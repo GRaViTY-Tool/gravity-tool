@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.headless.webapi.impl.ProgramModelApiServiceImpl;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
@@ -38,7 +38,7 @@ abstract class AbstractWebApiTests {
 	 *
 	 * @throws IOException
 	 */
-	@BeforeEach
+	@BeforeAll
 	public void initCache() throws IOException {
 		this.cache = FileUtils.createTempDirectory(this.getClass().getName()).toFile();
 	}
@@ -46,7 +46,7 @@ abstract class AbstractWebApiTests {
 	/**
 	 * Deletes the temporary cache
 	 */
-	@AfterEach
+	@AfterAll
 	public void cleanUp() {
 		FileUtils.recursiveDelete(this.cache);
 	}

@@ -96,7 +96,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tMember, LineComment mComment,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, LineComment mComment, TMember tMember,
 			MDefinition mMember, MDefinitionToTMember mMemberToTMember);
 
 	/**
@@ -113,8 +113,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mCommentToTText, EObject tMember, EObject mComment,
-			EObject mMember, EObject tText, EObject mMemberToTMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mComment, EObject tMember, EObject mMember,
+			EObject mCommentToTText, EObject tText, EObject mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mCommentToTText, EObject tMember, EObject mComment,
-			EObject mMember, EObject tText, EObject mMemberToTMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mComment, EObject tMember, EObject mMember,
+			EObject mCommentToTText, EObject tText, EObject mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_19(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_7(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_20(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TMember tMember, LineComment mComment, MDefinition mMember, TTextAnnotation tText,
+	CSP isApplicable_solveCsp_CC(LineComment mComment, TMember tMember, MDefinition mMember, TTextAnnotation tText,
 			Match sourceMatch, Match targetMatch);
 
 	/**

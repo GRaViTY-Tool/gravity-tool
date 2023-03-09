@@ -102,10 +102,10 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition, TSignature tSignature,
-			AbstractTypeDeclaration mType, TAbstractType tType, MDefinitionToTMember mDefinitionToTMember,
-			TMember tDefinition, MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			MSignature mSignature);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tDefinition, MDefinition mDefinition,
+			AbstractTypeDeclaration mType, MSignature mSignature, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			MSignatureToTSignature mSignatureToTSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +121,9 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature, EObject mType,
-			EObject tType, EObject mDefinitionToTMember, EObject tDefinition, EObject mSignatureToTSignature,
-			EObject mTypeToTType, EObject mSignature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mDefinition, EObject mType,
+			EObject mSignature, EObject tType, EObject mTypeToTType, EObject mDefinitionToTMember, EObject tSignature,
+			EObject mSignatureToTSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +139,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TSignature tSignature, TAbstractType tType, TMember tDefinition);
+	boolean isAppropriate_BWD(Match match, TMember tDefinition, TAbstractType tType, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,7 +163,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TSignature tSignature, TAbstractType tType, TMember tDefinition);
+	void registerObjectsToMatch_BWD(Match match, TMember tDefinition, TAbstractType tType, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,7 +171,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TSignature tSignature, TAbstractType tType, TMember tDefinition);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tDefinition, TAbstractType tType, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,10 +187,10 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition, TSignature tSignature,
-			AbstractTypeDeclaration mType, TAbstractType tType, MDefinitionToTMember mDefinitionToTMember,
-			TMember tDefinition, MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			MSignature mSignature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tDefinition, MDefinition mDefinition,
+			AbstractTypeDeclaration mType, MSignature mSignature, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			MSignatureToTSignature mSignatureToTSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,9 +206,9 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mDefinition, EObject tSignature, EObject mType,
-			EObject tType, EObject mDefinitionToTMember, EObject tDefinition, EObject mSignatureToTSignature,
-			EObject mTypeToTType, EObject mSignature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mDefinition, EObject mType,
+			EObject mSignature, EObject tType, EObject mTypeToTType, EObject mDefinitionToTMember, EObject tSignature,
+			EObject mSignatureToTSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +224,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_signature);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_84(EMoflonEdge _edge_signature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +232,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_87(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,8 +264,8 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MDefinition mDefinition, TSignature tSignature, AbstractTypeDeclaration mType,
-			TAbstractType tType, TMember tDefinition, MSignature mSignature, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TMember tDefinition, MDefinition mDefinition, AbstractTypeDeclaration mType,
+			MSignature mSignature, TAbstractType tType, TSignature tSignature, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,7 +289,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TSignature tSignature, TAbstractType tType, TMember tDefinition);
+	boolean checkDEC_BWD(TMember tDefinition, TAbstractType tType, TSignature tSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,7 +298,7 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember mDefinitionToTMemberParameter, TypeToTAbstractType mTypeToTTypeParameter);
+			MSignatureToTSignature mSignatureToTSignatureParameter, TypeToTAbstractType mTypeToTTypeParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,10 +306,10 @@ public interface LinkDefinitionToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition, TSignature tSignature,
-			AbstractTypeDeclaration mType, TAbstractType tType, MDefinitionToTMember mDefinitionToTMember,
-			TMember tDefinition, MSignatureToTSignature mSignatureToTSignature, TypeToTAbstractType mTypeToTType,
-			MSignature mSignature, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tDefinition, MDefinition mDefinition,
+			AbstractTypeDeclaration mType, MSignature mSignature, TAbstractType tType, TypeToTAbstractType mTypeToTType,
+			MDefinitionToTMember mDefinitionToTMember, TSignature tSignature,
+			MSignatureToTSignature mSignatureToTSignature, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

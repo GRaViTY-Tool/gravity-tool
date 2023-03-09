@@ -45,7 +45,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, BodyDeclaration astNode, org.eclipse.modisco.java.Annotation Annotation);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Annotation Annotation, BodyDeclaration astNode);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +69,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, BodyDeclaration astNode,
-			org.eclipse.modisco.java.Annotation Annotation);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Annotation Annotation,
+			BodyDeclaration astNode);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,8 +78,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, BodyDeclaration astNode,
-			org.eclipse.modisco.java.Annotation Annotation);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Annotation Annotation,
+			BodyDeclaration astNode);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +95,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BodyDeclaration astNode,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable,
-			org.eclipse.modisco.java.Annotation Annotation);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Annotation Annotation,
+			BodyDeclaration astNode, ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +112,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject astNode, EObject aSTNodeToTAnnotable,
-			EObject AnnotationToTAnnotation, EObject tAnnotation, EObject tAnnotable, EObject Annotation);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject Annotation, EObject astNode,
+			EObject aSTNodeToTAnnotable, EObject tAnnotable, EObject tAnnotation, EObject AnnotationToTAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +129,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAnnotation tAnnotation, TAnnotatable tAnnotable);
+	boolean isAppropriate_BWD(Match match, TAnnotatable tAnnotable, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +153,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAnnotation tAnnotation, TAnnotatable tAnnotable);
+	void registerObjectsToMatch_BWD(Match match, TAnnotatable tAnnotable, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +161,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotation tAnnotation, TAnnotatable tAnnotable);
+	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotatable tAnnotable, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,7 +178,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BodyDeclaration astNode,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotation tAnnotation, TAnnotatable tAnnotable);
+			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +194,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject astNode, EObject aSTNodeToTAnnotable,
-			EObject AnnotationToTAnnotation, EObject tAnnotation, EObject tAnnotable, EObject Annotation);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject Annotation, EObject astNode,
+			EObject aSTNodeToTAnnotable, EObject tAnnotable, EObject tAnnotation, EObject AnnotationToTAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +211,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_63(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +219,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_annotations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_annotations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +251,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(BodyDeclaration astNode, TAnnotation tAnnotation, TAnnotatable tAnnotable,
-			org.eclipse.modisco.java.Annotation Annotation, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.Annotation Annotation, BodyDeclaration astNode,
+			TAnnotatable tAnnotable, TAnnotation tAnnotation, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,7 +268,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(BodyDeclaration astNode, org.eclipse.modisco.java.Annotation Annotation);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.Annotation Annotation, BodyDeclaration astNode);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,7 +276,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAnnotation tAnnotation, TAnnotatable tAnnotable);
+	boolean checkDEC_BWD(TAnnotatable tAnnotable, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->

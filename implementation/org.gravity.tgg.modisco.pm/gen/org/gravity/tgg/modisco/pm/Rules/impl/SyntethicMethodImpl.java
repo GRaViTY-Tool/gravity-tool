@@ -107,55 +107,55 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef,
-			ClassDeclaration mClass) {
+	public boolean isAppropriate_FWD(Match match, ClassDeclaration mClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
 
 		Object[] result1_black = SyntethicMethodImpl.pattern_SyntethicMethod_0_1_initialbindings_blackBBBBB(this, match,
-				mSyntethic, mDef, mClass);
+				mClass, mDef, mSyntethic);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mSyntethic] = " + mSyntethic + ", " + "[mDef] = " + mDef + ", "
-					+ "[mClass] = " + mClass + ".");
+					+ "[match] = " + match + ", " + "[mClass] = " + mClass + ", " + "[mDef] = " + mDef + ", "
+					+ "[mSyntethic] = " + mSyntethic + ".");
 		}
 
 		Object[] result2_bindingAndBlack = SyntethicMethodImpl
-				.pattern_SyntethicMethod_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mSyntethic, mDef, mClass);
+				.pattern_SyntethicMethod_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mClass, mDef, mSyntethic);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mSyntethic] = " + mSyntethic + ", " + "[mDef] = " + mDef + ", "
-					+ "[mClass] = " + mClass + ".");
+					+ "[match] = " + match + ", " + "[mClass] = " + mClass + ", " + "[mDef] = " + mDef + ", "
+					+ "[mSyntethic] = " + mSyntethic + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (SyntethicMethodImpl.pattern_SyntethicMethod_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = SyntethicMethodImpl
-					.pattern_SyntethicMethod_0_4_collectelementstobetranslated_blackBBBB(match, mSyntethic, mDef,
-							mClass);
+					.pattern_SyntethicMethod_0_4_collectelementstobetranslated_blackBBBB(match, mClass, mDef,
+							mSyntethic);
 			if (result4_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mSyntethic] = "
-								+ mSyntethic + ", " + "[mDef] = " + mDef + ", " + "[mClass] = " + mClass + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mClass] = "
+								+ mClass + ", " + "[mDef] = " + mDef + ", " + "[mSyntethic] = " + mSyntethic + ".");
 			}
-			SyntethicMethodImpl.pattern_SyntethicMethod_0_4_collectelementstobetranslated_greenBBBBFFFF(match,
-					mSyntethic, mDef, mClass);
-			//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result4_green[7];
+			SyntethicMethodImpl.pattern_SyntethicMethod_0_4_collectelementstobetranslated_greenBBBBFFFF(match, mClass,
+					mDef, mSyntethic);
+			//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result4_green[7];
 
 			Object[] result5_black = SyntethicMethodImpl
-					.pattern_SyntethicMethod_0_5_collectcontextelements_blackBBBB(match, mSyntethic, mDef, mClass);
+					.pattern_SyntethicMethod_0_5_collectcontextelements_blackBBBB(match, mClass, mDef, mSyntethic);
 			if (result5_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mSyntethic] = "
-								+ mSyntethic + ", " + "[mDef] = " + mDef + ", " + "[mClass] = " + mClass + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mClass] = "
+								+ mClass + ", " + "[mDef] = " + mDef + ", " + "[mSyntethic] = " + mSyntethic + ".");
 			}
-			SyntethicMethodImpl.pattern_SyntethicMethod_0_5_collectcontextelements_greenBBB(match, mDef, mClass);
+			SyntethicMethodImpl.pattern_SyntethicMethod_0_5_collectcontextelements_greenBBB(match, mClass, mDef);
 
 			// 
-			SyntethicMethodImpl.pattern_SyntethicMethod_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-					mSyntethic, mDef, mClass);
+			SyntethicMethodImpl.pattern_SyntethicMethod_0_6_registerobjectstomatch_expressionBBBBB(this, match, mClass,
+					mDef, mSyntethic);
 			return SyntethicMethodImpl.pattern_SyntethicMethod_0_7_expressionF();
 		} else {
 			return SyntethicMethodImpl.pattern_SyntethicMethod_0_8_expressionF();
@@ -176,61 +176,61 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result1_bindingAndBlack[0];
+		TMethodSignature tSig = (TMethodSignature) result1_bindingAndBlack[0];
 		TMethodDefinition tDef = (TMethodDefinition) result1_bindingAndBlack[1];
-		MMethodDefinition mDef = (MMethodDefinition) result1_bindingAndBlack[2];
-		TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		ClassDeclaration mClass = (ClassDeclaration) result1_bindingAndBlack[3];
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[4];
 		TClass tClass = (TClass) result1_bindingAndBlack[5];
-		ClassDeclaration mClass = (ClassDeclaration) result1_bindingAndBlack[6];
-		TMethodSignature tSig = (TMethodSignature) result1_bindingAndBlack[7];
+		MMethodDefinition mDef = (MMethodDefinition) result1_bindingAndBlack[6];
+		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result1_bindingAndBlack[7];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[8];
-		Object[] result1_green = SyntethicMethodImpl
-				.pattern_SyntethicMethod_1_1_performtransformation_greenBBFFBB(mSyntethic, tDef, tClass, tSig);
-		TSyntethicMethod tSyntethic = (TSyntethicMethod) result1_green[2];
-		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result1_green[3];
+		Object[] result1_green = SyntethicMethodImpl.pattern_SyntethicMethod_1_1_performtransformation_greenBBFFBB(tSig,
+				tDef, tClass, mSyntethic);
+		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result1_green[2];
+		TSyntethicMethod tSyntethic = (TSyntethicMethod) result1_green[3];
 
 		Object[] result2_black = SyntethicMethodImpl
-				.pattern_SyntethicMethod_1_2_collecttranslatedelements_blackBBB(mSyntethic, tSyntethic, mSyntToTSynt);
+				.pattern_SyntethicMethod_1_2_collecttranslatedelements_blackBBB(mSyntToTSynt, tSyntethic, mSyntethic);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mSyntethic] = " + mSyntethic
-					+ ", " + "[tSyntethic] = " + tSyntethic + ", " + "[mSyntToTSynt] = " + mSyntToTSynt + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mSyntToTSynt] = " + mSyntToTSynt
+					+ ", " + "[tSyntethic] = " + tSyntethic + ", " + "[mSyntethic] = " + mSyntethic + ".");
 		}
 		Object[] result2_green = SyntethicMethodImpl
-				.pattern_SyntethicMethod_1_2_collecttranslatedelements_greenFBBB(mSyntethic, tSyntethic, mSyntToTSynt);
+				.pattern_SyntethicMethod_1_2_collecttranslatedelements_greenFBBB(mSyntToTSynt, tSyntethic, mSyntethic);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = SyntethicMethodImpl.pattern_SyntethicMethod_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, mSyntethic, tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember,
-				mSyntToTSynt, tClass, mClass, tSig);
+				ruleresult, tSig, tDef, mClassDeclarationToTClass, mClass, mSyntToTSynt, mDefinitionToTMember,
+				tSyntethic, tClass, mDef, mSyntethic);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mSyntethic] = " + mSyntethic + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = "
-					+ tSyntethic + ", " + "[mDef] = " + mDef + ", " + "[mClassDeclarationToTClass] = "
-					+ mClassDeclarationToTClass + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
-					+ "[mSyntToTSynt] = " + mSyntToTSynt + ", " + "[tClass] = " + tClass + ", " + "[mClass] = " + mClass
-					+ ", " + "[tSig] = " + tSig + ".");
+					+ ", " + "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", " + "[mClassDeclarationToTClass] = "
+					+ mClassDeclarationToTClass + ", " + "[mClass] = " + mClass + ", " + "[mSyntToTSynt] = "
+					+ mSyntToTSynt + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
+					+ "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass + ", " + "[mDef] = " + mDef + ", "
+					+ "[mSyntethic] = " + mSyntethic + ".");
 		}
-		SyntethicMethodImpl.pattern_SyntethicMethod_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFF(ruleresult,
-				mSyntethic, tDef, tSyntethic, mDef, mSyntToTSynt, tClass, mClass, tSig);
+		SyntethicMethodImpl.pattern_SyntethicMethod_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFF(ruleresult, tSig,
+				tDef, mClass, mSyntToTSynt, tSyntethic, tClass, mDef, mSyntethic);
 		//nothing EMoflonEdge tDef__tSyntethic____syntethicMethods = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tSyntethic__tDef____originalMethodDefinition = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tSig__tSyntethic____definitions = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mSyntToTSynt__tSyntethic____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mSyntToTSynt__mSyntethic____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tClass__tSyntethic____defines = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tSyntethic__tClass____definedBy = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mSyntToTSynt__tSyntethic____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tSig__tSyntethic____definitions = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tClass__tSyntethic____defines = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tSyntethic__tClass____definedBy = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mSyntToTSynt__mSyntethic____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result3_green[20];
 
 		// 
 		// 
-		SyntethicMethodImpl.pattern_SyntethicMethod_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-				mSyntethic, tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, mSyntToTSynt,
-				tClass, mClass, tSig);
+		SyntethicMethodImpl.pattern_SyntethicMethod_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, tSig,
+				tDef, mClassDeclarationToTClass, mClass, mSyntToTSynt, mDefinitionToTMember, tSyntethic, tClass, mDef,
+				mSyntethic);
 		return SyntethicMethodImpl.pattern_SyntethicMethod_1_6_expressionFB(ruleresult);
 	}
 
@@ -258,45 +258,45 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result2_binding[0];
+		ClassDeclaration mClass = (ClassDeclaration) result2_binding[0];
 		MMethodDefinition mDef = (MMethodDefinition) result2_binding[1];
-		ClassDeclaration mClass = (ClassDeclaration) result2_binding[2];
-		for (Object[] result2_black : SyntethicMethodImpl
-				.pattern_SyntethicMethod_2_2_corematch_blackBFBFFFBB(mSyntethic, mDef, mClass, match)) {
-			TMethodDefinition tDef = (TMethodDefinition) result2_black[1];
-			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result2_black[3];
-			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[4];
-			TClass tClass = (TClass) result2_black[5];
+		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result2_binding[2];
+		for (Object[] result2_black : SyntethicMethodImpl.pattern_SyntethicMethod_2_2_corematch_blackFFBFFBBB(mClass,
+				mDef, mSyntethic, match)) {
+			TMethodDefinition tDef = (TMethodDefinition) result2_black[0];
+			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result2_black[1];
+			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[3];
+			TClass tClass = (TClass) result2_black[4];
 			// ForEach 
-			for (Object[] result3_black : SyntethicMethodImpl.pattern_SyntethicMethod_2_3_findcontext_blackBBBBBBBF(
-					mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass)) {
-				TMethodSignature tSig = (TMethodSignature) result3_black[7];
+			for (Object[] result3_black : SyntethicMethodImpl.pattern_SyntethicMethod_2_3_findcontext_blackFBBBBBBB(
+					tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef, mSyntethic)) {
+				TMethodSignature tSig = (TMethodSignature) result3_black[0];
 				Object[] result3_green = SyntethicMethodImpl
-						.pattern_SyntethicMethod_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(mSyntethic, tDef, mDef,
-								mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig);
+						.pattern_SyntethicMethod_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(tSig, tDef,
+								mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef, mSyntethic);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
-				//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mDefinitionToTMember__tDef____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tDef__tSig____signature = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tSig__tDef____definitions = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mDefinitionToTMember__mDef____source = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mClassDeclarationToTClass__mClass____source = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge tDef__tSig____signature = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tSig__tDef____definitions = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mClassDeclarationToTClass__mClass____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mDefinitionToTMember__tDef____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge mDefinitionToTMember__mDef____source = (EMoflonEdge) result3_green[18];
 
 				Object[] result4_bindingAndBlack = SyntethicMethodImpl
-						.pattern_SyntethicMethod_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch,
-								mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass,
-								tSig);
+						.pattern_SyntethicMethod_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch, tSig,
+								tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef,
+								mSyntethic);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mSyntethic] = " + mSyntethic
-							+ ", " + "[tDef] = " + tDef + ", " + "[mDef] = " + mDef + ", "
-							+ "[mClassDeclarationToTClass] = " + mClassDeclarationToTClass + ", "
-							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tClass] = " + tClass + ", "
-							+ "[mClass] = " + mClass + ", " + "[tSig] = " + tSig + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tSig] = " + tSig + ", "
+							+ "[tDef] = " + tDef + ", " + "[mClassDeclarationToTClass] = " + mClassDeclarationToTClass
+							+ ", " + "[mClass] = " + mClass + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember
+							+ ", " + "[tClass] = " + tClass + ", " + "[mDef] = " + mDef + ", " + "[mSyntethic] = "
+							+ mSyntethic + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -325,11 +325,11 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef,
-			ClassDeclaration mClass) {
-		match.registerObject("mSyntethic", mSyntethic);
-		match.registerObject("mDef", mDef);
+	public void registerObjectsToMatch_FWD(Match match, ClassDeclaration mClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
 		match.registerObject("mClass", mClass);
+		match.registerObject("mDef", mDef);
+		match.registerObject("mSyntethic", mSyntethic);
 
 	}
 
@@ -338,8 +338,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef,
-			ClassDeclaration mClass) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration mClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -368,9 +368,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSyntheticMethodDefinition mSyntethic,
-			TMethodDefinition tDef, MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -385,14 +386,14 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mSyntethic", mSyntethic);
+		isApplicableMatch.registerObject("tSig", tSig);
 		isApplicableMatch.registerObject("tDef", tDef);
-		isApplicableMatch.registerObject("mDef", mDef);
 		isApplicableMatch.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
+		isApplicableMatch.registerObject("mClass", mClass);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 		isApplicableMatch.registerObject("tClass", tClass);
-		isApplicableMatch.registerObject("mClass", mClass);
-		isApplicableMatch.registerObject("tSig", tSig);
+		isApplicableMatch.registerObject("mDef", mDef);
+		isApplicableMatch.registerObject("mSyntethic", mSyntethic);
 		return csp;
 	}
 
@@ -410,19 +411,19 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic,
-			EObject mDef, EObject mClassDeclarationToTClass, EObject mDefinitionToTMember, EObject mSyntToTSynt,
-			EObject tClass, EObject mClass, EObject tSig) {
-		ruleresult.registerObject("mSyntethic", mSyntethic);
-		ruleresult.registerObject("tDef", tDef);
-		ruleresult.registerObject("tSyntethic", tSyntethic);
-		ruleresult.registerObject("mDef", mDef);
-		ruleresult.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
-		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mSyntToTSynt", mSyntToTSynt);
-		ruleresult.registerObject("tClass", tClass);
-		ruleresult.registerObject("mClass", mClass);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSig, EObject tDef,
+			EObject mClassDeclarationToTClass, EObject mClass, EObject mSyntToTSynt, EObject mDefinitionToTMember,
+			EObject tSyntethic, EObject tClass, EObject mDef, EObject mSyntethic) {
 		ruleresult.registerObject("tSig", tSig);
+		ruleresult.registerObject("tDef", tDef);
+		ruleresult.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
+		ruleresult.registerObject("mClass", mClass);
+		ruleresult.registerObject("mSyntToTSynt", mSyntToTSynt);
+		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		ruleresult.registerObject("tSyntethic", tSyntethic);
+		ruleresult.registerObject("tClass", tClass);
+		ruleresult.registerObject("mDef", mDef);
+		ruleresult.registerObject("mSyntethic", mSyntethic);
 
 	}
 
@@ -441,39 +442,39 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass,
-			TMethodSignature tSig) {
+	public boolean isAppropriate_BWD(Match match, TMethodSignature tSig, TMethodDefinition tDef,
+			TSyntethicMethod tSyntethic, TClass tClass) {
 
 		Object[] result1_black = SyntethicMethodImpl.pattern_SyntethicMethod_10_1_initialbindings_blackBBBBBB(this,
-				match, tDef, tSyntethic, tClass, tSig);
+				match, tSig, tDef, tSyntethic, tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", "
-					+ "[tClass] = " + tClass + ", " + "[tSig] = " + tSig + ".");
+					+ "[match] = " + match + ", " + "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", "
+					+ "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass + ".");
 		}
 
 		Object[] result2_bindingAndBlack = SyntethicMethodImpl
-				.pattern_SyntethicMethod_10_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, tDef, tSyntethic, tClass,
-						tSig);
+				.pattern_SyntethicMethod_10_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, tSig, tDef, tSyntethic,
+						tClass);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", "
-					+ "[tClass] = " + tClass + ", " + "[tSig] = " + tSig + ".");
+					+ "[match] = " + match + ", " + "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", "
+					+ "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (SyntethicMethodImpl.pattern_SyntethicMethod_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = SyntethicMethodImpl
-					.pattern_SyntethicMethod_10_4_collectelementstobetranslated_blackBBBBB(match, tDef, tSyntethic,
-							tClass, tSig);
+					.pattern_SyntethicMethod_10_4_collectelementstobetranslated_blackBBBBB(match, tSig, tDef,
+							tSyntethic, tClass);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass
-						+ ", " + "[tSig] = " + tSig + ".");
+						+ "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", "
+						+ "[tClass] = " + tClass + ".");
 			}
-			SyntethicMethodImpl.pattern_SyntethicMethod_10_4_collectelementstobetranslated_greenBBBBBFFFFFF(match, tDef,
-					tSyntethic, tClass, tSig);
+			SyntethicMethodImpl.pattern_SyntethicMethod_10_4_collectelementstobetranslated_greenBBBBBFFFFFF(match, tSig,
+					tDef, tSyntethic, tClass);
 			//nothing EMoflonEdge tDef__tSyntethic____syntethicMethods = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge tSyntethic__tDef____originalMethodDefinition = (EMoflonEdge) result4_green[6];
 			//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result4_green[7];
@@ -482,20 +483,20 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			//nothing EMoflonEdge tSyntethic__tClass____definedBy = (EMoflonEdge) result4_green[10];
 
 			Object[] result5_black = SyntethicMethodImpl.pattern_SyntethicMethod_10_5_collectcontextelements_blackBBBBB(
-					match, tDef, tSyntethic, tClass, tSig);
+					match, tSig, tDef, tSyntethic, tClass);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass
-						+ ", " + "[tSig] = " + tSig + ".");
+						+ "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", "
+						+ "[tClass] = " + tClass + ".");
 			}
-			SyntethicMethodImpl.pattern_SyntethicMethod_10_5_collectcontextelements_greenBBBBFF(match, tDef, tClass,
-					tSig);
+			SyntethicMethodImpl.pattern_SyntethicMethod_10_5_collectcontextelements_greenBBBBFF(match, tSig, tDef,
+					tClass);
 			//nothing EMoflonEdge tDef__tSig____signature = (EMoflonEdge) result5_green[4];
 			//nothing EMoflonEdge tSig__tDef____definitions = (EMoflonEdge) result5_green[5];
 
 			// 
-			SyntethicMethodImpl.pattern_SyntethicMethod_10_6_registerobjectstomatch_expressionBBBBBB(this, match, tDef,
-					tSyntethic, tClass, tSig);
+			SyntethicMethodImpl.pattern_SyntethicMethod_10_6_registerobjectstomatch_expressionBBBBBB(this, match, tSig,
+					tDef, tSyntethic, tClass);
 			return SyntethicMethodImpl.pattern_SyntethicMethod_10_7_expressionF();
 		} else {
 			return SyntethicMethodImpl.pattern_SyntethicMethod_10_8_expressionF();
@@ -516,61 +517,61 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TMethodDefinition tDef = (TMethodDefinition) result1_bindingAndBlack[0];
-		TSyntethicMethod tSyntethic = (TSyntethicMethod) result1_bindingAndBlack[1];
-		MMethodDefinition mDef = (MMethodDefinition) result1_bindingAndBlack[2];
-		TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TMethodSignature tSig = (TMethodSignature) result1_bindingAndBlack[0];
+		TMethodDefinition tDef = (TMethodDefinition) result1_bindingAndBlack[1];
+		TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		ClassDeclaration mClass = (ClassDeclaration) result1_bindingAndBlack[3];
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_bindingAndBlack[4];
-		TClass tClass = (TClass) result1_bindingAndBlack[5];
-		ClassDeclaration mClass = (ClassDeclaration) result1_bindingAndBlack[6];
-		TMethodSignature tSig = (TMethodSignature) result1_bindingAndBlack[7];
+		TSyntethicMethod tSyntethic = (TSyntethicMethod) result1_bindingAndBlack[5];
+		TClass tClass = (TClass) result1_bindingAndBlack[6];
+		MMethodDefinition mDef = (MMethodDefinition) result1_bindingAndBlack[7];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[8];
 		Object[] result1_green = SyntethicMethodImpl
-				.pattern_SyntethicMethod_11_1_performtransformation_greenFBBFB(tSyntethic, mDef, mClass);
-		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result1_green[0];
-		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result1_green[3];
+				.pattern_SyntethicMethod_11_1_performtransformation_greenBFBBF(mClass, tSyntethic, mDef);
+		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result1_green[1];
+		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result1_green[4];
 
 		Object[] result2_black = SyntethicMethodImpl
-				.pattern_SyntethicMethod_11_2_collecttranslatedelements_blackBBB(mSyntethic, tSyntethic, mSyntToTSynt);
+				.pattern_SyntethicMethod_11_2_collecttranslatedelements_blackBBB(mSyntToTSynt, tSyntethic, mSyntethic);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mSyntethic] = " + mSyntethic
-					+ ", " + "[tSyntethic] = " + tSyntethic + ", " + "[mSyntToTSynt] = " + mSyntToTSynt + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mSyntToTSynt] = " + mSyntToTSynt
+					+ ", " + "[tSyntethic] = " + tSyntethic + ", " + "[mSyntethic] = " + mSyntethic + ".");
 		}
 		Object[] result2_green = SyntethicMethodImpl
-				.pattern_SyntethicMethod_11_2_collecttranslatedelements_greenFBBB(mSyntethic, tSyntethic, mSyntToTSynt);
+				.pattern_SyntethicMethod_11_2_collecttranslatedelements_greenFBBB(mSyntToTSynt, tSyntethic, mSyntethic);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = SyntethicMethodImpl.pattern_SyntethicMethod_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, mSyntethic, tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember,
-				mSyntToTSynt, tClass, mClass, tSig);
+				ruleresult, tSig, tDef, mClassDeclarationToTClass, mClass, mSyntToTSynt, mDefinitionToTMember,
+				tSyntethic, tClass, mDef, mSyntethic);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mSyntethic] = " + mSyntethic + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = "
-					+ tSyntethic + ", " + "[mDef] = " + mDef + ", " + "[mClassDeclarationToTClass] = "
-					+ mClassDeclarationToTClass + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
-					+ "[mSyntToTSynt] = " + mSyntToTSynt + ", " + "[tClass] = " + tClass + ", " + "[mClass] = " + mClass
-					+ ", " + "[tSig] = " + tSig + ".");
+					+ ", " + "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", " + "[mClassDeclarationToTClass] = "
+					+ mClassDeclarationToTClass + ", " + "[mClass] = " + mClass + ", " + "[mSyntToTSynt] = "
+					+ mSyntToTSynt + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
+					+ "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass + ", " + "[mDef] = " + mDef + ", "
+					+ "[mSyntethic] = " + mSyntethic + ".");
 		}
 		SyntethicMethodImpl.pattern_SyntethicMethod_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFF(ruleresult,
-				mSyntethic, tDef, tSyntethic, mDef, mSyntToTSynt, tClass, mClass, tSig);
+				tSig, tDef, mClass, mSyntToTSynt, tSyntethic, tClass, mDef, mSyntethic);
 		//nothing EMoflonEdge tDef__tSyntethic____syntethicMethods = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tSyntethic__tDef____originalMethodDefinition = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tSig__tSyntethic____definitions = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mSyntToTSynt__tSyntethic____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mSyntToTSynt__mSyntethic____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge tClass__tSyntethic____defines = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge tSyntethic__tClass____definedBy = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge mClass__mSyntethic____bodyDeclarations = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mSyntToTSynt__tSyntethic____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tSig__tSyntethic____definitions = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge tClass__tSyntethic____defines = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tSyntethic__tClass____definedBy = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mSyntToTSynt__mSyntethic____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge mSyntethic__mDef____originalMethodDefinition = (EMoflonEdge) result3_green[20];
 
 		// 
 		// 
-		SyntethicMethodImpl.pattern_SyntethicMethod_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-				mSyntethic, tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, mSyntToTSynt,
-				tClass, mClass, tSig);
+		SyntethicMethodImpl.pattern_SyntethicMethod_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, tSig,
+				tDef, mClassDeclarationToTClass, mClass, mSyntToTSynt, mDefinitionToTMember, tSyntethic, tClass, mDef,
+				mSyntethic);
 		return SyntethicMethodImpl.pattern_SyntethicMethod_11_6_expressionFB(ruleresult);
 	}
 
@@ -598,47 +599,47 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TMethodDefinition tDef = (TMethodDefinition) result2_binding[0];
-		TSyntethicMethod tSyntethic = (TSyntethicMethod) result2_binding[1];
-		TClass tClass = (TClass) result2_binding[2];
-		TMethodSignature tSig = (TMethodSignature) result2_binding[3];
-		for (Object[] result2_black : SyntethicMethodImpl.pattern_SyntethicMethod_12_2_corematch_blackBBFFFBFBB(tDef,
-				tSyntethic, tClass, tSig, match)) {
-			MMethodDefinition mDef = (MMethodDefinition) result2_black[2];
-			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result2_black[3];
+		TMethodSignature tSig = (TMethodSignature) result2_binding[0];
+		TMethodDefinition tDef = (TMethodDefinition) result2_binding[1];
+		TSyntethicMethod tSyntethic = (TSyntethicMethod) result2_binding[2];
+		TClass tClass = (TClass) result2_binding[3];
+		for (Object[] result2_black : SyntethicMethodImpl.pattern_SyntethicMethod_12_2_corematch_blackBBFFFBBFB(tSig,
+				tDef, tSyntethic, tClass, match)) {
+			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result2_black[2];
+			ClassDeclaration mClass = (ClassDeclaration) result2_black[3];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[4];
-			ClassDeclaration mClass = (ClassDeclaration) result2_black[6];
+			MMethodDefinition mDef = (MMethodDefinition) result2_black[7];
 			// ForEach 
 			for (Object[] result3_black : SyntethicMethodImpl.pattern_SyntethicMethod_12_3_findcontext_blackBBBBBBBB(
-					tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig)) {
+					tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic, tClass, mDef)) {
 				Object[] result3_green = SyntethicMethodImpl
-						.pattern_SyntethicMethod_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFFF(tDef, tSyntethic, mDef,
-								mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig);
+						.pattern_SyntethicMethod_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFFF(tSig, tDef,
+								mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic, tClass, mDef);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
-				//nothing EMoflonEdge tDef__tSyntethic____syntethicMethods = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tSyntethic__tDef____originalMethodDefinition = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tSig__tSyntethic____definitions = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mDefinitionToTMember__tDef____target = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tDef__tSig____signature = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tSig__tDef____definitions = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mDefinitionToTMember__mDef____source = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge tDef__tSig____signature = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tSig__tDef____definitions = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tDef__tSyntethic____syntethicMethods = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tSyntethic__tDef____originalMethodDefinition = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mClassDeclarationToTClass__mClass____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mDefinitionToTMember__tDef____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tSyntethic__tSig____signature = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge tSig__tSyntethic____definitions = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge tClass__tSyntethic____defines = (EMoflonEdge) result3_green[17];
 				//nothing EMoflonEdge tSyntethic__tClass____definedBy = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mClassDeclarationToTClass__mClass____source = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge mClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge mDefinitionToTMember__mDef____source = (EMoflonEdge) result3_green[20];
 
 				Object[] result4_bindingAndBlack = SyntethicMethodImpl
-						.pattern_SyntethicMethod_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch, tDef,
-								tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass,
-								tSig);
+						.pattern_SyntethicMethod_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch, tSig,
+								tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic, tClass,
+								mDef);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tDef] = " + tDef + ", "
-							+ "[tSyntethic] = " + tSyntethic + ", " + "[mDef] = " + mDef + ", "
-							+ "[mClassDeclarationToTClass] = " + mClassDeclarationToTClass + ", "
-							+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tClass] = " + tClass + ", "
-							+ "[mClass] = " + mClass + ", " + "[tSig] = " + tSig + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tSig] = " + tSig + ", "
+							+ "[tDef] = " + tDef + ", " + "[mClassDeclarationToTClass] = " + mClassDeclarationToTClass
+							+ ", " + "[mClass] = " + mClass + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember
+							+ ", " + "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass + ", " + "[mDef] = "
+							+ mDef + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -667,12 +668,12 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			TClass tClass, TMethodSignature tSig) {
+	public void registerObjectsToMatch_BWD(Match match, TMethodSignature tSig, TMethodDefinition tDef,
+			TSyntethicMethod tSyntethic, TClass tClass) {
+		match.registerObject("tSig", tSig);
 		match.registerObject("tDef", tDef);
 		match.registerObject("tSyntethic", tSyntethic);
 		match.registerObject("tClass", tClass);
-		match.registerObject("tSig", tSig);
 
 	}
 
@@ -681,8 +682,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			TClass tClass, TMethodSignature tSig) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TMethodSignature tSig, TMethodDefinition tDef,
+			TSyntethicMethod tSyntethic, TClass tClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -711,9 +712,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tDef,
-			TSyntethicMethod tSyntethic, MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TSyntethicMethod tSyntethic, TClass tClass,
+			MMethodDefinition mDef) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -728,14 +730,14 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tDef", tDef);
-		isApplicableMatch.registerObject("tSyntethic", tSyntethic);
-		isApplicableMatch.registerObject("mDef", mDef);
-		isApplicableMatch.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
-		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		isApplicableMatch.registerObject("tClass", tClass);
-		isApplicableMatch.registerObject("mClass", mClass);
 		isApplicableMatch.registerObject("tSig", tSig);
+		isApplicableMatch.registerObject("tDef", tDef);
+		isApplicableMatch.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
+		isApplicableMatch.registerObject("mClass", mClass);
+		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		isApplicableMatch.registerObject("tSyntethic", tSyntethic);
+		isApplicableMatch.registerObject("tClass", tClass);
+		isApplicableMatch.registerObject("mDef", mDef);
 		return csp;
 	}
 
@@ -753,19 +755,19 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic,
-			EObject mDef, EObject mClassDeclarationToTClass, EObject mDefinitionToTMember, EObject mSyntToTSynt,
-			EObject tClass, EObject mClass, EObject tSig) {
-		ruleresult.registerObject("mSyntethic", mSyntethic);
-		ruleresult.registerObject("tDef", tDef);
-		ruleresult.registerObject("tSyntethic", tSyntethic);
-		ruleresult.registerObject("mDef", mDef);
-		ruleresult.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
-		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mSyntToTSynt", mSyntToTSynt);
-		ruleresult.registerObject("tClass", tClass);
-		ruleresult.registerObject("mClass", mClass);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSig, EObject tDef,
+			EObject mClassDeclarationToTClass, EObject mClass, EObject mSyntToTSynt, EObject mDefinitionToTMember,
+			EObject tSyntethic, EObject tClass, EObject mDef, EObject mSyntethic) {
 		ruleresult.registerObject("tSig", tSig);
+		ruleresult.registerObject("tDef", tDef);
+		ruleresult.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
+		ruleresult.registerObject("mClass", mClass);
+		ruleresult.registerObject("mSyntToTSynt", mSyntToTSynt);
+		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
+		ruleresult.registerObject("tSyntethic", tSyntethic);
+		ruleresult.registerObject("tClass", tClass);
+		ruleresult.registerObject("mDef", mDef);
+		ruleresult.registerObject("mSyntethic", mSyntethic);
 
 	}
 
@@ -784,7 +786,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_72(EMoflonEdge _edge_syntethicMethods) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_41(EMoflonEdge _edge_syntethicMethods) {
 
 		Object[] result1_bindingAndBlack = SyntethicMethodImpl
 				.pattern_SyntethicMethod_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -800,10 +802,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		// ForEach 
 		for (Object[] result2_black : SyntethicMethodImpl
 				.pattern_SyntethicMethod_20_2_testcorematchandDECs_blackFFFFB(_edge_syntethicMethods)) {
-			TMethodDefinition tDef = (TMethodDefinition) result2_black[0];
-			TSyntethicMethod tSyntethic = (TSyntethicMethod) result2_black[1];
-			TClass tClass = (TClass) result2_black[2];
-			TMethodSignature tSig = (TMethodSignature) result2_black[3];
+			TMethodSignature tSig = (TMethodSignature) result2_black[0];
+			TMethodDefinition tDef = (TMethodDefinition) result2_black[1];
+			TSyntethicMethod tSyntethic = (TSyntethicMethod) result2_black[2];
+			TClass tClass = (TClass) result2_black[3];
 			Object[] result2_green = SyntethicMethodImpl
 					.pattern_SyntethicMethod_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -811,7 +813,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			// 
 			if (SyntethicMethodImpl
 					.pattern_SyntethicMethod_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(this,
-							match, tDef, tSyntethic, tClass, tSig)) {
+							match, tSig, tDef, tSyntethic, tClass)) {
 				// 
 				if (SyntethicMethodImpl
 						.pattern_SyntethicMethod_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -843,7 +845,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_syntheticMethodDefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = SyntethicMethodImpl
 				.pattern_SyntethicMethod_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -858,10 +860,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 		// ForEach 
 		for (Object[] result2_black : SyntethicMethodImpl
-				.pattern_SyntethicMethod_21_2_testcorematchandDECs_blackFFFB(_edge_syntheticMethodDefinitions)) {
-			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result2_black[0];
+				.pattern_SyntethicMethod_21_2_testcorematchandDECs_blackFFFB(_edge_bodyDeclarations)) {
+			ClassDeclaration mClass = (ClassDeclaration) result2_black[0];
 			MMethodDefinition mDef = (MMethodDefinition) result2_black[1];
-			ClassDeclaration mClass = (ClassDeclaration) result2_black[2];
+			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result2_black[2];
 			Object[] result2_green = SyntethicMethodImpl
 					.pattern_SyntethicMethod_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -869,7 +871,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			// 
 			if (SyntethicMethodImpl
 					.pattern_SyntethicMethod_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, mSyntethic, mDef, mClass)) {
+							match, mClass, mDef, mSyntethic)) {
 				// 
 				if (SyntethicMethodImpl
 						.pattern_SyntethicMethod_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -976,49 +978,49 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result2_bindingAndBlack[0];
+		TMethodSignature tSig = (TMethodSignature) result2_bindingAndBlack[0];
 		TMethodDefinition tDef = (TMethodDefinition) result2_bindingAndBlack[1];
-		TSyntethicMethod tSyntethic = (TSyntethicMethod) result2_bindingAndBlack[2];
-		MMethodDefinition mDef = (MMethodDefinition) result2_bindingAndBlack[3];
+		ClassDeclaration mClass = (ClassDeclaration) result2_bindingAndBlack[2];
+		TSyntethicMethod tSyntethic = (TSyntethicMethod) result2_bindingAndBlack[3];
 		TClass tClass = (TClass) result2_bindingAndBlack[4];
-		ClassDeclaration mClass = (ClassDeclaration) result2_bindingAndBlack[5];
-		TMethodSignature tSig = (TMethodSignature) result2_bindingAndBlack[6];
+		MMethodDefinition mDef = (MMethodDefinition) result2_bindingAndBlack[5];
+		MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result2_bindingAndBlack[6];
 
 		Object[] result3_bindingAndBlack = SyntethicMethodImpl
-				.pattern_SyntethicMethod_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, mSyntethic, tDef, tSyntethic,
-						mDef, tClass, mClass, tSig, sourceMatch, targetMatch);
+				.pattern_SyntethicMethod_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tSig, tDef, mClass, tSyntethic,
+						tClass, mDef, mSyntethic, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mSyntethic] = " + mSyntethic + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic
-					+ ", " + "[mDef] = " + mDef + ", " + "[tClass] = " + tClass + ", " + "[mClass] = " + mClass + ", "
-					+ "[tSig] = " + tSig + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
-					+ targetMatch + ".");
+					+ "[tSig] = " + tSig + ", " + "[tDef] = " + tDef + ", " + "[mClass] = " + mClass + ", "
+					+ "[tSyntethic] = " + tSyntethic + ", " + "[tClass] = " + tClass + ", " + "[mDef] = " + mDef + ", "
+					+ "[mSyntethic] = " + mSyntethic + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (SyntethicMethodImpl.pattern_SyntethicMethod_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : SyntethicMethodImpl
-					.pattern_SyntethicMethod_24_5_matchcorrcontext_blackBBFFBBBB(tDef, mDef, tClass, mClass,
+					.pattern_SyntethicMethod_24_5_matchcorrcontext_blackBFBFBBBB(tDef, mClass, tClass, mDef,
 							sourceMatch, targetMatch)) {
-				TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result5_black[2];
+				TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result5_black[1];
 				MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result5_black[3];
 				Object[] result5_green = SyntethicMethodImpl.pattern_SyntethicMethod_24_5_matchcorrcontext_greenBBBBF(
 						mClassDeclarationToTClass, mDefinitionToTMember, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = SyntethicMethodImpl
-						.pattern_SyntethicMethod_24_6_createcorrespondence_blackBBBBBBBB(mSyntethic, tDef, tSyntethic,
-								mDef, tClass, mClass, tSig, ccMatch);
+						.pattern_SyntethicMethod_24_6_createcorrespondence_blackBBBBBBBB(tSig, tDef, mClass, tSyntethic,
+								tClass, mDef, mSyntethic, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mSyntethic] = "
-							+ mSyntethic + ", " + "[tDef] = " + tDef + ", " + "[tSyntethic] = " + tSyntethic + ", "
-							+ "[mDef] = " + mDef + ", " + "[tClass] = " + tClass + ", " + "[mClass] = " + mClass + ", "
-							+ "[tSig] = " + tSig + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSig] = " + tSig + ", "
+							+ "[tDef] = " + tDef + ", " + "[mClass] = " + mClass + ", " + "[tSyntethic] = " + tSyntethic
+							+ ", " + "[tClass] = " + tClass + ", " + "[mDef] = " + mDef + ", " + "[mSyntethic] = "
+							+ mSyntethic + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				SyntethicMethodImpl.pattern_SyntethicMethod_24_6_createcorrespondence_greenBBFB(mSyntethic, tSyntethic,
+				SyntethicMethodImpl.pattern_SyntethicMethod_24_6_createcorrespondence_greenFBBB(tSyntethic, mSyntethic,
 						ccMatch);
-				//nothing MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result6_green[2];
+				//nothing MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result6_green[0];
 
 				Object[] result7_black = SyntethicMethodImpl
 						.pattern_SyntethicMethod_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1040,9 +1042,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef,
-			TSyntethicMethod tSyntethic, MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass,
-			TMethodSignature tSig, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TMethodSignature tSig, TMethodDefinition tDef, ClassDeclaration mClass,
+			TSyntethicMethod tSyntethic, TClass tClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic,
+			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1071,10 +1073,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef,
-			ClassDeclaration mClass) {// 
-		Object[] result1_black = SyntethicMethodImpl.pattern_SyntethicMethod_27_1_matchtggpattern_blackBBB(mSyntethic,
-				mDef, mClass);
+	public boolean checkDEC_FWD(ClassDeclaration mClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {// 
+		Object[] result1_black = SyntethicMethodImpl.pattern_SyntethicMethod_27_1_matchtggpattern_blackBBB(mClass, mDef,
+				mSyntethic);
 		if (result1_black != null) {
 			return SyntethicMethodImpl.pattern_SyntethicMethod_27_2_expressionF();
 		} else {
@@ -1088,10 +1090,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass,
-			TMethodSignature tSig) {// 
-		Object[] result1_black = SyntethicMethodImpl.pattern_SyntethicMethod_28_1_matchtggpattern_blackBBBB(tDef,
-				tSyntethic, tClass, tSig);
+	public boolean checkDEC_BWD(TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
+			TClass tClass) {// 
+		Object[] result1_black = SyntethicMethodImpl.pattern_SyntethicMethod_28_1_matchtggpattern_blackBBBB(tSig, tDef,
+				tSyntethic, tClass);
 		if (result1_black != null) {
 			return SyntethicMethodImpl.pattern_SyntethicMethod_28_2_expressionF();
 		} else {
@@ -1121,8 +1123,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		for (Object[] result2_black : SyntethicMethodImpl
 				.pattern_SyntethicMethod_29_2_isapplicablecore_blackFFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mDefinitionToTMemberList = (RuleEntryList) result2_black[0];
-			TMethodDefinition tDef = (TMethodDefinition) result2_black[1];
-			TMethodSignature tSig = (TMethodSignature) result2_black[2];
+			TMethodSignature tSig = (TMethodSignature) result2_black[1];
+			TMethodDefinition tDef = (TMethodDefinition) result2_black[2];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result2_black[3];
 			MMethodDefinition mDef = (MMethodDefinition) result2_black[4];
 			//nothing RuleEntryList mClassDeclarationToTClassList = (RuleEntryList) result2_black[5];
@@ -1131,39 +1133,39 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			TClass tClass = (TClass) result2_black[8];
 
 			Object[] result3_bindingAndBlack = SyntethicMethodImpl
-					.pattern_SyntethicMethod_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch, tDef,
-							mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig, ruleResult);
+					.pattern_SyntethicMethod_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch, tSig,
+							tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tDef] = " + tDef + ", " + "[mDef] = "
-						+ mDef + ", " + "[mClassDeclarationToTClass] = " + mClassDeclarationToTClass + ", "
-						+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tClass] = " + tClass + ", "
-						+ "[mClass] = " + mClass + ", " + "[tSig] = " + tSig + ", " + "[ruleResult] = " + ruleResult
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tSig] = " + tSig + ", " + "[tDef] = "
+						+ tDef + ", " + "[mClassDeclarationToTClass] = " + mClassDeclarationToTClass + ", "
+						+ "[mClass] = " + mClass + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
+						+ "[tClass] = " + tClass + ", " + "[mDef] = " + mDef + ", " + "[ruleResult] = " + ruleResult
 						+ ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (SyntethicMethodImpl.pattern_SyntethicMethod_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = SyntethicMethodImpl.pattern_SyntethicMethod_29_5_checknacs_blackBBBBBBB(tDef,
-						mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig);
+				Object[] result5_black = SyntethicMethodImpl.pattern_SyntethicMethod_29_5_checknacs_blackBBBBBBB(tSig,
+						tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef);
 				if (result5_black != null) {
 
 					Object[] result6_black = SyntethicMethodImpl.pattern_SyntethicMethod_29_6_perform_blackBBBBBBBB(
-							tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig,
+							tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef,
 							ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tDef] = " + tDef
-								+ ", " + "[mDef] = " + mDef + ", " + "[mClassDeclarationToTClass] = "
-								+ mClassDeclarationToTClass + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember
-								+ ", " + "[tClass] = " + tClass + ", " + "[mClass] = " + mClass + ", " + "[tSig] = "
-								+ tSig + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSig] = " + tSig
+								+ ", " + "[tDef] = " + tDef + ", " + "[mClassDeclarationToTClass] = "
+								+ mClassDeclarationToTClass + ", " + "[mClass] = " + mClass + ", "
+								+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tClass] = " + tClass
+								+ ", " + "[mDef] = " + mDef + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					SyntethicMethodImpl.pattern_SyntethicMethod_29_6_perform_greenFBFBFBBBB(tDef, mDef, tClass, mClass,
-							tSig, ruleResult);
-					//nothing MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result6_green[0];
-					//nothing TSyntethicMethod tSyntethic = (TSyntethicMethod) result6_green[2];
-					//nothing MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result6_green[4];
+					SyntethicMethodImpl.pattern_SyntethicMethod_29_6_perform_greenBBBFFBBFB(tSig, tDef, mClass, tClass,
+							mDef, ruleResult);
+					//nothing MSyntethicMethodToTSyntethicMethod mSyntToTSynt = (MSyntethicMethodToTSyntethicMethod) result6_green[3];
+					//nothing TSyntethicMethod tSyntethic = (TSyntethicMethod) result6_green[4];
+					//nothing MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result6_green[7];
 
 				} else {
 				}
@@ -1180,9 +1182,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tDef,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1198,13 +1200,13 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("tSig", tSig);
 		isApplicableMatch.registerObject("tDef", tDef);
-		isApplicableMatch.registerObject("mDef", mDef);
 		isApplicableMatch.registerObject("mClassDeclarationToTClass", mClassDeclarationToTClass);
+		isApplicableMatch.registerObject("mClass", mClass);
 		isApplicableMatch.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 		isApplicableMatch.registerObject("tClass", tClass);
-		isApplicableMatch.registerObject("mClass", mClass);
-		isApplicableMatch.registerObject("tSig", tSig);
+		isApplicableMatch.registerObject("mDef", mDef);
 		return csp;
 	}
 
@@ -1225,28 +1227,28 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_FWD__MATCH_MSYNTHETICMETHODDEFINITION_MMETHODDEFINITION_CLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MSyntheticMethodDefinition) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (ClassDeclaration) arguments.get(3));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_FWD__MATCH_CLASSDECLARATION_MMETHODDEFINITION_MSYNTHETICMETHODDEFINITION:
+			return isAppropriate_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(MMethodDefinition) arguments.get(2), (MSyntheticMethodDefinition) arguments.get(3));
 		case RulesPackage.SYNTETHIC_METHOD___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSYNTHETICMETHODDEFINITION_MMETHODDEFINITION_CLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MSyntheticMethodDefinition) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (ClassDeclaration) arguments.get(3));
+		case RulesPackage.SYNTETHIC_METHOD___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSDECLARATION_MMETHODDEFINITION_MSYNTHETICMETHODDEFINITION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(MMethodDefinition) arguments.get(2), (MSyntheticMethodDefinition) arguments.get(3));
 			return null;
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSYNTHETICMETHODDEFINITION_MMETHODDEFINITION_CLASSDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MSyntheticMethodDefinition) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (ClassDeclaration) arguments.get(3));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSDECLARATION_MMETHODDEFINITION_MSYNTHETICMETHODDEFINITION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(MMethodDefinition) arguments.get(2), (MSyntheticMethodDefinition) arguments.get(3));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSYNTHETICMETHODDEFINITION_TMETHODDEFINITION_MMETHODDEFINITION_TYPETOTABSTRACTTYPE_MDEFINITIONTOTMEMBER_TCLASS_CLASSDECLARATION_TMETHODSIGNATURE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MSyntheticMethodDefinition) arguments.get(1), (TMethodDefinition) arguments.get(2),
-					(MMethodDefinition) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
-					(MDefinitionToTMember) arguments.get(5), (TClass) arguments.get(6),
-					(ClassDeclaration) arguments.get(7), (TMethodSignature) arguments.get(8));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TMETHODSIGNATURE_TMETHODDEFINITION_TYPETOTABSTRACTTYPE_CLASSDECLARATION_MDEFINITIONTOTMEMBER_TCLASS_MMETHODDEFINITION_MSYNTHETICMETHODDEFINITION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
+					(TClass) arguments.get(6), (MMethodDefinition) arguments.get(7),
+					(MSyntheticMethodDefinition) arguments.get(8));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1257,31 +1259,31 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			return null;
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_BWD__MATCH_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS_TMETHODSIGNATURE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TSyntethicMethod) arguments.get(2), (TClass) arguments.get(3),
-					(TMethodSignature) arguments.get(4));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_BWD__MATCH_TMETHODSIGNATURE_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS:
+			return isAppropriate_BWD((Match) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (TSyntethicMethod) arguments.get(3),
+					(TClass) arguments.get(4));
 		case RulesPackage.SYNTETHIC_METHOD___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS_TMETHODSIGNATURE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TSyntethicMethod) arguments.get(2), (TClass) arguments.get(3),
-					(TMethodSignature) arguments.get(4));
+		case RulesPackage.SYNTETHIC_METHOD___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHODSIGNATURE_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (TSyntethicMethod) arguments.get(3),
+					(TClass) arguments.get(4));
 			return null;
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS_TMETHODSIGNATURE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TSyntethicMethod) arguments.get(2), (TClass) arguments.get(3),
-					(TMethodSignature) arguments.get(4));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHODSIGNATURE_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (TSyntethicMethod) arguments.get(3),
+					(TClass) arguments.get(4));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHODDEFINITION_TSYNTETHICMETHOD_MMETHODDEFINITION_TYPETOTABSTRACTTYPE_MDEFINITIONTOTMEMBER_TCLASS_CLASSDECLARATION_TMETHODSIGNATURE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMethodDefinition) arguments.get(1),
-					(TSyntethicMethod) arguments.get(2), (MMethodDefinition) arguments.get(3),
-					(TypeToTAbstractType) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
-					(TClass) arguments.get(6), (ClassDeclaration) arguments.get(7),
-					(TMethodSignature) arguments.get(8));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHODSIGNATURE_TMETHODDEFINITION_TYPETOTABSTRACTTYPE_CLASSDECLARATION_MDEFINITIONTOTMEMBER_TSYNTETHICMETHOD_TCLASS_MMETHODDEFINITION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
+					(TSyntethicMethod) arguments.get(6), (TClass) arguments.get(7),
+					(MMethodDefinition) arguments.get(8));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1292,38 +1294,37 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			return null;
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_72__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_72((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_75__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_75((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_41__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_41((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_43__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_43((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_SOLVE_CSP_CC__MSYNTHETICMETHODDEFINITION_TMETHODDEFINITION_TSYNTETHICMETHOD_MMETHODDEFINITION_TCLASS_CLASSDECLARATION_TMETHODSIGNATURE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MSyntheticMethodDefinition) arguments.get(0),
-					(TMethodDefinition) arguments.get(1), (TSyntethicMethod) arguments.get(2),
-					(MMethodDefinition) arguments.get(3), (TClass) arguments.get(4),
-					(ClassDeclaration) arguments.get(5), (TMethodSignature) arguments.get(6), (Match) arguments.get(7),
-					(Match) arguments.get(8));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_SOLVE_CSP_CC__TMETHODSIGNATURE_TMETHODDEFINITION_CLASSDECLARATION_TSYNTETHICMETHOD_TCLASS_MMETHODDEFINITION_MSYNTHETICMETHODDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TMethodSignature) arguments.get(0), (TMethodDefinition) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (TSyntethicMethod) arguments.get(3), (TClass) arguments.get(4),
+					(MMethodDefinition) arguments.get(5), (MSyntheticMethodDefinition) arguments.get(6),
+					(Match) arguments.get(7), (Match) arguments.get(8));
 		case RulesPackage.SYNTETHIC_METHOD___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___CHECK_DEC_FWD__MSYNTHETICMETHODDEFINITION_MMETHODDEFINITION_CLASSDECLARATION:
-			return checkDEC_FWD((MSyntheticMethodDefinition) arguments.get(0), (MMethodDefinition) arguments.get(1),
-					(ClassDeclaration) arguments.get(2));
-		case RulesPackage.SYNTETHIC_METHOD___CHECK_DEC_BWD__TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS_TMETHODSIGNATURE:
-			return checkDEC_BWD((TMethodDefinition) arguments.get(0), (TSyntethicMethod) arguments.get(1),
-					(TClass) arguments.get(2), (TMethodSignature) arguments.get(3));
+		case RulesPackage.SYNTETHIC_METHOD___CHECK_DEC_FWD__CLASSDECLARATION_MMETHODDEFINITION_MSYNTHETICMETHODDEFINITION:
+			return checkDEC_FWD((ClassDeclaration) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(MSyntheticMethodDefinition) arguments.get(2));
+		case RulesPackage.SYNTETHIC_METHOD___CHECK_DEC_BWD__TMETHODSIGNATURE_TMETHODDEFINITION_TSYNTETHICMETHOD_TCLASS:
+			return checkDEC_BWD((TMethodSignature) arguments.get(0), (TMethodDefinition) arguments.get(1),
+					(TSyntethicMethod) arguments.get(2), (TClass) arguments.get(3));
 		case RulesPackage.SYNTETHIC_METHOD___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_TYPETOTABSTRACTTYPE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
 					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.SYNTETHIC_METHOD___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHODDEFINITION_MMETHODDEFINITION_TYPETOTABSTRACTTYPE_MDEFINITIONTOTMEMBER_TCLASS_CLASSDECLARATION_TMETHODSIGNATURE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TMethodDefinition) arguments.get(1), (MMethodDefinition) arguments.get(2),
-					(TypeToTAbstractType) arguments.get(3), (MDefinitionToTMember) arguments.get(4),
-					(TClass) arguments.get(5), (ClassDeclaration) arguments.get(6), (TMethodSignature) arguments.get(7),
+		case RulesPackage.SYNTETHIC_METHOD___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHODSIGNATURE_TMETHODDEFINITION_TYPETOTABSTRACTTYPE_CLASSDECLARATION_MDEFINITIONTOTMEMBER_TCLASS_MMETHODDEFINITION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMethodSignature) arguments.get(1),
+					(TMethodDefinition) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (MDefinitionToTMember) arguments.get(5),
+					(TClass) arguments.get(6), (MMethodDefinition) arguments.get(7),
 					(ModelgeneratorRuleResult) arguments.get(8));
 		case RulesPackage.SYNTETHIC_METHOD___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1332,16 +1333,16 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_1_initialbindings_blackBBBBB(SyntethicMethod _this,
-			Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		return new Object[] { _this, match, mSyntethic, mDef, mClass };
+			Match match, ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
+		return new Object[] { _this, match, mClass, mDef, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_2_SolveCSP_bindingFBBBBB(SyntethicMethod _this, Match match,
-			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mSyntethic, mDef, mClass);
+			ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mClass, mDef, mSyntethic);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mSyntethic, mDef, mClass };
+			return new Object[] { csp, _this, match, mClass, mDef, mSyntethic };
 		}
 		return null;
 	}
@@ -1351,9 +1352,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_2_SolveCSP_bindingAndBlackFBBBBB(SyntethicMethod _this,
-			Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
+			Match match, ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
 		Object[] result_pattern_SyntethicMethod_0_2_SolveCSP_binding = pattern_SyntethicMethod_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, mSyntethic, mDef, mClass);
+				_this, match, mClass, mDef, mSyntethic);
 		if (result_pattern_SyntethicMethod_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SyntethicMethod_0_2_SolveCSP_binding[0];
 
@@ -1361,7 +1362,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					csp);
 			if (result_pattern_SyntethicMethod_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mSyntethic, mDef, mClass };
+				return new Object[] { csp, _this, match, mClass, mDef, mSyntethic };
 			}
 		}
 		return null;
@@ -1374,58 +1375,58 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_4_collectelementstobetranslated_blackBBBB(Match match,
-			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		return new Object[] { match, mSyntethic, mDef, mClass };
+			ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
+		return new Object[] { match, mClass, mDef, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_4_collectelementstobetranslated_greenBBBBFFFF(Match match,
-			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
 		EMoflonEdge mClass__mSyntethic____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mSyntethic);
-		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
-		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
 		String mClass__mSyntethic____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mSyntethic__mClass____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
-		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
-		match.getToBeTranslatedEdges().add(mDef__mSyntethic____syntheticMethodDefinitions);
-		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
-		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
-		match.getToBeTranslatedEdges().add(mSyntethic__mDef____originalMethodDefinition);
+		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
+		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
 		mClass__mSyntethic____bodyDeclarations.setSrc(mClass);
 		mClass__mSyntethic____bodyDeclarations.setTrg(mSyntethic);
 		match.getToBeTranslatedEdges().add(mClass__mSyntethic____bodyDeclarations);
 		mSyntethic__mClass____abstractTypeDeclaration.setSrc(mSyntethic);
 		mSyntethic__mClass____abstractTypeDeclaration.setTrg(mClass);
 		match.getToBeTranslatedEdges().add(mSyntethic__mClass____abstractTypeDeclaration);
+		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
+		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
+		match.getToBeTranslatedEdges().add(mDef__mSyntethic____syntheticMethodDefinitions);
+		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
+		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
+		match.getToBeTranslatedEdges().add(mSyntethic__mDef____originalMethodDefinition);
+		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
+		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
 		mDef__mSyntethic____syntheticMethodDefinitions
 				.setName(mDef__mSyntethic____syntheticMethodDefinitions_name_prime);
 		mSyntethic__mDef____originalMethodDefinition.setName(mSyntethic__mDef____originalMethodDefinition_name_prime);
-		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
-		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
-		return new Object[] { match, mSyntethic, mDef, mClass, mDef__mSyntethic____syntheticMethodDefinitions,
-				mSyntethic__mDef____originalMethodDefinition, mClass__mSyntethic____bodyDeclarations,
-				mSyntethic__mClass____abstractTypeDeclaration };
+		return new Object[] { match, mClass, mDef, mSyntethic, mClass__mSyntethic____bodyDeclarations,
+				mSyntethic__mClass____abstractTypeDeclaration, mDef__mSyntethic____syntheticMethodDefinitions,
+				mSyntethic__mDef____originalMethodDefinition };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_5_collectcontextelements_blackBBBB(Match match,
-			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		return new Object[] { match, mSyntethic, mDef, mClass };
+			ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
+		return new Object[] { match, mClass, mDef, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_0_5_collectcontextelements_greenBBB(Match match,
-			MMethodDefinition mDef, ClassDeclaration mClass) {
-		match.getContextNodes().add(mDef);
+			ClassDeclaration mClass, MMethodDefinition mDef) {
 		match.getContextNodes().add(mClass);
-		return new Object[] { match, mDef, mClass };
+		match.getContextNodes().add(mDef);
+		return new Object[] { match, mClass, mDef };
 	}
 
 	public static final void pattern_SyntethicMethod_0_6_registerobjectstomatch_expressionBBBBB(SyntethicMethod _this,
-			Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		_this.registerObjectsToMatch_FWD(match, mSyntethic, mDef, mClass);
+			Match match, ClassDeclaration mClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
+		_this.registerObjectsToMatch_FWD(match, mClass, mDef, mSyntethic);
 
 	}
 
@@ -1441,40 +1442,40 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_1_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mSyntethic");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tSig");
 		EObject _localVariable_1 = isApplicableMatch.getObject("tDef");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mDef");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mClassDeclarationToTClass");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mClassDeclarationToTClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mClass");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinitionToTMember");
 		EObject _localVariable_5 = isApplicableMatch.getObject("tClass");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mClass");
-		EObject _localVariable_7 = isApplicableMatch.getObject("tSig");
-		EObject tmpMSyntethic = _localVariable_0;
+		EObject _localVariable_6 = isApplicableMatch.getObject("mDef");
+		EObject _localVariable_7 = isApplicableMatch.getObject("mSyntethic");
+		EObject tmpTSig = _localVariable_0;
 		EObject tmpTDef = _localVariable_1;
-		EObject tmpMDef = _localVariable_2;
-		EObject tmpMClassDeclarationToTClass = _localVariable_3;
+		EObject tmpMClassDeclarationToTClass = _localVariable_2;
+		EObject tmpMClass = _localVariable_3;
 		EObject tmpMDefinitionToTMember = _localVariable_4;
 		EObject tmpTClass = _localVariable_5;
-		EObject tmpMClass = _localVariable_6;
-		EObject tmpTSig = _localVariable_7;
-		if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
-			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
+		EObject tmpMDef = _localVariable_6;
+		EObject tmpMSyntethic = _localVariable_7;
+		if (tmpTSig instanceof TMethodSignature) {
+			TMethodSignature tSig = (TMethodSignature) tmpTSig;
 			if (tmpTDef instanceof TMethodDefinition) {
 				TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
-				if (tmpMDef instanceof MMethodDefinition) {
-					MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
-					if (tmpMClassDeclarationToTClass instanceof TypeToTAbstractType) {
-						TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) tmpMClassDeclarationToTClass;
+				if (tmpMClassDeclarationToTClass instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) tmpMClassDeclarationToTClass;
+					if (tmpMClass instanceof ClassDeclaration) {
+						ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
 						if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
 							MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
 							if (tmpTClass instanceof TClass) {
 								TClass tClass = (TClass) tmpTClass;
-								if (tmpMClass instanceof ClassDeclaration) {
-									ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
-									if (tmpTSig instanceof TMethodSignature) {
-										TMethodSignature tSig = (TMethodSignature) tmpTSig;
-										return new Object[] { mSyntethic, tDef, mDef, mClassDeclarationToTClass,
-												mDefinitionToTMember, tClass, mClass, tSig, isApplicableMatch };
+								if (tmpMDef instanceof MMethodDefinition) {
+									MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
+									if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
+										MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
+										return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass,
+												mDefinitionToTMember, tClass, mDef, mSyntethic, isApplicableMatch };
 									}
 								}
 							}
@@ -1487,15 +1488,14 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_1_1_performtransformation_blackBBBBBBBBFBB(
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig, SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch) {
+			TMethodSignature tSig, TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass,
+			ClassDeclaration mClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic, SyntethicMethod _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass,
-						mClass, tSig, csp, _this, isApplicableMatch };
+				return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef,
+						mSyntethic, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1506,146 +1506,143 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		Object[] result_pattern_SyntethicMethod_1_1_performtransformation_binding = pattern_SyntethicMethod_1_1_performtransformation_bindingFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_SyntethicMethod_1_1_performtransformation_binding != null) {
-			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result_pattern_SyntethicMethod_1_1_performtransformation_binding[0];
+			TMethodSignature tSig = (TMethodSignature) result_pattern_SyntethicMethod_1_1_performtransformation_binding[0];
 			TMethodDefinition tDef = (TMethodDefinition) result_pattern_SyntethicMethod_1_1_performtransformation_binding[1];
-			MMethodDefinition mDef = (MMethodDefinition) result_pattern_SyntethicMethod_1_1_performtransformation_binding[2];
-			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_SyntethicMethod_1_1_performtransformation_binding[3];
+			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_SyntethicMethod_1_1_performtransformation_binding[2];
+			ClassDeclaration mClass = (ClassDeclaration) result_pattern_SyntethicMethod_1_1_performtransformation_binding[3];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_SyntethicMethod_1_1_performtransformation_binding[4];
 			TClass tClass = (TClass) result_pattern_SyntethicMethod_1_1_performtransformation_binding[5];
-			ClassDeclaration mClass = (ClassDeclaration) result_pattern_SyntethicMethod_1_1_performtransformation_binding[6];
-			TMethodSignature tSig = (TMethodSignature) result_pattern_SyntethicMethod_1_1_performtransformation_binding[7];
+			MMethodDefinition mDef = (MMethodDefinition) result_pattern_SyntethicMethod_1_1_performtransformation_binding[6];
+			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result_pattern_SyntethicMethod_1_1_performtransformation_binding[7];
 
 			Object[] result_pattern_SyntethicMethod_1_1_performtransformation_black = pattern_SyntethicMethod_1_1_performtransformation_blackBBBBBBBBFBB(
-					mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig,
+					tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef, mSyntethic,
 					_this, isApplicableMatch);
 			if (result_pattern_SyntethicMethod_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_SyntethicMethod_1_1_performtransformation_black[8];
 
-				return new Object[] { mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass,
-						mClass, tSig, csp, _this, isApplicableMatch };
+				return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef,
+						mSyntethic, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_1_1_performtransformation_greenBBFFBB(
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, TClass tClass, TMethodSignature tSig) {
-		TSyntethicMethod tSyntethic = BasicFactory.eINSTANCE.createTSyntethicMethod();
+	public static final Object[] pattern_SyntethicMethod_1_1_performtransformation_greenBBFFBB(TMethodSignature tSig,
+			TMethodDefinition tDef, TClass tClass, MSyntheticMethodDefinition mSyntethic) {
 		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = PmFactory.eINSTANCE
 				.createMSyntethicMethodToTSyntethicMethod();
+		TSyntethicMethod tSyntethic = BasicFactory.eINSTANCE.createTSyntethicMethod();
+		mSyntToTSynt.setSource(mSyntethic);
 		tDef.getSyntethicMethods().add(tSyntethic);
+		mSyntToTSynt.setTarget(tSyntethic);
 		tSyntethic.setSignature(tSig);
 		tClass.getDefines().add(tSyntethic);
-		mSyntToTSynt.setTarget(tSyntethic);
-		mSyntToTSynt.setSource(mSyntethic);
-		return new Object[] { mSyntethic, tDef, tSyntethic, mSyntToTSynt, tClass, tSig };
+		return new Object[] { tSig, tDef, mSyntToTSynt, tSyntethic, tClass, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_1_2_collecttranslatedelements_blackBBB(
-			MSyntheticMethodDefinition mSyntethic, TSyntethicMethod tSyntethic,
-			MSyntethicMethodToTSyntethicMethod mSyntToTSynt) {
-		return new Object[] { mSyntethic, tSyntethic, mSyntToTSynt };
+			MSyntethicMethodToTSyntethicMethod mSyntToTSynt, TSyntethicMethod tSyntethic,
+			MSyntheticMethodDefinition mSyntethic) {
+		return new Object[] { mSyntToTSynt, tSyntethic, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_1_2_collecttranslatedelements_greenFBBB(
-			MSyntheticMethodDefinition mSyntethic, TSyntethicMethod tSyntethic,
-			MSyntethicMethodToTSyntethicMethod mSyntToTSynt) {
+			MSyntethicMethodToTSyntethicMethod mSyntToTSynt, TSyntethicMethod tSyntethic,
+			MSyntheticMethodDefinition mSyntethic) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(mSyntethic);
-		ruleresult.getCreatedElements().add(tSyntethic);
 		ruleresult.getCreatedLinkElements().add(mSyntToTSynt);
-		return new Object[] { ruleresult, mSyntethic, tSyntethic, mSyntToTSynt };
+		ruleresult.getCreatedElements().add(tSyntethic);
+		ruleresult.getTranslatedElements().add(mSyntethic);
+		return new Object[] { ruleresult, mSyntToTSynt, tSyntethic, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic, EObject mDef,
-			EObject mClassDeclarationToTClass, EObject mDefinitionToTMember, EObject mSyntToTSynt, EObject tClass,
-			EObject mClass, EObject tSig) {
-		if (!mSyntethic.equals(tDef)) {
-			if (!mSyntethic.equals(tSyntethic)) {
-				if (!mSyntethic.equals(tClass)) {
-					if (!mSyntethic.equals(tSig)) {
-						if (!tDef.equals(tSyntethic)) {
-							if (!tDef.equals(tSig)) {
-								if (!mDef.equals(mSyntethic)) {
-									if (!mDef.equals(tDef)) {
-										if (!mDef.equals(tSyntethic)) {
-											if (!mDef.equals(mDefinitionToTMember)) {
-												if (!mDef.equals(mSyntToTSynt)) {
-													if (!mDef.equals(tClass)) {
-														if (!mDef.equals(tSig)) {
-															if (!mClassDeclarationToTClass.equals(mSyntethic)) {
-																if (!mClassDeclarationToTClass.equals(tDef)) {
-																	if (!mClassDeclarationToTClass.equals(tSyntethic)) {
-																		if (!mClassDeclarationToTClass.equals(mDef)) {
-																			if (!mClassDeclarationToTClass
-																					.equals(mDefinitionToTMember)) {
-																				if (!mClassDeclarationToTClass
-																						.equals(mSyntToTSynt)) {
-																					if (!mClassDeclarationToTClass
-																							.equals(tClass)) {
-																						if (!mClassDeclarationToTClass
+			PerformRuleResult ruleresult, EObject tSig, EObject tDef, EObject mClassDeclarationToTClass, EObject mClass,
+			EObject mSyntToTSynt, EObject mDefinitionToTMember, EObject tSyntethic, EObject tClass, EObject mDef,
+			EObject mSyntethic) {
+		if (!tSig.equals(tSyntethic)) {
+			if (!tDef.equals(tSig)) {
+				if (!tDef.equals(tSyntethic)) {
+					if (!mClassDeclarationToTClass.equals(tSig)) {
+						if (!mClassDeclarationToTClass.equals(tDef)) {
+							if (!mClassDeclarationToTClass.equals(mSyntToTSynt)) {
+								if (!mClassDeclarationToTClass.equals(mDefinitionToTMember)) {
+									if (!mClassDeclarationToTClass.equals(tSyntethic)) {
+										if (!mClassDeclarationToTClass.equals(tClass)) {
+											if (!mClassDeclarationToTClass.equals(mDef)) {
+												if (!mClassDeclarationToTClass.equals(mSyntethic)) {
+													if (!mClass.equals(tSig)) {
+														if (!mClass.equals(tDef)) {
+															if (!mClass.equals(mClassDeclarationToTClass)) {
+																if (!mClass.equals(mSyntToTSynt)) {
+																	if (!mClass.equals(mDefinitionToTMember)) {
+																		if (!mClass.equals(tSyntethic)) {
+																			if (!mClass.equals(tClass)) {
+																				if (!mClass.equals(mDef)) {
+																					if (!mClass.equals(mSyntethic)) {
+																						if (!mSyntToTSynt
 																								.equals(tSig)) {
-																							if (!mDefinitionToTMember
-																									.equals(mSyntethic)) {
-																								if (!mDefinitionToTMember
-																										.equals(tDef)) {
-																									if (!mDefinitionToTMember
-																											.equals(tSyntethic)) {
-																										if (!mDefinitionToTMember
-																												.equals(mSyntToTSynt)) {
+																							if (!mSyntToTSynt
+																									.equals(tDef)) {
+																								if (!mSyntToTSynt
+																										.equals(tSyntethic)) {
+																									if (!mSyntToTSynt
+																											.equals(tClass)) {
+																										if (!mSyntToTSynt
+																												.equals(mSyntethic)) {
 																											if (!mDefinitionToTMember
-																													.equals(tClass)) {
+																													.equals(tSig)) {
 																												if (!mDefinitionToTMember
-																														.equals(tSig)) {
-																													if (!mSyntToTSynt
-																															.equals(mSyntethic)) {
-																														if (!mSyntToTSynt
-																																.equals(tDef)) {
-																															if (!mSyntToTSynt
-																																	.equals(tSyntethic)) {
-																																if (!mSyntToTSynt
-																																		.equals(tClass)) {
-																																	if (!mSyntToTSynt
+																														.equals(tDef)) {
+																													if (!mDefinitionToTMember
+																															.equals(mSyntToTSynt)) {
+																														if (!mDefinitionToTMember
+																																.equals(tSyntethic)) {
+																															if (!mDefinitionToTMember
+																																	.equals(tClass)) {
+																																if (!mDefinitionToTMember
+																																		.equals(mSyntethic)) {
+																																	if (!tClass
 																																			.equals(tSig)) {
 																																		if (!tClass
 																																				.equals(tDef)) {
 																																			if (!tClass
 																																					.equals(tSyntethic)) {
-																																				if (!tClass
+																																				if (!mDef
 																																						.equals(tSig)) {
-																																					if (!mClass
-																																							.equals(mSyntethic)) {
-																																						if (!mClass
-																																								.equals(tDef)) {
-																																							if (!mClass
-																																									.equals(tSyntethic)) {
-																																								if (!mClass
-																																										.equals(mDef)) {
-																																									if (!mClass
-																																											.equals(mClassDeclarationToTClass)) {
-																																										if (!mClass
-																																												.equals(mDefinitionToTMember)) {
-																																											if (!mClass
-																																													.equals(mSyntToTSynt)) {
-																																												if (!mClass
-																																														.equals(tClass)) {
-																																													if (!mClass
-																																															.equals(tSig)) {
-																																														if (!tSig
-																																																.equals(tSyntethic)) {
+																																					if (!mDef
+																																							.equals(tDef)) {
+																																						if (!mDef
+																																								.equals(mSyntToTSynt)) {
+																																							if (!mDef
+																																									.equals(mDefinitionToTMember)) {
+																																								if (!mDef
+																																										.equals(tSyntethic)) {
+																																									if (!mDef
+																																											.equals(tClass)) {
+																																										if (!mDef
+																																												.equals(mSyntethic)) {
+																																											if (!mSyntethic
+																																													.equals(tSig)) {
+																																												if (!mSyntethic
+																																														.equals(tDef)) {
+																																													if (!mSyntethic
+																																															.equals(tSyntethic)) {
+																																														if (!mSyntethic
+																																																.equals(tClass)) {
 																																															return new Object[] {
 																																																	ruleresult,
-																																																	mSyntethic,
+																																																	tSig,
 																																																	tDef,
-																																																	tSyntethic,
-																																																	mDef,
 																																																	mClassDeclarationToTClass,
-																																																	mDefinitionToTMember,
-																																																	mSyntToTSynt,
-																																																	tClass,
 																																																	mClass,
-																																																	tSig };
+																																																	mSyntToTSynt,
+																																																	mDefinitionToTMember,
+																																																	tSyntethic,
+																																																	tClass,
+																																																	mDef,
+																																																	mSyntethic };
 																																														}
 																																													}
 																																												}
@@ -1695,98 +1692,97 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic, EObject mDef,
-			EObject mSyntToTSynt, EObject tClass, EObject mClass, EObject tSig) {
+			PerformRuleResult ruleresult, EObject tSig, EObject tDef, EObject mClass, EObject mSyntToTSynt,
+			EObject tSyntethic, EObject tClass, EObject mDef, EObject mSyntethic) {
 		EMoflonEdge tDef__tSyntethic____syntethicMethods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSyntethic__tDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSig__tSyntethic____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntToTSynt__tSyntethic____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntToTSynt__mSyntethic____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tClass__tSyntethic____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSyntethic__tClass____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mClass__mSyntethic____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntToTSynt__tSyntethic____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSig__tSyntethic____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tClass__tSyntethic____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSyntethic__tClass____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntToTSynt__mSyntethic____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "SyntethicMethod";
 		String tDef__tSyntethic____syntethicMethods_name_prime = "syntethicMethods";
 		String tSyntethic__tDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
-		String tSyntethic__tSig____signature_name_prime = "signature";
-		String tSig__tSyntethic____definitions_name_prime = "definitions";
-		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
-		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
-		String mSyntToTSynt__tSyntethic____target_name_prime = "target";
-		String mSyntToTSynt__mSyntethic____source_name_prime = "source";
-		String tClass__tSyntethic____defines_name_prime = "defines";
-		String tSyntethic__tClass____definedBy_name_prime = "definedBy";
 		String mClass__mSyntethic____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mSyntethic__mClass____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String mSyntToTSynt__tSyntethic____target_name_prime = "target";
+		String tSyntethic__tSig____signature_name_prime = "signature";
+		String tSig__tSyntethic____definitions_name_prime = "definitions";
+		String tClass__tSyntethic____defines_name_prime = "defines";
+		String tSyntethic__tClass____definedBy_name_prime = "definedBy";
+		String mSyntToTSynt__mSyntethic____source_name_prime = "source";
+		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
+		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
 		tDef__tSyntethic____syntethicMethods.setSrc(tDef);
 		tDef__tSyntethic____syntethicMethods.setTrg(tSyntethic);
 		ruleresult.getCreatedEdges().add(tDef__tSyntethic____syntethicMethods);
 		tSyntethic__tDef____originalMethodDefinition.setSrc(tSyntethic);
 		tSyntethic__tDef____originalMethodDefinition.setTrg(tDef);
 		ruleresult.getCreatedEdges().add(tSyntethic__tDef____originalMethodDefinition);
-		tSyntethic__tSig____signature.setSrc(tSyntethic);
-		tSyntethic__tSig____signature.setTrg(tSig);
-		ruleresult.getCreatedEdges().add(tSyntethic__tSig____signature);
-		tSig__tSyntethic____definitions.setSrc(tSig);
-		tSig__tSyntethic____definitions.setTrg(tSyntethic);
-		ruleresult.getCreatedEdges().add(tSig__tSyntethic____definitions);
-		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
-		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
-		ruleresult.getTranslatedEdges().add(mDef__mSyntethic____syntheticMethodDefinitions);
-		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
-		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
-		ruleresult.getTranslatedEdges().add(mSyntethic__mDef____originalMethodDefinition);
-		mSyntToTSynt__tSyntethic____target.setSrc(mSyntToTSynt);
-		mSyntToTSynt__tSyntethic____target.setTrg(tSyntethic);
-		ruleresult.getCreatedEdges().add(mSyntToTSynt__tSyntethic____target);
-		mSyntToTSynt__mSyntethic____source.setSrc(mSyntToTSynt);
-		mSyntToTSynt__mSyntethic____source.setTrg(mSyntethic);
-		ruleresult.getCreatedEdges().add(mSyntToTSynt__mSyntethic____source);
-		tClass__tSyntethic____defines.setSrc(tClass);
-		tClass__tSyntethic____defines.setTrg(tSyntethic);
-		ruleresult.getCreatedEdges().add(tClass__tSyntethic____defines);
-		tSyntethic__tClass____definedBy.setSrc(tSyntethic);
-		tSyntethic__tClass____definedBy.setTrg(tClass);
-		ruleresult.getCreatedEdges().add(tSyntethic__tClass____definedBy);
 		mClass__mSyntethic____bodyDeclarations.setSrc(mClass);
 		mClass__mSyntethic____bodyDeclarations.setTrg(mSyntethic);
 		ruleresult.getTranslatedEdges().add(mClass__mSyntethic____bodyDeclarations);
 		mSyntethic__mClass____abstractTypeDeclaration.setSrc(mSyntethic);
 		mSyntethic__mClass____abstractTypeDeclaration.setTrg(mClass);
 		ruleresult.getTranslatedEdges().add(mSyntethic__mClass____abstractTypeDeclaration);
+		mSyntToTSynt__tSyntethic____target.setSrc(mSyntToTSynt);
+		mSyntToTSynt__tSyntethic____target.setTrg(tSyntethic);
+		ruleresult.getCreatedEdges().add(mSyntToTSynt__tSyntethic____target);
+		tSyntethic__tSig____signature.setSrc(tSyntethic);
+		tSyntethic__tSig____signature.setTrg(tSig);
+		ruleresult.getCreatedEdges().add(tSyntethic__tSig____signature);
+		tSig__tSyntethic____definitions.setSrc(tSig);
+		tSig__tSyntethic____definitions.setTrg(tSyntethic);
+		ruleresult.getCreatedEdges().add(tSig__tSyntethic____definitions);
+		tClass__tSyntethic____defines.setSrc(tClass);
+		tClass__tSyntethic____defines.setTrg(tSyntethic);
+		ruleresult.getCreatedEdges().add(tClass__tSyntethic____defines);
+		tSyntethic__tClass____definedBy.setSrc(tSyntethic);
+		tSyntethic__tClass____definedBy.setTrg(tClass);
+		ruleresult.getCreatedEdges().add(tSyntethic__tClass____definedBy);
+		mSyntToTSynt__mSyntethic____source.setSrc(mSyntToTSynt);
+		mSyntToTSynt__mSyntethic____source.setTrg(mSyntethic);
+		ruleresult.getCreatedEdges().add(mSyntToTSynt__mSyntethic____source);
+		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
+		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
+		ruleresult.getTranslatedEdges().add(mDef__mSyntethic____syntheticMethodDefinitions);
+		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
+		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
+		ruleresult.getTranslatedEdges().add(mSyntethic__mDef____originalMethodDefinition);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tDef__tSyntethic____syntethicMethods.setName(tDef__tSyntethic____syntethicMethods_name_prime);
 		tSyntethic__tDef____originalMethodDefinition.setName(tSyntethic__tDef____originalMethodDefinition_name_prime);
+		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
+		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
+		mSyntToTSynt__tSyntethic____target.setName(mSyntToTSynt__tSyntethic____target_name_prime);
 		tSyntethic__tSig____signature.setName(tSyntethic__tSig____signature_name_prime);
 		tSig__tSyntethic____definitions.setName(tSig__tSyntethic____definitions_name_prime);
+		tClass__tSyntethic____defines.setName(tClass__tSyntethic____defines_name_prime);
+		tSyntethic__tClass____definedBy.setName(tSyntethic__tClass____definedBy_name_prime);
+		mSyntToTSynt__mSyntethic____source.setName(mSyntToTSynt__mSyntethic____source_name_prime);
 		mDef__mSyntethic____syntheticMethodDefinitions
 				.setName(mDef__mSyntethic____syntheticMethodDefinitions_name_prime);
 		mSyntethic__mDef____originalMethodDefinition.setName(mSyntethic__mDef____originalMethodDefinition_name_prime);
-		mSyntToTSynt__tSyntethic____target.setName(mSyntToTSynt__tSyntethic____target_name_prime);
-		mSyntToTSynt__mSyntethic____source.setName(mSyntToTSynt__mSyntethic____source_name_prime);
-		tClass__tSyntethic____defines.setName(tClass__tSyntethic____defines_name_prime);
-		tSyntethic__tClass____definedBy.setName(tSyntethic__tClass____definedBy_name_prime);
-		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
-		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
-		return new Object[] { ruleresult, mSyntethic, tDef, tSyntethic, mDef, mSyntToTSynt, tClass, mClass, tSig,
+		return new Object[] { ruleresult, tSig, tDef, mClass, mSyntToTSynt, tSyntethic, tClass, mDef, mSyntethic,
 				tDef__tSyntethic____syntethicMethods, tSyntethic__tDef____originalMethodDefinition,
-				tSyntethic__tSig____signature, tSig__tSyntethic____definitions,
-				mDef__mSyntethic____syntheticMethodDefinitions, mSyntethic__mDef____originalMethodDefinition,
-				mSyntToTSynt__tSyntethic____target, mSyntToTSynt__mSyntethic____source, tClass__tSyntethic____defines,
-				tSyntethic__tClass____definedBy, mClass__mSyntethic____bodyDeclarations,
-				mSyntethic__mClass____abstractTypeDeclaration };
+				mClass__mSyntethic____bodyDeclarations, mSyntethic__mClass____abstractTypeDeclaration,
+				mSyntToTSynt__tSyntethic____target, tSyntethic__tSig____signature, tSig__tSyntethic____definitions,
+				tClass__tSyntethic____defines, tSyntethic__tClass____definedBy, mSyntToTSynt__mSyntethic____source,
+				mDef__mSyntethic____syntheticMethodDefinitions, mSyntethic__mDef____originalMethodDefinition };
 	}
 
 	public static final void pattern_SyntethicMethod_1_5_registerobjects_expressionBBBBBBBBBBBB(SyntethicMethod _this,
-			PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic, EObject mDef,
-			EObject mClassDeclarationToTClass, EObject mDefinitionToTMember, EObject mSyntToTSynt, EObject tClass,
-			EObject mClass, EObject tSig) {
-		_this.registerObjects_FWD(ruleresult, mSyntethic, tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-				mDefinitionToTMember, mSyntToTSynt, tClass, mClass, tSig);
+			PerformRuleResult ruleresult, EObject tSig, EObject tDef, EObject mClassDeclarationToTClass, EObject mClass,
+			EObject mSyntToTSynt, EObject mDefinitionToTMember, EObject tSyntethic, EObject tClass, EObject mDef,
+			EObject mSyntethic) {
+		_this.registerObjects_FWD(ruleresult, tSig, tDef, mClassDeclarationToTClass, mClass, mSyntToTSynt,
+				mDefinitionToTMember, tSyntethic, tClass, mDef, mSyntethic);
 
 	}
 
@@ -1845,40 +1841,40 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mSyntethic");
+		EObject _localVariable_0 = match.getObject("mClass");
 		EObject _localVariable_1 = match.getObject("mDef");
-		EObject _localVariable_2 = match.getObject("mClass");
-		EObject tmpMSyntethic = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("mSyntethic");
+		EObject tmpMClass = _localVariable_0;
 		EObject tmpMDef = _localVariable_1;
-		EObject tmpMClass = _localVariable_2;
-		if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
-			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
+		EObject tmpMSyntethic = _localVariable_2;
+		if (tmpMClass instanceof ClassDeclaration) {
+			ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
 			if (tmpMDef instanceof MMethodDefinition) {
 				MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
-				if (tmpMClass instanceof ClassDeclaration) {
-					ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
-					return new Object[] { mSyntethic, mDef, mClass, match };
+				if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
+					MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
+					return new Object[] { mClass, mDef, mSyntethic, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SyntethicMethod_2_2_corematch_blackBFBFFFBB(
-			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass, Match match) {
+	public static final Iterable<Object[]> pattern_SyntethicMethod_2_2_corematch_blackFFBFFBBB(ClassDeclaration mClass,
+			MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(mDef, MDefinitionToTMember.class, "source")) {
-			TMember tmpTDef = mDefinitionToTMember.getTarget();
-			if (tmpTDef instanceof TMethodDefinition) {
-				TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
-				for (TypeToTAbstractType mClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(mClass, TypeToTAbstractType.class, "source")) {
-					TAbstractType tmpTClass = mClassDeclarationToTClass.getTarget();
-					if (tmpTClass instanceof TClass) {
-						TClass tClass = (TClass) tmpTClass;
-						_result.add(new Object[] { mSyntethic, tDef, mDef, mClassDeclarationToTClass,
-								mDefinitionToTMember, tClass, mClass, match });
+		for (TypeToTAbstractType mClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mClass, TypeToTAbstractType.class, "source")) {
+			TAbstractType tmpTClass = mClassDeclarationToTClass.getTarget();
+			if (tmpTClass instanceof TClass) {
+				TClass tClass = (TClass) tmpTClass;
+				for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(mDef, MDefinitionToTMember.class, "source")) {
+					TMember tmpTDef = mDefinitionToTMember.getTarget();
+					if (tmpTDef instanceof TMethodDefinition) {
+						TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
+						_result.add(new Object[] { tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember,
+								tClass, mDef, mSyntethic, match });
 					}
 
 				}
@@ -1888,22 +1884,22 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_SyntethicMethod_2_3_findcontext_blackBBBBBBBF(
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass) {
+	public static final Iterable<Object[]> pattern_SyntethicMethod_2_3_findcontext_blackFBBBBBBB(TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mDef.getSyntheticMethodDefinitions().contains(mSyntethic)) {
-			if (tDef.equals(mDefinitionToTMember.getTarget())) {
-				if (mDef.equals(mDefinitionToTMember.getSource())) {
-					if (mClass.equals(mClassDeclarationToTClass.getSource())) {
-						if (tClass.equals(mClassDeclarationToTClass.getTarget())) {
-							if (mClass.getBodyDeclarations().contains(mSyntethic)) {
+		if (mClass.getBodyDeclarations().contains(mSyntethic)) {
+			if (mClass.equals(mClassDeclarationToTClass.getSource())) {
+				if (tDef.equals(mDefinitionToTMember.getTarget())) {
+					if (tClass.equals(mClassDeclarationToTClass.getTarget())) {
+						if (mDef.getSyntheticMethodDefinitions().contains(mSyntethic)) {
+							if (mDef.equals(mDefinitionToTMember.getSource())) {
 								TSignature tmpTSig = tDef.getSignature();
 								if (tmpTSig instanceof TMethodSignature) {
 									TMethodSignature tSig = (TMethodSignature) tmpTSig;
-									_result.add(new Object[] { mSyntethic, tDef, mDef, mClassDeclarationToTClass,
-											mDefinitionToTMember, tClass, mClass, tSig });
+									_result.add(new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass,
+											mDefinitionToTMember, tClass, mDef, mSyntethic });
 								}
 
 							}
@@ -1915,98 +1911,99 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return _result;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig) {
+	public static final Object[] pattern_SyntethicMethod_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDef____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDef__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSig__tDef____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__mDef____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mClassDeclarationToTClass__mClass____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mClass__mSyntethic____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
-		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
-		String mDefinitionToTMember__tDef____target_name_prime = "target";
+		EMoflonEdge mClassDeclarationToTClass__mClass____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDef____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__mDef____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tDef__tSig____signature_name_prime = "signature";
 		String tSig__tDef____definitions_name_prime = "definitions";
-		String mDefinitionToTMember__mDef____source_name_prime = "source";
-		String mClassDeclarationToTClass__mClass____source_name_prime = "source";
-		String mClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String mClass__mSyntethic____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mSyntethic__mClass____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		isApplicableMatch.getAllContextElements().add(mSyntethic);
+		String mClassDeclarationToTClass__mClass____source_name_prime = "source";
+		String mDefinitionToTMember__tDef____target_name_prime = "target";
+		String mClassDeclarationToTClass__tClass____target_name_prime = "target";
+		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
+		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
+		String mDefinitionToTMember__mDef____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(tSig);
 		isApplicableMatch.getAllContextElements().add(tDef);
-		isApplicableMatch.getAllContextElements().add(mDef);
 		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass);
+		isApplicableMatch.getAllContextElements().add(mClass);
 		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
 		isApplicableMatch.getAllContextElements().add(tClass);
-		isApplicableMatch.getAllContextElements().add(mClass);
-		isApplicableMatch.getAllContextElements().add(tSig);
-		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
-		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
-		isApplicableMatch.getAllContextElements().add(mDef__mSyntethic____syntheticMethodDefinitions);
-		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
-		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
-		isApplicableMatch.getAllContextElements().add(mSyntethic__mDef____originalMethodDefinition);
-		mDefinitionToTMember__tDef____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDef____target.setTrg(tDef);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDef____target);
+		isApplicableMatch.getAllContextElements().add(mDef);
+		isApplicableMatch.getAllContextElements().add(mSyntethic);
 		tDef__tSig____signature.setSrc(tDef);
 		tDef__tSig____signature.setTrg(tSig);
 		isApplicableMatch.getAllContextElements().add(tDef__tSig____signature);
 		tSig__tDef____definitions.setSrc(tSig);
 		tSig__tDef____definitions.setTrg(tDef);
 		isApplicableMatch.getAllContextElements().add(tSig__tDef____definitions);
-		mDefinitionToTMember__mDef____source.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__mDef____source.setTrg(mDef);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDef____source);
-		mClassDeclarationToTClass__mClass____source.setSrc(mClassDeclarationToTClass);
-		mClassDeclarationToTClass__mClass____source.setTrg(mClass);
-		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__mClass____source);
-		mClassDeclarationToTClass__tClass____target.setSrc(mClassDeclarationToTClass);
-		mClassDeclarationToTClass__tClass____target.setTrg(tClass);
-		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__tClass____target);
 		mClass__mSyntethic____bodyDeclarations.setSrc(mClass);
 		mClass__mSyntethic____bodyDeclarations.setTrg(mSyntethic);
 		isApplicableMatch.getAllContextElements().add(mClass__mSyntethic____bodyDeclarations);
 		mSyntethic__mClass____abstractTypeDeclaration.setSrc(mSyntethic);
 		mSyntethic__mClass____abstractTypeDeclaration.setTrg(mClass);
 		isApplicableMatch.getAllContextElements().add(mSyntethic__mClass____abstractTypeDeclaration);
+		mClassDeclarationToTClass__mClass____source.setSrc(mClassDeclarationToTClass);
+		mClassDeclarationToTClass__mClass____source.setTrg(mClass);
+		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__mClass____source);
+		mDefinitionToTMember__tDef____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDef____target.setTrg(tDef);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDef____target);
+		mClassDeclarationToTClass__tClass____target.setSrc(mClassDeclarationToTClass);
+		mClassDeclarationToTClass__tClass____target.setTrg(tClass);
+		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__tClass____target);
+		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
+		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
+		isApplicableMatch.getAllContextElements().add(mDef__mSyntethic____syntheticMethodDefinitions);
+		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
+		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
+		isApplicableMatch.getAllContextElements().add(mSyntethic__mDef____originalMethodDefinition);
+		mDefinitionToTMember__mDef____source.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__mDef____source.setTrg(mDef);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDef____source);
+		tDef__tSig____signature.setName(tDef__tSig____signature_name_prime);
+		tSig__tDef____definitions.setName(tSig__tDef____definitions_name_prime);
+		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
+		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
+		mClassDeclarationToTClass__mClass____source.setName(mClassDeclarationToTClass__mClass____source_name_prime);
+		mDefinitionToTMember__tDef____target.setName(mDefinitionToTMember__tDef____target_name_prime);
+		mClassDeclarationToTClass__tClass____target.setName(mClassDeclarationToTClass__tClass____target_name_prime);
 		mDef__mSyntethic____syntheticMethodDefinitions
 				.setName(mDef__mSyntethic____syntheticMethodDefinitions_name_prime);
 		mSyntethic__mDef____originalMethodDefinition.setName(mSyntethic__mDef____originalMethodDefinition_name_prime);
-		mDefinitionToTMember__tDef____target.setName(mDefinitionToTMember__tDef____target_name_prime);
-		tDef__tSig____signature.setName(tDef__tSig____signature_name_prime);
-		tSig__tDef____definitions.setName(tSig__tDef____definitions_name_prime);
 		mDefinitionToTMember__mDef____source.setName(mDefinitionToTMember__mDef____source_name_prime);
-		mClassDeclarationToTClass__mClass____source.setName(mClassDeclarationToTClass__mClass____source_name_prime);
-		mClassDeclarationToTClass__tClass____target.setName(mClassDeclarationToTClass__tClass____target_name_prime);
-		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
-		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
-		return new Object[] { mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass,
-				tSig, isApplicableMatch, mDef__mSyntethic____syntheticMethodDefinitions,
-				mSyntethic__mDef____originalMethodDefinition, mDefinitionToTMember__tDef____target,
-				tDef__tSig____signature, tSig__tDef____definitions, mDefinitionToTMember__mDef____source,
-				mClassDeclarationToTClass__mClass____source, mClassDeclarationToTClass__tClass____target,
-				mClass__mSyntethic____bodyDeclarations, mSyntethic__mClass____abstractTypeDeclaration };
+		return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef,
+				mSyntethic, isApplicableMatch, tDef__tSig____signature, tSig__tDef____definitions,
+				mClass__mSyntethic____bodyDeclarations, mSyntethic__mClass____abstractTypeDeclaration,
+				mClassDeclarationToTClass__mClass____source, mDefinitionToTMember__tDef____target,
+				mClassDeclarationToTClass__tClass____target, mDef__mSyntethic____syntheticMethodDefinitions,
+				mSyntethic__mDef____originalMethodDefinition, mDefinitionToTMember__mDef____source };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_2_4_solveCSP_bindingFBBBBBBBBBB(SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch, MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mSyntethic, tDef, mDef,
-				mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig);
+			IsApplicableMatch isApplicableMatch, TMethodSignature tSig, TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tSig, tDef, mClassDeclarationToTClass,
+				mClass, mDefinitionToTMember, tClass, mDef, mSyntethic);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mSyntethic, tDef, mDef, mClassDeclarationToTClass,
-					mDefinitionToTMember, tClass, mClass, tSig };
+			return new Object[] { csp, _this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass,
+					mDefinitionToTMember, tClass, mDef, mSyntethic };
 		}
 		return null;
 	}
@@ -2016,12 +2013,13 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch, MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {
+			IsApplicableMatch isApplicableMatch, TMethodSignature tSig, TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
 		Object[] result_pattern_SyntethicMethod_2_4_solveCSP_binding = pattern_SyntethicMethod_2_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, mSyntethic, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember,
-				tClass, mClass, tSig);
+				_this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass,
+				mDef, mSyntethic);
 		if (result_pattern_SyntethicMethod_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SyntethicMethod_2_4_solveCSP_binding[0];
 
@@ -2029,8 +2027,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					csp);
 			if (result_pattern_SyntethicMethod_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mSyntethic, tDef, mDef, mClassDeclarationToTClass,
-						mDefinitionToTMember, tClass, mClass, tSig };
+				return new Object[] { csp, _this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass,
+						mDefinitionToTMember, tClass, mDef, mSyntethic };
 			}
 		}
 		return null;
@@ -2064,16 +2062,16 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_1_initialbindings_blackBBBBBB(SyntethicMethod _this,
-			Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
-		return new Object[] { _this, match, tDef, tSyntethic, tClass, tSig };
+			Match match, TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
+		return new Object[] { _this, match, tSig, tDef, tSyntethic, tClass };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_2_SolveCSP_bindingFBBBBBB(SyntethicMethod _this,
-			Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tDef, tSyntethic, tClass, tSig);
+			Match match, TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tSig, tDef, tSyntethic, tClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tDef, tSyntethic, tClass, tSig };
+			return new Object[] { csp, _this, match, tSig, tDef, tSyntethic, tClass };
 		}
 		return null;
 	}
@@ -2083,9 +2081,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_2_SolveCSP_bindingAndBlackFBBBBBB(SyntethicMethod _this,
-			Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
+			Match match, TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
 		Object[] result_pattern_SyntethicMethod_10_2_SolveCSP_binding = pattern_SyntethicMethod_10_2_SolveCSP_bindingFBBBBBB(
-				_this, match, tDef, tSyntethic, tClass, tSig);
+				_this, match, tSig, tDef, tSyntethic, tClass);
 		if (result_pattern_SyntethicMethod_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SyntethicMethod_10_2_SolveCSP_binding[0];
 
@@ -2093,7 +2091,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					csp);
 			if (result_pattern_SyntethicMethod_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tDef, tSyntethic, tClass, tSig };
+				return new Object[] { csp, _this, match, tSig, tDef, tSyntethic, tClass };
 			}
 		}
 		return null;
@@ -2106,12 +2104,12 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_4_collectelementstobetranslated_blackBBBBB(Match match,
-			TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
-		return new Object[] { match, tDef, tSyntethic, tClass, tSig };
+			TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
+		return new Object[] { match, tSig, tDef, tSyntethic, tClass };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_4_collectelementstobetranslated_greenBBBBBFFFFFF(
-			Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
+			Match match, TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
 		EMoflonEdge tDef__tSyntethic____syntethicMethods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSyntethic__tDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2149,23 +2147,23 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		tSig__tSyntethic____definitions.setName(tSig__tSyntethic____definitions_name_prime);
 		tClass__tSyntethic____defines.setName(tClass__tSyntethic____defines_name_prime);
 		tSyntethic__tClass____definedBy.setName(tSyntethic__tClass____definedBy_name_prime);
-		return new Object[] { match, tDef, tSyntethic, tClass, tSig, tDef__tSyntethic____syntethicMethods,
+		return new Object[] { match, tSig, tDef, tSyntethic, tClass, tDef__tSyntethic____syntethicMethods,
 				tSyntethic__tDef____originalMethodDefinition, tSyntethic__tSig____signature,
 				tSig__tSyntethic____definitions, tClass__tSyntethic____defines, tSyntethic__tClass____definedBy };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_5_collectcontextelements_blackBBBBB(Match match,
-			TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
-		return new Object[] { match, tDef, tSyntethic, tClass, tSig };
+			TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
+		return new Object[] { match, tSig, tDef, tSyntethic, tClass };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_10_5_collectcontextelements_greenBBBBFF(Match match,
-			TMethodDefinition tDef, TClass tClass, TMethodSignature tSig) {
+			TMethodSignature tSig, TMethodDefinition tDef, TClass tClass) {
 		EMoflonEdge tDef__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSig__tDef____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		match.getContextNodes().add(tSig);
 		match.getContextNodes().add(tDef);
 		match.getContextNodes().add(tClass);
-		match.getContextNodes().add(tSig);
 		String tDef__tSig____signature_name_prime = "signature";
 		String tSig__tDef____definitions_name_prime = "definitions";
 		tDef__tSig____signature.setSrc(tDef);
@@ -2176,12 +2174,12 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		match.getContextEdges().add(tSig__tDef____definitions);
 		tDef__tSig____signature.setName(tDef__tSig____signature_name_prime);
 		tSig__tDef____definitions.setName(tSig__tDef____definitions_name_prime);
-		return new Object[] { match, tDef, tClass, tSig, tDef__tSig____signature, tSig__tDef____definitions };
+		return new Object[] { match, tSig, tDef, tClass, tDef__tSig____signature, tSig__tDef____definitions };
 	}
 
 	public static final void pattern_SyntethicMethod_10_6_registerobjectstomatch_expressionBBBBBB(SyntethicMethod _this,
-			Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
-		_this.registerObjectsToMatch_BWD(match, tDef, tSyntethic, tClass, tSig);
+			Match match, TMethodSignature tSig, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
+		_this.registerObjectsToMatch_BWD(match, tSig, tDef, tSyntethic, tClass);
 
 	}
 
@@ -2197,40 +2195,40 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_11_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tDef");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tSyntethic");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mDef");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mClassDeclarationToTClass");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tSig");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tDef");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mClassDeclarationToTClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mClass");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinitionToTMember");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tClass");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mClass");
-		EObject _localVariable_7 = isApplicableMatch.getObject("tSig");
-		EObject tmpTDef = _localVariable_0;
-		EObject tmpTSyntethic = _localVariable_1;
-		EObject tmpMDef = _localVariable_2;
-		EObject tmpMClassDeclarationToTClass = _localVariable_3;
+		EObject _localVariable_5 = isApplicableMatch.getObject("tSyntethic");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tClass");
+		EObject _localVariable_7 = isApplicableMatch.getObject("mDef");
+		EObject tmpTSig = _localVariable_0;
+		EObject tmpTDef = _localVariable_1;
+		EObject tmpMClassDeclarationToTClass = _localVariable_2;
+		EObject tmpMClass = _localVariable_3;
 		EObject tmpMDefinitionToTMember = _localVariable_4;
-		EObject tmpTClass = _localVariable_5;
-		EObject tmpMClass = _localVariable_6;
-		EObject tmpTSig = _localVariable_7;
-		if (tmpTDef instanceof TMethodDefinition) {
-			TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
-			if (tmpTSyntethic instanceof TSyntethicMethod) {
-				TSyntethicMethod tSyntethic = (TSyntethicMethod) tmpTSyntethic;
-				if (tmpMDef instanceof MMethodDefinition) {
-					MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
-					if (tmpMClassDeclarationToTClass instanceof TypeToTAbstractType) {
-						TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) tmpMClassDeclarationToTClass;
+		EObject tmpTSyntethic = _localVariable_5;
+		EObject tmpTClass = _localVariable_6;
+		EObject tmpMDef = _localVariable_7;
+		if (tmpTSig instanceof TMethodSignature) {
+			TMethodSignature tSig = (TMethodSignature) tmpTSig;
+			if (tmpTDef instanceof TMethodDefinition) {
+				TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
+				if (tmpMClassDeclarationToTClass instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) tmpMClassDeclarationToTClass;
+					if (tmpMClass instanceof ClassDeclaration) {
+						ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
 						if (tmpMDefinitionToTMember instanceof MDefinitionToTMember) {
 							MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) tmpMDefinitionToTMember;
-							if (tmpTClass instanceof TClass) {
-								TClass tClass = (TClass) tmpTClass;
-								if (tmpMClass instanceof ClassDeclaration) {
-									ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
-									if (tmpTSig instanceof TMethodSignature) {
-										TMethodSignature tSig = (TMethodSignature) tmpTSig;
-										return new Object[] { tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-												mDefinitionToTMember, tClass, mClass, tSig, isApplicableMatch };
+							if (tmpTSyntethic instanceof TSyntethicMethod) {
+								TSyntethicMethod tSyntethic = (TSyntethicMethod) tmpTSyntethic;
+								if (tmpTClass instanceof TClass) {
+									TClass tClass = (TClass) tmpTClass;
+									if (tmpMDef instanceof MMethodDefinition) {
+										MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
+										return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass,
+												mDefinitionToTMember, tSyntethic, tClass, mDef, isApplicableMatch };
 									}
 								}
 							}
@@ -2243,15 +2241,14 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_11_1_performtransformation_blackBBBBBBBBFBB(
-			TMethodDefinition tDef, TSyntethicMethod tSyntethic, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig, SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch) {
+			TMethodSignature tSig, TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass,
+			ClassDeclaration mClass, MDefinitionToTMember mDefinitionToTMember, TSyntethicMethod tSyntethic,
+			TClass tClass, MMethodDefinition mDef, SyntethicMethod _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass,
-						mClass, tSig, csp, _this, isApplicableMatch };
+				return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic,
+						tClass, mDef, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -2262,145 +2259,142 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		Object[] result_pattern_SyntethicMethod_11_1_performtransformation_binding = pattern_SyntethicMethod_11_1_performtransformation_bindingFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_SyntethicMethod_11_1_performtransformation_binding != null) {
-			TMethodDefinition tDef = (TMethodDefinition) result_pattern_SyntethicMethod_11_1_performtransformation_binding[0];
-			TSyntethicMethod tSyntethic = (TSyntethicMethod) result_pattern_SyntethicMethod_11_1_performtransformation_binding[1];
-			MMethodDefinition mDef = (MMethodDefinition) result_pattern_SyntethicMethod_11_1_performtransformation_binding[2];
-			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_SyntethicMethod_11_1_performtransformation_binding[3];
+			TMethodSignature tSig = (TMethodSignature) result_pattern_SyntethicMethod_11_1_performtransformation_binding[0];
+			TMethodDefinition tDef = (TMethodDefinition) result_pattern_SyntethicMethod_11_1_performtransformation_binding[1];
+			TypeToTAbstractType mClassDeclarationToTClass = (TypeToTAbstractType) result_pattern_SyntethicMethod_11_1_performtransformation_binding[2];
+			ClassDeclaration mClass = (ClassDeclaration) result_pattern_SyntethicMethod_11_1_performtransformation_binding[3];
 			MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result_pattern_SyntethicMethod_11_1_performtransformation_binding[4];
-			TClass tClass = (TClass) result_pattern_SyntethicMethod_11_1_performtransformation_binding[5];
-			ClassDeclaration mClass = (ClassDeclaration) result_pattern_SyntethicMethod_11_1_performtransformation_binding[6];
-			TMethodSignature tSig = (TMethodSignature) result_pattern_SyntethicMethod_11_1_performtransformation_binding[7];
+			TSyntethicMethod tSyntethic = (TSyntethicMethod) result_pattern_SyntethicMethod_11_1_performtransformation_binding[5];
+			TClass tClass = (TClass) result_pattern_SyntethicMethod_11_1_performtransformation_binding[6];
+			MMethodDefinition mDef = (MMethodDefinition) result_pattern_SyntethicMethod_11_1_performtransformation_binding[7];
 
 			Object[] result_pattern_SyntethicMethod_11_1_performtransformation_black = pattern_SyntethicMethod_11_1_performtransformation_blackBBBBBBBBFBB(
-					tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig,
+					tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic, tClass, mDef,
 					_this, isApplicableMatch);
 			if (result_pattern_SyntethicMethod_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_SyntethicMethod_11_1_performtransformation_black[8];
 
-				return new Object[] { tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass,
-						mClass, tSig, csp, _this, isApplicableMatch };
+				return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic,
+						tClass, mDef, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_11_1_performtransformation_greenFBBFB(
-			TSyntethicMethod tSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		MSyntheticMethodDefinition mSyntethic = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
+	public static final Object[] pattern_SyntethicMethod_11_1_performtransformation_greenBFBBF(ClassDeclaration mClass,
+			TSyntethicMethod tSyntethic, MMethodDefinition mDef) {
 		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = PmFactory.eINSTANCE
 				.createMSyntethicMethodToTSyntethicMethod();
-		mDef.getSyntheticMethodDefinitions().add(mSyntethic);
-		mClass.getBodyDeclarations().add(mSyntethic);
+		MSyntheticMethodDefinition mSyntethic = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
 		mSyntToTSynt.setTarget(tSyntethic);
+		mClass.getBodyDeclarations().add(mSyntethic);
 		mSyntToTSynt.setSource(mSyntethic);
-		return new Object[] { mSyntethic, tSyntethic, mDef, mSyntToTSynt, mClass };
+		mDef.getSyntheticMethodDefinitions().add(mSyntethic);
+		return new Object[] { mClass, mSyntToTSynt, tSyntethic, mDef, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_11_2_collecttranslatedelements_blackBBB(
-			MSyntheticMethodDefinition mSyntethic, TSyntethicMethod tSyntethic,
-			MSyntethicMethodToTSyntethicMethod mSyntToTSynt) {
-		return new Object[] { mSyntethic, tSyntethic, mSyntToTSynt };
+			MSyntethicMethodToTSyntethicMethod mSyntToTSynt, TSyntethicMethod tSyntethic,
+			MSyntheticMethodDefinition mSyntethic) {
+		return new Object[] { mSyntToTSynt, tSyntethic, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_11_2_collecttranslatedelements_greenFBBB(
-			MSyntheticMethodDefinition mSyntethic, TSyntethicMethod tSyntethic,
-			MSyntethicMethodToTSyntethicMethod mSyntToTSynt) {
+			MSyntethicMethodToTSyntethicMethod mSyntToTSynt, TSyntethicMethod tSyntethic,
+			MSyntheticMethodDefinition mSyntethic) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(mSyntethic);
-		ruleresult.getTranslatedElements().add(tSyntethic);
 		ruleresult.getCreatedLinkElements().add(mSyntToTSynt);
-		return new Object[] { ruleresult, mSyntethic, tSyntethic, mSyntToTSynt };
+		ruleresult.getTranslatedElements().add(tSyntethic);
+		ruleresult.getCreatedElements().add(mSyntethic);
+		return new Object[] { ruleresult, mSyntToTSynt, tSyntethic, mSyntethic };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic, EObject mDef,
-			EObject mClassDeclarationToTClass, EObject mDefinitionToTMember, EObject mSyntToTSynt, EObject tClass,
-			EObject mClass, EObject tSig) {
-		if (!mSyntethic.equals(tDef)) {
-			if (!mSyntethic.equals(tSyntethic)) {
-				if (!mSyntethic.equals(tClass)) {
-					if (!mSyntethic.equals(tSig)) {
-						if (!tDef.equals(tSyntethic)) {
-							if (!tDef.equals(tSig)) {
-								if (!mDef.equals(mSyntethic)) {
-									if (!mDef.equals(tDef)) {
-										if (!mDef.equals(tSyntethic)) {
-											if (!mDef.equals(mDefinitionToTMember)) {
-												if (!mDef.equals(mSyntToTSynt)) {
-													if (!mDef.equals(tClass)) {
-														if (!mDef.equals(tSig)) {
-															if (!mClassDeclarationToTClass.equals(mSyntethic)) {
-																if (!mClassDeclarationToTClass.equals(tDef)) {
-																	if (!mClassDeclarationToTClass.equals(tSyntethic)) {
-																		if (!mClassDeclarationToTClass.equals(mDef)) {
-																			if (!mClassDeclarationToTClass
-																					.equals(mDefinitionToTMember)) {
-																				if (!mClassDeclarationToTClass
-																						.equals(mSyntToTSynt)) {
-																					if (!mClassDeclarationToTClass
-																							.equals(tClass)) {
-																						if (!mClassDeclarationToTClass
+			PerformRuleResult ruleresult, EObject tSig, EObject tDef, EObject mClassDeclarationToTClass, EObject mClass,
+			EObject mSyntToTSynt, EObject mDefinitionToTMember, EObject tSyntethic, EObject tClass, EObject mDef,
+			EObject mSyntethic) {
+		if (!tSig.equals(tSyntethic)) {
+			if (!tDef.equals(tSig)) {
+				if (!tDef.equals(tSyntethic)) {
+					if (!mClassDeclarationToTClass.equals(tSig)) {
+						if (!mClassDeclarationToTClass.equals(tDef)) {
+							if (!mClassDeclarationToTClass.equals(mSyntToTSynt)) {
+								if (!mClassDeclarationToTClass.equals(mDefinitionToTMember)) {
+									if (!mClassDeclarationToTClass.equals(tSyntethic)) {
+										if (!mClassDeclarationToTClass.equals(tClass)) {
+											if (!mClassDeclarationToTClass.equals(mDef)) {
+												if (!mClassDeclarationToTClass.equals(mSyntethic)) {
+													if (!mClass.equals(tSig)) {
+														if (!mClass.equals(tDef)) {
+															if (!mClass.equals(mClassDeclarationToTClass)) {
+																if (!mClass.equals(mSyntToTSynt)) {
+																	if (!mClass.equals(mDefinitionToTMember)) {
+																		if (!mClass.equals(tSyntethic)) {
+																			if (!mClass.equals(tClass)) {
+																				if (!mClass.equals(mDef)) {
+																					if (!mClass.equals(mSyntethic)) {
+																						if (!mSyntToTSynt
 																								.equals(tSig)) {
-																							if (!mDefinitionToTMember
-																									.equals(mSyntethic)) {
-																								if (!mDefinitionToTMember
-																										.equals(tDef)) {
-																									if (!mDefinitionToTMember
-																											.equals(tSyntethic)) {
-																										if (!mDefinitionToTMember
-																												.equals(mSyntToTSynt)) {
+																							if (!mSyntToTSynt
+																									.equals(tDef)) {
+																								if (!mSyntToTSynt
+																										.equals(tSyntethic)) {
+																									if (!mSyntToTSynt
+																											.equals(tClass)) {
+																										if (!mSyntToTSynt
+																												.equals(mSyntethic)) {
 																											if (!mDefinitionToTMember
-																													.equals(tClass)) {
+																													.equals(tSig)) {
 																												if (!mDefinitionToTMember
-																														.equals(tSig)) {
-																													if (!mSyntToTSynt
-																															.equals(mSyntethic)) {
-																														if (!mSyntToTSynt
-																																.equals(tDef)) {
-																															if (!mSyntToTSynt
-																																	.equals(tSyntethic)) {
-																																if (!mSyntToTSynt
-																																		.equals(tClass)) {
-																																	if (!mSyntToTSynt
+																														.equals(tDef)) {
+																													if (!mDefinitionToTMember
+																															.equals(mSyntToTSynt)) {
+																														if (!mDefinitionToTMember
+																																.equals(tSyntethic)) {
+																															if (!mDefinitionToTMember
+																																	.equals(tClass)) {
+																																if (!mDefinitionToTMember
+																																		.equals(mSyntethic)) {
+																																	if (!tClass
 																																			.equals(tSig)) {
 																																		if (!tClass
 																																				.equals(tDef)) {
 																																			if (!tClass
 																																					.equals(tSyntethic)) {
-																																				if (!tClass
+																																				if (!mDef
 																																						.equals(tSig)) {
-																																					if (!mClass
-																																							.equals(mSyntethic)) {
-																																						if (!mClass
-																																								.equals(tDef)) {
-																																							if (!mClass
-																																									.equals(tSyntethic)) {
-																																								if (!mClass
-																																										.equals(mDef)) {
-																																									if (!mClass
-																																											.equals(mClassDeclarationToTClass)) {
-																																										if (!mClass
-																																												.equals(mDefinitionToTMember)) {
-																																											if (!mClass
-																																													.equals(mSyntToTSynt)) {
-																																												if (!mClass
-																																														.equals(tClass)) {
-																																													if (!mClass
-																																															.equals(tSig)) {
-																																														if (!tSig
-																																																.equals(tSyntethic)) {
+																																					if (!mDef
+																																							.equals(tDef)) {
+																																						if (!mDef
+																																								.equals(mSyntToTSynt)) {
+																																							if (!mDef
+																																									.equals(mDefinitionToTMember)) {
+																																								if (!mDef
+																																										.equals(tSyntethic)) {
+																																									if (!mDef
+																																											.equals(tClass)) {
+																																										if (!mDef
+																																												.equals(mSyntethic)) {
+																																											if (!mSyntethic
+																																													.equals(tSig)) {
+																																												if (!mSyntethic
+																																														.equals(tDef)) {
+																																													if (!mSyntethic
+																																															.equals(tSyntethic)) {
+																																														if (!mSyntethic
+																																																.equals(tClass)) {
 																																															return new Object[] {
 																																																	ruleresult,
-																																																	mSyntethic,
+																																																	tSig,
 																																																	tDef,
-																																																	tSyntethic,
-																																																	mDef,
 																																																	mClassDeclarationToTClass,
-																																																	mDefinitionToTMember,
-																																																	mSyntToTSynt,
-																																																	tClass,
 																																																	mClass,
-																																																	tSig };
+																																																	mSyntToTSynt,
+																																																	mDefinitionToTMember,
+																																																	tSyntethic,
+																																																	tClass,
+																																																	mDef,
+																																																	mSyntethic };
 																																														}
 																																													}
 																																												}
@@ -2450,98 +2444,97 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic, EObject mDef,
-			EObject mSyntToTSynt, EObject tClass, EObject mClass, EObject tSig) {
+			PerformRuleResult ruleresult, EObject tSig, EObject tDef, EObject mClass, EObject mSyntToTSynt,
+			EObject tSyntethic, EObject tClass, EObject mDef, EObject mSyntethic) {
 		EMoflonEdge tDef__tSyntethic____syntethicMethods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSyntethic__tDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSig__tSyntethic____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntToTSynt__tSyntethic____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSyntToTSynt__mSyntethic____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tClass__tSyntethic____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSyntethic__tClass____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mClass__mSyntethic____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSyntethic__mClass____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntToTSynt__tSyntethic____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSig__tSyntethic____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tClass__tSyntethic____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSyntethic__tClass____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntToTSynt__mSyntethic____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDef__mSyntethic____syntheticMethodDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSyntethic__mDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "SyntethicMethod";
 		String tDef__tSyntethic____syntethicMethods_name_prime = "syntethicMethods";
 		String tSyntethic__tDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
-		String tSyntethic__tSig____signature_name_prime = "signature";
-		String tSig__tSyntethic____definitions_name_prime = "definitions";
-		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
-		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
-		String mSyntToTSynt__tSyntethic____target_name_prime = "target";
-		String mSyntToTSynt__mSyntethic____source_name_prime = "source";
-		String tClass__tSyntethic____defines_name_prime = "defines";
-		String tSyntethic__tClass____definedBy_name_prime = "definedBy";
 		String mClass__mSyntethic____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mSyntethic__mClass____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String mSyntToTSynt__tSyntethic____target_name_prime = "target";
+		String tSyntethic__tSig____signature_name_prime = "signature";
+		String tSig__tSyntethic____definitions_name_prime = "definitions";
+		String tClass__tSyntethic____defines_name_prime = "defines";
+		String tSyntethic__tClass____definedBy_name_prime = "definedBy";
+		String mSyntToTSynt__mSyntethic____source_name_prime = "source";
+		String mDef__mSyntethic____syntheticMethodDefinitions_name_prime = "syntheticMethodDefinitions";
+		String mSyntethic__mDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
 		tDef__tSyntethic____syntethicMethods.setSrc(tDef);
 		tDef__tSyntethic____syntethicMethods.setTrg(tSyntethic);
 		ruleresult.getTranslatedEdges().add(tDef__tSyntethic____syntethicMethods);
 		tSyntethic__tDef____originalMethodDefinition.setSrc(tSyntethic);
 		tSyntethic__tDef____originalMethodDefinition.setTrg(tDef);
 		ruleresult.getTranslatedEdges().add(tSyntethic__tDef____originalMethodDefinition);
-		tSyntethic__tSig____signature.setSrc(tSyntethic);
-		tSyntethic__tSig____signature.setTrg(tSig);
-		ruleresult.getTranslatedEdges().add(tSyntethic__tSig____signature);
-		tSig__tSyntethic____definitions.setSrc(tSig);
-		tSig__tSyntethic____definitions.setTrg(tSyntethic);
-		ruleresult.getTranslatedEdges().add(tSig__tSyntethic____definitions);
-		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
-		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
-		ruleresult.getCreatedEdges().add(mDef__mSyntethic____syntheticMethodDefinitions);
-		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
-		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
-		ruleresult.getCreatedEdges().add(mSyntethic__mDef____originalMethodDefinition);
-		mSyntToTSynt__tSyntethic____target.setSrc(mSyntToTSynt);
-		mSyntToTSynt__tSyntethic____target.setTrg(tSyntethic);
-		ruleresult.getCreatedEdges().add(mSyntToTSynt__tSyntethic____target);
-		mSyntToTSynt__mSyntethic____source.setSrc(mSyntToTSynt);
-		mSyntToTSynt__mSyntethic____source.setTrg(mSyntethic);
-		ruleresult.getCreatedEdges().add(mSyntToTSynt__mSyntethic____source);
-		tClass__tSyntethic____defines.setSrc(tClass);
-		tClass__tSyntethic____defines.setTrg(tSyntethic);
-		ruleresult.getTranslatedEdges().add(tClass__tSyntethic____defines);
-		tSyntethic__tClass____definedBy.setSrc(tSyntethic);
-		tSyntethic__tClass____definedBy.setTrg(tClass);
-		ruleresult.getTranslatedEdges().add(tSyntethic__tClass____definedBy);
 		mClass__mSyntethic____bodyDeclarations.setSrc(mClass);
 		mClass__mSyntethic____bodyDeclarations.setTrg(mSyntethic);
 		ruleresult.getCreatedEdges().add(mClass__mSyntethic____bodyDeclarations);
 		mSyntethic__mClass____abstractTypeDeclaration.setSrc(mSyntethic);
 		mSyntethic__mClass____abstractTypeDeclaration.setTrg(mClass);
 		ruleresult.getCreatedEdges().add(mSyntethic__mClass____abstractTypeDeclaration);
+		mSyntToTSynt__tSyntethic____target.setSrc(mSyntToTSynt);
+		mSyntToTSynt__tSyntethic____target.setTrg(tSyntethic);
+		ruleresult.getCreatedEdges().add(mSyntToTSynt__tSyntethic____target);
+		tSyntethic__tSig____signature.setSrc(tSyntethic);
+		tSyntethic__tSig____signature.setTrg(tSig);
+		ruleresult.getTranslatedEdges().add(tSyntethic__tSig____signature);
+		tSig__tSyntethic____definitions.setSrc(tSig);
+		tSig__tSyntethic____definitions.setTrg(tSyntethic);
+		ruleresult.getTranslatedEdges().add(tSig__tSyntethic____definitions);
+		tClass__tSyntethic____defines.setSrc(tClass);
+		tClass__tSyntethic____defines.setTrg(tSyntethic);
+		ruleresult.getTranslatedEdges().add(tClass__tSyntethic____defines);
+		tSyntethic__tClass____definedBy.setSrc(tSyntethic);
+		tSyntethic__tClass____definedBy.setTrg(tClass);
+		ruleresult.getTranslatedEdges().add(tSyntethic__tClass____definedBy);
+		mSyntToTSynt__mSyntethic____source.setSrc(mSyntToTSynt);
+		mSyntToTSynt__mSyntethic____source.setTrg(mSyntethic);
+		ruleresult.getCreatedEdges().add(mSyntToTSynt__mSyntethic____source);
+		mDef__mSyntethic____syntheticMethodDefinitions.setSrc(mDef);
+		mDef__mSyntethic____syntheticMethodDefinitions.setTrg(mSyntethic);
+		ruleresult.getCreatedEdges().add(mDef__mSyntethic____syntheticMethodDefinitions);
+		mSyntethic__mDef____originalMethodDefinition.setSrc(mSyntethic);
+		mSyntethic__mDef____originalMethodDefinition.setTrg(mDef);
+		ruleresult.getCreatedEdges().add(mSyntethic__mDef____originalMethodDefinition);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tDef__tSyntethic____syntethicMethods.setName(tDef__tSyntethic____syntethicMethods_name_prime);
 		tSyntethic__tDef____originalMethodDefinition.setName(tSyntethic__tDef____originalMethodDefinition_name_prime);
+		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
+		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
+		mSyntToTSynt__tSyntethic____target.setName(mSyntToTSynt__tSyntethic____target_name_prime);
 		tSyntethic__tSig____signature.setName(tSyntethic__tSig____signature_name_prime);
 		tSig__tSyntethic____definitions.setName(tSig__tSyntethic____definitions_name_prime);
+		tClass__tSyntethic____defines.setName(tClass__tSyntethic____defines_name_prime);
+		tSyntethic__tClass____definedBy.setName(tSyntethic__tClass____definedBy_name_prime);
+		mSyntToTSynt__mSyntethic____source.setName(mSyntToTSynt__mSyntethic____source_name_prime);
 		mDef__mSyntethic____syntheticMethodDefinitions
 				.setName(mDef__mSyntethic____syntheticMethodDefinitions_name_prime);
 		mSyntethic__mDef____originalMethodDefinition.setName(mSyntethic__mDef____originalMethodDefinition_name_prime);
-		mSyntToTSynt__tSyntethic____target.setName(mSyntToTSynt__tSyntethic____target_name_prime);
-		mSyntToTSynt__mSyntethic____source.setName(mSyntToTSynt__mSyntethic____source_name_prime);
-		tClass__tSyntethic____defines.setName(tClass__tSyntethic____defines_name_prime);
-		tSyntethic__tClass____definedBy.setName(tSyntethic__tClass____definedBy_name_prime);
-		mClass__mSyntethic____bodyDeclarations.setName(mClass__mSyntethic____bodyDeclarations_name_prime);
-		mSyntethic__mClass____abstractTypeDeclaration.setName(mSyntethic__mClass____abstractTypeDeclaration_name_prime);
-		return new Object[] { ruleresult, mSyntethic, tDef, tSyntethic, mDef, mSyntToTSynt, tClass, mClass, tSig,
+		return new Object[] { ruleresult, tSig, tDef, mClass, mSyntToTSynt, tSyntethic, tClass, mDef, mSyntethic,
 				tDef__tSyntethic____syntethicMethods, tSyntethic__tDef____originalMethodDefinition,
-				tSyntethic__tSig____signature, tSig__tSyntethic____definitions,
-				mDef__mSyntethic____syntheticMethodDefinitions, mSyntethic__mDef____originalMethodDefinition,
-				mSyntToTSynt__tSyntethic____target, mSyntToTSynt__mSyntethic____source, tClass__tSyntethic____defines,
-				tSyntethic__tClass____definedBy, mClass__mSyntethic____bodyDeclarations,
-				mSyntethic__mClass____abstractTypeDeclaration };
+				mClass__mSyntethic____bodyDeclarations, mSyntethic__mClass____abstractTypeDeclaration,
+				mSyntToTSynt__tSyntethic____target, tSyntethic__tSig____signature, tSig__tSyntethic____definitions,
+				tClass__tSyntethic____defines, tSyntethic__tClass____definedBy, mSyntToTSynt__mSyntethic____source,
+				mDef__mSyntethic____syntheticMethodDefinitions, mSyntethic__mDef____originalMethodDefinition };
 	}
 
 	public static final void pattern_SyntethicMethod_11_5_registerobjects_expressionBBBBBBBBBBBB(SyntethicMethod _this,
-			PerformRuleResult ruleresult, EObject mSyntethic, EObject tDef, EObject tSyntethic, EObject mDef,
-			EObject mClassDeclarationToTClass, EObject mDefinitionToTMember, EObject mSyntToTSynt, EObject tClass,
-			EObject mClass, EObject tSig) {
-		_this.registerObjects_BWD(ruleresult, mSyntethic, tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-				mDefinitionToTMember, mSyntToTSynt, tClass, mClass, tSig);
+			PerformRuleResult ruleresult, EObject tSig, EObject tDef, EObject mClassDeclarationToTClass, EObject mClass,
+			EObject mSyntToTSynt, EObject mDefinitionToTMember, EObject tSyntethic, EObject tClass, EObject mDef,
+			EObject mSyntethic) {
+		_this.registerObjects_BWD(ruleresult, tSig, tDef, mClassDeclarationToTClass, mClass, mSyntToTSynt,
+				mDefinitionToTMember, tSyntethic, tClass, mDef, mSyntethic);
 
 	}
 
@@ -2600,23 +2593,23 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_12_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tDef");
-		EObject _localVariable_1 = match.getObject("tSyntethic");
-		EObject _localVariable_2 = match.getObject("tClass");
-		EObject _localVariable_3 = match.getObject("tSig");
-		EObject tmpTDef = _localVariable_0;
-		EObject tmpTSyntethic = _localVariable_1;
-		EObject tmpTClass = _localVariable_2;
-		EObject tmpTSig = _localVariable_3;
-		if (tmpTDef instanceof TMethodDefinition) {
-			TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
-			if (tmpTSyntethic instanceof TSyntethicMethod) {
-				TSyntethicMethod tSyntethic = (TSyntethicMethod) tmpTSyntethic;
-				if (tmpTClass instanceof TClass) {
-					TClass tClass = (TClass) tmpTClass;
-					if (tmpTSig instanceof TMethodSignature) {
-						TMethodSignature tSig = (TMethodSignature) tmpTSig;
-						return new Object[] { tDef, tSyntethic, tClass, tSig, match };
+		EObject _localVariable_0 = match.getObject("tSig");
+		EObject _localVariable_1 = match.getObject("tDef");
+		EObject _localVariable_2 = match.getObject("tSyntethic");
+		EObject _localVariable_3 = match.getObject("tClass");
+		EObject tmpTSig = _localVariable_0;
+		EObject tmpTDef = _localVariable_1;
+		EObject tmpTSyntethic = _localVariable_2;
+		EObject tmpTClass = _localVariable_3;
+		if (tmpTSig instanceof TMethodSignature) {
+			TMethodSignature tSig = (TMethodSignature) tmpTSig;
+			if (tmpTDef instanceof TMethodDefinition) {
+				TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
+				if (tmpTSyntethic instanceof TSyntethicMethod) {
+					TSyntethicMethod tSyntethic = (TSyntethicMethod) tmpTSyntethic;
+					if (tmpTClass instanceof TClass) {
+						TClass tClass = (TClass) tmpTClass;
+						return new Object[] { tSig, tDef, tSyntethic, tClass, match };
 					}
 				}
 			}
@@ -2624,8 +2617,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SyntethicMethod_12_2_corematch_blackBBFFFBFBB(TMethodDefinition tDef,
-			TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig, Match match) {
+	public static final Iterable<Object[]> pattern_SyntethicMethod_12_2_corematch_blackBBFFFBBFB(TMethodSignature tSig,
+			TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tDef, MDefinitionToTMember.class, "target")) {
@@ -2637,8 +2630,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					Type tmpMClass = mClassDeclarationToTClass.getSource();
 					if (tmpMClass instanceof ClassDeclaration) {
 						ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
-						_result.add(new Object[] { tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-								mDefinitionToTMember, tClass, mClass, tSig, match });
+						_result.add(new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember,
+								tSyntethic, tClass, mDef, match });
 					}
 
 				}
@@ -2648,21 +2641,21 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_SyntethicMethod_12_3_findcontext_blackBBBBBBBB(
-			TMethodDefinition tDef, TSyntethicMethod tSyntethic, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig) {
+	public static final Iterable<Object[]> pattern_SyntethicMethod_12_3_findcontext_blackBBBBBBBB(TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TSyntethicMethod tSyntethic, TClass tClass,
+			MMethodDefinition mDef) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tDef.getSyntethicMethods().contains(tSyntethic)) {
-			if (tSig.equals(tSyntethic.getSignature())) {
-				if (tDef.equals(mDefinitionToTMember.getTarget())) {
-					if (tSig.equals(tDef.getSignature())) {
-						if (mDef.equals(mDefinitionToTMember.getSource())) {
+		if (tSig.equals(tDef.getSignature())) {
+			if (tDef.getSyntethicMethods().contains(tSyntethic)) {
+				if (mClass.equals(mClassDeclarationToTClass.getSource())) {
+					if (tDef.equals(mDefinitionToTMember.getTarget())) {
+						if (tSig.equals(tSyntethic.getSignature())) {
 							if (tClass.getDefines().contains(tSyntethic)) {
-								if (mClass.equals(mClassDeclarationToTClass.getSource())) {
-									if (tClass.equals(mClassDeclarationToTClass.getTarget())) {
-										_result.add(new Object[] { tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-												mDefinitionToTMember, tClass, mClass, tSig });
+								if (tClass.equals(mClassDeclarationToTClass.getTarget())) {
+									if (mDef.equals(mDefinitionToTMember.getSource())) {
+										_result.add(new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass,
+												mDefinitionToTMember, tSyntethic, tClass, mDef });
 									}
 								}
 							}
@@ -2675,109 +2668,110 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFFF(
-			TMethodDefinition tDef, TSyntethicMethod tSyntethic, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig) {
+			TMethodSignature tSig, TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass,
+			ClassDeclaration mClass, MDefinitionToTMember mDefinitionToTMember, TSyntethicMethod tSyntethic,
+			TClass tClass, MMethodDefinition mDef) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge tDef__tSyntethic____syntethicMethods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSyntethic__tDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSig__tSyntethic____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDef____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDef__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSig__tDef____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__mDef____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tDef__tSyntethic____syntethicMethods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSyntethic__tDef____originalMethodDefinition = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mClassDeclarationToTClass__mClass____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDef____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSyntethic__tSig____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSig__tSyntethic____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__tSyntethic____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSyntethic__tClass____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mClassDeclarationToTClass__mClass____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String tDef__tSyntethic____syntethicMethods_name_prime = "syntethicMethods";
-		String tSyntethic__tDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
-		String tSyntethic__tSig____signature_name_prime = "signature";
-		String tSig__tSyntethic____definitions_name_prime = "definitions";
-		String mDefinitionToTMember__tDef____target_name_prime = "target";
+		EMoflonEdge mDefinitionToTMember__mDef____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tDef__tSig____signature_name_prime = "signature";
 		String tSig__tDef____definitions_name_prime = "definitions";
-		String mDefinitionToTMember__mDef____source_name_prime = "source";
+		String tDef__tSyntethic____syntethicMethods_name_prime = "syntethicMethods";
+		String tSyntethic__tDef____originalMethodDefinition_name_prime = "originalMethodDefinition";
+		String mClassDeclarationToTClass__mClass____source_name_prime = "source";
+		String mDefinitionToTMember__tDef____target_name_prime = "target";
+		String tSyntethic__tSig____signature_name_prime = "signature";
+		String tSig__tSyntethic____definitions_name_prime = "definitions";
 		String tClass__tSyntethic____defines_name_prime = "defines";
 		String tSyntethic__tClass____definedBy_name_prime = "definedBy";
-		String mClassDeclarationToTClass__mClass____source_name_prime = "source";
 		String mClassDeclarationToTClass__tClass____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(tDef);
-		isApplicableMatch.getAllContextElements().add(tSyntethic);
-		isApplicableMatch.getAllContextElements().add(mDef);
-		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
-		isApplicableMatch.getAllContextElements().add(tClass);
-		isApplicableMatch.getAllContextElements().add(mClass);
+		String mDefinitionToTMember__mDef____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(tSig);
-		tDef__tSyntethic____syntethicMethods.setSrc(tDef);
-		tDef__tSyntethic____syntethicMethods.setTrg(tSyntethic);
-		isApplicableMatch.getAllContextElements().add(tDef__tSyntethic____syntethicMethods);
-		tSyntethic__tDef____originalMethodDefinition.setSrc(tSyntethic);
-		tSyntethic__tDef____originalMethodDefinition.setTrg(tDef);
-		isApplicableMatch.getAllContextElements().add(tSyntethic__tDef____originalMethodDefinition);
-		tSyntethic__tSig____signature.setSrc(tSyntethic);
-		tSyntethic__tSig____signature.setTrg(tSig);
-		isApplicableMatch.getAllContextElements().add(tSyntethic__tSig____signature);
-		tSig__tSyntethic____definitions.setSrc(tSig);
-		tSig__tSyntethic____definitions.setTrg(tSyntethic);
-		isApplicableMatch.getAllContextElements().add(tSig__tSyntethic____definitions);
-		mDefinitionToTMember__tDef____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDef____target.setTrg(tDef);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDef____target);
+		isApplicableMatch.getAllContextElements().add(tDef);
+		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass);
+		isApplicableMatch.getAllContextElements().add(mClass);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember);
+		isApplicableMatch.getAllContextElements().add(tSyntethic);
+		isApplicableMatch.getAllContextElements().add(tClass);
+		isApplicableMatch.getAllContextElements().add(mDef);
 		tDef__tSig____signature.setSrc(tDef);
 		tDef__tSig____signature.setTrg(tSig);
 		isApplicableMatch.getAllContextElements().add(tDef__tSig____signature);
 		tSig__tDef____definitions.setSrc(tSig);
 		tSig__tDef____definitions.setTrg(tDef);
 		isApplicableMatch.getAllContextElements().add(tSig__tDef____definitions);
-		mDefinitionToTMember__mDef____source.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__mDef____source.setTrg(mDef);
-		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDef____source);
+		tDef__tSyntethic____syntethicMethods.setSrc(tDef);
+		tDef__tSyntethic____syntethicMethods.setTrg(tSyntethic);
+		isApplicableMatch.getAllContextElements().add(tDef__tSyntethic____syntethicMethods);
+		tSyntethic__tDef____originalMethodDefinition.setSrc(tSyntethic);
+		tSyntethic__tDef____originalMethodDefinition.setTrg(tDef);
+		isApplicableMatch.getAllContextElements().add(tSyntethic__tDef____originalMethodDefinition);
+		mClassDeclarationToTClass__mClass____source.setSrc(mClassDeclarationToTClass);
+		mClassDeclarationToTClass__mClass____source.setTrg(mClass);
+		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__mClass____source);
+		mDefinitionToTMember__tDef____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDef____target.setTrg(tDef);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__tDef____target);
+		tSyntethic__tSig____signature.setSrc(tSyntethic);
+		tSyntethic__tSig____signature.setTrg(tSig);
+		isApplicableMatch.getAllContextElements().add(tSyntethic__tSig____signature);
+		tSig__tSyntethic____definitions.setSrc(tSig);
+		tSig__tSyntethic____definitions.setTrg(tSyntethic);
+		isApplicableMatch.getAllContextElements().add(tSig__tSyntethic____definitions);
 		tClass__tSyntethic____defines.setSrc(tClass);
 		tClass__tSyntethic____defines.setTrg(tSyntethic);
 		isApplicableMatch.getAllContextElements().add(tClass__tSyntethic____defines);
 		tSyntethic__tClass____definedBy.setSrc(tSyntethic);
 		tSyntethic__tClass____definedBy.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(tSyntethic__tClass____definedBy);
-		mClassDeclarationToTClass__mClass____source.setSrc(mClassDeclarationToTClass);
-		mClassDeclarationToTClass__mClass____source.setTrg(mClass);
-		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__mClass____source);
 		mClassDeclarationToTClass__tClass____target.setSrc(mClassDeclarationToTClass);
 		mClassDeclarationToTClass__tClass____target.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(mClassDeclarationToTClass__tClass____target);
-		tDef__tSyntethic____syntethicMethods.setName(tDef__tSyntethic____syntethicMethods_name_prime);
-		tSyntethic__tDef____originalMethodDefinition.setName(tSyntethic__tDef____originalMethodDefinition_name_prime);
-		tSyntethic__tSig____signature.setName(tSyntethic__tSig____signature_name_prime);
-		tSig__tSyntethic____definitions.setName(tSig__tSyntethic____definitions_name_prime);
-		mDefinitionToTMember__tDef____target.setName(mDefinitionToTMember__tDef____target_name_prime);
+		mDefinitionToTMember__mDef____source.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__mDef____source.setTrg(mDef);
+		isApplicableMatch.getAllContextElements().add(mDefinitionToTMember__mDef____source);
 		tDef__tSig____signature.setName(tDef__tSig____signature_name_prime);
 		tSig__tDef____definitions.setName(tSig__tDef____definitions_name_prime);
-		mDefinitionToTMember__mDef____source.setName(mDefinitionToTMember__mDef____source_name_prime);
+		tDef__tSyntethic____syntethicMethods.setName(tDef__tSyntethic____syntethicMethods_name_prime);
+		tSyntethic__tDef____originalMethodDefinition.setName(tSyntethic__tDef____originalMethodDefinition_name_prime);
+		mClassDeclarationToTClass__mClass____source.setName(mClassDeclarationToTClass__mClass____source_name_prime);
+		mDefinitionToTMember__tDef____target.setName(mDefinitionToTMember__tDef____target_name_prime);
+		tSyntethic__tSig____signature.setName(tSyntethic__tSig____signature_name_prime);
+		tSig__tSyntethic____definitions.setName(tSig__tSyntethic____definitions_name_prime);
 		tClass__tSyntethic____defines.setName(tClass__tSyntethic____defines_name_prime);
 		tSyntethic__tClass____definedBy.setName(tSyntethic__tClass____definedBy_name_prime);
-		mClassDeclarationToTClass__mClass____source.setName(mClassDeclarationToTClass__mClass____source_name_prime);
 		mClassDeclarationToTClass__tClass____target.setName(mClassDeclarationToTClass__tClass____target_name_prime);
-		return new Object[] { tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass,
-				tSig, isApplicableMatch, tDef__tSyntethic____syntethicMethods,
-				tSyntethic__tDef____originalMethodDefinition, tSyntethic__tSig____signature,
-				tSig__tSyntethic____definitions, mDefinitionToTMember__tDef____target, tDef__tSig____signature,
-				tSig__tDef____definitions, mDefinitionToTMember__mDef____source, tClass__tSyntethic____defines,
-				tSyntethic__tClass____definedBy, mClassDeclarationToTClass__mClass____source,
-				mClassDeclarationToTClass__tClass____target };
+		mDefinitionToTMember__mDef____source.setName(mDefinitionToTMember__mDef____source_name_prime);
+		return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tSyntethic, tClass,
+				mDef, isApplicableMatch, tDef__tSig____signature, tSig__tDef____definitions,
+				tDef__tSyntethic____syntethicMethods, tSyntethic__tDef____originalMethodDefinition,
+				mClassDeclarationToTClass__mClass____source, mDefinitionToTMember__tDef____target,
+				tSyntethic__tSig____signature, tSig__tSyntethic____definitions, tClass__tSyntethic____defines,
+				tSyntethic__tClass____definedBy, mClassDeclarationToTClass__tClass____target,
+				mDefinitionToTMember__mDef____source };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_12_4_solveCSP_bindingFBBBBBBBBBB(SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tDef, tSyntethic, mDef,
-				mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig);
+			IsApplicableMatch isApplicableMatch, TMethodSignature tSig, TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TSyntethicMethod tSyntethic, TClass tClass,
+			MMethodDefinition mDef) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tSig, tDef, mClassDeclarationToTClass,
+				mClass, mDefinitionToTMember, tSyntethic, tClass, mDef);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-					mDefinitionToTMember, tClass, mClass, tSig };
+			return new Object[] { csp, _this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass,
+					mDefinitionToTMember, tSyntethic, tClass, mDef };
 		}
 		return null;
 	}
@@ -2787,12 +2781,13 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {
+			IsApplicableMatch isApplicableMatch, TMethodSignature tSig, TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TSyntethicMethod tSyntethic, TClass tClass,
+			MMethodDefinition mDef) {
 		Object[] result_pattern_SyntethicMethod_12_4_solveCSP_binding = pattern_SyntethicMethod_12_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, tDef, tSyntethic, mDef, mClassDeclarationToTClass, mDefinitionToTMember,
-				tClass, mClass, tSig);
+				_this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember,
+				tSyntethic, tClass, mDef);
 		if (result_pattern_SyntethicMethod_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SyntethicMethod_12_4_solveCSP_binding[0];
 
@@ -2800,8 +2795,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					csp);
 			if (result_pattern_SyntethicMethod_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tDef, tSyntethic, mDef, mClassDeclarationToTClass,
-						mDefinitionToTMember, tClass, mClass, tSig };
+				return new Object[] { csp, _this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass,
+						mDefinitionToTMember, tSyntethic, tClass, mDef };
 			}
 		}
 		return null;
@@ -2889,9 +2884,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_20_2_testcorematchandDECs_black_nac_0BB(
 			TSyntethicMethod tSyntethic, TMethodDefinition tDef) {
-		TMethodDefinition __DEC_tSyntethic_syntethicMethods_926721 = tSyntethic.getOriginalMethodDefinition();
-		if (__DEC_tSyntethic_syntethicMethods_926721 != null) {
-			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_926721)) {
+		TMethodDefinition __DEC_tSyntethic_syntethicMethods_164209 = tSyntethic.getOriginalMethodDefinition();
+		if (__DEC_tSyntethic_syntethicMethods_164209 != null) {
+			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_164209)) {
 				return new Object[] { tSyntethic, tDef };
 			}
 		}
@@ -2901,9 +2896,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_20_2_testcorematchandDECs_black_nac_1BB(
 			TSyntethicMethod tSyntethic, TMethodSignature tSig) {
-		TSignature __DEC_tSyntethic_definitions_565521 = tSyntethic.getSignature();
-		if (__DEC_tSyntethic_definitions_565521 != null) {
-			if (!tSig.equals(__DEC_tSyntethic_definitions_565521)) {
+		TSignature __DEC_tSyntethic_definitions_978616 = tSyntethic.getSignature();
+		if (__DEC_tSyntethic_definitions_978616 != null) {
+			if (!tSig.equals(__DEC_tSyntethic_definitions_978616)) {
 				return new Object[] { tSyntethic, tSig };
 			}
 		}
@@ -2932,7 +2927,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 										tDef) == null) {
 									if (pattern_SyntethicMethod_20_2_testcorematchandDECs_black_nac_1BB(tSyntethic,
 											tSig) == null) {
-										_result.add(new Object[] { tDef, tSyntethic, tClass, tSig,
+										_result.add(new Object[] { tSig, tDef, tSyntethic, tClass,
 												_edge_syntethicMethods });
 									}
 								}
@@ -2959,9 +2954,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final boolean pattern_SyntethicMethod_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			SyntethicMethod _this, Match match, TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass,
-			TMethodSignature tSig) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tDef, tSyntethic, tClass, tSig);
+			SyntethicMethod _this, Match match, TMethodSignature tSig, TMethodDefinition tDef,
+			TSyntethicMethod tSyntethic, TClass tClass) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tSig, tDef, tSyntethic, tClass);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3049,10 +3044,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_0BB(
 			MSyntheticMethodDefinition mSyntethic, ClassDeclaration mClass) {
-		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_188872 = mSyntethic
+		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_807000 = mSyntethic
 				.getAbstractTypeDeclaration();
-		if (__DEC_mSyntethic_abstractTypeDeclaration_188872 != null) {
-			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_188872)) {
+		if (__DEC_mSyntethic_abstractTypeDeclaration_807000 != null) {
+			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_807000)) {
 				return new Object[] { mSyntethic, mClass };
 			}
 		}
@@ -3062,9 +3057,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_1B(
 			MSyntheticMethodDefinition mSyntethic) {
-		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_958077 = mSyntethic
+		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_791873 = mSyntethic
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_958077 != null) {
+		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_791873 != null) {
 			return new Object[] { mSyntethic };
 		}
 
@@ -3073,9 +3068,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_2BB(
 			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef) {
-		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_293017 = mSyntethic.getOriginalMethodDefinition();
-		if (__DEC_mSyntethic_syntheticMethodDefinitions_293017 != null) {
-			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_293017)) {
+		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_330802 = mSyntethic.getOriginalMethodDefinition();
+		if (__DEC_mSyntethic_syntheticMethodDefinitions_330802 != null) {
+			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_330802)) {
 				return new Object[] { mSyntethic, mDef };
 			}
 		}
@@ -3084,25 +3079,23 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Iterable<Object[]> pattern_SyntethicMethod_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_syntheticMethodDefinitions) {
+			EMoflonEdge _edge_bodyDeclarations) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpMDef = _edge_syntheticMethodDefinitions.getSrc();
-		if (tmpMDef instanceof MMethodDefinition) {
-			MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
-			EObject tmpMSyntethic = _edge_syntheticMethodDefinitions.getTrg();
+		EObject tmpMClass = _edge_bodyDeclarations.getSrc();
+		if (tmpMClass instanceof ClassDeclaration) {
+			ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
+			EObject tmpMSyntethic = _edge_bodyDeclarations.getTrg();
 			if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
 				MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
-				if (mDef.getSyntheticMethodDefinitions().contains(mSyntethic)) {
-					AbstractTypeDeclaration tmpMClass = mSyntethic.getAbstractTypeDeclaration();
-					if (tmpMClass instanceof ClassDeclaration) {
-						ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
-						if (pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_1B(mSyntethic) == null) {
-							if (pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_2BB(mSyntethic,
-									mDef) == null) {
-								if (pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_0BB(mSyntethic,
-										mClass) == null) {
-									_result.add(new Object[] { mSyntethic, mDef, mClass,
-											_edge_syntheticMethodDefinitions });
+				if (mClass.getBodyDeclarations().contains(mSyntethic)) {
+					MMethodDefinition mDef = mSyntethic.getOriginalMethodDefinition();
+					if (mDef != null) {
+						if (pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_0BB(mSyntethic,
+								mClass) == null) {
+							if (pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_1B(mSyntethic) == null) {
+								if (pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_2BB(mSyntethic,
+										mDef) == null) {
+									_result.add(new Object[] { mClass, mDef, mSyntethic, _edge_bodyDeclarations });
 								}
 							}
 						}
@@ -3126,9 +3119,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final boolean pattern_SyntethicMethod_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			SyntethicMethod _this, Match match, MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef,
-			ClassDeclaration mClass) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mSyntethic, mDef, mClass);
+			SyntethicMethod _this, Match match, ClassDeclaration mClass, MMethodDefinition mDef,
+			MSyntheticMethodDefinition mSyntethic) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mClass, mDef, mSyntethic);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3170,38 +3163,38 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_SyntethicMethod_24_2_matchsrctrgcontext_bindingFFFFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mSyntethic");
+	public static final Object[] pattern_SyntethicMethod_24_2_matchsrctrgcontext_bindingFFFFFFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("tSig");
 		EObject _localVariable_1 = targetMatch.getObject("tDef");
-		EObject _localVariable_2 = targetMatch.getObject("tSyntethic");
-		EObject _localVariable_3 = sourceMatch.getObject("mDef");
+		EObject _localVariable_2 = sourceMatch.getObject("mClass");
+		EObject _localVariable_3 = targetMatch.getObject("tSyntethic");
 		EObject _localVariable_4 = targetMatch.getObject("tClass");
-		EObject _localVariable_5 = sourceMatch.getObject("mClass");
-		EObject _localVariable_6 = targetMatch.getObject("tSig");
-		EObject tmpMSyntethic = _localVariable_0;
+		EObject _localVariable_5 = sourceMatch.getObject("mDef");
+		EObject _localVariable_6 = sourceMatch.getObject("mSyntethic");
+		EObject tmpTSig = _localVariable_0;
 		EObject tmpTDef = _localVariable_1;
-		EObject tmpTSyntethic = _localVariable_2;
-		EObject tmpMDef = _localVariable_3;
+		EObject tmpMClass = _localVariable_2;
+		EObject tmpTSyntethic = _localVariable_3;
 		EObject tmpTClass = _localVariable_4;
-		EObject tmpMClass = _localVariable_5;
-		EObject tmpTSig = _localVariable_6;
-		if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
-			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
+		EObject tmpMDef = _localVariable_5;
+		EObject tmpMSyntethic = _localVariable_6;
+		if (tmpTSig instanceof TMethodSignature) {
+			TMethodSignature tSig = (TMethodSignature) tmpTSig;
 			if (tmpTDef instanceof TMethodDefinition) {
 				TMethodDefinition tDef = (TMethodDefinition) tmpTDef;
-				if (tmpTSyntethic instanceof TSyntethicMethod) {
-					TSyntethicMethod tSyntethic = (TSyntethicMethod) tmpTSyntethic;
-					if (tmpMDef instanceof MMethodDefinition) {
-						MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
+				if (tmpMClass instanceof ClassDeclaration) {
+					ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
+					if (tmpTSyntethic instanceof TSyntethicMethod) {
+						TSyntethicMethod tSyntethic = (TSyntethicMethod) tmpTSyntethic;
 						if (tmpTClass instanceof TClass) {
 							TClass tClass = (TClass) tmpTClass;
-							if (tmpMClass instanceof ClassDeclaration) {
-								ClassDeclaration mClass = (ClassDeclaration) tmpMClass;
-								if (tmpTSig instanceof TMethodSignature) {
-									TMethodSignature tSig = (TMethodSignature) tmpTSig;
-									return new Object[] { mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig,
-											sourceMatch, targetMatch };
+							if (tmpMDef instanceof MMethodDefinition) {
+								MMethodDefinition mDef = (MMethodDefinition) tmpMDef;
+								if (tmpMSyntethic instanceof MSyntheticMethodDefinition) {
+									MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) tmpMSyntethic;
+									return new Object[] { tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic,
+											targetMatch, sourceMatch };
 								}
 							}
 						}
@@ -3212,12 +3205,11 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return null;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_SyntethicMethod_24_2_matchsrctrgcontext_blackBBBBBBBBB(TMethodSignature tSig,
+			TMethodDefinition tDef, ClassDeclaration mClass, TSyntethicMethod tSyntethic, TClass tClass,
+			MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, sourceMatch, targetMatch };
+			return new Object[] { tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3225,21 +3217,21 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	public static final Object[] pattern_SyntethicMethod_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding = pattern_SyntethicMethod_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding != null) {
-			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[0];
+			TMethodSignature tSig = (TMethodSignature) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[0];
 			TMethodDefinition tDef = (TMethodDefinition) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[1];
-			TSyntethicMethod tSyntethic = (TSyntethicMethod) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[2];
-			MMethodDefinition mDef = (MMethodDefinition) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[3];
+			ClassDeclaration mClass = (ClassDeclaration) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[2];
+			TSyntethicMethod tSyntethic = (TSyntethicMethod) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[3];
 			TClass tClass = (TClass) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[4];
-			ClassDeclaration mClass = (ClassDeclaration) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[5];
-			TMethodSignature tSig = (TMethodSignature) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[6];
+			MMethodDefinition mDef = (MMethodDefinition) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[5];
+			MSyntheticMethodDefinition mSyntethic = (MSyntheticMethodDefinition) result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_binding[6];
 
 			Object[] result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_black = pattern_SyntethicMethod_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, sourceMatch, targetMatch);
+					tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, sourceMatch, targetMatch);
 			if (result_pattern_SyntethicMethod_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, sourceMatch,
+				return new Object[] { tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3247,14 +3239,14 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_24_3_solvecsp_bindingFBBBBBBBBBB(SyntethicMethod _this,
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig, Match sourceMatch,
+			TMethodSignature tSig, TMethodDefinition tDef, ClassDeclaration mClass, TSyntethicMethod tSyntethic,
+			TClass tClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig,
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, sourceMatch,
+			return new Object[] { csp, _this, tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3265,11 +3257,11 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(SyntethicMethod _this,
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig, Match sourceMatch,
+			TMethodSignature tSig, TMethodDefinition tDef, ClassDeclaration mClass, TSyntethicMethod tSyntethic,
+			TClass tClass, MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_SyntethicMethod_24_3_solvecsp_binding = pattern_SyntethicMethod_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, sourceMatch, targetMatch);
+				_this, tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, sourceMatch, targetMatch);
 		if (result_pattern_SyntethicMethod_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_SyntethicMethod_24_3_solvecsp_binding[0];
 
@@ -3277,7 +3269,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					csp);
 			if (result_pattern_SyntethicMethod_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, sourceMatch,
+				return new Object[] { csp, _this, tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3290,19 +3282,19 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_SyntethicMethod_24_5_matchcorrcontext_blackBBFFBBBB(
-			TMethodDefinition tDef, MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass, Match sourceMatch,
+	public static final Iterable<Object[]> pattern_SyntethicMethod_24_5_matchcorrcontext_blackBFBFBBBB(
+			TMethodDefinition tDef, ClassDeclaration mClass, TClass tClass, MMethodDefinition mDef, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tDef, MDefinitionToTMember.class, "target")) {
-				if (mDef.equals(mDefinitionToTMember.getSource())) {
-					for (TypeToTAbstractType mClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mClass, TypeToTAbstractType.class, "source")) {
-						if (tClass.equals(mClassDeclarationToTClass.getTarget())) {
-							_result.add(new Object[] { tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember,
-									tClass, mClass, sourceMatch, targetMatch });
+			for (TypeToTAbstractType mClassDeclarationToTClass : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mClass, TypeToTAbstractType.class, "source")) {
+				if (tClass.equals(mClassDeclarationToTClass.getTarget())) {
+					for (MDefinitionToTMember mDefinitionToTMember : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tDef, MDefinitionToTMember.class, "target")) {
+						if (mDef.equals(mDefinitionToTMember.getSource())) {
+							_result.add(new Object[] { tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember,
+									tClass, mDef, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -3324,20 +3316,20 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return new Object[] { mClassDeclarationToTClass, mDefinitionToTMember, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_SyntethicMethod_24_6_createcorrespondence_blackBBBBBBBB(
-			MSyntheticMethodDefinition mSyntethic, TMethodDefinition tDef, TSyntethicMethod tSyntethic,
-			MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig, CCMatch ccMatch) {
-		return new Object[] { mSyntethic, tDef, tSyntethic, mDef, tClass, mClass, tSig, ccMatch };
+	public static final Object[] pattern_SyntethicMethod_24_6_createcorrespondence_blackBBBBBBBB(TMethodSignature tSig,
+			TMethodDefinition tDef, ClassDeclaration mClass, TSyntethicMethod tSyntethic, TClass tClass,
+			MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic, CCMatch ccMatch) {
+		return new Object[] { tSig, tDef, mClass, tSyntethic, tClass, mDef, mSyntethic, ccMatch };
 	}
 
-	public static final Object[] pattern_SyntethicMethod_24_6_createcorrespondence_greenBBFB(
-			MSyntheticMethodDefinition mSyntethic, TSyntethicMethod tSyntethic, CCMatch ccMatch) {
+	public static final Object[] pattern_SyntethicMethod_24_6_createcorrespondence_greenFBBB(
+			TSyntethicMethod tSyntethic, MSyntheticMethodDefinition mSyntethic, CCMatch ccMatch) {
 		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = PmFactory.eINSTANCE
 				.createMSyntethicMethodToTSyntethicMethod();
 		mSyntToTSynt.setTarget(tSyntethic);
 		mSyntToTSynt.setSource(mSyntethic);
 		ccMatch.getCreateCorr().add(mSyntToTSynt);
-		return new Object[] { mSyntethic, tSyntethic, mSyntToTSynt, ccMatch };
+		return new Object[] { mSyntToTSynt, tSyntethic, mSyntethic, ccMatch };
 	}
 
 	public static final Object[] pattern_SyntethicMethod_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -3363,10 +3355,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_0BB(
 			MSyntheticMethodDefinition mSyntethic, ClassDeclaration mClass) {
-		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_588937 = mSyntethic
+		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_430410 = mSyntethic
 				.getAbstractTypeDeclaration();
-		if (__DEC_mSyntethic_abstractTypeDeclaration_588937 != null) {
-			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_588937)) {
+		if (__DEC_mSyntethic_abstractTypeDeclaration_430410 != null) {
+			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_430410)) {
 				return new Object[] { mSyntethic, mClass };
 			}
 		}
@@ -3376,9 +3368,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_1B(
 			MSyntheticMethodDefinition mSyntethic) {
-		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_608786 = mSyntethic
+		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_30409 = mSyntethic
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_608786 != null) {
+		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_30409 != null) {
 			return new Object[] { mSyntethic };
 		}
 
@@ -3387,9 +3379,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_2BB(
 			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef) {
-		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_9378 = mSyntethic.getOriginalMethodDefinition();
-		if (__DEC_mSyntethic_syntheticMethodDefinitions_9378 != null) {
-			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_9378)) {
+		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_766472 = mSyntethic.getOriginalMethodDefinition();
+		if (__DEC_mSyntethic_syntheticMethodDefinitions_766472 != null) {
+			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_766472)) {
 				return new Object[] { mSyntethic, mDef };
 			}
 		}
@@ -3397,14 +3389,14 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return null;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_blackBBB(
-			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef, ClassDeclaration mClass) {
-		if (mDef.getSyntheticMethodDefinitions().contains(mSyntethic)) {
-			if (mClass.getBodyDeclarations().contains(mSyntethic)) {
+	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_blackBBB(ClassDeclaration mClass,
+			MMethodDefinition mDef, MSyntheticMethodDefinition mSyntethic) {
+		if (mClass.getBodyDeclarations().contains(mSyntethic)) {
+			if (mDef.getSyntheticMethodDefinitions().contains(mSyntethic)) {
 				if (pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_0BB(mSyntethic, mClass) == null) {
 					if (pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_1B(mSyntethic) == null) {
 						if (pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_2BB(mSyntethic, mDef) == null) {
-							return new Object[] { mSyntethic, mDef, mClass };
+							return new Object[] { mClass, mDef, mSyntethic };
 						}
 					}
 				}
@@ -3425,9 +3417,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_0BB(TSyntethicMethod tSyntethic,
 			TMethodDefinition tDef) {
-		TMethodDefinition __DEC_tSyntethic_syntethicMethods_680901 = tSyntethic.getOriginalMethodDefinition();
-		if (__DEC_tSyntethic_syntethicMethods_680901 != null) {
-			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_680901)) {
+		TMethodDefinition __DEC_tSyntethic_syntethicMethods_868091 = tSyntethic.getOriginalMethodDefinition();
+		if (__DEC_tSyntethic_syntethicMethods_868091 != null) {
+			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_868091)) {
 				return new Object[] { tSyntethic, tDef };
 			}
 		}
@@ -3437,9 +3429,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_1BB(TSyntethicMethod tSyntethic,
 			TMethodSignature tSig) {
-		TSignature __DEC_tSyntethic_definitions_329500 = tSyntethic.getSignature();
-		if (__DEC_tSyntethic_definitions_329500 != null) {
-			if (!tSig.equals(__DEC_tSyntethic_definitions_329500)) {
+		TSignature __DEC_tSyntethic_definitions_559196 = tSyntethic.getSignature();
+		if (__DEC_tSyntethic_definitions_559196 != null) {
+			if (!tSig.equals(__DEC_tSyntethic_definitions_559196)) {
 				return new Object[] { tSyntethic, tSig };
 			}
 		}
@@ -3447,15 +3439,15 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return null;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_blackBBBB(TMethodDefinition tDef,
-			TSyntethicMethod tSyntethic, TClass tClass, TMethodSignature tSig) {
-		if (tDef.getSyntethicMethods().contains(tSyntethic)) {
-			if (tSig.equals(tSyntethic.getSignature())) {
-				if (tSig.equals(tDef.getSignature())) {
+	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_blackBBBB(TMethodSignature tSig,
+			TMethodDefinition tDef, TSyntethicMethod tSyntethic, TClass tClass) {
+		if (tSig.equals(tDef.getSignature())) {
+			if (tDef.getSyntethicMethods().contains(tSyntethic)) {
+				if (tSig.equals(tSyntethic.getSignature())) {
 					if (tClass.getDefines().contains(tSyntethic)) {
 						if (pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_0BB(tSyntethic, tDef) == null) {
 							if (pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_1BB(tSyntethic, tSig) == null) {
-								return new Object[] { tDef, tSyntethic, tClass, tSig };
+								return new Object[] { tSig, tDef, tSyntethic, tClass };
 							}
 						}
 					}
@@ -3488,17 +3480,17 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TMethodDefinition tDef) {
-		if (ruleResult.getTargetObjects().contains(tDef)) {
-			return new Object[] { ruleResult, tDef };
+			ModelgeneratorRuleResult ruleResult, TMethodSignature tSig) {
+		if (ruleResult.getTargetObjects().contains(tSig)) {
+			return new Object[] { ruleResult, tSig };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TMethodSignature tSig) {
-		if (ruleResult.getTargetObjects().contains(tSig)) {
-			return new Object[] { ruleResult, tSig };
+			ModelgeneratorRuleResult ruleResult, TMethodDefinition tDef) {
+		if (ruleResult.getTargetObjects().contains(tDef)) {
+			return new Object[] { ruleResult, tDef };
 		}
 		return null;
 	}
@@ -3563,11 +3555,11 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 										TMethodSignature tSig = (TMethodSignature) tmpTSig;
 										if (pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 												mDefinitionToTMember) == null) {
-											if (pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+											if (pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 													tDef) == null) {
 												if (pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_3BB(
 														ruleResult, mDef) == null) {
-													if (pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_1BB(
+													if (pattern_SyntethicMethod_29_2_isapplicablecore_black_nac_0BB(
 															ruleResult, tSig) == null) {
 														for (EObject tmpMClassDeclarationToTClass : mClassDeclarationToTClassList
 																.getEntryObjects()) {
@@ -3589,7 +3581,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 																						ruleResult, tClass) == null) {
 																					_result.add(new Object[] {
 																							mDefinitionToTMemberList,
-																							tDef, tSig,
+																							tSig, tDef,
 																							mDefinitionToTMember, mDef,
 																							mClassDeclarationToTClassList,
 																							mClassDeclarationToTClass,
@@ -3624,15 +3616,16 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_29_3_solveCSP_bindingFBBBBBBBBBB(SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch, TMethodDefinition tDef, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tDef, mDef,
-				mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig, ruleResult);
+			IsApplicableMatch isApplicableMatch, TMethodSignature tSig, TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tSig, tDef,
+				mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tDef, mDef, mClassDeclarationToTClass,
-					mDefinitionToTMember, tClass, mClass, tSig, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass,
+					mDefinitionToTMember, tClass, mDef, ruleResult };
 		}
 		return null;
 	}
@@ -3642,12 +3635,13 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	}
 
 	public static final Object[] pattern_SyntethicMethod_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(SyntethicMethod _this,
-			IsApplicableMatch isApplicableMatch, TMethodDefinition tDef, MMethodDefinition mDef,
-			TypeToTAbstractType mClassDeclarationToTClass, MDefinitionToTMember mDefinitionToTMember, TClass tClass,
-			ClassDeclaration mClass, TMethodSignature tSig, ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, TMethodSignature tSig, TMethodDefinition tDef,
+			TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_SyntethicMethod_29_3_solveCSP_binding = pattern_SyntethicMethod_29_3_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass,
-				tSig, ruleResult);
+				_this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass,
+				mDef, ruleResult);
 		if (result_pattern_SyntethicMethod_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_SyntethicMethod_29_3_solveCSP_binding[0];
 
@@ -3655,8 +3649,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 					csp);
 			if (result_pattern_SyntethicMethod_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tDef, mDef, mClassDeclarationToTClass,
-						mDefinitionToTMember, tClass, mClass, tSig, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tSig, tDef, mClassDeclarationToTClass, mClass,
+						mDefinitionToTMember, tClass, mDef, ruleResult };
 			}
 		}
 		return null;
@@ -3668,43 +3662,43 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 		return _result;
 	}
 
-	public static final Object[] pattern_SyntethicMethod_29_5_checknacs_blackBBBBBBB(TMethodDefinition tDef,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig) {
-		return new Object[] { tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig };
+	public static final Object[] pattern_SyntethicMethod_29_5_checknacs_blackBBBBBBB(TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef) {
+		return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef };
 	}
 
-	public static final Object[] pattern_SyntethicMethod_29_6_perform_blackBBBBBBBB(TMethodDefinition tDef,
-			MMethodDefinition mDef, TypeToTAbstractType mClassDeclarationToTClass,
-			MDefinitionToTMember mDefinitionToTMember, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig,
+	public static final Object[] pattern_SyntethicMethod_29_6_perform_blackBBBBBBBB(TMethodSignature tSig,
+			TMethodDefinition tDef, TypeToTAbstractType mClassDeclarationToTClass, ClassDeclaration mClass,
+			MDefinitionToTMember mDefinitionToTMember, TClass tClass, MMethodDefinition mDef,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tDef, mDef, mClassDeclarationToTClass, mDefinitionToTMember, tClass, mClass, tSig,
+		return new Object[] { tSig, tDef, mClassDeclarationToTClass, mClass, mDefinitionToTMember, tClass, mDef,
 				ruleResult };
 	}
 
-	public static final Object[] pattern_SyntethicMethod_29_6_perform_greenFBFBFBBBB(TMethodDefinition tDef,
-			MMethodDefinition mDef, TClass tClass, ClassDeclaration mClass, TMethodSignature tSig,
+	public static final Object[] pattern_SyntethicMethod_29_6_perform_greenBBBFFBBFB(TMethodSignature tSig,
+			TMethodDefinition tDef, ClassDeclaration mClass, TClass tClass, MMethodDefinition mDef,
 			ModelgeneratorRuleResult ruleResult) {
-		MSyntheticMethodDefinition mSyntethic = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
-		TSyntethicMethod tSyntethic = BasicFactory.eINSTANCE.createTSyntethicMethod();
 		MSyntethicMethodToTSyntethicMethod mSyntToTSynt = PmFactory.eINSTANCE
 				.createMSyntethicMethodToTSyntethicMethod();
+		TSyntethicMethod tSyntethic = BasicFactory.eINSTANCE.createTSyntethicMethod();
+		MSyntheticMethodDefinition mSyntethic = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		mDef.getSyntheticMethodDefinitions().add(mSyntethic);
-		mClass.getBodyDeclarations().add(mSyntethic);
-		ruleResult.getSourceObjects().add(mSyntethic);
+		ruleResult.getCorrObjects().add(mSyntToTSynt);
 		tDef.getSyntethicMethods().add(tSyntethic);
+		mSyntToTSynt.setTarget(tSyntethic);
 		tSyntethic.setSignature(tSig);
 		tClass.getDefines().add(tSyntethic);
 		ruleResult.getTargetObjects().add(tSyntethic);
-		mSyntToTSynt.setTarget(tSyntethic);
+		mClass.getBodyDeclarations().add(mSyntethic);
 		mSyntToTSynt.setSource(mSyntethic);
-		ruleResult.getCorrObjects().add(mSyntToTSynt);
+		mDef.getSyntheticMethodDefinitions().add(mSyntethic);
+		ruleResult.getSourceObjects().add(mSyntethic);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mSyntethic, tDef, tSyntethic, mDef, mSyntToTSynt, tClass, mClass, tSig, ruleResult };
+		return new Object[] { tSig, tDef, mClass, mSyntToTSynt, tSyntethic, tClass, mDef, mSyntethic, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_SyntethicMethod_29_7_expressionFB(

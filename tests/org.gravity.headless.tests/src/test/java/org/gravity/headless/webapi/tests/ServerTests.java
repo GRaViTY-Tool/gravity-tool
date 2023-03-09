@@ -102,7 +102,9 @@ public class ServerTests {
 	 */
 	@AfterAll
 	public static void cleanup() {
-		server.stopServer();
+		if(server!=null) {
+			server.stopServer();
+		}
 		FileUtils.recursiveDelete(cache);
 	}
 

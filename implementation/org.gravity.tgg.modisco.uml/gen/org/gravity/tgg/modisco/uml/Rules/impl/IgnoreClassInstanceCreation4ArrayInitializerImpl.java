@@ -86,22 +86,22 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, ClassInstanceCreation create, ArrayInitializer array) {
+	public boolean isAppropriate_FWD(Match match, ArrayInitializer array, ClassInstanceCreation create) {
 
 		Object[] result1_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
-				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_1_initialbindings_blackBBBB(this, match, create,
-						array);
+				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_1_initialbindings_blackBBBB(this, match, array,
+						create);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[create] = " + create + ", " + "[array] = " + array + ".");
+					+ "[match] = " + match + ", " + "[array] = " + array + ", " + "[create] = " + create + ".");
 		}
 
 		Object[] result2_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_bindingAndBlackFBBBB(this, match,
-						create, array);
+						array, create);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[create] = " + create + ", " + "[array] = " + array + ".");
+					+ "[match] = " + match + ", " + "[array] = " + array + ", " + "[create] = " + create + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -110,31 +110,31 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 			Object[] result4_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_4_collectelementstobetranslated_blackBBB(
-							match, create, array);
+							match, array, create);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[create] = " + create + ", " + "[array] = " + array + ".");
+						+ "[array] = " + array + ", " + "[create] = " + create + ".");
 			}
 			IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_4_collectelementstobetranslated_greenBBBF(
-							match, create, array);
+							match, array, create);
 			//nothing EMoflonEdge array__create____expressions = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_5_collectcontextelements_blackBBB(match,
-							create, array);
+							array, create);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[create] = " + create + ", " + "[array] = " + array + ".");
+						+ "[array] = " + array + ", " + "[create] = " + create + ".");
 			}
 			IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_5_collectcontextelements_greenBBB(match,
-							create, array);
+							array, create);
 
 			// 
 			IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_6_registerobjectstomatch_expressionBBBB(
-							this, match, create, array);
+							this, match, array, create);
 			return IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_7_expressionF();
 		} else {
@@ -158,8 +158,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ClassInstanceCreation create = (ClassInstanceCreation) result1_bindingAndBlack[0];
-		ArrayInitializer array = (ArrayInitializer) result1_bindingAndBlack[1];
+		ArrayInitializer array = (ArrayInitializer) result1_bindingAndBlack[0];
+		ClassInstanceCreation create = (ClassInstanceCreation) result1_bindingAndBlack[1];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[2];
 
 		Object[] result2_green = IgnoreClassInstanceCreation4ArrayInitializerImpl
@@ -171,21 +171,21 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 		Object[] result3_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_3_bookkeepingforedges_blackBBB(ruleresult,
-						create, array);
+						array, create);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[create] = " + create + ", " + "[array] = " + array + ".");
+					+ ", " + "[array] = " + array + ", " + "[create] = " + create + ".");
 		}
 		IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_3_bookkeepingforedges_greenBBBF(ruleresult,
-						create, array);
+						array, create);
 		//nothing EMoflonEdge array__create____expressions = (EMoflonEdge) result3_green[3];
 
 		// 
 		// 
 		IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_5_registerobjects_expressionBBBB(this,
-						ruleresult, create, array);
+						ruleresult, array, create);
 		return IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_6_expressionFB(ruleresult);
 	}
@@ -215,25 +215,25 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		ClassInstanceCreation create = (ClassInstanceCreation) result2_binding[0];
-		ArrayInitializer array = (ArrayInitializer) result2_binding[1];
+		ArrayInitializer array = (ArrayInitializer) result2_binding[0];
+		ClassInstanceCreation create = (ClassInstanceCreation) result2_binding[1];
 		for (Object[] result2_black : IgnoreClassInstanceCreation4ArrayInitializerImpl
-				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_2_corematch_blackBBB(create, array, match)) {
+				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_2_corematch_blackBBB(array, create, match)) {
 			// ForEach 
 			for (Object[] result3_black : IgnoreClassInstanceCreation4ArrayInitializerImpl
-					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_3_findcontext_blackBB(create, array)) {
+					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_3_findcontext_blackBB(array, create)) {
 				Object[] result3_green = IgnoreClassInstanceCreation4ArrayInitializerImpl
-						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_3_findcontext_greenBBFF(create, array);
+						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_3_findcontext_greenBBFF(array, create);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[2];
 				//nothing EMoflonEdge array__create____expressions = (EMoflonEdge) result3_green[3];
 
 				Object[] result4_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
 						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_bindingAndBlackFBBBB(this,
-								isApplicableMatch, create, array);
+								isApplicableMatch, array, create);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[create] = " + create + ", "
-							+ "[array] = " + array + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[array] = " + array + ", "
+							+ "[create] = " + create + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -266,9 +266,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, ClassInstanceCreation create, ArrayInitializer array) {
-		match.registerObject("create", create);
+	public void registerObjectsToMatch_FWD(Match match, ArrayInitializer array, ClassInstanceCreation create) {
 		match.registerObject("array", array);
+		match.registerObject("create", create);
 
 	}
 
@@ -277,7 +277,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, ClassInstanceCreation create, ArrayInitializer array) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ArrayInitializer array, ClassInstanceCreation create) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -306,8 +306,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassInstanceCreation create,
-			ArrayInitializer array) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array,
+			ClassInstanceCreation create) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -322,8 +322,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("create", create);
 		isApplicableMatch.registerObject("array", array);
+		isApplicableMatch.registerObject("create", create);
 		return csp;
 	}
 
@@ -341,9 +341,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject create, EObject array) {
-		ruleresult.registerObject("create", create);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject array, EObject create) {
 		ruleresult.registerObject("array", array);
+		ruleresult.registerObject("create", create);
 
 	}
 
@@ -481,7 +481,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_141(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -499,8 +499,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		for (Object[] result2_black : IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_2_testcorematchandDECs_blackFFB(
 						_edge_expressions)) {
-			ClassInstanceCreation create = (ClassInstanceCreation) result2_black[0];
-			ArrayInitializer array = (ArrayInitializer) result2_black[1];
+			ArrayInitializer array = (ArrayInitializer) result2_black[0];
+			ClassInstanceCreation create = (ClassInstanceCreation) result2_black[1];
 			Object[] result2_green = IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -508,7 +508,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			// 
 			if (IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, create, array)) {
+							this, match, array, create)) {
 				// 
 				if (IgnoreClassInstanceCreation4ArrayInitializerImpl
 						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -620,15 +620,15 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		ClassInstanceCreation create = (ClassInstanceCreation) result2_bindingAndBlack[0];
-		ArrayInitializer array = (ArrayInitializer) result2_bindingAndBlack[1];
+		ArrayInitializer array = (ArrayInitializer) result2_bindingAndBlack[0];
+		ClassInstanceCreation create = (ClassInstanceCreation) result2_bindingAndBlack[1];
 
 		Object[] result3_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
-				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_bindingAndBlackFBBBBB(this, create,
-						array, sourceMatch, targetMatch);
+				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_bindingAndBlackFBBBBB(this, array,
+						create, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[create] = " + create + ", " + "[array] = " + array + ", " + "[sourceMatch] = " + sourceMatch
+					+ "[array] = " + array + ", " + "[create] = " + create + ", " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -645,11 +645,11 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
-						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_6_createcorrespondence_blackBBB(create,
-								array, ccMatch);
+						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_6_createcorrespondence_blackBBB(array,
+								create, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[create] = " + create
-							+ ", " + "[array] = " + array + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[array] = " + array + ", "
+							+ "[create] = " + create + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
@@ -676,7 +676,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(ClassInstanceCreation create, ArrayInitializer array, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(ArrayInitializer array, ClassInstanceCreation create, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -706,9 +706,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(ClassInstanceCreation create, ArrayInitializer array) {// 
+	public boolean checkDEC_FWD(ArrayInitializer array, ClassInstanceCreation create) {// 
 		Object[] result1_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
-				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_23_1_matchtggpattern_blackBB(create, array);
+				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_23_1_matchtggpattern_blackBB(array, create);
 		if (result1_black != null) {
 			return IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_23_2_expressionF();
@@ -736,7 +736,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			ClassInstanceCreation createParameter, ArrayInitializer arrayParameter) {
+			ArrayInitializer arrayParameter, ClassInstanceCreation createParameter) {
 
 		Object[] result1_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_1_createresult_blackB(this);
@@ -752,18 +752,18 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		for (Object[] result2_black : IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_blackFFFFBB(
 						ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList createList = (RuleEntryList) result2_black[0];
-			ClassInstanceCreation create = (ClassInstanceCreation) result2_black[1];
-			//nothing RuleEntryList arrayList = (RuleEntryList) result2_black[2];
-			ArrayInitializer array = (ArrayInitializer) result2_black[3];
+			//nothing RuleEntryList arrayList = (RuleEntryList) result2_black[0];
+			ArrayInitializer array = (ArrayInitializer) result2_black[1];
+			//nothing RuleEntryList createList = (RuleEntryList) result2_black[2];
+			ClassInstanceCreation create = (ClassInstanceCreation) result2_black[3];
 
 			Object[] result3_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_bindingAndBlackFBBBBB(this,
-							isApplicableMatch, create, array, ruleResult);
+							isApplicableMatch, array, create, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[create] = " + create + ", "
-						+ "[array] = " + array + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[array] = " + array + ", "
+						+ "[create] = " + create + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -771,18 +771,18 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 					.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
-						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_5_checknacs_blackBB(create, array);
+						.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_5_checknacs_blackBB(array, create);
 				if (result5_black != null) {
 
 					Object[] result6_black = IgnoreClassInstanceCreation4ArrayInitializerImpl
-							.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_6_perform_blackBBB(create, array,
+							.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_6_perform_blackBBB(array, create,
 									ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[create] = " + create
-								+ ", " + "[array] = " + array + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[array] = " + array
+								+ ", " + "[create] = " + create + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					IgnoreClassInstanceCreation4ArrayInitializerImpl
-							.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_6_perform_greenBBB(create, array,
+							.pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_6_perform_greenBBB(array, create,
 									ruleResult);
 
 				} else {
@@ -801,8 +801,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassInstanceCreation create,
-			ArrayInitializer array, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array,
+			ClassInstanceCreation create, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -817,8 +817,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("create", create);
 		isApplicableMatch.registerObject("array", array);
+		isApplicableMatch.registerObject("create", create);
 		return csp;
 	}
 
@@ -839,25 +839,25 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return isAppropriate_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD__MATCH_ARRAYINITIALIZER_CLASSINSTANCECREATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(ClassInstanceCreation) arguments.get(2));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ARRAYINITIALIZER_CLASSINSTANCECREATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(ClassInstanceCreation) arguments.get(2));
 			return null;
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ARRAYINITIALIZER_CLASSINSTANCECREATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(ClassInstanceCreation) arguments.get(2));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(ClassInstanceCreation) arguments.get(1), (ArrayInitializer) arguments.get(2));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ARRAYINITIALIZER_CLASSINSTANCECREATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(ClassInstanceCreation) arguments.get(2));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT:
@@ -881,30 +881,29 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_141__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_141((EMoflonEdge) arguments.get(0));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_119__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_CC__CLASSINSTANCECREATION_ARRAYINITIALIZER_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((ClassInstanceCreation) arguments.get(0),
-					(ArrayInitializer) arguments.get(1), (Match) arguments.get(2), (Match) arguments.get(3));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_CC__ARRAYINITIALIZER_CLASSINSTANCECREATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((ArrayInitializer) arguments.get(0),
+					(ClassInstanceCreation) arguments.get(1), (Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_FWD__CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return checkDEC_FWD((ClassInstanceCreation) arguments.get(0), (ArrayInitializer) arguments.get(1));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_FWD__ARRAYINITIALIZER_CLASSINSTANCECREATION:
+			return checkDEC_FWD((ArrayInitializer) arguments.get(0), (ClassInstanceCreation) arguments.get(1));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_BWD:
 			return checkDEC_BWD();
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL__RULEENTRYCONTAINER_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ClassInstanceCreation) arguments.get(1), (ArrayInitializer) arguments.get(2),
-					(ModelgeneratorRuleResult) arguments.get(3));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL__RULEENTRYCONTAINER_ARRAYINITIALIZER_CLASSINSTANCECREATION:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(ClassInstanceCreation) arguments.get(2));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ARRAYINITIALIZER_CLASSINSTANCECREATION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(ClassInstanceCreation) arguments.get(2), (ModelgeneratorRuleResult) arguments.get(3));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -912,18 +911,18 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_1_initialbindings_blackBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ClassInstanceCreation create,
-			ArrayInitializer array) {
-		return new Object[] { _this, match, create, array };
+			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ArrayInitializer array,
+			ClassInstanceCreation create) {
+		return new Object[] { _this, match, array, create };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_bindingFBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ClassInstanceCreation create,
-			ArrayInitializer array) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, create, array);
+			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ArrayInitializer array,
+			ClassInstanceCreation create) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, array, create);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, create, array };
+			return new Object[] { csp, _this, match, array, create };
 		}
 		return null;
 	}
@@ -933,10 +932,10 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_bindingAndBlackFBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ClassInstanceCreation create,
-			ArrayInitializer array) {
+			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ArrayInitializer array,
+			ClassInstanceCreation create) {
 		Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_binding = pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_bindingFBBBB(
-				_this, match, create, array);
+				_this, match, array, create);
 		if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_binding[0];
 
@@ -944,7 +943,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 					csp);
 			if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, create, array };
+				return new Object[] { csp, _this, match, array, create };
 			}
 		}
 		return null;
@@ -958,37 +957,37 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_4_collectelementstobetranslated_blackBBB(
-			Match match, ClassInstanceCreation create, ArrayInitializer array) {
-		return new Object[] { match, create, array };
+			Match match, ArrayInitializer array, ClassInstanceCreation create) {
+		return new Object[] { match, array, create };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_4_collectelementstobetranslated_greenBBBF(
-			Match match, ClassInstanceCreation create, ArrayInitializer array) {
+			Match match, ArrayInitializer array, ClassInstanceCreation create) {
 		EMoflonEdge array__create____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String array__create____expressions_name_prime = "expressions";
 		array__create____expressions.setSrc(array);
 		array__create____expressions.setTrg(create);
 		match.getToBeTranslatedEdges().add(array__create____expressions);
 		array__create____expressions.setName(array__create____expressions_name_prime);
-		return new Object[] { match, create, array, array__create____expressions };
+		return new Object[] { match, array, create, array__create____expressions };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_5_collectcontextelements_blackBBB(
-			Match match, ClassInstanceCreation create, ArrayInitializer array) {
-		return new Object[] { match, create, array };
+			Match match, ArrayInitializer array, ClassInstanceCreation create) {
+		return new Object[] { match, array, create };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_5_collectcontextelements_greenBBB(
-			Match match, ClassInstanceCreation create, ArrayInitializer array) {
-		match.getContextNodes().add(create);
+			Match match, ArrayInitializer array, ClassInstanceCreation create) {
 		match.getContextNodes().add(array);
-		return new Object[] { match, create, array };
+		match.getContextNodes().add(create);
+		return new Object[] { match, array, create };
 	}
 
 	public static final void pattern_IgnoreClassInstanceCreation4ArrayInitializer_0_6_registerobjectstomatch_expressionBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ClassInstanceCreation create,
-			ArrayInitializer array) {
-		_this.registerObjectsToMatch_FWD(match, create, array);
+			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ArrayInitializer array,
+			ClassInstanceCreation create) {
+		_this.registerObjectsToMatch_FWD(match, array, create);
 
 	}
 
@@ -1004,27 +1003,27 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_bindingFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("create");
-		EObject _localVariable_1 = isApplicableMatch.getObject("array");
-		EObject tmpCreate = _localVariable_0;
-		EObject tmpArray = _localVariable_1;
-		if (tmpCreate instanceof ClassInstanceCreation) {
-			ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
-			if (tmpArray instanceof ArrayInitializer) {
-				ArrayInitializer array = (ArrayInitializer) tmpArray;
-				return new Object[] { create, array, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("array");
+		EObject _localVariable_1 = isApplicableMatch.getObject("create");
+		EObject tmpArray = _localVariable_0;
+		EObject tmpCreate = _localVariable_1;
+		if (tmpArray instanceof ArrayInitializer) {
+			ArrayInitializer array = (ArrayInitializer) tmpArray;
+			if (tmpCreate instanceof ClassInstanceCreation) {
+				ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
+				return new Object[] { array, create, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_blackBBFBB(
-			ClassInstanceCreation create, ArrayInitializer array, IgnoreClassInstanceCreation4ArrayInitializer _this,
+			ArrayInitializer array, ClassInstanceCreation create, IgnoreClassInstanceCreation4ArrayInitializer _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { create, array, csp, _this, isApplicableMatch };
+				return new Object[] { array, create, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1035,15 +1034,15 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_binding = pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_bindingFFB(
 				isApplicableMatch);
 		if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_binding != null) {
-			ClassInstanceCreation create = (ClassInstanceCreation) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_binding[0];
-			ArrayInitializer array = (ArrayInitializer) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_binding[1];
+			ArrayInitializer array = (ArrayInitializer) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_binding[0];
+			ClassInstanceCreation create = (ClassInstanceCreation) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_binding[1];
 
 			Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_black = pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_blackBBFBB(
-					create, array, _this, isApplicableMatch);
+					array, create, _this, isApplicableMatch);
 			if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_1_performtransformation_black[2];
 
-				return new Object[] { create, array, csp, _this, isApplicableMatch };
+				return new Object[] { array, create, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1055,15 +1054,15 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_3_bookkeepingforedges_blackBBB(
-			PerformRuleResult ruleresult, EObject create, EObject array) {
+			PerformRuleResult ruleresult, EObject array, EObject create) {
 		if (!array.equals(create)) {
-			return new Object[] { ruleresult, create, array };
+			return new Object[] { ruleresult, array, create };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_3_bookkeepingforedges_greenBBBF(
-			PerformRuleResult ruleresult, EObject create, EObject array) {
+			PerformRuleResult ruleresult, EObject array, EObject create) {
 		EMoflonEdge array__create____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "IgnoreClassInstanceCreation4ArrayInitializer";
 		String array__create____expressions_name_prime = "expressions";
@@ -1072,13 +1071,13 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		ruleresult.getTranslatedEdges().add(array__create____expressions);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		array__create____expressions.setName(array__create____expressions_name_prime);
-		return new Object[] { ruleresult, create, array, array__create____expressions };
+		return new Object[] { ruleresult, array, create, array__create____expressions };
 	}
 
 	public static final void pattern_IgnoreClassInstanceCreation4ArrayInitializer_1_5_registerobjects_expressionBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, PerformRuleResult ruleresult, EObject create,
-			EObject array) {
-		_this.registerObjects_FWD(ruleresult, create, array);
+			IgnoreClassInstanceCreation4ArrayInitializer _this, PerformRuleResult ruleresult, EObject array,
+			EObject create) {
+		_this.registerObjects_FWD(ruleresult, array, create);
 
 	}
 
@@ -1141,57 +1140,57 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_2_corematch_bindingFFB(
 			Match match) {
-		EObject _localVariable_0 = match.getObject("create");
-		EObject _localVariable_1 = match.getObject("array");
-		EObject tmpCreate = _localVariable_0;
-		EObject tmpArray = _localVariable_1;
-		if (tmpCreate instanceof ClassInstanceCreation) {
-			ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
-			if (tmpArray instanceof ArrayInitializer) {
-				ArrayInitializer array = (ArrayInitializer) tmpArray;
-				return new Object[] { create, array, match };
+		EObject _localVariable_0 = match.getObject("array");
+		EObject _localVariable_1 = match.getObject("create");
+		EObject tmpArray = _localVariable_0;
+		EObject tmpCreate = _localVariable_1;
+		if (tmpArray instanceof ArrayInitializer) {
+			ArrayInitializer array = (ArrayInitializer) tmpArray;
+			if (tmpCreate instanceof ClassInstanceCreation) {
+				ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
+				return new Object[] { array, create, match };
 			}
 		}
 		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_2_corematch_blackBBB(
-			ClassInstanceCreation create, ArrayInitializer array, Match match) {
+			ArrayInitializer array, ClassInstanceCreation create, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		_result.add(new Object[] { create, array, match });
+		_result.add(new Object[] { array, create, match });
 		return _result;
 	}
 
 	public static final Iterable<Object[]> pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_3_findcontext_blackBB(
-			ClassInstanceCreation create, ArrayInitializer array) {
+			ArrayInitializer array, ClassInstanceCreation create) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (array.getExpressions().contains(create)) {
-			_result.add(new Object[] { create, array });
+			_result.add(new Object[] { array, create });
 		}
 		return _result;
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_3_findcontext_greenBBFF(
-			ClassInstanceCreation create, ArrayInitializer array) {
+			ArrayInitializer array, ClassInstanceCreation create) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge array__create____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String array__create____expressions_name_prime = "expressions";
-		isApplicableMatch.getAllContextElements().add(create);
 		isApplicableMatch.getAllContextElements().add(array);
+		isApplicableMatch.getAllContextElements().add(create);
 		array__create____expressions.setSrc(array);
 		array__create____expressions.setTrg(create);
 		isApplicableMatch.getAllContextElements().add(array__create____expressions);
 		array__create____expressions.setName(array__create____expressions_name_prime);
-		return new Object[] { create, array, isApplicableMatch, array__create____expressions };
+		return new Object[] { array, create, isApplicableMatch, array__create____expressions };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_bindingFBBBB(
 			IgnoreClassInstanceCreation4ArrayInitializer _this, IsApplicableMatch isApplicableMatch,
-			ClassInstanceCreation create, ArrayInitializer array) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, create, array);
+			ArrayInitializer array, ClassInstanceCreation create) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, array, create);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, create, array };
+			return new Object[] { csp, _this, isApplicableMatch, array, create };
 		}
 		return null;
 	}
@@ -1202,9 +1201,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_bindingAndBlackFBBBB(
 			IgnoreClassInstanceCreation4ArrayInitializer _this, IsApplicableMatch isApplicableMatch,
-			ClassInstanceCreation create, ArrayInitializer array) {
+			ArrayInitializer array, ClassInstanceCreation create) {
 		Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_binding = pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_bindingFBBBB(
-				_this, isApplicableMatch, create, array);
+				_this, isApplicableMatch, array, create);
 		if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_binding[0];
 
@@ -1212,7 +1211,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 					csp);
 			if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, create, array };
+				return new Object[] { csp, _this, isApplicableMatch, array, create };
 			}
 		}
 		return null;
@@ -1379,7 +1378,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			if (tmpCreate instanceof ClassInstanceCreation) {
 				ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
 				if (array.getExpressions().contains(create)) {
-					_result.add(new Object[] { create, array, _edge_expressions });
+					_result.add(new Object[] { array, create, _edge_expressions });
 				}
 			}
 
@@ -1399,9 +1398,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final boolean pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ClassInstanceCreation create,
-			ArrayInitializer array) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, create, array);
+			IgnoreClassInstanceCreation4ArrayInitializer _this, Match match, ArrayInitializer array,
+			ClassInstanceCreation create) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, array, create);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -1447,24 +1446,24 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_bindingFFB(
 			Match sourceMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("create");
-		EObject _localVariable_1 = sourceMatch.getObject("array");
-		EObject tmpCreate = _localVariable_0;
-		EObject tmpArray = _localVariable_1;
-		if (tmpCreate instanceof ClassInstanceCreation) {
-			ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
-			if (tmpArray instanceof ArrayInitializer) {
-				ArrayInitializer array = (ArrayInitializer) tmpArray;
-				return new Object[] { create, array, sourceMatch };
+		EObject _localVariable_0 = sourceMatch.getObject("array");
+		EObject _localVariable_1 = sourceMatch.getObject("create");
+		EObject tmpArray = _localVariable_0;
+		EObject tmpCreate = _localVariable_1;
+		if (tmpArray instanceof ArrayInitializer) {
+			ArrayInitializer array = (ArrayInitializer) tmpArray;
+			if (tmpCreate instanceof ClassInstanceCreation) {
+				ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
+				return new Object[] { array, create, sourceMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_blackBBBB(
-			ClassInstanceCreation create, ArrayInitializer array, Match sourceMatch, Match targetMatch) {
+			ArrayInitializer array, ClassInstanceCreation create, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { create, array, sourceMatch, targetMatch };
+			return new Object[] { array, create, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1474,26 +1473,26 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_binding = pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_bindingFFB(
 				sourceMatch);
 		if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_binding != null) {
-			ClassInstanceCreation create = (ClassInstanceCreation) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_binding[0];
-			ArrayInitializer array = (ArrayInitializer) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_binding[1];
+			ArrayInitializer array = (ArrayInitializer) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_binding[0];
+			ClassInstanceCreation create = (ClassInstanceCreation) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_binding[1];
 
 			Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_black = pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_blackBBBB(
-					create, array, sourceMatch, targetMatch);
+					array, create, sourceMatch, targetMatch);
 			if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { create, array, sourceMatch, targetMatch };
+				return new Object[] { array, create, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_bindingFBBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, ClassInstanceCreation create, ArrayInitializer array,
+			IgnoreClassInstanceCreation4ArrayInitializer _this, ArrayInitializer array, ClassInstanceCreation create,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(create, array, sourceMatch, targetMatch);
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(array, create, sourceMatch, targetMatch);
 		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, create, array, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, array, create, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1503,10 +1502,10 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_bindingAndBlackFBBBBB(
-			IgnoreClassInstanceCreation4ArrayInitializer _this, ClassInstanceCreation create, ArrayInitializer array,
+			IgnoreClassInstanceCreation4ArrayInitializer _this, ArrayInitializer array, ClassInstanceCreation create,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_binding = pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_bindingFBBBBB(
-				_this, create, array, sourceMatch, targetMatch);
+				_this, array, create, sourceMatch, targetMatch);
 		if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_binding[0];
 
@@ -1514,7 +1513,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 					csp);
 			if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, create, array, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, array, create, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -1547,8 +1546,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_6_createcorrespondence_blackBBB(
-			ClassInstanceCreation create, ArrayInitializer array, CCMatch ccMatch) {
-		return new Object[] { create, array, ccMatch };
+			ArrayInitializer array, ClassInstanceCreation create, CCMatch ccMatch) {
+		return new Object[] { array, create, ccMatch };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_20_7_addtoreturnedresult_blackBB(
@@ -1573,9 +1572,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_23_1_matchtggpattern_blackBB(
-			ClassInstanceCreation create, ArrayInitializer array) {
+			ArrayInitializer array, ClassInstanceCreation create) {
 		if (array.getExpressions().contains(create)) {
-			return new Object[] { create, array };
+			return new Object[] { array, create };
 		}
 		return null;
 	}
@@ -1614,14 +1613,6 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, ClassInstanceCreation create) {
-		if (ruleResult.getSourceObjects().contains(create)) {
-			return new Object[] { ruleResult, create };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, ArrayInitializer array) {
 		if (ruleResult.getSourceObjects().contains(array)) {
 			return new Object[] { ruleResult, array };
@@ -1629,23 +1620,31 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 		return null;
 	}
 
+	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, ClassInstanceCreation create) {
+		if (ruleResult.getSourceObjects().contains(create)) {
+			return new Object[] { ruleResult, create };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_blackFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList createList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList arrayList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList arrayList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList createList : ruleEntryContainer.getRuleEntryList()) {
 				if (!arrayList.equals(createList)) {
-					for (EObject tmpCreate : createList.getEntryObjects()) {
-						if (tmpCreate instanceof ClassInstanceCreation) {
-							ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
+					for (EObject tmpArray : arrayList.getEntryObjects()) {
+						if (tmpArray instanceof ArrayInitializer) {
+							ArrayInitializer array = (ArrayInitializer) tmpArray;
 							if (pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_black_nac_0BB(
-									ruleResult, create) == null) {
-								for (EObject tmpArray : arrayList.getEntryObjects()) {
-									if (tmpArray instanceof ArrayInitializer) {
-										ArrayInitializer array = (ArrayInitializer) tmpArray;
+									ruleResult, array) == null) {
+								for (EObject tmpCreate : createList.getEntryObjects()) {
+									if (tmpCreate instanceof ClassInstanceCreation) {
+										ClassInstanceCreation create = (ClassInstanceCreation) tmpCreate;
 										if (pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_2_isapplicablecore_black_nac_1BB(
-												ruleResult, array) == null) {
-											_result.add(new Object[] { createList, create, arrayList, array,
+												ruleResult, create) == null) {
+											_result.add(new Object[] { arrayList, array, createList, create,
 													ruleEntryContainer, ruleResult });
 										}
 									}
@@ -1661,11 +1660,11 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_bindingFBBBBB(
 			IgnoreClassInstanceCreation4ArrayInitializer _this, IsApplicableMatch isApplicableMatch,
-			ClassInstanceCreation create, ArrayInitializer array, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, create, array, ruleResult);
+			ArrayInitializer array, ClassInstanceCreation create, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, array, create, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, create, array, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, array, create, ruleResult };
 		}
 		return null;
 	}
@@ -1676,9 +1675,9 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_bindingAndBlackFBBBBB(
 			IgnoreClassInstanceCreation4ArrayInitializer _this, IsApplicableMatch isApplicableMatch,
-			ClassInstanceCreation create, ArrayInitializer array, ModelgeneratorRuleResult ruleResult) {
+			ArrayInitializer array, ClassInstanceCreation create, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_binding = pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_bindingFBBBBB(
-				_this, isApplicableMatch, create, array, ruleResult);
+				_this, isApplicableMatch, array, create, ruleResult);
 		if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_binding[0];
 
@@ -1686,7 +1685,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 					csp);
 			if (result_pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, create, array, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, array, create, ruleResult };
 			}
 		}
 		return null;
@@ -1700,24 +1699,24 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_5_checknacs_blackBB(
-			ClassInstanceCreation create, ArrayInitializer array) {
-		return new Object[] { create, array };
+			ArrayInitializer array, ClassInstanceCreation create) {
+		return new Object[] { array, create };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_6_perform_blackBBB(
-			ClassInstanceCreation create, ArrayInitializer array, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { create, array, ruleResult };
+			ArrayInitializer array, ClassInstanceCreation create, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { array, create, ruleResult };
 	}
 
 	public static final Object[] pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_6_perform_greenBBB(
-			ClassInstanceCreation create, ArrayInitializer array, ModelgeneratorRuleResult ruleResult) {
+			ArrayInitializer array, ClassInstanceCreation create, ModelgeneratorRuleResult ruleResult) {
 		array.getExpressions().add(create);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { create, array, ruleResult };
+		return new Object[] { array, create, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_IgnoreClassInstanceCreation4ArrayInitializer_25_7_expressionFB(

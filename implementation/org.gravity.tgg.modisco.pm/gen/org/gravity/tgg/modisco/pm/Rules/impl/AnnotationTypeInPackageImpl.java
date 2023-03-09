@@ -210,9 +210,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		//nothing EMoflonEdge type2Type__mType____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge annotatable2Annotatable__tType____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge pg__tType____tAnnotationTypes = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge type2Type__tType____target = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[18];
@@ -359,18 +359,18 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		// Create literals
 
 		// Create attribute variables
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", true, csp);
-		var_mType_proxy.setValue(mType.isProxy());
-		var_mType_proxy.setType("Boolean");
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", true, csp);
 		var_mType_name.setValue(mType.getName());
 		var_mType_name.setType("String");
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", true, csp);
+		var_mType_proxy.setValue(mType.isProxy());
+		var_mType_proxy.setType("Boolean");
 
 		// Create unbound variables
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", csp);
-		var_tType_tLib.setType("Boolean");
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", csp);
 		var_tType_tName.setType("String");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", csp);
+		var_tType_tLib.setType("Boolean");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -381,9 +381,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_proxy, var_tType_tLib);
+		eq.solve(var_mType_name, var_tType_tName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_name, var_tType_tName);
+		eq_0.solve(var_mType_proxy, var_tType_tLib);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
@@ -550,9 +550,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		//nothing EMoflonEdge type2Type__mType____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge annotatable2Annotatable__tType____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge pg__tType____tAnnotationTypes = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge type2Type__tType____target = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[18];
@@ -701,18 +701,18 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
-		var_tType_tLib.setValue(tType.isTLib());
-		var_tType_tLib.setType("Boolean");
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
 		var_tType_tName.setValue(tType.getTName());
 		var_tType_tName.setType("String");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
+		var_tType_tLib.setValue(tType.isTLib());
+		var_tType_tLib.setType("Boolean");
 
 		// Create unbound variables
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", csp);
-		var_mType_proxy.setType("Boolean");
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", csp);
 		var_mType_name.setType("String");
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", csp);
+		var_mType_proxy.setType("Boolean");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -723,9 +723,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_proxy, var_tType_tLib);
+		eq.solve(var_mType_name, var_tType_tName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_name, var_tType_tName);
+		eq_0.solve(var_mType_proxy, var_tType_tLib);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
@@ -779,7 +779,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_82(EMoflonEdge _edge_ownedTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_55(EMoflonEdge _edge_ownedTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInPackageImpl
 				.pattern_AnnotationTypeInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -838,7 +838,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_86(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_57(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInPackageImpl
 				.pattern_AnnotationTypeInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -906,14 +906,6 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
-		var_mType_proxy.setType("boolean");
-
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
@@ -922,6 +914,14 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		var_mType_name.setValue(__helper.getValue("mType", "name"));
 		var_mType_name.setType("String");
 
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
+		var_mType_proxy.setType("boolean");
+
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
+
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
 
@@ -929,23 +929,23 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("AnnotationTypeInPackage");
-		eq0.solve(var_mType_proxy, var_tType_tLib);
+		eq0.solve(var_mType_name, var_tType_tName);
 
 		eq1.setRuleName("AnnotationTypeInPackage");
-		eq1.solve(var_mType_name, var_tType_tName);
+		eq1.solve(var_mType_proxy, var_tType_tLib);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_tType_tLib.setBound(false);
 			var_tType_tName.setBound(false);
-			eq0.solve(var_mType_proxy, var_tType_tLib);
-			eq1.solve(var_mType_name, var_tType_tName);
+			var_tType_tLib.setBound(false);
+			eq0.solve(var_mType_name, var_tType_tName);
+			eq1.solve(var_mType_proxy, var_tType_tLib);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("tType", "tLib", var_tType_tLib.getValue());
 				__helper.setValue("tType", "tName", var_tType_tName.getValue());
+				__helper.setValue("tType", "tLib", var_tType_tLib.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -970,14 +970,6 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
-		var_mType_proxy.setType("boolean");
-
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
@@ -986,6 +978,14 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		var_mType_name.setValue(__helper.getValue("mType", "name"));
 		var_mType_name.setType("String");
 
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
+		var_mType_proxy.setType("boolean");
+
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
+
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
 
@@ -993,23 +993,23 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("AnnotationTypeInPackage");
-		eq0.solve(var_mType_proxy, var_tType_tLib);
+		eq0.solve(var_mType_name, var_tType_tName);
 
 		eq1.setRuleName("AnnotationTypeInPackage");
-		eq1.solve(var_mType_name, var_tType_tName);
+		eq1.solve(var_mType_proxy, var_tType_tLib);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_mType_proxy.setBound(false);
 			var_mType_name.setBound(false);
-			eq0.solve(var_mType_proxy, var_tType_tLib);
-			eq1.solve(var_mType_name, var_tType_tName);
+			var_mType_proxy.setBound(false);
+			eq0.solve(var_mType_name, var_tType_tName);
+			eq1.solve(var_mType_proxy, var_tType_tLib);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("mType", "proxy", var_mType_proxy.getValue());
 				__helper.setValue("mType", "name", var_mType_name.getValue());
+				__helper.setValue("mType", "proxy", var_mType_proxy.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1109,18 +1109,18 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		// Create literals
 
 		// Create attribute variables
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", true, csp);
-		var_mType_proxy.setValue(mType.isProxy());
-		var_mType_proxy.setType("Boolean");
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
-		var_tType_tLib.setValue(tType.isTLib());
-		var_tType_tLib.setType("Boolean");
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", true, csp);
 		var_mType_name.setValue(mType.getName());
 		var_mType_name.setType("String");
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
 		var_tType_tName.setValue(tType.getTName());
 		var_tType_tName.setType("String");
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", true, csp);
+		var_mType_proxy.setValue(mType.isProxy());
+		var_mType_proxy.setType("Boolean");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
+		var_tType_tLib.setValue(tType.isTLib());
+		var_tType_tLib.setType("Boolean");
 
 		// Create unbound variables
 
@@ -1133,9 +1133,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_proxy, var_tType_tLib);
+		eq.solve(var_mType_name, var_tType_tName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_name, var_tType_tName);
+		eq_0.solve(var_mType_proxy, var_tType_tLib);
 		return csp;
 	}
 
@@ -1267,14 +1267,14 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", csp);
-		var_mType_proxy.setType("Boolean");
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", csp);
-		var_tType_tLib.setType("Boolean");
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", csp);
 		var_mType_name.setType("String");
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", csp);
 		var_tType_tName.setType("String");
+		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", csp);
+		var_mType_proxy.setType("Boolean");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", csp);
+		var_tType_tLib.setType("Boolean");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -1285,9 +1285,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_proxy, var_tType_tLib);
+		eq.solve(var_mType_name, var_tType_tName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_name, var_tType_tName);
+		eq_0.solve(var_mType_proxy, var_tType_tLib);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
@@ -1374,10 +1374,10 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_82__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_82((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_86__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_86((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_55__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_55((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_57__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_57((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1581,8 +1581,8 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		ASTNodeToTAnnotatable annotatable2Annotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TAnnotationType tType = AnnotationsFactory.eINSTANCE.createTAnnotationType();
 		TypeToTAbstractType type2Type = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		Object _localVariable_0 = csp.getValue("tType", "tLib");
-		Object _localVariable_1 = csp.getValue("tType", "tName");
+		Object _localVariable_0 = csp.getValue("tType", "tName");
+		Object _localVariable_1 = csp.getValue("tType", "tLib");
 		annotatable2Annotatable.setSource(mType);
 		tPackage.getOwnedTypes().add(tType);
 		annotatable2Annotatable.setTarget(tType);
@@ -1590,10 +1590,10 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		pg.getOwnedTypes().add(tType);
 		type2Type.setSource(mType);
 		type2Type.setTarget(tType);
-		boolean tType_tLib_prime = (boolean) _localVariable_0;
-		String tType_tName_prime = (String) _localVariable_1;
-		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
+		String tType_tName_prime = (String) _localVariable_0;
+		boolean tType_tLib_prime = (boolean) _localVariable_1;
 		tType.setTName(tType_tName_prime);
+		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
 		return new Object[] { annotatable2Annotatable, tType, tPackage, pg, type2Type, mType, csp };
 	}
 
@@ -1701,9 +1701,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		EMoflonEdge type2Type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____tAnnotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1713,9 +1713,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		String type2Type__mType____source_name_prime = "source";
 		String annotatable2Annotatable__tType____target_name_prime = "target";
 		String pg__tType____tAnnotationTypes_name_prime = "tAnnotationTypes";
+		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____model_name_prime = "model";
-		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String type2Type__tType____target_name_prime = "target";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
@@ -1734,15 +1734,15 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		pg__tType____tAnnotationTypes.setSrc(pg);
 		pg__tType____tAnnotationTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____tAnnotationTypes);
+		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
+		annotatable2Annotatable__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		ruleresult.getCreatedEdges().add(tType__pg____model);
-		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
-		annotatable2Annotatable__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		type2Type__tType____target.setSrc(type2Type);
 		type2Type__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(type2Type__tType____target);
@@ -1758,17 +1758,17 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		type2Type__mType____source.setName(type2Type__mType____source_name_prime);
 		annotatable2Annotatable__tType____target.setName(annotatable2Annotatable__tType____target_name_prime);
 		pg__tType____tAnnotationTypes.setName(pg__tType____tAnnotationTypes_name_prime);
+		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
-		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		type2Type__tType____target.setName(type2Type__tType____target_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		return new Object[] { ruleresult, annotatable2Annotatable, tType, mPackage, tPackage, pg, type2Type, mType,
 				tPackage__tType____ownedTypes, tType__tPackage____package, type2Type__mType____source,
-				annotatable2Annotatable__tType____target, pg__tType____tAnnotationTypes, pg__tType____ownedTypes,
-				tType__pg____model, annotatable2Annotatable__mType____source, type2Type__tType____target,
-				mPackage__mType____ownedElements, mType__mPackage____package };
+				annotatable2Annotatable__tType____target, pg__tType____tAnnotationTypes,
+				annotatable2Annotatable__mType____source, pg__tType____ownedTypes, tType__pg____model,
+				type2Type__tType____target, mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
 	public static final void pattern_AnnotationTypeInPackage_1_5_registerobjects_expressionBBBBBBBBBB(
@@ -2185,17 +2185,17 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		ASTNodeToTAnnotatable annotatable2Annotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeToTAbstractType type2Type = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		AnnotationTypeDeclaration mType = JavaFactory.eINSTANCE.createAnnotationTypeDeclaration();
-		Object _localVariable_0 = csp.getValue("mType", "proxy");
-		Object _localVariable_1 = csp.getValue("mType", "name");
+		Object _localVariable_0 = csp.getValue("mType", "name");
+		Object _localVariable_1 = csp.getValue("mType", "proxy");
 		annotatable2Annotatable.setTarget(tType);
 		type2Type.setTarget(tType);
 		type2Type.setSource(mType);
 		annotatable2Annotatable.setSource(mType);
 		mPackage.getOwnedElements().add(mType);
-		boolean mType_proxy_prime = (boolean) _localVariable_0;
-		String mType_name_prime = (String) _localVariable_1;
-		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
+		String mType_name_prime = (String) _localVariable_0;
+		boolean mType_proxy_prime = (boolean) _localVariable_1;
 		mType.setName(mType_name_prime);
+		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		return new Object[] { annotatable2Annotatable, tType, mPackage, type2Type, mType, csp };
 	}
 
@@ -2303,9 +2303,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		EMoflonEdge type2Type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____tAnnotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2315,9 +2315,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		String type2Type__mType____source_name_prime = "source";
 		String annotatable2Annotatable__tType____target_name_prime = "target";
 		String pg__tType____tAnnotationTypes_name_prime = "tAnnotationTypes";
+		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String pg__tType____ownedTypes_name_prime = "ownedTypes";
 		String tType__pg____model_name_prime = "model";
-		String annotatable2Annotatable__mType____source_name_prime = "source";
 		String type2Type__tType____target_name_prime = "target";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
@@ -2336,15 +2336,15 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		pg__tType____tAnnotationTypes.setSrc(pg);
 		pg__tType____tAnnotationTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____tAnnotationTypes);
+		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
+		annotatable2Annotatable__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		pg__tType____ownedTypes.setSrc(pg);
 		pg__tType____ownedTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____ownedTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		ruleresult.getTranslatedEdges().add(tType__pg____model);
-		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
-		annotatable2Annotatable__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
 		type2Type__tType____target.setSrc(type2Type);
 		type2Type__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(type2Type__tType____target);
@@ -2360,17 +2360,17 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		type2Type__mType____source.setName(type2Type__mType____source_name_prime);
 		annotatable2Annotatable__tType____target.setName(annotatable2Annotatable__tType____target_name_prime);
 		pg__tType____tAnnotationTypes.setName(pg__tType____tAnnotationTypes_name_prime);
+		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
-		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
 		type2Type__tType____target.setName(type2Type__tType____target_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		return new Object[] { ruleresult, annotatable2Annotatable, tType, mPackage, tPackage, pg, type2Type, mType,
 				tPackage__tType____ownedTypes, tType__tPackage____package, type2Type__mType____source,
-				annotatable2Annotatable__tType____target, pg__tType____tAnnotationTypes, pg__tType____ownedTypes,
-				tType__pg____model, annotatable2Annotatable__mType____source, type2Type__tType____target,
-				mPackage__mType____ownedElements, mType__mPackage____package };
+				annotatable2Annotatable__tType____target, pg__tType____tAnnotationTypes,
+				annotatable2Annotatable__mType____source, pg__tType____ownedTypes, tType__pg____model,
+				type2Type__tType____target, mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
 	public static final void pattern_AnnotationTypeInPackage_11_5_registerobjects_expressionBBBBBBBBBB(
@@ -2675,9 +2675,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_tAnnotationTypes_575257 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_tAnnotationTypes_582375 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "tAnnotationTypes")) {
-			if (!pg.equals(__DEC_tType_tAnnotationTypes_575257)) {
+			if (!pg.equals(__DEC_tType_tAnnotationTypes_582375)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2686,9 +2686,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_1BB(
 			TAnnotationType tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_183400 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_183400 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_183400)) {
+		TPackage __DEC_tType_ownedTypes_557206 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_557206 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_557206)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2698,9 +2698,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_2B(
 			TAnnotationType tType) {
-		TAbstractType __DEC_tType_innerTypes_976770 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_976770 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_976770)) {
+		TAbstractType __DEC_tType_innerTypes_797026 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_797026 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_797026)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2844,9 +2844,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_305371 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_305371 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_305371)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_455893 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_455893 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_455893)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2856,9 +2856,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_725210 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_81527 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_725210 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_81527 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2867,7 +2867,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_29003 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_907740 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2876,7 +2876,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_605723 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_485059 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3133,9 +3133,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_209117 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_209117 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_209117)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_915375 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_915375 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_915375)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3145,9 +3145,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_856940 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_947623 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_856940 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_947623 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3156,7 +3156,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_696176 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_727950 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3165,7 +3165,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_614777 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_193606 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3200,9 +3200,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_tAnnotationTypes_854651 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_tAnnotationTypes_243825 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "tAnnotationTypes")) {
-			if (!pg.equals(__DEC_tType_tAnnotationTypes_854651)) {
+			if (!pg.equals(__DEC_tType_tAnnotationTypes_243825)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3211,9 +3211,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_1BB(
 			TAnnotationType tType, TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_49621 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_49621 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_49621)) {
+		TPackage __DEC_tType_ownedTypes_725553 = tType.getPackage();
+		if (__DEC_tType_ownedTypes_725553 != null) {
+			if (!tPackage.equals(__DEC_tType_ownedTypes_725553)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3223,9 +3223,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_2B(
 			TAnnotationType tType) {
-		TAbstractType __DEC_tType_innerTypes_738339 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_738339 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_738339)) {
+		TAbstractType __DEC_tType_innerTypes_323695 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_323695 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_323695)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3412,10 +3412,10 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		TAnnotationType tType = AnnotationsFactory.eINSTANCE.createTAnnotationType();
 		TypeToTAbstractType type2Type = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		AnnotationTypeDeclaration mType = JavaFactory.eINSTANCE.createAnnotationTypeDeclaration();
-		Object _localVariable_0 = csp.getValue("tType", "tLib");
-		Object _localVariable_1 = csp.getValue("tType", "tName");
-		Object _localVariable_2 = csp.getValue("mType", "proxy");
-		Object _localVariable_3 = csp.getValue("mType", "name");
+		Object _localVariable_0 = csp.getValue("tType", "tName");
+		Object _localVariable_1 = csp.getValue("tType", "tLib");
+		Object _localVariable_2 = csp.getValue("mType", "name");
+		Object _localVariable_3 = csp.getValue("mType", "proxy");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(annotatable2Annotatable);
@@ -3430,16 +3430,16 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		annotatable2Annotatable.setSource(mType);
 		mPackage.getOwnedElements().add(mType);
 		ruleResult.getSourceObjects().add(mType);
-		boolean tType_tLib_prime = (boolean) _localVariable_0;
-		String tType_tName_prime = (String) _localVariable_1;
-		boolean mType_proxy_prime = (boolean) _localVariable_2;
-		String mType_name_prime = (String) _localVariable_3;
+		String tType_tName_prime = (String) _localVariable_0;
+		boolean tType_tLib_prime = (boolean) _localVariable_1;
+		String mType_name_prime = (String) _localVariable_2;
+		boolean mType_proxy_prime = (boolean) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
 		tType.setTName(tType_tName_prime);
-		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
+		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
 		mType.setName(mType_name_prime);
+		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
 		return new Object[] { annotatable2Annotatable, tType, mPackage, tPackage, pg, type2Type, mType, ruleResult,
 				csp };

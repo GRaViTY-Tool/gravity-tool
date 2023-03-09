@@ -877,7 +877,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_35(EMoflonEdge _edge_tClass) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_11(EMoflonEdge _edge_tClass) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -937,7 +937,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_38(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_12(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 				.pattern_AnnotationMemberValueClassArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1247,8 +1247,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			BodyDeclaration mOwner = (BodyDeclaration) result2_black[5];
 			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[6];
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[7];
-			Type mType = (Type) result2_black[8];
-			TAbstractType tType = (TAbstractType) result2_black[9];
+			TAbstractType tType = (TAbstractType) result2_black[8];
+			Type mType = (Type) result2_black[9];
 
 			Object[] result3_bindingAndBlack = AnnotationMemberValueClassArrayImpl
 					.pattern_AnnotationMemberValueClassArray_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
@@ -1432,10 +1432,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_35__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_35((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_38__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_38((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_11__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_12__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_12((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_CLASS_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3414,10 +3414,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_0BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_180492 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_532391 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mAccess_superInterfaces_180492)) {
-				if (!mOwner.equals(__DEC_mAccess_superInterfaces_180492)) {
+			if (!mType.equals(__DEC_mAccess_superInterfaces_532391)) {
+				if (!mOwner.equals(__DEC_mAccess_superInterfaces_532391)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3427,9 +3427,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_1BB(
 			TypeAccess mAccess, Annotation annotation) {
-		for (Annotation __DEC_mAccess_type_248621 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mAccess_type_313052 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, Annotation.class, "type")) {
-			if (!annotation.equals(__DEC_mAccess_type_248621)) {
+			if (!annotation.equals(__DEC_mAccess_type_313052)) {
 				return new Object[] { mAccess, annotation };
 			}
 		}
@@ -3438,9 +3438,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_89852 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_276988 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationTypeMemberDeclaration.class, "type")) {
-			if (!mOwner.equals(__DEC_mAccess_type_89852)) {
+			if (!mOwner.equals(__DEC_mAccess_type_276988)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3449,9 +3449,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_3BB(
 			TypeAccess mAccess, Type mType) {
-		for (ArrayType __DEC_mAccess_elementType_113948 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_598015 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mAccess_elementType_113948)) {
+			if (!mType.equals(__DEC_mAccess_elementType_598015)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3460,7 +3460,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_540923 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_621965 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3469,10 +3469,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_5BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (ClassDeclaration __DEC_mAccess_superClass_514671 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_966296 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mAccess_superClass_514671)) {
-				if (!mOwner.equals(__DEC_mAccess_superClass_514671)) {
+			if (!mType.equals(__DEC_mAccess_superClass_966296)) {
+				if (!mOwner.equals(__DEC_mAccess_superClass_966296)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3482,9 +3482,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_6BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (MethodDeclaration __DEC_mAccess_returnType_5872 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_80998 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
-			if (!mOwner.equals(__DEC_mAccess_returnType_5872)) {
+			if (!mOwner.equals(__DEC_mAccess_returnType_80998)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3493,9 +3493,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_7BB(
 			TypeAccess mAccess, Type mType) {
-		for (ParameterizedType __DEC_mAccess_type_751092 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_771520 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mAccess_type_751092)) {
+			if (!mType.equals(__DEC_mAccess_type_771520)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3504,9 +3504,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_8BB(
 			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_733202 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_571379 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mAccess_value_733202)) {
+			if (!mAnnotationValue.equals(__DEC_mAccess_value_571379)) {
 				return new Object[] { mAccess, mAnnotationValue };
 			}
 		}
@@ -3515,9 +3515,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_21_2_testcorematchandDECs_black_nac_9BB(
 			TypeLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_824486 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_398322 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_824486)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_398322)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3914,10 +3914,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_0BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_176321 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_461615 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mAccess_superInterfaces_176321)) {
-				if (!mOwner.equals(__DEC_mAccess_superInterfaces_176321)) {
+			if (!mType.equals(__DEC_mAccess_superInterfaces_461615)) {
+				if (!mOwner.equals(__DEC_mAccess_superInterfaces_461615)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3927,9 +3927,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_1BB(
 			TypeAccess mAccess, Annotation annotation) {
-		for (Annotation __DEC_mAccess_type_210477 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mAccess_type_387411 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, Annotation.class, "type")) {
-			if (!annotation.equals(__DEC_mAccess_type_210477)) {
+			if (!annotation.equals(__DEC_mAccess_type_387411)) {
 				return new Object[] { mAccess, annotation };
 			}
 		}
@@ -3938,9 +3938,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_336490 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_988084 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationTypeMemberDeclaration.class, "type")) {
-			if (!mOwner.equals(__DEC_mAccess_type_336490)) {
+			if (!mOwner.equals(__DEC_mAccess_type_988084)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3949,9 +3949,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_3BB(
 			TypeAccess mAccess, Type mType) {
-		for (ArrayType __DEC_mAccess_elementType_364626 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_673015 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mAccess_elementType_364626)) {
+			if (!mType.equals(__DEC_mAccess_elementType_673015)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -3960,7 +3960,7 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_15641 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_412635 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3969,10 +3969,10 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_5BBB(
 			TypeAccess mAccess, Type mType, BodyDeclaration mOwner) {
-		for (ClassDeclaration __DEC_mAccess_superClass_836585 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_40309 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mAccess_superClass_836585)) {
-				if (!mOwner.equals(__DEC_mAccess_superClass_836585)) {
+			if (!mType.equals(__DEC_mAccess_superClass_40309)) {
+				if (!mOwner.equals(__DEC_mAccess_superClass_40309)) {
 					return new Object[] { mAccess, mType, mOwner };
 				}
 			}
@@ -3982,9 +3982,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_6BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (MethodDeclaration __DEC_mAccess_returnType_116930 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_785284 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
-			if (!mOwner.equals(__DEC_mAccess_returnType_116930)) {
+			if (!mOwner.equals(__DEC_mAccess_returnType_785284)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3993,9 +3993,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_7BB(
 			TypeAccess mAccess, Type mType) {
-		for (ParameterizedType __DEC_mAccess_type_26837 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_753081 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mAccess_type_26837)) {
+			if (!mType.equals(__DEC_mAccess_type_753081)) {
 				return new Object[] { mAccess, mType };
 			}
 		}
@@ -4004,9 +4004,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_8BB(
 			TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_602014 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_432930 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mAccess_value_602014)) {
+			if (!mAnnotationValue.equals(__DEC_mAccess_value_432930)) {
 				return new Object[] { mAccess, mAnnotationValue };
 			}
 		}
@@ -4015,9 +4015,9 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_27_1_matchtggpattern_black_nac_9BB(
 			TypeLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_186651 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_488476 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_186651)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_488476)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -4204,17 +4204,17 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, Type mType) {
-		if (ruleResult.getSourceObjects().contains(mType)) {
-			return new Object[] { ruleResult, mType };
+			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
+		if (ruleResult.getTargetObjects().contains(tType)) {
+			return new Object[] { ruleResult, tType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_7BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
-		if (ruleResult.getTargetObjects().contains(tType)) {
-			return new Object[] { ruleResult, tType };
+			ModelgeneratorRuleResult ruleResult, Type mType) {
+		if (ruleResult.getSourceObjects().contains(mType)) {
+			return new Object[] { ruleResult, mType };
 		}
 		return null;
 	}
@@ -4244,16 +4244,16 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 												for (EObject tmpMTypeToTType : mTypeToTTypeList.getEntryObjects()) {
 													if (tmpMTypeToTType instanceof TypeToTAbstractType) {
 														TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-														Type mType = mTypeToTType.getSource();
-														if (mType != null) {
-															TAbstractType tType = mTypeToTType.getTarget();
-															if (tType != null) {
+														TAbstractType tType = mTypeToTType.getTarget();
+														if (tType != null) {
+															Type mType = mTypeToTType.getSource();
+															if (mType != null) {
 																if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_5BB(
 																		ruleResult, mTypeToTType) == null) {
 																	if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_6BB(
-																			ruleResult, mType) == null) {
+																			ruleResult, tType) == null) {
 																		if (pattern_AnnotationMemberValueClassArray_29_2_isapplicablecore_black_nac_7BB(
-																				ruleResult, tType) == null) {
+																				ruleResult, mType) == null) {
 																			for (Annotation annotation : org.moflon.core.utilities.eMoflonEMFUtil
 																					.getOppositeReferenceTyped(
 																							mAnnotationValue,
@@ -4278,8 +4278,8 @@ public class AnnotationMemberValueClassArrayImpl extends AbstractRuleImpl implem
 																									tAnnotationValue,
 																									mOwner,
 																									mTypeToTTypeList,
-																									mTypeToTType, mType,
-																									tType,
+																									mTypeToTType, tType,
+																									mType,
 																									ruleEntryContainer,
 																									ruleResult });
 																						}

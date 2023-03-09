@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>2.7.5</tycho-version>
+    <tycho-version>3.0.3</tycho-version>
     <jacoco.version>0.8.8</jacoco.version>
     <dependency-plugin>3.3.0</dependency-plugin>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -64,7 +64,6 @@
     <module>implementation/org.gravity.typegraph.basic.ui</module>
     <module>implementation/org.gravity.typegraph.spl</module>
     <module>implementation/org.gravity.umlsecrt</module>
-    <module>implementation/org.gravity.variability.secpl</module>
     <module>tests/org.gravity.eclipse.tests</module>
     <module>tests/org.gravity.goblin.tests</module>
     <module>tests/org.gravity.headless.tests</module>
@@ -151,9 +150,9 @@
 
   <repositories>
     <repository>
-      <id>Eclipse 2022-06</id>
+      <id>Eclipse 2022-12</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2022-06</url>
+      <url>https://download.eclipse.org/releases/2022-12</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>

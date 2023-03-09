@@ -162,12 +162,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[0];
-		MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
-		AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result1_bindingAndBlack[2];
-		TMethodDefinition tInvokedMember = (TMethodDefinition) result1_bindingAndBlack[3];
-		AbstractMethodInvocation invocation = (AbstractMethodInvocation) result1_bindingAndBlack[4];
-		TAccess tAccess = (TAccess) result1_bindingAndBlack[5];
+		MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
+		AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result1_bindingAndBlack[1];
+		TMethodDefinition tInvokedMember = (TMethodDefinition) result1_bindingAndBlack[2];
+		AbstractMethodInvocation invocation = (AbstractMethodInvocation) result1_bindingAndBlack[3];
+		TAccess tAccess = (TAccess) result1_bindingAndBlack[4];
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodInvocationTargetImpl.pattern_MethodInvocationTarget_1_1_performtransformation_greenBB(tInvokedMember,
 				tAccess);
@@ -180,14 +180,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodInvocationTargetImpl
-				.pattern_MethodInvocationTarget_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, invocationToTAccess,
-						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+				.pattern_MethodInvocationTarget_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
+						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+						invocationToTAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-					+ "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
+					+ ", " + "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
 					+ "[mInvokedMember] = " + mInvokedMember + ", " + "[tInvokedMember] = " + tInvokedMember + ", "
-					+ "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ".");
+					+ "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ", "
+					+ "[invocationToTAccess] = " + invocationToTAccess + ".");
 		}
 		MethodInvocationTargetImpl.pattern_MethodInvocationTarget_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
 				mInvokedMember, tInvokedMember, invocation, tAccess);
@@ -199,8 +200,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		// 
 		// 
 		MethodInvocationTargetImpl.pattern_MethodInvocationTarget_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-				invocation, tAccess);
+				ruleresult, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+				invocationToTAccess);
 		return MethodInvocationTargetImpl.pattern_MethodInvocationTarget_1_6_expressionFB(ruleresult);
 	}
 
@@ -232,37 +233,38 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result2_binding[0];
 		AbstractMethodInvocation invocation = (AbstractMethodInvocation) result2_binding[1];
 		for (Object[] result2_black : MethodInvocationTargetImpl
-				.pattern_MethodInvocationTarget_2_2_corematch_blackFFBFBFB(mInvokedMember, invocation, match)) {
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[0];
-			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result2_black[1];
-			TMethodDefinition tInvokedMember = (TMethodDefinition) result2_black[3];
-			TAccess tAccess = (TAccess) result2_black[5];
+				.pattern_MethodInvocationTarget_2_2_corematch_blackFBFBFFB(mInvokedMember, invocation, match)) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result2_black[0];
+			TMethodDefinition tInvokedMember = (TMethodDefinition) result2_black[2];
+			TAccess tAccess = (TAccess) result2_black[4];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodInvocationTargetImpl
-					.pattern_MethodInvocationTarget_2_3_findcontext_blackBBBBBB(invocationToTAccess,
-							mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess)) {
+					.pattern_MethodInvocationTarget_2_3_findcontext_blackBBBBBB(mInvokedMemberToTInvokedMember,
+							mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess)) {
 				Object[] result3_green = MethodInvocationTargetImpl
-						.pattern_MethodInvocationTarget_2_3_findcontext_greenBBBBBBFFFFFFF(invocationToTAccess,
-								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+						.pattern_MethodInvocationTarget_2_3_findcontext_greenBBBBBBFFFFFFF(
+								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+								invocationToTAccess);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge mInvokedMemberToTInvokedMember__tInvokedMember____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge mInvokedMemberToTInvokedMember__mInvokedMember____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge invocation__mInvokedMember____method = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mInvokedMember__invocation____usages = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge invocation__mInvokedMember____method = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mInvokedMember__invocation____usages = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = MethodInvocationTargetImpl
 						.pattern_MethodInvocationTarget_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-								invocation, tAccess);
+								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+								invocationToTAccess);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[invocationToTAccess] = "
-							+ invocationToTAccess + ", " + "[mInvokedMemberToTInvokedMember] = "
-							+ mInvokedMemberToTInvokedMember + ", " + "[mInvokedMember] = " + mInvokedMember + ", "
-							+ "[tInvokedMember] = " + tInvokedMember + ", " + "[invocation] = " + invocation + ", "
-							+ "[tAccess] = " + tAccess + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", "
+							+ "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
+							+ "[mInvokedMember] = " + mInvokedMember + ", " + "[tInvokedMember] = " + tInvokedMember
+							+ ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ", "
+							+ "[invocationToTAccess] = " + invocationToTAccess + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -335,9 +337,9 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {// Create CSP
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -352,12 +354,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
 		isApplicableMatch.registerObject("mInvokedMemberToTInvokedMember", mInvokedMemberToTInvokedMember);
 		isApplicableMatch.registerObject("mInvokedMember", mInvokedMember);
 		isApplicableMatch.registerObject("tInvokedMember", tInvokedMember);
 		isApplicableMatch.registerObject("invocation", invocation);
 		isApplicableMatch.registerObject("tAccess", tAccess);
+		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
 		return csp;
 	}
 
@@ -375,15 +377,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject invocationToTAccess,
-			EObject mInvokedMemberToTInvokedMember, EObject mInvokedMember, EObject tInvokedMember, EObject invocation,
-			EObject tAccess) {
-		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mInvokedMemberToTInvokedMember,
+			EObject mInvokedMember, EObject tInvokedMember, EObject invocation, EObject tAccess,
+			EObject invocationToTAccess) {
 		ruleresult.registerObject("mInvokedMemberToTInvokedMember", mInvokedMemberToTInvokedMember);
 		ruleresult.registerObject("mInvokedMember", mInvokedMember);
 		ruleresult.registerObject("tInvokedMember", tInvokedMember);
 		ruleresult.registerObject("invocation", invocation);
 		ruleresult.registerObject("tAccess", tAccess);
+		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
 
 	}
 
@@ -469,12 +471,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[0];
-		MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
-		AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result1_bindingAndBlack[2];
-		TMethodDefinition tInvokedMember = (TMethodDefinition) result1_bindingAndBlack[3];
-		AbstractMethodInvocation invocation = (AbstractMethodInvocation) result1_bindingAndBlack[4];
-		TAccess tAccess = (TAccess) result1_bindingAndBlack[5];
+		MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
+		AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result1_bindingAndBlack[1];
+		TMethodDefinition tInvokedMember = (TMethodDefinition) result1_bindingAndBlack[2];
+		AbstractMethodInvocation invocation = (AbstractMethodInvocation) result1_bindingAndBlack[3];
+		TAccess tAccess = (TAccess) result1_bindingAndBlack[4];
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodInvocationTargetImpl.pattern_MethodInvocationTarget_11_1_performtransformation_greenBB(mInvokedMember,
 				invocation);
@@ -487,14 +489,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodInvocationTargetImpl
-				.pattern_MethodInvocationTarget_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, invocationToTAccess,
-						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+				.pattern_MethodInvocationTarget_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
+						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+						invocationToTAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-					+ "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
+					+ ", " + "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
 					+ "[mInvokedMember] = " + mInvokedMember + ", " + "[tInvokedMember] = " + tInvokedMember + ", "
-					+ "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ".");
+					+ "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ", "
+					+ "[invocationToTAccess] = " + invocationToTAccess + ".");
 		}
 		MethodInvocationTargetImpl.pattern_MethodInvocationTarget_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
 				mInvokedMember, tInvokedMember, invocation, tAccess);
@@ -506,8 +509,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		// 
 		// 
 		MethodInvocationTargetImpl.pattern_MethodInvocationTarget_11_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-				invocation, tAccess);
+				ruleresult, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+				invocationToTAccess);
 		return MethodInvocationTargetImpl.pattern_MethodInvocationTarget_11_6_expressionFB(ruleresult);
 	}
 
@@ -539,37 +542,38 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		TMethodDefinition tInvokedMember = (TMethodDefinition) result2_binding[0];
 		TAccess tAccess = (TAccess) result2_binding[1];
 		for (Object[] result2_black : MethodInvocationTargetImpl
-				.pattern_MethodInvocationTarget_12_2_corematch_blackFFFBFBB(tInvokedMember, tAccess, match)) {
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[0];
-			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result2_black[1];
-			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result2_black[2];
-			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result2_black[4];
+				.pattern_MethodInvocationTarget_12_2_corematch_blackFFBFBFB(tInvokedMember, tAccess, match)) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result2_black[0];
+			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result2_black[1];
+			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result2_black[3];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodInvocationTargetImpl
-					.pattern_MethodInvocationTarget_12_3_findcontext_blackBBBBBB(invocationToTAccess,
-							mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess)) {
+					.pattern_MethodInvocationTarget_12_3_findcontext_blackBBBBBB(mInvokedMemberToTInvokedMember,
+							mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess)) {
 				Object[] result3_green = MethodInvocationTargetImpl
-						.pattern_MethodInvocationTarget_12_3_findcontext_greenBBBBBBFFFFFFF(invocationToTAccess,
-								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+						.pattern_MethodInvocationTarget_12_3_findcontext_greenBBBBBBFFFFFFF(
+								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+								invocationToTAccess);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge mInvokedMemberToTInvokedMember__tInvokedMember____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge mInvokedMemberToTInvokedMember__mInvokedMember____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tAccess__tInvokedMember____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tInvokedMember__tAccess____accessedBy = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tAccess__tInvokedMember____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tInvokedMember__tAccess____accessedBy = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = MethodInvocationTargetImpl
 						.pattern_MethodInvocationTarget_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-								invocation, tAccess);
+								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+								invocationToTAccess);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[invocationToTAccess] = "
-							+ invocationToTAccess + ", " + "[mInvokedMemberToTInvokedMember] = "
-							+ mInvokedMemberToTInvokedMember + ", " + "[mInvokedMember] = " + mInvokedMember + ", "
-							+ "[tInvokedMember] = " + tInvokedMember + ", " + "[invocation] = " + invocation + ", "
-							+ "[tAccess] = " + tAccess + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", "
+							+ "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
+							+ "[mInvokedMember] = " + mInvokedMember + ", " + "[tInvokedMember] = " + tInvokedMember
+							+ ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ", "
+							+ "[invocationToTAccess] = " + invocationToTAccess + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -640,9 +644,9 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {// Create CSP
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -657,12 +661,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
 		isApplicableMatch.registerObject("mInvokedMemberToTInvokedMember", mInvokedMemberToTInvokedMember);
 		isApplicableMatch.registerObject("mInvokedMember", mInvokedMember);
 		isApplicableMatch.registerObject("tInvokedMember", tInvokedMember);
 		isApplicableMatch.registerObject("invocation", invocation);
 		isApplicableMatch.registerObject("tAccess", tAccess);
+		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
 		return csp;
 	}
 
@@ -680,15 +684,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject invocationToTAccess,
-			EObject mInvokedMemberToTInvokedMember, EObject mInvokedMember, EObject tInvokedMember, EObject invocation,
-			EObject tAccess) {
-		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mInvokedMemberToTInvokedMember,
+			EObject mInvokedMember, EObject tInvokedMember, EObject invocation, EObject tAccess,
+			EObject invocationToTAccess) {
 		ruleresult.registerObject("mInvokedMemberToTInvokedMember", mInvokedMemberToTInvokedMember);
 		ruleresult.registerObject("mInvokedMember", mInvokedMember);
 		ruleresult.registerObject("tInvokedMember", tInvokedMember);
 		ruleresult.registerObject("invocation", invocation);
 		ruleresult.registerObject("tAccess", tAccess);
+		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
 
 	}
 
@@ -706,7 +710,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_target) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_77(EMoflonEdge _edge_target) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationTargetImpl
 				.pattern_MethodInvocationTarget_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -764,7 +768,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_78(EMoflonEdge _edge_method) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_80(EMoflonEdge _edge_method) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationTargetImpl
 				.pattern_MethodInvocationTarget_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -916,13 +920,13 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		if (MethodInvocationTargetImpl.pattern_MethodInvocationTarget_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodInvocationTargetImpl
-					.pattern_MethodInvocationTarget_24_5_matchcorrcontext_blackFFBBBBBB(mInvokedMember, tInvokedMember,
+					.pattern_MethodInvocationTarget_24_5_matchcorrcontext_blackFBBBBFBB(mInvokedMember, tInvokedMember,
 							invocation, tAccess, sourceMatch, targetMatch)) {
-				AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result5_black[0];
-				MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result5_black[1];
+				MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result5_black[0];
+				AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result5_black[5];
 				Object[] result5_green = MethodInvocationTargetImpl
-						.pattern_MethodInvocationTarget_24_5_matchcorrcontext_greenBBBBF(invocationToTAccess,
-								mInvokedMemberToTInvokedMember, sourceMatch, targetMatch);
+						.pattern_MethodInvocationTarget_24_5_matchcorrcontext_greenBBBBF(mInvokedMemberToTInvokedMember,
+								invocationToTAccess, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MethodInvocationTargetImpl
@@ -1018,8 +1022,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			AbstractMethodInvocationToTAccess invocationToTAccessParameter,
-			MDefinitionToTMember mInvokedMemberToTInvokedMemberParameter) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMemberParameter,
+			AbstractMethodInvocationToTAccess invocationToTAccessParameter) {
 
 		Object[] result1_black = MethodInvocationTargetImpl
 				.pattern_MethodInvocationTarget_29_1_createresult_blackB(this);
@@ -1033,47 +1037,47 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		// ForEach 
 		for (Object[] result2_black : MethodInvocationTargetImpl
 				.pattern_MethodInvocationTarget_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList invocationToTAccessList = (RuleEntryList) result2_black[0];
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[1];
-			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result2_black[2];
-			TAccess tAccess = (TAccess) result2_black[3];
-			//nothing RuleEntryList mInvokedMemberToTInvokedMemberList = (RuleEntryList) result2_black[4];
-			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result2_black[5];
-			TMethodDefinition tInvokedMember = (TMethodDefinition) result2_black[6];
-			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result2_black[7];
+			//nothing RuleEntryList mInvokedMemberToTInvokedMemberList = (RuleEntryList) result2_black[0];
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result2_black[1];
+			TMethodDefinition tInvokedMember = (TMethodDefinition) result2_black[2];
+			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result2_black[3];
+			//nothing RuleEntryList invocationToTAccessList = (RuleEntryList) result2_black[4];
+			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result2_black[5];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[6];
+			TAccess tAccess = (TAccess) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodInvocationTargetImpl
 					.pattern_MethodInvocationTarget_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-							invocation, tAccess, ruleResult);
+							mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+							invocationToTAccess, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[invocationToTAccess] = "
-						+ invocationToTAccess + ", " + "[mInvokedMemberToTInvokedMember] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mInvokedMemberToTInvokedMember] = "
 						+ mInvokedMemberToTInvokedMember + ", " + "[mInvokedMember] = " + mInvokedMember + ", "
 						+ "[tInvokedMember] = " + tInvokedMember + ", " + "[invocation] = " + invocation + ", "
-						+ "[tAccess] = " + tAccess + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[tAccess] = " + tAccess + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
+						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (MethodInvocationTargetImpl.pattern_MethodInvocationTarget_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = MethodInvocationTargetImpl
-						.pattern_MethodInvocationTarget_29_5_checknacs_blackBBBBBB(invocationToTAccess,
-								mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+						.pattern_MethodInvocationTarget_29_5_checknacs_blackBBBBBB(mInvokedMemberToTInvokedMember,
+								mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodInvocationTargetImpl
-							.pattern_MethodInvocationTarget_29_6_perform_blackBBBBBBB(invocationToTAccess,
-									mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+							.pattern_MethodInvocationTarget_29_6_perform_blackBBBBBBB(mInvokedMemberToTInvokedMember,
+									mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess,
 									ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: "
-								+ "[invocationToTAccess] = " + invocationToTAccess + ", "
 								+ "[mInvokedMemberToTInvokedMember] = " + mInvokedMemberToTInvokedMember + ", "
 								+ "[mInvokedMember] = " + mInvokedMember + ", " + "[tInvokedMember] = " + tInvokedMember
 								+ ", " + "[invocation] = " + invocation + ", " + "[tAccess] = " + tAccess + ", "
-								+ "[ruleResult] = " + ruleResult + ".");
+								+ "[invocationToTAccess] = " + invocationToTAccess + ", " + "[ruleResult] = "
+								+ ruleResult + ".");
 					}
 					MethodInvocationTargetImpl.pattern_MethodInvocationTarget_29_6_perform_greenBBBBB(mInvokedMember,
 							tInvokedMember, invocation, tAccess, ruleResult);
@@ -1094,9 +1098,9 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1111,12 +1115,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
 		isApplicableMatch.registerObject("mInvokedMemberToTInvokedMember", mInvokedMemberToTInvokedMember);
 		isApplicableMatch.registerObject("mInvokedMember", mInvokedMember);
 		isApplicableMatch.registerObject("tInvokedMember", tInvokedMember);
 		isApplicableMatch.registerObject("invocation", invocation);
 		isApplicableMatch.registerObject("tAccess", tAccess);
+		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
 		return csp;
 	}
 
@@ -1153,11 +1157,11 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					(AbstractMethodInvocation) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ABSTRACTMETHODINVOCATIONTOTACCESS_MDEFINITIONTOTMEMBER_ABSTRACTMETHODDECLARATION_TMETHODDEFINITION_ABSTRACTMETHODINVOCATION_TACCESS:
+		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_ABSTRACTMETHODDECLARATION_TMETHODDEFINITION_ABSTRACTMETHODINVOCATION_TACCESS_ABSTRACTMETHODINVOCATIONTOTACCESS:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(AbstractMethodInvocationToTAccess) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
-					(AbstractMethodDeclaration) arguments.get(3), (TMethodDefinition) arguments.get(4),
-					(AbstractMethodInvocation) arguments.get(5), (TAccess) arguments.get(6));
+					(MDefinitionToTMember) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
+					(TMethodDefinition) arguments.get(3), (AbstractMethodInvocation) arguments.get(4),
+					(TAccess) arguments.get(5), (AbstractMethodInvocationToTAccess) arguments.get(6));
 		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_TARGET___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1183,11 +1187,11 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					(TAccess) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ABSTRACTMETHODINVOCATIONTOTACCESS_MDEFINITIONTOTMEMBER_ABSTRACTMETHODDECLARATION_TMETHODDEFINITION_ABSTRACTMETHODINVOCATION_TACCESS:
+		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_ABSTRACTMETHODDECLARATION_TMETHODDEFINITION_ABSTRACTMETHODINVOCATION_TACCESS_ABSTRACTMETHODINVOCATIONTOTACCESS:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(AbstractMethodInvocationToTAccess) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
-					(AbstractMethodDeclaration) arguments.get(3), (TMethodDefinition) arguments.get(4),
-					(AbstractMethodInvocation) arguments.get(5), (TAccess) arguments.get(6));
+					(MDefinitionToTMember) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
+					(TMethodDefinition) arguments.get(3), (AbstractMethodInvocation) arguments.get(4),
+					(TAccess) arguments.get(5), (AbstractMethodInvocationToTAccess) arguments.get(6));
 		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_TARGET___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1197,10 +1201,10 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 			return null;
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_BWD_EMOFLON_EDGE_74__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_74((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_FWD_EMOFLON_EDGE_78__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_78((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_BWD_EMOFLON_EDGE_77__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_77((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_FWD_EMOFLON_EDGE_80__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_80((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1218,14 +1222,14 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					(AbstractMethodInvocation) arguments.get(1));
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_DEC_BWD__TMETHODDEFINITION_TACCESS:
 			return checkDEC_BWD((TMethodDefinition) arguments.get(0), (TAccess) arguments.get(1));
-		case RulesPackage.METHOD_INVOCATION_TARGET___GENERATE_MODEL__RULEENTRYCONTAINER_ABSTRACTMETHODINVOCATIONTOTACCESS_MDEFINITIONTOTMEMBER:
-			return generateModel((RuleEntryContainer) arguments.get(0),
-					(AbstractMethodInvocationToTAccess) arguments.get(1), (MDefinitionToTMember) arguments.get(2));
-		case RulesPackage.METHOD_INVOCATION_TARGET___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ABSTRACTMETHODINVOCATIONTOTACCESS_MDEFINITIONTOTMEMBER_ABSTRACTMETHODDECLARATION_TMETHODDEFINITION_ABSTRACTMETHODINVOCATION_TACCESS_MODELGENERATORRULERESULT:
+		case RulesPackage.METHOD_INVOCATION_TARGET___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_ABSTRACTMETHODINVOCATIONTOTACCESS:
+			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
+					(AbstractMethodInvocationToTAccess) arguments.get(2));
+		case RulesPackage.METHOD_INVOCATION_TARGET___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_ABSTRACTMETHODDECLARATION_TMETHODDEFINITION_ABSTRACTMETHODINVOCATION_TACCESS_ABSTRACTMETHODINVOCATIONTOTACCESS_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(AbstractMethodInvocationToTAccess) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
-					(AbstractMethodDeclaration) arguments.get(3), (TMethodDefinition) arguments.get(4),
-					(AbstractMethodInvocation) arguments.get(5), (TAccess) arguments.get(6),
+					(MDefinitionToTMember) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
+					(TMethodDefinition) arguments.get(3), (AbstractMethodInvocation) arguments.get(4),
+					(TAccess) arguments.get(5), (AbstractMethodInvocationToTAccess) arguments.get(6),
 					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.METHOD_INVOCATION_TARGET___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1332,32 +1336,32 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 
 	public static final Object[] pattern_MethodInvocationTarget_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("invocationToTAccess");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mInvokedMemberToTInvokedMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mInvokedMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tInvokedMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("invocation");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAccess");
-		EObject tmpInvocationToTAccess = _localVariable_0;
-		EObject tmpMInvokedMemberToTInvokedMember = _localVariable_1;
-		EObject tmpMInvokedMember = _localVariable_2;
-		EObject tmpTInvokedMember = _localVariable_3;
-		EObject tmpInvocation = _localVariable_4;
-		EObject tmpTAccess = _localVariable_5;
-		if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
-			if (tmpMInvokedMemberToTInvokedMember instanceof MDefinitionToTMember) {
-				MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) tmpMInvokedMemberToTInvokedMember;
-				if (tmpMInvokedMember instanceof AbstractMethodDeclaration) {
-					AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) tmpMInvokedMember;
-					if (tmpTInvokedMember instanceof TMethodDefinition) {
-						TMethodDefinition tInvokedMember = (TMethodDefinition) tmpTInvokedMember;
-						if (tmpInvocation instanceof AbstractMethodInvocation) {
-							AbstractMethodInvocation invocation = (AbstractMethodInvocation) tmpInvocation;
-							if (tmpTAccess instanceof TAccess) {
-								TAccess tAccess = (TAccess) tmpTAccess;
-								return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember,
-										mInvokedMember, tInvokedMember, invocation, tAccess, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mInvokedMemberToTInvokedMember");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mInvokedMember");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tInvokedMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("invocation");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_5 = isApplicableMatch.getObject("invocationToTAccess");
+		EObject tmpMInvokedMemberToTInvokedMember = _localVariable_0;
+		EObject tmpMInvokedMember = _localVariable_1;
+		EObject tmpTInvokedMember = _localVariable_2;
+		EObject tmpInvocation = _localVariable_3;
+		EObject tmpTAccess = _localVariable_4;
+		EObject tmpInvocationToTAccess = _localVariable_5;
+		if (tmpMInvokedMemberToTInvokedMember instanceof MDefinitionToTMember) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) tmpMInvokedMemberToTInvokedMember;
+			if (tmpMInvokedMember instanceof AbstractMethodDeclaration) {
+				AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) tmpMInvokedMember;
+				if (tmpTInvokedMember instanceof TMethodDefinition) {
+					TMethodDefinition tInvokedMember = (TMethodDefinition) tmpTInvokedMember;
+					if (tmpInvocation instanceof AbstractMethodInvocation) {
+						AbstractMethodInvocation invocation = (AbstractMethodInvocation) tmpInvocation;
+						if (tmpTAccess instanceof TAccess) {
+							TAccess tAccess = (TAccess) tmpTAccess;
+							if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
+								AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
+								return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+										invocation, tAccess, invocationToTAccess, isApplicableMatch };
 							}
 						}
 					}
@@ -1368,15 +1372,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_1_1_performtransformation_blackBBBBBBFBB(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess, MethodInvocationTarget _this,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess, MethodInvocationTarget _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-						tInvokedMember, invocation, tAccess, csp, _this, isApplicableMatch };
+				return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+						tAccess, invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1387,21 +1391,21 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		Object[] result_pattern_MethodInvocationTarget_1_1_performtransformation_binding = pattern_MethodInvocationTarget_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodInvocationTarget_1_1_performtransformation_binding != null) {
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[0];
-			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[1];
-			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[2];
-			TMethodDefinition tInvokedMember = (TMethodDefinition) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[3];
-			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[4];
-			TAccess tAccess = (TAccess) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[5];
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[0];
+			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[1];
+			TMethodDefinition tInvokedMember = (TMethodDefinition) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[2];
+			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[3];
+			TAccess tAccess = (TAccess) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[4];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationTarget_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodInvocationTarget_1_1_performtransformation_black = pattern_MethodInvocationTarget_1_1_performtransformation_blackBBBBBBFBB(
-					invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
-					tAccess, _this, isApplicableMatch);
+					mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+					invocationToTAccess, _this, isApplicableMatch);
 			if (result_pattern_MethodInvocationTarget_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodInvocationTarget_1_1_performtransformation_black[6];
 
-				return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-						tInvokedMember, invocation, tAccess, csp, _this, isApplicableMatch };
+				return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+						tAccess, invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1419,28 +1423,27 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember,
-			EObject mInvokedMember, EObject tInvokedMember, EObject invocation, EObject tAccess) {
-		if (!invocationToTAccess.equals(mInvokedMemberToTInvokedMember)) {
-			if (!invocationToTAccess.equals(mInvokedMember)) {
-				if (!invocationToTAccess.equals(tInvokedMember)) {
-					if (!invocationToTAccess.equals(tAccess)) {
-						if (!mInvokedMemberToTInvokedMember.equals(tInvokedMember)) {
-							if (!mInvokedMemberToTInvokedMember.equals(tAccess)) {
-								if (!mInvokedMember.equals(mInvokedMemberToTInvokedMember)) {
-									if (!mInvokedMember.equals(tInvokedMember)) {
-										if (!mInvokedMember.equals(tAccess)) {
+			PerformRuleResult ruleresult, EObject mInvokedMemberToTInvokedMember, EObject mInvokedMember,
+			EObject tInvokedMember, EObject invocation, EObject tAccess, EObject invocationToTAccess) {
+		if (!mInvokedMemberToTInvokedMember.equals(tInvokedMember)) {
+			if (!mInvokedMemberToTInvokedMember.equals(tAccess)) {
+				if (!mInvokedMember.equals(mInvokedMemberToTInvokedMember)) {
+					if (!mInvokedMember.equals(tInvokedMember)) {
+						if (!mInvokedMember.equals(tAccess)) {
+							if (!invocation.equals(mInvokedMemberToTInvokedMember)) {
+								if (!invocation.equals(mInvokedMember)) {
+									if (!invocation.equals(tInvokedMember)) {
+										if (!invocation.equals(tAccess)) {
 											if (!invocation.equals(invocationToTAccess)) {
-												if (!invocation.equals(mInvokedMemberToTInvokedMember)) {
-													if (!invocation.equals(mInvokedMember)) {
-														if (!invocation.equals(tInvokedMember)) {
-															if (!invocation.equals(tAccess)) {
-																if (!tAccess.equals(tInvokedMember)) {
+												if (!tAccess.equals(tInvokedMember)) {
+													if (!invocationToTAccess.equals(mInvokedMemberToTInvokedMember)) {
+														if (!invocationToTAccess.equals(mInvokedMember)) {
+															if (!invocationToTAccess.equals(tInvokedMember)) {
+																if (!invocationToTAccess.equals(tAccess)) {
 																	return new Object[] { ruleresult,
-																			invocationToTAccess,
 																			mInvokedMemberToTInvokedMember,
 																			mInvokedMember, tInvokedMember, invocation,
-																			tAccess };
+																			tAccess, invocationToTAccess };
 																}
 															}
 														}
@@ -1494,11 +1497,11 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final void pattern_MethodInvocationTarget_1_5_registerobjects_expressionBBBBBBBB(
-			MethodInvocationTarget _this, PerformRuleResult ruleresult, EObject invocationToTAccess,
-			EObject mInvokedMemberToTInvokedMember, EObject mInvokedMember, EObject tInvokedMember, EObject invocation,
-			EObject tAccess) {
-		_this.registerObjects_FWD(ruleresult, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-				tInvokedMember, invocation, tAccess);
+			MethodInvocationTarget _this, PerformRuleResult ruleresult, EObject mInvokedMemberToTInvokedMember,
+			EObject mInvokedMember, EObject tInvokedMember, EObject invocation, EObject tAccess,
+			EObject invocationToTAccess) {
+		_this.registerObjects_FWD(ruleresult, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+				invocation, tAccess, invocationToTAccess);
 
 	}
 
@@ -1574,7 +1577,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationTarget_2_2_corematch_blackFFBFBFB(
+	public static final Iterable<Object[]> pattern_MethodInvocationTarget_2_2_corematch_blackFBFBFFB(
 			AbstractMethodDeclaration mInvokedMember, AbstractMethodInvocation invocation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mInvokedMemberToTInvokedMember : org.moflon.core.utilities.eMoflonEMFUtil
@@ -1586,8 +1589,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 						.getOppositeReferenceTyped(invocation, AbstractMethodInvocationToTAccess.class, "source")) {
 					TAccess tAccess = invocationToTAccess.getTarget();
 					if (tAccess != null) {
-						_result.add(new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-								tInvokedMember, invocation, tAccess, match });
+						_result.add(new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+								invocation, tAccess, invocationToTAccess, match });
 					}
 
 				}
@@ -1598,17 +1601,17 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationTarget_2_3_findcontext_blackBBBBBB(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tInvokedMember.equals(mInvokedMemberToTInvokedMember.getTarget())) {
 			if (mInvokedMember.equals(mInvokedMemberToTInvokedMember.getSource())) {
-				if (invocation.equals(invocationToTAccess.getSource())) {
-					if (tAccess.equals(invocationToTAccess.getTarget())) {
-						if (mInvokedMember.equals(invocation.getMethod())) {
-							_result.add(new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember,
-									mInvokedMember, tInvokedMember, invocation, tAccess });
+				if (tAccess.equals(invocationToTAccess.getTarget())) {
+					if (mInvokedMember.equals(invocation.getMethod())) {
+						if (invocation.equals(invocationToTAccess.getSource())) {
+							_result.add(new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+									invocation, tAccess, invocationToTAccess });
 						}
 					}
 				}
@@ -1618,39 +1621,36 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_2_3_findcontext_greenBBBBBBFFFFFFF(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge mInvokedMemberToTInvokedMember__tInvokedMember____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge mInvokedMemberToTInvokedMember__mInvokedMember____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__mInvokedMember____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mInvokedMember__invocation____usages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mInvokedMemberToTInvokedMember__tInvokedMember____target_name_prime = "target";
 		String mInvokedMemberToTInvokedMember__mInvokedMember____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String invocation__mInvokedMember____method_name_prime = "method";
 		String mInvokedMember__invocation____usages_name_prime = "usages";
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess);
+		String invocationToTAccess__invocation____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember);
 		isApplicableMatch.getAllContextElements().add(mInvokedMember);
 		isApplicableMatch.getAllContextElements().add(tInvokedMember);
 		isApplicableMatch.getAllContextElements().add(invocation);
 		isApplicableMatch.getAllContextElements().add(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess);
 		mInvokedMemberToTInvokedMember__tInvokedMember____target.setSrc(mInvokedMemberToTInvokedMember);
 		mInvokedMemberToTInvokedMember__tInvokedMember____target.setTrg(tInvokedMember);
 		isApplicableMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember__tInvokedMember____target);
 		mInvokedMemberToTInvokedMember__mInvokedMember____source.setSrc(mInvokedMemberToTInvokedMember);
 		mInvokedMemberToTInvokedMember__mInvokedMember____source.setTrg(mInvokedMember);
 		isApplicableMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember__mInvokedMember____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
@@ -1660,32 +1660,35 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		mInvokedMember__invocation____usages.setSrc(mInvokedMember);
 		mInvokedMember__invocation____usages.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(mInvokedMember__invocation____usages);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
 		mInvokedMemberToTInvokedMember__tInvokedMember____target
 				.setName(mInvokedMemberToTInvokedMember__tInvokedMember____target_name_prime);
 		mInvokedMemberToTInvokedMember__mInvokedMember____source
 				.setName(mInvokedMemberToTInvokedMember__mInvokedMember____source_name_prime);
-		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		invocation__mInvokedMember____method.setName(invocation__mInvokedMember____method_name_prime);
 		mInvokedMember__invocation____usages.setName(mInvokedMember__invocation____usages_name_prime);
-		return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-				invocation, tAccess, isApplicableMatch, mInvokedMemberToTInvokedMember__tInvokedMember____target,
-				mInvokedMemberToTInvokedMember__mInvokedMember____source, invocationToTAccess__invocation____source,
-				invocationToTAccess__tAccess____target, invocation__mInvokedMember____method,
-				mInvokedMember__invocation____usages };
+		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
+		return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+				invocationToTAccess, isApplicableMatch, mInvokedMemberToTInvokedMember__tInvokedMember____target,
+				mInvokedMemberToTInvokedMember__mInvokedMember____source, invocationToTAccess__tAccess____target,
+				invocation__mInvokedMember____method, mInvokedMember__invocation____usages,
+				invocationToTAccess__invocation____source };
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_2_4_solveCSP_bindingFBBBBBBBB(
 			MethodInvocationTarget _this, IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, invocationToTAccess,
-				mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mInvokedMemberToTInvokedMember,
+				mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, invocationToTAccess, mInvokedMemberToTInvokedMember,
-					mInvokedMember, tInvokedMember, invocation, tAccess };
+			return new Object[] { csp, _this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember,
+					tInvokedMember, invocation, tAccess, invocationToTAccess };
 		}
 		return null;
 	}
@@ -1696,12 +1699,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 
 	public static final Object[] pattern_MethodInvocationTarget_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			MethodInvocationTarget _this, IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
 		Object[] result_pattern_MethodInvocationTarget_2_4_solveCSP_binding = pattern_MethodInvocationTarget_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-				tInvokedMember, invocation, tAccess);
+				_this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+				tAccess, invocationToTAccess);
 		if (result_pattern_MethodInvocationTarget_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationTarget_2_4_solveCSP_binding[0];
 
@@ -1709,8 +1712,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					csp);
 			if (result_pattern_MethodInvocationTarget_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, invocationToTAccess,
-						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess };
+				return new Object[] { csp, _this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember,
+						tInvokedMember, invocation, tAccess, invocationToTAccess };
 			}
 		}
 		return null;
@@ -1840,32 +1843,32 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 
 	public static final Object[] pattern_MethodInvocationTarget_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("invocationToTAccess");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mInvokedMemberToTInvokedMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mInvokedMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tInvokedMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("invocation");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAccess");
-		EObject tmpInvocationToTAccess = _localVariable_0;
-		EObject tmpMInvokedMemberToTInvokedMember = _localVariable_1;
-		EObject tmpMInvokedMember = _localVariable_2;
-		EObject tmpTInvokedMember = _localVariable_3;
-		EObject tmpInvocation = _localVariable_4;
-		EObject tmpTAccess = _localVariable_5;
-		if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
-			if (tmpMInvokedMemberToTInvokedMember instanceof MDefinitionToTMember) {
-				MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) tmpMInvokedMemberToTInvokedMember;
-				if (tmpMInvokedMember instanceof AbstractMethodDeclaration) {
-					AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) tmpMInvokedMember;
-					if (tmpTInvokedMember instanceof TMethodDefinition) {
-						TMethodDefinition tInvokedMember = (TMethodDefinition) tmpTInvokedMember;
-						if (tmpInvocation instanceof AbstractMethodInvocation) {
-							AbstractMethodInvocation invocation = (AbstractMethodInvocation) tmpInvocation;
-							if (tmpTAccess instanceof TAccess) {
-								TAccess tAccess = (TAccess) tmpTAccess;
-								return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember,
-										mInvokedMember, tInvokedMember, invocation, tAccess, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mInvokedMemberToTInvokedMember");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mInvokedMember");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tInvokedMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("invocation");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_5 = isApplicableMatch.getObject("invocationToTAccess");
+		EObject tmpMInvokedMemberToTInvokedMember = _localVariable_0;
+		EObject tmpMInvokedMember = _localVariable_1;
+		EObject tmpTInvokedMember = _localVariable_2;
+		EObject tmpInvocation = _localVariable_3;
+		EObject tmpTAccess = _localVariable_4;
+		EObject tmpInvocationToTAccess = _localVariable_5;
+		if (tmpMInvokedMemberToTInvokedMember instanceof MDefinitionToTMember) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) tmpMInvokedMemberToTInvokedMember;
+			if (tmpMInvokedMember instanceof AbstractMethodDeclaration) {
+				AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) tmpMInvokedMember;
+				if (tmpTInvokedMember instanceof TMethodDefinition) {
+					TMethodDefinition tInvokedMember = (TMethodDefinition) tmpTInvokedMember;
+					if (tmpInvocation instanceof AbstractMethodInvocation) {
+						AbstractMethodInvocation invocation = (AbstractMethodInvocation) tmpInvocation;
+						if (tmpTAccess instanceof TAccess) {
+							TAccess tAccess = (TAccess) tmpTAccess;
+							if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
+								AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
+								return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+										invocation, tAccess, invocationToTAccess, isApplicableMatch };
 							}
 						}
 					}
@@ -1876,15 +1879,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_11_1_performtransformation_blackBBBBBBFBB(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess, MethodInvocationTarget _this,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess, MethodInvocationTarget _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-						tInvokedMember, invocation, tAccess, csp, _this, isApplicableMatch };
+				return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+						tAccess, invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1895,21 +1898,21 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		Object[] result_pattern_MethodInvocationTarget_11_1_performtransformation_binding = pattern_MethodInvocationTarget_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodInvocationTarget_11_1_performtransformation_binding != null) {
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[0];
-			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[1];
-			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[2];
-			TMethodDefinition tInvokedMember = (TMethodDefinition) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[3];
-			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[4];
-			TAccess tAccess = (TAccess) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[5];
+			MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[0];
+			AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[1];
+			TMethodDefinition tInvokedMember = (TMethodDefinition) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[2];
+			AbstractMethodInvocation invocation = (AbstractMethodInvocation) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[3];
+			TAccess tAccess = (TAccess) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[4];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationTarget_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodInvocationTarget_11_1_performtransformation_black = pattern_MethodInvocationTarget_11_1_performtransformation_blackBBBBBBFBB(
-					invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
-					tAccess, _this, isApplicableMatch);
+					mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+					invocationToTAccess, _this, isApplicableMatch);
 			if (result_pattern_MethodInvocationTarget_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodInvocationTarget_11_1_performtransformation_black[6];
 
-				return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-						tInvokedMember, invocation, tAccess, csp, _this, isApplicableMatch };
+				return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+						tAccess, invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1927,28 +1930,27 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject invocationToTAccess, EObject mInvokedMemberToTInvokedMember,
-			EObject mInvokedMember, EObject tInvokedMember, EObject invocation, EObject tAccess) {
-		if (!invocationToTAccess.equals(mInvokedMemberToTInvokedMember)) {
-			if (!invocationToTAccess.equals(mInvokedMember)) {
-				if (!invocationToTAccess.equals(tInvokedMember)) {
-					if (!invocationToTAccess.equals(tAccess)) {
-						if (!mInvokedMemberToTInvokedMember.equals(tInvokedMember)) {
-							if (!mInvokedMemberToTInvokedMember.equals(tAccess)) {
-								if (!mInvokedMember.equals(mInvokedMemberToTInvokedMember)) {
-									if (!mInvokedMember.equals(tInvokedMember)) {
-										if (!mInvokedMember.equals(tAccess)) {
+			PerformRuleResult ruleresult, EObject mInvokedMemberToTInvokedMember, EObject mInvokedMember,
+			EObject tInvokedMember, EObject invocation, EObject tAccess, EObject invocationToTAccess) {
+		if (!mInvokedMemberToTInvokedMember.equals(tInvokedMember)) {
+			if (!mInvokedMemberToTInvokedMember.equals(tAccess)) {
+				if (!mInvokedMember.equals(mInvokedMemberToTInvokedMember)) {
+					if (!mInvokedMember.equals(tInvokedMember)) {
+						if (!mInvokedMember.equals(tAccess)) {
+							if (!invocation.equals(mInvokedMemberToTInvokedMember)) {
+								if (!invocation.equals(mInvokedMember)) {
+									if (!invocation.equals(tInvokedMember)) {
+										if (!invocation.equals(tAccess)) {
 											if (!invocation.equals(invocationToTAccess)) {
-												if (!invocation.equals(mInvokedMemberToTInvokedMember)) {
-													if (!invocation.equals(mInvokedMember)) {
-														if (!invocation.equals(tInvokedMember)) {
-															if (!invocation.equals(tAccess)) {
-																if (!tAccess.equals(tInvokedMember)) {
+												if (!tAccess.equals(tInvokedMember)) {
+													if (!invocationToTAccess.equals(mInvokedMemberToTInvokedMember)) {
+														if (!invocationToTAccess.equals(mInvokedMember)) {
+															if (!invocationToTAccess.equals(tInvokedMember)) {
+																if (!invocationToTAccess.equals(tAccess)) {
 																	return new Object[] { ruleresult,
-																			invocationToTAccess,
 																			mInvokedMemberToTInvokedMember,
 																			mInvokedMember, tInvokedMember, invocation,
-																			tAccess };
+																			tAccess, invocationToTAccess };
 																}
 															}
 														}
@@ -2002,11 +2004,11 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final void pattern_MethodInvocationTarget_11_5_registerobjects_expressionBBBBBBBB(
-			MethodInvocationTarget _this, PerformRuleResult ruleresult, EObject invocationToTAccess,
-			EObject mInvokedMemberToTInvokedMember, EObject mInvokedMember, EObject tInvokedMember, EObject invocation,
-			EObject tAccess) {
-		_this.registerObjects_BWD(ruleresult, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-				tInvokedMember, invocation, tAccess);
+			MethodInvocationTarget _this, PerformRuleResult ruleresult, EObject mInvokedMemberToTInvokedMember,
+			EObject mInvokedMember, EObject tInvokedMember, EObject invocation, EObject tAccess,
+			EObject invocationToTAccess) {
+		_this.registerObjects_BWD(ruleresult, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+				invocation, tAccess, invocationToTAccess);
 
 	}
 
@@ -2082,7 +2084,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationTarget_12_2_corematch_blackFFFBFBB(
+	public static final Iterable<Object[]> pattern_MethodInvocationTarget_12_2_corematch_blackFFBFBFB(
 			TMethodDefinition tInvokedMember, TAccess tAccess, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mInvokedMemberToTInvokedMember : org.moflon.core.utilities.eMoflonEMFUtil
@@ -2094,8 +2096,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 						.getOppositeReferenceTyped(tAccess, AbstractMethodInvocationToTAccess.class, "target")) {
 					AbstractMethodInvocation invocation = invocationToTAccess.getSource();
 					if (invocation != null) {
-						_result.add(new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-								tInvokedMember, invocation, tAccess, match });
+						_result.add(new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+								invocation, tAccess, invocationToTAccess, match });
 					}
 
 				}
@@ -2106,17 +2108,17 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationTarget_12_3_findcontext_blackBBBBBB(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tInvokedMember.equals(mInvokedMemberToTInvokedMember.getTarget())) {
 			if (mInvokedMember.equals(mInvokedMemberToTInvokedMember.getSource())) {
-				if (invocation.equals(invocationToTAccess.getSource())) {
+				if (tInvokedMember.equals(tAccess.getTarget())) {
 					if (tAccess.equals(invocationToTAccess.getTarget())) {
-						if (tInvokedMember.equals(tAccess.getTarget())) {
-							_result.add(new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember,
-									mInvokedMember, tInvokedMember, invocation, tAccess });
+						if (invocation.equals(invocationToTAccess.getSource())) {
+							_result.add(new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+									invocation, tAccess, invocationToTAccess });
 						}
 					}
 				}
@@ -2126,74 +2128,74 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_12_3_findcontext_greenBBBBBBFFFFFFF(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge mInvokedMemberToTInvokedMember__tInvokedMember____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge mInvokedMemberToTInvokedMember__mInvokedMember____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tInvokedMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tInvokedMember__tAccess____accessedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mInvokedMemberToTInvokedMember__tInvokedMember____target_name_prime = "target";
 		String mInvokedMemberToTInvokedMember__mInvokedMember____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
-		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String tAccess__tInvokedMember____target_name_prime = "target";
 		String tInvokedMember__tAccess____accessedBy_name_prime = "accessedBy";
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess);
+		String invocationToTAccess__tAccess____target_name_prime = "target";
+		String invocationToTAccess__invocation____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember);
 		isApplicableMatch.getAllContextElements().add(mInvokedMember);
 		isApplicableMatch.getAllContextElements().add(tInvokedMember);
 		isApplicableMatch.getAllContextElements().add(invocation);
 		isApplicableMatch.getAllContextElements().add(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess);
 		mInvokedMemberToTInvokedMember__tInvokedMember____target.setSrc(mInvokedMemberToTInvokedMember);
 		mInvokedMemberToTInvokedMember__tInvokedMember____target.setTrg(tInvokedMember);
 		isApplicableMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember__tInvokedMember____target);
 		mInvokedMemberToTInvokedMember__mInvokedMember____source.setSrc(mInvokedMemberToTInvokedMember);
 		mInvokedMemberToTInvokedMember__mInvokedMember____source.setTrg(mInvokedMember);
 		isApplicableMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember__mInvokedMember____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
-		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
-		invocationToTAccess__tAccess____target.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
 		tAccess__tInvokedMember____target.setSrc(tAccess);
 		tAccess__tInvokedMember____target.setTrg(tInvokedMember);
 		isApplicableMatch.getAllContextElements().add(tAccess__tInvokedMember____target);
 		tInvokedMember__tAccess____accessedBy.setSrc(tInvokedMember);
 		tInvokedMember__tAccess____accessedBy.setTrg(tAccess);
 		isApplicableMatch.getAllContextElements().add(tInvokedMember__tAccess____accessedBy);
+		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
+		invocationToTAccess__tAccess____target.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
 		mInvokedMemberToTInvokedMember__tInvokedMember____target
 				.setName(mInvokedMemberToTInvokedMember__tInvokedMember____target_name_prime);
 		mInvokedMemberToTInvokedMember__mInvokedMember____source
 				.setName(mInvokedMemberToTInvokedMember__mInvokedMember____source_name_prime);
-		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
-		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		tAccess__tInvokedMember____target.setName(tAccess__tInvokedMember____target_name_prime);
 		tInvokedMember__tAccess____accessedBy.setName(tInvokedMember__tAccess____accessedBy_name_prime);
-		return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-				invocation, tAccess, isApplicableMatch, mInvokedMemberToTInvokedMember__tInvokedMember____target,
-				mInvokedMemberToTInvokedMember__mInvokedMember____source, invocationToTAccess__invocation____source,
-				invocationToTAccess__tAccess____target, tAccess__tInvokedMember____target,
-				tInvokedMember__tAccess____accessedBy };
+		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
+		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
+		return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+				invocationToTAccess, isApplicableMatch, mInvokedMemberToTInvokedMember__tInvokedMember____target,
+				mInvokedMemberToTInvokedMember__mInvokedMember____source, tAccess__tInvokedMember____target,
+				tInvokedMember__tAccess____accessedBy, invocationToTAccess__tAccess____target,
+				invocationToTAccess__invocation____source };
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_12_4_solveCSP_bindingFBBBBBBBB(
 			MethodInvocationTarget _this, IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, invocationToTAccess,
-				mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess);
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mInvokedMemberToTInvokedMember,
+				mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, invocationToTAccess, mInvokedMemberToTInvokedMember,
-					mInvokedMember, tInvokedMember, invocation, tAccess };
+			return new Object[] { csp, _this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember,
+					tInvokedMember, invocation, tAccess, invocationToTAccess };
 		}
 		return null;
 	}
@@ -2204,12 +2206,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 
 	public static final Object[] pattern_MethodInvocationTarget_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			MethodInvocationTarget _this, IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
 		Object[] result_pattern_MethodInvocationTarget_12_4_solveCSP_binding = pattern_MethodInvocationTarget_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-				tInvokedMember, invocation, tAccess);
+				_this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+				tAccess, invocationToTAccess);
 		if (result_pattern_MethodInvocationTarget_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationTarget_12_4_solveCSP_binding[0];
 
@@ -2217,8 +2219,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					csp);
 			if (result_pattern_MethodInvocationTarget_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, invocationToTAccess,
-						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess };
+				return new Object[] { csp, _this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember,
+						tInvokedMember, invocation, tAccess, invocationToTAccess };
 			}
 		}
 		return null;
@@ -2594,7 +2596,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationTarget_24_5_matchcorrcontext_blackFFBBBBBB(
+	public static final Iterable<Object[]> pattern_MethodInvocationTarget_24_5_matchcorrcontext_blackFBBBBFBB(
 			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
 			AbstractMethodInvocation invocation, TAccess tAccess, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2603,10 +2605,10 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					.getOppositeReferenceTyped(tInvokedMember, MDefinitionToTMember.class, "target")) {
 				if (mInvokedMember.equals(mInvokedMemberToTInvokedMember.getSource())) {
 					for (AbstractMethodInvocationToTAccess invocationToTAccess : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(invocation, AbstractMethodInvocationToTAccess.class, "source")) {
-						if (tAccess.equals(invocationToTAccess.getTarget())) {
-							_result.add(new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember,
-									mInvokedMember, tInvokedMember, invocation, tAccess, sourceMatch, targetMatch });
+							.getOppositeReferenceTyped(tAccess, AbstractMethodInvocationToTAccess.class, "target")) {
+						if (invocation.equals(invocationToTAccess.getSource())) {
+							_result.add(new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
+									invocation, tAccess, invocationToTAccess, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -2616,16 +2618,16 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_24_5_matchcorrcontext_greenBBBBF(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodInvocationToTAccess invocationToTAccess,
 			Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "MethodInvocationTarget";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(invocationToTAccess);
 		ccMatch.getAllContextElements().add(mInvokedMemberToTInvokedMember);
+		ccMatch.getAllContextElements().add(invocationToTAccess);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { mInvokedMemberToTInvokedMember, invocationToTAccess, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_24_6_createcorrespondence_blackBBBBB(
@@ -2704,30 +2706,6 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, AbstractMethodInvocationToTAccess invocationToTAccess) {
-		if (ruleResult.getCorrObjects().contains(invocationToTAccess)) {
-			return new Object[] { ruleResult, invocationToTAccess };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, AbstractMethodInvocation invocation) {
-		if (ruleResult.getSourceObjects().contains(invocation)) {
-			return new Object[] { ruleResult, invocation };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TAccess tAccess) {
-		if (ruleResult.getTargetObjects().contains(tAccess)) {
-			return new Object[] { ruleResult, tAccess };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, MDefinitionToTMember mInvokedMemberToTInvokedMember) {
 		if (ruleResult.getCorrObjects().contains(mInvokedMemberToTInvokedMember)) {
 			return new Object[] { ruleResult, mInvokedMemberToTInvokedMember };
@@ -2735,7 +2713,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		return null;
 	}
 
-	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, TMethodDefinition tInvokedMember) {
 		if (ruleResult.getTargetObjects().contains(tInvokedMember)) {
 			return new Object[] { ruleResult, tInvokedMember };
@@ -2743,7 +2721,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		return null;
 	}
 
-	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, AbstractMethodDeclaration mInvokedMember) {
 		if (ruleResult.getSourceObjects().contains(mInvokedMember)) {
 			return new Object[] { ruleResult, mInvokedMember };
@@ -2751,51 +2729,73 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 		return null;
 	}
 
+	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, AbstractMethodInvocation invocation) {
+		if (ruleResult.getSourceObjects().contains(invocation)) {
+			return new Object[] { ruleResult, invocation };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, AbstractMethodInvocationToTAccess invocationToTAccess) {
+		if (ruleResult.getCorrObjects().contains(invocationToTAccess)) {
+			return new Object[] { ruleResult, invocationToTAccess };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, TAccess tAccess) {
+		if (ruleResult.getTargetObjects().contains(tAccess)) {
+			return new Object[] { ruleResult, tAccess };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_MethodInvocationTarget_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList invocationToTAccessList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList mInvokedMemberToTInvokedMemberList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList mInvokedMemberToTInvokedMemberList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList invocationToTAccessList : ruleEntryContainer.getRuleEntryList()) {
 				if (!invocationToTAccessList.equals(mInvokedMemberToTInvokedMemberList)) {
-					for (EObject tmpInvocationToTAccess : invocationToTAccessList.getEntryObjects()) {
-						if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
-							AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
-							AbstractMethodInvocation invocation = invocationToTAccess.getSource();
-							if (invocation != null) {
-								TAccess tAccess = invocationToTAccess.getTarget();
-								if (tAccess != null) {
+					for (EObject tmpMInvokedMemberToTInvokedMember : mInvokedMemberToTInvokedMemberList
+							.getEntryObjects()) {
+						if (tmpMInvokedMemberToTInvokedMember instanceof MDefinitionToTMember) {
+							MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) tmpMInvokedMemberToTInvokedMember;
+							TMember tmpTInvokedMember = mInvokedMemberToTInvokedMember.getTarget();
+							if (tmpTInvokedMember instanceof TMethodDefinition) {
+								TMethodDefinition tInvokedMember = (TMethodDefinition) tmpTInvokedMember;
+								BodyDeclaration tmpMInvokedMember = mInvokedMemberToTInvokedMember.getSource();
+								if (tmpMInvokedMember instanceof AbstractMethodDeclaration) {
+									AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) tmpMInvokedMember;
 									if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-											invocationToTAccess) == null) {
+											mInvokedMemberToTInvokedMember) == null) {
 										if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, invocation) == null) {
+												ruleResult, tInvokedMember) == null) {
 											if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, tAccess) == null) {
-												for (EObject tmpMInvokedMemberToTInvokedMember : mInvokedMemberToTInvokedMemberList
+													ruleResult, mInvokedMember) == null) {
+												for (EObject tmpInvocationToTAccess : invocationToTAccessList
 														.getEntryObjects()) {
-													if (tmpMInvokedMemberToTInvokedMember instanceof MDefinitionToTMember) {
-														MDefinitionToTMember mInvokedMemberToTInvokedMember = (MDefinitionToTMember) tmpMInvokedMemberToTInvokedMember;
-														TMember tmpTInvokedMember = mInvokedMemberToTInvokedMember
-																.getTarget();
-														if (tmpTInvokedMember instanceof TMethodDefinition) {
-															TMethodDefinition tInvokedMember = (TMethodDefinition) tmpTInvokedMember;
-															BodyDeclaration tmpMInvokedMember = mInvokedMemberToTInvokedMember
-																	.getSource();
-															if (tmpMInvokedMember instanceof AbstractMethodDeclaration) {
-																AbstractMethodDeclaration mInvokedMember = (AbstractMethodDeclaration) tmpMInvokedMember;
-																if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_3BB(
-																		ruleResult,
-																		mInvokedMemberToTInvokedMember) == null) {
-																	if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, tInvokedMember) == null) {
+													if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
+														AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
+														AbstractMethodInvocation invocation = invocationToTAccess
+																.getSource();
+														if (invocation != null) {
+															TAccess tAccess = invocationToTAccess.getTarget();
+															if (tAccess != null) {
+																if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_4BB(
+																		ruleResult, invocationToTAccess) == null) {
+																	if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_3BB(
+																			ruleResult, invocation) == null) {
 																		if (pattern_MethodInvocationTarget_29_2_isapplicablecore_black_nac_5BB(
-																				ruleResult, mInvokedMember) == null) {
+																				ruleResult, tAccess) == null) {
 																			_result.add(new Object[] {
-																					invocationToTAccessList,
-																					invocationToTAccess, invocation,
-																					tAccess,
 																					mInvokedMemberToTInvokedMemberList,
 																					mInvokedMemberToTInvokedMember,
 																					tInvokedMember, mInvokedMember,
+																					invocationToTAccessList, invocation,
+																					invocationToTAccess, tAccess,
 																					ruleEntryContainer, ruleResult });
 																		}
 																	}
@@ -2823,15 +2823,15 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 
 	public static final Object[] pattern_MethodInvocationTarget_29_3_solveCSP_bindingFBBBBBBBBB(
 			MethodInvocationTarget _this, IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, invocationToTAccess,
-				mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess, ruleResult);
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mInvokedMemberToTInvokedMember,
+				mInvokedMember, tInvokedMember, invocation, tAccess, invocationToTAccess, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, invocationToTAccess, mInvokedMemberToTInvokedMember,
-					mInvokedMember, tInvokedMember, invocation, tAccess, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember,
+					tInvokedMember, invocation, tAccess, invocationToTAccess, ruleResult };
 		}
 		return null;
 	}
@@ -2842,12 +2842,12 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 
 	public static final Object[] pattern_MethodInvocationTarget_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			MethodInvocationTarget _this, IsApplicableMatch isApplicableMatch,
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess, ModelgeneratorRuleResult ruleResult) {
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodInvocationTarget_29_3_solveCSP_binding = pattern_MethodInvocationTarget_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember,
-				tInvokedMember, invocation, tAccess, ruleResult);
+				_this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation,
+				tAccess, invocationToTAccess, ruleResult);
 		if (result_pattern_MethodInvocationTarget_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationTarget_29_3_solveCSP_binding[0];
 
@@ -2855,9 +2855,8 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 					csp);
 			if (result_pattern_MethodInvocationTarget_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, invocationToTAccess,
-						mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
-						ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mInvokedMemberToTInvokedMember, mInvokedMember,
+						tInvokedMember, invocation, tAccess, invocationToTAccess, ruleResult };
 			}
 		}
 		return null;
@@ -2871,19 +2870,19 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_29_5_checknacs_blackBBBBBB(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess) {
-		return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-				invocation, tAccess };
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess) {
+		return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+				invocationToTAccess };
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_29_6_perform_blackBBBBBBB(
-			AbstractMethodInvocationToTAccess invocationToTAccess, MDefinitionToTMember mInvokedMemberToTInvokedMember,
-			AbstractMethodDeclaration mInvokedMember, TMethodDefinition tInvokedMember,
-			AbstractMethodInvocation invocation, TAccess tAccess, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { invocationToTAccess, mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember,
-				invocation, tAccess, ruleResult };
+			MDefinitionToTMember mInvokedMemberToTInvokedMember, AbstractMethodDeclaration mInvokedMember,
+			TMethodDefinition tInvokedMember, AbstractMethodInvocation invocation, TAccess tAccess,
+			AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mInvokedMemberToTInvokedMember, mInvokedMember, tInvokedMember, invocation, tAccess,
+				invocationToTAccess, ruleResult };
 	}
 
 	public static final Object[] pattern_MethodInvocationTarget_29_6_perform_greenBBBBB(

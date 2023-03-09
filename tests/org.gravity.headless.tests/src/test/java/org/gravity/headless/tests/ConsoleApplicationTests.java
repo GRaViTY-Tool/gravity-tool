@@ -19,7 +19,6 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
 import javax.ws.rs.core.Response;
@@ -35,6 +34,8 @@ import org.gravity.headless.Messages;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.Timeout;
 import org.osgi.framework.Bundle;
 
@@ -42,13 +43,15 @@ import org.osgi.framework.Bundle;
  * @author speldszus
  *
  */
+@TestInstance(Lifecycle.PER_CLASS)
 class ConsoleApplicationTests {
 
 	private static final PrintStream standardOut = System.out;
-	private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+	private ByteArrayOutputStream outputStreamCaptor;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
+		this.outputStreamCaptor = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(this.outputStreamCaptor));
 	}
 
@@ -100,7 +103,8 @@ class ConsoleApplicationTests {
 			final var server = getServer(app);
 			assertNull(server);
 			final var output = this.outputStreamCaptor.toString();
-			assertTrue(output.contains(HeadlessActivator.PLUGIN_ID+':'), "Expected a version string but got: \""+output+'\"');
+			assertTrue(output.contains(HeadlessActivator.PLUGIN_ID + ':'),
+					"Expected a version string but got: \"" + output + '\"');
 		});
 	}
 
@@ -130,7 +134,7 @@ class ConsoleApplicationTests {
 	 * @throws IOException If the cache cannot be deleted after the test
 	 */
 	@Test
-	@Timeout(value = 30, unit = TimeUnit.SECONDS)
+	@Timeout(30)
 	void testStartServerCusomCache() throws IOException {
 		final var cache = new File("cache");
 		final var cmn = "6";
@@ -143,7 +147,7 @@ class ConsoleApplicationTests {
 			assertTrue(cache.exists());
 			writeToInputStream("exit");
 		});
-		//Clean up
+		// Clean up
 		Files.delete(cache.toPath());
 	}
 
@@ -151,18 +155,20 @@ class ConsoleApplicationTests {
 	 * Test method for
 	 * {@link org.gravity.headless.ConsoleApplication#start(org.eclipse.equinox.app.IApplicationContext)}.
 	 *
-	 * Tests whether the server can be started and terminated from the console using logging
+	 * Tests whether the server can be started and terminated from the console using
+	 * logging
 	 *
 	 * @throws IOException If the cache cannot be deleted after the test
 	 */
 	@Test
-	@Timeout(value = 30, unit = TimeUnit.SECONDS)
+	@Timeout(30)
 	void testStartServerLogging() throws IOException {
 		final var cache = new File("cache");
 		final var cmn = "6";
 		final var crn = "7";
 		final var logs = new File("logs");
-		final var args = new String[] { "-s", "-p", "8080", "-c", cache.getAbsolutePath(), "-cmn", cmn, "-crn", crn, "-l", logs.getAbsolutePath() };
+		final var args = new String[] { "-s", "-p", "8080", "-c", cache.getAbsolutePath(), "-cmn", cmn, "-crn", crn,
+				"-l", logs.getAbsolutePath() };
 		run(args, app -> {
 			assertNotNull(app);
 			final var server = getServer(app);
@@ -175,12 +181,11 @@ class ConsoleApplicationTests {
 				assertTrue(logs.listFiles().length > 0);
 			} catch (final IOException e) {
 				fail(e.getLocalizedMessage());
-			}
-			finally {
+			} finally {
 				writeToInputStream("exit");
 			}
 		});
-		//Clean up
+		// Clean up
 		FileUtils.recursiveDelete(logs);
 		FileUtils.recursiveDelete(cache);
 	}
@@ -189,7 +194,7 @@ class ConsoleApplicationTests {
 	 * Restores the standard output
 	 */
 	@AfterEach
-	public void tearDown() {
+	void tearDown() {
 		System.setOut(ConsoleApplicationTests.standardOut);
 	}
 
@@ -212,10 +217,12 @@ class ConsoleApplicationTests {
 	}
 
 	/**
-	 * Launches the console application with the given arguments and the executes a consumer, e.g., containing assertions for testing
+	 * Launches the console application with the given arguments and the executes a
+	 * consumer, e.g., containing assertions for testing
 	 *
-	 * @param args The launch arguments
-	 * @param assertions The consumer to which the launched application should be handed
+	 * @param args       The launch arguments
+	 * @param assertions The consumer to which the launched application should be
+	 *                   handed
 	 * @throws Exception If the launch of the application failed
 	 */
 	private void run(final String[] args, final Consumer<ConsoleApplication> assertions) {

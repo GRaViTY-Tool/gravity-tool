@@ -67,8 +67,7 @@ class WebApiGitTests extends AbstractWebApiTests {
 		final var service = getService(this.cache);
 		final var response = service.getPM4Git("https://github.com/GRaViTY-Tool/gravity-misc.git",
 				"1920e688e90c75d8daa3ccd14863bfaf9c56296e");
-		assertEquals(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), response.getStatus(),
-				"Unexpected status code: " + response.getStatus());
+		assertEquals(response.getStatus(), Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), "Unexpected status code: " + response.getStatus());
 		final var entity = response.getEntity();
 		if (entity instanceof String) {
 			assertEquals(Messages.errorNoSupportetBuildSystem, entity);

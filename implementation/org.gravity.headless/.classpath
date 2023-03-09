@@ -7,6 +7,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src/"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/javax.activation-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/asm.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/classgraph.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/commons-lang3.jar"/>
@@ -79,7 +81,5 @@
 	<classpathentry exported="true" kind="lib" path="target/dependency/wsdl4j.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/xml-resolver.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/xmlschema-core.jar"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/javax.activation-api.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

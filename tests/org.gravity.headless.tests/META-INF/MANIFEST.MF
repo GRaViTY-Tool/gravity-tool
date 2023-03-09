@@ -3,15 +3,15 @@ Bundle-ManifestVersion: 2
 Bundle-Name: GRaViTY Headless API Tests
 Bundle-SymbolicName: org.gravity.headless.tests
 Bundle-Version: 1.0.0.qualifier
+Import-Package: org.junit.jupiter.api;version="5.9.1"
 Bundle-Vendor: Ruhr University Bochum
 Automatic-Module-Name: org.gravity.headless.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Require-Bundle: org.junit,
- org.junit.jupiter.api,
- org.gravity.headless,
+Require-Bundle: org.gravity.headless,
  org.eclipse.emf.ecore,
  org.gravity.typegraph.basic,
  org.gravity.eclipse,
  org.apache.commons.cli,
- org.apache.log4j
+ org.apache.log4j,
+ junit-jupiter-api;bundle-version="5.9.1"
 Bundle-ClassPath: .

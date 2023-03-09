@@ -94,47 +94,47 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
+	public boolean isAppropriate_FWD(Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
 
 		Object[] result1_black = PackageToPGPackageImpl.pattern_PackageToPGPackage_0_1_initialbindings_blackBBBB(this,
-				match, mPackage, mModel);
+				match, mModel, mPackage);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mPackage] = " + mPackage + ", " + "[mModel] = " + mModel + ".");
+					+ "[match] = " + match + ", " + "[mModel] = " + mModel + ", " + "[mPackage] = " + mPackage + ".");
 		}
 
 		Object[] result2_bindingAndBlack = PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mPackage, mModel);
+				.pattern_PackageToPGPackage_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mModel, mPackage);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mPackage] = " + mPackage + ", " + "[mModel] = " + mModel + ".");
+					+ "[match] = " + match + ", " + "[mModel] = " + mModel + ", " + "[mPackage] = " + mPackage + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (PackageToPGPackageImpl.pattern_PackageToPGPackage_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = PackageToPGPackageImpl
-					.pattern_PackageToPGPackage_0_4_collectelementstobetranslated_blackBBB(match, mPackage, mModel);
+					.pattern_PackageToPGPackage_0_4_collectelementstobetranslated_blackBBB(match, mModel, mPackage);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mPackage] = " + mPackage + ", " + "[mModel] = " + mModel + ".");
+						+ "[mModel] = " + mModel + ", " + "[mPackage] = " + mPackage + ".");
 			}
 			PackageToPGPackageImpl.pattern_PackageToPGPackage_0_4_collectelementstobetranslated_greenBBBFF(match,
-					mPackage, mModel);
+					mModel, mPackage);
 			//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = PackageToPGPackageImpl
-					.pattern_PackageToPGPackage_0_5_collectcontextelements_blackBBB(match, mPackage, mModel);
+					.pattern_PackageToPGPackage_0_5_collectcontextelements_blackBBB(match, mModel, mPackage);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mPackage] = " + mPackage + ", " + "[mModel] = " + mModel + ".");
+						+ "[mModel] = " + mModel + ", " + "[mPackage] = " + mPackage + ".");
 			}
 			PackageToPGPackageImpl.pattern_PackageToPGPackage_0_5_collectcontextelements_greenBB(match, mModel);
 
 			// 
 			PackageToPGPackageImpl.pattern_PackageToPGPackage_0_6_registerobjectstomatch_expressionBBBB(this, match,
-					mPackage, mModel);
+					mModel, mPackage);
 			return PackageToPGPackageImpl.pattern_PackageToPGPackage_0_7_expressionF();
 		} else {
 			return PackageToPGPackageImpl.pattern_PackageToPGPackage_0_8_expressionF();
@@ -156,12 +156,12 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[0];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[1];
+		Model mModel = (Model) result1_bindingAndBlack[1];
 		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[2];
-		Model mModel = (Model) result1_bindingAndBlack[3];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_1_1_performtransformation_greenFBBFB(mPackage, typeGraph, csp);
+				.pattern_PackageToPGPackage_1_1_performtransformation_greenFBBFB(typeGraph, mPackage, csp);
 		TPackage tPackage = (TPackage) result1_green[0];
 		PackageToTPackage mPackageToTPackage = (PackageToTPackage) result1_green[3];
 
@@ -178,26 +178,26 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = PackageToPGPackageImpl.pattern_PackageToPGPackage_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mModelToTypeGraph, tPackage, mPackage, typeGraph, mModel, mPackageToTPackage);
+				ruleresult, tPackage, mModelToTypeGraph, mModel, typeGraph, mPackage, mPackageToTPackage);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[tPackage] = " + tPackage + ", "
-					+ "[mPackage] = " + mPackage + ", " + "[typeGraph] = " + typeGraph + ", " + "[mModel] = " + mModel
+					+ ", " + "[tPackage] = " + tPackage + ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", "
+					+ "[mModel] = " + mModel + ", " + "[typeGraph] = " + typeGraph + ", " + "[mPackage] = " + mPackage
 					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ".");
 		}
 		PackageToPGPackageImpl.pattern_PackageToPGPackage_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult,
-				tPackage, mPackage, typeGraph, mModel, mPackageToTPackage);
+				tPackage, mModel, typeGraph, mPackage, mPackageToTPackage);
 		//nothing EMoflonEdge tPackage__typeGraph____model = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge typeGraph__tPackage____packages = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge typeGraph__tPackage____packages = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result3_green[11];
 
 		// 
 		// 
 		PackageToPGPackageImpl.pattern_PackageToPGPackage_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				mModelToTypeGraph, tPackage, mPackage, typeGraph, mModel, mPackageToTPackage);
+				tPackage, mModelToTypeGraph, mModel, typeGraph, mPackage, mPackageToTPackage);
 		return PackageToPGPackageImpl.pattern_PackageToPGPackage_1_6_expressionFB(ruleresult);
 	}
 
@@ -225,32 +225,32 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_binding[0];
-		Model mModel = (Model) result2_binding[1];
-		for (Object[] result2_black : PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_2_2_corematch_blackFBFBB(mPackage, mModel, match)) {
+		Model mModel = (Model) result2_binding[0];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_binding[1];
+		for (Object[] result2_black : PackageToPGPackageImpl.pattern_PackageToPGPackage_2_2_corematch_blackFBFBB(mModel,
+				mPackage, match)) {
 			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[0];
 			TypeGraph typeGraph = (TypeGraph) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : PackageToPGPackageImpl.pattern_PackageToPGPackage_2_3_findcontext_blackBBBB(
-					mModelToTypeGraph, mPackage, typeGraph, mModel)) {
+					mModelToTypeGraph, mModel, typeGraph, mPackage)) {
 				Object[] result3_green = PackageToPGPackageImpl
-						.pattern_PackageToPGPackage_2_3_findcontext_greenBBBBFFFFF(mModelToTypeGraph, mPackage,
-								typeGraph, mModel);
+						.pattern_PackageToPGPackage_2_3_findcontext_greenBBBBFFFFF(mModelToTypeGraph, mModel, typeGraph,
+								mPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mModelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mModelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = PackageToPGPackageImpl
 						.pattern_PackageToPGPackage_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mModelToTypeGraph, mPackage, typeGraph, mModel);
+								mModelToTypeGraph, mModel, typeGraph, mPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModelToTypeGraph] = "
-							+ mModelToTypeGraph + ", " + "[mPackage] = " + mPackage + ", " + "[typeGraph] = "
-							+ typeGraph + ", " + "[mModel] = " + mModel + ".");
+							+ mModelToTypeGraph + ", " + "[mModel] = " + mModel + ", " + "[typeGraph] = " + typeGraph
+							+ ", " + "[mPackage] = " + mPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -279,9 +279,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		match.registerObject("mPackage", mPackage);
+	public void registerObjectsToMatch_FWD(Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
 		match.registerObject("mModel", mModel);
+		match.registerObject("mPackage", mPackage);
 
 	}
 
@@ -290,7 +290,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -320,7 +320,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, Model mModel) {// Create CSP
+			Model mModel, TypeGraph typeGraph, org.eclipse.modisco.java.Package mPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -346,9 +346,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
-		isApplicableMatch.registerObject("mPackage", mPackage);
-		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("typeGraph", typeGraph);
+		isApplicableMatch.registerObject("mPackage", mPackage);
 		return csp;
 	}
 
@@ -366,13 +366,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject tPackage,
-			EObject mPackage, EObject typeGraph, EObject mModel, EObject mPackageToTPackage) {
-		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPackage, EObject mModelToTypeGraph,
+			EObject mModel, EObject typeGraph, EObject mPackage, EObject mPackageToTPackage) {
 		ruleresult.registerObject("tPackage", tPackage);
-		ruleresult.registerObject("mPackage", mPackage);
-		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		ruleresult.registerObject("mModel", mModel);
+		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mPackage", mPackage);
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 
 	}
@@ -455,14 +455,14 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[0];
-		TPackage tPackage = (TPackage) result1_bindingAndBlack[1];
-		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[2];
-		Model mModel = (Model) result1_bindingAndBlack[3];
+		TPackage tPackage = (TPackage) result1_bindingAndBlack[0];
+		ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[1];
+		Model mModel = (Model) result1_bindingAndBlack[2];
+		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_11_1_performtransformation_greenBFBFB(tPackage, mModel, csp);
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_green[1];
+				.pattern_PackageToPGPackage_11_1_performtransformation_greenBBFFB(tPackage, mModel, csp);
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_green[2];
 		PackageToTPackage mPackageToTPackage = (PackageToTPackage) result1_green[3];
 
 		Object[] result2_black = PackageToPGPackageImpl
@@ -478,27 +478,27 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, mModelToTypeGraph,
-						tPackage, mPackage, typeGraph, mModel, mPackageToTPackage);
+				.pattern_PackageToPGPackage_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, tPackage,
+						mModelToTypeGraph, mModel, typeGraph, mPackage, mPackageToTPackage);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[tPackage] = " + tPackage + ", "
-					+ "[mPackage] = " + mPackage + ", " + "[typeGraph] = " + typeGraph + ", " + "[mModel] = " + mModel
+					+ ", " + "[tPackage] = " + tPackage + ", " + "[mModelToTypeGraph] = " + mModelToTypeGraph + ", "
+					+ "[mModel] = " + mModel + ", " + "[typeGraph] = " + typeGraph + ", " + "[mPackage] = " + mPackage
 					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ".");
 		}
 		PackageToPGPackageImpl.pattern_PackageToPGPackage_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult,
-				tPackage, mPackage, typeGraph, mModel, mPackageToTPackage);
+				tPackage, mModel, typeGraph, mPackage, mPackageToTPackage);
 		//nothing EMoflonEdge tPackage__typeGraph____model = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge typeGraph__tPackage____packages = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge typeGraph__tPackage____packages = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mPackage__mModel____model = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mModel__mPackage____ownedElements = (EMoflonEdge) result3_green[11];
 
 		// 
 		// 
 		PackageToPGPackageImpl.pattern_PackageToPGPackage_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				mModelToTypeGraph, tPackage, mPackage, typeGraph, mModel, mPackageToTPackage);
+				tPackage, mModelToTypeGraph, mModel, typeGraph, mPackage, mPackageToTPackage);
 		return PackageToPGPackageImpl.pattern_PackageToPGPackage_11_6_expressionFB(ruleresult);
 	}
 
@@ -529,29 +529,29 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		TPackage tPackage = (TPackage) result2_binding[0];
 		TypeGraph typeGraph = (TypeGraph) result2_binding[1];
 		for (Object[] result2_black : PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_12_2_corematch_blackFBBFB(tPackage, typeGraph, match)) {
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[0];
-			Model mModel = (Model) result2_black[3];
+				.pattern_PackageToPGPackage_12_2_corematch_blackBFFBB(tPackage, typeGraph, match)) {
+			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result2_black[1];
+			Model mModel = (Model) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : PackageToPGPackageImpl.pattern_PackageToPGPackage_12_3_findcontext_blackBBBB(
-					mModelToTypeGraph, tPackage, typeGraph, mModel)) {
+					tPackage, mModelToTypeGraph, mModel, typeGraph)) {
 				Object[] result3_green = PackageToPGPackageImpl
-						.pattern_PackageToPGPackage_12_3_findcontext_greenBBBBFFFFF(mModelToTypeGraph, tPackage,
-								typeGraph, mModel);
+						.pattern_PackageToPGPackage_12_3_findcontext_greenBBBBFFFFF(tPackage, mModelToTypeGraph, mModel,
+								typeGraph);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge tPackage__typeGraph____model = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mModelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge typeGraph__tPackage____packages = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge tPackage__typeGraph____model = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge typeGraph__tPackage____packages = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mModelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = PackageToPGPackageImpl
 						.pattern_PackageToPGPackage_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mModelToTypeGraph, tPackage, typeGraph, mModel);
+								tPackage, mModelToTypeGraph, mModel, typeGraph);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModelToTypeGraph] = "
-							+ mModelToTypeGraph + ", " + "[tPackage] = " + tPackage + ", " + "[typeGraph] = "
-							+ typeGraph + ", " + "[mModel] = " + mModel + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPackage] = " + tPackage + ", "
+							+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mModel] = " + mModel + ", "
+							+ "[typeGraph] = " + typeGraph + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -621,8 +621,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			TPackage tPackage, TypeGraph typeGraph, Model mModel) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tPackage,
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -647,10 +647,10 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		eq.solve(var_mPackage_name, var_tPackage_tName);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		isApplicableMatch.registerObject("tPackage", tPackage);
-		isApplicableMatch.registerObject("typeGraph", typeGraph);
+		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		return csp;
 	}
 
@@ -668,13 +668,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject tPackage,
-			EObject mPackage, EObject typeGraph, EObject mModel, EObject mPackageToTPackage) {
-		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPackage, EObject mModelToTypeGraph,
+			EObject mModel, EObject typeGraph, EObject mPackage, EObject mPackageToTPackage) {
 		ruleresult.registerObject("tPackage", tPackage);
-		ruleresult.registerObject("mPackage", mPackage);
-		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mModelToTypeGraph", mModelToTypeGraph);
 		ruleresult.registerObject("mModel", mModel);
+		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mPackage", mPackage);
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
 
 	}
@@ -694,7 +694,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_81(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_38(EMoflonEdge _edge_model) {
 
 		Object[] result1_bindingAndBlack = PackageToPGPackageImpl
 				.pattern_PackageToPGPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -751,7 +751,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_85(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_39(EMoflonEdge _edge_model) {
 
 		Object[] result1_bindingAndBlack = PackageToPGPackageImpl
 				.pattern_PackageToPGPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,8 +767,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		// ForEach 
 		for (Object[] result2_black : PackageToPGPackageImpl
 				.pattern_PackageToPGPackage_21_2_testcorematchandDECs_blackFFB(_edge_model)) {
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[0];
-			Model mModel = (Model) result2_black[1];
+			Model mModel = (Model) result2_black[0];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[1];
 			Object[] result2_green = PackageToPGPackageImpl
 					.pattern_PackageToPGPackage_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -776,7 +776,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 			// 
 			if (PackageToPGPackageImpl
 					.pattern_PackageToPGPackage_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, mPackage, mModel)) {
+							match, mModel, mPackage)) {
 				// 
 				if (PackageToPGPackageImpl
 						.pattern_PackageToPGPackage_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -818,13 +818,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tPackage_tName = CSPFactoryHelper.eINSTANCE.createVariable("tPackage", true, csp);
-		var_tPackage_tName.setValue(__helper.getValue("tPackage", "tName"));
-		var_tPackage_tName.setType("String");
-
 		Variable var_mPackage_name = CSPFactoryHelper.eINSTANCE.createVariable("mPackage", true, csp);
 		var_mPackage_name.setValue(__helper.getValue("mPackage", "name"));
 		var_mPackage_name.setType("String");
+
+		Variable var_tPackage_tName = CSPFactoryHelper.eINSTANCE.createVariable("tPackage", true, csp);
+		var_tPackage_tName.setValue(__helper.getValue("tPackage", "tName"));
+		var_tPackage_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -865,13 +865,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tPackage_tName = CSPFactoryHelper.eINSTANCE.createVariable("tPackage", true, csp);
-		var_tPackage_tName.setValue(__helper.getValue("tPackage", "tName"));
-		var_tPackage_tName.setType("String");
-
 		Variable var_mPackage_name = CSPFactoryHelper.eINSTANCE.createVariable("mPackage", true, csp);
 		var_mPackage_name.setValue(__helper.getValue("mPackage", "name"));
 		var_mPackage_name.setType("String");
+
+		Variable var_tPackage_tName = CSPFactoryHelper.eINSTANCE.createVariable("tPackage", true, csp);
+		var_tPackage_tName.setValue(__helper.getValue("tPackage", "tName"));
+		var_tPackage_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -918,17 +918,17 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TPackage tPackage = (TPackage) result2_bindingAndBlack[0];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[1];
+		Model mModel = (Model) result2_bindingAndBlack[1];
 		TypeGraph typeGraph = (TypeGraph) result2_bindingAndBlack[2];
-		Model mModel = (Model) result2_bindingAndBlack[3];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tPackage, mPackage, typeGraph,
-						mModel, sourceMatch, targetMatch);
+				.pattern_PackageToPGPackage_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tPackage, mModel, typeGraph,
+						mPackage, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tPackage] = " + tPackage + ", " + "[mPackage] = " + mPackage + ", " + "[typeGraph] = "
-					+ typeGraph + ", " + "[mModel] = " + mModel + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[tPackage] = " + tPackage + ", " + "[mModel] = " + mModel + ", " + "[typeGraph] = " + typeGraph
+					+ ", " + "[mPackage] = " + mPackage + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -936,7 +936,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		if (PackageToPGPackageImpl.pattern_PackageToPGPackage_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : PackageToPGPackageImpl
-					.pattern_PackageToPGPackage_24_5_matchcorrcontext_blackFBBBB(typeGraph, mModel, sourceMatch,
+					.pattern_PackageToPGPackage_24_5_matchcorrcontext_blackFBBBB(mModel, typeGraph, sourceMatch,
 							targetMatch)) {
 				ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result5_black[0];
 				Object[] result5_green = PackageToPGPackageImpl
@@ -945,12 +945,12 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = PackageToPGPackageImpl
-						.pattern_PackageToPGPackage_24_6_createcorrespondence_blackBBBBB(tPackage, mPackage, typeGraph,
-								mModel, ccMatch);
+						.pattern_PackageToPGPackage_24_6_createcorrespondence_blackBBBBB(tPackage, mModel, typeGraph,
+								mPackage, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPackage] = " + tPackage
-							+ ", " + "[mPackage] = " + mPackage + ", " + "[typeGraph] = " + typeGraph + ", "
-							+ "[mModel] = " + mModel + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ ", " + "[mModel] = " + mModel + ", " + "[typeGraph] = " + typeGraph + ", "
+							+ "[mPackage] = " + mPackage + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				PackageToPGPackageImpl.pattern_PackageToPGPackage_24_6_createcorrespondence_greenBBFB(tPackage,
 						mPackage, ccMatch);
@@ -976,8 +976,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TPackage tPackage, org.eclipse.modisco.java.Package mPackage,
-			TypeGraph typeGraph, Model mModel, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TPackage tPackage, Model mModel, TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1017,9 +1017,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(org.eclipse.modisco.java.Package mPackage, Model mModel) {// 
-		Object[] result1_black = PackageToPGPackageImpl
-				.pattern_PackageToPGPackage_27_1_matchtggpattern_blackBB(mPackage, mModel);
+	public boolean checkDEC_FWD(Model mModel, org.eclipse.modisco.java.Package mPackage) {// 
+		Object[] result1_black = PackageToPGPackageImpl.pattern_PackageToPGPackage_27_1_matchtggpattern_blackBB(mModel,
+				mPackage);
 		if (result1_black != null) {
 			return PackageToPGPackageImpl.pattern_PackageToPGPackage_27_2_expressionF();
 		} else {
@@ -1070,11 +1070,11 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 			Object[] result3_bindingAndBlack = PackageToPGPackageImpl
 					.pattern_PackageToPGPackage_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							mModelToTypeGraph, typeGraph, mModel, ruleResult);
+							mModelToTypeGraph, mModel, typeGraph, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModelToTypeGraph] = "
-						+ mModelToTypeGraph + ", " + "[typeGraph] = " + typeGraph + ", " + "[mModel] = " + mModel + ", "
+						+ mModelToTypeGraph + ", " + "[mModel] = " + mModel + ", " + "[typeGraph] = " + typeGraph + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1082,20 +1082,20 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 			if (PackageToPGPackageImpl.pattern_PackageToPGPackage_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = PackageToPGPackageImpl
-						.pattern_PackageToPGPackage_29_5_checknacs_blackBBB(mModelToTypeGraph, typeGraph, mModel);
+						.pattern_PackageToPGPackage_29_5_checknacs_blackBBB(mModelToTypeGraph, mModel, typeGraph);
 				if (result5_black != null) {
 
 					Object[] result6_black = PackageToPGPackageImpl.pattern_PackageToPGPackage_29_6_perform_blackBBBB(
-							mModelToTypeGraph, typeGraph, mModel, ruleResult);
+							mModelToTypeGraph, mModel, typeGraph, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: "
-								+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[typeGraph] = " + typeGraph
-								+ ", " + "[mModel] = " + mModel + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ "[mModelToTypeGraph] = " + mModelToTypeGraph + ", " + "[mModel] = " + mModel + ", "
+								+ "[typeGraph] = " + typeGraph + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					PackageToPGPackageImpl.pattern_PackageToPGPackage_29_6_perform_greenFFBBFBB(typeGraph, mModel,
+					PackageToPGPackageImpl.pattern_PackageToPGPackage_29_6_perform_greenFBBFFBB(mModel, typeGraph,
 							ruleResult, csp);
 					//nothing TPackage tPackage = (TPackage) result6_green[0];
-					//nothing org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result6_green[1];
+					//nothing org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result6_green[3];
 					//nothing PackageToTPackage mPackageToTPackage = (PackageToTPackage) result6_green[4];
 
 				} else {
@@ -1114,7 +1114,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			TypeGraph typeGraph, Model mModel, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			Model mModel, TypeGraph typeGraph, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1139,8 +1139,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mModelToTypeGraph", mModelToTypeGraph);
-		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("typeGraph", typeGraph);
 		return csp;
 	}
 
@@ -1161,26 +1161,26 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(Model) arguments.get(2));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD__MATCH_MODEL_PACKAGE:
+			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(Model) arguments.get(2));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_PACKAGE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 			return null;
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (Model) arguments.get(2));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_PACKAGE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_PACKAGE_TYPEGRAPH_MODEL:
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_MODEL_TYPEGRAPH_PACKAGE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(org.eclipse.modisco.java.Package) arguments.get(2), (TypeGraph) arguments.get(3),
-					(Model) arguments.get(4));
+					(Model) arguments.get(2), (TypeGraph) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1206,9 +1206,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					(TypeGraph) arguments.get(2));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TPACKAGE_TYPEGRAPH_MODEL:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (Model) arguments.get(4));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPACKAGE_MODELTOTYPEGRAPH_MODEL_TYPEGRAPH:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
+					(ModelToTypeGraph) arguments.get(2), (Model) arguments.get(3), (TypeGraph) arguments.get(4));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1218,31 +1218,31 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 			return null;
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_81__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_81((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_85__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_85((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_38__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_38((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_39__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_39((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_SOLVE_CSP_CC__TPACKAGE_PACKAGE_TYPEGRAPH_MODEL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TPackage) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (TypeGraph) arguments.get(2),
-					(Model) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_SOLVE_CSP_CC__TPACKAGE_MODEL_TYPEGRAPH_PACKAGE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TPackage) arguments.get(0), (Model) arguments.get(1),
+					(TypeGraph) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_DEC_FWD__PACKAGE_MODEL:
-			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0), (Model) arguments.get(1));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_DEC_FWD__MODEL_PACKAGE:
+			return checkDEC_FWD((Model) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_DEC_BWD__TPACKAGE_TYPEGRAPH:
 			return checkDEC_BWD((TPackage) arguments.get(0), (TypeGraph) arguments.get(1));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_MODEL_TYPEGRAPH_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TypeGraph) arguments.get(2), (Model) arguments.get(3),
+					(Model) arguments.get(2), (TypeGraph) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1251,16 +1251,16 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_1_initialbindings_blackBBBB(PackageToPGPackage _this,
-			Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		return new Object[] { _this, match, mPackage, mModel };
+			Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
+		return new Object[] { _this, match, mModel, mPackage };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_2_SolveCSP_bindingFBBBB(PackageToPGPackage _this,
-			Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mPackage, mModel);
+			Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mModel, mPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mPackage, mModel };
+			return new Object[] { csp, _this, match, mModel, mPackage };
 		}
 		return null;
 	}
@@ -1270,9 +1270,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_2_SolveCSP_bindingAndBlackFBBBB(PackageToPGPackage _this,
-			Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
+			Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
 		Object[] result_pattern_PackageToPGPackage_0_2_SolveCSP_binding = pattern_PackageToPGPackage_0_2_SolveCSP_bindingFBBBB(
-				_this, match, mPackage, mModel);
+				_this, match, mModel, mPackage);
 		if (result_pattern_PackageToPGPackage_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PackageToPGPackage_0_2_SolveCSP_binding[0];
 
@@ -1280,7 +1280,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					csp);
 			if (result_pattern_PackageToPGPackage_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mPackage, mModel };
+				return new Object[] { csp, _this, match, mModel, mPackage };
 			}
 		}
 		return null;
@@ -1294,12 +1294,12 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_4_collectelementstobetranslated_blackBBB(Match match,
-			org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		return new Object[] { match, mPackage, mModel };
+			Model mModel, org.eclipse.modisco.java.Package mPackage) {
+		return new Object[] { match, mModel, mPackage };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_4_collectelementstobetranslated_greenBBBFF(Match match,
-			org.eclipse.modisco.java.Package mPackage, Model mModel) {
+			Model mModel, org.eclipse.modisco.java.Package mPackage) {
 		EMoflonEdge mPackage__mModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mPackage____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mPackage);
@@ -1313,12 +1313,12 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		match.getToBeTranslatedEdges().add(mModel__mPackage____ownedElements);
 		mPackage__mModel____model.setName(mPackage__mModel____model_name_prime);
 		mModel__mPackage____ownedElements.setName(mModel__mPackage____ownedElements_name_prime);
-		return new Object[] { match, mPackage, mModel, mPackage__mModel____model, mModel__mPackage____ownedElements };
+		return new Object[] { match, mModel, mPackage, mPackage__mModel____model, mModel__mPackage____ownedElements };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_5_collectcontextelements_blackBBB(Match match,
-			org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		return new Object[] { match, mPackage, mModel };
+			Model mModel, org.eclipse.modisco.java.Package mPackage) {
+		return new Object[] { match, mModel, mPackage };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_0_5_collectcontextelements_greenBB(Match match,
@@ -1328,8 +1328,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final void pattern_PackageToPGPackage_0_6_registerobjectstomatch_expressionBBBB(
-			PackageToPGPackage _this, Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		_this.registerObjectsToMatch_FWD(match, mPackage, mModel);
+			PackageToPGPackage _this, Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
+		_this.registerObjectsToMatch_FWD(match, mModel, mPackage);
 
 	}
 
@@ -1346,22 +1346,22 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	public static final Object[] pattern_PackageToPGPackage_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mModelToTypeGraph");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mPackage");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mModel");
 		EObject _localVariable_2 = isApplicableMatch.getObject("typeGraph");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mPackage");
 		EObject tmpMModelToTypeGraph = _localVariable_0;
-		EObject tmpMPackage = _localVariable_1;
+		EObject tmpMModel = _localVariable_1;
 		EObject tmpTypeGraph = _localVariable_2;
-		EObject tmpMModel = _localVariable_3;
+		EObject tmpMPackage = _localVariable_3;
 		if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
 			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
-			if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+			if (tmpMModel instanceof Model) {
+				Model mModel = (Model) tmpMModel;
 				if (tmpTypeGraph instanceof TypeGraph) {
 					TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-					if (tmpMModel instanceof Model) {
-						Model mModel = (Model) tmpMModel;
-						return new Object[] { mModelToTypeGraph, mPackage, typeGraph, mModel, isApplicableMatch };
+					if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+						org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+						return new Object[] { mModelToTypeGraph, mModel, typeGraph, mPackage, isApplicableMatch };
 					}
 				}
 			}
@@ -1370,12 +1370,12 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_1_1_performtransformation_blackBBBBFBB(
-			ModelToTypeGraph mModelToTypeGraph, org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph,
-			Model mModel, PackageToPGPackage _this, IsApplicableMatch isApplicableMatch) {
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage, PackageToPGPackage _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mModelToTypeGraph, mPackage, typeGraph, mModel, csp, _this, isApplicableMatch };
+				return new Object[] { mModelToTypeGraph, mModel, typeGraph, mPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1387,33 +1387,33 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 				isApplicableMatch);
 		if (result_pattern_PackageToPGPackage_1_1_performtransformation_binding != null) {
 			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_PackageToPGPackage_1_1_performtransformation_binding[0];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_PackageToPGPackage_1_1_performtransformation_binding[1];
+			Model mModel = (Model) result_pattern_PackageToPGPackage_1_1_performtransformation_binding[1];
 			TypeGraph typeGraph = (TypeGraph) result_pattern_PackageToPGPackage_1_1_performtransformation_binding[2];
-			Model mModel = (Model) result_pattern_PackageToPGPackage_1_1_performtransformation_binding[3];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_PackageToPGPackage_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_PackageToPGPackage_1_1_performtransformation_black = pattern_PackageToPGPackage_1_1_performtransformation_blackBBBBFBB(
-					mModelToTypeGraph, mPackage, typeGraph, mModel, _this, isApplicableMatch);
+					mModelToTypeGraph, mModel, typeGraph, mPackage, _this, isApplicableMatch);
 			if (result_pattern_PackageToPGPackage_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_PackageToPGPackage_1_1_performtransformation_black[4];
 
-				return new Object[] { mModelToTypeGraph, mPackage, typeGraph, mModel, csp, _this, isApplicableMatch };
+				return new Object[] { mModelToTypeGraph, mModel, typeGraph, mPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PackageToPGPackage_1_1_performtransformation_greenFBBFB(
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, CSP csp) {
+	public static final Object[] pattern_PackageToPGPackage_1_1_performtransformation_greenFBBFB(TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage, CSP csp) {
 		TPackage tPackage = BasicFactory.eINSTANCE.createTPackage();
 		PackageToTPackage mPackageToTPackage = PmFactory.eINSTANCE.createPackageToTPackage();
 		Object _localVariable_0 = csp.getValue("tPackage", "tName");
 		tPackage.setModel(typeGraph);
 		typeGraph.getPackages().add(tPackage);
-		mPackageToTPackage.setTarget(tPackage);
 		mPackageToTPackage.setSource(mPackage);
+		mPackageToTPackage.setTarget(tPackage);
 		String tPackage_tName_prime = (String) _localVariable_0;
 		tPackage.setTName(tPackage_tName_prime);
-		return new Object[] { tPackage, mPackage, typeGraph, mPackageToTPackage, csp };
+		return new Object[] { tPackage, typeGraph, mPackage, mPackageToTPackage, csp };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_1_2_collecttranslatedelements_blackBBB(TPackage tPackage,
@@ -1431,26 +1431,26 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject tPackage, EObject mPackage,
-			EObject typeGraph, EObject mModel, EObject mPackageToTPackage) {
-		if (!mModelToTypeGraph.equals(tPackage)) {
-			if (!mModelToTypeGraph.equals(mPackage)) {
+			PerformRuleResult ruleresult, EObject tPackage, EObject mModelToTypeGraph, EObject mModel,
+			EObject typeGraph, EObject mPackage, EObject mPackageToTPackage) {
+		if (!tPackage.equals(typeGraph)) {
+			if (!mModelToTypeGraph.equals(tPackage)) {
 				if (!mModelToTypeGraph.equals(typeGraph)) {
-					if (!mModelToTypeGraph.equals(mPackageToTPackage)) {
-						if (!tPackage.equals(typeGraph)) {
-							if (!mPackage.equals(tPackage)) {
-								if (!mPackage.equals(typeGraph)) {
-									if (!mPackage.equals(mPackageToTPackage)) {
-										if (!mModel.equals(mModelToTypeGraph)) {
-											if (!mModel.equals(tPackage)) {
-												if (!mModel.equals(mPackage)) {
-													if (!mModel.equals(typeGraph)) {
-														if (!mModel.equals(mPackageToTPackage)) {
+					if (!mModelToTypeGraph.equals(mPackage)) {
+						if (!mModelToTypeGraph.equals(mPackageToTPackage)) {
+							if (!mModel.equals(tPackage)) {
+								if (!mModel.equals(mModelToTypeGraph)) {
+									if (!mModel.equals(typeGraph)) {
+										if (!mModel.equals(mPackage)) {
+											if (!mModel.equals(mPackageToTPackage)) {
+												if (!mPackage.equals(tPackage)) {
+													if (!mPackage.equals(typeGraph)) {
+														if (!mPackage.equals(mPackageToTPackage)) {
 															if (!mPackageToTPackage.equals(tPackage)) {
 																if (!mPackageToTPackage.equals(typeGraph)) {
-																	return new Object[] { ruleresult, mModelToTypeGraph,
-																			tPackage, mPackage, typeGraph, mModel,
-																			mPackageToTPackage };
+																	return new Object[] { ruleresult, tPackage,
+																			mModelToTypeGraph, mModel, typeGraph,
+																			mPackage, mPackageToTPackage };
 																}
 															}
 														}
@@ -1470,56 +1470,55 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject tPackage, EObject mPackage, EObject typeGraph, EObject mModel,
+			PerformRuleResult ruleresult, EObject tPackage, EObject mModel, EObject typeGraph, EObject mPackage,
 			EObject mPackageToTPackage) {
 		EMoflonEdge tPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tPackage____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mPackage____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tPackage____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PackageToPGPackage";
 		String tPackage__typeGraph____model_name_prime = "model";
+		String typeGraph__tPackage____packages_name_prime = "packages";
+		String mPackageToTPackage__mPackage____source_name_prime = "source";
+		String mPackageToTPackage__tPackage____target_name_prime = "target";
 		String mPackage__mModel____model_name_prime = "model";
 		String mModel__mPackage____ownedElements_name_prime = "ownedElements";
-		String typeGraph__tPackage____packages_name_prime = "packages";
-		String mPackageToTPackage__tPackage____target_name_prime = "target";
-		String mPackageToTPackage__mPackage____source_name_prime = "source";
 		tPackage__typeGraph____model.setSrc(tPackage);
 		tPackage__typeGraph____model.setTrg(typeGraph);
 		ruleresult.getCreatedEdges().add(tPackage__typeGraph____model);
+		typeGraph__tPackage____packages.setSrc(typeGraph);
+		typeGraph__tPackage____packages.setTrg(tPackage);
+		ruleresult.getCreatedEdges().add(typeGraph__tPackage____packages);
+		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
+		mPackageToTPackage__mPackage____source.setTrg(mPackage);
+		ruleresult.getCreatedEdges().add(mPackageToTPackage__mPackage____source);
+		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
+		mPackageToTPackage__tPackage____target.setTrg(tPackage);
+		ruleresult.getCreatedEdges().add(mPackageToTPackage__tPackage____target);
 		mPackage__mModel____model.setSrc(mPackage);
 		mPackage__mModel____model.setTrg(mModel);
 		ruleresult.getTranslatedEdges().add(mPackage__mModel____model);
 		mModel__mPackage____ownedElements.setSrc(mModel);
 		mModel__mPackage____ownedElements.setTrg(mPackage);
 		ruleresult.getTranslatedEdges().add(mModel__mPackage____ownedElements);
-		typeGraph__tPackage____packages.setSrc(typeGraph);
-		typeGraph__tPackage____packages.setTrg(tPackage);
-		ruleresult.getCreatedEdges().add(typeGraph__tPackage____packages);
-		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
-		mPackageToTPackage__tPackage____target.setTrg(tPackage);
-		ruleresult.getCreatedEdges().add(mPackageToTPackage__tPackage____target);
-		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
-		mPackageToTPackage__mPackage____source.setTrg(mPackage);
-		ruleresult.getCreatedEdges().add(mPackageToTPackage__mPackage____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tPackage__typeGraph____model.setName(tPackage__typeGraph____model_name_prime);
+		typeGraph__tPackage____packages.setName(typeGraph__tPackage____packages_name_prime);
+		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
+		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
 		mPackage__mModel____model.setName(mPackage__mModel____model_name_prime);
 		mModel__mPackage____ownedElements.setName(mModel__mPackage____ownedElements_name_prime);
-		typeGraph__tPackage____packages.setName(typeGraph__tPackage____packages_name_prime);
-		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
-		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
-		return new Object[] { ruleresult, tPackage, mPackage, typeGraph, mModel, mPackageToTPackage,
-				tPackage__typeGraph____model, mPackage__mModel____model, mModel__mPackage____ownedElements,
-				typeGraph__tPackage____packages, mPackageToTPackage__tPackage____target,
-				mPackageToTPackage__mPackage____source };
+		return new Object[] { ruleresult, tPackage, mModel, typeGraph, mPackage, mPackageToTPackage,
+				tPackage__typeGraph____model, typeGraph__tPackage____packages, mPackageToTPackage__mPackage____source,
+				mPackageToTPackage__tPackage____target, mPackage__mModel____model, mModel__mPackage____ownedElements };
 	}
 
 	public static final void pattern_PackageToPGPackage_1_5_registerobjects_expressionBBBBBBBB(PackageToPGPackage _this,
-			PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject tPackage, EObject mPackage,
-			EObject typeGraph, EObject mModel, EObject mPackageToTPackage) {
-		_this.registerObjects_FWD(ruleresult, mModelToTypeGraph, tPackage, mPackage, typeGraph, mModel,
+			PerformRuleResult ruleresult, EObject tPackage, EObject mModelToTypeGraph, EObject mModel,
+			EObject typeGraph, EObject mPackage, EObject mPackageToTPackage) {
+		_this.registerObjects_FWD(ruleresult, tPackage, mModelToTypeGraph, mModel, typeGraph, mPackage,
 				mPackageToTPackage);
 
 	}
@@ -1580,28 +1579,28 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mPackage");
-		EObject _localVariable_1 = match.getObject("mModel");
-		EObject tmpMPackage = _localVariable_0;
-		EObject tmpMModel = _localVariable_1;
-		if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-			if (tmpMModel instanceof Model) {
-				Model mModel = (Model) tmpMModel;
-				return new Object[] { mPackage, mModel, match };
+		EObject _localVariable_0 = match.getObject("mModel");
+		EObject _localVariable_1 = match.getObject("mPackage");
+		EObject tmpMModel = _localVariable_0;
+		EObject tmpMPackage = _localVariable_1;
+		if (tmpMModel instanceof Model) {
+			Model mModel = (Model) tmpMModel;
+			if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+				org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+				return new Object[] { mModel, mPackage, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_PackageToPGPackage_2_2_corematch_blackFBFBB(
-			org.eclipse.modisco.java.Package mPackage, Model mModel, Match match) {
+	public static final Iterable<Object[]> pattern_PackageToPGPackage_2_2_corematch_blackFBFBB(Model mModel,
+			org.eclipse.modisco.java.Package mPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph mModelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
 			TypeGraph typeGraph = mModelToTypeGraph.getTarget();
 			if (typeGraph != null) {
-				_result.add(new Object[] { mModelToTypeGraph, mPackage, typeGraph, mModel, match });
+				_result.add(new Object[] { mModelToTypeGraph, mModel, typeGraph, mPackage, match });
 			}
 
 		}
@@ -1609,13 +1608,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Iterable<Object[]> pattern_PackageToPGPackage_2_3_findcontext_blackBBBB(
-			ModelToTypeGraph mModelToTypeGraph, org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph,
-			Model mModel) {
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mModel.equals(mPackage.getModel())) {
-			if (mModel.equals(mModelToTypeGraph.getSource())) {
-				if (typeGraph.equals(mModelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { mModelToTypeGraph, mPackage, typeGraph, mModel });
+		if (mModel.equals(mModelToTypeGraph.getSource())) {
+			if (typeGraph.equals(mModelToTypeGraph.getTarget())) {
+				if (mModel.equals(mPackage.getModel())) {
+					_result.add(new Object[] { mModelToTypeGraph, mModel, typeGraph, mPackage });
 				}
 			}
 		}
@@ -1623,50 +1622,50 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_2_3_findcontext_greenBBBBFFFFF(
-			ModelToTypeGraph mModelToTypeGraph, org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph,
-			Model mModel) {
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mPackage__mModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModel__mPackage____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mPackage__mModel____model_name_prime = "model";
-		String mModel__mPackage____ownedElements_name_prime = "ownedElements";
+		EMoflonEdge mPackage__mModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModel__mPackage____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mModelToTypeGraph__mModel____source_name_prime = "source";
 		String mModelToTypeGraph__typeGraph____target_name_prime = "target";
+		String mPackage__mModel____model_name_prime = "model";
+		String mModel__mPackage____ownedElements_name_prime = "ownedElements";
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph);
-		isApplicableMatch.getAllContextElements().add(mPackage);
-		isApplicableMatch.getAllContextElements().add(typeGraph);
 		isApplicableMatch.getAllContextElements().add(mModel);
-		mPackage__mModel____model.setSrc(mPackage);
-		mPackage__mModel____model.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(mPackage__mModel____model);
-		mModel__mPackage____ownedElements.setSrc(mModel);
-		mModel__mPackage____ownedElements.setTrg(mPackage);
-		isApplicableMatch.getAllContextElements().add(mModel__mPackage____ownedElements);
+		isApplicableMatch.getAllContextElements().add(typeGraph);
+		isApplicableMatch.getAllContextElements().add(mPackage);
 		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
 		mModelToTypeGraph__mModel____source.setTrg(mModel);
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
 		mModelToTypeGraph__typeGraph____target.setSrc(mModelToTypeGraph);
 		mModelToTypeGraph__typeGraph____target.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__typeGraph____target);
-		mPackage__mModel____model.setName(mPackage__mModel____model_name_prime);
-		mModel__mPackage____ownedElements.setName(mModel__mPackage____ownedElements_name_prime);
+		mPackage__mModel____model.setSrc(mPackage);
+		mPackage__mModel____model.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(mPackage__mModel____model);
+		mModel__mPackage____ownedElements.setSrc(mModel);
+		mModel__mPackage____ownedElements.setTrg(mPackage);
+		isApplicableMatch.getAllContextElements().add(mModel__mPackage____ownedElements);
 		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
 		mModelToTypeGraph__typeGraph____target.setName(mModelToTypeGraph__typeGraph____target_name_prime);
-		return new Object[] { mModelToTypeGraph, mPackage, typeGraph, mModel, isApplicableMatch,
-				mPackage__mModel____model, mModel__mPackage____ownedElements, mModelToTypeGraph__mModel____source,
-				mModelToTypeGraph__typeGraph____target };
+		mPackage__mModel____model.setName(mPackage__mModel____model_name_prime);
+		mModel__mPackage____ownedElements.setName(mModel__mPackage____ownedElements_name_prime);
+		return new Object[] { mModelToTypeGraph, mModel, typeGraph, mPackage, isApplicableMatch,
+				mModelToTypeGraph__mModel____source, mModelToTypeGraph__typeGraph____target, mPackage__mModel____model,
+				mModel__mPackage____ownedElements };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_2_4_solveCSP_bindingFBBBBBB(PackageToPGPackage _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, Model mModel) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModelToTypeGraph, mPackage,
-				typeGraph, mModel);
+			IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModelToTypeGraph, mModel, typeGraph,
+				mPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, mPackage, typeGraph, mModel };
+			return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, mModel, typeGraph, mPackage };
 		}
 		return null;
 	}
@@ -1677,9 +1676,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			PackageToPGPackage _this, IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, Model mModel) {
+			Model mModel, TypeGraph typeGraph, org.eclipse.modisco.java.Package mPackage) {
 		Object[] result_pattern_PackageToPGPackage_2_4_solveCSP_binding = pattern_PackageToPGPackage_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModelToTypeGraph, mPackage, typeGraph, mModel);
+				_this, isApplicableMatch, mModelToTypeGraph, mModel, typeGraph, mPackage);
 		if (result_pattern_PackageToPGPackage_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PackageToPGPackage_2_4_solveCSP_binding[0];
 
@@ -1687,7 +1686,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					csp);
 			if (result_pattern_PackageToPGPackage_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, mPackage, typeGraph, mModel };
+				return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, mModel, typeGraph, mPackage };
 			}
 		}
 		return null;
@@ -1817,23 +1816,23 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mModelToTypeGraph");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("typeGraph");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mModel");
-		EObject tmpMModelToTypeGraph = _localVariable_0;
-		EObject tmpTPackage = _localVariable_1;
-		EObject tmpTypeGraph = _localVariable_2;
-		EObject tmpMModel = _localVariable_3;
-		if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
-			if (tmpTPackage instanceof TPackage) {
-				TPackage tPackage = (TPackage) tmpTPackage;
-				if (tmpTypeGraph instanceof TypeGraph) {
-					TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-					if (tmpMModel instanceof Model) {
-						Model mModel = (Model) tmpMModel;
-						return new Object[] { mModelToTypeGraph, tPackage, typeGraph, mModel, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("tPackage");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mModelToTypeGraph");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_3 = isApplicableMatch.getObject("typeGraph");
+		EObject tmpTPackage = _localVariable_0;
+		EObject tmpMModelToTypeGraph = _localVariable_1;
+		EObject tmpMModel = _localVariable_2;
+		EObject tmpTypeGraph = _localVariable_3;
+		if (tmpTPackage instanceof TPackage) {
+			TPackage tPackage = (TPackage) tmpTPackage;
+			if (tmpMModelToTypeGraph instanceof ModelToTypeGraph) {
+				ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) tmpMModelToTypeGraph;
+				if (tmpMModel instanceof Model) {
+					Model mModel = (Model) tmpMModel;
+					if (tmpTypeGraph instanceof TypeGraph) {
+						TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+						return new Object[] { tPackage, mModelToTypeGraph, mModel, typeGraph, isApplicableMatch };
 					}
 				}
 			}
@@ -1841,13 +1840,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		return null;
 	}
 
-	public static final Object[] pattern_PackageToPGPackage_11_1_performtransformation_blackBBBBFBB(
-			ModelToTypeGraph mModelToTypeGraph, TPackage tPackage, TypeGraph typeGraph, Model mModel,
-			PackageToPGPackage _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_PackageToPGPackage_11_1_performtransformation_blackBBBBFBB(TPackage tPackage,
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph, PackageToPGPackage _this,
+			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mModelToTypeGraph, tPackage, typeGraph, mModel, csp, _this, isApplicableMatch };
+				return new Object[] { tPackage, mModelToTypeGraph, mModel, typeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1858,33 +1857,33 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		Object[] result_pattern_PackageToPGPackage_11_1_performtransformation_binding = pattern_PackageToPGPackage_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_PackageToPGPackage_11_1_performtransformation_binding != null) {
-			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[0];
-			TPackage tPackage = (TPackage) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[1];
-			TypeGraph typeGraph = (TypeGraph) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[2];
-			Model mModel = (Model) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[3];
+			TPackage tPackage = (TPackage) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[0];
+			ModelToTypeGraph mModelToTypeGraph = (ModelToTypeGraph) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[1];
+			Model mModel = (Model) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[2];
+			TypeGraph typeGraph = (TypeGraph) result_pattern_PackageToPGPackage_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_PackageToPGPackage_11_1_performtransformation_black = pattern_PackageToPGPackage_11_1_performtransformation_blackBBBBFBB(
-					mModelToTypeGraph, tPackage, typeGraph, mModel, _this, isApplicableMatch);
+					tPackage, mModelToTypeGraph, mModel, typeGraph, _this, isApplicableMatch);
 			if (result_pattern_PackageToPGPackage_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_PackageToPGPackage_11_1_performtransformation_black[4];
 
-				return new Object[] { mModelToTypeGraph, tPackage, typeGraph, mModel, csp, _this, isApplicableMatch };
+				return new Object[] { tPackage, mModelToTypeGraph, mModel, typeGraph, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_PackageToPGPackage_11_1_performtransformation_greenBFBFB(TPackage tPackage,
+	public static final Object[] pattern_PackageToPGPackage_11_1_performtransformation_greenBBFFB(TPackage tPackage,
 			Model mModel, CSP csp) {
 		org.eclipse.modisco.java.Package mPackage = JavaFactory.eINSTANCE.createPackage();
 		PackageToTPackage mPackageToTPackage = PmFactory.eINSTANCE.createPackageToTPackage();
 		Object _localVariable_0 = csp.getValue("mPackage", "name");
 		mPackage.setModel(mModel);
-		mPackageToTPackage.setTarget(tPackage);
 		mPackageToTPackage.setSource(mPackage);
+		mPackageToTPackage.setTarget(tPackage);
 		String mPackage_name_prime = (String) _localVariable_0;
 		mPackage.setName(mPackage_name_prime);
-		return new Object[] { tPackage, mPackage, mModel, mPackageToTPackage, csp };
+		return new Object[] { tPackage, mModel, mPackage, mPackageToTPackage, csp };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_11_2_collecttranslatedelements_blackBBB(TPackage tPackage,
@@ -1902,26 +1901,26 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject tPackage, EObject mPackage,
-			EObject typeGraph, EObject mModel, EObject mPackageToTPackage) {
-		if (!mModelToTypeGraph.equals(tPackage)) {
-			if (!mModelToTypeGraph.equals(mPackage)) {
+			PerformRuleResult ruleresult, EObject tPackage, EObject mModelToTypeGraph, EObject mModel,
+			EObject typeGraph, EObject mPackage, EObject mPackageToTPackage) {
+		if (!tPackage.equals(typeGraph)) {
+			if (!mModelToTypeGraph.equals(tPackage)) {
 				if (!mModelToTypeGraph.equals(typeGraph)) {
-					if (!mModelToTypeGraph.equals(mPackageToTPackage)) {
-						if (!tPackage.equals(typeGraph)) {
-							if (!mPackage.equals(tPackage)) {
-								if (!mPackage.equals(typeGraph)) {
-									if (!mPackage.equals(mPackageToTPackage)) {
-										if (!mModel.equals(mModelToTypeGraph)) {
-											if (!mModel.equals(tPackage)) {
-												if (!mModel.equals(mPackage)) {
-													if (!mModel.equals(typeGraph)) {
-														if (!mModel.equals(mPackageToTPackage)) {
+					if (!mModelToTypeGraph.equals(mPackage)) {
+						if (!mModelToTypeGraph.equals(mPackageToTPackage)) {
+							if (!mModel.equals(tPackage)) {
+								if (!mModel.equals(mModelToTypeGraph)) {
+									if (!mModel.equals(typeGraph)) {
+										if (!mModel.equals(mPackage)) {
+											if (!mModel.equals(mPackageToTPackage)) {
+												if (!mPackage.equals(tPackage)) {
+													if (!mPackage.equals(typeGraph)) {
+														if (!mPackage.equals(mPackageToTPackage)) {
 															if (!mPackageToTPackage.equals(tPackage)) {
 																if (!mPackageToTPackage.equals(typeGraph)) {
-																	return new Object[] { ruleresult, mModelToTypeGraph,
-																			tPackage, mPackage, typeGraph, mModel,
-																			mPackageToTPackage };
+																	return new Object[] { ruleresult, tPackage,
+																			mModelToTypeGraph, mModel, typeGraph,
+																			mPackage, mPackageToTPackage };
 																}
 															}
 														}
@@ -1941,56 +1940,55 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject tPackage, EObject mPackage, EObject typeGraph, EObject mModel,
+			PerformRuleResult ruleresult, EObject tPackage, EObject mModel, EObject typeGraph, EObject mPackage,
 			EObject mPackageToTPackage) {
 		EMoflonEdge tPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tPackage____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mPackage____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tPackage____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PackageToPGPackage";
 		String tPackage__typeGraph____model_name_prime = "model";
+		String typeGraph__tPackage____packages_name_prime = "packages";
+		String mPackageToTPackage__mPackage____source_name_prime = "source";
+		String mPackageToTPackage__tPackage____target_name_prime = "target";
 		String mPackage__mModel____model_name_prime = "model";
 		String mModel__mPackage____ownedElements_name_prime = "ownedElements";
-		String typeGraph__tPackage____packages_name_prime = "packages";
-		String mPackageToTPackage__tPackage____target_name_prime = "target";
-		String mPackageToTPackage__mPackage____source_name_prime = "source";
 		tPackage__typeGraph____model.setSrc(tPackage);
 		tPackage__typeGraph____model.setTrg(typeGraph);
 		ruleresult.getTranslatedEdges().add(tPackage__typeGraph____model);
+		typeGraph__tPackage____packages.setSrc(typeGraph);
+		typeGraph__tPackage____packages.setTrg(tPackage);
+		ruleresult.getTranslatedEdges().add(typeGraph__tPackage____packages);
+		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
+		mPackageToTPackage__mPackage____source.setTrg(mPackage);
+		ruleresult.getCreatedEdges().add(mPackageToTPackage__mPackage____source);
+		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
+		mPackageToTPackage__tPackage____target.setTrg(tPackage);
+		ruleresult.getCreatedEdges().add(mPackageToTPackage__tPackage____target);
 		mPackage__mModel____model.setSrc(mPackage);
 		mPackage__mModel____model.setTrg(mModel);
 		ruleresult.getCreatedEdges().add(mPackage__mModel____model);
 		mModel__mPackage____ownedElements.setSrc(mModel);
 		mModel__mPackage____ownedElements.setTrg(mPackage);
 		ruleresult.getCreatedEdges().add(mModel__mPackage____ownedElements);
-		typeGraph__tPackage____packages.setSrc(typeGraph);
-		typeGraph__tPackage____packages.setTrg(tPackage);
-		ruleresult.getTranslatedEdges().add(typeGraph__tPackage____packages);
-		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
-		mPackageToTPackage__tPackage____target.setTrg(tPackage);
-		ruleresult.getCreatedEdges().add(mPackageToTPackage__tPackage____target);
-		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
-		mPackageToTPackage__mPackage____source.setTrg(mPackage);
-		ruleresult.getCreatedEdges().add(mPackageToTPackage__mPackage____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tPackage__typeGraph____model.setName(tPackage__typeGraph____model_name_prime);
+		typeGraph__tPackage____packages.setName(typeGraph__tPackage____packages_name_prime);
+		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
+		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
 		mPackage__mModel____model.setName(mPackage__mModel____model_name_prime);
 		mModel__mPackage____ownedElements.setName(mModel__mPackage____ownedElements_name_prime);
-		typeGraph__tPackage____packages.setName(typeGraph__tPackage____packages_name_prime);
-		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
-		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
-		return new Object[] { ruleresult, tPackage, mPackage, typeGraph, mModel, mPackageToTPackage,
-				tPackage__typeGraph____model, mPackage__mModel____model, mModel__mPackage____ownedElements,
-				typeGraph__tPackage____packages, mPackageToTPackage__tPackage____target,
-				mPackageToTPackage__mPackage____source };
+		return new Object[] { ruleresult, tPackage, mModel, typeGraph, mPackage, mPackageToTPackage,
+				tPackage__typeGraph____model, typeGraph__tPackage____packages, mPackageToTPackage__mPackage____source,
+				mPackageToTPackage__tPackage____target, mPackage__mModel____model, mModel__mPackage____ownedElements };
 	}
 
 	public static final void pattern_PackageToPGPackage_11_5_registerobjects_expressionBBBBBBBB(
-			PackageToPGPackage _this, PerformRuleResult ruleresult, EObject mModelToTypeGraph, EObject tPackage,
-			EObject mPackage, EObject typeGraph, EObject mModel, EObject mPackageToTPackage) {
-		_this.registerObjects_BWD(ruleresult, mModelToTypeGraph, tPackage, mPackage, typeGraph, mModel,
+			PackageToPGPackage _this, PerformRuleResult ruleresult, EObject tPackage, EObject mModelToTypeGraph,
+			EObject mModel, EObject typeGraph, EObject mPackage, EObject mPackageToTPackage) {
+		_this.registerObjects_BWD(ruleresult, tPackage, mModelToTypeGraph, mModel, typeGraph, mPackage,
 				mPackageToTPackage);
 
 	}
@@ -2066,28 +2064,28 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_PackageToPGPackage_12_2_corematch_blackFBBFB(TPackage tPackage,
+	public static final Iterable<Object[]> pattern_PackageToPGPackage_12_2_corematch_blackBFFBB(TPackage tPackage,
 			TypeGraph typeGraph, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ModelToTypeGraph mModelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeGraph, ModelToTypeGraph.class, "target")) {
 			Model mModel = mModelToTypeGraph.getSource();
 			if (mModel != null) {
-				_result.add(new Object[] { mModelToTypeGraph, tPackage, typeGraph, mModel, match });
+				_result.add(new Object[] { tPackage, mModelToTypeGraph, mModel, typeGraph, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_PackageToPGPackage_12_3_findcontext_blackBBBB(
-			ModelToTypeGraph mModelToTypeGraph, TPackage tPackage, TypeGraph typeGraph, Model mModel) {
+	public static final Iterable<Object[]> pattern_PackageToPGPackage_12_3_findcontext_blackBBBB(TPackage tPackage,
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (typeGraph.equals(tPackage.getModel())) {
-			if (mModel.equals(mModelToTypeGraph.getSource())) {
-				if (typeGraph.equals(mModelToTypeGraph.getTarget())) {
-					if (typeGraph.getPackages().contains(tPackage)) {
-						_result.add(new Object[] { mModelToTypeGraph, tPackage, typeGraph, mModel });
+		if (mModel.equals(mModelToTypeGraph.getSource())) {
+			if (typeGraph.equals(tPackage.getModel())) {
+				if (typeGraph.getPackages().contains(tPackage)) {
+					if (typeGraph.equals(mModelToTypeGraph.getTarget())) {
+						_result.add(new Object[] { tPackage, mModelToTypeGraph, mModel, typeGraph });
 					}
 				}
 			}
@@ -2095,50 +2093,50 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		return _result;
 	}
 
-	public static final Object[] pattern_PackageToPGPackage_12_3_findcontext_greenBBBBFFFFF(
-			ModelToTypeGraph mModelToTypeGraph, TPackage tPackage, TypeGraph typeGraph, Model mModel) {
+	public static final Object[] pattern_PackageToPGPackage_12_3_findcontext_greenBBBBFFFFF(TPackage tPackage,
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge tPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tPackage____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String tPackage__typeGraph____model_name_prime = "model";
+		EMoflonEdge mModelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mModelToTypeGraph__mModel____source_name_prime = "source";
-		String mModelToTypeGraph__typeGraph____target_name_prime = "target";
+		String tPackage__typeGraph____model_name_prime = "model";
 		String typeGraph__tPackage____packages_name_prime = "packages";
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph);
+		String mModelToTypeGraph__typeGraph____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(tPackage);
-		isApplicableMatch.getAllContextElements().add(typeGraph);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph);
 		isApplicableMatch.getAllContextElements().add(mModel);
-		tPackage__typeGraph____model.setSrc(tPackage);
-		tPackage__typeGraph____model.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(tPackage__typeGraph____model);
+		isApplicableMatch.getAllContextElements().add(typeGraph);
 		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
 		mModelToTypeGraph__mModel____source.setTrg(mModel);
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
-		mModelToTypeGraph__typeGraph____target.setSrc(mModelToTypeGraph);
-		mModelToTypeGraph__typeGraph____target.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__typeGraph____target);
+		tPackage__typeGraph____model.setSrc(tPackage);
+		tPackage__typeGraph____model.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(tPackage__typeGraph____model);
 		typeGraph__tPackage____packages.setSrc(typeGraph);
 		typeGraph__tPackage____packages.setTrg(tPackage);
 		isApplicableMatch.getAllContextElements().add(typeGraph__tPackage____packages);
-		tPackage__typeGraph____model.setName(tPackage__typeGraph____model_name_prime);
+		mModelToTypeGraph__typeGraph____target.setSrc(mModelToTypeGraph);
+		mModelToTypeGraph__typeGraph____target.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__typeGraph____target);
 		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
-		mModelToTypeGraph__typeGraph____target.setName(mModelToTypeGraph__typeGraph____target_name_prime);
+		tPackage__typeGraph____model.setName(tPackage__typeGraph____model_name_prime);
 		typeGraph__tPackage____packages.setName(typeGraph__tPackage____packages_name_prime);
-		return new Object[] { mModelToTypeGraph, tPackage, typeGraph, mModel, isApplicableMatch,
-				tPackage__typeGraph____model, mModelToTypeGraph__mModel____source,
-				mModelToTypeGraph__typeGraph____target, typeGraph__tPackage____packages };
+		mModelToTypeGraph__typeGraph____target.setName(mModelToTypeGraph__typeGraph____target_name_prime);
+		return new Object[] { tPackage, mModelToTypeGraph, mModel, typeGraph, isApplicableMatch,
+				mModelToTypeGraph__mModel____source, tPackage__typeGraph____model, typeGraph__tPackage____packages,
+				mModelToTypeGraph__typeGraph____target };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_12_4_solveCSP_bindingFBBBBBB(PackageToPGPackage _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, TPackage tPackage,
-			TypeGraph typeGraph, Model mModel) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mModelToTypeGraph, tPackage,
-				typeGraph, mModel);
+			IsApplicableMatch isApplicableMatch, TPackage tPackage, ModelToTypeGraph mModelToTypeGraph, Model mModel,
+			TypeGraph typeGraph) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tPackage, mModelToTypeGraph, mModel,
+				typeGraph);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, tPackage, typeGraph, mModel };
+			return new Object[] { csp, _this, isApplicableMatch, tPackage, mModelToTypeGraph, mModel, typeGraph };
 		}
 		return null;
 	}
@@ -2148,10 +2146,10 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			PackageToPGPackage _this, IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			TPackage tPackage, TypeGraph typeGraph, Model mModel) {
+			PackageToPGPackage _this, IsApplicableMatch isApplicableMatch, TPackage tPackage,
+			ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph) {
 		Object[] result_pattern_PackageToPGPackage_12_4_solveCSP_binding = pattern_PackageToPGPackage_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModelToTypeGraph, tPackage, typeGraph, mModel);
+				_this, isApplicableMatch, tPackage, mModelToTypeGraph, mModel, typeGraph);
 		if (result_pattern_PackageToPGPackage_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PackageToPGPackage_12_4_solveCSP_binding[0];
 
@@ -2159,7 +2157,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					csp);
 			if (result_pattern_PackageToPGPackage_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, tPackage, typeGraph, mModel };
+				return new Object[] { csp, _this, isApplicableMatch, tPackage, mModelToTypeGraph, mModel, typeGraph };
 			}
 		}
 		return null;
@@ -2248,9 +2246,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_20_2_testcorematchandDECs_black_nac_0B(TPackage tPackage) {
-		TPackage __DEC_tPackage_subpackages_991050 = tPackage.getParent();
-		if (__DEC_tPackage_subpackages_991050 != null) {
-			if (!tPackage.equals(__DEC_tPackage_subpackages_991050)) {
+		TPackage __DEC_tPackage_subpackages_497776 = tPackage.getParent();
+		if (__DEC_tPackage_subpackages_497776 != null) {
+			if (!tPackage.equals(__DEC_tPackage_subpackages_497776)) {
 				return new Object[] { tPackage };
 			}
 		}
@@ -2381,9 +2379,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Package mPackage) {
-		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_900799 = mPackage.getPackage();
-		if (__DEC_mPackage_ownedPackages_900799 != null) {
-			if (!mPackage.equals(__DEC_mPackage_ownedPackages_900799)) {
+		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_515181 = mPackage.getPackage();
+		if (__DEC_mPackage_ownedPackages_515181 != null) {
+			if (!mPackage.equals(__DEC_mPackage_ownedPackages_515181)) {
 				return new Object[] { mPackage };
 			}
 		}
@@ -2402,7 +2400,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 				Model mModel = (Model) tmpMModel;
 				if (mModel.equals(mPackage.getModel())) {
 					if (pattern_PackageToPGPackage_21_2_testcorematchandDECs_black_nac_0B(mPackage) == null) {
-						_result.add(new Object[] { mPackage, mModel, _edge_model });
+						_result.add(new Object[] { mModel, mPackage, _edge_model });
 					}
 				}
 			}
@@ -2422,8 +2420,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final boolean pattern_PackageToPGPackage_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			PackageToPGPackage _this, Match match, org.eclipse.modisco.java.Package mPackage, Model mModel) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mPackage, mModel);
+			PackageToPGPackage _this, Match match, Model mModel, org.eclipse.modisco.java.Package mPackage) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mModel, mPackage);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2468,22 +2466,22 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	public static final Object[] pattern_PackageToPGPackage_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tPackage");
-		EObject _localVariable_1 = sourceMatch.getObject("mPackage");
+		EObject _localVariable_1 = sourceMatch.getObject("mModel");
 		EObject _localVariable_2 = targetMatch.getObject("typeGraph");
-		EObject _localVariable_3 = sourceMatch.getObject("mModel");
+		EObject _localVariable_3 = sourceMatch.getObject("mPackage");
 		EObject tmpTPackage = _localVariable_0;
-		EObject tmpMPackage = _localVariable_1;
+		EObject tmpMModel = _localVariable_1;
 		EObject tmpTypeGraph = _localVariable_2;
-		EObject tmpMModel = _localVariable_3;
+		EObject tmpMPackage = _localVariable_3;
 		if (tmpTPackage instanceof TPackage) {
 			TPackage tPackage = (TPackage) tmpTPackage;
-			if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+			if (tmpMModel instanceof Model) {
+				Model mModel = (Model) tmpMModel;
 				if (tmpTypeGraph instanceof TypeGraph) {
 					TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-					if (tmpMModel instanceof Model) {
-						Model mModel = (Model) tmpMModel;
-						return new Object[] { tPackage, mPackage, typeGraph, mModel, targetMatch, sourceMatch };
+					if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+						org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+						return new Object[] { tPackage, mModel, typeGraph, mPackage, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2492,10 +2490,10 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_24_2_matchsrctrgcontext_blackBBBBBB(TPackage tPackage,
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, Model mModel, Match sourceMatch,
+			Model mModel, TypeGraph typeGraph, org.eclipse.modisco.java.Package mPackage, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tPackage, mPackage, typeGraph, mModel, sourceMatch, targetMatch };
+			return new Object[] { tPackage, mModel, typeGraph, mPackage, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2506,28 +2504,28 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 				targetMatch, sourceMatch);
 		if (result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding != null) {
 			TPackage tPackage = (TPackage) result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding[0];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding[1];
+			Model mModel = (Model) result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding[1];
 			TypeGraph typeGraph = (TypeGraph) result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding[2];
-			Model mModel = (Model) result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding[3];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_black = pattern_PackageToPGPackage_24_2_matchsrctrgcontext_blackBBBBBB(
-					tPackage, mPackage, typeGraph, mModel, sourceMatch, targetMatch);
+					tPackage, mModel, typeGraph, mPackage, sourceMatch, targetMatch);
 			if (result_pattern_PackageToPGPackage_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tPackage, mPackage, typeGraph, mModel, sourceMatch, targetMatch };
+				return new Object[] { tPackage, mModel, typeGraph, mPackage, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_24_3_solvecsp_bindingFBBBBBBB(PackageToPGPackage _this,
-			TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, Model mModel,
+			TPackage tPackage, Model mModel, TypeGraph typeGraph, org.eclipse.modisco.java.Package mPackage,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tPackage, mPackage, typeGraph, mModel, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tPackage, mModel, typeGraph, mPackage, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, tPackage, mPackage, typeGraph, mModel, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, tPackage, mModel, typeGraph, mPackage, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2537,10 +2535,10 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			PackageToPGPackage _this, TPackage tPackage, org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph,
-			Model mModel, Match sourceMatch, Match targetMatch) {
+			PackageToPGPackage _this, TPackage tPackage, Model mModel, TypeGraph typeGraph,
+			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_PackageToPGPackage_24_3_solvecsp_binding = pattern_PackageToPGPackage_24_3_solvecsp_bindingFBBBBBBB(
-				_this, tPackage, mPackage, typeGraph, mModel, sourceMatch, targetMatch);
+				_this, tPackage, mModel, typeGraph, mPackage, sourceMatch, targetMatch);
 		if (result_pattern_PackageToPGPackage_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_PackageToPGPackage_24_3_solvecsp_binding[0];
 
@@ -2548,7 +2546,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					csp);
 			if (result_pattern_PackageToPGPackage_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tPackage, mPackage, typeGraph, mModel, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tPackage, mModel, typeGraph, mPackage, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2560,14 +2558,14 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_PackageToPGPackage_24_5_matchcorrcontext_blackFBBBB(
-			TypeGraph typeGraph, Model mModel, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_PackageToPGPackage_24_5_matchcorrcontext_blackFBBBB(Model mModel,
+			TypeGraph typeGraph, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (ModelToTypeGraph mModelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
 				if (typeGraph.equals(mModelToTypeGraph.getTarget())) {
-					_result.add(new Object[] { mModelToTypeGraph, typeGraph, mModel, sourceMatch, targetMatch });
+					_result.add(new Object[] { mModelToTypeGraph, mModel, typeGraph, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2586,15 +2584,15 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_24_6_createcorrespondence_blackBBBBB(TPackage tPackage,
-			org.eclipse.modisco.java.Package mPackage, TypeGraph typeGraph, Model mModel, CCMatch ccMatch) {
-		return new Object[] { tPackage, mPackage, typeGraph, mModel, ccMatch };
+			Model mModel, TypeGraph typeGraph, org.eclipse.modisco.java.Package mPackage, CCMatch ccMatch) {
+		return new Object[] { tPackage, mModel, typeGraph, mPackage, ccMatch };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_24_6_createcorrespondence_greenBBFB(TPackage tPackage,
 			org.eclipse.modisco.java.Package mPackage, CCMatch ccMatch) {
 		PackageToTPackage mPackageToTPackage = PmFactory.eINSTANCE.createPackageToTPackage();
-		mPackageToTPackage.setTarget(tPackage);
 		mPackageToTPackage.setSource(mPackage);
+		mPackageToTPackage.setTarget(tPackage);
 		ccMatch.getCreateCorr().add(mPackageToTPackage);
 		return new Object[] { tPackage, mPackage, mPackageToTPackage, ccMatch };
 	}
@@ -2622,9 +2620,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Package mPackage) {
-		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_805874 = mPackage.getPackage();
-		if (__DEC_mPackage_ownedPackages_805874 != null) {
-			if (!mPackage.equals(__DEC_mPackage_ownedPackages_805874)) {
+		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_378265 = mPackage.getPackage();
+		if (__DEC_mPackage_ownedPackages_378265 != null) {
+			if (!mPackage.equals(__DEC_mPackage_ownedPackages_378265)) {
 				return new Object[] { mPackage };
 			}
 		}
@@ -2632,11 +2630,11 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		return null;
 	}
 
-	public static final Object[] pattern_PackageToPGPackage_27_1_matchtggpattern_blackBB(
-			org.eclipse.modisco.java.Package mPackage, Model mModel) {
+	public static final Object[] pattern_PackageToPGPackage_27_1_matchtggpattern_blackBB(Model mModel,
+			org.eclipse.modisco.java.Package mPackage) {
 		if (mModel.equals(mPackage.getModel())) {
 			if (pattern_PackageToPGPackage_27_1_matchtggpattern_black_nac_0B(mPackage) == null) {
-				return new Object[] { mPackage, mModel };
+				return new Object[] { mModel, mPackage };
 			}
 		}
 		return null;
@@ -2653,9 +2651,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_28_1_matchtggpattern_black_nac_0B(TPackage tPackage) {
-		TPackage __DEC_tPackage_subpackages_336262 = tPackage.getParent();
-		if (__DEC_tPackage_subpackages_336262 != null) {
-			if (!tPackage.equals(__DEC_tPackage_subpackages_336262)) {
+		TPackage __DEC_tPackage_subpackages_451802 = tPackage.getParent();
+		if (__DEC_tPackage_subpackages_451802 != null) {
+			if (!tPackage.equals(__DEC_tPackage_subpackages_451802)) {
 				return new Object[] { tPackage };
 			}
 		}
@@ -2754,13 +2752,13 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_29_3_solveCSP_bindingFBBBBBB(PackageToPGPackage _this,
-			IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, TypeGraph typeGraph, Model mModel,
+			IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph, Model mModel, TypeGraph typeGraph,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModelToTypeGraph, typeGraph, mModel,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModelToTypeGraph, mModel, typeGraph,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, typeGraph, mModel, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, mModel, typeGraph, ruleResult };
 		}
 		return null;
 	}
@@ -2771,9 +2769,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_29_3_solveCSP_bindingAndBlackFBBBBBB(
 			PackageToPGPackage _this, IsApplicableMatch isApplicableMatch, ModelToTypeGraph mModelToTypeGraph,
-			TypeGraph typeGraph, Model mModel, ModelgeneratorRuleResult ruleResult) {
+			Model mModel, TypeGraph typeGraph, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_PackageToPGPackage_29_3_solveCSP_binding = pattern_PackageToPGPackage_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mModelToTypeGraph, typeGraph, mModel, ruleResult);
+				_this, isApplicableMatch, mModelToTypeGraph, mModel, typeGraph, ruleResult);
 		if (result_pattern_PackageToPGPackage_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_PackageToPGPackage_29_3_solveCSP_binding[0];
 
@@ -2781,7 +2779,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 					csp);
 			if (result_pattern_PackageToPGPackage_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, typeGraph, mModel, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mModelToTypeGraph, mModel, typeGraph, ruleResult };
 			}
 		}
 		return null;
@@ -2795,16 +2793,16 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_29_5_checknacs_blackBBB(ModelToTypeGraph mModelToTypeGraph,
-			TypeGraph typeGraph, Model mModel) {
-		return new Object[] { mModelToTypeGraph, typeGraph, mModel };
+			Model mModel, TypeGraph typeGraph) {
+		return new Object[] { mModelToTypeGraph, mModel, typeGraph };
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_29_6_perform_blackBBBB(ModelToTypeGraph mModelToTypeGraph,
-			TypeGraph typeGraph, Model mModel, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mModelToTypeGraph, typeGraph, mModel, ruleResult };
+			Model mModel, TypeGraph typeGraph, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mModelToTypeGraph, mModel, typeGraph, ruleResult };
 	}
 
-	public static final Object[] pattern_PackageToPGPackage_29_6_perform_greenFFBBFBB(TypeGraph typeGraph, Model mModel,
+	public static final Object[] pattern_PackageToPGPackage_29_6_perform_greenFBBFFBB(Model mModel, TypeGraph typeGraph,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TPackage tPackage = BasicFactory.eINSTANCE.createTPackage();
 		org.eclipse.modisco.java.Package mPackage = JavaFactory.eINSTANCE.createPackage();
@@ -2818,8 +2816,8 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		ruleResult.getTargetObjects().add(tPackage);
 		mPackage.setModel(mModel);
 		ruleResult.getSourceObjects().add(mPackage);
-		mPackageToTPackage.setTarget(tPackage);
 		mPackageToTPackage.setSource(mPackage);
+		mPackageToTPackage.setTarget(tPackage);
 		ruleResult.getCorrObjects().add(mPackageToTPackage);
 		String tPackage_tName_prime = (String) _localVariable_0;
 		String mPackage_name_prime = (String) _localVariable_1;
@@ -2828,7 +2826,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 		tPackage.setTName(tPackage_tName_prime);
 		mPackage.setName(mPackage_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tPackage, mPackage, typeGraph, mModel, mPackageToTPackage, ruleResult, csp };
+		return new Object[] { tPackage, mModel, typeGraph, mPackage, mPackageToTPackage, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_PackageToPGPackage_29_7_expressionFB(
