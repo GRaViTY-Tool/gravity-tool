@@ -118,7 +118,7 @@ public interface InitializerInType extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
 			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType);
+			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +205,7 @@ public interface InitializerInType extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
 			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType);
+			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface InitializerInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_39(EMoflonEdge _edge_model);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_94(EMoflonEdge _edge_model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface InitializerInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_99(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -45,7 +45,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, CompilationUnit compilationUnit, Model jm);
+	boolean isAppropriate_FWD(Match match, Model jm, CompilationUnit compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, CompilationUnit compilationUnit, Model jm);
+	void registerObjectsToMatch_FWD(Match match, Model jm, CompilationUnit compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +77,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, CompilationUnit compilationUnit, Model jm);
+	CSP isAppropriate_solveCsp_FWD(Match match, Model jm, CompilationUnit compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,8 +93,8 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, CompilationUnit compilationUnit,
-			org.eclipse.uml2.uml.Model um, Model jm, JavaModel2UMLPackage jm2um);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model jm, CompilationUnit compilationUnit,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject compilationUnit, EObject artifact, EObject um,
-			EObject jm, EObject jm2um, EObject c2a);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject jm2um,
+			EObject um, EObject artifact, EObject c2a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Artifact artifact, org.eclipse.uml2.uml.Model um);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Model um, Artifact artifact);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +151,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Artifact artifact, org.eclipse.uml2.uml.Model um);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Model um, Artifact artifact);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +159,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Artifact artifact, org.eclipse.uml2.uml.Model um);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Model um, Artifact artifact);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,8 +175,8 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Artifact artifact, org.eclipse.uml2.uml.Model um,
-			Model jm, JavaModel2UMLPackage jm2um);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
+			org.eclipse.uml2.uml.Model um, Artifact artifact);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,8 +192,8 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject compilationUnit, EObject artifact, EObject um,
-			EObject jm, EObject jm2um, EObject c2a);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject jm2um,
+			EObject um, EObject artifact, EObject c2a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_140(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_150(EMoflonEdge _edge_compilationUnits);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_113(EMoflonEdge _edge_compilationUnits);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,8 +249,8 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(CompilationUnit compilationUnit, Artifact artifact, org.eclipse.uml2.uml.Model um,
-			Model jm, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Model jm, CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um,
+			Artifact artifact, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,7 +266,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(CompilationUnit compilationUnit, Model jm);
+	boolean checkDEC_FWD(Model jm, CompilationUnit compilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,7 +274,7 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Artifact artifact, org.eclipse.uml2.uml.Model um);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Model um, Artifact artifact);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,8 +290,8 @@ public interface CompilationUnit2Artifact extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Model um, Model jm,
-			JavaModel2UMLPackage jm2um, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
+			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -211,7 +211,7 @@ public interface TypeInCompilationUnitToModule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_module);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_34(EMoflonEdge _edge_module);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface TypeInCompilationUnitToModule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_originalCompilationUnit);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_36(EMoflonEdge _edge_originalCompilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -6,7 +6,7 @@
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/Model2TypeGraph/checkDEC_FWD"/>
     </rules>
     <rules ruleName="ModelNested2TypeGraph">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_1"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/isAppropriate_FWD_EMoflonEdge_167"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules/ModelNested2TypeGraph/checkDEC_FWD"/>
     </rules>
   </sourceRules>

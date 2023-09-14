@@ -166,11 +166,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result1_bindingAndBlack[0];
-		Property feature = (Property) result1_bindingAndBlack[1];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[1];
+		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[2];
+		Property feature = (Property) result1_bindingAndBlack[3];
 		ASTNode2Element jo2uo = (ASTNode2Element) result1_bindingAndBlack[4];
-		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
+		org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_greenBB(feature,
 				uOwnerType);
@@ -184,15 +184,15 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 		Object[] result3_black = FieldDec2Property4_AnonymousImpl
 				.pattern_FieldDec2Property4_Anonymous_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jOwnerType,
-						feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+						bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[feature] = " + feature + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType + ", "
-					+ "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne + ".");
+					+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[nd2ne] = " + nd2ne + ", " + "[feature] = " + feature + ", " + "[jo2uo] = " + jo2uo + ", "
+					+ "[uOwnerType] = " + uOwnerType + ".");
 		}
 		FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_1_3_bookkeepingforedges_greenBBBBBFFF(
-				ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType);
+				ruleresult, jOwnerType, bodyDeclaration, feature, uOwnerType);
 		//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[7];
@@ -200,7 +200,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		// 
 		// 
 		FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_1_5_registerobjects_expressionBBBBBBBB(
-				this, ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+				this, ruleresult, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 		return FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_1_6_expressionFB(ruleresult);
 	}
 
@@ -232,35 +232,35 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result2_binding[0];
 		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_binding[1];
 		for (Object[] result2_black : FieldDec2Property4_AnonymousImpl
-				.pattern_FieldDec2Property4_Anonymous_2_2_corematch_blackBFBFFFB(jOwnerType, bodyDeclaration, match)) {
-			Property feature = (Property) result2_black[1];
-			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result2_black[3];
+				.pattern_FieldDec2Property4_Anonymous_2_2_corematch_blackBBFFFFB(jOwnerType, bodyDeclaration, match)) {
+			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[2];
+			Property feature = (Property) result2_black[3];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[4];
-			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[5];
+			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : FieldDec2Property4_AnonymousImpl
-					.pattern_FieldDec2Property4_Anonymous_2_3_findcontext_blackBBBBBB(jOwnerType, feature,
-							bodyDeclaration, uOwnerType, jo2uo, nd2ne)) {
+					.pattern_FieldDec2Property4_Anonymous_2_3_findcontext_blackBBBBBB(jOwnerType, bodyDeclaration,
+							nd2ne, feature, jo2uo, uOwnerType)) {
 				Object[] result3_green = FieldDec2Property4_AnonymousImpl
-						.pattern_FieldDec2Property4_Anonymous_2_3_findcontext_greenBBBBBBFFFFFFF(jOwnerType, feature,
-								bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+						.pattern_FieldDec2Property4_Anonymous_2_3_findcontext_greenBBBBBBFFFFFFF(jOwnerType,
+								bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = FieldDec2Property4_AnonymousImpl
 						.pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+								isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jOwnerType] = " + jOwnerType
-							+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-							+ "[uOwnerType] = " + uOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne
-							+ ".");
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[nd2ne] = " + nd2ne + ", "
+							+ "[feature] = " + feature + ", " + "[jo2uo] = " + jo2uo + ", " + "[uOwnerType] = "
+							+ uOwnerType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -335,8 +335,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jOwnerType,
-			Property feature, MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType,
-			ASTNode2Element jo2uo, ASTNode2Element nd2ne) {// Create CSP
+			MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne, Property feature, ASTNode2Element jo2uo,
+			org.eclipse.uml2.uml.Class uOwnerType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -352,11 +352,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
-		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
-		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
-		isApplicableMatch.registerObject("jo2uo", jo2uo);
 		isApplicableMatch.registerObject("nd2ne", nd2ne);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("jo2uo", jo2uo);
+		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
 		return csp;
 	}
 
@@ -374,14 +374,14 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject feature,
-			EObject bodyDeclaration, EObject uOwnerType, EObject jo2uo, EObject nd2ne) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration,
+			EObject nd2ne, EObject feature, EObject jo2uo, EObject uOwnerType) {
 		ruleresult.registerObject("jOwnerType", jOwnerType);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("uOwnerType", uOwnerType);
-		ruleresult.registerObject("jo2uo", jo2uo);
 		ruleresult.registerObject("nd2ne", nd2ne);
+		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("jo2uo", jo2uo);
+		ruleresult.registerObject("uOwnerType", uOwnerType);
 
 	}
 
@@ -470,11 +470,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result1_bindingAndBlack[0];
-		Property feature = (Property) result1_bindingAndBlack[1];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[1];
+		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[2];
+		Property feature = (Property) result1_bindingAndBlack[3];
 		ASTNode2Element jo2uo = (ASTNode2Element) result1_bindingAndBlack[4];
-		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
+		org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		FieldDec2Property4_AnonymousImpl
 				.pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_greenBB(jOwnerType, bodyDeclaration);
@@ -488,15 +488,15 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 		Object[] result3_black = FieldDec2Property4_AnonymousImpl
 				.pattern_FieldDec2Property4_Anonymous_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jOwnerType,
-						feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+						bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[feature] = " + feature + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType + ", "
-					+ "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne + ".");
+					+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[nd2ne] = " + nd2ne + ", " + "[feature] = " + feature + ", " + "[jo2uo] = " + jo2uo + ", "
+					+ "[uOwnerType] = " + uOwnerType + ".");
 		}
 		FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_11_3_bookkeepingforedges_greenBBBBBFFF(
-				ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType);
+				ruleresult, jOwnerType, bodyDeclaration, feature, uOwnerType);
 		//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[7];
@@ -504,7 +504,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		// 
 		// 
 		FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_11_5_registerobjects_expressionBBBBBBBB(
-				this, ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+				this, ruleresult, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 		return FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_11_6_expressionFB(ruleresult);
 	}
 
@@ -536,34 +536,34 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		Property feature = (Property) result2_binding[0];
 		org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result2_binding[1];
 		for (Object[] result2_black : FieldDec2Property4_AnonymousImpl
-				.pattern_FieldDec2Property4_Anonymous_12_2_corematch_blackFBFBFFB(feature, uOwnerType, match)) {
+				.pattern_FieldDec2Property4_Anonymous_12_2_corematch_blackFFFBFBB(feature, uOwnerType, match)) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result2_black[0];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[2];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[1];
+			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[2];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[4];
-			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : FieldDec2Property4_AnonymousImpl
-					.pattern_FieldDec2Property4_Anonymous_12_3_findcontext_blackBBBBBB(jOwnerType, feature,
-							bodyDeclaration, uOwnerType, jo2uo, nd2ne)) {
+					.pattern_FieldDec2Property4_Anonymous_12_3_findcontext_blackBBBBBB(jOwnerType, bodyDeclaration,
+							nd2ne, feature, jo2uo, uOwnerType)) {
 				Object[] result3_green = FieldDec2Property4_AnonymousImpl
-						.pattern_FieldDec2Property4_Anonymous_12_3_findcontext_greenBBBBBBFFFFFF(jOwnerType, feature,
-								bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+						.pattern_FieldDec2Property4_Anonymous_12_3_findcontext_greenBBBBBBFFFFFF(jOwnerType,
+								bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = FieldDec2Property4_AnonymousImpl
 						.pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+								isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jOwnerType] = " + jOwnerType
-							+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-							+ "[uOwnerType] = " + uOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne
-							+ ".");
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[nd2ne] = " + nd2ne + ", "
+							+ "[feature] = " + feature + ", " + "[jo2uo] = " + jo2uo + ", " + "[uOwnerType] = "
+							+ uOwnerType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -636,8 +636,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jOwnerType,
-			Property feature, MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType,
-			ASTNode2Element jo2uo, ASTNode2Element nd2ne) {// Create CSP
+			MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne, Property feature, ASTNode2Element jo2uo,
+			org.eclipse.uml2.uml.Class uOwnerType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -653,11 +653,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
-		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
-		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
-		isApplicableMatch.registerObject("jo2uo", jo2uo);
 		isApplicableMatch.registerObject("nd2ne", nd2ne);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("jo2uo", jo2uo);
+		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
 		return csp;
 	}
 
@@ -675,14 +675,14 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject feature,
-			EObject bodyDeclaration, EObject uOwnerType, EObject jo2uo, EObject nd2ne) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration,
+			EObject nd2ne, EObject feature, EObject jo2uo, EObject uOwnerType) {
 		ruleresult.registerObject("jOwnerType", jOwnerType);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("uOwnerType", uOwnerType);
-		ruleresult.registerObject("jo2uo", jo2uo);
 		ruleresult.registerObject("nd2ne", nd2ne);
+		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("jo2uo", jo2uo);
+		ruleresult.registerObject("uOwnerType", uOwnerType);
 
 	}
 
@@ -700,7 +700,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_120(EMoflonEdge _edge_ownedAttribute) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_144(EMoflonEdge _edge_ownedAttribute) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4_AnonymousImpl
 				.pattern_FieldDec2Property4_Anonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -759,7 +759,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_154(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4_AnonymousImpl
 				.pattern_FieldDec2Property4_Anonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -897,41 +897,40 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result2_bindingAndBlack[0];
-		Property feature = (Property) result2_bindingAndBlack[1];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_bindingAndBlack[2];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_bindingAndBlack[1];
+		Property feature = (Property) result2_bindingAndBlack[2];
 		org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = FieldDec2Property4_AnonymousImpl
-				.pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jOwnerType, feature,
-						bodyDeclaration, uOwnerType, sourceMatch, targetMatch);
+				.pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jOwnerType,
+						bodyDeclaration, feature, uOwnerType, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[jOwnerType] = " + jOwnerType + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[sourceMatch] = " + sourceMatch
-					+ ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[jOwnerType] = " + jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[feature] = " + feature + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[sourceMatch] = "
+					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : FieldDec2Property4_AnonymousImpl
-					.pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_blackBBBBFFBB(jOwnerType, feature,
-							bodyDeclaration, uOwnerType, sourceMatch, targetMatch)) {
+					.pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_blackBBFBFBBB(jOwnerType,
+							bodyDeclaration, feature, uOwnerType, sourceMatch, targetMatch)) {
+				ASTNode2Element nd2ne = (ASTNode2Element) result5_black[2];
 				ASTNode2Element jo2uo = (ASTNode2Element) result5_black[4];
-				ASTNode2Element nd2ne = (ASTNode2Element) result5_black[5];
 				Object[] result5_green = FieldDec2Property4_AnonymousImpl
-						.pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_greenBBBBF(jo2uo, nd2ne,
+						.pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_greenBBBBF(nd2ne, jo2uo,
 								sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = FieldDec2Property4_AnonymousImpl
-						.pattern_FieldDec2Property4_Anonymous_24_6_createcorrespondence_blackBBBBB(jOwnerType, feature,
-								bodyDeclaration, uOwnerType, ccMatch);
+						.pattern_FieldDec2Property4_Anonymous_24_6_createcorrespondence_blackBBBBB(jOwnerType,
+								bodyDeclaration, feature, uOwnerType, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[jOwnerType] = " + jOwnerType + ", "
-									+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-									+ "[uOwnerType] = " + uOwnerType + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jOwnerType] = "
+							+ jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = "
+							+ feature + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = FieldDec2Property4_AnonymousImpl
@@ -955,9 +954,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration jOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration,
+			Property feature, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1040,20 +1038,20 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[2];
 			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result2_black[3];
 			//nothing RuleEntryList nd2neList = (RuleEntryList) result2_black[4];
-			Property feature = (Property) result2_black[5];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[5];
 			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[6];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[7];
+			Property feature = (Property) result2_black[7];
 
 			Object[] result3_bindingAndBlack = FieldDec2Property4_AnonymousImpl
 					.pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne,
+							isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jOwnerType] = " + jOwnerType + ", "
-						+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-						+ "[uOwnerType] = " + uOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[nd2ne] = " + nd2ne
-						+ ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[nd2ne] = " + nd2ne + ", " + "[feature] = "
+						+ feature + ", " + "[jo2uo] = " + jo2uo + ", " + "[uOwnerType] = " + uOwnerType + ", "
+						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1061,21 +1059,21 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					csp)) {
 				// 
 				Object[] result5_black = FieldDec2Property4_AnonymousImpl
-						.pattern_FieldDec2Property4_Anonymous_29_5_checknacs_blackBBBBBB(jOwnerType, feature,
-								bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+						.pattern_FieldDec2Property4_Anonymous_29_5_checknacs_blackBBBBBB(jOwnerType, bodyDeclaration,
+								nd2ne, feature, jo2uo, uOwnerType);
 				if (result5_black != null) {
 
 					Object[] result6_black = FieldDec2Property4_AnonymousImpl
-							.pattern_FieldDec2Property4_Anonymous_29_6_perform_blackBBBBBBB(jOwnerType, feature,
-									bodyDeclaration, uOwnerType, jo2uo, nd2ne, ruleResult);
+							.pattern_FieldDec2Property4_Anonymous_29_6_perform_blackBBBBBBB(jOwnerType, bodyDeclaration,
+									nd2ne, feature, jo2uo, uOwnerType, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jOwnerType] = "
-								+ jOwnerType + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-								+ bodyDeclaration + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[jo2uo] = " + jo2uo
-								+ ", " + "[nd2ne] = " + nd2ne + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ jOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[nd2ne] = "
+								+ nd2ne + ", " + "[feature] = " + feature + ", " + "[jo2uo] = " + jo2uo + ", "
+								+ "[uOwnerType] = " + uOwnerType + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					FieldDec2Property4_AnonymousImpl.pattern_FieldDec2Property4_Anonymous_29_6_perform_greenBBBBB(
-							jOwnerType, feature, bodyDeclaration, uOwnerType, ruleResult);
+							jOwnerType, bodyDeclaration, feature, uOwnerType, ruleResult);
 
 				} else {
 				}
@@ -1093,8 +1091,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration jOwnerType,
-			Property feature, MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType,
-			ASTNode2Element jo2uo, ASTNode2Element nd2ne, ModelgeneratorRuleResult ruleResult) {// Create CSP
+			MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne, Property feature, ASTNode2Element jo2uo,
+			org.eclipse.uml2.uml.Class uOwnerType, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1110,11 +1108,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
-		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
-		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
-		isApplicableMatch.registerObject("jo2uo", jo2uo);
 		isApplicableMatch.registerObject("nd2ne", nd2ne);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("jo2uo", jo2uo);
+		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
 		return csp;
 	}
 
@@ -1151,11 +1149,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					(MFieldDefinition) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_PROPERTY_MFIELDDEFINITION_CLASS_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_MFIELDDEFINITION_ASTNODE2ELEMENT_PROPERTY_ASTNODE2ELEMENT_CLASS:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(AnonymousClassDeclaration) arguments.get(1), (Property) arguments.get(2),
-					(MFieldDefinition) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6));
+					(AnonymousClassDeclaration) arguments.get(1), (MFieldDefinition) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Property) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(org.eclipse.uml2.uml.Class) arguments.get(6));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1181,11 +1179,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					(org.eclipse.uml2.uml.Class) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_PROPERTY_MFIELDDEFINITION_CLASS_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_MFIELDDEFINITION_ASTNODE2ELEMENT_PROPERTY_ASTNODE2ELEMENT_CLASS:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(AnonymousClassDeclaration) arguments.get(1), (Property) arguments.get(2),
-					(MFieldDefinition) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6));
+					(AnonymousClassDeclaration) arguments.get(1), (MFieldDefinition) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Property) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(org.eclipse.uml2.uml.Class) arguments.get(6));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1195,20 +1193,20 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_120__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_144__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_144((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_154__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_154((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__ANONYMOUSCLASSDECLARATION_PROPERTY_MFIELDDEFINITION_CLASS_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((AnonymousClassDeclaration) arguments.get(0), (Property) arguments.get(1),
-					(MFieldDefinition) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__ANONYMOUSCLASSDECLARATION_MFIELDDEFINITION_PROPERTY_CLASS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((AnonymousClassDeclaration) arguments.get(0),
+					(MFieldDefinition) arguments.get(1), (Property) arguments.get(2),
+					(org.eclipse.uml2.uml.Class) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___CHECK_DEC_FWD__ANONYMOUSCLASSDECLARATION_MFIELDDEFINITION:
@@ -1218,12 +1216,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_PROPERTY_MFIELDDEFINITION_CLASS_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANONYMOUSCLASSDECLARATION_MFIELDDEFINITION_ASTNODE2ELEMENT_PROPERTY_ASTNODE2ELEMENT_CLASS_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(AnonymousClassDeclaration) arguments.get(1), (Property) arguments.get(2),
-					(MFieldDefinition) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
+					(AnonymousClassDeclaration) arguments.get(1), (MFieldDefinition) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Property) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(org.eclipse.uml2.uml.Class) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1334,30 +1331,30 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("jOwnerType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = isApplicableMatch.getObject("uOwnerType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_2 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
 		EObject _localVariable_4 = isApplicableMatch.getObject("jo2uo");
-		EObject _localVariable_5 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_5 = isApplicableMatch.getObject("uOwnerType");
 		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpUOwnerType = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpNd2ne = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
 		EObject tmpJo2uo = _localVariable_4;
-		EObject tmpNd2ne = _localVariable_5;
+		EObject tmpUOwnerType = _localVariable_5;
 		if (tmpJOwnerType instanceof AnonymousClassDeclaration) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) tmpJOwnerType;
-			if (tmpFeature instanceof Property) {
-				Property feature = (Property) tmpFeature;
-				if (tmpBodyDeclaration instanceof MFieldDefinition) {
-					MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-					if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
+			if (tmpBodyDeclaration instanceof MFieldDefinition) {
+				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+				if (tmpNd2ne instanceof ASTNode2Element) {
+					ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+					if (tmpFeature instanceof Property) {
+						Property feature = (Property) tmpFeature;
 						if (tmpJo2uo instanceof ASTNode2Element) {
 							ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-							if (tmpNd2ne instanceof ASTNode2Element) {
-								ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
-								return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne,
+							if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
+								return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType,
 										isApplicableMatch };
 							}
 						}
@@ -1369,14 +1366,14 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_blackBBBBBBFBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch) {
 		if (!jo2uo.equals(nd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, csp, _this,
+					return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1390,18 +1387,18 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 				isApplicableMatch);
 		if (result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding != null) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[0];
-			Property feature = (Property) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[1];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[3];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[1];
+			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[2];
+			Property feature = (Property) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[3];
 			ASTNode2Element jo2uo = (ASTNode2Element) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[4];
-			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[5];
+			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_black = pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_blackBBBBBBFBB(
-					jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, _this, isApplicableMatch);
+					jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, _this, isApplicableMatch);
 			if (result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDec2Property4_Anonymous_1_1_performtransformation_black[6];
 
-				return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, csp, _this,
+				return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1420,26 +1417,26 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject feature, EObject bodyDeclaration,
-			EObject uOwnerType, EObject jo2uo, EObject nd2ne) {
-		if (!jOwnerType.equals(uOwnerType)) {
+			PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject nd2ne, EObject feature,
+			EObject jo2uo, EObject uOwnerType) {
+		if (!jOwnerType.equals(nd2ne)) {
 			if (!jOwnerType.equals(jo2uo)) {
-				if (!jOwnerType.equals(nd2ne)) {
-					if (!feature.equals(jOwnerType)) {
-						if (!feature.equals(uOwnerType)) {
-							if (!feature.equals(jo2uo)) {
-								if (!feature.equals(nd2ne)) {
-									if (!bodyDeclaration.equals(jOwnerType)) {
-										if (!bodyDeclaration.equals(feature)) {
-											if (!bodyDeclaration.equals(uOwnerType)) {
-												if (!bodyDeclaration.equals(jo2uo)) {
-													if (!bodyDeclaration.equals(nd2ne)) {
-														if (!jo2uo.equals(uOwnerType)) {
+				if (!jOwnerType.equals(uOwnerType)) {
+					if (!bodyDeclaration.equals(jOwnerType)) {
+						if (!bodyDeclaration.equals(nd2ne)) {
+							if (!bodyDeclaration.equals(feature)) {
+								if (!bodyDeclaration.equals(jo2uo)) {
+									if (!bodyDeclaration.equals(uOwnerType)) {
+										if (!nd2ne.equals(uOwnerType)) {
+											if (!feature.equals(jOwnerType)) {
+												if (!feature.equals(nd2ne)) {
+													if (!feature.equals(jo2uo)) {
+														if (!feature.equals(uOwnerType)) {
 															if (!jo2uo.equals(nd2ne)) {
-																if (!nd2ne.equals(uOwnerType)) {
+																if (!jo2uo.equals(uOwnerType)) {
 																	return new Object[] { ruleresult, jOwnerType,
-																			feature, bodyDeclaration, uOwnerType, jo2uo,
-																			nd2ne };
+																			bodyDeclaration, nd2ne, feature, jo2uo,
+																			uOwnerType };
 																}
 															}
 														}
@@ -1459,7 +1456,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_1_3_bookkeepingforedges_greenBBBBBFFF(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject feature, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject feature,
 			EObject uOwnerType) {
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
@@ -1484,15 +1481,15 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
-		return new Object[] { ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType,
+		return new Object[] { ruleresult, jOwnerType, bodyDeclaration, feature, uOwnerType,
 				jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner, uOwnerType__feature____ownedAttribute };
 	}
 
 	public static final void pattern_FieldDec2Property4_Anonymous_1_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property4_Anonymous _this, PerformRuleResult ruleresult, EObject jOwnerType, EObject feature,
-			EObject bodyDeclaration, EObject uOwnerType, EObject jo2uo, EObject nd2ne) {
-		_this.registerObjects_FWD(ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+			FieldDec2Property4_Anonymous _this, PerformRuleResult ruleresult, EObject jOwnerType,
+			EObject bodyDeclaration, EObject nd2ne, EObject feature, EObject jo2uo, EObject uOwnerType) {
+		_this.registerObjects_FWD(ruleresult, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 
 	}
 
@@ -1568,21 +1565,21 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_2_2_corematch_blackBFBFFFB(
+	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_2_2_corematch_blackBBFFFFB(
 			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jOwnerType,
+		for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(bodyDeclaration,
 				ASTNode2Element.class, "source")) {
-			Element tmpUOwnerType = jo2uo.getTarget();
-			if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
-				for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
+			Element tmpFeature = nd2ne.getTarget();
+			if (tmpFeature instanceof Property) {
+				Property feature = (Property) tmpFeature;
+				for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(jOwnerType, ASTNode2Element.class, "source")) {
 					if (!jo2uo.equals(nd2ne)) {
-						Element tmpFeature = nd2ne.getTarget();
-						if (tmpFeature instanceof Property) {
-							Property feature = (Property) tmpFeature;
-							_result.add(new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne,
+						Element tmpUOwnerType = jo2uo.getTarget();
+						if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
+							org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
+							_result.add(new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType,
 									match });
 						}
 
@@ -1595,17 +1592,17 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_2_3_findcontext_blackBBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jo2uo.equals(nd2ne)) {
-			if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
-				if (jOwnerType.equals(jo2uo.getSource())) {
-					if (uOwnerType.equals(jo2uo.getTarget())) {
-						if (bodyDeclaration.equals(nd2ne.getSource())) {
-							if (feature.equals(nd2ne.getTarget())) {
-								_result.add(new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo,
-										nd2ne });
+			if (bodyDeclaration.equals(nd2ne.getSource())) {
+				if (feature.equals(nd2ne.getTarget())) {
+					if (jOwnerType.equals(jo2uo.getSource())) {
+						if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
+							if (uOwnerType.equals(jo2uo.getTarget())) {
+								_result.add(new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+										uOwnerType });
 							}
 						}
 					}
@@ -1616,70 +1613,70 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_2_3_findcontext_greenBBBBBBFFFFFFF(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jOwnerType__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
-		String bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
-		String jo2uo__jOwnerType____source_name_prime = "source";
-		String jo2uo__uOwnerType____target_name_prime = "target";
 		String nd2ne__bodyDeclaration____source_name_prime = "source";
 		String nd2ne__feature____target_name_prime = "target";
+		String jo2uo__jOwnerType____source_name_prime = "source";
+		String jOwnerType__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
+		String bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
+		String jo2uo__uOwnerType____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(uOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo);
 		isApplicableMatch.getAllContextElements().add(nd2ne);
-		jOwnerType__bodyDeclaration____bodyDeclarations.setSrc(jOwnerType);
-		jOwnerType__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(jOwnerType__bodyDeclaration____bodyDeclarations);
-		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
-		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner.setTrg(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner);
-		jo2uo__jOwnerType____source.setSrc(jo2uo);
-		jo2uo__jOwnerType____source.setTrg(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
-		jo2uo__uOwnerType____target.setSrc(jo2uo);
-		jo2uo__uOwnerType____target.setTrg(uOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
+		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(jo2uo);
+		isApplicableMatch.getAllContextElements().add(uOwnerType);
 		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
 		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
 		nd2ne__feature____target.setSrc(nd2ne);
 		nd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
+		jo2uo__jOwnerType____source.setSrc(jo2uo);
+		jo2uo__jOwnerType____source.setTrg(jOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
+		jOwnerType__bodyDeclaration____bodyDeclarations.setSrc(jOwnerType);
+		jOwnerType__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(jOwnerType__bodyDeclaration____bodyDeclarations);
+		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
+		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner.setTrg(jOwnerType);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner);
+		jo2uo__uOwnerType____target.setSrc(jo2uo);
+		jo2uo__uOwnerType____target.setTrg(uOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
+		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
+		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
+		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
 		jOwnerType__bodyDeclaration____bodyDeclarations
 				.setName(jOwnerType__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner_name_prime);
-		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
 		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
-		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
-		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
-		return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, isApplicableMatch,
+		return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, isApplicableMatch,
+				nd2ne__bodyDeclaration____source, nd2ne__feature____target, jo2uo__jOwnerType____source,
 				jOwnerType__bodyDeclaration____bodyDeclarations,
-				bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner, jo2uo__jOwnerType____source,
-				jo2uo__uOwnerType____target, nd2ne__bodyDeclaration____source, nd2ne__feature____target };
+				bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner, jo2uo__uOwnerType____target };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_bindingFBBBBBBBB(
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch,
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jOwnerType, feature, bodyDeclaration,
-				uOwnerType, jo2uo, nd2ne);
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne,
+				feature, jo2uo, uOwnerType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType,
-					jo2uo, nd2ne };
+			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+					uOwnerType };
 		}
 		return null;
 	}
@@ -1690,10 +1687,10 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch,
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		Object[] result_pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_binding = pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+				_this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 		if (result_pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_binding[0];
 
@@ -1701,8 +1698,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_FieldDec2Property4_Anonymous_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType,
-						jo2uo, nd2ne };
+				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+						uOwnerType };
 			}
 		}
 		return null;
@@ -1826,30 +1823,30 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("jOwnerType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = isApplicableMatch.getObject("uOwnerType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_2 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
 		EObject _localVariable_4 = isApplicableMatch.getObject("jo2uo");
-		EObject _localVariable_5 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_5 = isApplicableMatch.getObject("uOwnerType");
 		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpUOwnerType = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpNd2ne = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
 		EObject tmpJo2uo = _localVariable_4;
-		EObject tmpNd2ne = _localVariable_5;
+		EObject tmpUOwnerType = _localVariable_5;
 		if (tmpJOwnerType instanceof AnonymousClassDeclaration) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) tmpJOwnerType;
-			if (tmpFeature instanceof Property) {
-				Property feature = (Property) tmpFeature;
-				if (tmpBodyDeclaration instanceof MFieldDefinition) {
-					MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-					if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
+			if (tmpBodyDeclaration instanceof MFieldDefinition) {
+				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+				if (tmpNd2ne instanceof ASTNode2Element) {
+					ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+					if (tmpFeature instanceof Property) {
+						Property feature = (Property) tmpFeature;
 						if (tmpJo2uo instanceof ASTNode2Element) {
 							ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-							if (tmpNd2ne instanceof ASTNode2Element) {
-								ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
-								return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne,
+							if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
+								return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType,
 										isApplicableMatch };
 							}
 						}
@@ -1861,14 +1858,14 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_blackBBBBBBFBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch) {
 		if (!jo2uo.equals(nd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, csp, _this,
+					return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1882,18 +1879,18 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 				isApplicableMatch);
 		if (result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding != null) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[0];
-			Property feature = (Property) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[1];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[3];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[1];
+			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[2];
+			Property feature = (Property) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[3];
 			ASTNode2Element jo2uo = (ASTNode2Element) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[4];
-			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[5];
+			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_black = pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_blackBBBBBBFBB(
-					jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, _this, isApplicableMatch);
+					jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, _this, isApplicableMatch);
 			if (result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDec2Property4_Anonymous_11_1_performtransformation_black[6];
 
-				return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, csp, _this,
+				return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1912,26 +1909,26 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject feature, EObject bodyDeclaration,
-			EObject uOwnerType, EObject jo2uo, EObject nd2ne) {
-		if (!jOwnerType.equals(uOwnerType)) {
+			PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject nd2ne, EObject feature,
+			EObject jo2uo, EObject uOwnerType) {
+		if (!jOwnerType.equals(nd2ne)) {
 			if (!jOwnerType.equals(jo2uo)) {
-				if (!jOwnerType.equals(nd2ne)) {
-					if (!feature.equals(jOwnerType)) {
-						if (!feature.equals(uOwnerType)) {
-							if (!feature.equals(jo2uo)) {
-								if (!feature.equals(nd2ne)) {
-									if (!bodyDeclaration.equals(jOwnerType)) {
-										if (!bodyDeclaration.equals(feature)) {
-											if (!bodyDeclaration.equals(uOwnerType)) {
-												if (!bodyDeclaration.equals(jo2uo)) {
-													if (!bodyDeclaration.equals(nd2ne)) {
-														if (!jo2uo.equals(uOwnerType)) {
+				if (!jOwnerType.equals(uOwnerType)) {
+					if (!bodyDeclaration.equals(jOwnerType)) {
+						if (!bodyDeclaration.equals(nd2ne)) {
+							if (!bodyDeclaration.equals(feature)) {
+								if (!bodyDeclaration.equals(jo2uo)) {
+									if (!bodyDeclaration.equals(uOwnerType)) {
+										if (!nd2ne.equals(uOwnerType)) {
+											if (!feature.equals(jOwnerType)) {
+												if (!feature.equals(nd2ne)) {
+													if (!feature.equals(jo2uo)) {
+														if (!feature.equals(uOwnerType)) {
 															if (!jo2uo.equals(nd2ne)) {
-																if (!nd2ne.equals(uOwnerType)) {
+																if (!jo2uo.equals(uOwnerType)) {
 																	return new Object[] { ruleresult, jOwnerType,
-																			feature, bodyDeclaration, uOwnerType, jo2uo,
-																			nd2ne };
+																			bodyDeclaration, nd2ne, feature, jo2uo,
+																			uOwnerType };
 																}
 															}
 														}
@@ -1951,7 +1948,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_11_3_bookkeepingforedges_greenBBBBBFFF(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject feature, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject feature,
 			EObject uOwnerType) {
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
@@ -1976,15 +1973,15 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
-		return new Object[] { ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType,
+		return new Object[] { ruleresult, jOwnerType, bodyDeclaration, feature, uOwnerType,
 				jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____anonymousClassDeclarationOwner, uOwnerType__feature____ownedAttribute };
 	}
 
 	public static final void pattern_FieldDec2Property4_Anonymous_11_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property4_Anonymous _this, PerformRuleResult ruleresult, EObject jOwnerType, EObject feature,
-			EObject bodyDeclaration, EObject uOwnerType, EObject jo2uo, EObject nd2ne) {
-		_this.registerObjects_BWD(ruleresult, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+			FieldDec2Property4_Anonymous _this, PerformRuleResult ruleresult, EObject jOwnerType,
+			EObject bodyDeclaration, EObject nd2ne, EObject feature, EObject jo2uo, EObject uOwnerType) {
+		_this.registerObjects_BWD(ruleresult, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 
 	}
 
@@ -2060,21 +2057,21 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_12_2_corematch_blackFBFBFFB(
+	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_12_2_corematch_blackFFFBFBB(
 			Property feature, org.eclipse.uml2.uml.Class uOwnerType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uOwnerType,
+		for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
 				ASTNode2Element.class, "target")) {
-			ASTNode tmpJOwnerType = jo2uo.getSource();
-			if (tmpJOwnerType instanceof AnonymousClassDeclaration) {
-				AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) tmpJOwnerType;
-				for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
-						ASTNode2Element.class, "target")) {
+			ASTNode tmpBodyDeclaration = nd2ne.getSource();
+			if (tmpBodyDeclaration instanceof MFieldDefinition) {
+				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+				for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(uOwnerType, ASTNode2Element.class, "target")) {
 					if (!jo2uo.equals(nd2ne)) {
-						ASTNode tmpBodyDeclaration = nd2ne.getSource();
-						if (tmpBodyDeclaration instanceof MFieldDefinition) {
-							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-							_result.add(new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne,
+						ASTNode tmpJOwnerType = jo2uo.getSource();
+						if (tmpJOwnerType instanceof AnonymousClassDeclaration) {
+							AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) tmpJOwnerType;
+							_result.add(new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType,
 									match });
 						}
 
@@ -2087,17 +2084,17 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_12_3_findcontext_blackBBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jo2uo.equals(nd2ne)) {
-			if (uOwnerType.getOwnedAttributes().contains(feature)) {
-				if (jOwnerType.equals(jo2uo.getSource())) {
-					if (uOwnerType.equals(jo2uo.getTarget())) {
-						if (bodyDeclaration.equals(nd2ne.getSource())) {
-							if (feature.equals(nd2ne.getTarget())) {
-								_result.add(new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo,
-										nd2ne });
+			if (bodyDeclaration.equals(nd2ne.getSource())) {
+				if (feature.equals(nd2ne.getTarget())) {
+					if (jOwnerType.equals(jo2uo.getSource())) {
+						if (uOwnerType.getOwnedAttributes().contains(feature)) {
+							if (uOwnerType.equals(jo2uo.getTarget())) {
+								_result.add(new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+										uOwnerType });
 							}
 						}
 					}
@@ -2108,60 +2105,60 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_12_3_findcontext_greenBBBBBBFFFFFF(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
-		String jo2uo__jOwnerType____source_name_prime = "source";
-		String jo2uo__uOwnerType____target_name_prime = "target";
+		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String nd2ne__bodyDeclaration____source_name_prime = "source";
 		String nd2ne__feature____target_name_prime = "target";
+		String jo2uo__jOwnerType____source_name_prime = "source";
+		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
+		String jo2uo__uOwnerType____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(uOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo);
 		isApplicableMatch.getAllContextElements().add(nd2ne);
-		uOwnerType__feature____ownedAttribute.setSrc(uOwnerType);
-		uOwnerType__feature____ownedAttribute.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(uOwnerType__feature____ownedAttribute);
-		jo2uo__jOwnerType____source.setSrc(jo2uo);
-		jo2uo__jOwnerType____source.setTrg(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
-		jo2uo__uOwnerType____target.setSrc(jo2uo);
-		jo2uo__uOwnerType____target.setTrg(uOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
+		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(jo2uo);
+		isApplicableMatch.getAllContextElements().add(uOwnerType);
 		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
 		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
 		nd2ne__feature____target.setSrc(nd2ne);
 		nd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
-		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
-		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
-		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
+		jo2uo__jOwnerType____source.setSrc(jo2uo);
+		jo2uo__jOwnerType____source.setTrg(jOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
+		uOwnerType__feature____ownedAttribute.setSrc(uOwnerType);
+		uOwnerType__feature____ownedAttribute.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(uOwnerType__feature____ownedAttribute);
+		jo2uo__uOwnerType____target.setSrc(jo2uo);
+		jo2uo__uOwnerType____target.setTrg(uOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
 		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
 		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
-		return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, isApplicableMatch,
-				uOwnerType__feature____ownedAttribute, jo2uo__jOwnerType____source, jo2uo__uOwnerType____target,
-				nd2ne__bodyDeclaration____source, nd2ne__feature____target };
+		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
+		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
+		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
+		return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, isApplicableMatch,
+				nd2ne__bodyDeclaration____source, nd2ne__feature____target, jo2uo__jOwnerType____source,
+				uOwnerType__feature____ownedAttribute, jo2uo__uOwnerType____target };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_bindingFBBBBBBBB(
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch,
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jOwnerType, feature, bodyDeclaration,
-				uOwnerType, jo2uo, nd2ne);
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne,
+				feature, jo2uo, uOwnerType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType,
-					jo2uo, nd2ne };
+			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+					uOwnerType };
 		}
 		return null;
 	}
@@ -2172,10 +2169,10 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch,
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		Object[] result_pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_binding = pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne);
+				_this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType);
 		if (result_pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_binding[0];
 
@@ -2183,8 +2180,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_FieldDec2Property4_Anonymous_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType,
-						jo2uo, nd2ne };
+				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+						uOwnerType };
 			}
 		}
 		return null;
@@ -2470,22 +2467,22 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("jOwnerType");
-		EObject _localVariable_1 = targetMatch.getObject("feature");
-		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_2 = targetMatch.getObject("feature");
 		EObject _localVariable_3 = targetMatch.getObject("uOwnerType");
 		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpFeature = _localVariable_2;
 		EObject tmpUOwnerType = _localVariable_3;
 		if (tmpJOwnerType instanceof AnonymousClassDeclaration) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) tmpJOwnerType;
-			if (tmpFeature instanceof Property) {
-				Property feature = (Property) tmpFeature;
-				if (tmpBodyDeclaration instanceof MFieldDefinition) {
-					MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+			if (tmpBodyDeclaration instanceof MFieldDefinition) {
+				MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+				if (tmpFeature instanceof Property) {
+					Property feature = (Property) tmpFeature;
 					if (tmpUOwnerType instanceof org.eclipse.uml2.uml.Class) {
 						org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) tmpUOwnerType;
-						return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch,
+						return new Object[] { jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch,
 								targetMatch };
 					}
 				}
@@ -2495,10 +2492,10 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_blackBBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Property feature,
 			org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch, targetMatch };
+			return new Object[] { jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2509,29 +2506,28 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 				sourceMatch, targetMatch);
 		if (result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding != null) {
 			AnonymousClassDeclaration jOwnerType = (AnonymousClassDeclaration) result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding[0];
-			Property feature = (Property) result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding[1];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding[2];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding[1];
+			Property feature = (Property) result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding[2];
 			org.eclipse.uml2.uml.Class uOwnerType = (org.eclipse.uml2.uml.Class) result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_black = pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_blackBBBBBB(
-					jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch, targetMatch);
+					jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch, targetMatch);
 			if (result_pattern_FieldDec2Property4_Anonymous_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch, targetMatch };
+				return new Object[] { jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_bindingFBBBBBBB(
-			FieldDec2Property4_Anonymous _this, AnonymousClassDeclaration jOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jOwnerType, feature, bodyDeclaration, uOwnerType,
+			FieldDec2Property4_Anonymous _this, AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration,
+			Property feature, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jOwnerType, bodyDeclaration, feature, uOwnerType,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch,
+			return new Object[] { csp, _this, jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2542,11 +2538,10 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			FieldDec2Property4_Anonymous _this, AnonymousClassDeclaration jOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch,
-			Match targetMatch) {
+			FieldDec2Property4_Anonymous _this, AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration,
+			Property feature, org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_binding = pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_bindingFBBBBBBB(
-				_this, jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch, targetMatch);
+				_this, jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch, targetMatch);
 		if (result_pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_binding[0];
 
@@ -2554,7 +2549,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_FieldDec2Property4_Anonymous_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, jOwnerType, feature, bodyDeclaration, uOwnerType, sourceMatch,
+				return new Object[] { csp, _this, jOwnerType, bodyDeclaration, feature, uOwnerType, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2567,20 +2562,20 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_blackBBBBFFBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
+	public static final Iterable<Object[]> pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_blackBBFBFBBB(
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Property feature,
 			org.eclipse.uml2.uml.Class uOwnerType, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jOwnerType,
-					ASTNode2Element.class, "source")) {
-				if (uOwnerType.equals(jo2uo.getTarget())) {
-					for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
+			for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
+				if (feature.equals(nd2ne.getTarget())) {
+					for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(jOwnerType, ASTNode2Element.class, "source")) {
 						if (!jo2uo.equals(nd2ne)) {
-							if (feature.equals(nd2ne.getTarget())) {
-								_result.add(new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo,
-										nd2ne, sourceMatch, targetMatch });
+							if (uOwnerType.equals(jo2uo.getTarget())) {
+								_result.add(new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+										uOwnerType, sourceMatch, targetMatch });
 							}
 						}
 					}
@@ -2591,21 +2586,21 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_5_matchcorrcontext_greenBBBBF(
-			ASTNode2Element jo2uo, ASTNode2Element nd2ne, Match sourceMatch, Match targetMatch) {
+			ASTNode2Element nd2ne, ASTNode2Element jo2uo, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "FieldDec2Property4_Anonymous";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(jo2uo);
 		ccMatch.getAllContextElements().add(nd2ne);
+		ccMatch.getAllContextElements().add(jo2uo);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { jo2uo, nd2ne, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { nd2ne, jo2uo, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_6_createcorrespondence_blackBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Property feature,
 			org.eclipse.uml2.uml.Class uOwnerType, CCMatch ccMatch) {
-		return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, ccMatch };
+		return new Object[] { jOwnerType, bodyDeclaration, feature, uOwnerType, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_24_7_addtoreturnedresult_blackBB(
@@ -2703,9 +2698,9 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, Property feature) {
-		if (ruleResult.getTargetObjects().contains(feature)) {
-			return new Object[] { ruleResult, feature };
+			ModelgeneratorRuleResult ruleResult, MFieldDefinition bodyDeclaration) {
+		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
+			return new Object[] { ruleResult, bodyDeclaration };
 		}
 		return null;
 	}
@@ -2719,9 +2714,9 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, MFieldDefinition bodyDeclaration) {
-		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
-			return new Object[] { ruleResult, bodyDeclaration };
+			ModelgeneratorRuleResult ruleResult, Property feature) {
+		if (ruleResult.getTargetObjects().contains(feature)) {
+			return new Object[] { ruleResult, feature };
 		}
 		return null;
 	}
@@ -2751,23 +2746,22 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 													if (tmpNd2ne instanceof ASTNode2Element) {
 														ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
 														if (!jo2uo.equals(nd2ne)) {
-															Element tmpFeature = nd2ne.getTarget();
-															if (tmpFeature instanceof Property) {
-																Property feature = (Property) tmpFeature;
-																ASTNode tmpBodyDeclaration = nd2ne.getSource();
-																if (tmpBodyDeclaration instanceof MFieldDefinition) {
-																	MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+															ASTNode tmpBodyDeclaration = nd2ne.getSource();
+															if (tmpBodyDeclaration instanceof MFieldDefinition) {
+																MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+																Element tmpFeature = nd2ne.getTarget();
+																if (tmpFeature instanceof Property) {
+																	Property feature = (Property) tmpFeature;
 																	if (pattern_FieldDec2Property4_Anonymous_29_2_isapplicablecore_black_nac_4BB(
 																			ruleResult, nd2ne) == null) {
 																		if (pattern_FieldDec2Property4_Anonymous_29_2_isapplicablecore_black_nac_3BB(
-																				ruleResult, feature) == null) {
+																				ruleResult, bodyDeclaration) == null) {
 																			if (pattern_FieldDec2Property4_Anonymous_29_2_isapplicablecore_black_nac_5BB(
-																					ruleResult,
-																					bodyDeclaration) == null) {
+																					ruleResult, feature) == null) {
 																				_result.add(new Object[] { jo2uoList,
 																						jOwnerType, jo2uo, uOwnerType,
-																						nd2neList, feature, nd2ne,
-																						bodyDeclaration,
+																						nd2neList, bodyDeclaration,
+																						nd2ne, feature,
 																						ruleEntryContainer,
 																						ruleResult });
 																			}
@@ -2797,15 +2791,15 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_bindingFBBBBBBBBB(
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch,
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jOwnerType, feature, bodyDeclaration,
-				uOwnerType, jo2uo, nd2ne, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne,
+				feature, jo2uo, uOwnerType, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType,
-					jo2uo, nd2ne, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+					uOwnerType, ruleResult };
 		}
 		return null;
 	}
@@ -2816,11 +2810,11 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			FieldDec2Property4_Anonymous _this, IsApplicableMatch isApplicableMatch,
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_binding = pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, ruleResult);
+				_this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, ruleResult);
 		if (result_pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_binding[0];
 
@@ -2828,8 +2822,8 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 					csp);
 			if (result_pattern_FieldDec2Property4_Anonymous_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, feature, bodyDeclaration, uOwnerType,
-						jo2uo, nd2ne, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo,
+						uOwnerType, ruleResult };
 			}
 		}
 		return null;
@@ -2843,26 +2837,26 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_5_checknacs_blackBBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne) {
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType) {
 		if (!jo2uo.equals(nd2ne)) {
-			return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne };
+			return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_6_perform_blackBBBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class uOwnerType, ASTNode2Element jo2uo, ASTNode2Element nd2ne,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, ASTNode2Element nd2ne,
+			Property feature, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
 			ModelgeneratorRuleResult ruleResult) {
 		if (!jo2uo.equals(nd2ne)) {
-			return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, jo2uo, nd2ne, ruleResult };
+			return new Object[] { jOwnerType, bodyDeclaration, nd2ne, feature, jo2uo, uOwnerType, ruleResult };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4_Anonymous_29_6_perform_greenBBBBB(
-			AnonymousClassDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
+			AnonymousClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Property feature,
 			org.eclipse.uml2.uml.Class uOwnerType, ModelgeneratorRuleResult ruleResult) {
 		jOwnerType.getBodyDeclarations().add(bodyDeclaration);
 		uOwnerType.getOwnedAttributes().add(feature);
@@ -2871,7 +2865,7 @@ public class FieldDec2Property4_AnonymousImpl extends AbstractRuleImpl implement
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { jOwnerType, feature, bodyDeclaration, uOwnerType, ruleResult };
+		return new Object[] { jOwnerType, bodyDeclaration, feature, uOwnerType, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FieldDec2Property4_Anonymous_29_7_expressionFB(

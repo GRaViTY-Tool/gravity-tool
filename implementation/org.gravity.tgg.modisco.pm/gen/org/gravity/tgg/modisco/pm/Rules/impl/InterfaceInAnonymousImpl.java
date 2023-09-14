@@ -279,9 +279,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 								tPackage, pg, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tClass__tPackage____package = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tPackage__tClass____allTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tClass__tPackage____package = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tPackage__tClass____allTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge pg__tClass____allTypes = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge tClass__pg____model = (EMoflonEdge) result3_green[13];
@@ -641,9 +641,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 								tNestedType, eAnonymousClassDeclarationToTClass, eAnonymousClassDeclaration);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge pg__tClass____classes = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tClass__tPackage____package = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tPackage__tClass____allTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tClass__tPackage____package = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tPackage__tClass____allTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge pg__tNestedType____interfaces = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[13];
@@ -824,7 +824,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_33(EMoflonEdge _edge_interfaces) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_interfaces) {
 
 		Object[] result1_bindingAndBlack = InterfaceInAnonymousImpl
 				.pattern_InterfaceInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -883,7 +883,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_34(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
 
 		Object[] result1_bindingAndBlack = InterfaceInAnonymousImpl
 				.pattern_InterfaceInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -951,17 +951,17 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
-		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
-		var_mNestedType_name.setType("String");
+		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
+		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
+		var_tNestedType_tName.setType("String");
 
 		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
 		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
 		var_tClass_tName.setType("String");
 
-		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
-		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
-		var_tNestedType_tName.setType("String");
+		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
+		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
+		var_mNestedType_name.setType("String");
 
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
@@ -1006,17 +1006,17 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
-		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
-		var_mNestedType_name.setType("String");
+		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
+		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
+		var_tNestedType_tName.setType("String");
 
 		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
 		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
 		var_tClass_tName.setType("String");
 
-		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
-		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
-		var_tNestedType_tName.setType("String");
+		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
+		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
+		var_mNestedType_name.setType("String");
 
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
@@ -1229,9 +1229,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 			//nothing RuleEntryList eAnonymousClassDeclarationToTClassList = (RuleEntryList) result2_black[0];
 			TClass tClass = (TClass) result2_black[1];
 			TPackage tPackage = (TPackage) result2_black[2];
-			TypeGraph pg = (TypeGraph) result2_black[3];
-			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = (AnonymousClassDeclarationToTClass) result2_black[4];
-			AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result2_black[5];
+			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = (AnonymousClassDeclarationToTClass) result2_black[3];
+			AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result2_black[4];
+			TypeGraph pg = (TypeGraph) result2_black[5];
 
 			Object[] result3_bindingAndBlack = InterfaceInAnonymousImpl
 					.pattern_InterfaceInAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
@@ -1403,10 +1403,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 			return null;
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_33__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_33((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_34__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_34((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_9__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1976,9 +1976,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 			AnonymousClassDeclaration eAnonymousClassDeclaration) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge pg__tClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1988,9 +1988,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		String pg__tClass____classes_name_prime = "classes";
-		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String tClass__tPackage____package_name_prime = "package";
 		String tPackage__tClass____allTypes_name_prime = "allTypes";
+		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime = "source";
 		String pg__tClass____allTypes_name_prime = "allTypes";
 		String tClass__pg____model_name_prime = "model";
@@ -2005,15 +2005,15 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		pg__tClass____classes.setSrc(pg);
 		pg__tClass____classes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(pg__tClass____classes);
-		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
-		isApplicableMatch.getAllContextElements().add(eAnonymousClassDeclarationToTClass__tClass____target);
 		tClass__tPackage____package.setSrc(tClass);
 		tClass__tPackage____package.setTrg(tPackage);
 		isApplicableMatch.getAllContextElements().add(tClass__tPackage____package);
 		tPackage__tClass____allTypes.setSrc(tPackage);
 		tPackage__tClass____allTypes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(tPackage__tClass____allTypes);
+		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
+		isApplicableMatch.getAllContextElements().add(eAnonymousClassDeclarationToTClass__tClass____target);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
 				.setSrc(eAnonymousClassDeclarationToTClass);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source.setTrg(eAnonymousClassDeclaration);
@@ -2033,10 +2033,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations.setTrg(mNestedType);
 		isApplicableMatch.getAllContextElements().add(eAnonymousClassDeclaration__mNestedType____bodyDeclarations);
 		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
-		eAnonymousClassDeclarationToTClass__tClass____target
-				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
 		tClass__tPackage____package.setName(tClass__tPackage____package_name_prime);
 		tPackage__tClass____allTypes.setName(tPackage__tClass____allTypes_name_prime);
+		eAnonymousClassDeclarationToTClass__tClass____target
+				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
 				.setName(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime);
 		pg__tClass____allTypes.setName(pg__tClass____allTypes_name_prime);
@@ -2046,11 +2046,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		eAnonymousClassDeclaration__mNestedType____bodyDeclarations
 				.setName(eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime);
 		return new Object[] { tClass, mNestedType, tPackage, pg, eAnonymousClassDeclarationToTClass,
-				eAnonymousClassDeclaration, isApplicableMatch, pg__tClass____classes,
-				eAnonymousClassDeclarationToTClass__tClass____target, tClass__tPackage____package,
-				tPackage__tClass____allTypes, eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source,
-				pg__tClass____allTypes, tClass__pg____model,
-				mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
+				eAnonymousClassDeclaration, isApplicableMatch, pg__tClass____classes, tClass__tPackage____package,
+				tPackage__tClass____allTypes, eAnonymousClassDeclarationToTClass__tClass____target,
+				eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source, pg__tClass____allTypes,
+				tClass__pg____model, mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
 				eAnonymousClassDeclaration__mNestedType____bodyDeclarations };
 	}
 
@@ -2690,8 +2689,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 			AnonymousClassDeclaration eAnonymousClassDeclaration) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (pg.getClasses().contains(tClass)) {
-			if (tClass.equals(eAnonymousClassDeclarationToTClass.getTarget())) {
-				if (tPackage.equals(tClass.getPackage())) {
+			if (tPackage.equals(tClass.getPackage())) {
+				if (tClass.equals(eAnonymousClassDeclarationToTClass.getTarget())) {
 					if (pg.getInterfaces().contains(tNestedType)) {
 						if (eAnonymousClassDeclaration.equals(eAnonymousClassDeclarationToTClass.getSource())) {
 							if (tClass.getInnerTypes().contains(tNestedType)) {
@@ -2716,9 +2715,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 			AnonymousClassDeclaration eAnonymousClassDeclaration) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge pg__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eAnonymousClassDeclarationToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____interfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -2729,9 +2728,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		EMoflonEdge pg__tClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tClass____classes_name_prime = "classes";
-		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String tClass__tPackage____package_name_prime = "package";
 		String tPackage__tClass____allTypes_name_prime = "allTypes";
+		String eAnonymousClassDeclarationToTClass__tClass____target_name_prime = "target";
 		String pg__tNestedType____interfaces_name_prime = "interfaces";
 		String eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime = "source";
 		String tClass__tNestedType____innerTypes_name_prime = "innerTypes";
@@ -2749,15 +2748,15 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		pg__tClass____classes.setSrc(pg);
 		pg__tClass____classes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(pg__tClass____classes);
-		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
-		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
-		isApplicableMatch.getAllContextElements().add(eAnonymousClassDeclarationToTClass__tClass____target);
 		tClass__tPackage____package.setSrc(tClass);
 		tClass__tPackage____package.setTrg(tPackage);
 		isApplicableMatch.getAllContextElements().add(tClass__tPackage____package);
 		tPackage__tClass____allTypes.setSrc(tPackage);
 		tPackage__tClass____allTypes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(tPackage__tClass____allTypes);
+		eAnonymousClassDeclarationToTClass__tClass____target.setSrc(eAnonymousClassDeclarationToTClass);
+		eAnonymousClassDeclarationToTClass__tClass____target.setTrg(tClass);
+		isApplicableMatch.getAllContextElements().add(eAnonymousClassDeclarationToTClass__tClass____target);
 		pg__tNestedType____interfaces.setSrc(pg);
 		pg__tNestedType____interfaces.setTrg(tNestedType);
 		isApplicableMatch.getAllContextElements().add(pg__tNestedType____interfaces);
@@ -2785,10 +2784,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		tClass__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tClass__pg____model);
 		pg__tClass____classes.setName(pg__tClass____classes_name_prime);
-		eAnonymousClassDeclarationToTClass__tClass____target
-				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
 		tClass__tPackage____package.setName(tClass__tPackage____package_name_prime);
 		tPackage__tClass____allTypes.setName(tPackage__tClass____allTypes_name_prime);
+		eAnonymousClassDeclarationToTClass__tClass____target
+				.setName(eAnonymousClassDeclarationToTClass__tClass____target_name_prime);
 		pg__tNestedType____interfaces.setName(pg__tNestedType____interfaces_name_prime);
 		eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source
 				.setName(eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source_name_prime);
@@ -2799,10 +2798,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		pg__tClass____allTypes.setName(pg__tClass____allTypes_name_prime);
 		tClass__pg____model.setName(tClass__pg____model_name_prime);
 		return new Object[] { tClass, tPackage, pg, tNestedType, eAnonymousClassDeclarationToTClass,
-				eAnonymousClassDeclaration, isApplicableMatch, pg__tClass____classes,
-				eAnonymousClassDeclarationToTClass__tClass____target, tClass__tPackage____package,
-				tPackage__tClass____allTypes, pg__tNestedType____interfaces,
-				eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source,
+				eAnonymousClassDeclaration, isApplicableMatch, pg__tClass____classes, tClass__tPackage____package,
+				tPackage__tClass____allTypes, eAnonymousClassDeclarationToTClass__tClass____target,
+				pg__tNestedType____interfaces, eAnonymousClassDeclarationToTClass__eAnonymousClassDeclaration____source,
 				tClass__tNestedType____innerTypes, tNestedType__tClass____outerType, pg__tNestedType____allTypes,
 				tNestedType__pg____model, pg__tClass____allTypes, tClass__pg____model };
 	}
@@ -2930,9 +2928,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 			TInterface tNestedType, TPackage tPackage) {
-		for (TPackage __DEC_tNestedType_interfaces_479083 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_interfaces_310522 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "interfaces")) {
-			if (!tPackage.equals(__DEC_tNestedType_interfaces_479083)) {
+			if (!tPackage.equals(__DEC_tNestedType_interfaces_310522)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -2941,9 +2939,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 			TInterface tNestedType, TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_interfaces_384729 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_interfaces_835802 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tNestedType_interfaces_384729)) {
+			if (!pg.equals(__DEC_tNestedType_interfaces_835802)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -2952,9 +2950,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
 			TInterface tNestedType, TPackage tPackage) {
-		TPackage __DEC_tNestedType_allTypes_519601 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_519601 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_allTypes_519601)) {
+		TPackage __DEC_tNestedType_allTypes_780779 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_780779 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_allTypes_780779)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -2964,10 +2962,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(
 			TInterface tNestedType, TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_735663 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_735663 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_735663)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_735663)) {
+		TAbstractType __DEC_tNestedType_innerTypes_966803 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_966803 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_966803)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_966803)) {
 					return new Object[] { tNestedType, tClass };
 				}
 			}
@@ -3146,10 +3144,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_557315 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_283431 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_557315 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_557315)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_283431 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_283431)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3159,7 +3157,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_1B(
 			InterfaceDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_96018 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_730066 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3168,8 +3166,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_2B(
 			InterfaceDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_528905 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_528905 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_142038 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_142038 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3178,7 +3176,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_21_2_testcorematchandDECs_black_nac_3B(
 			InterfaceDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_844856 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_49924 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3454,10 +3452,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_230724 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_329378 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_230724 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_230724)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_329378 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_329378)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3467,7 +3465,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_1B(
 			InterfaceDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_897290 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_600823 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3476,8 +3474,8 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_2B(
 			InterfaceDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_558094 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_558094 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_41806 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_41806 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3486,7 +3484,7 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_27_1_matchtggpattern_black_nac_3B(
 			InterfaceDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_926029 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_181722 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3521,9 +3519,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_0BB(TInterface tNestedType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tNestedType_interfaces_81841 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tNestedType_interfaces_130426 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TPackage.class, "interfaces")) {
-			if (!tPackage.equals(__DEC_tNestedType_interfaces_81841)) {
+			if (!tPackage.equals(__DEC_tNestedType_interfaces_130426)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -3532,9 +3530,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_1BB(TInterface tNestedType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_interfaces_593395 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_interfaces_792595 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tNestedType_interfaces_593395)) {
+			if (!pg.equals(__DEC_tNestedType_interfaces_792595)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -3543,9 +3541,9 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_2BB(TInterface tNestedType,
 			TPackage tPackage) {
-		TPackage __DEC_tNestedType_allTypes_220631 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_220631 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_allTypes_220631)) {
+		TPackage __DEC_tNestedType_allTypes_127118 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_127118 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_allTypes_127118)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -3555,10 +3553,10 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 
 	public static final Object[] pattern_InterfaceInAnonymous_28_1_matchtggpattern_black_nac_3BB(TInterface tNestedType,
 			TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_176121 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_176121 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_176121)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_176121)) {
+		TAbstractType __DEC_tNestedType_innerTypes_165676 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_165676 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_165676)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_165676)) {
 					return new Object[] { tNestedType, tClass };
 				}
 			}
@@ -3658,14 +3656,6 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 	}
 
 	public static final Object[] pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
-		if (ruleResult.getTargetObjects().contains(pg)) {
-			return new Object[] { ruleResult, pg };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass) {
 		if (ruleResult.getCorrObjects().contains(eAnonymousClassDeclarationToTClass)) {
 			return new Object[] { ruleResult, eAnonymousClassDeclarationToTClass };
@@ -3673,10 +3663,18 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration eAnonymousClassDeclaration) {
 		if (ruleResult.getSourceObjects().contains(eAnonymousClassDeclaration)) {
 			return new Object[] { ruleResult, eAnonymousClassDeclaration };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
+		if (ruleResult.getTargetObjects().contains(pg)) {
+			return new Object[] { ruleResult, pg };
 		}
 		return null;
 	}
@@ -3699,20 +3697,20 @@ public class InterfaceInAnonymousImpl extends AbstractRuleImpl implements Interf
 								TypeGraph pg = tClass.getModel();
 								if (pg != null) {
 									if (pg.getClasses().contains(tClass)) {
-										if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_3BB(ruleResult,
+										if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 												eAnonymousClassDeclarationToTClass) == null) {
 											if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_0BB(
 													ruleResult, tClass) == null) {
-												if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+												if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 														ruleResult, eAnonymousClassDeclaration) == null) {
 													if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_1BB(
 															ruleResult, tPackage) == null) {
-														if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+														if (pattern_InterfaceInAnonymous_29_2_isapplicablecore_black_nac_4BB(
 																ruleResult, pg) == null) {
 															_result.add(new Object[] {
 																	eAnonymousClassDeclarationToTClassList, tClass,
-																	tPackage, pg, eAnonymousClassDeclarationToTClass,
-																	eAnonymousClassDeclaration, ruleEntryContainer,
+																	tPackage, eAnonymousClassDeclarationToTClass,
+																	eAnonymousClassDeclaration, pg, ruleEntryContainer,
 																	ruleResult });
 														}
 													}

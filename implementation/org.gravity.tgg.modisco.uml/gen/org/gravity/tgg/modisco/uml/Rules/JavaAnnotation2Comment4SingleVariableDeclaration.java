@@ -118,7 +118,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject v2p,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject v2p,
 			EObject variable, EObject comment, EObject interf, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -201,7 +201,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject access, EObject a2c, EObject v2p,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject a2c, EObject access, EObject v2p,
 			EObject variable, EObject comment, EObject interf, EObject type, EObject type2Interface, EObject element);
 
 	/**
@@ -226,7 +226,7 @@ public interface JavaAnnotation2Comment4SingleVariableDeclaration extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_157(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_155(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

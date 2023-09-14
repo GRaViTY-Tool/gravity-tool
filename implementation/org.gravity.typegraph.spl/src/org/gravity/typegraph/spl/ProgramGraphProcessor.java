@@ -41,7 +41,7 @@ public class ProgramGraphProcessor implements IProgramGraphProcessor {
 			LOGGER.error(e);
 		}
 		final var javaProject = JavaCore.create(project);
-		for (final TAbstractType tType : pg.getOwnedTypes()) {
+		for (final TAbstractType tType : pg.getAllTypes()) {
 			if (tType.isDeclared() && (tType.getOuterType() == null)) {
 				try {
 					new TypeProcessor(tType, javaProject).process();

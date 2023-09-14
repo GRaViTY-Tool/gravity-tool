@@ -221,7 +221,7 @@ public interface AnnotationTypeAccessOnSelf extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_90(EMoflonEdge _edge_annotations);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_62(EMoflonEdge _edge_annotations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface AnnotationTypeAccessOnSelf extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_94(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

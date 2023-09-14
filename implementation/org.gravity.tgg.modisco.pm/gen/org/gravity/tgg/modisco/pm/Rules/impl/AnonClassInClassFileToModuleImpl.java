@@ -680,7 +680,7 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_100(EMoflonEdge _edge_module) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_82(EMoflonEdge _edge_module) {
 
 		Object[] result1_bindingAndBlack = AnonClassInClassFileToModuleImpl
 				.pattern_AnonClassInClassFileToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -739,7 +739,7 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_originalClassFile) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_87(EMoflonEdge _edge_originalClassFile) {
 
 		Object[] result1_bindingAndBlack = AnonClassInClassFileToModuleImpl
 				.pattern_AnonClassInClassFileToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1166,10 +1166,10 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 			return null;
 		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_100__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_100((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_104__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_104((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_82__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_82((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_87__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_87((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

@@ -49,8 +49,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Annotation mAnnotation, BodyDeclaration mOwner,
-			AnnotationMemberValuePair mValue);
+	boolean isAppropriate_FWD(Match match, BodyDeclaration mOwner, AnnotationMemberValuePair mValue,
+			Annotation mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,8 +74,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Annotation mAnnotation, BodyDeclaration mOwner,
-			AnnotationMemberValuePair mValue);
+	void registerObjectsToMatch_FWD(Match match, BodyDeclaration mOwner, AnnotationMemberValuePair mValue,
+			Annotation mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,8 +83,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Annotation mAnnotation, BodyDeclaration mOwner,
-			AnnotationMemberValuePair mValue);
+	CSP isAppropriate_solveCsp_FWD(Match match, BodyDeclaration mOwner, AnnotationMemberValuePair mValue,
+			Annotation mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,9 +100,9 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNodeToTAnnotatable ownerToWoner,
-			Annotation mAnnotation, BodyDeclaration mOwner, TAnnotation tAnnotation,
-			AnnotationToTAnnotation annotationToTAnnotation, TAnnotatable tOwner, AnnotationMemberValuePair mValue);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnnotationToTAnnotation annotationToTAnnotation,
+			TAnnotatable tOwner, TAnnotation tAnnotation, ASTNodeToTAnnotatable ownerToWoner, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mValue, Annotation mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +118,9 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ownerToWoner, EObject mAnnotation,
-			EObject tAnnotationValue, EObject mOwner, EObject tAnnotation, EObject annotationToTAnnotation,
-			EObject tOwner, EObject annotationMemberValuePairToTAnnotationValue, EObject mValue);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotationValue, EObject annotationToTAnnotation,
+			EObject tOwner, EObject annotationMemberValuePairToTAnnotationValue, EObject tAnnotation,
+			EObject ownerToWoner, EObject mOwner, EObject mValue, EObject mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,8 +136,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAnnotationValue tAnnotationValue, TAnnotation tAnnotation,
-			TAnnotatable tOwner);
+	boolean isAppropriate_BWD(Match match, TAnnotationValue tAnnotationValue, TAnnotatable tOwner,
+			TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,8 +161,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAnnotationValue tAnnotationValue, TAnnotation tAnnotation,
-			TAnnotatable tOwner);
+	void registerObjectsToMatch_BWD(Match match, TAnnotationValue tAnnotationValue, TAnnotatable tOwner,
+			TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,8 +170,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotationValue tAnnotationValue, TAnnotation tAnnotation,
-			TAnnotatable tOwner);
+	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotationValue tAnnotationValue, TAnnotatable tOwner,
+			TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,9 +187,9 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNodeToTAnnotatable ownerToWoner,
-			Annotation mAnnotation, TAnnotationValue tAnnotationValue, BodyDeclaration mOwner, TAnnotation tAnnotation,
-			AnnotationToTAnnotation annotationToTAnnotation, TAnnotatable tOwner);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAnnotationValue tAnnotationValue,
+			AnnotationToTAnnotation annotationToTAnnotation, TAnnotatable tOwner, TAnnotation tAnnotation,
+			ASTNodeToTAnnotatable ownerToWoner, BodyDeclaration mOwner, Annotation mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,9 +205,9 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ownerToWoner, EObject mAnnotation,
-			EObject tAnnotationValue, EObject mOwner, EObject tAnnotation, EObject annotationToTAnnotation,
-			EObject tOwner, EObject annotationMemberValuePairToTAnnotationValue, EObject mValue);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotationValue, EObject annotationToTAnnotation,
+			EObject tOwner, EObject annotationMemberValuePairToTAnnotationValue, EObject tAnnotation,
+			EObject ownerToWoner, EObject mOwner, EObject mValue, EObject mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_tValues);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_65(EMoflonEdge _edge_tValues);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_23(EMoflonEdge _edge_values);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_values);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,8 +263,8 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Annotation mAnnotation, TAnnotationValue tAnnotationValue, BodyDeclaration mOwner,
-			TAnnotation tAnnotation, TAnnotatable tOwner, AnnotationMemberValuePair mValue, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(TAnnotationValue tAnnotationValue, TAnnotatable tOwner, TAnnotation tAnnotation,
+			BodyDeclaration mOwner, AnnotationMemberValuePair mValue, Annotation mAnnotation, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -281,7 +281,7 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Annotation mAnnotation, BodyDeclaration mOwner, AnnotationMemberValuePair mValue);
+	boolean checkDEC_FWD(BodyDeclaration mOwner, AnnotationMemberValuePair mValue, Annotation mAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,7 +289,7 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAnnotationValue tAnnotationValue, TAnnotation tAnnotation, TAnnotatable tOwner);
+	boolean checkDEC_BWD(TAnnotationValue tAnnotationValue, TAnnotatable tOwner, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,7 +298,7 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			ASTNodeToTAnnotatable ownerToWonerParameter);
+			AnnotationToTAnnotation annotationToTAnnotationParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,9 +306,9 @@ public interface AnnotationMemberKey extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNodeToTAnnotatable ownerToWoner,
-			Annotation mAnnotation, BodyDeclaration mOwner, TAnnotation tAnnotation,
-			AnnotationToTAnnotation annotationToTAnnotation, TAnnotatable tOwner, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationToTAnnotation annotationToTAnnotation,
+			TAnnotatable tOwner, TAnnotation tAnnotation, ASTNodeToTAnnotatable ownerToWoner, BodyDeclaration mOwner,
+			Annotation mAnnotation, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

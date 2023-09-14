@@ -683,7 +683,7 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_modules) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_79(EMoflonEdge _edge_modules) {
 
 		Object[] result1_bindingAndBlack = CompilationUnitToModuleImpl
 				.pattern_CompilationUnitToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -741,7 +741,7 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_17(EMoflonEdge _edge_compilationUnits) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_84(EMoflonEdge _edge_compilationUnits) {
 
 		Object[] result1_bindingAndBlack = CompilationUnitToModuleImpl
 				.pattern_CompilationUnitToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -809,13 +809,13 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_module_location = CSPFactoryHelper.eINSTANCE.createVariable("module", true, csp);
-		var_module_location.setValue(__helper.getValue("module", "location"));
-		var_module_location.setType("String");
-
 		Variable var_cu_originalFilePath = CSPFactoryHelper.eINSTANCE.createVariable("cu", true, csp);
 		var_cu_originalFilePath.setValue(__helper.getValue("cu", "originalFilePath"));
 		var_cu_originalFilePath.setType("String");
+
+		Variable var_module_location = CSPFactoryHelper.eINSTANCE.createVariable("module", true, csp);
+		var_module_location.setValue(__helper.getValue("module", "location"));
+		var_module_location.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -856,13 +856,13 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_module_location = CSPFactoryHelper.eINSTANCE.createVariable("module", true, csp);
-		var_module_location.setValue(__helper.getValue("module", "location"));
-		var_module_location.setType("String");
-
 		Variable var_cu_originalFilePath = CSPFactoryHelper.eINSTANCE.createVariable("cu", true, csp);
 		var_cu_originalFilePath.setValue(__helper.getValue("cu", "originalFilePath"));
 		var_cu_originalFilePath.setType("String");
+
+		Variable var_module_location = CSPFactoryHelper.eINSTANCE.createVariable("module", true, csp);
+		var_module_location.setValue(__helper.getValue("module", "location"));
+		var_module_location.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1059,8 +1059,8 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 				.pattern_CompilationUnitToModule_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList m2pmList = (RuleEntryList) result2_black[0];
 			ModelToTypeGraph m2pm = (ModelToTypeGraph) result2_black[1];
-			Model model = (Model) result2_black[2];
-			TypeGraph pm = (TypeGraph) result2_black[3];
+			TypeGraph pm = (TypeGraph) result2_black[2];
+			Model model = (Model) result2_black[3];
 
 			Object[] result3_bindingAndBlack = CompilationUnitToModuleImpl
 					.pattern_CompilationUnitToModule_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, m2pm,
@@ -1210,10 +1210,10 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 			return null;
 		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_16__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_17__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_17((EMoflonEdge) arguments.get(0));
+		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_79__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_79((EMoflonEdge) arguments.get(0));
+		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_84__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_84((EMoflonEdge) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2574,17 +2574,17 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 	}
 
 	public static final Object[] pattern_CompilationUnitToModule_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Model model) {
-		if (ruleResult.getSourceObjects().contains(model)) {
-			return new Object[] { ruleResult, model };
+			ModelgeneratorRuleResult ruleResult, TypeGraph pm) {
+		if (ruleResult.getTargetObjects().contains(pm)) {
+			return new Object[] { ruleResult, pm };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_CompilationUnitToModule_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pm) {
-		if (ruleResult.getTargetObjects().contains(pm)) {
-			return new Object[] { ruleResult, pm };
+			ModelgeneratorRuleResult ruleResult, Model model) {
+		if (ruleResult.getSourceObjects().contains(model)) {
+			return new Object[] { ruleResult, model };
 		}
 		return null;
 	}
@@ -2596,17 +2596,17 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 			for (EObject tmpM2pm : m2pmList.getEntryObjects()) {
 				if (tmpM2pm instanceof ModelToTypeGraph) {
 					ModelToTypeGraph m2pm = (ModelToTypeGraph) tmpM2pm;
-					Model model = m2pm.getSource();
-					if (model != null) {
-						TypeGraph pm = m2pm.getTarget();
-						if (pm != null) {
+					TypeGraph pm = m2pm.getTarget();
+					if (pm != null) {
+						Model model = m2pm.getSource();
+						if (model != null) {
 							if (pattern_CompilationUnitToModule_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									m2pm) == null) {
 								if (pattern_CompilationUnitToModule_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-										model) == null) {
+										pm) == null) {
 									if (pattern_CompilationUnitToModule_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											pm) == null) {
-										_result.add(new Object[] { m2pmList, m2pm, model, pm, ruleEntryContainer,
+											model) == null) {
+										_result.add(new Object[] { m2pmList, m2pm, pm, model, ruleEntryContainer,
 												ruleResult });
 									}
 								}

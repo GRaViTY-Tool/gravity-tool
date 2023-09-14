@@ -698,7 +698,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_85(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -756,7 +756,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_90(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1028,8 +1028,8 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 				.pattern_ConstructorInvocation_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mMemberToTMemberList = (RuleEntryList) result2_black[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
-			TMember tMember = (TMember) result2_black[2];
-			MDefinition mMember = (MDefinition) result2_black[3];
+			MDefinition mMember = (MDefinition) result2_black[2];
+			TMember tMember = (TMember) result2_black[3];
 
 			Object[] result3_bindingAndBlack = ConstructorInvocationImpl
 					.pattern_ConstructorInvocation_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
@@ -1173,10 +1173,10 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			return null;
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_66__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_66((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_69__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_69((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_85__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_85((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_90__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_90((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2382,9 +2382,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_548502 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_960674 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_548502)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_960674)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2629,9 +2629,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_886402 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_659922 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_886402)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_659922)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2697,17 +2697,17 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	}
 
 	public static final Object[] pattern_ConstructorInvocation_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TMember tMember) {
-		if (ruleResult.getTargetObjects().contains(tMember)) {
-			return new Object[] { ruleResult, tMember };
+			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ConstructorInvocation_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
+			ModelgeneratorRuleResult ruleResult, TMember tMember) {
+		if (ruleResult.getTargetObjects().contains(tMember)) {
+			return new Object[] { ruleResult, tMember };
 		}
 		return null;
 	}
@@ -2719,19 +2719,19 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			for (EObject tmpMMemberToTMember : mMemberToTMemberList.getEntryObjects()) {
 				if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 					MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-					TMember tMember = mMemberToTMember.getTarget();
-					if (tMember != null) {
-						BodyDeclaration tmpMMember = mMemberToTMember.getSource();
-						if (tmpMMember instanceof MDefinition) {
-							MDefinition mMember = (MDefinition) tmpMMember;
+					BodyDeclaration tmpMMember = mMemberToTMember.getSource();
+					if (tmpMMember instanceof MDefinition) {
+						MDefinition mMember = (MDefinition) tmpMMember;
+						TMember tMember = mMemberToTMember.getTarget();
+						if (tMember != null) {
 							if (pattern_ConstructorInvocation_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									mMemberToTMember) == null) {
 								if (pattern_ConstructorInvocation_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-										tMember) == null) {
+										mMember) == null) {
 									if (pattern_ConstructorInvocation_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											mMember) == null) {
-										_result.add(new Object[] { mMemberToTMemberList, mMemberToTMember, tMember,
-												mMember, ruleEntryContainer, ruleResult });
+											tMember) == null) {
+										_result.add(new Object[] { mMemberToTMemberList, mMemberToTMember, mMember,
+												tMember, ruleEntryContainer, ruleResult });
 									}
 								}
 							}

@@ -100,9 +100,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, Annotation mValue);
+			ArrayInitializer mArray, BodyDeclaration mOwner, Annotation mValue, TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +118,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mOwner, EObject mValue, EObject tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,9 +185,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TAnnotation tValue, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue);
+			AnnotationMemberValuePair mAnnotationValue,
+			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue, TAnnotation tValue,
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,9 +203,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject mOwner, EObject mValue, EObject tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_64(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_89(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_94(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,8 +262,8 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, TAnnotation tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			Annotation mValue, Match sourceMatch, Match targetMatch);
+			ArrayInitializer mArray, TAnnotation tValue, BodyDeclaration mOwner, Annotation mValue,
+			TAnnotationValue tAnnotationValue, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,9 +306,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			ModelgeneratorRuleResult ruleResult);
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -220,8 +220,6 @@
         <setEntry value="org.apache.xml.serializer@default:default"/>
         <setEntry value="org.apache.xmlgraphics@default:default"/>
         <setEntry value="org.apiguardian.api@default:default"/>
-        <setEntry value="org.bouncycastle.bcpg@default:default"/>
-        <setEntry value="org.bouncycastle.bcprov@default:default"/>
         <setEntry value="org.eclipse.acceleo.common@default:default"/>
         <setEntry value="org.eclipse.acceleo.engine@default:default"/>
         <setEntry value="org.eclipse.acceleo.model@default:default"/>

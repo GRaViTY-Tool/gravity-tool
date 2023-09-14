@@ -169,8 +169,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		}
 		Model2TypeGraphImpl.pattern_Model2TypeGraph_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, model, pm,
 				model2PM);
-		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -426,8 +426,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		}
 		Model2TypeGraphImpl.pattern_Model2TypeGraph_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, model, pm,
 				model2PM);
-		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -1226,8 +1226,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		TypeGraph pm = BasicFactory.eINSTANCE.createTypeGraph();
 		org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		Object _localVariable_0 = csp.getValue("pm", "tName");
-		model2PM.setTarget(pm);
 		model2PM.setSource(model);
+		model2PM.setTarget(pm);
 		String pm_tName_prime = (String) _localVariable_0;
 		pm.setTName(pm_tName_prime);
 		return new Object[] { model, pm, model2PM, csp };
@@ -1261,21 +1261,21 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 
 	public static final Object[] pattern_Model2TypeGraph_1_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject model, EObject pm, EObject model2PM) {
-		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Model2TypeGraph";
-		String model2PM__pm____target_name_prime = "target";
 		String model2PM__model____source_name_prime = "source";
-		model2PM__pm____target.setSrc(model2PM);
-		model2PM__pm____target.setTrg(pm);
-		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		String model2PM__pm____target_name_prime = "target";
 		model2PM__model____source.setSrc(model2PM);
 		model2PM__model____source.setTrg(model);
 		ruleresult.getCreatedEdges().add(model2PM__model____source);
+		model2PM__pm____target.setSrc(model2PM);
+		model2PM__pm____target.setTrg(pm);
+		ruleresult.getCreatedEdges().add(model2PM__pm____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
 		model2PM__model____source.setName(model2PM__model____source_name_prime);
-		return new Object[] { ruleresult, model, pm, model2PM, model2PM__pm____target, model2PM__model____source };
+		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
+		return new Object[] { ruleresult, model, pm, model2PM, model2PM__model____source, model2PM__pm____target };
 	}
 
 	public static final void pattern_Model2TypeGraph_1_5_registerobjects_expressionBBBBB(Model2TypeGraph _this,
@@ -1542,8 +1542,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		Model model = UMLFactory.eINSTANCE.createModel();
 		org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		Object _localVariable_0 = csp.getValue("model", "name");
-		model2PM.setTarget(pm);
 		model2PM.setSource(model);
+		model2PM.setTarget(pm);
 		String model_name_prime = (String) _localVariable_0;
 		model.setName(model_name_prime);
 		return new Object[] { model, pm, model2PM, csp };
@@ -1577,21 +1577,21 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 
 	public static final Object[] pattern_Model2TypeGraph_11_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject model, EObject pm, EObject model2PM) {
-		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Model2TypeGraph";
-		String model2PM__pm____target_name_prime = "target";
 		String model2PM__model____source_name_prime = "source";
-		model2PM__pm____target.setSrc(model2PM);
-		model2PM__pm____target.setTrg(pm);
-		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		String model2PM__pm____target_name_prime = "target";
 		model2PM__model____source.setSrc(model2PM);
 		model2PM__model____source.setTrg(model);
 		ruleresult.getCreatedEdges().add(model2PM__model____source);
+		model2PM__pm____target.setSrc(model2PM);
+		model2PM__pm____target.setTrg(pm);
+		ruleresult.getCreatedEdges().add(model2PM__pm____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
 		model2PM__model____source.setName(model2PM__model____source_name_prime);
-		return new Object[] { ruleresult, model, pm, model2PM, model2PM__pm____target, model2PM__model____source };
+		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
+		return new Object[] { ruleresult, model, pm, model2PM, model2PM__model____source, model2PM__pm____target };
 	}
 
 	public static final void pattern_Model2TypeGraph_11_5_registerobjects_expressionBBBBB(Model2TypeGraph _this,
@@ -2061,8 +2061,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	public static final Object[] pattern_Model2TypeGraph_24_6_createcorrespondence_greenBBFB(Model model, TypeGraph pm,
 			CCMatch ccMatch) {
 		org.gravity.tgg.pm.uml.Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
-		model2PM.setTarget(pm);
 		model2PM.setSource(model);
+		model2PM.setTarget(pm);
 		ccMatch.getCreateCorr().add(model2PM);
 		return new Object[] { model, pm, model2PM, ccMatch };
 	}
@@ -2184,8 +2184,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getSourceObjects().add(model);
 		ruleResult.getTargetObjects().add(pm);
-		model2PM.setTarget(pm);
 		model2PM.setSource(model);
+		model2PM.setTarget(pm);
 		ruleResult.getCorrObjects().add(model2PM);
 		String model_name_prime = (String) _localVariable_0;
 		String pm_tName_prime = (String) _localVariable_1;

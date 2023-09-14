@@ -588,9 +588,9 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge o2c__owner____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge owner__method____bodyDeclarations = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge method__owner____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge owner__method____bodyDeclarations = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge method__owner____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge o2c__uContainer____target = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl
@@ -743,7 +743,7 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_139(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_151(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InMethod4IAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -806,7 +806,7 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_149(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_162(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InMethod4IAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -1267,10 +1267,10 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 			return null;
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_139__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_139((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_149__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_149((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_151__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_162__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_162((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2269,16 +2269,16 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge o2c__owner____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge owner__method____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__owner____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge o2c__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String o2c__owner____source_name_prime = "source";
 		String bd2ne__feature____target_name_prime = "target";
+		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		String owner__method____bodyDeclarations_name_prime = "bodyDeclarations";
 		String method__owner____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
-		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		String o2c__uContainer____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(owner);
 		isApplicableMatch.getAllContextElements().add(o2c);
@@ -2296,30 +2296,30 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
+		uContainer__feature____nestedClassifier.setSrc(uContainer);
+		uContainer__feature____nestedClassifier.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(uContainer__feature____nestedClassifier);
 		owner__method____bodyDeclarations.setSrc(owner);
 		owner__method____bodyDeclarations.setTrg(method);
 		isApplicableMatch.getAllContextElements().add(owner__method____bodyDeclarations);
 		method__owner____anonymousClassDeclarationOwner.setSrc(method);
 		method__owner____anonymousClassDeclarationOwner.setTrg(owner);
 		isApplicableMatch.getAllContextElements().add(method__owner____anonymousClassDeclarationOwner);
-		uContainer__feature____nestedClassifier.setSrc(uContainer);
-		uContainer__feature____nestedClassifier.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(uContainer__feature____nestedClassifier);
 		o2c__uContainer____target.setSrc(o2c);
 		o2c__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(o2c__uContainer____target);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		o2c__owner____source.setName(o2c__owner____source_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		owner__method____bodyDeclarations.setName(owner__method____bodyDeclarations_name_prime);
 		method__owner____anonymousClassDeclarationOwner
 				.setName(method__owner____anonymousClassDeclarationOwner_name_prime);
-		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		o2c__uContainer____target.setName(o2c__uContainer____target_name_prime);
 		return new Object[] { owner, o2c, feature, method, bd2ne, bodyDeclaration, uContainer, isApplicableMatch,
 				bd2ne__bodyDeclaration____source, o2c__owner____source, bd2ne__feature____target,
-				owner__method____bodyDeclarations, method__owner____anonymousClassDeclarationOwner,
-				uContainer__feature____nestedClassifier, o2c__uContainer____target };
+				uContainer__feature____nestedClassifier, owner__method____bodyDeclarations,
+				method__owner____anonymousClassDeclarationOwner, o2c__uContainer____target };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InMethod4IAnonymous_12_4_solveCSP_bindingFBBBBBBBBB(
