@@ -92,4 +92,11 @@ public abstract class ProjectImport {
 	public File getRootFile() {
 		return this.rootFile;
 	}
+	
+	/**
+	 * Returns whether all needed dependencies have been found
+	 * 
+	 * @return <code>true</code> if all dependencies have been found
+	 */
+	public abstract boolean allDependenciesFound();
 }

@@ -69,6 +69,10 @@ public abstract class ImportTest {
 	 */
 	@Test
 	public void testProjectImport() throws ImportException, JavaModelException {
+		if(!importer.allDependenciesFound()) {
+			LOGGER.warn("Skip test since not all requirements are met");
+			return;
+		}
 		final var importedProject = this.importer.importProject(new NullProgressMonitor());
 		final Set<String> libs = Stream.of(importedProject.getRawClasspath()).parallel()
 				.filter(entry -> entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY).map(IClasspathEntry::getPath)

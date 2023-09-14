@@ -496,4 +496,9 @@ public class GradleImport extends ProjectImport {
 			throw new GradleImportException(e);
 		}
 	}
+
+	@Override
+	public boolean allDependenciesFound() {
+		return gradleCache != null && gradleCache.exists();
+	}
 }
