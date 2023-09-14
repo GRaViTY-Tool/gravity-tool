@@ -111,7 +111,7 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 				requiredTVisibility = tVisibility;
 			}
 		}
-		for (final TAbstractType tType : tPackage.getOwnedTypes()) {
+		for (final TAbstractType tType : tPackage.getAllTypes()) {
 			if (tType.isDeclared()) {
 				final var tVisibility = process(apg, tType, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {

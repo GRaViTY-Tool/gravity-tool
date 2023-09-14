@@ -213,17 +213,17 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 				ruleresult, eNestedType, astNodeToAnnotatable, eNestedTypeToTNestedType, typeGraph, tNestedType,
 				tOuterType, eOuterType, tOuterPackage);
 		//nothing EMoflonEdge astNodeToAnnotatable__eNestedType____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge typeGraph__tNestedType____annotationTypes = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge eOuterType__eNestedType____bodyDeclarations = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tOuterPackage__tNestedType____ownedTypes = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge tOuterPackage__tNestedType____allTypes = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge typeGraph__tNestedType____allTypes = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[20];
 		//nothing EMoflonEdge eNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[21];
 
 		// 
@@ -277,10 +277,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge tOuterPackage__typeGraph____model = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge eOuterTypeToTOuterInterface__eOuterType____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge typeGraph__tOuterType____ownedTypes = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tOuterType__tOuterPackage____package = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tOuterPackage__tOuterType____ownedTypes = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tOuterType__tOuterPackage____package = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tOuterPackage__tOuterType____allTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge typeGraph__tOuterType____allTypes = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge eOuterType__eNestedType____bodyDeclarations = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge eOuterTypeToTOuterInterface__tOuterType____target = (EMoflonEdge) result3_green[15];
@@ -487,13 +487,13 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			}
 			AnnotationTypeNestedImpl.pattern_AnnotationTypeNested_10_4_collectelementstobetranslated_greenBBBBBFFFFFFF(
 					match, typeGraph, tNestedType, tOuterType, tOuterPackage);
-			//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge tOuterPackage__tNestedType____ownedTypes = (EMoflonEdge) result4_green[10];
-			//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result4_green[11];
+			//nothing EMoflonEdge typeGraph__tNestedType____annotationTypes = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge tOuterPackage__tNestedType____allTypes = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge typeGraph__tNestedType____allTypes = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result4_green[11];
 
 			Object[] result5_black = AnnotationTypeNestedImpl
 					.pattern_AnnotationTypeNested_10_5_collectcontextelements_blackBBBBB(match, typeGraph, tNestedType,
@@ -506,10 +506,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			AnnotationTypeNestedImpl.pattern_AnnotationTypeNested_10_5_collectcontextelements_greenBBBBFFFFF(match,
 					typeGraph, tOuterType, tOuterPackage);
 			//nothing EMoflonEdge tOuterPackage__typeGraph____model = (EMoflonEdge) result5_green[4];
-			//nothing EMoflonEdge typeGraph__tOuterType____ownedTypes = (EMoflonEdge) result5_green[5];
-			//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result5_green[6];
-			//nothing EMoflonEdge tOuterType__tOuterPackage____package = (EMoflonEdge) result5_green[7];
-			//nothing EMoflonEdge tOuterPackage__tOuterType____ownedTypes = (EMoflonEdge) result5_green[8];
+			//nothing EMoflonEdge tOuterType__tOuterPackage____package = (EMoflonEdge) result5_green[5];
+			//nothing EMoflonEdge tOuterPackage__tOuterType____allTypes = (EMoflonEdge) result5_green[6];
+			//nothing EMoflonEdge typeGraph__tOuterType____allTypes = (EMoflonEdge) result5_green[7];
+			//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result5_green[8];
 
 			// 
 			AnnotationTypeNestedImpl.pattern_AnnotationTypeNested_10_6_registerobjectstomatch_expressionBBBBBB(this,
@@ -577,17 +577,17 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 				ruleresult, eNestedType, astNodeToAnnotatable, eNestedTypeToTNestedType, typeGraph, tNestedType,
 				tOuterType, eOuterType, tOuterPackage);
 		//nothing EMoflonEdge astNodeToAnnotatable__eNestedType____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge typeGraph__tNestedType____annotationTypes = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge astNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge eOuterType__eNestedType____bodyDeclarations = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge tOuterPackage__tNestedType____ownedTypes = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge tOuterPackage__tNestedType____allTypes = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge typeGraph__tNestedType____allTypes = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[20];
 		//nothing EMoflonEdge eNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[21];
 
 		// 
@@ -641,17 +641,17 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge tOuterPackage__typeGraph____model = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge eOuterTypeToTOuterInterface__eOuterType____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge typeGraph__tNestedType____ownedTypes = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge typeGraph__tOuterType____ownedTypes = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tOuterType__tOuterPackage____package = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge tOuterPackage__tOuterType____ownedTypes = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge tOuterPackage__tNestedType____ownedTypes = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge typeGraph__tNestedType____annotationTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tOuterType__tNestedType____innerTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tNestedType__tOuterType____outerType = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tOuterType__tOuterPackage____package = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tOuterPackage__tOuterType____allTypes = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge typeGraph__tOuterType____allTypes = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tOuterType__typeGraph____model = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge tOuterPackage__tNestedType____allTypes = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge tNestedType__tOuterPackage____package = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge typeGraph__tNestedType____allTypes = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge tNestedType__typeGraph____model = (EMoflonEdge) result3_green[19];
 				//nothing EMoflonEdge eOuterTypeToTOuterInterface__tOuterType____target = (EMoflonEdge) result3_green[20];
 
 				Object[] result4_bindingAndBlack = AnnotationTypeNestedImpl
@@ -823,7 +823,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_78(EMoflonEdge _edge_ownedTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_annotationTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeNestedImpl
 				.pattern_AnnotationTypeNested_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -838,7 +838,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 		// ForEach 
 		for (Object[] result2_black : AnnotationTypeNestedImpl
-				.pattern_AnnotationTypeNested_20_2_testcorematchandDECs_blackFFFFB(_edge_ownedTypes)) {
+				.pattern_AnnotationTypeNested_20_2_testcorematchandDECs_blackFFFFB(_edge_annotationTypes)) {
 			TypeGraph typeGraph = (TypeGraph) result2_black[0];
 			TAnnotationType tNestedType = (TAnnotationType) result2_black[1];
 			TAbstractType tOuterType = (TAbstractType) result2_black[2];
@@ -882,7 +882,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_81(EMoflonEdge _edge_abstractTypeDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_abstractTypeDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeNestedImpl
 				.pattern_AnnotationTypeNested_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -949,21 +949,21 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tOuterType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterType", true, csp);
-		var_tOuterType_tName.setValue(__helper.getValue("tOuterType", "tName"));
-		var_tOuterType_tName.setType("String");
-
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
-
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
 
+		Variable var_tOuterType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterType", true, csp);
+		var_tOuterType_tName.setValue(__helper.getValue("tOuterType", "tName"));
+		var_tOuterType_tName.setType("String");
+
 		Variable var_eNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("eNestedType", true, csp);
 		var_eNestedType_name.setValue(__helper.getValue("eNestedType", "name"));
 		var_eNestedType_name.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1004,21 +1004,21 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tOuterType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterType", true, csp);
-		var_tOuterType_tName.setValue(__helper.getValue("tOuterType", "tName"));
-		var_tOuterType_tName.setType("String");
-
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
-
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
 
+		Variable var_tOuterType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterType", true, csp);
+		var_tOuterType_tName.setValue(__helper.getValue("tOuterType", "tName"));
+		var_tOuterType_tName.setType("String");
+
 		Variable var_eNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("eNestedType", true, csp);
 		var_eNestedType_name.setValue(__helper.getValue("eNestedType", "name"));
 		var_eNestedType_name.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1401,10 +1401,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_NESTED___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_BWD_EMOFLON_EDGE_78__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_78((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_FWD_EMOFLON_EDGE_81__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_81((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_BWD_EMOFLON_EDGE_2__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_FWD_EMOFLON_EDGE_2__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_NESTED___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_NESTED___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1630,11 +1630,11 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		Object _localVariable_0 = csp.getValue("tNestedType", "tName");
 		astNodeToAnnotatable.setSource(eNestedType);
 		eNestedTypeToTNestedType.setSource(eNestedType);
-		typeGraph.getOwnedTypes().add(tNestedType);
+		typeGraph.getAnnotationTypes().add(tNestedType);
 		tOuterType.getInnerTypes().add(tNestedType);
 		astNodeToAnnotatable.setTarget(tNestedType);
-		typeGraph.getTAnnotationTypes().add(tNestedType);
-		tOuterPackage.getOwnedTypes().add(tNestedType);
+		tOuterPackage.getAllTypes().add(tNestedType);
+		typeGraph.getAllTypes().add(tNestedType);
 		eNestedTypeToTNestedType.setTarget(tNestedType);
 		String tNestedType_tName_prime = (String) _localVariable_0;
 		tNestedType.setTName(tNestedType_tName_prime);
@@ -1774,41 +1774,38 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
 			EObject eOuterType, EObject tOuterPackage) {
 		EMoflonEdge astNodeToAnnotatable__eNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____annotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge astNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterType__eNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeNested";
 		String astNodeToAnnotatable__eNestedType____source_name_prime = "source";
-		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
-		String tNestedType__typeGraph____model_name_prime = "model";
+		String typeGraph__tNestedType____annotationTypes_name_prime = "annotationTypes";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
 		String astNodeToAnnotatable__tNestedType____target_name_prime = "target";
+		String eNestedTypeToTNestedType__eNestedType____source_name_prime = "source";
 		String eNestedType__eOuterType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String eOuterType__eNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
-		String eNestedTypeToTNestedType__eNestedType____source_name_prime = "source";
-		String typeGraph__tNestedType____tAnnotationTypes_name_prime = "tAnnotationTypes";
-		String tOuterPackage__tNestedType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterPackage__tNestedType____allTypes_name_prime = "allTypes";
 		String tNestedType__tOuterPackage____package_name_prime = "package";
+		String typeGraph__tNestedType____allTypes_name_prime = "allTypes";
+		String tNestedType__typeGraph____model_name_prime = "model";
 		String eNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		astNodeToAnnotatable__eNestedType____source.setSrc(astNodeToAnnotatable);
 		astNodeToAnnotatable__eNestedType____source.setTrg(eNestedType);
 		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__eNestedType____source);
-		typeGraph__tNestedType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____ownedTypes.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(typeGraph__tNestedType____ownedTypes);
-		tNestedType__typeGraph____model.setSrc(tNestedType);
-		tNestedType__typeGraph____model.setTrg(typeGraph);
-		ruleresult.getCreatedEdges().add(tNestedType__typeGraph____model);
+		typeGraph__tNestedType____annotationTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____annotationTypes.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(typeGraph__tNestedType____annotationTypes);
 		tOuterType__tNestedType____innerTypes.setSrc(tOuterType);
 		tOuterType__tNestedType____innerTypes.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(tOuterType__tNestedType____innerTypes);
@@ -1818,52 +1815,55 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		astNodeToAnnotatable__tNestedType____target.setSrc(astNodeToAnnotatable);
 		astNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__tNestedType____target);
+		eNestedTypeToTNestedType__eNestedType____source.setSrc(eNestedTypeToTNestedType);
+		eNestedTypeToTNestedType__eNestedType____source.setTrg(eNestedType);
+		ruleresult.getCreatedEdges().add(eNestedTypeToTNestedType__eNestedType____source);
 		eNestedType__eOuterType____abstractTypeDeclaration.setSrc(eNestedType);
 		eNestedType__eOuterType____abstractTypeDeclaration.setTrg(eOuterType);
 		ruleresult.getTranslatedEdges().add(eNestedType__eOuterType____abstractTypeDeclaration);
 		eOuterType__eNestedType____bodyDeclarations.setSrc(eOuterType);
 		eOuterType__eNestedType____bodyDeclarations.setTrg(eNestedType);
 		ruleresult.getTranslatedEdges().add(eOuterType__eNestedType____bodyDeclarations);
-		eNestedTypeToTNestedType__eNestedType____source.setSrc(eNestedTypeToTNestedType);
-		eNestedTypeToTNestedType__eNestedType____source.setTrg(eNestedType);
-		ruleresult.getCreatedEdges().add(eNestedTypeToTNestedType__eNestedType____source);
-		typeGraph__tNestedType____tAnnotationTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____tAnnotationTypes.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(typeGraph__tNestedType____tAnnotationTypes);
-		tOuterPackage__tNestedType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tNestedType____ownedTypes.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(tOuterPackage__tNestedType____ownedTypes);
+		tOuterPackage__tNestedType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tNestedType____allTypes.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(tOuterPackage__tNestedType____allTypes);
 		tNestedType__tOuterPackage____package.setSrc(tNestedType);
 		tNestedType__tOuterPackage____package.setTrg(tOuterPackage);
 		ruleresult.getCreatedEdges().add(tNestedType__tOuterPackage____package);
+		typeGraph__tNestedType____allTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____allTypes.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(typeGraph__tNestedType____allTypes);
+		tNestedType__typeGraph____model.setSrc(tNestedType);
+		tNestedType__typeGraph____model.setTrg(typeGraph);
+		ruleresult.getCreatedEdges().add(tNestedType__typeGraph____model);
 		eNestedTypeToTNestedType__tNestedType____target.setSrc(eNestedTypeToTNestedType);
 		eNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(eNestedTypeToTNestedType__tNestedType____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		astNodeToAnnotatable__eNestedType____source.setName(astNodeToAnnotatable__eNestedType____source_name_prime);
-		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
-		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
+		typeGraph__tNestedType____annotationTypes.setName(typeGraph__tNestedType____annotationTypes_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
 		astNodeToAnnotatable__tNestedType____target.setName(astNodeToAnnotatable__tNestedType____target_name_prime);
+		eNestedTypeToTNestedType__eNestedType____source
+				.setName(eNestedTypeToTNestedType__eNestedType____source_name_prime);
 		eNestedType__eOuterType____abstractTypeDeclaration
 				.setName(eNestedType__eOuterType____abstractTypeDeclaration_name_prime);
 		eOuterType__eNestedType____bodyDeclarations.setName(eOuterType__eNestedType____bodyDeclarations_name_prime);
-		eNestedTypeToTNestedType__eNestedType____source
-				.setName(eNestedTypeToTNestedType__eNestedType____source_name_prime);
-		typeGraph__tNestedType____tAnnotationTypes.setName(typeGraph__tNestedType____tAnnotationTypes_name_prime);
-		tOuterPackage__tNestedType____ownedTypes.setName(tOuterPackage__tNestedType____ownedTypes_name_prime);
+		tOuterPackage__tNestedType____allTypes.setName(tOuterPackage__tNestedType____allTypes_name_prime);
 		tNestedType__tOuterPackage____package.setName(tNestedType__tOuterPackage____package_name_prime);
+		typeGraph__tNestedType____allTypes.setName(typeGraph__tNestedType____allTypes_name_prime);
+		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
 		eNestedTypeToTNestedType__tNestedType____target
 				.setName(eNestedTypeToTNestedType__tNestedType____target_name_prime);
 		return new Object[] { ruleresult, eNestedType, astNodeToAnnotatable, eNestedTypeToTNestedType, typeGraph,
 				tNestedType, tOuterType, eOuterType, tOuterPackage, astNodeToAnnotatable__eNestedType____source,
-				typeGraph__tNestedType____ownedTypes, tNestedType__typeGraph____model,
-				tOuterType__tNestedType____innerTypes, tNestedType__tOuterType____outerType,
-				astNodeToAnnotatable__tNestedType____target, eNestedType__eOuterType____abstractTypeDeclaration,
-				eOuterType__eNestedType____bodyDeclarations, eNestedTypeToTNestedType__eNestedType____source,
-				typeGraph__tNestedType____tAnnotationTypes, tOuterPackage__tNestedType____ownedTypes,
-				tNestedType__tOuterPackage____package, eNestedTypeToTNestedType__tNestedType____target };
+				typeGraph__tNestedType____annotationTypes, tOuterType__tNestedType____innerTypes,
+				tNestedType__tOuterType____outerType, astNodeToAnnotatable__tNestedType____target,
+				eNestedTypeToTNestedType__eNestedType____source, eNestedType__eOuterType____abstractTypeDeclaration,
+				eOuterType__eNestedType____bodyDeclarations, tOuterPackage__tNestedType____allTypes,
+				tNestedType__tOuterPackage____package, typeGraph__tNestedType____allTypes,
+				tNestedType__typeGraph____model, eNestedTypeToTNestedType__tNestedType____target };
 	}
 
 	public static final void pattern_AnnotationTypeNested_1_5_registerobjects_expressionBBBBBBBBBBB(
@@ -1971,10 +1971,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			if (eOuterType.equals(eOuterTypeToTOuterInterface.getSource())) {
 				if (eOuterType.equals(eNestedType.getAbstractTypeDeclaration())) {
 					if (tOuterType.equals(eOuterTypeToTOuterInterface.getTarget())) {
-						TypeGraph typeGraph = tOuterType.getModel();
-						if (typeGraph != null) {
-							TPackage tOuterPackage = tOuterType.getPackage();
-							if (tOuterPackage != null) {
+						TPackage tOuterPackage = tOuterType.getPackage();
+						if (tOuterPackage != null) {
+							TypeGraph typeGraph = tOuterType.getModel();
+							if (typeGraph != null) {
 								if (typeGraph.equals(tOuterPackage.getModel())) {
 									_result.add(new Object[] { eNestedType, typeGraph, tOuterType,
 											eOuterTypeToTOuterInterface, eOuterType, tOuterPackage });
@@ -1997,19 +1997,19 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tOuterPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterTypeToTOuterInterface__eOuterType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tOuterType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tOuterType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterType__eNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterTypeToTOuterInterface__tOuterType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tOuterPackage__typeGraph____model_name_prime = "model";
 		String eOuterTypeToTOuterInterface__eOuterType____source_name_prime = "source";
-		String typeGraph__tOuterType____ownedTypes_name_prime = "ownedTypes";
-		String tOuterType__typeGraph____model_name_prime = "model";
 		String tOuterType__tOuterPackage____package_name_prime = "package";
-		String tOuterPackage__tOuterType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterPackage__tOuterType____allTypes_name_prime = "allTypes";
+		String typeGraph__tOuterType____allTypes_name_prime = "allTypes";
+		String tOuterType__typeGraph____model_name_prime = "model";
 		String eNestedType__eOuterType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String eOuterType__eNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
 		String eOuterTypeToTOuterInterface__tOuterType____target_name_prime = "target";
@@ -2025,18 +2025,18 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		eOuterTypeToTOuterInterface__eOuterType____source.setSrc(eOuterTypeToTOuterInterface);
 		eOuterTypeToTOuterInterface__eOuterType____source.setTrg(eOuterType);
 		isApplicableMatch.getAllContextElements().add(eOuterTypeToTOuterInterface__eOuterType____source);
-		typeGraph__tOuterType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tOuterType____ownedTypes.setTrg(tOuterType);
-		isApplicableMatch.getAllContextElements().add(typeGraph__tOuterType____ownedTypes);
-		tOuterType__typeGraph____model.setSrc(tOuterType);
-		tOuterType__typeGraph____model.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(tOuterType__typeGraph____model);
 		tOuterType__tOuterPackage____package.setSrc(tOuterType);
 		tOuterType__tOuterPackage____package.setTrg(tOuterPackage);
 		isApplicableMatch.getAllContextElements().add(tOuterType__tOuterPackage____package);
-		tOuterPackage__tOuterType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tOuterType____ownedTypes.setTrg(tOuterType);
-		isApplicableMatch.getAllContextElements().add(tOuterPackage__tOuterType____ownedTypes);
+		tOuterPackage__tOuterType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tOuterType____allTypes.setTrg(tOuterType);
+		isApplicableMatch.getAllContextElements().add(tOuterPackage__tOuterType____allTypes);
+		typeGraph__tOuterType____allTypes.setSrc(typeGraph);
+		typeGraph__tOuterType____allTypes.setTrg(tOuterType);
+		isApplicableMatch.getAllContextElements().add(typeGraph__tOuterType____allTypes);
+		tOuterType__typeGraph____model.setSrc(tOuterType);
+		tOuterType__typeGraph____model.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(tOuterType__typeGraph____model);
 		eNestedType__eOuterType____abstractTypeDeclaration.setSrc(eNestedType);
 		eNestedType__eOuterType____abstractTypeDeclaration.setTrg(eOuterType);
 		isApplicableMatch.getAllContextElements().add(eNestedType__eOuterType____abstractTypeDeclaration);
@@ -2049,10 +2049,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		tOuterPackage__typeGraph____model.setName(tOuterPackage__typeGraph____model_name_prime);
 		eOuterTypeToTOuterInterface__eOuterType____source
 				.setName(eOuterTypeToTOuterInterface__eOuterType____source_name_prime);
-		typeGraph__tOuterType____ownedTypes.setName(typeGraph__tOuterType____ownedTypes_name_prime);
-		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
 		tOuterType__tOuterPackage____package.setName(tOuterType__tOuterPackage____package_name_prime);
-		tOuterPackage__tOuterType____ownedTypes.setName(tOuterPackage__tOuterType____ownedTypes_name_prime);
+		tOuterPackage__tOuterType____allTypes.setName(tOuterPackage__tOuterType____allTypes_name_prime);
+		typeGraph__tOuterType____allTypes.setName(typeGraph__tOuterType____allTypes_name_prime);
+		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
 		eNestedType__eOuterType____abstractTypeDeclaration
 				.setName(eNestedType__eOuterType____abstractTypeDeclaration_name_prime);
 		eOuterType__eNestedType____bodyDeclarations.setName(eOuterType__eNestedType____bodyDeclarations_name_prime);
@@ -2060,9 +2060,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 				.setName(eOuterTypeToTOuterInterface__tOuterType____target_name_prime);
 		return new Object[] { eNestedType, typeGraph, tOuterType, eOuterTypeToTOuterInterface, eOuterType,
 				tOuterPackage, isApplicableMatch, tOuterPackage__typeGraph____model,
-				eOuterTypeToTOuterInterface__eOuterType____source, typeGraph__tOuterType____ownedTypes,
-				tOuterType__typeGraph____model, tOuterType__tOuterPackage____package,
-				tOuterPackage__tOuterType____ownedTypes, eNestedType__eOuterType____abstractTypeDeclaration,
+				eOuterTypeToTOuterInterface__eOuterType____source, tOuterType__tOuterPackage____package,
+				tOuterPackage__tOuterType____allTypes, typeGraph__tOuterType____allTypes,
+				tOuterType__typeGraph____model, eNestedType__eOuterType____abstractTypeDeclaration,
 				eOuterType__eNestedType____bodyDeclarations, eOuterTypeToTOuterInterface__tOuterType____target };
 	}
 
@@ -2194,54 +2194,54 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	public static final Object[] pattern_AnnotationTypeNested_10_4_collectelementstobetranslated_greenBBBBBFFFFFFF(
 			Match match, TypeGraph typeGraph, TAnnotationType tNestedType, TAbstractType tOuterType,
 			TPackage tOuterPackage) {
-		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____annotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tNestedType);
-		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
-		String tNestedType__typeGraph____model_name_prime = "model";
+		String typeGraph__tNestedType____annotationTypes_name_prime = "annotationTypes";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
-		String typeGraph__tNestedType____tAnnotationTypes_name_prime = "tAnnotationTypes";
-		String tOuterPackage__tNestedType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterPackage__tNestedType____allTypes_name_prime = "allTypes";
 		String tNestedType__tOuterPackage____package_name_prime = "package";
-		typeGraph__tNestedType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____ownedTypes.setTrg(tNestedType);
-		match.getToBeTranslatedEdges().add(typeGraph__tNestedType____ownedTypes);
-		tNestedType__typeGraph____model.setSrc(tNestedType);
-		tNestedType__typeGraph____model.setTrg(typeGraph);
-		match.getToBeTranslatedEdges().add(tNestedType__typeGraph____model);
+		String typeGraph__tNestedType____allTypes_name_prime = "allTypes";
+		String tNestedType__typeGraph____model_name_prime = "model";
+		typeGraph__tNestedType____annotationTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____annotationTypes.setTrg(tNestedType);
+		match.getToBeTranslatedEdges().add(typeGraph__tNestedType____annotationTypes);
 		tOuterType__tNestedType____innerTypes.setSrc(tOuterType);
 		tOuterType__tNestedType____innerTypes.setTrg(tNestedType);
 		match.getToBeTranslatedEdges().add(tOuterType__tNestedType____innerTypes);
 		tNestedType__tOuterType____outerType.setSrc(tNestedType);
 		tNestedType__tOuterType____outerType.setTrg(tOuterType);
 		match.getToBeTranslatedEdges().add(tNestedType__tOuterType____outerType);
-		typeGraph__tNestedType____tAnnotationTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____tAnnotationTypes.setTrg(tNestedType);
-		match.getToBeTranslatedEdges().add(typeGraph__tNestedType____tAnnotationTypes);
-		tOuterPackage__tNestedType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tNestedType____ownedTypes.setTrg(tNestedType);
-		match.getToBeTranslatedEdges().add(tOuterPackage__tNestedType____ownedTypes);
+		tOuterPackage__tNestedType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tNestedType____allTypes.setTrg(tNestedType);
+		match.getToBeTranslatedEdges().add(tOuterPackage__tNestedType____allTypes);
 		tNestedType__tOuterPackage____package.setSrc(tNestedType);
 		tNestedType__tOuterPackage____package.setTrg(tOuterPackage);
 		match.getToBeTranslatedEdges().add(tNestedType__tOuterPackage____package);
-		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
-		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
+		typeGraph__tNestedType____allTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____allTypes.setTrg(tNestedType);
+		match.getToBeTranslatedEdges().add(typeGraph__tNestedType____allTypes);
+		tNestedType__typeGraph____model.setSrc(tNestedType);
+		tNestedType__typeGraph____model.setTrg(typeGraph);
+		match.getToBeTranslatedEdges().add(tNestedType__typeGraph____model);
+		typeGraph__tNestedType____annotationTypes.setName(typeGraph__tNestedType____annotationTypes_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
-		typeGraph__tNestedType____tAnnotationTypes.setName(typeGraph__tNestedType____tAnnotationTypes_name_prime);
-		tOuterPackage__tNestedType____ownedTypes.setName(tOuterPackage__tNestedType____ownedTypes_name_prime);
+		tOuterPackage__tNestedType____allTypes.setName(tOuterPackage__tNestedType____allTypes_name_prime);
 		tNestedType__tOuterPackage____package.setName(tNestedType__tOuterPackage____package_name_prime);
+		typeGraph__tNestedType____allTypes.setName(typeGraph__tNestedType____allTypes_name_prime);
+		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
 		return new Object[] { match, typeGraph, tNestedType, tOuterType, tOuterPackage,
-				typeGraph__tNestedType____ownedTypes, tNestedType__typeGraph____model,
-				tOuterType__tNestedType____innerTypes, tNestedType__tOuterType____outerType,
-				typeGraph__tNestedType____tAnnotationTypes, tOuterPackage__tNestedType____ownedTypes,
-				tNestedType__tOuterPackage____package };
+				typeGraph__tNestedType____annotationTypes, tOuterType__tNestedType____innerTypes,
+				tNestedType__tOuterType____outerType, tOuterPackage__tNestedType____allTypes,
+				tNestedType__tOuterPackage____package, typeGraph__tNestedType____allTypes,
+				tNestedType__typeGraph____model };
 	}
 
 	public static final Object[] pattern_AnnotationTypeNested_10_5_collectcontextelements_blackBBBBB(Match match,
@@ -2255,41 +2255,41 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	public static final Object[] pattern_AnnotationTypeNested_10_5_collectcontextelements_greenBBBBFFFFF(Match match,
 			TypeGraph typeGraph, TAbstractType tOuterType, TPackage tOuterPackage) {
 		EMoflonEdge tOuterPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tOuterType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tOuterType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getContextNodes().add(typeGraph);
 		match.getContextNodes().add(tOuterType);
 		match.getContextNodes().add(tOuterPackage);
 		String tOuterPackage__typeGraph____model_name_prime = "model";
-		String typeGraph__tOuterType____ownedTypes_name_prime = "ownedTypes";
-		String tOuterType__typeGraph____model_name_prime = "model";
 		String tOuterType__tOuterPackage____package_name_prime = "package";
-		String tOuterPackage__tOuterType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterPackage__tOuterType____allTypes_name_prime = "allTypes";
+		String typeGraph__tOuterType____allTypes_name_prime = "allTypes";
+		String tOuterType__typeGraph____model_name_prime = "model";
 		tOuterPackage__typeGraph____model.setSrc(tOuterPackage);
 		tOuterPackage__typeGraph____model.setTrg(typeGraph);
 		match.getContextEdges().add(tOuterPackage__typeGraph____model);
-		typeGraph__tOuterType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tOuterType____ownedTypes.setTrg(tOuterType);
-		match.getContextEdges().add(typeGraph__tOuterType____ownedTypes);
-		tOuterType__typeGraph____model.setSrc(tOuterType);
-		tOuterType__typeGraph____model.setTrg(typeGraph);
-		match.getContextEdges().add(tOuterType__typeGraph____model);
 		tOuterType__tOuterPackage____package.setSrc(tOuterType);
 		tOuterType__tOuterPackage____package.setTrg(tOuterPackage);
 		match.getContextEdges().add(tOuterType__tOuterPackage____package);
-		tOuterPackage__tOuterType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tOuterType____ownedTypes.setTrg(tOuterType);
-		match.getContextEdges().add(tOuterPackage__tOuterType____ownedTypes);
+		tOuterPackage__tOuterType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tOuterType____allTypes.setTrg(tOuterType);
+		match.getContextEdges().add(tOuterPackage__tOuterType____allTypes);
+		typeGraph__tOuterType____allTypes.setSrc(typeGraph);
+		typeGraph__tOuterType____allTypes.setTrg(tOuterType);
+		match.getContextEdges().add(typeGraph__tOuterType____allTypes);
+		tOuterType__typeGraph____model.setSrc(tOuterType);
+		tOuterType__typeGraph____model.setTrg(typeGraph);
+		match.getContextEdges().add(tOuterType__typeGraph____model);
 		tOuterPackage__typeGraph____model.setName(tOuterPackage__typeGraph____model_name_prime);
-		typeGraph__tOuterType____ownedTypes.setName(typeGraph__tOuterType____ownedTypes_name_prime);
-		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
 		tOuterType__tOuterPackage____package.setName(tOuterType__tOuterPackage____package_name_prime);
-		tOuterPackage__tOuterType____ownedTypes.setName(tOuterPackage__tOuterType____ownedTypes_name_prime);
+		tOuterPackage__tOuterType____allTypes.setName(tOuterPackage__tOuterType____allTypes_name_prime);
+		typeGraph__tOuterType____allTypes.setName(typeGraph__tOuterType____allTypes_name_prime);
+		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
 		return new Object[] { match, typeGraph, tOuterType, tOuterPackage, tOuterPackage__typeGraph____model,
-				typeGraph__tOuterType____ownedTypes, tOuterType__typeGraph____model,
-				tOuterType__tOuterPackage____package, tOuterPackage__tOuterType____ownedTypes };
+				tOuterType__tOuterPackage____package, tOuterPackage__tOuterType____allTypes,
+				typeGraph__tOuterType____allTypes, tOuterType__typeGraph____model };
 	}
 
 	public static final void pattern_AnnotationTypeNested_10_6_registerobjectstomatch_expressionBBBBBB(
@@ -2536,41 +2536,38 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			EObject eNestedTypeToTNestedType, EObject typeGraph, EObject tNestedType, EObject tOuterType,
 			EObject eOuterType, EObject tOuterPackage) {
 		EMoflonEdge astNodeToAnnotatable__eNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____annotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge astNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedType__eOuterType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterType__eNestedType____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eNestedTypeToTNestedType__eNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeNested";
 		String astNodeToAnnotatable__eNestedType____source_name_prime = "source";
-		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
-		String tNestedType__typeGraph____model_name_prime = "model";
+		String typeGraph__tNestedType____annotationTypes_name_prime = "annotationTypes";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
 		String astNodeToAnnotatable__tNestedType____target_name_prime = "target";
+		String eNestedTypeToTNestedType__eNestedType____source_name_prime = "source";
 		String eNestedType__eOuterType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String eOuterType__eNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
-		String eNestedTypeToTNestedType__eNestedType____source_name_prime = "source";
-		String typeGraph__tNestedType____tAnnotationTypes_name_prime = "tAnnotationTypes";
-		String tOuterPackage__tNestedType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterPackage__tNestedType____allTypes_name_prime = "allTypes";
 		String tNestedType__tOuterPackage____package_name_prime = "package";
+		String typeGraph__tNestedType____allTypes_name_prime = "allTypes";
+		String tNestedType__typeGraph____model_name_prime = "model";
 		String eNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		astNodeToAnnotatable__eNestedType____source.setSrc(astNodeToAnnotatable);
 		astNodeToAnnotatable__eNestedType____source.setTrg(eNestedType);
 		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__eNestedType____source);
-		typeGraph__tNestedType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____ownedTypes.setTrg(tNestedType);
-		ruleresult.getTranslatedEdges().add(typeGraph__tNestedType____ownedTypes);
-		tNestedType__typeGraph____model.setSrc(tNestedType);
-		tNestedType__typeGraph____model.setTrg(typeGraph);
-		ruleresult.getTranslatedEdges().add(tNestedType__typeGraph____model);
+		typeGraph__tNestedType____annotationTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____annotationTypes.setTrg(tNestedType);
+		ruleresult.getTranslatedEdges().add(typeGraph__tNestedType____annotationTypes);
 		tOuterType__tNestedType____innerTypes.setSrc(tOuterType);
 		tOuterType__tNestedType____innerTypes.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(tOuterType__tNestedType____innerTypes);
@@ -2580,52 +2577,55 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		astNodeToAnnotatable__tNestedType____target.setSrc(astNodeToAnnotatable);
 		astNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(astNodeToAnnotatable__tNestedType____target);
+		eNestedTypeToTNestedType__eNestedType____source.setSrc(eNestedTypeToTNestedType);
+		eNestedTypeToTNestedType__eNestedType____source.setTrg(eNestedType);
+		ruleresult.getCreatedEdges().add(eNestedTypeToTNestedType__eNestedType____source);
 		eNestedType__eOuterType____abstractTypeDeclaration.setSrc(eNestedType);
 		eNestedType__eOuterType____abstractTypeDeclaration.setTrg(eOuterType);
 		ruleresult.getCreatedEdges().add(eNestedType__eOuterType____abstractTypeDeclaration);
 		eOuterType__eNestedType____bodyDeclarations.setSrc(eOuterType);
 		eOuterType__eNestedType____bodyDeclarations.setTrg(eNestedType);
 		ruleresult.getCreatedEdges().add(eOuterType__eNestedType____bodyDeclarations);
-		eNestedTypeToTNestedType__eNestedType____source.setSrc(eNestedTypeToTNestedType);
-		eNestedTypeToTNestedType__eNestedType____source.setTrg(eNestedType);
-		ruleresult.getCreatedEdges().add(eNestedTypeToTNestedType__eNestedType____source);
-		typeGraph__tNestedType____tAnnotationTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____tAnnotationTypes.setTrg(tNestedType);
-		ruleresult.getTranslatedEdges().add(typeGraph__tNestedType____tAnnotationTypes);
-		tOuterPackage__tNestedType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tNestedType____ownedTypes.setTrg(tNestedType);
-		ruleresult.getTranslatedEdges().add(tOuterPackage__tNestedType____ownedTypes);
+		tOuterPackage__tNestedType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tNestedType____allTypes.setTrg(tNestedType);
+		ruleresult.getTranslatedEdges().add(tOuterPackage__tNestedType____allTypes);
 		tNestedType__tOuterPackage____package.setSrc(tNestedType);
 		tNestedType__tOuterPackage____package.setTrg(tOuterPackage);
 		ruleresult.getTranslatedEdges().add(tNestedType__tOuterPackage____package);
+		typeGraph__tNestedType____allTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____allTypes.setTrg(tNestedType);
+		ruleresult.getTranslatedEdges().add(typeGraph__tNestedType____allTypes);
+		tNestedType__typeGraph____model.setSrc(tNestedType);
+		tNestedType__typeGraph____model.setTrg(typeGraph);
+		ruleresult.getTranslatedEdges().add(tNestedType__typeGraph____model);
 		eNestedTypeToTNestedType__tNestedType____target.setSrc(eNestedTypeToTNestedType);
 		eNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(eNestedTypeToTNestedType__tNestedType____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		astNodeToAnnotatable__eNestedType____source.setName(astNodeToAnnotatable__eNestedType____source_name_prime);
-		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
-		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
+		typeGraph__tNestedType____annotationTypes.setName(typeGraph__tNestedType____annotationTypes_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
 		astNodeToAnnotatable__tNestedType____target.setName(astNodeToAnnotatable__tNestedType____target_name_prime);
+		eNestedTypeToTNestedType__eNestedType____source
+				.setName(eNestedTypeToTNestedType__eNestedType____source_name_prime);
 		eNestedType__eOuterType____abstractTypeDeclaration
 				.setName(eNestedType__eOuterType____abstractTypeDeclaration_name_prime);
 		eOuterType__eNestedType____bodyDeclarations.setName(eOuterType__eNestedType____bodyDeclarations_name_prime);
-		eNestedTypeToTNestedType__eNestedType____source
-				.setName(eNestedTypeToTNestedType__eNestedType____source_name_prime);
-		typeGraph__tNestedType____tAnnotationTypes.setName(typeGraph__tNestedType____tAnnotationTypes_name_prime);
-		tOuterPackage__tNestedType____ownedTypes.setName(tOuterPackage__tNestedType____ownedTypes_name_prime);
+		tOuterPackage__tNestedType____allTypes.setName(tOuterPackage__tNestedType____allTypes_name_prime);
 		tNestedType__tOuterPackage____package.setName(tNestedType__tOuterPackage____package_name_prime);
+		typeGraph__tNestedType____allTypes.setName(typeGraph__tNestedType____allTypes_name_prime);
+		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
 		eNestedTypeToTNestedType__tNestedType____target
 				.setName(eNestedTypeToTNestedType__tNestedType____target_name_prime);
 		return new Object[] { ruleresult, eNestedType, astNodeToAnnotatable, eNestedTypeToTNestedType, typeGraph,
 				tNestedType, tOuterType, eOuterType, tOuterPackage, astNodeToAnnotatable__eNestedType____source,
-				typeGraph__tNestedType____ownedTypes, tNestedType__typeGraph____model,
-				tOuterType__tNestedType____innerTypes, tNestedType__tOuterType____outerType,
-				astNodeToAnnotatable__tNestedType____target, eNestedType__eOuterType____abstractTypeDeclaration,
-				eOuterType__eNestedType____bodyDeclarations, eNestedTypeToTNestedType__eNestedType____source,
-				typeGraph__tNestedType____tAnnotationTypes, tOuterPackage__tNestedType____ownedTypes,
-				tNestedType__tOuterPackage____package, eNestedTypeToTNestedType__tNestedType____target };
+				typeGraph__tNestedType____annotationTypes, tOuterType__tNestedType____innerTypes,
+				tNestedType__tOuterType____outerType, astNodeToAnnotatable__tNestedType____target,
+				eNestedTypeToTNestedType__eNestedType____source, eNestedType__eOuterType____abstractTypeDeclaration,
+				eOuterType__eNestedType____bodyDeclarations, tOuterPackage__tNestedType____allTypes,
+				tNestedType__tOuterPackage____package, typeGraph__tNestedType____allTypes,
+				tNestedType__typeGraph____model, eNestedTypeToTNestedType__tNestedType____target };
 	}
 
 	public static final void pattern_AnnotationTypeNested_11_5_registerobjects_expressionBBBBBBBBBBB(
@@ -2744,12 +2744,12 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		if (!tNestedType.equals(tOuterType)) {
 			if (typeGraph.equals(tOuterPackage.getModel())) {
 				if (eOuterType.equals(eOuterTypeToTOuterInterface.getSource())) {
-					if (typeGraph.getOwnedTypes().contains(tNestedType)) {
-						if (typeGraph.getOwnedTypes().contains(tOuterType)) {
-							if (tOuterType.getInnerTypes().contains(tNestedType)) {
-								if (tOuterPackage.equals(tOuterType.getPackage())) {
-									if (typeGraph.getTAnnotationTypes().contains(tNestedType)) {
-										if (tOuterPackage.getOwnedTypes().contains(tNestedType)) {
+					if (typeGraph.getAnnotationTypes().contains(tNestedType)) {
+						if (tOuterType.getInnerTypes().contains(tNestedType)) {
+							if (tOuterPackage.equals(tOuterType.getPackage())) {
+								if (typeGraph.getAllTypes().contains(tOuterType)) {
+									if (tOuterPackage.getAllTypes().contains(tNestedType)) {
+										if (typeGraph.getAllTypes().contains(tNestedType)) {
 											if (tOuterType.equals(eOuterTypeToTOuterInterface.getTarget())) {
 												_result.add(new Object[] { typeGraph, tNestedType, tOuterType,
 														eOuterTypeToTOuterInterface, eOuterType, tOuterPackage });
@@ -2773,31 +2773,31 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tOuterPackage__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterTypeToTOuterInterface__eOuterType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____annotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterType____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tOuterType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tOuterType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeGraph__tNestedType____tAnnotationTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tOuterPackage__tNestedType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tOuterType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tOuterType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tOuterPackage__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tOuterPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeGraph__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tNestedType__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eOuterTypeToTOuterInterface__tOuterType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tOuterPackage__typeGraph____model_name_prime = "model";
 		String eOuterTypeToTOuterInterface__eOuterType____source_name_prime = "source";
-		String typeGraph__tNestedType____ownedTypes_name_prime = "ownedTypes";
-		String tNestedType__typeGraph____model_name_prime = "model";
-		String typeGraph__tOuterType____ownedTypes_name_prime = "ownedTypes";
-		String tOuterType__typeGraph____model_name_prime = "model";
+		String typeGraph__tNestedType____annotationTypes_name_prime = "annotationTypes";
 		String tOuterType__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tOuterType____outerType_name_prime = "outerType";
 		String tOuterType__tOuterPackage____package_name_prime = "package";
-		String tOuterPackage__tOuterType____ownedTypes_name_prime = "ownedTypes";
-		String typeGraph__tNestedType____tAnnotationTypes_name_prime = "tAnnotationTypes";
-		String tOuterPackage__tNestedType____ownedTypes_name_prime = "ownedTypes";
+		String tOuterPackage__tOuterType____allTypes_name_prime = "allTypes";
+		String typeGraph__tOuterType____allTypes_name_prime = "allTypes";
+		String tOuterType__typeGraph____model_name_prime = "model";
+		String tOuterPackage__tNestedType____allTypes_name_prime = "allTypes";
 		String tNestedType__tOuterPackage____package_name_prime = "package";
+		String typeGraph__tNestedType____allTypes_name_prime = "allTypes";
+		String tNestedType__typeGraph____model_name_prime = "model";
 		String eOuterTypeToTOuterInterface__tOuterType____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(typeGraph);
 		isApplicableMatch.getAllContextElements().add(tNestedType);
@@ -2811,18 +2811,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		eOuterTypeToTOuterInterface__eOuterType____source.setSrc(eOuterTypeToTOuterInterface);
 		eOuterTypeToTOuterInterface__eOuterType____source.setTrg(eOuterType);
 		isApplicableMatch.getAllContextElements().add(eOuterTypeToTOuterInterface__eOuterType____source);
-		typeGraph__tNestedType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____ownedTypes.setTrg(tNestedType);
-		isApplicableMatch.getAllContextElements().add(typeGraph__tNestedType____ownedTypes);
-		tNestedType__typeGraph____model.setSrc(tNestedType);
-		tNestedType__typeGraph____model.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(tNestedType__typeGraph____model);
-		typeGraph__tOuterType____ownedTypes.setSrc(typeGraph);
-		typeGraph__tOuterType____ownedTypes.setTrg(tOuterType);
-		isApplicableMatch.getAllContextElements().add(typeGraph__tOuterType____ownedTypes);
-		tOuterType__typeGraph____model.setSrc(tOuterType);
-		tOuterType__typeGraph____model.setTrg(typeGraph);
-		isApplicableMatch.getAllContextElements().add(tOuterType__typeGraph____model);
+		typeGraph__tNestedType____annotationTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____annotationTypes.setTrg(tNestedType);
+		isApplicableMatch.getAllContextElements().add(typeGraph__tNestedType____annotationTypes);
 		tOuterType__tNestedType____innerTypes.setSrc(tOuterType);
 		tOuterType__tNestedType____innerTypes.setTrg(tNestedType);
 		isApplicableMatch.getAllContextElements().add(tOuterType__tNestedType____innerTypes);
@@ -2832,45 +2823,55 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		tOuterType__tOuterPackage____package.setSrc(tOuterType);
 		tOuterType__tOuterPackage____package.setTrg(tOuterPackage);
 		isApplicableMatch.getAllContextElements().add(tOuterType__tOuterPackage____package);
-		tOuterPackage__tOuterType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tOuterType____ownedTypes.setTrg(tOuterType);
-		isApplicableMatch.getAllContextElements().add(tOuterPackage__tOuterType____ownedTypes);
-		typeGraph__tNestedType____tAnnotationTypes.setSrc(typeGraph);
-		typeGraph__tNestedType____tAnnotationTypes.setTrg(tNestedType);
-		isApplicableMatch.getAllContextElements().add(typeGraph__tNestedType____tAnnotationTypes);
-		tOuterPackage__tNestedType____ownedTypes.setSrc(tOuterPackage);
-		tOuterPackage__tNestedType____ownedTypes.setTrg(tNestedType);
-		isApplicableMatch.getAllContextElements().add(tOuterPackage__tNestedType____ownedTypes);
+		tOuterPackage__tOuterType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tOuterType____allTypes.setTrg(tOuterType);
+		isApplicableMatch.getAllContextElements().add(tOuterPackage__tOuterType____allTypes);
+		typeGraph__tOuterType____allTypes.setSrc(typeGraph);
+		typeGraph__tOuterType____allTypes.setTrg(tOuterType);
+		isApplicableMatch.getAllContextElements().add(typeGraph__tOuterType____allTypes);
+		tOuterType__typeGraph____model.setSrc(tOuterType);
+		tOuterType__typeGraph____model.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(tOuterType__typeGraph____model);
+		tOuterPackage__tNestedType____allTypes.setSrc(tOuterPackage);
+		tOuterPackage__tNestedType____allTypes.setTrg(tNestedType);
+		isApplicableMatch.getAllContextElements().add(tOuterPackage__tNestedType____allTypes);
 		tNestedType__tOuterPackage____package.setSrc(tNestedType);
 		tNestedType__tOuterPackage____package.setTrg(tOuterPackage);
 		isApplicableMatch.getAllContextElements().add(tNestedType__tOuterPackage____package);
+		typeGraph__tNestedType____allTypes.setSrc(typeGraph);
+		typeGraph__tNestedType____allTypes.setTrg(tNestedType);
+		isApplicableMatch.getAllContextElements().add(typeGraph__tNestedType____allTypes);
+		tNestedType__typeGraph____model.setSrc(tNestedType);
+		tNestedType__typeGraph____model.setTrg(typeGraph);
+		isApplicableMatch.getAllContextElements().add(tNestedType__typeGraph____model);
 		eOuterTypeToTOuterInterface__tOuterType____target.setSrc(eOuterTypeToTOuterInterface);
 		eOuterTypeToTOuterInterface__tOuterType____target.setTrg(tOuterType);
 		isApplicableMatch.getAllContextElements().add(eOuterTypeToTOuterInterface__tOuterType____target);
 		tOuterPackage__typeGraph____model.setName(tOuterPackage__typeGraph____model_name_prime);
 		eOuterTypeToTOuterInterface__eOuterType____source
 				.setName(eOuterTypeToTOuterInterface__eOuterType____source_name_prime);
-		typeGraph__tNestedType____ownedTypes.setName(typeGraph__tNestedType____ownedTypes_name_prime);
-		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
-		typeGraph__tOuterType____ownedTypes.setName(typeGraph__tOuterType____ownedTypes_name_prime);
-		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
+		typeGraph__tNestedType____annotationTypes.setName(typeGraph__tNestedType____annotationTypes_name_prime);
 		tOuterType__tNestedType____innerTypes.setName(tOuterType__tNestedType____innerTypes_name_prime);
 		tNestedType__tOuterType____outerType.setName(tNestedType__tOuterType____outerType_name_prime);
 		tOuterType__tOuterPackage____package.setName(tOuterType__tOuterPackage____package_name_prime);
-		tOuterPackage__tOuterType____ownedTypes.setName(tOuterPackage__tOuterType____ownedTypes_name_prime);
-		typeGraph__tNestedType____tAnnotationTypes.setName(typeGraph__tNestedType____tAnnotationTypes_name_prime);
-		tOuterPackage__tNestedType____ownedTypes.setName(tOuterPackage__tNestedType____ownedTypes_name_prime);
+		tOuterPackage__tOuterType____allTypes.setName(tOuterPackage__tOuterType____allTypes_name_prime);
+		typeGraph__tOuterType____allTypes.setName(typeGraph__tOuterType____allTypes_name_prime);
+		tOuterType__typeGraph____model.setName(tOuterType__typeGraph____model_name_prime);
+		tOuterPackage__tNestedType____allTypes.setName(tOuterPackage__tNestedType____allTypes_name_prime);
 		tNestedType__tOuterPackage____package.setName(tNestedType__tOuterPackage____package_name_prime);
+		typeGraph__tNestedType____allTypes.setName(typeGraph__tNestedType____allTypes_name_prime);
+		tNestedType__typeGraph____model.setName(tNestedType__typeGraph____model_name_prime);
 		eOuterTypeToTOuterInterface__tOuterType____target
 				.setName(eOuterTypeToTOuterInterface__tOuterType____target_name_prime);
 		return new Object[] { typeGraph, tNestedType, tOuterType, eOuterTypeToTOuterInterface, eOuterType,
 				tOuterPackage, isApplicableMatch, tOuterPackage__typeGraph____model,
-				eOuterTypeToTOuterInterface__eOuterType____source, typeGraph__tNestedType____ownedTypes,
-				tNestedType__typeGraph____model, typeGraph__tOuterType____ownedTypes, tOuterType__typeGraph____model,
+				eOuterTypeToTOuterInterface__eOuterType____source, typeGraph__tNestedType____annotationTypes,
 				tOuterType__tNestedType____innerTypes, tNestedType__tOuterType____outerType,
-				tOuterType__tOuterPackage____package, tOuterPackage__tOuterType____ownedTypes,
-				typeGraph__tNestedType____tAnnotationTypes, tOuterPackage__tNestedType____ownedTypes,
-				tNestedType__tOuterPackage____package, eOuterTypeToTOuterInterface__tOuterType____target };
+				tOuterType__tOuterPackage____package, tOuterPackage__tOuterType____allTypes,
+				typeGraph__tOuterType____allTypes, tOuterType__typeGraph____model,
+				tOuterPackage__tNestedType____allTypes, tNestedType__tOuterPackage____package,
+				typeGraph__tNestedType____allTypes, tNestedType__typeGraph____model,
+				eOuterTypeToTOuterInterface__tOuterType____target };
 	}
 
 	public static final Object[] pattern_AnnotationTypeNested_12_4_solveCSP_bindingFBBBBBBBB(AnnotationTypeNested _this,
@@ -2996,9 +2997,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tNestedType_tAnnotationTypes_49425 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "tAnnotationTypes")) {
-			if (!typeGraph.equals(__DEC_tNestedType_tAnnotationTypes_49425)) {
+		for (TypeGraph __DEC_tNestedType_annotationTypes_891417 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
+			if (!typeGraph.equals(__DEC_tNestedType_annotationTypes_891417)) {
 				return new Object[] { tNestedType, typeGraph };
 			}
 		}
@@ -3007,9 +3008,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_1BB(
 			TAnnotationType tNestedType, TPackage tOuterPackage) {
-		TPackage __DEC_tNestedType_ownedTypes_871157 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_871157 != null) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_ownedTypes_871157)) {
+		TPackage __DEC_tNestedType_allTypes_68437 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_68437 != null) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_allTypes_68437)) {
 				return new Object[] { tNestedType, tOuterPackage };
 			}
 		}
@@ -3020,10 +3021,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_2BB(
 			TAnnotationType tNestedType, TAbstractType tOuterType) {
 		if (!tNestedType.equals(tOuterType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_59697 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_59697 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_59697)) {
-					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_59697)) {
+			TAbstractType __DEC_tNestedType_innerTypes_669207 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_669207 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_669207)) {
+					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_669207)) {
 						return new Object[] { tNestedType, tOuterType };
 					}
 				}
@@ -3034,20 +3035,20 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationTypeNested_20_2_testcorematchandDECs_blackFFFFB(
-			EMoflonEdge _edge_ownedTypes) {
+			EMoflonEdge _edge_annotationTypes) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTypeGraph = _edge_ownedTypes.getSrc();
+		EObject tmpTypeGraph = _edge_annotationTypes.getSrc();
 		if (tmpTypeGraph instanceof TypeGraph) {
 			TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
-			EObject tmpTNestedType = _edge_ownedTypes.getTrg();
+			EObject tmpTNestedType = _edge_annotationTypes.getTrg();
 			if (tmpTNestedType instanceof TAnnotationType) {
 				TAnnotationType tNestedType = (TAnnotationType) tmpTNestedType;
-				if (typeGraph.getOwnedTypes().contains(tNestedType)) {
-					if (typeGraph.getTAnnotationTypes().contains(tNestedType)) {
+				if (typeGraph.getAnnotationTypes().contains(tNestedType)) {
+					if (typeGraph.getAllTypes().contains(tNestedType)) {
 						TAbstractType tOuterType = tNestedType.getOuterType();
 						if (tOuterType != null) {
 							if (!tNestedType.equals(tOuterType)) {
-								if (typeGraph.getOwnedTypes().contains(tOuterType)) {
+								if (typeGraph.getAllTypes().contains(tOuterType)) {
 									TPackage tOuterPackage = tNestedType.getPackage();
 									if (tOuterPackage != null) {
 										if (typeGraph.equals(tOuterPackage.getModel())) {
@@ -3059,7 +3060,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 														if (pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_1BB(
 																tNestedType, tOuterPackage) == null) {
 															_result.add(new Object[] { typeGraph, tNestedType,
-																	tOuterType, tOuterPackage, _edge_ownedTypes });
+																	tOuterType, tOuterPackage, _edge_annotationTypes });
 														}
 													}
 												}
@@ -3181,9 +3182,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration eNestedType) {
-		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_543383 = eNestedType
+		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_406384 = eNestedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_eNestedType_anonymousClassDeclarationOwner_543383 != null) {
+		if (__DEC_eNestedType_anonymousClassDeclarationOwner_406384 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3192,7 +3193,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (Model __DEC_eNestedType_orphanTypes_944356 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_eNestedType_orphanTypes_48624 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3201,8 +3202,8 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration eNestedType) {
-		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_454624 = eNestedType.getPackage();
-		if (__DEC_eNestedType_ownedElements_454624 != null) {
+		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_622230 = eNestedType.getPackage();
+		if (__DEC_eNestedType_ownedElements_622230 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3211,7 +3212,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_591164 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_576874 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3500,9 +3501,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration eNestedType) {
-		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_118670 = eNestedType
+		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_712219 = eNestedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_eNestedType_anonymousClassDeclarationOwner_118670 != null) {
+		if (__DEC_eNestedType_anonymousClassDeclarationOwner_712219 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3511,7 +3512,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (Model __DEC_eNestedType_orphanTypes_59452 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_eNestedType_orphanTypes_492755 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3520,8 +3521,8 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration eNestedType) {
-		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_455336 = eNestedType.getPackage();
-		if (__DEC_eNestedType_ownedElements_455336 != null) {
+		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_462815 = eNestedType.getPackage();
+		if (__DEC_eNestedType_ownedElements_462815 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3530,7 +3531,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_716626 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_137295 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3567,9 +3568,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tNestedType_tAnnotationTypes_857978 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "tAnnotationTypes")) {
-			if (!typeGraph.equals(__DEC_tNestedType_tAnnotationTypes_857978)) {
+		for (TypeGraph __DEC_tNestedType_annotationTypes_583909 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
+			if (!typeGraph.equals(__DEC_tNestedType_annotationTypes_583909)) {
 				return new Object[] { tNestedType, typeGraph };
 			}
 		}
@@ -3578,9 +3579,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_1BB(
 			TAnnotationType tNestedType, TPackage tOuterPackage) {
-		TPackage __DEC_tNestedType_ownedTypes_569569 = tNestedType.getPackage();
-		if (__DEC_tNestedType_ownedTypes_569569 != null) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_ownedTypes_569569)) {
+		TPackage __DEC_tNestedType_allTypes_739337 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_739337 != null) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_allTypes_739337)) {
 				return new Object[] { tNestedType, tOuterPackage };
 			}
 		}
@@ -3591,10 +3592,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_2BB(
 			TAnnotationType tNestedType, TAbstractType tOuterType) {
 		if (!tNestedType.equals(tOuterType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_29566 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_29566 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_29566)) {
-					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_29566)) {
+			TAbstractType __DEC_tNestedType_innerTypes_920857 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_920857 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_920857)) {
+					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_920857)) {
 						return new Object[] { tNestedType, tOuterType };
 					}
 				}
@@ -3608,12 +3609,12 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			TAnnotationType tNestedType, TAbstractType tOuterType, TPackage tOuterPackage) {
 		if (!tNestedType.equals(tOuterType)) {
 			if (typeGraph.equals(tOuterPackage.getModel())) {
-				if (typeGraph.getOwnedTypes().contains(tNestedType)) {
-					if (typeGraph.getOwnedTypes().contains(tOuterType)) {
-						if (tOuterType.getInnerTypes().contains(tNestedType)) {
-							if (tOuterPackage.equals(tOuterType.getPackage())) {
-								if (typeGraph.getTAnnotationTypes().contains(tNestedType)) {
-									if (tOuterPackage.getOwnedTypes().contains(tNestedType)) {
+				if (typeGraph.getAnnotationTypes().contains(tNestedType)) {
+					if (tOuterType.getInnerTypes().contains(tNestedType)) {
+						if (tOuterPackage.equals(tOuterType.getPackage())) {
+							if (typeGraph.getAllTypes().contains(tOuterType)) {
+								if (tOuterPackage.getAllTypes().contains(tNestedType)) {
+									if (typeGraph.getAllTypes().contains(tNestedType)) {
 										if (pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_0BB(tNestedType,
 												typeGraph) == null) {
 											if (pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_1BB(
@@ -3825,11 +3826,11 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 		ruleResult.getCorrObjects().add(astNodeToAnnotatable);
 		eNestedTypeToTNestedType.setSource(eNestedType);
 		ruleResult.getCorrObjects().add(eNestedTypeToTNestedType);
-		typeGraph.getOwnedTypes().add(tNestedType);
+		typeGraph.getAnnotationTypes().add(tNestedType);
 		tOuterType.getInnerTypes().add(tNestedType);
 		astNodeToAnnotatable.setTarget(tNestedType);
-		typeGraph.getTAnnotationTypes().add(tNestedType);
-		tOuterPackage.getOwnedTypes().add(tNestedType);
+		tOuterPackage.getAllTypes().add(tNestedType);
+		typeGraph.getAllTypes().add(tNestedType);
 		eNestedTypeToTNestedType.setTarget(tNestedType);
 		ruleResult.getTargetObjects().add(tNestedType);
 		String eNestedType_name_prime = (String) _localVariable_0;

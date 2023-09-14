@@ -35,6 +35,7 @@ public class BrokenModiscoModelTests {
 
 
 		final var notContained = ModiscoFactory.eINSTANCE.createMClass();
+		notContained.setProxy(true);
 		notContained.setName("NotContained");
 
 		final var method = createMethodDefinition("dummy", notContained);
@@ -53,13 +54,20 @@ public class BrokenModiscoModelTests {
 		final var model = ModiscoFactory.eINSTANCE.createMGravityModel();
 
 		final var child = createType("p", "Child", model);
+		
 		final var parent = ModiscoFactory.eINSTANCE.createMClass();
 		parent.setName(parentName);
 		parent.setPackage(child.getPackage());
+		
+		final var cu = JavaFactory.eINSTANCE.createCompilationUnit();
+		cu.getTypes().add(parent);
+		parent.setOriginalCompilationUnit(cu);
+		model.getCompilationUnits().add(cu);
+		
 		final var access = JavaFactory.eINSTANCE.createTypeAccess();
-		child.getSuperInterfaces().add(access);
 		access.setType(parent);
-
+		child.getSuperInterfaces().add(access);
+		
 		processFwd(model);
 
 		assertEquals(1, child.getSuperInterfaces().size());
@@ -101,6 +109,7 @@ public class BrokenModiscoModelTests {
 		final var type = createType("p", name, model);
 
 		final var unresolvedType = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
+		unresolvedType.setProxy(true);
 		unresolvedType.setName(name);
 		model.getUnresolvedItems().add(unresolvedType);
 
@@ -196,6 +205,7 @@ public class BrokenModiscoModelTests {
 		final var invocation = createCallerStructure(model);
 
 		final var target = ModiscoFactory.eINSTANCE.createMClass();
+		target.setProxy(true);
 		target.setName(name);
 		model.getOwnedElements().get(0).getOwnedElements().add(target);
 
@@ -225,8 +235,10 @@ public class BrokenModiscoModelTests {
 		model.getOwnedElements().add(pack);
 
 		final var type = ModiscoFactory.eINSTANCE.createMClass();
+		type.setProxy(true);
 		type.setName(name);
 		pack.getOwnedElements().add(type);
+				
 		return type;
 	}
 

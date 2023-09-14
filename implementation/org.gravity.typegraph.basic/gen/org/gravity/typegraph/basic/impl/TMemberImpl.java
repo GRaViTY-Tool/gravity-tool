@@ -25,9 +25,11 @@ import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractFlowElement;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TContainableElement;
 import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TModifier;
+import org.gravity.typegraph.basic.TModule;
 import org.gravity.typegraph.basic.TSignature;
 
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
@@ -45,6 +47,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getOwnedFlows <em>Owned Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getModule <em>Module</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getAccessedBy <em>Accessed By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getAccessing <em>Accessing</em>}</li>
@@ -181,6 +184,49 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<TAbstractFlowElement>(TAbstractFlowElement.class, this, BasicPackage.TMEMBER__OUTGOING_FLOWS, BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
 		}
 		return outgoingFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TModule getModule() {
+		if (eContainerFeatureID() != BasicPackage.TMEMBER__MODULE) return null;
+		return (TModule)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModule(TModule newModule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModule, BasicPackage.TMEMBER__MODULE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setModule(TModule newModule) {
+		if (newModule != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMEMBER__MODULE && newModule != null)) {
+			if (EcoreUtil.isAncestor(this, newModule))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModule != null)
+				msgs = ((InternalEObject)newModule).eInverseAdd(this, BasicPackage.TMODULE__CONTAINS, TModule.class, msgs);
+			msgs = basicSetModule(newModule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMEMBER__MODULE, newModule, newModule));
 	}
 
 	/**
@@ -377,6 +423,10 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMEMBER__MODULE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetModule((TModule)otherEnd, msgs);
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				if (definedBy != null)
 					msgs = ((InternalEObject)definedBy).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__DEFINES, TAbstractType.class, msgs);
@@ -407,6 +457,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
 				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMEMBER__MODULE:
+				return basicSetModule(null, msgs);
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				return basicSetDefinedBy(null, msgs);
 			case BasicPackage.TMEMBER__ACCESSED_BY:
@@ -429,6 +481,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
+			case BasicPackage.TMEMBER__MODULE:
+				return eInternalContainer().eInverseRemove(this, BasicPackage.TMODULE__CONTAINS, TModule.class, msgs);
 			case BasicPackage.TMEMBER__SIGNATURE:
 				return eInternalContainer().eInverseRemove(this, BasicPackage.TSIGNATURE__DEFINITIONS, TSignature.class, msgs);
 		}
@@ -449,6 +503,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return getIncomingFlows();
 			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
 				return getOutgoingFlows();
+			case BasicPackage.TMEMBER__MODULE:
+				return getModule();
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				if (resolve) return getDefinedBy();
 				return basicGetDefinedBy();
@@ -484,6 +540,9 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
 				getOutgoingFlows().addAll((Collection<? extends TAbstractFlowElement>)newValue);
+				return;
+			case BasicPackage.TMEMBER__MODULE:
+				setModule((TModule)newValue);
 				return;
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				setDefinedBy((TAbstractType)newValue);
@@ -523,6 +582,9 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
 				return;
+			case BasicPackage.TMEMBER__MODULE:
+				setModule((TModule)null);
+				return;
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				setDefinedBy((TAbstractType)null);
 				return;
@@ -556,6 +618,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return incomingFlows != null && !incomingFlows.isEmpty();
 			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
 				return outgoingFlows != null && !outgoingFlows.isEmpty();
+			case BasicPackage.TMEMBER__MODULE:
+				return getModule() != null;
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				return definedBy != null;
 			case BasicPackage.TMEMBER__ACCESSED_BY:
@@ -585,6 +649,12 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				default: return -1;
 			}
 		}
+		if (baseClass == TContainableElement.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TMEMBER__MODULE: return BasicPackage.TCONTAINABLE_ELEMENT__MODULE;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -600,6 +670,12 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return BasicPackage.TMEMBER__OWNED_FLOWS;
 				case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return BasicPackage.TMEMBER__INCOMING_FLOWS;
 				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return BasicPackage.TMEMBER__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		if (baseClass == TContainableElement.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TCONTAINABLE_ELEMENT__MODULE: return BasicPackage.TMEMBER__MODULE;
 				default: return -1;
 			}
 		}

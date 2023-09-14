@@ -14,12 +14,12 @@
 
 #target {
 	typeGraph:TypeGraph {
-		++  -ownedTypes -> tInnerClass
+		++  -allTypes -> tInnerClass
 		++  -classes -> tInnerClass
 	}
 	
 	tPackage:TPackage {
-		++-ownedTypes->tInnerClass
+		++-allTypes->tInnerClass
 		++-classes->tInnerClass
 	}
 

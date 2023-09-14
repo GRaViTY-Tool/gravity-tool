@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -76,8 +74,8 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		if (target.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		if(target instanceof TypeGraph) {
-			this.pm = (TypeGraph) target;
+		if(target instanceof TypeGraph graph) {
+			this.pm = graph;
 		} else {
 			throw new IllegalStateException("Source type is not a program model: class=" + target.eClass().getName()
 					+ ", object=" + target.toString());
@@ -86,8 +84,8 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		if (source.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		if (source instanceof Model) {
-			this.uml = (Model) source;
+		if (source instanceof Model model) {
+			this.uml = model;
 		} else {
 			throw new IllegalStateException("Source type is not a UML model: class=" + source.eClass().getName()
 					+ ", object=" + source.toString());
@@ -121,8 +119,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 	private Map<critical, Map<Integer, List<String>>> replaceAllWithNames(final List<EObject> uml) {
 		final Map<critical, Map<Integer, List<String>>> signatures = new HashMap<>();
 		for (final EObject object : uml) {
-			if (object instanceof critical) {
-				final var crit = (critical) object;
+			if (object instanceof critical crit) {
 				signatures.computeIfAbsent(crit, key -> {
 					final Map<Integer, List<String>> map = new HashMap<>();
 					final var secrecy = key.getSecrecy();
@@ -171,7 +168,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 				return signature.substring(0, typeSep);
 			}
 			return signature;
-		}).collect(Collectors.toList());
+		}).toList();
 		critical.clear();
 		critical.addAll(names);
 	}

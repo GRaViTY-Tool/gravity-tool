@@ -31,26 +31,26 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * @model abstract="true"
  * @generated
  */
-public interface TAbstractType extends TAnnotatable {
+public interface TAbstractType extends TAnnotatable, TContainableElement {
 	/**
-	 * Returns the value of the '<em><b>Model</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TypeGraph#getOwnedTypes <em>Owned Types</em>}'.
+	 * Returns the value of the '<em><b>Model</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TypeGraph#getAllTypes <em>All Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Model</em>' container reference.
+	 * @return the value of the '<em>Model</em>' reference.
 	 * @see #setModel(TypeGraph)
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_Model()
-	 * @see org.gravity.typegraph.basic.TypeGraph#getOwnedTypes
-	 * @model opposite="ownedTypes" required="true" transient="false"
+	 * @see org.gravity.typegraph.basic.TypeGraph#getAllTypes
+	 * @model opposite="allTypes" required="true"
 	 * @generated
 	 */
 	TypeGraph getModel();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}' container reference.
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model</em>' container reference.
+	 * @param value the new value of the '<em>Model</em>' reference.
 	 * @see #getModel()
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface TAbstractType extends TAnnotatable {
 
 	/**
 	 * Returns the value of the '<em><b>Package</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TPackage#getOwnedTypes <em>Owned Types</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TPackage#getAllTypes <em>All Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Package</em>' reference isn't clear,
@@ -68,8 +68,8 @@ public interface TAbstractType extends TAnnotatable {
 	 * @return the value of the '<em>Package</em>' reference.
 	 * @see #setPackage(TPackage)
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_Package()
-	 * @see org.gravity.typegraph.basic.TPackage#getOwnedTypes
-	 * @model opposite="ownedTypes"
+	 * @see org.gravity.typegraph.basic.TPackage#getAllTypes
+	 * @model opposite="allTypes"
 	 * @generated
 	 */
 	TPackage getPackage();

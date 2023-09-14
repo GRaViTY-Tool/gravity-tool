@@ -16,6 +16,7 @@ import org.eclipse.modisco.java.Type;
 
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
+import org.gravity.modisco.MName;
 import org.gravity.modisco.ModiscoFactory;
 
 import org.gravity.tgg.modisco.pm.MAbstractFlowElementToTAbstractFlowElement;
@@ -100,52 +101,52 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {
+	public boolean isAppropriate_FWD(Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {
 
 		Object[] result1_black = MethodSignatureImpl.pattern_MethodSignature_0_1_initialbindings_blackBBBBB(this, match,
-				mName, mType, mSignature);
+				mType, mSignature, mName);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mName] = " + mName + ", " + "[mType] = " + mType + ", "
-					+ "[mSignature] = " + mSignature + ".");
+					+ "[match] = " + match + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[mName] = " + mName + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MethodSignatureImpl
-				.pattern_MethodSignature_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mName, mType, mSignature);
+				.pattern_MethodSignature_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mType, mSignature, mName);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mName] = " + mName + ", " + "[mType] = " + mType + ", "
-					+ "[mSignature] = " + mSignature + ".");
+					+ "[match] = " + match + ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[mName] = " + mName + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (MethodSignatureImpl.pattern_MethodSignature_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = MethodSignatureImpl
-					.pattern_MethodSignature_0_4_collectelementstobetranslated_blackBBBB(match, mName, mType,
-							mSignature);
+					.pattern_MethodSignature_0_4_collectelementstobetranslated_blackBBBB(match, mType, mSignature,
+							mName);
 			if (result4_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mName] = " + mName
-								+ ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mType] = " + mType
+								+ ", " + "[mSignature] = " + mSignature + ", " + "[mName] = " + mName + ".");
 			}
-			MethodSignatureImpl.pattern_MethodSignature_0_4_collectelementstobetranslated_greenBBBBFF(match, mName,
-					mType, mSignature);
-			//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result4_green[5];
+			MethodSignatureImpl.pattern_MethodSignature_0_4_collectelementstobetranslated_greenBBBBFF(match, mType,
+					mSignature, mName);
+			//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = MethodSignatureImpl
-					.pattern_MethodSignature_0_5_collectcontextelements_blackBBBB(match, mName, mType, mSignature);
+					.pattern_MethodSignature_0_5_collectcontextelements_blackBBBB(match, mType, mSignature, mName);
 			if (result5_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mName] = " + mName
-								+ ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[mType] = " + mType
+								+ ", " + "[mSignature] = " + mSignature + ", " + "[mName] = " + mName + ".");
 			}
-			MethodSignatureImpl.pattern_MethodSignature_0_5_collectcontextelements_greenBBB(match, mName, mType);
+			MethodSignatureImpl.pattern_MethodSignature_0_5_collectcontextelements_greenBBB(match, mType, mName);
 
 			// 
-			MethodSignatureImpl.pattern_MethodSignature_0_6_registerobjectstomatch_expressionBBBBB(this, match, mName,
-					mType, mSignature);
+			MethodSignatureImpl.pattern_MethodSignature_0_6_registerobjectstomatch_expressionBBBBB(this, match, mType,
+					mSignature, mName);
 			return MethodSignatureImpl.pattern_MethodSignature_0_7_expressionF();
 		} else {
 			return MethodSignatureImpl.pattern_MethodSignature_0_8_expressionF();
@@ -166,61 +167,61 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TMethod tName = (TMethod) result1_bindingAndBlack[0];
-		MMethodName mName = (MMethodName) result1_bindingAndBlack[1];
-		Type mType = (Type) result1_bindingAndBlack[2];
-		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_bindingAndBlack[3];
-		MMethodSignature mSignature = (MMethodSignature) result1_bindingAndBlack[4];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[5];
+		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_bindingAndBlack[0];
+		Type mType = (Type) result1_bindingAndBlack[1];
+		MMethodSignature mSignature = (MMethodSignature) result1_bindingAndBlack[2];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TMethod tName = (TMethod) result1_bindingAndBlack[4];
+		MMethodName mName = (MMethodName) result1_bindingAndBlack[5];
 		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = MethodSignatureImpl
-				.pattern_MethodSignature_1_1_performtransformation_greenBFBFBFB(tName, mSignature, tAbstractType, csp);
-		TMethodSignature tSignature = (TMethodSignature) result1_green[1];
-		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_green[3];
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[5];
+				.pattern_MethodSignature_1_1_performtransformation_greenFBFBBFB(mSignature, tName, tAbstractType, csp);
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[0];
+		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_green[2];
+		TMethodSignature tSignature = (TMethodSignature) result1_green[5];
 
 		Object[] result2_black = MethodSignatureImpl.pattern_MethodSignature_1_2_collecttranslatedelements_blackBBBB(
-				tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement);
+				mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
-					+ ", " + "[mSignature] = " + mSignature + ", " + "[mSignatureToTSignature] = "
-					+ mSignatureToTSignature + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mFlowElementToTFlowElement] = "
+					+ mFlowElementToTFlowElement + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[tSignature] = " + tSignature
 					+ ".");
 		}
 		Object[] result2_green = MethodSignatureImpl.pattern_MethodSignature_1_2_collecttranslatedelements_greenFBBBB(
-				tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement);
+				mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodSignatureImpl.pattern_MethodSignature_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, tName, mName, mType, mNameToTName, tSignature, mSignature, mTypeToTType,
-				mSignatureToTSignature, tAbstractType, mFlowElementToTFlowElement);
+				ruleresult, mNameToTName, mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature,
+				mTypeToTType, tName, mName, tAbstractType, tSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tName] = " + tName + ", " + "[mName] = " + mName + ", " + "[mType] = " + mType + ", "
-					+ "[mNameToTName] = " + mNameToTName + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[mSignature] = " + mSignature + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[tAbstractType] = "
-					+ tAbstractType + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ".");
+					+ ", " + "[mNameToTName] = " + mNameToTName + ", " + "[mType] = " + mType + ", "
+					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tName] = " + tName + ", " + "[mName] = " + mName
+					+ ", " + "[tAbstractType] = " + tAbstractType + ", " + "[tSignature] = " + tSignature + ".");
 		}
-		MethodSignatureImpl.pattern_MethodSignature_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(ruleresult, tName,
-				mName, mType, tSignature, mSignature, mSignatureToTSignature, tAbstractType,
-				mFlowElementToTFlowElement);
-		//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result3_green[11];
+		MethodSignatureImpl.pattern_MethodSignature_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(ruleresult, mType,
+				mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tName, mName, tAbstractType,
+				tSignature);
+		//nothing EMoflonEdge mFlowElementToTFlowElement__mSignature____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tSignature__tName____method = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__mSignature____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tSignature____target = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tSignature____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[17];
 
 		// 
 		// 
-		MethodSignatureImpl.pattern_MethodSignature_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, tName,
-				mName, mType, mNameToTName, tSignature, mSignature, mTypeToTType, mSignatureToTSignature, tAbstractType,
-				mFlowElementToTFlowElement);
+		MethodSignatureImpl.pattern_MethodSignature_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
+				mNameToTName, mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, mTypeToTType,
+				tName, mName, tAbstractType, tSignature);
 		return MethodSignatureImpl.pattern_MethodSignature_1_6_expressionFB(ruleresult);
 	}
 
@@ -248,38 +249,38 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MMethodName mName = (MMethodName) result2_binding[0];
-		Type mType = (Type) result2_binding[1];
-		MMethodSignature mSignature = (MMethodSignature) result2_binding[2];
-		for (Object[] result2_black : MethodSignatureImpl.pattern_MethodSignature_2_2_corematch_blackFBBFBFFB(mName,
-				mType, mSignature, match)) {
-			TMethod tName = (TMethod) result2_black[0];
-			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[5];
+		Type mType = (Type) result2_binding[0];
+		MMethodSignature mSignature = (MMethodSignature) result2_binding[1];
+		MMethodName mName = (MMethodName) result2_binding[2];
+		for (Object[] result2_black : MethodSignatureImpl.pattern_MethodSignature_2_2_corematch_blackFBBFFBFB(mType,
+				mSignature, mName, match)) {
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[0];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[3];
+			TMethod tName = (TMethod) result2_black[4];
 			TAbstractType tAbstractType = (TAbstractType) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : MethodSignatureImpl.pattern_MethodSignature_2_3_findcontext_blackBBBBBBB(
-					tName, mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType)) {
+					mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType)) {
 				Object[] result3_green = MethodSignatureImpl
-						.pattern_MethodSignature_2_3_findcontext_greenBBBBBBBFFFFFFF(tName, mName, mType, mNameToTName,
-								mSignature, mTypeToTType, tAbstractType);
+						.pattern_MethodSignature_2_3_findcontext_greenBBBBBBBFFFFFFF(mNameToTName, mType, mSignature,
+								mTypeToTType, tName, mName, tAbstractType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mNameToTName__tName____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mNameToTName__mName____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mNameToTName__tName____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mNameToTName__mName____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge mTypeToTType__tAbstractType____target = (EMoflonEdge) result3_green[13];
 
 				Object[] result4_bindingAndBlack = MethodSignatureImpl
-						.pattern_MethodSignature_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, tName,
-								mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType);
+						.pattern_MethodSignature_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
+								mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tName] = " + tName + ", "
-							+ "[mName] = " + mName + ", " + "[mType] = " + mType + ", " + "[mNameToTName] = "
-							+ mNameToTName + ", " + "[mSignature] = " + mSignature + ", " + "[mTypeToTType] = "
-							+ mTypeToTType + ", " + "[tAbstractType] = " + tAbstractType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mNameToTName] = " + mNameToTName
+							+ ", " + "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", "
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tName] = " + tName + ", " + "[mName] = "
+							+ mName + ", " + "[tAbstractType] = " + tAbstractType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -308,10 +309,10 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {
-		match.registerObject("mName", mName);
+	public void registerObjectsToMatch_FWD(Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {
 		match.registerObject("mType", mType);
 		match.registerObject("mSignature", mSignature);
+		match.registerObject("mName", mName);
 
 	}
 
@@ -320,7 +321,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -349,9 +350,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName,
-			Type mType, MMethodNameToTMethod mNameToTName, MMethodSignature mSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName,
+			Type mType, MMethodSignature mSignature, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName,
+			TAbstractType tAbstractType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -376,12 +377,12 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		upperBound.solve(var_mType_name, var_tSignature_upperBound);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tName", tName);
-		isApplicableMatch.registerObject("mName", mName);
-		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("mNameToTName", mNameToTName);
+		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("mSignature", mSignature);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("tName", tName);
+		isApplicableMatch.registerObject("mName", mName);
 		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
 		return csp;
 	}
@@ -400,19 +401,19 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType,
-			EObject mNameToTName, EObject tSignature, EObject mSignature, EObject mTypeToTType,
-			EObject mSignatureToTSignature, EObject tAbstractType, EObject mFlowElementToTFlowElement) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mNameToTName, EObject mType,
+			EObject mFlowElementToTFlowElement, EObject mSignature, EObject mSignatureToTSignature,
+			EObject mTypeToTType, EObject tName, EObject mName, EObject tAbstractType, EObject tSignature) {
+		ruleresult.registerObject("mNameToTName", mNameToTName);
+		ruleresult.registerObject("mType", mType);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
+		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mName", mName);
-		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("mNameToTName", mNameToTName);
-		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("mSignature", mSignature);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		ruleresult.registerObject("tAbstractType", tAbstractType);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
+		ruleresult.registerObject("tSignature", tSignature);
 
 	}
 
@@ -431,56 +432,56 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TMethod tName, TMethodSignature tSignature,
-			TAbstractType tAbstractType) {
+	public boolean isAppropriate_BWD(Match match, TMethod tName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {
 
 		Object[] result1_black = MethodSignatureImpl.pattern_MethodSignature_10_1_initialbindings_blackBBBBB(this,
-				match, tName, tSignature, tAbstractType);
+				match, tName, tAbstractType, tSignature);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tAbstractType] = " + tAbstractType + ".");
+					+ "[match] = " + match + ", " + "[tName] = " + tName + ", " + "[tAbstractType] = " + tAbstractType
+					+ ", " + "[tSignature] = " + tSignature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MethodSignatureImpl
-				.pattern_MethodSignature_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tName, tSignature,
-						tAbstractType);
+				.pattern_MethodSignature_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, tName, tAbstractType,
+						tSignature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tAbstractType] = " + tAbstractType + ".");
+					+ "[match] = " + match + ", " + "[tName] = " + tName + ", " + "[tAbstractType] = " + tAbstractType
+					+ ", " + "[tSignature] = " + tSignature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (MethodSignatureImpl.pattern_MethodSignature_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = MethodSignatureImpl
-					.pattern_MethodSignature_10_4_collectelementstobetranslated_blackBBBB(match, tName, tSignature,
-							tAbstractType);
+					.pattern_MethodSignature_10_4_collectelementstobetranslated_blackBBBB(match, tName, tAbstractType,
+							tSignature);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", " + "[tAbstractType] = "
-						+ tAbstractType + ".");
+						+ "[tName] = " + tName + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[tSignature] = "
+						+ tSignature + ".");
 			}
 			MethodSignatureImpl.pattern_MethodSignature_10_4_collectelementstobetranslated_greenBBBBFFF(match, tName,
-					tSignature, tAbstractType);
-			//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge tSignature__tName____method = (EMoflonEdge) result4_green[6];
+					tAbstractType, tSignature);
+			//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge tSignature__tName____method = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = MethodSignatureImpl.pattern_MethodSignature_10_5_collectcontextelements_blackBBBB(
-					match, tName, tSignature, tAbstractType);
+					match, tName, tAbstractType, tSignature);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tName] = " + tName + ", " + "[tSignature] = " + tSignature + ", " + "[tAbstractType] = "
-						+ tAbstractType + ".");
+						+ "[tName] = " + tName + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[tSignature] = "
+						+ tSignature + ".");
 			}
 			MethodSignatureImpl.pattern_MethodSignature_10_5_collectcontextelements_greenBBB(match, tName,
 					tAbstractType);
 
 			// 
 			MethodSignatureImpl.pattern_MethodSignature_10_6_registerobjectstomatch_expressionBBBBB(this, match, tName,
-					tSignature, tAbstractType);
+					tAbstractType, tSignature);
 			return MethodSignatureImpl.pattern_MethodSignature_10_7_expressionF();
 		} else {
 			return MethodSignatureImpl.pattern_MethodSignature_10_8_expressionF();
@@ -501,61 +502,61 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TMethod tName = (TMethod) result1_bindingAndBlack[0];
-		MMethodName mName = (MMethodName) result1_bindingAndBlack[1];
-		Type mType = (Type) result1_bindingAndBlack[2];
-		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_bindingAndBlack[3];
-		TMethodSignature tSignature = (TMethodSignature) result1_bindingAndBlack[4];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[5];
-		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[6];
+		MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result1_bindingAndBlack[0];
+		Type mType = (Type) result1_bindingAndBlack[1];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TMethod tName = (TMethod) result1_bindingAndBlack[3];
+		MMethodName mName = (MMethodName) result1_bindingAndBlack[4];
+		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[5];
+		TMethodSignature tSignature = (TMethodSignature) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = MethodSignatureImpl
-				.pattern_MethodSignature_11_1_performtransformation_greenBBBFFF(mName, mType, tSignature);
-		MMethodSignature mSignature = (MMethodSignature) result1_green[3];
-		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_green[4];
-		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[5];
+				.pattern_MethodSignature_11_1_performtransformation_greenBFFFBB(mType, mName, tSignature);
+		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result1_green[1];
+		MMethodSignature mSignature = (MMethodSignature) result1_green[2];
+		MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result1_green[3];
 
 		Object[] result2_black = MethodSignatureImpl.pattern_MethodSignature_11_2_collecttranslatedelements_blackBBBB(
-				tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement);
+				mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
-					+ ", " + "[mSignature] = " + mSignature + ", " + "[mSignatureToTSignature] = "
-					+ mSignatureToTSignature + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mFlowElementToTFlowElement] = "
+					+ mFlowElementToTFlowElement + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[tSignature] = " + tSignature
 					+ ".");
 		}
 		Object[] result2_green = MethodSignatureImpl.pattern_MethodSignature_11_2_collecttranslatedelements_greenFBBBB(
-				tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement);
+				mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodSignatureImpl.pattern_MethodSignature_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-				ruleresult, tName, mName, mType, mNameToTName, tSignature, mSignature, mTypeToTType,
-				mSignatureToTSignature, tAbstractType, mFlowElementToTFlowElement);
+				ruleresult, mNameToTName, mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature,
+				mTypeToTType, tName, mName, tAbstractType, tSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tName] = " + tName + ", " + "[mName] = " + mName + ", " + "[mType] = " + mType + ", "
-					+ "[mNameToTName] = " + mNameToTName + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[mSignature] = " + mSignature + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-					+ "[mSignatureToTSignature] = " + mSignatureToTSignature + ", " + "[tAbstractType] = "
-					+ tAbstractType + ", " + "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ".");
+					+ ", " + "[mNameToTName] = " + mNameToTName + ", " + "[mType] = " + mType + ", "
+					+ "[mFlowElementToTFlowElement] = " + mFlowElementToTFlowElement + ", " + "[mSignature] = "
+					+ mSignature + ", " + "[mSignatureToTSignature] = " + mSignatureToTSignature + ", "
+					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tName] = " + tName + ", " + "[mName] = " + mName
+					+ ", " + "[tAbstractType] = " + tAbstractType + ", " + "[tSignature] = " + tSignature + ".");
 		}
-		MethodSignatureImpl.pattern_MethodSignature_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(ruleresult, tName,
-				mName, mType, tSignature, mSignature, mSignatureToTSignature, tAbstractType,
-				mFlowElementToTFlowElement);
-		//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result3_green[11];
+		MethodSignatureImpl.pattern_MethodSignature_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(ruleresult, mType,
+				mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tName, mName, tAbstractType,
+				tSignature);
+		//nothing EMoflonEdge mFlowElementToTFlowElement__mSignature____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mSignature__mType____returnType = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tSignature__tName____method = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mSignatureToTSignature__mSignature____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__mSignature____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tSignature____target = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mName__mSignature____mSignatures = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tSignature____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mSignatureToTSignature__tSignature____target = (EMoflonEdge) result3_green[17];
 
 		// 
 		// 
-		MethodSignatureImpl.pattern_MethodSignature_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult, tName,
-				mName, mType, mNameToTName, tSignature, mSignature, mTypeToTType, mSignatureToTSignature, tAbstractType,
-				mFlowElementToTFlowElement);
+		MethodSignatureImpl.pattern_MethodSignature_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
+				mNameToTName, mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, mTypeToTType,
+				tName, mName, tAbstractType, tSignature);
 		return MethodSignatureImpl.pattern_MethodSignature_11_6_expressionFB(ruleresult);
 	}
 
@@ -584,38 +585,38 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		TMethod tName = (TMethod) result2_binding[0];
-		TMethodSignature tSignature = (TMethodSignature) result2_binding[1];
-		TAbstractType tAbstractType = (TAbstractType) result2_binding[2];
-		for (Object[] result2_black : MethodSignatureImpl.pattern_MethodSignature_12_2_corematch_blackBFFFBFBB(tName,
-				tSignature, tAbstractType, match)) {
-			MMethodName mName = (MMethodName) result2_black[1];
-			Type mType = (Type) result2_black[2];
-			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[3];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[5];
+		TAbstractType tAbstractType = (TAbstractType) result2_binding[1];
+		TMethodSignature tSignature = (TMethodSignature) result2_binding[2];
+		for (Object[] result2_black : MethodSignatureImpl.pattern_MethodSignature_12_2_corematch_blackFFFBFBBB(tName,
+				tAbstractType, tSignature, match)) {
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[0];
+			Type mType = (Type) result2_black[1];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[2];
+			MMethodName mName = (MMethodName) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : MethodSignatureImpl.pattern_MethodSignature_12_3_findcontext_blackBBBBBBB(
-					tName, mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType)) {
+					mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature)) {
 				Object[] result3_green = MethodSignatureImpl
-						.pattern_MethodSignature_12_3_findcontext_greenBBBBBBBFFFFFFFF(tName, mName, mType,
-								mNameToTName, tSignature, mTypeToTType, tAbstractType);
+						.pattern_MethodSignature_12_3_findcontext_greenBBBBBBBFFFFFFFF(mNameToTName, mType,
+								mTypeToTType, tName, mName, tAbstractType, tSignature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge mNameToTName__tName____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mNameToTName__mName____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tSignature__tName____method = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mTypeToTType__tAbstractType____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge tSignature__tName____method = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mNameToTName__tName____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mNameToTName__mName____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mTypeToTType__tAbstractType____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tSignature__tAbstractType____returnType = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = MethodSignatureImpl
-						.pattern_MethodSignature_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, tName,
-								mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType);
+						.pattern_MethodSignature_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
+								mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tName] = " + tName + ", "
-							+ "[mName] = " + mName + ", " + "[mType] = " + mType + ", " + "[mNameToTName] = "
-							+ mNameToTName + ", " + "[tSignature] = " + tSignature + ", " + "[mTypeToTType] = "
-							+ mTypeToTType + ", " + "[tAbstractType] = " + tAbstractType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mNameToTName] = " + mNameToTName
+							+ ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+							+ "[tName] = " + tName + ", " + "[mName] = " + mName + ", " + "[tAbstractType] = "
+							+ tAbstractType + ", " + "[tSignature] = " + tSignature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -644,11 +645,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TMethod tName, TMethodSignature tSignature,
-			TAbstractType tAbstractType) {
+	public void registerObjectsToMatch_BWD(Match match, TMethod tName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {
 		match.registerObject("tName", tName);
-		match.registerObject("tSignature", tSignature);
 		match.registerObject("tAbstractType", tAbstractType);
+		match.registerObject("tSignature", tSignature);
 
 	}
 
@@ -657,8 +658,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TMethod tName, TMethodSignature tSignature,
-			TAbstractType tAbstractType) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TMethod tName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -687,9 +688,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName,
-			Type mType, MMethodNameToTMethod mNameToTName, TMethodSignature tSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName,
+			Type mType, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -716,13 +717,13 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		upperBound.solve(var_mType_name, var_tSignature_upperBound);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mNameToTName", mNameToTName);
+		isApplicableMatch.registerObject("mType", mType);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tName", tName);
 		isApplicableMatch.registerObject("mName", mName);
-		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("mNameToTName", mNameToTName);
-		isApplicableMatch.registerObject("tSignature", tSignature);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
+		isApplicableMatch.registerObject("tSignature", tSignature);
 		return csp;
 	}
 
@@ -740,19 +741,19 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType,
-			EObject mNameToTName, EObject tSignature, EObject mSignature, EObject mTypeToTType,
-			EObject mSignatureToTSignature, EObject tAbstractType, EObject mFlowElementToTFlowElement) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mNameToTName, EObject mType,
+			EObject mFlowElementToTFlowElement, EObject mSignature, EObject mSignatureToTSignature,
+			EObject mTypeToTType, EObject tName, EObject mName, EObject tAbstractType, EObject tSignature) {
+		ruleresult.registerObject("mNameToTName", mNameToTName);
+		ruleresult.registerObject("mType", mType);
+		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
+		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mName", mName);
-		ruleresult.registerObject("mType", mType);
-		ruleresult.registerObject("mNameToTName", mNameToTName);
-		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("mSignature", mSignature);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mSignatureToTSignature", mSignatureToTSignature);
 		ruleresult.registerObject("tAbstractType", tAbstractType);
-		ruleresult.registerObject("mFlowElementToTFlowElement", mFlowElementToTFlowElement);
+		ruleresult.registerObject("tSignature", tSignature);
 
 	}
 
@@ -771,7 +772,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_43(EMoflonEdge _edge_returnType) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_91(EMoflonEdge _edge_signatures) {
 
 		Object[] result1_bindingAndBlack = MethodSignatureImpl
 				.pattern_MethodSignature_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,10 +787,10 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 		// ForEach 
 		for (Object[] result2_black : MethodSignatureImpl
-				.pattern_MethodSignature_20_2_testcorematchandDECs_blackFFFB(_edge_returnType)) {
+				.pattern_MethodSignature_20_2_testcorematchandDECs_blackFFFB(_edge_signatures)) {
 			TMethod tName = (TMethod) result2_black[0];
-			TMethodSignature tSignature = (TMethodSignature) result2_black[1];
-			TAbstractType tAbstractType = (TAbstractType) result2_black[2];
+			TAbstractType tAbstractType = (TAbstractType) result2_black[1];
+			TMethodSignature tSignature = (TMethodSignature) result2_black[2];
 			Object[] result2_green = MethodSignatureImpl
 					.pattern_MethodSignature_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -797,7 +798,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			// 
 			if (MethodSignatureImpl
 					.pattern_MethodSignature_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, tName, tSignature, tAbstractType)) {
+							match, tName, tAbstractType, tSignature)) {
 				// 
 				if (MethodSignatureImpl
 						.pattern_MethodSignature_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -829,7 +830,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_45(EMoflonEdge _edge_mSignatures) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_95(EMoflonEdge _edge_returnType) {
 
 		Object[] result1_bindingAndBlack = MethodSignatureImpl
 				.pattern_MethodSignature_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -844,10 +845,10 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 		// ForEach 
 		for (Object[] result2_black : MethodSignatureImpl
-				.pattern_MethodSignature_21_2_testcorematchandDECs_blackFFFB(_edge_mSignatures)) {
-			MMethodName mName = (MMethodName) result2_black[0];
-			Type mType = (Type) result2_black[1];
-			MMethodSignature mSignature = (MMethodSignature) result2_black[2];
+				.pattern_MethodSignature_21_2_testcorematchandDECs_blackFFFB(_edge_returnType)) {
+			Type mType = (Type) result2_black[0];
+			MMethodSignature mSignature = (MMethodSignature) result2_black[1];
+			MMethodName mName = (MMethodName) result2_black[2];
 			Object[] result2_green = MethodSignatureImpl
 					.pattern_MethodSignature_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -855,7 +856,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			// 
 			if (MethodSignatureImpl
 					.pattern_MethodSignature_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(this,
-							match, mName, mType, mSignature)) {
+							match, mType, mSignature, mName)) {
 				// 
 				if (MethodSignatureImpl
 						.pattern_MethodSignature_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -902,13 +903,13 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			return ruleResult;
 		}
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tSignature", true, csp);
 		var_tSignature_upperBound.setValue(__helper.getValue("tSignature", "upperBound"));
 		var_tSignature_upperBound.setType("int");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		UpperBound upperBound0 = new UpperBound();
 		csp.getConstraints().add(upperBound0);
@@ -954,13 +955,13 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			return ruleResult;
 		}
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tSignature", true, csp);
 		var_tSignature_upperBound.setValue(__helper.getValue("tSignature", "upperBound"));
 		var_tSignature_upperBound.setType("int");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		UpperBound upperBound0 = new UpperBound();
 		csp.getConstraints().add(upperBound0);
@@ -1004,49 +1005,49 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TMethod tName = (TMethod) result2_bindingAndBlack[0];
-		MMethodName mName = (MMethodName) result2_bindingAndBlack[1];
-		Type mType = (Type) result2_bindingAndBlack[2];
-		TMethodSignature tSignature = (TMethodSignature) result2_bindingAndBlack[3];
-		MMethodSignature mSignature = (MMethodSignature) result2_bindingAndBlack[4];
-		TAbstractType tAbstractType = (TAbstractType) result2_bindingAndBlack[5];
+		Type mType = (Type) result2_bindingAndBlack[0];
+		MMethodSignature mSignature = (MMethodSignature) result2_bindingAndBlack[1];
+		TMethod tName = (TMethod) result2_bindingAndBlack[2];
+		MMethodName mName = (MMethodName) result2_bindingAndBlack[3];
+		TAbstractType tAbstractType = (TAbstractType) result2_bindingAndBlack[4];
+		TMethodSignature tSignature = (TMethodSignature) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = MethodSignatureImpl
-				.pattern_MethodSignature_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, tName, mName, mType, tSignature,
-						mSignature, tAbstractType, sourceMatch, targetMatch);
+				.pattern_MethodSignature_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mType, mSignature, tName, mName,
+						tAbstractType, tSignature, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tName] = " + tName + ", " + "[mName] = " + mName + ", " + "[mType] = " + mType + ", "
-					+ "[tSignature] = " + tSignature + ", " + "[mSignature] = " + mSignature + ", "
-					+ "[tAbstractType] = " + tAbstractType + ", " + "[sourceMatch] = " + sourceMatch + ", "
-					+ "[targetMatch] = " + targetMatch + ".");
+					+ "[mType] = " + mType + ", " + "[mSignature] = " + mSignature + ", " + "[tName] = " + tName + ", "
+					+ "[mName] = " + mName + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[tSignature] = "
+					+ tSignature + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
+					+ ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (MethodSignatureImpl.pattern_MethodSignature_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodSignatureImpl
-					.pattern_MethodSignature_24_5_matchcorrcontext_blackBBBFFBBB(tName, mName, mType, tAbstractType,
+					.pattern_MethodSignature_24_5_matchcorrcontext_blackFBFBBBBB(mType, tName, mName, tAbstractType,
 							sourceMatch, targetMatch)) {
-				MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result5_black[3];
-				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[4];
+				MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result5_black[0];
+				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[2];
 				Object[] result5_green = MethodSignatureImpl.pattern_MethodSignature_24_5_matchcorrcontext_greenBBBBF(
 						mNameToTName, mTypeToTType, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MethodSignatureImpl
-						.pattern_MethodSignature_24_6_createcorrespondence_blackBBBBBBB(tName, mName, mType, tSignature,
-								mSignature, tAbstractType, ccMatch);
+						.pattern_MethodSignature_24_6_createcorrespondence_blackBBBBBBB(mType, mSignature, tName, mName,
+								tAbstractType, tSignature, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tName] = " + tName + ", "
-							+ "[mName] = " + mName + ", " + "[mType] = " + mType + ", " + "[tSignature] = " + tSignature
-							+ ", " + "[mSignature] = " + mSignature + ", " + "[tAbstractType] = " + tAbstractType + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType + ", "
+							+ "[mSignature] = " + mSignature + ", " + "[tName] = " + tName + ", " + "[mName] = " + mName
+							+ ", " + "[tAbstractType] = " + tAbstractType + ", " + "[tSignature] = " + tSignature + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
-				MethodSignatureImpl.pattern_MethodSignature_24_6_createcorrespondence_greenBBFFB(tSignature, mSignature,
+				MethodSignatureImpl.pattern_MethodSignature_24_6_createcorrespondence_greenFBFBB(mSignature, tSignature,
 						ccMatch);
+				//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[0];
 				//nothing MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result6_green[2];
-				//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[3];
 
 				Object[] result7_black = MethodSignatureImpl
 						.pattern_MethodSignature_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1068,8 +1069,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TMethod tName, MMethodName mName, Type mType, TMethodSignature tSignature,
-			MMethodSignature mSignature, TAbstractType tAbstractType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Type mType, MMethodSignature mSignature, TMethod tName, MMethodName mName,
+			TAbstractType tAbstractType, TMethodSignature tSignature, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1110,9 +1111,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MMethodName mName, Type mType, MMethodSignature mSignature) {// 
-		Object[] result1_black = MethodSignatureImpl.pattern_MethodSignature_27_1_matchtggpattern_blackBBB(mName, mType,
-				mSignature);
+	public boolean checkDEC_FWD(Type mType, MMethodSignature mSignature, MMethodName mName) {// 
+		Object[] result1_black = MethodSignatureImpl.pattern_MethodSignature_27_1_matchtggpattern_blackBBB(mType,
+				mSignature, mName);
 		if (result1_black != null) {
 			return MethodSignatureImpl.pattern_MethodSignature_27_2_expressionF();
 		} else {
@@ -1126,9 +1127,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {// 
+	public boolean checkDEC_BWD(TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {// 
 		Object[] result1_black = MethodSignatureImpl.pattern_MethodSignature_28_1_matchtggpattern_blackBBB(tName,
-				tSignature, tAbstractType);
+				tAbstractType, tSignature);
 		if (result1_black != null) {
 			MethodSignatureImpl.pattern_MethodSignature_28_1_matchtggpattern_greenB(tSignature);
 
@@ -1159,8 +1160,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		for (Object[] result2_black : MethodSignatureImpl
 				.pattern_MethodSignature_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mNameToTNameList = (RuleEntryList) result2_black[0];
-			TMethod tName = (TMethod) result2_black[1];
-			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[2];
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result2_black[1];
+			TMethod tName = (TMethod) result2_black[2];
 			MMethodName mName = (MMethodName) result2_black[3];
 			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[4];
 			Type mType = (Type) result2_black[5];
@@ -1168,37 +1169,37 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			TAbstractType tAbstractType = (TAbstractType) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodSignatureImpl
-					.pattern_MethodSignature_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, tName,
-							mName, mType, mNameToTName, mTypeToTType, tAbstractType, ruleResult);
+					.pattern_MethodSignature_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
+							mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tName] = " + tName + ", "
-						+ "[mName] = " + mName + ", " + "[mType] = " + mType + ", " + "[mNameToTName] = " + mNameToTName
-						+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tAbstractType] = " + tAbstractType + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mNameToTName] = " + mNameToTName
+						+ ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tName] = "
+						+ tName + ", " + "[mName] = " + mName + ", " + "[tAbstractType] = " + tAbstractType + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (MethodSignatureImpl.pattern_MethodSignature_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = MethodSignatureImpl.pattern_MethodSignature_29_5_checknacs_blackBBBBBB(tName,
-						mName, mType, mNameToTName, mTypeToTType, tAbstractType);
+				Object[] result5_black = MethodSignatureImpl.pattern_MethodSignature_29_5_checknacs_blackBBBBBB(
+						mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodSignatureImpl.pattern_MethodSignature_29_6_perform_blackBBBBBBB(
-							tName, mName, mType, mNameToTName, mTypeToTType, tAbstractType, ruleResult);
+							mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tName] = " + tName
-								+ ", " + "[mName] = " + mName + ", " + "[mType] = " + mType + ", " + "[mNameToTName] = "
-								+ mNameToTName + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tAbstractType] = "
-								+ tAbstractType + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mNameToTName] = "
+								+ mNameToTName + ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType
+								+ ", " + "[tName] = " + tName + ", " + "[mName] = " + mName + ", "
+								+ "[tAbstractType] = " + tAbstractType + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					MethodSignatureImpl.pattern_MethodSignature_29_6_perform_greenBBBFFFBFBB(tName, mName, mType,
+					MethodSignatureImpl.pattern_MethodSignature_29_6_perform_greenBFFFBBBFBB(mType, tName, mName,
 							tAbstractType, ruleResult, csp);
-					//nothing TMethodSignature tSignature = (TMethodSignature) result6_green[3];
-					//nothing MMethodSignature mSignature = (MMethodSignature) result6_green[4];
-					//nothing MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result6_green[5];
-					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[7];
+					//nothing MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = (MAbstractFlowElementToTAbstractFlowElement) result6_green[1];
+					//nothing MMethodSignature mSignature = (MMethodSignature) result6_green[2];
+					//nothing MSignatureToTSignature mSignatureToTSignature = (MSignatureToTSignature) result6_green[3];
+					//nothing TMethodSignature tSignature = (TMethodSignature) result6_green[7];
 
 				} else {
 				}
@@ -1215,9 +1216,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName,
-			Type mType, MMethodNameToTMethod mNameToTName, TypeToTAbstractType mTypeToTType,
-			TAbstractType tAbstractType, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName,
+			Type mType, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1242,11 +1243,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		upperBound.solve(var_mType_name, var_tSignature_upperBound);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mNameToTName", mNameToTName);
+		isApplicableMatch.registerObject("mType", mType);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tName", tName);
 		isApplicableMatch.registerObject("mName", mName);
-		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("mNameToTName", mNameToTName);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
 		return csp;
 	}
@@ -1268,27 +1269,27 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_FWD__MATCH_MMETHODNAME_TYPE_MMETHODSIGNATURE:
-			return isAppropriate_FWD((Match) arguments.get(0), (MMethodName) arguments.get(1), (Type) arguments.get(2),
-					(MMethodSignature) arguments.get(3));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_FWD__MATCH_TYPE_MMETHODSIGNATURE_MMETHODNAME:
+			return isAppropriate_FWD((Match) arguments.get(0), (Type) arguments.get(1),
+					(MMethodSignature) arguments.get(2), (MMethodName) arguments.get(3));
 		case RulesPackage.METHOD_SIGNATURE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MMETHODNAME_TYPE_MMETHODSIGNATURE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MMethodName) arguments.get(1),
-					(Type) arguments.get(2), (MMethodSignature) arguments.get(3));
+		case RulesPackage.METHOD_SIGNATURE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPE_MMETHODSIGNATURE_MMETHODNAME:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Type) arguments.get(1),
+					(MMethodSignature) arguments.get(2), (MMethodName) arguments.get(3));
 			return null;
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MMETHODNAME_TYPE_MMETHODSIGNATURE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MMethodName) arguments.get(1),
-					(Type) arguments.get(2), (MMethodSignature) arguments.get(3));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPE_MMETHODSIGNATURE_MMETHODNAME:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Type) arguments.get(1),
+					(MMethodSignature) arguments.get(2), (MMethodName) arguments.get(3));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TMETHOD_MMETHODNAME_TYPE_MMETHODNAMETOTMETHOD_MMETHODSIGNATURE_TYPETOTABSTRACTTYPE_TABSTRACTTYPE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TMethod) arguments.get(1),
-					(MMethodName) arguments.get(2), (Type) arguments.get(3), (MMethodNameToTMethod) arguments.get(4),
-					(MMethodSignature) arguments.get(5), (TypeToTAbstractType) arguments.get(6),
-					(TAbstractType) arguments.get(7));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MMETHODNAMETOTMETHOD_TYPE_MMETHODSIGNATURE_TYPETOTABSTRACTTYPE_TMETHOD_MMETHODNAME_TABSTRACTTYPE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(MMethodNameToTMethod) arguments.get(1), (Type) arguments.get(2),
+					(MMethodSignature) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
+					(TMethod) arguments.get(5), (MMethodName) arguments.get(6), (TAbstractType) arguments.get(7));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1299,27 +1300,27 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			return null;
 		case RulesPackage.METHOD_SIGNATURE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_BWD__MATCH_TMETHOD_TMETHODSIGNATURE_TABSTRACTTYPE:
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_BWD__MATCH_TMETHOD_TABSTRACTTYPE_TMETHODSIGNATURE:
 			return isAppropriate_BWD((Match) arguments.get(0), (TMethod) arguments.get(1),
-					(TMethodSignature) arguments.get(2), (TAbstractType) arguments.get(3));
+					(TAbstractType) arguments.get(2), (TMethodSignature) arguments.get(3));
 		case RulesPackage.METHOD_SIGNATURE___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHOD_TMETHODSIGNATURE_TABSTRACTTYPE:
+		case RulesPackage.METHOD_SIGNATURE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMETHOD_TABSTRACTTYPE_TMETHODSIGNATURE:
 			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMethod) arguments.get(1),
-					(TMethodSignature) arguments.get(2), (TAbstractType) arguments.get(3));
+					(TAbstractType) arguments.get(2), (TMethodSignature) arguments.get(3));
 			return null;
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHOD_TMETHODSIGNATURE_TABSTRACTTYPE:
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMETHOD_TABSTRACTTYPE_TMETHODSIGNATURE:
 			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMethod) arguments.get(1),
-					(TMethodSignature) arguments.get(2), (TAbstractType) arguments.get(3));
+					(TAbstractType) arguments.get(2), (TMethodSignature) arguments.get(3));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHOD_MMETHODNAME_TYPE_MMETHODNAMETOTMETHOD_TMETHODSIGNATURE_TYPETOTABSTRACTTYPE_TABSTRACTTYPE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMethod) arguments.get(1),
-					(MMethodName) arguments.get(2), (Type) arguments.get(3), (MMethodNameToTMethod) arguments.get(4),
-					(TMethodSignature) arguments.get(5), (TypeToTAbstractType) arguments.get(6),
-					(TAbstractType) arguments.get(7));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODNAMETOTMETHOD_TYPE_TYPETOTABSTRACTTYPE_TMETHOD_MMETHODNAME_TABSTRACTTYPE_TMETHODSIGNATURE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(MMethodNameToTMethod) arguments.get(1), (Type) arguments.get(2),
+					(TypeToTAbstractType) arguments.get(3), (TMethod) arguments.get(4), (MMethodName) arguments.get(5),
+					(TAbstractType) arguments.get(6), (TMethodSignature) arguments.get(7));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1330,36 +1331,36 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			return null;
 		case RulesPackage.METHOD_SIGNATURE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_43__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_43((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_45__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_45((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_91__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_91((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_95__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_95((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_SOLVE_CSP_CC__TMETHOD_MMETHODNAME_TYPE_TMETHODSIGNATURE_MMETHODSIGNATURE_TABSTRACTTYPE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TMethod) arguments.get(0), (MMethodName) arguments.get(1),
-					(Type) arguments.get(2), (TMethodSignature) arguments.get(3), (MMethodSignature) arguments.get(4),
-					(TAbstractType) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_SOLVE_CSP_CC__TYPE_MMETHODSIGNATURE_TMETHOD_MMETHODNAME_TABSTRACTTYPE_TMETHODSIGNATURE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Type) arguments.get(0), (MMethodSignature) arguments.get(1),
+					(TMethod) arguments.get(2), (MMethodName) arguments.get(3), (TAbstractType) arguments.get(4),
+					(TMethodSignature) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.METHOD_SIGNATURE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___CHECK_DEC_FWD__MMETHODNAME_TYPE_MMETHODSIGNATURE:
-			return checkDEC_FWD((MMethodName) arguments.get(0), (Type) arguments.get(1),
-					(MMethodSignature) arguments.get(2));
-		case RulesPackage.METHOD_SIGNATURE___CHECK_DEC_BWD__TMETHOD_TMETHODSIGNATURE_TABSTRACTTYPE:
-			return checkDEC_BWD((TMethod) arguments.get(0), (TMethodSignature) arguments.get(1),
-					(TAbstractType) arguments.get(2));
+		case RulesPackage.METHOD_SIGNATURE___CHECK_DEC_FWD__TYPE_MMETHODSIGNATURE_MMETHODNAME:
+			return checkDEC_FWD((Type) arguments.get(0), (MMethodSignature) arguments.get(1),
+					(MMethodName) arguments.get(2));
+		case RulesPackage.METHOD_SIGNATURE___CHECK_DEC_BWD__TMETHOD_TABSTRACTTYPE_TMETHODSIGNATURE:
+			return checkDEC_BWD((TMethod) arguments.get(0), (TAbstractType) arguments.get(1),
+					(TMethodSignature) arguments.get(2));
 		case RulesPackage.METHOD_SIGNATURE___GENERATE_MODEL__RULEENTRYCONTAINER_MMETHODNAMETOTMETHOD_TYPETOTABSTRACTTYPE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MMethodNameToTMethod) arguments.get(1),
 					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.METHOD_SIGNATURE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMETHOD_MMETHODNAME_TYPE_MMETHODNAMETOTMETHOD_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TMethod) arguments.get(1),
-					(MMethodName) arguments.get(2), (Type) arguments.get(3), (MMethodNameToTMethod) arguments.get(4),
-					(TypeToTAbstractType) arguments.get(5), (TAbstractType) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.METHOD_SIGNATURE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MMETHODNAMETOTMETHOD_TYPE_TYPETOTABSTRACTTYPE_TMETHOD_MMETHODNAME_TABSTRACTTYPE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(MMethodNameToTMethod) arguments.get(1), (Type) arguments.get(2),
+					(TypeToTAbstractType) arguments.get(3), (TMethod) arguments.get(4), (MMethodName) arguments.get(5),
+					(TAbstractType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.METHOD_SIGNATURE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1367,16 +1368,16 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_0_1_initialbindings_blackBBBBB(MethodSignature _this,
-			Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {
-		return new Object[] { _this, match, mName, mType, mSignature };
+			Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {
+		return new Object[] { _this, match, mType, mSignature, mName };
 	}
 
 	public static final Object[] pattern_MethodSignature_0_2_SolveCSP_bindingFBBBBB(MethodSignature _this, Match match,
-			MMethodName mName, Type mType, MMethodSignature mSignature) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mName, mType, mSignature);
+			Type mType, MMethodSignature mSignature, MMethodName mName) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mType, mSignature, mName);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mName, mType, mSignature };
+			return new Object[] { csp, _this, match, mType, mSignature, mName };
 		}
 		return null;
 	}
@@ -1386,9 +1387,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_0_2_SolveCSP_bindingAndBlackFBBBBB(MethodSignature _this,
-			Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {
+			Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {
 		Object[] result_pattern_MethodSignature_0_2_SolveCSP_binding = pattern_MethodSignature_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, mName, mType, mSignature);
+				_this, match, mType, mSignature, mName);
 		if (result_pattern_MethodSignature_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodSignature_0_2_SolveCSP_binding[0];
 
@@ -1396,7 +1397,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					csp);
 			if (result_pattern_MethodSignature_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mName, mType, mSignature };
+				return new Object[] { csp, _this, match, mType, mSignature, mName };
 			}
 		}
 		return null;
@@ -1409,44 +1410,44 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_0_4_collectelementstobetranslated_blackBBBB(Match match,
-			MMethodName mName, Type mType, MMethodSignature mSignature) {
-		return new Object[] { match, mName, mType, mSignature };
+			Type mType, MMethodSignature mSignature, MMethodName mName) {
+		return new Object[] { match, mType, mSignature, mName };
 	}
 
 	public static final Object[] pattern_MethodSignature_0_4_collectelementstobetranslated_greenBBBBFF(Match match,
-			MMethodName mName, Type mType, MMethodSignature mSignature) {
-		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Type mType, MMethodSignature mSignature, MMethodName mName) {
 		EMoflonEdge mSignature__mType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mSignature);
-		String mName__mSignature____mSignatures_name_prime = "mSignatures";
 		String mSignature__mType____returnType_name_prime = "returnType";
-		mName__mSignature____mSignatures.setSrc(mName);
-		mName__mSignature____mSignatures.setTrg(mSignature);
-		match.getToBeTranslatedEdges().add(mName__mSignature____mSignatures);
+		String mName__mSignature____mSignatures_name_prime = "mSignatures";
 		mSignature__mType____returnType.setSrc(mSignature);
 		mSignature__mType____returnType.setTrg(mType);
 		match.getToBeTranslatedEdges().add(mSignature__mType____returnType);
-		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
+		mName__mSignature____mSignatures.setSrc(mName);
+		mName__mSignature____mSignatures.setTrg(mSignature);
+		match.getToBeTranslatedEdges().add(mName__mSignature____mSignatures);
 		mSignature__mType____returnType.setName(mSignature__mType____returnType_name_prime);
-		return new Object[] { match, mName, mType, mSignature, mName__mSignature____mSignatures,
-				mSignature__mType____returnType };
+		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
+		return new Object[] { match, mType, mSignature, mName, mSignature__mType____returnType,
+				mName__mSignature____mSignatures };
 	}
 
-	public static final Object[] pattern_MethodSignature_0_5_collectcontextelements_blackBBBB(Match match,
-			MMethodName mName, Type mType, MMethodSignature mSignature) {
-		return new Object[] { match, mName, mType, mSignature };
+	public static final Object[] pattern_MethodSignature_0_5_collectcontextelements_blackBBBB(Match match, Type mType,
+			MMethodSignature mSignature, MMethodName mName) {
+		return new Object[] { match, mType, mSignature, mName };
 	}
 
-	public static final Object[] pattern_MethodSignature_0_5_collectcontextelements_greenBBB(Match match,
-			MMethodName mName, Type mType) {
-		match.getContextNodes().add(mName);
+	public static final Object[] pattern_MethodSignature_0_5_collectcontextelements_greenBBB(Match match, Type mType,
+			MMethodName mName) {
 		match.getContextNodes().add(mType);
-		return new Object[] { match, mName, mType };
+		match.getContextNodes().add(mName);
+		return new Object[] { match, mType, mName };
 	}
 
 	public static final void pattern_MethodSignature_0_6_registerobjectstomatch_expressionBBBBB(MethodSignature _this,
-			Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {
-		_this.registerObjectsToMatch_FWD(match, mName, mType, mSignature);
+			Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {
+		_this.registerObjectsToMatch_FWD(match, mType, mSignature, mName);
 
 	}
 
@@ -1462,35 +1463,35 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tName");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mName");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mNameToTName");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mSignature");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mNameToTName");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tName");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mName");
 		EObject _localVariable_6 = isApplicableMatch.getObject("tAbstractType");
-		EObject tmpTName = _localVariable_0;
-		EObject tmpMName = _localVariable_1;
-		EObject tmpMType = _localVariable_2;
-		EObject tmpMNameToTName = _localVariable_3;
-		EObject tmpMSignature = _localVariable_4;
-		EObject tmpMTypeToTType = _localVariable_5;
+		EObject tmpMNameToTName = _localVariable_0;
+		EObject tmpMType = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMTypeToTType = _localVariable_3;
+		EObject tmpTName = _localVariable_4;
+		EObject tmpMName = _localVariable_5;
 		EObject tmpTAbstractType = _localVariable_6;
-		if (tmpTName instanceof TMethod) {
-			TMethod tName = (TMethod) tmpTName;
-			if (tmpMName instanceof MMethodName) {
-				MMethodName mName = (MMethodName) tmpMName;
-				if (tmpMType instanceof Type) {
-					Type mType = (Type) tmpMType;
-					if (tmpMNameToTName instanceof MMethodNameToTMethod) {
-						MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) tmpMNameToTName;
-						if (tmpMSignature instanceof MMethodSignature) {
-							MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-							if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-								TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+		if (tmpMNameToTName instanceof MMethodNameToTMethod) {
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) tmpMNameToTName;
+			if (tmpMType instanceof Type) {
+				Type mType = (Type) tmpMType;
+				if (tmpMSignature instanceof MMethodSignature) {
+					MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+					if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+						if (tmpTName instanceof TMethod) {
+							TMethod tName = (TMethod) tmpTName;
+							if (tmpMName instanceof MMethodName) {
+								MMethodName mName = (MMethodName) tmpMName;
 								if (tmpTAbstractType instanceof TAbstractType) {
 									TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-									return new Object[] { tName, mName, mType, mNameToTName, mSignature, mTypeToTType,
+									return new Object[] { mNameToTName, mType, mSignature, mTypeToTType, tName, mName,
 											tAbstractType, isApplicableMatch };
 								}
 							}
@@ -1502,14 +1503,14 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return null;
 	}
 
-	public static final Object[] pattern_MethodSignature_1_1_performtransformation_blackBBBBBBBFBB(TMethod tName,
-			MMethodName mName, Type mType, MMethodNameToTMethod mNameToTName, MMethodSignature mSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType, MethodSignature _this,
-			IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_MethodSignature_1_1_performtransformation_blackBBBBBBBFBB(
+			MMethodNameToTMethod mNameToTName, Type mType, MMethodSignature mSignature,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			MethodSignature _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tName, mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType, csp,
+				return new Object[] { mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -1521,152 +1522,155 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		Object[] result_pattern_MethodSignature_1_1_performtransformation_binding = pattern_MethodSignature_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodSignature_1_1_performtransformation_binding != null) {
-			TMethod tName = (TMethod) result_pattern_MethodSignature_1_1_performtransformation_binding[0];
-			MMethodName mName = (MMethodName) result_pattern_MethodSignature_1_1_performtransformation_binding[1];
-			Type mType = (Type) result_pattern_MethodSignature_1_1_performtransformation_binding[2];
-			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result_pattern_MethodSignature_1_1_performtransformation_binding[3];
-			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodSignature_1_1_performtransformation_binding[4];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MethodSignature_1_1_performtransformation_binding[5];
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result_pattern_MethodSignature_1_1_performtransformation_binding[0];
+			Type mType = (Type) result_pattern_MethodSignature_1_1_performtransformation_binding[1];
+			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodSignature_1_1_performtransformation_binding[2];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MethodSignature_1_1_performtransformation_binding[3];
+			TMethod tName = (TMethod) result_pattern_MethodSignature_1_1_performtransformation_binding[4];
+			MMethodName mName = (MMethodName) result_pattern_MethodSignature_1_1_performtransformation_binding[5];
 			TAbstractType tAbstractType = (TAbstractType) result_pattern_MethodSignature_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_MethodSignature_1_1_performtransformation_black = pattern_MethodSignature_1_1_performtransformation_blackBBBBBBBFBB(
-					tName, mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType, _this,
+					mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType, _this,
 					isApplicableMatch);
 			if (result_pattern_MethodSignature_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodSignature_1_1_performtransformation_black[7];
 
-				return new Object[] { tName, mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType, csp,
+				return new Object[] { mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType, csp,
 						_this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodSignature_1_1_performtransformation_greenBFBFBFB(TMethod tName,
-			MMethodSignature mSignature, TAbstractType tAbstractType, CSP csp) {
-		TMethodSignature tSignature = BasicFactory.eINSTANCE.createTMethodSignature();
-		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
+	public static final Object[] pattern_MethodSignature_1_1_performtransformation_greenFBFBBFB(
+			MMethodSignature mSignature, TMethod tName, TAbstractType tAbstractType, CSP csp) {
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
+		TMethodSignature tSignature = BasicFactory.eINSTANCE.createTMethodSignature();
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
 		Object _localVariable_0 = csp.getValue("tSignature", "upperBound");
-		tSignature.setReturnType(tAbstractType);
-		tName.getSignatures().add(tSignature);
-		mSignatureToTSignature.setTarget(tSignature);
-		mSignatureToTSignature.setSource(mSignature);
 		mFlowElementToTFlowElement.setSource(mSignature);
+		mSignatureToTSignature.setSource(mSignature);
+		tName.getSignatures().add(tSignature);
+		tSignature.setReturnType(tAbstractType);
 		mFlowElementToTFlowElement.setTarget(tSignature);
+		mSignatureToTSignature.setTarget(tSignature);
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
 		int tSignature_upperBound_prime = (int) _localVariable_0;
 		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
-		return new Object[] { tName, tSignature, mSignature, mSignatureToTSignature, tAbstractType,
-				mFlowElementToTFlowElement, csp };
+		return new Object[] { mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tName, tAbstractType,
+				tSignature, csp };
 	}
 
 	public static final Object[] pattern_MethodSignature_1_2_collecttranslatedelements_blackBBBB(
-			TMethodSignature tSignature, MMethodSignature mSignature, MSignatureToTSignature mSignatureToTSignature,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
-		return new Object[] { tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement };
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, MMethodSignature mSignature,
+			MSignatureToTSignature mSignatureToTSignature, TMethodSignature tSignature) {
+		return new Object[] { mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_1_2_collecttranslatedelements_greenFBBBB(
-			TMethodSignature tSignature, MMethodSignature mSignature, MSignatureToTSignature mSignatureToTSignature,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, MMethodSignature mSignature,
+			MSignatureToTSignature mSignatureToTSignature, TMethodSignature tSignature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(tSignature);
+		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getTranslatedElements().add(mSignature);
 		ruleresult.getCreatedLinkElements().add(mSignatureToTSignature);
-		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
-		return new Object[] { ruleresult, tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement };
+		ruleresult.getCreatedElements().add(tSignature);
+		return new Object[] { ruleresult, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType, EObject mNameToTName,
-			EObject tSignature, EObject mSignature, EObject mTypeToTType, EObject mSignatureToTSignature,
-			EObject tAbstractType, EObject mFlowElementToTFlowElement) {
-		if (!tName.equals(tSignature)) {
-			if (!mName.equals(tName)) {
-				if (!mName.equals(mType)) {
-					if (!mName.equals(mNameToTName)) {
-						if (!mName.equals(tSignature)) {
-							if (!mName.equals(mSignature)) {
-								if (!mName.equals(mTypeToTType)) {
-									if (!mName.equals(mSignatureToTSignature)) {
-										if (!mName.equals(tAbstractType)) {
-											if (!mType.equals(tName)) {
+			PerformRuleResult ruleresult, EObject mNameToTName, EObject mType, EObject mFlowElementToTFlowElement,
+			EObject mSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject tName, EObject mName,
+			EObject tAbstractType, EObject tSignature) {
+		if (!mNameToTName.equals(mType)) {
+			if (!mNameToTName.equals(mSignature)) {
+				if (!mNameToTName.equals(mSignatureToTSignature)) {
+					if (!mNameToTName.equals(mTypeToTType)) {
+						if (!mNameToTName.equals(tName)) {
+							if (!mNameToTName.equals(tAbstractType)) {
+								if (!mNameToTName.equals(tSignature)) {
+									if (!mType.equals(mTypeToTType)) {
+										if (!mType.equals(tName)) {
+											if (!mType.equals(tAbstractType)) {
 												if (!mType.equals(tSignature)) {
-													if (!mType.equals(mTypeToTType)) {
-														if (!mType.equals(tAbstractType)) {
-															if (!mNameToTName.equals(tName)) {
-																if (!mNameToTName.equals(mType)) {
-																	if (!mNameToTName.equals(tSignature)) {
-																		if (!mNameToTName.equals(mSignature)) {
-																			if (!mNameToTName.equals(mTypeToTType)) {
-																				if (!mNameToTName.equals(
-																						mSignatureToTSignature)) {
-																					if (!mNameToTName
-																							.equals(tAbstractType)) {
-																						if (!mSignature.equals(tName)) {
-																							if (!mSignature
-																									.equals(mType)) {
+													if (!mFlowElementToTFlowElement.equals(mNameToTName)) {
+														if (!mFlowElementToTFlowElement.equals(mType)) {
+															if (!mFlowElementToTFlowElement.equals(mSignature)) {
+																if (!mFlowElementToTFlowElement
+																		.equals(mSignatureToTSignature)) {
+																	if (!mFlowElementToTFlowElement
+																			.equals(mTypeToTType)) {
+																		if (!mFlowElementToTFlowElement.equals(tName)) {
+																			if (!mFlowElementToTFlowElement
+																					.equals(mName)) {
+																				if (!mFlowElementToTFlowElement
+																						.equals(tAbstractType)) {
+																					if (!mFlowElementToTFlowElement
+																							.equals(tSignature)) {
+																						if (!mSignature.equals(mType)) {
+																							if (!mSignature.equals(
+																									mSignatureToTSignature)) {
 																								if (!mSignature.equals(
-																										tSignature)) {
+																										mTypeToTType)) {
 																									if (!mSignature
-																											.equals(mTypeToTType)) {
+																											.equals(tName)) {
 																										if (!mSignature
-																												.equals(mSignatureToTSignature)) {
+																												.equals(tAbstractType)) {
 																											if (!mSignature
-																													.equals(tAbstractType)) {
-																												if (!mTypeToTType
-																														.equals(tName)) {
-																													if (!mTypeToTType
-																															.equals(tSignature)) {
-																														if (!mTypeToTType
-																																.equals(tAbstractType)) {
+																													.equals(tSignature)) {
+																												if (!mSignatureToTSignature
+																														.equals(mType)) {
+																													if (!mSignatureToTSignature
+																															.equals(mTypeToTType)) {
+																														if (!mSignatureToTSignature
+																																.equals(tName)) {
 																															if (!mSignatureToTSignature
-																																	.equals(tName)) {
+																																	.equals(tAbstractType)) {
 																																if (!mSignatureToTSignature
-																																		.equals(mType)) {
-																																	if (!mSignatureToTSignature
-																																			.equals(tSignature)) {
-																																		if (!mSignatureToTSignature
-																																				.equals(mTypeToTType)) {
-																																			if (!mSignatureToTSignature
-																																					.equals(tAbstractType)) {
-																																				if (!tAbstractType
-																																						.equals(tName)) {
-																																					if (!tAbstractType
-																																							.equals(tSignature)) {
-																																						if (!mFlowElementToTFlowElement
-																																								.equals(tName)) {
-																																							if (!mFlowElementToTFlowElement
-																																									.equals(mName)) {
-																																								if (!mFlowElementToTFlowElement
-																																										.equals(mType)) {
-																																									if (!mFlowElementToTFlowElement
-																																											.equals(mNameToTName)) {
-																																										if (!mFlowElementToTFlowElement
-																																												.equals(tSignature)) {
-																																											if (!mFlowElementToTFlowElement
-																																													.equals(mSignature)) {
-																																												if (!mFlowElementToTFlowElement
-																																														.equals(mTypeToTType)) {
-																																													if (!mFlowElementToTFlowElement
-																																															.equals(mSignatureToTSignature)) {
-																																														if (!mFlowElementToTFlowElement
-																																																.equals(tAbstractType)) {
+																																		.equals(tSignature)) {
+																																	if (!mTypeToTType
+																																			.equals(tName)) {
+																																		if (!mTypeToTType
+																																				.equals(tAbstractType)) {
+																																			if (!mTypeToTType
+																																					.equals(tSignature)) {
+																																				if (!tName
+																																						.equals(tSignature)) {
+																																					if (!mName
+																																							.equals(mNameToTName)) {
+																																						if (!mName
+																																								.equals(mType)) {
+																																							if (!mName
+																																									.equals(mSignature)) {
+																																								if (!mName
+																																										.equals(mSignatureToTSignature)) {
+																																									if (!mName
+																																											.equals(mTypeToTType)) {
+																																										if (!mName
+																																												.equals(tName)) {
+																																											if (!mName
+																																													.equals(tAbstractType)) {
+																																												if (!mName
+																																														.equals(tSignature)) {
+																																													if (!tAbstractType
+																																															.equals(tName)) {
+																																														if (!tAbstractType
+																																																.equals(tSignature)) {
 																																															return new Object[] {
 																																																	ruleresult,
+																																																	mNameToTName,
+																																																	mType,
+																																																	mFlowElementToTFlowElement,
+																																																	mSignature,
+																																																	mSignatureToTSignature,
+																																																	mTypeToTType,
 																																																	tName,
 																																																	mName,
-																																																	mType,
-																																																	mNameToTName,
-																																																	tSignature,
-																																																	mSignature,
-																																																	mTypeToTType,
-																																																	mSignatureToTSignature,
 																																																	tAbstractType,
-																																																	mFlowElementToTFlowElement };
+																																																	tSignature };
 																																														}
 																																													}
 																																												}
@@ -1716,81 +1720,80 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType, EObject tSignature,
-			EObject mSignature, EObject mSignatureToTSignature, EObject tAbstractType,
-			EObject mFlowElementToTFlowElement) {
-		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mType, EObject mFlowElementToTFlowElement, EObject mSignature,
+			EObject mSignatureToTSignature, EObject tName, EObject mName, EObject tAbstractType, EObject tSignature) {
+		EMoflonEdge mFlowElementToTFlowElement__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodSignature";
-		String mName__mSignature____mSignatures_name_prime = "mSignatures";
-		String tSignature__tAbstractType____returnType_name_prime = "returnType";
+		String mFlowElementToTFlowElement__mSignature____source_name_prime = "source";
 		String mSignature__mType____returnType_name_prime = "returnType";
+		String mSignatureToTSignature__mSignature____source_name_prime = "source";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____method_name_prime = "method";
-		String mSignatureToTSignature__tSignature____target_name_prime = "target";
-		String mSignatureToTSignature__mSignature____source_name_prime = "source";
-		String mFlowElementToTFlowElement__mSignature____source_name_prime = "source";
+		String mName__mSignature____mSignatures_name_prime = "mSignatures";
+		String tSignature__tAbstractType____returnType_name_prime = "returnType";
 		String mFlowElementToTFlowElement__tSignature____target_name_prime = "target";
-		mName__mSignature____mSignatures.setSrc(mName);
-		mName__mSignature____mSignatures.setTrg(mSignature);
-		ruleresult.getTranslatedEdges().add(mName__mSignature____mSignatures);
-		tSignature__tAbstractType____returnType.setSrc(tSignature);
-		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
-		ruleresult.getCreatedEdges().add(tSignature__tAbstractType____returnType);
+		String mSignatureToTSignature__tSignature____target_name_prime = "target";
+		mFlowElementToTFlowElement__mSignature____source.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__mSignature____source.setTrg(mSignature);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__mSignature____source);
 		mSignature__mType____returnType.setSrc(mSignature);
 		mSignature__mType____returnType.setTrg(mType);
 		ruleresult.getTranslatedEdges().add(mSignature__mType____returnType);
+		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
+		ruleresult.getCreatedEdges().add(mSignatureToTSignature__mSignature____source);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tName__tSignature____signatures);
 		tSignature__tName____method.setSrc(tSignature);
 		tSignature__tName____method.setTrg(tName);
 		ruleresult.getCreatedEdges().add(tSignature__tName____method);
-		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
-		ruleresult.getCreatedEdges().add(mSignatureToTSignature__tSignature____target);
-		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
-		ruleresult.getCreatedEdges().add(mSignatureToTSignature__mSignature____source);
-		mFlowElementToTFlowElement__mSignature____source.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__mSignature____source.setTrg(mSignature);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__mSignature____source);
+		mName__mSignature____mSignatures.setSrc(mName);
+		mName__mSignature____mSignatures.setTrg(mSignature);
+		ruleresult.getTranslatedEdges().add(mName__mSignature____mSignatures);
+		tSignature__tAbstractType____returnType.setSrc(tSignature);
+		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
+		ruleresult.getCreatedEdges().add(tSignature__tAbstractType____returnType);
 		mFlowElementToTFlowElement__tSignature____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tSignature____target.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tSignature____target);
+		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
+		ruleresult.getCreatedEdges().add(mSignatureToTSignature__tSignature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
-		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
-		mSignature__mType____returnType.setName(mSignature__mType____returnType_name_prime);
-		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		tSignature__tName____method.setName(tSignature__tName____method_name_prime);
-		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
-		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
 		mFlowElementToTFlowElement__mSignature____source
 				.setName(mFlowElementToTFlowElement__mSignature____source_name_prime);
+		mSignature__mType____returnType.setName(mSignature__mType____returnType_name_prime);
+		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tSignature__tName____method.setName(tSignature__tName____method_name_prime);
+		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
+		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
 		mFlowElementToTFlowElement__tSignature____target
 				.setName(mFlowElementToTFlowElement__tSignature____target_name_prime);
-		return new Object[] { ruleresult, tName, mName, mType, tSignature, mSignature, mSignatureToTSignature,
-				tAbstractType, mFlowElementToTFlowElement, mName__mSignature____mSignatures,
-				tSignature__tAbstractType____returnType, mSignature__mType____returnType,
-				tName__tSignature____signatures, tSignature__tName____method,
-				mSignatureToTSignature__tSignature____target, mSignatureToTSignature__mSignature____source,
-				mFlowElementToTFlowElement__mSignature____source, mFlowElementToTFlowElement__tSignature____target };
+		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
+		return new Object[] { ruleresult, mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tName,
+				mName, tAbstractType, tSignature, mFlowElementToTFlowElement__mSignature____source,
+				mSignature__mType____returnType, mSignatureToTSignature__mSignature____source,
+				tName__tSignature____signatures, tSignature__tName____method, mName__mSignature____mSignatures,
+				tSignature__tAbstractType____returnType, mFlowElementToTFlowElement__tSignature____target,
+				mSignatureToTSignature__tSignature____target };
 	}
 
 	public static final void pattern_MethodSignature_1_5_registerobjects_expressionBBBBBBBBBBBB(MethodSignature _this,
-			PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType, EObject mNameToTName,
-			EObject tSignature, EObject mSignature, EObject mTypeToTType, EObject mSignatureToTSignature,
-			EObject tAbstractType, EObject mFlowElementToTFlowElement) {
-		_this.registerObjects_FWD(ruleresult, tName, mName, mType, mNameToTName, tSignature, mSignature, mTypeToTType,
-				mSignatureToTSignature, tAbstractType, mFlowElementToTFlowElement);
+			PerformRuleResult ruleresult, EObject mNameToTName, EObject mType, EObject mFlowElementToTFlowElement,
+			EObject mSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject tName, EObject mName,
+			EObject tAbstractType, EObject tSignature) {
+		_this.registerObjects_FWD(ruleresult, mNameToTName, mType, mFlowElementToTFlowElement, mSignature,
+				mSignatureToTSignature, mTypeToTType, tName, mName, tAbstractType, tSignature);
 
 	}
 
@@ -1849,37 +1852,37 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mName");
-		EObject _localVariable_1 = match.getObject("mType");
-		EObject _localVariable_2 = match.getObject("mSignature");
-		EObject tmpMName = _localVariable_0;
-		EObject tmpMType = _localVariable_1;
-		EObject tmpMSignature = _localVariable_2;
-		if (tmpMName instanceof MMethodName) {
-			MMethodName mName = (MMethodName) tmpMName;
-			if (tmpMType instanceof Type) {
-				Type mType = (Type) tmpMType;
-				if (tmpMSignature instanceof MMethodSignature) {
-					MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-					return new Object[] { mName, mType, mSignature, match };
+		EObject _localVariable_0 = match.getObject("mType");
+		EObject _localVariable_1 = match.getObject("mSignature");
+		EObject _localVariable_2 = match.getObject("mName");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpMSignature = _localVariable_1;
+		EObject tmpMName = _localVariable_2;
+		if (tmpMType instanceof Type) {
+			Type mType = (Type) tmpMType;
+			if (tmpMSignature instanceof MMethodSignature) {
+				MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+				if (tmpMName instanceof MMethodName) {
+					MMethodName mName = (MMethodName) tmpMName;
+					return new Object[] { mType, mSignature, mName, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodSignature_2_2_corematch_blackFBBFBFFB(MMethodName mName,
-			Type mType, MMethodSignature mSignature, Match match) {
+	public static final Iterable<Object[]> pattern_MethodSignature_2_2_corematch_blackFBBFFBFB(Type mType,
+			MMethodSignature mSignature, MMethodName mName, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MMethodNameToTMethod mNameToTName : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(mName, MMethodNameToTMethod.class, "source")) {
-			TMethod tName = mNameToTName.getTarget();
-			if (tName != null) {
-				for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
-					TAbstractType tAbstractType = mTypeToTType.getTarget();
-					if (tAbstractType != null) {
-						_result.add(new Object[] { tName, mName, mType, mNameToTName, mSignature, mTypeToTType,
+		for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
+			TAbstractType tAbstractType = mTypeToTType.getTarget();
+			if (tAbstractType != null) {
+				for (MMethodNameToTMethod mNameToTName : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(mName, MMethodNameToTMethod.class, "source")) {
+					TMethod tName = mNameToTName.getTarget();
+					if (tName != null) {
+						_result.add(new Object[] { mNameToTName, mType, mSignature, mTypeToTType, tName, mName,
 								tAbstractType, match });
 					}
 
@@ -1890,17 +1893,17 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodSignature_2_3_findcontext_blackBBBBBBB(TMethod tName,
-			MMethodName mName, Type mType, MMethodNameToTMethod mNameToTName, MMethodSignature mSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType) {
+	public static final Iterable<Object[]> pattern_MethodSignature_2_3_findcontext_blackBBBBBBB(
+			MMethodNameToTMethod mNameToTName, Type mType, MMethodSignature mSignature,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mName.getMSignatures().contains(mSignature)) {
-			if (tName.equals(mNameToTName.getTarget())) {
-				if (mName.equals(mNameToTName.getSource())) {
-					if (mType.equals(mSignature.getReturnType())) {
-						if (mType.equals(mTypeToTType.getSource())) {
+		if (mType.equals(mSignature.getReturnType())) {
+			if (mType.equals(mTypeToTType.getSource())) {
+				if (tName.equals(mNameToTName.getTarget())) {
+					if (mName.equals(mNameToTName.getSource())) {
+						if (mName.getMSignatures().contains(mSignature)) {
 							if (tAbstractType.equals(mTypeToTType.getTarget())) {
-								_result.add(new Object[] { tName, mName, mType, mNameToTName, mSignature, mTypeToTType,
+								_result.add(new Object[] { mNameToTName, mType, mSignature, mTypeToTType, tName, mName,
 										tAbstractType });
 							}
 						}
@@ -1911,69 +1914,69 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodSignature_2_3_findcontext_greenBBBBBBBFFFFFFF(TMethod tName,
-			MMethodName mName, Type mType, MMethodNameToTMethod mNameToTName, MMethodSignature mSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType) {
+	public static final Object[] pattern_MethodSignature_2_3_findcontext_greenBBBBBBBFFFFFFF(
+			MMethodNameToTMethod mNameToTName, Type mType, MMethodSignature mSignature,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNameToTName__tName____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNameToTName__mName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNameToTName__tName____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNameToTName__mName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mName__mSignature____mSignatures_name_prime = "mSignatures";
-		String mNameToTName__tName____target_name_prime = "target";
-		String mNameToTName__mName____source_name_prime = "source";
 		String mSignature__mType____returnType_name_prime = "returnType";
 		String mTypeToTType__mType____source_name_prime = "source";
+		String mNameToTName__tName____target_name_prime = "target";
+		String mNameToTName__mName____source_name_prime = "source";
+		String mName__mSignature____mSignatures_name_prime = "mSignatures";
 		String mTypeToTType__tAbstractType____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(tName);
-		isApplicableMatch.getAllContextElements().add(mName);
-		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(mNameToTName);
+		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(mSignature);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		isApplicableMatch.getAllContextElements().add(tName);
+		isApplicableMatch.getAllContextElements().add(mName);
 		isApplicableMatch.getAllContextElements().add(tAbstractType);
-		mName__mSignature____mSignatures.setSrc(mName);
-		mName__mSignature____mSignatures.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mName__mSignature____mSignatures);
-		mNameToTName__tName____target.setSrc(mNameToTName);
-		mNameToTName__tName____target.setTrg(tName);
-		isApplicableMatch.getAllContextElements().add(mNameToTName__tName____target);
-		mNameToTName__mName____source.setSrc(mNameToTName);
-		mNameToTName__mName____source.setTrg(mName);
-		isApplicableMatch.getAllContextElements().add(mNameToTName__mName____source);
 		mSignature__mType____returnType.setSrc(mSignature);
 		mSignature__mType____returnType.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(mSignature__mType____returnType);
 		mTypeToTType__mType____source.setSrc(mTypeToTType);
 		mTypeToTType__mType____source.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
+		mNameToTName__tName____target.setSrc(mNameToTName);
+		mNameToTName__tName____target.setTrg(tName);
+		isApplicableMatch.getAllContextElements().add(mNameToTName__tName____target);
+		mNameToTName__mName____source.setSrc(mNameToTName);
+		mNameToTName__mName____source.setTrg(mName);
+		isApplicableMatch.getAllContextElements().add(mNameToTName__mName____source);
+		mName__mSignature____mSignatures.setSrc(mName);
+		mName__mSignature____mSignatures.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mName__mSignature____mSignatures);
 		mTypeToTType__tAbstractType____target.setSrc(mTypeToTType);
 		mTypeToTType__tAbstractType____target.setTrg(tAbstractType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tAbstractType____target);
-		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
-		mNameToTName__tName____target.setName(mNameToTName__tName____target_name_prime);
-		mNameToTName__mName____source.setName(mNameToTName__mName____source_name_prime);
 		mSignature__mType____returnType.setName(mSignature__mType____returnType_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mNameToTName__tName____target.setName(mNameToTName__tName____target_name_prime);
+		mNameToTName__mName____source.setName(mNameToTName__mName____source_name_prime);
+		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
 		mTypeToTType__tAbstractType____target.setName(mTypeToTType__tAbstractType____target_name_prime);
-		return new Object[] { tName, mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType,
-				isApplicableMatch, mName__mSignature____mSignatures, mNameToTName__tName____target,
-				mNameToTName__mName____source, mSignature__mType____returnType, mTypeToTType__mType____source,
+		return new Object[] { mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType,
+				isApplicableMatch, mSignature__mType____returnType, mTypeToTType__mType____source,
+				mNameToTName__tName____target, mNameToTName__mName____source, mName__mSignature____mSignatures,
 				mTypeToTType__tAbstractType____target };
 	}
 
 	public static final Object[] pattern_MethodSignature_2_4_solveCSP_bindingFBBBBBBBBB(MethodSignature _this,
-			IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName, Type mType,
-			MMethodNameToTMethod mNameToTName, MMethodSignature mSignature, TypeToTAbstractType mTypeToTType,
+			IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName, Type mType,
+			MMethodSignature mSignature, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName,
 			TAbstractType tAbstractType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tName, mName, mType, mNameToTName,
-				mSignature, mTypeToTType, tAbstractType);
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mNameToTName, mType, mSignature,
+				mTypeToTType, tName, mName, tAbstractType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tName, mName, mType, mNameToTName, mSignature,
-					mTypeToTType, tAbstractType };
+			return new Object[] { csp, _this, isApplicableMatch, mNameToTName, mType, mSignature, mTypeToTType, tName,
+					mName, tAbstractType };
 		}
 		return null;
 	}
@@ -1983,11 +1986,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(MethodSignature _this,
-			IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName, Type mType,
-			MMethodNameToTMethod mNameToTName, MMethodSignature mSignature, TypeToTAbstractType mTypeToTType,
+			IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName, Type mType,
+			MMethodSignature mSignature, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName,
 			TAbstractType tAbstractType) {
 		Object[] result_pattern_MethodSignature_2_4_solveCSP_binding = pattern_MethodSignature_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tName, mName, mType, mNameToTName, mSignature, mTypeToTType, tAbstractType);
+				_this, isApplicableMatch, mNameToTName, mType, mSignature, mTypeToTType, tName, mName, tAbstractType);
 		if (result_pattern_MethodSignature_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodSignature_2_4_solveCSP_binding[0];
 
@@ -1995,8 +1998,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					csp);
 			if (result_pattern_MethodSignature_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tName, mName, mType, mNameToTName, mSignature,
-						mTypeToTType, tAbstractType };
+				return new Object[] { csp, _this, isApplicableMatch, mNameToTName, mType, mSignature, mTypeToTType,
+						tName, mName, tAbstractType };
 			}
 		}
 		return null;
@@ -2030,16 +2033,16 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_10_1_initialbindings_blackBBBBB(MethodSignature _this,
-			Match match, TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
-		return new Object[] { _this, match, tName, tSignature, tAbstractType };
+			Match match, TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
+		return new Object[] { _this, match, tName, tAbstractType, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_10_2_SolveCSP_bindingFBBBBB(MethodSignature _this, Match match,
-			TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tName, tSignature, tAbstractType);
+			TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tName, tAbstractType, tSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tName, tSignature, tAbstractType };
+			return new Object[] { csp, _this, match, tName, tAbstractType, tSignature };
 		}
 		return null;
 	}
@@ -2049,9 +2052,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_10_2_SolveCSP_bindingAndBlackFBBBBB(MethodSignature _this,
-			Match match, TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
+			Match match, TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
 		Object[] result_pattern_MethodSignature_10_2_SolveCSP_binding = pattern_MethodSignature_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, tName, tSignature, tAbstractType);
+				_this, match, tName, tAbstractType, tSignature);
 		if (result_pattern_MethodSignature_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodSignature_10_2_SolveCSP_binding[0];
 
@@ -2059,7 +2062,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					csp);
 			if (result_pattern_MethodSignature_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tName, tSignature, tAbstractType };
+				return new Object[] { csp, _this, match, tName, tAbstractType, tSignature };
 			}
 		}
 		return null;
@@ -2072,38 +2075,38 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_10_4_collectelementstobetranslated_blackBBBB(Match match,
-			TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
-		return new Object[] { match, tName, tSignature, tAbstractType };
+			TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
+		return new Object[] { match, tName, tAbstractType, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_10_4_collectelementstobetranslated_greenBBBBFFF(Match match,
-			TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
-		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tSignature);
-		String tSignature__tAbstractType____returnType_name_prime = "returnType";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____method_name_prime = "method";
-		tSignature__tAbstractType____returnType.setSrc(tSignature);
-		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
-		match.getToBeTranslatedEdges().add(tSignature__tAbstractType____returnType);
+		String tSignature__tAbstractType____returnType_name_prime = "returnType";
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		match.getToBeTranslatedEdges().add(tName__tSignature____signatures);
 		tSignature__tName____method.setSrc(tSignature);
 		tSignature__tName____method.setTrg(tName);
 		match.getToBeTranslatedEdges().add(tSignature__tName____method);
-		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
+		tSignature__tAbstractType____returnType.setSrc(tSignature);
+		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
+		match.getToBeTranslatedEdges().add(tSignature__tAbstractType____returnType);
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
 		tSignature__tName____method.setName(tSignature__tName____method_name_prime);
-		return new Object[] { match, tName, tSignature, tAbstractType, tSignature__tAbstractType____returnType,
-				tName__tSignature____signatures, tSignature__tName____method };
+		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
+		return new Object[] { match, tName, tAbstractType, tSignature, tName__tSignature____signatures,
+				tSignature__tName____method, tSignature__tAbstractType____returnType };
 	}
 
 	public static final Object[] pattern_MethodSignature_10_5_collectcontextelements_blackBBBB(Match match,
-			TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
-		return new Object[] { match, tName, tSignature, tAbstractType };
+			TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
+		return new Object[] { match, tName, tAbstractType, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_10_5_collectcontextelements_greenBBB(Match match,
@@ -2114,8 +2117,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final void pattern_MethodSignature_10_6_registerobjectstomatch_expressionBBBBB(MethodSignature _this,
-			Match match, TMethod tName, TMethodSignature tSignature, TAbstractType tAbstractType) {
-		_this.registerObjectsToMatch_BWD(match, tName, tSignature, tAbstractType);
+			Match match, TMethod tName, TAbstractType tAbstractType, TMethodSignature tSignature) {
+		_this.registerObjectsToMatch_BWD(match, tName, tAbstractType, tSignature);
 
 	}
 
@@ -2131,36 +2134,36 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tName");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mName");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mNameToTName");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tSignature");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_6 = isApplicableMatch.getObject("tAbstractType");
-		EObject tmpTName = _localVariable_0;
-		EObject tmpMName = _localVariable_1;
-		EObject tmpMType = _localVariable_2;
-		EObject tmpMNameToTName = _localVariable_3;
-		EObject tmpTSignature = _localVariable_4;
-		EObject tmpMTypeToTType = _localVariable_5;
-		EObject tmpTAbstractType = _localVariable_6;
-		if (tmpTName instanceof TMethod) {
-			TMethod tName = (TMethod) tmpTName;
-			if (tmpMName instanceof MMethodName) {
-				MMethodName mName = (MMethodName) tmpMName;
-				if (tmpMType instanceof Type) {
-					Type mType = (Type) tmpMType;
-					if (tmpMNameToTName instanceof MMethodNameToTMethod) {
-						MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) tmpMNameToTName;
-						if (tmpTSignature instanceof TMethodSignature) {
-							TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
-							if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-								TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-								if (tmpTAbstractType instanceof TAbstractType) {
-									TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-									return new Object[] { tName, mName, mType, mNameToTName, tSignature, mTypeToTType,
-											tAbstractType, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mNameToTName");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tName");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mName");
+		EObject _localVariable_5 = isApplicableMatch.getObject("tAbstractType");
+		EObject _localVariable_6 = isApplicableMatch.getObject("tSignature");
+		EObject tmpMNameToTName = _localVariable_0;
+		EObject tmpMType = _localVariable_1;
+		EObject tmpMTypeToTType = _localVariable_2;
+		EObject tmpTName = _localVariable_3;
+		EObject tmpMName = _localVariable_4;
+		EObject tmpTAbstractType = _localVariable_5;
+		EObject tmpTSignature = _localVariable_6;
+		if (tmpMNameToTName instanceof MMethodNameToTMethod) {
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) tmpMNameToTName;
+			if (tmpMType instanceof Type) {
+				Type mType = (Type) tmpMType;
+				if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+					if (tmpTName instanceof TMethod) {
+						TMethod tName = (TMethod) tmpTName;
+						if (tmpMName instanceof MMethodName) {
+							MMethodName mName = (MMethodName) tmpMName;
+							if (tmpTAbstractType instanceof TAbstractType) {
+								TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
+								if (tmpTSignature instanceof TMethodSignature) {
+									TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
+									return new Object[] { mNameToTName, mType, mTypeToTType, tName, mName,
+											tAbstractType, tSignature, isApplicableMatch };
 								}
 							}
 						}
@@ -2171,14 +2174,14 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return null;
 	}
 
-	public static final Object[] pattern_MethodSignature_11_1_performtransformation_blackBBBBBBBFBB(TMethod tName,
-			MMethodName mName, Type mType, MMethodNameToTMethod mNameToTName, TMethodSignature tSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType, MethodSignature _this,
+	public static final Object[] pattern_MethodSignature_11_1_performtransformation_blackBBBBBBBFBB(
+			MMethodNameToTMethod mNameToTName, Type mType, TypeToTAbstractType mTypeToTType, TMethod tName,
+			MMethodName mName, TAbstractType tAbstractType, TMethodSignature tSignature, MethodSignature _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tName, mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType, csp,
+				return new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -2190,147 +2193,150 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		Object[] result_pattern_MethodSignature_11_1_performtransformation_binding = pattern_MethodSignature_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodSignature_11_1_performtransformation_binding != null) {
-			TMethod tName = (TMethod) result_pattern_MethodSignature_11_1_performtransformation_binding[0];
-			MMethodName mName = (MMethodName) result_pattern_MethodSignature_11_1_performtransformation_binding[1];
-			Type mType = (Type) result_pattern_MethodSignature_11_1_performtransformation_binding[2];
-			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result_pattern_MethodSignature_11_1_performtransformation_binding[3];
-			TMethodSignature tSignature = (TMethodSignature) result_pattern_MethodSignature_11_1_performtransformation_binding[4];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MethodSignature_11_1_performtransformation_binding[5];
-			TAbstractType tAbstractType = (TAbstractType) result_pattern_MethodSignature_11_1_performtransformation_binding[6];
+			MMethodNameToTMethod mNameToTName = (MMethodNameToTMethod) result_pattern_MethodSignature_11_1_performtransformation_binding[0];
+			Type mType = (Type) result_pattern_MethodSignature_11_1_performtransformation_binding[1];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_MethodSignature_11_1_performtransformation_binding[2];
+			TMethod tName = (TMethod) result_pattern_MethodSignature_11_1_performtransformation_binding[3];
+			MMethodName mName = (MMethodName) result_pattern_MethodSignature_11_1_performtransformation_binding[4];
+			TAbstractType tAbstractType = (TAbstractType) result_pattern_MethodSignature_11_1_performtransformation_binding[5];
+			TMethodSignature tSignature = (TMethodSignature) result_pattern_MethodSignature_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_MethodSignature_11_1_performtransformation_black = pattern_MethodSignature_11_1_performtransformation_blackBBBBBBBFBB(
-					tName, mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType, _this,
+					mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature, _this,
 					isApplicableMatch);
 			if (result_pattern_MethodSignature_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodSignature_11_1_performtransformation_black[7];
 
-				return new Object[] { tName, mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType, csp,
+				return new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature, csp,
 						_this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodSignature_11_1_performtransformation_greenBBBFFF(MMethodName mName,
-			Type mType, TMethodSignature tSignature) {
-		MMethodSignature mSignature = ModiscoFactory.eINSTANCE.createMMethodSignature();
-		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
+	public static final Object[] pattern_MethodSignature_11_1_performtransformation_greenBFFFBB(Type mType,
+			MMethodName mName, TMethodSignature tSignature) {
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		mName.getMSignatures().add(mSignature);
-		mSignature.setReturnType(mType);
-		mSignatureToTSignature.setTarget(tSignature);
-		mSignatureToTSignature.setSource(mSignature);
-		mFlowElementToTFlowElement.setSource(mSignature);
+		MMethodSignature mSignature = ModiscoFactory.eINSTANCE.createMMethodSignature();
+		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
 		mFlowElementToTFlowElement.setTarget(tSignature);
-		return new Object[] { mName, mType, tSignature, mSignature, mSignatureToTSignature,
-				mFlowElementToTFlowElement };
+		mFlowElementToTFlowElement.setSource(mSignature);
+		mSignature.setReturnType(mType);
+		mName.getMSignatures().add(mSignature);
+		mSignatureToTSignature.setSource(mSignature);
+		mSignatureToTSignature.setTarget(tSignature);
+		return new Object[] { mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, mName,
+				tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_11_2_collecttranslatedelements_blackBBBB(
-			TMethodSignature tSignature, MMethodSignature mSignature, MSignatureToTSignature mSignatureToTSignature,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
-		return new Object[] { tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement };
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, MMethodSignature mSignature,
+			MSignatureToTSignature mSignatureToTSignature, TMethodSignature tSignature) {
+		return new Object[] { mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_11_2_collecttranslatedelements_greenFBBBB(
-			TMethodSignature tSignature, MMethodSignature mSignature, MSignatureToTSignature mSignatureToTSignature,
-			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement) {
+			MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement, MMethodSignature mSignature,
+			MSignatureToTSignature mSignatureToTSignature, TMethodSignature tSignature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(tSignature);
+		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
 		ruleresult.getCreatedElements().add(mSignature);
 		ruleresult.getCreatedLinkElements().add(mSignatureToTSignature);
-		ruleresult.getCreatedLinkElements().add(mFlowElementToTFlowElement);
-		return new Object[] { ruleresult, tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement };
+		ruleresult.getTranslatedElements().add(tSignature);
+		return new Object[] { ruleresult, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature };
 	}
 
 	public static final Object[] pattern_MethodSignature_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType, EObject mNameToTName,
-			EObject tSignature, EObject mSignature, EObject mTypeToTType, EObject mSignatureToTSignature,
-			EObject tAbstractType, EObject mFlowElementToTFlowElement) {
-		if (!tName.equals(tSignature)) {
-			if (!mName.equals(tName)) {
-				if (!mName.equals(mType)) {
-					if (!mName.equals(mNameToTName)) {
-						if (!mName.equals(tSignature)) {
-							if (!mName.equals(mSignature)) {
-								if (!mName.equals(mTypeToTType)) {
-									if (!mName.equals(mSignatureToTSignature)) {
-										if (!mName.equals(tAbstractType)) {
-											if (!mType.equals(tName)) {
+			PerformRuleResult ruleresult, EObject mNameToTName, EObject mType, EObject mFlowElementToTFlowElement,
+			EObject mSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject tName, EObject mName,
+			EObject tAbstractType, EObject tSignature) {
+		if (!mNameToTName.equals(mType)) {
+			if (!mNameToTName.equals(mSignature)) {
+				if (!mNameToTName.equals(mSignatureToTSignature)) {
+					if (!mNameToTName.equals(mTypeToTType)) {
+						if (!mNameToTName.equals(tName)) {
+							if (!mNameToTName.equals(tAbstractType)) {
+								if (!mNameToTName.equals(tSignature)) {
+									if (!mType.equals(mTypeToTType)) {
+										if (!mType.equals(tName)) {
+											if (!mType.equals(tAbstractType)) {
 												if (!mType.equals(tSignature)) {
-													if (!mType.equals(mTypeToTType)) {
-														if (!mType.equals(tAbstractType)) {
-															if (!mNameToTName.equals(tName)) {
-																if (!mNameToTName.equals(mType)) {
-																	if (!mNameToTName.equals(tSignature)) {
-																		if (!mNameToTName.equals(mSignature)) {
-																			if (!mNameToTName.equals(mTypeToTType)) {
-																				if (!mNameToTName.equals(
-																						mSignatureToTSignature)) {
-																					if (!mNameToTName
-																							.equals(tAbstractType)) {
-																						if (!mSignature.equals(tName)) {
-																							if (!mSignature
-																									.equals(mType)) {
+													if (!mFlowElementToTFlowElement.equals(mNameToTName)) {
+														if (!mFlowElementToTFlowElement.equals(mType)) {
+															if (!mFlowElementToTFlowElement.equals(mSignature)) {
+																if (!mFlowElementToTFlowElement
+																		.equals(mSignatureToTSignature)) {
+																	if (!mFlowElementToTFlowElement
+																			.equals(mTypeToTType)) {
+																		if (!mFlowElementToTFlowElement.equals(tName)) {
+																			if (!mFlowElementToTFlowElement
+																					.equals(mName)) {
+																				if (!mFlowElementToTFlowElement
+																						.equals(tAbstractType)) {
+																					if (!mFlowElementToTFlowElement
+																							.equals(tSignature)) {
+																						if (!mSignature.equals(mType)) {
+																							if (!mSignature.equals(
+																									mSignatureToTSignature)) {
 																								if (!mSignature.equals(
-																										tSignature)) {
+																										mTypeToTType)) {
 																									if (!mSignature
-																											.equals(mTypeToTType)) {
+																											.equals(tName)) {
 																										if (!mSignature
-																												.equals(mSignatureToTSignature)) {
+																												.equals(tAbstractType)) {
 																											if (!mSignature
-																													.equals(tAbstractType)) {
-																												if (!mTypeToTType
-																														.equals(tName)) {
-																													if (!mTypeToTType
-																															.equals(tSignature)) {
-																														if (!mTypeToTType
-																																.equals(tAbstractType)) {
+																													.equals(tSignature)) {
+																												if (!mSignatureToTSignature
+																														.equals(mType)) {
+																													if (!mSignatureToTSignature
+																															.equals(mTypeToTType)) {
+																														if (!mSignatureToTSignature
+																																.equals(tName)) {
 																															if (!mSignatureToTSignature
-																																	.equals(tName)) {
+																																	.equals(tAbstractType)) {
 																																if (!mSignatureToTSignature
-																																		.equals(mType)) {
-																																	if (!mSignatureToTSignature
-																																			.equals(tSignature)) {
-																																		if (!mSignatureToTSignature
-																																				.equals(mTypeToTType)) {
-																																			if (!mSignatureToTSignature
-																																					.equals(tAbstractType)) {
-																																				if (!tAbstractType
-																																						.equals(tName)) {
-																																					if (!tAbstractType
-																																							.equals(tSignature)) {
-																																						if (!mFlowElementToTFlowElement
-																																								.equals(tName)) {
-																																							if (!mFlowElementToTFlowElement
-																																									.equals(mName)) {
-																																								if (!mFlowElementToTFlowElement
-																																										.equals(mType)) {
-																																									if (!mFlowElementToTFlowElement
-																																											.equals(mNameToTName)) {
-																																										if (!mFlowElementToTFlowElement
-																																												.equals(tSignature)) {
-																																											if (!mFlowElementToTFlowElement
-																																													.equals(mSignature)) {
-																																												if (!mFlowElementToTFlowElement
-																																														.equals(mTypeToTType)) {
-																																													if (!mFlowElementToTFlowElement
-																																															.equals(mSignatureToTSignature)) {
-																																														if (!mFlowElementToTFlowElement
-																																																.equals(tAbstractType)) {
+																																		.equals(tSignature)) {
+																																	if (!mTypeToTType
+																																			.equals(tName)) {
+																																		if (!mTypeToTType
+																																				.equals(tAbstractType)) {
+																																			if (!mTypeToTType
+																																					.equals(tSignature)) {
+																																				if (!tName
+																																						.equals(tSignature)) {
+																																					if (!mName
+																																							.equals(mNameToTName)) {
+																																						if (!mName
+																																								.equals(mType)) {
+																																							if (!mName
+																																									.equals(mSignature)) {
+																																								if (!mName
+																																										.equals(mSignatureToTSignature)) {
+																																									if (!mName
+																																											.equals(mTypeToTType)) {
+																																										if (!mName
+																																												.equals(tName)) {
+																																											if (!mName
+																																													.equals(tAbstractType)) {
+																																												if (!mName
+																																														.equals(tSignature)) {
+																																													if (!tAbstractType
+																																															.equals(tName)) {
+																																														if (!tAbstractType
+																																																.equals(tSignature)) {
 																																															return new Object[] {
 																																																	ruleresult,
+																																																	mNameToTName,
+																																																	mType,
+																																																	mFlowElementToTFlowElement,
+																																																	mSignature,
+																																																	mSignatureToTSignature,
+																																																	mTypeToTType,
 																																																	tName,
 																																																	mName,
-																																																	mType,
-																																																	mNameToTName,
-																																																	tSignature,
-																																																	mSignature,
-																																																	mTypeToTType,
-																																																	mSignatureToTSignature,
 																																																	tAbstractType,
-																																																	mFlowElementToTFlowElement };
+																																																	tSignature };
 																																														}
 																																													}
 																																												}
@@ -2380,81 +2386,80 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType, EObject tSignature,
-			EObject mSignature, EObject mSignatureToTSignature, EObject tAbstractType,
-			EObject mFlowElementToTFlowElement) {
-		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mType, EObject mFlowElementToTFlowElement, EObject mSignature,
+			EObject mSignatureToTSignature, EObject tName, EObject mName, EObject tAbstractType, EObject tSignature) {
+		EMoflonEdge mFlowElementToTFlowElement__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSignatureToTSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mName__mSignature____mSignatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSignatureToTSignature__tSignature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodSignature";
-		String mName__mSignature____mSignatures_name_prime = "mSignatures";
-		String tSignature__tAbstractType____returnType_name_prime = "returnType";
+		String mFlowElementToTFlowElement__mSignature____source_name_prime = "source";
 		String mSignature__mType____returnType_name_prime = "returnType";
+		String mSignatureToTSignature__mSignature____source_name_prime = "source";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____method_name_prime = "method";
-		String mSignatureToTSignature__tSignature____target_name_prime = "target";
-		String mSignatureToTSignature__mSignature____source_name_prime = "source";
-		String mFlowElementToTFlowElement__mSignature____source_name_prime = "source";
+		String mName__mSignature____mSignatures_name_prime = "mSignatures";
+		String tSignature__tAbstractType____returnType_name_prime = "returnType";
 		String mFlowElementToTFlowElement__tSignature____target_name_prime = "target";
-		mName__mSignature____mSignatures.setSrc(mName);
-		mName__mSignature____mSignatures.setTrg(mSignature);
-		ruleresult.getCreatedEdges().add(mName__mSignature____mSignatures);
-		tSignature__tAbstractType____returnType.setSrc(tSignature);
-		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
-		ruleresult.getTranslatedEdges().add(tSignature__tAbstractType____returnType);
+		String mSignatureToTSignature__tSignature____target_name_prime = "target";
+		mFlowElementToTFlowElement__mSignature____source.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__mSignature____source.setTrg(mSignature);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__mSignature____source);
 		mSignature__mType____returnType.setSrc(mSignature);
 		mSignature__mType____returnType.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mSignature__mType____returnType);
+		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
+		ruleresult.getCreatedEdges().add(mSignatureToTSignature__mSignature____source);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tName__tSignature____signatures);
 		tSignature__tName____method.setSrc(tSignature);
 		tSignature__tName____method.setTrg(tName);
 		ruleresult.getTranslatedEdges().add(tSignature__tName____method);
-		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
-		ruleresult.getCreatedEdges().add(mSignatureToTSignature__tSignature____target);
-		mSignatureToTSignature__mSignature____source.setSrc(mSignatureToTSignature);
-		mSignatureToTSignature__mSignature____source.setTrg(mSignature);
-		ruleresult.getCreatedEdges().add(mSignatureToTSignature__mSignature____source);
-		mFlowElementToTFlowElement__mSignature____source.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__mSignature____source.setTrg(mSignature);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__mSignature____source);
+		mName__mSignature____mSignatures.setSrc(mName);
+		mName__mSignature____mSignatures.setTrg(mSignature);
+		ruleresult.getCreatedEdges().add(mName__mSignature____mSignatures);
+		tSignature__tAbstractType____returnType.setSrc(tSignature);
+		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
+		ruleresult.getTranslatedEdges().add(tSignature__tAbstractType____returnType);
 		mFlowElementToTFlowElement__tSignature____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tSignature____target.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tSignature____target);
+		mSignatureToTSignature__tSignature____target.setSrc(mSignatureToTSignature);
+		mSignatureToTSignature__tSignature____target.setTrg(tSignature);
+		ruleresult.getCreatedEdges().add(mSignatureToTSignature__tSignature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
-		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
-		mSignature__mType____returnType.setName(mSignature__mType____returnType_name_prime);
-		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		tSignature__tName____method.setName(tSignature__tName____method_name_prime);
-		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
-		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
 		mFlowElementToTFlowElement__mSignature____source
 				.setName(mFlowElementToTFlowElement__mSignature____source_name_prime);
+		mSignature__mType____returnType.setName(mSignature__mType____returnType_name_prime);
+		mSignatureToTSignature__mSignature____source.setName(mSignatureToTSignature__mSignature____source_name_prime);
+		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tSignature__tName____method.setName(tSignature__tName____method_name_prime);
+		mName__mSignature____mSignatures.setName(mName__mSignature____mSignatures_name_prime);
+		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
 		mFlowElementToTFlowElement__tSignature____target
 				.setName(mFlowElementToTFlowElement__tSignature____target_name_prime);
-		return new Object[] { ruleresult, tName, mName, mType, tSignature, mSignature, mSignatureToTSignature,
-				tAbstractType, mFlowElementToTFlowElement, mName__mSignature____mSignatures,
-				tSignature__tAbstractType____returnType, mSignature__mType____returnType,
-				tName__tSignature____signatures, tSignature__tName____method,
-				mSignatureToTSignature__tSignature____target, mSignatureToTSignature__mSignature____source,
-				mFlowElementToTFlowElement__mSignature____source, mFlowElementToTFlowElement__tSignature____target };
+		mSignatureToTSignature__tSignature____target.setName(mSignatureToTSignature__tSignature____target_name_prime);
+		return new Object[] { ruleresult, mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tName,
+				mName, tAbstractType, tSignature, mFlowElementToTFlowElement__mSignature____source,
+				mSignature__mType____returnType, mSignatureToTSignature__mSignature____source,
+				tName__tSignature____signatures, tSignature__tName____method, mName__mSignature____mSignatures,
+				tSignature__tAbstractType____returnType, mFlowElementToTFlowElement__tSignature____target,
+				mSignatureToTSignature__tSignature____target };
 	}
 
 	public static final void pattern_MethodSignature_11_5_registerobjects_expressionBBBBBBBBBBBB(MethodSignature _this,
-			PerformRuleResult ruleresult, EObject tName, EObject mName, EObject mType, EObject mNameToTName,
-			EObject tSignature, EObject mSignature, EObject mTypeToTType, EObject mSignatureToTSignature,
-			EObject tAbstractType, EObject mFlowElementToTFlowElement) {
-		_this.registerObjects_BWD(ruleresult, tName, mName, mType, mNameToTName, tSignature, mSignature, mTypeToTType,
-				mSignatureToTSignature, tAbstractType, mFlowElementToTFlowElement);
+			PerformRuleResult ruleresult, EObject mNameToTName, EObject mType, EObject mFlowElementToTFlowElement,
+			EObject mSignature, EObject mSignatureToTSignature, EObject mTypeToTType, EObject tName, EObject mName,
+			EObject tAbstractType, EObject tSignature) {
+		_this.registerObjects_BWD(ruleresult, mNameToTName, mType, mFlowElementToTFlowElement, mSignature,
+				mSignatureToTSignature, mTypeToTType, tName, mName, tAbstractType, tSignature);
 
 	}
 
@@ -2514,26 +2519,26 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_12_2_corematch_bindingFFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("tName");
-		EObject _localVariable_1 = match.getObject("tSignature");
-		EObject _localVariable_2 = match.getObject("tAbstractType");
+		EObject _localVariable_1 = match.getObject("tAbstractType");
+		EObject _localVariable_2 = match.getObject("tSignature");
 		EObject tmpTName = _localVariable_0;
-		EObject tmpTSignature = _localVariable_1;
-		EObject tmpTAbstractType = _localVariable_2;
+		EObject tmpTAbstractType = _localVariable_1;
+		EObject tmpTSignature = _localVariable_2;
 		if (tmpTName instanceof TMethod) {
 			TMethod tName = (TMethod) tmpTName;
-			if (tmpTSignature instanceof TMethodSignature) {
-				TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
-				if (tmpTAbstractType instanceof TAbstractType) {
-					TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-					return new Object[] { tName, tSignature, tAbstractType, match };
+			if (tmpTAbstractType instanceof TAbstractType) {
+				TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
+				if (tmpTSignature instanceof TMethodSignature) {
+					TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
+					return new Object[] { tName, tAbstractType, tSignature, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodSignature_12_2_corematch_blackBFFFBFBB(TMethod tName,
-			TMethodSignature tSignature, TAbstractType tAbstractType, Match match) {
+	public static final Iterable<Object[]> pattern_MethodSignature_12_2_corematch_blackFFFBFBBB(TMethod tName,
+			TAbstractType tAbstractType, TMethodSignature tSignature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		int tSignature_lowerBound = tSignature.getLowerBound();
 		if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
@@ -2545,8 +2550,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 							.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
 						Type mType = mTypeToTType.getSource();
 						if (mType != null) {
-							_result.add(new Object[] { tName, mName, mType, mNameToTName, tSignature, mTypeToTType,
-									tAbstractType, match });
+							_result.add(new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType,
+									tSignature, match });
 						}
 
 					}
@@ -2558,20 +2563,20 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodSignature_12_3_findcontext_blackBBBBBBB(TMethod tName,
-			MMethodName mName, Type mType, MMethodNameToTMethod mNameToTName, TMethodSignature tSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType) {
+	public static final Iterable<Object[]> pattern_MethodSignature_12_3_findcontext_blackBBBBBBB(
+			MMethodNameToTMethod mNameToTName, Type mType, TypeToTAbstractType mTypeToTType, TMethod tName,
+			MMethodName mName, TAbstractType tAbstractType, TMethodSignature tSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tName.equals(mNameToTName.getTarget())) {
-			if (tAbstractType.equals(tSignature.getReturnType())) {
-				if (mName.equals(mNameToTName.getSource())) {
-					if (tName.getSignatures().contains(tSignature)) {
-						if (mType.equals(mTypeToTType.getSource())) {
-							if (tAbstractType.equals(mTypeToTType.getTarget())) {
+		if (mType.equals(mTypeToTType.getSource())) {
+			if (tName.getSignatures().contains(tSignature)) {
+				if (tName.equals(mNameToTName.getTarget())) {
+					if (mName.equals(mNameToTName.getSource())) {
+						if (tAbstractType.equals(mTypeToTType.getTarget())) {
+							if (tAbstractType.equals(tSignature.getReturnType())) {
 								int tSignature_lowerBound = tSignature.getLowerBound();
 								if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
-									_result.add(new Object[] { tName, mName, mType, mNameToTName, tSignature,
-											mTypeToTType, tAbstractType });
+									_result.add(new Object[] { mNameToTName, mType, mTypeToTType, tName, mName,
+											tAbstractType, tSignature });
 								}
 
 							}
@@ -2583,75 +2588,75 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodSignature_12_3_findcontext_greenBBBBBBBFFFFFFFF(TMethod tName,
-			MMethodName mName, Type mType, MMethodNameToTMethod mNameToTName, TMethodSignature tSignature,
-			TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType) {
+	public static final Object[] pattern_MethodSignature_12_3_findcontext_greenBBBBBBBFFFFFFFF(
+			MMethodNameToTMethod mNameToTName, Type mType, TypeToTAbstractType mTypeToTType, TMethod tName,
+			MMethodName mName, TAbstractType tAbstractType, TMethodSignature tSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mNameToTName__tName____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNameToTName__mName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____method = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNameToTName__tName____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNameToTName__mName____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mNameToTName__tName____target_name_prime = "target";
-		String tSignature__tAbstractType____returnType_name_prime = "returnType";
-		String mNameToTName__mName____source_name_prime = "source";
+		EMoflonEdge tSignature__tAbstractType____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String mTypeToTType__mType____source_name_prime = "source";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____method_name_prime = "method";
-		String mTypeToTType__mType____source_name_prime = "source";
+		String mNameToTName__tName____target_name_prime = "target";
+		String mNameToTName__mName____source_name_prime = "source";
 		String mTypeToTType__tAbstractType____target_name_prime = "target";
+		String tSignature__tAbstractType____returnType_name_prime = "returnType";
+		isApplicableMatch.getAllContextElements().add(mNameToTName);
+		isApplicableMatch.getAllContextElements().add(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(tName);
 		isApplicableMatch.getAllContextElements().add(mName);
-		isApplicableMatch.getAllContextElements().add(mType);
-		isApplicableMatch.getAllContextElements().add(mNameToTName);
-		isApplicableMatch.getAllContextElements().add(tSignature);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(tAbstractType);
-		mNameToTName__tName____target.setSrc(mNameToTName);
-		mNameToTName__tName____target.setTrg(tName);
-		isApplicableMatch.getAllContextElements().add(mNameToTName__tName____target);
-		tSignature__tAbstractType____returnType.setSrc(tSignature);
-		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
-		isApplicableMatch.getAllContextElements().add(tSignature__tAbstractType____returnType);
-		mNameToTName__mName____source.setSrc(mNameToTName);
-		mNameToTName__mName____source.setTrg(mName);
-		isApplicableMatch.getAllContextElements().add(mNameToTName__mName____source);
+		isApplicableMatch.getAllContextElements().add(tSignature);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(tName__tSignature____signatures);
 		tSignature__tName____method.setSrc(tSignature);
 		tSignature__tName____method.setTrg(tName);
 		isApplicableMatch.getAllContextElements().add(tSignature__tName____method);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
+		mNameToTName__tName____target.setSrc(mNameToTName);
+		mNameToTName__tName____target.setTrg(tName);
+		isApplicableMatch.getAllContextElements().add(mNameToTName__tName____target);
+		mNameToTName__mName____source.setSrc(mNameToTName);
+		mNameToTName__mName____source.setTrg(mName);
+		isApplicableMatch.getAllContextElements().add(mNameToTName__mName____source);
 		mTypeToTType__tAbstractType____target.setSrc(mTypeToTType);
 		mTypeToTType__tAbstractType____target.setTrg(tAbstractType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tAbstractType____target);
-		mNameToTName__tName____target.setName(mNameToTName__tName____target_name_prime);
-		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
-		mNameToTName__mName____source.setName(mNameToTName__mName____source_name_prime);
+		tSignature__tAbstractType____returnType.setSrc(tSignature);
+		tSignature__tAbstractType____returnType.setTrg(tAbstractType);
+		isApplicableMatch.getAllContextElements().add(tSignature__tAbstractType____returnType);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
 		tSignature__tName____method.setName(tSignature__tName____method_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mNameToTName__tName____target.setName(mNameToTName__tName____target_name_prime);
+		mNameToTName__mName____source.setName(mNameToTName__mName____source_name_prime);
 		mTypeToTType__tAbstractType____target.setName(mTypeToTType__tAbstractType____target_name_prime);
-		return new Object[] { tName, mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType,
-				isApplicableMatch, mNameToTName__tName____target, tSignature__tAbstractType____returnType,
-				mNameToTName__mName____source, tName__tSignature____signatures, tSignature__tName____method,
-				mTypeToTType__mType____source, mTypeToTType__tAbstractType____target };
+		tSignature__tAbstractType____returnType.setName(tSignature__tAbstractType____returnType_name_prime);
+		return new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature,
+				isApplicableMatch, mTypeToTType__mType____source, tName__tSignature____signatures,
+				tSignature__tName____method, mNameToTName__tName____target, mNameToTName__mName____source,
+				mTypeToTType__tAbstractType____target, tSignature__tAbstractType____returnType };
 	}
 
 	public static final Object[] pattern_MethodSignature_12_4_solveCSP_bindingFBBBBBBBBB(MethodSignature _this,
-			IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName, Type mType,
-			MMethodNameToTMethod mNameToTName, TMethodSignature tSignature, TypeToTAbstractType mTypeToTType,
-			TAbstractType tAbstractType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tName, mName, mType, mNameToTName,
-				tSignature, mTypeToTType, tAbstractType);
+			IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName, Type mType,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mNameToTName, mType, mTypeToTType,
+				tName, mName, tAbstractType, tSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tName, mName, mType, mNameToTName, tSignature,
-					mTypeToTType, tAbstractType };
+			return new Object[] { csp, _this, isApplicableMatch, mNameToTName, mType, mTypeToTType, tName, mName,
+					tAbstractType, tSignature };
 		}
 		return null;
 	}
@@ -2661,11 +2666,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(MethodSignature _this,
-			IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName, Type mType,
-			MMethodNameToTMethod mNameToTName, TMethodSignature tSignature, TypeToTAbstractType mTypeToTType,
-			TAbstractType tAbstractType) {
+			IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName, Type mType,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {
 		Object[] result_pattern_MethodSignature_12_4_solveCSP_binding = pattern_MethodSignature_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tName, mName, mType, mNameToTName, tSignature, mTypeToTType, tAbstractType);
+				_this, isApplicableMatch, mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, tSignature);
 		if (result_pattern_MethodSignature_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodSignature_12_4_solveCSP_binding[0];
 
@@ -2673,8 +2678,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					csp);
 			if (result_pattern_MethodSignature_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tName, mName, mType, mNameToTName, tSignature,
-						mTypeToTType, tAbstractType };
+				return new Object[] { csp, _this, isApplicableMatch, mNameToTName, mType, mTypeToTType, tName, mName,
+						tAbstractType, tSignature };
 			}
 		}
 		return null;
@@ -2762,9 +2767,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodSignature tSignature, TMethod tName) {
-		TMethod __DEC_tSignature_method_243753 = tSignature.getMethod();
-		if (__DEC_tSignature_method_243753 != null) {
-			if (!tName.equals(__DEC_tSignature_method_243753)) {
+		TMethod __DEC_tSignature_method_214850 = tSignature.getMethod();
+		if (__DEC_tSignature_method_214850 != null) {
+			if (!tName.equals(__DEC_tSignature_method_214850)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -2773,22 +2778,22 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Iterable<Object[]> pattern_MethodSignature_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_returnType) {
+			EMoflonEdge _edge_signatures) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTSignature = _edge_returnType.getSrc();
-		if (tmpTSignature instanceof TMethodSignature) {
-			TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
-			EObject tmpTAbstractType = _edge_returnType.getTrg();
-			if (tmpTAbstractType instanceof TAbstractType) {
-				TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-				if (tAbstractType.equals(tSignature.getReturnType())) {
-					TMethod tName = tSignature.getMethod();
-					if (tName != null) {
+		EObject tmpTName = _edge_signatures.getSrc();
+		if (tmpTName instanceof TMethod) {
+			TMethod tName = (TMethod) tmpTName;
+			EObject tmpTSignature = _edge_signatures.getTrg();
+			if (tmpTSignature instanceof TMethodSignature) {
+				TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
+				if (tName.getSignatures().contains(tSignature)) {
+					TAbstractType tAbstractType = tSignature.getReturnType();
+					if (tAbstractType != null) {
 						int tSignature_lowerBound = tSignature.getLowerBound();
 						if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
 							if (pattern_MethodSignature_20_2_testcorematchandDECs_black_nac_0BB(tSignature,
 									tName) == null) {
-								_result.add(new Object[] { tName, tSignature, tAbstractType, _edge_returnType });
+								_result.add(new Object[] { tName, tAbstractType, tSignature, _edge_signatures });
 							}
 						}
 
@@ -2812,9 +2817,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final boolean pattern_MethodSignature_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			MethodSignature _this, Match match, TMethod tName, TMethodSignature tSignature,
-			TAbstractType tAbstractType) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tName, tSignature, tAbstractType);
+			MethodSignature _this, Match match, TMethod tName, TAbstractType tAbstractType,
+			TMethodSignature tSignature) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tName, tAbstractType, tSignature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2901,20 +2906,22 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Iterable<Object[]> pattern_MethodSignature_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_mSignatures) {
+			EMoflonEdge _edge_returnType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpMName = _edge_mSignatures.getSrc();
-		if (tmpMName instanceof MMethodName) {
-			MMethodName mName = (MMethodName) tmpMName;
-			EObject tmpMSignature = _edge_mSignatures.getTrg();
-			if (tmpMSignature instanceof MMethodSignature) {
-				MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-				if (mName.getMSignatures().contains(mSignature)) {
-					Type mType = mSignature.getReturnType();
-					if (mType != null) {
-						_result.add(new Object[] { mName, mType, mSignature, _edge_mSignatures });
+		EObject tmpMSignature = _edge_returnType.getSrc();
+		if (tmpMSignature instanceof MMethodSignature) {
+			MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+			EObject tmpMType = _edge_returnType.getTrg();
+			if (tmpMType instanceof Type) {
+				Type mType = (Type) tmpMType;
+				if (mType.equals(mSignature.getReturnType())) {
+					for (MName tmpMName : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mSignature,
+							MName.class, "mSignatures")) {
+						if (tmpMName instanceof MMethodName) {
+							MMethodName mName = (MMethodName) tmpMName;
+							_result.add(new Object[] { mType, mSignature, mName, _edge_returnType });
+						}
 					}
-
 				}
 			}
 
@@ -2933,8 +2940,8 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final boolean pattern_MethodSignature_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			MethodSignature _this, Match match, MMethodName mName, Type mType, MMethodSignature mSignature) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mName, mType, mSignature);
+			MethodSignature _this, Match match, Type mType, MMethodSignature mSignature, MMethodName mName) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mType, mSignature, mName);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2976,34 +2983,34 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_MethodSignature_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tName");
-		EObject _localVariable_1 = sourceMatch.getObject("mName");
-		EObject _localVariable_2 = sourceMatch.getObject("mType");
-		EObject _localVariable_3 = targetMatch.getObject("tSignature");
-		EObject _localVariable_4 = sourceMatch.getObject("mSignature");
-		EObject _localVariable_5 = targetMatch.getObject("tAbstractType");
-		EObject tmpTName = _localVariable_0;
-		EObject tmpMName = _localVariable_1;
-		EObject tmpMType = _localVariable_2;
-		EObject tmpTSignature = _localVariable_3;
-		EObject tmpMSignature = _localVariable_4;
-		EObject tmpTAbstractType = _localVariable_5;
-		if (tmpTName instanceof TMethod) {
-			TMethod tName = (TMethod) tmpTName;
-			if (tmpMName instanceof MMethodName) {
-				MMethodName mName = (MMethodName) tmpMName;
-				if (tmpMType instanceof Type) {
-					Type mType = (Type) tmpMType;
-					if (tmpTSignature instanceof TMethodSignature) {
-						TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
-						if (tmpMSignature instanceof MMethodSignature) {
-							MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
-							if (tmpTAbstractType instanceof TAbstractType) {
-								TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-								return new Object[] { tName, mName, mType, tSignature, mSignature, tAbstractType,
-										targetMatch, sourceMatch };
+	public static final Object[] pattern_MethodSignature_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mType");
+		EObject _localVariable_1 = sourceMatch.getObject("mSignature");
+		EObject _localVariable_2 = targetMatch.getObject("tName");
+		EObject _localVariable_3 = sourceMatch.getObject("mName");
+		EObject _localVariable_4 = targetMatch.getObject("tAbstractType");
+		EObject _localVariable_5 = targetMatch.getObject("tSignature");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpMSignature = _localVariable_1;
+		EObject tmpTName = _localVariable_2;
+		EObject tmpMName = _localVariable_3;
+		EObject tmpTAbstractType = _localVariable_4;
+		EObject tmpTSignature = _localVariable_5;
+		if (tmpMType instanceof Type) {
+			Type mType = (Type) tmpMType;
+			if (tmpMSignature instanceof MMethodSignature) {
+				MMethodSignature mSignature = (MMethodSignature) tmpMSignature;
+				if (tmpTName instanceof TMethod) {
+					TMethod tName = (TMethod) tmpTName;
+					if (tmpMName instanceof MMethodName) {
+						MMethodName mName = (MMethodName) tmpMName;
+						if (tmpTAbstractType instanceof TAbstractType) {
+							TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
+							if (tmpTSignature instanceof TMethodSignature) {
+								TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
+								return new Object[] { mType, mSignature, tName, mName, tAbstractType, tSignature,
+										sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -3013,13 +3020,13 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return null;
 	}
 
-	public static final Object[] pattern_MethodSignature_24_2_matchsrctrgcontext_blackBBBBBBBB(TMethod tName,
-			MMethodName mName, Type mType, TMethodSignature tSignature, MMethodSignature mSignature,
-			TAbstractType tAbstractType, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_MethodSignature_24_2_matchsrctrgcontext_blackBBBBBBBB(Type mType,
+			MMethodSignature mSignature, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
 			int tSignature_lowerBound = tSignature.getLowerBound();
 			if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
-				return new Object[] { tName, mName, mType, tSignature, mSignature, tAbstractType, sourceMatch,
+				return new Object[] { mType, mSignature, tName, mName, tAbstractType, tSignature, sourceMatch,
 						targetMatch };
 			}
 
@@ -3030,20 +3037,20 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	public static final Object[] pattern_MethodSignature_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding = pattern_MethodSignature_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding != null) {
-			TMethod tName = (TMethod) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[0];
-			MMethodName mName = (MMethodName) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[1];
-			Type mType = (Type) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[2];
-			TMethodSignature tSignature = (TMethodSignature) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[3];
-			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[4];
-			TAbstractType tAbstractType = (TAbstractType) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[5];
+			Type mType = (Type) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[0];
+			MMethodSignature mSignature = (MMethodSignature) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[1];
+			TMethod tName = (TMethod) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[2];
+			MMethodName mName = (MMethodName) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[3];
+			TAbstractType tAbstractType = (TAbstractType) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[4];
+			TMethodSignature tSignature = (TMethodSignature) result_pattern_MethodSignature_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_MethodSignature_24_2_matchsrctrgcontext_black = pattern_MethodSignature_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					tName, mName, mType, tSignature, mSignature, tAbstractType, sourceMatch, targetMatch);
+					mType, mSignature, tName, mName, tAbstractType, tSignature, sourceMatch, targetMatch);
 			if (result_pattern_MethodSignature_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tName, mName, mType, tSignature, mSignature, tAbstractType, sourceMatch,
+				return new Object[] { mType, mSignature, tName, mName, tAbstractType, tSignature, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3051,13 +3058,13 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_24_3_solvecsp_bindingFBBBBBBBBB(MethodSignature _this,
-			TMethod tName, MMethodName mName, Type mType, TMethodSignature tSignature, MMethodSignature mSignature,
-			TAbstractType tAbstractType, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(tName, mName, mType, tSignature, mSignature,
-				tAbstractType, sourceMatch, targetMatch);
+			Type mType, MMethodSignature mSignature, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mType, mSignature, tName, mName, tAbstractType,
+				tSignature, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, tName, mName, mType, tSignature, mSignature, tAbstractType, sourceMatch,
+			return new Object[] { csp, _this, mType, mSignature, tName, mName, tAbstractType, tSignature, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3068,10 +3075,10 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(MethodSignature _this,
-			TMethod tName, MMethodName mName, Type mType, TMethodSignature tSignature, MMethodSignature mSignature,
-			TAbstractType tAbstractType, Match sourceMatch, Match targetMatch) {
+			Type mType, MMethodSignature mSignature, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodSignature_24_3_solvecsp_binding = pattern_MethodSignature_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, tName, mName, mType, tSignature, mSignature, tAbstractType, sourceMatch, targetMatch);
+				_this, mType, mSignature, tName, mName, tAbstractType, tSignature, sourceMatch, targetMatch);
 		if (result_pattern_MethodSignature_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodSignature_24_3_solvecsp_binding[0];
 
@@ -3079,7 +3086,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					csp);
 			if (result_pattern_MethodSignature_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tName, mName, mType, tSignature, mSignature, tAbstractType,
+				return new Object[] { csp, _this, mType, mSignature, tName, mName, tAbstractType, tSignature,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3092,17 +3099,17 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodSignature_24_5_matchcorrcontext_blackBBBFFBBB(TMethod tName,
-			MMethodName mName, Type mType, TAbstractType tAbstractType, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_MethodSignature_24_5_matchcorrcontext_blackFBFBBBBB(Type mType,
+			TMethod tName, MMethodName mName, TAbstractType tAbstractType, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (MMethodNameToTMethod mNameToTName : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tName, MMethodNameToTMethod.class, "target")) {
-				if (mName.equals(mNameToTName.getSource())) {
-					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
-						if (tAbstractType.equals(mTypeToTType.getTarget())) {
-							_result.add(new Object[] { tName, mName, mType, mNameToTName, mTypeToTType, tAbstractType,
+			for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
+				if (tAbstractType.equals(mTypeToTType.getTarget())) {
+					for (MMethodNameToTMethod mNameToTName : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tName, MMethodNameToTMethod.class, "target")) {
+						if (mName.equals(mNameToTName.getSource())) {
+							_result.add(new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType,
 									sourceMatch, targetMatch });
 						}
 					}
@@ -3124,24 +3131,24 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return new Object[] { mNameToTName, mTypeToTType, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodSignature_24_6_createcorrespondence_blackBBBBBBB(TMethod tName,
-			MMethodName mName, Type mType, TMethodSignature tSignature, MMethodSignature mSignature,
-			TAbstractType tAbstractType, CCMatch ccMatch) {
-		return new Object[] { tName, mName, mType, tSignature, mSignature, tAbstractType, ccMatch };
+	public static final Object[] pattern_MethodSignature_24_6_createcorrespondence_blackBBBBBBB(Type mType,
+			MMethodSignature mSignature, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			TMethodSignature tSignature, CCMatch ccMatch) {
+		return new Object[] { mType, mSignature, tName, mName, tAbstractType, tSignature, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodSignature_24_6_createcorrespondence_greenBBFFB(
-			TMethodSignature tSignature, MMethodSignature mSignature, CCMatch ccMatch) {
-		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
+	public static final Object[] pattern_MethodSignature_24_6_createcorrespondence_greenFBFBB(
+			MMethodSignature mSignature, TMethodSignature tSignature, CCMatch ccMatch) {
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
-		mSignatureToTSignature.setTarget(tSignature);
-		mSignatureToTSignature.setSource(mSignature);
-		ccMatch.getCreateCorr().add(mSignatureToTSignature);
+		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
 		mFlowElementToTFlowElement.setSource(mSignature);
 		mFlowElementToTFlowElement.setTarget(tSignature);
 		ccMatch.getCreateCorr().add(mFlowElementToTFlowElement);
-		return new Object[] { tSignature, mSignature, mSignatureToTSignature, mFlowElementToTFlowElement, ccMatch };
+		mSignatureToTSignature.setSource(mSignature);
+		mSignatureToTSignature.setTarget(tSignature);
+		ccMatch.getCreateCorr().add(mSignatureToTSignature);
+		return new Object[] { mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tSignature, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodSignature_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -3165,11 +3172,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodSignature_27_1_matchtggpattern_blackBBB(MMethodName mName, Type mType,
-			MMethodSignature mSignature) {
-		if (mName.getMSignatures().contains(mSignature)) {
-			if (mType.equals(mSignature.getReturnType())) {
-				return new Object[] { mName, mType, mSignature };
+	public static final Object[] pattern_MethodSignature_27_1_matchtggpattern_blackBBB(Type mType,
+			MMethodSignature mSignature, MMethodName mName) {
+		if (mType.equals(mSignature.getReturnType())) {
+			if (mName.getMSignatures().contains(mSignature)) {
+				return new Object[] { mType, mSignature, mName };
 			}
 		}
 		return null;
@@ -3187,9 +3194,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_28_1_matchtggpattern_black_nac_0BB(TMethodSignature tSignature,
 			TMethod tName) {
-		TMethod __DEC_tSignature_method_690741 = tSignature.getMethod();
-		if (__DEC_tSignature_method_690741 != null) {
-			if (!tName.equals(__DEC_tSignature_method_690741)) {
+		TMethod __DEC_tSignature_method_928959 = tSignature.getMethod();
+		if (__DEC_tSignature_method_928959 != null) {
+			if (!tName.equals(__DEC_tSignature_method_928959)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3198,11 +3205,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_28_1_matchtggpattern_blackBBB(TMethod tName,
-			TMethodSignature tSignature, TAbstractType tAbstractType) {
-		if (tAbstractType.equals(tSignature.getReturnType())) {
-			if (tName.getSignatures().contains(tSignature)) {
+			TAbstractType tAbstractType, TMethodSignature tSignature) {
+		if (tName.getSignatures().contains(tSignature)) {
+			if (tAbstractType.equals(tSignature.getReturnType())) {
 				if (pattern_MethodSignature_28_1_matchtggpattern_black_nac_0BB(tSignature, tName) == null) {
-					return new Object[] { tName, tSignature, tAbstractType };
+					return new Object[] { tName, tAbstractType, tSignature };
 				}
 			}
 		}
@@ -3238,17 +3245,17 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TMethod tName) {
-		if (ruleResult.getTargetObjects().contains(tName)) {
-			return new Object[] { ruleResult, tName };
+			ModelgeneratorRuleResult ruleResult, MMethodNameToTMethod mNameToTName) {
+		if (ruleResult.getCorrObjects().contains(mNameToTName)) {
+			return new Object[] { ruleResult, mNameToTName };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodSignature_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, MMethodNameToTMethod mNameToTName) {
-		if (ruleResult.getCorrObjects().contains(mNameToTName)) {
-			return new Object[] { ruleResult, mNameToTName };
+			ModelgeneratorRuleResult ruleResult, TMethod tName) {
+		if (ruleResult.getTargetObjects().contains(tName)) {
+			return new Object[] { ruleResult, tName };
 		}
 		return null;
 	}
@@ -3298,9 +3305,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 							if (tName != null) {
 								MMethodName mName = mNameToTName.getSource();
 								if (mName != null) {
-									if (pattern_MethodSignature_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+									if (pattern_MethodSignature_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 											mNameToTName) == null) {
-										if (pattern_MethodSignature_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+										if (pattern_MethodSignature_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 												tName) == null) {
 											if (pattern_MethodSignature_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 													mName) == null) {
@@ -3318,7 +3325,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 																		if (pattern_MethodSignature_29_2_isapplicablecore_black_nac_5BB(
 																				ruleResult, tAbstractType) == null) {
 																			_result.add(new Object[] { mNameToTNameList,
-																					tName, mNameToTName, mName,
+																					mNameToTName, tName, mName,
 																					mTypeToTTypeList, mType,
 																					mTypeToTType, tAbstractType,
 																					ruleEntryContainer, ruleResult });
@@ -3347,14 +3354,14 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_29_3_solveCSP_bindingFBBBBBBBBB(MethodSignature _this,
-			IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName, Type mType,
-			MMethodNameToTMethod mNameToTName, TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType,
+			IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName, Type mType,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tName, mName, mType, mNameToTName,
-				mTypeToTType, tAbstractType, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mNameToTName, mType, mTypeToTType,
+				tName, mName, tAbstractType, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tName, mName, mType, mNameToTName, mTypeToTType,
+			return new Object[] { csp, _this, isApplicableMatch, mNameToTName, mType, mTypeToTType, tName, mName,
 					tAbstractType, ruleResult };
 		}
 		return null;
@@ -3365,11 +3372,11 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	}
 
 	public static final Object[] pattern_MethodSignature_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(MethodSignature _this,
-			IsApplicableMatch isApplicableMatch, TMethod tName, MMethodName mName, Type mType,
-			MMethodNameToTMethod mNameToTName, TypeToTAbstractType mTypeToTType, TAbstractType tAbstractType,
+			IsApplicableMatch isApplicableMatch, MMethodNameToTMethod mNameToTName, Type mType,
+			TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodSignature_29_3_solveCSP_binding = pattern_MethodSignature_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tName, mName, mType, mNameToTName, mTypeToTType, tAbstractType, ruleResult);
+				_this, isApplicableMatch, mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, ruleResult);
 		if (result_pattern_MethodSignature_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodSignature_29_3_solveCSP_binding[0];
 
@@ -3377,7 +3384,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 					csp);
 			if (result_pattern_MethodSignature_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tName, mName, mType, mNameToTName, mTypeToTType,
+				return new Object[] { csp, _this, isApplicableMatch, mNameToTName, mType, mTypeToTType, tName, mName,
 						tAbstractType, ruleResult };
 			}
 		}
@@ -3390,49 +3397,49 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodSignature_29_5_checknacs_blackBBBBBB(TMethod tName, MMethodName mName,
-			Type mType, MMethodNameToTMethod mNameToTName, TypeToTAbstractType mTypeToTType,
+	public static final Object[] pattern_MethodSignature_29_5_checknacs_blackBBBBBB(MMethodNameToTMethod mNameToTName,
+			Type mType, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName,
 			TAbstractType tAbstractType) {
-		return new Object[] { tName, mName, mType, mNameToTName, mTypeToTType, tAbstractType };
+		return new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType };
 	}
 
-	public static final Object[] pattern_MethodSignature_29_6_perform_blackBBBBBBB(TMethod tName, MMethodName mName,
-			Type mType, MMethodNameToTMethod mNameToTName, TypeToTAbstractType mTypeToTType,
-			TAbstractType tAbstractType, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tName, mName, mType, mNameToTName, mTypeToTType, tAbstractType, ruleResult };
+	public static final Object[] pattern_MethodSignature_29_6_perform_blackBBBBBBB(MMethodNameToTMethod mNameToTName,
+			Type mType, TypeToTAbstractType mTypeToTType, TMethod tName, MMethodName mName, TAbstractType tAbstractType,
+			ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mNameToTName, mType, mTypeToTType, tName, mName, tAbstractType, ruleResult };
 	}
 
-	public static final Object[] pattern_MethodSignature_29_6_perform_greenBBBFFFBFBB(TMethod tName, MMethodName mName,
-			Type mType, TAbstractType tAbstractType, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		TMethodSignature tSignature = BasicFactory.eINSTANCE.createTMethodSignature();
-		MMethodSignature mSignature = ModiscoFactory.eINSTANCE.createMMethodSignature();
-		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
+	public static final Object[] pattern_MethodSignature_29_6_perform_greenBFFFBBBFBB(Type mType, TMethod tName,
+			MMethodName mName, TAbstractType tAbstractType, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		MAbstractFlowElementToTAbstractFlowElement mFlowElementToTFlowElement = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MMethodSignature mSignature = ModiscoFactory.eINSTANCE.createMMethodSignature();
+		MSignatureToTSignature mSignatureToTSignature = PmFactory.eINSTANCE.createMSignatureToTSignature();
+		TMethodSignature tSignature = BasicFactory.eINSTANCE.createTMethodSignature();
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
 		Object _localVariable_0 = csp.getValue("tSignature", "upperBound");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_1 = ruleResult.getIncrementedPerformCount();
-		tSignature.setReturnType(tAbstractType);
-		tName.getSignatures().add(tSignature);
-		ruleResult.getTargetObjects().add(tSignature);
-		mName.getMSignatures().add(mSignature);
+		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement.setSource(mSignature);
 		mSignature.setReturnType(mType);
+		mName.getMSignatures().add(mSignature);
 		ruleResult.getSourceObjects().add(mSignature);
-		mSignatureToTSignature.setTarget(tSignature);
 		mSignatureToTSignature.setSource(mSignature);
 		ruleResult.getCorrObjects().add(mSignatureToTSignature);
-		mFlowElementToTFlowElement.setSource(mSignature);
+		tName.getSignatures().add(tSignature);
+		tSignature.setReturnType(tAbstractType);
 		mFlowElementToTFlowElement.setTarget(tSignature);
-		ruleResult.getCorrObjects().add(mFlowElementToTFlowElement);
+		mSignatureToTSignature.setTarget(tSignature);
+		ruleResult.getTargetObjects().add(tSignature);
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
 		int tSignature_upperBound_prime = (int) _localVariable_0;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_1);
 		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tName, mName, mType, tSignature, mSignature, mSignatureToTSignature, tAbstractType,
-				mFlowElementToTFlowElement, ruleResult, csp };
+		return new Object[] { mType, mFlowElementToTFlowElement, mSignature, mSignatureToTSignature, tName, mName,
+				tAbstractType, tSignature, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodSignature_29_7_expressionFB(

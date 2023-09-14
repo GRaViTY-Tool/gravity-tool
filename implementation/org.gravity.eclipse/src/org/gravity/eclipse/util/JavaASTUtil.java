@@ -199,7 +199,7 @@ public final class JavaASTUtil {
 			if (tPackage == null) {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
-			return tPackage.getOwnedTypes().parallelStream()
+			return tPackage.getAllTypes().parallelStream()
 					.filter(tType -> fullyQualifiedName.equals(tType.getTName())).findAny().orElse(null);
 		} else if (parent instanceof TypeDeclaration) {
 			final var tParent = getType((TypeDeclaration) parent, pm);
@@ -298,7 +298,7 @@ public final class JavaASTUtil {
 		for (final String packageName : new String[] { "java.lang", "java.util" }) {
 			final var cuPackage = pm.getPackage(packageName);
 			if (cuPackage != null) {
-				final var result = cuPackage.getOwnedTypes().parallelStream()
+				final var result = cuPackage.getAllTypes().parallelStream()
 						.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
 				if (result.isPresent()) {
 					return result.get();
@@ -324,7 +324,7 @@ public final class JavaASTUtil {
 		if (cuPackageDecl != null) {
 			final var cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
 			if (cuPackage != null) {
-				final var result = cuPackage.getOwnedTypes().parallelStream()
+				final var result = cuPackage.getAllTypes().parallelStream()
 						.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
 				if (result.isPresent()) {
 					return result.get();

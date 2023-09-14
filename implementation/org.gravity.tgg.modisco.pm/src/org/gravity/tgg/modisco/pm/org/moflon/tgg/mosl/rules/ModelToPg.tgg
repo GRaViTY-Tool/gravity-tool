@@ -10,12 +10,16 @@
 
 #target {
 	++tPG:TypeGraph {
-		++-packages->tProxyPackage
+		++-modules->primitives
+		++-modules->proxies
 	}
 	
-	++tProxyPackage : TPackage {
-		tName := "(proxies)"
-		++-model->tPG
+	++primitives:TModule{
+		location := "${JVM.PRIMITIVES}"
+	}
+	
+	++proxies:TModule{
+		location := "${PROXIES}"
 	}
 }
 

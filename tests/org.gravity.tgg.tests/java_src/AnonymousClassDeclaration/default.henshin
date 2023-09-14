@@ -55,13 +55,13 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </edges>
       <edges xmi:id="_f5FCwJiFEeq4spDLGVfnoA" source="_Y-t4sJiFEeq4spDLGVfnoA" target="_X7COIJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_gF4vsJiFEeq4spDLGVfnoA" source="_Y-t4sJiFEeq4spDLGVfnoA" target="_X7COIJiFEeq4spDLGVfnoA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </edges>
       <edges xmi:id="_gaV8wJiFEeq4spDLGVfnoA" source="_Y-t4sJiFEeq4spDLGVfnoA" target="_XMOAUJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_j_mMMJiFEeq4spDLGVfnoA" source="_X7COIJiFEeq4spDLGVfnoA" target="_i8phcJiFEeq4spDLGVfnoA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
@@ -153,13 +153,13 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </edges>
       <edges xmi:id="_f5FCwZiFEeq4spDLGVfnoA" source="_Y-t4sZiFEeq4spDLGVfnoA" target="_X7C1MJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_gF4vsZiFEeq4spDLGVfnoA" source="_Y-t4sZiFEeq4spDLGVfnoA" target="_X7C1MJiFEeq4spDLGVfnoA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </edges>
       <edges xmi:id="_gaV8wZiFEeq4spDLGVfnoA" source="_Y-t4sZiFEeq4spDLGVfnoA" target="_XMOAUZiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_j_mMMZiFEeq4spDLGVfnoA" source="_X7C1MJiFEeq4spDLGVfnoA" target="_i8phcZiFEeq4spDLGVfnoA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>

@@ -25,6 +25,7 @@ import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TContainableElement;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
@@ -33,6 +34,7 @@ import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TModifier;
+import org.gravity.typegraph.basic.TModule;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TVisibility;
@@ -46,6 +48,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getModule <em>Module</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getModel <em>Model</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getSignature <em>Signature</em>}</li>
@@ -61,8 +64,19 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  */
 public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbstractType {
 	/**
+	 * The cached value of the '{@link #getModel() <em>Model</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeGraph model;
+
+	/**
 	 * The cached value of the '{@link #getPackage() <em>Package</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getPackage()
 	 * @generated
 	 * @ordered
@@ -159,6 +173,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	protected TAbstractTypeImpl() {
+		super();
 	}
 
 	/**
@@ -171,23 +186,85 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public TypeGraph getModel() {
-		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__MODEL) {
-			return null;
+	public TModule getModule() {
+		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__MODULE) return null;
+		return (TModule)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModule(TModule newModule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModule, BasicPackage.TABSTRACT_TYPE__MODULE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setModule(TModule newModule) {
+		if (newModule != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__MODULE && newModule != null)) {
+			if (EcoreUtil.isAncestor(this, newModule))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModule != null)
+				msgs = ((InternalEObject)newModule).eInverseAdd(this, BasicPackage.TMODULE__CONTAINS, TModule.class, msgs);
+			msgs = basicSetModule(newModule, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return (TypeGraph)eInternalContainer();
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__MODULE, newModule, newModule));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModel(final TypeGraph newModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newModel, BasicPackage.TABSTRACT_TYPE__MODEL, msgs);
+	@Override
+	public TypeGraph getModel() {
+		if (model != null && model.eIsProxy()) {
+			InternalEObject oldModel = (InternalEObject)model;
+			model = (TypeGraph)eResolveProxy(oldModel);
+			if (model != oldModel) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__MODEL, oldModel, model));
+			}
+		}
+		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeGraph basicGetModel() {
+		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModel(TypeGraph newModel, NotificationChain msgs) {
+		TypeGraph oldModel = model;
+		model = newModel;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__MODEL, oldModel, newModel);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -196,26 +273,18 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setModel(final TypeGraph newModel) {
-		if ((newModel != eInternalContainer()) || ((eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__MODEL) && (newModel != null))) {
-			if (EcoreUtil.isAncestor(this, newModel)) {
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
+	public void setModel(TypeGraph newModel) {
+		if (newModel != model) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
-				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newModel != null) {
-				msgs = ((InternalEObject)newModel).eInverseAdd(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, TypeGraph.class, msgs);
-			}
+			if (model != null)
+				msgs = ((InternalEObject)model).eInverseRemove(this, BasicPackage.TYPE_GRAPH__ALL_TYPES, TypeGraph.class, msgs);
+			if (newModel != null)
+				msgs = ((InternalEObject)newModel).eInverseAdd(this, BasicPackage.TYPE_GRAPH__ALL_TYPES, TypeGraph.class, msgs);
 			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__MODEL, newModel, newModel));
-		}
 	}
 
 	/**
@@ -224,38 +293,36 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public TPackage getPackage() {
-		if ((this.package_ != null) && this.package_.eIsProxy()) {
-			final InternalEObject oldPackage = (InternalEObject)this.package_;
-			this.package_ = (TPackage)eResolveProxy(oldPackage);
-			if ((this.package_ != oldPackage) && eNotificationRequired()) {
-				eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, this.package_));
+		if (package_ != null && package_.eIsProxy()) {
+			InternalEObject oldPackage = (InternalEObject)package_;
+			package_ = (TPackage)eResolveProxy(oldPackage);
+			if (package_ != oldPackage) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, package_));
 			}
 		}
-		return this.package_;
+		return package_;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TPackage basicGetPackage() {
-		return this.package_;
+		return package_;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPackage(final TPackage newPackage, NotificationChain msgs) {
-		final TPackage oldPackage = this.package_;
-		this.package_ = newPackage;
+	public NotificationChain basicSetPackage(TPackage newPackage, NotificationChain msgs) {
+		TPackage oldPackage = package_;
+		package_ = newPackage;
 		if (eNotificationRequired()) {
-			final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, newPackage);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, newPackage);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -265,23 +332,18 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setPackage(final TPackage newPackage) {
-		if (newPackage != this.package_) {
+	public void setPackage(TPackage newPackage) {
+		if (newPackage != package_) {
 			NotificationChain msgs = null;
-			if (this.package_ != null) {
-				msgs = ((InternalEObject)this.package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES, TPackage.class, msgs);
-			}
-			if (newPackage != null) {
-				msgs = ((InternalEObject)newPackage).eInverseAdd(this, BasicPackage.TPACKAGE__OWNED_TYPES, TPackage.class, msgs);
-			}
+			if (package_ != null)
+				msgs = ((InternalEObject)package_).eInverseRemove(this, BasicPackage.TPACKAGE__ALL_TYPES, TPackage.class, msgs);
+			if (newPackage != null)
+				msgs = ((InternalEObject)newPackage).eInverseAdd(this, BasicPackage.TPACKAGE__ALL_TYPES, TPackage.class, msgs);
 			msgs = basicSetPackage(newPackage, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PACKAGE, newPackage, newPackage));
-		}
 	}
 
 	/**
@@ -290,10 +352,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public EList<TSignature> getSignature() {
-		if (this.signature == null) {
-			this.signature = new EObjectResolvingEList<>(TSignature.class, this, BasicPackage.TABSTRACT_TYPE__SIGNATURE);
+		if (signature == null) {
+			signature = new EObjectResolvingEList<TSignature>(TSignature.class, this, BasicPackage.TABSTRACT_TYPE__SIGNATURE);
 		}
-		return this.signature;
+		return signature;
 	}
 
 	/**
@@ -302,10 +364,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public EList<TMember> getDefines() {
-		if (this.defines == null) {
-			this.defines = new EObjectWithInverseResolvingEList<>(TMember.class, this, BasicPackage.TABSTRACT_TYPE__DEFINES, BasicPackage.TMEMBER__DEFINED_BY);
+		if (defines == null) {
+			defines = new EObjectWithInverseResolvingEList<TMember>(TMember.class, this, BasicPackage.TABSTRACT_TYPE__DEFINES, BasicPackage.TMEMBER__DEFINED_BY);
 		}
-		return this.defines;
+		return defines;
 	}
 
 	/**
@@ -314,7 +376,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public boolean isTLib() {
-		return this.tLib;
+		return tLib;
 	}
 
 	/**
@@ -322,12 +384,11 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setTLib(final boolean newTLib) {
-		final boolean oldTLib = this.tLib;
-		this.tLib = newTLib;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TLIB, oldTLib, this.tLib));
-		}
+	public void setTLib(boolean newTLib) {
+		boolean oldTLib = tLib;
+		tLib = newTLib;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TLIB, oldTLib, tLib));
 	}
 
 	/**
@@ -336,7 +397,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public String getTName() {
-		return this.tName;
+		return tName;
 	}
 
 	/**
@@ -344,12 +405,11 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setTName(final String newTName) {
-		final String oldTName = this.tName;
-		this.tName = newTName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TNAME, oldTName, this.tName));
-		}
+	public void setTName(String newTName) {
+		String oldTName = tName;
+		tName = newTName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TNAME, oldTName, tName));
 	}
 
 	/**
@@ -358,23 +418,19 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public TModifier getTModifier() {
-		return this.tModifier;
+		return tModifier;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTModifier(final TModifier newTModifier, NotificationChain msgs) {
-		final TModifier oldTModifier = this.tModifier;
-		this.tModifier = newTModifier;
+	public NotificationChain basicSetTModifier(TModifier newTModifier, NotificationChain msgs) {
+		TModifier oldTModifier = tModifier;
+		tModifier = newTModifier;
 		if (eNotificationRequired()) {
-			final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TMODIFIER, oldTModifier, newTModifier);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TMODIFIER, oldTModifier, newTModifier);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -384,23 +440,18 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setTModifier(final TModifier newTModifier) {
-		if (newTModifier != this.tModifier) {
+	public void setTModifier(TModifier newTModifier) {
+		if (newTModifier != tModifier) {
 			NotificationChain msgs = null;
-			if (this.tModifier != null) {
-				msgs = ((InternalEObject)this.tModifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
-			}
-			if (newTModifier != null) {
+			if (tModifier != null)
+				msgs = ((InternalEObject)tModifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
+			if (newTModifier != null)
 				msgs = ((InternalEObject)newTModifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
-			}
 			msgs = basicSetTModifier(newTModifier, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TMODIFIER, newTModifier, newTModifier));
-		}
 	}
 
 	/**
@@ -409,10 +460,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public EList<TAbstractType> getInnerTypes() {
-		if (this.innerTypes == null) {
-			this.innerTypes = new EObjectWithInverseResolvingEList<>(TAbstractType.class, this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE);
+		if (innerTypes == null) {
+			innerTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE);
 		}
-		return this.innerTypes;
+		return innerTypes;
 	}
 
 	/**
@@ -421,14 +472,15 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public TAbstractType getOuterType() {
-		if ((this.outerType != null) && this.outerType.eIsProxy()) {
-			final InternalEObject oldOuterType = (InternalEObject)this.outerType;
-			this.outerType = (TAbstractType)eResolveProxy(oldOuterType);
-			if ((this.outerType != oldOuterType) && eNotificationRequired()) {
-				eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, this.outerType));
+		if (outerType != null && outerType.eIsProxy()) {
+			InternalEObject oldOuterType = (InternalEObject)outerType;
+			outerType = (TAbstractType)eResolveProxy(oldOuterType);
+			if (outerType != oldOuterType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, outerType));
 			}
 		}
-		return this.outerType;
+		return outerType;
 	}
 
 	/**
@@ -436,23 +488,19 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	public TAbstractType basicGetOuterType() {
-		return this.outerType;
+		return outerType;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOuterType(final TAbstractType newOuterType, NotificationChain msgs) {
-		final TAbstractType oldOuterType = this.outerType;
-		this.outerType = newOuterType;
+	public NotificationChain basicSetOuterType(TAbstractType newOuterType, NotificationChain msgs) {
+		TAbstractType oldOuterType = outerType;
+		outerType = newOuterType;
 		if (eNotificationRequired()) {
-			final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, newOuterType);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, newOuterType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -462,23 +510,30 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void setOuterType(final TAbstractType newOuterType) {
-		if (newOuterType != this.outerType) {
+	public void setOuterType(TAbstractType newOuterType) {
+		if (newOuterType != outerType) {
 			NotificationChain msgs = null;
-			if (this.outerType != null) {
-				msgs = ((InternalEObject)this.outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
-			}
-			if (newOuterType != null) {
+			if (outerType != null)
+				msgs = ((InternalEObject)outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
+			if (newOuterType != null)
 				msgs = ((InternalEObject)newOuterType).eInverseAdd(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
-			}
 			msgs = basicSetOuterType(newOuterType, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
+			if (msgs != null) msgs.dispatch();
 		}
-		else if (eNotificationRequired()) {
+		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, newOuterType, newOuterType));
-		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSuperTypeOf(TAbstractType tType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -670,7 +725,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public boolean hasCommonSuperType(final TAbstractType tType) {
+	public boolean hasCommonSuperType(TAbstractType tType) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -682,27 +737,28 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			if (eInternalContainer() != null) {
-				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			return basicSetModel((TypeGraph)otherEnd, msgs);
-		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-			if (this.package_ != null) {
-				msgs = ((InternalEObject)this.package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES, TPackage.class, msgs);
-			}
-			return basicSetPackage((TPackage)otherEnd, msgs);
-		case BasicPackage.TABSTRACT_TYPE__DEFINES:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getDefines()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getInnerTypes()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-			if (this.outerType != null) {
-				msgs = ((InternalEObject)this.outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
-			}
-			return basicSetOuterType((TAbstractType)otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetModule((TModule)otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__MODEL:
+				if (model != null)
+					msgs = ((InternalEObject)model).eInverseRemove(this, BasicPackage.TYPE_GRAPH__ALL_TYPES, TypeGraph.class, msgs);
+				return basicSetModel((TypeGraph)otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+				if (package_ != null)
+					msgs = ((InternalEObject)package_).eInverseRemove(this, BasicPackage.TPACKAGE__ALL_TYPES, TPackage.class, msgs);
+				return basicSetPackage((TPackage)otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__DEFINES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDefines()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInnerTypes()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+				if (outerType != null)
+					msgs = ((InternalEObject)outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
+				return basicSetOuterType((TAbstractType)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -712,20 +768,22 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			return basicSetModel(null, msgs);
-		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-			return basicSetPackage(null, msgs);
-		case BasicPackage.TABSTRACT_TYPE__DEFINES:
-			return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-			return basicSetTModifier(null, msgs);
-		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-			return ((InternalEList<?>)getInnerTypes()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-			return basicSetOuterType(null, msgs);
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				return basicSetModule(null, msgs);
+			case BasicPackage.TABSTRACT_TYPE__MODEL:
+				return basicSetModel(null, msgs);
+			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+				return basicSetPackage(null, msgs);
+			case BasicPackage.TABSTRACT_TYPE__DEFINES:
+				return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+				return basicSetTModifier(null, msgs);
+			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+				return ((InternalEList<?>)getInnerTypes()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+				return basicSetOuterType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -735,10 +793,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, TypeGraph.class, msgs);
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				return eInternalContainer().eInverseRemove(this, BasicPackage.TMODULE__CONTAINS, TModule.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -748,32 +806,31 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			return getModel();
-		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-			if (resolve) {
-				return getPackage();
-			}
-			return basicGetPackage();
-		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-			return getSignature();
-		case BasicPackage.TABSTRACT_TYPE__DEFINES:
-			return getDefines();
-		case BasicPackage.TABSTRACT_TYPE__TLIB:
-			return isTLib();
-		case BasicPackage.TABSTRACT_TYPE__TNAME:
-			return getTName();
-		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-			return getTModifier();
-		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-			return getInnerTypes();
-		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-			if (resolve) {
-				return getOuterType();
-			}
-			return basicGetOuterType();
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				return getModule();
+			case BasicPackage.TABSTRACT_TYPE__MODEL:
+				if (resolve) return getModel();
+				return basicGetModel();
+			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+				if (resolve) return getPackage();
+				return basicGetPackage();
+			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+				return getSignature();
+			case BasicPackage.TABSTRACT_TYPE__DEFINES:
+				return getDefines();
+			case BasicPackage.TABSTRACT_TYPE__TLIB:
+				return isTLib();
+			case BasicPackage.TABSTRACT_TYPE__TNAME:
+				return getTName();
+			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+				return getTModifier();
+			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+				return getInnerTypes();
+			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+				if (resolve) return getOuterType();
+				return basicGetOuterType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -784,38 +841,41 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue) {
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			setModel((TypeGraph)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-			setPackage((TPackage)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-			getSignature().clear();
-			getSignature().addAll((Collection<? extends TSignature>)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__DEFINES:
-			getDefines().clear();
-			getDefines().addAll((Collection<? extends TMember>)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__TLIB:
-			setTLib((Boolean)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__TNAME:
-			setTName((String)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-			setTModifier((TModifier)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-			getInnerTypes().clear();
-			getInnerTypes().addAll((Collection<? extends TAbstractType>)newValue);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-			setOuterType((TAbstractType)newValue);
-			return;
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				setModule((TModule)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__MODEL:
+				setModel((TypeGraph)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+				setPackage((TPackage)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+				getSignature().clear();
+				getSignature().addAll((Collection<? extends TSignature>)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__DEFINES:
+				getDefines().clear();
+				getDefines().addAll((Collection<? extends TMember>)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__TLIB:
+				setTLib((Boolean)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__TNAME:
+				setTName((String)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+				setTModifier((TModifier)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+				getInnerTypes().clear();
+				getInnerTypes().addAll((Collection<? extends TAbstractType>)newValue);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+				setOuterType((TAbstractType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -825,35 +885,38 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID) {
+	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			setModel((TypeGraph)null);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-			setPackage((TPackage)null);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-			getSignature().clear();
-			return;
-		case BasicPackage.TABSTRACT_TYPE__DEFINES:
-			getDefines().clear();
-			return;
-		case BasicPackage.TABSTRACT_TYPE__TLIB:
-			setTLib(TLIB_EDEFAULT);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__TNAME:
-			setTName(TNAME_EDEFAULT);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-			setTModifier((TModifier)null);
-			return;
-		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-			getInnerTypes().clear();
-			return;
-		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-			setOuterType((TAbstractType)null);
-			return;
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				setModule((TModule)null);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__MODEL:
+				setModel((TypeGraph)null);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+				setPackage((TPackage)null);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+				getSignature().clear();
+				return;
+			case BasicPackage.TABSTRACT_TYPE__DEFINES:
+				getDefines().clear();
+				return;
+			case BasicPackage.TABSTRACT_TYPE__TLIB:
+				setTLib(TLIB_EDEFAULT);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__TNAME:
+				setTName(TNAME_EDEFAULT);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+				setTModifier((TModifier)null);
+				return;
+			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+				getInnerTypes().clear();
+				return;
+			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+				setOuterType((TAbstractType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -863,28 +926,62 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID) {
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BasicPackage.TABSTRACT_TYPE__MODEL:
-			return getModel() != null;
-		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-			return this.package_ != null;
-		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-			return (this.signature != null) && !this.signature.isEmpty();
-		case BasicPackage.TABSTRACT_TYPE__DEFINES:
-			return (this.defines != null) && !this.defines.isEmpty();
-		case BasicPackage.TABSTRACT_TYPE__TLIB:
-			return this.tLib != TLIB_EDEFAULT;
-		case BasicPackage.TABSTRACT_TYPE__TNAME:
-			return TNAME_EDEFAULT == null ? this.tName != null : !TNAME_EDEFAULT.equals(this.tName);
-		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-			return this.tModifier != null;
-		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-			return (this.innerTypes != null) && !this.innerTypes.isEmpty();
-		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-			return this.outerType != null;
+			case BasicPackage.TABSTRACT_TYPE__MODULE:
+				return getModule() != null;
+			case BasicPackage.TABSTRACT_TYPE__MODEL:
+				return model != null;
+			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+				return package_ != null;
+			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+				return signature != null && !signature.isEmpty();
+			case BasicPackage.TABSTRACT_TYPE__DEFINES:
+				return defines != null && !defines.isEmpty();
+			case BasicPackage.TABSTRACT_TYPE__TLIB:
+				return tLib != TLIB_EDEFAULT;
+			case BasicPackage.TABSTRACT_TYPE__TNAME:
+				return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
+			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+				return tModifier != null;
+			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+				return innerTypes != null && !innerTypes.isEmpty();
+			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+				return outerType != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TContainableElement.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TABSTRACT_TYPE__MODULE: return BasicPackage.TCONTAINABLE_ELEMENT__MODULE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TContainableElement.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TCONTAINABLE_ELEMENT__MODULE: return BasicPackage.TABSTRACT_TYPE__MODULE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -893,40 +990,40 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case BasicPackage.TABSTRACT_TYPE___IS_SUPER_TYPE_OF__TABSTRACTTYPE:
-			return isSuperTypeOf((TAbstractType)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___IS_SUB_TYPE_OF__TABSTRACTTYPE:
-			return isSubTypeOf((TAbstractType)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___IS_DECLARED:
-			return isDeclared();
-		case BasicPackage.TABSTRACT_TYPE___GET_FULLY_QUALIFIED_NAME:
-			return getFullyQualifiedName();
-		case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_SIGNATURE__STRING:
-			return getTMethodSignature((String)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_DEFINITION__STRING:
-			return getTMethodDefinition((String)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___GET_BASE_PACKAGE:
-			return getBasePackage();
-		case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE:
-			return getTDefinition((TSignature)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__STRING:
-			return getTDefinition((String)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER:
-			return hasTMember((TMember)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE:
-			return hasCommonSuperType((TAbstractType)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE:
-			return getRealPackage((TAbstractType)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING:
-			return getTFieldSignature((String)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING:
-			return getTFieldDefinition((String)arguments.get(0));
-		case BasicPackage.TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY:
-			return createMethodDefinition((String)arguments.get(0), (TAbstractType)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (EList<TAbstractType>)arguments.get(4), (EList<Integer>)arguments.get(5), (EList<Integer>)arguments.get(6), (Boolean)arguments.get(7), (TVisibility)arguments.get(8));
-		case BasicPackage.TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY:
-			return createFieldDefinition((String)arguments.get(0), (TAbstractType)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (Boolean)arguments.get(4), (TVisibility)arguments.get(5));
+			case BasicPackage.TABSTRACT_TYPE___IS_SUPER_TYPE_OF__TABSTRACTTYPE:
+				return isSuperTypeOf((TAbstractType)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___IS_SUB_TYPE_OF__TABSTRACTTYPE:
+				return isSubTypeOf((TAbstractType)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___IS_DECLARED:
+				return isDeclared();
+			case BasicPackage.TABSTRACT_TYPE___GET_FULLY_QUALIFIED_NAME:
+				return getFullyQualifiedName();
+			case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_SIGNATURE__STRING:
+				return getTMethodSignature((String)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_DEFINITION__STRING:
+				return getTMethodDefinition((String)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_BASE_PACKAGE:
+				return getBasePackage();
+			case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE:
+				return getTDefinition((TSignature)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__STRING:
+				return getTDefinition((String)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER:
+				return hasTMember((TMember)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE:
+				return hasCommonSuperType((TAbstractType)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE:
+				return getRealPackage((TAbstractType)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING:
+				return getTFieldSignature((String)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING:
+				return getTFieldDefinition((String)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___CREATE_METHOD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_ELIST_ELIST_ELIST_BOOLEAN_TVISIBILITY:
+				return createMethodDefinition((String)arguments.get(0), (TAbstractType)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (EList<TAbstractType>)arguments.get(4), (EList<Integer>)arguments.get(5), (EList<Integer>)arguments.get(6), (Boolean)arguments.get(7), (TVisibility)arguments.get(8));
+			case BasicPackage.TABSTRACT_TYPE___CREATE_FIELD_DEFINITION__STRING_TABSTRACTTYPE_INT_INT_BOOLEAN_TVISIBILITY:
+				return createFieldDefinition((String)arguments.get(0), (TAbstractType)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (Boolean)arguments.get(4), (TVisibility)arguments.get(5));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -937,15 +1034,13 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuilder result = new StringBuilder(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tLib: ");
-		result.append(this.tLib);
+		result.append(tLib);
 		result.append(", tName: ");
-		result.append(this.tName);
+		result.append(tName);
 		result.append(')');
 		return result.toString();
 	}

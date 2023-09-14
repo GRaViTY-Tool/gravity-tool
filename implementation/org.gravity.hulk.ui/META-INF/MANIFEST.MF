@@ -16,7 +16,7 @@ Require-Bundle: org.gravity.eclipse,
  org.eclipse.emf.ecore,
  org.gravity.hulk.resolve,
  org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.hulk.ui,
  org.gravity.hulk.ui.dialogs,

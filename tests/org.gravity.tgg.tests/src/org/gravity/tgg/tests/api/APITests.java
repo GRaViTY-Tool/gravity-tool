@@ -12,9 +12,11 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.tests.TestHelper;
+import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -111,8 +113,13 @@ public class APITests {
 		final var p = pm.getPackage("dummy");
 		p.getAllOwnedTypes().add(iface);
 		p.getInterfaces().add(iface);
-		pm.getOwnedTypes().add(iface);
 		pm.getInterfaces().add(iface);
+		pm.getAllTypes().add(iface);
+		
+		final var module = BasicFactory.eINSTANCE.createTModule();
+		iface.setModule(module);
+		pm.getModules().add(module);
+		
 		pm.eResource().save(Collections.emptyMap());
 	}
 }

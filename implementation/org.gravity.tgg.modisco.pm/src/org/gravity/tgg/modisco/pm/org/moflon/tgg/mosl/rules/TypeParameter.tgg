@@ -5,30 +5,71 @@
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	eModel : MGravityModel {
+	model:MGravityModel {
 		++  -typeParameters -> typeParameter
+		-ownedElements-> java
 	}
-	++ typeParameter : TypeParameter
+
+	java:Package {
+		-ownedPackages-> lang
+	}
+
+	lang:Package {
+		-ownedElements-> object
+	}
+
+	object:ClassDeclaration {
+		name=="Object"
+	}
+
+	++typeParameter:TypeParameter
 }
 
 #target {
-	pg : TypeGraph {
-		++  -classes -> tClass
-		++  -ownedTypes -> tClass
+	pg:TypeGraph {
+		-packages -> tPackageJava
 	}
-	++ tClass : TClass {
-		tLib := false
-		tName := "T"
+
+	tPackageJava:TPackage {
+		tName == "java"
+		-subpackages->tPackageLang
+	}
+
+	tPackageLang:TPackage {
+		tName=="lang"
+		-classes-> tClass
+	}
+
+	tClass:TClass {
+		tName=="Object"
 	}
 }
 
 #correspondence {
-	eModelToPg : ModelToTypeGraph {
-		#src->eModel
+	eModelToPg :ModelToTypeGraph {
+		#src->model
 		#trg->pg
 	}
-	++ eAnonymousClassDeclarationToTClass : TypeToTAbstractType {
+
+	++ templateTypeToTClass :TypeToTAbstractType {
 		#src->typeParameter
 		#trg->tClass
 	}
+
+	objectToObject :TypeToTAbstractType {
+		#src->object
+		#trg->tClass
+	}
+
+	javaToJava:PackageToTPackage  {
+		#src->java
+		#trg->tPackageJava
+	}
+
+	langToLang:PackageToTPackage {
+		#src->lang
+		#trg->tPackageLang
+	}
 }
+
+

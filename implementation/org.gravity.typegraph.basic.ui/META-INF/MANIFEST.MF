@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.gravity.typegraph.basic
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: %providerName
 Automatic-Module-Name: org.gravity.typegraph.basic.ui
 Export-Package: org.gravity.typegraph.basic.ui

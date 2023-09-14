@@ -199,8 +199,8 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 				invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
@@ -498,8 +498,8 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 				invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
@@ -698,7 +698,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_10(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -756,7 +756,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_11(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1173,10 +1173,10 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			return null;
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_10__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_11__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_66__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_66((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_69__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_69((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1450,16 +1450,16 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorInvocation";
 		String tMember__tAccess____accessing_name_prime = "accessing";
 		String tAccess__tMember____source_name_prime = "source";
-		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__invocation____source_name_prime = "source";
+		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
@@ -1469,12 +1469,12 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		tAccess__tMember____source.setSrc(tAccess);
 		tAccess__tMember____source.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(tAccess__tMember____source);
-		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
+		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__tAccess____target);
@@ -1487,15 +1487,15 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
 		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
-		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
+		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
-				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__invocation____source,
+				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
 				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
 				mMember__invocation____mMethodInvocations };
 	}
@@ -1952,16 +1952,16 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorInvocation";
 		String tMember__tAccess____accessing_name_prime = "accessing";
 		String tAccess__tMember____source_name_prime = "source";
-		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__invocation____source_name_prime = "source";
+		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
@@ -1971,12 +1971,12 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		tAccess__tMember____source.setSrc(tAccess);
 		tAccess__tMember____source.setTrg(tMember);
 		ruleresult.getTranslatedEdges().add(tAccess__tMember____source);
-		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
-		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
-		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
+		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
+		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
+		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__tAccess____target);
@@ -1989,15 +1989,15 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
 		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
-		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
+		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
-				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__invocation____source,
+				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
 				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
 				mMember__invocation____mMethodInvocations };
 	}
@@ -2382,9 +2382,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_122802 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_548502 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_122802)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_548502)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2629,9 +2629,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_451931 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_886402 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_451931)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_886402)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

@@ -4,8 +4,6 @@ package org.gravity.security.annotations.requirements.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.security.annotations.requirements.TAbstractCriticalElement;
 import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;

@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.gravity.typegraph.basic.TSignature;
 
-import org.gravity.typegraph.basic.annotations.TAnnotation;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>TCritical</b></em>'.

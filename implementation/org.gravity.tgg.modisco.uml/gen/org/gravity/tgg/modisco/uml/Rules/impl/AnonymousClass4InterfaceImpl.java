@@ -217,9 +217,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 		}
 		AnonymousClass4InterfaceImpl.pattern_AnonymousClass4Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 				ruleresult, a2a, mConstructor, feature, mAnon, uContainer, mMember);
-		//nothing EMoflonEdge a2a__feature____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge a2a__feature____target = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge a2a__mAnon____source = (EMoflonEdge) result3_green[12];
@@ -273,9 +273,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 						.pattern_AnonymousClass4Interface_2_3_findcontext_greenBBBBBBFFFFFFFF(mConstructor, mAnon,
 								uContainer, mMember, jContainer, ne2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge jContainer__mMember____bodyDeclarations = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge mMember__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[12];
@@ -537,9 +537,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 		}
 		AnonymousClass4InterfaceImpl.pattern_AnonymousClass4Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 				ruleresult, a2a, mConstructor, feature, mAnon, uContainer, mMember);
-		//nothing EMoflonEdge a2a__feature____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mAnon__mConstructor____classInstanceCreation = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge a2a__feature____target = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mMember__mConstructor____mMethodInvocations = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge a2a__mAnon____source = (EMoflonEdge) result3_green[12];
@@ -740,7 +740,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_99(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_152(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4InterfaceImpl
 				.pattern_AnonymousClass4Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -798,7 +798,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_164(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4InterfaceImpl
 				.pattern_AnonymousClass4Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1253,10 +1253,10 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_99__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_99((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_104__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_104((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_152__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_152((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_164__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_164((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1597,28 +1597,28 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 	public static final Object[] pattern_AnonymousClass4Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject a2a, EObject mConstructor, EObject feature, EObject mAnon,
 			EObject uContainer, EObject mMember) {
-		EMoflonEdge a2a__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2a__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2a__mAnon____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnonymousClass4Interface";
-		String a2a__feature____target_name_prime = "target";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
+		String a2a__feature____target_name_prime = "target";
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		String a2a__mAnon____source_name_prime = "source";
-		a2a__feature____target.setSrc(a2a);
-		a2a__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(a2a__feature____target);
 		mConstructor__mAnon____anonymousClassDeclaration.setSrc(mConstructor);
 		mConstructor__mAnon____anonymousClassDeclaration.setTrg(mAnon);
 		ruleresult.getTranslatedEdges().add(mConstructor__mAnon____anonymousClassDeclaration);
 		mAnon__mConstructor____classInstanceCreation.setSrc(mAnon);
 		mAnon__mConstructor____classInstanceCreation.setTrg(mConstructor);
 		ruleresult.getTranslatedEdges().add(mAnon__mConstructor____classInstanceCreation);
+		a2a__feature____target.setSrc(a2a);
+		a2a__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(a2a__feature____target);
 		mMember__mConstructor____mMethodInvocations.setSrc(mMember);
 		mMember__mConstructor____mMethodInvocations.setTrg(mConstructor);
 		ruleresult.getTranslatedEdges().add(mMember__mConstructor____mMethodInvocations);
@@ -1629,16 +1629,16 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 		a2a__mAnon____source.setTrg(mAnon);
 		ruleresult.getCreatedEdges().add(a2a__mAnon____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		a2a__feature____target.setName(a2a__feature____target_name_prime);
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
+		a2a__feature____target.setName(a2a__feature____target_name_prime);
 		mMember__mConstructor____mMethodInvocations.setName(mMember__mConstructor____mMethodInvocations_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		a2a__mAnon____source.setName(a2a__mAnon____source_name_prime);
 		return new Object[] { ruleresult, a2a, mConstructor, feature, mAnon, uContainer, mMember,
-				a2a__feature____target, mConstructor__mAnon____anonymousClassDeclaration,
-				mAnon__mConstructor____classInstanceCreation, mMember__mConstructor____mMethodInvocations,
+				mConstructor__mAnon____anonymousClassDeclaration, mAnon__mConstructor____classInstanceCreation,
+				a2a__feature____target, mMember__mConstructor____mMethodInvocations,
 				uContainer__feature____nestedClassifier, a2a__mAnon____source };
 	}
 
@@ -1752,8 +1752,8 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 			MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon, Interface uContainer,
 			MDefinition mMember, InterfaceDeclaration jContainer, ASTNode2Element ne2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (jContainer.equals(ne2ne.getSource())) {
-			if (mAnon.equals(mConstructor.getAnonymousClassDeclaration())) {
+		if (mAnon.equals(mConstructor.getAnonymousClassDeclaration())) {
+			if (jContainer.equals(ne2ne.getSource())) {
 				if (mMember.getMMethodInvocations().contains(mConstructor)) {
 					if (jContainer.getBodyDeclarations().contains(mMember)) {
 						if (uContainer.equals(ne2ne.getTarget())) {
@@ -1770,16 +1770,16 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 			MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon, Interface uContainer,
 			MDefinition mMember, InterfaceDeclaration jContainer, ASTNode2Element ne2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String ne2ne__jContainer____source_name_prime = "source";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
+		String ne2ne__jContainer____source_name_prime = "source";
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
 		String jContainer__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mMember__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
@@ -1790,15 +1790,15 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 		isApplicableMatch.getAllContextElements().add(mMember);
 		isApplicableMatch.getAllContextElements().add(jContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne);
-		ne2ne__jContainer____source.setSrc(ne2ne);
-		ne2ne__jContainer____source.setTrg(jContainer);
-		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
 		mConstructor__mAnon____anonymousClassDeclaration.setSrc(mConstructor);
 		mConstructor__mAnon____anonymousClassDeclaration.setTrg(mAnon);
 		isApplicableMatch.getAllContextElements().add(mConstructor__mAnon____anonymousClassDeclaration);
 		mAnon__mConstructor____classInstanceCreation.setSrc(mAnon);
 		mAnon__mConstructor____classInstanceCreation.setTrg(mConstructor);
 		isApplicableMatch.getAllContextElements().add(mAnon__mConstructor____classInstanceCreation);
+		ne2ne__jContainer____source.setSrc(ne2ne);
+		ne2ne__jContainer____source.setTrg(jContainer);
+		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
 		mMember__mConstructor____mMethodInvocations.setSrc(mMember);
 		mMember__mConstructor____mMethodInvocations.setTrg(mConstructor);
 		isApplicableMatch.getAllContextElements().add(mMember__mConstructor____mMethodInvocations);
@@ -1811,18 +1811,18 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 		ne2ne__uContainer____target.setSrc(ne2ne);
 		ne2ne__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
-		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
+		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		mMember__mConstructor____mMethodInvocations.setName(mMember__mConstructor____mMethodInvocations_name_prime);
 		jContainer__mMember____bodyDeclarations.setName(jContainer__mMember____bodyDeclarations_name_prime);
 		mMember__jContainer____abstractTypeDeclaration
 				.setName(mMember__jContainer____abstractTypeDeclaration_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		return new Object[] { mConstructor, mAnon, uContainer, mMember, jContainer, ne2ne, isApplicableMatch,
-				ne2ne__jContainer____source, mConstructor__mAnon____anonymousClassDeclaration,
-				mAnon__mConstructor____classInstanceCreation, mMember__mConstructor____mMethodInvocations,
+				mConstructor__mAnon____anonymousClassDeclaration, mAnon__mConstructor____classInstanceCreation,
+				ne2ne__jContainer____source, mMember__mConstructor____mMethodInvocations,
 				jContainer__mMember____bodyDeclarations, mMember__jContainer____abstractTypeDeclaration,
 				ne2ne__uContainer____target };
 	}
@@ -2158,28 +2158,28 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 	public static final Object[] pattern_AnonymousClass4Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject a2a, EObject mConstructor, EObject feature, EObject mAnon,
 			EObject uContainer, EObject mMember) {
-		EMoflonEdge a2a__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mConstructor__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__mConstructor____classInstanceCreation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2a__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mConstructor____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2a__mAnon____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnonymousClass4Interface";
-		String a2a__feature____target_name_prime = "target";
 		String mConstructor__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String mAnon__mConstructor____classInstanceCreation_name_prime = "classInstanceCreation";
+		String a2a__feature____target_name_prime = "target";
 		String mMember__mConstructor____mMethodInvocations_name_prime = "mMethodInvocations";
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		String a2a__mAnon____source_name_prime = "source";
-		a2a__feature____target.setSrc(a2a);
-		a2a__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(a2a__feature____target);
 		mConstructor__mAnon____anonymousClassDeclaration.setSrc(mConstructor);
 		mConstructor__mAnon____anonymousClassDeclaration.setTrg(mAnon);
 		ruleresult.getCreatedEdges().add(mConstructor__mAnon____anonymousClassDeclaration);
 		mAnon__mConstructor____classInstanceCreation.setSrc(mAnon);
 		mAnon__mConstructor____classInstanceCreation.setTrg(mConstructor);
 		ruleresult.getCreatedEdges().add(mAnon__mConstructor____classInstanceCreation);
+		a2a__feature____target.setSrc(a2a);
+		a2a__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(a2a__feature____target);
 		mMember__mConstructor____mMethodInvocations.setSrc(mMember);
 		mMember__mConstructor____mMethodInvocations.setTrg(mConstructor);
 		ruleresult.getCreatedEdges().add(mMember__mConstructor____mMethodInvocations);
@@ -2190,16 +2190,16 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 		a2a__mAnon____source.setTrg(mAnon);
 		ruleresult.getCreatedEdges().add(a2a__mAnon____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		a2a__feature____target.setName(a2a__feature____target_name_prime);
 		mConstructor__mAnon____anonymousClassDeclaration
 				.setName(mConstructor__mAnon____anonymousClassDeclaration_name_prime);
 		mAnon__mConstructor____classInstanceCreation.setName(mAnon__mConstructor____classInstanceCreation_name_prime);
+		a2a__feature____target.setName(a2a__feature____target_name_prime);
 		mMember__mConstructor____mMethodInvocations.setName(mMember__mConstructor____mMethodInvocations_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
 		a2a__mAnon____source.setName(a2a__mAnon____source_name_prime);
 		return new Object[] { ruleresult, a2a, mConstructor, feature, mAnon, uContainer, mMember,
-				a2a__feature____target, mConstructor__mAnon____anonymousClassDeclaration,
-				mAnon__mConstructor____classInstanceCreation, mMember__mConstructor____mMethodInvocations,
+				mConstructor__mAnon____anonymousClassDeclaration, mAnon__mConstructor____classInstanceCreation,
+				a2a__feature____target, mMember__mConstructor____mMethodInvocations,
 				uContainer__feature____nestedClassifier, a2a__mAnon____source };
 	}
 
@@ -2610,7 +2610,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_21_2_testcorematchandDECs_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_558760 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_11364 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2619,9 +2619,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_21_2_testcorematchandDECs_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_261727 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_886629 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_261727)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_886629)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2630,7 +2630,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_21_2_testcorematchandDECs_black_nac_2B(
 			AnonymousClassDeclaration mAnon) {
-		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_648655 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_776352 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnon, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnon };
 		}
@@ -2908,7 +2908,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_27_1_matchtggpattern_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_328268 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_349154 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2917,9 +2917,9 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_27_1_matchtggpattern_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_932960 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_712085 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_932960)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_712085)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2928,7 +2928,7 @@ public class AnonymousClass4InterfaceImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Interface_27_1_matchtggpattern_black_nac_2B(
 			AnonymousClassDeclaration mAnon) {
-		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_599072 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_978413 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnon, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnon };
 		}

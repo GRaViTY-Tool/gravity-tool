@@ -56,7 +56,7 @@ public class PGAdditionHelper {
 						break;
 					}
 				} else {
-					match.getOwnedTypes().add(tClass);
+					match.getAllTypes().add(tClass);
 					match.getClasses().add(tClass);
 					return;
 				}
@@ -66,7 +66,7 @@ public class PGAdditionHelper {
 				match.getSubpackages().add(nextChild.get(0));
 				setPG4Package(nextChild.get(0), pg);
 			} else {
-				match.getOwnedTypes().add(tClass);
+				match.getAllTypes().add(tClass);
 				match.getClasses().add(tClass);
 			}
 		}

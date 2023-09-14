@@ -437,7 +437,7 @@ public final class MoDiscoUtil {
 	 * @param model The model in which the type should be searched
 	 * @return The type
 	 */
-	public static Type getJavaLangObject(final MGravityModel model) {
+	public static AbstractTypeDeclaration getJavaLangObject(final MGravityModel model) {
 		var javaLangPackage = getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
 		if (javaLangPackage != null) {
 			final var result = javaLangPackage.getOwnedElements().parallelStream()

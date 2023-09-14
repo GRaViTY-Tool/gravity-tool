@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="GRaViTY CLI" uid="org.gravity.headless.product" id="org.gravity.headless.gravity_cli" application="org.gravity.headless" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true" autoIncludeRequirements="true">
-
+<product name="GRaViTY CLI" uid="org.gravity.headless.product" id="org.gravity.headless.gravity_cli" application="org.gravity.headless" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
    <configIni use="default">
    </configIni>
@@ -14,66 +13,54 @@
 
    <windowImages/>
 
-
    <launcher name="gravity">
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
 
-
    <vm>
-      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</linux>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>
       <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</macos>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</windows>
    </vm>
 
-
    <plugins>
       <plugin id="MocaTree"/>
       <plugin id="SDMLanguage"/>
-      <plugin id="bcpg"/>
-      <plugin id="bcprov"/>
-      <plugin id="ch.qos.logback.classic"/>
-      <plugin id="ch.qos.logback.core"/>
-      <plugin id="com.google.gson"/>
-      <plugin id="com.google.guava" version="30.1.0.v20221112-0806"/>
+      <plugin id="biz.aQute.bnd.util"/>
+      <plugin id="biz.aQute.bndlib"/>
+      <plugin id="com.google.guava"/>
+      <plugin id="com.google.guava.failureaccess"/>
       <plugin id="com.google.inject"/>
-      <plugin id="com.jcraft.jsch"/>
+      <plugin id="com.ibm.icu"/>
       <plugin id="com.sun.jna"/>
       <plugin id="com.sun.jna.platform"/>
       <plugin id="io.github.classgraph"/>
-      <plugin id="jakarta.servlet-api"/>
-      <plugin id="javaewah"/>
+      <plugin id="jakarta.inject.jakarta.inject-api"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
-      <plugin id="javax.xml"/>
       <plugin id="lpg.runtime.java"/>
       <plugin id="net.i2p.crypto.eddsa"/>
-      <plugin id="org.antlr.runtime" version="3.2.0.v20220404-1927"/>
-      <plugin id="org.antlr.stringtemplate"/>
+      <plugin id="org.antlr.runtime" version="4.7.2.v20221112-0806"/>
       <plugin id="org.aopalliance"/>
       <plugin id="org.apache.ant"/>
+      <plugin id="org.apache.aries.spifly.dynamic.bundle"/>
       <plugin id="org.apache.batik.constants"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.i18n"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.commons.cli"/>
-      <plugin id="org.apache.commons.codec"/>
+      <plugin id="org.apache.commons.commons-codec"/>
+      <plugin id="org.apache.commons.commons-io"/>
       <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.lang3"/>
       <plugin id="org.apache.commons.logging"/>
-      <plugin id="org.apache.felix.gogo.command"/>
-      <plugin id="org.apache.felix.gogo.runtime"/>
-      <plugin id="org.apache.felix.gogo.shell"/>
       <plugin id="org.apache.felix.scr"/>
       <plugin id="org.apache.log4j"/>
       <plugin id="org.apache.sshd.osgi"/>
       <plugin id="org.apache.sshd.sftp"/>
-      <plugin id="org.apache.xalan"/>
-      <plugin id="org.apache.xerces"/>
-      <plugin id="org.apache.xml.resolver"/>
       <plugin id="org.apache.xmlgraphics"/>
       <plugin id="org.eclipse.acceleo.common"/>
       <plugin id="org.eclipse.acceleo.engine"/>
@@ -129,11 +116,9 @@
       <plugin id="org.eclipse.emf.compare"/>
       <plugin id="org.eclipse.emf.ecore"/>
       <plugin id="org.eclipse.emf.ecore.change"/>
-      <plugin id="org.eclipse.emf.ecore.edit"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.emf.mwe.core"/>
-      <plugin id="org.eclipse.emf.mwe.utils"/>
       <plugin id="org.eclipse.emf.mwe2.language"/>
       <plugin id="org.eclipse.emf.mwe2.launch"/>
       <plugin id="org.eclipse.emf.mwe2.runtime"/>
@@ -142,14 +127,12 @@
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.bidi"/>
       <plugin id="org.eclipse.equinox.common"/>
-      <plugin id="org.eclipse.equinox.console"/>
       <plugin id="org.eclipse.equinox.event"/>
       <plugin id="org.eclipse.equinox.frameworkadmin"/>
       <plugin id="org.eclipse.equinox.frameworkadmin.equinox"/>
       <plugin id="org.eclipse.equinox.p2.artifact.repository"/>
       <plugin id="org.eclipse.equinox.p2.core"/>
       <plugin id="org.eclipse.equinox.p2.director"/>
-      <plugin id="org.eclipse.equinox.p2.director.app"/>
       <plugin id="org.eclipse.equinox.p2.directorywatcher"/>
       <plugin id="org.eclipse.equinox.p2.engine"/>
       <plugin id="org.eclipse.equinox.p2.extensionlocation"/>
@@ -164,7 +147,6 @@
       <plugin id="org.eclipse.equinox.p2.repository.tools"/>
       <plugin id="org.eclipse.equinox.p2.touchpoint.eclipse"/>
       <plugin id="org.eclipse.equinox.p2.ui"/>
-      <plugin id="org.eclipse.equinox.p2.updatesite"/>
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.security"/>
@@ -172,19 +154,17 @@
       <plugin id="org.eclipse.equinox.security.ui"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
+      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
       <plugin id="org.eclipse.help"/>
-      <plugin id="org.eclipse.jdt.annotation"/>
       <plugin id="org.eclipse.jdt.apt.core"/>
-      <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
-      <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
       <plugin id="org.eclipse.jdt.core"/>
+      <plugin id="org.eclipse.jdt.core.compiler.batch"/>
       <plugin id="org.eclipse.jdt.core.manipulation"/>
       <plugin id="org.eclipse.jdt.debug"/>
       <plugin id="org.eclipse.jdt.launching"/>
       <plugin id="org.eclipse.jdt.ui"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
-      <plugin id="org.eclipse.jface.notifications"/>
       <plugin id="org.eclipse.jface.text"/>
       <plugin id="org.eclipse.jgit"/>
       <plugin id="org.eclipse.jgit.gpg.bc" fragment="true"/>
@@ -192,6 +172,16 @@
       <plugin id="org.eclipse.jgit.ssh.apache.agent" fragment="true"/>
       <plugin id="org.eclipse.ltk.core.refactoring"/>
       <plugin id="org.eclipse.ltk.ui.refactoring"/>
+      <plugin id="org.eclipse.m2m.atl"/>
+      <plugin id="org.eclipse.m2m.atl.common"/>
+      <plugin id="org.eclipse.m2m.atl.core"/>
+      <plugin id="org.eclipse.m2m.atl.core.emf"/>
+      <plugin id="org.eclipse.m2m.atl.drivers.emf4atl"/>
+      <plugin id="org.eclipse.m2m.atl.dsls"/>
+      <plugin id="org.eclipse.m2m.atl.emftvm"/>
+      <plugin id="org.eclipse.m2m.atl.emftvm.trace"/>
+      <plugin id="org.eclipse.m2m.atl.engine.emfvm"/>
+      <plugin id="org.eclipse.m2m.atl.engine.vm"/>
       <plugin id="org.eclipse.modisco.facet.common.core"/>
       <plugin id="org.eclipse.modisco.facet.util.core"/>
       <plugin id="org.eclipse.modisco.facet.util.emf.catalog"/>
@@ -213,8 +203,6 @@
       <plugin id="org.eclipse.ocl.ecore"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
-      <plugin id="org.eclipse.osgi.services"/>
-      <plugin id="org.eclipse.osgi.util"/>
       <plugin id="org.eclipse.pde.build"/>
       <plugin id="org.eclipse.pde.core"/>
       <plugin id="org.eclipse.search"/>
@@ -227,27 +215,16 @@
       <plugin id="org.eclipse.ui.console"/>
       <plugin id="org.eclipse.ui.editors"/>
       <plugin id="org.eclipse.ui.forms"/>
-      <plugin id="org.eclipse.ui.genericeditor"/>
       <plugin id="org.eclipse.ui.ide"/>
       <plugin id="org.eclipse.ui.navigator"/>
       <plugin id="org.eclipse.ui.navigator.resources"/>
-      <plugin id="org.eclipse.ui.trace"/>
       <plugin id="org.eclipse.ui.views"/>
       <plugin id="org.eclipse.ui.views.properties.tabbed"/>
       <plugin id="org.eclipse.ui.workbench"/>
       <plugin id="org.eclipse.ui.workbench.texteditor"/>
       <plugin id="org.eclipse.urischeme"/>
-      <plugin id="org.eclipse.wst.common.core"/>
-      <plugin id="org.eclipse.wst.common.emf"/>
-      <plugin id="org.eclipse.wst.common.environment"/>
-      <plugin id="org.eclipse.wst.common.frameworks"/>
-      <plugin id="org.eclipse.wst.common.uriresolver"/>
-      <plugin id="org.eclipse.wst.sse.core"/>
-      <plugin id="org.eclipse.wst.xml.core"/>
-      <plugin id="org.eclipse.xtend"/>
       <plugin id="org.eclipse.xtend.lib"/>
       <plugin id="org.eclipse.xtend.lib.macro"/>
-      <plugin id="org.eclipse.xtend.typesystem.emf"/>
       <plugin id="org.eclipse.xtext"/>
       <plugin id="org.eclipse.xtext.common.types"/>
       <plugin id="org.eclipse.xtext.ide"/>
@@ -263,8 +240,6 @@
       <plugin id="org.gravity.modisco"/>
       <plugin id="org.gravity.tgg.modisco.pm"/>
       <plugin id="org.gravity.typegraph.basic"/>
-      <plugin id="org.hamcrest.core"/>
-      <plugin id="org.junit"/>
       <plugin id="org.moflon.core.propertycontainer"/>
       <plugin id="org.moflon.core.utilities"/>
       <plugin id="org.moflon.deployment.pdefragment" fragment="true"/>
@@ -273,41 +248,27 @@
       <plugin id="org.moflon.tgg.language"/>
       <plugin id="org.moflon.tgg.runtime"/>
       <plugin id="org.objectweb.asm"/>
-      <plugin id="org.opentest4j"/>
-      <plugin id="org.osgi.service.cm"/>
+      <plugin id="org.objectweb.asm.commons"/>
+      <plugin id="org.objectweb.asm.tree"/>
+      <plugin id="org.objectweb.asm.tree.analysis"/>
+      <plugin id="org.objectweb.asm.util"/>
       <plugin id="org.osgi.service.component"/>
-      <plugin id="org.osgi.service.device"/>
       <plugin id="org.osgi.service.event"/>
-      <plugin id="org.osgi.service.metatype"/>
       <plugin id="org.osgi.service.prefs"/>
-      <plugin id="org.osgi.service.provisioning"/>
-      <plugin id="org.osgi.service.upnp"/>
-      <plugin id="org.osgi.service.useradmin"/>
-      <plugin id="org.osgi.service.wireadmin"/>
+      <plugin id="org.osgi.service.repository"/>
       <plugin id="org.osgi.util.function"/>
-      <plugin id="org.osgi.util.measurement"/>
-      <plugin id="org.osgi.util.position"/>
       <plugin id="org.osgi.util.promise"/>
-      <plugin id="org.osgi.util.xml"/>
       <plugin id="org.sat4j.core"/>
       <plugin id="org.sat4j.pb"/>
-      <plugin id="org.slf4j.api"/>
-      <plugin id="org.stringtemplate"/>
       <plugin id="org.tukaani.xz"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.events"/>
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="slf4j.api"/>
+      <plugin id="slf4j.simple"/>
    </plugins>
 
-   <configurations>
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="0" />
-   </configurations>
 
    <preferencesInfo>
       <targetfile overwrite="false"/>

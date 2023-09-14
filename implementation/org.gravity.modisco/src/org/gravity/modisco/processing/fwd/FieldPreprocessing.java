@@ -44,6 +44,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		for(final MFieldDefinition field : elements) {
 			if(field.eContainer() == null) {
 				final var type = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
+				type.setProxy(true);
 				type.getBodyDeclarations().add(field);
 				model.getUnresolvedItems().add(type);
 			}

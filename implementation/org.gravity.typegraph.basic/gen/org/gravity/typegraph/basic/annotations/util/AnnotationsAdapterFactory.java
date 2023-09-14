@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.gravity.typegraph.basic.TAbstractType;
 
+import org.gravity.typegraph.basic.TContainableElement;
 import org.gravity.typegraph.basic.annotations.*;
 
 /**
@@ -107,6 +108,10 @@ public class AnnotationsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTAbstractNode(TAbstractNode object) {
 				return createTAbstractNodeAdapter();
+			}
+			@Override
+			public Adapter caseTContainableElement(TContainableElement object) {
+				return createTContainableElementAdapter();
 			}
 			@Override
 			public Adapter caseTAbstractType(TAbstractType object) {
@@ -268,6 +273,20 @@ public class AnnotationsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTAbstractNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TContainableElement <em>TContainable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TContainableElement
+	 * @generated
+	 */
+	public Adapter createTContainableElementAdapter() {
 		return null;
 	}
 

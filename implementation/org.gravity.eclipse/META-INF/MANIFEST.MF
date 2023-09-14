@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.jgit.ssh.apache,
  org.apache.log4j,
  org.gravity.typegraph.basic;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.converter,

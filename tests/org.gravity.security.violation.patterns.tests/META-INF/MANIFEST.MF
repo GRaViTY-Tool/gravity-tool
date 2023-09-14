@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.gravity.security.violation.patterns.tests;singleton:=tr
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: University of Koblenz Landau and Ruhr University Bochum
 Automatic-Module-Name: org.gravity.security.violation.patterns.tests
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.gravity.typegraph.basic,
  org.eclipse.emf.henshin.model,
  org.eclipse.uml2.uml,

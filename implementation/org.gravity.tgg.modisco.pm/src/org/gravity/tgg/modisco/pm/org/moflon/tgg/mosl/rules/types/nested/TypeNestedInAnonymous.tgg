@@ -14,7 +14,7 @@
 
 #target {
 	tPackage:TPackage
-
+	
 	tClass:TClass {
 		-package -> tPackage
 		++-innerTypes -> tNestedType
@@ -22,8 +22,8 @@
 
 	pg:TypeGraph {
 		-classes -> tClass
-		-ownedTypes -> tClass
-		++  -ownedTypes -> tNestedType
+		-allTypes -> tClass
+		++ -allTypes -> tNestedType
 	}
 
 	++tNestedType:TAbstractType
@@ -130,7 +130,7 @@
 	++tNestedType:TAnnotationType
 
 	pg:TypeGraph {
-		++  -tAnnotationTypes -> tNestedType
+		++  -annotationTypes -> tNestedType
 	}
 }
 

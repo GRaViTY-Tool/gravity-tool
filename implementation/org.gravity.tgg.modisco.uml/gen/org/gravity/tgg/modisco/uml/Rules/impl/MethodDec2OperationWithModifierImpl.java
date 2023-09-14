@@ -97,24 +97,24 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
+	public boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
 
 		Object[] result1_black = MethodDec2OperationWithModifierImpl
-				.pattern_MethodDec2OperationWithModifier_0_1_initialbindings_blackBBBB(this, match, modifier,
-						bodyDeclaration);
+				.pattern_MethodDec2OperationWithModifier_0_1_initialbindings_blackBBBB(this, match, bodyDeclaration,
+						modifier);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = "
+					+ modifier + ".");
 		}
 
 		Object[] result2_bindingAndBlack = MethodDec2OperationWithModifierImpl
-				.pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, modifier,
-						bodyDeclaration);
+				.pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, bodyDeclaration,
+						modifier);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = "
+					+ modifier + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -122,29 +122,29 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 				csp)) {
 
 			Object[] result4_black = MethodDec2OperationWithModifierImpl
-					.pattern_MethodDec2OperationWithModifier_0_4_collectelementstobetranslated_blackBBB(match, modifier,
-							bodyDeclaration);
+					.pattern_MethodDec2OperationWithModifier_0_4_collectelementstobetranslated_blackBBB(match,
+							bodyDeclaration, modifier);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 			}
 			MethodDec2OperationWithModifierImpl
 					.pattern_MethodDec2OperationWithModifier_0_4_collectelementstobetranslated_greenBBBFF(match,
-							modifier, bodyDeclaration);
+							bodyDeclaration, modifier);
 			//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = MethodDec2OperationWithModifierImpl
-					.pattern_MethodDec2OperationWithModifier_0_5_collectcontextelements_blackBBB(match, modifier,
-							bodyDeclaration);
+					.pattern_MethodDec2OperationWithModifier_0_5_collectcontextelements_blackBBB(match, bodyDeclaration,
+							modifier);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 			}
 			// 
 			MethodDec2OperationWithModifierImpl
 					.pattern_MethodDec2OperationWithModifier_0_6_registerobjectstomatch_expressionBBBB(this, match,
-							modifier, bodyDeclaration);
+							bodyDeclaration, modifier);
 			return MethodDec2OperationWithModifierImpl.pattern_MethodDec2OperationWithModifier_0_7_expressionF();
 		} else {
 			return MethodDec2OperationWithModifierImpl.pattern_MethodDec2OperationWithModifier_0_8_expressionF();
@@ -166,43 +166,43 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Modifier modifier = (Modifier) result1_bindingAndBlack[0];
-		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_bindingAndBlack[1];
+		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_bindingAndBlack[0];
+		Modifier modifier = (Modifier) result1_bindingAndBlack[1];
 		CSP csp = (CSP) result1_bindingAndBlack[2];
 		Object[] result1_green = MethodDec2OperationWithModifierImpl
-				.pattern_MethodDec2OperationWithModifier_1_1_performtransformation_greenFFFBBB(modifier,
-						bodyDeclaration, csp);
+				.pattern_MethodDec2OperationWithModifier_1_1_performtransformation_greenFFFBBB(bodyDeclaration,
+						modifier, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
 		Operation feature = (Operation) result1_green[1];
 		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_1_2_collecttranslatedelements_blackBBBBB(m2f, feature, b2e,
-						modifier, bodyDeclaration);
+						bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[modifier] = " + modifier + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_1_2_collecttranslatedelements_greenFBBBBB(m2f, feature, b2e,
-						modifier, bodyDeclaration);
+						bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, feature,
-						b2e, modifier, bodyDeclaration);
+						b2e, bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
-					+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, m2f,
-						feature, b2e, modifier, bodyDeclaration);
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
+						feature, b2e, bodyDeclaration, modifier);
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -211,7 +211,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		// 
 		MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_1_5_registerobjects_expressionBBBBBBB(this, ruleresult, m2f,
-						feature, b2e, modifier, bodyDeclaration);
+						feature, b2e, bodyDeclaration, modifier);
 		return MethodDec2OperationWithModifierImpl.pattern_MethodDec2OperationWithModifier_1_6_expressionFB(ruleresult);
 	}
 
@@ -240,26 +240,26 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Modifier modifier = (Modifier) result2_binding[0];
-		MMethodDefinition bodyDeclaration = (MMethodDefinition) result2_binding[1];
+		MMethodDefinition bodyDeclaration = (MMethodDefinition) result2_binding[0];
+		Modifier modifier = (Modifier) result2_binding[1];
 		for (Object[] result2_black : MethodDec2OperationWithModifierImpl
-				.pattern_MethodDec2OperationWithModifier_2_2_corematch_blackBBB(modifier, bodyDeclaration, match)) {
+				.pattern_MethodDec2OperationWithModifier_2_2_corematch_blackBBB(bodyDeclaration, modifier, match)) {
 			// ForEach 
 			for (Object[] result3_black : MethodDec2OperationWithModifierImpl
-					.pattern_MethodDec2OperationWithModifier_2_3_findcontext_blackBB(modifier, bodyDeclaration)) {
+					.pattern_MethodDec2OperationWithModifier_2_3_findcontext_blackBB(bodyDeclaration, modifier)) {
 				Object[] result3_green = MethodDec2OperationWithModifierImpl
-						.pattern_MethodDec2OperationWithModifier_2_3_findcontext_greenBBFFF(modifier, bodyDeclaration);
+						.pattern_MethodDec2OperationWithModifier_2_3_findcontext_greenBBFFF(bodyDeclaration, modifier);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[2];
 				//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[3];
 				//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[4];
 
 				Object[] result4_bindingAndBlack = MethodDec2OperationWithModifierImpl
 						.pattern_MethodDec2OperationWithModifier_2_4_solveCSP_bindingAndBlackFBBBB(this,
-								isApplicableMatch, modifier, bodyDeclaration);
+								isApplicableMatch, bodyDeclaration, modifier);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[modifier] = " + modifier + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -291,9 +291,9 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		match.registerObject("modifier", modifier);
+	public void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
 		match.registerObject("bodyDeclaration", bodyDeclaration);
+		match.registerObject("modifier", modifier);
 
 	}
 
@@ -302,7 +302,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -331,53 +331,53 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
+			Modifier modifier) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 
 		// Create attribute variables
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
+				csp);
+		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
+		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier.static", true, csp);
 		var_modifier_static.setValue(modifier.isStatic());
 		var_modifier_static.setType("Boolean");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
 		var_modifier_visibility.setValue(modifier.getVisibility());
 		var_modifier_visibility.setType("java.VisibilityKind");
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
-				csp);
-		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
-		var_bodyDeclaration_name.setType("String");
 
 		// Create unbound variables
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature.isStatic", csp);
 		var_feature_isStatic.setType("Boolean");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq_0 = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
 		csp.getConstraints().add(eq);
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq_0);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_modifier_static, var_feature_isStatic);
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		eq_0.setRuleName("NoRuleName");
+		eq_0.solve(var_modifier_static, var_feature_isStatic);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
-		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("modifier", modifier);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("modifier", modifier);
 		return csp;
 	}
 
@@ -396,12 +396,12 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration) {
+			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("modifier", modifier);
 
 	}
 
@@ -412,9 +412,9 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 */
 	public boolean checkTypes_FWD(Match match) {
 		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("modifier").eClass()).equals("java.Modifier.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("bodyDeclaration").eClass())
-						.equals("modisco.MMethodDefinition.");
+						.equals("modisco.MMethodDefinition.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("modifier").eClass()).equals("java.Modifier.");
 	}
 
 	/**
@@ -488,36 +488,36 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 				.pattern_MethodDec2OperationWithModifier_11_1_performtransformation_greenFBFFFB(feature, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
 		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
-		Modifier modifier = (Modifier) result1_green[3];
-		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_green[4];
+		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_green[3];
+		Modifier modifier = (Modifier) result1_green[4];
 
 		Object[] result2_black = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_2_collecttranslatedelements_blackBBBBB(m2f, feature, b2e,
-						modifier, bodyDeclaration);
+						bodyDeclaration, modifier);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[modifier] = " + modifier + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		Object[] result2_green = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_2_collecttranslatedelements_greenFBBBBB(m2f, feature, b2e,
-						modifier, bodyDeclaration);
+						bodyDeclaration, modifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, m2f, feature,
-						b2e, modifier, bodyDeclaration);
+						b2e, bodyDeclaration, modifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
-					+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ".");
 		}
 		MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, m2f,
-						feature, b2e, modifier, bodyDeclaration);
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
+						feature, b2e, bodyDeclaration, modifier);
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -526,7 +526,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		// 
 		MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_5_registerobjects_expressionBBBBBBB(this, ruleresult, m2f,
-						feature, b2e, modifier, bodyDeclaration);
+						feature, b2e, bodyDeclaration, modifier);
 		return MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_6_expressionFB(ruleresult);
 	}
@@ -650,40 +650,40 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		// Create literals
 
 		// Create attribute variables
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature.isStatic", true, csp);
 		var_feature_isStatic.setValue(feature.isStatic());
 		var_feature_isStatic.setType("Boolean");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
 		var_feature_visibility.setValue(feature.getVisibility());
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 
 		// Create unbound variables
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier.static", csp);
 		var_modifier_static.setType("Boolean");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq_0 = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
 		csp.getConstraints().add(eq);
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq_0);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_modifier_static, var_feature_isStatic);
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		eq_0.setRuleName("NoRuleName");
+		eq_0.solve(var_modifier_static, var_feature_isStatic);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
-		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
@@ -705,12 +705,12 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
-			EObject modifier, EObject bodyDeclaration) {
+			EObject bodyDeclaration, EObject modifier) {
 		ruleresult.registerObject("m2f", m2f);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("modifier", modifier);
 
 	}
 
@@ -729,7 +729,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Operation_0(Operation feature) {
+	public EObjectContainer isAppropriate_BWD_Operation_1(Operation feature) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,7 +786,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_151(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -803,8 +803,8 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		// ForEach 
 		for (Object[] result2_black : MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_21_2_testcorematchandDECs_blackFFB(_edge_modifier)) {
-			Modifier modifier = (Modifier) result2_black[0];
-			MMethodDefinition bodyDeclaration = (MMethodDefinition) result2_black[1];
+			MMethodDefinition bodyDeclaration = (MMethodDefinition) result2_black[0];
+			Modifier modifier = (Modifier) result2_black[1];
 			Object[] result2_green = MethodDec2OperationWithModifierImpl
 					.pattern_MethodDec2OperationWithModifier_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -812,7 +812,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			// 
 			if (MethodDec2OperationWithModifierImpl
 					.pattern_MethodDec2OperationWithModifier_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, modifier, bodyDeclaration)) {
+							this, match, bodyDeclaration, modifier)) {
 				// 
 				if (MethodDec2OperationWithModifierImpl
 						.pattern_MethodDec2OperationWithModifier_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -855,6 +855,14 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
+
 		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
 		var_feature_isStatic.setType("boolean");
@@ -871,47 +879,39 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		Eq eq2 = new Eq();
-		csp.getConstraints().add(eq2);
+		JVisibility2umlVisibility jVisibility2umlVisibility2 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility2);
 
 		eq0.setRuleName("MethodDec2OperationWithModifier");
-		eq0.solve(var_modifier_static, var_feature_isStatic);
+		eq0.solve(var_bodyDeclaration_name, var_feature_name);
 
-		jVisibility2umlVisibility1.setRuleName("MethodDec2OperationWithModifier");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		eq1.setRuleName("MethodDec2OperationWithModifier");
+		eq1.solve(var_modifier_static, var_feature_isStatic);
 
-		eq2.setRuleName("MethodDec2OperationWithModifier");
-		eq2.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility2.setRuleName("MethodDec2OperationWithModifier");
+		jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
+			var_feature_name.setBound(false);
 			var_feature_isStatic.setBound(false);
 			var_feature_visibility.setBound(false);
-			var_feature_name.setBound(false);
-			eq0.solve(var_modifier_static, var_feature_isStatic);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
-			eq2.solve(var_bodyDeclaration_name, var_feature_name);
+			eq0.solve(var_bodyDeclaration_name, var_feature_name);
+			eq1.solve(var_modifier_static, var_feature_isStatic);
+			jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
+				__helper.setValue("feature", "name", var_feature_name.getValue());
 				__helper.setValue("feature", "isStatic", var_feature_isStatic.getValue());
 				__helper.setValue("feature", "visibility", var_feature_visibility.getValue());
-				__helper.setValue("feature", "name", var_feature_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -936,6 +936,14 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
+
 		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
 		var_feature_isStatic.setType("boolean");
@@ -952,47 +960,39 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		Eq eq2 = new Eq();
-		csp.getConstraints().add(eq2);
+		JVisibility2umlVisibility jVisibility2umlVisibility2 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility2);
 
 		eq0.setRuleName("MethodDec2OperationWithModifier");
-		eq0.solve(var_modifier_static, var_feature_isStatic);
+		eq0.solve(var_bodyDeclaration_name, var_feature_name);
 
-		jVisibility2umlVisibility1.setRuleName("MethodDec2OperationWithModifier");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		eq1.setRuleName("MethodDec2OperationWithModifier");
+		eq1.solve(var_modifier_static, var_feature_isStatic);
 
-		eq2.setRuleName("MethodDec2OperationWithModifier");
-		eq2.solve(var_bodyDeclaration_name, var_feature_name);
+		jVisibility2umlVisibility2.setRuleName("MethodDec2OperationWithModifier");
+		jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
+			var_bodyDeclaration_name.setBound(false);
 			var_modifier_static.setBound(false);
 			var_modifier_visibility.setBound(false);
-			var_bodyDeclaration_name.setBound(false);
-			eq0.solve(var_modifier_static, var_feature_isStatic);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
-			eq2.solve(var_bodyDeclaration_name, var_feature_name);
+			eq0.solve(var_bodyDeclaration_name, var_feature_name);
+			eq1.solve(var_modifier_static, var_feature_isStatic);
+			jVisibility2umlVisibility2.solve(var_modifier_visibility, var_feature_visibility);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
+				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
 				__helper.setValue("modifier", "static", var_modifier_static.getValue());
 				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
-				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1026,16 +1026,16 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		Operation feature = (Operation) result2_bindingAndBlack[0];
-		Modifier modifier = (Modifier) result2_bindingAndBlack[1];
-		MMethodDefinition bodyDeclaration = (MMethodDefinition) result2_bindingAndBlack[2];
+		MMethodDefinition bodyDeclaration = (MMethodDefinition) result2_bindingAndBlack[1];
+		Modifier modifier = (Modifier) result2_bindingAndBlack[2];
 
 		Object[] result3_bindingAndBlack = MethodDec2OperationWithModifierImpl
-				.pattern_MethodDec2OperationWithModifier_24_3_solvecsp_bindingAndBlackFBBBBBB(this, feature, modifier,
-						bodyDeclaration, sourceMatch, targetMatch);
+				.pattern_MethodDec2OperationWithModifier_24_3_solvecsp_bindingAndBlackFBBBBBB(this, feature,
+						bodyDeclaration, modifier, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[feature] = " + feature
-							+ ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
 							+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1051,16 +1051,16 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = MethodDec2OperationWithModifierImpl
-						.pattern_MethodDec2OperationWithModifier_24_6_createcorrespondence_blackBBBB(feature, modifier,
-								bodyDeclaration, ccMatch);
+						.pattern_MethodDec2OperationWithModifier_24_6_createcorrespondence_blackBBBB(feature,
+								bodyDeclaration, modifier, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
-							+ ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
 				MethodDec2OperationWithModifierImpl
 						.pattern_MethodDec2OperationWithModifier_24_6_createcorrespondence_greenFBFBBB(feature,
-								modifier, bodyDeclaration, ccMatch);
+								bodyDeclaration, modifier, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
 				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
@@ -1085,13 +1085,20 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration,
+	public CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
 
 		// Create attribute variables
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
+				csp);
+		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
+		var_bodyDeclaration_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier.static", true, csp);
 		var_modifier_static.setValue(modifier.isStatic());
 		var_modifier_static.setType("Boolean");
@@ -1104,32 +1111,25 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
 		var_feature_visibility.setValue(feature.getVisibility());
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
-				csp);
-		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
-		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 
 		// Create unbound variables
 
 		// Create constraints
 		Eq eq = new Eq();
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq_0 = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
 		csp.getConstraints().add(eq);
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq_0);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_modifier_static, var_feature_isStatic);
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		eq_0.setRuleName("NoRuleName");
+		eq_0.solve(var_modifier_static, var_feature_isStatic);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
-		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_bodyDeclaration_name, var_feature_name);
 		return csp;
 	}
 
@@ -1147,9 +1147,9 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Modifier modifier, MMethodDefinition bodyDeclaration) {// 
+	public boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier) {// 
 		Object[] result1_black = MethodDec2OperationWithModifierImpl
-				.pattern_MethodDec2OperationWithModifier_27_1_matchtggpattern_blackBB(modifier, bodyDeclaration);
+				.pattern_MethodDec2OperationWithModifier_27_1_matchtggpattern_blackBB(bodyDeclaration, modifier);
 		if (result1_black != null) {
 			return MethodDec2OperationWithModifierImpl.pattern_MethodDec2OperationWithModifier_27_2_expressionF();
 		} else {
@@ -1220,8 +1220,8 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
 				//nothing Operation feature = (Operation) result6_green[1];
 				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
-				//nothing Modifier modifier = (Modifier) result6_green[3];
-				//nothing MMethodDefinition bodyDeclaration = (MMethodDefinition) result6_green[4];
+				//nothing MMethodDefinition bodyDeclaration = (MMethodDefinition) result6_green[3];
+				//nothing Modifier modifier = (Modifier) result6_green[4];
 
 			} else {
 			}
@@ -1246,6 +1246,10 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		// Create attribute variables
 
 		// Create unbound variables
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier.static", csp);
 		var_modifier_static.setType("Boolean");
 		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature.isStatic", csp);
@@ -1254,27 +1258,23 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
-		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 		Eq eq_0 = new Eq();
+		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
 
 		csp.getConstraints().add(eq);
-		csp.getConstraints().add(jVisibility2umlVisibility);
 		csp.getConstraints().add(eq_0);
+		csp.getConstraints().add(jVisibility2umlVisibility);
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_modifier_static, var_feature_isStatic);
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		eq_0.setRuleName("NoRuleName");
+		eq_0.solve(var_modifier_static, var_feature_isStatic);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
-		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		return csp;
@@ -1297,25 +1297,25 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MMETHODDEFINITION_MODIFIER:
+			return isAppropriate_FWD((Match) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(Modifier) arguments.get(2));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MMETHODDEFINITION_MODIFIER:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(Modifier) arguments.get(2));
 			return null;
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MMETHODDEFINITION_MODIFIER:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(Modifier) arguments.get(2));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODIFIER_MMETHODDEFINITION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MMETHODDEFINITION_MODIFIER:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(Modifier) arguments.get(2));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1349,23 +1349,23 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_0__OPERATION:
-			return isAppropriate_BWD_Operation_0((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_124__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_1__OPERATION:
+			return isAppropriate_BWD_Operation_1((Operation) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_151__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_MODIFIER_MMETHODDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Operation) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_MMETHODDEFINITION_MODIFIER_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Operation) arguments.get(0), (MMethodDefinition) arguments.get(1),
+					(Modifier) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_FWD__MODIFIER_MMETHODDEFINITION:
-			return checkDEC_FWD((Modifier) arguments.get(0), (MMethodDefinition) arguments.get(1));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_FWD__MMETHODDEFINITION_MODIFIER:
+			return checkDEC_FWD((MMethodDefinition) arguments.get(0), (Modifier) arguments.get(1));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_BWD__OPERATION:
 			return checkDEC_BWD((Operation) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL__RULEENTRYCONTAINER:
@@ -1380,16 +1380,16 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_0_1_initialbindings_blackBBBB(
-			MethodDec2OperationWithModifier _this, Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		return new Object[] { _this, match, modifier, bodyDeclaration };
+			MethodDec2OperationWithModifier _this, Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
+		return new Object[] { _this, match, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_bindingFBBBB(
-			MethodDec2OperationWithModifier _this, Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, modifier, bodyDeclaration);
+			MethodDec2OperationWithModifier _this, Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, bodyDeclaration, modifier);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, modifier, bodyDeclaration };
+			return new Object[] { csp, _this, match, bodyDeclaration, modifier };
 		}
 		return null;
 	}
@@ -1399,9 +1399,9 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_bindingAndBlackFBBBB(
-			MethodDec2OperationWithModifier _this, Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
+			MethodDec2OperationWithModifier _this, Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
 		Object[] result_pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_binding = pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_bindingFBBBB(
-				_this, match, modifier, bodyDeclaration);
+				_this, match, bodyDeclaration, modifier);
 		if (result_pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_binding[0];
 
@@ -1409,7 +1409,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 					csp);
 			if (result_pattern_MethodDec2OperationWithModifier_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, modifier, bodyDeclaration };
+				return new Object[] { csp, _this, match, bodyDeclaration, modifier };
 			}
 		}
 		return null;
@@ -1423,16 +1423,16 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_0_4_collectelementstobetranslated_blackBBB(
-			Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		return new Object[] { match, modifier, bodyDeclaration };
+			Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
+		return new Object[] { match, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_0_4_collectelementstobetranslated_greenBBBFF(
-			Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
+			Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(modifier);
 		match.getToBeTranslatedNodes().add(bodyDeclaration);
+		match.getToBeTranslatedNodes().add(modifier);
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
@@ -1443,18 +1443,18 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		match.getToBeTranslatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
-		return new Object[] { match, modifier, bodyDeclaration, bodyDeclaration__modifier____modifier,
+		return new Object[] { match, bodyDeclaration, modifier, bodyDeclaration__modifier____modifier,
 				modifier__bodyDeclaration____bodyDeclaration };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_0_5_collectcontextelements_blackBBB(
-			Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		return new Object[] { match, modifier, bodyDeclaration };
+			Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
+		return new Object[] { match, bodyDeclaration, modifier };
 	}
 
 	public static final void pattern_MethodDec2OperationWithModifier_0_6_registerobjectstomatch_expressionBBBB(
-			MethodDec2OperationWithModifier _this, Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		_this.registerObjectsToMatch_FWD(match, modifier, bodyDeclaration);
+			MethodDec2OperationWithModifier _this, Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
+		_this.registerObjectsToMatch_FWD(match, bodyDeclaration, modifier);
 
 	}
 
@@ -1470,27 +1470,27 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_1_performtransformation_bindingFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("modifier");
-		EObject _localVariable_1 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject tmpModifier = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
-		if (tmpModifier instanceof Modifier) {
-			Modifier modifier = (Modifier) tmpModifier;
-			if (tmpBodyDeclaration instanceof MMethodDefinition) {
-				MMethodDefinition bodyDeclaration = (MMethodDefinition) tmpBodyDeclaration;
-				return new Object[] { modifier, bodyDeclaration, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = isApplicableMatch.getObject("modifier");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpModifier = _localVariable_1;
+		if (tmpBodyDeclaration instanceof MMethodDefinition) {
+			MMethodDefinition bodyDeclaration = (MMethodDefinition) tmpBodyDeclaration;
+			if (tmpModifier instanceof Modifier) {
+				Modifier modifier = (Modifier) tmpModifier;
+				return new Object[] { bodyDeclaration, modifier, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_1_performtransformation_blackBBFBB(
-			Modifier modifier, MMethodDefinition bodyDeclaration, MethodDec2OperationWithModifier _this,
+			MMethodDefinition bodyDeclaration, Modifier modifier, MethodDec2OperationWithModifier _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { modifier, bodyDeclaration, csp, _this, isApplicableMatch };
+				return new Object[] { bodyDeclaration, modifier, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1501,74 +1501,74 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		Object[] result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_binding = pattern_MethodDec2OperationWithModifier_1_1_performtransformation_bindingFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_binding != null) {
-			Modifier modifier = (Modifier) result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_binding[0];
-			MMethodDefinition bodyDeclaration = (MMethodDefinition) result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_binding[1];
+			MMethodDefinition bodyDeclaration = (MMethodDefinition) result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_binding[0];
+			Modifier modifier = (Modifier) result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_binding[1];
 
 			Object[] result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_black = pattern_MethodDec2OperationWithModifier_1_1_performtransformation_blackBBFBB(
-					modifier, bodyDeclaration, _this, isApplicableMatch);
+					bodyDeclaration, modifier, _this, isApplicableMatch);
 			if (result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodDec2OperationWithModifier_1_1_performtransformation_black[2];
 
-				return new Object[] { modifier, bodyDeclaration, csp, _this, isApplicableMatch };
+				return new Object[] { bodyDeclaration, modifier, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_1_performtransformation_greenFFFBBB(
-			Modifier modifier, MMethodDefinition bodyDeclaration, CSP csp) {
+			MMethodDefinition bodyDeclaration, Modifier modifier, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Object _localVariable_0 = csp.getValue("feature", "isStatic");
-		Object _localVariable_1 = csp.getValue("feature", "visibility");
-		Object _localVariable_2 = csp.getValue("feature", "name");
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("feature", "isStatic");
+		Object _localVariable_2 = csp.getValue("feature", "visibility");
 		m2f.setSource(modifier);
 		m2f.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
-		boolean feature_isStatic_prime = (boolean) _localVariable_0;
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
-		String feature_name_prime = (String) _localVariable_2;
+		String feature_name_prime = (String) _localVariable_0;
+		boolean feature_isStatic_prime = (boolean) _localVariable_1;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_2;
+		feature.setName(feature_name_prime);
 		feature.setIsStatic(Boolean.valueOf(feature_isStatic_prime));
 		feature.setVisibility(feature_visibility_prime);
-		feature.setName(feature_name_prime);
-		return new Object[] { m2f, feature, b2e, modifier, bodyDeclaration, csp };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
-		return new Object[] { m2f, feature, b2e, modifier, bodyDeclaration };
+			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, MMethodDefinition bodyDeclaration,
+			Modifier modifier) {
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
+			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, MMethodDefinition bodyDeclaration,
+			Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
 		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getTranslatedElements().add(modifier);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration };
+		ruleresult.getTranslatedElements().add(modifier);
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
-			EObject bodyDeclaration) {
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			EObject modifier) {
 		if (!m2f.equals(modifier)) {
 			if (!feature.equals(m2f)) {
 				if (!feature.equals(modifier)) {
 					if (!b2e.equals(m2f)) {
 						if (!b2e.equals(feature)) {
-							if (!b2e.equals(modifier)) {
-								if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(bodyDeclaration)) {
+								if (!b2e.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, feature, b2e, modifier,
-														bodyDeclaration };
+												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
+														modifier };
 											}
 										}
 									}
@@ -1583,30 +1583,30 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
-			EObject bodyDeclaration) {
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			EObject modifier) {
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodDec2OperationWithModifier";
-		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
+		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1617,21 +1617,22 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
+				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_MethodDec2OperationWithModifier_1_5_registerobjects_expressionBBBBBBB(
 			MethodDec2OperationWithModifier _this, PerformRuleResult ruleresult, EObject m2f, EObject feature,
-			EObject b2e, EObject modifier, EObject bodyDeclaration) {
-		_this.registerObjects_FWD(ruleresult, m2f, feature, b2e, modifier, bodyDeclaration);
+			EObject b2e, EObject bodyDeclaration, EObject modifier) {
+		_this.registerObjects_FWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 
 	}
 
@@ -1693,45 +1694,45 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("modifier");
-		EObject _localVariable_1 = match.getObject("bodyDeclaration");
-		EObject tmpModifier = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
-		if (tmpModifier instanceof Modifier) {
-			Modifier modifier = (Modifier) tmpModifier;
-			if (tmpBodyDeclaration instanceof MMethodDefinition) {
-				MMethodDefinition bodyDeclaration = (MMethodDefinition) tmpBodyDeclaration;
-				return new Object[] { modifier, bodyDeclaration, match };
+		EObject _localVariable_0 = match.getObject("bodyDeclaration");
+		EObject _localVariable_1 = match.getObject("modifier");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpModifier = _localVariable_1;
+		if (tmpBodyDeclaration instanceof MMethodDefinition) {
+			MMethodDefinition bodyDeclaration = (MMethodDefinition) tmpBodyDeclaration;
+			if (tmpModifier instanceof Modifier) {
+				Modifier modifier = (Modifier) tmpModifier;
+				return new Object[] { bodyDeclaration, modifier, match };
 			}
 		}
 		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_MethodDec2OperationWithModifier_2_2_corematch_blackBBB(
-			Modifier modifier, MMethodDefinition bodyDeclaration, Match match) {
+			MMethodDefinition bodyDeclaration, Modifier modifier, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		_result.add(new Object[] { modifier, bodyDeclaration, match });
+		_result.add(new Object[] { bodyDeclaration, modifier, match });
 		return _result;
 	}
 
 	public static final Iterable<Object[]> pattern_MethodDec2OperationWithModifier_2_3_findcontext_blackBB(
-			Modifier modifier, MMethodDefinition bodyDeclaration) {
+			MMethodDefinition bodyDeclaration, Modifier modifier) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (modifier.equals(bodyDeclaration.getModifier())) {
-			_result.add(new Object[] { modifier, bodyDeclaration });
+			_result.add(new Object[] { bodyDeclaration, modifier });
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDec2OperationWithModifier_2_3_findcontext_greenBBFFF(Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_MethodDec2OperationWithModifier_2_3_findcontext_greenBBFFF(
+			MMethodDefinition bodyDeclaration, Modifier modifier) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
-		isApplicableMatch.getAllContextElements().add(modifier);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(modifier);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__modifier____modifier);
@@ -1740,17 +1741,17 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		isApplicableMatch.getAllContextElements().add(modifier__bodyDeclaration____bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
-		return new Object[] { modifier, bodyDeclaration, isApplicableMatch, bodyDeclaration__modifier____modifier,
+		return new Object[] { bodyDeclaration, modifier, isApplicableMatch, bodyDeclaration__modifier____modifier,
 				modifier__bodyDeclaration____bodyDeclaration };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_2_4_solveCSP_bindingFBBBB(
-			MethodDec2OperationWithModifier _this, IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, modifier, bodyDeclaration);
+			MethodDec2OperationWithModifier _this, IsApplicableMatch isApplicableMatch,
+			MMethodDefinition bodyDeclaration, Modifier modifier) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, modifier);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, modifier, bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, modifier };
 		}
 		return null;
 	}
@@ -1760,10 +1761,10 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_2_4_solveCSP_bindingAndBlackFBBBB(
-			MethodDec2OperationWithModifier _this, IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
+			MethodDec2OperationWithModifier _this, IsApplicableMatch isApplicableMatch,
+			MMethodDefinition bodyDeclaration, Modifier modifier) {
 		Object[] result_pattern_MethodDec2OperationWithModifier_2_4_solveCSP_binding = pattern_MethodDec2OperationWithModifier_2_4_solveCSP_bindingFBBBB(
-				_this, isApplicableMatch, modifier, bodyDeclaration);
+				_this, isApplicableMatch, bodyDeclaration, modifier);
 		if (result_pattern_MethodDec2OperationWithModifier_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDec2OperationWithModifier_2_4_solveCSP_binding[0];
 
@@ -1771,7 +1772,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 					csp);
 			if (result_pattern_MethodDec2OperationWithModifier_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, modifier, bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, modifier };
 			}
 		}
 		return null;
@@ -1924,58 +1925,58 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			Operation feature, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		MMethodDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMMethodDefinition();
-		Object _localVariable_0 = csp.getValue("modifier", "static");
-		Object _localVariable_1 = csp.getValue("modifier", "visibility");
-		Object _localVariable_2 = csp.getValue("bodyDeclaration", "name");
+		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
+		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
+		Object _localVariable_1 = csp.getValue("modifier", "static");
+		Object _localVariable_2 = csp.getValue("modifier", "visibility");
 		m2f.setTarget(feature);
 		b2e.setTarget(feature);
-		m2f.setSource(modifier);
-		bodyDeclaration.setModifier(modifier);
 		b2e.setSource(bodyDeclaration);
-		boolean modifier_static_prime = (boolean) _localVariable_0;
-		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_1;
-		String bodyDeclaration_name_prime = (String) _localVariable_2;
+		bodyDeclaration.setModifier(modifier);
+		m2f.setSource(modifier);
+		String bodyDeclaration_name_prime = (String) _localVariable_0;
+		boolean modifier_static_prime = (boolean) _localVariable_1;
+		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_2;
+		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setStatic(Boolean.valueOf(modifier_static_prime));
 		modifier.setVisibility(modifier_visibility_prime);
-		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { m2f, feature, b2e, modifier, bodyDeclaration, csp };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_11_2_collecttranslatedelements_blackBBBBB(
-			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
-		return new Object[] { m2f, feature, b2e, modifier, bodyDeclaration };
+			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, MMethodDefinition bodyDeclaration,
+			Modifier modifier) {
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_11_2_collecttranslatedelements_greenFBBBBB(
-			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
+			Modifier2NamedElement m2f, Operation feature, ASTNode2Element b2e, MMethodDefinition bodyDeclaration,
+			Modifier modifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
 		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getCreatedElements().add(modifier);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration };
+		ruleresult.getCreatedElements().add(modifier);
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_11_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
-			EObject bodyDeclaration) {
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			EObject modifier) {
 		if (!m2f.equals(modifier)) {
 			if (!feature.equals(m2f)) {
 				if (!feature.equals(modifier)) {
 					if (!b2e.equals(m2f)) {
 						if (!b2e.equals(feature)) {
-							if (!b2e.equals(modifier)) {
-								if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(bodyDeclaration)) {
+								if (!b2e.equals(modifier)) {
 									if (!bodyDeclaration.equals(m2f)) {
 										if (!bodyDeclaration.equals(feature)) {
 											if (!bodyDeclaration.equals(modifier)) {
-												return new Object[] { ruleresult, m2f, feature, b2e, modifier,
-														bodyDeclaration };
+												return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration,
+														modifier };
 											}
 										}
 									}
@@ -1990,30 +1991,30 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
-			EObject bodyDeclaration) {
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			EObject modifier) {
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodDec2OperationWithModifier";
-		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
+		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -2024,21 +2025,22 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
+				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_MethodDec2OperationWithModifier_11_5_registerobjects_expressionBBBBBBB(
 			MethodDec2OperationWithModifier _this, PerformRuleResult ruleresult, EObject m2f, EObject feature,
-			EObject b2e, EObject modifier, EObject bodyDeclaration) {
-		_this.registerObjects_BWD(ruleresult, m2f, feature, b2e, modifier, bodyDeclaration);
+			EObject b2e, EObject bodyDeclaration, EObject modifier) {
+		_this.registerObjects_BWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier);
 
 	}
 
@@ -2359,7 +2361,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			if (tmpModifier instanceof Modifier) {
 				Modifier modifier = (Modifier) tmpModifier;
 				if (modifier.equals(bodyDeclaration.getModifier())) {
-					_result.add(new Object[] { modifier, bodyDeclaration, _edge_modifier });
+					_result.add(new Object[] { bodyDeclaration, modifier, _edge_modifier });
 				}
 			}
 
@@ -2379,8 +2381,8 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final boolean pattern_MethodDec2OperationWithModifier_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			MethodDec2OperationWithModifier _this, Match match, Modifier modifier, MMethodDefinition bodyDeclaration) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, modifier, bodyDeclaration);
+			MethodDec2OperationWithModifier _this, Match match, MMethodDefinition bodyDeclaration, Modifier modifier) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, bodyDeclaration, modifier);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2427,18 +2429,18 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_bindingFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("feature");
-		EObject _localVariable_1 = sourceMatch.getObject("modifier");
-		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_2 = sourceMatch.getObject("modifier");
 		EObject tmpFeature = _localVariable_0;
-		EObject tmpModifier = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_1;
+		EObject tmpModifier = _localVariable_2;
 		if (tmpFeature instanceof Operation) {
 			Operation feature = (Operation) tmpFeature;
-			if (tmpModifier instanceof Modifier) {
-				Modifier modifier = (Modifier) tmpModifier;
-				if (tmpBodyDeclaration instanceof MMethodDefinition) {
-					MMethodDefinition bodyDeclaration = (MMethodDefinition) tmpBodyDeclaration;
-					return new Object[] { feature, modifier, bodyDeclaration, targetMatch, sourceMatch };
+			if (tmpBodyDeclaration instanceof MMethodDefinition) {
+				MMethodDefinition bodyDeclaration = (MMethodDefinition) tmpBodyDeclaration;
+				if (tmpModifier instanceof Modifier) {
+					Modifier modifier = (Modifier) tmpModifier;
+					return new Object[] { feature, bodyDeclaration, modifier, targetMatch, sourceMatch };
 				}
 			}
 		}
@@ -2446,10 +2448,10 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_blackBBBBB(
-			Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration, Match sourceMatch,
+			Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { feature, modifier, bodyDeclaration, sourceMatch, targetMatch };
+			return new Object[] { feature, bodyDeclaration, modifier, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2460,27 +2462,27 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 				targetMatch, sourceMatch);
 		if (result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_binding != null) {
 			Operation feature = (Operation) result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_binding[0];
-			Modifier modifier = (Modifier) result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_binding[1];
-			MMethodDefinition bodyDeclaration = (MMethodDefinition) result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_binding[2];
+			MMethodDefinition bodyDeclaration = (MMethodDefinition) result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_binding[1];
+			Modifier modifier = (Modifier) result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_binding[2];
 
 			Object[] result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_black = pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_blackBBBBB(
-					feature, modifier, bodyDeclaration, sourceMatch, targetMatch);
+					feature, bodyDeclaration, modifier, sourceMatch, targetMatch);
 			if (result_pattern_MethodDec2OperationWithModifier_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { feature, modifier, bodyDeclaration, sourceMatch, targetMatch };
+				return new Object[] { feature, bodyDeclaration, modifier, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_3_solvecsp_bindingFBBBBBB(
-			MethodDec2OperationWithModifier _this, Operation feature, Modifier modifier,
-			MMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(feature, modifier, bodyDeclaration, sourceMatch,
+			MethodDec2OperationWithModifier _this, Operation feature, MMethodDefinition bodyDeclaration,
+			Modifier modifier, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(feature, bodyDeclaration, modifier, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_3;
 		if (csp != null) {
-			return new Object[] { csp, _this, feature, modifier, bodyDeclaration, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, feature, bodyDeclaration, modifier, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2490,10 +2492,10 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_3_solvecsp_bindingAndBlackFBBBBBB(
-			MethodDec2OperationWithModifier _this, Operation feature, Modifier modifier,
-			MMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
+			MethodDec2OperationWithModifier _this, Operation feature, MMethodDefinition bodyDeclaration,
+			Modifier modifier, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodDec2OperationWithModifier_24_3_solvecsp_binding = pattern_MethodDec2OperationWithModifier_24_3_solvecsp_bindingFBBBBBB(
-				_this, feature, modifier, bodyDeclaration, sourceMatch, targetMatch);
+				_this, feature, bodyDeclaration, modifier, sourceMatch, targetMatch);
 		if (result_pattern_MethodDec2OperationWithModifier_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodDec2OperationWithModifier_24_3_solvecsp_binding[0];
 
@@ -2501,7 +2503,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 					csp);
 			if (result_pattern_MethodDec2OperationWithModifier_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, feature, modifier, bodyDeclaration, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, feature, bodyDeclaration, modifier, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2533,12 +2535,12 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_6_createcorrespondence_blackBBBB(
-			Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration, CCMatch ccMatch) {
-		return new Object[] { feature, modifier, bodyDeclaration, ccMatch };
+			Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
+		return new Object[] { feature, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_6_createcorrespondence_greenFBFBBB(
-			Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration, CCMatch ccMatch) {
+			Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		m2f.setTarget(feature);
@@ -2547,7 +2549,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, feature, b2e, modifier, bodyDeclaration, ccMatch };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodDec2OperationWithModifier_24_7_addtoreturnedresult_blackBB(
@@ -2571,10 +2573,10 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodDec2OperationWithModifier_27_1_matchtggpattern_blackBB(Modifier modifier,
-			MMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_MethodDec2OperationWithModifier_27_1_matchtggpattern_blackBB(
+			MMethodDefinition bodyDeclaration, Modifier modifier) {
 		if (modifier.equals(bodyDeclaration.getModifier())) {
-			return new Object[] { modifier, bodyDeclaration };
+			return new Object[] { bodyDeclaration, modifier };
 		}
 		return null;
 	}
@@ -2672,14 +2674,14 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		MMethodDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMMethodDefinition();
-		Object _localVariable_0 = csp.getValue("feature", "isStatic");
-		Object _localVariable_1 = csp.getValue("feature", "visibility");
-		Object _localVariable_2 = csp.getValue("feature", "name");
-		Object _localVariable_3 = csp.getValue("modifier", "static");
-		Object _localVariable_4 = csp.getValue("modifier", "visibility");
-		Object _localVariable_5 = csp.getValue("bodyDeclaration", "name");
+		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
+		Object _localVariable_0 = csp.getValue("feature", "name");
+		Object _localVariable_1 = csp.getValue("feature", "isStatic");
+		Object _localVariable_2 = csp.getValue("feature", "visibility");
+		Object _localVariable_3 = csp.getValue("bodyDeclaration", "name");
+		Object _localVariable_4 = csp.getValue("modifier", "static");
+		Object _localVariable_5 = csp.getValue("modifier", "visibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_6 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
@@ -2687,27 +2689,27 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		ruleResult.getTargetObjects().add(feature);
 		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
-		m2f.setSource(modifier);
-		ruleResult.getSourceObjects().add(modifier);
-		bodyDeclaration.setModifier(modifier);
 		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
-		boolean feature_isStatic_prime = (boolean) _localVariable_0;
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
-		String feature_name_prime = (String) _localVariable_2;
-		boolean modifier_static_prime = (boolean) _localVariable_3;
-		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_4;
-		String bodyDeclaration_name_prime = (String) _localVariable_5;
+		bodyDeclaration.setModifier(modifier);
+		m2f.setSource(modifier);
+		ruleResult.getSourceObjects().add(modifier);
+		String feature_name_prime = (String) _localVariable_0;
+		boolean feature_isStatic_prime = (boolean) _localVariable_1;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_2;
+		String bodyDeclaration_name_prime = (String) _localVariable_3;
+		boolean modifier_static_prime = (boolean) _localVariable_4;
+		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_5;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_6);
+		feature.setName(feature_name_prime);
 		feature.setIsStatic(Boolean.valueOf(feature_isStatic_prime));
 		feature.setVisibility(feature_visibility_prime);
-		feature.setName(feature_name_prime);
+		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setStatic(Boolean.valueOf(modifier_static_prime));
 		modifier.setVisibility(modifier_visibility_prime);
-		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, feature, b2e, modifier, bodyDeclaration, ruleResult, csp };
+		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodDec2OperationWithModifier_29_7_expressionFB(

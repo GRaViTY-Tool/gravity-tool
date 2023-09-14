@@ -53,7 +53,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Type mType, AnnotationTypeDeclaration mAnnotation, TypeAccess access,
+	boolean isAppropriate_FWD(Match match, AnnotationTypeDeclaration mAnnotation, TypeAccess access, Type mType,
 			AnnotationTypeMemberDeclaration mMember);
 
 	/**
@@ -78,7 +78,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Type mType, AnnotationTypeDeclaration mAnnotation, TypeAccess access,
+	void registerObjectsToMatch_FWD(Match match, AnnotationTypeDeclaration mAnnotation, TypeAccess access, Type mType,
 			AnnotationTypeMemberDeclaration mMember);
 
 	/**
@@ -87,7 +87,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Type mType, AnnotationTypeDeclaration mAnnotation, TypeAccess access,
+	CSP isAppropriate_solveCsp_FWD(Match match, AnnotationTypeDeclaration mAnnotation, TypeAccess access, Type mType,
 			AnnotationTypeMemberDeclaration mMember);
 
 	/**
@@ -104,10 +104,9 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type mType,
-			AnnotationTypeDeclaration mAnnotation, TAbstractType tType, TypeGraph pm, TypeToTAbstractType mTypeToType,
-			TypeAccess access, TAnnotationType tAnnotation, TypeToTAbstractType mAnnotationToAnnotation,
-			AnnotationTypeMemberDeclaration mMember);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
+			TypeGraph pm, TypeAccess access, Type mType, TAbstractType tType, AnnotationTypeMemberDeclaration mMember,
+			TypeToTAbstractType mTypeToType, TypeToTAbstractType mAnnotationToAnnotation, TAnnotationType tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,10 +122,10 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject memberToMember, EObject mType, EObject tSignature,
-			EObject mAnnotation, EObject tType, EObject pm, EObject mTypeToType, EObject tMember, EObject access,
-			EObject tName, EObject anntotatableToTannotatable, EObject tAnnotation, EObject mAnnotationToAnnotation,
-			EObject mMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnnotation, EObject pm, EObject access,
+			EObject mType, EObject tType, EObject mMember, EObject tMember, EObject mTypeToType, EObject memberToMember,
+			EObject mAnnotationToAnnotation, EObject tAnnotation, EObject tSignature, EObject tName,
+			EObject anntotatableToTannotatable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,8 +141,8 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TFieldSignature tSignature, TAbstractType tType, TypeGraph pm,
-			TFieldDefinition tMember, TField tName, TAnnotationType tAnnotation);
+	boolean isAppropriate_BWD(Match match, TypeGraph pm, TAbstractType tType, TFieldDefinition tMember,
+			TAnnotationType tAnnotation, TFieldSignature tSignature, TField tName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,8 +166,8 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TFieldSignature tSignature, TAbstractType tType, TypeGraph pm,
-			TFieldDefinition tMember, TField tName, TAnnotationType tAnnotation);
+	void registerObjectsToMatch_BWD(Match match, TypeGraph pm, TAbstractType tType, TFieldDefinition tMember,
+			TAnnotationType tAnnotation, TFieldSignature tSignature, TField tName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,8 +175,8 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TFieldSignature tSignature, TAbstractType tType, TypeGraph pm,
-			TFieldDefinition tMember, TField tName, TAnnotationType tAnnotation);
+	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pm, TAbstractType tType, TFieldDefinition tMember,
+			TAnnotationType tAnnotation, TFieldSignature tSignature, TField tName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,10 +192,10 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mType, TFieldSignature tSignature,
-			AnnotationTypeDeclaration mAnnotation, TAbstractType tType, TypeGraph pm, TypeToTAbstractType mTypeToType,
-			TFieldDefinition tMember, TField tName, TAnnotationType tAnnotation,
-			TypeToTAbstractType mAnnotationToAnnotation);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
+			TypeGraph pm, Type mType, TAbstractType tType, TFieldDefinition tMember, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TAnnotationType tAnnotation, TFieldSignature tSignature,
+			TField tName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,10 +211,10 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject memberToMember, EObject mType, EObject tSignature,
-			EObject mAnnotation, EObject tType, EObject pm, EObject mTypeToType, EObject tMember, EObject access,
-			EObject tName, EObject anntotatableToTannotatable, EObject tAnnotation, EObject mAnnotationToAnnotation,
-			EObject mMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAnnotation, EObject pm, EObject access,
+			EObject mType, EObject tType, EObject mMember, EObject tMember, EObject mTypeToType, EObject memberToMember,
+			EObject mAnnotationToAnnotation, EObject tAnnotation, EObject tSignature, EObject tName,
+			EObject anntotatableToTannotatable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +230,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_40(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_82(EMoflonEdge _edge_signature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,7 +238,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_42(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_85(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -271,9 +270,10 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Type mType, TFieldSignature tSignature, AnnotationTypeDeclaration mAnnotation,
-			TAbstractType tType, TypeGraph pm, TFieldDefinition tMember, TypeAccess access, TField tName,
-			TAnnotationType tAnnotation, AnnotationTypeMemberDeclaration mMember, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(AnnotationTypeDeclaration mAnnotation, TypeGraph pm, TypeAccess access, Type mType,
+			TAbstractType tType, AnnotationTypeMemberDeclaration mMember, TFieldDefinition tMember,
+			TAnnotationType tAnnotation, TFieldSignature tSignature, TField tName, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,7 +289,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Type mType, AnnotationTypeDeclaration mAnnotation, TypeAccess access,
+	boolean checkDEC_FWD(AnnotationTypeDeclaration mAnnotation, TypeAccess access, Type mType,
 			AnnotationTypeMemberDeclaration mMember);
 
 	/**
@@ -298,8 +298,8 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TFieldSignature tSignature, TAbstractType tType, TypeGraph pm, TFieldDefinition tMember,
-			TField tName, TAnnotationType tAnnotation);
+	boolean checkDEC_BWD(TypeGraph pm, TAbstractType tType, TFieldDefinition tMember, TAnnotationType tAnnotation,
+			TFieldSignature tSignature, TField tName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,7 +308,7 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType mTypeToTypeParameter, TypeToTAbstractType mAnnotationToAnnotationParameter);
+			TypeToTAbstractType mAnnotationToAnnotationParameter, TypeToTAbstractType mTypeToTypeParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,9 +316,9 @@ public interface AnnotationTypeMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mType,
-			AnnotationTypeDeclaration mAnnotation, TAbstractType tType, TypeGraph pm, TypeToTAbstractType mTypeToType,
-			TAnnotationType tAnnotation, TypeToTAbstractType mAnnotationToAnnotation,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
+			TypeGraph pm, Type mType, TAbstractType tType, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TAnnotationType tAnnotation,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

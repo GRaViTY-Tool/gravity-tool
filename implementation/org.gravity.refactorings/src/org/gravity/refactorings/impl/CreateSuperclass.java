@@ -55,7 +55,7 @@ public class CreateSuperclass implements Refactoring {
 		final List<TClass> container = new LinkedList<>();
 
 		container.add(newParent);
-		pg.getOwnedTypes().add(newParent);
+		pg.getAllTypes().add(newParent);
 		pg.getClasses().add(newParent);
 
 		PGAdditionHelper.linkClass(pg, newParent);

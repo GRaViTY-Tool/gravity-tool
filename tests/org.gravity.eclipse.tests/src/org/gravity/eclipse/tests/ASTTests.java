@@ -332,7 +332,7 @@ public class ASTTests {
 	 * @return the AST
 	 */
 	private ASTNode createAST(final IType iType) {
-		final var parser = ASTParser.newParser(AST.JLS18);
+		final var parser = ASTParser.newParser(AST.JLS20);
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		final var typeRoot = iType.getTypeRoot();
 		if (typeRoot.getElementType() == IJavaElement.CLASS_FILE) {

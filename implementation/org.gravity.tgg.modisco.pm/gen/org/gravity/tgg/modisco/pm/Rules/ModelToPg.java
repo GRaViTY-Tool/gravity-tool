@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.gravity.modisco.MGravityModel;
 
-import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TModule;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -107,8 +107,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tProxyPackage, EObject mModelToTPG, EObject tPG,
-			EObject mModel);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject proxies, EObject primitives, EObject mModel,
+			EObject tPG, EObject mModelToTPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +124,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TPackage tProxyPackage, TypeGraph tPG);
+	boolean isAppropriate_BWD(Match match, TModule proxies, TModule primitives, TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +148,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TPackage tProxyPackage, TypeGraph tPG);
+	void registerObjectsToMatch_BWD(Match match, TModule proxies, TModule primitives, TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tProxyPackage, TypeGraph tPG);
+	CSP isAppropriate_solveCsp_BWD(Match match, TModule proxies, TModule primitives, TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,7 +172,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TPackage tProxyPackage, TypeGraph tPG);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TModule proxies, TModule primitives,
+			TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,8 +189,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tProxyPackage, EObject mModelToTPG, EObject tPG,
-			EObject mModel);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject proxies, EObject primitives, EObject mModel,
+			EObject tPG, EObject mModelToTPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +214,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_76(EMoflonEdge _edge_packages);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_30(EMoflonEdge _edge_modules);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,8 +246,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TPackage tProxyPackage, TypeGraph tPG, MGravityModel mModel, Match sourceMatch,
-			Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TModule proxies, TModule primitives, MGravityModel mModel, TypeGraph tPG,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,7 +271,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TPackage tProxyPackage, TypeGraph tPG);
+	boolean checkDEC_BWD(TModule proxies, TModule primitives, TypeGraph tPG);
 
 	/**
 	 * <!-- begin-user-doc -->

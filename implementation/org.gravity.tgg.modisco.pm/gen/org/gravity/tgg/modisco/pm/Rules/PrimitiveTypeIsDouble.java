@@ -10,6 +10,7 @@ import org.eclipse.modisco.java.PrimitiveTypeDouble;
 import org.gravity.tgg.modisco.pm.ModelToTypeGraph;
 
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TModule;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -95,7 +96,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, PrimitiveTypeDouble ePrimitiveType,
-			ModelToTypeGraph eModelToTypeGraph, TypeGraph typeGraph, Model eModel);
+			ModelToTypeGraph eModelToTypeGraph, TModule primitives, TypeGraph typeGraph, Model eModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,7 +113,8 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ePrimitiveType, EObject eModelToTypeGraph,
-			EObject typeGraph, EObject typeToTAbstractType, EObject tPrimitiveClass, EObject eModel);
+			EObject primitives, EObject typeGraph, EObject typeToTAbstractType, EObject tPrimitiveClass,
+			EObject eModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +130,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TypeGraph typeGraph, TClass tPrimitiveClass);
+	boolean isAppropriate_BWD(Match match, TModule primitives, TypeGraph typeGraph, TClass tPrimitiveClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +154,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TypeGraph typeGraph, TClass tPrimitiveClass);
+	void registerObjectsToMatch_BWD(Match match, TModule primitives, TypeGraph typeGraph, TClass tPrimitiveClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +162,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph typeGraph, TClass tPrimitiveClass);
+	CSP isAppropriate_solveCsp_BWD(Match match, TModule primitives, TypeGraph typeGraph, TClass tPrimitiveClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +179,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToTypeGraph,
-			TypeGraph typeGraph, TClass tPrimitiveClass, Model eModel);
+			TModule primitives, TypeGraph typeGraph, TClass tPrimitiveClass, Model eModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,7 +196,8 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ePrimitiveType, EObject eModelToTypeGraph,
-			EObject typeGraph, EObject typeToTAbstractType, EObject tPrimitiveClass, EObject eModel);
+			EObject primitives, EObject typeGraph, EObject typeToTAbstractType, EObject tPrimitiveClass,
+			EObject eModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +213,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_70(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_97(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +221,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_74(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_101(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,8 +253,8 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(PrimitiveTypeDouble ePrimitiveType, TypeGraph typeGraph, TClass tPrimitiveClass,
-			Model eModel, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(PrimitiveTypeDouble ePrimitiveType, TModule primitives, TypeGraph typeGraph,
+			TClass tPrimitiveClass, Model eModel, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,7 +278,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TypeGraph typeGraph, TClass tPrimitiveClass);
+	boolean checkDEC_BWD(TModule primitives, TypeGraph typeGraph, TClass tPrimitiveClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +296,7 @@ public interface PrimitiveTypeIsDouble extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ModelToTypeGraph eModelToTypeGraph,
-			TypeGraph typeGraph, Model eModel, ModelgeneratorRuleResult ruleResult);
+			TModule primitives, TypeGraph typeGraph, Model eModel, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

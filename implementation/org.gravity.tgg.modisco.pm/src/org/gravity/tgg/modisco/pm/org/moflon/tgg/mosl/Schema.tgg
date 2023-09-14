@@ -18,6 +18,10 @@
 }
 
 #correspondence {
+	ElementToModule {
+		#src->NamedElement
+		#trg->TModule
+	}
 	LiteralToTNode {
 		#src->Expression
 		#trg->TAbstractNode

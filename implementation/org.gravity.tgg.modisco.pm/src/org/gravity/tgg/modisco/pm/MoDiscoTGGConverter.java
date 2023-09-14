@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.function.Consumer;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -62,8 +61,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		this(project, true);
 	}
 
-	public MoDiscoTGGConverter(final IJavaProject project, final boolean load)
-			throws IOException, CoreException {
+	public MoDiscoTGGConverter(final IJavaProject project, final boolean load) throws IOException, CoreException {
 		super(project, "pm", load);
 	}
 
@@ -166,7 +164,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
 		}
 
-		final var success = this.trg instanceof TypeGraph;
+		boolean success = trg instanceof TypeGraph;
 		if (success) {
 			postprocess(submonitor.split(20), infoEnabled);
 			if (this.autosave) {
@@ -185,8 +183,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 	 * @param info    If info messages should be logged
 	 */
 	private void postprocess(final IProgressMonitor monitor, final boolean info) {
-		final var sortedProcessors = ProgramGraphProcesorUtil
-				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
+		final var sortedProcessors = ProgramGraphProcesorUtil.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
 		final var processors = SubMonitor.convert(monitor, "Postprocessing", sortedProcessors.size());
 		var start = 0L;
 		if (GravityActivator.MEASURE_PERFORMANCE) {
@@ -315,7 +312,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		try {
 			final var srcFile = this.project.getProject().getFolder("src");
 			new GenerateJavaExtended(src, srcFile.getLocation().toFile(), Collections.emptyList())
-			.doGenerate(new BasicMonitor.EclipseSubProgress(progressMonitor, 1));
+					.doGenerate(new BasicMonitor.EclipseSubProgress(progressMonitor, 1));
 			this.project.getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (IOException | CoreException e) {
 			return false;
@@ -326,12 +323,12 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 	@Override
 	public TypeGraph getPG() {
-		return getTrg();
+		return (TypeGraph) trg;
 	}
 
 	@Override
 	public TypeGraph getTrg() {
-		return (TypeGraph) super.getTrg();
+		return getPG();
 	}
 
 	@Override

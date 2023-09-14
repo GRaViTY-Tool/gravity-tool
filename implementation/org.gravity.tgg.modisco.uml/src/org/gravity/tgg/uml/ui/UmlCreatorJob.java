@@ -40,6 +40,7 @@ final class UmlCreatorJob extends ModelCreatorJob {
 
 	@Override
 	public boolean process(final IJavaProject iJavaProject, final IProgressMonitor monitor) {
+		long start = System.currentTimeMillis();
 		Model model;
 		final TransformationFactory factory = GravityUmlActivator.getTransformationFactory();
 		try {
@@ -50,6 +51,7 @@ final class UmlCreatorJob extends ModelCreatorJob {
 			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
+		System.out.println("Time: "+(System.currentTimeMillis()-start)+"ms");
 		return model != null;
 	}
 

@@ -435,13 +435,22 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__MODEL = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TABSTRACT_TYPE__MODULE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_TYPE__MODEL = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Package</b></em>' reference.
@@ -450,7 +459,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__PACKAGE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TABSTRACT_TYPE__PACKAGE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Signature</b></em>' reference list.
@@ -459,7 +468,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__SIGNATURE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TABSTRACT_TYPE__SIGNATURE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Defines</b></em>' reference list.
@@ -468,7 +477,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__DEFINES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TABSTRACT_TYPE__DEFINES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>TLib</b></em>' attribute.
@@ -477,7 +486,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__TLIB = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TABSTRACT_TYPE__TLIB = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -486,7 +495,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
+	int TABSTRACT_TYPE__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -495,7 +504,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
+	int TABSTRACT_TYPE__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Inner Types</b></em>' reference list.
@@ -504,7 +513,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__INNER_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+	int TABSTRACT_TYPE__INNER_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Outer Type</b></em>' reference.
@@ -513,7 +522,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE__OUTER_TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
+	int TABSTRACT_TYPE__OUTER_TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>TAbstract Type</em>' class.
@@ -522,7 +531,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 9;
+	int TABSTRACT_TYPE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -696,7 +705,16 @@ public interface BasicPackage extends EPackage {
 	int TCLASS__TANNOTATION = TABSTRACT_TYPE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCLASS__MODULE = TABSTRACT_TYPE__MODULE;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1146,13 +1164,22 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__MODULE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__DEFINED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TMEMBER__DEFINED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Accessed By</b></em>' reference list.
@@ -1161,7 +1188,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Accessing</b></em>' containment reference list.
@@ -1170,7 +1197,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__ACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
+	int TMEMBER__ACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -1179,7 +1206,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
+	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Signature</b></em>' container reference.
@@ -1188,7 +1215,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__SIGNATURE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+	int TMEMBER__SIGNATURE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>TMember</em>' class.
@@ -1197,7 +1224,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
+	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1261,6 +1288,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TFIELD_DEFINITION__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__MODULE = TMEMBER__MODULE;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -1794,6 +1830,15 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__MODULE = TMEMBER__MODULE;
+
+	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2190,13 +2235,13 @@ public interface BasicPackage extends EPackage {
 	int TPACKAGE__INTERFACES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Owned Types</b></em>' reference list.
+	 * The feature id for the '<em><b>All Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE__OWNED_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TPACKAGE__ALL_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' reference.
@@ -2217,13 +2262,22 @@ public interface BasicPackage extends EPackage {
 	int TPACKAGE__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Modules</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPACKAGE__MODULES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>TPackage</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPACKAGE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+	int TPACKAGE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2424,13 +2478,22 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>TName</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__PACKAGES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TYPE_GRAPH__PACKAGES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -2439,7 +2502,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__METHODS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TYPE_GRAPH__METHODS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -2448,7 +2511,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__FIELDS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TYPE_GRAPH__FIELDS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Classes</b></em>' reference list.
@@ -2457,7 +2520,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__CLASSES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TYPE_GRAPH__CLASSES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Interfaces</b></em>' reference list.
@@ -2466,34 +2529,34 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__INTERFACES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TYPE_GRAPH__INTERFACES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Owned Types</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotation Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__OWNED_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
+	int TYPE_GRAPH__ANNOTATION_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>TAnnotation Types</b></em>' reference list.
+	 * The feature id for the '<em><b>All Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__TANNOTATION_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
+	int TYPE_GRAPH__ALL_TYPES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>TName</b></em>' attribute.
+	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH__TNAME = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+	int TYPE_GRAPH__MODULES = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Type Graph</em>' class.
@@ -2502,7 +2565,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
+	int TYPE_GRAPH_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2676,7 +2739,16 @@ public interface BasicPackage extends EPackage {
 	int TINTERFACE__TANNOTATION = TABSTRACT_TYPE__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTERFACE__MODULE = TABSTRACT_TYPE__MODULE;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3207,6 +3279,15 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__MODULE = TMEMBER__MODULE;
+
+	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3315,7 +3396,16 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE__TANNOTATION = TCLASS__TANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TUNRESOLVED_TYPE__MODULE = TCLASS__MODULE;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4301,6 +4391,98 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_MULTIPLICITY_OPERATION_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TModuleImpl <em>TModule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TModuleImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTModule()
+	 * @generated
+	 */
+	int TMODULE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Contains</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMODULE__CONTAINS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMODULE__NAMESPACE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMODULE__LOCATION = 2;
+
+	/**
+	 * The number of structural features of the '<em>TModule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMODULE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>TModule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMODULE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TContainableElementImpl <em>TContainable Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TContainableElementImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTContainableElement()
+	 * @generated
+	 */
+	int TCONTAINABLE_ELEMENT = 29;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONTAINABLE_ELEMENT__MODULE = 0;
+
+	/**
+	 * The number of structural features of the '<em>TContainable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONTAINABLE_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>TContainable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONTAINABLE_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4308,7 +4490,7 @@ public interface BasicPackage extends EPackage {
 	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTVisibility()
 	 * @generated
 	 */
-	int TVISIBILITY = 28;
+	int TVISIBILITY = 30;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAccess <em>TAccess</em>}'.
@@ -5014,15 +5196,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTPackage_Interfaces();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TPackage#getOwnedTypes <em>Owned Types</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TPackage#getAllTypes <em>All Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Owned Types</em>'.
-	 * @see org.gravity.typegraph.basic.TPackage#getOwnedTypes()
+	 * @return the meta object for the reference list '<em>All Types</em>'.
+	 * @see org.gravity.typegraph.basic.TPackage#getAllTypes()
 	 * @see #getTPackage()
 	 * @generated
 	 */
-	EReference getTPackage_OwnedTypes();
+	EReference getTPackage_AllTypes();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TPackage#getModel <em>Model</em>}'.
@@ -5045,6 +5227,17 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTPackage_TName();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TPackage#getModules <em>Modules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Modules</em>'.
+	 * @see org.gravity.typegraph.basic.TPackage#getModules()
+	 * @see #getTPackage()
+	 * @generated
+	 */
+	EReference getTPackage_Modules();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TPackage#getFullyQualifiedName() <em>Get Fully Qualified Name</em>}' operation.
@@ -5256,26 +5449,26 @@ public interface BasicPackage extends EPackage {
 	EReference getTypeGraph_Interfaces();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TypeGraph#getOwnedTypes <em>Owned Types</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TypeGraph#getAnnotationTypes <em>Annotation Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Types</em>'.
-	 * @see org.gravity.typegraph.basic.TypeGraph#getOwnedTypes()
+	 * @return the meta object for the reference list '<em>Annotation Types</em>'.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getAnnotationTypes()
 	 * @see #getTypeGraph()
 	 * @generated
 	 */
-	EReference getTypeGraph_OwnedTypes();
+	EReference getTypeGraph_AnnotationTypes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TypeGraph#getTAnnotationTypes <em>TAnnotation Types</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TypeGraph#getAllTypes <em>All Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>TAnnotation Types</em>'.
-	 * @see org.gravity.typegraph.basic.TypeGraph#getTAnnotationTypes()
+	 * @return the meta object for the reference list '<em>All Types</em>'.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getAllTypes()
 	 * @see #getTypeGraph()
 	 * @generated
 	 */
-	EReference getTypeGraph_TAnnotationTypes();
+	EReference getTypeGraph_AllTypes();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.gravity.typegraph.basic.TypeGraph#getTName <em>TName</em>}'.
@@ -5287,6 +5480,17 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTypeGraph_TName();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TypeGraph#getModules <em>Modules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Modules</em>'.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getModules()
+	 * @see #getTypeGraph()
+	 * @generated
+	 */
+	EReference getTypeGraph_Modules();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getDeclaredTClasses() <em>Get Declared TClasses</em>}' operation.
@@ -5532,10 +5736,10 @@ public interface BasicPackage extends EPackage {
 	EClass getTAbstractType();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @return the meta object for the reference '<em>Model</em>'.
 	 * @see org.gravity.typegraph.basic.TAbstractType#getModel()
 	 * @see #getTAbstractType()
 	 * @generated
@@ -6039,6 +6243,70 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTAbstractMultiplicity__IsArray();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TModule <em>TModule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TModule</em>'.
+	 * @see org.gravity.typegraph.basic.TModule
+	 * @generated
+	 */
+	EClass getTModule();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TModule#getContains <em>Contains</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contains</em>'.
+	 * @see org.gravity.typegraph.basic.TModule#getContains()
+	 * @see #getTModule()
+	 * @generated
+	 */
+	EReference getTModule_Contains();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TModule#getNamespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Namespace</em>'.
+	 * @see org.gravity.typegraph.basic.TModule#getNamespace()
+	 * @see #getTModule()
+	 * @generated
+	 */
+	EReference getTModule_Namespace();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gravity.typegraph.basic.TModule#getLocation <em>Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Location</em>'.
+	 * @see org.gravity.typegraph.basic.TModule#getLocation()
+	 * @see #getTModule()
+	 * @generated
+	 */
+	EAttribute getTModule_Location();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TContainableElement <em>TContainable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TContainable Element</em>'.
+	 * @see org.gravity.typegraph.basic.TContainableElement
+	 * @generated
+	 */
+	EClass getTContainableElement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TContainableElement#getModule <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Module</em>'.
+	 * @see org.gravity.typegraph.basic.TContainableElement#getModule()
+	 * @see #getTContainableElement()
+	 * @generated
+	 */
+	EReference getTContainableElement_Module();
 
 	/**
 	 * Returns the meta object for enum '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}'.
@@ -6632,12 +6900,12 @@ public interface BasicPackage extends EPackage {
 		EReference TPACKAGE__INTERFACES = eINSTANCE.getTPackage_Interfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Types</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>All Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TPACKAGE__OWNED_TYPES = eINSTANCE.getTPackage_OwnedTypes();
+		EReference TPACKAGE__ALL_TYPES = eINSTANCE.getTPackage_AllTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Model</b></em>' reference feature.
@@ -6654,6 +6922,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TPACKAGE__TNAME = eINSTANCE.getTPackage_TName();
+
+		/**
+		 * The meta object literal for the '<em><b>Modules</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TPACKAGE__MODULES = eINSTANCE.getTPackage_Modules();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Fully Qualified Name</b></em>' operation.
@@ -6822,20 +7098,20 @@ public interface BasicPackage extends EPackage {
 		EReference TYPE_GRAPH__INTERFACES = eINSTANCE.getTypeGraph_Interfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Types</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Annotation Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE_GRAPH__OWNED_TYPES = eINSTANCE.getTypeGraph_OwnedTypes();
+		EReference TYPE_GRAPH__ANNOTATION_TYPES = eINSTANCE.getTypeGraph_AnnotationTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>TAnnotation Types</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>All Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE_GRAPH__TANNOTATION_TYPES = eINSTANCE.getTypeGraph_TAnnotationTypes();
+		EReference TYPE_GRAPH__ALL_TYPES = eINSTANCE.getTypeGraph_AllTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>TName</b></em>' attribute feature.
@@ -6844,6 +7120,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TYPE_GRAPH__TNAME = eINSTANCE.getTypeGraph_TName();
+
+		/**
+		 * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_GRAPH__MODULES = eINSTANCE.getTypeGraph_Modules();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Declared TClasses</b></em>' operation.
@@ -7042,7 +7326,7 @@ public interface BasicPackage extends EPackage {
 		EClass TABSTRACT_TYPE = eINSTANCE.getTAbstractType();
 
 		/**
-		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -7456,6 +7740,58 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TABSTRACT_MULTIPLICITY___IS_ARRAY = eINSTANCE.getTAbstractMultiplicity__IsArray();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TModuleImpl <em>TModule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TModuleImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTModule()
+		 * @generated
+		 */
+		EClass TMODULE = eINSTANCE.getTModule();
+
+		/**
+		 * The meta object literal for the '<em><b>Contains</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TMODULE__CONTAINS = eINSTANCE.getTModule_Contains();
+
+		/**
+		 * The meta object literal for the '<em><b>Namespace</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TMODULE__NAMESPACE = eINSTANCE.getTModule_Namespace();
+
+		/**
+		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TMODULE__LOCATION = eINSTANCE.getTModule_Location();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TContainableElementImpl <em>TContainable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TContainableElementImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTContainableElement()
+		 * @generated
+		 */
+		EClass TCONTAINABLE_ELEMENT = eINSTANCE.getTContainableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Module</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TCONTAINABLE_ELEMENT__MODULE = eINSTANCE.getTContainableElement_Module();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.

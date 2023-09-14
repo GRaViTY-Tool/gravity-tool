@@ -10,7 +10,36 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.gravity.typegraph.basic.*;
-
+import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractFlowElement;
+import org.gravity.typegraph.basic.TAbstractMultiplicity;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TCall;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TConstructor;
+import org.gravity.typegraph.basic.TContainableElement;
+import org.gravity.typegraph.basic.TEnum;
+import org.gravity.typegraph.basic.TField;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TFlow;
+import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TModifier;
+import org.gravity.typegraph.basic.TName;
+import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TParameter;
+import org.gravity.typegraph.basic.TRead;
+import org.gravity.typegraph.basic.TReadWrite;
+import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.TSyntethicMethod;
+import org.gravity.typegraph.basic.TUnresolvedType;
+import org.gravity.typegraph.basic.TWrite;
+import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
@@ -180,6 +209,14 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTAbstractMultiplicity(TAbstractMultiplicity object) {
 				return createTAbstractMultiplicityAdapter();
+			}
+			@Override
+			public Adapter caseTModule(TModule object) {
+				return createTModuleAdapter();
+			}
+			@Override
+			public Adapter caseTContainableElement(TContainableElement object) {
+				return createTContainableElementAdapter();
 			}
 			@Override
 			public Adapter caseTAnnotatable(TAnnotatable object) {
@@ -597,6 +634,34 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTAbstractMultiplicityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TModule <em>TModule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TModule
+	 * @generated
+	 */
+	public Adapter createTModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TContainableElement <em>TContainable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TContainableElement
+	 * @generated
+	 */
+	public Adapter createTContainableElementAdapter() {
 		return null;
 	}
 

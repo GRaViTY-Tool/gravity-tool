@@ -43,7 +43,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_i3rxQDJSEey-me7NVbinCQ" source="_hZWLADJSEey-me7NVbinCQ" target="_LyMuMNPvEem1sfMQQxK1rw">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
     </lhs>
     <rhs xmi:id="_FTT_MNPvEem1sfMQQxK1rw" name="Rhs">
@@ -87,7 +87,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_i3sYUDJSEey-me7NVbinCQ" source="_hZWyEDJSEey-me7NVbinCQ" target="_LyNVQNPvEem1sfMQQxK1rw">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
     </rhs>
     <mappings xmi:id="_LyNVQdPvEem1sfMQQxK1rw" origin="_LyMuMNPvEem1sfMQQxK1rw" image="_LyNVQNPvEem1sfMQQxK1rw"/>

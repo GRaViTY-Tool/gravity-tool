@@ -201,7 +201,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Operation_1(Operation feature);
+	EObjectContainer isAppropriate_BWD_Operation_0(Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->

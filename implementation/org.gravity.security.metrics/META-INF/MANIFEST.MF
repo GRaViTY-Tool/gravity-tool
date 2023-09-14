@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.hulk;bundle-version="1.0.0",
  org.gravity.security.annotations;bundle-version="1.0.0",
  org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.security.analysis
 Export-Package: org.gravity.security.analysis,

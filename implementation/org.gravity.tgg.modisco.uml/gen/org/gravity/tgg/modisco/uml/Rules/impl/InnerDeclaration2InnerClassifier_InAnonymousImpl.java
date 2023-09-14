@@ -168,16 +168,16 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Classifier feature = (Classifier) result1_bindingAndBlack[0];
-		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
-		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result1_bindingAndBlack[3];
-		ASTNode2Element b2e = (ASTNode2Element) result1_bindingAndBlack[4];
-		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[0];
+		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result1_bindingAndBlack[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_bindingAndBlack[2];
+		Classifier feature = (Classifier) result1_bindingAndBlack[3];
+		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
+		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		InnerDeclaration2InnerClassifier_InAnonymousImpl
-				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_greenBB(feature,
-						uContainer);
+				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_greenBB(uContainer,
+						feature);
 
 		Object[] result2_green = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_2_collecttranslatedelements_greenF();
@@ -188,16 +188,16 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 		Object[] result3_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-						feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+						uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[ne2ne] = " + ne2ne + ", " + "[uContainer] = "
-					+ uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = "
+					+ b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[ne2ne] = " + ne2ne + ".");
 		}
 		InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_3_bookkeepingforedges_greenBBBBBFFF(ruleresult,
-						feature, uContainer, jContainer, bodyDeclaration);
+						uContainer, jContainer, feature, bodyDeclaration);
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge bodyDeclaration__jContainer____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[7];
@@ -206,7 +206,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		// 
 		InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_5_registerobjects_expressionBBBBBBBB(this,
-						ruleresult, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+						ruleresult, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 		return InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_6_expressionFB(ruleresult);
 	}
@@ -239,35 +239,35 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_binding[0];
 		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result2_binding[1];
 		for (Object[] result2_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
-				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_2_corematch_blackFFFBFBB(jContainer,
+				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_2_corematch_blackFBFFBFB(jContainer,
 						bodyDeclaration, match)) {
-			Classifier feature = (Classifier) result2_black[0];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[1];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[2];
-			ASTNode2Element b2e = (ASTNode2Element) result2_black[4];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[0];
+			ASTNode2Element b2e = (ASTNode2Element) result2_black[2];
+			Classifier feature = (Classifier) result2_black[3];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
-					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_3_findcontext_blackBBBBBB(feature, ne2ne,
-							uContainer, jContainer, b2e, bodyDeclaration)) {
+					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_3_findcontext_blackBBBBBB(uContainer,
+							jContainer, b2e, feature, bodyDeclaration, ne2ne)) {
 				Object[] result3_green = InnerDeclaration2InnerClassifier_InAnonymousImpl
 						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_3_findcontext_greenBBBBBBFFFFFFF(
-								feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+								uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge bodyDeclaration__jContainer____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bodyDeclaration__jContainer____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-								this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+								this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-							+ jContainer + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uContainer] = " + uContainer
+							+ ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", " + "[feature] = "
+							+ feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ne2ne] = " + ne2ne
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -343,9 +343,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Classifier feature, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
-			AbstractTypeDeclaration bodyDeclaration) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uContainer,
+			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, Classifier feature,
+			AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -360,12 +360,12 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("b2e", b2e);
+		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		return csp;
 	}
 
@@ -383,14 +383,14 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject ne2ne, EObject uContainer,
-			EObject jContainer, EObject b2e, EObject bodyDeclaration) {
-		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("ne2ne", ne2ne);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uContainer, EObject jContainer, EObject b2e,
+			EObject feature, EObject bodyDeclaration, EObject ne2ne) {
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("ne2ne", ne2ne);
 
 	}
 
@@ -408,24 +408,24 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
+	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 
 		Object[] result1_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_1_initialbindings_blackBBBB(this, match,
-						feature, uContainer);
+						uContainer, feature);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[feature] = " + feature + ", " + "[uContainer] = " + uContainer + ".");
+							+ ", " + "[uContainer] = " + uContainer + ", " + "[feature] = " + feature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_bindingAndBlackFBBBB(this, match,
-						feature, uContainer);
+						uContainer, feature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[feature] = " + feature + ", " + "[uContainer] = " + uContainer + ".");
+							+ ", " + "[uContainer] = " + uContainer + ", " + "[feature] = " + feature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -434,31 +434,31 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 			Object[] result4_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_4_collectelementstobetranslated_blackBBB(
-							match, feature, uContainer);
+							match, uContainer, feature);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[uContainer] = " + uContainer + ".");
+						+ "[uContainer] = " + uContainer + ", " + "[feature] = " + feature + ".");
 			}
 			InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_4_collectelementstobetranslated_greenBBBF(
-							match, feature, uContainer);
+							match, uContainer, feature);
 			//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_5_collectcontextelements_blackBBB(match,
-							feature, uContainer);
+							uContainer, feature);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[uContainer] = " + uContainer + ".");
+						+ "[uContainer] = " + uContainer + ", " + "[feature] = " + feature + ".");
 			}
 			InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_5_collectcontextelements_greenBBB(match,
-							feature, uContainer);
+							uContainer, feature);
 
 			// 
 			InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_6_registerobjectstomatch_expressionBBBB(
-							this, match, feature, uContainer);
+							this, match, uContainer, feature);
 			return InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_7_expressionF();
 		} else {
@@ -482,12 +482,12 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Classifier feature = (Classifier) result1_bindingAndBlack[0];
-		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
-		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result1_bindingAndBlack[3];
-		ASTNode2Element b2e = (ASTNode2Element) result1_bindingAndBlack[4];
-		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[0];
+		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result1_bindingAndBlack[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_bindingAndBlack[2];
+		Classifier feature = (Classifier) result1_bindingAndBlack[3];
+		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
+		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_greenBB(jContainer,
@@ -502,16 +502,16 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 		Object[] result3_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-						feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+						uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[ne2ne] = " + ne2ne + ", " + "[uContainer] = "
-					+ uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = "
+					+ b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[ne2ne] = " + ne2ne + ".");
 		}
 		InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_3_bookkeepingforedges_greenBBBBBFFF(ruleresult,
-						feature, uContainer, jContainer, bodyDeclaration);
+						uContainer, jContainer, feature, bodyDeclaration);
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge bodyDeclaration__jContainer____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[7];
@@ -520,7 +520,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		// 
 		InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_5_registerobjects_expressionBBBBBBBB(this,
-						ruleresult, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+						ruleresult, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 		return InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_6_expressionFB(ruleresult);
 	}
@@ -550,37 +550,37 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Classifier feature = (Classifier) result2_binding[0];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_binding[1];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_binding[0];
+		Classifier feature = (Classifier) result2_binding[1];
 		for (Object[] result2_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
-				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_2_corematch_blackBFBFFFB(feature, uContainer,
+				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_2_corematch_blackBFFBFFB(uContainer, feature,
 						match)) {
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[1];
-			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_black[3];
-			ASTNode2Element b2e = (ASTNode2Element) result2_black[4];
-			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result2_black[5];
+			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_black[1];
+			ASTNode2Element b2e = (ASTNode2Element) result2_black[2];
+			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result2_black[4];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
-					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_3_findcontext_blackBBBBBB(feature, ne2ne,
-							uContainer, jContainer, b2e, bodyDeclaration)) {
+					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_3_findcontext_blackBBBBBB(uContainer,
+							jContainer, b2e, feature, bodyDeclaration, ne2ne)) {
 				Object[] result3_green = InnerDeclaration2InnerClassifier_InAnonymousImpl
 						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_3_findcontext_greenBBBBBBFFFFFF(
-								feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+								uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-								this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+								this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-							+ jContainer + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uContainer] = " + uContainer
+							+ ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", " + "[feature] = "
+							+ feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ne2ne] = " + ne2ne
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -614,9 +614,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
-		match.registerObject("feature", feature);
+	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		match.registerObject("uContainer", uContainer);
+		match.registerObject("feature", feature);
 
 	}
 
@@ -625,7 +625,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -654,9 +654,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier feature, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
-			AbstractTypeDeclaration bodyDeclaration) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uContainer,
+			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, Classifier feature,
+			AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -671,12 +671,12 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("b2e", b2e);
+		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		return csp;
 	}
 
@@ -694,14 +694,14 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject ne2ne, EObject uContainer,
-			EObject jContainer, EObject b2e, EObject bodyDeclaration) {
-		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("ne2ne", ne2ne);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject uContainer, EObject jContainer, EObject b2e,
+			EObject feature, EObject bodyDeclaration, EObject ne2ne) {
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("jContainer", jContainer);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("ne2ne", ne2ne);
 
 	}
 
@@ -719,7 +719,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_132(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_130(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -737,8 +737,8 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		for (Object[] result2_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_20_2_testcorematchandDECs_blackFFB(
 						_edge_nestedClassifier)) {
-			Classifier feature = (Classifier) result2_black[0];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[1];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[0];
+			Classifier feature = (Classifier) result2_black[1];
 			Object[] result2_green = InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -746,7 +746,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			// 
 			if (InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, feature, uContainer)) {
+							this, match, uContainer, feature)) {
 				// 
 				if (InnerDeclaration2InnerClassifier_InAnonymousImpl
 						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -780,7 +780,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_142(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_138(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -919,18 +919,18 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Classifier feature = (Classifier) result2_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[1];
-		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[0];
+		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_bindingAndBlack[1];
+		Classifier feature = (Classifier) result2_bindingAndBlack[2];
 		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_bindingAndBlackFBBBBBBB(this,
-						feature, uContainer, jContainer, bodyDeclaration, sourceMatch, targetMatch);
+						uContainer, jContainer, feature, bodyDeclaration, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[feature] = " + feature + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-					+ jContainer + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[sourceMatch] = "
+					+ "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[feature] = "
+					+ feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[sourceMatch] = "
 					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -939,22 +939,22 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
-					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_blackBFBBFBBB(feature,
-							uContainer, jContainer, bodyDeclaration, sourceMatch, targetMatch)) {
-				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[1];
-				ASTNode2Element b2e = (ASTNode2Element) result5_black[4];
+					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_blackBBFBBFBB(
+							uContainer, jContainer, feature, bodyDeclaration, sourceMatch, targetMatch)) {
+				ASTNode2Element b2e = (ASTNode2Element) result5_black[2];
+				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[5];
 				Object[] result5_green = InnerDeclaration2InnerClassifier_InAnonymousImpl
-						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_greenBBBBF(ne2ne,
-								b2e, sourceMatch, targetMatch);
+						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_greenBBBBF(b2e,
+								ne2ne, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_6_createcorrespondence_blackBBBBB(
-								feature, uContainer, jContainer, bodyDeclaration, ccMatch);
+								uContainer, jContainer, feature, bodyDeclaration, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
-							+ ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uContainer] = "
+							+ uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[feature] = " + feature
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
@@ -981,9 +981,8 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Classifier feature, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, AbstractTypeDeclaration bodyDeclaration, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1031,9 +1030,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Classifier feature, org.eclipse.uml2.uml.Class uContainer) {// 
+	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Class uContainer, Classifier feature) {// 
 		Object[] result1_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
-				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_28_1_matchtggpattern_blackBB(feature, uContainer);
+				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_28_1_matchtggpattern_blackBB(uContainer, feature);
 		if (result1_black != null) {
 			return InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_28_2_expressionF();
@@ -1049,8 +1048,8 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element b2eParameter,
-			ASTNode2Element ne2neParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element ne2neParameter,
+			ASTNode2Element b2eParameter) {
 
 		Object[] result1_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_1_createresult_blackB(this);
@@ -1066,24 +1065,24 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		for (Object[] result2_black : InnerDeclaration2InnerClassifier_InAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_blackFFFFFFFFBB(
 						ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList b2eList = (RuleEntryList) result2_black[0];
-			Classifier feature = (Classifier) result2_black[1];
-			ASTNode2Element b2e = (ASTNode2Element) result2_black[2];
-			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result2_black[3];
-			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[4];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[6];
-			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_black[7];
+			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result2_black[1];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[2];
+			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result2_black[3];
+			//nothing RuleEntryList b2eList = (RuleEntryList) result2_black[4];
+			ASTNode2Element b2e = (ASTNode2Element) result2_black[5];
+			Classifier feature = (Classifier) result2_black[6];
+			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnonymousImpl
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration,
+							isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-						+ "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = "
-						+ jContainer + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uContainer] = " + uContainer + ", "
+						+ "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature
+						+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ne2ne] = " + ne2ne + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1092,23 +1091,22 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
-						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_5_checknacs_blackBBBBBB(feature, ne2ne,
-								uContainer, jContainer, b2e, bodyDeclaration);
+						.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_5_checknacs_blackBBBBBB(uContainer,
+								jContainer, b2e, feature, bodyDeclaration, ne2ne);
 				if (result5_black != null) {
 
 					Object[] result6_black = InnerDeclaration2InnerClassifier_InAnonymousImpl
-							.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_6_perform_blackBBBBBBB(feature,
-									ne2ne, uContainer, jContainer, b2e, bodyDeclaration, ruleResult);
+							.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_6_perform_blackBBBBBBB(uContainer,
+									jContainer, b2e, feature, bodyDeclaration, ne2ne, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = "
-								+ feature + ", " + "[ne2ne] = " + ne2ne + ", " + "[uContainer] = " + uContainer + ", "
-								+ "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", "
-								+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ruleResult] = " + ruleResult
-								+ ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uContainer] = "
+								+ uContainer + ", " + "[jContainer] = " + jContainer + ", " + "[b2e] = " + b2e + ", "
+								+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+								+ "[ne2ne] = " + ne2ne + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					InnerDeclaration2InnerClassifier_InAnonymousImpl
-							.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_6_perform_greenBBBBB(feature,
-									uContainer, jContainer, bodyDeclaration, ruleResult);
+							.pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_6_perform_greenBBBBB(uContainer,
+									jContainer, feature, bodyDeclaration, ruleResult);
 
 				} else {
 				}
@@ -1126,9 +1124,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uContainer,
+			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, Classifier feature,
+			AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1143,12 +1141,12 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("jContainer", jContainer);
 		isApplicableMatch.registerObject("b2e", b2e);
+		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
 		return csp;
 	}
 
@@ -1185,11 +1183,11 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					(AbstractTypeDeclaration) arguments.get(2));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_CLASS_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-					(ASTNode2Element) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(AbstractTypeDeclaration) arguments.get(6));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASS_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_ABSTRACTTYPEDECLARATION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(org.eclipse.uml2.uml.Class) arguments.get(1), (AnonymousClassDeclaration) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Classifier) arguments.get(4),
+					(AbstractTypeDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1199,27 +1197,27 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			return null;
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_CLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_CLASS_CLASSIFIER:
+			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+					(Classifier) arguments.get(2));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_CLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_CLASSIFIER:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+					(Classifier) arguments.get(2));
 			return null;
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_CLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_CLASSIFIER:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+					(Classifier) arguments.get(2));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_CLASS_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-					(ASTNode2Element) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(AbstractTypeDeclaration) arguments.get(6));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_ABSTRACTTYPEDECLARATION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(org.eclipse.uml2.uml.Class) arguments.get(1), (AnonymousClassDeclaration) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Classifier) arguments.get(4),
+					(AbstractTypeDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1229,35 +1227,36 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 			return null;
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_132__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_132((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_142__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_142((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_130__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_130((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_138__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_CLASS_ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Classifier) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (AnonymousClassDeclaration) arguments.get(2),
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_ANONYMOUSCLASSDECLARATION_CLASSIFIER_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0),
+					(AnonymousClassDeclaration) arguments.get(1), (Classifier) arguments.get(2),
 					(AbstractTypeDeclaration) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_DEC_FWD__ANONYMOUSCLASSDECLARATION_ABSTRACTTYPEDECLARATION:
 			return checkDEC_FWD((AnonymousClassDeclaration) arguments.get(0),
 					(AbstractTypeDeclaration) arguments.get(1));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_DEC_BWD__CLASSIFIER_CLASS:
-			return checkDEC_BWD((Classifier) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___CHECK_DEC_BWD__CLASS_CLASSIFIER:
+			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0), (Classifier) arguments.get(1));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_CLASS_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-					(ASTNode2Element) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(AbstractTypeDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_ABSTRACTTYPEDECLARATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(org.eclipse.uml2.uml.Class) arguments.get(1), (AnonymousClassDeclaration) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Classifier) arguments.get(4),
+					(AbstractTypeDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1367,31 +1366,31 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_1 = isApplicableMatch.getObject("ne2ne");
-		EObject _localVariable_2 = isApplicableMatch.getObject("uContainer");
-		EObject _localVariable_3 = isApplicableMatch.getObject("jContainer");
-		EObject _localVariable_4 = isApplicableMatch.getObject("b2e");
-		EObject _localVariable_5 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpNe2ne = _localVariable_1;
-		EObject tmpUContainer = _localVariable_2;
-		EObject tmpJContainer = _localVariable_3;
-		EObject tmpB2e = _localVariable_4;
-		EObject tmpBodyDeclaration = _localVariable_5;
-		if (tmpFeature instanceof Classifier) {
-			Classifier feature = (Classifier) tmpFeature;
-			if (tmpNe2ne instanceof ASTNode2Element) {
-				ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-				if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-					org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-					if (tmpJContainer instanceof AnonymousClassDeclaration) {
-						AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
-						if (tmpB2e instanceof ASTNode2Element) {
-							ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
-							if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
-								return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration,
+		EObject _localVariable_0 = isApplicableMatch.getObject("uContainer");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jContainer");
+		EObject _localVariable_2 = isApplicableMatch.getObject("b2e");
+		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_5 = isApplicableMatch.getObject("ne2ne");
+		EObject tmpUContainer = _localVariable_0;
+		EObject tmpJContainer = _localVariable_1;
+		EObject tmpB2e = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_4;
+		EObject tmpNe2ne = _localVariable_5;
+		if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+			if (tmpJContainer instanceof AnonymousClassDeclaration) {
+				AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
+				if (tmpB2e instanceof ASTNode2Element) {
+					ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
+					if (tmpFeature instanceof Classifier) {
+						Classifier feature = (Classifier) tmpFeature;
+						if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
+							AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
+							if (tmpNe2ne instanceof ASTNode2Element) {
+								ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+								return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne,
 										isApplicableMatch };
 							}
 						}
@@ -1403,15 +1402,15 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_blackBBBBBBFBB(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne,
 			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch) {
-		if (!feature.equals(uContainer)) {
-			if (!b2e.equals(ne2ne)) {
+		if (!b2e.equals(ne2ne)) {
+			if (!feature.equals(uContainer)) {
 				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 					if (tmpCsp instanceof CSP) {
 						CSP csp = (CSP) tmpCsp;
-						return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, csp, _this,
+						return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, csp, _this,
 								isApplicableMatch };
 					}
 				}
@@ -1425,19 +1424,19 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding != null) {
-			Classifier feature = (Classifier) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[0];
-			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[2];
-			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[3];
-			ASTNode2Element b2e = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[4];
-			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[5];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[0];
+			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[1];
+			ASTNode2Element b2e = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[2];
+			Classifier feature = (Classifier) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[3];
+			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[4];
+			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_black = pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_blackBBBBBBFBB(
-					feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, _this, isApplicableMatch);
+					uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, _this, isApplicableMatch);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_black[6];
 
-				return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, csp, _this,
+				return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1445,9 +1444,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_1_performtransformation_greenBB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
+			org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		uContainer.getNestedClassifiers().add(feature);
-		return new Object[] { feature, uContainer };
+		return new Object[] { uContainer, feature };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_2_collecttranslatedelements_greenF() {
@@ -1456,26 +1455,26 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject ne2ne, EObject uContainer, EObject jContainer,
-			EObject b2e, EObject bodyDeclaration) {
-		if (!feature.equals(ne2ne)) {
-			if (!feature.equals(uContainer)) {
-				if (!feature.equals(jContainer)) {
-					if (!ne2ne.equals(uContainer)) {
-						if (!jContainer.equals(ne2ne)) {
-							if (!jContainer.equals(uContainer)) {
-								if (!b2e.equals(feature)) {
-									if (!b2e.equals(ne2ne)) {
-										if (!b2e.equals(uContainer)) {
-											if (!b2e.equals(jContainer)) {
-												if (!b2e.equals(bodyDeclaration)) {
-													if (!bodyDeclaration.equals(feature)) {
-														if (!bodyDeclaration.equals(ne2ne)) {
-															if (!bodyDeclaration.equals(uContainer)) {
-																if (!bodyDeclaration.equals(jContainer)) {
-																	return new Object[] { ruleresult, feature, ne2ne,
-																			uContainer, jContainer, b2e,
-																			bodyDeclaration };
+			PerformRuleResult ruleresult, EObject uContainer, EObject jContainer, EObject b2e, EObject feature,
+			EObject bodyDeclaration, EObject ne2ne) {
+		if (!jContainer.equals(uContainer)) {
+			if (!jContainer.equals(ne2ne)) {
+				if (!b2e.equals(uContainer)) {
+					if (!b2e.equals(jContainer)) {
+						if (!b2e.equals(feature)) {
+							if (!b2e.equals(bodyDeclaration)) {
+								if (!b2e.equals(ne2ne)) {
+									if (!feature.equals(uContainer)) {
+										if (!feature.equals(jContainer)) {
+											if (!feature.equals(ne2ne)) {
+												if (!bodyDeclaration.equals(uContainer)) {
+													if (!bodyDeclaration.equals(jContainer)) {
+														if (!bodyDeclaration.equals(feature)) {
+															if (!bodyDeclaration.equals(ne2ne)) {
+																if (!ne2ne.equals(uContainer)) {
+																	return new Object[] { ruleresult, uContainer,
+																			jContainer, b2e, feature, bodyDeclaration,
+																			ne2ne };
 																}
 															}
 														}
@@ -1495,7 +1494,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_3_bookkeepingforedges_greenBBBBBFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject uContainer, EObject jContainer,
+			PerformRuleResult ruleresult, EObject uContainer, EObject jContainer, EObject feature,
 			EObject bodyDeclaration) {
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1520,15 +1519,15 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 				.setName(jContainer__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jContainer____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__jContainer____anonymousClassDeclarationOwner_name_prime);
-		return new Object[] { ruleresult, feature, uContainer, jContainer, bodyDeclaration,
+		return new Object[] { ruleresult, uContainer, jContainer, feature, bodyDeclaration,
 				uContainer__feature____nestedClassifier, jContainer__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jContainer____anonymousClassDeclarationOwner };
 	}
 
 	public static final void pattern_InnerDeclaration2InnerClassifier_InAnonymous_1_5_registerobjects_expressionBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, PerformRuleResult ruleresult, EObject feature,
-			EObject ne2ne, EObject uContainer, EObject jContainer, EObject b2e, EObject bodyDeclaration) {
-		_this.registerObjects_FWD(ruleresult, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, PerformRuleResult ruleresult, EObject uContainer,
+			EObject jContainer, EObject b2e, EObject feature, EObject bodyDeclaration, EObject ne2ne) {
+		_this.registerObjects_FWD(ruleresult, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 
 	}
 
@@ -1605,22 +1604,22 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_2_corematch_blackFFFBFBB(
+	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_2_corematch_blackFBFFBFB(
 			AnonymousClassDeclaration jContainer, AbstractTypeDeclaration bodyDeclaration, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jContainer,
+		for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(bodyDeclaration,
 				ASTNode2Element.class, "source")) {
-			Element tmpUContainer = ne2ne.getTarget();
-			if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-				for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
+			Element tmpFeature = b2e.getTarget();
+			if (tmpFeature instanceof Classifier) {
+				Classifier feature = (Classifier) tmpFeature;
+				for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(jContainer, ASTNode2Element.class, "source")) {
 					if (!b2e.equals(ne2ne)) {
-						Element tmpFeature = b2e.getTarget();
-						if (tmpFeature instanceof Classifier) {
-							Classifier feature = (Classifier) tmpFeature;
+						Element tmpUContainer = ne2ne.getTarget();
+						if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+							org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
 							if (!feature.equals(uContainer)) {
-								_result.add(new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration,
+								_result.add(new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne,
 										match });
 							}
 						}
@@ -1634,18 +1633,18 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_3_findcontext_blackBBBBBB(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!feature.equals(uContainer)) {
-			if (!b2e.equals(ne2ne)) {
-				if (uContainer.equals(ne2ne.getTarget())) {
-					if (jContainer.equals(ne2ne.getSource())) {
-						if (jContainer.getBodyDeclarations().contains(bodyDeclaration)) {
-							if (bodyDeclaration.equals(b2e.getSource())) {
-								if (feature.equals(b2e.getTarget())) {
-									_result.add(new Object[] { feature, ne2ne, uContainer, jContainer, b2e,
-											bodyDeclaration });
+		if (!b2e.equals(ne2ne)) {
+			if (!feature.equals(uContainer)) {
+				if (feature.equals(b2e.getTarget())) {
+					if (bodyDeclaration.equals(b2e.getSource())) {
+						if (uContainer.equals(ne2ne.getTarget())) {
+							if (jContainer.getBodyDeclarations().contains(bodyDeclaration)) {
+								if (jContainer.equals(ne2ne.getSource())) {
+									_result.add(new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration,
+											ne2ne });
 								}
 							}
 						}
@@ -1657,71 +1656,70 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_3_findcontext_greenBBBBBBFFFFFFF(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jContainer____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String b2e__feature____target_name_prime = "target";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String ne2ne__uContainer____target_name_prime = "target";
-		String ne2ne__jContainer____source_name_prime = "source";
 		String jContainer__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__jContainer____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
-		String b2e__bodyDeclaration____source_name_prime = "source";
-		String b2e__feature____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(feature);
-		isApplicableMatch.getAllContextElements().add(ne2ne);
+		String ne2ne__jContainer____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(jContainer);
 		isApplicableMatch.getAllContextElements().add(b2e);
+		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(ne2ne);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(b2e__bodyDeclaration____source);
 		ne2ne__uContainer____target.setSrc(ne2ne);
 		ne2ne__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
-		ne2ne__jContainer____source.setSrc(ne2ne);
-		ne2ne__jContainer____source.setTrg(jContainer);
-		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
 		jContainer__bodyDeclaration____bodyDeclarations.setSrc(jContainer);
 		jContainer__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jContainer__bodyDeclaration____bodyDeclarations);
 		bodyDeclaration__jContainer____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
 		bodyDeclaration__jContainer____anonymousClassDeclarationOwner.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jContainer____anonymousClassDeclarationOwner);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(b2e__bodyDeclaration____source);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
+		ne2ne__jContainer____source.setSrc(ne2ne);
+		ne2ne__jContainer____source.setTrg(jContainer);
+		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
-		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		jContainer__bodyDeclaration____bodyDeclarations
 				.setName(jContainer__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jContainer____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__jContainer____anonymousClassDeclarationOwner_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, isApplicableMatch,
-				ne2ne__uContainer____target, ne2ne__jContainer____source,
+		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
+		return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, isApplicableMatch,
+				b2e__feature____target, b2e__bodyDeclaration____source, ne2ne__uContainer____target,
 				jContainer__bodyDeclaration____bodyDeclarations,
-				bodyDeclaration__jContainer____anonymousClassDeclarationOwner, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+				bodyDeclaration__jContainer____anonymousClassDeclarationOwner, ne2ne__jContainer____source };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_bindingFBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, feature, ne2ne, uContainer,
-				jContainer, b2e, bodyDeclaration);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uContainer, jContainer, b2e, feature,
+				bodyDeclaration, ne2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e,
-					bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration,
+					ne2ne };
 		}
 		return null;
 	}
@@ -1731,11 +1729,11 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
+			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+				_this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_binding[0];
 
@@ -1743,8 +1741,8 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					csp);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e,
-						bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, uContainer, jContainer, b2e, feature,
+						bodyDeclaration, ne2ne };
 			}
 		}
 		return null;
@@ -1779,21 +1777,21 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_1_initialbindings_blackBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer) {
+			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, org.eclipse.uml2.uml.Class uContainer,
+			Classifier feature) {
 		if (!feature.equals(uContainer)) {
-			return new Object[] { _this, match, feature, uContainer };
+			return new Object[] { _this, match, uContainer, feature };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_bindingFBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, feature, uContainer);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, org.eclipse.uml2.uml.Class uContainer,
+			Classifier feature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uContainer, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, feature, uContainer };
+			return new Object[] { csp, _this, match, uContainer, feature };
 		}
 		return null;
 	}
@@ -1803,10 +1801,10 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_bindingAndBlackFBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer) {
+			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, org.eclipse.uml2.uml.Class uContainer,
+			Classifier feature) {
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_bindingFBBBB(
-				_this, match, feature, uContainer);
+				_this, match, uContainer, feature);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_binding[0];
 
@@ -1814,7 +1812,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					csp);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, feature, uContainer };
+				return new Object[] { csp, _this, match, uContainer, feature };
 			}
 		}
 		return null;
@@ -1828,43 +1826,43 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_4_collectelementstobetranslated_blackBBB(
-			Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
+			Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		if (!feature.equals(uContainer)) {
-			return new Object[] { match, feature, uContainer };
+			return new Object[] { match, uContainer, feature };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_4_collectelementstobetranslated_greenBBBF(
-			Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
+			Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
 		uContainer__feature____nestedClassifier.setSrc(uContainer);
 		uContainer__feature____nestedClassifier.setTrg(feature);
 		match.getToBeTranslatedEdges().add(uContainer__feature____nestedClassifier);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
-		return new Object[] { match, feature, uContainer, uContainer__feature____nestedClassifier };
+		return new Object[] { match, uContainer, feature, uContainer__feature____nestedClassifier };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_5_collectcontextelements_blackBBB(
-			Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
+			Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		if (!feature.equals(uContainer)) {
-			return new Object[] { match, feature, uContainer };
+			return new Object[] { match, uContainer, feature };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_5_collectcontextelements_greenBBB(
-			Match match, Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
-		match.getContextNodes().add(feature);
+			Match match, org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		match.getContextNodes().add(uContainer);
-		return new Object[] { match, feature, uContainer };
+		match.getContextNodes().add(feature);
+		return new Object[] { match, uContainer, feature };
 	}
 
 	public static final void pattern_InnerDeclaration2InnerClassifier_InAnonymous_10_6_registerobjectstomatch_expressionBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer) {
-		_this.registerObjectsToMatch_BWD(match, feature, uContainer);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, org.eclipse.uml2.uml.Class uContainer,
+			Classifier feature) {
+		_this.registerObjectsToMatch_BWD(match, uContainer, feature);
 
 	}
 
@@ -1880,31 +1878,31 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_1 = isApplicableMatch.getObject("ne2ne");
-		EObject _localVariable_2 = isApplicableMatch.getObject("uContainer");
-		EObject _localVariable_3 = isApplicableMatch.getObject("jContainer");
-		EObject _localVariable_4 = isApplicableMatch.getObject("b2e");
-		EObject _localVariable_5 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpNe2ne = _localVariable_1;
-		EObject tmpUContainer = _localVariable_2;
-		EObject tmpJContainer = _localVariable_3;
-		EObject tmpB2e = _localVariable_4;
-		EObject tmpBodyDeclaration = _localVariable_5;
-		if (tmpFeature instanceof Classifier) {
-			Classifier feature = (Classifier) tmpFeature;
-			if (tmpNe2ne instanceof ASTNode2Element) {
-				ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-				if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-					org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-					if (tmpJContainer instanceof AnonymousClassDeclaration) {
-						AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
-						if (tmpB2e instanceof ASTNode2Element) {
-							ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
-							if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
-								return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration,
+		EObject _localVariable_0 = isApplicableMatch.getObject("uContainer");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jContainer");
+		EObject _localVariable_2 = isApplicableMatch.getObject("b2e");
+		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_5 = isApplicableMatch.getObject("ne2ne");
+		EObject tmpUContainer = _localVariable_0;
+		EObject tmpJContainer = _localVariable_1;
+		EObject tmpB2e = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_4;
+		EObject tmpNe2ne = _localVariable_5;
+		if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+			if (tmpJContainer instanceof AnonymousClassDeclaration) {
+				AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
+				if (tmpB2e instanceof ASTNode2Element) {
+					ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
+					if (tmpFeature instanceof Classifier) {
+						Classifier feature = (Classifier) tmpFeature;
+						if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
+							AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
+							if (tmpNe2ne instanceof ASTNode2Element) {
+								ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+								return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne,
 										isApplicableMatch };
 							}
 						}
@@ -1916,15 +1914,15 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_blackBBBBBBFBB(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne,
 			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch) {
-		if (!feature.equals(uContainer)) {
-			if (!b2e.equals(ne2ne)) {
+		if (!b2e.equals(ne2ne)) {
+			if (!feature.equals(uContainer)) {
 				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 					if (tmpCsp instanceof CSP) {
 						CSP csp = (CSP) tmpCsp;
-						return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, csp, _this,
+						return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, csp, _this,
 								isApplicableMatch };
 					}
 				}
@@ -1938,19 +1936,19 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding != null) {
-			Classifier feature = (Classifier) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[0];
-			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[2];
-			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[3];
-			ASTNode2Element b2e = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[4];
-			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[5];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[0];
+			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[1];
+			ASTNode2Element b2e = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[2];
+			Classifier feature = (Classifier) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[3];
+			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[4];
+			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_black = pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_blackBBBBBBFBB(
-					feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, _this, isApplicableMatch);
+					uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, _this, isApplicableMatch);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_1_performtransformation_black[6];
 
-				return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, csp, _this,
+				return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1969,26 +1967,26 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject ne2ne, EObject uContainer, EObject jContainer,
-			EObject b2e, EObject bodyDeclaration) {
-		if (!feature.equals(ne2ne)) {
-			if (!feature.equals(uContainer)) {
-				if (!feature.equals(jContainer)) {
-					if (!ne2ne.equals(uContainer)) {
-						if (!jContainer.equals(ne2ne)) {
-							if (!jContainer.equals(uContainer)) {
-								if (!b2e.equals(feature)) {
-									if (!b2e.equals(ne2ne)) {
-										if (!b2e.equals(uContainer)) {
-											if (!b2e.equals(jContainer)) {
-												if (!b2e.equals(bodyDeclaration)) {
-													if (!bodyDeclaration.equals(feature)) {
-														if (!bodyDeclaration.equals(ne2ne)) {
-															if (!bodyDeclaration.equals(uContainer)) {
-																if (!bodyDeclaration.equals(jContainer)) {
-																	return new Object[] { ruleresult, feature, ne2ne,
-																			uContainer, jContainer, b2e,
-																			bodyDeclaration };
+			PerformRuleResult ruleresult, EObject uContainer, EObject jContainer, EObject b2e, EObject feature,
+			EObject bodyDeclaration, EObject ne2ne) {
+		if (!jContainer.equals(uContainer)) {
+			if (!jContainer.equals(ne2ne)) {
+				if (!b2e.equals(uContainer)) {
+					if (!b2e.equals(jContainer)) {
+						if (!b2e.equals(feature)) {
+							if (!b2e.equals(bodyDeclaration)) {
+								if (!b2e.equals(ne2ne)) {
+									if (!feature.equals(uContainer)) {
+										if (!feature.equals(jContainer)) {
+											if (!feature.equals(ne2ne)) {
+												if (!bodyDeclaration.equals(uContainer)) {
+													if (!bodyDeclaration.equals(jContainer)) {
+														if (!bodyDeclaration.equals(feature)) {
+															if (!bodyDeclaration.equals(ne2ne)) {
+																if (!ne2ne.equals(uContainer)) {
+																	return new Object[] { ruleresult, uContainer,
+																			jContainer, b2e, feature, bodyDeclaration,
+																			ne2ne };
 																}
 															}
 														}
@@ -2008,7 +2006,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_3_bookkeepingforedges_greenBBBBBFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject uContainer, EObject jContainer,
+			PerformRuleResult ruleresult, EObject uContainer, EObject jContainer, EObject feature,
 			EObject bodyDeclaration) {
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2033,15 +2031,15 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 				.setName(jContainer__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jContainer____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__jContainer____anonymousClassDeclarationOwner_name_prime);
-		return new Object[] { ruleresult, feature, uContainer, jContainer, bodyDeclaration,
+		return new Object[] { ruleresult, uContainer, jContainer, feature, bodyDeclaration,
 				uContainer__feature____nestedClassifier, jContainer__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jContainer____anonymousClassDeclarationOwner };
 	}
 
 	public static final void pattern_InnerDeclaration2InnerClassifier_InAnonymous_11_5_registerobjects_expressionBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, PerformRuleResult ruleresult, EObject feature,
-			EObject ne2ne, EObject uContainer, EObject jContainer, EObject b2e, EObject bodyDeclaration) {
-		_this.registerObjects_BWD(ruleresult, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, PerformRuleResult ruleresult, EObject uContainer,
+			EObject jContainer, EObject b2e, EObject feature, EObject bodyDeclaration, EObject ne2ne) {
+		_this.registerObjects_BWD(ruleresult, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 
 	}
 
@@ -2104,36 +2102,36 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_2_corematch_bindingFFB(
 			Match match) {
-		EObject _localVariable_0 = match.getObject("feature");
-		EObject _localVariable_1 = match.getObject("uContainer");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpUContainer = _localVariable_1;
-		if (tmpFeature instanceof Classifier) {
-			Classifier feature = (Classifier) tmpFeature;
-			if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-				return new Object[] { feature, uContainer, match };
+		EObject _localVariable_0 = match.getObject("uContainer");
+		EObject _localVariable_1 = match.getObject("feature");
+		EObject tmpUContainer = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
+		if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+			if (tmpFeature instanceof Classifier) {
+				Classifier feature = (Classifier) tmpFeature;
+				return new Object[] { uContainer, feature, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_2_corematch_blackBFBFFFB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer, Match match) {
+	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_2_corematch_blackBFFBFFB(
+			org.eclipse.uml2.uml.Class uContainer, Classifier feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!feature.equals(uContainer)) {
-			for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uContainer,
+			for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
 					ASTNode2Element.class, "target")) {
-				ASTNode tmpJContainer = ne2ne.getSource();
-				if (tmpJContainer instanceof AnonymousClassDeclaration) {
-					AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
-					for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(feature, ASTNode2Element.class, "target")) {
+				ASTNode tmpBodyDeclaration = b2e.getSource();
+				if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
+					AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
+					for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(uContainer, ASTNode2Element.class, "target")) {
 						if (!b2e.equals(ne2ne)) {
-							ASTNode tmpBodyDeclaration = b2e.getSource();
-							if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
-								AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
-								_result.add(new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration,
+							ASTNode tmpJContainer = ne2ne.getSource();
+							if (tmpJContainer instanceof AnonymousClassDeclaration) {
+								AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
+								_result.add(new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne,
 										match });
 							}
 
@@ -2147,18 +2145,18 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_3_findcontext_blackBBBBBB(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!feature.equals(uContainer)) {
-			if (!b2e.equals(ne2ne)) {
+		if (!b2e.equals(ne2ne)) {
+			if (!feature.equals(uContainer)) {
 				if (uContainer.getNestedClassifiers().contains(feature)) {
-					if (uContainer.equals(ne2ne.getTarget())) {
-						if (jContainer.equals(ne2ne.getSource())) {
-							if (bodyDeclaration.equals(b2e.getSource())) {
-								if (feature.equals(b2e.getTarget())) {
-									_result.add(new Object[] { feature, ne2ne, uContainer, jContainer, b2e,
-											bodyDeclaration });
+					if (feature.equals(b2e.getTarget())) {
+						if (bodyDeclaration.equals(b2e.getSource())) {
+							if (uContainer.equals(ne2ne.getTarget())) {
+								if (jContainer.equals(ne2ne.getSource())) {
+									_result.add(new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration,
+											ne2ne });
 								}
 							}
 						}
@@ -2170,60 +2168,60 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_3_findcontext_greenBBBBBBFFFFFF(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
+		String b2e__feature____target_name_prime = "target";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String ne2ne__uContainer____target_name_prime = "target";
 		String ne2ne__jContainer____source_name_prime = "source";
-		String b2e__bodyDeclaration____source_name_prime = "source";
-		String b2e__feature____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(feature);
-		isApplicableMatch.getAllContextElements().add(ne2ne);
 		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(jContainer);
 		isApplicableMatch.getAllContextElements().add(b2e);
+		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(ne2ne);
 		uContainer__feature____nestedClassifier.setSrc(uContainer);
 		uContainer__feature____nestedClassifier.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(uContainer__feature____nestedClassifier);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(b2e__bodyDeclaration____source);
 		ne2ne__uContainer____target.setSrc(ne2ne);
 		ne2ne__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		ne2ne__jContainer____source.setSrc(ne2ne);
 		ne2ne__jContainer____source.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__jContainer____source);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(b2e__bodyDeclaration____source);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, isApplicableMatch,
-				uContainer__feature____nestedClassifier, ne2ne__uContainer____target, ne2ne__jContainer____source,
-				b2e__bodyDeclaration____source, b2e__feature____target };
+		return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, isApplicableMatch,
+				uContainer__feature____nestedClassifier, b2e__feature____target, b2e__bodyDeclaration____source,
+				ne2ne__uContainer____target, ne2ne__jContainer____source };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_bindingFBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, ne2ne, uContainer,
-				jContainer, b2e, bodyDeclaration);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uContainer, jContainer, b2e, feature,
+				bodyDeclaration, ne2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e,
-					bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration,
+					ne2ne };
 		}
 		return null;
 	}
@@ -2233,11 +2231,11 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
+			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration);
+				_this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_binding[0];
 
@@ -2245,8 +2243,8 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					csp);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e,
-						bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, uContainer, jContainer, b2e, feature,
+						bodyDeclaration, ne2ne };
 			}
 		}
 		return null;
@@ -2345,7 +2343,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 				Classifier feature = (Classifier) tmpFeature;
 				if (!feature.equals(uContainer)) {
 					if (uContainer.getNestedClassifiers().contains(feature)) {
-						_result.add(new Object[] { feature, uContainer, _edge_nestedClassifier });
+						_result.add(new Object[] { uContainer, feature, _edge_nestedClassifier });
 					}
 				}
 			}
@@ -2366,9 +2364,9 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final boolean pattern_InnerDeclaration2InnerClassifier_InAnonymous_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, feature, uContainer);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, Match match, org.eclipse.uml2.uml.Class uContainer,
+			Classifier feature) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uContainer, feature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2534,23 +2532,23 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("feature");
-		EObject _localVariable_1 = targetMatch.getObject("uContainer");
-		EObject _localVariable_2 = sourceMatch.getObject("jContainer");
+		EObject _localVariable_0 = targetMatch.getObject("uContainer");
+		EObject _localVariable_1 = sourceMatch.getObject("jContainer");
+		EObject _localVariable_2 = targetMatch.getObject("feature");
 		EObject _localVariable_3 = sourceMatch.getObject("bodyDeclaration");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpUContainer = _localVariable_1;
-		EObject tmpJContainer = _localVariable_2;
+		EObject tmpUContainer = _localVariable_0;
+		EObject tmpJContainer = _localVariable_1;
+		EObject tmpFeature = _localVariable_2;
 		EObject tmpBodyDeclaration = _localVariable_3;
-		if (tmpFeature instanceof Classifier) {
-			Classifier feature = (Classifier) tmpFeature;
-			if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
-				if (tmpJContainer instanceof AnonymousClassDeclaration) {
-					AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
+		if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+			if (tmpJContainer instanceof AnonymousClassDeclaration) {
+				AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
+				if (tmpFeature instanceof Classifier) {
+					Classifier feature = (Classifier) tmpFeature;
 					if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
 						AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
-						return new Object[] { feature, uContainer, jContainer, bodyDeclaration, targetMatch,
+						return new Object[] { uContainer, jContainer, feature, bodyDeclaration, targetMatch,
 								sourceMatch };
 					}
 				}
@@ -2560,11 +2558,11 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_blackBBBBBB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, Classifier feature,
 			AbstractTypeDeclaration bodyDeclaration, Match sourceMatch, Match targetMatch) {
 		if (!feature.equals(uContainer)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { feature, uContainer, jContainer, bodyDeclaration, sourceMatch, targetMatch };
+				return new Object[] { uContainer, jContainer, feature, bodyDeclaration, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2575,30 +2573,30 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_bindingFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding != null) {
-			Classifier feature = (Classifier) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[0];
-			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[1];
-			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[0];
+			AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[1];
+			Classifier feature = (Classifier) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[2];
 			AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_black = pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_blackBBBBBB(
-					feature, uContainer, jContainer, bodyDeclaration, sourceMatch, targetMatch);
+					uContainer, jContainer, feature, bodyDeclaration, sourceMatch, targetMatch);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { feature, uContainer, jContainer, bodyDeclaration, sourceMatch, targetMatch };
+				return new Object[] { uContainer, jContainer, feature, bodyDeclaration, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_bindingFBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			AbstractTypeDeclaration bodyDeclaration, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(feature, uContainer, jContainer, bodyDeclaration,
+			InnerDeclaration2InnerClassifier_InAnonymous _this, org.eclipse.uml2.uml.Class uContainer,
+			AnonymousClassDeclaration jContainer, Classifier feature, AbstractTypeDeclaration bodyDeclaration,
+			Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(uContainer, jContainer, feature, bodyDeclaration,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, feature, uContainer, jContainer, bodyDeclaration, sourceMatch,
+			return new Object[] { csp, _this, uContainer, jContainer, feature, bodyDeclaration, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2609,11 +2607,11 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, Classifier feature,
-			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			AbstractTypeDeclaration bodyDeclaration, Match sourceMatch, Match targetMatch) {
+			InnerDeclaration2InnerClassifier_InAnonymous _this, org.eclipse.uml2.uml.Class uContainer,
+			AnonymousClassDeclaration jContainer, Classifier feature, AbstractTypeDeclaration bodyDeclaration,
+			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_bindingFBBBBBBB(
-				_this, feature, uContainer, jContainer, bodyDeclaration, sourceMatch, targetMatch);
+				_this, uContainer, jContainer, feature, bodyDeclaration, sourceMatch, targetMatch);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_binding[0];
 
@@ -2621,7 +2619,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					csp);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, feature, uContainer, jContainer, bodyDeclaration, sourceMatch,
+				return new Object[] { csp, _this, uContainer, jContainer, feature, bodyDeclaration, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2635,21 +2633,21 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_blackBFBBFBBB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
+	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_blackBBFBBFBB(
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, Classifier feature,
 			AbstractTypeDeclaration bodyDeclaration, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!feature.equals(uContainer)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(uContainer, ASTNode2Element.class, "target")) {
-					if (jContainer.equals(ne2ne.getSource())) {
-						for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
+				for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
+						ASTNode2Element.class, "target")) {
+					if (bodyDeclaration.equals(b2e.getSource())) {
+						for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
+								.getOppositeReferenceTyped(uContainer, ASTNode2Element.class, "target")) {
 							if (!b2e.equals(ne2ne)) {
-								if (feature.equals(b2e.getTarget())) {
-									_result.add(new Object[] { feature, ne2ne, uContainer, jContainer, b2e,
-											bodyDeclaration, sourceMatch, targetMatch });
+								if (jContainer.equals(ne2ne.getSource())) {
+									_result.add(new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration,
+											ne2ne, sourceMatch, targetMatch });
 								}
 							}
 						}
@@ -2661,22 +2659,22 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_5_matchcorrcontext_greenBBBBF(
-			ASTNode2Element ne2ne, ASTNode2Element b2e, Match sourceMatch, Match targetMatch) {
+			ASTNode2Element b2e, ASTNode2Element ne2ne, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "InnerDeclaration2InnerClassifier_InAnonymous";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(ne2ne);
 		ccMatch.getAllContextElements().add(b2e);
+		ccMatch.getAllContextElements().add(ne2ne);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { ne2ne, b2e, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { b2e, ne2ne, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_24_6_createcorrespondence_blackBBBBB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, Classifier feature,
 			AbstractTypeDeclaration bodyDeclaration, CCMatch ccMatch) {
 		if (!feature.equals(uContainer)) {
-			return new Object[] { feature, uContainer, jContainer, bodyDeclaration, ccMatch };
+			return new Object[] { uContainer, jContainer, feature, bodyDeclaration, ccMatch };
 		}
 		return null;
 	}
@@ -2721,10 +2719,10 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_28_1_matchtggpattern_blackBB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer) {
+			org.eclipse.uml2.uml.Class uContainer, Classifier feature) {
 		if (!feature.equals(uContainer)) {
 			if (uContainer.getNestedClassifiers().contains(feature)) {
-				return new Object[] { feature, uContainer };
+				return new Object[] { uContainer, feature };
 			}
 		}
 		return null;
@@ -2754,38 +2752,6 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Classifier feature) {
-		if (ruleResult.getTargetObjects().contains(feature)) {
-			return new Object[] { ruleResult, feature };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element b2e) {
-		if (ruleResult.getCorrObjects().contains(b2e)) {
-			return new Object[] { ruleResult, b2e };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration bodyDeclaration) {
-		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
-			return new Object[] { ruleResult, bodyDeclaration };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
-		if (ruleResult.getCorrObjects().contains(ne2ne)) {
-			return new Object[] { ruleResult, ne2ne };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Class uContainer) {
 		if (ruleResult.getTargetObjects().contains(uContainer)) {
 			return new Object[] { ruleResult, uContainer };
@@ -2793,7 +2759,15 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		return null;
 	}
 
-	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
+		if (ruleResult.getCorrObjects().contains(ne2ne)) {
+			return new Object[] { ruleResult, ne2ne };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration jContainer) {
 		if (ruleResult.getSourceObjects().contains(jContainer)) {
 			return new Object[] { ruleResult, jContainer };
@@ -2801,50 +2775,74 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		return null;
 	}
 
+	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element b2e) {
+		if (ruleResult.getCorrObjects().contains(b2e)) {
+			return new Object[] { ruleResult, b2e };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, Classifier feature) {
+		if (ruleResult.getTargetObjects().contains(feature)) {
+			return new Object[] { ruleResult, feature };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration bodyDeclaration) {
+		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
+			return new Object[] { ruleResult, bodyDeclaration };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList b2eList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList b2eList : ruleEntryContainer.getRuleEntryList()) {
 				if (!b2eList.equals(ne2neList)) {
-					for (EObject tmpB2e : b2eList.getEntryObjects()) {
-						if (tmpB2e instanceof ASTNode2Element) {
-							ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
-							Element tmpFeature = b2e.getTarget();
-							if (tmpFeature instanceof Classifier) {
-								Classifier feature = (Classifier) tmpFeature;
-								ASTNode tmpBodyDeclaration = b2e.getSource();
-								if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
-									AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
+					for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
+						if (tmpNe2ne instanceof ASTNode2Element) {
+							ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+							Element tmpUContainer = ne2ne.getTarget();
+							if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+								ASTNode tmpJContainer = ne2ne.getSource();
+								if (tmpJContainer instanceof AnonymousClassDeclaration) {
+									AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
 									if (pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_1BB(
-											ruleResult, b2e) == null) {
+											ruleResult, ne2ne) == null) {
 										if (pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, feature) == null) {
+												ruleResult, uContainer) == null) {
 											if (pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, bodyDeclaration) == null) {
-												for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
-													if (tmpNe2ne instanceof ASTNode2Element) {
-														ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+													ruleResult, jContainer) == null) {
+												for (EObject tmpB2e : b2eList.getEntryObjects()) {
+													if (tmpB2e instanceof ASTNode2Element) {
+														ASTNode2Element b2e = (ASTNode2Element) tmpB2e;
 														if (!b2e.equals(ne2ne)) {
-															Element tmpUContainer = ne2ne.getTarget();
-															if (tmpUContainer instanceof org.eclipse.uml2.uml.Class) {
-																org.eclipse.uml2.uml.Class uContainer = (org.eclipse.uml2.uml.Class) tmpUContainer;
+															Element tmpFeature = b2e.getTarget();
+															if (tmpFeature instanceof Classifier) {
+																Classifier feature = (Classifier) tmpFeature;
 																if (!feature.equals(uContainer)) {
-																	ASTNode tmpJContainer = ne2ne.getSource();
-																	if (tmpJContainer instanceof AnonymousClassDeclaration) {
-																		AnonymousClassDeclaration jContainer = (AnonymousClassDeclaration) tmpJContainer;
+																	ASTNode tmpBodyDeclaration = b2e.getSource();
+																	if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
+																		AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
 																		if (pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_3BB(
-																				ruleResult, ne2ne) == null) {
+																				ruleResult, b2e) == null) {
 																			if (pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_4BB(
-																					ruleResult, uContainer) == null) {
+																					ruleResult, feature) == null) {
 																				if (pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_2_isapplicablecore_black_nac_5BB(
 																						ruleResult,
-																						jContainer) == null) {
-																					_result.add(new Object[] { b2eList,
-																							feature, b2e,
-																							bodyDeclaration, ne2neList,
-																							ne2ne, uContainer,
-																							jContainer,
+																						bodyDeclaration) == null) {
+																					_result.add(new Object[] {
+																							ne2neList, uContainer,
+																							ne2ne, jContainer, b2eList,
+																							b2e, feature,
+																							bodyDeclaration,
 																							ruleEntryContainer,
 																							ruleResult });
 																				}
@@ -2874,15 +2872,16 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_bindingFBBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, feature, ne2ne, uContainer,
-				jContainer, b2e, bodyDeclaration, ruleResult);
+			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne,
+			ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uContainer, jContainer, b2e, feature,
+				bodyDeclaration, ne2ne, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e,
-					bodyDeclaration, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration,
+					ne2ne, ruleResult };
 		}
 		return null;
 	}
@@ -2892,11 +2891,12 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch, Classifier feature,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
-			ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
+			InnerDeclaration2InnerClassifier_InAnonymous _this, IsApplicableMatch isApplicableMatch,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_binding = pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, ruleResult);
+				_this, isApplicableMatch, uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, ruleResult);
 		if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_binding[0];
 
@@ -2904,8 +2904,8 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 					csp);
 			if (result_pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, ne2ne, uContainer, jContainer, b2e,
-						bodyDeclaration, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, uContainer, jContainer, b2e, feature,
+						bodyDeclaration, ne2ne, ruleResult };
 			}
 		}
 		return null;
@@ -2919,30 +2919,30 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_5_checknacs_blackBBBBBB(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration) {
-		if (!feature.equals(uContainer)) {
-			if (!b2e.equals(ne2ne)) {
-				return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration };
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne) {
+		if (!b2e.equals(ne2ne)) {
+			if (!feature.equals(uContainer)) {
+				return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_6_perform_blackBBBBBBB(
-			Classifier feature, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Class uContainer,
-			AnonymousClassDeclaration jContainer, ASTNode2Element b2e, AbstractTypeDeclaration bodyDeclaration,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, ASTNode2Element b2e,
+			Classifier feature, AbstractTypeDeclaration bodyDeclaration, ASTNode2Element ne2ne,
 			ModelgeneratorRuleResult ruleResult) {
-		if (!feature.equals(uContainer)) {
-			if (!b2e.equals(ne2ne)) {
-				return new Object[] { feature, ne2ne, uContainer, jContainer, b2e, bodyDeclaration, ruleResult };
+		if (!b2e.equals(ne2ne)) {
+			if (!feature.equals(uContainer)) {
+				return new Object[] { uContainer, jContainer, b2e, feature, bodyDeclaration, ne2ne, ruleResult };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_6_perform_greenBBBBB(
-			Classifier feature, org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer,
+			org.eclipse.uml2.uml.Class uContainer, AnonymousClassDeclaration jContainer, Classifier feature,
 			AbstractTypeDeclaration bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
 		uContainer.getNestedClassifiers().add(feature);
 		jContainer.getBodyDeclarations().add(bodyDeclaration);
@@ -2951,7 +2951,7 @@ public class InnerDeclaration2InnerClassifier_InAnonymousImpl extends AbstractRu
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { feature, uContainer, jContainer, bodyDeclaration, ruleResult };
+		return new Object[] { uContainer, jContainer, feature, bodyDeclaration, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InnerDeclaration2InnerClassifier_InAnonymous_29_7_expressionFB(

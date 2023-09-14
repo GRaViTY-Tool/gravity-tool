@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
 import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.EnumDeclaration;
@@ -803,7 +804,7 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_146(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_110(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -863,7 +864,7 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_157(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_117(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1190,8 +1191,7 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			ASTNode2Element ne2neParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element p2pParameter) {
 
 		Object[] result1_black = AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_29_1_createresult_blackB(this);
@@ -1207,14 +1207,14 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 		for (Object[] result2_black : AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
-			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
+			//nothing RuleEntryList p2pList = (RuleEntryList) result2_black[0];
 			org.eclipse.uml2.uml.Class uType = (org.eclipse.uml2.uml.Class) result2_black[1];
-			Enumeration uContainer = (Enumeration) result2_black[2];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[3];
+			ASTNode2Element p2p = (ASTNode2Element) result2_black[2];
+			AbstractTypeDeclaration jType = (AbstractTypeDeclaration) result2_black[3];
 			EnumDeclaration jContainer = (EnumDeclaration) result2_black[4];
 			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result2_black[5];
-			AbstractTypeDeclaration jType = (AbstractTypeDeclaration) result2_black[6];
-			ASTNode2Element p2p = (ASTNode2Element) result2_black[7];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[6];
+			Enumeration uContainer = (Enumeration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = AnonymousClass4EnumConstInTypeImpl
 					.pattern_AnonymousClass4EnumConstInType_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
@@ -1391,10 +1391,10 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_146__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_146((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_157__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_157((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_110__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_110((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_117__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3003,8 +3003,8 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_21_2_testcorematchandDECs_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_707297 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_707297 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_337446 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_337446 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3305,8 +3305,8 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_27_1_matchtggpattern_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_220294 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_220294 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_284243 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_284243 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3384,17 +3384,17 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Enumeration uContainer) {
-		if (ruleResult.getTargetObjects().contains(uContainer)) {
-			return new Object[] { ruleResult, uContainer };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element p2p) {
+		if (ruleResult.getCorrObjects().contains(p2p)) {
+			return new Object[] { ruleResult, p2p };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
-		if (ruleResult.getCorrObjects().contains(ne2ne)) {
-			return new Object[] { ruleResult, ne2ne };
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jType) {
+		if (ruleResult.getSourceObjects().contains(jType)) {
+			return new Object[] { ruleResult, jType };
 		}
 		return null;
 	}
@@ -3416,17 +3416,17 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jType) {
-		if (ruleResult.getSourceObjects().contains(jType)) {
-			return new Object[] { ruleResult, jType };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
+		if (ruleResult.getCorrObjects().contains(ne2ne)) {
+			return new Object[] { ruleResult, ne2ne };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element p2p) {
-		if (ruleResult.getCorrObjects().contains(p2p)) {
-			return new Object[] { ruleResult, p2p };
+			ModelgeneratorRuleResult ruleResult, Enumeration uContainer) {
+		if (ruleResult.getTargetObjects().contains(uContainer)) {
+			return new Object[] { ruleResult, uContainer };
 		}
 		return null;
 	}
@@ -3434,49 +3434,57 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
-				if (tmpNe2ne instanceof ASTNode2Element) {
-					ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-					Element tmpUContainer = ne2ne.getTarget();
-					if (tmpUContainer instanceof Enumeration) {
-						Enumeration uContainer = (Enumeration) tmpUContainer;
-						ASTNode tmpJContainer = ne2ne.getSource();
-						if (tmpJContainer instanceof EnumDeclaration) {
-							EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
-							Element tmpUType = uContainer.getOwner();
-							if (tmpUType instanceof org.eclipse.uml2.uml.Class) {
-								org.eclipse.uml2.uml.Class uType = (org.eclipse.uml2.uml.Class) tmpUType;
-								AbstractTypeDeclaration jType = jContainer.getAbstractTypeDeclaration();
-								if (jType != null) {
-									if (!jContainer.equals(jType)) {
-										if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_2BB(
-												ruleResult, ne2ne) == null) {
-											if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_1BB(
-													ruleResult, uContainer) == null) {
-												if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_3BB(
-														ruleResult, jContainer) == null) {
-													if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_0BB(
-															ruleResult, uType) == null) {
-														if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_5BB(
-																ruleResult, jType) == null) {
-															for (EnumConstantDeclaration mMember : jContainer
-																	.getEnumConstants()) {
-																if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_4BB(
-																		ruleResult, mMember) == null) {
-																	for (ASTNode2Element p2p : org.moflon.core.utilities.eMoflonEMFUtil
-																			.getOppositeReferenceTyped(uType,
-																					ASTNode2Element.class, "target")) {
-																		if (!ne2ne.equals(p2p)) {
-																			if (jType.equals(p2p.getSource())) {
-																				if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_6BB(
-																						ruleResult, p2p) == null) {
-																					_result.add(new Object[] {
-																							ne2neList, uType,
-																							uContainer, ne2ne,
-																							jContainer, mMember, jType,
-																							p2p, ruleEntryContainer,
-																							ruleResult });
+		for (RuleEntryList p2pList : ruleEntryContainer.getRuleEntryList()) {
+			for (EObject tmpP2p : p2pList.getEntryObjects()) {
+				if (tmpP2p instanceof ASTNode2Element) {
+					ASTNode2Element p2p = (ASTNode2Element) tmpP2p;
+					Element tmpUType = p2p.getTarget();
+					if (tmpUType instanceof org.eclipse.uml2.uml.Class) {
+						org.eclipse.uml2.uml.Class uType = (org.eclipse.uml2.uml.Class) tmpUType;
+						ASTNode tmpJType = p2p.getSource();
+						if (tmpJType instanceof AbstractTypeDeclaration) {
+							AbstractTypeDeclaration jType = (AbstractTypeDeclaration) tmpJType;
+							if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+									p2p) == null) {
+								if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_0BB(
+										ruleResult, uType) == null) {
+									if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_2BB(
+											ruleResult, jType) == null) {
+										for (Element tmpUContainer : uType.getOwnedElements()) {
+											if (tmpUContainer instanceof Enumeration) {
+												Enumeration uContainer = (Enumeration) tmpUContainer;
+												if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_6BB(
+														ruleResult, uContainer) == null) {
+													for (BodyDeclaration tmpJContainer : jType.getBodyDeclarations()) {
+														if (tmpJContainer instanceof EnumDeclaration) {
+															EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
+															if (!jContainer.equals(jType)) {
+																if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_3BB(
+																		ruleResult, jContainer) == null) {
+																	for (EnumConstantDeclaration mMember : jContainer
+																			.getEnumConstants()) {
+																		if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_4BB(
+																				ruleResult, mMember) == null) {
+																			for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
+																					.getOppositeReferenceTyped(
+																							uContainer,
+																							ASTNode2Element.class,
+																							"target")) {
+																				if (!ne2ne.equals(p2p)) {
+																					if (jContainer.equals(
+																							ne2ne.getSource())) {
+																						if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_5BB(
+																								ruleResult,
+																								ne2ne) == null) {
+																							_result.add(new Object[] {
+																									p2pList, uType, p2p,
+																									jType, jContainer,
+																									mMember, ne2ne,
+																									uContainer,
+																									ruleEntryContainer,
+																									ruleResult });
+																						}
+																					}
 																				}
 																			}
 																		}
@@ -3490,9 +3498,7 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 										}
 									}
 								}
-
 							}
-
 						}
 
 					}

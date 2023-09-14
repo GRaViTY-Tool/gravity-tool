@@ -103,19 +103,19 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TConstructor"/>
       </nodes>
       <edges xmi:id="_8H0ed-GOEey8I6Gm2JN-ZQ" source="_8H0eYuGOEey8I6Gm2JN-ZQ" target="_8H0eZOGOEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_EyLJ8OGQEey8I6Gm2JN-ZQ" source="_8H0eZOGOEey8I6Gm2JN-ZQ" target="_Ch5wcOGQEey8I6Gm2JN-ZQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/innerTypes"/>
       </edges>
       <edges xmi:id="_FLKRsOGQEey8I6Gm2JN-ZQ" source="_8H0eYuGOEey8I6Gm2JN-ZQ" target="_5-PtUOGPEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_Fd6OkOGQEey8I6Gm2JN-ZQ" source="_8H0eYuGOEey8I6Gm2JN-ZQ" target="_7YOYAOGPEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_FyCrgOGQEey8I6Gm2JN-ZQ" source="_8H0eYuGOEey8I6Gm2JN-ZQ" target="_4SvNwOGPEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_H_urEOGQEey8I6Gm2JN-ZQ" source="_Ch5wcOGQEey8I6Gm2JN-ZQ" target="_4SvNwOGPEey8I6Gm2JN-ZQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>
@@ -276,19 +276,19 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TConstructor"/>
       </nodes>
       <edges xmi:id="_8H0eluGOEey8I6Gm2JN-ZQ" source="_8H0egeGOEey8I6Gm2JN-ZQ" target="_8H0eg-GOEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_EyLJ8eGQEey8I6Gm2JN-ZQ" source="_8H0eg-GOEey8I6Gm2JN-ZQ" target="_Ch5wceGQEey8I6Gm2JN-ZQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/innerTypes"/>
       </edges>
       <edges xmi:id="_FLKRseGQEey8I6Gm2JN-ZQ" source="_8H0egeGOEey8I6Gm2JN-ZQ" target="_5-PtUeGPEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_Fd6OkeGQEey8I6Gm2JN-ZQ" source="_8H0egeGOEey8I6Gm2JN-ZQ" target="_7YOYAeGPEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_FyCrgeGQEey8I6Gm2JN-ZQ" source="_8H0egeGOEey8I6Gm2JN-ZQ" target="_4SvNweGPEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_H_urEeGQEey8I6Gm2JN-ZQ" source="_Ch5wceGQEey8I6Gm2JN-ZQ" target="_4SvNweGPEey8I6Gm2JN-ZQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClasses"/>

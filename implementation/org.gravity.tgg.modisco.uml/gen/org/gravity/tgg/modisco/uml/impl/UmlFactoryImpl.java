@@ -55,12 +55,8 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING:
-			return createTypeAccess2TemplateBinding();
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE:
-			return createParameterizedType2RedefinableTemplateSignature();
-		case UmlPackage.TYPE_ACCESS2_INTERFACE_REALIZATION:
-			return createTypeAccess2InterfaceRealization();
+		case UmlPackage.JAVA_MODEL2_UML_PACKAGE:
+			return createJavaModel2UMLPackage();
 		case UmlPackage.EXPRESSION2_COMMENT:
 			return createExpression2Comment();
 		case UmlPackage.AST_NODE2_ELEMENT:
@@ -69,16 +65,20 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 			return createTypeAccess2Generalization();
 		case UmlPackage.TYPE_ACCESS2_PARAMETER:
 			return createTypeAccess2Parameter();
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT:
-			return createModifier2NamedElement();
-		case UmlPackage.JAVA_PACKAGE2_UML_PACKAGE:
-			return createJavaPackage2UmlPackage();
 		case UmlPackage.COMPILATION_UNIT2_ARTIFACT:
 			return createCompilationUnit2Artifact();
-		case UmlPackage.JAVA_MODEL2_UML_PACKAGE:
-			return createJavaModel2UMLPackage();
 		case UmlPackage.TYPE_ACCESS2_PROPERTY:
 			return createTypeAccess2Property();
+		case UmlPackage.TYPE_ACCESS2_INTERFACE_REALIZATION:
+			return createTypeAccess2InterfaceRealization();
+		case UmlPackage.JAVA_PACKAGE2_UML_PACKAGE:
+			return createJavaPackage2UmlPackage();
+		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING:
+			return createTypeAccess2TemplateBinding();
+		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE:
+			return createParameterizedType2RedefinableTemplateSignature();
+		case UmlPackage.MODIFIER2_NAMED_ELEMENT:
+			return createModifier2NamedElement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -90,31 +90,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public TypeAccess2TemplateBinding createTypeAccess2TemplateBinding() {
-		TypeAccess2TemplateBindingImpl typeAccess2TemplateBinding = new TypeAccess2TemplateBindingImpl();
-		return typeAccess2TemplateBinding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ParameterizedType2RedefinableTemplateSignature createParameterizedType2RedefinableTemplateSignature() {
-		ParameterizedType2RedefinableTemplateSignatureImpl parameterizedType2RedefinableTemplateSignature = new ParameterizedType2RedefinableTemplateSignatureImpl();
-		return parameterizedType2RedefinableTemplateSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TypeAccess2InterfaceRealization createTypeAccess2InterfaceRealization() {
-		TypeAccess2InterfaceRealizationImpl typeAccess2InterfaceRealization = new TypeAccess2InterfaceRealizationImpl();
-		return typeAccess2InterfaceRealization;
+	public JavaModel2UMLPackage createJavaModel2UMLPackage() {
+		JavaModel2UMLPackageImpl javaModel2UMLPackage = new JavaModel2UMLPackageImpl();
+		return javaModel2UMLPackage;
 	}
 
 	/**
@@ -167,9 +145,31 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public Modifier2NamedElement createModifier2NamedElement() {
-		Modifier2NamedElementImpl modifier2NamedElement = new Modifier2NamedElementImpl();
-		return modifier2NamedElement;
+	public CompilationUnit2Artifact createCompilationUnit2Artifact() {
+		CompilationUnit2ArtifactImpl compilationUnit2Artifact = new CompilationUnit2ArtifactImpl();
+		return compilationUnit2Artifact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TypeAccess2Property createTypeAccess2Property() {
+		TypeAccess2PropertyImpl typeAccess2Property = new TypeAccess2PropertyImpl();
+		return typeAccess2Property;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TypeAccess2InterfaceRealization createTypeAccess2InterfaceRealization() {
+		TypeAccess2InterfaceRealizationImpl typeAccess2InterfaceRealization = new TypeAccess2InterfaceRealizationImpl();
+		return typeAccess2InterfaceRealization;
 	}
 
 	/**
@@ -189,9 +189,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public CompilationUnit2Artifact createCompilationUnit2Artifact() {
-		CompilationUnit2ArtifactImpl compilationUnit2Artifact = new CompilationUnit2ArtifactImpl();
-		return compilationUnit2Artifact;
+	public TypeAccess2TemplateBinding createTypeAccess2TemplateBinding() {
+		TypeAccess2TemplateBindingImpl typeAccess2TemplateBinding = new TypeAccess2TemplateBindingImpl();
+		return typeAccess2TemplateBinding;
 	}
 
 	/**
@@ -200,9 +200,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public JavaModel2UMLPackage createJavaModel2UMLPackage() {
-		JavaModel2UMLPackageImpl javaModel2UMLPackage = new JavaModel2UMLPackageImpl();
-		return javaModel2UMLPackage;
+	public ParameterizedType2RedefinableTemplateSignature createParameterizedType2RedefinableTemplateSignature() {
+		ParameterizedType2RedefinableTemplateSignatureImpl parameterizedType2RedefinableTemplateSignature = new ParameterizedType2RedefinableTemplateSignatureImpl();
+		return parameterizedType2RedefinableTemplateSignature;
 	}
 
 	/**
@@ -211,9 +211,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public TypeAccess2Property createTypeAccess2Property() {
-		TypeAccess2PropertyImpl typeAccess2Property = new TypeAccess2PropertyImpl();
-		return typeAccess2Property;
+	public Modifier2NamedElement createModifier2NamedElement() {
+		Modifier2NamedElementImpl modifier2NamedElement = new Modifier2NamedElementImpl();
+		return modifier2NamedElement;
 	}
 
 	/**

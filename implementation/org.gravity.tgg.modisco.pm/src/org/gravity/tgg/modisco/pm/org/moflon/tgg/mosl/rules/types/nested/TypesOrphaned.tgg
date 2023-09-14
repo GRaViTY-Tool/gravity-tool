@@ -6,24 +6,24 @@
 
 #source {
 	mModel:Model {
-		++  -orphanTypes -> mType
+		++ -orphanTypes -> mType
 	}
 
-	++mType: AbstractTypeDeclaration
+	++ mType: AbstractTypeDeclaration
 }
 
 #target {
 	pg:TypeGraph {
-		++  -ownedTypes -> tType
-		-packages->tProxyPackage
+		++ -allTypes -> tType
+		-modules->tModule
 	}
 	
-	tProxyPackage : TPackage {
-		tName := "(proxies)"
-		++-ownedTypes->tType
+	tModule:TModule {
+		location == "${PROXIES}"
+		++ -contains->tType
 	}
 
-	++tType:TAbstractType
+	++ tType:TAbstractType
 }
 
 #correspondence {
@@ -32,12 +32,12 @@
 		#trg->pg
 	}
 
-	++mTypeToTType :TypeToTAbstractType {
+	++ mTypeToTType :TypeToTAbstractType {
 		#src->mType
 		#trg->tType
 	}
 
-	++mAnnotatableToTAnnotatable :ASTNodeToTAnnotatable {
+	++ mAnnotatableToTAnnotatable :ASTNodeToTAnnotatable {
 		#src->mType
 		#trg->tType
 	}

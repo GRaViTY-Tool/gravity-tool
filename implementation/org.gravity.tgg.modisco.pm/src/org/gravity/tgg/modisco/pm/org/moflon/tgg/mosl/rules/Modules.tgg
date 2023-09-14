@@ -1,0 +1,260 @@
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule TypeToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	mType:ASTNode
+
+	cu:NamedElement
+}
+
+#target {
+	tType:TAbstractType {
+		++-module -> module
+	}
+
+	module:TModule
+}
+
+#correspondence {
+	cu2m:ElementToModule {
+		#src->cu
+		#trg->module
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule TypeInCompilationUnitToModule #extends TypeToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:CompilationUnit
+
+	mType:AbstractTypeDeclaration {
+		++-originalCompilationUnit -> cu
+	}
+}
+
+#target {
+	tType:TAbstractType
+}
+
+#correspondence {
+	type:TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule TypeInClassFileToModule #extends TypeToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:ClassFile
+
+	mType:AbstractTypeDeclaration {
+		++-originalClassFile -> cu
+	}
+}
+
+#target {
+	tType:TAbstractType
+}
+
+#correspondence {
+	type:TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnonClassInCompilationUnitToModule #extends TypeToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:CompilationUnit
+
+	mType:AnonymousClassDeclaration {
+		++-originalCompilationUnit -> cu
+	}
+}
+
+#target {
+	tType:TClass
+}
+
+#correspondence {
+	type:AnonymousClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule AnonClassInClassFileToModule #extends TypeToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:ClassFile
+
+	mType:AnonymousClassDeclaration {
+		++-originalClassFile -> cu
+	}
+}
+
+#target {
+	tType:TClass
+}
+
+#correspondence {
+	type:AnonymousClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ContainerToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	model:Model
+
+	++cu:NamedElement
+}
+
+#target {
+	pm:TypeGraph {
+		++-modules -> module
+	}
+
+	++module:TModule
+}
+
+#correspondence {
+	m2pm:ModelToTypeGraph {
+		#src->model
+		#trg->pm
+	}
+
+	++ cu2m:ElementToModule {
+		#src->cu
+		#trg->module
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule CompilationUnitToModule #extends ContainerToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	model:Model {
+		++-compilationUnits -> cu
+	}
+
+	++cu:CompilationUnit
+}
+
+#target {
+	++module:TModule
+}
+
+#attributeConditions {
+	eq(cu.originalFilePath, module.location)
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule ClassFileToModule #extends ContainerToModule_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	model:Model {
+		++-classFiles -> cu
+	}
+
+	++cu:ClassFile
+}
+
+#target {
+	++module:TModule
+}
+
+#attributeConditions {
+	eq(cu.originalFilePath, module.location)
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ElementPackageToNamespace_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:NamedElement
+
+	p:Package
+}
+
+#target {
+	module:TModule {
+		++-namespace -> tp
+	}
+
+	tp:TPackage
+}
+
+#correspondence {
+	cu2m:ElementToModule {
+		#src->cu
+		#trg->module
+	}
+
+	p2p:PackageToTPackage {
+		#src->p
+		#trg->tp
+	}
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule CompilationUnitPackageToNamespace #extends ElementPackageToNamespace_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:CompilationUnit {
+		++-package -> p
+	}
+
+	p:Package
+}
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule ClassFilePackageToNamespace #extends ElementPackageToNamespace_abstract #with org.gravity.tgg.modisco.pm
+
+#source {
+	cu:ClassFile {
+		++-package -> p
+	}
+
+	p:Package
+}
+
+

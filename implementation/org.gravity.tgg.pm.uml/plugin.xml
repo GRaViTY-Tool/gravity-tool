@@ -10,10 +10,6 @@
   </extension>
   <extension point="org.eclipse.emf.ecore.extension_parser">
     <!-- @generated Uml -->
-    <parser class="org.gravity.tgg.pm.uml.util.UmlResourceFactoryImpl" type="uml"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.extension_parser">
-    <!-- @generated Uml -->
     <parser class="org.gravity.tgg.pm.uml.Rules.util.RulesResourceFactoryImpl" type="rules"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">

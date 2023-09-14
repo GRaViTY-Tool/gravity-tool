@@ -17,14 +17,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getTName <em>TName</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getPackages <em>Packages</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getMethods <em>Methods</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getFields <em>Fields</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getClasses <em>Classes</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getInterfaces <em>Interfaces</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getOwnedTypes <em>Owned Types</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getTAnnotationTypes <em>TAnnotation Types</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getTName <em>TName</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getAnnotationTypes <em>Annotation Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getAllTypes <em>All Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TypeGraph#getModules <em>Modules</em>}</li>
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph()
@@ -117,38 +118,30 @@ public interface TypeGraph extends TAnnotatable {
 	EList<TInterface> getInterfaces();
 
 	/**
-	 * Returns the value of the '<em><b>Owned Types</b></em>' containment reference list.
-	 * The list contents are of type {@link org.gravity.typegraph.basic.TAbstractType}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Owned Types</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Types</em>' containment reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_OwnedTypes()
-	 * @see org.gravity.typegraph.basic.TAbstractType#getModel
-	 * @model opposite="model" containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<TAbstractType> getOwnedTypes();
-
-	/**
-	 * Returns the value of the '<em><b>TAnnotation Types</b></em>' reference list.
+	 * Returns the value of the '<em><b>Annotation Types</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.annotations.TAnnotationType}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>TAnnotation Types</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>TAnnotation Types</em>' reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_TAnnotationTypes()
+	 * @return the value of the '<em>Annotation Types</em>' reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_AnnotationTypes()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<TAnnotationType> getTAnnotationTypes();
+	EList<TAnnotationType> getAnnotationTypes();
+
+	/**
+	 * Returns the value of the '<em><b>All Types</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TAbstractType}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractType#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Types</em>' reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_AllTypes()
+	 * @see org.gravity.typegraph.basic.TAbstractType#getModel
+	 * @model opposite="model" derived="true" ordered="false"
+	 * @generated
+	 */
+	EList<TAbstractType> getAllTypes();
 
 	/**
 	 * Returns the value of the '<em><b>TName</b></em>' attribute.
@@ -175,6 +168,18 @@ public interface TypeGraph extends TAnnotatable {
 	 * @generated
 	 */
 	void setTName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TModule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Modules</em>' containment reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Modules()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<TModule> getModules();
 
 	/**
 	 * <!-- begin-user-doc -->

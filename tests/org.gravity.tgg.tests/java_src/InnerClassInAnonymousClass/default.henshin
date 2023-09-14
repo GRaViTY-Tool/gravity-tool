@@ -61,13 +61,13 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_BKyuUFvGEeusLa39wZCfig" source="__ua28FvFEeusLa39wZCfig" target="_X7COIJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_BpuGAFvGEeusLa39wZCfig" source="__ua28FvFEeusLa39wZCfig" target="_YJsVMJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_CDssQFvGEeusLa39wZCfig" source="__ua28FvFEeusLa39wZCfig" target="_XMOAUJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_N70w0FvGEeusLa39wZCfig" source="_X7COIJiFEeq4spDLGVfnoA" target="_YJsVMJiFEeq4spDLGVfnoA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/innerTypes"/>
@@ -150,13 +150,13 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_BKzVYFvGEeusLa39wZCfig" source="__ua28VvFEeusLa39wZCfig" target="_X7C1MJiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_BpuGAVvGEeusLa39wZCfig" source="__ua28VvFEeusLa39wZCfig" target="_YJsVMZiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_CDssQVvGEeusLa39wZCfig" source="__ua28VvFEeusLa39wZCfig" target="_XMOAUZiFEeq4spDLGVfnoA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_N71X4FvGEeusLa39wZCfig" source="_X7C1MJiFEeq4spDLGVfnoA" target="_YJsVMZiFEeq4spDLGVfnoA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/innerTypes"/>

@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Import-Package: org.junit.jupiter.api;version="5.9.1"
 Bundle-Vendor: Ruhr University Bochum
 Automatic-Module-Name: org.gravity.headless.tests
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.gravity.headless,
  org.eclipse.emf.ecore,
  org.gravity.typegraph.basic,

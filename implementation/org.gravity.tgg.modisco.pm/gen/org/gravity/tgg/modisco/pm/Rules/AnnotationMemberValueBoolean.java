@@ -100,9 +100,9 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			BodyDeclaration mOwner, BooleanLiteral mValue, TAnnotationValue tAnnotationValue);
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			BooleanLiteral mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +118,9 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject tValue, EObject mOwner, EObject mValueToTValue,
-			EObject mValue, EObject tAnnotationValue);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject tValue,
+			EObject mOwner, EObject mValueToTValue, EObject tAnnotationValue, EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,9 +185,9 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue,
-			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue, TBoolNode tValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue);
+			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, TBoolNode tValue, BodyDeclaration mOwner,
+			TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,9 +203,9 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject tValue, EObject mOwner, EObject mValueToTValue,
-			EObject mValue, EObject tAnnotationValue);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject tValue,
+			EObject mOwner, EObject mValueToTValue, EObject tAnnotationValue, EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_53(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_71(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_value);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_74(EMoflonEdge _edge_value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,7 +262,7 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TBoolNode tValue,
-			BodyDeclaration mOwner, BooleanLiteral mValue, TAnnotationValue tAnnotationValue, Match sourceMatch,
+			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, BooleanLiteral mValue, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -306,9 +306,9 @@ public interface AnnotationMemberValueBoolean extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult);
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

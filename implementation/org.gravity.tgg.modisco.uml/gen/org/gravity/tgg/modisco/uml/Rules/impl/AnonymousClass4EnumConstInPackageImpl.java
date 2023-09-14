@@ -179,8 +179,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[0];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[1];
 		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result1_bindingAndBlack[2];
 		Enumeration uContainer = (Enumeration) result1_bindingAndBlack[3];
 		EnumConstantDeclaration mMember = (EnumConstantDeclaration) result1_bindingAndBlack[4];
@@ -205,11 +205,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 		Object[] result3_black = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, a2a,
-						feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
+						feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[a2a] = " + a2a + ", " + "[feature] = " + feature + ", " + "[jPackage] = " + jPackage
-					+ ", " + "[uPackage] = " + uPackage + ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = "
+					+ ", " + "[a2a] = " + a2a + ", " + "[feature] = " + feature + ", " + "[uPackage] = " + uPackage
+					+ ", " + "[jPackage] = " + jPackage + ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = "
 					+ uContainer + ", " + "[mMember] = " + mMember + ", " + "[jContainer] = " + jContainer + ", "
 					+ "[ne2ne] = " + ne2ne + ", " + "[p2p] = " + p2p + ".");
 		}
@@ -226,7 +226,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		// 
 		AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-						a2a, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
+						a2a, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
 		return AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_1_6_expressionFB(ruleresult);
 	}
@@ -261,19 +261,19 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		EnumConstantDeclaration mMember = (EnumConstantDeclaration) result2_binding[2];
 		EnumDeclaration jContainer = (EnumDeclaration) result2_binding[3];
 		for (Object[] result2_black : AnonymousClass4EnumConstInPackageImpl
-				.pattern_AnonymousClass4EnumConstInPackage_2_2_corematch_blackBFBFBBFFB(jPackage, mAnon, mMember,
+				.pattern_AnonymousClass4EnumConstInPackage_2_2_corematch_blackFBBFBBFFB(jPackage, mAnon, mMember,
 						jContainer, match)) {
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[0];
 			Enumeration uContainer = (Enumeration) result2_black[3];
 			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[6];
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[7];
 			// ForEach 
 			for (Object[] result3_black : AnonymousClass4EnumConstInPackageImpl
-					.pattern_AnonymousClass4EnumConstInPackage_2_3_findcontext_blackBBBBBBBB(jPackage, uPackage, mAnon,
+					.pattern_AnonymousClass4EnumConstInPackage_2_3_findcontext_blackBBBBBBBB(uPackage, jPackage, mAnon,
 							uContainer, mMember, jContainer, ne2ne, p2p)) {
 				Object[] result3_green = AnonymousClass4EnumConstInPackageImpl
-						.pattern_AnonymousClass4EnumConstInPackage_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(jPackage,
-								uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
+						.pattern_AnonymousClass4EnumConstInPackage_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(uPackage,
+								jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
 				//nothing EMoflonEdge p2p__jPackage____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[10];
@@ -288,12 +288,12 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 				Object[] result4_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 						.pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
-								isApplicableMatch, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne,
+								isApplicableMatch, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne,
 								p2p);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uPackage] = " + uPackage + ", "
+							+ "[jPackage] = " + jPackage + ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = "
 							+ uContainer + ", " + "[mMember] = " + mMember + ", " + "[jContainer] = " + jContainer
 							+ ", " + "[ne2ne] = " + ne2ne + ", " + "[p2p] = " + p2p + ".");
 				}
@@ -372,8 +372,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -403,8 +403,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		addPrefix.solve(var_uContainer_name, literal0, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("uPackage", uPackage);
+		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("mAnon", mAnon);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("mMember", mMember);
@@ -428,13 +428,13 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject jPackage,
-			EObject uPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject uPackage,
+			EObject jPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
 			EObject p2p) {
 		ruleresult.registerObject("a2a", a2a);
 		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("jPackage", jPackage);
 		ruleresult.registerObject("uPackage", uPackage);
+		ruleresult.registerObject("jPackage", jPackage);
 		ruleresult.registerObject("mAnon", mAnon);
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("mMember", mMember);
@@ -538,8 +538,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[0];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[2];
 		Enumeration uContainer = (Enumeration) result1_bindingAndBlack[3];
 		EnumConstantDeclaration mMember = (EnumConstantDeclaration) result1_bindingAndBlack[4];
 		EnumDeclaration jContainer = (EnumDeclaration) result1_bindingAndBlack[5];
@@ -564,11 +564,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 		Object[] result3_black = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, a2a,
-						feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
+						feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[a2a] = " + a2a + ", " + "[feature] = " + feature + ", " + "[jPackage] = " + jPackage
-					+ ", " + "[uPackage] = " + uPackage + ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = "
+					+ ", " + "[a2a] = " + a2a + ", " + "[feature] = " + feature + ", " + "[uPackage] = " + uPackage
+					+ ", " + "[jPackage] = " + jPackage + ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = "
 					+ uContainer + ", " + "[mMember] = " + mMember + ", " + "[jContainer] = " + jContainer + ", "
 					+ "[ne2ne] = " + ne2ne + ", " + "[p2p] = " + p2p + ".");
 		}
@@ -585,7 +585,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		// 
 		AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-						a2a, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
+						a2a, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
 		return AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_11_6_expressionFB(ruleresult);
 	}
@@ -619,28 +619,28 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_binding[1];
 		Enumeration uContainer = (Enumeration) result2_binding[2];
 		for (Object[] result2_black : AnonymousClass4EnumConstInPackageImpl
-				.pattern_AnonymousClass4EnumConstInPackage_12_2_corematch_blackBFBBFFFB(feature, uPackage, uContainer,
+				.pattern_AnonymousClass4EnumConstInPackage_12_2_corematch_blackBBFBFFFB(feature, uPackage, uContainer,
 						match)) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[2];
 			EnumDeclaration jContainer = (EnumDeclaration) result2_black[4];
 			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : AnonymousClass4EnumConstInPackageImpl
-					.pattern_AnonymousClass4EnumConstInPackage_12_3_findcontext_blackBBBBFBBB(feature, jPackage,
-							uPackage, uContainer, jContainer, ne2ne, p2p)) {
+					.pattern_AnonymousClass4EnumConstInPackage_12_3_findcontext_blackBBBBFBBB(feature, uPackage,
+							jPackage, uContainer, jContainer, ne2ne, p2p)) {
 				EnumConstantDeclaration mMember = (EnumConstantDeclaration) result3_black[4];
 				Object[] result3_green = AnonymousClass4EnumConstInPackageImpl
 						.pattern_AnonymousClass4EnumConstInPackage_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFF(feature,
-								jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p);
+								uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
 				//nothing EMoflonEdge p2p__jPackage____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge uContainer__uPackage____package = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge uPackage__uContainer____ownedType = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge feature__uPackage____package = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge uPackage__feature____ownedType = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge feature__uPackage____package = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge uPackage__feature____ownedType = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge uContainer__uPackage____package = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge uPackage__uContainer____ownedType = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge jContainer__jPackage____package = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge jPackage__jContainer____ownedElements = (EMoflonEdge) result3_green[17];
 				//nothing EMoflonEdge jContainer__mMember____enumConstants = (EMoflonEdge) result3_green[18];
@@ -648,12 +648,12 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 				Object[] result4_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 						.pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
-								isApplicableMatch, feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne,
+								isApplicableMatch, feature, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne,
 								p2p);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[jPackage] = " + jPackage + ", " + "[uPackage] = " + uPackage + ", " + "[uContainer] = "
+							+ "[uPackage] = " + uPackage + ", " + "[jPackage] = " + jPackage + ", " + "[uContainer] = "
 							+ uContainer + ", " + "[mMember] = " + mMember + ", " + "[jContainer] = " + jContainer
 							+ ", " + "[ne2ne] = " + ne2ne + ", " + "[p2p] = " + p2p + ".");
 				}
@@ -746,7 +746,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class feature,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -764,8 +764,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("uPackage", uPackage);
+		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("mMember", mMember);
 		isApplicableMatch.registerObject("jContainer", jContainer);
@@ -788,13 +788,13 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject jPackage,
-			EObject uPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject uPackage,
+			EObject jPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
 			EObject p2p) {
 		ruleresult.registerObject("a2a", a2a);
 		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("jPackage", jPackage);
 		ruleresult.registerObject("uPackage", uPackage);
+		ruleresult.registerObject("jPackage", jPackage);
 		ruleresult.registerObject("mAnon", mAnon);
 		ruleresult.registerObject("uContainer", uContainer);
 		ruleresult.registerObject("mMember", mMember);
@@ -818,7 +818,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_113(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_141(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -879,7 +879,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_154(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1061,8 +1061,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[0];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[2];
 		AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result2_bindingAndBlack[3];
 		Enumeration uContainer = (Enumeration) result2_bindingAndBlack[4];
 		EnumConstantDeclaration mMember = (EnumConstantDeclaration) result2_bindingAndBlack[5];
@@ -1070,10 +1070,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 		Object[] result3_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, feature,
-						jPackage, uPackage, mAnon, uContainer, mMember, jContainer, sourceMatch, targetMatch);
+						uPackage, jPackage, mAnon, uContainer, mMember, jContainer, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[feature] = " + feature + ", " + "[jPackage] = " + jPackage + ", " + "[uPackage] = " + uPackage
+					+ "[feature] = " + feature + ", " + "[uPackage] = " + uPackage + ", " + "[jPackage] = " + jPackage
 					+ ", " + "[mAnon] = " + mAnon + ", " + "[uContainer] = " + uContainer + ", " + "[mMember] = "
 					+ mMember + ", " + "[jContainer] = " + jContainer + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
@@ -1084,7 +1084,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 				.pattern_AnonymousClass4EnumConstInPackage_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : AnonymousClass4EnumConstInPackageImpl
-					.pattern_AnonymousClass4EnumConstInPackage_24_5_matchcorrcontext_blackBBBBFFBB(jPackage, uPackage,
+					.pattern_AnonymousClass4EnumConstInPackage_24_5_matchcorrcontext_blackBBBBFFBB(uPackage, jPackage,
 							uContainer, jContainer, sourceMatch, targetMatch)) {
 				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[4];
 				JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result5_black[5];
@@ -1095,10 +1095,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 				Object[] result6_black = AnonymousClass4EnumConstInPackageImpl
 						.pattern_AnonymousClass4EnumConstInPackage_24_6_createcorrespondence_blackBBBBBBBB(feature,
-								jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ccMatch);
+								uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
-							+ ", " + "[jPackage] = " + jPackage + ", " + "[uPackage] = " + uPackage + ", "
+							+ ", " + "[uPackage] = " + uPackage + ", " + "[jPackage] = " + jPackage + ", "
 							+ "[mAnon] = " + mAnon + ", " + "[uContainer] = " + uContainer + ", " + "[mMember] = "
 							+ mMember + ", " + "[jContainer] = " + jContainer + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
@@ -1129,8 +1129,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
+	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1227,22 +1227,22 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 				.pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
-			EnumDeclaration jContainer = (EnumDeclaration) result2_black[2];
-			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result2_black[3];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[4];
-			Enumeration uContainer = (Enumeration) result2_black[5];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[6];
-			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[7];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
+			Enumeration uContainer = (Enumeration) result2_black[2];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[3];
+			EnumDeclaration jContainer = (EnumDeclaration) result2_black[4];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[5];
+			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[6];
+			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 					.pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
-							isApplicableMatch, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p,
+							isApplicableMatch, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
-						+ "[uPackage] = " + uPackage + ", " + "[uContainer] = " + uContainer + ", " + "[mMember] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uPackage] = " + uPackage + ", "
+						+ "[jPackage] = " + jPackage + ", " + "[uContainer] = " + uContainer + ", " + "[mMember] = "
 						+ mMember + ", " + "[jContainer] = " + jContainer + ", " + "[ne2ne] = " + ne2ne + ", "
 						+ "[p2p] = " + p2p + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
@@ -1252,16 +1252,16 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					.pattern_AnonymousClass4EnumConstInPackage_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = AnonymousClass4EnumConstInPackageImpl
-						.pattern_AnonymousClass4EnumConstInPackage_29_5_checknacs_blackBBBBBBB(jPackage, uPackage,
+						.pattern_AnonymousClass4EnumConstInPackage_29_5_checknacs_blackBBBBBBB(uPackage, jPackage,
 								uContainer, mMember, jContainer, ne2ne, p2p);
 				if (result5_black != null) {
 
 					Object[] result6_black = AnonymousClass4EnumConstInPackageImpl
-							.pattern_AnonymousClass4EnumConstInPackage_29_6_perform_blackBBBBBBBB(jPackage, uPackage,
+							.pattern_AnonymousClass4EnumConstInPackage_29_6_perform_blackBBBBBBBB(uPackage, jPackage,
 									uContainer, mMember, jContainer, ne2ne, p2p, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jPackage] = "
-								+ jPackage + ", " + "[uPackage] = " + uPackage + ", " + "[uContainer] = " + uContainer
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uPackage] = "
+								+ uPackage + ", " + "[jPackage] = " + jPackage + ", " + "[uContainer] = " + uContainer
 								+ ", " + "[mMember] = " + mMember + ", " + "[jContainer] = " + jContainer + ", "
 								+ "[ne2ne] = " + ne2ne + ", " + "[p2p] = " + p2p + ", " + "[ruleResult] = " + ruleResult
 								+ ".");
@@ -1289,10 +1289,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
-			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
-			JavaPackage2UmlPackage p2p, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
+			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1320,8 +1320,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		addPrefix.solve(var_uContainer_name, literal0, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("uPackage", uPackage);
+		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("uContainer", uContainer);
 		isApplicableMatch.registerObject("mMember", mMember);
 		isApplicableMatch.registerObject("jContainer", jContainer);
@@ -1368,8 +1368,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_ANONYMOUSCLASSDECLARATION_ENUMERATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
 					(Enumeration) arguments.get(4), (EnumConstantDeclaration) arguments.get(5),
 					(EnumDeclaration) arguments.get(6), (ASTNode2Element) arguments.get(7),
 					(JavaPackage2UmlPackage) arguments.get(8));
@@ -1401,8 +1401,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_PACKAGE_PACKAGE_ENUMERATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.modisco.java.Package) arguments.get(2),
-					(org.eclipse.uml2.uml.Package) arguments.get(3), (Enumeration) arguments.get(4),
+					(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(3), (Enumeration) arguments.get(4),
 					(EnumConstantDeclaration) arguments.get(5), (EnumDeclaration) arguments.get(6),
 					(ASTNode2Element) arguments.get(7), (JavaPackage2UmlPackage) arguments.get(8));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
@@ -1415,10 +1415,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_113__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_113((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_141__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_141((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_154__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_154((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1427,8 +1427,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_PACKAGE_PACKAGE_ANONYMOUSCLASSDECLARATION_ENUMERATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
 					(Enumeration) arguments.get(4), (EnumConstantDeclaration) arguments.get(5),
 					(EnumDeclaration) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
@@ -1444,8 +1444,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_ENUMERATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (Enumeration) arguments.get(3),
 					(EnumConstantDeclaration) arguments.get(4), (EnumDeclaration) arguments.get(5),
 					(ASTNode2Element) arguments.get(6), (JavaPackage2UmlPackage) arguments.get(7),
 					(ModelgeneratorRuleResult) arguments.get(8));
@@ -1572,26 +1572,26 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jPackage");
-		EObject _localVariable_1 = isApplicableMatch.getObject("uPackage");
+		EObject _localVariable_0 = isApplicableMatch.getObject("uPackage");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jPackage");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mAnon");
 		EObject _localVariable_3 = isApplicableMatch.getObject("uContainer");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mMember");
 		EObject _localVariable_5 = isApplicableMatch.getObject("jContainer");
 		EObject _localVariable_6 = isApplicableMatch.getObject("ne2ne");
 		EObject _localVariable_7 = isApplicableMatch.getObject("p2p");
-		EObject tmpJPackage = _localVariable_0;
-		EObject tmpUPackage = _localVariable_1;
+		EObject tmpUPackage = _localVariable_0;
+		EObject tmpJPackage = _localVariable_1;
 		EObject tmpMAnon = _localVariable_2;
 		EObject tmpUContainer = _localVariable_3;
 		EObject tmpMMember = _localVariable_4;
 		EObject tmpJContainer = _localVariable_5;
 		EObject tmpNe2ne = _localVariable_6;
 		EObject tmpP2p = _localVariable_7;
-		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+		if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
 				if (tmpMAnon instanceof AnonymousClassDeclaration) {
 					AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
 					if (tmpUContainer instanceof Enumeration) {
@@ -1604,7 +1604,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 									ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
 									if (tmpP2p instanceof JavaPackage2UmlPackage) {
 										JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) tmpP2p;
-										return new Object[] { jPackage, uPackage, mAnon, uContainer, mMember,
+										return new Object[] { uPackage, jPackage, mAnon, uContainer, mMember,
 												jContainer, ne2ne, p2p, isApplicableMatch };
 									}
 								}
@@ -1618,14 +1618,14 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_blackBBBBBBBBFBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p,
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, csp,
+				return new Object[] { uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -1637,8 +1637,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		Object[] result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding = pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_bindingFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding != null) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[0];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[1];
 			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[2];
 			Enumeration uContainer = (Enumeration) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[3];
 			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[4];
@@ -1647,11 +1647,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_binding[7];
 
 			Object[] result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_black = pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_blackBBBBBBBBFBB(
-					jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, _this, isApplicableMatch);
+					uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, _this, isApplicableMatch);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnonymousClass4EnumConstInPackage_1_1_performtransformation_black[8];
 
-				return new Object[] { jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, csp,
+				return new Object[] { uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -1686,19 +1686,19 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject jPackage, EObject uPackage,
+			PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject uPackage, EObject jPackage,
 			EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne, EObject p2p) {
 		if (!a2a.equals(feature)) {
-			if (!a2a.equals(jPackage)) {
-				if (!a2a.equals(uPackage)) {
+			if (!a2a.equals(uPackage)) {
+				if (!a2a.equals(jPackage)) {
 					if (!a2a.equals(mAnon)) {
 						if (!a2a.equals(uContainer)) {
 							if (!a2a.equals(mMember)) {
 								if (!a2a.equals(jContainer)) {
 									if (!a2a.equals(ne2ne)) {
 										if (!a2a.equals(p2p)) {
-											if (!feature.equals(jPackage)) {
-												if (!feature.equals(uPackage)) {
+											if (!feature.equals(uPackage)) {
+												if (!feature.equals(jPackage)) {
 													if (!feature.equals(mAnon)) {
 														if (!feature.equals(uContainer)) {
 															if (!feature.equals(mMember)) {
@@ -1734,9 +1734,9 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 																																		if (!mMember
 																																				.equals(p2p)) {
 																																			if (!jContainer
-																																					.equals(jPackage)) {
+																																					.equals(uPackage)) {
 																																				if (!jContainer
-																																						.equals(uPackage)) {
+																																						.equals(jPackage)) {
 																																					if (!jContainer
 																																							.equals(mAnon)) {
 																																						if (!jContainer
@@ -1761,8 +1761,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 																																																	ruleresult,
 																																																	a2a,
 																																																	feature,
-																																																	jPackage,
 																																																	uPackage,
+																																																	jPackage,
 																																																	mAnon,
 																																																	uContainer,
 																																																	mMember,
@@ -1859,9 +1859,9 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final void pattern_AnonymousClass4EnumConstInPackage_1_5_registerobjects_expressionBBBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, PerformRuleResult ruleresult, EObject a2a, EObject feature,
-			EObject jPackage, EObject uPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer,
+			EObject uPackage, EObject jPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer,
 			EObject ne2ne, EObject p2p) {
-		_this.registerObjects_FWD(ruleresult, a2a, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer,
+		_this.registerObjects_FWD(ruleresult, a2a, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer,
 				ne2ne, p2p);
 
 	}
@@ -1948,7 +1948,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_2_2_corematch_blackBFBFBBFFB(
+	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_2_2_corematch_blackFBBFBBFFB(
 			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -1961,7 +1961,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					Element tmpUContainer = ne2ne.getTarget();
 					if (tmpUContainer instanceof Enumeration) {
 						Enumeration uContainer = (Enumeration) tmpUContainer;
-						_result.add(new Object[] { jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne,
+						_result.add(new Object[] { uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne,
 								p2p, match });
 					}
 
@@ -1973,7 +1973,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_2_3_findcontext_blackBBBBBBBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -1985,7 +1985,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 							if (mAnon.equals(mMember.getAnonymousClassDeclaration())) {
 								if (jContainer.getEnumConstants().contains(mMember)) {
 									if (uContainer.equals(ne2ne.getTarget())) {
-										_result.add(new Object[] { jPackage, uPackage, mAnon, uContainer, mMember,
+										_result.add(new Object[] { uPackage, jPackage, mAnon, uContainer, mMember,
 												jContainer, ne2ne, p2p });
 									}
 								}
@@ -1999,7 +1999,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
@@ -2023,8 +2023,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		String mMember__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
 		String jContainer__mMember____enumConstants_name_prime = "enumConstants";
 		String ne2ne__uContainer____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(uPackage);
+		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(mAnon);
 		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(mMember);
@@ -2071,7 +2071,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		mMember__mAnon____anonymousClassDeclaration.setName(mMember__mAnon____anonymousClassDeclaration_name_prime);
 		jContainer__mMember____enumConstants.setName(jContainer__mMember____enumConstants_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
-		return new Object[] { jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, isApplicableMatch,
+		return new Object[] { uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, isApplicableMatch,
 				p2p__jPackage____source, ne2ne__jContainer____source, p2p__uPackage____target,
 				uContainer__uPackage____package, uPackage__uContainer____ownedType, jContainer__jPackage____package,
 				jPackage__jContainer____ownedElements, mMember__mAnon____anonymousClassDeclaration,
@@ -2080,14 +2080,14 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_bindingFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jPackage, uPackage, mAnon, uContainer,
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uPackage, jPackage, mAnon, uContainer,
 				mMember, jContainer, ne2ne, p2p);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, mAnon, uContainer, mMember,
+			return new Object[] { csp, _this, isApplicableMatch, uPackage, jPackage, mAnon, uContainer, mMember,
 					jContainer, ne2ne, p2p };
 		}
 		return null;
@@ -2099,11 +2099,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
 		Object[] result_pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_binding = pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
+				_this, isApplicableMatch, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_binding[0];
 
@@ -2111,7 +2111,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, mAnon, uContainer, mMember,
+				return new Object[] { csp, _this, isApplicableMatch, uPackage, jPackage, mAnon, uContainer, mMember,
 						jContainer, ne2ne, p2p };
 			}
 		}
@@ -2262,16 +2262,16 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("uPackage");
+		EObject _localVariable_1 = isApplicableMatch.getObject("uPackage");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jPackage");
 		EObject _localVariable_3 = isApplicableMatch.getObject("uContainer");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mMember");
 		EObject _localVariable_5 = isApplicableMatch.getObject("jContainer");
 		EObject _localVariable_6 = isApplicableMatch.getObject("ne2ne");
 		EObject _localVariable_7 = isApplicableMatch.getObject("p2p");
 		EObject tmpFeature = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
-		EObject tmpUPackage = _localVariable_2;
+		EObject tmpUPackage = _localVariable_1;
+		EObject tmpJPackage = _localVariable_2;
 		EObject tmpUContainer = _localVariable_3;
 		EObject tmpMMember = _localVariable_4;
 		EObject tmpJContainer = _localVariable_5;
@@ -2279,10 +2279,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		EObject tmpP2p = _localVariable_7;
 		if (tmpFeature instanceof org.eclipse.uml2.uml.Class) {
 			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) tmpFeature;
-			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-				if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+				if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
 					if (tmpUContainer instanceof Enumeration) {
 						Enumeration uContainer = (Enumeration) tmpUContainer;
 						if (tmpMMember instanceof EnumConstantDeclaration) {
@@ -2293,7 +2293,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 									ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
 									if (tmpP2p instanceof JavaPackage2UmlPackage) {
 										JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) tmpP2p;
-										return new Object[] { feature, jPackage, uPackage, uContainer, mMember,
+										return new Object[] { feature, uPackage, jPackage, uContainer, mMember,
 												jContainer, ne2ne, p2p, isApplicableMatch };
 									}
 								}
@@ -2307,14 +2307,14 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_blackBBBBBBBBFBB(
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p,
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p, csp,
+				return new Object[] { feature, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -2327,8 +2327,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 				isApplicableMatch);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding != null) {
 			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[2];
 			Enumeration uContainer = (Enumeration) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[3];
 			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[4];
 			EnumDeclaration jContainer = (EnumDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[5];
@@ -2336,11 +2336,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_binding[7];
 
 			Object[] result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_black = pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_blackBBBBBBBBFBB(
-					feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p, _this, isApplicableMatch);
+					feature, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p, _this, isApplicableMatch);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnonymousClass4EnumConstInPackage_11_1_performtransformation_black[8];
 
-				return new Object[] { feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p, csp,
+				return new Object[] { feature, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -2372,19 +2372,19 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject jPackage, EObject uPackage,
+			PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject uPackage, EObject jPackage,
 			EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne, EObject p2p) {
 		if (!a2a.equals(feature)) {
-			if (!a2a.equals(jPackage)) {
-				if (!a2a.equals(uPackage)) {
+			if (!a2a.equals(uPackage)) {
+				if (!a2a.equals(jPackage)) {
 					if (!a2a.equals(mAnon)) {
 						if (!a2a.equals(uContainer)) {
 							if (!a2a.equals(mMember)) {
 								if (!a2a.equals(jContainer)) {
 									if (!a2a.equals(ne2ne)) {
 										if (!a2a.equals(p2p)) {
-											if (!feature.equals(jPackage)) {
-												if (!feature.equals(uPackage)) {
+											if (!feature.equals(uPackage)) {
+												if (!feature.equals(jPackage)) {
 													if (!feature.equals(mAnon)) {
 														if (!feature.equals(uContainer)) {
 															if (!feature.equals(mMember)) {
@@ -2420,9 +2420,9 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 																																		if (!mMember
 																																				.equals(p2p)) {
 																																			if (!jContainer
-																																					.equals(jPackage)) {
+																																					.equals(uPackage)) {
 																																				if (!jContainer
-																																						.equals(uPackage)) {
+																																						.equals(jPackage)) {
 																																					if (!jContainer
 																																							.equals(mAnon)) {
 																																						if (!jContainer
@@ -2447,8 +2447,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 																																																	ruleresult,
 																																																	a2a,
 																																																	feature,
-																																																	jPackage,
 																																																	uPackage,
+																																																	jPackage,
 																																																	mAnon,
 																																																	uContainer,
 																																																	mMember,
@@ -2545,9 +2545,9 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final void pattern_AnonymousClass4EnumConstInPackage_11_5_registerobjects_expressionBBBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, PerformRuleResult ruleresult, EObject a2a, EObject feature,
-			EObject jPackage, EObject uPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer,
+			EObject uPackage, EObject jPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer,
 			EObject ne2ne, EObject p2p) {
-		_this.registerObjects_BWD(ruleresult, a2a, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer,
+		_this.registerObjects_BWD(ruleresult, a2a, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer,
 				ne2ne, p2p);
 
 	}
@@ -2629,7 +2629,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_12_2_corematch_blackBFBBFFFB(
+	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_12_2_corematch_blackBBFBFFFB(
 			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2642,7 +2642,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					ASTNode tmpJContainer = ne2ne.getSource();
 					if (tmpJContainer instanceof EnumDeclaration) {
 						EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
-						_result.add(new Object[] { feature, jPackage, uPackage, uContainer, jContainer, ne2ne, p2p,
+						_result.add(new Object[] { feature, uPackage, jPackage, uContainer, jContainer, ne2ne, p2p,
 								match });
 					}
 
@@ -2654,19 +2654,19 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_12_3_findcontext_blackBBBBFBBB(
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer, EnumDeclaration jContainer,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumDeclaration jContainer,
 			ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (jPackage.equals(p2p.getSource())) {
 			if (jContainer.equals(ne2ne.getSource())) {
 				if (uPackage.equals(p2p.getTarget())) {
-					if (uPackage.equals(uContainer.getPackage())) {
-						if (uPackage.equals(feature.getPackage())) {
+					if (uPackage.equals(feature.getPackage())) {
+						if (uPackage.equals(uContainer.getPackage())) {
 							if (jPackage.equals(jContainer.getPackage())) {
 								if (uContainer.equals(ne2ne.getTarget())) {
 									for (EnumConstantDeclaration mMember : jContainer.getEnumConstants()) {
-										_result.add(new Object[] { feature, jPackage, uPackage, uContainer, mMember,
+										_result.add(new Object[] { feature, uPackage, jPackage, uContainer, mMember,
 												jContainer, ne2ne, p2p });
 									}
 								}
@@ -2680,17 +2680,17 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFF(
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge p2p__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uContainer__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__uContainer____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uPackage__feature____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uContainer__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uContainer____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__jContainer____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__mMember____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2698,17 +2698,17 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		String p2p__jPackage____source_name_prime = "source";
 		String ne2ne__jContainer____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
-		String uContainer__uPackage____package_name_prime = "package";
-		String uPackage__uContainer____ownedType_name_prime = "ownedType";
 		String feature__uPackage____package_name_prime = "package";
 		String uPackage__feature____ownedType_name_prime = "ownedType";
+		String uContainer__uPackage____package_name_prime = "package";
+		String uPackage__uContainer____ownedType_name_prime = "ownedType";
 		String jContainer__jPackage____package_name_prime = "package";
 		String jPackage__jContainer____ownedElements_name_prime = "ownedElements";
 		String jContainer__mMember____enumConstants_name_prime = "enumConstants";
 		String ne2ne__uContainer____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(feature);
-		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(uPackage);
+		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(uContainer);
 		isApplicableMatch.getAllContextElements().add(mMember);
 		isApplicableMatch.getAllContextElements().add(jContainer);
@@ -2723,18 +2723,18 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		p2p__uPackage____target.setSrc(p2p);
 		p2p__uPackage____target.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		uContainer__uPackage____package.setSrc(uContainer);
-		uContainer__uPackage____package.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(uContainer__uPackage____package);
-		uPackage__uContainer____ownedType.setSrc(uPackage);
-		uPackage__uContainer____ownedType.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(uPackage__uContainer____ownedType);
 		feature__uPackage____package.setSrc(feature);
 		feature__uPackage____package.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(feature__uPackage____package);
 		uPackage__feature____ownedType.setSrc(uPackage);
 		uPackage__feature____ownedType.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(uPackage__feature____ownedType);
+		uContainer__uPackage____package.setSrc(uContainer);
+		uContainer__uPackage____package.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(uContainer__uPackage____package);
+		uPackage__uContainer____ownedType.setSrc(uPackage);
+		uPackage__uContainer____ownedType.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(uPackage__uContainer____ownedType);
 		jContainer__jPackage____package.setSrc(jContainer);
 		jContainer__jPackage____package.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jContainer__jPackage____package);
@@ -2750,31 +2750,32 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		p2p__jPackage____source.setName(p2p__jPackage____source_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		uContainer__uPackage____package.setName(uContainer__uPackage____package_name_prime);
-		uPackage__uContainer____ownedType.setName(uPackage__uContainer____ownedType_name_prime);
 		feature__uPackage____package.setName(feature__uPackage____package_name_prime);
 		uPackage__feature____ownedType.setName(uPackage__feature____ownedType_name_prime);
+		uContainer__uPackage____package.setName(uContainer__uPackage____package_name_prime);
+		uPackage__uContainer____ownedType.setName(uPackage__uContainer____ownedType_name_prime);
 		jContainer__jPackage____package.setName(jContainer__jPackage____package_name_prime);
 		jPackage__jContainer____ownedElements.setName(jPackage__jContainer____ownedElements_name_prime);
 		jContainer__mMember____enumConstants.setName(jContainer__mMember____enumConstants_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
-		return new Object[] { feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p,
+		return new Object[] { feature, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p,
 				isApplicableMatch, p2p__jPackage____source, ne2ne__jContainer____source, p2p__uPackage____target,
-				uContainer__uPackage____package, uPackage__uContainer____ownedType, feature__uPackage____package,
-				uPackage__feature____ownedType, jContainer__jPackage____package, jPackage__jContainer____ownedElements,
-				jContainer__mMember____enumConstants, ne2ne__uContainer____target };
+				feature__uPackage____package, uPackage__feature____ownedType, uContainer__uPackage____package,
+				uPackage__uContainer____ownedType, jContainer__jPackage____package,
+				jPackage__jContainer____ownedElements, jContainer__mMember____enumConstants,
+				ne2ne__uContainer____target };
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_bindingFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, jPackage, uPackage,
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, uPackage, jPackage,
 				uContainer, mMember, jContainer, ne2ne, p2p);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, jPackage, uPackage, uContainer, mMember,
+			return new Object[] { csp, _this, isApplicableMatch, feature, uPackage, jPackage, uContainer, mMember,
 					jContainer, ne2ne, p2p };
 		}
 		return null;
@@ -2786,11 +2787,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p) {
 		Object[] result_pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_binding = pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p);
+				_this, isApplicableMatch, feature, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_binding[0];
 
@@ -2798,7 +2799,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, jPackage, uPackage, uContainer, mMember,
+				return new Object[] { csp, _this, isApplicableMatch, feature, uPackage, jPackage, uContainer, mMember,
 						jContainer, ne2ne, p2p };
 			}
 		}
@@ -3014,8 +3015,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_452095 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_452095 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_338069 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_338069 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3112,25 +3113,25 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("feature");
-		EObject _localVariable_1 = sourceMatch.getObject("jPackage");
-		EObject _localVariable_2 = targetMatch.getObject("uPackage");
+		EObject _localVariable_1 = targetMatch.getObject("uPackage");
+		EObject _localVariable_2 = sourceMatch.getObject("jPackage");
 		EObject _localVariable_3 = sourceMatch.getObject("mAnon");
 		EObject _localVariable_4 = targetMatch.getObject("uContainer");
 		EObject _localVariable_5 = sourceMatch.getObject("mMember");
 		EObject _localVariable_6 = sourceMatch.getObject("jContainer");
 		EObject tmpFeature = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
-		EObject tmpUPackage = _localVariable_2;
+		EObject tmpUPackage = _localVariable_1;
+		EObject tmpJPackage = _localVariable_2;
 		EObject tmpMAnon = _localVariable_3;
 		EObject tmpUContainer = _localVariable_4;
 		EObject tmpMMember = _localVariable_5;
 		EObject tmpJContainer = _localVariable_6;
 		if (tmpFeature instanceof org.eclipse.uml2.uml.Class) {
 			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) tmpFeature;
-			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-				if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+				if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
 					if (tmpMAnon instanceof AnonymousClassDeclaration) {
 						AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) tmpMAnon;
 						if (tmpUContainer instanceof Enumeration) {
@@ -3139,7 +3140,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 								EnumConstantDeclaration mMember = (EnumConstantDeclaration) tmpMMember;
 								if (tmpJContainer instanceof EnumDeclaration) {
 									EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
-									return new Object[] { feature, jPackage, uPackage, mAnon, uContainer, mMember,
+									return new Object[] { feature, uPackage, jPackage, mAnon, uContainer, mMember,
 											jContainer, targetMatch, sourceMatch };
 								}
 							}
@@ -3152,11 +3153,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, sourceMatch,
+			return new Object[] { feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3168,18 +3169,18 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 				targetMatch, sourceMatch);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding != null) {
 			org.eclipse.uml2.uml.Class feature = (org.eclipse.uml2.uml.Class) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[2];
 			AnonymousClassDeclaration mAnon = (AnonymousClassDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[3];
 			Enumeration uContainer = (Enumeration) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[4];
 			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[5];
 			EnumDeclaration jContainer = (EnumDeclaration) result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_binding[6];
 
 			Object[] result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_black = pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, sourceMatch, targetMatch);
+					feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, sourceMatch, targetMatch);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, sourceMatch,
+				return new Object[] { feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3188,14 +3189,14 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_bindingFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, org.eclipse.uml2.uml.Class feature,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(feature, jPackage, uPackage, mAnon, uContainer, mMember,
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(feature, uPackage, jPackage, mAnon, uContainer, mMember,
 				jContainer, sourceMatch, targetMatch);
 		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer,
+			return new Object[] { csp, _this, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3207,11 +3208,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, org.eclipse.uml2.uml.Class feature,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AnonymousClassDeclaration mAnon, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_binding = pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, sourceMatch, targetMatch);
+				_this, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, sourceMatch, targetMatch);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_binding[0];
 
@@ -3219,7 +3220,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer,
+				return new Object[] { csp, _this, feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3233,7 +3234,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInPackage_24_5_matchcorrcontext_blackBBBBFFBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
 			EnumDeclaration jContainer, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
@@ -3243,7 +3244,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(jContainer, ASTNode2Element.class, "source")) {
 						if (uContainer.equals(ne2ne.getTarget())) {
-							_result.add(new Object[] { jPackage, uPackage, uContainer, jContainer, ne2ne, p2p,
+							_result.add(new Object[] { uPackage, jPackage, uContainer, jContainer, ne2ne, p2p,
 									sourceMatch, targetMatch });
 						}
 					}
@@ -3266,10 +3267,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_24_6_createcorrespondence_blackBBBBBBBB(
-			org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
+			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, CCMatch ccMatch) {
-		return new Object[] { feature, jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ccMatch };
+		return new Object[] { feature, uPackage, jPackage, mAnon, uContainer, mMember, jContainer, ccMatch };
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_24_6_createcorrespondence_greenFBBB(
@@ -3304,8 +3305,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_27_1_matchtggpattern_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_202408 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_202408 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_845619 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_845619 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3339,8 +3340,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_28_1_matchtggpattern_blackBBB(
 			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer) {
-		if (uPackage.equals(uContainer.getPackage())) {
-			if (uPackage.equals(feature.getPackage())) {
+		if (uPackage.equals(feature.getPackage())) {
+			if (uPackage.equals(uContainer.getPackage())) {
 				return new Object[] { feature, uPackage, uContainer };
 			}
 		}
@@ -3371,46 +3372,6 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
-		if (ruleResult.getSourceObjects().contains(jPackage)) {
-			return new Object[] { ruleResult, jPackage };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, EnumDeclaration jContainer) {
-		if (ruleResult.getSourceObjects().contains(jContainer)) {
-			return new Object[] { ruleResult, jContainer };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, EnumConstantDeclaration mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
-		if (ruleResult.getCorrObjects().contains(ne2ne)) {
-			return new Object[] { ruleResult, ne2ne };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, Enumeration uContainer) {
-		if (ruleResult.getTargetObjects().contains(uContainer)) {
-			return new Object[] { ruleResult, uContainer };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_5BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Package uPackage) {
 		if (ruleResult.getTargetObjects().contains(uPackage)) {
 			return new Object[] { ruleResult, uPackage };
@@ -3418,10 +3379,50 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_6BB(
+	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, Enumeration uContainer) {
+		if (ruleResult.getTargetObjects().contains(uContainer)) {
+			return new Object[] { ruleResult, uContainer };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
+		if (ruleResult.getCorrObjects().contains(ne2ne)) {
+			return new Object[] { ruleResult, ne2ne };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, EnumDeclaration jContainer) {
+		if (ruleResult.getSourceObjects().contains(jContainer)) {
+			return new Object[] { ruleResult, jContainer };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
+		if (ruleResult.getSourceObjects().contains(jPackage)) {
+			return new Object[] { ruleResult, jPackage };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_5BB(
 			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage p2p) {
 		if (ruleResult.getCorrObjects().contains(p2p)) {
 			return new Object[] { ruleResult, p2p };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_6BB(
+			ModelgeneratorRuleResult ruleResult, EnumConstantDeclaration mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
 		}
 		return null;
 	}
@@ -3433,40 +3434,40 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
 				if (tmpNe2ne instanceof ASTNode2Element) {
 					ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-					ASTNode tmpJContainer = ne2ne.getSource();
-					if (tmpJContainer instanceof EnumDeclaration) {
-						EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
-						Element tmpUContainer = ne2ne.getTarget();
-						if (tmpUContainer instanceof Enumeration) {
-							Enumeration uContainer = (Enumeration) tmpUContainer;
-							org.eclipse.modisco.java.Package jPackage = jContainer.getPackage();
-							if (jPackage != null) {
-								org.eclipse.uml2.uml.Package uPackage = uContainer.getPackage();
-								if (uPackage != null) {
-									if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_3BB(
+					Element tmpUContainer = ne2ne.getTarget();
+					if (tmpUContainer instanceof Enumeration) {
+						Enumeration uContainer = (Enumeration) tmpUContainer;
+						ASTNode tmpJContainer = ne2ne.getSource();
+						if (tmpJContainer instanceof EnumDeclaration) {
+							EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
+							org.eclipse.uml2.uml.Package uPackage = uContainer.getPackage();
+							if (uPackage != null) {
+								org.eclipse.modisco.java.Package jPackage = jContainer.getPackage();
+								if (jPackage != null) {
+									if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_2BB(
 											ruleResult, ne2ne) == null) {
 										if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, jContainer) == null) {
-											if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_4BB(
-													ruleResult, uContainer) == null) {
+												ruleResult, uContainer) == null) {
+											if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_3BB(
+													ruleResult, jContainer) == null) {
 												if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_0BB(
-														ruleResult, jPackage) == null) {
-													if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_5BB(
-															ruleResult, uPackage) == null) {
+														ruleResult, uPackage) == null) {
+													if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_4BB(
+															ruleResult, jPackage) == null) {
 														for (EnumConstantDeclaration mMember : jContainer
 																.getEnumConstants()) {
-															if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_2BB(
+															if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_6BB(
 																	ruleResult, mMember) == null) {
 																for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
-																		.getOppositeReferenceTyped(jPackage,
+																		.getOppositeReferenceTyped(uPackage,
 																				JavaPackage2UmlPackage.class,
-																				"source")) {
-																	if (uPackage.equals(p2p.getTarget())) {
-																		if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_6BB(
+																				"target")) {
+																	if (jPackage.equals(p2p.getSource())) {
+																		if (pattern_AnonymousClass4EnumConstInPackage_29_2_isapplicablecore_black_nac_5BB(
 																				ruleResult, p2p) == null) {
 																			_result.add(new Object[] { ne2neList,
-																					jPackage, jContainer, mMember,
-																					ne2ne, uContainer, uPackage, p2p,
+																					uPackage, uContainer, ne2ne,
+																					jContainer, jPackage, p2p, mMember,
 																					ruleEntryContainer, ruleResult });
 																		}
 																	}
@@ -3494,14 +3495,14 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_bindingFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jPackage, uPackage, uContainer,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uPackage, jPackage, uContainer,
 				mMember, jContainer, ne2ne, p2p, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, uContainer, mMember, jContainer,
+			return new Object[] { csp, _this, isApplicableMatch, uPackage, jPackage, uContainer, mMember, jContainer,
 					ne2ne, p2p, ruleResult };
 		}
 		return null;
@@ -3513,11 +3514,11 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(
 			AnonymousClass4EnumConstInPackage _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_binding = pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p, ruleResult);
+				_this, isApplicableMatch, uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p, ruleResult);
 		if (result_pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_binding[0];
 
@@ -3525,7 +3526,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_AnonymousClass4EnumConstInPackage_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jPackage, uPackage, uContainer, mMember,
+				return new Object[] { csp, _this, isApplicableMatch, uPackage, jPackage, uContainer, mMember,
 						jContainer, ne2ne, p2p, ruleResult };
 			}
 		}
@@ -3540,17 +3541,17 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_5_checknacs_blackBBBBBBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p) {
-		return new Object[] { jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p };
+		return new Object[] { uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p };
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_6_perform_blackBBBBBBBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p, ruleResult };
+		return new Object[] { uPackage, jPackage, uContainer, mMember, jContainer, ne2ne, p2p, ruleResult };
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_29_6_perform_greenFFBFBBB(

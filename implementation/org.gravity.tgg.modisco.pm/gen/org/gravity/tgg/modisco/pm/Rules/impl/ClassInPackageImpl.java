@@ -198,15 +198,15 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		}
 		ClassInPackageImpl.pattern_ClassInPackage_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult,
 				annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType);
-		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge pg__tType____allTypes = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge type2Type__mType____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge annotatable2Annotatable__tType____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tPackage__tType____allTypes = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge type2Type__tType____target = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[19];
@@ -345,18 +345,18 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		// Create literals
 
 		// Create attribute variables
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", true, csp);
-		var_mType_name.setValue(mType.getName());
-		var_mType_name.setType("String");
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", true, csp);
 		var_mType_proxy.setValue(mType.isProxy());
 		var_mType_proxy.setType("Boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", true, csp);
+		var_mType_name.setValue(mType.getName());
+		var_mType_name.setType("String");
 
 		// Create unbound variables
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", csp);
-		var_tType_tName.setType("String");
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", csp);
 		var_tType_tLib.setType("Boolean");
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", csp);
+		var_tType_tName.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -367,9 +367,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_name, var_tType_tName);
+		eq.solve(var_mType_proxy, var_tType_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_proxy, var_tType_tLib);
+		eq_0.solve(var_mType_name, var_tType_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
@@ -452,12 +452,12 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 			}
 			ClassInPackageImpl.pattern_ClassInPackage_10_4_collectelementstobetranslated_greenBBBBFFFFFF(match, tType,
 					tPackage, pg);
-			//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge pg__tType____allTypes = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result4_green[5];
 			//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge tPackage__tType____allTypes = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result4_green[9];
 
 			Object[] result5_black = ClassInPackageImpl
 					.pattern_ClassInPackage_10_5_collectcontextelements_blackBBBB(match, tType, tPackage, pg);
@@ -526,15 +526,15 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		}
 		ClassInPackageImpl.pattern_ClassInPackage_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(ruleresult,
 				annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType);
-		//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge pg__tType____allTypes = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge type2Type__mType____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge annotatable2Annotatable__tType____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge tPackage__tType____allTypes = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge annotatable2Annotatable__mType____source = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge type2Type__tType____target = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge mPackage__mType____ownedElements = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mType__mPackage____package = (EMoflonEdge) result3_green[19];
@@ -584,14 +584,14 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 						.pattern_ClassInPackage_12_3_findcontext_greenBBBBBFFFFFFFFFF(mPackageToTPackage, tType,
 								tPackage, mPackage, pg);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge tPackage__tType____ownedTypes = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge pg__tType____allTypes = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge tPackage__pg____model = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge tPackage__tType____classes = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge mPackageToTPackage__mPackage____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge pg__tType____ownedTypes = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tPackage__tType____allTypes = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge pg__tType____classes = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge mPackageToTPackage__tPackage____target = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = ClassInPackageImpl
@@ -679,18 +679,18 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
-		var_tType_tName.setValue(tType.getTName());
-		var_tType_tName.setType("String");
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
 		var_tType_tLib.setValue(tType.isTLib());
 		var_tType_tLib.setType("Boolean");
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
+		var_tType_tName.setValue(tType.getTName());
+		var_tType_tName.setType("String");
 
 		// Create unbound variables
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", csp);
-		var_mType_name.setType("String");
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", csp);
 		var_mType_proxy.setType("Boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", csp);
+		var_mType_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -701,9 +701,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_name, var_tType_tName);
+		eq.solve(var_mType_proxy, var_tType_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_proxy, var_tType_tLib);
+		eq_0.solve(var_mType_name, var_tType_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
@@ -756,7 +756,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_47(EMoflonEdge _edge_ownedTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_43(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = ClassInPackageImpl
 				.pattern_ClassInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -771,7 +771,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		// ForEach 
 		for (Object[] result2_black : ClassInPackageImpl
-				.pattern_ClassInPackage_20_2_testcorematchandDECs_blackFFFB(_edge_ownedTypes)) {
+				.pattern_ClassInPackage_20_2_testcorematchandDECs_blackFFFB(_edge_allTypes)) {
 			TClass tType = (TClass) result2_black[0];
 			TPackage tPackage = (TPackage) result2_black[1];
 			TypeGraph pg = (TypeGraph) result2_black[2];
@@ -814,7 +814,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_49(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_45(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = ClassInPackageImpl
 				.pattern_ClassInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -881,21 +881,21 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
 		var_mType_proxy.setType("boolean");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -904,23 +904,23 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("ClassInPackage");
-		eq0.solve(var_mType_name, var_tType_tName);
+		eq0.solve(var_mType_proxy, var_tType_tLib);
 
 		eq1.setRuleName("ClassInPackage");
-		eq1.solve(var_mType_proxy, var_tType_tLib);
+		eq1.solve(var_mType_name, var_tType_tName);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_tType_tName.setBound(false);
 			var_tType_tLib.setBound(false);
-			eq0.solve(var_mType_name, var_tType_tName);
-			eq1.solve(var_mType_proxy, var_tType_tLib);
+			var_tType_tName.setBound(false);
+			eq0.solve(var_mType_proxy, var_tType_tLib);
+			eq1.solve(var_mType_name, var_tType_tName);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("tType", "tName", var_tType_tName.getValue());
 				__helper.setValue("tType", "tLib", var_tType_tLib.getValue());
+				__helper.setValue("tType", "tName", var_tType_tName.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -945,21 +945,21 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_proxy.setValue(__helper.getValue("mType", "proxy"));
 		var_mType_proxy.setType("boolean");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -968,23 +968,23 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("ClassInPackage");
-		eq0.solve(var_mType_name, var_tType_tName);
+		eq0.solve(var_mType_proxy, var_tType_tLib);
 
 		eq1.setRuleName("ClassInPackage");
-		eq1.solve(var_mType_proxy, var_tType_tLib);
+		eq1.solve(var_mType_name, var_tType_tName);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_mType_name.setBound(false);
 			var_mType_proxy.setBound(false);
-			eq0.solve(var_mType_name, var_tType_tName);
-			eq1.solve(var_mType_proxy, var_tType_tLib);
+			var_mType_name.setBound(false);
+			eq0.solve(var_mType_proxy, var_tType_tLib);
+			eq1.solve(var_mType_name, var_tType_tName);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("mType", "name", var_mType_name.getValue());
 				__helper.setValue("mType", "proxy", var_mType_proxy.getValue());
+				__helper.setValue("mType", "name", var_mType_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1079,18 +1079,18 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		// Create literals
 
 		// Create attribute variables
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", true, csp);
-		var_mType_name.setValue(mType.getName());
-		var_mType_name.setType("String");
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
-		var_tType_tName.setValue(tType.getTName());
-		var_tType_tName.setType("String");
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", true, csp);
 		var_mType_proxy.setValue(mType.isProxy());
 		var_mType_proxy.setType("Boolean");
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
 		var_tType_tLib.setValue(tType.isTLib());
 		var_tType_tLib.setType("Boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", true, csp);
+		var_mType_name.setValue(mType.getName());
+		var_mType_name.setType("String");
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
+		var_tType_tName.setValue(tType.getTName());
+		var_tType_tName.setType("String");
 
 		// Create unbound variables
 
@@ -1103,9 +1103,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_name, var_tType_tName);
+		eq.solve(var_mType_proxy, var_tType_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_proxy, var_tType_tLib);
+		eq_0.solve(var_mType_name, var_tType_tName);
 		return csp;
 	}
 
@@ -1171,9 +1171,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 				.pattern_ClassInPackage_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mPackageToTPackageList = (RuleEntryList) result2_black[0];
 			PackageToTPackage mPackageToTPackage = (PackageToTPackage) result2_black[1];
-			TPackage tPackage = (TPackage) result2_black[2];
-			TypeGraph pg = (TypeGraph) result2_black[3];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[4];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[2];
+			TPackage tPackage = (TPackage) result2_black[3];
+			TypeGraph pg = (TypeGraph) result2_black[4];
 
 			Object[] result3_bindingAndBlack = ClassInPackageImpl
 					.pattern_ClassInPackage_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
@@ -1233,14 +1233,14 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", csp);
-		var_mType_name.setType("String");
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", csp);
-		var_tType_tName.setType("String");
 		Variable var_mType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mType.proxy", csp);
 		var_mType_proxy.setType("Boolean");
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", csp);
 		var_tType_tLib.setType("Boolean");
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType.name", csp);
+		var_mType_name.setType("String");
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", csp);
+		var_tType_tName.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -1251,9 +1251,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_mType_name, var_tType_tName);
+		eq.solve(var_mType_proxy, var_tType_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_mType_proxy, var_tType_tLib);
+		eq_0.solve(var_mType_name, var_tType_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mPackageToTPackage", mPackageToTPackage);
@@ -1340,10 +1340,10 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 			return null;
 		case RulesPackage.CLASS_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_47__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_47((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_49__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_49((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_43__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_43((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_45__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_45((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1537,20 +1537,20 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		ASTNodeToTAnnotatable annotatable2Annotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TClass tType = BasicFactory.eINSTANCE.createTClass();
 		TypeToTAbstractType type2Type = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		Object _localVariable_0 = csp.getValue("tType", "tName");
-		Object _localVariable_1 = csp.getValue("tType", "tLib");
+		Object _localVariable_0 = csp.getValue("tType", "tLib");
+		Object _localVariable_1 = csp.getValue("tType", "tName");
 		annotatable2Annotatable.setSource(mType);
-		tPackage.getOwnedTypes().add(tType);
+		pg.getAllTypes().add(tType);
 		tPackage.getClasses().add(tType);
 		annotatable2Annotatable.setTarget(tType);
+		tPackage.getAllTypes().add(tType);
 		pg.getClasses().add(tType);
-		pg.getOwnedTypes().add(tType);
 		type2Type.setSource(mType);
 		type2Type.setTarget(tType);
-		String tType_tName_prime = (String) _localVariable_0;
-		boolean tType_tLib_prime = (boolean) _localVariable_1;
-		tType.setTName(tType_tName_prime);
+		boolean tType_tLib_prime = (boolean) _localVariable_0;
+		String tType_tName_prime = (String) _localVariable_1;
 		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
+		tType.setTName(tType_tName_prime);
 		return new Object[] { annotatable2Annotatable, tType, tPackage, pg, type2Type, mType, csp };
 	}
 
@@ -1650,37 +1650,37 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	public static final Object[] pattern_ClassInPackage_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject tType, EObject tPackage,
 			EObject mPackage, EObject pg, EObject type2Type, EObject mType) {
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassInPackage";
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
+		String pg__tType____allTypes_name_prime = "allTypes";
+		String tType__pg____model_name_prime = "model";
 		String tPackage__tType____classes_name_prime = "classes";
 		String type2Type__mType____source_name_prime = "source";
 		String annotatable2Annotatable__tType____target_name_prime = "target";
+		String tPackage__tType____allTypes_name_prime = "allTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String pg__tType____classes_name_prime = "classes";
 		String annotatable2Annotatable__mType____source_name_prime = "source";
-		String pg__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__pg____model_name_prime = "model";
 		String type2Type__tType____target_name_prime = "target";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		ruleresult.getCreatedEdges().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		ruleresult.getCreatedEdges().add(tType__tPackage____package);
+		pg__tType____allTypes.setSrc(pg);
+		pg__tType____allTypes.setTrg(tType);
+		ruleresult.getCreatedEdges().add(pg__tType____allTypes);
+		tType__pg____model.setSrc(tType);
+		tType__pg____model.setTrg(pg);
+		ruleresult.getCreatedEdges().add(tType__pg____model);
 		tPackage__tType____classes.setSrc(tPackage);
 		tPackage__tType____classes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(tPackage__tType____classes);
@@ -1690,18 +1690,18 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		annotatable2Annotatable__tType____target.setSrc(annotatable2Annotatable);
 		annotatable2Annotatable__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(annotatable2Annotatable__tType____target);
+		tPackage__tType____allTypes.setSrc(tPackage);
+		tPackage__tType____allTypes.setTrg(tType);
+		ruleresult.getCreatedEdges().add(tPackage__tType____allTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		ruleresult.getCreatedEdges().add(tType__tPackage____package);
 		pg__tType____classes.setSrc(pg);
 		pg__tType____classes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____classes);
 		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
 		annotatable2Annotatable__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
-		pg__tType____ownedTypes.setSrc(pg);
-		pg__tType____ownedTypes.setTrg(tType);
-		ruleresult.getCreatedEdges().add(pg__tType____ownedTypes);
-		tType__pg____model.setSrc(tType);
-		tType__pg____model.setTrg(pg);
-		ruleresult.getCreatedEdges().add(tType__pg____model);
 		type2Type__tType____target.setSrc(type2Type);
 		type2Type__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(type2Type__tType____target);
@@ -1712,23 +1712,23 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getTranslatedEdges().add(mType__mPackage____package);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
+		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
+		tType__pg____model.setName(tType__pg____model_name_prime);
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		type2Type__mType____source.setName(type2Type__mType____source_name_prime);
 		annotatable2Annotatable__tType____target.setName(annotatable2Annotatable__tType____target_name_prime);
+		tPackage__tType____allTypes.setName(tPackage__tType____allTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
 		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
-		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
-		tType__pg____model.setName(tType__pg____model_name_prime);
 		type2Type__tType____target.setName(type2Type__tType____target_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		return new Object[] { ruleresult, annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType,
-				tPackage__tType____ownedTypes, tType__tPackage____package, tPackage__tType____classes,
-				type2Type__mType____source, annotatable2Annotatable__tType____target, pg__tType____classes,
-				annotatable2Annotatable__mType____source, pg__tType____ownedTypes, tType__pg____model,
-				type2Type__tType____target, mPackage__mType____ownedElements, mType__mPackage____package };
+				pg__tType____allTypes, tType__pg____model, tPackage__tType____classes, type2Type__mType____source,
+				annotatable2Annotatable__tType____target, tPackage__tType____allTypes, tType__tPackage____package,
+				pg__tType____classes, annotatable2Annotatable__mType____source, type2Type__tType____target,
+				mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
 	public static final void pattern_ClassInPackage_1_5_registerobjects_expressionBBBBBBBBBB(ClassInPackage _this,
@@ -1994,45 +1994,46 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_10_4_collectelementstobetranslated_greenBBBBFFFFFF(Match match,
 			TClass tType, TPackage tPackage, TypeGraph pg) {
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tType);
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
-		String tPackage__tType____classes_name_prime = "classes";
-		String pg__tType____classes_name_prime = "classes";
-		String pg__tType____ownedTypes_name_prime = "ownedTypes";
+		String pg__tType____allTypes_name_prime = "allTypes";
 		String tType__pg____model_name_prime = "model";
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		match.getToBeTranslatedEdges().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		match.getToBeTranslatedEdges().add(tType__tPackage____package);
-		tPackage__tType____classes.setSrc(tPackage);
-		tPackage__tType____classes.setTrg(tType);
-		match.getToBeTranslatedEdges().add(tPackage__tType____classes);
-		pg__tType____classes.setSrc(pg);
-		pg__tType____classes.setTrg(tType);
-		match.getToBeTranslatedEdges().add(pg__tType____classes);
-		pg__tType____ownedTypes.setSrc(pg);
-		pg__tType____ownedTypes.setTrg(tType);
-		match.getToBeTranslatedEdges().add(pg__tType____ownedTypes);
+		String tPackage__tType____classes_name_prime = "classes";
+		String tPackage__tType____allTypes_name_prime = "allTypes";
+		String tType__tPackage____package_name_prime = "package";
+		String pg__tType____classes_name_prime = "classes";
+		pg__tType____allTypes.setSrc(pg);
+		pg__tType____allTypes.setTrg(tType);
+		match.getToBeTranslatedEdges().add(pg__tType____allTypes);
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		match.getToBeTranslatedEdges().add(tType__pg____model);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
-		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
-		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
+		tPackage__tType____classes.setSrc(tPackage);
+		tPackage__tType____classes.setTrg(tType);
+		match.getToBeTranslatedEdges().add(tPackage__tType____classes);
+		tPackage__tType____allTypes.setSrc(tPackage);
+		tPackage__tType____allTypes.setTrg(tType);
+		match.getToBeTranslatedEdges().add(tPackage__tType____allTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		match.getToBeTranslatedEdges().add(tType__tPackage____package);
+		pg__tType____classes.setSrc(pg);
+		pg__tType____classes.setTrg(tType);
+		match.getToBeTranslatedEdges().add(pg__tType____classes);
+		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
-		return new Object[] { match, tType, tPackage, pg, tPackage__tType____ownedTypes, tType__tPackage____package,
-				tPackage__tType____classes, pg__tType____classes, pg__tType____ownedTypes, tType__pg____model };
+		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
+		tPackage__tType____allTypes.setName(tPackage__tType____allTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
+		pg__tType____classes.setName(pg__tType____classes_name_prime);
+		return new Object[] { match, tType, tPackage, pg, pg__tType____allTypes, tType__pg____model,
+				tPackage__tType____classes, tPackage__tType____allTypes, tType__tPackage____package,
+				pg__tType____classes };
 	}
 
 	public static final Object[] pattern_ClassInPackage_10_5_collectcontextelements_blackBBBB(Match match, TClass tType,
@@ -2143,17 +2144,17 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		ASTNodeToTAnnotatable annotatable2Annotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeToTAbstractType type2Type = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		MClass mType = ModiscoFactory.eINSTANCE.createMClass();
-		Object _localVariable_0 = csp.getValue("mType", "name");
-		Object _localVariable_1 = csp.getValue("mType", "proxy");
+		Object _localVariable_0 = csp.getValue("mType", "proxy");
+		Object _localVariable_1 = csp.getValue("mType", "name");
 		annotatable2Annotatable.setTarget(tType);
 		type2Type.setTarget(tType);
 		type2Type.setSource(mType);
 		annotatable2Annotatable.setSource(mType);
 		mPackage.getOwnedElements().add(mType);
-		String mType_name_prime = (String) _localVariable_0;
-		boolean mType_proxy_prime = (boolean) _localVariable_1;
-		mType.setName(mType_name_prime);
+		boolean mType_proxy_prime = (boolean) _localVariable_0;
+		String mType_name_prime = (String) _localVariable_1;
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
+		mType.setName(mType_name_prime);
 		return new Object[] { annotatable2Annotatable, tType, mPackage, type2Type, mType, csp };
 	}
 
@@ -2253,37 +2254,37 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	public static final Object[] pattern_ClassInPackage_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject tType, EObject tPackage,
 			EObject mPackage, EObject pg, EObject type2Type, EObject mType) {
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge annotatable2Annotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassInPackage";
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
+		String pg__tType____allTypes_name_prime = "allTypes";
+		String tType__pg____model_name_prime = "model";
 		String tPackage__tType____classes_name_prime = "classes";
 		String type2Type__mType____source_name_prime = "source";
 		String annotatable2Annotatable__tType____target_name_prime = "target";
+		String tPackage__tType____allTypes_name_prime = "allTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String pg__tType____classes_name_prime = "classes";
 		String annotatable2Annotatable__mType____source_name_prime = "source";
-		String pg__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__pg____model_name_prime = "model";
 		String type2Type__tType____target_name_prime = "target";
 		String mPackage__mType____ownedElements_name_prime = "ownedElements";
 		String mType__mPackage____package_name_prime = "package";
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		ruleresult.getTranslatedEdges().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		ruleresult.getTranslatedEdges().add(tType__tPackage____package);
+		pg__tType____allTypes.setSrc(pg);
+		pg__tType____allTypes.setTrg(tType);
+		ruleresult.getTranslatedEdges().add(pg__tType____allTypes);
+		tType__pg____model.setSrc(tType);
+		tType__pg____model.setTrg(pg);
+		ruleresult.getTranslatedEdges().add(tType__pg____model);
 		tPackage__tType____classes.setSrc(tPackage);
 		tPackage__tType____classes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(tPackage__tType____classes);
@@ -2293,18 +2294,18 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		annotatable2Annotatable__tType____target.setSrc(annotatable2Annotatable);
 		annotatable2Annotatable__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(annotatable2Annotatable__tType____target);
+		tPackage__tType____allTypes.setSrc(tPackage);
+		tPackage__tType____allTypes.setTrg(tType);
+		ruleresult.getTranslatedEdges().add(tPackage__tType____allTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		ruleresult.getTranslatedEdges().add(tType__tPackage____package);
 		pg__tType____classes.setSrc(pg);
 		pg__tType____classes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____classes);
 		annotatable2Annotatable__mType____source.setSrc(annotatable2Annotatable);
 		annotatable2Annotatable__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(annotatable2Annotatable__mType____source);
-		pg__tType____ownedTypes.setSrc(pg);
-		pg__tType____ownedTypes.setTrg(tType);
-		ruleresult.getTranslatedEdges().add(pg__tType____ownedTypes);
-		tType__pg____model.setSrc(tType);
-		tType__pg____model.setTrg(pg);
-		ruleresult.getTranslatedEdges().add(tType__pg____model);
 		type2Type__tType____target.setSrc(type2Type);
 		type2Type__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(type2Type__tType____target);
@@ -2315,23 +2316,23 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		mType__mPackage____package.setTrg(mPackage);
 		ruleresult.getCreatedEdges().add(mType__mPackage____package);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
+		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
+		tType__pg____model.setName(tType__pg____model_name_prime);
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		type2Type__mType____source.setName(type2Type__mType____source_name_prime);
 		annotatable2Annotatable__tType____target.setName(annotatable2Annotatable__tType____target_name_prime);
+		tPackage__tType____allTypes.setName(tPackage__tType____allTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
 		annotatable2Annotatable__mType____source.setName(annotatable2Annotatable__mType____source_name_prime);
-		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
-		tType__pg____model.setName(tType__pg____model_name_prime);
 		type2Type__tType____target.setName(type2Type__tType____target_name_prime);
 		mPackage__mType____ownedElements.setName(mPackage__mType____ownedElements_name_prime);
 		mType__mPackage____package.setName(mType__mPackage____package_name_prime);
 		return new Object[] { ruleresult, annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType,
-				tPackage__tType____ownedTypes, tType__tPackage____package, tPackage__tType____classes,
-				type2Type__mType____source, annotatable2Annotatable__tType____target, pg__tType____classes,
-				annotatable2Annotatable__mType____source, pg__tType____ownedTypes, tType__pg____model,
-				type2Type__tType____target, mPackage__mType____ownedElements, mType__mPackage____package };
+				pg__tType____allTypes, tType__pg____model, tPackage__tType____classes, type2Type__mType____source,
+				annotatable2Annotatable__tType____target, tPackage__tType____allTypes, tType__tPackage____package,
+				pg__tType____classes, annotatable2Annotatable__mType____source, type2Type__tType____target,
+				mPackage__mType____ownedElements, mType__mPackage____package };
 	}
 
 	public static final void pattern_ClassInPackage_11_5_registerobjects_expressionBBBBBBBBBB(ClassInPackage _this,
@@ -2434,12 +2435,12 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tPackage.getOwnedTypes().contains(tType)) {
+		if (pg.getAllTypes().contains(tType)) {
 			if (pg.equals(tPackage.getModel())) {
 				if (tPackage.getClasses().contains(tType)) {
 					if (mPackage.equals(mPackageToTPackage.getSource())) {
-						if (pg.getClasses().contains(tType)) {
-							if (pg.getOwnedTypes().contains(tType)) {
+						if (tPackage.getAllTypes().contains(tType)) {
+							if (pg.getClasses().contains(tType)) {
 								if (tPackage.equals(mPackageToTPackage.getTarget())) {
 									_result.add(new Object[] { mPackageToTPackage, tType, tPackage, mPackage, pg });
 								}
@@ -2456,35 +2457,35 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 			PackageToTPackage mPackageToTPackage, TClass tType, TPackage tPackage,
 			org.eclipse.modisco.java.Package mPackage, TypeGraph pg) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge tPackage__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackageToTPackage__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tPackage__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tType____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tType____ownedTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackageToTPackage__tPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String tPackage__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__tPackage____package_name_prime = "package";
+		String pg__tType____allTypes_name_prime = "allTypes";
+		String tType__pg____model_name_prime = "model";
 		String tPackage__pg____model_name_prime = "model";
 		String tPackage__tType____classes_name_prime = "classes";
 		String mPackageToTPackage__mPackage____source_name_prime = "source";
+		String tPackage__tType____allTypes_name_prime = "allTypes";
+		String tType__tPackage____package_name_prime = "package";
 		String pg__tType____classes_name_prime = "classes";
-		String pg__tType____ownedTypes_name_prime = "ownedTypes";
-		String tType__pg____model_name_prime = "model";
 		String mPackageToTPackage__tPackage____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage);
 		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(tPackage);
 		isApplicableMatch.getAllContextElements().add(mPackage);
 		isApplicableMatch.getAllContextElements().add(pg);
-		tPackage__tType____ownedTypes.setSrc(tPackage);
-		tPackage__tType____ownedTypes.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(tPackage__tType____ownedTypes);
-		tType__tPackage____package.setSrc(tType);
-		tType__tPackage____package.setTrg(tPackage);
-		isApplicableMatch.getAllContextElements().add(tType__tPackage____package);
+		pg__tType____allTypes.setSrc(pg);
+		pg__tType____allTypes.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(pg__tType____allTypes);
+		tType__pg____model.setSrc(tType);
+		tType__pg____model.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(tType__pg____model);
 		tPackage__pg____model.setSrc(tPackage);
 		tPackage__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tPackage__pg____model);
@@ -2494,31 +2495,31 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		mPackageToTPackage__mPackage____source.setSrc(mPackageToTPackage);
 		mPackageToTPackage__mPackage____source.setTrg(mPackage);
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__mPackage____source);
+		tPackage__tType____allTypes.setSrc(tPackage);
+		tPackage__tType____allTypes.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(tPackage__tType____allTypes);
+		tType__tPackage____package.setSrc(tType);
+		tType__tPackage____package.setTrg(tPackage);
+		isApplicableMatch.getAllContextElements().add(tType__tPackage____package);
 		pg__tType____classes.setSrc(pg);
 		pg__tType____classes.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(pg__tType____classes);
-		pg__tType____ownedTypes.setSrc(pg);
-		pg__tType____ownedTypes.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(pg__tType____ownedTypes);
-		tType__pg____model.setSrc(tType);
-		tType__pg____model.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(tType__pg____model);
 		mPackageToTPackage__tPackage____target.setSrc(mPackageToTPackage);
 		mPackageToTPackage__tPackage____target.setTrg(tPackage);
 		isApplicableMatch.getAllContextElements().add(mPackageToTPackage__tPackage____target);
-		tPackage__tType____ownedTypes.setName(tPackage__tType____ownedTypes_name_prime);
-		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
+		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
+		tType__pg____model.setName(tType__pg____model_name_prime);
 		tPackage__pg____model.setName(tPackage__pg____model_name_prime);
 		tPackage__tType____classes.setName(tPackage__tType____classes_name_prime);
 		mPackageToTPackage__mPackage____source.setName(mPackageToTPackage__mPackage____source_name_prime);
+		tPackage__tType____allTypes.setName(tPackage__tType____allTypes_name_prime);
+		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		pg__tType____classes.setName(pg__tType____classes_name_prime);
-		pg__tType____ownedTypes.setName(pg__tType____ownedTypes_name_prime);
-		tType__pg____model.setName(tType__pg____model_name_prime);
 		mPackageToTPackage__tPackage____target.setName(mPackageToTPackage__tPackage____target_name_prime);
 		return new Object[] { mPackageToTPackage, tType, tPackage, mPackage, pg, isApplicableMatch,
-				tPackage__tType____ownedTypes, tType__tPackage____package, tPackage__pg____model,
-				tPackage__tType____classes, mPackageToTPackage__mPackage____source, pg__tType____classes,
-				pg__tType____ownedTypes, tType__pg____model, mPackageToTPackage__tPackage____target };
+				pg__tType____allTypes, tType__pg____model, tPackage__pg____model, tPackage__tType____classes,
+				mPackageToTPackage__mPackage____source, tPackage__tType____allTypes, tType__tPackage____package,
+				pg__tType____classes, mPackageToTPackage__tPackage____target };
 	}
 
 	public static final Object[] pattern_ClassInPackage_12_4_solveCSP_bindingFBBBBBBB(ClassInPackage _this,
@@ -2638,9 +2639,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_0BB(TClass tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_999067 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_738405 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_999067)) {
+			if (!tPackage.equals(__DEC_tType_classes_738405)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2649,9 +2650,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_1BB(TClass tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_799328 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_188117 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_799328)) {
+			if (!pg.equals(__DEC_tType_classes_188117)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2660,9 +2661,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_2BB(TClass tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_634798 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_634798 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_634798)) {
+		TPackage __DEC_tType_allTypes_235488 = tType.getPackage();
+		if (__DEC_tType_allTypes_235488 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_235488)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2671,9 +2672,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_335003 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_335003 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_335003)) {
+		TAbstractType __DEC_tType_innerTypes_553462 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_553462 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_553462)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2682,29 +2683,29 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Iterable<Object[]> pattern_ClassInPackage_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_ownedTypes) {
+			EMoflonEdge _edge_allTypes) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTPackage = _edge_ownedTypes.getSrc();
-		if (tmpTPackage instanceof TPackage) {
-			TPackage tPackage = (TPackage) tmpTPackage;
-			EObject tmpTType = _edge_ownedTypes.getTrg();
+		EObject tmpPg = _edge_allTypes.getSrc();
+		if (tmpPg instanceof TypeGraph) {
+			TypeGraph pg = (TypeGraph) tmpPg;
+			EObject tmpTType = _edge_allTypes.getTrg();
 			if (tmpTType instanceof TClass) {
 				TClass tType = (TClass) tmpTType;
-				if (tPackage.getOwnedTypes().contains(tType)) {
-					if (tPackage.getClasses().contains(tType)) {
-						TypeGraph pg = tPackage.getModel();
-						if (pg != null) {
-							if (pg.getClasses().contains(tType)) {
-								if (pg.getOwnedTypes().contains(tType)) {
-									if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_0BB(tType,
-											tPackage) == null) {
-										if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_2BB(tType,
-												tPackage) == null) {
-											if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_3B(
-													tType) == null) {
-												if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_1BB(
-														tType, pg) == null) {
-													_result.add(new Object[] { tType, tPackage, pg, _edge_ownedTypes });
+				if (pg.getAllTypes().contains(tType)) {
+					if (pg.getClasses().contains(tType)) {
+						TPackage tPackage = tType.getPackage();
+						if (tPackage != null) {
+							if (pg.equals(tPackage.getModel())) {
+								if (tPackage.getClasses().contains(tType)) {
+									if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_1BB(tType,
+											pg) == null) {
+										if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_3B(
+												tType) == null) {
+											if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_0BB(tType,
+													tPackage) == null) {
+												if (pattern_ClassInPackage_20_2_testcorematchandDECs_black_nac_2BB(
+														tType, tPackage) == null) {
+													_result.add(new Object[] { tType, tPackage, pg, _edge_allTypes });
 												}
 											}
 										}
@@ -2820,9 +2821,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_21_2_testcorematchandDECs_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_33364 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_33364 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_33364)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_700231 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_700231 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_700231)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2831,9 +2832,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_21_2_testcorematchandDECs_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_976970 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_408022 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_976970 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_408022 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2841,7 +2842,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_21_2_testcorematchandDECs_black_nac_2B(MClass mType) {
-		for (Model __DEC_mType_orphanTypes_42225 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_134930 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2849,7 +2850,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_21_2_testcorematchandDECs_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_451496 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_479718 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3101,9 +3102,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_27_1_matchtggpattern_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_344773 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_344773 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_344773)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_612038 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_612038 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_612038)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3112,9 +3113,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_27_1_matchtggpattern_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_119029 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_374163 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_119029 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_374163 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3122,7 +3123,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_27_1_matchtggpattern_black_nac_2B(MClass mType) {
-		for (Model __DEC_mType_orphanTypes_387689 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_504340 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3130,7 +3131,7 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_27_1_matchtggpattern_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_214895 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_626062 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3165,9 +3166,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_28_1_matchtggpattern_black_nac_0BB(TClass tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_classes_799293 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_656252 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tType_classes_799293)) {
+			if (!tPackage.equals(__DEC_tType_classes_656252)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3175,9 +3176,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_28_1_matchtggpattern_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_287292 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_540366 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_287292)) {
+			if (!pg.equals(__DEC_tType_classes_540366)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3186,9 +3187,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_28_1_matchtggpattern_black_nac_2BB(TClass tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_ownedTypes_104968 = tType.getPackage();
-		if (__DEC_tType_ownedTypes_104968 != null) {
-			if (!tPackage.equals(__DEC_tType_ownedTypes_104968)) {
+		TPackage __DEC_tType_allTypes_666207 = tType.getPackage();
+		if (__DEC_tType_allTypes_666207 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_666207)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3197,9 +3198,9 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_788314 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_788314 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_788314)) {
+		TAbstractType __DEC_tType_innerTypes_410070 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_410070 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_410070)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3209,11 +3210,11 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 
 	public static final Object[] pattern_ClassInPackage_28_1_matchtggpattern_blackBBB(TClass tType, TPackage tPackage,
 			TypeGraph pg) {
-		if (tPackage.getOwnedTypes().contains(tType)) {
+		if (pg.getAllTypes().contains(tType)) {
 			if (pg.equals(tPackage.getModel())) {
 				if (tPackage.getClasses().contains(tType)) {
-					if (pg.getClasses().contains(tType)) {
-						if (pg.getOwnedTypes().contains(tType)) {
+					if (tPackage.getAllTypes().contains(tType)) {
+						if (pg.getClasses().contains(tType)) {
 							if (pattern_ClassInPackage_28_1_matchtggpattern_black_nac_0BB(tType, tPackage) == null) {
 								if (pattern_ClassInPackage_28_1_matchtggpattern_black_nac_1BB(tType, pg) == null) {
 									if (pattern_ClassInPackage_28_1_matchtggpattern_black_nac_2BB(tType,
@@ -3263,6 +3264,14 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 	}
 
 	public static final Object[] pattern_ClassInPackage_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package mPackage) {
+		if (ruleResult.getSourceObjects().contains(mPackage)) {
+			return new Object[] { ruleResult, mPackage };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ClassInPackage_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, TPackage tPackage) {
 		if (ruleResult.getTargetObjects().contains(tPackage)) {
 			return new Object[] { ruleResult, tPackage };
@@ -3270,18 +3279,10 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		return null;
 	}
 
-	public static final Object[] pattern_ClassInPackage_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_ClassInPackage_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
 		if (ruleResult.getTargetObjects().contains(pg)) {
 			return new Object[] { ruleResult, pg };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ClassInPackage_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package mPackage) {
-		if (ruleResult.getSourceObjects().contains(mPackage)) {
-			return new Object[] { ruleResult, mPackage };
 		}
 		return null;
 	}
@@ -3293,22 +3294,22 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 			for (EObject tmpMPackageToTPackage : mPackageToTPackageList.getEntryObjects()) {
 				if (tmpMPackageToTPackage instanceof PackageToTPackage) {
 					PackageToTPackage mPackageToTPackage = (PackageToTPackage) tmpMPackageToTPackage;
-					TPackage tPackage = mPackageToTPackage.getTarget();
-					if (tPackage != null) {
-						org.eclipse.modisco.java.Package mPackage = mPackageToTPackage.getSource();
-						if (mPackage != null) {
+					org.eclipse.modisco.java.Package mPackage = mPackageToTPackage.getSource();
+					if (mPackage != null) {
+						TPackage tPackage = mPackageToTPackage.getTarget();
+						if (tPackage != null) {
 							TypeGraph pg = tPackage.getModel();
 							if (pg != null) {
 								if (pattern_ClassInPackage_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 										mPackageToTPackage) == null) {
 									if (pattern_ClassInPackage_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											tPackage) == null) {
-										if (pattern_ClassInPackage_29_2_isapplicablecore_black_nac_3BB(ruleResult,
-												mPackage) == null) {
-											if (pattern_ClassInPackage_29_2_isapplicablecore_black_nac_2BB(ruleResult,
+											mPackage) == null) {
+										if (pattern_ClassInPackage_29_2_isapplicablecore_black_nac_2BB(ruleResult,
+												tPackage) == null) {
+											if (pattern_ClassInPackage_29_2_isapplicablecore_black_nac_3BB(ruleResult,
 													pg) == null) {
 												_result.add(new Object[] { mPackageToTPackageList, mPackageToTPackage,
-														tPackage, pg, mPackage, ruleEntryContainer, ruleResult });
+														mPackage, tPackage, pg, ruleEntryContainer, ruleResult });
 											}
 										}
 									}
@@ -3384,18 +3385,18 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		TClass tType = BasicFactory.eINSTANCE.createTClass();
 		TypeToTAbstractType type2Type = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		MClass mType = ModiscoFactory.eINSTANCE.createMClass();
-		Object _localVariable_0 = csp.getValue("tType", "tName");
-		Object _localVariable_1 = csp.getValue("tType", "tLib");
-		Object _localVariable_2 = csp.getValue("mType", "name");
-		Object _localVariable_3 = csp.getValue("mType", "proxy");
+		Object _localVariable_0 = csp.getValue("tType", "tLib");
+		Object _localVariable_1 = csp.getValue("tType", "tName");
+		Object _localVariable_2 = csp.getValue("mType", "proxy");
+		Object _localVariable_3 = csp.getValue("mType", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(annotatable2Annotatable);
-		tPackage.getOwnedTypes().add(tType);
+		pg.getAllTypes().add(tType);
 		tPackage.getClasses().add(tType);
 		annotatable2Annotatable.setTarget(tType);
+		tPackage.getAllTypes().add(tType);
 		pg.getClasses().add(tType);
-		pg.getOwnedTypes().add(tType);
 		ruleResult.getTargetObjects().add(tType);
 		type2Type.setTarget(tType);
 		ruleResult.getCorrObjects().add(type2Type);
@@ -3403,16 +3404,16 @@ public class ClassInPackageImpl extends AbstractRuleImpl implements ClassInPacka
 		annotatable2Annotatable.setSource(mType);
 		mPackage.getOwnedElements().add(mType);
 		ruleResult.getSourceObjects().add(mType);
-		String tType_tName_prime = (String) _localVariable_0;
-		boolean tType_tLib_prime = (boolean) _localVariable_1;
-		String mType_name_prime = (String) _localVariable_2;
-		boolean mType_proxy_prime = (boolean) _localVariable_3;
+		boolean tType_tLib_prime = (boolean) _localVariable_0;
+		String tType_tName_prime = (String) _localVariable_1;
+		boolean mType_proxy_prime = (boolean) _localVariable_2;
+		String mType_name_prime = (String) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		tType.setTName(tType_tName_prime);
 		tType.setTLib(Boolean.valueOf(tType_tLib_prime));
-		mType.setName(mType_name_prime);
+		tType.setTName(tType_tName_prime);
 		mType.setProxy(Boolean.valueOf(mType_proxy_prime));
+		mType.setName(mType_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
 		return new Object[] { annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType, ruleResult,
 				csp };

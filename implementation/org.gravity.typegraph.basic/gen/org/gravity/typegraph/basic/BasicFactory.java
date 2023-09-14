@@ -220,6 +220,15 @@ public interface BasicFactory extends EFactory {
 	TEnum createTEnum();
 
 	/**
+	 * Returns a new object of class '<em>TModule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TModule</em>'.
+	 * @generated
+	 */
+	TModule createTModule();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

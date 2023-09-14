@@ -24,3 +24,4 @@ encoding//rules/metrics/lcom.henshin_diagram=UTF-8
 encoding//rules/metrics/number-of-members.henshin=UTF-8
 encoding//rules/metrics/number-of-members.henshin_diagram=UTF-8
 encoding//src/org/gravity/hulk/messages.properties=ISO-8859-1
+encoding/<project>=UTF-8
