@@ -8,15 +8,14 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
-import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.tests.TestHelper;
-import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -33,6 +32,8 @@ import org.junit.Test;
 public class APITests {
 
 	public static final String PROJECT_NAME = "APITestProject";
+
+	private static final Logger LOGGER = Logger.getLogger(APITests.class);
 
 	private static IJavaProject project;
 
@@ -120,6 +121,12 @@ public class APITests {
 		iface.setModule(module);
 		pm.getModules().add(module);
 		
+		try {
+			EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm.xmi").delete(true, null);
+		}
+		catch(IOException | CoreException e) {
+			LOGGER.warn(e);
+		}
 		pm.eResource().save(Collections.emptyMap());
 	}
 }

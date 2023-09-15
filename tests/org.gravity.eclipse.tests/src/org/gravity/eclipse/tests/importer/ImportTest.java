@@ -42,6 +42,15 @@ public abstract class ImportTest {
 		LOGGER.info("Explicitly loaded TGG: " + PmPackage.eINSTANCE.getNsURI());
 	}
 
+	/**
+	 * Returns a the test data for all projects that contain a file with the given extenstion.
+	 * The data format is:
+	 * Object[0]: String: project name
+	 * Object[1]: File: location of the project
+	 * Object[2]: Map<String, String>: expected files and libs of the project
+	 * 
+	 * @return the test projects as one Object array per project
+	 */
 	public static Collection<Object[]> getTestProjects(final String fileExtension) throws IOException {
 		final var visitor = new ExtensionFileVisitor(fileExtension);
 		final var path = new File("data/import").getAbsoluteFile().toPath();
@@ -69,10 +78,6 @@ public abstract class ImportTest {
 	 */
 	@Test
 	public void testProjectImport() throws ImportException, JavaModelException {
-		if(!importer.allDependenciesFound()) {
-			LOGGER.warn("Skip test since not all requirements are met");
-			return;
-		}
 		final var importedProject = this.importer.importProject(new NullProgressMonitor());
 		final Set<String> libs = Stream.of(importedProject.getRawClasspath()).parallel()
 				.filter(entry -> entry.getEntryKind() == IClasspathEntry.CPE_LIBRARY).map(IClasspathEntry::getPath)

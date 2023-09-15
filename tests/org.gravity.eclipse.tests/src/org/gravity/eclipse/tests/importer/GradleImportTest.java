@@ -17,13 +17,18 @@ public class GradleImportTest extends ImportTest {
 
 	private static final Logger LOGGER = Logger.getLogger(GradleImportTest.class);
 
-	public GradleImportTest(final String name, final File projectLocation, final Map<String, String> expected) throws IOException, ImportException {
+	public GradleImportTest(final String name, final File projectLocation, final Map<String, String> expected)
+			throws IOException, ImportException {
 		super(new GradleImport(projectLocation, true), expected);
-		LOGGER.info("Run: "+name);
+		LOGGER.info("Run: " + name);
 	}
 
 	@Parameters(name = "{index}: Import gradle project: {0}")
 	public static Collection<Object[]> getTestProjects() throws IOException {
-		return getTestProjects(".gradle.csv");
+		return getTestProjects(".gradle.csv").stream().sorted((a, b) -> {
+			String nameA = (String) a[0];
+			String nameB = (String) b[0];
+			return nameA.compareTo(nameB) * -1; // Sort in reverse order to execute newer gradle versions first
+		}).toList();
 	}
 }

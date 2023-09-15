@@ -42,7 +42,7 @@ final class GradleRegexPatterns {
 	/**
 	 * Dependencies
 	 */
-	protected static final Pattern SINGLE_DEPENDENCY = Pattern.compile("(compile|useLibrary)(\\s+)['\"](.+)['\"]");
+	protected static final Pattern SINGLE_DEPENDENCY = Pattern.compile("(implementation|compile|useLibrary)(\\s+)['\"](.+)['\"]");
 	protected static final Pattern MULTIPLE_DEPENDENCIES_ENTRY = Pattern.compile("classpath\\s+['\"](.+)['\"]");
 
 	/**

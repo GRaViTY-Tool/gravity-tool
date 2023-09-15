@@ -460,6 +460,15 @@ public final class MoDiscoUtil {
 		object.setName("Object"); //$NON-NLS-1$
 		object.setProxy(true);
 		javaLangPackage.getOwnedElements().add(object);
+		
+		final var file = JavaFactory.eINSTANCE.createClassFile();
+		file.setName("Object.class"); //$NON-NLS-1$
+		file.setPackage(javaLangPackage);
+		file.setType(object);
+		file.setOriginalFilePath(""); //$NON-NLS-1$
+		model.getClassFiles().add(file);
+		
+		LOGGER.warn("Class \"java.lang.Object\" is not contained in the MoDisco model and has been created");
 		return object;
 
 	}

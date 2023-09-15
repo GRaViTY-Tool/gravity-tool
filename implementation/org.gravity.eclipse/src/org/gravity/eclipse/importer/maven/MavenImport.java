@@ -282,9 +282,4 @@ public class MavenImport extends ProjectImport {
 		}
 		return child;
 	}
-
-	@Override
-	public boolean allDependenciesFound() {
-		return mavenRepository != null && mavenRepository.exists();
-	}
 }

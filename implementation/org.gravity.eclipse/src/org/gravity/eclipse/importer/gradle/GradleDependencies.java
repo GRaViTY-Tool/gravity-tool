@@ -85,7 +85,7 @@ public class GradleDependencies {
 			var dependency = m.group(3);
 			try {
 				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-				if (m.group(0).startsWith("compile")) {
+				if (m.group(0).startsWith("compile") || m.group(0).startsWith("implementation")) {
 					getCompileDependencies().add(dependency);
 				} else if (dependency.contains(":")) {
 					getCompileDependencies().add(dependency);

@@ -1,0 +1,1 @@
+These projects cannot be executed using Java 17 or newer, the import has to fall back to analyzing the gradle files. Therefore, "0-gradle7.2-java17" has to be executed first to ensure that the libraries are available at the host system. 
