@@ -169,7 +169,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 				this.saveJob.cancel();
 				this.saveJob.schedule();
 			}
-		} else if (verbose) {
+		} else if (isDebug()) {
 			LOGGER.error("Transformation did not create a program model: " + trg);
 		}
 		submonitor.done();

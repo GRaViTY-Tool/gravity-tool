@@ -43,9 +43,11 @@ public class GravityAPI {
 		} catch (CoreException | NoConverterRegisteredException e) {
 			throw new TransformationFailedException(e);
 		}
+		boolean previousDebug = converter.isDebug();
 		converter.setDebug(debug);
 		
 		final var success = converter.convertProject(Collections.emptySet(), monitor);
+		converter.setDebug(previousDebug);
 		if (!success || (converter.getPG() == null)) {
 			throw new TransformationFailedException(
 					Messages.createPMFailed + project.getProject().getName());
