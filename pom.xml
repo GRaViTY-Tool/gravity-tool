@@ -10,7 +10,7 @@
   <properties>
     <tycho-version>4.0.2</tycho-version>
     <jacoco.version>0.8.10</jacoco.version>
-    <dependency-plugin>3.3.0</dependency-plugin>
+    <dependency-plugin>3.6.0</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
 
