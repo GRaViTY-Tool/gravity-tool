@@ -58,12 +58,12 @@ public class APITests {
 
 	@Test
 	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException, IOException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, null);
+		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(pm);
 
 		addInterface(pm);
 
-		final var newPm = GravityAPI.createProgramModel(APITests.project, null);
+		final var newPm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(newPm);
 		assertNotEquals(pm, newPm);
 		assertTrue(newPm.getInterfaces().isEmpty());
