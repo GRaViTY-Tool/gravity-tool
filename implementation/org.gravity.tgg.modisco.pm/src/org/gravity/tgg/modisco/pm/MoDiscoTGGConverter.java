@@ -32,6 +32,7 @@ import org.gravity.tgg.modisco.pm.processing.pg.IProgramGraphProcessor;
 import org.gravity.tgg.modisco.pm.processing.pg.ProgramGraphProcesorUtil;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.moflon.tgg.language.algorithm.TempOutputContainer;
 
 /**
  * A converter for creating a program model from eclipse projects using MoDisco
@@ -171,6 +172,9 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 			}
 		} else if (isDebug()) {
 			LOGGER.error("Transformation did not create a program model: " + trg);
+			if (trg instanceof TempOutputContainer container) {
+				LOGGER.error("Potential roots are: "+container.getPotentialRoots());				
+			}
 		}
 		submonitor.done();
 		return success;
