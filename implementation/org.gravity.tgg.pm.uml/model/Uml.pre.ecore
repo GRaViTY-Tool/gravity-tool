@@ -5,11 +5,11 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.tgg.pm"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Feature2TSignature" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+  <eClassifiers xsi:type="ecore:EClass" name="Package2TPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature"/>
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property2TFieldDefinition" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -17,35 +17,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Type2TAbstractType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element2TAnnotatable" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation2TMethodDefinition" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment2TTextAnnotation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextAnnotation"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model2TypeGraph" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FDependency2TAccess" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -53,47 +29,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property2TFieldSignature" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter2TParameter" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interface2TInterface" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StereotypeProperty2AnnotationNode" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAbstractNode"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType2TClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package2TPackage" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Stereotype2TAnnotation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Stereotype"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation2TMethodSignature" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -101,17 +41,59 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property2TFieldName" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TField"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypeProperty2AnnotationNode" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAbstractNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model2TypeGraph" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature2TSignature" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType2TClass" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property2TFieldSignature" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type2TAbstractType" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation2TMethodName" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property2TFieldName" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+  <eClassifiers xsi:type="ecore:EClass" name="Stereotype2TAnnotation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Stereotype"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TField"/>
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature2TMember" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -124,6 +106,24 @@
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment2TTextAnnotation" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextAnnotation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation2TMethodDefinition" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter2TParameter" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="ecore:EClass platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter"/>
   </eClassifiers>
   <eSubpackages name="Rules" nsURI="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore#//Rules"
       nsPrefix="Rules">

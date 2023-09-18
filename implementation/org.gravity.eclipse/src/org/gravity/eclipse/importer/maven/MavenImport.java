@@ -282,5 +282,4 @@ public class MavenImport extends ProjectImport {
 		}
 		return child;
 	}
-
 }

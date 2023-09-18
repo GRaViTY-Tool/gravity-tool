@@ -13,6 +13,8 @@
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.BrokenTypeAccessProcessor"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.VisibilityRepairPreprocessor"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.StaticTypePreprocessing"/>
+    <processor priority="0" processor="org.gravity.modisco.processing.fwd.AnonymousContainerProcessing"/>
+    <processor priority="1" processor="org.gravity.modisco.processing.fwd.TypeContainerProcessing"/>
     <processor priority="1" processor="org.gravity.modisco.processing.fwd.TypeDeclarationStatementPreprocessor"/>
     <processor priority="2" processor="org.gravity.modisco.processing.fwd.SuperInterfacePreprocessing"/>
     <processor priority="5" processor="org.gravity.modisco.processing.fwd.AccessPreprocessing"/>

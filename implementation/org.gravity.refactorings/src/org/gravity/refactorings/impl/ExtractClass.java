@@ -124,7 +124,7 @@ public class ExtractClass implements Refactoring {
 		}
 
 		final String tNewClassName = configuration.getTNewClassName();
-		if (owner.getPackage().getOwnedTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
+		if (owner.getPackage().getAllTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
 			if (LOGGER.isInfoEnabled()) {
 				LOGGER.info(NLS.bind("There is already a type with the name \"{0}\"", tNewClassName));
 			}
@@ -203,9 +203,9 @@ public class ExtractClass implements Refactoring {
 	private TClass createNewTClass(final ExtractClassConfiguration tExtractConfiguration, final TPackage tPackage, final TypeGraph tPG) {
 		final TClass tNewClass = BasicFactory.eINSTANCE.createTClass();
 		tNewClass.setTName(tExtractConfiguration.getTNewClassName());
-		tPG.getOwnedTypes().add(tNewClass);
+		tPG.getAllTypes().add(tNewClass);
 		tPG.getClasses().add(tNewClass);
-		tPackage.getOwnedTypes().add(tNewClass);
+		tPackage.getAllTypes().add(tNewClass);
 		tPackage.getClasses().add(tNewClass);
 
 		return tNewClass;

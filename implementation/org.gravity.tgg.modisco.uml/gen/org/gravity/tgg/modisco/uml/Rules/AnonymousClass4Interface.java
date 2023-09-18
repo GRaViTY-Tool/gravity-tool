@@ -216,7 +216,7 @@ public interface AnonymousClass4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_99(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_124(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +224,7 @@ public interface AnonymousClass4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_129(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

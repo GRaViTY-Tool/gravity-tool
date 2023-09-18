@@ -223,7 +223,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_113(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_115(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_120(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

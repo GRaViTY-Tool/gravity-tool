@@ -96,10 +96,10 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration eInterfaceDeclaration,
-			TypeAccess eTypeAccess, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
-			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tInterface);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TInterface tInterface,
+			InterfaceDeclaration eInterfaceDeclaration, TypeAccess eTypeAccess, InterfaceDeclaration eSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
+			TInterface tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,9 +115,9 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eInterfaceDeclaration, EObject eTypeAccess,
-			EObject eSuperInterfaceToTSuperInterface, EObject eSuperInterface, EObject tSuperInterface,
-			EObject eInterfaceDeclarationToTInterface, EObject tInterface);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tInterface, EObject eInterfaceDeclaration,
+			EObject eTypeAccess, EObject eSuperInterface, EObject eInterfaceDeclarationToTInterface,
+			EObject eSuperInterfaceToTSuperInterface, EObject tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,7 +133,7 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TInterface tSuperInterface, TInterface tInterface);
+	boolean isAppropriate_BWD(Match match, TInterface tInterface, TInterface tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,7 +157,7 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TInterface tSuperInterface, TInterface tInterface);
+	void registerObjectsToMatch_BWD(Match match, TInterface tInterface, TInterface tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +165,7 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TInterface tSuperInterface, TInterface tInterface);
+	CSP isAppropriate_solveCsp_BWD(Match match, TInterface tInterface, TInterface tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,9 +181,10 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration eInterfaceDeclaration,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tInterface);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TInterface tInterface,
+			InterfaceDeclaration eInterfaceDeclaration, InterfaceDeclaration eSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
+			TInterface tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,9 +200,9 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eInterfaceDeclaration, EObject eTypeAccess,
-			EObject eSuperInterfaceToTSuperInterface, EObject eSuperInterface, EObject tSuperInterface,
-			EObject eInterfaceDeclarationToTInterface, EObject tInterface);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tInterface, EObject eInterfaceDeclaration,
+			EObject eTypeAccess, EObject eSuperInterface, EObject eInterfaceDeclarationToTInterface,
+			EObject eSuperInterfaceToTSuperInterface, EObject tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +218,7 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_parentInterfaces);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_7(EMoflonEdge _edge_parentInterfaces);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +226,7 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_8(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,8 +258,8 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(InterfaceDeclaration eInterfaceDeclaration, TypeAccess eTypeAccess,
-			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface, TInterface tInterface, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(TInterface tInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TypeAccess eTypeAccess, InterfaceDeclaration eSuperInterface, TInterface tSuperInterface, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -284,7 +285,7 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TInterface tSuperInterface, TInterface tInterface);
+	boolean checkDEC_BWD(TInterface tInterface, TInterface tSuperInterface);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,10 +303,10 @@ public interface InterfaceExtendsInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration eInterfaceDeclaration,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tInterface,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TInterface tInterface,
+			InterfaceDeclaration eInterfaceDeclaration, InterfaceDeclaration eSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
+			TInterface tSuperInterface, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

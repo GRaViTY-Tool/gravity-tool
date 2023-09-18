@@ -1,341 +1,381 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.tgg.pm.uml="platform:/plugin/org.gravity.tgg.pm.uml/model/Uml.ecore" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Model2TypeGraph">
-    <source href="uml/classdiagram.uml#_uCxtZn0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#/"/>
-  </correspondences>
   <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Model" href="uml/classdiagram.uml#_uCxtZn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtb30UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.8"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtb30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.8"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtb30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.8"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtcH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.9"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtcH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.9"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtcH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.9"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Package" href="uml/classdiagram.uml#_uCxtaH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxten0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtbH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.2"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtbH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.2"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtbH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.2"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxta30UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.1"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxta30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.1"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxta30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.1"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Model2TypeGraph">
-    <source href="uml/classdiagram.uml#_uCxtYX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#/"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Model" href="uml/classdiagram.uml#_uCxtYX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtaX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.5"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtaX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.5"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtaX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.5"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
-    <source href="uml/classdiagram.uml#_uCxteH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxteH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxteH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
-    <source href="uml/classdiagram.uml#_uCxteH0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxteH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxteH0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtbX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.7"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtbX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.7"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtbX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.7"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtcX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.6"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtcX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.6"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtcX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.6"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Property" href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Property2TFieldDefinition">
-    <source href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Property" href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Property" href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Property2TFieldDefinition">
-    <source href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Property" href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Property" href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Property2TFieldDefinition">
-    <source href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Property" href="uml/classdiagram.uml#_uCxteX0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
-    <source href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#_uCxtdn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
-    <source href="uml/classdiagram.uml#_uCxtc30UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.3"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxtc30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.3"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxtc30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.3"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
-    <source href="uml/classdiagram.uml#_uCxtc30UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.3"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxtc30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.3"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Class" href="uml/classdiagram.uml#_uCxtc30UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.3"/>
+    <source xsi:type="uml:Package" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang"/>
+    <target xsi:type="org.gravity.typegraph.basic:TPackage" href="pm/pm.xmi#//@packages.0/@subpackages.0"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.pm.uml:Package2TPackage">
-    <source href="uml/classdiagram.uml#_uCxtcn0UEeyJlLcCPXvoJg"/>
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang"/>
+    <target href="pm/pm.xmi#//@packages.0/@subpackages.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Model" href="uml/classdiagram.uml#//externals"/>
+    <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Model2TypeGraph">
+    <source href="uml/classdiagram.uml#//externals"/>
+    <target href="pm/pm.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/char"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Package" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes"/>
+    <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Package" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java"/>
+    <target xsi:type="org.gravity.typegraph.basic:TPackage" href="pm/pm.xmi#//@packages.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Package2TPackage">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java"/>
     <target href="pm/pm.xmi#//@packages.0"/>
   </correspondences>
   <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Package" href="uml/classdiagram.uml#_uCxtcn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TPackage" href="pm/pm.xmi#//@packages.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtbn0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtbn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtbn0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.0"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
-    <source href="uml/classdiagram.uml#_uCxtan0UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#//@ownedTypes.10"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtan0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.10"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#_uCxtan0UEeyJlLcCPXvoJg"/>
-    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@ownedTypes.10"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Model2TypeGraph">
-    <source href="uml/classdiagram.uml#_uCxtZ30UEeyJlLcCPXvoJg"/>
-    <target href="pm/pm.xmi#/"/>
-  </correspondences>
-  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
-    <source xsi:type="uml:Model" href="uml/classdiagram.uml#_uCxtZ30UEeyJlLcCPXvoJg"/>
+    <source xsi:type="uml:Model" href="uml/classdiagram.uml#//SecureViolationPatternsViolation"/>
     <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
   </correspondences>
-  <source href="uml/classdiagram.uml#_uCxtYH0UEeyJlLcCPXvoJg"/>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Model2TypeGraph">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation"/>
+    <target href="pm/pm.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.4/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.4/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target href="pm/pm.xmi#//@modules.4/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.4/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.4/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier"/>
+    <target href="pm/pm.xmi#//@modules.4/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Package" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy"/>
+    <target xsi:type="org.gravity.typegraph.basic:TPackage" href="pm/pm.xmi#//@packages.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Package2TPackage">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy"/>
+    <target href="pm/pm.xmi#//@packages.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.3/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.3/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target href="pm/pm.xmi#//@modules.3/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.3/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.3/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client"/>
+    <target href="pm/pm.xmi#//@modules.3/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/byte"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/Supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Property" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Property2TFieldDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Property" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Property" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Property2TFieldDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Property" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Property" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Property2TFieldDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Property" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/supplier"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="pm/pm.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/long"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/void"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/float"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/boolean"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Model" href="uml/classdiagram.uml#//source%20references"/>
+    <target xsi:type="org.gravity.typegraph.basic:TypeGraph" href="pm/pm.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Model2TypeGraph">
+    <source href="uml/classdiagram.uml#//source%20references"/>
+    <target href="pm/pm.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/short"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/int"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Supplier/supplierMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Operation2TMethodDefinition">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Feature2TMember">
+    <source xsi:type="uml:Operation" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/dummy/Client/clientMethod"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="pm/pm.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang/Object"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.2/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang/Object"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.2/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang/Object"/>
+    <target href="pm/pm.xmi#//@modules.2/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang/Object"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.2/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:Class" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang/Object"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.2/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Class2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/java/lang/Object"/>
+    <target href="pm/pm.xmi#//@modules.2/@contains.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Type2TAbstractType">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:Element2TAnnotatable">
+    <source xsi:type="uml:PrimitiveType" href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="pm/pm.xmi#//@modules.0/@contains.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.pm.uml:PrimitiveType2TClass">
+    <source href="uml/classdiagram.uml#//SecureViolationPatternsViolation/Common%20Java%20datatypes/double"/>
+    <target href="pm/pm.xmi#//@modules.0/@contains.2"/>
+  </correspondences>
+  <source href="uml/classdiagram.uml#/"/>
   <target href="pm/pm.xmi#/"/>
 </org.moflon.tgg.runtime:CorrespondenceModel>

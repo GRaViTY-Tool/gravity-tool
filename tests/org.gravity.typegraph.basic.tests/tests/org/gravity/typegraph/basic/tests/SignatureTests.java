@@ -119,8 +119,9 @@ public class SignatureTests {
 		TClass c = BasicFactory.eINSTANCE.createTClass();
 		c.setTName(name);
 		p.getClasses().add(c);
-		p.getOwnedTypes().add(c);
-		pm.getOwnedTypes().add(c);
+		p.getAllTypes().add(c);
+		pm.getClasses().add(c);
+		pm.getAllTypes().add(c);
 		return c;
 	}
 }

@@ -27,7 +27,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * @model abstract="true"
  * @generated
  */
-public interface TMember extends TAnnotatable, TAbstractFlowElement {
+public interface TMember extends TAnnotatable, TAbstractFlowElement, TContainableElement {
 	/**
 	 * Returns the value of the '<em><b>Defined By</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractType#getDefines <em>Defines</em>}'.

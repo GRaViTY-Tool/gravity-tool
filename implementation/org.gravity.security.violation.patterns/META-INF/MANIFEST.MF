@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.security.violation.patterns
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: carisma.profile.umlsec;visibility:=reexport,
  org.eclipse.emf.henshin.interpreter;visibility:=reexport,
  org.gravity.tgg.pm.uml,

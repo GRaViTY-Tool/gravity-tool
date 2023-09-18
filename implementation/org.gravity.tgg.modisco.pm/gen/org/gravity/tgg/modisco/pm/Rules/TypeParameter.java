@@ -4,11 +4,16 @@ package org.gravity.tgg.modisco.pm.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.modisco.java.ClassDeclaration;
+
 import org.gravity.modisco.MGravityModel;
 
 import org.gravity.tgg.modisco.pm.ModelToTypeGraph;
+import org.gravity.tgg.modisco.pm.PackageToTPackage;
+import org.gravity.tgg.modisco.pm.TypeToTAbstractType;
 
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -45,7 +50,8 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MGravityModel eModel, org.eclipse.modisco.java.TypeParameter typeParameter);
+	boolean isAppropriate_FWD(Match match, MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java, ClassDeclaration object, org.eclipse.modisco.java.Package lang);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +75,9 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MGravityModel eModel,
-			org.eclipse.modisco.java.TypeParameter typeParameter);
+	void registerObjectsToMatch_FWD(Match match, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,8 +85,9 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MGravityModel eModel,
-			org.eclipse.modisco.java.TypeParameter typeParameter);
+	CSP isAppropriate_solveCsp_FWD(Match match, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,8 +103,11 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MGravityModel eModel, TypeGraph pg,
-			org.eclipse.modisco.java.TypeParameter typeParameter, ModelToTypeGraph eModelToPg);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MGravityModel model, TPackage tPackageLang,
+			PackageToTPackage javaToJava, org.eclipse.modisco.java.TypeParameter typeParameter,
+			TypeToTAbstractType objectToObject, org.eclipse.modisco.java.Package java, TypeGraph pg,
+			ClassDeclaration object, ModelToTypeGraph eModelToPg, TClass tClass, org.eclipse.modisco.java.Package lang,
+			PackageToTPackage langToLang, TPackage tPackageJava);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +123,9 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eModel, EObject pg, EObject tClass,
-			EObject typeParameter, EObject eAnonymousClassDeclarationToTClass, EObject eModelToPg);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject tPackageLang, EObject javaToJava,
+			EObject typeParameter, EObject objectToObject, EObject java, EObject templateTypeToTClass, EObject pg,
+			EObject object, EObject eModelToPg, EObject tClass, EObject lang, EObject langToLang, EObject tPackageJava);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +141,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TypeGraph pg, TClass tClass);
+	boolean isAppropriate_BWD(Match match, TPackage tPackageLang, TypeGraph pg, TClass tClass, TPackage tPackageJava);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +165,8 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TClass tClass);
+	void registerObjectsToMatch_BWD(Match match, TPackage tPackageLang, TypeGraph pg, TClass tClass,
+			TPackage tPackageJava);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +174,8 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TClass tClass);
+	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tPackageLang, TypeGraph pg, TClass tClass,
+			TPackage tPackageJava);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,32 +191,6 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel eModel, TypeGraph pg,
-			TClass tClass, ModelToTypeGraph eModelToPg);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean isApplicable_checkCsp_BWD(CSP csp);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eModel, EObject pg, EObject tClass,
-			EObject typeParameter, EObject eAnonymousClassDeclarationToTClass, EObject eModelToPg);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	boolean checkTypes_BWD(Match match);
 
 	/**
@@ -211,7 +199,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_TPackage_0(TPackage tPackageLang);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +207,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_89(EMoflonEdge _edge_typeParameters);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_typeParameters);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +239,10 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MGravityModel eModel, TypeGraph pg, TClass tClass,
-			org.eclipse.modisco.java.TypeParameter typeParameter, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MGravityModel model, TPackage tPackageLang,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java, TypeGraph pg,
+			ClassDeclaration object, TClass tClass, org.eclipse.modisco.java.Package lang, TPackage tPackageJava,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +258,8 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MGravityModel eModel, org.eclipse.modisco.java.TypeParameter typeParameter);
+	boolean checkDEC_FWD(MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java, ClassDeclaration object, org.eclipse.modisco.java.Package lang);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +267,7 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TypeGraph pg, TClass tClass);
+	boolean checkDEC_BWD(TPackage tPackageLang, TypeGraph pg, TClass tClass, TPackage tPackageJava);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,7 +275,8 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ModelToTypeGraph eModelToPgParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
+			TypeToTAbstractType objectToObjectParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,8 +284,11 @@ public interface TypeParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel eModel, TypeGraph pg,
-			ModelToTypeGraph eModelToPg, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MGravityModel model, TPackage tPackageLang,
+			PackageToTPackage javaToJava, TypeToTAbstractType objectToObject, org.eclipse.modisco.java.Package java,
+			TypeGraph pg, ClassDeclaration object, ModelToTypeGraph eModelToPg, TClass tClass,
+			org.eclipse.modisco.java.Package lang, PackageToTPackage langToLang, TPackage tPackageJava,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -15,8 +15,6 @@ import org.gravity.security.annotations.requirements.TCritical;
 
 import org.gravity.typegraph.basic.TSignature;
 
-import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>TCritical</b></em>'.

@@ -731,13 +731,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -778,13 +778,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1910,8 +1910,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_49592 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_49592 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_698750 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_698750 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2113,8 +2113,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_488683 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_488683 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_726788 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_726788 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

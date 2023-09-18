@@ -8,6 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
@@ -32,6 +33,8 @@ public class APITests {
 
 	public static final String PROJECT_NAME = "APITestProject";
 
+	private static final Logger LOGGER = Logger.getLogger(APITests.class);
+
 	private static IJavaProject project;
 
 	/**
@@ -55,12 +58,12 @@ public class APITests {
 
 	@Test
 	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException, IOException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, null);
+		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(pm);
 
 		addInterface(pm);
 
-		final var newPm = GravityAPI.createProgramModel(APITests.project, null);
+		final var newPm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(newPm);
 		assertNotEquals(pm, newPm);
 		assertTrue(newPm.getInterfaces().isEmpty());
@@ -69,7 +72,7 @@ public class APITests {
 	@Test
 	public void testCreateProgramModelAfterSrcChange()
 			throws TransformationFailedException, IOException, CoreException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, null);
+		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(pm);
 
 		// Change project src
@@ -111,8 +114,19 @@ public class APITests {
 		final var p = pm.getPackage("dummy");
 		p.getAllOwnedTypes().add(iface);
 		p.getInterfaces().add(iface);
-		pm.getOwnedTypes().add(iface);
 		pm.getInterfaces().add(iface);
+		pm.getAllTypes().add(iface);
+		
+		final var module = BasicFactory.eINSTANCE.createTModule();
+		iface.setModule(module);
+		pm.getModules().add(module);
+		
+		try {
+			EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm/pm.xmi").delete(true, null);
+		}
+		catch(IOException | CoreException e) {
+			LOGGER.warn(e);
+		}
 		pm.eResource().save(Collections.emptyMap());
 	}
 }

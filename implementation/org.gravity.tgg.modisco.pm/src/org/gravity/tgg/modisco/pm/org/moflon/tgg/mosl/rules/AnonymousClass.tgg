@@ -18,8 +18,8 @@
 
 #target {
 	tPackage:TPackage {
-		++-classes->tAnonymous
-		++-ownedTypes->tAnonymous
+		++-classes -> tAnonymous
+		++-allTypes -> tAnonymous
 		-model -> pg
 	}
 
@@ -35,7 +35,7 @@
 
 	pg:TypeGraph {
 		++  -classes -> tAnonymous
-		++  -ownedTypes -> tAnonymous
+		++  -allTypes -> tAnonymous
 	}
 }
 
@@ -53,8 +53,10 @@
 
 #attributeConditions {
 	addSuffix(tType.tName, "$Anonymous", tAnonymous.tName)
+
 	eq(tType.tLib, tAnonymous.tLib)
 }
+
 
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
@@ -71,10 +73,9 @@
 
 #target {
 	++tAnonymous:TClass
-	
+
 	tType:TAbstractType
 }
-
 
 #correspondence {
 	mTypeToTType :TypeToTAbstractType {
@@ -82,6 +83,7 @@
 		#trg->tType
 	}
 }
+
 
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
@@ -98,10 +100,9 @@
 
 #target {
 	++tAnonymous:TClass
-	
+
 	tType:TClass
 }
-
 
 #correspondence {
 	mTypeToTType :AnonymousClassDeclarationToTClass {
@@ -110,6 +111,7 @@
 	}
 }
 
+
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
@@ -117,7 +119,7 @@
 
 #source {
 	mMember:MEnumConstantDeclaration {
-		++-anonymousClassDeclaration->mAnonymous
+		++-anonymousClassDeclaration -> mAnonymous
 	}
 
 	++mAnonymous:AnonymousClassDeclaration
@@ -125,8 +127,8 @@
 
 #target {
 	tPackage:TPackage {
-		++-classes->tAnonymous
-		++-ownedTypes->tAnonymous
+		++-classes -> tAnonymous
+		++-allTypes -> tAnonymous
 		-model -> pg
 	}
 
@@ -142,7 +144,7 @@
 
 	pg:TypeGraph {
 		++  -classes -> tAnonymous
-		++  -ownedTypes -> tAnonymous
+		++  -allTypes -> tAnonymous
 	}
 }
 
@@ -160,5 +162,8 @@
 
 #attributeConditions {
 	addSuffix(tType.tName, "$Anonymous", tAnonymous.tName)
+
 	eq(tType.tLib, tAnonymous.tLib)
 }
+
+

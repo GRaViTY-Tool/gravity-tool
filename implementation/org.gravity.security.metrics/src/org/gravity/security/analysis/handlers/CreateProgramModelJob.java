@@ -1,10 +1,10 @@
 package org.gravity.security.analysis.handlers;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.apache.log4j.Level;
@@ -82,16 +82,16 @@ final class CreateProgramModelJob extends Job {
 		final IExtensionRegistry registry = Platform.getExtensionRegistry();
 		final IExtensionPoint point = registry.getExtensionPoint(Activator.EXTENSIONPOINT_REGISTER_PROJECT);
 		for (final IConfigurationElement element : point.getConfigurationElements()) {
-			try {
-				final String pluginId = element.getAttribute("plugin");
-				final Bundle bundle = Platform.getBundle(pluginId);
-				if (bundle == null) {
-					continue;
-				}
-				final File file = FileLocator.getBundleFile(bundle);
-				libs.put(pluginId, new Path(file.getAbsolutePath()));
-			} catch (final IOException e) {
-				PublicInterfacesAccessHandler.LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+			final String pluginId = element.getAttribute("plugin");
+			final Bundle bundle = Platform.getBundle(pluginId);
+			if (bundle == null) {
+				continue;
+			}
+			final Optional<File> optional = FileLocator.getBundleFileLocation(bundle);
+			if (optional.isPresent()) {
+				libs.put(pluginId, new Path(optional.get().getAbsolutePath()));
+			} else {
+				PublicInterfacesAccessHandler.LOGGER.log(Level.ERROR, "Could not get location of bundle: " + pluginId);
 			}
 		}
 

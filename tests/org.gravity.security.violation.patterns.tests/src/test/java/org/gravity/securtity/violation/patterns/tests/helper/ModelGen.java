@@ -33,6 +33,7 @@ import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TModule;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -281,9 +282,14 @@ public class ModelGen {
 		final var pmClass = PM_FACTORY.createTClass();
 		pmClass.setTName(classname);
 		pm.getClasses().add(pmClass);
-		pm.getOwnedTypes().add(pmClass);
+		pm.getAllTypes().add(pmClass);
 		pm.getModel().getClasses().add(pmClass);
-		pm.getModel().getOwnedTypes().add(pmClass);
+		pm.getModel().getAllTypes().add(pmClass);
+		TModule module = PM_FACTORY.createTModule();
+		module.setLocation(classname+".java");
+		module.getContains().add(pmClass);
+		module.setNamespace(pm);
+		pm.getModel().getModules().add(module);
 
 		final var umlClass = uml.createOwnedClass(classname, false);
 

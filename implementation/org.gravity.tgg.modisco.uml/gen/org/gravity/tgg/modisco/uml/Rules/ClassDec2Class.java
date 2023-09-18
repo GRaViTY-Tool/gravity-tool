@@ -103,7 +103,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,7 +183,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Class_1(org.eclipse.uml2.uml.Class feature);
+	EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -232,7 +232,7 @@ public interface AnnotationMemberValueClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_tClass);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_98(EMoflonEdge _edge_tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,7 +240,7 @@ public interface AnnotationMemberValueClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_96(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_103(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

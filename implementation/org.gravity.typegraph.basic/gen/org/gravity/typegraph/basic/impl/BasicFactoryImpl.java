@@ -9,6 +9,31 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.gravity.typegraph.basic.*;
+import org.gravity.typegraph.basic.BasicFactory;
+import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TCall;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TConstructor;
+import org.gravity.typegraph.basic.TEnum;
+import org.gravity.typegraph.basic.TField;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TFlow;
+import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TModifier;
+import org.gravity.typegraph.basic.TName;
+import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TParameter;
+import org.gravity.typegraph.basic.TRead;
+import org.gravity.typegraph.basic.TReadWrite;
+import org.gravity.typegraph.basic.TSyntethicMethod;
+import org.gravity.typegraph.basic.TUnresolvedType;
+import org.gravity.typegraph.basic.TVisibility;
+import org.gravity.typegraph.basic.TWrite;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,6 +101,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TREAD_WRITE: return createTReadWrite();
 			case BasicPackage.TCONSTRUCTOR: return createTConstructor();
 			case BasicPackage.TENUM: return createTEnum();
+			case BasicPackage.TMODULE: return createTModule();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -351,6 +377,17 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TEnum createTEnum() {
 		TEnumImpl tEnum = new TEnumImpl();
 		return tEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TModule createTModule() {
+		TModuleImpl tModule = new TModuleImpl();
+		return tModule;
 	}
 
 	/**

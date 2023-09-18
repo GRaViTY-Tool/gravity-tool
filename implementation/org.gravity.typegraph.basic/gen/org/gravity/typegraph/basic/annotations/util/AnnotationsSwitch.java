@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.gravity.typegraph.basic.TAbstractType;
 
+import org.gravity.typegraph.basic.TContainableElement;
 import org.gravity.typegraph.basic.annotations.*;
 
 /**
@@ -92,6 +93,7 @@ public class AnnotationsSwitch<T> extends Switch<T> {
 				T result = caseTAnnotationType(tAnnotationType);
 				if (result == null) result = caseTAbstractType(tAnnotationType);
 				if (result == null) result = caseTAnnotatable(tAnnotationType);
+				if (result == null) result = caseTContainableElement(tAnnotationType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -286,6 +288,21 @@ public class AnnotationsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTAbstractNode(TAbstractNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TContainable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TContainable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTContainableElement(TContainableElement object) {
 		return null;
 	}
 

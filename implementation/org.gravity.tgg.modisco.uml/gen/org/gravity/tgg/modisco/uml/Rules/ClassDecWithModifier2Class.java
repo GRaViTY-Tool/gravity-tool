@@ -42,7 +42,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MClass bodyDeclaration, Modifier modifier);
+	boolean isAppropriate_FWD(Match match, Modifier modifier, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MClass bodyDeclaration, Modifier modifier);
+	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MClass bodyDeclaration, Modifier modifier);
+	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,7 +90,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MClass bodyDeclaration, Modifier modifier);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,8 +106,8 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
-			EObject bodyDeclaration, EObject modifier);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
+			EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,8 +187,8 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
-			EObject bodyDeclaration, EObject modifier);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
+			EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,7 +204,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature);
+	EObjectContainer isAppropriate_BWD_Class_1(org.eclipse.uml2.uml.Class feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_111(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_153(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,7 +244,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, Modifier modifier,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, Modifier modifier, MClass bodyDeclaration,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -261,7 +261,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MClass bodyDeclaration, Modifier modifier);
+	boolean checkDEC_FWD(Modifier modifier, MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

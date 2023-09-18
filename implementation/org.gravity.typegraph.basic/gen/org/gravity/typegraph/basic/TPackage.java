@@ -20,9 +20,10 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getParent <em>Parent</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getClasses <em>Classes</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getInterfaces <em>Interfaces</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TPackage#getOwnedTypes <em>Owned Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TPackage#getAllTypes <em>All Types</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getModel <em>Model</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TPackage#getTName <em>TName</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TPackage#getModules <em>Modules</em>}</li>
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTPackage()
@@ -105,22 +106,18 @@ public interface TPackage extends TAnnotatable {
 	EList<TInterface> getInterfaces();
 
 	/**
-	 * Returns the value of the '<em><b>Owned Types</b></em>' reference list.
+	 * Returns the value of the '<em><b>All Types</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TAbstractType}.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractType#getPackage <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Owned Types</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Types</em>' reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_OwnedTypes()
+	 * @return the value of the '<em>All Types</em>' reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_AllTypes()
 	 * @see org.gravity.typegraph.basic.TAbstractType#getPackage
 	 * @model opposite="package" ordered="false"
 	 * @generated
 	 */
-	EList<TAbstractType> getOwnedTypes();
+	EList<TAbstractType> getAllTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Model</b></em>' reference.
@@ -169,6 +166,20 @@ public interface TPackage extends TAnnotatable {
 	 * @generated
 	 */
 	void setTName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Modules</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TModule}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TModule#getNamespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Modules</em>' reference list.
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Modules()
+	 * @see org.gravity.typegraph.basic.TModule#getNamespace
+	 * @model opposite="namespace"
+	 * @generated
+	 */
+	EList<TModule> getModules();
 
 	/**
 	 * <!-- begin-user-doc -->

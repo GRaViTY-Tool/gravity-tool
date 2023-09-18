@@ -53,7 +53,7 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	@Override
 	public boolean process(final TypeGraph programModel, final IProgressMonitor monitor) {
 		this.rs = programModel.eResource().getResourceSet();
-		for (final TAnnotationType tAnnotationType : programModel.getTAnnotationTypes()) {
+		for (final TAnnotationType tAnnotationType : programModel.getAnnotationTypes()) {
 			final String tFullyQualifiedName = tAnnotationType.getFullyQualifiedName();
 			final List<TAnnotation> annotations = new ArrayList<>(tAnnotationType.getAnnotations());
 			if (tFullyQualifiedName.equals(Secrecy.class.getName())) {

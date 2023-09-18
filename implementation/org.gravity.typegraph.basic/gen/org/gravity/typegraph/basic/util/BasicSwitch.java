@@ -8,7 +8,36 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.gravity.typegraph.basic.*;
-
+import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractFlowElement;
+import org.gravity.typegraph.basic.TAbstractMultiplicity;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TCall;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TConstructor;
+import org.gravity.typegraph.basic.TContainableElement;
+import org.gravity.typegraph.basic.TEnum;
+import org.gravity.typegraph.basic.TField;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TFlow;
+import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TModifier;
+import org.gravity.typegraph.basic.TName;
+import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TParameter;
+import org.gravity.typegraph.basic.TRead;
+import org.gravity.typegraph.basic.TReadWrite;
+import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.TSyntethicMethod;
+import org.gravity.typegraph.basic.TUnresolvedType;
+import org.gravity.typegraph.basic.TWrite;
+import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
@@ -82,6 +111,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTClass(tClass);
 				if (result == null) result = caseTAbstractType(tClass);
 				if (result == null) result = caseTAnnotatable(tClass);
+				if (result == null) result = caseTContainableElement(tClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,6 +128,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTMember(tFieldDefinition);
 				if (result == null) result = caseTAnnotatable(tFieldDefinition);
 				if (result == null) result = caseTAbstractFlowElement(tFieldDefinition);
+				if (result == null) result = caseTContainableElement(tFieldDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -125,6 +156,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTMember(tMember);
 				if (result == null) result = caseTAnnotatable(tMember);
 				if (result == null) result = caseTAbstractFlowElement(tMember);
+				if (result == null) result = caseTContainableElement(tMember);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +174,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTAbstractMultiplicity(tMethodDefinition);
 				if (result == null) result = caseTAnnotatable(tMethodDefinition);
 				if (result == null) result = caseTAbstractFlowElement(tMethodDefinition);
+				if (result == null) result = caseTContainableElement(tMethodDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -191,6 +224,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTInterface(tInterface);
 				if (result == null) result = caseTAbstractType(tInterface);
 				if (result == null) result = caseTAnnotatable(tInterface);
+				if (result == null) result = caseTContainableElement(tInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -198,6 +232,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TAbstractType tAbstractType = (TAbstractType)theEObject;
 				T result = caseTAbstractType(tAbstractType);
 				if (result == null) result = caseTAnnotatable(tAbstractType);
+				if (result == null) result = caseTContainableElement(tAbstractType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,6 +266,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTMember(tSyntethicMethod);
 				if (result == null) result = caseTAnnotatable(tSyntethicMethod);
 				if (result == null) result = caseTAbstractFlowElement(tSyntethicMethod);
+				if (result == null) result = caseTContainableElement(tSyntethicMethod);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -241,6 +277,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTInterface(tUnresolvedType);
 				if (result == null) result = caseTAbstractType(tUnresolvedType);
 				if (result == null) result = caseTAnnotatable(tUnresolvedType);
+				if (result == null) result = caseTContainableElement(tUnresolvedType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,6 +326,18 @@ public class BasicSwitch<T> extends Switch<T> {
 			case BasicPackage.TABSTRACT_MULTIPLICITY: {
 				TAbstractMultiplicity tAbstractMultiplicity = (TAbstractMultiplicity)theEObject;
 				T result = caseTAbstractMultiplicity(tAbstractMultiplicity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TMODULE: {
+				TModule tModule = (TModule)theEObject;
+				T result = caseTModule(tModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TCONTAINABLE_ELEMENT: {
+				TContainableElement tContainableElement = (TContainableElement)theEObject;
+				T result = caseTContainableElement(tContainableElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -713,6 +762,36 @@ public class BasicSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTAbstractMultiplicity(TAbstractMultiplicity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TModule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TModule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTModule(TModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TContainable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TContainable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTContainableElement(TContainableElement object) {
 		return null;
 	}
 

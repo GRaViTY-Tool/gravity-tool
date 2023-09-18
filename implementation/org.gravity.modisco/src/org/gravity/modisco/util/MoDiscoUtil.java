@@ -437,7 +437,7 @@ public final class MoDiscoUtil {
 	 * @param model The model in which the type should be searched
 	 * @return The type
 	 */
-	public static Type getJavaLangObject(final MGravityModel model) {
+	public static AbstractTypeDeclaration getJavaLangObject(final MGravityModel model) {
 		var javaLangPackage = getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
 		if (javaLangPackage != null) {
 			final var result = javaLangPackage.getOwnedElements().parallelStream()
@@ -460,6 +460,15 @@ public final class MoDiscoUtil {
 		object.setName("Object"); //$NON-NLS-1$
 		object.setProxy(true);
 		javaLangPackage.getOwnedElements().add(object);
+		
+		final var file = JavaFactory.eINSTANCE.createClassFile();
+		file.setName("Object.class"); //$NON-NLS-1$
+		file.setPackage(javaLangPackage);
+		file.setType(object);
+		file.setOriginalFilePath(""); //$NON-NLS-1$
+		model.getClassFiles().add(file);
+		
+		LOGGER.warn("Class \"java.lang.Object\" is not contained in the MoDisco model and has been created");
 		return object;
 
 	}

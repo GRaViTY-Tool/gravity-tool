@@ -43,7 +43,7 @@ public class TypeFullyQualifiedNameTests {
 		final var c = BasicFactory.eINSTANCE.createTClass();
 		c.setTName(name);
 		pm.getClasses().add(c);
-		pm.getOwnedTypes().add(c);
+		pm.getAllTypes().add(c);
 
 		assertEquals(name, c.getFullyQualifiedName());
 	}

@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.gravity.hulk.resolve
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: University of Koblenz-Landau and TU Darmstadt
 Automatic-Module-Name: org.gravity.hulk.resolve
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.gravity.hulk.resolve,
  org.gravity.hulk.resolve.antipattern,
  org.gravity.hulk.resolve.calculators

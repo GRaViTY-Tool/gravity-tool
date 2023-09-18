@@ -15,11 +15,11 @@
 #target {
 	tPackage:TPackage {
 		-model -> pg
-		++  -ownedTypes -> tType
+		++  -allTypes -> tType
 	}
 
 	pg:TypeGraph {
-		++  -ownedTypes -> tType
+		++  -allTypes -> tType
 	}
 
 	++tType:TAbstractType 
@@ -134,6 +134,6 @@
 	++tType:TAnnotationType
 
 	pg:TypeGraph {
-		++  -tAnnotationTypes -> tType
+		++  -annotationTypes -> tType
 	}
 }

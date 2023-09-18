@@ -18,8 +18,14 @@
 	}
 
 	typeGraph:TypeGraph {
-		++  -ownedTypes -> tPrimitiveClass
+		++  -allTypes -> tPrimitiveClass
 		++  -classes -> tPrimitiveClass
+		-modules -> primitives
+	}
+
+	primitives:TModule {
+		location=="${JVM.PRIMITIVES}"
+		++-contains -> tPrimitiveClass
 	}
 }
 
@@ -160,3 +166,5 @@
 		tName := "void"
 	}
 }
+
+

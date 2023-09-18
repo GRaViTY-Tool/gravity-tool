@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.function.Consumer;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -33,6 +32,7 @@ import org.gravity.tgg.modisco.pm.processing.pg.IProgramGraphProcessor;
 import org.gravity.tgg.modisco.pm.processing.pg.ProgramGraphProcesorUtil;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.moflon.tgg.language.algorithm.TempOutputContainer;
 
 /**
  * A converter for creating a program model from eclipse projects using MoDisco
@@ -46,9 +46,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class);
 
-	private final Job saveJob = Job.create("Save models", monitor -> {
-		save(monitor);
-	});
+	private final Job saveJob = Job.create("Save models", this::save);
 
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
@@ -62,8 +60,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		this(project, true);
 	}
 
-	public MoDiscoTGGConverter(final IJavaProject project, final boolean load)
-			throws IOException, CoreException {
+	public MoDiscoTGGConverter(final IJavaProject project, final boolean load) throws IOException, CoreException {
 		super(project, "pm", load);
 	}
 
@@ -117,7 +114,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 		final var success = convertModel(preprocessedModiscoModel, progressMonitor);
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			System.out.println("All:" + (System.currentTimeMillis() - start) + "ms");
+			LOGGER.info("All:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (infoEnabled) {
 			LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
 		}
@@ -161,17 +158,22 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		integrate.done();
 
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			System.out.println("TGG:" + (System.currentTimeMillis() - start) + "ms");
+			LOGGER.log(Level.INFO, "TGG:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (infoEnabled) {
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
 		}
 
-		final var success = this.trg instanceof TypeGraph;
+		boolean success = trg instanceof TypeGraph;
 		if (success) {
 			postprocess(submonitor.split(20), infoEnabled);
 			if (this.autosave) {
 				this.saveJob.cancel();
 				this.saveJob.schedule();
+			}
+		} else if (isDebug()) {
+			LOGGER.error("Transformation did not create a program model: " + trg);
+			if (trg instanceof TempOutputContainer container) {
+				LOGGER.error("Potential roots are: "+container.getPotentialRoots());				
 			}
 		}
 		submonitor.done();
@@ -185,22 +187,21 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 	 * @param info    If info messages should be logged
 	 */
 	private void postprocess(final IProgressMonitor monitor, final boolean info) {
-		final var sortedProcessors = ProgramGraphProcesorUtil
-				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
+		final var sortedProcessors = ProgramGraphProcesorUtil.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
 		final var processors = SubMonitor.convert(monitor, "Postprocessing", sortedProcessors.size());
 		var start = 0L;
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			start = System.currentTimeMillis();
 		} else if (info) {
 			start = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, "Start postprocessing with " + sortedProcessors.size() + " post-processors");
+			LOGGER.info("Start postprocessing with " + sortedProcessors.size() + " post-processors");
 		}
 		for (final IProgramGraphProcessor processor : sortedProcessors) {
 			processor.process(getPG(), processors);
 			processors.worked(1);
 		}
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			System.out.println("Postprocessing:" + (System.currentTimeMillis() - start) + "ms");
+			LOGGER.info("Postprocessing:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (info) {
 			LOGGER.log(Level.INFO, "Postprocessing - done (" + (System.currentTimeMillis() - start) + "ms)");
 		}
@@ -315,7 +316,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		try {
 			final var srcFile = this.project.getProject().getFolder("src");
 			new GenerateJavaExtended(src, srcFile.getLocation().toFile(), Collections.emptyList())
-			.doGenerate(new BasicMonitor.EclipseSubProgress(progressMonitor, 1));
+					.doGenerate(new BasicMonitor.EclipseSubProgress(progressMonitor, 1));
 			this.project.getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (IOException | CoreException e) {
 			return false;
@@ -326,12 +327,12 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 	@Override
 	public TypeGraph getPG() {
-		return getTrg();
+		return (TypeGraph) trg;
 	}
 
 	@Override
 	public TypeGraph getTrg() {
-		return (TypeGraph) super.getTrg();
+		return getPG();
 	}
 
 	@Override

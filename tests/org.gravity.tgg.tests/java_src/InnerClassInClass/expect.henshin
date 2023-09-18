@@ -25,7 +25,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       </nodes>
       <edges xmi:id="_VkCRoFvBEeup173OY004Hw" source="_LkffUFvBEeup173OY004Hw" target="_vOB18G50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_WBIdUFvBEeup173OY004Hw" source="_LkffUFvBEeup173OY004Hw" target="_vOB18G50Eeqj_LkwUcB67w">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
@@ -37,16 +37,16 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/outerType"/>
       </edges>
       <edges xmi:id="_Dk45kFvDEeusLa39wZCfig" source="_tISmIFvBEeup173OY004Hw" target="_vOB18G50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_EIZ2UFvDEeusLa39wZCfig" source="_tISmIFvBEeup173OY004Hw" target="_vHDEMG50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_EzrA4FvDEeusLa39wZCfig" source="_tISmIFvBEeup173OY004Hw" target="_vHDEMG50Eeqj_LkwUcB67w">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </edges>
       <edges xmi:id="_QUYJEI-6EeuVXpn9yc3Afg" source="_LkffUFvBEeup173OY004Hw" target="_vHDEMG50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_Q-VFAI-6EeuVXpn9yc3Afg" source="_LkffUFvBEeup173OY004Hw" target="_vHDEMG50Eeqj_LkwUcB67w">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
@@ -75,7 +75,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       </nodes>
       <edges xmi:id="_VkC4sFvBEeup173OY004Hw" source="_LkgGYFvBEeup173OY004Hw" target="_vOB18W50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_WBIdUVvBEeup173OY004Hw" source="_LkgGYFvBEeup173OY004Hw" target="_vOB18W50Eeqj_LkwUcB67w">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
@@ -87,16 +87,16 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/outerType"/>
       </edges>
       <edges xmi:id="_Dk5goFvDEeusLa39wZCfig" source="_tIdlQFvBEeup173OY004Hw" target="_vOB18W50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_EIbrgFvDEeusLa39wZCfig" source="_tIdlQFvBEeup173OY004Hw" target="_vHDEMW50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
       <edges xmi:id="_Ezrn8FvDEeusLa39wZCfig" source="_tIdlQFvBEeup173OY004Hw" target="_vHDEMW50Eeqj_LkwUcB67w">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </edges>
       <edges xmi:id="_QUYwII-6EeuVXpn9yc3Afg" source="_LkgGYFvBEeup173OY004Hw" target="_vHDEMW50Eeqj_LkwUcB67w">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_Q-VFAY-6EeuVXpn9yc3Afg" source="_LkgGYFvBEeup173OY004Hw" target="_vHDEMW50Eeqj_LkwUcB67w">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>

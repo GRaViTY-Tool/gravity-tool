@@ -96,7 +96,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Annotation Annotation,
-			BodyDeclaration astNode, ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable);
+			BodyDeclaration astNode, TAnnotatable tAnnotable, ASTNodeToTAnnotatable aSTNodeToTAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject Annotation, EObject astNode,
-			EObject aSTNodeToTAnnotable, EObject tAnnotable, EObject tAnnotation, EObject AnnotationToTAnnotation);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject Annotation, EObject astNode, EObject tAnnotable,
+			EObject aSTNodeToTAnnotable, EObject tAnnotation, EObject AnnotationToTAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,8 +177,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BodyDeclaration astNode,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable, TAnnotation tAnnotation);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BodyDeclaration astNode, TAnnotatable tAnnotable,
+			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +194,8 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject Annotation, EObject astNode,
-			EObject aSTNodeToTAnnotable, EObject tAnnotable, EObject tAnnotation, EObject AnnotationToTAnnotation);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject Annotation, EObject astNode, EObject tAnnotable,
+			EObject aSTNodeToTAnnotable, EObject tAnnotation, EObject AnnotationToTAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +211,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_57(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_annotations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_60(EMoflonEdge _edge_annotations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,7 +294,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BodyDeclaration astNode,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable, ModelgeneratorRuleResult ruleResult);
+			TAnnotatable tAnnotable, ASTNodeToTAnnotatable aSTNodeToTAnnotable, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

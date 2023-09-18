@@ -4,7 +4,7 @@ Bundle-Name: Java Project SPL Discoverer
 Bundle-SymbolicName: org.gravity.eclipse.java.spl
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.gravity.eclipse.java.spl
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.gravity.eclipse.java.spl
 Require-Bundle: org.gravity.eclipse,
  org.apache.log4j

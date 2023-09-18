@@ -480,7 +480,7 @@ public class ArrayInitializerIgnoreExpressionsEdgeImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_3(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = ArrayInitializerIgnoreExpressionsEdgeImpl
 				.pattern_ArrayInitializerIgnoreExpressionsEdge_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -879,8 +879,8 @@ public class ArrayInitializerIgnoreExpressionsEdgeImpl extends AbstractRuleImpl
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ARRAY_INITIALIZER_IGNORE_EXPRESSIONS_EDGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ARRAY_INITIALIZER_IGNORE_EXPRESSIONS_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_3__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ARRAY_INITIALIZER_IGNORE_EXPRESSIONS_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_51__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_51((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ARRAY_INITIALIZER_IGNORE_EXPRESSIONS_EDGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ARRAY_INITIALIZER_IGNORE_EXPRESSIONS_EDGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

@@ -786,7 +786,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_133(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -855,21 +855,21 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
@@ -936,21 +936,21 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
@@ -1351,8 +1351,8 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_0__OPERATION:
 			return isAppropriate_BWD_Operation_0((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_124__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_133__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_133((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

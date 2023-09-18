@@ -42,6 +42,15 @@ public abstract class ImportTest {
 		LOGGER.info("Explicitly loaded TGG: " + PmPackage.eINSTANCE.getNsURI());
 	}
 
+	/**
+	 * Returns a the test data for all projects that contain a file with the given extenstion.
+	 * The data format is:
+	 * Object[0]: String: project name
+	 * Object[1]: File: location of the project
+	 * Object[2]: Map<String, String>: expected files and libs of the project
+	 * 
+	 * @return the test projects as one Object array per project
+	 */
 	public static Collection<Object[]> getTestProjects(final String fileExtension) throws IOException {
 		final var visitor = new ExtensionFileVisitor(fileExtension);
 		final var path = new File("data/import").getAbsoluteFile().toPath();

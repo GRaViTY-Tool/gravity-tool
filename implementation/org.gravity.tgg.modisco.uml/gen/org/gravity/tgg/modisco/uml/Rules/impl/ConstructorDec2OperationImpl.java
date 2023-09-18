@@ -156,34 +156,34 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_1_1_performtransformation_greenFBFFB(bodyDeclaration, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		Operation feature = (Operation) result1_green[2];
-		Comment comment = (Comment) result1_green[3];
+				.pattern_ConstructorDec2Operation_1_1_performtransformation_greenBFFFB(bodyDeclaration, csp);
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		Comment comment = (Comment) result1_green[2];
+		Operation feature = (Operation) result1_green[3];
 
 		Object[] result2_black = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_1_2_collecttranslatedelements_blackBBBB(b2e, bodyDeclaration, feature,
-						comment);
+				.pattern_ConstructorDec2Operation_1_2_collecttranslatedelements_blackBBBB(bodyDeclaration, b2e, comment,
+						feature);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[comment] = "
-					+ comment + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[comment] = " + comment + ", "
+					+ "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_1_2_collecttranslatedelements_greenFBBBB(b2e, bodyDeclaration,
-						feature, comment);
+				.pattern_ConstructorDec2Operation_1_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, b2e,
+						comment, feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_1_3_bookkeepingforedges_blackBBBBB(ruleresult, b2e, bodyDeclaration,
-						feature, comment);
+				.pattern_ConstructorDec2Operation_1_3_bookkeepingforedges_blackBBBBB(ruleresult, bodyDeclaration, b2e,
+						comment, feature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = "
-					+ feature + ", " + "[comment] = " + comment + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[comment] = "
+					+ comment + ", " + "[feature] = " + feature + ".");
 		}
 		ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				b2e, bodyDeclaration, feature, comment);
+				bodyDeclaration, b2e, comment, feature);
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge feature__comment____ownedComment = (EMoflonEdge) result3_green[7];
@@ -192,7 +192,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		// 
 		// 
 		ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_1_5_registerobjects_expressionBBBBBB(this,
-				ruleresult, b2e, bodyDeclaration, feature, comment);
+				ruleresult, bodyDeclaration, b2e, comment, feature);
 		return ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_1_6_expressionFB(ruleresult);
 	}
 
@@ -351,12 +351,12 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature,
-			EObject comment) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment,
+			EObject feature) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("comment", comment);
+		ruleresult.registerObject("feature", feature);
 
 	}
 
@@ -375,46 +375,46 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Operation feature, Comment comment) {
+	public boolean isAppropriate_BWD(Match match, Comment comment, Operation feature) {
 
 		Object[] result1_black = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_10_1_initialbindings_blackBBBB(this, match, feature, comment);
+				.pattern_ConstructorDec2Operation_10_1_initialbindings_blackBBBB(this, match, comment, feature);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[feature] = " + feature + ", " + "[comment] = " + comment + ".");
+					+ "[match] = " + match + ", " + "[comment] = " + comment + ", " + "[feature] = " + feature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, feature, comment);
+				.pattern_ConstructorDec2Operation_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, comment, feature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[feature] = " + feature + ", " + "[comment] = " + comment + ".");
+					+ "[match] = " + match + ", " + "[comment] = " + comment + ", " + "[feature] = " + feature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = ConstructorDec2OperationImpl
-					.pattern_ConstructorDec2Operation_10_4_collectelementstobetranslated_blackBBB(match, feature,
-							comment);
+					.pattern_ConstructorDec2Operation_10_4_collectelementstobetranslated_blackBBB(match, comment,
+							feature);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[comment] = " + comment + ".");
+						+ "[comment] = " + comment + ", " + "[feature] = " + feature + ".");
 			}
 			ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_10_4_collectelementstobetranslated_greenBBBFF(
-					match, feature, comment);
+					match, comment, feature);
 			//nothing EMoflonEdge feature__comment____ownedComment = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge comment__feature____annotatedElement = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = ConstructorDec2OperationImpl
-					.pattern_ConstructorDec2Operation_10_5_collectcontextelements_blackBBB(match, feature, comment);
+					.pattern_ConstructorDec2Operation_10_5_collectcontextelements_blackBBB(match, comment, feature);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[comment] = " + comment + ".");
+						+ "[comment] = " + comment + ", " + "[feature] = " + feature + ".");
 			}
 			// 
 			ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_10_6_registerobjectstomatch_expressionBBBB(
-					this, match, feature, comment);
+					this, match, comment, feature);
 			return ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_10_7_expressionF();
 		} else {
 			return ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_10_8_expressionF();
@@ -436,37 +436,37 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Operation feature = (Operation) result1_bindingAndBlack[0];
-		Comment comment = (Comment) result1_bindingAndBlack[1];
+		Comment comment = (Comment) result1_bindingAndBlack[0];
+		Operation feature = (Operation) result1_bindingAndBlack[1];
 		CSP csp = (CSP) result1_bindingAndBlack[2];
 		Object[] result1_green = ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_11_1_performtransformation_greenFFBB(feature, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result1_green[1];
+		MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
 
 		Object[] result2_black = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_11_2_collecttranslatedelements_blackBBBB(b2e, bodyDeclaration,
-						feature, comment);
+				.pattern_ConstructorDec2Operation_11_2_collecttranslatedelements_blackBBBB(bodyDeclaration, b2e,
+						comment, feature);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[comment] = "
-					+ comment + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[comment] = " + comment + ", "
+					+ "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_11_2_collecttranslatedelements_greenFBBBB(b2e, bodyDeclaration,
-						feature, comment);
+				.pattern_ConstructorDec2Operation_11_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, b2e,
+						comment, feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_11_3_bookkeepingforedges_blackBBBBB(ruleresult, b2e, bodyDeclaration,
-						feature, comment);
+				.pattern_ConstructorDec2Operation_11_3_bookkeepingforedges_blackBBBBB(ruleresult, bodyDeclaration, b2e,
+						comment, feature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = "
-					+ feature + ", " + "[comment] = " + comment + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[comment] = "
+					+ comment + ", " + "[feature] = " + feature + ".");
 		}
 		ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_11_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, b2e, bodyDeclaration, feature, comment);
+				ruleresult, bodyDeclaration, b2e, comment, feature);
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge feature__comment____ownedComment = (EMoflonEdge) result3_green[7];
@@ -475,7 +475,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		// 
 		// 
 		ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_11_5_registerobjects_expressionBBBBBB(this,
-				ruleresult, b2e, bodyDeclaration, feature, comment);
+				ruleresult, bodyDeclaration, b2e, comment, feature);
 		return ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_11_6_expressionFB(ruleresult);
 	}
 
@@ -504,26 +504,26 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Operation feature = (Operation) result2_binding[0];
-		Comment comment = (Comment) result2_binding[1];
+		Comment comment = (Comment) result2_binding[0];
+		Operation feature = (Operation) result2_binding[1];
 		for (Object[] result2_black : ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_12_2_corematch_blackBBB(feature, comment, match)) {
+				.pattern_ConstructorDec2Operation_12_2_corematch_blackBBB(comment, feature, match)) {
 			// ForEach 
 			for (Object[] result3_black : ConstructorDec2OperationImpl
-					.pattern_ConstructorDec2Operation_12_3_findcontext_blackBB(feature, comment)) {
+					.pattern_ConstructorDec2Operation_12_3_findcontext_blackBB(comment, feature)) {
 				Object[] result3_green = ConstructorDec2OperationImpl
-						.pattern_ConstructorDec2Operation_12_3_findcontext_greenBBFFF(feature, comment);
+						.pattern_ConstructorDec2Operation_12_3_findcontext_greenBBFFF(comment, feature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[2];
 				//nothing EMoflonEdge feature__comment____ownedComment = (EMoflonEdge) result3_green[3];
 				//nothing EMoflonEdge comment__feature____annotatedElement = (EMoflonEdge) result3_green[4];
 
 				Object[] result4_bindingAndBlack = ConstructorDec2OperationImpl
 						.pattern_ConstructorDec2Operation_12_4_solveCSP_bindingAndBlackFBBBB(this, isApplicableMatch,
-								feature, comment);
+								comment, feature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[comment] = " + comment + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[comment] = " + comment + ", "
+							+ "[feature] = " + feature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -554,9 +554,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Operation feature, Comment comment) {
-		match.registerObject("feature", feature);
+	public void registerObjectsToMatch_BWD(Match match, Comment comment, Operation feature) {
 		match.registerObject("comment", comment);
+		match.registerObject("feature", feature);
 
 	}
 
@@ -565,7 +565,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Comment comment) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Comment comment, Operation feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -594,7 +594,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Comment comment) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Comment comment, Operation feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -619,8 +619,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("comment", comment);
+		isApplicableMatch.registerObject("feature", feature);
 		return csp;
 	}
 
@@ -638,12 +638,12 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature,
-			EObject comment) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment,
+			EObject feature) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("comment", comment);
+		ruleresult.registerObject("feature", feature);
 
 	}
 
@@ -653,9 +653,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * @generated
 	 */
 	public boolean checkTypes_BWD(Match match) {
-		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("feature").eClass()).equals("uml.Operation.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("comment").eClass()).equals("uml.Comment.");
+		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("comment").eClass()).equals("uml.Comment.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("feature").eClass()).equals("uml.Operation.");
 	}
 
 	/**
@@ -719,7 +718,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_123(EMoflonEdge _edge_ownedComment) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_ownedComment) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -736,8 +735,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		// ForEach 
 		for (Object[] result2_black : ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_21_2_testcorematchandDECs_blackFFB(_edge_ownedComment)) {
-			Operation feature = (Operation) result2_black[0];
-			Comment comment = (Comment) result2_black[1];
+			Comment comment = (Comment) result2_black[0];
+			Operation feature = (Operation) result2_black[1];
 			Object[] result2_green = ConstructorDec2OperationImpl
 					.pattern_ConstructorDec2Operation_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -745,7 +744,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			// 
 			if (ConstructorDec2OperationImpl
 					.pattern_ConstructorDec2Operation_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, feature, comment)) {
+							this, match, comment, feature)) {
 				// 
 				if (ConstructorDec2OperationImpl
 						.pattern_ConstructorDec2Operation_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -792,13 +791,13 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			return ruleResult;
 		}
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -844,13 +843,13 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			return ruleResult;
 		}
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -899,16 +898,16 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result2_bindingAndBlack[0];
-		Operation feature = (Operation) result2_bindingAndBlack[1];
-		Comment comment = (Comment) result2_bindingAndBlack[2];
+		Comment comment = (Comment) result2_bindingAndBlack[1];
+		Operation feature = (Operation) result2_bindingAndBlack[2];
 
 		Object[] result3_bindingAndBlack = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_24_3_solvecsp_bindingAndBlackFBBBBBB(this, bodyDeclaration, feature,
-						comment, sourceMatch, targetMatch);
+				.pattern_ConstructorDec2Operation_24_3_solvecsp_bindingAndBlackFBBBBBB(this, bodyDeclaration, comment,
+						feature, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[comment] = " + comment + ", "
+							+ bodyDeclaration + ", " + "[comment] = " + comment + ", " + "[feature] = " + feature + ", "
 							+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -922,16 +921,16 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = ConstructorDec2OperationImpl
-						.pattern_ConstructorDec2Operation_24_6_createcorrespondence_blackBBBB(bodyDeclaration, feature,
-								comment, ccMatch);
+						.pattern_ConstructorDec2Operation_24_6_createcorrespondence_blackBBBB(bodyDeclaration, comment,
+								feature, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[comment] = " + comment + ", "
+							+ bodyDeclaration + ", " + "[comment] = " + comment + ", " + "[feature] = " + feature + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
-				ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_24_6_createcorrespondence_greenFBBB(
+				ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_24_6_createcorrespondence_greenBFBB(
 						bodyDeclaration, feature, ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = ConstructorDec2OperationImpl
 						.pattern_ConstructorDec2Operation_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -954,7 +953,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MConstructorDefinition bodyDeclaration, Operation feature, Comment comment,
+	public CSP isApplicable_solveCsp_CC(MConstructorDefinition bodyDeclaration, Comment comment, Operation feature,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1012,9 +1011,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Operation feature, Comment comment) {// 
+	public boolean checkDEC_BWD(Comment comment, Operation feature) {// 
 		Object[] result1_black = ConstructorDec2OperationImpl
-				.pattern_ConstructorDec2Operation_28_1_matchtggpattern_blackBB(feature, comment);
+				.pattern_ConstructorDec2Operation_28_1_matchtggpattern_blackBB(comment, feature);
 		if (result1_black != null) {
 			ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_28_1_matchtggpattern_greenB(comment);
 
@@ -1066,10 +1065,10 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				ConstructorDec2OperationImpl.pattern_ConstructorDec2Operation_29_6_perform_greenFFFFBB(ruleResult, csp);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-				//nothing MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result6_green[1];
-				//nothing Operation feature = (Operation) result6_green[2];
-				//nothing Comment comment = (Comment) result6_green[3];
+				//nothing MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+				//nothing Comment comment = (Comment) result6_green[2];
+				//nothing Operation feature = (Operation) result6_green[3];
 
 			} else {
 			}
@@ -1152,25 +1151,25 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			return null;
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD__MATCH_OPERATION_COMMENT:
-			return isAppropriate_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
-					(Comment) arguments.get(2));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD__MATCH_COMMENT_OPERATION:
+			return isAppropriate_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+					(Operation) arguments.get(2));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_OPERATION_COMMENT:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
-					(Comment) arguments.get(2));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMENT_OPERATION:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+					(Operation) arguments.get(2));
 			return null;
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_OPERATION_COMMENT:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
-					(Comment) arguments.get(2));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMENT_OPERATION:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+					(Operation) arguments.get(2));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION_COMMENT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
-					(Comment) arguments.get(2));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMENT_OPERATION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Comment) arguments.get(1),
+					(Operation) arguments.get(2));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1181,23 +1180,23 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_0__MCONSTRUCTORDEFINITION:
 			return isAppropriate_FWD_MConstructorDefinition_0((MConstructorDefinition) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_123__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_123((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_125__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_CC__MCONSTRUCTORDEFINITION_OPERATION_COMMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MConstructorDefinition) arguments.get(0), (Operation) arguments.get(1),
-					(Comment) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_CC__MCONSTRUCTORDEFINITION_COMMENT_OPERATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MConstructorDefinition) arguments.get(0), (Comment) arguments.get(1),
+					(Operation) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_FWD__MCONSTRUCTORDEFINITION:
 			return checkDEC_FWD((MConstructorDefinition) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_BWD__OPERATION_COMMENT:
-			return checkDEC_BWD((Operation) arguments.get(0), (Comment) arguments.get(1));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_BWD__COMMENT_OPERATION:
+			return checkDEC_BWD((Comment) arguments.get(0), (Operation) arguments.get(1));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL__RULEENTRYCONTAINER:
 			return generateModel((RuleEntryContainer) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
@@ -1325,47 +1324,47 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		return null;
 	}
 
-	public static final Object[] pattern_ConstructorDec2Operation_1_1_performtransformation_greenFBFFB(
+	public static final Object[] pattern_ConstructorDec2Operation_1_1_performtransformation_greenBFFFB(
 			MConstructorDefinition bodyDeclaration, CSP csp) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		Comment comment = UMLFactory.eINSTANCE.createComment();
-		Object _localVariable_0 = csp.getValue("feature", "name");
+		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		String comment_body_prime = "Constructor";
+		Object _localVariable_0 = csp.getValue("feature", "name");
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		feature.getOwnedComments().add(comment);
 		comment.getAnnotatedElements().add(feature);
-		String feature_name_prime = (String) _localVariable_0;
 		comment.setBody(comment_body_prime);
+		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { b2e, bodyDeclaration, feature, comment, csp };
+		return new Object[] { bodyDeclaration, b2e, comment, feature, csp };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_1_2_collecttranslatedelements_blackBBBB(
-			ASTNode2Element b2e, MConstructorDefinition bodyDeclaration, Operation feature, Comment comment) {
-		return new Object[] { b2e, bodyDeclaration, feature, comment };
+			MConstructorDefinition bodyDeclaration, ASTNode2Element b2e, Comment comment, Operation feature) {
+		return new Object[] { bodyDeclaration, b2e, comment, feature };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_1_2_collecttranslatedelements_greenFBBBB(
-			ASTNode2Element b2e, MConstructorDefinition bodyDeclaration, Operation feature, Comment comment) {
+			MConstructorDefinition bodyDeclaration, ASTNode2Element b2e, Comment comment, Operation feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		ruleresult.getCreatedElements().add(feature);
+		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(comment);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, comment };
+		ruleresult.getCreatedElements().add(feature);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, comment, feature };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_1_3_bookkeepingforedges_blackBBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature, EObject comment) {
-		if (!b2e.equals(bodyDeclaration)) {
-			if (!b2e.equals(feature)) {
-				if (!b2e.equals(comment)) {
-					if (!bodyDeclaration.equals(feature)) {
-						if (!bodyDeclaration.equals(comment)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment, EObject feature) {
+		if (!bodyDeclaration.equals(comment)) {
+			if (!bodyDeclaration.equals(feature)) {
+				if (!b2e.equals(bodyDeclaration)) {
+					if (!b2e.equals(comment)) {
+						if (!b2e.equals(feature)) {
 							if (!comment.equals(feature)) {
-								return new Object[] { ruleresult, b2e, bodyDeclaration, feature, comment };
+								return new Object[] { ruleresult, bodyDeclaration, b2e, comment, feature };
 							}
 						}
 					}
@@ -1376,7 +1375,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature, EObject comment) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment, EObject feature) {
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__comment____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1403,14 +1402,14 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		feature__comment____ownedComment.setName(feature__comment____ownedComment_name_prime);
 		comment__feature____annotatedElement.setName(comment__feature____annotatedElement_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, comment, b2e__bodyDeclaration____source,
+		return new Object[] { ruleresult, bodyDeclaration, b2e, comment, feature, b2e__bodyDeclaration____source,
 				b2e__feature____target, feature__comment____ownedComment, comment__feature____annotatedElement };
 	}
 
 	public static final void pattern_ConstructorDec2Operation_1_5_registerobjects_expressionBBBBBB(
-			ConstructorDec2Operation _this, PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration,
-			EObject feature, EObject comment) {
-		_this.registerObjects_FWD(ruleresult, b2e, bodyDeclaration, feature, comment);
+			ConstructorDec2Operation _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e,
+			EObject comment, EObject feature) {
+		_this.registerObjects_FWD(ruleresult, bodyDeclaration, b2e, comment, feature);
 
 	}
 
@@ -1564,16 +1563,16 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_10_1_initialbindings_blackBBBB(
-			ConstructorDec2Operation _this, Match match, Operation feature, Comment comment) {
-		return new Object[] { _this, match, feature, comment };
+			ConstructorDec2Operation _this, Match match, Comment comment, Operation feature) {
+		return new Object[] { _this, match, comment, feature };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_10_2_SolveCSP_bindingFBBBB(
-			ConstructorDec2Operation _this, Match match, Operation feature, Comment comment) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, feature, comment);
+			ConstructorDec2Operation _this, Match match, Comment comment, Operation feature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, comment, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, feature, comment };
+			return new Object[] { csp, _this, match, comment, feature };
 		}
 		return null;
 	}
@@ -1583,9 +1582,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_10_2_SolveCSP_bindingAndBlackFBBBB(
-			ConstructorDec2Operation _this, Match match, Operation feature, Comment comment) {
+			ConstructorDec2Operation _this, Match match, Comment comment, Operation feature) {
 		Object[] result_pattern_ConstructorDec2Operation_10_2_SolveCSP_binding = pattern_ConstructorDec2Operation_10_2_SolveCSP_bindingFBBBB(
-				_this, match, feature, comment);
+				_this, match, comment, feature);
 		if (result_pattern_ConstructorDec2Operation_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ConstructorDec2Operation_10_2_SolveCSP_binding[0];
 
@@ -1593,7 +1592,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_ConstructorDec2Operation_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, feature, comment };
+				return new Object[] { csp, _this, match, comment, feature };
 			}
 		}
 		return null;
@@ -1607,16 +1606,16 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_10_4_collectelementstobetranslated_blackBBB(
-			Match match, Operation feature, Comment comment) {
-		return new Object[] { match, feature, comment };
+			Match match, Comment comment, Operation feature) {
+		return new Object[] { match, comment, feature };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_10_4_collectelementstobetranslated_greenBBBFF(
-			Match match, Operation feature, Comment comment) {
+			Match match, Comment comment, Operation feature) {
 		EMoflonEdge feature__comment____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge comment__feature____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(feature);
 		match.getToBeTranslatedNodes().add(comment);
+		match.getToBeTranslatedNodes().add(feature);
 		String feature__comment____ownedComment_name_prime = "ownedComment";
 		String comment__feature____annotatedElement_name_prime = "annotatedElement";
 		feature__comment____ownedComment.setSrc(feature);
@@ -1627,18 +1626,18 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		match.getToBeTranslatedEdges().add(comment__feature____annotatedElement);
 		feature__comment____ownedComment.setName(feature__comment____ownedComment_name_prime);
 		comment__feature____annotatedElement.setName(comment__feature____annotatedElement_name_prime);
-		return new Object[] { match, feature, comment, feature__comment____ownedComment,
+		return new Object[] { match, comment, feature, feature__comment____ownedComment,
 				comment__feature____annotatedElement };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_10_5_collectcontextelements_blackBBB(Match match,
-			Operation feature, Comment comment) {
-		return new Object[] { match, feature, comment };
+			Comment comment, Operation feature) {
+		return new Object[] { match, comment, feature };
 	}
 
 	public static final void pattern_ConstructorDec2Operation_10_6_registerobjectstomatch_expressionBBBB(
-			ConstructorDec2Operation _this, Match match, Operation feature, Comment comment) {
-		_this.registerObjectsToMatch_BWD(match, feature, comment);
+			ConstructorDec2Operation _this, Match match, Comment comment, Operation feature) {
+		_this.registerObjectsToMatch_BWD(match, comment, feature);
 
 	}
 
@@ -1654,26 +1653,26 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_11_1_performtransformation_bindingFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_1 = isApplicableMatch.getObject("comment");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpComment = _localVariable_1;
-		if (tmpFeature instanceof Operation) {
-			Operation feature = (Operation) tmpFeature;
-			if (tmpComment instanceof Comment) {
-				Comment comment = (Comment) tmpComment;
-				return new Object[] { feature, comment, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("comment");
+		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
+		EObject tmpComment = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
+		if (tmpComment instanceof Comment) {
+			Comment comment = (Comment) tmpComment;
+			if (tmpFeature instanceof Operation) {
+				Operation feature = (Operation) tmpFeature;
+				return new Object[] { comment, feature, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ConstructorDec2Operation_11_1_performtransformation_blackBBFBB(
-			Operation feature, Comment comment, ConstructorDec2Operation _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_ConstructorDec2Operation_11_1_performtransformation_blackBBFBB(Comment comment,
+			Operation feature, ConstructorDec2Operation _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { feature, comment, csp, _this, isApplicableMatch };
+				return new Object[] { comment, feature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1684,15 +1683,15 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		Object[] result_pattern_ConstructorDec2Operation_11_1_performtransformation_binding = pattern_ConstructorDec2Operation_11_1_performtransformation_bindingFFB(
 				isApplicableMatch);
 		if (result_pattern_ConstructorDec2Operation_11_1_performtransformation_binding != null) {
-			Operation feature = (Operation) result_pattern_ConstructorDec2Operation_11_1_performtransformation_binding[0];
-			Comment comment = (Comment) result_pattern_ConstructorDec2Operation_11_1_performtransformation_binding[1];
+			Comment comment = (Comment) result_pattern_ConstructorDec2Operation_11_1_performtransformation_binding[0];
+			Operation feature = (Operation) result_pattern_ConstructorDec2Operation_11_1_performtransformation_binding[1];
 
 			Object[] result_pattern_ConstructorDec2Operation_11_1_performtransformation_black = pattern_ConstructorDec2Operation_11_1_performtransformation_blackBBFBB(
-					feature, comment, _this, isApplicableMatch);
+					comment, feature, _this, isApplicableMatch);
 			if (result_pattern_ConstructorDec2Operation_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ConstructorDec2Operation_11_1_performtransformation_black[2];
 
-				return new Object[] { feature, comment, csp, _this, isApplicableMatch };
+				return new Object[] { comment, feature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1700,40 +1699,40 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_11_1_performtransformation_greenFFBB(
 			Operation feature, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		MConstructorDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { b2e, bodyDeclaration, feature, csp };
+		return new Object[] { bodyDeclaration, b2e, feature, csp };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_11_2_collecttranslatedelements_blackBBBB(
-			ASTNode2Element b2e, MConstructorDefinition bodyDeclaration, Operation feature, Comment comment) {
-		return new Object[] { b2e, bodyDeclaration, feature, comment };
+			MConstructorDefinition bodyDeclaration, ASTNode2Element b2e, Comment comment, Operation feature) {
+		return new Object[] { bodyDeclaration, b2e, comment, feature };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_11_2_collecttranslatedelements_greenFBBBB(
-			ASTNode2Element b2e, MConstructorDefinition bodyDeclaration, Operation feature, Comment comment) {
+			MConstructorDefinition bodyDeclaration, ASTNode2Element b2e, Comment comment, Operation feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		ruleresult.getTranslatedElements().add(feature);
+		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(comment);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, comment };
+		ruleresult.getTranslatedElements().add(feature);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, comment, feature };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_11_3_bookkeepingforedges_blackBBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature, EObject comment) {
-		if (!b2e.equals(bodyDeclaration)) {
-			if (!b2e.equals(feature)) {
-				if (!b2e.equals(comment)) {
-					if (!bodyDeclaration.equals(feature)) {
-						if (!bodyDeclaration.equals(comment)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment, EObject feature) {
+		if (!bodyDeclaration.equals(comment)) {
+			if (!bodyDeclaration.equals(feature)) {
+				if (!b2e.equals(bodyDeclaration)) {
+					if (!b2e.equals(comment)) {
+						if (!b2e.equals(feature)) {
 							if (!comment.equals(feature)) {
-								return new Object[] { ruleresult, b2e, bodyDeclaration, feature, comment };
+								return new Object[] { ruleresult, bodyDeclaration, b2e, comment, feature };
 							}
 						}
 					}
@@ -1744,7 +1743,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature, EObject comment) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment, EObject feature) {
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__comment____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1771,14 +1770,14 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		feature__comment____ownedComment.setName(feature__comment____ownedComment_name_prime);
 		comment__feature____annotatedElement.setName(comment__feature____annotatedElement_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, comment, b2e__bodyDeclaration____source,
+		return new Object[] { ruleresult, bodyDeclaration, b2e, comment, feature, b2e__bodyDeclaration____source,
 				b2e__feature____target, feature__comment____ownedComment, comment__feature____annotatedElement };
 	}
 
 	public static final void pattern_ConstructorDec2Operation_11_5_registerobjects_expressionBBBBBB(
-			ConstructorDec2Operation _this, PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration,
-			EObject feature, EObject comment) {
-		_this.registerObjects_BWD(ruleresult, b2e, bodyDeclaration, feature, comment);
+			ConstructorDec2Operation _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e,
+			EObject comment, EObject feature) {
+		_this.registerObjects_BWD(ruleresult, bodyDeclaration, b2e, comment, feature);
 
 	}
 
@@ -1840,39 +1839,39 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("feature");
-		EObject _localVariable_1 = match.getObject("comment");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpComment = _localVariable_1;
-		if (tmpFeature instanceof Operation) {
-			Operation feature = (Operation) tmpFeature;
-			if (tmpComment instanceof Comment) {
-				Comment comment = (Comment) tmpComment;
-				return new Object[] { feature, comment, match };
+		EObject _localVariable_0 = match.getObject("comment");
+		EObject _localVariable_1 = match.getObject("feature");
+		EObject tmpComment = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
+		if (tmpComment instanceof Comment) {
+			Comment comment = (Comment) tmpComment;
+			if (tmpFeature instanceof Operation) {
+				Operation feature = (Operation) tmpFeature;
+				return new Object[] { comment, feature, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_ConstructorDec2Operation_12_2_corematch_blackBBB(Operation feature,
-			Comment comment, Match match) {
+	public static final Iterable<Object[]> pattern_ConstructorDec2Operation_12_2_corematch_blackBBB(Comment comment,
+			Operation feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		String comment_body = comment.getBody();
 		if (comment_body.equals("Constructor")) {
-			_result.add(new Object[] { feature, comment, match });
+			_result.add(new Object[] { comment, feature, match });
 		}
 
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ConstructorDec2Operation_12_3_findcontext_blackBB(Operation feature,
-			Comment comment) {
+	public static final Iterable<Object[]> pattern_ConstructorDec2Operation_12_3_findcontext_blackBB(Comment comment,
+			Operation feature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (feature.getOwnedComments().contains(comment)) {
 			if (comment.getAnnotatedElements().contains(feature)) {
 				String comment_body = comment.getBody();
 				if (comment_body.equals("Constructor")) {
-					_result.add(new Object[] { feature, comment });
+					_result.add(new Object[] { comment, feature });
 				}
 
 			}
@@ -1880,15 +1879,15 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		return _result;
 	}
 
-	public static final Object[] pattern_ConstructorDec2Operation_12_3_findcontext_greenBBFFF(Operation feature,
-			Comment comment) {
+	public static final Object[] pattern_ConstructorDec2Operation_12_3_findcontext_greenBBFFF(Comment comment,
+			Operation feature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge feature__comment____ownedComment = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge comment__feature____annotatedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String feature__comment____ownedComment_name_prime = "ownedComment";
 		String comment__feature____annotatedElement_name_prime = "annotatedElement";
-		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(comment);
+		isApplicableMatch.getAllContextElements().add(feature);
 		feature__comment____ownedComment.setSrc(feature);
 		feature__comment____ownedComment.setTrg(comment);
 		isApplicableMatch.getAllContextElements().add(feature__comment____ownedComment);
@@ -1897,16 +1896,16 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		isApplicableMatch.getAllContextElements().add(comment__feature____annotatedElement);
 		feature__comment____ownedComment.setName(feature__comment____ownedComment_name_prime);
 		comment__feature____annotatedElement.setName(comment__feature____annotatedElement_name_prime);
-		return new Object[] { feature, comment, isApplicableMatch, feature__comment____ownedComment,
+		return new Object[] { comment, feature, isApplicableMatch, feature__comment____ownedComment,
 				comment__feature____annotatedElement };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_12_4_solveCSP_bindingFBBBB(
-			ConstructorDec2Operation _this, IsApplicableMatch isApplicableMatch, Operation feature, Comment comment) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, comment);
+			ConstructorDec2Operation _this, IsApplicableMatch isApplicableMatch, Comment comment, Operation feature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, comment, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, comment };
+			return new Object[] { csp, _this, isApplicableMatch, comment, feature };
 		}
 		return null;
 	}
@@ -1916,9 +1915,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_12_4_solveCSP_bindingAndBlackFBBBB(
-			ConstructorDec2Operation _this, IsApplicableMatch isApplicableMatch, Operation feature, Comment comment) {
+			ConstructorDec2Operation _this, IsApplicableMatch isApplicableMatch, Comment comment, Operation feature) {
 		Object[] result_pattern_ConstructorDec2Operation_12_4_solveCSP_binding = pattern_ConstructorDec2Operation_12_4_solveCSP_bindingFBBBB(
-				_this, isApplicableMatch, feature, comment);
+				_this, isApplicableMatch, comment, feature);
 		if (result_pattern_ConstructorDec2Operation_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ConstructorDec2Operation_12_4_solveCSP_binding[0];
 
@@ -1926,7 +1925,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_ConstructorDec2Operation_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, comment };
+				return new Object[] { csp, _this, isApplicableMatch, comment, feature };
 			}
 		}
 		return null;
@@ -2016,8 +2015,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_20_2_testcorematchandDECs_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_362761 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_362761 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_574092 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_574092 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2133,9 +2132,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_21_2_testcorematchandDECs_black_nac_0BB(
 			Comment comment, Operation feature) {
-		for (Element __DEC_comment_annotatedElement_634357 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_634357)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_634357)) {
+		for (Element __DEC_comment_annotatedElement_553744 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_553744)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_553744)) {
 					return new Object[] { comment, feature };
 				}
 			}
@@ -2158,7 +2157,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 						if (comment_body.equals("Constructor")) {
 							if (pattern_ConstructorDec2Operation_21_2_testcorematchandDECs_black_nac_0BB(comment,
 									feature) == null) {
-								_result.add(new Object[] { feature, comment, _edge_ownedComment });
+								_result.add(new Object[] { comment, feature, _edge_ownedComment });
 							}
 						}
 
@@ -2181,8 +2180,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final boolean pattern_ConstructorDec2Operation_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			ConstructorDec2Operation _this, Match match, Operation feature, Comment comment) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, feature, comment);
+			ConstructorDec2Operation _this, Match match, Comment comment, Operation feature) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, comment, feature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2227,18 +2226,18 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	public static final Object[] pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_bindingFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("bodyDeclaration");
-		EObject _localVariable_1 = targetMatch.getObject("feature");
-		EObject _localVariable_2 = targetMatch.getObject("comment");
+		EObject _localVariable_1 = targetMatch.getObject("comment");
+		EObject _localVariable_2 = targetMatch.getObject("feature");
 		EObject tmpBodyDeclaration = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		EObject tmpComment = _localVariable_2;
+		EObject tmpComment = _localVariable_1;
+		EObject tmpFeature = _localVariable_2;
 		if (tmpBodyDeclaration instanceof MConstructorDefinition) {
 			MConstructorDefinition bodyDeclaration = (MConstructorDefinition) tmpBodyDeclaration;
-			if (tmpFeature instanceof Operation) {
-				Operation feature = (Operation) tmpFeature;
-				if (tmpComment instanceof Comment) {
-					Comment comment = (Comment) tmpComment;
-					return new Object[] { bodyDeclaration, feature, comment, sourceMatch, targetMatch };
+			if (tmpComment instanceof Comment) {
+				Comment comment = (Comment) tmpComment;
+				if (tmpFeature instanceof Operation) {
+					Operation feature = (Operation) tmpFeature;
+					return new Object[] { bodyDeclaration, comment, feature, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2246,12 +2245,12 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_blackBBBBB(
-			MConstructorDefinition bodyDeclaration, Operation feature, Comment comment, Match sourceMatch,
+			MConstructorDefinition bodyDeclaration, Comment comment, Operation feature, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
 			String comment_body = comment.getBody();
 			if (comment_body.equals("Constructor")) {
-				return new Object[] { bodyDeclaration, feature, comment, sourceMatch, targetMatch };
+				return new Object[] { bodyDeclaration, comment, feature, sourceMatch, targetMatch };
 			}
 
 		}
@@ -2264,27 +2263,27 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 				sourceMatch, targetMatch);
 		if (result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_binding != null) {
 			MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_binding[0];
-			Operation feature = (Operation) result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_binding[1];
-			Comment comment = (Comment) result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_binding[2];
+			Comment comment = (Comment) result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_binding[1];
+			Operation feature = (Operation) result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_binding[2];
 
 			Object[] result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_black = pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_blackBBBBB(
-					bodyDeclaration, feature, comment, sourceMatch, targetMatch);
+					bodyDeclaration, comment, feature, sourceMatch, targetMatch);
 			if (result_pattern_ConstructorDec2Operation_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { bodyDeclaration, feature, comment, sourceMatch, targetMatch };
+				return new Object[] { bodyDeclaration, comment, feature, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_24_3_solvecsp_bindingFBBBBBB(
-			ConstructorDec2Operation _this, MConstructorDefinition bodyDeclaration, Operation feature, Comment comment,
+			ConstructorDec2Operation _this, MConstructorDefinition bodyDeclaration, Comment comment, Operation feature,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(bodyDeclaration, feature, comment, sourceMatch,
+		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(bodyDeclaration, comment, feature, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_3;
 		if (csp != null) {
-			return new Object[] { csp, _this, bodyDeclaration, feature, comment, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, bodyDeclaration, comment, feature, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2294,10 +2293,10 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_24_3_solvecsp_bindingAndBlackFBBBBBB(
-			ConstructorDec2Operation _this, MConstructorDefinition bodyDeclaration, Operation feature, Comment comment,
+			ConstructorDec2Operation _this, MConstructorDefinition bodyDeclaration, Comment comment, Operation feature,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ConstructorDec2Operation_24_3_solvecsp_binding = pattern_ConstructorDec2Operation_24_3_solvecsp_bindingFBBBBBB(
-				_this, bodyDeclaration, feature, comment, sourceMatch, targetMatch);
+				_this, bodyDeclaration, comment, feature, sourceMatch, targetMatch);
 		if (result_pattern_ConstructorDec2Operation_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ConstructorDec2Operation_24_3_solvecsp_binding[0];
 
@@ -2305,7 +2304,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_ConstructorDec2Operation_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, bodyDeclaration, feature, comment, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, bodyDeclaration, comment, feature, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2337,17 +2336,17 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_24_6_createcorrespondence_blackBBBB(
-			MConstructorDefinition bodyDeclaration, Operation feature, Comment comment, CCMatch ccMatch) {
-		return new Object[] { bodyDeclaration, feature, comment, ccMatch };
+			MConstructorDefinition bodyDeclaration, Comment comment, Operation feature, CCMatch ccMatch) {
+		return new Object[] { bodyDeclaration, comment, feature, ccMatch };
 	}
 
-	public static final Object[] pattern_ConstructorDec2Operation_24_6_createcorrespondence_greenFBBB(
+	public static final Object[] pattern_ConstructorDec2Operation_24_6_createcorrespondence_greenBFBB(
 			MConstructorDefinition bodyDeclaration, Operation feature, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { b2e, bodyDeclaration, feature, ccMatch };
+		return new Object[] { bodyDeclaration, b2e, feature, ccMatch };
 	}
 
 	public static final Object[] pattern_ConstructorDec2Operation_24_7_addtoreturnedresult_blackBB(
@@ -2373,8 +2372,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_27_1_matchtggpattern_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_103427 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_103427 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_181019 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_181019 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2401,9 +2400,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_28_1_matchtggpattern_black_nac_0BB(Comment comment,
 			Operation feature) {
-		for (Element __DEC_comment_annotatedElement_936336 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_936336)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_936336)) {
+		for (Element __DEC_comment_annotatedElement_328571 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_328571)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_328571)) {
 					return new Object[] { comment, feature };
 				}
 			}
@@ -2411,12 +2410,12 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 		return null;
 	}
 
-	public static final Object[] pattern_ConstructorDec2Operation_28_1_matchtggpattern_blackBB(Operation feature,
-			Comment comment) {
+	public static final Object[] pattern_ConstructorDec2Operation_28_1_matchtggpattern_blackBB(Comment comment,
+			Operation feature) {
 		if (feature.getOwnedComments().contains(comment)) {
 			if (comment.getAnnotatedElements().contains(feature)) {
 				if (pattern_ConstructorDec2Operation_28_1_matchtggpattern_black_nac_0BB(comment, feature) == null) {
-					return new Object[] { feature, comment };
+					return new Object[] { comment, feature };
 				}
 			}
 		}
@@ -2502,32 +2501,32 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_29_6_perform_greenFFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		MConstructorDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
-		Operation feature = UMLFactory.eINSTANCE.createOperation();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Comment comment = UMLFactory.eINSTANCE.createComment();
+		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		Object _localVariable_1 = csp.getValue("feature", "name");
 		String comment_body_prime = "Constructor";
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2e);
-		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(b2e);
+		ruleResult.getTargetObjects().add(comment);
 		b2e.setTarget(feature);
-		ruleResult.getTargetObjects().add(feature);
 		feature.getOwnedComments().add(comment);
 		comment.getAnnotatedElements().add(feature);
-		ruleResult.getTargetObjects().add(comment);
+		ruleResult.getTargetObjects().add(feature);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
-		String feature_name_prime = (String) _localVariable_1;
 		comment.setBody(comment_body_prime);
+		String feature_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		feature.setName(feature_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2e, bodyDeclaration, feature, comment, ruleResult, csp };
+		return new Object[] { bodyDeclaration, b2e, comment, feature, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ConstructorDec2Operation_29_7_expressionFB(

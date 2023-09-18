@@ -50,7 +50,7 @@ public class CreateSuperClassConfiguration implements RefactoringConfiguration {
 		tClass.setTName(name);
 		if (pack != null) {
 			pack.getClasses().add(tClass);
-			pack.getOwnedTypes().add(tClass);
+			pack.getAllTypes().add(tClass);
 		}
 		return tClass;
 	}

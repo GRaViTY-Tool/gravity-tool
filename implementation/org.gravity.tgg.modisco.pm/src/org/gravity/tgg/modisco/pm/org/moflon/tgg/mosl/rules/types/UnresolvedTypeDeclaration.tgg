@@ -14,13 +14,13 @@
 
 #target {
 	pg:TypeGraph {
-		++  -ownedTypes -> tClass
-		-packages->tProxyPackage
+		++  -allTypes -> tClass
+		- modules -> tModule
 	}
-	
-	tProxyPackage : TPackage {
-		tName := "(proxies)"
-		++-ownedTypes->tClass
+
+	tModule:TModule {
+		location=="${PROXIES}"
+		++-contains -> tClass
 	}
 
 	++tClass:TUnresolvedType
@@ -35,15 +35,17 @@
 
 #attributeConditions {
 	eq(unresolvedType.name, tClass.tName)
+
 	eq(unresolvedType.proxy, tClass.tLib)
 }
+
 
 #using org.gravity.tgg.modisco.pm.*
 
 #rule UnresolvedClassDeclaration #extends UnresolvedTypeDeclaration #with org.gravity.tgg.modisco.pm
 
 #source {
-	++unresolvedType : UnresolvedTypeDeclaration
+	++unresolvedType:UnresolvedTypeDeclaration
 }
 
 #target{
@@ -51,19 +53,19 @@
 }
 
 #correspondence {
-	
 	++ eAnonymousClassDeclarationToTClass :TypeToTAbstractType {
 		#src->unresolvedType
 		#trg->tClass
 	}
 }
+
 
 #using org.gravity.tgg.modisco.pm.*
 
 #rule UnresolvedInterfaceDeclaration #extends UnresolvedTypeDeclaration #with org.gravity.tgg.modisco.pm
 
 #source {
-	++unresolvedType : UnresolvedInterfaceDeclaration
+	++unresolvedType:UnresolvedInterfaceDeclaration
 }
 
 #target{
@@ -71,9 +73,10 @@
 }
 
 #correspondence {
-	
 	++ eAnonymousClassDeclarationToTClass :TypeToTAbstractType {
 		#src->unresolvedType
 		#trg->tClass
 	}
 }
+
+

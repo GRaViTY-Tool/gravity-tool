@@ -124,7 +124,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType);
 
 	/**
@@ -193,7 +193,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			ClassInstanceCreation mCreation, TypeToTAbstractType mTypeToTType, TClass tAnonymous, TAbstractType tType,
+			ClassInstanceCreation mCreation, TClass tAnonymous, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember, AbstractTypeDeclaration mType);
 
 	/**
@@ -211,7 +211,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType);
 
 	/**
@@ -228,7 +228,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_27(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,7 +236,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_28(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_70(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

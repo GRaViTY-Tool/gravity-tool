@@ -14,8 +14,8 @@
 
 #target {
 	typeGraph:TypeGraph {
-		++  -ownedTypes -> tNestedType
-		-ownedTypes -> tOuterType
+		++ -allTypes -> tNestedType
+		-allTypes -> tOuterType
 	}
 
 	tOuterType:TAbstractType {
@@ -27,7 +27,7 @@
 
 	tOuterPackage:TPackage {
 		-model -> typeGraph
-		++-ownedTypes -> tNestedType
+		++ -allTypes -> tNestedType
 	}
 }
 
@@ -37,12 +37,12 @@
 		#trg->tOuterType
 	}
 
-	++eNestedTypeToTNestedType :TypeToTAbstractType {
+	++ eNestedTypeToTNestedType :TypeToTAbstractType {
 		#src->eNestedType
 		#trg->tNestedType
 	}
 
-	++astNodeToAnnotatable :ASTNodeToTAnnotatable {
+	++ astNodeToAnnotatable :ASTNodeToTAnnotatable {
 		#src->eNestedType
 		#trg->tNestedType
 	}
@@ -142,7 +142,7 @@
 
 #target {
 	typeGraph:TypeGraph {
-		++  -tAnnotationTypes -> tNestedType
+		++  -annotationTypes -> tNestedType
 	}
 
 	++tNestedType:TAnnotationType

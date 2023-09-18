@@ -220,7 +220,7 @@ public interface AnnotationMemberValueAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_60(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->

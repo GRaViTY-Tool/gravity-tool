@@ -28,13 +28,13 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </edges>
       <edges xmi:id="_10QGIIp8EeyIFJGbwNZprg" source="_zwbNMIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_2YgCsIp8EeyIFJGbwNZprg" source="_0bRhAIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </edges>
       <edges xmi:id="_2kZJoIp8EeyIFJGbwNZprg" source="_0bRhAIp8EeyIFJGbwNZprg" target="_yso08Ip8EeyIFJGbwNZprg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
     </lhs>
     <rhs xmi:id="_uXW2wYp8EeyIFJGbwNZprg" name="Rhs">
@@ -63,13 +63,13 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </edges>
       <edges xmi:id="_10QtMIp8EeyIFJGbwNZprg" source="_zwbNMYp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_2YgCsYp8EeyIFJGbwNZprg" source="_0bSIEIp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </edges>
       <edges xmi:id="_2kZwsIp8EeyIFJGbwNZprg" source="_0bSIEIp8EeyIFJGbwNZprg" target="_yspcAIp8EeyIFJGbwNZprg">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/allTypes"/>
       </edges>
     </rhs>
     <mappings xmi:id="_ysr4QIp8EeyIFJGbwNZprg" origin="_yso08Ip8EeyIFJGbwNZprg" image="_yspcAIp8EeyIFJGbwNZprg"/>

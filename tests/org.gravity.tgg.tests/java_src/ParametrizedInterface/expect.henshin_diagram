@@ -114,7 +114,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_NXjVZtVCEemCHfEtuHnNkQ"/>
         </children>
         <element xmi:type="henshin:Node" href="expect.henshin#_NXhgMNVCEemCHfEtuHnNkQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NXjVYdVCEemCHfEtuHnNkQ" x="9" y="338"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NXjVYdVCEemCHfEtuHnNkQ" x="6" y="338"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_NhhJsNVCEemCHfEtuHnNkQ" type="3001" fontName="Ubuntu">
         <children xmi:type="notation:DecorationNode" xmi:id="_NhhJstVCEemCHfEtuHnNkQ" type="5002"/>
@@ -305,6 +305,6 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_QD94UdVCEemCHfEtuHnNkQ" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="expect.henshin#_QD9RQNVCEemCHfEtuHnNkQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QD94UtVCEemCHfEtuHnNkQ" points="[3, 21, -16, -115]$[18, 132, -1, -4]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QEAUkNVCEemCHfEtuHnNkQ" id="(0.4461538461538462,0.09523809523809523)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QEAUkNVCEemCHfEtuHnNkQ" id="(0.3416666666666667,0.02040816326530612)"/>
   </edges>
 </notation:Diagram>

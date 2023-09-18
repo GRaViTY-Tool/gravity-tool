@@ -47,7 +47,7 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Model mModel);
+	boolean isAppropriate_FWD(Match match, Model mModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +71,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
-			Model mModel);
+	void registerObjectsToMatch_FWD(Match match, Model mModel,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,8 +80,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
-			Model mModel);
+	CSP isAppropriate_solveCsp_FWD(Match match, Model mModel,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,9 +97,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Model mModel, ModelToTypeGraph model2pm,
-			TypeGraph tModel);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph tModel,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, ModelToTypeGraph model2pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,9 +114,9 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMethodName, EObject tMethodSignature,
-			EObject tMethodDefinition, EObject unresolved2Definiton, EObject mMethod, EObject mModel, EObject model2pm,
-			EObject tModel);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject unresolved2Definiton,
+			EObject tMethodName, EObject tModel, EObject tMethodSignature, EObject mMethod, EObject tMethodDefinition,
+			EObject model2pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,8 +132,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TMethod tMethodName, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition, TypeGraph tModel);
+	boolean isAppropriate_BWD(Match match, TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
+			TMethodDefinition tMethodDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +157,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TMethod tMethodName, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition, TypeGraph tModel);
+	void registerObjectsToMatch_BWD(Match match, TMethod tMethodName, TypeGraph tModel,
+			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,8 +166,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TMethod tMethodName, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition, TypeGraph tModel);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMethod tMethodName, TypeGraph tModel,
+			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,9 +183,9 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethod tMethodName,
-			TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition, Model mModel,
-			ModelToTypeGraph model2pm, TypeGraph tModel);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel, TMethod tMethodName,
+			TypeGraph tModel, TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition,
+			ModelToTypeGraph model2pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,9 +201,9 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMethodName, EObject tMethodSignature,
-			EObject tMethodDefinition, EObject unresolved2Definiton, EObject mMethod, EObject mModel, EObject model2pm,
-			EObject tModel);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject unresolved2Definiton,
+			EObject tMethodName, EObject tModel, EObject tMethodSignature, EObject mMethod, EObject tMethodDefinition,
+			EObject model2pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +219,7 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_75(EMoflonEdge _edge_signatures);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_91(EMoflonEdge _edge_methods);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +227,7 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_79(EMoflonEdge _edge_unresolvedItems);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_96(EMoflonEdge _edge_unresolvedItems);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,9 +259,9 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TMethod tMethodName, TMethodSignature tMethodSignature,
-			TMethodDefinition tMethodDefinition, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod,
-			Model mModel, TypeGraph tModel, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Model mModel, TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
+			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, TMethodDefinition tMethodDefinition,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +277,7 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod, Model mModel);
+	boolean checkDEC_FWD(Model mModel, org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,8 +285,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TMethod tMethodName, TMethodSignature tMethodSignature, TMethodDefinition tMethodDefinition,
-			TypeGraph tModel);
+	boolean checkDEC_BWD(TMethod tMethodName, TypeGraph tModel, TMethodSignature tMethodSignature,
+			TMethodDefinition tMethodDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,8 +302,8 @@ public interface UnresolvedMethodDeclaration extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel, ModelToTypeGraph model2pm,
-			TypeGraph tModel, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel, TypeGraph tModel,
+			ModelToTypeGraph model2pm, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

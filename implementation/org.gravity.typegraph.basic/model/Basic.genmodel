@@ -117,9 +117,10 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/parent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/classes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/interfaces"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/ownedTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/allTypes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/model"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TPackage/tName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/modules"/>
       <genOperations ecoreOperation="Basic.ecore#//TPackage/getFullyQualifiedName"/>
       <genOperations ecoreOperation="Basic.ecore#//TPackage/getAllOwnedTypes"/>
       <genOperations ecoreOperation="Basic.ecore#//TPackage/getAllOwnedClasses"/>
@@ -146,14 +147,15 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TypeGraph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TypeGraph/tName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/packages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/methods"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/fields"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/classes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/interfaces"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/ownedTypes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/tAnnotationTypes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TypeGraph/tName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/annotationTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/allTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/modules"/>
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getDeclaredTClasses"/>
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/toString"/>
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getPackage">
@@ -311,6 +313,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TAbstractMultiplicity/lowerBound"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TAbstractMultiplicity/upperBound"/>
       <genOperations ecoreOperation="Basic.ecore#//TAbstractMultiplicity/isArray"/>
+    </genClasses>
+    <genClasses ecoreClass="Basic.ecore#//TModule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TModule/contains"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TModule/namespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TModule/location"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Basic.ecore#//TContainableElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TContainableElement/module"/>
     </genClasses>
     <nestedGenPackages prefix="Annotations" disposableProviderFactory="true" ecorePackage="Basic.ecore#//annotations">
       <genClasses ecoreClass="Basic.ecore#//annotations/TAnnotationValue">

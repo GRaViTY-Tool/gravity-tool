@@ -22,7 +22,7 @@
 
 #target {	
 	tModel : TypeGraph {
-		-ownedTypes->tAbstractType
+		-allTypes->tAbstractType
 	}
 	
 	tAbstractType:TAbstractType

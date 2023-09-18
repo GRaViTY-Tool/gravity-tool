@@ -24,7 +24,7 @@ public class TypeGraphClassFactoryTests {
 		assertNotNull(tClass);
 		assertEquals(name, tClass.getTName());
 		assertTrue(pm.getClasses().contains(tClass));
-		assertTrue(pm.getOwnedTypes().contains(tClass));
+		assertTrue(pm.getAllTypes().contains(tClass));
 
 		var container = tClass.getPackage();
 		for (var i = namespaceArray.size() - 1; i >= 0; i--) {
@@ -44,7 +44,7 @@ public class TypeGraphClassFactoryTests {
 		assertNotNull(tClass);
 		assertEquals(name, tClass.getTName());
 		assertTrue(pm.getClasses().contains(tClass));
-		assertTrue(pm.getOwnedTypes().contains(tClass));
+		assertTrue(pm.getAllTypes().contains(tClass));
 
 		final var container = tClass.getPackage();
 		assertNotNull(container);

@@ -1,50 +1,63 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.security.violation.pattern="http://www.gravity-tool.org/security.violation.pattern/violations" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tName="SecureViolationPatternsViolation">
-  <packages classes="//@ownedTypes.3 //@ownedTypes.4" ownedTypes="//@ownedTypes.3 //@ownedTypes.4" model="/" tName="dummy"/>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.security.violation.pattern="http://www.gravity-tool.org/security.violation.pattern/violations" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" tName="SecureViolationPatternsViolation" classes="//@modules.0/@contains.0 //@modules.0/@contains.1 //@modules.0/@contains.2 //@modules.0/@contains.3 //@modules.0/@contains.4 //@modules.0/@contains.5 //@modules.0/@contains.6 //@modules.3/@contains.0 //@modules.0/@contains.7 //@modules.0/@contains.8 //@modules.2/@contains.0 //@modules.4/@contains.0" allTypes="//@modules.0/@contains.0 //@modules.0/@contains.1 //@modules.0/@contains.2 //@modules.0/@contains.3 //@modules.0/@contains.4 //@modules.0/@contains.5 //@modules.0/@contains.6 //@modules.3/@contains.0 //@modules.0/@contains.7 //@modules.0/@contains.8 //@modules.2/@contains.0 //@modules.4/@contains.0">
+  <packages model="/" tName="java">
+    <subpackages classes="//@modules.2/@contains.0" allTypes="//@modules.2/@contains.0" model="/" tName="lang" modules="//@modules.2"/>
+  </packages>
+  <packages classes="//@modules.3/@contains.0 //@modules.4/@contains.0" allTypes="//@modules.3/@contains.0 //@modules.4/@contains.0" model="/" tName="dummy" modules="//@modules.3 //@modules.4"/>
   <methods tName="clientMethod">
-    <signatures returnType="//@ownedTypes.0">
-      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.4" returnType="//@ownedTypes.0">
-        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.2/@signatures.0/@definitions.0" staticType="//@ownedTypes.4"/>
+    <signatures returnType="//@modules.0/@contains.8">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@modules.3/@contains.0" returnType="//@modules.0/@contains.8">
+        <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.2/@signatures.0/@definitions.0" staticType="//@modules.3/@contains.0"/>
         <accessing xsi:type="org.gravity.typegraph.basic:TRead" target="//@fields.0/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="Supplier">
-    <signatures returnType="//@ownedTypes.3">
-      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.3" accessedBy="//@fields.0/@signatures.0/@definitions.0/@accessing.0">
+    <signatures returnType="//@modules.4/@contains.0">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@modules.4/@contains.0" accessedBy="//@fields.0/@signatures.0/@definitions.0/@accessing.0">
         <tAnnotation xsi:type="org.gravity.typegraph.basic:TConstructor"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="supplierMethod">
-    <signatures returnType="//@ownedTypes.0">
-      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.3" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0" returnType="//@ownedTypes.0">
+    <signatures returnType="//@modules.0/@contains.8">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@modules.4/@contains.0" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.0" returnType="//@modules.0/@contains.8">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <fields tName="supplier">
-    <signatures type="//@ownedTypes.3">
-      <definitions xsi:type="org.gravity.typegraph.basic:TFieldDefinition" definedBy="//@ownedTypes.4" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.1">
+    <signatures type="//@modules.4/@contains.0">
+      <definitions xsi:type="org.gravity.typegraph.basic:TFieldDefinition" definedBy="//@modules.3/@contains.0" accessedBy="//@methods.0/@signatures.0/@definitions.0/@accessing.1">
         <accessing xsi:type="org.gravity.typegraph.basic:TCall" target="//@methods.1/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPackage"/>
       </definitions>
     </signatures>
   </fields>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.1/@signatures.0 //@methods.2/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@methods.2/@signatures.0/@definitions.0" tName="Supplier">
-    <tModifier tVisibility="TPublic"/>
-  </ownedTypes>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.0/@signatures.0 //@fields.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0" tName="Client">
-    <tModifier tVisibility="TPublic"/>
-  </ownedTypes>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <modules location="${JVM.PRIMITIVES}">
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="boolean"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="float"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="double"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="char"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="short"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="int"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="byte"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="long"/>
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" tLib="true" tName="void"/>
+  </modules>
+  <modules location="${PROXIES}"/>
+  <modules namespace="//@packages.0/@subpackages.0" location="${CP}/Object.class">
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" package="//@packages.0/@subpackages.0" tLib="true" tName="Object"/>
+  </modules>
+  <modules namespace="//@packages.1" location="/home/sven/Documents/git/gravity/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Client.java">
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" package="//@packages.1" signature="//@methods.0/@signatures.0 //@fields.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0" tName="Client">
+      <tModifier tVisibility="TPublic"/>
+    </contains>
+  </modules>
+  <modules namespace="//@packages.1" location="/home/sven/Documents/git/gravity/tests/org.gravity.security.violation.patterns.tests/instances/SecureViolationPatternsViolation/src/dummy/Supplier.java">
+    <contains xsi:type="org.gravity.typegraph.basic:TClass" model="/" package="//@packages.1" signature="//@methods.2/@signatures.0 //@methods.1/@signatures.0" defines="//@methods.2/@signatures.0/@definitions.0 //@methods.1/@signatures.0/@definitions.0" tName="Supplier">
+      <tModifier tVisibility="TPublic"/>
+    </contains>
+  </modules>
 </org.gravity.typegraph.basic:TypeGraph>

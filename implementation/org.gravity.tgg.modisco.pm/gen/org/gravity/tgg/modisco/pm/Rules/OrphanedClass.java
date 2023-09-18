@@ -11,7 +11,7 @@ import org.gravity.modisco.MClass;
 import org.gravity.tgg.modisco.pm.ModelToTypeGraph;
 
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TModule;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.moflon.tgg.language.csp.CSP;
@@ -96,8 +96,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, Model mModel,
-			TPackage tProxyPackage, MClass mType, ModelToTypeGraph mModelToTypeGraph);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TModule tModule, TypeGraph pg, Model mModel,
+			MClass mType, ModelToTypeGraph mModelToTypeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
-			EObject mAnnotatableToTAnnotatable, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tModule, EObject tType,
+			EObject mAnnotatableToTAnnotatable, EObject mTypeToTType, EObject pg, EObject mModel, EObject mType,
 			EObject mModelToTypeGraph);
 
 	/**
@@ -131,7 +131,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TClass tType, TypeGraph pg, TPackage tProxyPackage);
+	boolean isAppropriate_BWD(Match match, TModule tModule, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,7 +155,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TClass tType, TypeGraph pg, TPackage tProxyPackage);
+	void registerObjectsToMatch_BWD(Match match, TModule tModule, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,7 +163,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TClass tType, TypeGraph pg, TPackage tProxyPackage);
+	CSP isAppropriate_solveCsp_BWD(Match match, TModule tModule, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +179,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tType, TypeGraph pg, Model mModel,
-			TPackage tProxyPackage, ModelToTypeGraph mModelToTypeGraph);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TModule tModule, TClass tType, TypeGraph pg,
+			Model mModel, ModelToTypeGraph mModelToTypeGraph);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
-			EObject mAnnotatableToTAnnotatable, EObject pg, EObject mModel, EObject tProxyPackage, EObject mType,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tModule, EObject tType,
+			EObject mAnnotatableToTAnnotatable, EObject mTypeToTType, EObject pg, EObject mModel, EObject mType,
 			EObject mModelToTypeGraph);
 
 	/**
@@ -214,7 +214,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_ownedTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_4(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_5(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TClass tType, TypeGraph pg, Model mModel, TPackage tProxyPackage, MClass mType,
+	CSP isApplicable_solveCsp_CC(TModule tModule, TClass tType, TypeGraph pg, Model mModel, MClass mType,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -279,7 +279,7 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TClass tType, TypeGraph pg, TPackage tProxyPackage);
+	boolean checkDEC_BWD(TModule tModule, TClass tType, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,8 +296,8 @@ public interface OrphanedClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg, Model mModel,
-			TPackage tProxyPackage, ModelToTypeGraph mModelToTypeGraph, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TModule tModule, TypeGraph pg, Model mModel,
+			ModelToTypeGraph mModelToTypeGraph, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

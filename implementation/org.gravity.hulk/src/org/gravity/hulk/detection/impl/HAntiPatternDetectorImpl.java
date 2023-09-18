@@ -45,7 +45,7 @@ public abstract class HAntiPatternDetectorImpl extends HDetectorImpl implements 
 
 
 	public static final TAnnotationType getAnnotationType(TypeGraph pm, String name) {
-		return pm.getTAnnotationTypes().parallelStream().filter(t -> name.equals(t.getTName())).findAny()
+		return pm.getAnnotationTypes().parallelStream().filter(t -> name.equals(t.getTName())).findAny()
 				.orElse(null);
 	}
 

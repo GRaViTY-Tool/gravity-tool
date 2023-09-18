@@ -610,7 +610,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_0(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_6(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeVoidImpl
 				.pattern_PrimitiveTypeVoid_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1093,8 +1093,8 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_0__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_0((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_6__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_6((PrimitiveType) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_VOID_0__PRIMITIVETYPEVOID:
 			return isAppropriate_FWD_PrimitiveTypeVoid_0((org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:

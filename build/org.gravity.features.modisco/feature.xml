@@ -45,7 +45,6 @@ Darmstadt.
       <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.modisco.java" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.slf4j.api"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.apache.xmlgraphics"/>
       <import plugin="org.moflon.core.utilities"/>

@@ -67,7 +67,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
       </edges>
       <edges xmi:id="_C8IgQOGOEey8I6Gm2JN-ZQ" source="_xuiL0OGNEey8I6Gm2JN-ZQ" target="_yaZzUOGNEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_RxVZ8OGOEey8I6Gm2JN-ZQ" source="_5ewm4OGNEey8I6Gm2JN-ZQ" target="_8ZZzEOGNEey8I6Gm2JN-ZQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
@@ -159,7 +159,7 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
       </edges>
       <edges xmi:id="_C8IgQeGOEey8I6Gm2JN-ZQ" source="_xuiL0eGNEey8I6Gm2JN-ZQ" target="_yaaaYOGNEey8I6Gm2JN-ZQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/allTypes"/>
       </edges>
       <edges xmi:id="_RxVZ8eGOEey8I6Gm2JN-ZQ" source="_5ewm4eGNEey8I6Gm2JN-ZQ" target="_8ZZzEeGNEey8I6Gm2JN-ZQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
