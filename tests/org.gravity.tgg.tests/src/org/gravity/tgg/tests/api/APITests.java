@@ -72,7 +72,7 @@ public class APITests {
 	@Test
 	public void testCreateProgramModelAfterSrcChange()
 			throws TransformationFailedException, IOException, CoreException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, null);
+		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(pm);
 
 		// Change project src
@@ -122,7 +122,7 @@ public class APITests {
 		pm.getModules().add(module);
 		
 		try {
-			EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm.xmi").delete(true, null);
+			EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm/pm.xmi").delete(true, null);
 		}
 		catch(IOException | CoreException e) {
 			LOGGER.warn(e);
