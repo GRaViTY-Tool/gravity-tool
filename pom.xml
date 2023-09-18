@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>3.0.3</tycho-version>
+    <tycho-version>4.0.2</tycho-version>
     <jacoco.version>0.8.10</jacoco.version>
     <dependency-plugin>3.3.0</dependency-plugin>
 
