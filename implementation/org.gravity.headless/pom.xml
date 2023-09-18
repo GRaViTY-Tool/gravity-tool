@@ -12,7 +12,7 @@
 	<description>This is the web API of GRaViTY.</description>
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
-		<swagger-core-version>2.2.2</swagger-core-version>
+		<swagger-core-version>2.2.15</swagger-core-version>
 		<jetty-version>11.0.12</jetty-version>
 		<logback-version>1.4.1</logback-version>
 		<servlet-api-version>4.0.1</servlet-api-version>
