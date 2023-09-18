@@ -45,9 +45,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class);
 
-	private final Job saveJob = Job.create("Save models", monitor -> {
-		save(monitor);
-	});
+	private final Job saveJob = Job.create("Save models", this::save);
 
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
@@ -115,7 +113,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 		final var success = convertModel(preprocessedModiscoModel, progressMonitor);
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			System.out.println("All:" + (System.currentTimeMillis() - start) + "ms");
+			LOGGER.info("All:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (infoEnabled) {
 			LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
 		}
@@ -159,7 +157,7 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		integrate.done();
 
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			System.out.println("TGG:" + (System.currentTimeMillis() - start) + "ms");
+			LOGGER.log(Level.INFO, "TGG:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (infoEnabled) {
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
 		}
@@ -171,6 +169,8 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 				this.saveJob.cancel();
 				this.saveJob.schedule();
 			}
+		} else if (verbose) {
+			LOGGER.error("Transformation did not create a program model: " + trg);
 		}
 		submonitor.done();
 		return success;
@@ -190,14 +190,14 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 			start = System.currentTimeMillis();
 		} else if (info) {
 			start = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, "Start postprocessing with " + sortedProcessors.size() + " post-processors");
+			LOGGER.info("Start postprocessing with " + sortedProcessors.size() + " post-processors");
 		}
 		for (final IProgramGraphProcessor processor : sortedProcessors) {
 			processor.process(getPG(), processors);
 			processors.worked(1);
 		}
 		if (GravityActivator.MEASURE_PERFORMANCE) {
-			System.out.println("Postprocessing:" + (System.currentTimeMillis() - start) + "ms");
+			LOGGER.info("Postprocessing:" + (System.currentTimeMillis() - start) + "ms");
 		} else if (info) {
 			LOGGER.log(Level.INFO, "Postprocessing - done (" + (System.currentTimeMillis() - start) + "ms)");
 		}
