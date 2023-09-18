@@ -729,7 +729,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_103(EMoflonEdge _edge_ownedComment) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_257(EMoflonEdge _edge_ownedComment) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotationValue2CommentImpl
 				.pattern_JavaAnnotationValue2Comment_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -788,7 +788,7 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_108(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_277(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotationValue2CommentImpl
 				.pattern_JavaAnnotationValue2Comment_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1267,10 +1267,10 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_103__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_103((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_108__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_108((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_257__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_257((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_277__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_277((EMoflonEdge) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2364,9 +2364,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_JavaAnnotationValue2Comment_20_2_testcorematchandDECs_black_nac_0BB(
 			Comment tag, Comment comment) {
 		if (!comment.equals(tag)) {
-			for (Element __DEC_tag_annotatedElement_666007 : tag.getAnnotatedElements()) {
-				if (!tag.equals(__DEC_tag_annotatedElement_666007)) {
-					if (!comment.equals(__DEC_tag_annotatedElement_666007)) {
+			for (Element __DEC_tag_annotatedElement_866973 : tag.getAnnotatedElements()) {
+				if (!tag.equals(__DEC_tag_annotatedElement_866973)) {
+					if (!comment.equals(__DEC_tag_annotatedElement_866973)) {
 						return new Object[] { tag, comment };
 					}
 				}
@@ -2770,9 +2770,9 @@ public class JavaAnnotationValue2CommentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_JavaAnnotationValue2Comment_28_1_matchtggpattern_black_nac_0BB(Comment tag,
 			Comment comment) {
 		if (!comment.equals(tag)) {
-			for (Element __DEC_tag_annotatedElement_268510 : tag.getAnnotatedElements()) {
-				if (!tag.equals(__DEC_tag_annotatedElement_268510)) {
-					if (!comment.equals(__DEC_tag_annotatedElement_268510)) {
+			for (Element __DEC_tag_annotatedElement_858150 : tag.getAnnotatedElements()) {
+				if (!tag.equals(__DEC_tag_annotatedElement_858150)) {
+					if (!comment.equals(__DEC_tag_annotatedElement_858150)) {
 						return new Object[] { tag, comment };
 					}
 				}

@@ -25,9 +25,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<publishArtifacts>true</publishArtifacts>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>

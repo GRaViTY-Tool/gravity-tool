@@ -788,7 +788,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_139(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_293(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -849,7 +849,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_146(EMoflonEdge _edge_dependencies) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_315(EMoflonEdge _edge_dependencies) {
 
 		Object[] result1_bindingAndBlack = TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1313,10 +1313,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_139__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_139((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_146__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_146((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_293__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_293((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_315__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_315((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2891,11 +2891,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_client_115400 : uUsage.getClients()) {
-				if (!uUsage.equals(__DEC_uUsage_client_115400)) {
-					if (!uTrgType.equals(__DEC_uUsage_client_115400)) {
-						if (!uPackage.equals(__DEC_uUsage_client_115400)) {
-							if (!uSrcType.equals(__DEC_uUsage_client_115400)) {
+			for (NamedElement __DEC_uUsage_client_273236 : uUsage.getClients()) {
+				if (!uUsage.equals(__DEC_uUsage_client_273236)) {
+					if (!uTrgType.equals(__DEC_uUsage_client_273236)) {
+						if (!uPackage.equals(__DEC_uUsage_client_273236)) {
+							if (!uSrcType.equals(__DEC_uUsage_client_273236)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -2910,11 +2910,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_supplier_495615 : uUsage.getSuppliers()) {
-				if (!uUsage.equals(__DEC_uUsage_supplier_495615)) {
-					if (!uTrgType.equals(__DEC_uUsage_supplier_495615)) {
-						if (!uPackage.equals(__DEC_uUsage_supplier_495615)) {
-							if (!uSrcType.equals(__DEC_uUsage_supplier_495615)) {
+			for (NamedElement __DEC_uUsage_supplier_429461 : uUsage.getSuppliers()) {
+				if (!uUsage.equals(__DEC_uUsage_supplier_429461)) {
+					if (!uTrgType.equals(__DEC_uUsage_supplier_429461)) {
+						if (!uPackage.equals(__DEC_uUsage_supplier_429461)) {
+							if (!uSrcType.equals(__DEC_uUsage_supplier_429461)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -3424,11 +3424,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_client_698264 : uUsage.getClients()) {
-				if (!uUsage.equals(__DEC_uUsage_client_698264)) {
-					if (!uTrgType.equals(__DEC_uUsage_client_698264)) {
-						if (!uPackage.equals(__DEC_uUsage_client_698264)) {
-							if (!uSrcType.equals(__DEC_uUsage_client_698264)) {
+			for (NamedElement __DEC_uUsage_client_417208 : uUsage.getClients()) {
+				if (!uUsage.equals(__DEC_uUsage_client_417208)) {
+					if (!uTrgType.equals(__DEC_uUsage_client_417208)) {
+						if (!uPackage.equals(__DEC_uUsage_client_417208)) {
+							if (!uSrcType.equals(__DEC_uUsage_client_417208)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -3443,11 +3443,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_supplier_238076 : uUsage.getSuppliers()) {
-				if (!uUsage.equals(__DEC_uUsage_supplier_238076)) {
-					if (!uTrgType.equals(__DEC_uUsage_supplier_238076)) {
-						if (!uPackage.equals(__DEC_uUsage_supplier_238076)) {
-							if (!uSrcType.equals(__DEC_uUsage_supplier_238076)) {
+			for (NamedElement __DEC_uUsage_supplier_833766 : uUsage.getSuppliers()) {
+				if (!uUsage.equals(__DEC_uUsage_supplier_833766)) {
+					if (!uTrgType.equals(__DEC_uUsage_supplier_833766)) {
+						if (!uPackage.equals(__DEC_uUsage_supplier_833766)) {
+							if (!uSrcType.equals(__DEC_uUsage_supplier_833766)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}

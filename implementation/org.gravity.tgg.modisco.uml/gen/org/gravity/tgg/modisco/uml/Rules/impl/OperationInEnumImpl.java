@@ -668,7 +668,7 @@ public class OperationInEnumImpl extends AbstractRuleImpl implements OperationIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_261(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = OperationInEnumImpl
 				.pattern_OperationInEnum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -725,7 +725,7 @@ public class OperationInEnumImpl extends AbstractRuleImpl implements OperationIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_112(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_281(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = OperationInEnumImpl
 				.pattern_OperationInEnum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1145,10 +1145,10 @@ public class OperationInEnumImpl extends AbstractRuleImpl implements OperationIn
 			return null;
 		case RulesPackage.OPERATION_IN_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.OPERATION_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_107__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_107((EMoflonEdge) arguments.get(0));
-		case RulesPackage.OPERATION_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_112__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_112((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_261__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_261((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_281__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_281((EMoflonEdge) arguments.get(0));
 		case RulesPackage.OPERATION_IN_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.OPERATION_IN_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

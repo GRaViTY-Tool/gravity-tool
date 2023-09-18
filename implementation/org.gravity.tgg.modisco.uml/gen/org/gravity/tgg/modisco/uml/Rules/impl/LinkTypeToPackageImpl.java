@@ -660,7 +660,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_152(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_306(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = LinkTypeToPackageImpl
 				.pattern_LinkTypeToPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -717,7 +717,7 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_163(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_332(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = LinkTypeToPackageImpl
 				.pattern_LinkTypeToPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1138,10 +1138,10 @@ public class LinkTypeToPackageImpl extends AbstractRuleImpl implements LinkTypeT
 			return null;
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_152__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_152((EMoflonEdge) arguments.get(0));
-		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_163__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_163((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_306__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_306((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_332__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_332((EMoflonEdge) arguments.get(0));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_TYPE_TO_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

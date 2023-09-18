@@ -268,23 +268,23 @@ public interface RulesPackage extends EPackage {
 	int VARIABLE_DEC2_PARAMETER4___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 101</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 255</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_BWD_EMOFLON_EDGE_101__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_BWD_EMOFLON_EDGE_255__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 106</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 275</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_FWD_EMOFLON_EDGE_106__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_FWD_EMOFLON_EDGE_275__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -614,23 +614,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 102</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 256</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_102__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_256__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 107</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 276</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_107__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_276__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -959,23 +959,23 @@ public interface RulesPackage extends EPackage {
 	int JAVA_ANNOTATION_VALUE2_COMMENT___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 103</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 257</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_103__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_257__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 108</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 277</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_108__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION_VALUE2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_277__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -1303,23 +1303,23 @@ public interface RulesPackage extends EPackage {
 	int TYPE_PARAMETER2_OBJECT_IN_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 104</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 258</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_104__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_258__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 109</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 278</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_109__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_278__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -1647,23 +1647,23 @@ public interface RulesPackage extends EPackage {
 	int FIELD_DEC2_PROPERTY4_INTERFACE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 105</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 259</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_105__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_259__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 110</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 279</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_110__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_279__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -2013,23 +2013,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_DOUBLE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 9</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_0__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_9__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Double 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Double 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_DOUBLE_0__PRIMITIVETYPEDOUBLE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_DOUBLE_1__PRIMITIVETYPEDOUBLE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -2383,23 +2383,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 106</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 260</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_106__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_260__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 111</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 280</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_111__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_ACCESS2_INTERFACE_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_280__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -2721,23 +2721,23 @@ public interface RulesPackage extends EPackage {
 	int OPERATION_IN_ENUM___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 107</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 261</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_107__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_261__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 112</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 281</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_112__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_281__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -3087,23 +3087,23 @@ public interface RulesPackage extends EPackage {
 	int COMPILATION_UNIT2_ARTIFACT___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 108</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 262</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_108__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_262__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 113</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 282</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_113__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_282__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -3423,23 +3423,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_BOOLEAN___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 10</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_1__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_10__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Boolean 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Boolean 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_BOOLEAN_0__PRIMITIVETYPEBOOLEAN = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_BOOLEAN___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_BOOLEAN_1__PRIMITIVETYPEBOOLEAN = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -3764,23 +3764,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 109</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 263</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_109__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_263__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 114</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 283</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_114__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_283__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -4141,23 +4141,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 110</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 264</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_110__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_264__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 115</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 284</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_115__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_284__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -4479,23 +4479,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_BYTE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 2</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 11</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_2__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_11__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Byte 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Byte 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_BYTE_0__PRIMITIVETYPEBYTE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_BYTE_1__PRIMITIVETYPEBYTE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -4818,23 +4818,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 111</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 265</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_111__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_265__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 116</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 285</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_116__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_285__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -5154,22 +5154,22 @@ public interface RulesPackage extends EPackage {
 	int CLASS_DEC2_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Class 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Class 2</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_0__CLASS = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 20;
+	int CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_2__CLASS = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD MClass 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD MClass 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_0__MCLASS = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 21;
+	int CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_1__MCLASS = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 21;
 
 	/**
 	 * The operation id for the '<em>Check Attributes FWD</em>' operation.
@@ -5482,23 +5482,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_CHAR___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 3</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 12</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_3__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_12__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Char 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Char 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_CHAR_0__PRIMITIVETYPECHAR = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_CHAR_1__PRIMITIVETYPECHAR = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -5840,23 +5840,23 @@ public interface RulesPackage extends EPackage {
 	int OPERATION_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 112</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 266</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_112__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_266__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 117</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 286</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_117__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_286__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -6182,23 +6182,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 113</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 267</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_113__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_267__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 118</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 287</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_118__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_287__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -6532,23 +6532,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 114</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 268</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_114__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_268__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 119</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 288</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_119__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_288__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -6909,23 +6909,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 115</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 269</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_115__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_269__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 120</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 289</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_120__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_289__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -7258,23 +7258,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 116</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 270</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_116__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_270__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 121</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 290</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_290__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -7607,23 +7607,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 117</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 271</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_117__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_271__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 122</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 291</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_122__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_291__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -7944,23 +7944,23 @@ public interface RulesPackage extends EPackage {
 	int ENUM_DEC2_ENUM___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Enumeration 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Enumeration 2</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_0__ENUMERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_2__ENUMERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Enum Declaration 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Enum Declaration 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_0__ENUMDECLARATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_1__ENUMDECLARATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -8278,23 +8278,23 @@ public interface RulesPackage extends EPackage {
 	int FIELD_DEC2_PROPERTY4_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 118</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 272</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_118__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_272__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 123</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 292</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_123__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_292__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -8624,23 +8624,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 119</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 273</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_119__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_273__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 124</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 293</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_124__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_293__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -8972,23 +8972,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 120</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 274</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_120__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_274__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 125</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 294</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_125__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_294__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -9319,23 +9319,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 121</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 275</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_121__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_275__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 126</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 295</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_126__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_295__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -9657,23 +9657,23 @@ public interface RulesPackage extends EPackage {
 	int OPERATION_IN_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 122</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 276</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_122__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_276__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 127</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 296</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_127__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_296__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -9999,23 +9999,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 123</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 277</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_123__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_277__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 128</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 297</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION2_COMMENT4_BODY_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_297__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -10341,23 +10341,23 @@ public interface RulesPackage extends EPackage {
 	int ANONYMOUS_CLASS4_INTERFACE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 124</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 278</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_124__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_278__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 129</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 298</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_129__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_298__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -10681,23 +10681,23 @@ public interface RulesPackage extends EPackage {
 	int CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD MConstructor Definition 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD MConstructor Definition 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_0__MCONSTRUCTORDEFINITION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_1__MCONSTRUCTORDEFINITION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 125</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 279</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_125__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_279__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -11021,23 +11021,23 @@ public interface RulesPackage extends EPackage {
 	int PARAMETERIZED_TYPE2_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 126</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 280</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_126__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_280__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 130</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 299</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_130__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_299__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -11366,23 +11366,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 127</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 281</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_127__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_281__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 131</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 300</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_131__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_300__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -11715,23 +11715,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 128</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 282</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_128__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_282__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 132</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 301</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_132__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_301__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -12058,23 +12058,23 @@ public interface RulesPackage extends EPackage {
 	int JAVA_MODEL2_UML_MODEL_RULE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD MGravity Model 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD MGravity Model 3</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_FWD_MGRAVITY_MODEL_1__MGRAVITYMODEL = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_FWD_MGRAVITY_MODEL_3__MGRAVITYMODEL = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 129</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 283</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_129__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_283__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -12424,23 +12424,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_INT___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 4</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 13</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_INT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_4__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_INT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_13__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Int 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Int 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_INT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_INT_0__PRIMITIVETYPEINT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_INT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_INT_1__PRIMITIVETYPEINT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -12754,23 +12754,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_LONG___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 5</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 14</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_LONG___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_5__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_LONG___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_14__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Long 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Long 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_LONG___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_LONG_0__PRIMITIVETYPELONG = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_LONG___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_LONG_1__PRIMITIVETYPELONG = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -13093,23 +13093,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Operation 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Operation 2</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_0__OPERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_2__OPERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 133</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 302</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_133__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_302__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -13439,23 +13439,23 @@ public interface RulesPackage extends EPackage {
 	int ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 130</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 284</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_130__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_284__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 134</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 303</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_134__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_303__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -13788,23 +13788,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Interface 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Interface 4</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_INTERFACE_0__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_INTERFACE_4__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 135</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 304</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_135__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANNOTATION_TYPE_DECLARATION2_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_304__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -14134,23 +14134,23 @@ public interface RulesPackage extends EPackage {
 	int FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Property 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Property 2</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_0__PROPERTY = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_2__PROPERTY = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 136</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 305</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_136__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_305__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -14471,23 +14471,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_VOID___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 6</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 15</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_6__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_15__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Void 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Void 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_VOID_0__PRIMITIVETYPEVOID = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_VOID_1__PRIMITIVETYPEVOID = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -14811,23 +14811,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 131</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 285</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_131__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_285__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 137</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 306</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_137__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_306__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -15149,23 +15149,23 @@ public interface RulesPackage extends EPackage {
 	int OPERATION_IN_INTERFACE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 132</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 286</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_132__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_286__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 138</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 307</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_138__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_307__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -15520,23 +15520,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 133</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 287</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_133__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_287__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 139</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 308</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_139__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_CLASS_INNER_TYPE_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_308__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -15898,23 +15898,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 134</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 288</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_134__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_288__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 140</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 309</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_140__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_309__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -16244,23 +16244,23 @@ public interface RulesPackage extends EPackage {
 	int UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 135</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 289</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_135__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_289__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 141</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 310</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_141__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_310__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -16582,23 +16582,23 @@ public interface RulesPackage extends EPackage {
 	int ANONYMOUS_CLASS4_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 136</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 290</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_136__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_290__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 142</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 311</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_142__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_311__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -16914,23 +16914,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_SHORT___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 7</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 16</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_7__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_16__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Short 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Short 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_SHORT_0__PRIMITIVETYPESHORT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_SHORT_1__PRIMITIVETYPESHORT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -17250,23 +17250,23 @@ public interface RulesPackage extends EPackage {
 	int OPERATION_IN_ANNOTATION_TYPE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 137</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 291</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_137__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_291__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 143</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 312</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_143__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_312__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -17561,23 +17561,23 @@ public interface RulesPackage extends EPackage {
 	int ARRAY_TYPE2_NON_ARRAY_TYPE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Type 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Type 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_BWD_TYPE_0__TYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_BWD_TYPE_1__TYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 17;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 144</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 313</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_144__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ARRAY_TYPE2_NON_ARRAY_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_313__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 18;
 
 	/**
@@ -17907,23 +17907,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 138</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 292</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_138__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_292__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 145</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 314</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_145__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_314__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -18253,23 +18253,23 @@ public interface RulesPackage extends EPackage {
 	int TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 139</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 293</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_139__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_293__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 146</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 315</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_146__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_315__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -18592,23 +18592,23 @@ public interface RulesPackage extends EPackage {
 	int INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Interface 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Interface 5</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_1__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_5__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Interface Declaration 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Interface Declaration 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_0__INTERFACEDECLARATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_1__INTERFACEDECLARATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -18937,23 +18937,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Interface 2</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Interface 6</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_2__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_6__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 147</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 316</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_147__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INTERFACE_DEC_WITH_MODIFIER2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_316__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -19279,23 +19279,23 @@ public interface RulesPackage extends EPackage {
 	int ANONYMOUS_CLASS4_ANONYMOUS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 140</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 294</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_140__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_294__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 148</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 317</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_148__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_317__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -19615,23 +19615,23 @@ public interface RulesPackage extends EPackage {
 	int PRIMITIVE_TYPE_FLOAT___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 8</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Primitive Type 17</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_8__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_17__PRIMITIVETYPE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Float 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Primitive Type Float 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_FLOAT_0__PRIMITIVETYPEFLOAT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_FLOAT_1__PRIMITIVETYPEFLOAT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -19948,23 +19948,23 @@ public interface RulesPackage extends EPackage {
 	int FIELD_DEC2_PROPERTY4_ENUM___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 141</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 295</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_141__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_295__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 149</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 318</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_149__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_318__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -20294,23 +20294,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 142</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 296</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_142__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_296__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 150</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 319</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_150__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_319__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -20603,13 +20603,13 @@ public interface RulesPackage extends EPackage {
 	int IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 151</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 320</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_151__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_320__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 17;
 
 	/**
@@ -20936,23 +20936,23 @@ public interface RulesPackage extends EPackage {
 	int TYPE_ACCESS2_INTERFACE_REALIZATION___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 143</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 297</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_143__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_297__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 152</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 321</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_152__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_321__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -21364,23 +21364,23 @@ public interface RulesPackage extends EPackage {
 	int CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Class 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Class 3</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_1__CLASS = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_3__CLASS = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 153</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 322</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_153__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_322__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -21707,23 +21707,23 @@ public interface RulesPackage extends EPackage {
 	int FIELD_DEC2_PROPERTY4_ANONYMOUS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 144</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 298</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_144__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_298__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 154</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 323</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_154__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_323__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -22056,23 +22056,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 145</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 299</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_145__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_299__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 155</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 324</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_155__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_324__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -22406,23 +22406,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 146</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 300</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_146__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_300__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 156</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 325</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_156__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_INTERFACE_INNER_TYPE_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_325__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -22813,23 +22813,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Interface 3</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Interface 7</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_3__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_7__INTERFACE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Annotation Type Declaration 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Annotation Type Declaration 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD_ANNOTATION_TYPE_DECLARATION_0__ANNOTATIONTYPEDECLARATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ANNOTATION_TYPE_DECLARATION2_INTERFACE___IS_APPROPRIATE_FWD_ANNOTATION_TYPE_DECLARATION_1__ANNOTATIONTYPEDECLARATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -23157,23 +23157,23 @@ public interface RulesPackage extends EPackage {
 	int PARAMETERIZED_TYPE2_INTERFACE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 147</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 301</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_147__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_301__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 157</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 326</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_157__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_326__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -23505,23 +23505,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 148</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 302</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_148__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_302__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 158</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 327</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_158__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_327__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -23852,13 +23852,13 @@ public interface RulesPackage extends EPackage {
 			+ 16;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 159</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 328</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_159__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_328__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 17;
 
 	/**
@@ -24191,23 +24191,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 149</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 303</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_149__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_303__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 160</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 329</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_160__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_329__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -24534,23 +24534,23 @@ public interface RulesPackage extends EPackage {
 	int TYPE_ACCESS2_GENERALIZATION___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 150</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 304</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_150__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_304__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 161</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 330</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_161__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_330__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -24882,23 +24882,23 @@ public interface RulesPackage extends EPackage {
 			+ 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 151</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 305</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_151__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_305__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 162</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 331</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_162__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_331__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -25221,23 +25221,23 @@ public interface RulesPackage extends EPackage {
 	int LINK_TYPE_TO_PACKAGE___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 152</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 306</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_152__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_306__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 163</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 332</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_163__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int LINK_TYPE_TO_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_332__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -25561,23 +25561,23 @@ public interface RulesPackage extends EPackage {
 	int ORPHANED_CLASS_DEC2_ORPHANED_CLASS___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 153</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD EMoflon Edge 307</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_153__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_307__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 164</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 333</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_164__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ORPHANED_CLASS_DEC2_ORPHANED_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_333__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -25898,23 +25898,23 @@ public interface RulesPackage extends EPackage {
 	int FIELD_DEC2_PROPERTY___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Property 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Property 3</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY___IS_APPROPRIATE_BWD_PROPERTY_1__PROPERTY = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY___IS_APPROPRIATE_BWD_PROPERTY_3__PROPERTY = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 165</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 334</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DEC2_PROPERTY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_165__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int FIELD_DEC2_PROPERTY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_334__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -26235,23 +26235,23 @@ public interface RulesPackage extends EPackage {
 	int ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Enumeration 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Enumeration 3</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_1__ENUMERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_3__ENUMERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 166</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 335</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_166__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_335__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -26571,23 +26571,23 @@ public interface RulesPackage extends EPackage {
 	int METHOD_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Operation 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Operation 3</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_DEC2_OPERATION___IS_APPROPRIATE_BWD_OPERATION_1__OPERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int METHOD_DEC2_OPERATION___IS_APPROPRIATE_BWD_OPERATION_3__OPERATION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD MMethod Definition 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD MMethod Definition 1</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_DEC2_OPERATION___IS_APPROPRIATE_FWD_MMETHOD_DEFINITION_0__MMETHODDEFINITION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int METHOD_DEC2_OPERATION___IS_APPROPRIATE_FWD_MMETHOD_DEFINITION_1__MMETHODDEFINITION = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -26902,24 +26902,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getVariableDec2Parameter4__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_BWD_EMoflonEdge_101(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 101</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_BWD_EMoflonEdge_255(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 255</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 101</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_BWD_EMoflonEdge_101(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 255</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_BWD_EMoflonEdge_255(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getVariableDec2Parameter4__IsAppropriate_BWD_EMoflonEdge_101__EMoflonEdge();
+	EOperation getVariableDec2Parameter4__IsAppropriate_BWD_EMoflonEdge_255__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_FWD_EMoflonEdge_106(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 106</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_FWD_EMoflonEdge_275(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 275</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 106</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_FWD_EMoflonEdge_106(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 275</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#isAppropriate_FWD_EMoflonEdge_275(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getVariableDec2Parameter4__IsAppropriate_FWD_EMoflonEdge_106__EMoflonEdge();
+	EOperation getVariableDec2Parameter4__IsAppropriate_FWD_EMoflonEdge_275__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.VariableDec2Parameter4#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -27232,24 +27232,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeParameter2Object_InMethod_InInterface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_BWD_EMoflonEdge_102(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 102</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_BWD_EMoflonEdge_256(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 256</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 102</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_BWD_EMoflonEdge_102(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 256</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_BWD_EMoflonEdge_256(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InMethod_InInterface__IsAppropriate_BWD_EMoflonEdge_102__EMoflonEdge();
+	EOperation getTypeParameter2Object_InMethod_InInterface__IsAppropriate_BWD_EMoflonEdge_256__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_FWD_EMoflonEdge_107(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 107</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_FWD_EMoflonEdge_276(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 276</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 107</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_FWD_EMoflonEdge_107(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 276</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#isAppropriate_FWD_EMoflonEdge_276(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InMethod_InInterface__IsAppropriate_FWD_EMoflonEdge_107__EMoflonEdge();
+	EOperation getTypeParameter2Object_InMethod_InInterface__IsAppropriate_FWD_EMoflonEdge_276__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InInterface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -27562,24 +27562,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaAnnotationValue2Comment__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_BWD_EMoflonEdge_103(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 103</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_BWD_EMoflonEdge_257(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 257</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 103</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_BWD_EMoflonEdge_103(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 257</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_BWD_EMoflonEdge_257(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotationValue2Comment__IsAppropriate_BWD_EMoflonEdge_103__EMoflonEdge();
+	EOperation getJavaAnnotationValue2Comment__IsAppropriate_BWD_EMoflonEdge_257__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_FWD_EMoflonEdge_108(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 108</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_FWD_EMoflonEdge_277(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 277</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 108</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_FWD_EMoflonEdge_108(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 277</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#isAppropriate_FWD_EMoflonEdge_277(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotationValue2Comment__IsAppropriate_FWD_EMoflonEdge_108__EMoflonEdge();
+	EOperation getJavaAnnotationValue2Comment__IsAppropriate_FWD_EMoflonEdge_277__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValue2Comment#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -27892,24 +27892,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeParameter2Object_InClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_BWD_EMoflonEdge_104(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 104</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_BWD_EMoflonEdge_258(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 258</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 104</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_BWD_EMoflonEdge_104(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 258</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_BWD_EMoflonEdge_258(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InClass__IsAppropriate_BWD_EMoflonEdge_104__EMoflonEdge();
+	EOperation getTypeParameter2Object_InClass__IsAppropriate_BWD_EMoflonEdge_258__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_FWD_EMoflonEdge_109(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 109</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_FWD_EMoflonEdge_278(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 278</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 109</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_FWD_EMoflonEdge_109(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 278</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#isAppropriate_FWD_EMoflonEdge_278(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InClass__IsAppropriate_FWD_EMoflonEdge_109__EMoflonEdge();
+	EOperation getTypeParameter2Object_InClass__IsAppropriate_FWD_EMoflonEdge_278__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -28222,24 +28222,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getFieldDec2Property4Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_BWD_EMoflonEdge_105(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 105</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_BWD_EMoflonEdge_259(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 259</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 105</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_BWD_EMoflonEdge_105(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 259</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_BWD_EMoflonEdge_259(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4Interface__IsAppropriate_BWD_EMoflonEdge_105__EMoflonEdge();
+	EOperation getFieldDec2Property4Interface__IsAppropriate_BWD_EMoflonEdge_259__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_FWD_EMoflonEdge_110(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 110</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_FWD_EMoflonEdge_279(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 279</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 110</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_FWD_EMoflonEdge_110(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 279</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#isAppropriate_FWD_EMoflonEdge_279(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4Interface__IsAppropriate_FWD_EMoflonEdge_110__EMoflonEdge();
+	EOperation getFieldDec2Property4Interface__IsAppropriate_FWD_EMoflonEdge_279__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -28562,24 +28562,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeDouble__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_BWD_PrimitiveType_0(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_BWD_PrimitiveType_9(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 9</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_BWD_PrimitiveType_0(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 9</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_BWD_PrimitiveType_9(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeDouble__IsAppropriate_BWD_PrimitiveType_0__PrimitiveType();
+	EOperation getPrimitiveTypeDouble__IsAppropriate_BWD_PrimitiveType_9__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_FWD_PrimitiveTypeDouble_0(org.eclipse.modisco.java.PrimitiveTypeDouble) <em>Is Appropriate FWD Primitive Type Double 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_FWD_PrimitiveTypeDouble_1(org.eclipse.modisco.java.PrimitiveTypeDouble) <em>Is Appropriate FWD Primitive Type Double 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Double 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_FWD_PrimitiveTypeDouble_0(org.eclipse.modisco.java.PrimitiveTypeDouble)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Double 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#isAppropriate_FWD_PrimitiveTypeDouble_1(org.eclipse.modisco.java.PrimitiveTypeDouble)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeDouble__IsAppropriate_FWD_PrimitiveTypeDouble_0__PrimitiveTypeDouble();
+	EOperation getPrimitiveTypeDouble__IsAppropriate_FWD_PrimitiveTypeDouble_1__PrimitiveTypeDouble();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeDouble#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -28902,24 +28902,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeAccess2InterfaceGeneralization__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_BWD_EMoflonEdge_106(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 106</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_BWD_EMoflonEdge_260(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 260</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 106</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_BWD_EMoflonEdge_106(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 260</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_BWD_EMoflonEdge_260(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeAccess2InterfaceGeneralization__IsAppropriate_BWD_EMoflonEdge_106__EMoflonEdge();
+	EOperation getTypeAccess2InterfaceGeneralization__IsAppropriate_BWD_EMoflonEdge_260__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_FWD_EMoflonEdge_111(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 111</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_FWD_EMoflonEdge_280(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 280</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 111</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_FWD_EMoflonEdge_111(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 280</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#isAppropriate_FWD_EMoflonEdge_280(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeAccess2InterfaceGeneralization__IsAppropriate_FWD_EMoflonEdge_111__EMoflonEdge();
+	EOperation getTypeAccess2InterfaceGeneralization__IsAppropriate_FWD_EMoflonEdge_280__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceGeneralization#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -29232,24 +29232,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOperationInEnum__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_BWD_EMoflonEdge_107(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 107</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_BWD_EMoflonEdge_261(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 261</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 107</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_BWD_EMoflonEdge_107(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 261</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_BWD_EMoflonEdge_261(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInEnum__IsAppropriate_BWD_EMoflonEdge_107__EMoflonEdge();
+	EOperation getOperationInEnum__IsAppropriate_BWD_EMoflonEdge_261__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_FWD_EMoflonEdge_112(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 112</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_FWD_EMoflonEdge_281(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 281</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 112</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_FWD_EMoflonEdge_112(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 281</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInEnum#isAppropriate_FWD_EMoflonEdge_281(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInEnum__IsAppropriate_FWD_EMoflonEdge_112__EMoflonEdge();
+	EOperation getOperationInEnum__IsAppropriate_FWD_EMoflonEdge_281__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInEnum#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -29572,24 +29572,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getCompilationUnit2Artifact__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_108(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 108</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_262(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 262</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 108</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_108(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 262</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_262(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getCompilationUnit2Artifact__IsAppropriate_BWD_EMoflonEdge_108__EMoflonEdge();
+	EOperation getCompilationUnit2Artifact__IsAppropriate_BWD_EMoflonEdge_262__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_113(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 113</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_282(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 282</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 113</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_113(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 282</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_282(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getCompilationUnit2Artifact__IsAppropriate_FWD_EMoflonEdge_113__EMoflonEdge();
+	EOperation getCompilationUnit2Artifact__IsAppropriate_FWD_EMoflonEdge_282__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.CompilationUnit2Artifact#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -29902,24 +29902,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeBoolean__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_BWD_PrimitiveType_1(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_BWD_PrimitiveType_10(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 10</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_BWD_PrimitiveType_1(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 10</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_BWD_PrimitiveType_10(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeBoolean__IsAppropriate_BWD_PrimitiveType_1__PrimitiveType();
+	EOperation getPrimitiveTypeBoolean__IsAppropriate_BWD_PrimitiveType_10__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_FWD_PrimitiveTypeBoolean_0(org.eclipse.modisco.java.PrimitiveTypeBoolean) <em>Is Appropriate FWD Primitive Type Boolean 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_FWD_PrimitiveTypeBoolean_1(org.eclipse.modisco.java.PrimitiveTypeBoolean) <em>Is Appropriate FWD Primitive Type Boolean 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Boolean 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_FWD_PrimitiveTypeBoolean_0(org.eclipse.modisco.java.PrimitiveTypeBoolean)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Boolean 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#isAppropriate_FWD_PrimitiveTypeBoolean_1(org.eclipse.modisco.java.PrimitiveTypeBoolean)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeBoolean__IsAppropriate_FWD_PrimitiveTypeBoolean_0__PrimitiveTypeBoolean();
+	EOperation getPrimitiveTypeBoolean__IsAppropriate_FWD_PrimitiveTypeBoolean_1__PrimitiveTypeBoolean();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeBoolean#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -30232,24 +30232,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_BWD_EMoflonEdge_109(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 109</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_BWD_EMoflonEdge_263(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 263</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 109</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_BWD_EMoflonEdge_109(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 263</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_BWD_EMoflonEdge_263(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InClass__IsAppropriate_BWD_EMoflonEdge_109__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InClass__IsAppropriate_BWD_EMoflonEdge_263__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_FWD_EMoflonEdge_114(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 114</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_FWD_EMoflonEdge_283(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 283</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 114</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_FWD_EMoflonEdge_114(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 283</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#isAppropriate_FWD_EMoflonEdge_283(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InClass__IsAppropriate_FWD_EMoflonEdge_114__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InClass__IsAppropriate_FWD_EMoflonEdge_283__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -30572,24 +30572,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InEnum__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_BWD_EMoflonEdge_110(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 110</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_BWD_EMoflonEdge_264(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 264</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 110</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_BWD_EMoflonEdge_110(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 264</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_BWD_EMoflonEdge_264(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InEnum__IsAppropriate_BWD_EMoflonEdge_110__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InEnum__IsAppropriate_BWD_EMoflonEdge_264__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_FWD_EMoflonEdge_115(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 115</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_FWD_EMoflonEdge_284(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 284</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 115</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_FWD_EMoflonEdge_115(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 284</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#isAppropriate_FWD_EMoflonEdge_284(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InEnum__IsAppropriate_FWD_EMoflonEdge_115__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InEnum__IsAppropriate_FWD_EMoflonEdge_284__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InEnum#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -30902,24 +30902,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeByte__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_BWD_PrimitiveType_2(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 2</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_BWD_PrimitiveType_11(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 11</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 2</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_BWD_PrimitiveType_2(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 11</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_BWD_PrimitiveType_11(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeByte__IsAppropriate_BWD_PrimitiveType_2__PrimitiveType();
+	EOperation getPrimitiveTypeByte__IsAppropriate_BWD_PrimitiveType_11__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_FWD_PrimitiveTypeByte_0(org.eclipse.modisco.java.PrimitiveTypeByte) <em>Is Appropriate FWD Primitive Type Byte 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_FWD_PrimitiveTypeByte_1(org.eclipse.modisco.java.PrimitiveTypeByte) <em>Is Appropriate FWD Primitive Type Byte 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Byte 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_FWD_PrimitiveTypeByte_0(org.eclipse.modisco.java.PrimitiveTypeByte)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Byte 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#isAppropriate_FWD_PrimitiveTypeByte_1(org.eclipse.modisco.java.PrimitiveTypeByte)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeByte__IsAppropriate_FWD_PrimitiveTypeByte_0__PrimitiveTypeByte();
+	EOperation getPrimitiveTypeByte__IsAppropriate_FWD_PrimitiveTypeByte_1__PrimitiveTypeByte();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeByte#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -31232,24 +31232,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOrphandedPrimitive2PrimitiveType__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_BWD_EMoflonEdge_111(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 111</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_BWD_EMoflonEdge_265(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 265</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 111</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_BWD_EMoflonEdge_111(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 265</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_BWD_EMoflonEdge_265(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOrphandedPrimitive2PrimitiveType__IsAppropriate_BWD_EMoflonEdge_111__EMoflonEdge();
+	EOperation getOrphandedPrimitive2PrimitiveType__IsAppropriate_BWD_EMoflonEdge_265__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_FWD_EMoflonEdge_116(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 116</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_FWD_EMoflonEdge_285(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 285</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 116</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_FWD_EMoflonEdge_116(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 285</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#isAppropriate_FWD_EMoflonEdge_285(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOrphandedPrimitive2PrimitiveType__IsAppropriate_FWD_EMoflonEdge_116__EMoflonEdge();
+	EOperation getOrphandedPrimitive2PrimitiveType__IsAppropriate_FWD_EMoflonEdge_285__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphandedPrimitive2PrimitiveType#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -31562,24 +31562,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getClassDec2Class__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class) <em>Is Appropriate BWD Class 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_BWD_Class_2(org.eclipse.uml2.uml.Class) <em>Is Appropriate BWD Class 2</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Class 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class)
+	 * @return the meta object for the '<em>Is Appropriate BWD Class 2</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_BWD_Class_2(org.eclipse.uml2.uml.Class)
 	 * @generated
 	 */
-	EOperation getClassDec2Class__IsAppropriate_BWD_Class_0__Class();
+	EOperation getClassDec2Class__IsAppropriate_BWD_Class_2__Class();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_FWD_MClass_0(org.gravity.modisco.MClass) <em>Is Appropriate FWD MClass 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_FWD_MClass_1(org.gravity.modisco.MClass) <em>Is Appropriate FWD MClass 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD MClass 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_FWD_MClass_0(org.gravity.modisco.MClass)
+	 * @return the meta object for the '<em>Is Appropriate FWD MClass 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#isAppropriate_FWD_MClass_1(org.gravity.modisco.MClass)
 	 * @generated
 	 */
-	EOperation getClassDec2Class__IsAppropriate_FWD_MClass_0__MClass();
+	EOperation getClassDec2Class__IsAppropriate_FWD_MClass_1__MClass();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDec2Class#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -31892,24 +31892,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeChar__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_BWD_PrimitiveType_3(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 3</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_BWD_PrimitiveType_12(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 12</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 3</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_BWD_PrimitiveType_3(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 12</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_BWD_PrimitiveType_12(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeChar__IsAppropriate_BWD_PrimitiveType_3__PrimitiveType();
+	EOperation getPrimitiveTypeChar__IsAppropriate_BWD_PrimitiveType_12__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_FWD_PrimitiveTypeChar_0(org.eclipse.modisco.java.PrimitiveTypeChar) <em>Is Appropriate FWD Primitive Type Char 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_FWD_PrimitiveTypeChar_1(org.eclipse.modisco.java.PrimitiveTypeChar) <em>Is Appropriate FWD Primitive Type Char 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Char 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_FWD_PrimitiveTypeChar_0(org.eclipse.modisco.java.PrimitiveTypeChar)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Char 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#isAppropriate_FWD_PrimitiveTypeChar_1(org.eclipse.modisco.java.PrimitiveTypeChar)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeChar__IsAppropriate_FWD_PrimitiveTypeChar_0__PrimitiveTypeChar();
+	EOperation getPrimitiveTypeChar__IsAppropriate_FWD_PrimitiveTypeChar_1__PrimitiveTypeChar();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeChar#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -32232,24 +32232,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOperationInAnonymous__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_BWD_EMoflonEdge_112(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 112</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_BWD_EMoflonEdge_266(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 266</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 112</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_BWD_EMoflonEdge_112(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 266</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_BWD_EMoflonEdge_266(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInAnonymous__IsAppropriate_BWD_EMoflonEdge_112__EMoflonEdge();
+	EOperation getOperationInAnonymous__IsAppropriate_BWD_EMoflonEdge_266__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_FWD_EMoflonEdge_117(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 117</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_FWD_EMoflonEdge_286(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 286</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 117</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_FWD_EMoflonEdge_117(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 286</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#isAppropriate_FWD_EMoflonEdge_286(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInAnonymous__IsAppropriate_FWD_EMoflonEdge_117__EMoflonEdge();
+	EOperation getOperationInAnonymous__IsAppropriate_FWD_EMoflonEdge_286__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnonymous#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -32562,24 +32562,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InInterface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_BWD_EMoflonEdge_113(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 113</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_BWD_EMoflonEdge_267(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 267</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 113</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_BWD_EMoflonEdge_113(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 267</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_BWD_EMoflonEdge_267(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InInterface__IsAppropriate_BWD_EMoflonEdge_113__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InInterface__IsAppropriate_BWD_EMoflonEdge_267__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_FWD_EMoflonEdge_118(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 118</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_FWD_EMoflonEdge_287(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 287</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 118</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_FWD_EMoflonEdge_118(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 287</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#isAppropriate_FWD_EMoflonEdge_287(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InInterface__IsAppropriate_FWD_EMoflonEdge_118__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InInterface__IsAppropriate_FWD_EMoflonEdge_287__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InInterface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -32892,24 +32892,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getParameterizedType2Interface_InnerTypeInInterface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_114(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 114</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_268(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 268</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 114</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_114(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 268</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_268(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Interface_InnerTypeInInterface__IsAppropriate_BWD_EMoflonEdge_114__EMoflonEdge();
+	EOperation getParameterizedType2Interface_InnerTypeInInterface__IsAppropriate_BWD_EMoflonEdge_268__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_119(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 119</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_288(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 288</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 119</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_119(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 288</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_288(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Interface_InnerTypeInInterface__IsAppropriate_FWD_EMoflonEdge_119__EMoflonEdge();
+	EOperation getParameterizedType2Interface_InnerTypeInInterface__IsAppropriate_FWD_EMoflonEdge_288__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInInterface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -33232,24 +33232,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnonymousClass4EnumConstInPackage__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_BWD_EMoflonEdge_115(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 115</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_BWD_EMoflonEdge_269(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 269</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 115</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_BWD_EMoflonEdge_115(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 269</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_BWD_EMoflonEdge_269(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4EnumConstInPackage__IsAppropriate_BWD_EMoflonEdge_115__EMoflonEdge();
+	EOperation getAnonymousClass4EnumConstInPackage__IsAppropriate_BWD_EMoflonEdge_269__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_FWD_EMoflonEdge_120(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 120</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_FWD_EMoflonEdge_289(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 289</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 120</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_FWD_EMoflonEdge_120(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 289</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#isAppropriate_FWD_EMoflonEdge_289(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4EnumConstInPackage__IsAppropriate_FWD_EMoflonEdge_120__EMoflonEdge();
+	EOperation getAnonymousClass4EnumConstInPackage__IsAppropriate_FWD_EMoflonEdge_289__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInPackage#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -33562,24 +33562,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InAnnotationType__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_BWD_EMoflonEdge_116(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 116</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_BWD_EMoflonEdge_270(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 270</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 116</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_BWD_EMoflonEdge_116(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 270</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_BWD_EMoflonEdge_270(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InAnnotationType__IsAppropriate_BWD_EMoflonEdge_116__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InAnnotationType__IsAppropriate_BWD_EMoflonEdge_270__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_FWD_EMoflonEdge_121(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 121</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_FWD_EMoflonEdge_290(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 290</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 121</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_FWD_EMoflonEdge_121(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 290</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#isAppropriate_FWD_EMoflonEdge_290(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InAnnotationType__IsAppropriate_FWD_EMoflonEdge_121__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InAnnotationType__IsAppropriate_FWD_EMoflonEdge_290__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnnotationType#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -33892,24 +33892,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getParameterizedType2Class_InnerTypeInClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_117(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 117</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_271(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 271</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 117</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_117(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 271</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_271(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Class_InnerTypeInClass__IsAppropriate_BWD_EMoflonEdge_117__EMoflonEdge();
+	EOperation getParameterizedType2Class_InnerTypeInClass__IsAppropriate_BWD_EMoflonEdge_271__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_122(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 122</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_291(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 291</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 122</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_122(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 291</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_291(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Class_InnerTypeInClass__IsAppropriate_FWD_EMoflonEdge_122__EMoflonEdge();
+	EOperation getParameterizedType2Class_InnerTypeInClass__IsAppropriate_FWD_EMoflonEdge_291__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -34222,24 +34222,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getEnumDec2Enum__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_BWD_Enumeration_0(org.eclipse.uml2.uml.Enumeration) <em>Is Appropriate BWD Enumeration 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_BWD_Enumeration_2(org.eclipse.uml2.uml.Enumeration) <em>Is Appropriate BWD Enumeration 2</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Enumeration 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_BWD_Enumeration_0(org.eclipse.uml2.uml.Enumeration)
+	 * @return the meta object for the '<em>Is Appropriate BWD Enumeration 2</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_BWD_Enumeration_2(org.eclipse.uml2.uml.Enumeration)
 	 * @generated
 	 */
-	EOperation getEnumDec2Enum__IsAppropriate_BWD_Enumeration_0__Enumeration();
+	EOperation getEnumDec2Enum__IsAppropriate_BWD_Enumeration_2__Enumeration();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_FWD_EnumDeclaration_0(org.eclipse.modisco.java.EnumDeclaration) <em>Is Appropriate FWD Enum Declaration 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_FWD_EnumDeclaration_1(org.eclipse.modisco.java.EnumDeclaration) <em>Is Appropriate FWD Enum Declaration 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Enum Declaration 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_FWD_EnumDeclaration_0(org.eclipse.modisco.java.EnumDeclaration)
+	 * @return the meta object for the '<em>Is Appropriate FWD Enum Declaration 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#isAppropriate_FWD_EnumDeclaration_1(org.eclipse.modisco.java.EnumDeclaration)
 	 * @generated
 	 */
-	EOperation getEnumDec2Enum__IsAppropriate_FWD_EnumDeclaration_0__EnumDeclaration();
+	EOperation getEnumDec2Enum__IsAppropriate_FWD_EnumDeclaration_1__EnumDeclaration();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDec2Enum#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -34552,24 +34552,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getFieldDec2Property4Class__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_BWD_EMoflonEdge_118(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 118</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_BWD_EMoflonEdge_272(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 272</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 118</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_BWD_EMoflonEdge_118(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 272</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_BWD_EMoflonEdge_272(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4Class__IsAppropriate_BWD_EMoflonEdge_118__EMoflonEdge();
+	EOperation getFieldDec2Property4Class__IsAppropriate_BWD_EMoflonEdge_272__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_FWD_EMoflonEdge_123(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 123</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_FWD_EMoflonEdge_292(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 292</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 123</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_FWD_EMoflonEdge_123(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 292</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#isAppropriate_FWD_EMoflonEdge_292(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4Class__IsAppropriate_FWD_EMoflonEdge_123__EMoflonEdge();
+	EOperation getFieldDec2Property4Class__IsAppropriate_FWD_EMoflonEdge_292__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Class#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -34882,24 +34882,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaPackageToUMLPackage_underPackage__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_BWD_EMoflonEdge_119(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 119</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_BWD_EMoflonEdge_273(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 273</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 119</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_BWD_EMoflonEdge_119(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 273</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_BWD_EMoflonEdge_273(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaPackageToUMLPackage_underPackage__IsAppropriate_BWD_EMoflonEdge_119__EMoflonEdge();
+	EOperation getJavaPackageToUMLPackage_underPackage__IsAppropriate_BWD_EMoflonEdge_273__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_FWD_EMoflonEdge_124(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 124</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_FWD_EMoflonEdge_293(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 293</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 124</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_FWD_EMoflonEdge_124(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 293</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#isAppropriate_FWD_EMoflonEdge_293(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaPackageToUMLPackage_underPackage__IsAppropriate_FWD_EMoflonEdge_124__EMoflonEdge();
+	EOperation getJavaPackageToUMLPackage_underPackage__IsAppropriate_FWD_EMoflonEdge_293__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underPackage#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -35212,24 +35212,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaAnnotationValueEntry2Comment__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_BWD_EMoflonEdge_120(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 120</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_BWD_EMoflonEdge_274(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 274</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 120</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_BWD_EMoflonEdge_120(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 274</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_BWD_EMoflonEdge_274(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotationValueEntry2Comment__IsAppropriate_BWD_EMoflonEdge_120__EMoflonEdge();
+	EOperation getJavaAnnotationValueEntry2Comment__IsAppropriate_BWD_EMoflonEdge_274__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_FWD_EMoflonEdge_125(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 125</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_FWD_EMoflonEdge_294(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 294</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 125</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_FWD_EMoflonEdge_125(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 294</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#isAppropriate_FWD_EMoflonEdge_294(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotationValueEntry2Comment__IsAppropriate_FWD_EMoflonEdge_125__EMoflonEdge();
+	EOperation getJavaAnnotationValueEntry2Comment__IsAppropriate_FWD_EMoflonEdge_294__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotationValueEntry2Comment#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -35542,24 +35542,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnonymousClass4EnumConstInType__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_BWD_EMoflonEdge_121(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 121</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_BWD_EMoflonEdge_275(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 275</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 121</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_BWD_EMoflonEdge_121(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 275</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_BWD_EMoflonEdge_275(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4EnumConstInType__IsAppropriate_BWD_EMoflonEdge_121__EMoflonEdge();
+	EOperation getAnonymousClass4EnumConstInType__IsAppropriate_BWD_EMoflonEdge_275__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_FWD_EMoflonEdge_126(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 126</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_FWD_EMoflonEdge_295(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 295</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 126</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_FWD_EMoflonEdge_126(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 295</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#isAppropriate_FWD_EMoflonEdge_295(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4EnumConstInType__IsAppropriate_FWD_EMoflonEdge_126__EMoflonEdge();
+	EOperation getAnonymousClass4EnumConstInType__IsAppropriate_FWD_EMoflonEdge_295__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4EnumConstInType#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -35872,24 +35872,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOperationInClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_BWD_EMoflonEdge_122(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 122</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_BWD_EMoflonEdge_276(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 276</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 122</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_BWD_EMoflonEdge_122(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 276</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_BWD_EMoflonEdge_276(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInClass__IsAppropriate_BWD_EMoflonEdge_122__EMoflonEdge();
+	EOperation getOperationInClass__IsAppropriate_BWD_EMoflonEdge_276__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_FWD_EMoflonEdge_127(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 127</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_FWD_EMoflonEdge_296(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 296</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 127</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_FWD_EMoflonEdge_127(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 296</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInClass#isAppropriate_FWD_EMoflonEdge_296(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInClass__IsAppropriate_FWD_EMoflonEdge_127__EMoflonEdge();
+	EOperation getOperationInClass__IsAppropriate_FWD_EMoflonEdge_296__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -36202,24 +36202,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaAnnotation2Comment4BodyDeclaration__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_BWD_EMoflonEdge_123(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 123</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_BWD_EMoflonEdge_277(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 277</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 123</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_BWD_EMoflonEdge_123(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 277</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_BWD_EMoflonEdge_277(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotation2Comment4BodyDeclaration__IsAppropriate_BWD_EMoflonEdge_123__EMoflonEdge();
+	EOperation getJavaAnnotation2Comment4BodyDeclaration__IsAppropriate_BWD_EMoflonEdge_277__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_FWD_EMoflonEdge_128(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 128</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_FWD_EMoflonEdge_297(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 297</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 128</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_FWD_EMoflonEdge_128(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 297</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#isAppropriate_FWD_EMoflonEdge_297(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotation2Comment4BodyDeclaration__IsAppropriate_FWD_EMoflonEdge_128__EMoflonEdge();
+	EOperation getJavaAnnotation2Comment4BodyDeclaration__IsAppropriate_FWD_EMoflonEdge_297__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4BodyDeclaration#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -36532,24 +36532,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnonymousClass4Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_BWD_EMoflonEdge_124(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 124</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_BWD_EMoflonEdge_278(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 278</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 124</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_BWD_EMoflonEdge_124(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 278</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_BWD_EMoflonEdge_278(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4Interface__IsAppropriate_BWD_EMoflonEdge_124__EMoflonEdge();
+	EOperation getAnonymousClass4Interface__IsAppropriate_BWD_EMoflonEdge_278__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_FWD_EMoflonEdge_129(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 129</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_FWD_EMoflonEdge_298(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 298</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 129</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_FWD_EMoflonEdge_129(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 298</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#isAppropriate_FWD_EMoflonEdge_298(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4Interface__IsAppropriate_FWD_EMoflonEdge_129__EMoflonEdge();
+	EOperation getAnonymousClass4Interface__IsAppropriate_FWD_EMoflonEdge_298__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -36862,24 +36862,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getConstructorDec2Operation__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_FWD_MConstructorDefinition_0(org.gravity.modisco.MConstructorDefinition) <em>Is Appropriate FWD MConstructor Definition 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_FWD_MConstructorDefinition_1(org.gravity.modisco.MConstructorDefinition) <em>Is Appropriate FWD MConstructor Definition 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD MConstructor Definition 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_FWD_MConstructorDefinition_0(org.gravity.modisco.MConstructorDefinition)
+	 * @return the meta object for the '<em>Is Appropriate FWD MConstructor Definition 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_FWD_MConstructorDefinition_1(org.gravity.modisco.MConstructorDefinition)
 	 * @generated
 	 */
-	EOperation getConstructorDec2Operation__IsAppropriate_FWD_MConstructorDefinition_0__MConstructorDefinition();
+	EOperation getConstructorDec2Operation__IsAppropriate_FWD_MConstructorDefinition_1__MConstructorDefinition();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_BWD_EMoflonEdge_125(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 125</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_BWD_EMoflonEdge_279(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 279</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 125</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_BWD_EMoflonEdge_125(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 279</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#isAppropriate_BWD_EMoflonEdge_279(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getConstructorDec2Operation__IsAppropriate_BWD_EMoflonEdge_125__EMoflonEdge();
+	EOperation getConstructorDec2Operation__IsAppropriate_BWD_EMoflonEdge_279__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2Operation#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -37192,24 +37192,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getParameterizedType2Class__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_BWD_EMoflonEdge_126(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 126</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_BWD_EMoflonEdge_280(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 280</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 126</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_BWD_EMoflonEdge_126(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 280</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_BWD_EMoflonEdge_280(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Class__IsAppropriate_BWD_EMoflonEdge_126__EMoflonEdge();
+	EOperation getParameterizedType2Class__IsAppropriate_BWD_EMoflonEdge_280__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_FWD_EMoflonEdge_130(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 130</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_FWD_EMoflonEdge_299(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 299</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 130</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_FWD_EMoflonEdge_130(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 299</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#isAppropriate_FWD_EMoflonEdge_299(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Class__IsAppropriate_FWD_EMoflonEdge_130__EMoflonEdge();
+	EOperation getParameterizedType2Class__IsAppropriate_FWD_EMoflonEdge_299__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -37522,24 +37522,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeParameter2Object_InInterface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_BWD_EMoflonEdge_127(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 127</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_BWD_EMoflonEdge_281(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 281</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 127</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_BWD_EMoflonEdge_127(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 281</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_BWD_EMoflonEdge_281(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InInterface__IsAppropriate_BWD_EMoflonEdge_127__EMoflonEdge();
+	EOperation getTypeParameter2Object_InInterface__IsAppropriate_BWD_EMoflonEdge_281__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_FWD_EMoflonEdge_131(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 131</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_FWD_EMoflonEdge_300(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 300</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 131</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_FWD_EMoflonEdge_131(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 300</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#isAppropriate_FWD_EMoflonEdge_300(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InInterface__IsAppropriate_FWD_EMoflonEdge_131__EMoflonEdge();
+	EOperation getTypeParameter2Object_InInterface__IsAppropriate_FWD_EMoflonEdge_300__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InInterface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -37852,24 +37852,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InMethod4Class__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_BWD_EMoflonEdge_128(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 128</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_BWD_EMoflonEdge_282(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 282</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 128</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_BWD_EMoflonEdge_128(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 282</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_BWD_EMoflonEdge_282(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InMethod4Class__IsAppropriate_BWD_EMoflonEdge_128__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InMethod4Class__IsAppropriate_BWD_EMoflonEdge_282__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_FWD_EMoflonEdge_132(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 132</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_FWD_EMoflonEdge_301(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 301</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 132</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_FWD_EMoflonEdge_132(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 301</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#isAppropriate_FWD_EMoflonEdge_301(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InMethod4Class__IsAppropriate_FWD_EMoflonEdge_132__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InMethod4Class__IsAppropriate_FWD_EMoflonEdge_301__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Class#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -38182,24 +38182,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaModel2UmlModelRule__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_FWD_MGravityModel_1(org.gravity.modisco.MGravityModel) <em>Is Appropriate FWD MGravity Model 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_FWD_MGravityModel_3(org.gravity.modisco.MGravityModel) <em>Is Appropriate FWD MGravity Model 3</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD MGravity Model 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_FWD_MGravityModel_1(org.gravity.modisco.MGravityModel)
+	 * @return the meta object for the '<em>Is Appropriate FWD MGravity Model 3</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_FWD_MGravityModel_3(org.gravity.modisco.MGravityModel)
 	 * @generated
 	 */
-	EOperation getJavaModel2UmlModelRule__IsAppropriate_FWD_MGravityModel_1__MGravityModel();
+	EOperation getJavaModel2UmlModelRule__IsAppropriate_FWD_MGravityModel_3__MGravityModel();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_BWD_EMoflonEdge_129(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 129</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_BWD_EMoflonEdge_283(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 283</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 129</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_BWD_EMoflonEdge_129(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 283</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#isAppropriate_BWD_EMoflonEdge_283(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaModel2UmlModelRule__IsAppropriate_BWD_EMoflonEdge_129__EMoflonEdge();
+	EOperation getJavaModel2UmlModelRule__IsAppropriate_BWD_EMoflonEdge_283__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaModel2UmlModelRule#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -38522,24 +38522,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeInt__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_BWD_PrimitiveType_4(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 4</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_BWD_PrimitiveType_13(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 13</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 4</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_BWD_PrimitiveType_4(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 13</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_BWD_PrimitiveType_13(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeInt__IsAppropriate_BWD_PrimitiveType_4__PrimitiveType();
+	EOperation getPrimitiveTypeInt__IsAppropriate_BWD_PrimitiveType_13__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_FWD_PrimitiveTypeInt_0(org.eclipse.modisco.java.PrimitiveTypeInt) <em>Is Appropriate FWD Primitive Type Int 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_FWD_PrimitiveTypeInt_1(org.eclipse.modisco.java.PrimitiveTypeInt) <em>Is Appropriate FWD Primitive Type Int 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Int 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_FWD_PrimitiveTypeInt_0(org.eclipse.modisco.java.PrimitiveTypeInt)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Int 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#isAppropriate_FWD_PrimitiveTypeInt_1(org.eclipse.modisco.java.PrimitiveTypeInt)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeInt__IsAppropriate_FWD_PrimitiveTypeInt_0__PrimitiveTypeInt();
+	EOperation getPrimitiveTypeInt__IsAppropriate_FWD_PrimitiveTypeInt_1__PrimitiveTypeInt();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeInt#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -38852,24 +38852,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeLong__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_BWD_PrimitiveType_5(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 5</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_BWD_PrimitiveType_14(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 14</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 5</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_BWD_PrimitiveType_5(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 14</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_BWD_PrimitiveType_14(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeLong__IsAppropriate_BWD_PrimitiveType_5__PrimitiveType();
+	EOperation getPrimitiveTypeLong__IsAppropriate_BWD_PrimitiveType_14__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_FWD_PrimitiveTypeLong_0(org.eclipse.modisco.java.PrimitiveTypeLong) <em>Is Appropriate FWD Primitive Type Long 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_FWD_PrimitiveTypeLong_1(org.eclipse.modisco.java.PrimitiveTypeLong) <em>Is Appropriate FWD Primitive Type Long 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Long 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_FWD_PrimitiveTypeLong_0(org.eclipse.modisco.java.PrimitiveTypeLong)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Long 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#isAppropriate_FWD_PrimitiveTypeLong_1(org.eclipse.modisco.java.PrimitiveTypeLong)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeLong__IsAppropriate_FWD_PrimitiveTypeLong_0__PrimitiveTypeLong();
+	EOperation getPrimitiveTypeLong__IsAppropriate_FWD_PrimitiveTypeLong_1__PrimitiveTypeLong();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeLong#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -39182,24 +39182,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getMethodDec2OperationWithModifier__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_BWD_Operation_0(org.eclipse.uml2.uml.Operation) <em>Is Appropriate BWD Operation 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_BWD_Operation_2(org.eclipse.uml2.uml.Operation) <em>Is Appropriate BWD Operation 2</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Operation 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_BWD_Operation_0(org.eclipse.uml2.uml.Operation)
+	 * @return the meta object for the '<em>Is Appropriate BWD Operation 2</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_BWD_Operation_2(org.eclipse.uml2.uml.Operation)
 	 * @generated
 	 */
-	EOperation getMethodDec2OperationWithModifier__IsAppropriate_BWD_Operation_0__Operation();
+	EOperation getMethodDec2OperationWithModifier__IsAppropriate_BWD_Operation_2__Operation();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_133(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 133</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_302(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 302</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 133</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_133(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 302</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_302(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getMethodDec2OperationWithModifier__IsAppropriate_FWD_EMoflonEdge_133__EMoflonEdge();
+	EOperation getMethodDec2OperationWithModifier__IsAppropriate_FWD_EMoflonEdge_302__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2OperationWithModifier#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -39512,24 +39512,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAbstractTypeAccess2ReturnParam__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_BWD_EMoflonEdge_130(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 130</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_BWD_EMoflonEdge_284(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 284</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 130</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_BWD_EMoflonEdge_130(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 284</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_BWD_EMoflonEdge_284(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAbstractTypeAccess2ReturnParam__IsAppropriate_BWD_EMoflonEdge_130__EMoflonEdge();
+	EOperation getAbstractTypeAccess2ReturnParam__IsAppropriate_BWD_EMoflonEdge_284__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_FWD_EMoflonEdge_134(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 134</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_FWD_EMoflonEdge_303(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 303</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 134</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_FWD_EMoflonEdge_134(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 303</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#isAppropriate_FWD_EMoflonEdge_303(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAbstractTypeAccess2ReturnParam__IsAppropriate_FWD_EMoflonEdge_134__EMoflonEdge();
+	EOperation getAbstractTypeAccess2ReturnParam__IsAppropriate_FWD_EMoflonEdge_303__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AbstractTypeAccess2ReturnParam#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -39842,24 +39842,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnnotationTypeDeclaration2Interface_WithModifier__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_BWD_Interface_0(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_BWD_Interface_4(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 4</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Interface 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_BWD_Interface_0(org.eclipse.uml2.uml.Interface)
+	 * @return the meta object for the '<em>Is Appropriate BWD Interface 4</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_BWD_Interface_4(org.eclipse.uml2.uml.Interface)
 	 * @generated
 	 */
-	EOperation getAnnotationTypeDeclaration2Interface_WithModifier__IsAppropriate_BWD_Interface_0__Interface();
+	EOperation getAnnotationTypeDeclaration2Interface_WithModifier__IsAppropriate_BWD_Interface_4__Interface();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_FWD_EMoflonEdge_135(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 135</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_FWD_EMoflonEdge_304(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 304</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 135</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_FWD_EMoflonEdge_135(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 304</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#isAppropriate_FWD_EMoflonEdge_304(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnnotationTypeDeclaration2Interface_WithModifier__IsAppropriate_FWD_EMoflonEdge_135__EMoflonEdge();
+	EOperation getAnnotationTypeDeclaration2Interface_WithModifier__IsAppropriate_FWD_EMoflonEdge_304__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface_WithModifier#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -40172,24 +40172,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getFieldDec2Property_WithModifier__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_BWD_Property_0(org.eclipse.uml2.uml.Property) <em>Is Appropriate BWD Property 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_BWD_Property_2(org.eclipse.uml2.uml.Property) <em>Is Appropriate BWD Property 2</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Property 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_BWD_Property_0(org.eclipse.uml2.uml.Property)
+	 * @return the meta object for the '<em>Is Appropriate BWD Property 2</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_BWD_Property_2(org.eclipse.uml2.uml.Property)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property_WithModifier__IsAppropriate_BWD_Property_0__Property();
+	EOperation getFieldDec2Property_WithModifier__IsAppropriate_BWD_Property_2__Property();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_FWD_EMoflonEdge_136(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 136</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_FWD_EMoflonEdge_305(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 305</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 136</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_FWD_EMoflonEdge_136(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 305</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#isAppropriate_FWD_EMoflonEdge_305(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property_WithModifier__IsAppropriate_FWD_EMoflonEdge_136__EMoflonEdge();
+	EOperation getFieldDec2Property_WithModifier__IsAppropriate_FWD_EMoflonEdge_305__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property_WithModifier#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -40502,24 +40502,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeVoid__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_BWD_PrimitiveType_6(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 6</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_BWD_PrimitiveType_15(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 15</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 6</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_BWD_PrimitiveType_6(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 15</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_BWD_PrimitiveType_15(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeVoid__IsAppropriate_BWD_PrimitiveType_6__PrimitiveType();
+	EOperation getPrimitiveTypeVoid__IsAppropriate_BWD_PrimitiveType_15__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_FWD_PrimitiveTypeVoid_0(org.eclipse.modisco.java.PrimitiveTypeVoid) <em>Is Appropriate FWD Primitive Type Void 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_FWD_PrimitiveTypeVoid_1(org.eclipse.modisco.java.PrimitiveTypeVoid) <em>Is Appropriate FWD Primitive Type Void 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Void 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_FWD_PrimitiveTypeVoid_0(org.eclipse.modisco.java.PrimitiveTypeVoid)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Void 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#isAppropriate_FWD_PrimitiveTypeVoid_1(org.eclipse.modisco.java.PrimitiveTypeVoid)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeVoid__IsAppropriate_FWD_PrimitiveTypeVoid_0__PrimitiveTypeVoid();
+	EOperation getPrimitiveTypeVoid__IsAppropriate_FWD_PrimitiveTypeVoid_1__PrimitiveTypeVoid();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeVoid#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -40832,24 +40832,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaPackageToUMLPackage_underModel__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_BWD_EMoflonEdge_131(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 131</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_BWD_EMoflonEdge_285(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 285</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 131</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_BWD_EMoflonEdge_131(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 285</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_BWD_EMoflonEdge_285(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaPackageToUMLPackage_underModel__IsAppropriate_BWD_EMoflonEdge_131__EMoflonEdge();
+	EOperation getJavaPackageToUMLPackage_underModel__IsAppropriate_BWD_EMoflonEdge_285__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_FWD_EMoflonEdge_137(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 137</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_FWD_EMoflonEdge_306(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 306</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 137</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_FWD_EMoflonEdge_137(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 306</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#isAppropriate_FWD_EMoflonEdge_306(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaPackageToUMLPackage_underModel__IsAppropriate_FWD_EMoflonEdge_137__EMoflonEdge();
+	EOperation getJavaPackageToUMLPackage_underModel__IsAppropriate_FWD_EMoflonEdge_306__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaPackageToUMLPackage_underModel#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -41162,24 +41162,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOperationInInterface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_BWD_EMoflonEdge_132(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 132</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_BWD_EMoflonEdge_286(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 286</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 132</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_BWD_EMoflonEdge_132(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 286</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_BWD_EMoflonEdge_286(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInInterface__IsAppropriate_BWD_EMoflonEdge_132__EMoflonEdge();
+	EOperation getOperationInInterface__IsAppropriate_BWD_EMoflonEdge_286__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_FWD_EMoflonEdge_138(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 138</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_FWD_EMoflonEdge_307(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 307</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 138</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_FWD_EMoflonEdge_138(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 307</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInInterface#isAppropriate_FWD_EMoflonEdge_307(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInInterface__IsAppropriate_FWD_EMoflonEdge_138__EMoflonEdge();
+	EOperation getOperationInInterface__IsAppropriate_FWD_EMoflonEdge_307__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInInterface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -41502,24 +41502,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getParameterizedType2Class_InnerTypeInInterface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_133(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 133</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_287(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 287</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 133</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_133(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 287</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_BWD_EMoflonEdge_287(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Class_InnerTypeInInterface__IsAppropriate_BWD_EMoflonEdge_133__EMoflonEdge();
+	EOperation getParameterizedType2Class_InnerTypeInInterface__IsAppropriate_BWD_EMoflonEdge_287__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_139(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 139</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_308(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 308</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 139</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_139(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 308</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#isAppropriate_FWD_EMoflonEdge_308(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Class_InnerTypeInInterface__IsAppropriate_FWD_EMoflonEdge_139__EMoflonEdge();
+	EOperation getParameterizedType2Class_InnerTypeInInterface__IsAppropriate_FWD_EMoflonEdge_308__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Class_InnerTypeInInterface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -41842,24 +41842,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InMethod4Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_BWD_EMoflonEdge_134(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 134</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_BWD_EMoflonEdge_288(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 288</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 134</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_BWD_EMoflonEdge_134(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 288</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_BWD_EMoflonEdge_288(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InMethod4Interface__IsAppropriate_BWD_EMoflonEdge_134__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InMethod4Interface__IsAppropriate_BWD_EMoflonEdge_288__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_FWD_EMoflonEdge_140(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 140</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_FWD_EMoflonEdge_309(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 309</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 140</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_FWD_EMoflonEdge_140(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 309</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#isAppropriate_FWD_EMoflonEdge_309(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InMethod4Interface__IsAppropriate_FWD_EMoflonEdge_140__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InMethod4Interface__IsAppropriate_FWD_EMoflonEdge_309__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -42172,24 +42172,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getUnresolvedTypeDeclaration2Type__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_BWD_EMoflonEdge_135(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 135</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_BWD_EMoflonEdge_289(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 289</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 135</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_BWD_EMoflonEdge_135(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 289</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_BWD_EMoflonEdge_289(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getUnresolvedTypeDeclaration2Type__IsAppropriate_BWD_EMoflonEdge_135__EMoflonEdge();
+	EOperation getUnresolvedTypeDeclaration2Type__IsAppropriate_BWD_EMoflonEdge_289__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_FWD_EMoflonEdge_141(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 141</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_FWD_EMoflonEdge_310(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 310</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 141</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_FWD_EMoflonEdge_141(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 310</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#isAppropriate_FWD_EMoflonEdge_310(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getUnresolvedTypeDeclaration2Type__IsAppropriate_FWD_EMoflonEdge_141__EMoflonEdge();
+	EOperation getUnresolvedTypeDeclaration2Type__IsAppropriate_FWD_EMoflonEdge_310__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.UnresolvedTypeDeclaration2Type#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -42502,24 +42502,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnonymousClass4Class__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_BWD_EMoflonEdge_136(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 136</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_BWD_EMoflonEdge_290(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 290</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 136</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_BWD_EMoflonEdge_136(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 290</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_BWD_EMoflonEdge_290(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4Class__IsAppropriate_BWD_EMoflonEdge_136__EMoflonEdge();
+	EOperation getAnonymousClass4Class__IsAppropriate_BWD_EMoflonEdge_290__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_FWD_EMoflonEdge_142(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 142</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_FWD_EMoflonEdge_311(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 311</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 142</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_FWD_EMoflonEdge_142(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 311</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#isAppropriate_FWD_EMoflonEdge_311(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4Class__IsAppropriate_FWD_EMoflonEdge_142__EMoflonEdge();
+	EOperation getAnonymousClass4Class__IsAppropriate_FWD_EMoflonEdge_311__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Class#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -42832,24 +42832,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeShort__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_BWD_PrimitiveType_7(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 7</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_BWD_PrimitiveType_16(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 16</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 7</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_BWD_PrimitiveType_7(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 16</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_BWD_PrimitiveType_16(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeShort__IsAppropriate_BWD_PrimitiveType_7__PrimitiveType();
+	EOperation getPrimitiveTypeShort__IsAppropriate_BWD_PrimitiveType_16__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_FWD_PrimitiveTypeShort_0(org.eclipse.modisco.java.PrimitiveTypeShort) <em>Is Appropriate FWD Primitive Type Short 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_FWD_PrimitiveTypeShort_1(org.eclipse.modisco.java.PrimitiveTypeShort) <em>Is Appropriate FWD Primitive Type Short 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Short 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_FWD_PrimitiveTypeShort_0(org.eclipse.modisco.java.PrimitiveTypeShort)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Short 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#isAppropriate_FWD_PrimitiveTypeShort_1(org.eclipse.modisco.java.PrimitiveTypeShort)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeShort__IsAppropriate_FWD_PrimitiveTypeShort_0__PrimitiveTypeShort();
+	EOperation getPrimitiveTypeShort__IsAppropriate_FWD_PrimitiveTypeShort_1__PrimitiveTypeShort();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeShort#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -43162,24 +43162,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOperationInAnnotationType__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_BWD_EMoflonEdge_137(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 137</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_BWD_EMoflonEdge_291(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 291</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 137</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_BWD_EMoflonEdge_137(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 291</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_BWD_EMoflonEdge_291(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInAnnotationType__IsAppropriate_BWD_EMoflonEdge_137__EMoflonEdge();
+	EOperation getOperationInAnnotationType__IsAppropriate_BWD_EMoflonEdge_291__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_FWD_EMoflonEdge_143(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 143</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_FWD_EMoflonEdge_312(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 312</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 143</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_FWD_EMoflonEdge_143(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 312</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#isAppropriate_FWD_EMoflonEdge_312(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOperationInAnnotationType__IsAppropriate_FWD_EMoflonEdge_143__EMoflonEdge();
+	EOperation getOperationInAnnotationType__IsAppropriate_FWD_EMoflonEdge_312__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OperationInAnnotationType#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -43462,24 +43462,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getArrayType2NonArrayType__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_BWD_Type_0(org.eclipse.uml2.uml.Type) <em>Is Appropriate BWD Type 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_BWD_Type_1(org.eclipse.uml2.uml.Type) <em>Is Appropriate BWD Type 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Type 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_BWD_Type_0(org.eclipse.uml2.uml.Type)
+	 * @return the meta object for the '<em>Is Appropriate BWD Type 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_BWD_Type_1(org.eclipse.uml2.uml.Type)
 	 * @generated
 	 */
-	EOperation getArrayType2NonArrayType__IsAppropriate_BWD_Type_0__Type();
+	EOperation getArrayType2NonArrayType__IsAppropriate_BWD_Type_1__Type();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_FWD_EMoflonEdge_144(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 144</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_FWD_EMoflonEdge_313(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 313</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 144</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_FWD_EMoflonEdge_144(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 313</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#isAppropriate_FWD_EMoflonEdge_313(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getArrayType2NonArrayType__IsAppropriate_FWD_EMoflonEdge_144__EMoflonEdge();
+	EOperation getArrayType2NonArrayType__IsAppropriate_FWD_EMoflonEdge_313__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ArrayType2NonArrayType#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -43792,24 +43792,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InAnonymous__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_BWD_EMoflonEdge_138(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 138</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_BWD_EMoflonEdge_292(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 292</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 138</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_BWD_EMoflonEdge_138(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 292</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_BWD_EMoflonEdge_292(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InAnonymous__IsAppropriate_BWD_EMoflonEdge_138__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InAnonymous__IsAppropriate_BWD_EMoflonEdge_292__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_FWD_EMoflonEdge_145(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 145</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_FWD_EMoflonEdge_314(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 314</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 145</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_FWD_EMoflonEdge_145(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 314</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#isAppropriate_FWD_EMoflonEdge_314(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InAnonymous__IsAppropriate_FWD_EMoflonEdge_145__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InAnonymous__IsAppropriate_FWD_EMoflonEdge_314__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InAnonymous#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -44122,24 +44122,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeDependency2UsageDependency__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_BWD_EMoflonEdge_139(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 139</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_BWD_EMoflonEdge_293(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 293</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 139</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_BWD_EMoflonEdge_139(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 293</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_BWD_EMoflonEdge_293(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeDependency2UsageDependency__IsAppropriate_BWD_EMoflonEdge_139__EMoflonEdge();
+	EOperation getTypeDependency2UsageDependency__IsAppropriate_BWD_EMoflonEdge_293__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_FWD_EMoflonEdge_146(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 146</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_FWD_EMoflonEdge_315(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 315</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 146</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_FWD_EMoflonEdge_146(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 315</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#isAppropriate_FWD_EMoflonEdge_315(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeDependency2UsageDependency__IsAppropriate_FWD_EMoflonEdge_146__EMoflonEdge();
+	EOperation getTypeDependency2UsageDependency__IsAppropriate_FWD_EMoflonEdge_315__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeDependency2UsageDependency#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -44452,24 +44452,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInterfaceDec2Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_BWD_Interface_1(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_BWD_Interface_5(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 5</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Interface 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_BWD_Interface_1(org.eclipse.uml2.uml.Interface)
+	 * @return the meta object for the '<em>Is Appropriate BWD Interface 5</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_BWD_Interface_5(org.eclipse.uml2.uml.Interface)
 	 * @generated
 	 */
-	EOperation getInterfaceDec2Interface__IsAppropriate_BWD_Interface_1__Interface();
+	EOperation getInterfaceDec2Interface__IsAppropriate_BWD_Interface_5__Interface();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_FWD_InterfaceDeclaration_0(org.eclipse.modisco.java.InterfaceDeclaration) <em>Is Appropriate FWD Interface Declaration 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_FWD_InterfaceDeclaration_1(org.eclipse.modisco.java.InterfaceDeclaration) <em>Is Appropriate FWD Interface Declaration 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Interface Declaration 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_FWD_InterfaceDeclaration_0(org.eclipse.modisco.java.InterfaceDeclaration)
+	 * @return the meta object for the '<em>Is Appropriate FWD Interface Declaration 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#isAppropriate_FWD_InterfaceDeclaration_1(org.eclipse.modisco.java.InterfaceDeclaration)
 	 * @generated
 	 */
-	EOperation getInterfaceDec2Interface__IsAppropriate_FWD_InterfaceDeclaration_0__InterfaceDeclaration();
+	EOperation getInterfaceDec2Interface__IsAppropriate_FWD_InterfaceDeclaration_1__InterfaceDeclaration();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDec2Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -44782,24 +44782,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInterfaceDecWithModifier2Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_BWD_Interface_2(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 2</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_BWD_Interface_6(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 6</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Interface 2</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_BWD_Interface_2(org.eclipse.uml2.uml.Interface)
+	 * @return the meta object for the '<em>Is Appropriate BWD Interface 6</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_BWD_Interface_6(org.eclipse.uml2.uml.Interface)
 	 * @generated
 	 */
-	EOperation getInterfaceDecWithModifier2Interface__IsAppropriate_BWD_Interface_2__Interface();
+	EOperation getInterfaceDecWithModifier2Interface__IsAppropriate_BWD_Interface_6__Interface();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_FWD_EMoflonEdge_147(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 147</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_FWD_EMoflonEdge_316(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 316</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 147</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_FWD_EMoflonEdge_147(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 316</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#isAppropriate_FWD_EMoflonEdge_316(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInterfaceDecWithModifier2Interface__IsAppropriate_FWD_EMoflonEdge_147__EMoflonEdge();
+	EOperation getInterfaceDecWithModifier2Interface__IsAppropriate_FWD_EMoflonEdge_316__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InterfaceDecWithModifier2Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -45112,24 +45112,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnonymousClass4Anonymous__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_BWD_EMoflonEdge_140(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 140</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_BWD_EMoflonEdge_294(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 294</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 140</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_BWD_EMoflonEdge_140(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 294</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_BWD_EMoflonEdge_294(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4Anonymous__IsAppropriate_BWD_EMoflonEdge_140__EMoflonEdge();
+	EOperation getAnonymousClass4Anonymous__IsAppropriate_BWD_EMoflonEdge_294__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_FWD_EMoflonEdge_148(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 148</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_FWD_EMoflonEdge_317(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 317</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 148</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_FWD_EMoflonEdge_148(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 317</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#isAppropriate_FWD_EMoflonEdge_317(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getAnonymousClass4Anonymous__IsAppropriate_FWD_EMoflonEdge_148__EMoflonEdge();
+	EOperation getAnonymousClass4Anonymous__IsAppropriate_FWD_EMoflonEdge_317__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnonymousClass4Anonymous#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -45442,24 +45442,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getPrimitiveTypeFloat__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_BWD_PrimitiveType_8(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 8</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_BWD_PrimitiveType_17(org.eclipse.uml2.uml.PrimitiveType) <em>Is Appropriate BWD Primitive Type 17</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 8</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_BWD_PrimitiveType_8(org.eclipse.uml2.uml.PrimitiveType)
+	 * @return the meta object for the '<em>Is Appropriate BWD Primitive Type 17</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_BWD_PrimitiveType_17(org.eclipse.uml2.uml.PrimitiveType)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeFloat__IsAppropriate_BWD_PrimitiveType_8__PrimitiveType();
+	EOperation getPrimitiveTypeFloat__IsAppropriate_BWD_PrimitiveType_17__PrimitiveType();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_FWD_PrimitiveTypeFloat_0(org.eclipse.modisco.java.PrimitiveTypeFloat) <em>Is Appropriate FWD Primitive Type Float 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_FWD_PrimitiveTypeFloat_1(org.eclipse.modisco.java.PrimitiveTypeFloat) <em>Is Appropriate FWD Primitive Type Float 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Float 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_FWD_PrimitiveTypeFloat_0(org.eclipse.modisco.java.PrimitiveTypeFloat)
+	 * @return the meta object for the '<em>Is Appropriate FWD Primitive Type Float 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#isAppropriate_FWD_PrimitiveTypeFloat_1(org.eclipse.modisco.java.PrimitiveTypeFloat)
 	 * @generated
 	 */
-	EOperation getPrimitiveTypeFloat__IsAppropriate_FWD_PrimitiveTypeFloat_0__PrimitiveTypeFloat();
+	EOperation getPrimitiveTypeFloat__IsAppropriate_FWD_PrimitiveTypeFloat_1__PrimitiveTypeFloat();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.PrimitiveTypeFloat#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -45772,24 +45772,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getFieldDec2Property4Enum__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_BWD_EMoflonEdge_141(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 141</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_BWD_EMoflonEdge_295(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 295</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 141</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_BWD_EMoflonEdge_141(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 295</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_BWD_EMoflonEdge_295(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4Enum__IsAppropriate_BWD_EMoflonEdge_141__EMoflonEdge();
+	EOperation getFieldDec2Property4Enum__IsAppropriate_BWD_EMoflonEdge_295__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_FWD_EMoflonEdge_149(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 149</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_FWD_EMoflonEdge_318(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 318</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 149</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_FWD_EMoflonEdge_149(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 318</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#isAppropriate_FWD_EMoflonEdge_318(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4Enum__IsAppropriate_FWD_EMoflonEdge_149__EMoflonEdge();
+	EOperation getFieldDec2Property4Enum__IsAppropriate_FWD_EMoflonEdge_318__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4Enum#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -46102,24 +46102,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getManifestation4CompilationUnit2Artifact__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_142(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 142</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_296(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 296</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 142</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_142(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 296</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_BWD_EMoflonEdge_296(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getManifestation4CompilationUnit2Artifact__IsAppropriate_BWD_EMoflonEdge_142__EMoflonEdge();
+	EOperation getManifestation4CompilationUnit2Artifact__IsAppropriate_BWD_EMoflonEdge_296__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_150(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 150</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_319(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 319</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 150</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_150(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 319</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#isAppropriate_FWD_EMoflonEdge_319(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getManifestation4CompilationUnit2Artifact__IsAppropriate_FWD_EMoflonEdge_150__EMoflonEdge();
+	EOperation getManifestation4CompilationUnit2Artifact__IsAppropriate_FWD_EMoflonEdge_319__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.Manifestation4CompilationUnit2Artifact#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -46402,14 +46402,14 @@ public interface RulesPackage extends EPackage {
 	EOperation getIgnoreOrphanTypesEdge__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.IgnoreOrphanTypesEdge#isAppropriate_FWD_EMoflonEdge_151(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 151</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.IgnoreOrphanTypesEdge#isAppropriate_FWD_EMoflonEdge_320(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 320</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 151</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.IgnoreOrphanTypesEdge#isAppropriate_FWD_EMoflonEdge_151(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 320</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.IgnoreOrphanTypesEdge#isAppropriate_FWD_EMoflonEdge_320(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getIgnoreOrphanTypesEdge__IsAppropriate_FWD_EMoflonEdge_151__EMoflonEdge();
+	EOperation getIgnoreOrphanTypesEdge__IsAppropriate_FWD_EMoflonEdge_320__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.IgnoreOrphanTypesEdge#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -46722,24 +46722,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeAccess2InterfaceRealization__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_BWD_EMoflonEdge_143(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 143</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_BWD_EMoflonEdge_297(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 297</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 143</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_BWD_EMoflonEdge_143(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 297</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_BWD_EMoflonEdge_297(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeAccess2InterfaceRealization__IsAppropriate_BWD_EMoflonEdge_143__EMoflonEdge();
+	EOperation getTypeAccess2InterfaceRealization__IsAppropriate_BWD_EMoflonEdge_297__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_FWD_EMoflonEdge_152(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 152</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_FWD_EMoflonEdge_321(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 321</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 152</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_FWD_EMoflonEdge_152(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 321</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#isAppropriate_FWD_EMoflonEdge_321(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeAccess2InterfaceRealization__IsAppropriate_FWD_EMoflonEdge_152__EMoflonEdge();
+	EOperation getTypeAccess2InterfaceRealization__IsAppropriate_FWD_EMoflonEdge_321__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2InterfaceRealization#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -47082,24 +47082,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getClassDecWithModifier2Class__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_BWD_Class_1(org.eclipse.uml2.uml.Class) <em>Is Appropriate BWD Class 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_BWD_Class_3(org.eclipse.uml2.uml.Class) <em>Is Appropriate BWD Class 3</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Class 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_BWD_Class_1(org.eclipse.uml2.uml.Class)
+	 * @return the meta object for the '<em>Is Appropriate BWD Class 3</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_BWD_Class_3(org.eclipse.uml2.uml.Class)
 	 * @generated
 	 */
-	EOperation getClassDecWithModifier2Class__IsAppropriate_BWD_Class_1__Class();
+	EOperation getClassDecWithModifier2Class__IsAppropriate_BWD_Class_3__Class();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_FWD_EMoflonEdge_153(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 153</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_FWD_EMoflonEdge_322(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 322</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 153</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_FWD_EMoflonEdge_153(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 322</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#isAppropriate_FWD_EMoflonEdge_322(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getClassDecWithModifier2Class__IsAppropriate_FWD_EMoflonEdge_153__EMoflonEdge();
+	EOperation getClassDecWithModifier2Class__IsAppropriate_FWD_EMoflonEdge_322__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ClassDecWithModifier2Class#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -47412,24 +47412,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getFieldDec2Property4_Anonymous__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_BWD_EMoflonEdge_144(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 144</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_BWD_EMoflonEdge_298(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 298</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 144</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_BWD_EMoflonEdge_144(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 298</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_BWD_EMoflonEdge_298(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4_Anonymous__IsAppropriate_BWD_EMoflonEdge_144__EMoflonEdge();
+	EOperation getFieldDec2Property4_Anonymous__IsAppropriate_BWD_EMoflonEdge_298__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_FWD_EMoflonEdge_154(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 154</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_FWD_EMoflonEdge_323(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 323</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 154</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_FWD_EMoflonEdge_154(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 323</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#isAppropriate_FWD_EMoflonEdge_323(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property4_Anonymous__IsAppropriate_FWD_EMoflonEdge_154__EMoflonEdge();
+	EOperation getFieldDec2Property4_Anonymous__IsAppropriate_FWD_EMoflonEdge_323__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property4_Anonymous#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -47742,24 +47742,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getJavaAnnotation2Comment4SingleVariableDeclaration__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_BWD_EMoflonEdge_145(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 145</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_BWD_EMoflonEdge_299(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 299</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 145</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_BWD_EMoflonEdge_145(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 299</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_BWD_EMoflonEdge_299(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotation2Comment4SingleVariableDeclaration__IsAppropriate_BWD_EMoflonEdge_145__EMoflonEdge();
+	EOperation getJavaAnnotation2Comment4SingleVariableDeclaration__IsAppropriate_BWD_EMoflonEdge_299__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_FWD_EMoflonEdge_155(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 155</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_FWD_EMoflonEdge_324(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 324</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 155</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_FWD_EMoflonEdge_155(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 324</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#isAppropriate_FWD_EMoflonEdge_324(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getJavaAnnotation2Comment4SingleVariableDeclaration__IsAppropriate_FWD_EMoflonEdge_155__EMoflonEdge();
+	EOperation getJavaAnnotation2Comment4SingleVariableDeclaration__IsAppropriate_FWD_EMoflonEdge_324__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.JavaAnnotation2Comment4SingleVariableDeclaration#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -48072,24 +48072,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getParameterizedType2Interface_InnerTypeInClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_146(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 146</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_300(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 300</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 146</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_146(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 300</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_BWD_EMoflonEdge_300(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Interface_InnerTypeInClass__IsAppropriate_BWD_EMoflonEdge_146__EMoflonEdge();
+	EOperation getParameterizedType2Interface_InnerTypeInClass__IsAppropriate_BWD_EMoflonEdge_300__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_156(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 156</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_325(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 325</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 156</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_156(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 325</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#isAppropriate_FWD_EMoflonEdge_325(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Interface_InnerTypeInClass__IsAppropriate_FWD_EMoflonEdge_156__EMoflonEdge();
+	EOperation getParameterizedType2Interface_InnerTypeInClass__IsAppropriate_FWD_EMoflonEdge_325__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface_InnerTypeInClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -48422,24 +48422,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getAnnotationTypeDeclaration2Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_BWD_Interface_3(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 3</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_BWD_Interface_7(org.eclipse.uml2.uml.Interface) <em>Is Appropriate BWD Interface 7</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Interface 3</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_BWD_Interface_3(org.eclipse.uml2.uml.Interface)
+	 * @return the meta object for the '<em>Is Appropriate BWD Interface 7</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_BWD_Interface_7(org.eclipse.uml2.uml.Interface)
 	 * @generated
 	 */
-	EOperation getAnnotationTypeDeclaration2Interface__IsAppropriate_BWD_Interface_3__Interface();
+	EOperation getAnnotationTypeDeclaration2Interface__IsAppropriate_BWD_Interface_7__Interface();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_FWD_AnnotationTypeDeclaration_0(org.eclipse.modisco.java.AnnotationTypeDeclaration) <em>Is Appropriate FWD Annotation Type Declaration 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_FWD_AnnotationTypeDeclaration_1(org.eclipse.modisco.java.AnnotationTypeDeclaration) <em>Is Appropriate FWD Annotation Type Declaration 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Annotation Type Declaration 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_FWD_AnnotationTypeDeclaration_0(org.eclipse.modisco.java.AnnotationTypeDeclaration)
+	 * @return the meta object for the '<em>Is Appropriate FWD Annotation Type Declaration 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#isAppropriate_FWD_AnnotationTypeDeclaration_1(org.eclipse.modisco.java.AnnotationTypeDeclaration)
 	 * @generated
 	 */
-	EOperation getAnnotationTypeDeclaration2Interface__IsAppropriate_FWD_AnnotationTypeDeclaration_0__AnnotationTypeDeclaration();
+	EOperation getAnnotationTypeDeclaration2Interface__IsAppropriate_FWD_AnnotationTypeDeclaration_1__AnnotationTypeDeclaration();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.AnnotationTypeDeclaration2Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -48752,24 +48752,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getParameterizedType2Interface__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_BWD_EMoflonEdge_147(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 147</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_BWD_EMoflonEdge_301(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 301</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 147</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_BWD_EMoflonEdge_147(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 301</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_BWD_EMoflonEdge_301(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Interface__IsAppropriate_BWD_EMoflonEdge_147__EMoflonEdge();
+	EOperation getParameterizedType2Interface__IsAppropriate_BWD_EMoflonEdge_301__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_FWD_EMoflonEdge_157(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 157</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_FWD_EMoflonEdge_326(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 326</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 157</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_FWD_EMoflonEdge_157(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 326</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#isAppropriate_FWD_EMoflonEdge_326(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getParameterizedType2Interface__IsAppropriate_FWD_EMoflonEdge_157__EMoflonEdge();
+	EOperation getParameterizedType2Interface__IsAppropriate_FWD_EMoflonEdge_326__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ParameterizedType2Interface#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -49082,24 +49082,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getConstructorDec2OperationWithModifier__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_BWD_EMoflonEdge_148(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 148</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_BWD_EMoflonEdge_302(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 302</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 148</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_BWD_EMoflonEdge_148(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 302</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_BWD_EMoflonEdge_302(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getConstructorDec2OperationWithModifier__IsAppropriate_BWD_EMoflonEdge_148__EMoflonEdge();
+	EOperation getConstructorDec2OperationWithModifier__IsAppropriate_BWD_EMoflonEdge_302__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_158(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 158</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_327(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 327</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 158</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_158(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 327</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#isAppropriate_FWD_EMoflonEdge_327(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getConstructorDec2OperationWithModifier__IsAppropriate_FWD_EMoflonEdge_158__EMoflonEdge();
+	EOperation getConstructorDec2OperationWithModifier__IsAppropriate_FWD_EMoflonEdge_327__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.ConstructorDec2OperationWithModifier#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -49392,14 +49392,14 @@ public interface RulesPackage extends EPackage {
 	EOperation getIgnoreClassInstanceCreation4ArrayInitializer__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.IgnoreClassInstanceCreation4ArrayInitializer#isAppropriate_FWD_EMoflonEdge_159(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 159</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.IgnoreClassInstanceCreation4ArrayInitializer#isAppropriate_FWD_EMoflonEdge_328(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 328</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 159</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.IgnoreClassInstanceCreation4ArrayInitializer#isAppropriate_FWD_EMoflonEdge_159(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 328</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.IgnoreClassInstanceCreation4ArrayInitializer#isAppropriate_FWD_EMoflonEdge_328(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getIgnoreClassInstanceCreation4ArrayInitializer__IsAppropriate_FWD_EMoflonEdge_159__EMoflonEdge();
+	EOperation getIgnoreClassInstanceCreation4ArrayInitializer__IsAppropriate_FWD_EMoflonEdge_328__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.IgnoreClassInstanceCreation4ArrayInitializer#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -49712,24 +49712,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeParameter2Object_InMethod_InClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_BWD_EMoflonEdge_149(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 149</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_BWD_EMoflonEdge_303(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 303</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 149</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_BWD_EMoflonEdge_149(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 303</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_BWD_EMoflonEdge_303(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InMethod_InClass__IsAppropriate_BWD_EMoflonEdge_149__EMoflonEdge();
+	EOperation getTypeParameter2Object_InMethod_InClass__IsAppropriate_BWD_EMoflonEdge_303__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_FWD_EMoflonEdge_160(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 160</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_FWD_EMoflonEdge_329(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 329</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 160</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_FWD_EMoflonEdge_160(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 329</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#isAppropriate_FWD_EMoflonEdge_329(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeParameter2Object_InMethod_InClass__IsAppropriate_FWD_EMoflonEdge_160__EMoflonEdge();
+	EOperation getTypeParameter2Object_InMethod_InClass__IsAppropriate_FWD_EMoflonEdge_329__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeParameter2Object_InMethod_InClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -50042,24 +50042,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getTypeAccess2Generalization__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_BWD_EMoflonEdge_150(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 150</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_BWD_EMoflonEdge_304(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 304</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 150</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_BWD_EMoflonEdge_150(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 304</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_BWD_EMoflonEdge_304(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeAccess2Generalization__IsAppropriate_BWD_EMoflonEdge_150__EMoflonEdge();
+	EOperation getTypeAccess2Generalization__IsAppropriate_BWD_EMoflonEdge_304__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_FWD_EMoflonEdge_161(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 161</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_FWD_EMoflonEdge_330(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 330</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 161</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_FWD_EMoflonEdge_161(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 330</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#isAppropriate_FWD_EMoflonEdge_330(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getTypeAccess2Generalization__IsAppropriate_FWD_EMoflonEdge_161__EMoflonEdge();
+	EOperation getTypeAccess2Generalization__IsAppropriate_FWD_EMoflonEdge_330__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.TypeAccess2Generalization#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -50372,24 +50372,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getInnerDeclaration2InnerClassifier_InMethod4IAnonymous__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_BWD_EMoflonEdge_151(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 151</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_BWD_EMoflonEdge_305(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 305</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 151</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_BWD_EMoflonEdge_151(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 305</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_BWD_EMoflonEdge_305(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InMethod4IAnonymous__IsAppropriate_BWD_EMoflonEdge_151__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InMethod4IAnonymous__IsAppropriate_BWD_EMoflonEdge_305__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_FWD_EMoflonEdge_162(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 162</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_FWD_EMoflonEdge_331(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 331</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 162</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_FWD_EMoflonEdge_162(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 331</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#isAppropriate_FWD_EMoflonEdge_331(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getInnerDeclaration2InnerClassifier_InMethod4IAnonymous__IsAppropriate_FWD_EMoflonEdge_162__EMoflonEdge();
+	EOperation getInnerDeclaration2InnerClassifier_InMethod4IAnonymous__IsAppropriate_FWD_EMoflonEdge_331__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.InnerDeclaration2InnerClassifier_InMethod4IAnonymous#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -50702,24 +50702,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getLinkTypeToPackage__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_BWD_EMoflonEdge_152(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 152</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_BWD_EMoflonEdge_306(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 306</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 152</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_BWD_EMoflonEdge_152(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 306</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_BWD_EMoflonEdge_306(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getLinkTypeToPackage__IsAppropriate_BWD_EMoflonEdge_152__EMoflonEdge();
+	EOperation getLinkTypeToPackage__IsAppropriate_BWD_EMoflonEdge_306__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_FWD_EMoflonEdge_163(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 163</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_FWD_EMoflonEdge_332(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 332</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 163</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_FWD_EMoflonEdge_163(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 332</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#isAppropriate_FWD_EMoflonEdge_332(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getLinkTypeToPackage__IsAppropriate_FWD_EMoflonEdge_163__EMoflonEdge();
+	EOperation getLinkTypeToPackage__IsAppropriate_FWD_EMoflonEdge_332__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.LinkTypeToPackage#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -51032,24 +51032,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getOrphanedClassDec2OrphanedClass__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_BWD_EMoflonEdge_153(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 153</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_BWD_EMoflonEdge_307(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate BWD EMoflon Edge 307</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 153</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_BWD_EMoflonEdge_153(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate BWD EMoflon Edge 307</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_BWD_EMoflonEdge_307(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOrphanedClassDec2OrphanedClass__IsAppropriate_BWD_EMoflonEdge_153__EMoflonEdge();
+	EOperation getOrphanedClassDec2OrphanedClass__IsAppropriate_BWD_EMoflonEdge_307__EMoflonEdge();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_FWD_EMoflonEdge_164(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 164</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_FWD_EMoflonEdge_333(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 333</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 164</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_FWD_EMoflonEdge_164(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 333</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#isAppropriate_FWD_EMoflonEdge_333(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getOrphanedClassDec2OrphanedClass__IsAppropriate_FWD_EMoflonEdge_164__EMoflonEdge();
+	EOperation getOrphanedClassDec2OrphanedClass__IsAppropriate_FWD_EMoflonEdge_333__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.OrphanedClassDec2OrphanedClass#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -51362,24 +51362,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getFieldDec2Property__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_BWD_Property_1(org.eclipse.uml2.uml.Property) <em>Is Appropriate BWD Property 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_BWD_Property_3(org.eclipse.uml2.uml.Property) <em>Is Appropriate BWD Property 3</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Property 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_BWD_Property_1(org.eclipse.uml2.uml.Property)
+	 * @return the meta object for the '<em>Is Appropriate BWD Property 3</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_BWD_Property_3(org.eclipse.uml2.uml.Property)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property__IsAppropriate_BWD_Property_1__Property();
+	EOperation getFieldDec2Property__IsAppropriate_BWD_Property_3__Property();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_FWD_EMoflonEdge_165(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 165</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_FWD_EMoflonEdge_334(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 334</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 165</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_FWD_EMoflonEdge_165(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 334</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#isAppropriate_FWD_EMoflonEdge_334(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getFieldDec2Property__IsAppropriate_FWD_EMoflonEdge_165__EMoflonEdge();
+	EOperation getFieldDec2Property__IsAppropriate_FWD_EMoflonEdge_334__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.FieldDec2Property#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -51692,24 +51692,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getEnumDecWithModifier2Enum__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_BWD_Enumeration_1(org.eclipse.uml2.uml.Enumeration) <em>Is Appropriate BWD Enumeration 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_BWD_Enumeration_3(org.eclipse.uml2.uml.Enumeration) <em>Is Appropriate BWD Enumeration 3</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Enumeration 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_BWD_Enumeration_1(org.eclipse.uml2.uml.Enumeration)
+	 * @return the meta object for the '<em>Is Appropriate BWD Enumeration 3</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_BWD_Enumeration_3(org.eclipse.uml2.uml.Enumeration)
 	 * @generated
 	 */
-	EOperation getEnumDecWithModifier2Enum__IsAppropriate_BWD_Enumeration_1__Enumeration();
+	EOperation getEnumDecWithModifier2Enum__IsAppropriate_BWD_Enumeration_3__Enumeration();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_FWD_EMoflonEdge_166(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 166</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_FWD_EMoflonEdge_335(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 335</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 166</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_FWD_EMoflonEdge_166(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 335</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#isAppropriate_FWD_EMoflonEdge_335(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getEnumDecWithModifier2Enum__IsAppropriate_FWD_EMoflonEdge_166__EMoflonEdge();
+	EOperation getEnumDecWithModifier2Enum__IsAppropriate_FWD_EMoflonEdge_335__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.EnumDecWithModifier2Enum#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -52022,24 +52022,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getMethodDec2Operation__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_BWD_Operation_1(org.eclipse.uml2.uml.Operation) <em>Is Appropriate BWD Operation 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_BWD_Operation_3(org.eclipse.uml2.uml.Operation) <em>Is Appropriate BWD Operation 3</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Operation 1</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_BWD_Operation_1(org.eclipse.uml2.uml.Operation)
+	 * @return the meta object for the '<em>Is Appropriate BWD Operation 3</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_BWD_Operation_3(org.eclipse.uml2.uml.Operation)
 	 * @generated
 	 */
-	EOperation getMethodDec2Operation__IsAppropriate_BWD_Operation_1__Operation();
+	EOperation getMethodDec2Operation__IsAppropriate_BWD_Operation_3__Operation();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_FWD_MMethodDefinition_0(org.gravity.modisco.MMethodDefinition) <em>Is Appropriate FWD MMethod Definition 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_FWD_MMethodDefinition_1(org.gravity.modisco.MMethodDefinition) <em>Is Appropriate FWD MMethod Definition 1</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD MMethod Definition 0</em>' operation.
-	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_FWD_MMethodDefinition_0(org.gravity.modisco.MMethodDefinition)
+	 * @return the meta object for the '<em>Is Appropriate FWD MMethod Definition 1</em>' operation.
+	 * @see org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#isAppropriate_FWD_MMethodDefinition_1(org.gravity.modisco.MMethodDefinition)
 	 * @generated
 	 */
-	EOperation getMethodDec2Operation__IsAppropriate_FWD_MMethodDefinition_0__MMethodDefinition();
+	EOperation getMethodDec2Operation__IsAppropriate_FWD_MMethodDefinition_1__MMethodDefinition();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.modisco.uml.Rules.MethodDec2Operation#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.

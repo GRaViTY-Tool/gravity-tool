@@ -672,7 +672,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_122(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_276(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = OperationInClassImpl
 				.pattern_OperationInClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_127(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_296(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = OperationInClassImpl
 				.pattern_OperationInClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1150,10 +1150,10 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 			return null;
 		case RulesPackage.OPERATION_IN_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_122__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_122((EMoflonEdge) arguments.get(0));
-		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_127__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_127((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_276__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_276((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_296__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_296((EMoflonEdge) arguments.get(0));
 		case RulesPackage.OPERATION_IN_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.OPERATION_IN_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

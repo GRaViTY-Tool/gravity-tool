@@ -645,7 +645,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_1(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_5(Interface feature) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -701,7 +701,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_InterfaceDeclaration_0(InterfaceDeclaration bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_InterfaceDeclaration_1(InterfaceDeclaration bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1161,10 +1161,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			return null;
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_1__INTERFACE:
-			return isAppropriate_BWD_Interface_1((Interface) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_0__INTERFACEDECLARATION:
-			return isAppropriate_FWD_InterfaceDeclaration_0((InterfaceDeclaration) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_5__INTERFACE:
+			return isAppropriate_BWD_Interface_5((Interface) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_1__INTERFACEDECLARATION:
+			return isAppropriate_FWD_InterfaceDeclaration_1((InterfaceDeclaration) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2004,8 +2004,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_842925 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_842925 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_86484 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_86484 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2211,8 +2211,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_347509 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_347509 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_417576 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_417576 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

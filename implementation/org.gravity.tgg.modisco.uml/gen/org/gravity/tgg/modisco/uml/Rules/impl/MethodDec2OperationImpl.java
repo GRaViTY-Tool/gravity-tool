@@ -629,7 +629,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Operation_1(Operation feature) {
+	public EObjectContainer isAppropriate_BWD_Operation_3(Operation feature) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationImpl
 				.pattern_MethodDec2Operation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -684,7 +684,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MMethodDefinition_0(MMethodDefinition bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_MMethodDefinition_1(MMethodDefinition bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationImpl
 				.pattern_MethodDec2Operation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1114,10 +1114,10 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_BWD_OPERATION_1__OPERATION:
-			return isAppropriate_BWD_Operation_1((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_FWD_MMETHOD_DEFINITION_0__MMETHODDEFINITION:
-			return isAppropriate_FWD_MMethodDefinition_0((MMethodDefinition) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_BWD_OPERATION_3__OPERATION:
+			return isAppropriate_BWD_Operation_3((Operation) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_FWD_MMETHOD_DEFINITION_1__MMETHODDEFINITION:
+			return isAppropriate_FWD_MMethodDefinition_1((MMethodDefinition) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1953,8 +1953,8 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 
 	public static final Object[] pattern_MethodDec2Operation_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_871957 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_871957 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_107702 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_107702 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2159,8 +2159,8 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 
 	public static final Object[] pattern_MethodDec2Operation_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_478298 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_478298 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_7702 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_7702 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

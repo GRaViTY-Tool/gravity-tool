@@ -711,7 +711,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_135(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_289(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 				.pattern_UnresolvedTypeDeclaration2Type_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -770,7 +770,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_141(EMoflonEdge _edge_unresolvedItems) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_310(EMoflonEdge _edge_unresolvedItems) {
 
 		Object[] result1_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 				.pattern_UnresolvedTypeDeclaration2Type_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1259,10 +1259,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_135__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_135((EMoflonEdge) arguments.get(0));
-		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_141__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_141((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_289__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_289((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_310__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_310((EMoflonEdge) arguments.get(0));
 		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2402,8 +2402,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_21_2_testcorematchandDECs_black_nac_0B(
 			UnresolvedTypeDeclaration mType) {
-		Modifier __DEC_mType_modifier_656882 = mType.getModifier();
-		if (__DEC_mType_modifier_656882 != null) {
+		Modifier __DEC_mType_modifier_990656 = mType.getModifier();
+		if (__DEC_mType_modifier_990656 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2653,8 +2653,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_black_nac_0B(
 			UnresolvedTypeDeclaration mType) {
-		Modifier __DEC_mType_modifier_28297 = mType.getModifier();
-		if (__DEC_mType_modifier_28297 != null) {
+		Modifier __DEC_mType_modifier_462452 = mType.getModifier();
+		if (__DEC_mType_modifier_462452 != null) {
 			return new Object[] { mType };
 		}
 

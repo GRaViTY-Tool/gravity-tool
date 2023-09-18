@@ -818,7 +818,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_115(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_269(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -879,7 +879,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_120(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_289(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1415,10 +1415,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_115__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_115((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_120__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_269__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_269((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_289__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_289((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3014,8 +3014,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_509969 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_509969 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_266406 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_266406 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3304,8 +3304,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_27_1_matchtggpattern_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_80903 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_80903 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_248932 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_248932 != null) {
 			return new Object[] { mAnon };
 		}
 

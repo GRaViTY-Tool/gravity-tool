@@ -754,7 +754,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Property_0(Property feature) {
+	public EObjectContainer isAppropriate_BWD_Property_2(Property feature) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -811,7 +811,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_136(EMoflonEdge _edge_variablesContainer) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_305(EMoflonEdge _edge_variablesContainer) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1374,10 +1374,10 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_0__PROPERTY:
-			return isAppropriate_BWD_Property_0((Property) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_136__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_136((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_2__PROPERTY:
+			return isAppropriate_BWD_Property_2((Property) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_305__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_305((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2366,8 +2366,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Property feature) {
-		Type __DEC_feature_type_952356 = feature.getType();
-		if (__DEC_feature_type_952356 != null) {
+		Type __DEC_feature_type_438515 = feature.getType();
+		if (__DEC_feature_type_438515 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2485,9 +2485,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_21_2_testcorematchandDECs_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_403643 : bodyDeclaration
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_141129 : bodyDeclaration
 				.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_403643)) {
+			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_141129)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2733,9 +2733,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_27_1_matchtggpattern_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_696578 : bodyDeclaration
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_496987 : bodyDeclaration
 				.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_696578)) {
+			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_496987)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2767,8 +2767,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			Property feature) {
-		Type __DEC_feature_type_762360 = feature.getType();
-		if (__DEC_feature_type_762360 != null) {
+		Type __DEC_feature_type_213876 = feature.getType();
+		if (__DEC_feature_type_213876 != null) {
 			return new Object[] { feature };
 		}
 

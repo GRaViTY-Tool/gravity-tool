@@ -740,7 +740,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_142(EMoflonEdge _edge_utilizedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_296(EMoflonEdge _edge_utilizedElement) {
 
 		Object[] result1_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -802,7 +802,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_150(EMoflonEdge _edge_types) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_319(EMoflonEdge _edge_types) {
 
 		Object[] result1_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1251,10 +1251,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_142__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_142((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_150__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_150((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_296__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_296((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_319__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_319((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2392,10 +2392,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_0BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_client_679733 : manifestation.getClients()) {
-				if (!manifestation.equals(__DEC_manifestation_client_679733)) {
-					if (!classifier.equals(__DEC_manifestation_client_679733)) {
-						if (!artifact.equals(__DEC_manifestation_client_679733)) {
+			for (NamedElement __DEC_manifestation_client_949869 : manifestation.getClients()) {
+				if (!manifestation.equals(__DEC_manifestation_client_949869)) {
+					if (!classifier.equals(__DEC_manifestation_client_949869)) {
+						if (!artifact.equals(__DEC_manifestation_client_949869)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2408,10 +2408,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_1BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_supplier_436811 : manifestation.getSuppliers()) {
-				if (!manifestation.equals(__DEC_manifestation_supplier_436811)) {
-					if (!classifier.equals(__DEC_manifestation_supplier_436811)) {
-						if (!artifact.equals(__DEC_manifestation_supplier_436811)) {
+			for (NamedElement __DEC_manifestation_supplier_57748 : manifestation.getSuppliers()) {
+				if (!manifestation.equals(__DEC_manifestation_supplier_57748)) {
+					if (!classifier.equals(__DEC_manifestation_supplier_57748)) {
+						if (!artifact.equals(__DEC_manifestation_supplier_57748)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2869,10 +2869,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_0BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_client_178211 : manifestation.getClients()) {
-				if (!manifestation.equals(__DEC_manifestation_client_178211)) {
-					if (!classifier.equals(__DEC_manifestation_client_178211)) {
-						if (!artifact.equals(__DEC_manifestation_client_178211)) {
+			for (NamedElement __DEC_manifestation_client_373379 : manifestation.getClients()) {
+				if (!manifestation.equals(__DEC_manifestation_client_373379)) {
+					if (!classifier.equals(__DEC_manifestation_client_373379)) {
+						if (!artifact.equals(__DEC_manifestation_client_373379)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2885,10 +2885,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_1BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_supplier_564069 : manifestation.getSuppliers()) {
-				if (!manifestation.equals(__DEC_manifestation_supplier_564069)) {
-					if (!classifier.equals(__DEC_manifestation_supplier_564069)) {
-						if (!artifact.equals(__DEC_manifestation_supplier_564069)) {
+			for (NamedElement __DEC_manifestation_supplier_984690 : manifestation.getSuppliers()) {
+				if (!manifestation.equals(__DEC_manifestation_supplier_984690)) {
+					if (!classifier.equals(__DEC_manifestation_supplier_984690)) {
+						if (!artifact.equals(__DEC_manifestation_supplier_984690)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
