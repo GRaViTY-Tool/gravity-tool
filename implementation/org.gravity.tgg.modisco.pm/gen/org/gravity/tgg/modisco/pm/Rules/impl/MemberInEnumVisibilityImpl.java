@@ -802,7 +802,7 @@ public class MemberInEnumVisibilityImpl extends AbstractRuleImpl implements Memb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_217(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_164(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = MemberInEnumVisibilityImpl
 				.pattern_MemberInEnumVisibility_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -861,7 +861,7 @@ public class MemberInEnumVisibilityImpl extends AbstractRuleImpl implements Memb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_234(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_171(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MemberInEnumVisibilityImpl
 				.pattern_MemberInEnumVisibility_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1408,10 +1408,10 @@ public class MemberInEnumVisibilityImpl extends AbstractRuleImpl implements Memb
 			return null;
 		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_217__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_217((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_234__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_234((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_164__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_164((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_171__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_171((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ENUM_VISIBILITY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2778,9 +2778,9 @@ public class MemberInEnumVisibilityImpl extends AbstractRuleImpl implements Memb
 
 	public static final Object[] pattern_MemberInEnumVisibility_20_2_testcorematchandDECs_black_nac_0BB(
 			TModifier tModifier, TClass tClass) {
-		for (TAbstractType __DEC_tModifier_tModifier_530149 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_126359 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tClass.equals(__DEC_tModifier_tModifier_530149)) {
+			if (!tClass.equals(__DEC_tModifier_tModifier_126359)) {
 				return new Object[] { tModifier, tClass };
 			}
 		}
@@ -3204,9 +3204,9 @@ public class MemberInEnumVisibilityImpl extends AbstractRuleImpl implements Memb
 
 	public static final Object[] pattern_MemberInEnumVisibility_28_1_matchtggpattern_black_nac_0BB(TModifier tModifier,
 			TClass tClass) {
-		for (TAbstractType __DEC_tModifier_tModifier_577228 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_23177 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tClass.equals(__DEC_tModifier_tModifier_577228)) {
+			if (!tClass.equals(__DEC_tModifier_tModifier_23177)) {
 				return new Object[] { tModifier, tClass };
 			}
 		}

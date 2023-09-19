@@ -749,7 +749,7 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_235(EMoflonEdge _edge_subpackages) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_182(EMoflonEdge _edge_subpackages) {
 
 		Object[] result1_bindingAndBlack = SubPackageToPGPackageImpl
 				.pattern_SubPackageToPGPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -808,7 +808,7 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_254(EMoflonEdge _edge_ownedPackages) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_191(EMoflonEdge _edge_ownedPackages) {
 
 		Object[] result1_bindingAndBlack = SubPackageToPGPackageImpl
 				.pattern_SubPackageToPGPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1292,10 +1292,10 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 			return null;
 		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_235__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_235((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_254__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_254((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_182__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_182((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_191__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_191((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SUB_PACKAGE_TO_PG_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2518,9 +2518,9 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 
 	public static final Object[] pattern_SubPackageToPGPackage_20_2_testcorematchandDECs_black_nac_0BB(
 			TPackage tSubPackage, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tSubPackage_packages_630059 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tSubPackage_packages_174806 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tSubPackage, TypeGraph.class, "packages")) {
-			if (!typeGraph.equals(__DEC_tSubPackage_packages_630059)) {
+			if (!typeGraph.equals(__DEC_tSubPackage_packages_174806)) {
 				return new Object[] { tSubPackage, typeGraph };
 			}
 		}
@@ -2670,8 +2670,8 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 
 	public static final Object[] pattern_SubPackageToPGPackage_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Package mSubPackage) {
-		Model __DEC_mSubPackage_model_821115 = mSubPackage.getModel();
-		if (__DEC_mSubPackage_model_821115 != null) {
+		Model __DEC_mSubPackage_model_564517 = mSubPackage.getModel();
+		if (__DEC_mSubPackage_model_564517 != null) {
 			return new Object[] { mSubPackage };
 		}
 
@@ -2937,8 +2937,8 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 
 	public static final Object[] pattern_SubPackageToPGPackage_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Package mSubPackage) {
-		Model __DEC_mSubPackage_model_292319 = mSubPackage.getModel();
-		if (__DEC_mSubPackage_model_292319 != null) {
+		Model __DEC_mSubPackage_model_583803 = mSubPackage.getModel();
+		if (__DEC_mSubPackage_model_583803 != null) {
 			return new Object[] { mSubPackage };
 		}
 
@@ -2969,9 +2969,9 @@ public class SubPackageToPGPackageImpl extends AbstractRuleImpl implements SubPa
 
 	public static final Object[] pattern_SubPackageToPGPackage_28_1_matchtggpattern_black_nac_0BB(TPackage tSubPackage,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tSubPackage_packages_485643 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tSubPackage_packages_509214 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tSubPackage, TypeGraph.class, "packages")) {
-			if (!typeGraph.equals(__DEC_tSubPackage_packages_485643)) {
+			if (!typeGraph.equals(__DEC_tSubPackage_packages_509214)) {
 				return new Object[] { tSubPackage, typeGraph };
 			}
 		}

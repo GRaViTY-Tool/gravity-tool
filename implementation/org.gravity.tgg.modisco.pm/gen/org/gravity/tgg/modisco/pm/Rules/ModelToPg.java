@@ -206,7 +206,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MGravityModel_2(MGravityModel mModel);
+	EObjectContainer isAppropriate_FWD_MGravityModel_1(MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_162(EMoflonEdge _edge_modules);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_modules);
 
 	/**
 	 * <!-- begin-user-doc -->

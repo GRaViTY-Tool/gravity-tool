@@ -7,12 +7,13 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
 
-import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 import org.gravity.headless.Messages;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.jupiter.api.Test;
+
+import jakarta.ws.rs.core.Response;
 
 /**
  * Tests the git interface of the GRaViTY Server

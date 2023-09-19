@@ -868,7 +868,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_212(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_159(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = ClassInnerClassMemberImpl
 				.pattern_ClassInnerClassMember_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -928,7 +928,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_229(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_166(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = ClassInnerClassMemberImpl
 				.pattern_ClassInnerClassMember_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1508,10 +1508,10 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 			return null;
 		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_212__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_212((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_229__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_229((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_159__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_159((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_166__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_166((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3208,9 +3208,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_0BB(
 			TClass tInnerClass, TPackage tPackage) {
-		for (TPackage __DEC_tInnerClass_classes_890255 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tInnerClass_classes_855499 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tInnerClass_classes_890255)) {
+			if (!tPackage.equals(__DEC_tInnerClass_classes_855499)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3219,9 +3219,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tInnerClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tInnerClass_classes_397223 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tInnerClass_classes_409943 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tInnerClass_classes_397223)) {
+			if (!typeGraph.equals(__DEC_tInnerClass_classes_409943)) {
 				return new Object[] { tInnerClass, typeGraph };
 			}
 		}
@@ -3230,9 +3230,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_2BB(
 			TClass tInnerClass, TPackage tPackage) {
-		TPackage __DEC_tInnerClass_allTypes_322856 = tInnerClass.getPackage();
-		if (__DEC_tInnerClass_allTypes_322856 != null) {
-			if (!tPackage.equals(__DEC_tInnerClass_allTypes_322856)) {
+		TPackage __DEC_tInnerClass_allTypes_763533 = tInnerClass.getPackage();
+		if (__DEC_tInnerClass_allTypes_763533 != null) {
+			if (!tPackage.equals(__DEC_tInnerClass_allTypes_763533)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3243,10 +3243,10 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_3BB(
 			TClass tInnerClass, TClass tOuterClass) {
 		if (!tInnerClass.equals(tOuterClass)) {
-			TAbstractType __DEC_tInnerClass_innerTypes_739992 = tInnerClass.getOuterType();
-			if (__DEC_tInnerClass_innerTypes_739992 != null) {
-				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_739992)) {
-					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_739992)) {
+			TAbstractType __DEC_tInnerClass_innerTypes_799795 = tInnerClass.getOuterType();
+			if (__DEC_tInnerClass_innerTypes_799795 != null) {
+				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_799795)) {
+					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_799795)) {
 						return new Object[] { tInnerClass, tOuterClass };
 					}
 				}
@@ -3409,11 +3409,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_0BB(
 			MClass mInnerClass, ClassDeclaration eOuterClass) {
 		if (!eOuterClass.equals(mInnerClass)) {
-			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_629529 = mInnerClass
+			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_263664 = mInnerClass
 					.getAbstractTypeDeclaration();
-			if (__DEC_mInnerClass_abstractTypeDeclaration_629529 != null) {
-				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_629529)) {
-					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_629529)) {
+			if (__DEC_mInnerClass_abstractTypeDeclaration_263664 != null) {
+				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_263664)) {
+					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_263664)) {
 						return new Object[] { mInnerClass, eOuterClass };
 					}
 				}
@@ -3425,9 +3425,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_1B(
 			MClass mInnerClass) {
-		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_413378 = mInnerClass
+		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_952224 = mInnerClass
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_413378 != null) {
+		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_952224 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3436,7 +3436,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_2B(
 			MClass mInnerClass) {
-		for (Model __DEC_mInnerClass_orphanTypes_923570 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mInnerClass_orphanTypes_831503 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, Model.class, "orphanTypes")) {
 			return new Object[] { mInnerClass };
 		}
@@ -3445,8 +3445,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_3B(
 			MClass mInnerClass) {
-		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_248660 = mInnerClass.getPackage();
-		if (__DEC_mInnerClass_ownedElements_248660 != null) {
+		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_13855 = mInnerClass.getPackage();
+		if (__DEC_mInnerClass_ownedElements_13855 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3455,9 +3455,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_4BB(
 			MClass mInnerClass, MAbstractMethodDefinition mDefinition) {
-		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_572129 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_191416 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_572129)) {
+			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_191416)) {
 				return new Object[] { mInnerClass, mDefinition };
 			}
 		}
@@ -3773,11 +3773,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_0BB(MClass mInnerClass,
 			ClassDeclaration eOuterClass) {
 		if (!eOuterClass.equals(mInnerClass)) {
-			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_767255 = mInnerClass
+			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_694688 = mInnerClass
 					.getAbstractTypeDeclaration();
-			if (__DEC_mInnerClass_abstractTypeDeclaration_767255 != null) {
-				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_767255)) {
-					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_767255)) {
+			if (__DEC_mInnerClass_abstractTypeDeclaration_694688 != null) {
+				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_694688)) {
+					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_694688)) {
 						return new Object[] { mInnerClass, eOuterClass };
 					}
 				}
@@ -3788,9 +3788,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_1B(MClass mInnerClass) {
-		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_864385 = mInnerClass
+		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_126524 = mInnerClass
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_864385 != null) {
+		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_126524 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3798,7 +3798,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_2B(MClass mInnerClass) {
-		for (Model __DEC_mInnerClass_orphanTypes_74483 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mInnerClass_orphanTypes_159567 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, Model.class, "orphanTypes")) {
 			return new Object[] { mInnerClass };
 		}
@@ -3806,8 +3806,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_3B(MClass mInnerClass) {
-		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_344177 = mInnerClass.getPackage();
-		if (__DEC_mInnerClass_ownedElements_344177 != null) {
+		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_146888 = mInnerClass.getPackage();
+		if (__DEC_mInnerClass_ownedElements_146888 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3816,9 +3816,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_4BB(MClass mInnerClass,
 			MAbstractMethodDefinition mDefinition) {
-		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_912445 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_103048 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_912445)) {
+			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_103048)) {
 				return new Object[] { mInnerClass, mDefinition };
 			}
 		}
@@ -3873,9 +3873,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_0BB(TClass tInnerClass,
 			TPackage tPackage) {
-		for (TPackage __DEC_tInnerClass_classes_906627 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tInnerClass_classes_649503 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tInnerClass_classes_906627)) {
+			if (!tPackage.equals(__DEC_tInnerClass_classes_649503)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3884,9 +3884,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_1BB(TClass tInnerClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tInnerClass_classes_417814 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tInnerClass_classes_416222 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tInnerClass_classes_417814)) {
+			if (!typeGraph.equals(__DEC_tInnerClass_classes_416222)) {
 				return new Object[] { tInnerClass, typeGraph };
 			}
 		}
@@ -3895,9 +3895,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_2BB(TClass tInnerClass,
 			TPackage tPackage) {
-		TPackage __DEC_tInnerClass_allTypes_397174 = tInnerClass.getPackage();
-		if (__DEC_tInnerClass_allTypes_397174 != null) {
-			if (!tPackage.equals(__DEC_tInnerClass_allTypes_397174)) {
+		TPackage __DEC_tInnerClass_allTypes_92683 = tInnerClass.getPackage();
+		if (__DEC_tInnerClass_allTypes_92683 != null) {
+			if (!tPackage.equals(__DEC_tInnerClass_allTypes_92683)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3908,10 +3908,10 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_3BB(TClass tInnerClass,
 			TClass tOuterClass) {
 		if (!tInnerClass.equals(tOuterClass)) {
-			TAbstractType __DEC_tInnerClass_innerTypes_225270 = tInnerClass.getOuterType();
-			if (__DEC_tInnerClass_innerTypes_225270 != null) {
-				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_225270)) {
-					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_225270)) {
+			TAbstractType __DEC_tInnerClass_innerTypes_906861 = tInnerClass.getOuterType();
+			if (__DEC_tInnerClass_innerTypes_906861 != null) {
+				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_906861)) {
+					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_906861)) {
 						return new Object[] { tInnerClass, tOuterClass };
 					}
 				}

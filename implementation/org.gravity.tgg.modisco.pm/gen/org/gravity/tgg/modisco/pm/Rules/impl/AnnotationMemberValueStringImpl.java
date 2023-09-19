@@ -774,7 +774,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_176(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_123(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringImpl
 				.pattern_AnnotationMemberValueString_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -833,7 +833,7 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_192(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_129(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringImpl
 				.pattern_AnnotationMemberValueString_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1342,10 +1342,10 @@ public class AnnotationMemberValueStringImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_176__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_176((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_192__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_192((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_123__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_123((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_129__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_129((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

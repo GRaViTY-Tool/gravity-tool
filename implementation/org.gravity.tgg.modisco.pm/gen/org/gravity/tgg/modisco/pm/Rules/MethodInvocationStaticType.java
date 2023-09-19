@@ -214,7 +214,7 @@ public interface MethodInvocationStaticType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_155(EMoflonEdge _edge_staticType);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_102(EMoflonEdge _edge_staticType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface MethodInvocationStaticType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_171(EMoflonEdge _edge_mStaticType);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_108(EMoflonEdge _edge_mStaticType);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -727,7 +727,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_230(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_177(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsFloatImpl
 				.pattern_PrimitiveTypeIsFloat_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -785,7 +785,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_249(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_186(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsFloatImpl
 				.pattern_PrimitiveTypeIsFloat_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1238,10 +1238,10 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_230__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_230((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_249__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_249((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_177__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_177((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_186__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_186((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2452,7 +2452,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_719634 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_706483 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2461,9 +2461,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_820054 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_375058 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_820054)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_375058)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2472,8 +2472,8 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_719515 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_719515 != null) {
+		TPackage __DEC_tPrimitiveClass_allTypes_131740 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_131740 != null) {
 			return new Object[] { tPrimitiveClass };
 		}
 
@@ -2482,9 +2482,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_668958 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_668958 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_668958)) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_428753 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_428753 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_428753)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}
@@ -2913,7 +2913,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_804224 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_854884 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2922,9 +2922,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_1BB(TClass tPrimitiveClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_96329 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_463996 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_96329)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_463996)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2933,8 +2933,8 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_910020 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_910020 != null) {
+		TPackage __DEC_tPrimitiveClass_allTypes_693725 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_693725 != null) {
 			return new Object[] { tPrimitiveClass };
 		}
 
@@ -2943,9 +2943,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_902863 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_902863 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_902863)) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_760459 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_760459 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_760459)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}

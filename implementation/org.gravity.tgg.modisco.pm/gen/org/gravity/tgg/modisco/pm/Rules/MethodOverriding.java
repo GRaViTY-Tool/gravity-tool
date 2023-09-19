@@ -210,7 +210,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_184(EMoflonEdge _edge_overriddenBy);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_131(EMoflonEdge _edge_overriddenBy);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_200(EMoflonEdge _edge_redefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_137(EMoflonEdge _edge_redefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->

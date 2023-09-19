@@ -672,7 +672,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_245(EMoflonEdge _edge_methods) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_192(EMoflonEdge _edge_methods) {
 
 		Object[] result1_bindingAndBlack = MethodNameImpl
 				.pattern_MethodName_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -725,7 +725,7 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_265(EMoflonEdge _edge_mMethodNames) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_202(EMoflonEdge _edge_mMethodNames) {
 
 		Object[] result1_bindingAndBlack = MethodNameImpl
 				.pattern_MethodName_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1180,10 +1180,10 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 			return null;
 		case RulesPackage.METHOD_NAME___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_245__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_245((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_265__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_265((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_192__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_192((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_202__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_202((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_NAME___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_NAME___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2150,9 +2150,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 
 	public static final Object[] pattern_MethodName_20_2_testcorematchandDECs_black_nac_0BB(TMethod tName,
 			TypeGraph pg) {
-		TypeGraph __DEC_tName_model_25882 = tName.getModel();
-		if (__DEC_tName_model_25882 != null) {
-			if (!pg.equals(__DEC_tName_model_25882)) {
+		TypeGraph __DEC_tName_model_231792 = tName.getModel();
+		if (__DEC_tName_model_231792 != null) {
+			if (!pg.equals(__DEC_tName_model_231792)) {
 				return new Object[] { tName, pg };
 			}
 		}
@@ -2518,9 +2518,9 @@ public class MethodNameImpl extends AbstractRuleImpl implements MethodName {
 	}
 
 	public static final Object[] pattern_MethodName_28_1_matchtggpattern_black_nac_0BB(TMethod tName, TypeGraph pg) {
-		TypeGraph __DEC_tName_model_997220 = tName.getModel();
-		if (__DEC_tName_model_997220 != null) {
-			if (!pg.equals(__DEC_tName_model_997220)) {
+		TypeGraph __DEC_tName_model_250011 = tName.getModel();
+		if (__DEC_tName_model_250011 != null) {
+			if (!pg.equals(__DEC_tName_model_250011)) {
 				return new Object[] { tName, pg };
 			}
 		}

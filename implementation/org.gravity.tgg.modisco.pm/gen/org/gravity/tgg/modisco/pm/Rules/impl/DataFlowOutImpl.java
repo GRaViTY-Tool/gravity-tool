@@ -655,7 +655,7 @@ public class DataFlowOutImpl extends AbstractRuleImpl implements DataFlowOut {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_233(EMoflonEdge _edge_outgoingFlows) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_180(EMoflonEdge _edge_outgoingFlows) {
 
 		Object[] result1_bindingAndBlack = DataFlowOutImpl
 				.pattern_DataFlowOut_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -709,7 +709,7 @@ public class DataFlowOutImpl extends AbstractRuleImpl implements DataFlowOut {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_252(EMoflonEdge _edge_incomingFlows) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_189(EMoflonEdge _edge_incomingFlows) {
 
 		Object[] result1_bindingAndBlack = DataFlowOutImpl
 				.pattern_DataFlowOut_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1126,10 +1126,10 @@ public class DataFlowOutImpl extends AbstractRuleImpl implements DataFlowOut {
 			return null;
 		case RulesPackage.DATA_FLOW_OUT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.DATA_FLOW_OUT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_233__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_233((EMoflonEdge) arguments.get(0));
-		case RulesPackage.DATA_FLOW_OUT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_252__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_252((EMoflonEdge) arguments.get(0));
+		case RulesPackage.DATA_FLOW_OUT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_180__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_180((EMoflonEdge) arguments.get(0));
+		case RulesPackage.DATA_FLOW_OUT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_189__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_189((EMoflonEdge) arguments.get(0));
 		case RulesPackage.DATA_FLOW_OUT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.DATA_FLOW_OUT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

@@ -769,7 +769,7 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_170(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = InterfaceInPackageImpl
 				.pattern_InterfaceInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -827,7 +827,7 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_186(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = InterfaceInPackageImpl
 				.pattern_InterfaceInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1356,10 +1356,10 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 			return null;
 		case RulesPackage.INTERFACE_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_170__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_170((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_186__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_186((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_117__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_123__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_123((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2672,9 +2672,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_20_2_testcorematchandDECs_black_nac_0BB(TInterface tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_interfaces_912905 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_interfaces_448483 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "interfaces")) {
-			if (!tPackage.equals(__DEC_tType_interfaces_912905)) {
+			if (!tPackage.equals(__DEC_tType_interfaces_448483)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2683,9 +2683,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_20_2_testcorematchandDECs_black_nac_1BB(TInterface tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_interfaces_527689 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_interfaces_106717 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tType_interfaces_527689)) {
+			if (!pg.equals(__DEC_tType_interfaces_106717)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2694,9 +2694,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_20_2_testcorematchandDECs_black_nac_2BB(TInterface tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_allTypes_937605 = tType.getPackage();
-		if (__DEC_tType_allTypes_937605 != null) {
-			if (!tPackage.equals(__DEC_tType_allTypes_937605)) {
+		TPackage __DEC_tType_allTypes_753256 = tType.getPackage();
+		if (__DEC_tType_allTypes_753256 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_753256)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2705,9 +2705,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 	}
 
 	public static final Object[] pattern_InterfaceInPackage_20_2_testcorematchandDECs_black_nac_3B(TInterface tType) {
-		TAbstractType __DEC_tType_innerTypes_996149 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_996149 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_996149)) {
+		TAbstractType __DEC_tType_innerTypes_409252 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_409252 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_409252)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2856,9 +2856,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_566444 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_566444 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_566444)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_28094 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_28094 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_28094)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2868,9 +2868,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_21_2_testcorematchandDECs_black_nac_1B(
 			InterfaceDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_856142 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_472276 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_856142 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_472276 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2879,7 +2879,7 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_21_2_testcorematchandDECs_black_nac_2B(
 			InterfaceDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_154395 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_808227 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2888,7 +2888,7 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_21_2_testcorematchandDECs_black_nac_3B(
 			InterfaceDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_615122 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_150893 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3144,9 +3144,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_6271 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_6271 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_6271)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_635708 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_635708 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_635708)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3156,9 +3156,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_27_1_matchtggpattern_black_nac_1B(
 			InterfaceDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_393513 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_135446 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_393513 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_135446 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3167,7 +3167,7 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_27_1_matchtggpattern_black_nac_2B(
 			InterfaceDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_117699 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_579045 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3176,7 +3176,7 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_27_1_matchtggpattern_black_nac_3B(
 			InterfaceDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_738284 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_893813 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3211,9 +3211,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_28_1_matchtggpattern_black_nac_0BB(TInterface tType,
 			TPackage tPackage) {
-		for (TPackage __DEC_tType_interfaces_153672 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_interfaces_799586 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "interfaces")) {
-			if (!tPackage.equals(__DEC_tType_interfaces_153672)) {
+			if (!tPackage.equals(__DEC_tType_interfaces_799586)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3222,9 +3222,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_28_1_matchtggpattern_black_nac_1BB(TInterface tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_interfaces_489680 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_interfaces_141944 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tType_interfaces_489680)) {
+			if (!pg.equals(__DEC_tType_interfaces_141944)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3233,9 +3233,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 
 	public static final Object[] pattern_InterfaceInPackage_28_1_matchtggpattern_black_nac_2BB(TInterface tType,
 			TPackage tPackage) {
-		TPackage __DEC_tType_allTypes_909430 = tType.getPackage();
-		if (__DEC_tType_allTypes_909430 != null) {
-			if (!tPackage.equals(__DEC_tType_allTypes_909430)) {
+		TPackage __DEC_tType_allTypes_39950 = tType.getPackage();
+		if (__DEC_tType_allTypes_39950 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_39950)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3244,9 +3244,9 @@ public class InterfaceInPackageImpl extends AbstractRuleImpl implements Interfac
 	}
 
 	public static final Object[] pattern_InterfaceInPackage_28_1_matchtggpattern_black_nac_3B(TInterface tType) {
-		TAbstractType __DEC_tType_innerTypes_142082 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_142082 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_142082)) {
+		TAbstractType __DEC_tType_innerTypes_756831 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_756831 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_756831)) {
 				return new Object[] { tType };
 			}
 		}

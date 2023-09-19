@@ -667,7 +667,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_193(EMoflonEdge _edge_tAnnotated) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_140(EMoflonEdge _edge_tAnnotated) {
 
 		Object[] result1_bindingAndBlack = AnnotationImpl
 				.pattern_Annotation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -720,7 +720,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_210(EMoflonEdge _edge_annotations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_147(EMoflonEdge _edge_annotations) {
 
 		Object[] result1_bindingAndBlack = AnnotationImpl
 				.pattern_Annotation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1122,10 +1122,10 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			return null;
 		case RulesPackage.ANNOTATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_193__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_193((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_210__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_210((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_140__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_147__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_147((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2114,9 +2114,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_20_2_testcorematchandDECs_black_nac_0BB(TAnnotation tAnnotation,
 			TAnnotatable tAnnotable) {
-		TAnnotatable __DEC_tAnnotation_tAnnotation_468023 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotation_468023 != null) {
-			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_468023)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotation_22895 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotation_22895 != null) {
+			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_22895)) {
 				return new Object[] { tAnnotation, tAnnotable };
 			}
 		}
@@ -2243,7 +2243,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_Annotation_value_422734 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_Annotation_value_51669 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -2481,7 +2481,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_Annotation_value_302402 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_Annotation_value_134072 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -2510,9 +2510,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_28_1_matchtggpattern_black_nac_0BB(TAnnotation tAnnotation,
 			TAnnotatable tAnnotable) {
-		TAnnotatable __DEC_tAnnotation_tAnnotation_600482 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotation_600482 != null) {
-			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_600482)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotation_476473 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotation_476473 != null) {
+			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_476473)) {
 				return new Object[] { tAnnotation, tAnnotable };
 			}
 		}

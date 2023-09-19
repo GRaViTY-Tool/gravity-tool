@@ -783,7 +783,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_198(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_145(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = UnresolvedInterfaceDeclarationImpl
 				.pattern_UnresolvedInterfaceDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -843,7 +843,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_215(EMoflonEdge _edge_unresolvedItems) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_152(EMoflonEdge _edge_unresolvedItems) {
 
 		Object[] result1_bindingAndBlack = UnresolvedInterfaceDeclarationImpl
 				.pattern_UnresolvedInterfaceDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1397,10 +1397,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_198__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_198((EMoflonEdge) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_215__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_215((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_145__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_145((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_152__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_152((EMoflonEdge) arguments.get(0));
 		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2576,8 +2576,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_0B(
 			TUnresolvedType tClass) {
-		TPackage __DEC_tClass_allTypes_346346 = tClass.getPackage();
-		if (__DEC_tClass_allTypes_346346 != null) {
+		TPackage __DEC_tClass_allTypes_198696 = tClass.getPackage();
+		if (__DEC_tClass_allTypes_198696 != null) {
 			return new Object[] { tClass };
 		}
 
@@ -2586,9 +2586,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_1B(
 			TUnresolvedType tClass) {
-		TAbstractType __DEC_tClass_innerTypes_754844 = tClass.getOuterType();
-		if (__DEC_tClass_innerTypes_754844 != null) {
-			if (!tClass.equals(__DEC_tClass_innerTypes_754844)) {
+		TAbstractType __DEC_tClass_innerTypes_19683 = tClass.getOuterType();
+		if (__DEC_tClass_innerTypes_19683 != null) {
+			if (!tClass.equals(__DEC_tClass_innerTypes_19683)) {
 				return new Object[] { tClass };
 			}
 		}
@@ -2598,7 +2598,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_2B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_classes_747136 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_classes_240995 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "classes")) {
 			return new Object[] { tClass };
 		}
@@ -2607,9 +2607,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_3BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_classes_551278 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_classes_69331 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tClass_classes_551278)) {
+			if (!pg.equals(__DEC_tClass_classes_69331)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -2618,7 +2618,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_4B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_interfaces_920750 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_interfaces_20827 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "interfaces")) {
 			return new Object[] { tClass };
 		}
@@ -2627,9 +2627,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_5BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_interfaces_683785 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_interfaces_411796 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tClass_interfaces_683785)) {
+			if (!pg.equals(__DEC_tClass_interfaces_411796)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -2808,10 +2808,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_26453 = unresolvedType
+		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_602166 = unresolvedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_unresolvedType_abstractTypeDeclaration_26453 != null) {
-			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_26453)) {
+		if (__DEC_unresolvedType_abstractTypeDeclaration_602166 != null) {
+			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_602166)) {
 				return new Object[] { unresolvedType };
 			}
 		}
@@ -2821,9 +2821,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_390267 = unresolvedType
+		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_49811 = unresolvedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_390267 != null) {
+		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_49811 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -2832,9 +2832,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_2BB(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType, MGravityModel eModel) {
-		for (Model __DEC_unresolvedType_orphanTypes_765802 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_unresolvedType_orphanTypes_927603 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, Model.class, "orphanTypes")) {
-			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_765802)) {
+			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_927603)) {
 				return new Object[] { unresolvedType, eModel };
 			}
 		}
@@ -2843,8 +2843,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_3B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_865881 = unresolvedType.getPackage();
-		if (__DEC_unresolvedType_ownedElements_865881 != null) {
+		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_996053 = unresolvedType.getPackage();
+		if (__DEC_unresolvedType_ownedElements_996053 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -2853,7 +2853,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_4B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_318014 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_264489 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { unresolvedType };
 		}
@@ -3135,10 +3135,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_73190 = unresolvedType
+		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_904350 = unresolvedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_unresolvedType_abstractTypeDeclaration_73190 != null) {
-			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_73190)) {
+		if (__DEC_unresolvedType_abstractTypeDeclaration_904350 != null) {
+			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_904350)) {
 				return new Object[] { unresolvedType };
 			}
 		}
@@ -3148,9 +3148,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_453532 = unresolvedType
+		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_642778 = unresolvedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_453532 != null) {
+		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_642778 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -3159,9 +3159,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_2BB(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType, MGravityModel eModel) {
-		for (Model __DEC_unresolvedType_orphanTypes_324218 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_unresolvedType_orphanTypes_298246 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, Model.class, "orphanTypes")) {
-			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_324218)) {
+			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_298246)) {
 				return new Object[] { unresolvedType, eModel };
 			}
 		}
@@ -3170,8 +3170,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_3B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_540356 = unresolvedType.getPackage();
-		if (__DEC_unresolvedType_ownedElements_540356 != null) {
+		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_573422 = unresolvedType.getPackage();
+		if (__DEC_unresolvedType_ownedElements_573422 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -3180,7 +3180,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_4B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_767126 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_280766 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { unresolvedType };
 		}
@@ -3231,8 +3231,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_0B(
 			TUnresolvedType tClass) {
-		TPackage __DEC_tClass_allTypes_484813 = tClass.getPackage();
-		if (__DEC_tClass_allTypes_484813 != null) {
+		TPackage __DEC_tClass_allTypes_159508 = tClass.getPackage();
+		if (__DEC_tClass_allTypes_159508 != null) {
 			return new Object[] { tClass };
 		}
 
@@ -3241,9 +3241,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_1B(
 			TUnresolvedType tClass) {
-		TAbstractType __DEC_tClass_innerTypes_862716 = tClass.getOuterType();
-		if (__DEC_tClass_innerTypes_862716 != null) {
-			if (!tClass.equals(__DEC_tClass_innerTypes_862716)) {
+		TAbstractType __DEC_tClass_innerTypes_534852 = tClass.getOuterType();
+		if (__DEC_tClass_innerTypes_534852 != null) {
+			if (!tClass.equals(__DEC_tClass_innerTypes_534852)) {
 				return new Object[] { tClass };
 			}
 		}
@@ -3253,7 +3253,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_2B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_classes_881889 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_classes_335388 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "classes")) {
 			return new Object[] { tClass };
 		}
@@ -3262,9 +3262,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_3BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_classes_738972 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_classes_206765 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tClass_classes_738972)) {
+			if (!pg.equals(__DEC_tClass_classes_206765)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -3273,7 +3273,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_4B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_interfaces_598354 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_interfaces_484625 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "interfaces")) {
 			return new Object[] { tClass };
 		}
@@ -3282,9 +3282,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_5BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_interfaces_79662 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_interfaces_271566 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tClass_interfaces_79662)) {
+			if (!pg.equals(__DEC_tClass_interfaces_271566)) {
 				return new Object[] { tClass, pg };
 			}
 		}

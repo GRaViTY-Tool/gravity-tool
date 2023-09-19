@@ -868,7 +868,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_236(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_183(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionImpl
 				.pattern_MethodDefinition_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -926,7 +926,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_255(EMoflonEdge _edge_returnType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_192(EMoflonEdge _edge_returnType) {
 
 		Object[] result1_bindingAndBlack = MethodDefinitionImpl
 				.pattern_MethodDefinition_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1490,10 +1490,10 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 			return null;
 		case RulesPackage.METHOD_DEFINITION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_236__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_236((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_255__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_255((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_183__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_183((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_192__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_192((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEFINITION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3227,9 +3227,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_617132 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_617132 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_617132)) {
+		TSignature __DEC_tDefinition_signature_777130 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_777130 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_777130)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3239,8 +3239,8 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_20_2_testcorematchandDECs_black_nac_1B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_521816 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_521816 != null) {
+		TModule __DEC_tDefinition_contains_57018 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_57018 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3375,9 +3375,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_859438 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_859438 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_859438)) {
+		MSignature __DEC_mDefinition_mDefinitions_877688 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_877688 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_877688)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3387,9 +3387,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_1BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_767377 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_218087 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_767377)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_218087)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3398,7 +3398,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_78631 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_415760 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3407,7 +3407,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_294101 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_62763 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3416,9 +3416,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (ArrayType __DEC_mTypeAccess_elementType_665590 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mTypeAccess_elementType_528934 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mTypeAccess_elementType_665590)) {
+			if (!mType.equals(__DEC_mTypeAccess_elementType_528934)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3427,7 +3427,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_953333 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_301286 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3436,9 +3436,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_6BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_12289 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_38464 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_12289)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_38464)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3447,9 +3447,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_7BB(
 			TypeAccess mTypeAccess, Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_682234 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_689148 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_682234)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_689148)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3458,7 +3458,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_429903 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_785565 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3467,7 +3467,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_21_2_testcorematchandDECs_black_nac_9B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_88688 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_488079 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3791,9 +3791,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_0BB(
 			MMethodDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_552618 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_552618 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_552618)) {
+		MSignature __DEC_mDefinition_mDefinitions_884942 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_884942 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_884942)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3803,9 +3803,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_1BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_980150 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_639608 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_980150)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_639608)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3813,7 +3813,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_2B(TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_299241 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_86992 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3821,7 +3821,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_3B(TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_389676 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_752795 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3830,9 +3830,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_4BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ArrayType __DEC_mTypeAccess_elementType_821936 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mTypeAccess_elementType_785426 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_mTypeAccess_elementType_821936)) {
+			if (!mType.equals(__DEC_mTypeAccess_elementType_785426)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3840,7 +3840,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_5B(TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_925102 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_745807 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3849,9 +3849,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_6BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_97006 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_801855 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_97006)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_801855)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3860,9 +3860,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_7BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_857064 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_419189 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_857064)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_419189)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -3870,7 +3870,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_8B(TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_429195 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_531548 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3878,7 +3878,7 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 	}
 
 	public static final Object[] pattern_MethodDefinition_27_1_matchtggpattern_black_nac_9B(TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_649634 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_119926 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -3936,9 +3936,9 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_28_1_matchtggpattern_black_nac_0BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_666046 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_666046 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_666046)) {
+		TSignature __DEC_tDefinition_signature_654823 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_654823 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_654823)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3948,8 +3948,8 @@ public class MethodDefinitionImpl extends AbstractRuleImpl implements MethodDefi
 
 	public static final Object[] pattern_MethodDefinition_28_1_matchtggpattern_black_nac_1B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_474927 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_474927 != null) {
+		TModule __DEC_tDefinition_contains_559639 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_559639 != null) {
 			return new Object[] { tDefinition };
 		}
 

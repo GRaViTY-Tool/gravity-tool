@@ -781,7 +781,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_237(EMoflonEdge _edge_defines) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_184(EMoflonEdge _edge_defines) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToAnonymousImpl
 				.pattern_LinkDefinitionToAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -840,7 +840,7 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_257(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_194(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = LinkDefinitionToAnonymousImpl
 				.pattern_LinkDefinitionToAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1300,10 +1300,10 @@ public class LinkDefinitionToAnonymousImpl extends AbstractRuleImpl implements L
 			return null;
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_237__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_237((EMoflonEdge) arguments.get(0));
-		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_257__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_257((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_184__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_184((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_194__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_194((EMoflonEdge) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LINK_DEFINITION_TO_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

@@ -779,7 +779,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_197(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_144(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInPackageImpl
 				.pattern_AnnotationTypeInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -838,7 +838,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_214(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_151(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInPackageImpl
 				.pattern_AnnotationTypeInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1375,10 +1375,10 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_197__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_197((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_214__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_214((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_144__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_144((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_151__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2674,9 +2674,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_annotationTypes_570702 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_annotationTypes_239505 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tType_annotationTypes_570702)) {
+			if (!pg.equals(__DEC_tType_annotationTypes_239505)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2685,9 +2685,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_1BB(
 			TAnnotationType tType, TPackage tPackage) {
-		TPackage __DEC_tType_allTypes_100552 = tType.getPackage();
-		if (__DEC_tType_allTypes_100552 != null) {
-			if (!tPackage.equals(__DEC_tType_allTypes_100552)) {
+		TPackage __DEC_tType_allTypes_775901 = tType.getPackage();
+		if (__DEC_tType_allTypes_775901 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_775901)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2697,9 +2697,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_2B(
 			TAnnotationType tType) {
-		TAbstractType __DEC_tType_innerTypes_889687 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_889687 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_889687)) {
+		TAbstractType __DEC_tType_innerTypes_963994 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_963994 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_963994)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2843,9 +2843,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_522843 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_522843 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_522843)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_393373 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_393373 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_393373)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2855,9 +2855,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_510688 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_164333 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_510688 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_164333 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2866,7 +2866,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_313224 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_583556 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2875,7 +2875,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_879557 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_326083 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3134,9 +3134,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_417835 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_417835 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_417835)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_49475 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_49475 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_49475)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3146,9 +3146,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_728952 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_307002 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_728952 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_307002 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3157,7 +3157,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_52575 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_11029 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3166,7 +3166,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_776372 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_751368 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3201,9 +3201,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_annotationTypes_154582 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_annotationTypes_31236 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tType_annotationTypes_154582)) {
+			if (!pg.equals(__DEC_tType_annotationTypes_31236)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3212,9 +3212,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_1BB(
 			TAnnotationType tType, TPackage tPackage) {
-		TPackage __DEC_tType_allTypes_44464 = tType.getPackage();
-		if (__DEC_tType_allTypes_44464 != null) {
-			if (!tPackage.equals(__DEC_tType_allTypes_44464)) {
+		TPackage __DEC_tType_allTypes_428503 = tType.getPackage();
+		if (__DEC_tType_allTypes_428503 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_428503)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3224,9 +3224,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_2B(
 			TAnnotationType tType) {
-		TAbstractType __DEC_tType_innerTypes_808570 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_808570 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_808570)) {
+		TAbstractType __DEC_tType_innerTypes_830390 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_830390 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_830390)) {
 				return new Object[] { tType };
 			}
 		}

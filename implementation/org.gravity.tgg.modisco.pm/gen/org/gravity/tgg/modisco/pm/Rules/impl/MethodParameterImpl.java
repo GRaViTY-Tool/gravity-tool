@@ -772,7 +772,7 @@ public class MethodParameterImpl extends AbstractRuleImpl implements MethodParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_250(EMoflonEdge _edge_parameters) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_197(EMoflonEdge _edge_parameters) {
 
 		Object[] result1_bindingAndBlack = MethodParameterImpl
 				.pattern_MethodParameter_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -830,7 +830,7 @@ public class MethodParameterImpl extends AbstractRuleImpl implements MethodParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_270(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_207(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = MethodParameterImpl
 				.pattern_MethodParameter_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1334,10 +1334,10 @@ public class MethodParameterImpl extends AbstractRuleImpl implements MethodParam
 			return null;
 		case RulesPackage.METHOD_PARAMETER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_250__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_250((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_270__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_270((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_197__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_197((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_207__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_207((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

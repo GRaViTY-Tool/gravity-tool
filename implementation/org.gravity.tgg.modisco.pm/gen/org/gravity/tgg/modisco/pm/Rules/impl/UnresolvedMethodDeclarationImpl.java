@@ -789,7 +789,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_156(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_103(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -850,7 +850,7 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_172(EMoflonEdge _edge_unresolvedItems) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_109(EMoflonEdge _edge_unresolvedItems) {
 
 		Object[] result1_bindingAndBlack = UnresolvedMethodDeclarationImpl
 				.pattern_UnresolvedMethodDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1340,10 +1340,10 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_156__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_156((EMoflonEdge) arguments.get(0));
-		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_172__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_172((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_103__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_103((EMoflonEdge) arguments.get(0));
+		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_109__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_109((EMoflonEdge) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.UNRESOLVED_METHOD_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2625,9 +2625,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodSignature tMethodSignature, TMethod tMethodName) {
-		TMethod __DEC_tMethodSignature_method_102341 = tMethodSignature.getMethod();
-		if (__DEC_tMethodSignature_method_102341 != null) {
-			if (!tMethodName.equals(__DEC_tMethodSignature_method_102341)) {
+		TMethod __DEC_tMethodSignature_method_456206 = tMethodSignature.getMethod();
+		if (__DEC_tMethodSignature_method_456206 != null) {
+			if (!tMethodName.equals(__DEC_tMethodSignature_method_456206)) {
 				return new Object[] { tMethodSignature, tMethodName };
 			}
 		}
@@ -2637,8 +2637,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_1B(
 			TMethodSignature tMethodSignature) {
-		TAbstractType __DEC_tMethodSignature_returnType_546484 = tMethodSignature.getReturnType();
-		if (__DEC_tMethodSignature_returnType_546484 != null) {
+		TAbstractType __DEC_tMethodSignature_returnType_25134 = tMethodSignature.getReturnType();
+		if (__DEC_tMethodSignature_returnType_25134 != null) {
 			return new Object[] { tMethodSignature };
 		}
 
@@ -2647,9 +2647,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_2BB(
 			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tMethodDefinition_signature_504659 = tMethodDefinition.getSignature();
-		if (__DEC_tMethodDefinition_signature_504659 != null) {
-			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_504659)) {
+		TSignature __DEC_tMethodDefinition_signature_703160 = tMethodDefinition.getSignature();
+		if (__DEC_tMethodDefinition_signature_703160 != null) {
+			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_703160)) {
 				return new Object[] { tMethodDefinition, tMethodSignature };
 			}
 		}
@@ -2659,8 +2659,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_3B(
 			TMethodDefinition tMethodDefinition) {
-		TAbstractType __DEC_tMethodDefinition_returnType_908472 = tMethodDefinition.getReturnType();
-		if (__DEC_tMethodDefinition_returnType_908472 != null) {
+		TAbstractType __DEC_tMethodDefinition_returnType_743703 = tMethodDefinition.getReturnType();
+		if (__DEC_tMethodDefinition_returnType_743703 != null) {
 			return new Object[] { tMethodDefinition };
 		}
 
@@ -2669,8 +2669,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_4B(
 			TMethodDefinition tMethodDefinition) {
-		TModule __DEC_tMethodDefinition_contains_914570 = tMethodDefinition.getModule();
-		if (__DEC_tMethodDefinition_contains_914570 != null) {
+		TModule __DEC_tMethodDefinition_contains_203946 = tMethodDefinition.getModule();
+		if (__DEC_tMethodDefinition_contains_203946 != null) {
 			return new Object[] { tMethodDefinition };
 		}
 
@@ -2679,9 +2679,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_20_2_testcorematchandDECs_black_nac_5BB(
 			TMethod tMethodName, TypeGraph tModel) {
-		TypeGraph __DEC_tMethodName_model_680000 = tMethodName.getModel();
-		if (__DEC_tMethodName_model_680000 != null) {
-			if (!tModel.equals(__DEC_tMethodName_model_680000)) {
+		TypeGraph __DEC_tMethodName_model_853652 = tMethodName.getModel();
+		if (__DEC_tMethodName_model_853652 != null) {
+			if (!tModel.equals(__DEC_tMethodName_model_853652)) {
 				return new Object[] { tMethodName, tModel };
 			}
 		}
@@ -2839,8 +2839,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_946469 = mMethod.getAbstractTypeDeclaration();
-		if (__DEC_mMethod_abstractTypeDeclaration_946469 != null) {
+		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_399355 = mMethod.getAbstractTypeDeclaration();
+		if (__DEC_mMethod_abstractTypeDeclaration_399355 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -2849,9 +2849,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_21_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_950462 = mMethod
+		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_438571 = mMethod
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mMethod_anonymousClassDeclarationOwner_950462 != null) {
+		if (__DEC_mMethod_anonymousClassDeclarationOwner_438571 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -2860,8 +2860,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_21_2_testcorematchandDECs_black_nac_2B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		TypeAccess __DEC_mMethod_returnType_448982 = mMethod.getReturnType();
-		if (__DEC_mMethod_returnType_448982 != null) {
+		TypeAccess __DEC_mMethod_returnType_414189 = mMethod.getReturnType();
+		if (__DEC_mMethod_returnType_414189 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3133,8 +3133,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_558385 = mMethod.getAbstractTypeDeclaration();
-		if (__DEC_mMethod_abstractTypeDeclaration_558385 != null) {
+		AbstractTypeDeclaration __DEC_mMethod_abstractTypeDeclaration_743149 = mMethod.getAbstractTypeDeclaration();
+		if (__DEC_mMethod_abstractTypeDeclaration_743149 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3143,9 +3143,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_27_1_matchtggpattern_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_448471 = mMethod
+		AnonymousClassDeclaration __DEC_mMethod_anonymousClassDeclarationOwner_829177 = mMethod
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mMethod_anonymousClassDeclarationOwner_448471 != null) {
+		if (__DEC_mMethod_anonymousClassDeclarationOwner_829177 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3154,8 +3154,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_27_1_matchtggpattern_black_nac_2B(
 			org.eclipse.modisco.java.UnresolvedMethodDeclaration mMethod) {
-		TypeAccess __DEC_mMethod_returnType_377683 = mMethod.getReturnType();
-		if (__DEC_mMethod_returnType_377683 != null) {
+		TypeAccess __DEC_mMethod_returnType_542831 = mMethod.getReturnType();
+		if (__DEC_mMethod_returnType_542831 != null) {
 			return new Object[] { mMethod };
 		}
 
@@ -3188,9 +3188,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_0BB(
 			TMethodSignature tMethodSignature, TMethod tMethodName) {
-		TMethod __DEC_tMethodSignature_method_879991 = tMethodSignature.getMethod();
-		if (__DEC_tMethodSignature_method_879991 != null) {
-			if (!tMethodName.equals(__DEC_tMethodSignature_method_879991)) {
+		TMethod __DEC_tMethodSignature_method_487501 = tMethodSignature.getMethod();
+		if (__DEC_tMethodSignature_method_487501 != null) {
+			if (!tMethodName.equals(__DEC_tMethodSignature_method_487501)) {
 				return new Object[] { tMethodSignature, tMethodName };
 			}
 		}
@@ -3200,8 +3200,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_1B(
 			TMethodSignature tMethodSignature) {
-		TAbstractType __DEC_tMethodSignature_returnType_276248 = tMethodSignature.getReturnType();
-		if (__DEC_tMethodSignature_returnType_276248 != null) {
+		TAbstractType __DEC_tMethodSignature_returnType_177015 = tMethodSignature.getReturnType();
+		if (__DEC_tMethodSignature_returnType_177015 != null) {
 			return new Object[] { tMethodSignature };
 		}
 
@@ -3210,9 +3210,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_2BB(
 			TMethodDefinition tMethodDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tMethodDefinition_signature_31618 = tMethodDefinition.getSignature();
-		if (__DEC_tMethodDefinition_signature_31618 != null) {
-			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_31618)) {
+		TSignature __DEC_tMethodDefinition_signature_689100 = tMethodDefinition.getSignature();
+		if (__DEC_tMethodDefinition_signature_689100 != null) {
+			if (!tMethodSignature.equals(__DEC_tMethodDefinition_signature_689100)) {
 				return new Object[] { tMethodDefinition, tMethodSignature };
 			}
 		}
@@ -3222,8 +3222,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_3B(
 			TMethodDefinition tMethodDefinition) {
-		TAbstractType __DEC_tMethodDefinition_returnType_517964 = tMethodDefinition.getReturnType();
-		if (__DEC_tMethodDefinition_returnType_517964 != null) {
+		TAbstractType __DEC_tMethodDefinition_returnType_288267 = tMethodDefinition.getReturnType();
+		if (__DEC_tMethodDefinition_returnType_288267 != null) {
 			return new Object[] { tMethodDefinition };
 		}
 
@@ -3232,8 +3232,8 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_4B(
 			TMethodDefinition tMethodDefinition) {
-		TModule __DEC_tMethodDefinition_contains_762650 = tMethodDefinition.getModule();
-		if (__DEC_tMethodDefinition_contains_762650 != null) {
+		TModule __DEC_tMethodDefinition_contains_830053 = tMethodDefinition.getModule();
+		if (__DEC_tMethodDefinition_contains_830053 != null) {
 			return new Object[] { tMethodDefinition };
 		}
 
@@ -3242,9 +3242,9 @@ public class UnresolvedMethodDeclarationImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_UnresolvedMethodDeclaration_28_1_matchtggpattern_black_nac_5BB(
 			TMethod tMethodName, TypeGraph tModel) {
-		TypeGraph __DEC_tMethodName_model_639739 = tMethodName.getModel();
-		if (__DEC_tMethodName_model_639739 != null) {
-			if (!tModel.equals(__DEC_tMethodName_model_639739)) {
+		TypeGraph __DEC_tMethodName_model_586278 = tMethodName.getModel();
+		if (__DEC_tMethodName_model_586278 != null) {
+			if (!tModel.equals(__DEC_tMethodName_model_586278)) {
 				return new Object[] { tMethodName, tModel };
 			}
 		}

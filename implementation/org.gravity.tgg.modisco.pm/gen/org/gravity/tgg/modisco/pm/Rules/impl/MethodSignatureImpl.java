@@ -769,7 +769,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_179(EMoflonEdge _edge_signatures) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_126(EMoflonEdge _edge_signatures) {
 
 		Object[] result1_bindingAndBlack = MethodSignatureImpl
 				.pattern_MethodSignature_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -827,7 +827,7 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_195(EMoflonEdge _edge_mSignatures) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_132(EMoflonEdge _edge_mSignatures) {
 
 		Object[] result1_bindingAndBlack = MethodSignatureImpl
 				.pattern_MethodSignature_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1328,10 +1328,10 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 			return null;
 		case RulesPackage.METHOD_SIGNATURE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_179__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_179((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_195__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_195((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_126__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_126((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_132__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_132((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_SIGNATURE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2756,9 +2756,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodSignature tSignature, TMethod tName) {
-		TMethod __DEC_tSignature_method_425503 = tSignature.getMethod();
-		if (__DEC_tSignature_method_425503 != null) {
-			if (!tName.equals(__DEC_tSignature_method_425503)) {
+		TMethod __DEC_tSignature_method_761352 = tSignature.getMethod();
+		if (__DEC_tSignature_method_761352 != null) {
+			if (!tName.equals(__DEC_tSignature_method_761352)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3181,9 +3181,9 @@ public class MethodSignatureImpl extends AbstractRuleImpl implements MethodSigna
 
 	public static final Object[] pattern_MethodSignature_28_1_matchtggpattern_black_nac_0BB(TMethodSignature tSignature,
 			TMethod tName) {
-		TMethod __DEC_tSignature_method_502524 = tSignature.getMethod();
-		if (__DEC_tSignature_method_502524 != null) {
-			if (!tName.equals(__DEC_tSignature_method_502524)) {
+		TMethod __DEC_tSignature_method_729512 = tSignature.getMethod();
+		if (__DEC_tSignature_method_729512 != null) {
+			if (!tName.equals(__DEC_tSignature_method_729512)) {
 				return new Object[] { tSignature, tName };
 			}
 		}

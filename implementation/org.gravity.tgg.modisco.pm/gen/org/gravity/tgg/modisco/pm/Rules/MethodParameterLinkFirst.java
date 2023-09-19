@@ -217,7 +217,7 @@ public interface MethodParameterLinkFirst extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_227(EMoflonEdge _edge_firstParameter);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_174(EMoflonEdge _edge_firstParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface MethodParameterLinkFirst extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_246(EMoflonEdge _edge_mFirstEntry);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_183(EMoflonEdge _edge_mFirstEntry);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -220,7 +220,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_171(EMoflonEdge _edge_target);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_118(EMoflonEdge _edge_target);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface MethodInvocationTarget extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_187(EMoflonEdge _edge_method);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_method);
 
 	/**
 	 * <!-- begin-user-doc -->

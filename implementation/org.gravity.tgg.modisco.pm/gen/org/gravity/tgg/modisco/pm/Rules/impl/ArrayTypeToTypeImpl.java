@@ -565,7 +565,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TypeGraph_10(TypeGraph tModel) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_6(TypeGraph tModel) {
 
 		Object[] result1_bindingAndBlack = ArrayTypeToTypeImpl
 				.pattern_ArrayTypeToType_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -621,7 +621,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_183(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_120(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ArrayTypeToTypeImpl
 				.pattern_ArrayTypeToType_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1042,10 +1042,10 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_BWD_TYPE_GRAPH_10__TYPEGRAPH:
-			return isAppropriate_BWD_TypeGraph_10((TypeGraph) arguments.get(0));
-		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_183__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_183((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_BWD_TYPE_GRAPH_6__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_6((TypeGraph) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_120__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1993,9 +1993,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_0BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_448601 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_644473 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_448601)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_644473)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2004,7 +2004,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_156648 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_351289 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2013,7 +2013,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_365982 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_603036 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2022,7 +2022,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_240717 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_372251 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2031,9 +2031,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_4BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_340577 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_74363 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_340577)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_74363)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2042,7 +2042,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess mTypeAccess) {
-		for (MethodDeclaration __DEC_mTypeAccess_returnType_893423 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mTypeAccess_returnType_249500 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2051,9 +2051,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_6BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_868372 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_782664 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_868372)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_782664)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2062,7 +2062,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_336452 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_453436 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2071,7 +2071,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_520182 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_928827 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2373,9 +2373,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_0BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_816148 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_568725 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_816148)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_568725)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2383,7 +2383,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_1B(TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_823576 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_555636 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2391,7 +2391,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_2B(TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_672723 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_816688 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2399,7 +2399,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_3B(TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_88685 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_36806 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2408,9 +2408,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_4BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_315317 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_917016 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_315317)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_917016)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2418,7 +2418,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_5B(TypeAccess mTypeAccess) {
-		for (MethodDeclaration __DEC_mTypeAccess_returnType_23680 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mTypeAccess_returnType_794979 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2427,9 +2427,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_6BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_203154 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_208112 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_203154)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_208112)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2437,7 +2437,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_7B(TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_960762 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_98785 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2445,7 +2445,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_8B(TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_289815 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_686399 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}

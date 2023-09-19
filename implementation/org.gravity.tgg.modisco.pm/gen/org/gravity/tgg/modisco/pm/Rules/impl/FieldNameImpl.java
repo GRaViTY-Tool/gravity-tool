@@ -676,7 +676,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_199(EMoflonEdge _edge_fields) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_146(EMoflonEdge _edge_fields) {
 
 		Object[] result1_bindingAndBlack = FieldNameImpl
 				.pattern_FieldName_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_216(EMoflonEdge _edge_mFieldNames) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_153(EMoflonEdge _edge_mFieldNames) {
 
 		Object[] result1_bindingAndBlack = FieldNameImpl
 				.pattern_FieldName_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1181,10 +1181,10 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 			return null;
 		case RulesPackage.FIELD_NAME___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_199__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_199((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_216__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_216((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_BWD_EMOFLON_EDGE_146__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_146((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_NAME___IS_APPROPRIATE_FWD_EMOFLON_EDGE_153__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_153((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_NAME___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_NAME___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2163,9 +2163,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 
 	public static final Object[] pattern_FieldName_20_2_testcorematchandDECs_black_nac_0BB(TField tField,
 			TypeGraph typeGraph) {
-		TypeGraph __DEC_tField_model_833669 = tField.getModel();
-		if (__DEC_tField_model_833669 != null) {
-			if (!typeGraph.equals(__DEC_tField_model_833669)) {
+		TypeGraph __DEC_tField_model_760639 = tField.getModel();
+		if (__DEC_tField_model_760639 != null) {
+			if (!typeGraph.equals(__DEC_tField_model_760639)) {
 				return new Object[] { tField, typeGraph };
 			}
 		}
@@ -2532,9 +2532,9 @@ public class FieldNameImpl extends AbstractRuleImpl implements FieldName {
 
 	public static final Object[] pattern_FieldName_28_1_matchtggpattern_black_nac_0BB(TField tField,
 			TypeGraph typeGraph) {
-		TypeGraph __DEC_tField_model_7289 = tField.getModel();
-		if (__DEC_tField_model_7289 != null) {
-			if (!typeGraph.equals(__DEC_tField_model_7289)) {
+		TypeGraph __DEC_tField_model_417321 = tField.getModel();
+		if (__DEC_tField_model_417321 != null) {
+			if (!typeGraph.equals(__DEC_tField_model_417321)) {
 				return new Object[] { tField, typeGraph };
 			}
 		}

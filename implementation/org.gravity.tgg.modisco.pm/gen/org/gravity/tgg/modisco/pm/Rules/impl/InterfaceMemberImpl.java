@@ -787,7 +787,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_206(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_153(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = InterfaceMemberImpl
 				.pattern_InterfaceMember_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -845,7 +845,7 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_223(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_160(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InterfaceMemberImpl
 				.pattern_InterfaceMember_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1387,10 +1387,10 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 			return null;
 		case RulesPackage.INTERFACE_MEMBER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_206__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_206((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_223__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_223((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_153__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_153((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_160__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_160((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2752,9 +2752,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_20_2_testcorematchandDECs_black_nac_0BB(TModifier tModifier,
 			TInterface tInterface) {
-		for (TAbstractType __DEC_tModifier_tModifier_226357 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_863403 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tInterface.equals(__DEC_tModifier_tModifier_226357)) {
+			if (!tInterface.equals(__DEC_tModifier_tModifier_863403)) {
 				return new Object[] { tModifier, tInterface };
 			}
 		}
@@ -3177,9 +3177,9 @@ public class InterfaceMemberImpl extends AbstractRuleImpl implements InterfaceMe
 
 	public static final Object[] pattern_InterfaceMember_28_1_matchtggpattern_black_nac_0BB(TModifier tModifier,
 			TInterface tInterface) {
-		for (TAbstractType __DEC_tModifier_tModifier_331000 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_770490 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tInterface.equals(__DEC_tModifier_tModifier_331000)) {
+			if (!tInterface.equals(__DEC_tModifier_tModifier_770490)) {
 				return new Object[] { tModifier, tInterface };
 			}
 		}

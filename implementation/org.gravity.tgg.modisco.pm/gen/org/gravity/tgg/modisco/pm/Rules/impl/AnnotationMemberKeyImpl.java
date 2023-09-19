@@ -782,7 +782,7 @@ public class AnnotationMemberKeyImpl extends AbstractRuleImpl implements Annotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_251(EMoflonEdge _edge_tValues) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_198(EMoflonEdge _edge_tValues) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberKeyImpl
 				.pattern_AnnotationMemberKey_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -840,7 +840,7 @@ public class AnnotationMemberKeyImpl extends AbstractRuleImpl implements Annotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_271(EMoflonEdge _edge_values) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_208(EMoflonEdge _edge_values) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberKeyImpl
 				.pattern_AnnotationMemberKey_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1335,10 +1335,10 @@ public class AnnotationMemberKeyImpl extends AbstractRuleImpl implements Annotat
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_KEY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_KEY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_251__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_251((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_KEY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_271__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_271((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_KEY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_198__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_198((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_KEY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_208__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_208((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_KEY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_KEY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

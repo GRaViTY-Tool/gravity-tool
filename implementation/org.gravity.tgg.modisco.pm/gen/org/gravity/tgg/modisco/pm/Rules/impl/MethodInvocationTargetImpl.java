@@ -706,7 +706,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_171(EMoflonEdge _edge_target) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_118(EMoflonEdge _edge_target) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationTargetImpl
 				.pattern_MethodInvocationTarget_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -764,7 +764,7 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_187(EMoflonEdge _edge_method) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_method) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationTargetImpl
 				.pattern_MethodInvocationTarget_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1198,10 +1198,10 @@ public class MethodInvocationTargetImpl extends AbstractRuleImpl implements Meth
 			return null;
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_BWD_EMOFLON_EDGE_171__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_171((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_FWD_EMOFLON_EDGE_187__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_187((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_BWD_EMOFLON_EDGE_118__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_TARGET___IS_APPROPRIATE_FWD_EMOFLON_EDGE_124__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_TARGET___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

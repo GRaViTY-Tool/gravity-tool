@@ -764,7 +764,7 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_185(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_132(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = ConstructorDefinitionImpl
 				.pattern_ConstructorDefinition_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -823,7 +823,7 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_201(EMoflonEdge _edge_mDefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_138(EMoflonEdge _edge_mDefinitions) {
 
 		Object[] result1_bindingAndBlack = ConstructorDefinitionImpl
 				.pattern_ConstructorDefinition_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1277,10 +1277,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 			return null;
 		case RulesPackage.CONSTRUCTOR_DEFINITION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_185__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_185((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_201__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_201((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_132__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_132((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_138__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEFINITION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEFINITION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2664,10 +2664,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_0BBB(
 			TConstructor tAnnotation, TMethodSignature tMethodSignature, TMethodDefinition tDefinition) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_315570 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_315570 != null) {
-			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_315570)) {
-				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_315570)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_949839 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_949839 != null) {
+			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_949839)) {
+				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_949839)) {
 					return new Object[] { tAnnotation, tMethodSignature, tDefinition };
 				}
 			}
@@ -2678,9 +2678,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_1BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_212479 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_212479 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_212479)) {
+		TSignature __DEC_tDefinition_signature_754508 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_754508 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_754508)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -2690,8 +2690,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_2B(
 			TMethodDefinition tDefinition) {
-		TAbstractType __DEC_tDefinition_returnType_478585 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_478585 != null) {
+		TAbstractType __DEC_tDefinition_returnType_105241 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_105241 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -2700,8 +2700,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_20_2_testcorematchandDECs_black_nac_3B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_273479 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_273479 != null) {
+		TModule __DEC_tDefinition_contains_255080 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_255080 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -2865,9 +2865,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_21_2_testcorematchandDECs_black_nac_0BB(
 			MConstructorDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_592648 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_592648 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_592648)) {
+		MSignature __DEC_mDefinition_mDefinitions_488221 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_488221 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_488221)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3140,9 +3140,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_27_1_matchtggpattern_black_nac_0BB(
 			MConstructorDefinition mDefinition, MMethodSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_208725 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_208725 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_208725)) {
+		MSignature __DEC_mDefinition_mDefinitions_165444 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_165444 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_165444)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -3172,10 +3172,10 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_0BBB(
 			TConstructor tAnnotation, TMethodSignature tMethodSignature, TMethodDefinition tDefinition) {
-		TAnnotatable __DEC_tAnnotation_tAnnotated_208164 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotated_208164 != null) {
-			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_208164)) {
-				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_208164)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotated_543055 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotated_543055 != null) {
+			if (!tMethodSignature.equals(__DEC_tAnnotation_tAnnotated_543055)) {
+				if (!tDefinition.equals(__DEC_tAnnotation_tAnnotated_543055)) {
 					return new Object[] { tAnnotation, tMethodSignature, tDefinition };
 				}
 			}
@@ -3186,9 +3186,9 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_1BB(
 			TMethodDefinition tDefinition, TMethodSignature tMethodSignature) {
-		TSignature __DEC_tDefinition_signature_476659 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_476659 != null) {
-			if (!tMethodSignature.equals(__DEC_tDefinition_signature_476659)) {
+		TSignature __DEC_tDefinition_signature_35118 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_35118 != null) {
+			if (!tMethodSignature.equals(__DEC_tDefinition_signature_35118)) {
 				return new Object[] { tDefinition, tMethodSignature };
 			}
 		}
@@ -3198,8 +3198,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_2B(
 			TMethodDefinition tDefinition) {
-		TAbstractType __DEC_tDefinition_returnType_326281 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_326281 != null) {
+		TAbstractType __DEC_tDefinition_returnType_942127 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_942127 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3208,8 +3208,8 @@ public class ConstructorDefinitionImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorDefinition_28_1_matchtggpattern_black_nac_3B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_16242 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_16242 != null) {
+		TModule __DEC_tDefinition_contains_772040 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_772040 != null) {
 			return new Object[] { tDefinition };
 		}
 

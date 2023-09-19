@@ -685,7 +685,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_191(EMoflonEdge _edge_tAnnotated) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_tAnnotated) {
 
 		Object[] result1_bindingAndBlack = TextAnnotationsImpl
 				.pattern_TextAnnotations_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,7 +742,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_208(EMoflonEdge _edge_comments) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_145(EMoflonEdge _edge_comments) {
 
 		Object[] result1_bindingAndBlack = TextAnnotationsImpl
 				.pattern_TextAnnotations_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1220,10 +1220,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			return null;
 		case RulesPackage.TEXT_ANNOTATIONS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_191__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_191((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_208__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_208((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_138__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_145__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_145((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TEXT_ANNOTATIONS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TEXT_ANNOTATIONS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2220,9 +2220,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 
 	public static final Object[] pattern_TextAnnotations_20_2_testcorematchandDECs_black_nac_0BB(TTextAnnotation tText,
 			TMember tMember) {
-		TAnnotatable __DEC_tText_tAnnotation_194737 = tText.getTAnnotated();
-		if (__DEC_tText_tAnnotation_194737 != null) {
-			if (!tMember.equals(__DEC_tText_tAnnotation_194737)) {
+		TAnnotatable __DEC_tText_tAnnotation_359090 = tText.getTAnnotated();
+		if (__DEC_tText_tAnnotation_359090 != null) {
+			if (!tMember.equals(__DEC_tText_tAnnotation_359090)) {
 				return new Object[] { tText, tMember };
 			}
 		}
@@ -2608,9 +2608,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 
 	public static final Object[] pattern_TextAnnotations_28_1_matchtggpattern_black_nac_0BB(TTextAnnotation tText,
 			TMember tMember) {
-		TAnnotatable __DEC_tText_tAnnotation_159101 = tText.getTAnnotated();
-		if (__DEC_tText_tAnnotation_159101 != null) {
-			if (!tMember.equals(__DEC_tText_tAnnotation_159101)) {
+		TAnnotatable __DEC_tText_tAnnotation_227532 = tText.getTAnnotated();
+		if (__DEC_tText_tAnnotation_227532 != null) {
+			if (!tMember.equals(__DEC_tText_tAnnotation_227532)) {
 				return new Object[] { tText, tMember };
 			}
 		}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -7,79 +8,53 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="src" path="src/"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/javax.activation-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/asm.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-transports-http-jetty.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-http.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-io.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-jakarta-servlet-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-security.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-server.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-util.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.soap-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.ws-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/angus-activation.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/classgraph.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/commons-lang3.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-core.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-bindings-soap.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-bindings-xml.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-databinding-jaxb.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-frontend-jaxrs.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-frontend-jaxws.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-frontend-simple.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-rs-extension-providers.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-rs-service-description.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-rs-service-description-common-openapi.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-rs-service-description-openapi-v3.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-rs-service-description-swagger-ui.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-security.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-transports-http.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-transports-http-jetty.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-ws-addr.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-wsdl.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-ws-policy.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/geronimo-jta_1.1_spec.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/istack-commons-runtime.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-annotations.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-core.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-databind.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-dataformat-yaml.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-datatype-jsr310.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-jaxrs-base.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-jaxrs-json-provider.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-module-jaxb-annotations.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-jakarta-rs-base.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-jakarta-rs-json-provider.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jackson-module-jakarta-xmlbind-annotations.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.activation-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.annotation-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.jws-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.validation-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.ws.rs-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.bind-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.soap-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.ws-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/javassist.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/javax.annotation-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/javax.servlet-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/javax.xml.soap-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jaxb-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jaxb-core.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jaxb-runtime.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jaxws-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jettison.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-continuation.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-http.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-io.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-security.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-server.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-util.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/logback-classic.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/logback-core.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/neethi.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/saaj-impl.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/slf4j-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/snakeyaml.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/stax2-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/stax-ex.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-annotations.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-core.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-integration.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-jaxrs2.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-models.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-annotations-jakarta.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-core-jakarta.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-integration-jakarta.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-jaxrs2-jakarta.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/swagger-models-jakarta.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/txw2.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/woodstox-core.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/wsdl4j.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/xml-resolver.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/xmlschema-core.jar"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

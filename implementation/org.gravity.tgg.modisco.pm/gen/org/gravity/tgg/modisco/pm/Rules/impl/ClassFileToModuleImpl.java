@@ -672,7 +672,7 @@ public class ClassFileToModuleImpl extends AbstractRuleImpl implements ClassFile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_228(EMoflonEdge _edge_modules) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_175(EMoflonEdge _edge_modules) {
 
 		Object[] result1_bindingAndBlack = ClassFileToModuleImpl
 				.pattern_ClassFileToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class ClassFileToModuleImpl extends AbstractRuleImpl implements ClassFile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_247(EMoflonEdge _edge_classFiles) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_184(EMoflonEdge _edge_classFiles) {
 
 		Object[] result1_bindingAndBlack = ClassFileToModuleImpl
 				.pattern_ClassFileToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1189,10 +1189,10 @@ public class ClassFileToModuleImpl extends AbstractRuleImpl implements ClassFile
 			return null;
 		case RulesPackage.CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_228__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_228((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_247__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_247((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_175__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_175((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_184__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_184((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

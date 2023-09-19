@@ -659,7 +659,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_240(EMoflonEdge _edge_ownedFlows) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_187(EMoflonEdge _edge_ownedFlows) {
 
 		Object[] result1_bindingAndBlack = FlowNodeImpl
 				.pattern_FlowNode_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -712,7 +712,7 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_260(EMoflonEdge _edge_ownedFlows) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_197(EMoflonEdge _edge_ownedFlows) {
 
 		Object[] result1_bindingAndBlack = FlowNodeImpl
 				.pattern_FlowNode_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1118,10 +1118,10 @@ public class FlowNodeImpl extends AbstractRuleImpl implements FlowNode {
 			return null;
 		case RulesPackage.FLOW_NODE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_240__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_240((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_260__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_260((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_187__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_187((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FLOW_NODE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_197__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_197((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FLOW_NODE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FLOW_NODE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

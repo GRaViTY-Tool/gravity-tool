@@ -221,7 +221,7 @@ public interface MethodParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_250(EMoflonEdge _edge_parameters);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_197(EMoflonEdge _edge_parameters);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface MethodParameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_270(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_207(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

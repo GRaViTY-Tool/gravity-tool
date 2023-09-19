@@ -612,7 +612,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_256(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_193(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = ParameterizedTypeToTypeImpl
 				.pattern_ParameterizedTypeToType_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1036,8 +1036,8 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_TYPE___IS_APPROPRIATE_BWD_TABSTRACT_TYPE_1__TABSTRACTTYPE:
 			return isAppropriate_BWD_TAbstractType_1((TAbstractType) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_256__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_256((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_193__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_193((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE_TO_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1876,9 +1876,9 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess eTypeAccess, AbstractTypeDeclaration eType) {
-		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_161098 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_398928 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_161098)) {
+			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_398928)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -1887,7 +1887,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_864377 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_782988 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -1896,7 +1896,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_572672 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_896207 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -1905,7 +1905,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_62123 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_331762 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -1914,7 +1914,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_576285 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_76786 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -1923,9 +1923,9 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_5BB(
 			TypeAccess eTypeAccess, AbstractTypeDeclaration eType) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_955012 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_630692 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!eType.equals(__DEC_eTypeAccess_superClass_955012)) {
+			if (!eType.equals(__DEC_eTypeAccess_superClass_630692)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -1934,7 +1934,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_975706 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_754872 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -1943,7 +1943,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_268638 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_405107 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -1952,7 +1952,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_18_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_144178 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_921272 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2250,9 +2250,9 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_0BB(
 			TypeAccess eTypeAccess, AbstractTypeDeclaration eType) {
-		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_6162 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_eTypeAccess_superInterfaces_128151 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_6162)) {
+			if (!eType.equals(__DEC_eTypeAccess_superInterfaces_128151)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2261,7 +2261,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_649065 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_55700 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2270,7 +2270,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_237051 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_1725 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2279,7 +2279,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_691756 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_734024 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2288,7 +2288,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_4B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_334686 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_298995 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2297,9 +2297,9 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_5BB(
 			TypeAccess eTypeAccess, AbstractTypeDeclaration eType) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_519259 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_886422 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!eType.equals(__DEC_eTypeAccess_superClass_519259)) {
+			if (!eType.equals(__DEC_eTypeAccess_superClass_886422)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -2308,7 +2308,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_544810 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_539088 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2317,7 +2317,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_238833 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_49132 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2326,7 +2326,7 @@ public class ParameterizedTypeToTypeImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedTypeToType_24_1_matchtggpattern_black_nac_8B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_858350 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_411653 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}

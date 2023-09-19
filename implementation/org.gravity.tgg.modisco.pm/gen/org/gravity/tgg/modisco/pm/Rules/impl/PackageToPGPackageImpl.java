@@ -694,7 +694,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_169(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_116(EMoflonEdge _edge_model) {
 
 		Object[] result1_bindingAndBlack = PackageToPGPackageImpl
 				.pattern_PackageToPGPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -751,7 +751,7 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_185(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_122(EMoflonEdge _edge_model) {
 
 		Object[] result1_bindingAndBlack = PackageToPGPackageImpl
 				.pattern_PackageToPGPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1218,10 +1218,10 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 			return null;
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_169__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_169((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_185__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_185((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_116__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_116((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PACKAGE_TO_PG_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_122__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_122((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PACKAGE_TO_PG_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2246,9 +2246,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_20_2_testcorematchandDECs_black_nac_0B(TPackage tPackage) {
-		TPackage __DEC_tPackage_subpackages_573663 = tPackage.getParent();
-		if (__DEC_tPackage_subpackages_573663 != null) {
-			if (!tPackage.equals(__DEC_tPackage_subpackages_573663)) {
+		TPackage __DEC_tPackage_subpackages_340523 = tPackage.getParent();
+		if (__DEC_tPackage_subpackages_340523 != null) {
+			if (!tPackage.equals(__DEC_tPackage_subpackages_340523)) {
 				return new Object[] { tPackage };
 			}
 		}
@@ -2379,9 +2379,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Package mPackage) {
-		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_668215 = mPackage.getPackage();
-		if (__DEC_mPackage_ownedPackages_668215 != null) {
-			if (!mPackage.equals(__DEC_mPackage_ownedPackages_668215)) {
+		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_186484 = mPackage.getPackage();
+		if (__DEC_mPackage_ownedPackages_186484 != null) {
+			if (!mPackage.equals(__DEC_mPackage_ownedPackages_186484)) {
 				return new Object[] { mPackage };
 			}
 		}
@@ -2620,9 +2620,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 
 	public static final Object[] pattern_PackageToPGPackage_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Package mPackage) {
-		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_756000 = mPackage.getPackage();
-		if (__DEC_mPackage_ownedPackages_756000 != null) {
-			if (!mPackage.equals(__DEC_mPackage_ownedPackages_756000)) {
+		org.eclipse.modisco.java.Package __DEC_mPackage_ownedPackages_686012 = mPackage.getPackage();
+		if (__DEC_mPackage_ownedPackages_686012 != null) {
+			if (!mPackage.equals(__DEC_mPackage_ownedPackages_686012)) {
 				return new Object[] { mPackage };
 			}
 		}
@@ -2651,9 +2651,9 @@ public class PackageToPGPackageImpl extends AbstractRuleImpl implements PackageT
 	}
 
 	public static final Object[] pattern_PackageToPGPackage_28_1_matchtggpattern_black_nac_0B(TPackage tPackage) {
-		TPackage __DEC_tPackage_subpackages_211106 = tPackage.getParent();
-		if (__DEC_tPackage_subpackages_211106 != null) {
-			if (!tPackage.equals(__DEC_tPackage_subpackages_211106)) {
+		TPackage __DEC_tPackage_subpackages_984366 = tPackage.getParent();
+		if (__DEC_tPackage_subpackages_984366 != null) {
+			if (!tPackage.equals(__DEC_tPackage_subpackages_984366)) {
 				return new Object[] { tPackage };
 			}
 		}

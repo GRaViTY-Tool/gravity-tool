@@ -236,7 +236,7 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_253(EMoflonEdge _edge_tClass);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_200(EMoflonEdge _edge_tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,7 +244,7 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_273(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_210(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -758,7 +758,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_168(EMoflonEdge _edge_annotations) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_115(EMoflonEdge _edge_annotations) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeAccessOnSelfImpl
 				.pattern_AnnotationTypeAccessOnSelf_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -817,7 +817,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_184(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeAccessOnSelfImpl
 				.pattern_AnnotationTypeAccessOnSelf_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1262,10 +1262,10 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___IS_APPROPRIATE_BWD_EMOFLON_EDGE_168__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_168((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___IS_APPROPRIATE_FWD_EMOFLON_EDGE_184__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_184((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___IS_APPROPRIATE_BWD_EMOFLON_EDGE_115__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_115((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_SELF___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2627,9 +2627,9 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess mAccess, AnnotationTypeDeclaration mAnnotationType) {
-		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_362547 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_83043 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_362547)) {
+			if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_83043)) {
 				return new Object[] { mAccess, mAnnotationType };
 			}
 		}
@@ -2638,7 +2638,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess mAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_183676 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_704942 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2647,7 +2647,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mAccess) {
-		for (ArrayType __DEC_mAccess_elementType_262686 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_367542 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
 			return new Object[] { mAccess };
 		}
@@ -2656,7 +2656,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_252310 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_149877 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2665,7 +2665,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess mAccess) {
-		for (ClassDeclaration __DEC_mAccess_superClass_742201 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_289753 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
 			return new Object[] { mAccess };
 		}
@@ -2674,7 +2674,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess mAccess) {
-		for (MethodDeclaration __DEC_mAccess_returnType_523682 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_365428 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mAccess };
 		}
@@ -2683,7 +2683,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess mAccess) {
-		for (ParameterizedType __DEC_mAccess_type_413868 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_859736 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2692,7 +2692,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mAccess) {
-		for (TypeLiteral __DEC_mAccess_type_440573 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mAccess_type_159493 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2701,7 +2701,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_995717 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_621271 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}
@@ -2999,9 +2999,9 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_0BB(
 			TypeAccess mAccess, AnnotationTypeDeclaration mAnnotationType) {
-		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_998728 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_537030 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_998728)) {
+			if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_537030)) {
 				return new Object[] { mAccess, mAnnotationType };
 			}
 		}
@@ -3010,7 +3010,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess mAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_171787 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_680553 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3019,7 +3019,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess mAccess) {
-		for (ArrayType __DEC_mAccess_elementType_945723 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_398850 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
 			return new Object[] { mAccess };
 		}
@@ -3028,7 +3028,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_498645 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_831673 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3037,7 +3037,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess mAccess) {
-		for (ClassDeclaration __DEC_mAccess_superClass_266648 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_859681 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
 			return new Object[] { mAccess };
 		}
@@ -3046,7 +3046,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess mAccess) {
-		for (MethodDeclaration __DEC_mAccess_returnType_301936 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_763591 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mAccess };
 		}
@@ -3055,7 +3055,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess mAccess) {
-		for (ParameterizedType __DEC_mAccess_type_564324 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_361833 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3064,7 +3064,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess mAccess) {
-		for (TypeLiteral __DEC_mAccess_type_722295 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mAccess_type_117954 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3073,7 +3073,7 @@ public class AnnotationTypeAccessOnSelfImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_AnnotationTypeAccessOnSelf_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_81496 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_559376 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}

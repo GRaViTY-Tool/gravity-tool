@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_191(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_208(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_145(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->

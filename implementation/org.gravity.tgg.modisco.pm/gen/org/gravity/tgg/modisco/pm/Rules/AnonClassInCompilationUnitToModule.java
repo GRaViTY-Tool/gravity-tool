@@ -211,7 +211,7 @@ public interface AnonClassInCompilationUnitToModule extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_187(EMoflonEdge _edge_module);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_134(EMoflonEdge _edge_module);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface AnonClassInCompilationUnitToModule extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_204(EMoflonEdge _edge_originalCompilationUnit);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_141(EMoflonEdge _edge_originalCompilationUnit);
 
 	/**
 	 * <!-- begin-user-doc -->

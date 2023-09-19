@@ -706,7 +706,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_208(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_155(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = TypesVisibilityImpl
 				.pattern_TypesVisibility_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -763,7 +763,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_225(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_162(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = TypesVisibilityImpl
 				.pattern_TypesVisibility_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1283,10 +1283,10 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 			return null;
 		case RulesPackage.TYPES_VISIBILITY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_208__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_208((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_225__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_225((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_155__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_155((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_162__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_162((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPES_VISIBILITY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPES_VISIBILITY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2279,7 +2279,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_20_2_testcorematchandDECs_black_nac_0B(TModifier tModifier) {
-		for (TMember __DEC_tModifier_tModifier_184217 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TMember __DEC_tModifier_tModifier_776721 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TMember.class, "tModifier")) {
 			return new Object[] { tModifier };
 		}
@@ -2650,7 +2650,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_28_1_matchtggpattern_black_nac_0B(TModifier tModifier) {
-		for (TMember __DEC_tModifier_tModifier_952973 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TMember __DEC_tModifier_tModifier_662699 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TMember.class, "tModifier")) {
 			return new Object[] { tModifier };
 		}

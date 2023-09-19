@@ -787,7 +787,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_242(EMoflonEdge _edge_defines) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_189(EMoflonEdge _edge_defines) {
 
 		Object[] result1_bindingAndBlack = SyntethicMethodImpl
 				.pattern_SyntethicMethod_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -846,7 +846,7 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_262(EMoflonEdge _edge_syntheticMethodDefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_199(EMoflonEdge _edge_syntheticMethodDefinitions) {
 
 		Object[] result1_bindingAndBlack = SyntethicMethodImpl
 				.pattern_SyntethicMethod_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1295,10 +1295,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 			return null;
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_242__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_242((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_262__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_262((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_189__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_189((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SYNTETHIC_METHOD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_199__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_199((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SYNTETHIC_METHOD___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2888,9 +2888,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_20_2_testcorematchandDECs_black_nac_0BB(
 			TSyntethicMethod tSyntethic, TMethodDefinition tDef) {
-		TMethodDefinition __DEC_tSyntethic_syntethicMethods_134879 = tSyntethic.getOriginalMethodDefinition();
-		if (__DEC_tSyntethic_syntethicMethods_134879 != null) {
-			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_134879)) {
+		TMethodDefinition __DEC_tSyntethic_syntethicMethods_428974 = tSyntethic.getOriginalMethodDefinition();
+		if (__DEC_tSyntethic_syntethicMethods_428974 != null) {
+			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_428974)) {
 				return new Object[] { tSyntethic, tDef };
 			}
 		}
@@ -2900,8 +2900,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_20_2_testcorematchandDECs_black_nac_1B(
 			TSyntethicMethod tSyntethic) {
-		TModule __DEC_tSyntethic_contains_120801 = tSyntethic.getModule();
-		if (__DEC_tSyntethic_contains_120801 != null) {
+		TModule __DEC_tSyntethic_contains_271802 = tSyntethic.getModule();
+		if (__DEC_tSyntethic_contains_271802 != null) {
 			return new Object[] { tSyntethic };
 		}
 
@@ -2910,9 +2910,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_20_2_testcorematchandDECs_black_nac_2BB(
 			TSyntethicMethod tSyntethic, TMethodSignature tSig) {
-		TSignature __DEC_tSyntethic_definitions_36708 = tSyntethic.getSignature();
-		if (__DEC_tSyntethic_definitions_36708 != null) {
-			if (!tSig.equals(__DEC_tSyntethic_definitions_36708)) {
+		TSignature __DEC_tSyntethic_definitions_454837 = tSyntethic.getSignature();
+		if (__DEC_tSyntethic_definitions_454837 != null) {
+			if (!tSig.equals(__DEC_tSyntethic_definitions_454837)) {
 				return new Object[] { tSyntethic, tSig };
 			}
 		}
@@ -3059,9 +3059,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_0BB(
 			MSyntheticMethodDefinition mSyntethic, ClassDeclaration mClass) {
-		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_8197 = mSyntethic.getAbstractTypeDeclaration();
-		if (__DEC_mSyntethic_abstractTypeDeclaration_8197 != null) {
-			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_8197)) {
+		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_240181 = mSyntethic
+				.getAbstractTypeDeclaration();
+		if (__DEC_mSyntethic_abstractTypeDeclaration_240181 != null) {
+			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_240181)) {
 				return new Object[] { mSyntethic, mClass };
 			}
 		}
@@ -3071,9 +3072,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_1B(
 			MSyntheticMethodDefinition mSyntethic) {
-		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_764281 = mSyntethic
+		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_283087 = mSyntethic
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_764281 != null) {
+		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_283087 != null) {
 			return new Object[] { mSyntethic };
 		}
 
@@ -3082,9 +3083,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_21_2_testcorematchandDECs_black_nac_2BB(
 			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef) {
-		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_986401 = mSyntethic.getOriginalMethodDefinition();
-		if (__DEC_mSyntethic_syntheticMethodDefinitions_986401 != null) {
-			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_986401)) {
+		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_553468 = mSyntethic.getOriginalMethodDefinition();
+		if (__DEC_mSyntethic_syntheticMethodDefinitions_553468 != null) {
+			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_553468)) {
 				return new Object[] { mSyntethic, mDef };
 			}
 		}
@@ -3373,10 +3374,10 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_0BB(
 			MSyntheticMethodDefinition mSyntethic, ClassDeclaration mClass) {
-		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_687207 = mSyntethic
+		AbstractTypeDeclaration __DEC_mSyntethic_abstractTypeDeclaration_238353 = mSyntethic
 				.getAbstractTypeDeclaration();
-		if (__DEC_mSyntethic_abstractTypeDeclaration_687207 != null) {
-			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_687207)) {
+		if (__DEC_mSyntethic_abstractTypeDeclaration_238353 != null) {
+			if (!mClass.equals(__DEC_mSyntethic_abstractTypeDeclaration_238353)) {
 				return new Object[] { mSyntethic, mClass };
 			}
 		}
@@ -3386,9 +3387,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_1B(
 			MSyntheticMethodDefinition mSyntethic) {
-		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_634049 = mSyntethic
+		AnonymousClassDeclaration __DEC_mSyntethic_anonymousClassDeclarationOwner_29813 = mSyntethic
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_634049 != null) {
+		if (__DEC_mSyntethic_anonymousClassDeclarationOwner_29813 != null) {
 			return new Object[] { mSyntethic };
 		}
 
@@ -3397,9 +3398,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_27_1_matchtggpattern_black_nac_2BB(
 			MSyntheticMethodDefinition mSyntethic, MMethodDefinition mDef) {
-		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_747134 = mSyntethic.getOriginalMethodDefinition();
-		if (__DEC_mSyntethic_syntheticMethodDefinitions_747134 != null) {
-			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_747134)) {
+		MMethodDefinition __DEC_mSyntethic_syntheticMethodDefinitions_912557 = mSyntethic.getOriginalMethodDefinition();
+		if (__DEC_mSyntethic_syntheticMethodDefinitions_912557 != null) {
+			if (!mDef.equals(__DEC_mSyntethic_syntheticMethodDefinitions_912557)) {
 				return new Object[] { mSyntethic, mDef };
 			}
 		}
@@ -3435,9 +3436,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_0BB(TSyntethicMethod tSyntethic,
 			TMethodDefinition tDef) {
-		TMethodDefinition __DEC_tSyntethic_syntethicMethods_146510 = tSyntethic.getOriginalMethodDefinition();
-		if (__DEC_tSyntethic_syntethicMethods_146510 != null) {
-			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_146510)) {
+		TMethodDefinition __DEC_tSyntethic_syntethicMethods_75778 = tSyntethic.getOriginalMethodDefinition();
+		if (__DEC_tSyntethic_syntethicMethods_75778 != null) {
+			if (!tDef.equals(__DEC_tSyntethic_syntethicMethods_75778)) {
 				return new Object[] { tSyntethic, tDef };
 			}
 		}
@@ -3447,8 +3448,8 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_1B(
 			TSyntethicMethod tSyntethic) {
-		TModule __DEC_tSyntethic_contains_988223 = tSyntethic.getModule();
-		if (__DEC_tSyntethic_contains_988223 != null) {
+		TModule __DEC_tSyntethic_contains_63050 = tSyntethic.getModule();
+		if (__DEC_tSyntethic_contains_63050 != null) {
 			return new Object[] { tSyntethic };
 		}
 
@@ -3457,9 +3458,9 @@ public class SyntethicMethodImpl extends AbstractRuleImpl implements SyntethicMe
 
 	public static final Object[] pattern_SyntethicMethod_28_1_matchtggpattern_black_nac_2BB(TSyntethicMethod tSyntethic,
 			TMethodSignature tSig) {
-		TSignature __DEC_tSyntethic_definitions_733789 = tSyntethic.getSignature();
-		if (__DEC_tSyntethic_definitions_733789 != null) {
-			if (!tSig.equals(__DEC_tSyntethic_definitions_733789)) {
+		TSignature __DEC_tSyntethic_definitions_791648 = tSyntethic.getSignature();
+		if (__DEC_tSyntethic_definitions_791648 != null) {
+			if (!tSig.equals(__DEC_tSyntethic_definitions_791648)) {
 				return new Object[] { tSyntethic, tSig };
 			}
 		}

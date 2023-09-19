@@ -669,7 +669,7 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_184(EMoflonEdge _edge_overriddenBy) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_131(EMoflonEdge _edge_overriddenBy) {
 
 		Object[] result1_bindingAndBlack = MethodOverridingImpl
 				.pattern_MethodOverriding_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -726,7 +726,7 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_200(EMoflonEdge _edge_redefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_137(EMoflonEdge _edge_redefinitions) {
 
 		Object[] result1_bindingAndBlack = MethodOverridingImpl
 				.pattern_MethodOverriding_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1150,10 +1150,10 @@ public class MethodOverridingImpl extends AbstractRuleImpl implements MethodOver
 			return null;
 		case RulesPackage.METHOD_OVERRIDING___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_184__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_184((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_200__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_200((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_BWD_EMOFLON_EDGE_131__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_OVERRIDING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_137__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_137((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_OVERRIDING___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_OVERRIDING___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

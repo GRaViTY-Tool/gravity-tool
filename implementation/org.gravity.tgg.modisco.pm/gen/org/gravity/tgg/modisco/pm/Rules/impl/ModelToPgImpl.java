@@ -641,7 +641,7 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MGravityModel_2(MGravityModel mModel) {
+	public EObjectContainer isAppropriate_FWD_MGravityModel_1(MGravityModel mModel) {
 
 		Object[] result1_bindingAndBlack = ModelToPgImpl
 				.pattern_ModelToPg_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -691,7 +691,7 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_162(EMoflonEdge _edge_modules) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_modules) {
 
 		Object[] result1_bindingAndBlack = ModelToPgImpl
 				.pattern_ModelToPg_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1147,10 +1147,10 @@ public class ModelToPgImpl extends AbstractRuleImpl implements ModelToPg {
 			return null;
 		case RulesPackage.MODEL_TO_PG___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MODEL_TO_PG___IS_APPROPRIATE_FWD_MGRAVITY_MODEL_2__MGRAVITYMODEL:
-			return isAppropriate_FWD_MGravityModel_2((MGravityModel) arguments.get(0));
-		case RulesPackage.MODEL_TO_PG___IS_APPROPRIATE_BWD_EMOFLON_EDGE_162__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_162((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MODEL_TO_PG___IS_APPROPRIATE_FWD_MGRAVITY_MODEL_1__MGRAVITYMODEL:
+			return isAppropriate_FWD_MGravityModel_1((MGravityModel) arguments.get(0));
+		case RulesPackage.MODEL_TO_PG___IS_APPROPRIATE_BWD_EMOFLON_EDGE_109__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_109((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MODEL_TO_PG___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MODEL_TO_PG___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

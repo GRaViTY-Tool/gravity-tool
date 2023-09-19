@@ -900,7 +900,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_225(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_172(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = AnonymousClassInAnonymousImpl
 				.pattern_AnonymousClassInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -961,7 +961,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_243(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_180(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClassInAnonymousImpl
 				.pattern_AnonymousClassInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1552,10 +1552,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_225__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_225((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_243__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_243((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_172__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_172((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_180__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_180((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3530,9 +3530,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 			TClass tAnonymous, TPackage tPackage) {
-		for (TPackage __DEC_tAnonymous_classes_841801 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tAnonymous_classes_537651 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tAnonymous_classes_841801)) {
+			if (!tPackage.equals(__DEC_tAnonymous_classes_537651)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -3541,9 +3541,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tAnonymous, TypeGraph pg) {
-		for (TypeGraph __DEC_tAnonymous_classes_608569 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tAnonymous_classes_673907 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tAnonymous_classes_608569)) {
+			if (!pg.equals(__DEC_tAnonymous_classes_673907)) {
 				return new Object[] { tAnonymous, pg };
 			}
 		}
@@ -3552,9 +3552,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
 			TClass tAnonymous, TPackage tPackage) {
-		TPackage __DEC_tAnonymous_allTypes_13433 = tAnonymous.getPackage();
-		if (__DEC_tAnonymous_allTypes_13433 != null) {
-			if (!tPackage.equals(__DEC_tAnonymous_allTypes_13433)) {
+		TPackage __DEC_tAnonymous_allTypes_661583 = tAnonymous.getPackage();
+		if (__DEC_tAnonymous_allTypes_661583 != null) {
+			if (!tPackage.equals(__DEC_tAnonymous_allTypes_661583)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -3565,10 +3565,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(
 			TClass tAnonymous, TClass tType) {
 		if (!tAnonymous.equals(tType)) {
-			TAbstractType __DEC_tAnonymous_innerTypes_37782 = tAnonymous.getOuterType();
-			if (__DEC_tAnonymous_innerTypes_37782 != null) {
-				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_37782)) {
-					if (!tType.equals(__DEC_tAnonymous_innerTypes_37782)) {
+			TAbstractType __DEC_tAnonymous_innerTypes_354151 = tAnonymous.getOuterType();
+			if (__DEC_tAnonymous_innerTypes_354151 != null) {
+				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_354151)) {
+					if (!tType.equals(__DEC_tAnonymous_innerTypes_354151)) {
 						return new Object[] { tAnonymous, tType };
 					}
 				}
@@ -3733,7 +3733,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			AnonymousClassDeclaration mAnonymous) {
-		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_209802 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_902928 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnonymous, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnonymous };
 		}
@@ -4046,7 +4046,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			AnonymousClassDeclaration mAnonymous) {
-		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_654 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_901771 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnonymous, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnonymous };
 		}
@@ -4082,9 +4082,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_0BB(TClass tAnonymous,
 			TPackage tPackage) {
-		for (TPackage __DEC_tAnonymous_classes_500737 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tAnonymous_classes_987703 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tAnonymous_classes_500737)) {
+			if (!tPackage.equals(__DEC_tAnonymous_classes_987703)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -4093,9 +4093,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_1BB(TClass tAnonymous,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tAnonymous_classes_187429 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tAnonymous_classes_174143 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tAnonymous_classes_187429)) {
+			if (!pg.equals(__DEC_tAnonymous_classes_174143)) {
 				return new Object[] { tAnonymous, pg };
 			}
 		}
@@ -4104,9 +4104,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_2BB(TClass tAnonymous,
 			TPackage tPackage) {
-		TPackage __DEC_tAnonymous_allTypes_415333 = tAnonymous.getPackage();
-		if (__DEC_tAnonymous_allTypes_415333 != null) {
-			if (!tPackage.equals(__DEC_tAnonymous_allTypes_415333)) {
+		TPackage __DEC_tAnonymous_allTypes_217808 = tAnonymous.getPackage();
+		if (__DEC_tAnonymous_allTypes_217808 != null) {
+			if (!tPackage.equals(__DEC_tAnonymous_allTypes_217808)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -4117,10 +4117,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_3BB(TClass tAnonymous,
 			TClass tType) {
 		if (!tAnonymous.equals(tType)) {
-			TAbstractType __DEC_tAnonymous_innerTypes_464368 = tAnonymous.getOuterType();
-			if (__DEC_tAnonymous_innerTypes_464368 != null) {
-				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_464368)) {
-					if (!tType.equals(__DEC_tAnonymous_innerTypes_464368)) {
+			TAbstractType __DEC_tAnonymous_innerTypes_636255 = tAnonymous.getOuterType();
+			if (__DEC_tAnonymous_innerTypes_636255 != null) {
+				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_636255)) {
+					if (!tType.equals(__DEC_tAnonymous_innerTypes_636255)) {
 						return new Object[] { tAnonymous, tType };
 					}
 				}

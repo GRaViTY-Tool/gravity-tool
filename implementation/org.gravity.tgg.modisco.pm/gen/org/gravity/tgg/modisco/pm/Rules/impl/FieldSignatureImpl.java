@@ -775,7 +775,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_167(EMoflonEdge _edge_signatures) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_114(EMoflonEdge _edge_signatures) {
 
 		Object[] result1_bindingAndBlack = FieldSignatureImpl
 				.pattern_FieldSignature_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -833,7 +833,7 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_182(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = FieldSignatureImpl
 				.pattern_FieldSignature_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1335,10 +1335,10 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 			return null;
 		case RulesPackage.FIELD_SIGNATURE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_167__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_167((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_182__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_182((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_114__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_114((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_SIGNATURE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_119__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_SIGNATURE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_SIGNATURE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2775,9 +2775,9 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final Object[] pattern_FieldSignature_20_2_testcorematchandDECs_black_nac_0BB(
 			TFieldSignature tSignature, TField tField) {
-		TField __DEC_tSignature_field_314804 = tSignature.getField();
-		if (__DEC_tSignature_field_314804 != null) {
-			if (!tField.equals(__DEC_tSignature_field_314804)) {
+		TField __DEC_tSignature_field_918495 = tSignature.getField();
+		if (__DEC_tSignature_field_918495 != null) {
+			if (!tField.equals(__DEC_tSignature_field_918495)) {
 				return new Object[] { tSignature, tField };
 			}
 		}
@@ -3201,9 +3201,9 @@ public class FieldSignatureImpl extends AbstractRuleImpl implements FieldSignatu
 
 	public static final Object[] pattern_FieldSignature_28_1_matchtggpattern_black_nac_0BB(TFieldSignature tSignature,
 			TField tField) {
-		TField __DEC_tSignature_field_881846 = tSignature.getField();
-		if (__DEC_tSignature_field_881846 != null) {
-			if (!tField.equals(__DEC_tSignature_field_881846)) {
+		TField __DEC_tSignature_field_861349 = tSignature.getField();
+		if (__DEC_tSignature_field_861349 != null) {
+			if (!tField.equals(__DEC_tSignature_field_861349)) {
 				return new Object[] { tSignature, tField };
 			}
 		}

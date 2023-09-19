@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 
-import javax.ws.rs.core.Response;
-
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -17,6 +15,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+
+import jakarta.ws.rs.core.Response;
 
 /**
  * The instantiation and cleanup of tests for GRaViTY's API

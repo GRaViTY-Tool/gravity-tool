@@ -796,7 +796,7 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_223(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_170(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = EnumConstantImpl
 				.pattern_EnumConstant_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -853,7 +853,7 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_241(EMoflonEdge _edge_enumConstants) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_178(EMoflonEdge _edge_enumConstants) {
 
 		Object[] result1_bindingAndBlack = EnumConstantImpl
 				.pattern_EnumConstant_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1333,10 +1333,10 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 			return null;
 		case RulesPackage.ENUM_CONSTANT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_223__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_223((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_241__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_241((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_170__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_170((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_CONSTANT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_178__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_178((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_CONSTANT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2887,8 +2887,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_0B(
 			TFieldDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_740083 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_740083 != null) {
+		TModule __DEC_tDefinition_contains_190579 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_190579 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -2897,9 +2897,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_1BB(
 			TFieldDefinition tDefinition, TFieldSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_141221 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_141221 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_141221)) {
+		TSignature __DEC_tDefinition_definitions_17185 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_17185 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_17185)) {
 				return new Object[] { tDefinition, tSignature };
 			}
 		}
@@ -2909,9 +2909,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_2BB(
 			TFieldSignature tSignature, TField tName) {
-		TField __DEC_tSignature_signatures_48265 = tSignature.getField();
-		if (__DEC_tSignature_signatures_48265 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_48265)) {
+		TField __DEC_tSignature_signatures_615180 = tSignature.getField();
+		if (__DEC_tSignature_signatures_615180 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_615180)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -2921,9 +2921,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_20_2_testcorematchandDECs_black_nac_3BB(TField tName,
 			TypeGraph model) {
-		TypeGraph __DEC_tName_model_106727 = tName.getModel();
-		if (__DEC_tName_model_106727 != null) {
-			if (!model.equals(__DEC_tName_model_106727)) {
+		TypeGraph __DEC_tName_model_106001 = tName.getModel();
+		if (__DEC_tName_model_106001 != null) {
+			if (!model.equals(__DEC_tName_model_106001)) {
 				return new Object[] { tName, model };
 			}
 		}
@@ -3081,8 +3081,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_21_2_testcorematchandDECs_black_nac_0B(
 			MEnumConstantDeclaration mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_953386 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_953386 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_226967 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_226967 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3349,8 +3349,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_27_1_matchtggpattern_black_nac_0B(
 			MEnumConstantDeclaration mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_681181 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_681181 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_74862 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_74862 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3378,8 +3378,8 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 	}
 
 	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_0B(TFieldDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_550827 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_550827 != null) {
+		TModule __DEC_tDefinition_contains_213292 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_213292 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3388,9 +3388,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_1BB(TFieldDefinition tDefinition,
 			TFieldSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_296585 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_296585 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_296585)) {
+		TSignature __DEC_tDefinition_definitions_896692 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_896692 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_896692)) {
 				return new Object[] { tDefinition, tSignature };
 			}
 		}
@@ -3400,9 +3400,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_2BB(TFieldSignature tSignature,
 			TField tName) {
-		TField __DEC_tSignature_signatures_824554 = tSignature.getField();
-		if (__DEC_tSignature_signatures_824554 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_824554)) {
+		TField __DEC_tSignature_signatures_977833 = tSignature.getField();
+		if (__DEC_tSignature_signatures_977833 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_977833)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3412,9 +3412,9 @@ public class EnumConstantImpl extends AbstractRuleImpl implements EnumConstant {
 
 	public static final Object[] pattern_EnumConstant_28_1_matchtggpattern_black_nac_3BB(TField tName,
 			TypeGraph model) {
-		TypeGraph __DEC_tName_model_683465 = tName.getModel();
-		if (__DEC_tName_model_683465 != null) {
-			if (!model.equals(__DEC_tName_model_683465)) {
+		TypeGraph __DEC_tName_model_275640 = tName.getModel();
+		if (__DEC_tName_model_275640 != null) {
+			if (!model.equals(__DEC_tName_model_275640)) {
 				return new Object[] { tName, model };
 			}
 		}

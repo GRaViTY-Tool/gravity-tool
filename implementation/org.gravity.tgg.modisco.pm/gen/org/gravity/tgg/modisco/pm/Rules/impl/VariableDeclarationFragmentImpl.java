@@ -588,7 +588,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_203(EMoflonEdge _edge_variablesContainer) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_variablesContainer) {
 
 		Object[] result1_bindingAndBlack = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1007,8 +1007,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_BWD_TFIELD_DEFINITION_1__TFIELDDEFINITION:
 			return isAppropriate_BWD_TFieldDefinition_1((TFieldDefinition) arguments.get(0));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_203__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_203((EMoflonEdge) arguments.get(0));
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_140__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

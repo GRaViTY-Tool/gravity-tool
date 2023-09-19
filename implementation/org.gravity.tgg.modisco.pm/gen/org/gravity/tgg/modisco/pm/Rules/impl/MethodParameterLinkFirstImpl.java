@@ -708,7 +708,7 @@ public class MethodParameterLinkFirstImpl extends AbstractRuleImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_227(EMoflonEdge _edge_firstParameter) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_174(EMoflonEdge _edge_firstParameter) {
 
 		Object[] result1_bindingAndBlack = MethodParameterLinkFirstImpl
 				.pattern_MethodParameterLinkFirst_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -766,7 +766,7 @@ public class MethodParameterLinkFirstImpl extends AbstractRuleImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_246(EMoflonEdge _edge_mFirstEntry) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_183(EMoflonEdge _edge_mFirstEntry) {
 
 		Object[] result1_bindingAndBlack = MethodParameterLinkFirstImpl
 				.pattern_MethodParameterLinkFirst_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1208,10 +1208,10 @@ public class MethodParameterLinkFirstImpl extends AbstractRuleImpl implements Me
 			return null;
 		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_227__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_227((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_246__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_246((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_174__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_174((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_183__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_183((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK_FIRST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

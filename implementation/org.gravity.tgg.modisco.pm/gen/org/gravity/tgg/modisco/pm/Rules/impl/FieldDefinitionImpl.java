@@ -750,7 +750,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_205(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_152(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = FieldDefinitionImpl
 				.pattern_FieldDefinition_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -807,7 +807,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_222(EMoflonEdge _edge_mDefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_159(EMoflonEdge _edge_mDefinitions) {
 
 		Object[] result1_bindingAndBlack = FieldDefinitionImpl
 				.pattern_FieldDefinition_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1330,10 +1330,10 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 			return null;
 		case RulesPackage.FIELD_DEFINITION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_205__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_205((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_222__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_222((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_152__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_152((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_159__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_159((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEFINITION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEFINITION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2553,9 +2553,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_20_2_testcorematchandDECs_black_nac_0BB(
 			TFieldDefinition tDefinition, TFieldSignature tFieldSignature) {
-		TSignature __DEC_tDefinition_signature_426861 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_426861 != null) {
-			if (!tFieldSignature.equals(__DEC_tDefinition_signature_426861)) {
+		TSignature __DEC_tDefinition_signature_258381 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_258381 != null) {
+			if (!tFieldSignature.equals(__DEC_tDefinition_signature_258381)) {
 				return new Object[] { tDefinition, tFieldSignature };
 			}
 		}
@@ -2565,8 +2565,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_20_2_testcorematchandDECs_black_nac_1B(
 			TFieldDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_709326 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_709326 != null) {
+		TModule __DEC_tDefinition_contains_586552 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_586552 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -2696,9 +2696,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_21_2_testcorematchandDECs_black_nac_0BB(
 			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_619712 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_619712 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_619712)) {
+		MSignature __DEC_mDefinition_mDefinitions_461742 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_461742 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_461742)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -2953,9 +2953,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_27_1_matchtggpattern_black_nac_0BB(
 			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_438164 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_438164 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_438164)) {
+		MSignature __DEC_mDefinition_mDefinitions_566622 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_566622 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_566622)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -2985,9 +2985,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_28_1_matchtggpattern_black_nac_0BB(
 			TFieldDefinition tDefinition, TFieldSignature tFieldSignature) {
-		TSignature __DEC_tDefinition_signature_29035 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_29035 != null) {
-			if (!tFieldSignature.equals(__DEC_tDefinition_signature_29035)) {
+		TSignature __DEC_tDefinition_signature_984680 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_984680 != null) {
+			if (!tFieldSignature.equals(__DEC_tDefinition_signature_984680)) {
 				return new Object[] { tDefinition, tFieldSignature };
 			}
 		}
@@ -2997,8 +2997,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_28_1_matchtggpattern_black_nac_1B(
 			TFieldDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_512010 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_512010 != null) {
+		TModule __DEC_tDefinition_contains_52177 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_52177 != null) {
 			return new Object[] { tDefinition };
 		}
 

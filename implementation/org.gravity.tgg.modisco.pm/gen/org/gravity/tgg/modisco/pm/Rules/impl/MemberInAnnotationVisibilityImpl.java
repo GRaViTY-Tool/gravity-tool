@@ -825,7 +825,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_158(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_105(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -885,7 +885,7 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_174(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_111(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MemberInAnnotationVisibilityImpl
 				.pattern_MemberInAnnotationVisibility_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1444,10 +1444,10 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 			return null;
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_158__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_158((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_174__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_174((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_105__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_105((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_111__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_111((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MEMBER_IN_ANNOTATION_VISIBILITY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2826,9 +2826,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_20_2_testcorematchandDECs_black_nac_0BB(
 			TModifier tModifier, TAnnotationType tAnnotation) {
-		for (TAbstractType __DEC_tModifier_tModifier_108846 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_598588 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tAnnotation.equals(__DEC_tModifier_tModifier_108846)) {
+			if (!tAnnotation.equals(__DEC_tModifier_tModifier_598588)) {
 				return new Object[] { tModifier, tAnnotation };
 			}
 		}
@@ -3260,9 +3260,9 @@ public class MemberInAnnotationVisibilityImpl extends AbstractRuleImpl implement
 
 	public static final Object[] pattern_MemberInAnnotationVisibility_28_1_matchtggpattern_black_nac_0BB(
 			TModifier tModifier, TAnnotationType tAnnotation) {
-		for (TAbstractType __DEC_tModifier_tModifier_866215 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_317263 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tAnnotation.equals(__DEC_tModifier_tModifier_866215)) {
+			if (!tAnnotation.equals(__DEC_tModifier_tModifier_317263)) {
 				return new Object[] { tModifier, tAnnotation };
 			}
 		}

@@ -698,7 +698,7 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_215(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_162(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = MethodParameterLinkImpl
 				.pattern_MethodParameterLink_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -755,7 +755,7 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_232(EMoflonEdge _edge_mNext) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_169(EMoflonEdge _edge_mNext) {
 
 		Object[] result1_bindingAndBlack = MethodParameterLinkImpl
 				.pattern_MethodParameterLink_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1182,10 +1182,10 @@ public class MethodParameterLinkImpl extends AbstractRuleImpl implements MethodP
 			return null;
 		case RulesPackage.METHOD_PARAMETER_LINK___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_BWD_EMOFLON_EDGE_215__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_215((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_FWD_EMOFLON_EDGE_232__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_232((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_BWD_EMOFLON_EDGE_162__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_162((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_PARAMETER_LINK___IS_APPROPRIATE_FWD_EMOFLON_EDGE_169__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_169((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_PARAMETER_LINK___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

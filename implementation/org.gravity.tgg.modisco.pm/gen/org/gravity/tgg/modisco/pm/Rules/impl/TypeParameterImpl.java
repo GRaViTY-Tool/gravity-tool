@@ -610,7 +610,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TypeGraph_11(TypeGraph pg) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_7(TypeGraph pg) {
 
 		Object[] result1_bindingAndBlack = TypeParameterImpl
 				.pattern_TypeParameter_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -667,7 +667,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_235(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_172(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameterImpl
 				.pattern_TypeParameter_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1168,10 +1168,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD_TYPE_GRAPH_11__TYPEGRAPH:
-			return isAppropriate_BWD_TypeGraph_11((TypeGraph) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_235__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_235((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD_TYPE_GRAPH_7__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_7((TypeGraph) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_172__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_172((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2556,9 +2556,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_18_2_testcorematchandDECs_black_nac_0BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (MGravityModel __DEC_typeParameter_typeParameters_879094 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MGravityModel __DEC_typeParameter_typeParameters_763255 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, MGravityModel.class, "typeParameters")) {
-			if (!model.equals(__DEC_typeParameter_typeParameters_879094)) {
+			if (!model.equals(__DEC_typeParameter_typeParameters_763255)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2567,9 +2567,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_18_2_testcorematchandDECs_black_nac_1BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (Model __DEC_typeParameter_orphanTypes_844661 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_typeParameter_orphanTypes_585390 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, Model.class, "orphanTypes")) {
-			if (!model.equals(__DEC_typeParameter_orphanTypes_844661)) {
+			if (!model.equals(__DEC_typeParameter_orphanTypes_585390)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2955,9 +2955,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_24_1_matchtggpattern_black_nac_0BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (MGravityModel __DEC_typeParameter_typeParameters_618555 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MGravityModel __DEC_typeParameter_typeParameters_257614 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, MGravityModel.class, "typeParameters")) {
-			if (!model.equals(__DEC_typeParameter_typeParameters_618555)) {
+			if (!model.equals(__DEC_typeParameter_typeParameters_257614)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2966,9 +2966,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_24_1_matchtggpattern_black_nac_1BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (Model __DEC_typeParameter_orphanTypes_869314 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_typeParameter_orphanTypes_112842 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, Model.class, "orphanTypes")) {
-			if (!model.equals(__DEC_typeParameter_orphanTypes_869314)) {
+			if (!model.equals(__DEC_typeParameter_orphanTypes_112842)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
