@@ -16,7 +16,7 @@
 		<jetty-version>11.0.12</jetty-version>
 		<logback-version>1.4.1</logback-version>
 		<servlet-api-version>4.0.1</servlet-api-version>
-		<cxf-version>4.0.2</cxf-version>
+		<cxf-version>4.0.3</cxf-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
