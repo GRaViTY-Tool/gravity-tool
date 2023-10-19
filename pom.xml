@@ -58,8 +58,8 @@
     <module>implementation/org.gravity.secdfd</module>
     <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
-    <module>implementation/org.gravity.security.annotations.ui</module>
-    <module>implementation/org.gravity.security.annotations.pm</module>
+    <!--<module>implementation/org.gravity.security.annotations.ui</module>
+    <module>implementation/org.gravity.security.annotations.pm</module>-->
     <module>implementation/org.gravity.security.violation.patterns</module>
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
