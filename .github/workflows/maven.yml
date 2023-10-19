@@ -15,7 +15,7 @@ jobs:
     - name: Clone repository with submodules
       uses: actions/checkout@v4
       with: 
-        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
+#        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
         submodules: 'recursive'
 #    - name: Set up JDK
 #      uses: actions/setup-java@v2
