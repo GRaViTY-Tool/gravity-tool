@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -8,15 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-transports-http-jetty.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-http.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-io.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-jakarta-servlet-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-security.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-server.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-util.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.soap-api.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.ws-api.jar"/>
+	<classpathentry kind="src" path="src/"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/angus-activation.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/classgraph.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/commons-lang3.jar"/>
@@ -55,6 +46,15 @@
 	<classpathentry exported="true" kind="lib" path="target/dependency/txw2.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/woodstox-core.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/xmlschema-core.jar"/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.soap-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jakarta.xml.ws-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/cxf-rt-transports-http-jetty.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-http.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-io.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-jakarta-servlet-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-security.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-server.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-util.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

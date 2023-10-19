@@ -9,12 +9,11 @@
 		<relativePath>../../</relativePath>
 	</parent>
 	<artifactId>org.gravity.headless</artifactId>
-	<packaging>eclipse-plugin</packaging>
-	<name>GRaViTY Headless Application and Webserver</name>
-	<description>This is the web API of GRaViTY.</description>
 	<version>1.0.0-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+	<description>This is the GRaViTY Headless Application and Web-API of GRaViTY.</description>
 	<properties>
-		<cxf-version>4.0.3</cxf-version>
+		<cxf-version>4.0.1</cxf-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>

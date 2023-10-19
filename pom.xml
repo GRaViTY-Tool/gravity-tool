@@ -8,8 +8,8 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>4.0.2</tycho-version>
-    <jacoco.version>0.8.10</jacoco.version>
+    <tycho-version>4.0.3</tycho-version>
+    <jacoco.version>0.8.11</jacoco.version>
     <dependency-plugin>3.6.0</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
@@ -58,6 +58,8 @@
     <module>implementation/org.gravity.secdfd</module>
     <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
+    <module>implementation/org.gravity.security.annotations.ui</module>
+    <module>implementation/org.gravity.security.annotations.pm</module>
     <module>implementation/org.gravity.security.violation.patterns</module>
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
