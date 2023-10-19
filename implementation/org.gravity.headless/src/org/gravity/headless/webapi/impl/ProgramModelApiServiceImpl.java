@@ -18,8 +18,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.jar.JarInputStream;
 import java.util.stream.Collectors;
 
-import javax.ws.rs.core.Response;
-
 import org.apache.log4j.FileAppender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -52,6 +50,8 @@ import org.gravity.headless.Messages;
 import org.gravity.headless.config.LoggingConfiguration;
 import org.gravity.headless.webapi.ProgramModelApi;
 import org.gravity.typegraph.basic.TypeGraph;
+
+import jakarta.ws.rs.core.Response;
 
 /**
  * GRaViTY Web API

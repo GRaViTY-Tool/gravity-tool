@@ -791,7 +791,7 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_120(EMoflonEdge _edge_annotatedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_274(EMoflonEdge _edge_annotatedElement) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotationValueEntry2CommentImpl
 				.pattern_JavaAnnotationValueEntry2Comment_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -852,7 +852,7 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_125(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_294(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotationValueEntry2CommentImpl
 				.pattern_JavaAnnotationValueEntry2Comment_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1365,10 +1365,10 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 			return null;
 		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_120__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_125__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_274__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_274((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_294__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_294((EMoflonEdge) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_ANNOTATION_VALUE_ENTRY2_COMMENT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2841,10 +2841,10 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 		if (!entry.equals(tag)) {
 			if (!comment.equals(entry)) {
 				if (!comment.equals(tag)) {
-					for (Element __DEC_entry_annotatedElement_85733 : entry.getAnnotatedElements()) {
-						if (!entry.equals(__DEC_entry_annotatedElement_85733)) {
-							if (!tag.equals(__DEC_entry_annotatedElement_85733)) {
-								if (!comment.equals(__DEC_entry_annotatedElement_85733)) {
+					for (Element __DEC_entry_annotatedElement_871984 : entry.getAnnotatedElements()) {
+						if (!entry.equals(__DEC_entry_annotatedElement_871984)) {
+							if (!tag.equals(__DEC_entry_annotatedElement_871984)) {
+								if (!comment.equals(__DEC_entry_annotatedElement_871984)) {
 									return new Object[] { entry, tag, comment };
 								}
 							}
@@ -3006,9 +3006,9 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_JavaAnnotationValueEntry2Comment_21_2_testcorematchandDECs_black_nac_0BB(
 			StringLiteral expr, AnnotationMemberValuePair value) {
-		for (AnnotationMemberValuePair __DEC_expr_value_608810 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_expr_value_445531 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(expr, AnnotationMemberValuePair.class, "value")) {
-			if (!value.equals(__DEC_expr_value_608810)) {
+			if (!value.equals(__DEC_expr_value_445531)) {
 				return new Object[] { expr, value };
 			}
 		}
@@ -3318,9 +3318,9 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_JavaAnnotationValueEntry2Comment_27_1_matchtggpattern_black_nac_0BB(
 			StringLiteral expr, AnnotationMemberValuePair value) {
-		for (AnnotationMemberValuePair __DEC_expr_value_128870 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_expr_value_618298 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(expr, AnnotationMemberValuePair.class, "value")) {
-			if (!value.equals(__DEC_expr_value_128870)) {
+			if (!value.equals(__DEC_expr_value_618298)) {
 				return new Object[] { expr, value };
 			}
 		}
@@ -3368,10 +3368,10 @@ public class JavaAnnotationValueEntry2CommentImpl extends AbstractRuleImpl imple
 		if (!entry.equals(tag)) {
 			if (!comment.equals(entry)) {
 				if (!comment.equals(tag)) {
-					for (Element __DEC_entry_annotatedElement_831353 : entry.getAnnotatedElements()) {
-						if (!entry.equals(__DEC_entry_annotatedElement_831353)) {
-							if (!tag.equals(__DEC_entry_annotatedElement_831353)) {
-								if (!comment.equals(__DEC_entry_annotatedElement_831353)) {
+					for (Element __DEC_entry_annotatedElement_13447 : entry.getAnnotatedElements()) {
+						if (!entry.equals(__DEC_entry_annotatedElement_13447)) {
+							if (!tag.equals(__DEC_entry_annotatedElement_13447)) {
+								if (!comment.equals(__DEC_entry_annotatedElement_13447)) {
 									return new Object[] { entry, tag, comment };
 								}
 							}

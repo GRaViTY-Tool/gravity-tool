@@ -201,7 +201,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Interface_3(Interface feature);
+	EObjectContainer isAppropriate_BWD_Interface_7(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface AnnotationTypeDeclaration2Interface extends EObject, AbstractRu
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_AnnotationTypeDeclaration_0(AnnotationTypeDeclaration bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_AnnotationTypeDeclaration_1(AnnotationTypeDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

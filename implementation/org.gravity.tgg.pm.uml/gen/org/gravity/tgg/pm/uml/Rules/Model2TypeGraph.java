@@ -105,7 +105,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject pm, EObject model2PM);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject pm, EObject model2PM);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_2(TypeGraph pm);
+	EObjectContainer isAppropriate_BWD_TypeGraph_9(TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_Model_1(Model model);
+	EObjectContainer isAppropriate_FWD_Model_2(Model model);
 
 	/**
 	 * <!-- begin-user-doc -->

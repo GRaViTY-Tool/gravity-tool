@@ -199,7 +199,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature);
+	EObjectContainer isAppropriate_BWD_Class_2(org.eclipse.uml2.uml.Class feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +207,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MClass_0(MClass bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_MClass_1(MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

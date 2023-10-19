@@ -47,7 +47,7 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AbstractTypeDeclaration eType, Model model, TypeAccess eTypeAccess,
+	boolean isAppropriate_FWD(Match match, Model model, TypeAccess eTypeAccess, AbstractTypeDeclaration eType,
 			ParameterizedType eParameterizedType);
 
 	/**
@@ -72,7 +72,7 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AbstractTypeDeclaration eType, Model model, TypeAccess eTypeAccess,
+	void registerObjectsToMatch_FWD(Match match, Model model, TypeAccess eTypeAccess, AbstractTypeDeclaration eType,
 			ParameterizedType eParameterizedType);
 
 	/**
@@ -81,7 +81,7 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AbstractTypeDeclaration eType, Model model, TypeAccess eTypeAccess,
+	CSP isAppropriate_solveCsp_FWD(Match match, Model model, TypeAccess eTypeAccess, AbstractTypeDeclaration eType,
 			ParameterizedType eParameterizedType);
 
 	/**
@@ -98,8 +98,8 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType eTypeToTAbstractType,
-			TAbstractType tAbstractType, AbstractTypeDeclaration eType, Model model, TypeAccess eTypeAccess,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model model, TAbstractType tAbstractType,
+			TypeToTAbstractType eTypeToTAbstractType, TypeAccess eTypeAccess, AbstractTypeDeclaration eType,
 			ParameterizedType eParameterizedType);
 
 	/**
@@ -116,9 +116,9 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eTypeToTAbstractType,
-			EObject eParameterizedTypeToTAbstractType, EObject tAbstractType, EObject eType, EObject model,
-			EObject eTypeAccess, EObject eParameterizedType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject tAbstractType,
+			EObject eTypeToTAbstractType, EObject eTypeAccess, EObject eType, EObject eParameterizedTypeToTAbstractType,
+			EObject eParameterizedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,7 +190,7 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TAbstractType_0(TAbstractType tAbstractType);
+	EObjectContainer isAppropriate_BWD_TAbstractType_1(TAbstractType tAbstractType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_31(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_193(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,8 +230,8 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAbstractType tAbstractType, AbstractTypeDeclaration eType, Model model,
-			TypeAccess eTypeAccess, ParameterizedType eParameterizedType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Model model, TAbstractType tAbstractType, TypeAccess eTypeAccess,
+			AbstractTypeDeclaration eType, ParameterizedType eParameterizedType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,7 +247,7 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AbstractTypeDeclaration eType, Model model, TypeAccess eTypeAccess,
+	boolean checkDEC_FWD(Model model, TypeAccess eTypeAccess, AbstractTypeDeclaration eType,
 			ParameterizedType eParameterizedType);
 
 	/**
@@ -264,8 +264,8 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType eTypeToTAbstractTypeParameter, Model modelParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, Model modelParameter,
+			TypeToTAbstractType eTypeToTAbstractTypeParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,8 +273,8 @@ public interface ParameterizedTypeToType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeToTAbstractType eTypeToTAbstractType,
-			TAbstractType tAbstractType, AbstractTypeDeclaration eType, Model model,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model model, TAbstractType tAbstractType,
+			TypeToTAbstractType eTypeToTAbstractType, AbstractTypeDeclaration eType,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

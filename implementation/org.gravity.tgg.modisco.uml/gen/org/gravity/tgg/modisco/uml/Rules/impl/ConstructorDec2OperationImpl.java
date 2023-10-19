@@ -662,7 +662,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MConstructorDefinition_0(MConstructorDefinition bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_MConstructorDefinition_1(MConstructorDefinition bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -718,7 +718,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_ownedComment) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_279(EMoflonEdge _edge_ownedComment) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1178,10 +1178,10 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 			return null;
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_0__MCONSTRUCTORDEFINITION:
-			return isAppropriate_FWD_MConstructorDefinition_0((MConstructorDefinition) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_125__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_1__MCONSTRUCTORDEFINITION:
+			return isAppropriate_FWD_MConstructorDefinition_1((MConstructorDefinition) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_279__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_279((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2015,8 +2015,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_20_2_testcorematchandDECs_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_574092 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_574092 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_346896 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_346896 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2132,9 +2132,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_21_2_testcorematchandDECs_black_nac_0BB(
 			Comment comment, Operation feature) {
-		for (Element __DEC_comment_annotatedElement_553744 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_553744)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_553744)) {
+		for (Element __DEC_comment_annotatedElement_105028 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_105028)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_105028)) {
 					return new Object[] { comment, feature };
 				}
 			}
@@ -2372,8 +2372,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_27_1_matchtggpattern_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_181019 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_181019 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_120891 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_120891 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2400,9 +2400,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_28_1_matchtggpattern_black_nac_0BB(Comment comment,
 			Operation feature) {
-		for (Element __DEC_comment_annotatedElement_328571 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_328571)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_328571)) {
+		for (Element __DEC_comment_annotatedElement_714074 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_714074)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_714074)) {
 					return new Object[] { comment, feature };
 				}
 			}

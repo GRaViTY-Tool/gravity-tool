@@ -792,7 +792,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_143(EMoflonEdge _edge_contract) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_297(EMoflonEdge _edge_contract) {
 
 		Object[] result1_bindingAndBlack = TypeAccess2InterfaceRealizationImpl
 				.pattern_TypeAccess2InterfaceRealization_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -852,7 +852,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_152(EMoflonEdge _edge_superInterfaces) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_321(EMoflonEdge _edge_superInterfaces) {
 
 		Object[] result1_bindingAndBlack = TypeAccess2InterfaceRealizationImpl
 				.pattern_TypeAccess2InterfaceRealization_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1311,10 +1311,10 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 			return null;
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_143__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_143((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_152__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_152((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_297__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_297((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_321__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_321((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_INTERFACE_REALIZATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2725,10 +2725,10 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_20_2_testcorematchandDECs_black_nac_0BBB(
 			InterfaceRealization interfaceRealization, BehavioredClassifier umlClass, Interface superInterface) {
-		for (NamedElement __DEC_interfaceRealization_client_177324 : interfaceRealization.getClients()) {
-			if (!interfaceRealization.equals(__DEC_interfaceRealization_client_177324)) {
-				if (!umlClass.equals(__DEC_interfaceRealization_client_177324)) {
-					if (!superInterface.equals(__DEC_interfaceRealization_client_177324)) {
+		for (NamedElement __DEC_interfaceRealization_client_301558 : interfaceRealization.getClients()) {
+			if (!interfaceRealization.equals(__DEC_interfaceRealization_client_301558)) {
+				if (!umlClass.equals(__DEC_interfaceRealization_client_301558)) {
+					if (!superInterface.equals(__DEC_interfaceRealization_client_301558)) {
 						return new Object[] { interfaceRealization, umlClass, superInterface };
 					}
 				}
@@ -2739,10 +2739,10 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_20_2_testcorematchandDECs_black_nac_1BBB(
 			InterfaceRealization interfaceRealization, BehavioredClassifier umlClass, Interface superInterface) {
-		for (NamedElement __DEC_interfaceRealization_supplier_414735 : interfaceRealization.getSuppliers()) {
-			if (!interfaceRealization.equals(__DEC_interfaceRealization_supplier_414735)) {
-				if (!umlClass.equals(__DEC_interfaceRealization_supplier_414735)) {
-					if (!superInterface.equals(__DEC_interfaceRealization_supplier_414735)) {
+		for (NamedElement __DEC_interfaceRealization_supplier_825289 : interfaceRealization.getSuppliers()) {
+			if (!interfaceRealization.equals(__DEC_interfaceRealization_supplier_825289)) {
+				if (!umlClass.equals(__DEC_interfaceRealization_supplier_825289)) {
+					if (!superInterface.equals(__DEC_interfaceRealization_supplier_825289)) {
 						return new Object[] { interfaceRealization, umlClass, superInterface };
 					}
 				}
@@ -2928,7 +2928,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_0B(
 			TypeAccess typeAcc) {
-		for (Annotation __DEC_typeAcc_type_44928 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAcc_type_583941 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, Annotation.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2937,7 +2937,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeAcc) {
-		for (ArrayType __DEC_typeAcc_elementType_836034 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAcc_elementType_954691 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ArrayType.class, "elementType")) {
 			return new Object[] { typeAcc };
 		}
@@ -2946,9 +2946,9 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess typeAcc, ClassDeclaration classDec) {
-		for (ClassDeclaration __DEC_typeAcc_superClass_909913 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAcc_superClass_283123 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ClassDeclaration.class, "superClass")) {
-			if (!classDec.equals(__DEC_typeAcc_superClass_909913)) {
+			if (!classDec.equals(__DEC_typeAcc_superClass_283123)) {
 				return new Object[] { typeAcc, classDec };
 			}
 		}
@@ -2957,7 +2957,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess typeAcc) {
-		for (MethodDeclaration __DEC_typeAcc_returnType_267615 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAcc_returnType_380379 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAcc };
 		}
@@ -2966,7 +2966,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeAcc) {
-		for (ParameterizedType __DEC_typeAcc_type_189985 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAcc_type_449577 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ParameterizedType.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2975,7 +2975,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeAcc) {
-		for (SingleVariableDeclaration __DEC_typeAcc_type_261913 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAcc_type_675085 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2984,7 +2984,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeAcc) {
-		for (AnnotationMemberValuePair __DEC_typeAcc_value_929566 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAcc_value_911511 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAcc };
 		}
@@ -3298,7 +3298,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_0B(
 			TypeAccess typeAcc) {
-		for (Annotation __DEC_typeAcc_type_241890 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAcc_type_726289 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, Annotation.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3307,7 +3307,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeAcc) {
-		for (ArrayType __DEC_typeAcc_elementType_757100 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAcc_elementType_968041 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ArrayType.class, "elementType")) {
 			return new Object[] { typeAcc };
 		}
@@ -3316,9 +3316,9 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess typeAcc, ClassDeclaration classDec) {
-		for (ClassDeclaration __DEC_typeAcc_superClass_243578 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAcc_superClass_716709 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ClassDeclaration.class, "superClass")) {
-			if (!classDec.equals(__DEC_typeAcc_superClass_243578)) {
+			if (!classDec.equals(__DEC_typeAcc_superClass_716709)) {
 				return new Object[] { typeAcc, classDec };
 			}
 		}
@@ -3327,7 +3327,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess typeAcc) {
-		for (MethodDeclaration __DEC_typeAcc_returnType_465562 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAcc_returnType_223205 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAcc };
 		}
@@ -3336,7 +3336,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeAcc) {
-		for (ParameterizedType __DEC_typeAcc_type_291387 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAcc_type_189649 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ParameterizedType.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3345,7 +3345,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeAcc) {
-		for (SingleVariableDeclaration __DEC_typeAcc_type_677656 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAcc_type_659382 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3354,7 +3354,7 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeAcc) {
-		for (AnnotationMemberValuePair __DEC_typeAcc_value_29162 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAcc_value_172169 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAcc };
 		}
@@ -3413,10 +3413,10 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_28_1_matchtggpattern_black_nac_0BBB(
 			InterfaceRealization interfaceRealization, BehavioredClassifier umlClass, Interface superInterface) {
-		for (NamedElement __DEC_interfaceRealization_client_322212 : interfaceRealization.getClients()) {
-			if (!interfaceRealization.equals(__DEC_interfaceRealization_client_322212)) {
-				if (!umlClass.equals(__DEC_interfaceRealization_client_322212)) {
-					if (!superInterface.equals(__DEC_interfaceRealization_client_322212)) {
+		for (NamedElement __DEC_interfaceRealization_client_105960 : interfaceRealization.getClients()) {
+			if (!interfaceRealization.equals(__DEC_interfaceRealization_client_105960)) {
+				if (!umlClass.equals(__DEC_interfaceRealization_client_105960)) {
+					if (!superInterface.equals(__DEC_interfaceRealization_client_105960)) {
 						return new Object[] { interfaceRealization, umlClass, superInterface };
 					}
 				}
@@ -3427,10 +3427,10 @@ public class TypeAccess2InterfaceRealizationImpl extends AbstractRuleImpl implem
 
 	public static final Object[] pattern_TypeAccess2InterfaceRealization_28_1_matchtggpattern_black_nac_1BBB(
 			InterfaceRealization interfaceRealization, BehavioredClassifier umlClass, Interface superInterface) {
-		for (NamedElement __DEC_interfaceRealization_supplier_806911 : interfaceRealization.getSuppliers()) {
-			if (!interfaceRealization.equals(__DEC_interfaceRealization_supplier_806911)) {
-				if (!umlClass.equals(__DEC_interfaceRealization_supplier_806911)) {
-					if (!superInterface.equals(__DEC_interfaceRealization_supplier_806911)) {
+		for (NamedElement __DEC_interfaceRealization_supplier_829120 : interfaceRealization.getSuppliers()) {
+			if (!interfaceRealization.equals(__DEC_interfaceRealization_supplier_829120)) {
+				if (!umlClass.equals(__DEC_interfaceRealization_supplier_829120)) {
+					if (!superInterface.equals(__DEC_interfaceRealization_supplier_829120)) {
 						return new Object[] { interfaceRealization, umlClass, superInterface };
 					}
 				}

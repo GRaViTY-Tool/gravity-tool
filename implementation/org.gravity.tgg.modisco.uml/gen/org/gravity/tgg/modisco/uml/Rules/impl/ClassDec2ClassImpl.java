@@ -631,7 +631,7 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature) {
+	public EObjectContainer isAppropriate_BWD_Class_2(org.eclipse.uml2.uml.Class feature) {
 
 		Object[] result1_bindingAndBlack = ClassDec2ClassImpl
 				.pattern_ClassDec2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -685,7 +685,7 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MClass_0(MClass bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_MClass_1(MClass bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = ClassDec2ClassImpl
 				.pattern_ClassDec2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1134,10 +1134,10 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 			return null;
 		case RulesPackage.CLASS_DEC2_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_0__CLASS:
-			return isAppropriate_BWD_Class_0((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_0__MCLASS:
-			return isAppropriate_FWD_MClass_0((MClass) arguments.get(0));
+		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_2__CLASS:
+			return isAppropriate_BWD_Class_2((org.eclipse.uml2.uml.Class) arguments.get(0));
+		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_1__MCLASS:
+			return isAppropriate_FWD_MClass_1((MClass) arguments.get(0));
 		case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1959,8 +1959,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_21_2_testcorematchandDECs_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_84346 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_84346 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_36078 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_36078 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2162,8 +2162,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_27_1_matchtggpattern_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_684754 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_684754 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_377925 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_377925 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

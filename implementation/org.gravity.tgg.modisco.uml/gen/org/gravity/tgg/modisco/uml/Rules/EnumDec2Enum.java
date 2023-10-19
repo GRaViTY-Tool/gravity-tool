@@ -201,7 +201,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature);
+	EObjectContainer isAppropriate_BWD_Enumeration_2(Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EnumDeclaration_0(EnumDeclaration bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_EnumDeclaration_1(EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -725,7 +725,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_131(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_285(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -785,7 +785,7 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_137(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_306(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = JavaPackageToUMLPackage_underModelImpl
 				.pattern_JavaPackageToUMLPackage_underModel_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1318,10 +1318,10 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_131__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_137__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_137((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_285__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_285((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_306__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_306((EMoflonEdge) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.JAVA_PACKAGE_TO_UML_PACKAGE_UNDER_MODEL___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2451,9 +2451,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Package jp) {
-		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_542641 = jp.getPackage();
-		if (__DEC_jp_ownedPackages_542641 != null) {
-			if (!jp.equals(__DEC_jp_ownedPackages_542641)) {
+		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_790195 = jp.getPackage();
+		if (__DEC_jp_ownedPackages_790195 != null) {
+			if (!jp.equals(__DEC_jp_ownedPackages_790195)) {
 				return new Object[] { jp };
 			}
 		}
@@ -2700,9 +2700,9 @@ public class JavaPackageToUMLPackage_underModelImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_JavaPackageToUMLPackage_underModel_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Package jp) {
-		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_191942 = jp.getPackage();
-		if (__DEC_jp_ownedPackages_191942 != null) {
-			if (!jp.equals(__DEC_jp_ownedPackages_191942)) {
+		org.eclipse.modisco.java.Package __DEC_jp_ownedPackages_791657 = jp.getPackage();
+		if (__DEC_jp_ownedPackages_791657 != null) {
+			if (!jp.equals(__DEC_jp_ownedPackages_791657)) {
 				return new Object[] { jp };
 			}
 		}

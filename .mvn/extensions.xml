@@ -7,8 +7,8 @@
     eclipse-test-plugin if Bundle-SymbolicName ending with .tests found in META-INF/MANIFEST.MF 
   -->
   <extension>
-    <groupId>org.eclipse.tycho.extras</groupId>
-    <artifactId>tycho-pomless</artifactId>
+    <groupId>org.eclipse.tycho</groupId>
+    <artifactId>tycho-build</artifactId>
     <version>4.0.2</version>
   </extension>
 </extensions>

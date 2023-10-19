@@ -13,23 +13,24 @@ jobs:
 
     steps:
     - name: Clone repository with submodules
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with: 
-        fetch-depth: 0
-        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
+#        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
         submodules: 'recursive'
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-        cache: 'maven'  
+#    - name: Set up JDK
+#      uses: actions/setup-java@v2
+#      with:
+#        distribution: 'temurin'
+#        java-version: '17'
+#        cache: 'maven'  
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-    - name: Build with Maven
+#    - name: Build with Maven
+    - name: Setup Maven Action
+      uses: s4u/setup-maven-action@v1.9.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn clean verify sonar:sonar -Pcoverage -Declipse.p2.mirrors=false -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}}
+    - run: mvn clean verify sonar:sonar -Pcoverage -Declipse.p2.mirrors=false -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}}
     - name: Publisch Pre-Release
       if: ${{ github.ref == 'refs/heads/master' }}
       uses: "marvinpinto/action-automatic-releases@latest"

@@ -618,7 +618,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature) {
+	public EObjectContainer isAppropriate_BWD_Enumeration_2(Enumeration feature) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -669,7 +669,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EnumDeclaration_0(EnumDeclaration bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EnumDeclaration_1(EnumDeclaration bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1091,10 +1091,10 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			return null;
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_0__ENUMERATION:
-			return isAppropriate_BWD_Enumeration_0((Enumeration) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_0__ENUMDECLARATION:
-			return isAppropriate_FWD_EnumDeclaration_0((EnumDeclaration) arguments.get(0));
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_2__ENUMERATION:
+			return isAppropriate_BWD_Enumeration_2((Enumeration) arguments.get(0));
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_1__ENUMDECLARATION:
+			return isAppropriate_FWD_EnumDeclaration_1((EnumDeclaration) arguments.get(0));
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1910,8 +1910,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_698750 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_698750 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_968358 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_968358 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2113,8 +2113,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_726788 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_726788 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_194737 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_194737 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
