@@ -7,6 +7,22 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
+  <name>GRaViTY</name>
+  <description>Static analysis for security compliance and design quality of Java projects.</description>
+  <url>https://gravity-tool.org</url>
+ 
+  <licenses>
+    <license>
+      <name>Eclipse Public License - v 2.0</name>
+      <url>https://www.eclipse.org/legal/epl-2.0/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <scm>
+    <url>https://github.com/GRaViTY-Tool/gravity-tool/</url>
+  </scm>
+
   <properties>
     <tycho-version>4.0.3</tycho-version>
     <jacoco.version>0.8.11</jacoco.version>
@@ -58,8 +74,8 @@
     <module>implementation/org.gravity.secdfd</module>
     <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
-    <!--<module>implementation/org.gravity.security.annotations.ui</module>
-    <module>implementation/org.gravity.security.annotations.pm</module>-->
+    <module>implementation/org.gravity.security.annotations.ui</module>
+    <module>implementation/org.gravity.security.annotations.pm</module>
     <module>implementation/org.gravity.security.violation.patterns</module>
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
@@ -202,7 +218,7 @@
     <repository>
       <id>FeatureIDE</id>
       <layout>p2</layout>
-      <url>http://featureide.cs.ovgu.de/update/v3/</url>
+      <url>https://featureide.cs.ovgu.de/update/v3/</url>
     </repository>
   </repositories>
 </project>

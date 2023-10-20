@@ -15,11 +15,11 @@
     <setAttribute key="deselected_workspace_bundles">
         <setEntry value="org.gravity.tgg.modisco.ui"/>
         <setEntry value="org.gravity.tgg.modisco.uml"/>
-        <setEntry value="org.gravity.tgg.modisco.uml.tests"/>
         <setEntry value="org.gravity.tgg.tests"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
     <stringAttribute key="location" value="${workspace_loc}/../accessanalysistest"/>
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/org.gravity.hulk.tests/src/org/gravity/hulk/tests/metics/AccessAnalysisTest.java"/>
     </listAttribute>
@@ -30,6 +30,7 @@
     <booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
     <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
     <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_SHOW_CODEDETAILS_IN_EXCEPTION_MESSAGES" value="true"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>
@@ -44,12 +45,9 @@
     <setAttribute key="selected_target_bundles">
         <setEntry value="MocaTree@default:default"/>
         <setEntry value="SDMLanguage@default:default"/>
-        <setEntry value="com.google.guava*21.0.0.v20170206-1425@default:default"/>
-        <setEntry value="com.google.guava*27.1.0.v20190517-1946@default:default"/>
-        <setEntry value="com.google.inject@default:default"/>
+        <setEntry value="com.google.inject*7.0.0@default:default"/>
         <setEntry value="com.ibm.icu@default:default"/>
         <setEntry value="com.jcraft.jsch@default:default"/>
-        <setEntry value="com.jcraft.jzlib@default:default"/>
         <setEntry value="com.sun.jna.platform@default:default"/>
         <setEntry value="com.sun.jna@default:default"/>
         <setEntry value="io.github.classgraph@default:default"/>
@@ -64,42 +62,30 @@
         <setEntry value="net.sourceforge.plantuml.eclipse.imagecontrol@default:default"/>
         <setEntry value="net.sourceforge.plantuml.eclipse@default:default"/>
         <setEntry value="net.sourceforge.plantuml.lib@default:default"/>
-        <setEntry value="org.antlr.runtime*3.2.0.v201101311130@default:default"/>
         <setEntry value="org.antlr.stringtemplate@default:default"/>
         <setEntry value="org.apache.ant@default:default"/>
         <setEntry value="org.apache.batik.bridge@default:default"/>
         <setEntry value="org.apache.batik.constants@default:default"/>
-        <setEntry value="org.apache.batik.css*1.13.0.v20200622-2037@default:default"/>
-        <setEntry value="org.apache.batik.css*1.6.0.v201011041432@default:default"/>
+        <setEntry value="org.apache.batik.css@default:default"/>
         <setEntry value="org.apache.batik.dom.svg@default:default"/>
         <setEntry value="org.apache.batik.dom@default:default"/>
-        <setEntry value="org.apache.batik.ext.awt@default:default"/>
         <setEntry value="org.apache.batik.i18n@default:default"/>
         <setEntry value="org.apache.batik.parser@default:default"/>
-        <setEntry value="org.apache.batik.pdf@default:default"/>
         <setEntry value="org.apache.batik.svggen@default:default"/>
         <setEntry value="org.apache.batik.transcoder@default:default"/>
-        <setEntry value="org.apache.batik.util*1.13.0.v20200622-2037@default:default"/>
-        <setEntry value="org.apache.batik.util*1.6.0.v201011041432@default:default"/>
-        <setEntry value="org.apache.batik.util.gui@default:default"/>
+        <setEntry value="org.apache.batik.util@default:default"/>
         <setEntry value="org.apache.batik.xml@default:default"/>
         <setEntry value="org.apache.commons.cli@default:default"/>
         <setEntry value="org.apache.commons.io@default:default"/>
         <setEntry value="org.apache.commons.jxpath@default:default"/>
         <setEntry value="org.apache.commons.lang3@default:default"/>
-        <setEntry value="org.apache.commons.lang@default:default"/>
         <setEntry value="org.apache.commons.logging@default:default"/>
         <setEntry value="org.apache.felix.gogo.runtime@default:default"/>
         <setEntry value="org.apache.felix.scr@1:true"/>
-        <setEntry value="org.apache.log4j@default:default"/>
-        <setEntry value="org.apache.lucene.analyzers-common*8.4.1.v20200122-1459@default:default"/>
-        <setEntry value="org.apache.lucene.analyzers-smartcn@default:default"/>
-        <setEntry value="org.apache.lucene.core*8.4.1.v20200122-1459@default:default"/>
+        <setEntry value="org.apache.log4j*1.2.24.v20221221-2012@default:default"/>
+        <setEntry value="org.apache.lucene.core@default:default"/>
         <setEntry value="org.apache.xml.resolver@default:default"/>
         <setEntry value="org.apache.xmlgraphics@default:default"/>
-        <setEntry value="org.apiguardian@default:default"/>
-        <setEntry value="org.bouncycastle.bcpg@default:default"/>
-        <setEntry value="org.bouncycastle.bcprov@default:default"/>
         <setEntry value="org.eclipse.acceleo.common@default:default"/>
         <setEntry value="org.eclipse.acceleo.engine@default:default"/>
         <setEntry value="org.eclipse.acceleo.model@default:default"/>
@@ -121,7 +107,6 @@
         <setEntry value="org.eclipse.core.filesystem.linux.x86_64@default:false"/>
         <setEntry value="org.eclipse.core.filesystem@default:default"/>
         <setEntry value="org.eclipse.core.jobs@default:default"/>
-        <setEntry value="org.eclipse.core.net.linux.x86_64@default:false"/>
         <setEntry value="org.eclipse.core.net@default:default"/>
         <setEntry value="org.eclipse.core.resources@default:default"/>
         <setEntry value="org.eclipse.core.runtime@default:true"/>
@@ -207,7 +192,6 @@
         <setEntry value="org.eclipse.equinox.p2.updatesite@default:default"/>
         <setEntry value="org.eclipse.equinox.preferences@default:default"/>
         <setEntry value="org.eclipse.equinox.registry@default:default"/>
-        <setEntry value="org.eclipse.equinox.security.linux.x86_64@default:false"/>
         <setEntry value="org.eclipse.equinox.security.ui@default:default"/>
         <setEntry value="org.eclipse.equinox.security@default:default"/>
         <setEntry value="org.eclipse.equinox.simpleconfigurator.manipulator@default:default"/>
@@ -247,10 +231,7 @@
         <setEntry value="org.eclipse.help.base@default:default"/>
         <setEntry value="org.eclipse.help.ui@default:default"/>
         <setEntry value="org.eclipse.help@default:default"/>
-        <setEntry value="org.eclipse.jdt.annotation*2.2.600.v20200408-1511@default:default"/>
         <setEntry value="org.eclipse.jdt.apt.core@default:default"/>
-        <setEntry value="org.eclipse.jdt.compiler.apt@default:false"/>
-        <setEntry value="org.eclipse.jdt.compiler.tool@default:false"/>
         <setEntry value="org.eclipse.jdt.core.manipulation@default:default"/>
         <setEntry value="org.eclipse.jdt.core@default:default"/>
         <setEntry value="org.eclipse.jdt.debug.ui@default:default"/>
@@ -271,7 +252,6 @@
         <setEntry value="org.eclipse.jface.text@default:default"/>
         <setEntry value="org.eclipse.jface@default:default"/>
         <setEntry value="org.eclipse.jgit.gpg.bc@default:false"/>
-        <setEntry value="org.eclipse.jgit.ssh.jsch@default:false"/>
         <setEntry value="org.eclipse.jgit@default:default"/>
         <setEntry value="org.eclipse.ltk.core.refactoring@default:default"/>
         <setEntry value="org.eclipse.ltk.ui.refactoring@default:default"/>
@@ -355,7 +335,6 @@
         <setEntry value="org.eclipse.pde.ui@default:default"/>
         <setEntry value="org.eclipse.pde@default:default"/>
         <setEntry value="org.eclipse.search@default:default"/>
-        <setEntry value="org.eclipse.swt.browser.chromium.gtk.linux.x86_64@default:false"/>
         <setEntry value="org.eclipse.swt.gtk.linux.x86_64@default:false"/>
         <setEntry value="org.eclipse.swt@default:default"/>
         <setEntry value="org.eclipse.team.core@default:default"/>
@@ -418,9 +397,6 @@
         <setEntry value="org.gervarro.eclipse.workspace.autosetup@default:default"/>
         <setEntry value="org.gervarro.eclipse.workspace.util@default:default"/>
         <setEntry value="org.hamcrest.core@default:default"/>
-        <setEntry value="org.junit.platform.commons@default:default"/>
-        <setEntry value="org.junit.platform.engine@default:default"/>
-        <setEntry value="org.junit.platform.launcher@default:default"/>
         <setEntry value="org.junit@default:default"/>
         <setEntry value="org.moflon.core.build@default:default"/>
         <setEntry value="org.moflon.core.plugins@default:default"/>
@@ -448,26 +424,133 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="carisma.check.activity2petrinet.tests@default:false"/>
+        <setEntry value="carisma.check.activity2petrinet@default:default"/>
+        <setEntry value="carisma.check.activitypaths.tests@default:false"/>
+        <setEntry value="carisma.check.activitypaths@default:default"/>
+        <setEntry value="carisma.check.dummy.tests@default:false"/>
+        <setEntry value="carisma.check.dummy@default:default"/>
+        <setEntry value="carisma.check.idschecks@default:default"/>
+        <setEntry value="carisma.check.oclcheck@default:default"/>
+        <setEntry value="carisma.check.parametertest@default:default"/>
+        <setEntry value="carisma.check.rabac.tests@default:false"/>
+        <setEntry value="carisma.check.rabac@default:default"/>
+        <setEntry value="carisma.check.requirescheck.tests@default:default"/>
+        <setEntry value="carisma.check.requirescheck@default:default"/>
+        <setEntry value="carisma.check.sequencediagramcrypto@default:default"/>
+        <setEntry value="carisma.check.sequencediagrammcrypto.test@default:default"/>
+        <setEntry value="carisma.check.smartcard.evolution.tests@default:false"/>
+        <setEntry value="carisma.check.smartcard.evolution@default:default"/>
+        <setEntry value="carisma.check.smartcard.tests@default:false"/>
+        <setEntry value="carisma.check.smartcard@default:default"/>
+        <setEntry value="carisma.check.statemachinepaths@default:default"/>
+        <setEntry value="carisma.check.staticcheck.evolution.tests@default:false"/>
+        <setEntry value="carisma.check.staticcheck.evolution@default:default"/>
+        <setEntry value="carisma.check.staticcheck.tests@default:default"/>
+        <setEntry value="carisma.check.staticcheck@default:default"/>
+        <setEntry value="carisma.check.template@default:default"/>
+        <setEntry value="carisma.core.io@default:default"/>
+        <setEntry value="carisma.core.tests@default:false"/>
         <setEntry value="carisma.core@default:default"/>
+        <setEntry value="carisma.evolution.tests@default:false"/>
+        <setEntry value="carisma.evolution.uml2.tests@default:false"/>
+        <setEntry value="carisma.evolution.uml2.umlchange.tests@default:false"/>
+        <setEntry value="carisma.evolution.uml2.umlchange.ui@default:default"/>
+        <setEntry value="carisma.evolution.uml2.umlchange@default:default"/>
+        <setEntry value="carisma.evolution.uml2@default:default"/>
+        <setEntry value="carisma.evolution@default:default"/>
+        <setEntry value="carisma.modeltype.uml2.tests@default:false"/>
         <setEntry value="carisma.modeltype.uml2@default:default"/>
+        <setEntry value="carisma.ocl.library.edit@default:default"/>
+        <setEntry value="carisma.ocl.library.editor@default:default"/>
+        <setEntry value="carisma.ocl.library@default:default"/>
+        <setEntry value="carisma.ocl@default:default"/>
+        <setEntry value="carisma.profile.umlchange.tests@default:false"/>
+        <setEntry value="carisma.profile.umlchange@default:default"/>
+        <setEntry value="carisma.profile.umlsec.enc@default:default"/>
+        <setEntry value="carisma.profile.umlsec.rabac@default:default"/>
+        <setEntry value="carisma.profile.umlsec.tests@default:false"/>
+        <setEntry value="carisma.profile.umlsec.umlsec4ids@default:default"/>
         <setEntry value="carisma.profile.umlsec@default:default"/>
+        <setEntry value="carisma.tests.modelutils.uml@default:default"/>
+        <setEntry value="carisma.ui.console@default:default"/>
+        <setEntry value="carisma.ui.eclipse.descriptor@default:false"/>
+        <setEntry value="carisma.ui.eclipse@default:default"/>
+        <setEntry value="carisma.umlchange.efficiency@default:default"/>
+        <setEntry value="org.gravity.eclipse.java.spl@default:default"/>
         <setEntry value="org.gravity.eclipse.tests@default:default"/>
         <setEntry value="org.gravity.eclipse.ui@default:default"/>
         <setEntry value="org.gravity.eclipse@default:default"/>
+        <setEntry value="org.gravity.headless.tests@default:default"/>
+        <setEntry value="org.gravity.headless@default:default"/>
         <setEntry value="org.gravity.hulk.annotations@default:default"/>
         <setEntry value="org.gravity.hulk.antipatterngraph@default:default"/>
         <setEntry value="org.gravity.hulk.refactoringgraph@default:default"/>
+        <setEntry value="org.gravity.hulk.resolve@default:default"/>
         <setEntry value="org.gravity.hulk.tests@default:default"/>
         <setEntry value="org.gravity.hulk.ui.visualization@default:default"/>
         <setEntry value="org.gravity.hulk.ui@default:default"/>
         <setEntry value="org.gravity.hulk@default:default"/>
+        <setEntry value="org.gravity.mapping.secdfd.eval@default:default"/>
+        <setEntry value="org.gravity.mapping.secdfd.tests@default:default"/>
+        <setEntry value="org.gravity.mapping.secdfd@default:default"/>
+        <setEntry value="org.gravity.metrics.sourcemeter@default:default"/>
+        <setEntry value="org.gravity.model.security@default:default"/>
+        <setEntry value="org.gravity.model.system@default:default"/>
+        <setEntry value="org.gravity.modisco.patcher.emfcompare@default:default"/>
         <setEntry value="org.gravity.modisco@default:default"/>
+        <setEntry value="org.gravity.neo4j@default:default"/>
+        <setEntry value="org.gravity.ps.tests@default:default"/>
+        <setEntry value="org.gravity.python@default:default"/>
+        <setEntry value="org.gravity.refactorings.tests@default:default"/>
         <setEntry value="org.gravity.refactorings.ui@default:default"/>
         <setEntry value="org.gravity.refactorings@default:default"/>
-        <setEntry value="org.gravity.security.analysis@default:default"/>
-        <setEntry value="org.gravity.security.annotations@default:default"/>
-        <setEntry value="org.gravity.tgg.modisco@default:default"/>
+        <setEntry value="org.gravity.requirements@default:default"/>
+        <setEntry value="org.gravity.security.annotations.pm@default:default"/>
+        <setEntry value="org.gravity.security.annotations.ui@default:default"/>
+        <setEntry value="org.gravity.security.language.ide@default:default"/>
+        <setEntry value="org.gravity.security.language.instances.ui@default:default"/>
+        <setEntry value="org.gravity.security.language.instances@default:default"/>
+        <setEntry value="org.gravity.security.language.proposals@default:default"/>
+        <setEntry value="org.gravity.security.language.tests@default:default"/>
+        <setEntry value="org.gravity.security.language.ui.tests@default:default"/>
+        <setEntry value="org.gravity.security.language.ui@default:default"/>
+        <setEntry value="org.gravity.security.language@default:default"/>
+        <setEntry value="org.gravity.security.metrics@default:default"/>
+        <setEntry value="org.gravity.security.tests@default:default"/>
+        <setEntry value="org.gravity.security.updatesite@default:default"/>
+        <setEntry value="org.gravity.security.violation.patterns.tests@default:default"/>
+        <setEntry value="org.gravity.security.violation.patterns@default:default"/>
+        <setEntry value="org.gravity.tgg.modisco.pm@default:default"/>
+        <setEntry value="org.gravity.tgg.pm.uml@default:default"/>
+        <setEntry value="org.gravity.typegraph.basic.tests@default:default"/>
+        <setEntry value="org.gravity.typegraph.basic.ui@default:default"/>
         <setEntry value="org.gravity.typegraph.basic@default:default"/>
+        <setEntry value="org.gravity.typegraph.delta.tests@default:default"/>
+        <setEntry value="org.gravity.typegraph.sonarlint@default:default"/>
+        <setEntry value="org.gravity.uml.extraction@default:default"/>
+        <setEntry value="org.gravity.uml.mapping@default:default"/>
+        <setEntry value="org.gravity.uml.papyrus@default:default"/>
+        <setEntry value="org.gravity.uml@default:default"/>
+        <setEntry value="org.gravity.umlsecrt.adapt@default:default"/>
+        <setEntry value="org.gravity.umlsecrt.editor@default:default"/>
+        <setEntry value="org.secdfd.dsl.ide@default:default"/>
+        <setEntry value="org.secdfd.dsl.tests@default:default"/>
+        <setEntry value="org.secdfd.dsl.ui.tests@default:default"/>
+        <setEntry value="org.secdfd.dsl.ui@default:default"/>
+        <setEntry value="org.secdfd.dsl@default:default"/>
+        <setEntry value="org.secdfd.model.edit@default:default"/>
+        <setEntry value="org.secdfd.model.editor@default:default"/>
+        <setEntry value="org.secdfd.model.tests@default:default"/>
+        <setEntry value="org.secdfd.model@default:default"/>
+        <setEntry value="org.tracesec.graph.dsl.ide@default:default"/>
+        <setEntry value="org.tracesec.graph.dsl.ui@default:default"/>
+        <setEntry value="org.tracesec.graph.dsl@default:default"/>
+        <setEntry value="org.tracesec.prioritization.tests@default:default"/>
+        <setEntry value="org.tracesec.prioritization.ui@default:default"/>
+        <setEntry value="org.tracesec.prioritization@default:default"/>
+        <setEntry value="org.tracesec.qualitymodel@default:default"/>
+        <setEntry value="org.tracesec.requirements@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>

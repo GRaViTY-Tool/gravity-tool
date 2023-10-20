@@ -33,7 +33,6 @@
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.gravity.eclipse.ui"/>
       <import plugin="org.gravity.hulk" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.gravity.security.annotations" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="carisma.profile.umlsec"/>
       <import plugin="org.eclipse.emf.henshin.interpreter" version="1.7.0" match="greaterOrEqual"/>
@@ -48,7 +47,14 @@
    </requires>
 
    <plugin
-         id="org.gravity.security.annotations"
+         id="org.gravity.security.annotations.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.gravity.security.annotations.pm"
          download-size="0"
          install-size="0"
          version="0.0.0"
