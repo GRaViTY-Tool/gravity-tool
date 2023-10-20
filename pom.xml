@@ -90,6 +90,7 @@
     <module>tests/org.gravity.headless.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
+    <module>tests/org.gravity.security.tests</module>
     <module>tests/org.gravity.security.violation.patterns.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.typegraph.basic.tests</module>

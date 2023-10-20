@@ -42,16 +42,17 @@ import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchyVisitor;
 import org.eclipse.jdt.internal.corext.callhierarchy.CallLocation;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodCall;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
-import org.gravity.eclipse.util.JavaASTUtil;
+import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 import org.gravity.security.annotations.requirements.Critical;
 import org.gravity.security.annotations.requirements.Integrity;
 import org.gravity.security.annotations.requirements.Secrecy;
 
 @SuppressWarnings("restriction")
 public class SecureDependencyCheck extends CompilationParticipant {
-
-	private static final String MARKER_SOURCE = "org.gravity.security";
-	private static final String MARKER_ATTR_ANALYZED = "org.gravity.security.analyzedMember";
+	
+	/**
+	 * The logger of this class
+	 */
 	private static final Logger LOGGER = Logger.getLogger(SecureDependencyCheck.class);
 
 	private IJavaProject project;
@@ -78,7 +79,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				final ICompilationUnit cu = (ICompilationUnit) JavaCore.create(result.getFile());
 				project = cu.getJavaProject();
 
-				deleteOldMarkers(cu);
+				SecurityMarkerUtil.deleteOldMarkers(cu);
 
 				Set<String> secrecySignatures = new HashSet<>();
 				Set<String> integritySignatures = new HashSet<>();
@@ -112,7 +113,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 					if (!accessedSignatures.contains(signature)) {
 						annotations.forEach(a -> {
 							if (a.secrecy().contains(signature)) {
-								createWarningMarker(a.annotation, "There is a secrecy requirement for \"" + signature
+								SecurityMarkerUtil.createWarningMarker(a.annotation, "There is a secrecy requirement for \"" + signature
 										+ "\" but the signature is neither defined nor accessed!");
 							}
 						});
@@ -122,7 +123,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 					if (!accessedSignatures.contains(signature)) {
 						annotations.forEach(a -> {
 							if (a.integrity().contains(signature)) {
-								createWarningMarker(a.annotation, "There is a integrity requirement for \"" + signature
+								SecurityMarkerUtil.createWarningMarker(a.annotation, "There is a integrity requirement for \"" + signature
 										+ "\" but the signature is neither defined nor accessed!");
 							}
 						});
@@ -132,32 +133,6 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				LOGGER.error(e);
 			}
 		}
-	}
-
-	private void deleteOldMarkers(final ICompilationUnit cu) {
-		try {
-			for (IMarker m : cu.getResource().findMarkers(IMarker.PROBLEM, true, IResource.DEPTH_INFINITE)) {
-				if (MARKER_SOURCE.equals(m.getAttribute(IMarker.SOURCE_ID))) {
-					m.delete();
-				}
-			}
-		} catch (CoreException e) {
-			LOGGER.error(e);
-		}
-	}
-
-	private void deleteOldMarkers(final IResource res, String analyzedMember) {
-		if (res != null)
-			try {
-				for (IMarker m : res.findMarkers(IMarker.PROBLEM, true, IResource.DEPTH_INFINITE)) {
-					if (MARKER_SOURCE.equals(m.getAttribute(IMarker.SOURCE_ID))
-							&& m.getAttribute(MARKER_ATTR_ANALYZED, "").contains(analyzedMember)) {
-						m.delete();
-					}
-				}
-			} catch (CoreException e) {
-				LOGGER.error(e);
-			}
 	}
 
 	private Set<IMember> collectAllMembers(final ICompilationUnit cu, Set<String> secrecySignatures,
@@ -213,67 +188,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	private void checkIncomingAccesses(IMember member, boolean secrecy, boolean integrity) {
 		for (MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
-			root.accept(new CallHierarchyVisitor() {
-
-				@Override
-				public boolean visit(MethodWrapper methodWrapper) {
-					if (root == methodWrapper) {
-						return true;
-					}
-					IMember caller = methodWrapper.getMember();
-					String callingMemberSignature = getSignature(caller);
-					String analyzedMemberSignature = getSignature(member);
-					deleteOldMarkers(caller.getResource(), analyzedMemberSignature);
-
-					Annotations annotations = getSecurityRequirements(caller.getDeclaringType());
-
-					String callerSecrecyRequirement = getCorrespondingEntry(member, annotations.secrecy());
-					boolean callerSecrecy = callerSecrecyRequirement != null;
-					if (callerSecrecy != secrecy) {
-						if (callerSecrecy) {
-							createErrorMarker(methodWrapper.getMethodCall(),
-									"Secrecy is required but not provided by the accessed member!",
-									analyzedMemberSignature, callingMemberSignature);
-							createErrorMarker(member,
-									"Secrecy is required for this member by \"" + callingMemberSignature + "\"",
-									analyzedMemberSignature, callingMemberSignature);
-						} else {
-							createErrorMarker(member,
-									callingMemberSignature + " accesses this member without the required secrecy!",
-									analyzedMemberSignature, callingMemberSignature);
-							createErrorMarker(
-									methodWrapper.getMethodCall(), "This class must specify secrecy for accessing \""
-											+ analyzedMemberSignature + "\"!",
-									analyzedMemberSignature, callingMemberSignature);
-
-						}
-					}
-
-					String callerIntegrityRequirement = getCorrespondingEntry(member, annotations.integrity());
-					boolean callerIntegrity = callerIntegrityRequirement != null;
-					if (callerIntegrity != integrity) {
-						if (callerIntegrity) {
-							createErrorMarker(member,
-									"Integrity is required for this member by \"" + callingMemberSignature + "\"",
-									analyzedMemberSignature, callingMemberSignature);
-							createErrorMarker(methodWrapper.getMethodCall(),
-									"Integrity is required but not provided by the accessed member!",
-									analyzedMemberSignature, callingMemberSignature);
-						} else {
-							createErrorMarker(member,
-									callingMemberSignature + " accesses this member without the required integrity!",
-									analyzedMemberSignature, callingMemberSignature);
-							createErrorMarker(
-									methodWrapper.getMethodCall(), "This class must specify integrity for accessing \""
-											+ analyzedMemberSignature + "\"!",
-									analyzedMemberSignature, callingMemberSignature);
-
-						}
-					}
-
-					return false;
-				}
-			}, new NullProgressMonitor());
+			root.accept(new IncomingAccessCheck(member, secrecy, root, integrity), new NullProgressMonitor());
 		}
 	}
 
@@ -282,75 +197,9 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		Collection<String> accessedSignatures = new HashSet<>();
 		for (MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
 			// Check outgoing calls
-			root.accept(new CallHierarchyVisitor() {
-				public boolean visit(MethodWrapper methodWrapper) {
-					if (root == methodWrapper) {
-						return true;
-					}
-					IMember calledMember = methodWrapper.getMember();
-					if (calledMember instanceof IType) {
-						return false;
-					}
-					String calledMemberSignature = getSignature(calledMember);
-					String analyzedMemberSignature = getSignature(caller);
-					deleteOldMarkers(calledMember.getResource(), analyzedMemberSignature);
-
-					boolean calleeSecrecy = requiresSecrecy(calledMember);
-					String callerSecrecyRequirement = getCorrespondingEntry(calledMember, secrecySignatures);
-					boolean callerSecrey = callerSecrecyRequirement != null;
-					if (callerSecrey) {
-						accessedSignatures.add(callerSecrecyRequirement);
-					}
-					if (callerSecrey != calleeSecrecy) {
-						if (callerSecrey) {
-							createErrorMarker(methodWrapper.getMethodCall(),
-									"Secrecy is required but not provided by the accessed member!",
-									analyzedMemberSignature, calledMemberSignature);
-							createErrorMarker(calledMember,
-									"Secrecy is required for this member by \"" + analyzedMemberSignature + "\"",
-									analyzedMemberSignature, calledMemberSignature);
-
-						} else {
-							createErrorMarker(methodWrapper.getMethodCall(),
-									"This class must specify secrecy for accessing \"" + calledMemberSignature + "\"!",
-									analyzedMemberSignature, calledMemberSignature);
-							createErrorMarker(calledMember,
-									analyzedMemberSignature + " accesses this member without the required secrecy!",
-									analyzedMemberSignature, calledMemberSignature);
-						}
-					}
-
-					boolean calleeIntegrity = requiresIntegrity(calledMember);
-					String callerIntegrityRequirement = getCorrespondingEntry(calledMember, integritySignatures);
-					boolean callerIntegrity = callerIntegrityRequirement != null;
-					if (callerIntegrity) {
-						accessedSignatures.add(callerIntegrityRequirement);
-					}
-					if (callerIntegrity != calleeIntegrity) {
-						if (callerIntegrity) {
-							createErrorMarker(methodWrapper.getMethodCall(),
-									"Integrity is required but not provided by the accessed member!",
-									analyzedMemberSignature, calledMemberSignature);
-							createErrorMarker(calledMember,
-									"Integrity is required for this member by \"" + analyzedMemberSignature + "\"",
-									analyzedMemberSignature, calledMemberSignature);
-						} else {
-							createErrorMarker(
-									methodWrapper.getMethodCall(), "This class must specify integrity for accessing \""
-											+ calledMemberSignature + "\"!",
-									analyzedMemberSignature, calledMemberSignature);
-							createErrorMarker(calledMember,
-									analyzedMemberSignature + " accesses this member without the required integrity!",
-									analyzedMemberSignature, calledMemberSignature);
-
-						}
-					}
-
-					// Do not continue tree traversal
-					return false;
-				}
-
-			}, new NullProgressMonitor());
+			root.accept(
+					new OutgoingAccessCheck(accessedSignatures, root, caller, secrecySignatures, integritySignatures),
+					new NullProgressMonitor());
 		}
 		return accessedSignatures;
 	}
@@ -408,7 +257,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 						return signature;
 					}
 				} catch (JavaModelException e) {
-					e.printStackTrace();
+					LOGGER.error(e);
 				}
 			}
 			break;
@@ -568,7 +417,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		default:
 			int genericStart = type.indexOf(Util.C_GENERIC_START);
 			int end = genericStart == -1 ? type.indexOf(Util.C_NAME_END) : genericStart;
-			switch (type.charAt(0)) {
+			char prefix = type.charAt(0);
+			switch (prefix) {
 			case Util.C_UNRESOLVED:
 				String resolvedType = findType(cu, type.substring(1, end));
 				if (resolvedType == null) {
@@ -580,6 +430,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				return buildArray(arrays, type.substring(1, end));
 			case Util.C_TYPE_VARIABLE:
 				return buildArray(arrays, type.substring(1, end));
+			default:
+				LOGGER.error("Unhandled JDT type prefix: " + prefix);
 			}
 		}
 		throw new IllegalStateException("Unhandled return type \"" + type + "\" in " + cu.getPath());
@@ -593,54 +445,92 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			}
 
 			// Search the imports for the type
-			if (cu != null)
-				for (IImportDeclaration imp : cu.getImports()) {
-					String importName = imp.getElementName();
-
-					if (Util.C_STAR == importName.charAt(importName.length() - 1)) {
-						// Resolve import all
-						String packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
-						IPackageFragment packageFragment = getPackageFragment(packageName);
-						if (packageFragment != null) {
-							String fullyQualifiedName = findTypeInPackage(name, packageFragment);
-							if (fullyQualifiedName != null) {
-								return fullyQualifiedName;
-							}
-						}
-
-					} else {
-						// Check imported types
-						String simpleName = importName;
-						int index = simpleName.lastIndexOf(Util.C_DOT);
-						if (index >= 0) {
-							simpleName = simpleName.substring(index + 1);
-						}
-						if (simpleName.equals(name)) {
-							return imp.getElementName();
-						}
-					}
-				}
+			var importedType = searchTypeInImports(cu, name);
+			if (importedType != null) {
+				return importedType;
+			}
 
 			// Search java.lang for the type
 			IPackageFragment packageFragment = getPackageFragment("java.lang");
-			String fullyQualifiedName = findTypeInPackage(name, packageFragment);
-			if (fullyQualifiedName != null) {
-				return fullyQualifiedName;
+			if (packageFragment != null) {
+				String fullyQualifiedName = findTypeInPackage(name, packageFragment);
+				if (fullyQualifiedName != null) {
+					return fullyQualifiedName;
+				}
 			}
 
 			// Search the own package
-			if (cu != null)
-				for (IPackageDeclaration packageDeclaration : cu.getPackageDeclarations()) {
-					IPackageFragment cuPackageFragment = getPackageFragment(packageDeclaration.getElementName());
+			String type = findTypeOwnPackage(cu, name);
+			if (type != null) {
+				return type;
+			}
+		} catch (CoreException e) {
+			throw new IllegalStateException(e);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Searches the type in the imports of the compilation unit
+	 * 
+	 * @param cu
+	 * @param name
+	 * @return
+	 * @throws JavaModelException
+	 */
+	private String searchTypeInImports(ICompilationUnit cu, String name) throws JavaModelException {
+		if (cu != null) {
+			for (IImportDeclaration imp : cu.getImports()) {
+				String importName = imp.getElementName();
+
+				if (Util.C_STAR == importName.charAt(importName.length() - 1)) {
+					// Resolve import all
+					String packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
+					IPackageFragment packageFragment = getPackageFragment(packageName);
+					if (packageFragment != null) {
+						String fullyQualifiedName = findTypeInPackage(name, packageFragment);
+						if (fullyQualifiedName != null) {
+							return fullyQualifiedName;
+						}
+					}
+
+				} else {
+					// Check imported types
+					String simpleName = importName;
+					int index = simpleName.lastIndexOf(Util.C_DOT);
+					if (index >= 0) {
+						simpleName = simpleName.substring(index + 1);
+					}
+					if (simpleName.equals(name)) {
+						return imp.getElementName();
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Searches the type in the package of the compilation unit
+	 * 
+	 * @param cu
+	 * @param name
+	 * @return
+	 * @throws JavaModelException
+	 */
+	private String findTypeOwnPackage(ICompilationUnit cu, String name) throws JavaModelException {
+		if (cu != null) {
+			for (IPackageDeclaration packageDeclaration : cu.getPackageDeclarations()) {
+				IPackageFragment cuPackageFragment = getPackageFragment(packageDeclaration.getElementName());
+				if (cuPackageFragment != null) {
 					String ownName = findTypeInPackage(name, cuPackageFragment);
 					if (ownName != null) {
 						return ownName;
 					}
 				}
-		} catch (CoreException e) {
-			throw new IllegalStateException(e);
+			}
 		}
-
 		return null;
 	}
 
@@ -688,8 +578,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		if (critical != null && critical.exists()) {
 			try {
 				for (IMemberValuePair pair : critical.getMemberValuePairs()) {
-					switch (pair.getMemberName()) {
-					case "secrecy":
+					String memberName = pair.getMemberName();
+					if ("secrecy".equals(memberName)) {
 						Object secrecyValue = pair.getValue();
 						if (secrecyValue instanceof String string) {
 							secrecySignatures.add(string);
@@ -698,8 +588,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 								secrecySignatures.add((String) secrecy);
 							}
 						}
-						break;
-					case "integrity":
+					} else if ("integrity".equals(memberName)) {
 						Object integrityValue = pair.getValue();
 						if (integrityValue instanceof String string) {
 							integritySignatures.add(string);
@@ -708,7 +597,6 @@ public class SecureDependencyCheck extends CompilationParticipant {
 								integritySignatures.add((String) integrity);
 							}
 						}
-						break;
 					}
 				}
 			} catch (JavaModelException e) {
@@ -721,26 +609,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	}
 
-	private boolean requiresSecrecy(IMember member) {
-		if (member instanceof IAnnotatable annotatable) {
-			if (member instanceof IType) {
-				return false;
-			}
-			return annotatable.getAnnotation(Secrecy.class.getSimpleName()).exists() || getCorrespondingEntry(member,
-					getSecurityRequirements(member.getDeclaringType()).secrecy()) != null;
-		}
-		return false;
-	}
-
-	private boolean requiresIntegrity(IMember member) {
-		if (member instanceof IAnnotatable annotatable) {
-			return annotatable.getAnnotation(Integrity.class.getSimpleName()).exists() || getCorrespondingEntry(member,
-					getSecurityRequirements(member.getDeclaringType()).integrity()) != null;
-		}
-		return false;
-	}
-
-	private Collection<IMarker> createErrorMarker(MethodCall methodCall, String message, String... relevantMember) {
+	public static Collection<IMarker> createErrorMarker(MethodCall methodCall, String message, String... relevantMember) {
 		Collection<CallLocation> callLocations = methodCall.getCallLocations();
 		Collection<IMarker> marker = new ArrayList<>(callLocations.size());
 		for (CallLocation callLocation : callLocations) {
@@ -748,7 +617,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				IResource resource = callLocation.getMember().getResource();
 				int line = callLocation.getLineNumber();
 
-				marker.add(createErrorMarker(resource, line, message, relevantMember));
+				marker.add(SecurityMarkerUtil.createErrorMarker(resource, line, message, relevantMember));
 			} catch (CoreException e) {
 				throw new IllegalStateException(e);
 			}
@@ -756,42 +625,179 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return marker;
 	}
 
-	private IMarker createErrorMarker(IMember member, String message, String... relevantMember) {
-		try {
-			IResource resource = member.getResource();
-			int line = JavaASTUtil.getLine(member);
+	private final class OutgoingAccessCheck extends CallHierarchyVisitor {
+		private final Collection<String> accessedSignatures;
+		private final MethodWrapper root;
+		private final IMember caller;
+		private final Set<String> secrecySignatures;
+		private final Set<String> integritySignatures;
 
-			return createErrorMarker(resource, line, message, relevantMember);
-		} catch (CoreException e) {
-			throw new IllegalStateException(e);
+		private OutgoingAccessCheck(Collection<String> accessedSignatures, MethodWrapper root, IMember caller,
+				Set<String> secrecySignatures, Set<String> integritySignatures) {
+			this.accessedSignatures = accessedSignatures;
+			this.root = root;
+			this.caller = caller;
+			this.secrecySignatures = secrecySignatures;
+			this.integritySignatures = integritySignatures;
+		}
+
+		@Override
+		public boolean visit(MethodWrapper methodWrapper) {
+			if (root == methodWrapper) {
+				return true;
+			}
+			IMember calledMember = methodWrapper.getMember();
+			if (calledMember instanceof IType) {
+				return false;
+			}
+			String calledMemberSignature = getSignature(calledMember);
+			String analyzedMemberSignature = getSignature(caller);
+			SecurityMarkerUtil.deleteOldMarkers(calledMember.getResource(), analyzedMemberSignature);
+
+			boolean calleeSecrecy = requiresSecrecy(calledMember);
+			String callerSecrecyRequirement = getCorrespondingEntry(calledMember, secrecySignatures);
+			boolean callerSecrey = callerSecrecyRequirement != null;
+			if (callerSecrey) {
+				accessedSignatures.add(callerSecrecyRequirement);
+			}
+			if (callerSecrey != calleeSecrecy) {
+				if (callerSecrey) {
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"Secrecy is required but not provided by the accessed member!", analyzedMemberSignature,
+							calledMemberSignature);
+					SecurityMarkerUtil.createErrorMarker(calledMember,
+							"Secrecy is required for this member by \"" + analyzedMemberSignature + "\"",
+							analyzedMemberSignature, calledMemberSignature);
+
+				} else {
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"This class must specify secrecy for accessing \"" + calledMemberSignature + "\"!",
+							analyzedMemberSignature, calledMemberSignature);
+					SecurityMarkerUtil.createErrorMarker(calledMember,
+							analyzedMemberSignature + " accesses this member without the required secrecy!",
+							analyzedMemberSignature, calledMemberSignature);
+				}
+			}
+
+			boolean calleeIntegrity = requiresIntegrity(calledMember);
+			String callerIntegrityRequirement = getCorrespondingEntry(calledMember, integritySignatures);
+			boolean callerIntegrity = callerIntegrityRequirement != null;
+			if (callerIntegrity) {
+				accessedSignatures.add(callerIntegrityRequirement);
+			}
+			if (callerIntegrity != calleeIntegrity) {
+				if (callerIntegrity) {
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"Integrity is required but not provided by the accessed member!", analyzedMemberSignature,
+							calledMemberSignature);
+					SecurityMarkerUtil.createErrorMarker(calledMember,
+							"Integrity is required for this member by \"" + analyzedMemberSignature + "\"",
+							analyzedMemberSignature, calledMemberSignature);
+				} else {
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"This class must specify integrity for accessing \"" + calledMemberSignature + "\"!",
+							analyzedMemberSignature, calledMemberSignature);
+					SecurityMarkerUtil.createErrorMarker(calledMember,
+							analyzedMemberSignature + " accesses this member without the required integrity!",
+							analyzedMemberSignature, calledMemberSignature);
+
+				}
+			}
+
+			// Do not continue tree traversal
+			return false;
+		}
+
+		private boolean requiresSecrecy(IMember member) {
+			if (member instanceof IAnnotatable annotatable) {
+				if (member instanceof IType) {
+					return false;
+				}
+				return annotatable.getAnnotation(Secrecy.class.getSimpleName()).exists()
+						|| getCorrespondingEntry(member,
+								getSecurityRequirements(member.getDeclaringType()).secrecy()) != null;
+			}
+			return false;
+		}
+
+		private boolean requiresIntegrity(IMember member) {
+			if (member instanceof IAnnotatable annotatable) {
+				return annotatable.getAnnotation(Integrity.class.getSimpleName()).exists()
+						|| getCorrespondingEntry(member,
+								getSecurityRequirements(member.getDeclaringType()).integrity()) != null;
+			}
+			return false;
 		}
 	}
 
-	private IMarker createErrorMarker(IResource resource, int line, String message, String... relevantMember)
-			throws CoreException {
-		IMarker m = resource.createMarker(IMarker.PROBLEM);
-		m.setAttribute(IMarker.LINE_NUMBER, line);
-		m.setAttribute(IMarker.MESSAGE, message);
-		m.setAttribute(IMarker.PRIORITY, IMarker.PRIORITY_HIGH);
-		m.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_ERROR);
-		m.setAttribute(IMarker.SOURCE_ID, MARKER_SOURCE);
-		m.setAttribute(MARKER_ATTR_ANALYZED, String.join(";", relevantMember));
-		return m;
-	}
+	private final class IncomingAccessCheck extends CallHierarchyVisitor {
+		private final IMember member;
+		private final boolean secrecy;
+		private final MethodWrapper root;
+		private final boolean integrity;
 
-	private void createWarningMarker(IAnnotation annotation, String message) {
-		try {
-			IResource resource = annotation.getResource();
-			int line = JavaASTUtil.getLine(annotation);
+		private IncomingAccessCheck(IMember member, boolean secrecy, MethodWrapper root, boolean integrity) {
+			this.member = member;
+			this.secrecy = secrecy;
+			this.root = root;
+			this.integrity = integrity;
+		}
 
-			IMarker m = resource.createMarker(IMarker.PROBLEM);
-			m.setAttribute(IMarker.LINE_NUMBER, line);
-			m.setAttribute(IMarker.MESSAGE, message);
-			m.setAttribute(IMarker.PRIORITY, IMarker.PRIORITY_NORMAL);
-			m.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_WARNING);
-			m.setAttribute(IMarker.SOURCE_ID, MARKER_SOURCE);
-		} catch (CoreException e) {
-			throw new IllegalStateException(e);
+		@Override
+		public boolean visit(MethodWrapper methodWrapper) {
+			if (root == methodWrapper) {
+				return true;
+			}
+			IMember caller = methodWrapper.getMember();
+			String callingMemberSignature = getSignature(caller);
+			String analyzedMemberSignature = getSignature(member);
+			SecurityMarkerUtil.deleteOldMarkers(caller.getResource(), analyzedMemberSignature);
+
+			Annotations annotations = getSecurityRequirements(caller.getDeclaringType());
+
+			String callerSecrecyRequirement = getCorrespondingEntry(member, annotations.secrecy());
+			boolean callerSecrecy = callerSecrecyRequirement != null;
+			if (callerSecrecy != secrecy) {
+				if (callerSecrecy) {
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"Secrecy is required but not provided by the accessed member!", analyzedMemberSignature,
+							callingMemberSignature);
+					SecurityMarkerUtil.createErrorMarker(member,
+							"Secrecy is required for this member by \"" + callingMemberSignature + "\"",
+							analyzedMemberSignature, callingMemberSignature);
+				} else {
+					SecurityMarkerUtil.createErrorMarker(member,
+							callingMemberSignature + " accesses this member without the required secrecy!",
+							analyzedMemberSignature, callingMemberSignature);
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"This class must specify secrecy for accessing \"" + analyzedMemberSignature + "\"!",
+							analyzedMemberSignature, callingMemberSignature);
+
+				}
+			}
+
+			String callerIntegrityRequirement = getCorrespondingEntry(member, annotations.integrity());
+			boolean callerIntegrity = callerIntegrityRequirement != null;
+			if (callerIntegrity != integrity) {
+				if (callerIntegrity) {
+					SecurityMarkerUtil.createErrorMarker(member,
+							"Integrity is required for this member by \"" + callingMemberSignature + "\"",
+							analyzedMemberSignature, callingMemberSignature);
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"Integrity is required but not provided by the accessed member!", analyzedMemberSignature,
+							callingMemberSignature);
+				} else {
+					SecurityMarkerUtil.createErrorMarker(member,
+							callingMemberSignature + " accesses this member without the required integrity!",
+							analyzedMemberSignature, callingMemberSignature);
+					createErrorMarker(methodWrapper.getMethodCall(),
+							"This class must specify integrity for accessing \"" + analyzedMemberSignature + "\"!",
+							analyzedMemberSignature, callingMemberSignature);
+
+				}
+			}
+
+			return false;
 		}
 	}
 
