@@ -747,7 +747,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_158(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedEnumImpl
 				.pattern_OrphanedEnum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -803,7 +803,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_165(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedEnumImpl
 				.pattern_OrphanedEnum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -872,13 +872,13 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 			return ruleResult;
 		}
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -924,13 +924,13 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 			return ruleResult;
 		}
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1284,10 +1284,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 			return null;
 		case RulesPackage.ORPHANED_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_158__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_158((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_165__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_165((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_22__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_24__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ORPHANED_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ORPHANED_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2620,7 +2620,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_837442 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_842850 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -2629,9 +2629,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_1BB(TClass tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_770929 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_928073 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_770929)) {
+			if (!pg.equals(__DEC_tType_classes_928073)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2639,8 +2639,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_2B(TClass tType) {
-		TPackage __DEC_tType_allTypes_357007 = tType.getPackage();
-		if (__DEC_tType_allTypes_357007 != null) {
+		TPackage __DEC_tType_allTypes_117874 = tType.getPackage();
+		if (__DEC_tType_allTypes_117874 != null) {
 			return new Object[] { tType };
 		}
 
@@ -2648,9 +2648,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_777705 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_777705 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_777705)) {
+		TAbstractType __DEC_tType_innerTypes_836365 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_836365 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_836365)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2660,10 +2660,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_4BBB(TEnum tEnum,
 			TClass tType, TypeGraph pg) {
-		TAnnotatable __DEC_tEnum_tAnnotation_574444 = tEnum.getTAnnotated();
-		if (__DEC_tEnum_tAnnotation_574444 != null) {
-			if (!tType.equals(__DEC_tEnum_tAnnotation_574444)) {
-				if (!pg.equals(__DEC_tEnum_tAnnotation_574444)) {
+		TAnnotatable __DEC_tEnum_tAnnotation_205518 = tEnum.getTAnnotated();
+		if (__DEC_tEnum_tAnnotation_205518 != null) {
+			if (!tType.equals(__DEC_tEnum_tAnnotation_205518)) {
+				if (!pg.equals(__DEC_tEnum_tAnnotation_205518)) {
 					return new Object[] { tEnum, tType, pg };
 				}
 			}
@@ -2840,9 +2840,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_3396 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_3396 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_3396)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_682118 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_682118 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_682118)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2851,9 +2851,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_709675 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_796545 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_709675 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_796545 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2861,8 +2861,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_2B(EnumDeclaration mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_279280 = mType.getPackage();
-		if (__DEC_mType_ownedElements_279280 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_612908 = mType.getPackage();
+		if (__DEC_mType_ownedElements_612908 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2870,7 +2870,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_917438 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_943693 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3132,9 +3132,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_283902 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_283902 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_283902)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_84756 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_84756 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_84756)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3143,9 +3143,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_359673 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_39611 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_359673 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_39611 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3153,8 +3153,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_2B(EnumDeclaration mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_973634 = mType.getPackage();
-		if (__DEC_mType_ownedElements_973634 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_798051 = mType.getPackage();
+		if (__DEC_mType_ownedElements_798051 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3162,7 +3162,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_936360 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_753496 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3196,7 +3196,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_259974 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_755580 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -3204,9 +3204,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_158897 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_849310 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_158897)) {
+			if (!pg.equals(__DEC_tType_classes_849310)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3214,8 +3214,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_2B(TClass tType) {
-		TPackage __DEC_tType_allTypes_159871 = tType.getPackage();
-		if (__DEC_tType_allTypes_159871 != null) {
+		TPackage __DEC_tType_allTypes_872448 = tType.getPackage();
+		if (__DEC_tType_allTypes_872448 != null) {
 			return new Object[] { tType };
 		}
 
@@ -3223,9 +3223,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_395088 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_395088 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_395088)) {
+		TAbstractType __DEC_tType_innerTypes_637148 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_637148 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_637148)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3235,10 +3235,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_4BBB(TEnum tEnum, TClass tType,
 			TypeGraph pg) {
-		TAnnotatable __DEC_tEnum_tAnnotation_293763 = tEnum.getTAnnotated();
-		if (__DEC_tEnum_tAnnotation_293763 != null) {
-			if (!tType.equals(__DEC_tEnum_tAnnotation_293763)) {
-				if (!pg.equals(__DEC_tEnum_tAnnotation_293763)) {
+		TAnnotatable __DEC_tEnum_tAnnotation_838282 = tEnum.getTAnnotated();
+		if (__DEC_tEnum_tAnnotation_838282 != null) {
+			if (!tType.equals(__DEC_tEnum_tAnnotation_838282)) {
+				if (!pg.equals(__DEC_tEnum_tAnnotation_838282)) {
 					return new Object[] { tEnum, tType, pg };
 				}
 			}

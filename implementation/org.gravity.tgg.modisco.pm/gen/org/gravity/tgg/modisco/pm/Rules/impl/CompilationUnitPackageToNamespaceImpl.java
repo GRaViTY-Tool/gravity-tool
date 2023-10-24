@@ -541,9 +541,9 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 				//nothing EMoflonEdge cu2m__cu____source = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge p2p__tp____target = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge p2p__p____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge module__tp____namespace = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tp__module____modules = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge module__tp____namespace = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge tp__module____modules = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = CompilationUnitPackageToNamespaceImpl
 						.pattern_CompilationUnitPackageToNamespace_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
@@ -689,7 +689,7 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_137(EMoflonEdge _edge_namespace) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_36(EMoflonEdge _edge_namespace) {
 
 		Object[] result1_bindingAndBlack = CompilationUnitPackageToNamespaceImpl
 				.pattern_CompilationUnitPackageToNamespace_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -749,7 +749,7 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_144(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_39(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = CompilationUnitPackageToNamespaceImpl
 				.pattern_CompilationUnitPackageToNamespace_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1184,10 +1184,10 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_137__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_137((EMoflonEdge) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_144__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_144((EMoflonEdge) arguments.get(0));
+		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_36__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_36((EMoflonEdge) arguments.get(0));
+		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_39__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_39((EMoflonEdge) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2028,8 +2028,8 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 		if (cu.equals(cu2m.getSource())) {
 			if (tp.equals(p2p.getTarget())) {
 				if (p.equals(p2p.getSource())) {
-					if (tp.equals(module.getNamespace())) {
-						if (module.equals(cu2m.getTarget())) {
+					if (module.equals(cu2m.getTarget())) {
+						if (tp.equals(module.getNamespace())) {
 							_result.add(new Object[] { p, cu, cu2m, module, tp, p2p });
 						}
 					}
@@ -2046,15 +2046,15 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 		EMoflonEdge cu2m__cu____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__tp____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge module__tp____namespace = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tp__module____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String cu2m__cu____source_name_prime = "source";
 		String p2p__tp____target_name_prime = "target";
 		String p2p__p____source_name_prime = "source";
+		String cu2m__module____target_name_prime = "target";
 		String module__tp____namespace_name_prime = "namespace";
 		String tp__module____modules_name_prime = "modules";
-		String cu2m__module____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(p);
 		isApplicableMatch.getAllContextElements().add(cu);
 		isApplicableMatch.getAllContextElements().add(cu2m);
@@ -2070,23 +2070,23 @@ public class CompilationUnitPackageToNamespaceImpl extends AbstractRuleImpl
 		p2p__p____source.setSrc(p2p);
 		p2p__p____source.setTrg(p);
 		isApplicableMatch.getAllContextElements().add(p2p__p____source);
+		cu2m__module____target.setSrc(cu2m);
+		cu2m__module____target.setTrg(module);
+		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		module__tp____namespace.setSrc(module);
 		module__tp____namespace.setTrg(tp);
 		isApplicableMatch.getAllContextElements().add(module__tp____namespace);
 		tp__module____modules.setSrc(tp);
 		tp__module____modules.setTrg(module);
 		isApplicableMatch.getAllContextElements().add(tp__module____modules);
-		cu2m__module____target.setSrc(cu2m);
-		cu2m__module____target.setTrg(module);
-		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		cu2m__cu____source.setName(cu2m__cu____source_name_prime);
 		p2p__tp____target.setName(p2p__tp____target_name_prime);
 		p2p__p____source.setName(p2p__p____source_name_prime);
+		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		module__tp____namespace.setName(module__tp____namespace_name_prime);
 		tp__module____modules.setName(tp__module____modules_name_prime);
-		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		return new Object[] { p, cu, cu2m, module, tp, p2p, isApplicableMatch, cu2m__cu____source, p2p__tp____target,
-				p2p__p____source, module__tp____namespace, tp__module____modules, cu2m__module____target };
+				p2p__p____source, cu2m__module____target, module__tp____namespace, tp__module____modules };
 	}
 
 	public static final Object[] pattern_CompilationUnitPackageToNamespace_12_4_solveCSP_bindingFBBBBBBBB(

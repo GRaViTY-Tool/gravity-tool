@@ -11,8 +11,8 @@ import org.gravity.eclipse.util.JavaASTUtil;
 
 public class SecurityMarkerUtil {
 	
-	private static final String MARKER_SOURCE = "org.gravity.security";
-	private static final String MARKER_ATTR_ANALYZED = "org.gravity.security.analyzedMember";
+	public static final String MARKER_SOURCE = "org.gravity.security";
+	public static final String MARKER_ATTR_ANALYZED = "org.gravity.security.analyzedMember";
 	
 	/**
 	 * The logger of this class

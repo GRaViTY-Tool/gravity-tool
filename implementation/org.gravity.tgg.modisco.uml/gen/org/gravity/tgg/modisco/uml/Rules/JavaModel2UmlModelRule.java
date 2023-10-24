@@ -106,9 +106,9 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject javaModel, EObject rootModel, EObject commonTypes,
-			EObject jm2um3, EObject jm2um, EObject jm2um2, EObject jm2commonTypes, EObject umlModel,
-			EObject externalModel, EObject sourceRefModel);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm2um2, EObject jm2commonTypes, EObject commonTypes,
+			EObject sourceRefModel, EObject rootModel, EObject externalModel, EObject javaModel, EObject jm2um3,
+			EObject jm2um, EObject umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,8 +124,8 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Model rootModel, org.eclipse.uml2.uml.Package commonTypes, Model umlModel,
-			Model externalModel, Model sourceRefModel);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel,
+			Model rootModel, Model externalModel, Model umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,8 +149,8 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Model rootModel, org.eclipse.uml2.uml.Package commonTypes,
-			Model umlModel, Model externalModel, Model sourceRefModel);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel,
+			Model rootModel, Model externalModel, Model umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +158,8 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Model rootModel, org.eclipse.uml2.uml.Package commonTypes,
-			Model umlModel, Model externalModel, Model sourceRefModel);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel,
+			Model rootModel, Model externalModel, Model umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,8 +175,8 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes, Model umlModel, Model externalModel, Model sourceRefModel);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package commonTypes,
+			Model sourceRefModel, Model rootModel, Model externalModel, Model umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,9 +192,9 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject javaModel, EObject rootModel, EObject commonTypes,
-			EObject jm2um3, EObject jm2um, EObject jm2um2, EObject jm2commonTypes, EObject umlModel,
-			EObject externalModel, EObject sourceRefModel);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm2um2, EObject jm2commonTypes, EObject commonTypes,
+			EObject sourceRefModel, EObject rootModel, EObject externalModel, EObject javaModel, EObject jm2um3,
+			EObject jm2um, EObject umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MGravityModel_3(MGravityModel javaModel);
+	EObjectContainer isAppropriate_FWD_MGravityModel_1(MGravityModel javaModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_283(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_144(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,8 +250,8 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MGravityModel javaModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes,
-			Model umlModel, Model externalModel, Model sourceRefModel, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model rootModel,
+			Model externalModel, MGravityModel javaModel, Model umlModel, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,8 +275,8 @@ public interface JavaModel2UmlModelRule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Model rootModel, org.eclipse.uml2.uml.Package commonTypes, Model umlModel, Model externalModel,
-			Model sourceRefModel);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model rootModel,
+			Model externalModel, Model umlModel);
 
 	/**
 	 * <!-- begin-user-doc -->

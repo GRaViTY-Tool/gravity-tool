@@ -99,49 +99,49 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {
+	public boolean isAppropriate_FWD(Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {
 
 		Object[] result1_black = FieldDefinitionImpl.pattern_FieldDefinition_0_1_initialbindings_blackBBBB(this, match,
-				mDefinition, mSignature);
+				mSignature, mDefinition);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[mSignature] = " + mSignature + ".");
+							+ ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = " + mDefinition + ".");
 		}
 
 		Object[] result2_bindingAndBlack = FieldDefinitionImpl
-				.pattern_FieldDefinition_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mDefinition, mSignature);
+				.pattern_FieldDefinition_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mSignature, mDefinition);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[mDefinition] = " + mDefinition + ", " + "[mSignature] = " + mSignature + ".");
+							+ ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = " + mDefinition + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (FieldDefinitionImpl.pattern_FieldDefinition_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = FieldDefinitionImpl
-					.pattern_FieldDefinition_0_4_collectelementstobetranslated_blackBBB(match, mDefinition, mSignature);
+					.pattern_FieldDefinition_0_4_collectelementstobetranslated_blackBBB(match, mSignature, mDefinition);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mSignature] = " + mSignature + ".");
+						+ "[mSignature] = " + mSignature + ", " + "[mDefinition] = " + mDefinition + ".");
 			}
-			FieldDefinitionImpl.pattern_FieldDefinition_0_4_collectelementstobetranslated_greenBBBFF(match, mDefinition,
-					mSignature);
+			FieldDefinitionImpl.pattern_FieldDefinition_0_4_collectelementstobetranslated_greenBBBFF(match, mSignature,
+					mDefinition);
 			//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = FieldDefinitionImpl
-					.pattern_FieldDefinition_0_5_collectcontextelements_blackBBB(match, mDefinition, mSignature);
+					.pattern_FieldDefinition_0_5_collectcontextelements_blackBBB(match, mSignature, mDefinition);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[mSignature] = " + mSignature + ".");
+						+ "[mSignature] = " + mSignature + ", " + "[mDefinition] = " + mDefinition + ".");
 			}
 			FieldDefinitionImpl.pattern_FieldDefinition_0_5_collectcontextelements_greenBB(match, mSignature);
 
 			// 
 			FieldDefinitionImpl.pattern_FieldDefinition_0_6_registerobjectstomatch_expressionBBBB(this, match,
-					mDefinition, mSignature);
+					mSignature, mDefinition);
 			return FieldDefinitionImpl.pattern_FieldDefinition_0_7_expressionF();
 		} else {
 			return FieldDefinitionImpl.pattern_FieldDefinition_0_8_expressionF();
@@ -162,60 +162,60 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MFieldDefinition mDefinition = (MFieldDefinition) result1_bindingAndBlack[0];
-		TFieldSignature tFieldSignature = (TFieldSignature) result1_bindingAndBlack[1];
-		MFieldSignature mSignature = (MFieldSignature) result1_bindingAndBlack[2];
+		TFieldSignature tFieldSignature = (TFieldSignature) result1_bindingAndBlack[0];
+		MFieldSignature mSignature = (MFieldSignature) result1_bindingAndBlack[1];
+		MFieldDefinition mDefinition = (MFieldDefinition) result1_bindingAndBlack[2];
 		MSignatureToTSignature mSignatureToTFieldSignature = (MSignatureToTSignature) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = FieldDefinitionImpl
-				.pattern_FieldDefinition_1_1_performtransformation_greenFFBBFF(mDefinition, tFieldSignature);
+				.pattern_FieldDefinition_1_1_performtransformation_greenFBFFBF(tFieldSignature, mDefinition);
 		TFieldDefinition tDefinition = (TFieldDefinition) result1_green[0];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[1];
-		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[4];
-		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result1_green[5];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[2];
+		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result1_green[3];
+		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[5];
 
 		Object[] result2_black = FieldDefinitionImpl.pattern_FieldDefinition_1_2_collecttranslatedelements_blackBBBBB(
-				tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember, mDefinitionToTDefinition);
+				tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition, mDefinitionToTMember);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tDefinition] = " + tDefinition
-					+ ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mDefinition] = " + mDefinition
-					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mDefinitionToTDefinition] = "
-					+ mDefinitionToTDefinition + ".");
+					+ ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mDefinitionToTDefinition] = "
+					+ mDefinitionToTDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ".");
 		}
 		Object[] result2_green = FieldDefinitionImpl.pattern_FieldDefinition_1_2_collecttranslatedelements_greenFBBBBB(
-				tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember, mDefinitionToTDefinition);
+				tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition, mDefinitionToTMember);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDefinitionImpl.pattern_FieldDefinition_1_3_bookkeepingforedges_blackBBBBBBBBB(
-				ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember,
-				mSignature, mDefinitionToTDefinition, mSignatureToTFieldSignature);
+				ruleresult, tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature,
+				mDefinition, mDefinitionToTMember, mSignatureToTFieldSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
-					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tFieldSignature] = " + tFieldSignature + ", "
-					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignature] = " + mSignature + ", "
-					+ "[mDefinitionToTDefinition] = " + mDefinitionToTDefinition + ", "
+					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[tFieldSignature] = " + tFieldSignature + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mDefinitionToTDefinition] = "
+					+ mDefinitionToTDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
 					+ "[mSignatureToTFieldSignature] = " + mSignatureToTFieldSignature + ".");
 		}
 		FieldDefinitionImpl.pattern_FieldDefinition_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFF(ruleresult,
-				tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember, mSignature,
-				mDefinitionToTDefinition);
+				tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature, mDefinition,
+				mDefinitionToTMember);
 		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tFieldSignature__tDefinition____definitions = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tDefinition__tFieldSignature____signature = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tFieldSignature__tDefinition____definitions = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tDefinition__tFieldSignature____signature = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mDefinitionToTDefinition__tDefinition____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge mDefinitionToTDefinition__mDefinition____source = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mDefinitionToTDefinition__tDefinition____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[17];
 
 		// 
 		// 
 		FieldDefinitionImpl.pattern_FieldDefinition_1_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult,
-				tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember, mSignature,
-				mDefinitionToTDefinition, mSignatureToTFieldSignature);
+				tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature, mDefinition,
+				mDefinitionToTMember, mSignatureToTFieldSignature);
 		return FieldDefinitionImpl.pattern_FieldDefinition_1_6_expressionFB(ruleresult);
 	}
 
@@ -243,31 +243,32 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		MFieldDefinition mDefinition = (MFieldDefinition) result2_binding[0];
-		MFieldSignature mSignature = (MFieldSignature) result2_binding[1];
-		for (Object[] result2_black : FieldDefinitionImpl.pattern_FieldDefinition_2_2_corematch_blackBFBFB(mDefinition,
-				mSignature, match)) {
-			TFieldSignature tFieldSignature = (TFieldSignature) result2_black[1];
+		MFieldSignature mSignature = (MFieldSignature) result2_binding[0];
+		MFieldDefinition mDefinition = (MFieldDefinition) result2_binding[1];
+		for (Object[] result2_black : FieldDefinitionImpl.pattern_FieldDefinition_2_2_corematch_blackFBBFB(mSignature,
+				mDefinition, match)) {
+			TFieldSignature tFieldSignature = (TFieldSignature) result2_black[0];
 			MSignatureToTSignature mSignatureToTFieldSignature = (MSignatureToTSignature) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : FieldDefinitionImpl.pattern_FieldDefinition_2_3_findcontext_blackBBBB(
-					mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature)) {
+					tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature)) {
 				Object[] result3_green = FieldDefinitionImpl.pattern_FieldDefinition_2_3_findcontext_greenBBBBFFFFF(
-						mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature);
+						tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mSignatureToTFieldSignature__mSignature____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mSignatureToTFieldSignature__tFieldSignature____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mSignatureToTFieldSignature__mSignature____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mSignatureToTFieldSignature__tFieldSignature____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = FieldDefinitionImpl
 						.pattern_FieldDefinition_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature);
+								tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mDefinition] = " + mDefinition
-							+ ", " + "[tFieldSignature] = " + tFieldSignature + ", " + "[mSignature] = " + mSignature
-							+ ", " + "[mSignatureToTFieldSignature] = " + mSignatureToTFieldSignature + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tFieldSignature] = "
+							+ tFieldSignature + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = "
+							+ mDefinition + ", " + "[mSignatureToTFieldSignature] = " + mSignatureToTFieldSignature
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -296,9 +297,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		match.registerObject("mDefinition", mDefinition);
+	public void registerObjectsToMatch_FWD(Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {
 		match.registerObject("mSignature", mSignature);
+		match.registerObject("mDefinition", mDefinition);
 
 	}
 
@@ -307,7 +308,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -336,8 +337,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldDefinition mDefinition,
-			TFieldSignature tFieldSignature, MFieldSignature mSignature,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TFieldSignature tFieldSignature,
+			MFieldSignature mSignature, MFieldDefinition mDefinition,
 			MSignatureToTSignature mSignatureToTFieldSignature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -374,9 +375,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		eq_0.solve(var_tFieldSignature_lowerBound, var_lowerBound);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tFieldSignature", tFieldSignature);
 		isApplicableMatch.registerObject("mSignature", mSignature);
+		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("mSignatureToTFieldSignature", mSignatureToTFieldSignature);
 		return csp;
 	}
@@ -395,16 +396,16 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation,
-			EObject mDefinition, EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature,
-			EObject mDefinitionToTDefinition, EObject mSignatureToTFieldSignature) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature,
+			EObject mBodyToTAnnotation, EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition,
+			EObject mDefinitionToTMember, EObject mSignatureToTFieldSignature) {
 		ruleresult.registerObject("tDefinition", tDefinition);
-		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
-		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("tFieldSignature", tFieldSignature);
-		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mDefinitionToTDefinition", mDefinitionToTDefinition);
+		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 		ruleresult.registerObject("mSignatureToTFieldSignature", mSignatureToTFieldSignature);
 
 	}
@@ -494,54 +495,54 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		MSignatureToTSignature mSignatureToTFieldSignature = (MSignatureToTSignature) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = FieldDefinitionImpl
-				.pattern_FieldDefinition_11_1_performtransformation_greenBFFFBF(tDefinition, mSignature);
+				.pattern_FieldDefinition_11_1_performtransformation_greenBFFBFF(tDefinition, mSignature);
 		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[1];
-		MFieldDefinition mDefinition = (MFieldDefinition) result1_green[2];
-		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[3];
-		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result1_green[5];
+		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result1_green[2];
+		MFieldDefinition mDefinition = (MFieldDefinition) result1_green[4];
+		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[5];
 
 		Object[] result2_black = FieldDefinitionImpl.pattern_FieldDefinition_11_2_collecttranslatedelements_blackBBBBB(
-				tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember, mDefinitionToTDefinition);
+				tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition, mDefinitionToTMember);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tDefinition] = " + tDefinition
-					+ ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mDefinition] = " + mDefinition
-					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mDefinitionToTDefinition] = "
-					+ mDefinitionToTDefinition + ".");
+					+ ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mDefinitionToTDefinition] = "
+					+ mDefinitionToTDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ".");
 		}
 		Object[] result2_green = FieldDefinitionImpl.pattern_FieldDefinition_11_2_collecttranslatedelements_greenFBBBBB(
-				tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember, mDefinitionToTDefinition);
+				tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition, mDefinitionToTMember);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDefinitionImpl.pattern_FieldDefinition_11_3_bookkeepingforedges_blackBBBBBBBBB(
-				ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember,
-				mSignature, mDefinitionToTDefinition, mSignatureToTFieldSignature);
+				ruleresult, tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature,
+				mDefinition, mDefinitionToTMember, mSignatureToTFieldSignature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation
-					+ ", " + "[mDefinition] = " + mDefinition + ", " + "[tFieldSignature] = " + tFieldSignature + ", "
-					+ "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[mSignature] = " + mSignature + ", "
-					+ "[mDefinitionToTDefinition] = " + mDefinitionToTDefinition + ", "
+					+ ", " + "[tDefinition] = " + tDefinition + ", " + "[tFieldSignature] = " + tFieldSignature + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mDefinitionToTDefinition] = "
+					+ mDefinitionToTDefinition + ", " + "[mSignature] = " + mSignature + ", " + "[mDefinition] = "
+					+ mDefinition + ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", "
 					+ "[mSignatureToTFieldSignature] = " + mSignatureToTFieldSignature + ".");
 		}
 		FieldDefinitionImpl.pattern_FieldDefinition_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFF(ruleresult,
-				tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember, mSignature,
-				mDefinitionToTDefinition);
+				tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature, mDefinition,
+				mDefinitionToTMember);
 		//nothing EMoflonEdge mBodyToTAnnotation__tDefinition____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tFieldSignature__tDefinition____definitions = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge tDefinition__tFieldSignature____signature = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge tFieldSignature__tDefinition____definitions = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge tDefinition__tFieldSignature____signature = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mDefinitionToTDefinition__tDefinition____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge mDefinitionToTDefinition__mDefinition____source = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mDefinitionToTDefinition__tDefinition____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mSignature__mDefinition____mDefinitions = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mDefinition__mSignature____mSignature = (EMoflonEdge) result3_green[17];
 
 		// 
 		// 
 		FieldDefinitionImpl.pattern_FieldDefinition_11_5_registerobjects_expressionBBBBBBBBBB(this, ruleresult,
-				tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember, mSignature,
-				mDefinitionToTDefinition, mSignatureToTFieldSignature);
+				tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature, mDefinition,
+				mDefinitionToTMember, mSignatureToTFieldSignature);
 		return FieldDefinitionImpl.pattern_FieldDefinition_11_6_expressionFB(ruleresult);
 	}
 
@@ -721,16 +722,16 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation,
-			EObject mDefinition, EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature,
-			EObject mDefinitionToTDefinition, EObject mSignatureToTFieldSignature) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature,
+			EObject mBodyToTAnnotation, EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition,
+			EObject mDefinitionToTMember, EObject mSignatureToTFieldSignature) {
 		ruleresult.registerObject("tDefinition", tDefinition);
-		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
-		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("tFieldSignature", tFieldSignature);
-		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
-		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mDefinitionToTDefinition", mDefinitionToTDefinition);
+		ruleresult.registerObject("mSignature", mSignature);
+		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 		ruleresult.registerObject("mSignatureToTFieldSignature", mSignatureToTFieldSignature);
 
 	}
@@ -750,7 +751,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_152(EMoflonEdge _edge_definitions) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_31(EMoflonEdge _edge_definitions) {
 
 		Object[] result1_bindingAndBlack = FieldDefinitionImpl
 				.pattern_FieldDefinition_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -807,7 +808,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_159(EMoflonEdge _edge_mDefinitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_32(EMoflonEdge _edge_mDefinitions) {
 
 		Object[] result1_bindingAndBlack = FieldDefinitionImpl
 				.pattern_FieldDefinition_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -823,8 +824,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		// ForEach 
 		for (Object[] result2_black : FieldDefinitionImpl
 				.pattern_FieldDefinition_21_2_testcorematchandDECs_blackFFB(_edge_mDefinitions)) {
-			MFieldDefinition mDefinition = (MFieldDefinition) result2_black[0];
-			MFieldSignature mSignature = (MFieldSignature) result2_black[1];
+			MFieldSignature mSignature = (MFieldSignature) result2_black[0];
+			MFieldDefinition mDefinition = (MFieldDefinition) result2_black[1];
 			Object[] result2_green = FieldDefinitionImpl
 					.pattern_FieldDefinition_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -832,7 +833,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 			// 
 			if (FieldDefinitionImpl
 					.pattern_FieldDefinition_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this, match,
-							mDefinition, mSignature)) {
+							mSignature, mDefinition)) {
 				// 
 				if (FieldDefinitionImpl
 						.pattern_FieldDefinition_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -1000,17 +1001,17 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TFieldDefinition tDefinition = (TFieldDefinition) result2_bindingAndBlack[0];
-		MFieldDefinition mDefinition = (MFieldDefinition) result2_bindingAndBlack[1];
-		TFieldSignature tFieldSignature = (TFieldSignature) result2_bindingAndBlack[2];
-		MFieldSignature mSignature = (MFieldSignature) result2_bindingAndBlack[3];
+		TFieldSignature tFieldSignature = (TFieldSignature) result2_bindingAndBlack[1];
+		MFieldSignature mSignature = (MFieldSignature) result2_bindingAndBlack[2];
+		MFieldDefinition mDefinition = (MFieldDefinition) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = FieldDefinitionImpl
-				.pattern_FieldDefinition_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tDefinition, mDefinition,
-						tFieldSignature, mSignature, sourceMatch, targetMatch);
+				.pattern_FieldDefinition_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tDefinition, tFieldSignature,
+						mSignature, mDefinition, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[tFieldSignature] = " + tFieldSignature + ", " + "[mSignature] = " + mSignature + ", "
+					+ "[tDefinition] = " + tDefinition + ", " + "[tFieldSignature] = " + tFieldSignature + ", "
+					+ "[mSignature] = " + mSignature + ", " + "[mDefinition] = " + mDefinition + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1025,19 +1026,19 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = FieldDefinitionImpl
-						.pattern_FieldDefinition_24_6_createcorrespondence_blackBBBBB(tDefinition, mDefinition,
-								tFieldSignature, mSignature, ccMatch);
+						.pattern_FieldDefinition_24_6_createcorrespondence_blackBBBBB(tDefinition, tFieldSignature,
+								mSignature, mDefinition, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
 							"Pattern matching failed." + " Variables: " + "[tDefinition] = " + tDefinition + ", "
-									+ "[mDefinition] = " + mDefinition + ", " + "[tFieldSignature] = " + tFieldSignature
-									+ ", " + "[mSignature] = " + mSignature + ", " + "[ccMatch] = " + ccMatch + ".");
+									+ "[tFieldSignature] = " + tFieldSignature + ", " + "[mSignature] = " + mSignature
+									+ ", " + "[mDefinition] = " + mDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				FieldDefinitionImpl.pattern_FieldDefinition_24_6_createcorrespondence_greenBFBFFB(tDefinition,
+				FieldDefinitionImpl.pattern_FieldDefinition_24_6_createcorrespondence_greenBFFBFB(tDefinition,
 						mDefinition, ccMatch);
 				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[1];
-				//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[3];
-				//nothing MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result6_green[4];
+				//nothing MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result6_green[2];
+				//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[4];
 
 				Object[] result7_black = FieldDefinitionImpl
 						.pattern_FieldDefinition_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1059,8 +1060,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TFieldDefinition tDefinition, MFieldDefinition mDefinition,
-			TFieldSignature tFieldSignature, MFieldSignature mSignature, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TFieldDefinition tDefinition, TFieldSignature tFieldSignature,
+			MFieldSignature mSignature, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1110,9 +1111,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(MFieldDefinition mDefinition, MFieldSignature mSignature) {// 
-		Object[] result1_black = FieldDefinitionImpl.pattern_FieldDefinition_27_1_matchtggpattern_blackBB(mDefinition,
-				mSignature);
+	public boolean checkDEC_FWD(MFieldSignature mSignature, MFieldDefinition mDefinition) {// 
+		Object[] result1_black = FieldDefinitionImpl.pattern_FieldDefinition_27_1_matchtggpattern_blackBB(mSignature,
+				mDefinition);
 		if (result1_black != null) {
 			return FieldDefinitionImpl.pattern_FieldDefinition_27_2_expressionF();
 		} else {
@@ -1186,13 +1187,13 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 								+ "[mSignatureToTFieldSignature] = " + mSignatureToTFieldSignature + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					FieldDefinitionImpl.pattern_FieldDefinition_29_6_perform_greenFFFBFBFB(tFieldSignature, mSignature,
+					FieldDefinitionImpl.pattern_FieldDefinition_29_6_perform_greenFBFFBFFB(tFieldSignature, mSignature,
 							ruleResult);
 					//nothing TFieldDefinition tDefinition = (TFieldDefinition) result6_green[0];
-					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[1];
-					//nothing MFieldDefinition mDefinition = (MFieldDefinition) result6_green[2];
-					//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[4];
-					//nothing MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result6_green[6];
+					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[2];
+					//nothing MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = (MAbstractFlowElementToTAbstractFlowElement) result6_green[3];
+					//nothing MFieldDefinition mDefinition = (MFieldDefinition) result6_green[5];
+					//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[6];
 
 				} else {
 				}
@@ -1270,25 +1271,25 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_FWD__MATCH_MFIELDDEFINITION_MFIELDSIGNATURE:
-			return isAppropriate_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(MFieldSignature) arguments.get(2));
+		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_FWD__MATCH_MFIELDSIGNATURE_MFIELDDEFINITION:
+			return isAppropriate_FWD((Match) arguments.get(0), (MFieldSignature) arguments.get(1),
+					(MFieldDefinition) arguments.get(2));
 		case RulesPackage.FIELD_DEFINITION___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MFIELDDEFINITION_MFIELDSIGNATURE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(MFieldSignature) arguments.get(2));
+		case RulesPackage.FIELD_DEFINITION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MFIELDSIGNATURE_MFIELDDEFINITION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MFieldSignature) arguments.get(1),
+					(MFieldDefinition) arguments.get(2));
 			return null;
-		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MFIELDDEFINITION_MFIELDSIGNATURE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(MFieldSignature) arguments.get(2));
+		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MFIELDSIGNATURE_MFIELDDEFINITION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MFieldSignature) arguments.get(1),
+					(MFieldDefinition) arguments.get(2));
 		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_TFIELDSIGNATURE_MFIELDSIGNATURE_MSIGNATURETOTSIGNATURE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(TFieldSignature) arguments.get(2), (MFieldSignature) arguments.get(3),
+		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TFIELDSIGNATURE_MFIELDSIGNATURE_MFIELDDEFINITION_MSIGNATURETOTSIGNATURE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TFieldSignature) arguments.get(1),
+					(MFieldSignature) arguments.get(2), (MFieldDefinition) arguments.get(3),
 					(MSignatureToTSignature) arguments.get(4));
 		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1330,24 +1331,24 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 			return null;
 		case RulesPackage.FIELD_DEFINITION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_152__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_152((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_159__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_159((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_31__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEFINITION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_32__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_32((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEFINITION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEFINITION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_SOLVE_CSP_CC__TFIELDDEFINITION_MFIELDDEFINITION_TFIELDSIGNATURE_MFIELDSIGNATURE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TFieldDefinition) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(TFieldSignature) arguments.get(2), (MFieldSignature) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_SOLVE_CSP_CC__TFIELDDEFINITION_TFIELDSIGNATURE_MFIELDSIGNATURE_MFIELDDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TFieldDefinition) arguments.get(0), (TFieldSignature) arguments.get(1),
+					(MFieldSignature) arguments.get(2), (MFieldDefinition) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.FIELD_DEFINITION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEFINITION___CHECK_DEC_FWD__MFIELDDEFINITION_MFIELDSIGNATURE:
-			return checkDEC_FWD((MFieldDefinition) arguments.get(0), (MFieldSignature) arguments.get(1));
+		case RulesPackage.FIELD_DEFINITION___CHECK_DEC_FWD__MFIELDSIGNATURE_MFIELDDEFINITION:
+			return checkDEC_FWD((MFieldSignature) arguments.get(0), (MFieldDefinition) arguments.get(1));
 		case RulesPackage.FIELD_DEFINITION___CHECK_DEC_BWD__TFIELDDEFINITION_TFIELDSIGNATURE:
 			return checkDEC_BWD((TFieldDefinition) arguments.get(0), (TFieldSignature) arguments.get(1));
 		case RulesPackage.FIELD_DEFINITION___GENERATE_MODEL__RULEENTRYCONTAINER_MSIGNATURETOTSIGNATURE:
@@ -1363,16 +1364,16 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_1_initialbindings_blackBBBB(FieldDefinition _this,
-			Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		return new Object[] { _this, match, mDefinition, mSignature };
+			Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {
+		return new Object[] { _this, match, mSignature, mDefinition };
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_2_SolveCSP_bindingFBBBB(FieldDefinition _this, Match match,
-			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mDefinition, mSignature);
+			MFieldSignature mSignature, MFieldDefinition mDefinition) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mSignature, mDefinition);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mDefinition, mSignature };
+			return new Object[] { csp, _this, match, mSignature, mDefinition };
 		}
 		return null;
 	}
@@ -1382,9 +1383,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_2_SolveCSP_bindingAndBlackFBBBB(FieldDefinition _this,
-			Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {
+			Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {
 		Object[] result_pattern_FieldDefinition_0_2_SolveCSP_binding = pattern_FieldDefinition_0_2_SolveCSP_bindingFBBBB(
-				_this, match, mDefinition, mSignature);
+				_this, match, mSignature, mDefinition);
 		if (result_pattern_FieldDefinition_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDefinition_0_2_SolveCSP_binding[0];
 
@@ -1392,7 +1393,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 					csp);
 			if (result_pattern_FieldDefinition_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mDefinition, mSignature };
+				return new Object[] { csp, _this, match, mSignature, mDefinition };
 			}
 		}
 		return null;
@@ -1405,12 +1406,12 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_4_collectelementstobetranslated_blackBBB(Match match,
-			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		return new Object[] { match, mDefinition, mSignature };
+			MFieldSignature mSignature, MFieldDefinition mDefinition) {
+		return new Object[] { match, mSignature, mDefinition };
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_4_collectelementstobetranslated_greenBBBFF(Match match,
-			MFieldDefinition mDefinition, MFieldSignature mSignature) {
+			MFieldSignature mSignature, MFieldDefinition mDefinition) {
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mDefinition);
@@ -1424,13 +1425,13 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		match.getToBeTranslatedEdges().add(mDefinition__mSignature____mSignature);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { match, mDefinition, mSignature, mSignature__mDefinition____mDefinitions,
+		return new Object[] { match, mSignature, mDefinition, mSignature__mDefinition____mDefinitions,
 				mDefinition__mSignature____mSignature };
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_5_collectcontextelements_blackBBB(Match match,
-			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		return new Object[] { match, mDefinition, mSignature };
+			MFieldSignature mSignature, MFieldDefinition mDefinition) {
+		return new Object[] { match, mSignature, mDefinition };
 	}
 
 	public static final Object[] pattern_FieldDefinition_0_5_collectcontextelements_greenBB(Match match,
@@ -1440,8 +1441,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final void pattern_FieldDefinition_0_6_registerobjectstomatch_expressionBBBB(FieldDefinition _this,
-			Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		_this.registerObjectsToMatch_FWD(match, mDefinition, mSignature);
+			Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {
+		_this.registerObjectsToMatch_FWD(match, mSignature, mDefinition);
 
 	}
 
@@ -1457,23 +1458,23 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mDefinition");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tFieldSignature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tFieldSignature");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mSignature");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mDefinition");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mSignatureToTFieldSignature");
-		EObject tmpMDefinition = _localVariable_0;
-		EObject tmpTFieldSignature = _localVariable_1;
-		EObject tmpMSignature = _localVariable_2;
+		EObject tmpTFieldSignature = _localVariable_0;
+		EObject tmpMSignature = _localVariable_1;
+		EObject tmpMDefinition = _localVariable_2;
 		EObject tmpMSignatureToTFieldSignature = _localVariable_3;
-		if (tmpMDefinition instanceof MFieldDefinition) {
-			MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
-			if (tmpTFieldSignature instanceof TFieldSignature) {
-				TFieldSignature tFieldSignature = (TFieldSignature) tmpTFieldSignature;
-				if (tmpMSignature instanceof MFieldSignature) {
-					MFieldSignature mSignature = (MFieldSignature) tmpMSignature;
+		if (tmpTFieldSignature instanceof TFieldSignature) {
+			TFieldSignature tFieldSignature = (TFieldSignature) tmpTFieldSignature;
+			if (tmpMSignature instanceof MFieldSignature) {
+				MFieldSignature mSignature = (MFieldSignature) tmpMSignature;
+				if (tmpMDefinition instanceof MFieldDefinition) {
+					MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
 					if (tmpMSignatureToTFieldSignature instanceof MSignatureToTSignature) {
 						MSignatureToTSignature mSignatureToTFieldSignature = (MSignatureToTSignature) tmpMSignatureToTFieldSignature;
-						return new Object[] { mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature,
+						return new Object[] { tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature,
 								isApplicableMatch };
 					}
 				}
@@ -1483,13 +1484,13 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_1_1_performtransformation_blackBBBBFBB(
-			MFieldDefinition mDefinition, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			TFieldSignature tFieldSignature, MFieldSignature mSignature, MFieldDefinition mDefinition,
 			MSignatureToTSignature mSignatureToTFieldSignature, FieldDefinition _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature, csp, _this,
+				return new Object[] { tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1501,100 +1502,102 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		Object[] result_pattern_FieldDefinition_1_1_performtransformation_binding = pattern_FieldDefinition_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldDefinition_1_1_performtransformation_binding != null) {
-			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_FieldDefinition_1_1_performtransformation_binding[0];
-			TFieldSignature tFieldSignature = (TFieldSignature) result_pattern_FieldDefinition_1_1_performtransformation_binding[1];
-			MFieldSignature mSignature = (MFieldSignature) result_pattern_FieldDefinition_1_1_performtransformation_binding[2];
+			TFieldSignature tFieldSignature = (TFieldSignature) result_pattern_FieldDefinition_1_1_performtransformation_binding[0];
+			MFieldSignature mSignature = (MFieldSignature) result_pattern_FieldDefinition_1_1_performtransformation_binding[1];
+			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_FieldDefinition_1_1_performtransformation_binding[2];
 			MSignatureToTSignature mSignatureToTFieldSignature = (MSignatureToTSignature) result_pattern_FieldDefinition_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_FieldDefinition_1_1_performtransformation_black = pattern_FieldDefinition_1_1_performtransformation_blackBBBBFBB(
-					mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature, _this, isApplicableMatch);
+					tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature, _this, isApplicableMatch);
 			if (result_pattern_FieldDefinition_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDefinition_1_1_performtransformation_black[4];
 
-				return new Object[] { mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature, csp, _this,
+				return new Object[] { tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDefinition_1_1_performtransformation_greenFFBBFF(
-			MFieldDefinition mDefinition, TFieldSignature tFieldSignature) {
+	public static final Object[] pattern_FieldDefinition_1_1_performtransformation_greenFBFFBF(
+			TFieldSignature tFieldSignature, MFieldDefinition mDefinition) {
 		TFieldDefinition tDefinition = BasicFactory.eINSTANCE.createTFieldDefinition();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		tFieldSignature.getDefinitions().add(tDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
+		mDefinitionToTDefinition.setTarget(tDefinition);
+		mDefinitionToTDefinition.setSource(mDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
-		mDefinitionToTDefinition.setSource(mDefinition);
-		mDefinitionToTDefinition.setTarget(tDefinition);
-		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember,
-				mDefinitionToTDefinition };
+		return new Object[] { tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_FieldDefinition_1_2_collecttranslatedelements_blackBBBBB(
-			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, MFieldDefinition mDefinition,
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition) {
-		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember,
-				mDefinitionToTDefinition };
+			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation,
+			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition, MFieldDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember) {
+		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_FieldDefinition_1_2_collecttranslatedelements_greenFBBBBB(
-			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, MFieldDefinition mDefinition,
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition) {
+			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation,
+			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition, MFieldDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(tDefinition);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
+		ruleresult.getCreatedLinkElements().add(mDefinitionToTDefinition);
 		ruleresult.getTranslatedElements().add(mDefinition);
 		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
-		ruleresult.getCreatedLinkElements().add(mDefinitionToTDefinition);
-		return new Object[] { ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember,
-				mDefinitionToTDefinition };
+		return new Object[] { ruleresult, tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_FieldDefinition_1_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation, EObject mDefinition,
-			EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature, EObject mDefinitionToTDefinition,
+			PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature, EObject mBodyToTAnnotation,
+			EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition, EObject mDefinitionToTMember,
 			EObject mSignatureToTFieldSignature) {
 		if (!tDefinition.equals(tFieldSignature)) {
 			if (!mBodyToTAnnotation.equals(tDefinition)) {
-				if (!mBodyToTAnnotation.equals(mDefinition)) {
-					if (!mBodyToTAnnotation.equals(tFieldSignature)) {
-						if (!mBodyToTAnnotation.equals(mDefinitionToTMember)) {
-							if (!mBodyToTAnnotation.equals(mSignature)) {
-								if (!mBodyToTAnnotation.equals(mDefinitionToTDefinition)) {
+				if (!mBodyToTAnnotation.equals(tFieldSignature)) {
+					if (!mBodyToTAnnotation.equals(mDefinitionToTDefinition)) {
+						if (!mBodyToTAnnotation.equals(mSignature)) {
+							if (!mBodyToTAnnotation.equals(mDefinition)) {
+								if (!mBodyToTAnnotation.equals(mDefinitionToTMember)) {
 									if (!mBodyToTAnnotation.equals(mSignatureToTFieldSignature)) {
-										if (!mDefinition.equals(tDefinition)) {
-											if (!mDefinition.equals(tFieldSignature)) {
-												if (!mDefinition.equals(mDefinitionToTMember)) {
-													if (!mDefinition.equals(mSignature)) {
-														if (!mDefinition.equals(mDefinitionToTDefinition)) {
-															if (!mDefinition.equals(mSignatureToTFieldSignature)) {
-																if (!mDefinitionToTMember.equals(tDefinition)) {
-																	if (!mDefinitionToTMember.equals(tFieldSignature)) {
-																		if (!mDefinitionToTMember.equals(mSignature)) {
-																			if (!mDefinitionToTMember.equals(
-																					mSignatureToTFieldSignature)) {
-																				if (!mSignature.equals(tDefinition)) {
-																					if (!mSignature
-																							.equals(tFieldSignature)) {
-																						if (!mSignature.equals(
-																								mSignatureToTFieldSignature)) {
-																							if (!mDefinitionToTDefinition
-																									.equals(tDefinition)) {
-																								if (!mDefinitionToTDefinition
-																										.equals(tFieldSignature)) {
-																									if (!mDefinitionToTDefinition
-																											.equals(mDefinitionToTMember)) {
-																										if (!mDefinitionToTDefinition
+										if (!mDefinitionToTDefinition.equals(tDefinition)) {
+											if (!mDefinitionToTDefinition.equals(tFieldSignature)) {
+												if (!mDefinitionToTDefinition.equals(mSignature)) {
+													if (!mDefinitionToTDefinition.equals(mDefinitionToTMember)) {
+														if (!mDefinitionToTDefinition
+																.equals(mSignatureToTFieldSignature)) {
+															if (!mSignature.equals(tDefinition)) {
+																if (!mSignature.equals(tFieldSignature)) {
+																	if (!mSignature
+																			.equals(mSignatureToTFieldSignature)) {
+																		if (!mDefinition.equals(tDefinition)) {
+																			if (!mDefinition.equals(tFieldSignature)) {
+																				if (!mDefinition.equals(
+																						mDefinitionToTDefinition)) {
+																					if (!mDefinition
+																							.equals(mSignature)) {
+																						if (!mDefinition.equals(
+																								mDefinitionToTMember)) {
+																							if (!mDefinition.equals(
+																									mSignatureToTFieldSignature)) {
+																								if (!mDefinitionToTMember
+																										.equals(tDefinition)) {
+																									if (!mDefinitionToTMember
+																											.equals(tFieldSignature)) {
+																										if (!mDefinitionToTMember
 																												.equals(mSignature)) {
-																											if (!mDefinitionToTDefinition
+																											if (!mDefinitionToTMember
 																													.equals(mSignatureToTFieldSignature)) {
 																												if (!mSignatureToTFieldSignature
 																														.equals(tDefinition)) {
@@ -1603,12 +1606,12 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 																														return new Object[] {
 																																ruleresult,
 																																tDefinition,
-																																mBodyToTAnnotation,
-																																mDefinition,
 																																tFieldSignature,
-																																mDefinitionToTMember,
-																																mSignature,
+																																mBodyToTAnnotation,
 																																mDefinitionToTDefinition,
+																																mSignature,
+																																mDefinition,
+																																mDefinitionToTMember,
 																																mSignatureToTFieldSignature };
 																													}
 																												}
@@ -1642,54 +1645,53 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation, EObject mDefinition,
-			EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature,
-			EObject mDefinitionToTDefinition) {
+			PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature, EObject mBodyToTAnnotation,
+			EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition, EObject mDefinitionToTMember) {
 		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFieldSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tFieldSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTDefinition__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTDefinition__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTDefinition__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FieldDefinition";
 		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
-		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String tFieldSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tFieldSignature____signature_name_prime = "signature";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
-		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
-		String mDefinitionToTDefinition__mDefinition____source_name_prime = "source";
 		String mDefinitionToTDefinition__tDefinition____target_name_prime = "target";
+		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mDefinitionToTDefinition__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
 		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
-		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		tFieldSignature__tDefinition____definitions.setSrc(tFieldSignature);
 		tFieldSignature__tDefinition____definitions.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(tFieldSignature__tDefinition____definitions);
 		tDefinition__tFieldSignature____signature.setSrc(tDefinition);
 		tDefinition__tFieldSignature____signature.setTrg(tFieldSignature);
 		ruleresult.getCreatedEdges().add(tDefinition__tFieldSignature____signature);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
-		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
-		mDefinitionToTDefinition__mDefinition____source.setSrc(mDefinitionToTDefinition);
-		mDefinitionToTDefinition__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTDefinition__mDefinition____source);
 		mDefinitionToTDefinition__tDefinition____target.setSrc(mDefinitionToTDefinition);
 		mDefinitionToTDefinition__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTDefinition__tDefinition____target);
+		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
+		mDefinitionToTDefinition__mDefinition____source.setSrc(mDefinitionToTDefinition);
+		mDefinitionToTDefinition__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTDefinition__mDefinition____source);
+		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		ruleresult.getTranslatedEdges().add(mSignature__mDefinition____mDefinitions);
@@ -1698,32 +1700,32 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		ruleresult.getTranslatedEdges().add(mDefinition__mSignature____mSignature);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
-		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		tFieldSignature__tDefinition____definitions.setName(tFieldSignature__tDefinition____definitions_name_prime);
 		tDefinition__tFieldSignature____signature.setName(tDefinition__tFieldSignature____signature_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
-		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
-		mDefinitionToTDefinition__mDefinition____source
-				.setName(mDefinitionToTDefinition__mDefinition____source_name_prime);
 		mDefinitionToTDefinition__tDefinition____target
 				.setName(mDefinitionToTDefinition__tDefinition____target_name_prime);
+		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mDefinitionToTDefinition__mDefinition____source
+				.setName(mDefinitionToTDefinition__mDefinition____source_name_prime);
+		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature,
-				mDefinitionToTMember, mSignature, mDefinitionToTDefinition, mBodyToTAnnotation__tDefinition____target,
-				mBodyToTAnnotation__mDefinition____source, tFieldSignature__tDefinition____definitions,
-				tDefinition__tFieldSignature____signature, mDefinitionToTMember__tDefinition____target,
-				mDefinitionToTMember__mDefinition____source, mDefinitionToTDefinition__mDefinition____source,
-				mDefinitionToTDefinition__tDefinition____target, mSignature__mDefinition____mDefinitions,
+		return new Object[] { ruleresult, tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition,
+				mSignature, mDefinition, mDefinitionToTMember, mBodyToTAnnotation__tDefinition____target,
+				tFieldSignature__tDefinition____definitions, tDefinition__tFieldSignature____signature,
+				mDefinitionToTDefinition__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
+				mDefinitionToTMember__tDefinition____target, mDefinitionToTDefinition__mDefinition____source,
+				mDefinitionToTMember__mDefinition____source, mSignature__mDefinition____mDefinitions,
 				mDefinition__mSignature____mSignature };
 	}
 
 	public static final void pattern_FieldDefinition_1_5_registerobjects_expressionBBBBBBBBBB(FieldDefinition _this,
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation, EObject mDefinition,
-			EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature, EObject mDefinitionToTDefinition,
+			PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature, EObject mBodyToTAnnotation,
+			EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition, EObject mDefinitionToTMember,
 			EObject mSignatureToTFieldSignature) {
-		_this.registerObjects_FWD(ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature,
-				mDefinitionToTMember, mSignature, mDefinitionToTDefinition, mSignatureToTFieldSignature);
+		_this.registerObjects_FWD(ruleresult, tDefinition, tFieldSignature, mBodyToTAnnotation,
+				mDefinitionToTDefinition, mSignature, mDefinition, mDefinitionToTMember, mSignatureToTFieldSignature);
 
 	}
 
@@ -1782,22 +1784,22 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mDefinition");
-		EObject _localVariable_1 = match.getObject("mSignature");
-		EObject tmpMDefinition = _localVariable_0;
-		EObject tmpMSignature = _localVariable_1;
-		if (tmpMDefinition instanceof MFieldDefinition) {
-			MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
-			if (tmpMSignature instanceof MFieldSignature) {
-				MFieldSignature mSignature = (MFieldSignature) tmpMSignature;
-				return new Object[] { mDefinition, mSignature, match };
+		EObject _localVariable_0 = match.getObject("mSignature");
+		EObject _localVariable_1 = match.getObject("mDefinition");
+		EObject tmpMSignature = _localVariable_0;
+		EObject tmpMDefinition = _localVariable_1;
+		if (tmpMSignature instanceof MFieldSignature) {
+			MFieldSignature mSignature = (MFieldSignature) tmpMSignature;
+			if (tmpMDefinition instanceof MFieldDefinition) {
+				MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+				return new Object[] { mSignature, mDefinition, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDefinition_2_2_corematch_blackBFBFB(
-			MFieldDefinition mDefinition, MFieldSignature mSignature, Match match) {
+	public static final Iterable<Object[]> pattern_FieldDefinition_2_2_corematch_blackFBBFB(MFieldSignature mSignature,
+			MFieldDefinition mDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MSignatureToTSignature mSignatureToTFieldSignature : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mSignature, MSignatureToTSignature.class, "source")) {
@@ -1805,7 +1807,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 			if (tmpTFieldSignature instanceof TFieldSignature) {
 				TFieldSignature tFieldSignature = (TFieldSignature) tmpTFieldSignature;
 				_result.add(
-						new Object[] { mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature, match });
+						new Object[] { tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature, match });
 			}
 
 		}
@@ -1813,68 +1815,68 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Iterable<Object[]> pattern_FieldDefinition_2_3_findcontext_blackBBBB(
-			MFieldDefinition mDefinition, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			TFieldSignature tFieldSignature, MFieldSignature mSignature, MFieldDefinition mDefinition,
 			MSignatureToTSignature mSignatureToTFieldSignature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mSignature.equals(mSignatureToTFieldSignature.getSource())) {
-			if (tFieldSignature.equals(mSignatureToTFieldSignature.getTarget())) {
-				if (mSignature.getMDefinitions().contains(mDefinition)) {
-					_result.add(new Object[] { mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature });
+		if (mSignature.getMDefinitions().contains(mDefinition)) {
+			if (mSignature.equals(mSignatureToTFieldSignature.getSource())) {
+				if (tFieldSignature.equals(mSignatureToTFieldSignature.getTarget())) {
+					_result.add(new Object[] { tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDefinition_2_3_findcontext_greenBBBBFFFFF(MFieldDefinition mDefinition,
-			TFieldSignature tFieldSignature, MFieldSignature mSignature,
+	public static final Object[] pattern_FieldDefinition_2_3_findcontext_greenBBBBFFFFF(TFieldSignature tFieldSignature,
+			MFieldSignature mSignature, MFieldDefinition mDefinition,
 			MSignatureToTSignature mSignatureToTFieldSignature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTFieldSignature__mSignature____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignatureToTFieldSignature__tFieldSignature____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mSignatureToTFieldSignature__mSignature____source_name_prime = "source";
-		String mSignatureToTFieldSignature__tFieldSignature____target_name_prime = "target";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
-		isApplicableMatch.getAllContextElements().add(mDefinition);
+		String mSignatureToTFieldSignature__mSignature____source_name_prime = "source";
+		String mSignatureToTFieldSignature__tFieldSignature____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(tFieldSignature);
 		isApplicableMatch.getAllContextElements().add(mSignature);
+		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignatureToTFieldSignature);
-		mSignatureToTFieldSignature__mSignature____source.setSrc(mSignatureToTFieldSignature);
-		mSignatureToTFieldSignature__mSignature____source.setTrg(mSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTFieldSignature__mSignature____source);
-		mSignatureToTFieldSignature__tFieldSignature____target.setSrc(mSignatureToTFieldSignature);
-		mSignatureToTFieldSignature__tFieldSignature____target.setTrg(tFieldSignature);
-		isApplicableMatch.getAllContextElements().add(mSignatureToTFieldSignature__tFieldSignature____target);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mSignature__mDefinition____mDefinitions);
 		mDefinition__mSignature____mSignature.setSrc(mDefinition);
 		mDefinition__mSignature____mSignature.setTrg(mSignature);
 		isApplicableMatch.getAllContextElements().add(mDefinition__mSignature____mSignature);
+		mSignatureToTFieldSignature__mSignature____source.setSrc(mSignatureToTFieldSignature);
+		mSignatureToTFieldSignature__mSignature____source.setTrg(mSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTFieldSignature__mSignature____source);
+		mSignatureToTFieldSignature__tFieldSignature____target.setSrc(mSignatureToTFieldSignature);
+		mSignatureToTFieldSignature__tFieldSignature____target.setTrg(tFieldSignature);
+		isApplicableMatch.getAllContextElements().add(mSignatureToTFieldSignature__tFieldSignature____target);
+		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
+		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
 		mSignatureToTFieldSignature__mSignature____source
 				.setName(mSignatureToTFieldSignature__mSignature____source_name_prime);
 		mSignatureToTFieldSignature__tFieldSignature____target
 				.setName(mSignatureToTFieldSignature__tFieldSignature____target_name_prime);
-		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
-		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature, isApplicableMatch,
+		return new Object[] { tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature, isApplicableMatch,
+				mSignature__mDefinition____mDefinitions, mDefinition__mSignature____mSignature,
 				mSignatureToTFieldSignature__mSignature____source,
-				mSignatureToTFieldSignature__tFieldSignature____target, mSignature__mDefinition____mDefinitions,
-				mDefinition__mSignature____mSignature };
+				mSignatureToTFieldSignature__tFieldSignature____target };
 	}
 
 	public static final Object[] pattern_FieldDefinition_2_4_solveCSP_bindingFBBBBBB(FieldDefinition _this,
-			IsApplicableMatch isApplicableMatch, MFieldDefinition mDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, MSignatureToTSignature mSignatureToTFieldSignature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mDefinition, tFieldSignature,
-				mSignature, mSignatureToTFieldSignature);
+			IsApplicableMatch isApplicableMatch, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			MFieldDefinition mDefinition, MSignatureToTSignature mSignatureToTFieldSignature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tFieldSignature, mSignature,
+				mDefinition, mSignatureToTFieldSignature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mDefinition, tFieldSignature, mSignature,
+			return new Object[] { csp, _this, isApplicableMatch, tFieldSignature, mSignature, mDefinition,
 					mSignatureToTFieldSignature };
 		}
 		return null;
@@ -1885,10 +1887,10 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_2_4_solveCSP_bindingAndBlackFBBBBBB(FieldDefinition _this,
-			IsApplicableMatch isApplicableMatch, MFieldDefinition mDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, MSignatureToTSignature mSignatureToTFieldSignature) {
+			IsApplicableMatch isApplicableMatch, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			MFieldDefinition mDefinition, MSignatureToTSignature mSignatureToTFieldSignature) {
 		Object[] result_pattern_FieldDefinition_2_4_solveCSP_binding = pattern_FieldDefinition_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mDefinition, tFieldSignature, mSignature, mSignatureToTFieldSignature);
+				_this, isApplicableMatch, tFieldSignature, mSignature, mDefinition, mSignatureToTFieldSignature);
 		if (result_pattern_FieldDefinition_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDefinition_2_4_solveCSP_binding[0];
 
@@ -1896,7 +1898,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 					csp);
 			if (result_pattern_FieldDefinition_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mDefinition, tFieldSignature, mSignature,
+				return new Object[] { csp, _this, isApplicableMatch, tFieldSignature, mSignature, mDefinition,
 						mSignatureToTFieldSignature };
 			}
 		}
@@ -2086,83 +2088,85 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDefinition_11_1_performtransformation_greenBFFFBF(
+	public static final Object[] pattern_FieldDefinition_11_1_performtransformation_greenBFFBFF(
 			TFieldDefinition tDefinition, MFieldSignature mSignature) {
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		MFieldDefinition mDefinition = ModiscoFactory.eINSTANCE.createMFieldDefinition();
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MFieldDefinition mDefinition = ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		mBodyToTAnnotation.setTarget(tDefinition);
+		mDefinitionToTDefinition.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
+		mDefinitionToTDefinition.setSource(mDefinition);
 		mSignature.getMDefinitions().add(mDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
-		mDefinitionToTDefinition.setSource(mDefinition);
-		mDefinitionToTDefinition.setTarget(tDefinition);
-		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember, mSignature,
-				mDefinitionToTDefinition };
+		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature, mDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_FieldDefinition_11_2_collecttranslatedelements_blackBBBBB(
-			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, MFieldDefinition mDefinition,
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition) {
-		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember,
-				mDefinitionToTDefinition };
+			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation,
+			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition, MFieldDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember) {
+		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_FieldDefinition_11_2_collecttranslatedelements_greenFBBBBB(
-			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, MFieldDefinition mDefinition,
-			MDefinitionToTMember mDefinitionToTMember,
-			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition) {
+			TFieldDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation,
+			MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition, MFieldDefinition mDefinition,
+			MDefinitionToTMember mDefinitionToTMember) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(tDefinition);
 		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
+		ruleresult.getCreatedLinkElements().add(mDefinitionToTDefinition);
 		ruleresult.getCreatedElements().add(mDefinition);
 		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
-		ruleresult.getCreatedLinkElements().add(mDefinitionToTDefinition);
-		return new Object[] { ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember,
-				mDefinitionToTDefinition };
+		return new Object[] { ruleresult, tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition,
+				mDefinitionToTMember };
 	}
 
 	public static final Object[] pattern_FieldDefinition_11_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation, EObject mDefinition,
-			EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature, EObject mDefinitionToTDefinition,
+			PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature, EObject mBodyToTAnnotation,
+			EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition, EObject mDefinitionToTMember,
 			EObject mSignatureToTFieldSignature) {
 		if (!tDefinition.equals(tFieldSignature)) {
 			if (!mBodyToTAnnotation.equals(tDefinition)) {
-				if (!mBodyToTAnnotation.equals(mDefinition)) {
-					if (!mBodyToTAnnotation.equals(tFieldSignature)) {
-						if (!mBodyToTAnnotation.equals(mDefinitionToTMember)) {
-							if (!mBodyToTAnnotation.equals(mSignature)) {
-								if (!mBodyToTAnnotation.equals(mDefinitionToTDefinition)) {
+				if (!mBodyToTAnnotation.equals(tFieldSignature)) {
+					if (!mBodyToTAnnotation.equals(mDefinitionToTDefinition)) {
+						if (!mBodyToTAnnotation.equals(mSignature)) {
+							if (!mBodyToTAnnotation.equals(mDefinition)) {
+								if (!mBodyToTAnnotation.equals(mDefinitionToTMember)) {
 									if (!mBodyToTAnnotation.equals(mSignatureToTFieldSignature)) {
-										if (!mDefinition.equals(tDefinition)) {
-											if (!mDefinition.equals(tFieldSignature)) {
-												if (!mDefinition.equals(mDefinitionToTMember)) {
-													if (!mDefinition.equals(mSignature)) {
-														if (!mDefinition.equals(mDefinitionToTDefinition)) {
-															if (!mDefinition.equals(mSignatureToTFieldSignature)) {
-																if (!mDefinitionToTMember.equals(tDefinition)) {
-																	if (!mDefinitionToTMember.equals(tFieldSignature)) {
-																		if (!mDefinitionToTMember.equals(mSignature)) {
-																			if (!mDefinitionToTMember.equals(
-																					mSignatureToTFieldSignature)) {
-																				if (!mSignature.equals(tDefinition)) {
-																					if (!mSignature
-																							.equals(tFieldSignature)) {
-																						if (!mSignature.equals(
-																								mSignatureToTFieldSignature)) {
-																							if (!mDefinitionToTDefinition
-																									.equals(tDefinition)) {
-																								if (!mDefinitionToTDefinition
-																										.equals(tFieldSignature)) {
-																									if (!mDefinitionToTDefinition
-																											.equals(mDefinitionToTMember)) {
-																										if (!mDefinitionToTDefinition
+										if (!mDefinitionToTDefinition.equals(tDefinition)) {
+											if (!mDefinitionToTDefinition.equals(tFieldSignature)) {
+												if (!mDefinitionToTDefinition.equals(mSignature)) {
+													if (!mDefinitionToTDefinition.equals(mDefinitionToTMember)) {
+														if (!mDefinitionToTDefinition
+																.equals(mSignatureToTFieldSignature)) {
+															if (!mSignature.equals(tDefinition)) {
+																if (!mSignature.equals(tFieldSignature)) {
+																	if (!mSignature
+																			.equals(mSignatureToTFieldSignature)) {
+																		if (!mDefinition.equals(tDefinition)) {
+																			if (!mDefinition.equals(tFieldSignature)) {
+																				if (!mDefinition.equals(
+																						mDefinitionToTDefinition)) {
+																					if (!mDefinition
+																							.equals(mSignature)) {
+																						if (!mDefinition.equals(
+																								mDefinitionToTMember)) {
+																							if (!mDefinition.equals(
+																									mSignatureToTFieldSignature)) {
+																								if (!mDefinitionToTMember
+																										.equals(tDefinition)) {
+																									if (!mDefinitionToTMember
+																											.equals(tFieldSignature)) {
+																										if (!mDefinitionToTMember
 																												.equals(mSignature)) {
-																											if (!mDefinitionToTDefinition
+																											if (!mDefinitionToTMember
 																													.equals(mSignatureToTFieldSignature)) {
 																												if (!mSignatureToTFieldSignature
 																														.equals(tDefinition)) {
@@ -2171,12 +2175,12 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 																														return new Object[] {
 																																ruleresult,
 																																tDefinition,
-																																mBodyToTAnnotation,
-																																mDefinition,
 																																tFieldSignature,
-																																mDefinitionToTMember,
-																																mSignature,
+																																mBodyToTAnnotation,
 																																mDefinitionToTDefinition,
+																																mSignature,
+																																mDefinition,
+																																mDefinitionToTMember,
 																																mSignatureToTFieldSignature };
 																													}
 																												}
@@ -2210,54 +2214,53 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation, EObject mDefinition,
-			EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature,
-			EObject mDefinitionToTDefinition) {
+			PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature, EObject mBodyToTAnnotation,
+			EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition, EObject mDefinitionToTMember) {
 		EMoflonEdge mBodyToTAnnotation__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tFieldSignature__tDefinition____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tFieldSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mDefinitionToTDefinition__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTDefinition__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTDefinition__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSignature__mDefinition____mDefinitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__mSignature____mSignature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FieldDefinition";
 		String mBodyToTAnnotation__tDefinition____target_name_prime = "target";
-		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String tFieldSignature__tDefinition____definitions_name_prime = "definitions";
 		String tDefinition__tFieldSignature____signature_name_prime = "signature";
-		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
-		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
-		String mDefinitionToTDefinition__mDefinition____source_name_prime = "source";
 		String mDefinitionToTDefinition__tDefinition____target_name_prime = "target";
+		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mDefinitionToTDefinition__mDefinition____source_name_prime = "source";
+		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
 		String mSignature__mDefinition____mDefinitions_name_prime = "mDefinitions";
 		String mDefinition__mSignature____mSignature_name_prime = "mSignature";
 		mBodyToTAnnotation__tDefinition____target.setSrc(mBodyToTAnnotation);
 		mBodyToTAnnotation__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__tDefinition____target);
-		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		tFieldSignature__tDefinition____definitions.setSrc(tFieldSignature);
 		tFieldSignature__tDefinition____definitions.setTrg(tDefinition);
 		ruleresult.getTranslatedEdges().add(tFieldSignature__tDefinition____definitions);
 		tDefinition__tFieldSignature____signature.setSrc(tDefinition);
 		tDefinition__tFieldSignature____signature.setTrg(tFieldSignature);
 		ruleresult.getTranslatedEdges().add(tDefinition__tFieldSignature____signature);
-		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
-		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
-		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
-		mDefinitionToTDefinition__mDefinition____source.setSrc(mDefinitionToTDefinition);
-		mDefinitionToTDefinition__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mDefinitionToTDefinition__mDefinition____source);
 		mDefinitionToTDefinition__tDefinition____target.setSrc(mDefinitionToTDefinition);
 		mDefinitionToTDefinition__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTDefinition__tDefinition____target);
+		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
+		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
+		mDefinitionToTDefinition__mDefinition____source.setSrc(mDefinitionToTDefinition);
+		mDefinitionToTDefinition__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTDefinition__mDefinition____source);
+		mDefinitionToTMember__mDefinition____source.setSrc(mDefinitionToTMember);
+		mDefinitionToTMember__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mDefinitionToTMember__mDefinition____source);
 		mSignature__mDefinition____mDefinitions.setSrc(mSignature);
 		mSignature__mDefinition____mDefinitions.setTrg(mDefinition);
 		ruleresult.getCreatedEdges().add(mSignature__mDefinition____mDefinitions);
@@ -2266,32 +2269,32 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		ruleresult.getCreatedEdges().add(mDefinition__mSignature____mSignature);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mBodyToTAnnotation__tDefinition____target.setName(mBodyToTAnnotation__tDefinition____target_name_prime);
-		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		tFieldSignature__tDefinition____definitions.setName(tFieldSignature__tDefinition____definitions_name_prime);
 		tDefinition__tFieldSignature____signature.setName(tDefinition__tFieldSignature____signature_name_prime);
-		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
-		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
-		mDefinitionToTDefinition__mDefinition____source
-				.setName(mDefinitionToTDefinition__mDefinition____source_name_prime);
 		mDefinitionToTDefinition__tDefinition____target
 				.setName(mDefinitionToTDefinition__tDefinition____target_name_prime);
+		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
+		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mDefinitionToTDefinition__mDefinition____source
+				.setName(mDefinitionToTDefinition__mDefinition____source_name_prime);
+		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
 		mSignature__mDefinition____mDefinitions.setName(mSignature__mDefinition____mDefinitions_name_prime);
 		mDefinition__mSignature____mSignature.setName(mDefinition__mSignature____mSignature_name_prime);
-		return new Object[] { ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature,
-				mDefinitionToTMember, mSignature, mDefinitionToTDefinition, mBodyToTAnnotation__tDefinition____target,
-				mBodyToTAnnotation__mDefinition____source, tFieldSignature__tDefinition____definitions,
-				tDefinition__tFieldSignature____signature, mDefinitionToTMember__tDefinition____target,
-				mDefinitionToTMember__mDefinition____source, mDefinitionToTDefinition__mDefinition____source,
-				mDefinitionToTDefinition__tDefinition____target, mSignature__mDefinition____mDefinitions,
+		return new Object[] { ruleresult, tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition,
+				mSignature, mDefinition, mDefinitionToTMember, mBodyToTAnnotation__tDefinition____target,
+				tFieldSignature__tDefinition____definitions, tDefinition__tFieldSignature____signature,
+				mDefinitionToTDefinition__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
+				mDefinitionToTMember__tDefinition____target, mDefinitionToTDefinition__mDefinition____source,
+				mDefinitionToTMember__mDefinition____source, mSignature__mDefinition____mDefinitions,
 				mDefinition__mSignature____mSignature };
 	}
 
 	public static final void pattern_FieldDefinition_11_5_registerobjects_expressionBBBBBBBBBB(FieldDefinition _this,
-			PerformRuleResult ruleresult, EObject tDefinition, EObject mBodyToTAnnotation, EObject mDefinition,
-			EObject tFieldSignature, EObject mDefinitionToTMember, EObject mSignature, EObject mDefinitionToTDefinition,
+			PerformRuleResult ruleresult, EObject tDefinition, EObject tFieldSignature, EObject mBodyToTAnnotation,
+			EObject mDefinitionToTDefinition, EObject mSignature, EObject mDefinition, EObject mDefinitionToTMember,
 			EObject mSignatureToTFieldSignature) {
-		_this.registerObjects_BWD(ruleresult, tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature,
-				mDefinitionToTMember, mSignature, mDefinitionToTDefinition, mSignatureToTFieldSignature);
+		_this.registerObjects_BWD(ruleresult, tDefinition, tFieldSignature, mBodyToTAnnotation,
+				mDefinitionToTDefinition, mSignature, mDefinition, mDefinitionToTMember, mSignatureToTFieldSignature);
 
 	}
 
@@ -2553,9 +2556,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_20_2_testcorematchandDECs_black_nac_0BB(
 			TFieldDefinition tDefinition, TFieldSignature tFieldSignature) {
-		TSignature __DEC_tDefinition_signature_258381 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_258381 != null) {
-			if (!tFieldSignature.equals(__DEC_tDefinition_signature_258381)) {
+		TSignature __DEC_tDefinition_signature_368614 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_368614 != null) {
+			if (!tFieldSignature.equals(__DEC_tDefinition_signature_368614)) {
 				return new Object[] { tDefinition, tFieldSignature };
 			}
 		}
@@ -2565,8 +2568,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_20_2_testcorematchandDECs_black_nac_1B(
 			TFieldDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_586552 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_586552 != null) {
+		TModule __DEC_tDefinition_contains_720530 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_720530 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -2696,9 +2699,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_21_2_testcorematchandDECs_black_nac_0BB(
 			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_461742 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_461742 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_461742)) {
+		MSignature __DEC_mDefinition_mDefinitions_751453 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_751453 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_751453)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -2718,7 +2721,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 				if (mSignature.getMDefinitions().contains(mDefinition)) {
 					if (pattern_FieldDefinition_21_2_testcorematchandDECs_black_nac_0BB(mDefinition,
 							mSignature) == null) {
-						_result.add(new Object[] { mDefinition, mSignature, _edge_mDefinitions });
+						_result.add(new Object[] { mSignature, mDefinition, _edge_mDefinitions });
 					}
 				}
 			}
@@ -2738,8 +2741,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final boolean pattern_FieldDefinition_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			FieldDefinition _this, Match match, MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mDefinition, mSignature);
+			FieldDefinition _this, Match match, MFieldSignature mSignature, MFieldDefinition mDefinition) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mSignature, mDefinition);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2784,22 +2787,22 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	public static final Object[] pattern_FieldDefinition_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tDefinition");
-		EObject _localVariable_1 = sourceMatch.getObject("mDefinition");
-		EObject _localVariable_2 = targetMatch.getObject("tFieldSignature");
-		EObject _localVariable_3 = sourceMatch.getObject("mSignature");
+		EObject _localVariable_1 = targetMatch.getObject("tFieldSignature");
+		EObject _localVariable_2 = sourceMatch.getObject("mSignature");
+		EObject _localVariable_3 = sourceMatch.getObject("mDefinition");
 		EObject tmpTDefinition = _localVariable_0;
-		EObject tmpMDefinition = _localVariable_1;
-		EObject tmpTFieldSignature = _localVariable_2;
-		EObject tmpMSignature = _localVariable_3;
+		EObject tmpTFieldSignature = _localVariable_1;
+		EObject tmpMSignature = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_3;
 		if (tmpTDefinition instanceof TFieldDefinition) {
 			TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-			if (tmpMDefinition instanceof MFieldDefinition) {
-				MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
-				if (tmpTFieldSignature instanceof TFieldSignature) {
-					TFieldSignature tFieldSignature = (TFieldSignature) tmpTFieldSignature;
-					if (tmpMSignature instanceof MFieldSignature) {
-						MFieldSignature mSignature = (MFieldSignature) tmpMSignature;
-						return new Object[] { tDefinition, mDefinition, tFieldSignature, mSignature, targetMatch,
+			if (tmpTFieldSignature instanceof TFieldSignature) {
+				TFieldSignature tFieldSignature = (TFieldSignature) tmpTFieldSignature;
+				if (tmpMSignature instanceof MFieldSignature) {
+					MFieldSignature mSignature = (MFieldSignature) tmpMSignature;
+					if (tmpMDefinition instanceof MFieldDefinition) {
+						MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+						return new Object[] { tDefinition, tFieldSignature, mSignature, mDefinition, targetMatch,
 								sourceMatch };
 					}
 				}
@@ -2809,10 +2812,10 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_24_2_matchsrctrgcontext_blackBBBBBB(
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, Match sourceMatch, Match targetMatch) {
+			TFieldDefinition tDefinition, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tDefinition, mDefinition, tFieldSignature, mSignature, sourceMatch, targetMatch };
+			return new Object[] { tDefinition, tFieldSignature, mSignature, mDefinition, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2823,28 +2826,28 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 				targetMatch, sourceMatch);
 		if (result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding != null) {
 			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[0];
-			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[1];
-			TFieldSignature tFieldSignature = (TFieldSignature) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[2];
-			MFieldSignature mSignature = (MFieldSignature) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[3];
+			TFieldSignature tFieldSignature = (TFieldSignature) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[1];
+			MFieldSignature mSignature = (MFieldSignature) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[2];
+			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_FieldDefinition_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_FieldDefinition_24_2_matchsrctrgcontext_black = pattern_FieldDefinition_24_2_matchsrctrgcontext_blackBBBBBB(
-					tDefinition, mDefinition, tFieldSignature, mSignature, sourceMatch, targetMatch);
+					tDefinition, tFieldSignature, mSignature, mDefinition, sourceMatch, targetMatch);
 			if (result_pattern_FieldDefinition_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tDefinition, mDefinition, tFieldSignature, mSignature, sourceMatch, targetMatch };
+				return new Object[] { tDefinition, tFieldSignature, mSignature, mDefinition, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDefinition_24_3_solvecsp_bindingFBBBBBBB(FieldDefinition _this,
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tDefinition, mDefinition, tFieldSignature, mSignature,
+			TFieldDefinition tDefinition, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tDefinition, tFieldSignature, mSignature, mDefinition,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, tDefinition, mDefinition, tFieldSignature, mSignature, sourceMatch,
+			return new Object[] { csp, _this, tDefinition, tFieldSignature, mSignature, mDefinition, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2855,10 +2858,10 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_24_3_solvecsp_bindingAndBlackFBBBBBBB(FieldDefinition _this,
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, Match sourceMatch, Match targetMatch) {
+			TFieldDefinition tDefinition, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_FieldDefinition_24_3_solvecsp_binding = pattern_FieldDefinition_24_3_solvecsp_bindingFBBBBBBB(
-				_this, tDefinition, mDefinition, tFieldSignature, mSignature, sourceMatch, targetMatch);
+				_this, tDefinition, tFieldSignature, mSignature, mDefinition, sourceMatch, targetMatch);
 		if (result_pattern_FieldDefinition_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDefinition_24_3_solvecsp_binding[0];
 
@@ -2866,7 +2869,7 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 					csp);
 			if (result_pattern_FieldDefinition_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tDefinition, mDefinition, tFieldSignature, mSignature, sourceMatch,
+				return new Object[] { csp, _this, tDefinition, tFieldSignature, mSignature, mDefinition, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2906,28 +2909,28 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 	}
 
 	public static final Object[] pattern_FieldDefinition_24_6_createcorrespondence_blackBBBBB(
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, TFieldSignature tFieldSignature,
-			MFieldSignature mSignature, CCMatch ccMatch) {
-		return new Object[] { tDefinition, mDefinition, tFieldSignature, mSignature, ccMatch };
+			TFieldDefinition tDefinition, TFieldSignature tFieldSignature, MFieldSignature mSignature,
+			MFieldDefinition mDefinition, CCMatch ccMatch) {
+		return new Object[] { tDefinition, tFieldSignature, mSignature, mDefinition, ccMatch };
 	}
 
-	public static final Object[] pattern_FieldDefinition_24_6_createcorrespondence_greenBFBFFB(
+	public static final Object[] pattern_FieldDefinition_24_6_createcorrespondence_greenBFFBFB(
 			TFieldDefinition tDefinition, MFieldDefinition mDefinition, CCMatch ccMatch) {
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		mBodyToTAnnotation.setTarget(tDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
 		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
+		mDefinitionToTDefinition.setTarget(tDefinition);
+		mDefinitionToTDefinition.setSource(mDefinition);
+		ccMatch.getCreateCorr().add(mDefinitionToTDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
 		ccMatch.getCreateCorr().add(mDefinitionToTMember);
-		mDefinitionToTDefinition.setSource(mDefinition);
-		mDefinitionToTDefinition.setTarget(tDefinition);
-		ccMatch.getCreateCorr().add(mDefinitionToTDefinition);
-		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinition, mDefinitionToTMember,
-				mDefinitionToTDefinition, ccMatch };
+		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinitionToTDefinition, mDefinition,
+				mDefinitionToTMember, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldDefinition_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2953,9 +2956,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_27_1_matchtggpattern_black_nac_0BB(
 			MFieldDefinition mDefinition, MFieldSignature mSignature) {
-		MSignature __DEC_mDefinition_mDefinitions_566622 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_566622 != null) {
-			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_566622)) {
+		MSignature __DEC_mDefinition_mDefinitions_623103 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_623103 != null) {
+			if (!mSignature.equals(__DEC_mDefinition_mDefinitions_623103)) {
 				return new Object[] { mDefinition, mSignature };
 			}
 		}
@@ -2963,11 +2966,11 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDefinition_27_1_matchtggpattern_blackBB(MFieldDefinition mDefinition,
-			MFieldSignature mSignature) {
+	public static final Object[] pattern_FieldDefinition_27_1_matchtggpattern_blackBB(MFieldSignature mSignature,
+			MFieldDefinition mDefinition) {
 		if (mSignature.getMDefinitions().contains(mDefinition)) {
 			if (pattern_FieldDefinition_27_1_matchtggpattern_black_nac_0BB(mDefinition, mSignature) == null) {
-				return new Object[] { mDefinition, mSignature };
+				return new Object[] { mSignature, mDefinition };
 			}
 		}
 		return null;
@@ -2985,9 +2988,9 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_28_1_matchtggpattern_black_nac_0BB(
 			TFieldDefinition tDefinition, TFieldSignature tFieldSignature) {
-		TSignature __DEC_tDefinition_signature_984680 = tDefinition.getSignature();
-		if (__DEC_tDefinition_signature_984680 != null) {
-			if (!tFieldSignature.equals(__DEC_tDefinition_signature_984680)) {
+		TSignature __DEC_tDefinition_signature_248968 = tDefinition.getSignature();
+		if (__DEC_tDefinition_signature_248968 != null) {
+			if (!tFieldSignature.equals(__DEC_tDefinition_signature_248968)) {
 				return new Object[] { tDefinition, tFieldSignature };
 			}
 		}
@@ -2997,8 +3000,8 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 
 	public static final Object[] pattern_FieldDefinition_28_1_matchtggpattern_black_nac_1B(
 			TFieldDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_52177 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_52177 != null) {
+		TModule __DEC_tDefinition_contains_37272 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_37272 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3151,34 +3154,34 @@ public class FieldDefinitionImpl extends AbstractRuleImpl implements FieldDefini
 		return new Object[] { tFieldSignature, mSignature, mSignatureToTFieldSignature, ruleResult };
 	}
 
-	public static final Object[] pattern_FieldDefinition_29_6_perform_greenFFFBFBFB(TFieldSignature tFieldSignature,
+	public static final Object[] pattern_FieldDefinition_29_6_perform_greenFBFFBFFB(TFieldSignature tFieldSignature,
 			MFieldSignature mSignature, ModelgeneratorRuleResult ruleResult) {
 		TFieldDefinition tDefinition = BasicFactory.eINSTANCE.createTFieldDefinition();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		MFieldDefinition mDefinition = ModiscoFactory.eINSTANCE.createMFieldDefinition();
-		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		MAbstractFlowElementToTAbstractFlowElement mDefinitionToTDefinition = PmFactory.eINSTANCE
 				.createMAbstractFlowElementToTAbstractFlowElement();
+		MFieldDefinition mDefinition = ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		tFieldSignature.getDefinitions().add(tDefinition);
 		ruleResult.getTargetObjects().add(tDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
+		mDefinitionToTDefinition.setTarget(tDefinition);
+		ruleResult.getCorrObjects().add(mDefinitionToTDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
+		mDefinitionToTDefinition.setSource(mDefinition);
 		mSignature.getMDefinitions().add(mDefinition);
 		ruleResult.getSourceObjects().add(mDefinition);
 		mDefinitionToTMember.setTarget(tDefinition);
 		mDefinitionToTMember.setSource(mDefinition);
 		ruleResult.getCorrObjects().add(mDefinitionToTMember);
-		mDefinitionToTDefinition.setSource(mDefinition);
-		mDefinitionToTDefinition.setTarget(tDefinition);
-		ruleResult.getCorrObjects().add(mDefinitionToTDefinition);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tDefinition, mBodyToTAnnotation, mDefinition, tFieldSignature, mDefinitionToTMember,
-				mSignature, mDefinitionToTDefinition, ruleResult };
+		return new Object[] { tDefinition, tFieldSignature, mBodyToTAnnotation, mDefinitionToTDefinition, mSignature,
+				mDefinition, mDefinitionToTMember, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FieldDefinition_29_7_expressionFB(

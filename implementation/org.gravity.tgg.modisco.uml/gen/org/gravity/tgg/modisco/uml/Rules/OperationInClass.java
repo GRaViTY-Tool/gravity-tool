@@ -94,9 +94,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
-			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
-			MAbstractMethodDefinition bodyDeclaration);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element bd2ne, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element c2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject bd2ne,
-			EObject umlClass, EObject classDec, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject classDec, EObject feature, EObject umlClass,
+			EObject bd2ne, EObject bodyDeclaration, EObject c2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,9 +177,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
-			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
-			MAbstractMethodDefinition bodyDeclaration);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element bd2ne, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element c2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject bd2ne,
-			EObject umlClass, EObject classDec, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject classDec, EObject feature, EObject umlClass,
+			EObject bd2ne, EObject bodyDeclaration, EObject c2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_276(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_152(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_296(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_164(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+	CSP isApplicable_solveCsp_CC(ClassDeclaration classDec, Operation feature, org.eclipse.uml2.uml.Class umlClass,
 			MAbstractMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -294,9 +294,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
-			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
-			MAbstractMethodDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element bd2ne, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element c2c, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

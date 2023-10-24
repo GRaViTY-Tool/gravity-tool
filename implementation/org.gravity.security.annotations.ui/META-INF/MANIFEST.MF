@@ -20,3 +20,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.gravity.security.annotations.check
 Bundle-ActivationPolicy: lazy
+Export-Package: org.gravity.security.annotations.marker

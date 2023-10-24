@@ -55,46 +55,46 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case UmlPackage.OPERATION2_TMETHOD_NAME:
-			return createOperation2TMethodName();
+		case UmlPackage.TYPE2_TABSTRACT_TYPE:
+			return createType2TAbstractType();
 		case UmlPackage.COMMENT2_TTEXT_ANNOTATION:
 			return createComment2TTextAnnotation();
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE:
-			return createOperation2TMethodSignature();
+		case UmlPackage.FDEPENDENCY2_TACCESS:
+			return createFDependency2TAccess();
+		case UmlPackage.STEREOTYPE2_TANNOTATION:
+			return createStereotype2TAnnotation();
+		case UmlPackage.PROPERTY2_TFIELD_NAME:
+			return createProperty2TFieldName();
+		case UmlPackage.OPERATION2_TMETHOD_NAME:
+			return createOperation2TMethodName();
+		case UmlPackage.PRIMITIVE_TYPE2_TCLASS:
+			return createPrimitiveType2TClass();
+		case UmlPackage.MODEL2_TYPE_GRAPH:
+			return createModel2TypeGraph();
+		case UmlPackage.OPERATION2_TMETHOD_DEFINITION:
+			return createOperation2TMethodDefinition();
 		case UmlPackage.PARAMETER2_TPARAMETER:
 			return createParameter2TParameter();
+		case UmlPackage.INTERFACE2_TINTERFACE:
+			return createInterface2TInterface();
+		case UmlPackage.CLASS2_TCLASS:
+			return createClass2TClass();
+		case UmlPackage.ELEMENT2_TANNOTATABLE:
+			return createElement2TAnnotatable();
 		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE:
 			return createStereotypeProperty2AnnotationNode();
 		case UmlPackage.PACKAGE2_TPACKAGE:
 			return createPackage2TPackage();
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS:
-			return createPrimitiveType2TClass();
-		case UmlPackage.TYPE2_TABSTRACT_TYPE:
-			return createType2TAbstractType();
-		case UmlPackage.ELEMENT2_TANNOTATABLE:
-			return createElement2TAnnotatable();
-		case UmlPackage.MODEL2_TYPE_GRAPH:
-			return createModel2TypeGraph();
-		case UmlPackage.FDEPENDENCY2_TACCESS:
-			return createFDependency2TAccess();
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION:
-			return createOperation2TMethodDefinition();
-		case UmlPackage.INTERFACE2_TINTERFACE:
-			return createInterface2TInterface();
-		case UmlPackage.PROPERTY2_TFIELD_NAME:
-			return createProperty2TFieldName();
-		case UmlPackage.FEATURE2_TMEMBER:
-			return createFeature2TMember();
+		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE:
+			return createOperation2TMethodSignature();
 		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE:
 			return createProperty2TFieldSignature();
 		case UmlPackage.FEATURE2_TSIGNATURE:
 			return createFeature2TSignature();
-		case UmlPackage.STEREOTYPE2_TANNOTATION:
-			return createStereotype2TAnnotation();
-		case UmlPackage.CLASS2_TCLASS:
-			return createClass2TClass();
 		case UmlPackage.PROPERTY2_TFIELD_DEFINITION:
 			return createProperty2TFieldDefinition();
+		case UmlPackage.FEATURE2_TMEMBER:
+			return createFeature2TMember();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,9 +106,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public Operation2TMethodName createOperation2TMethodName() {
-		Operation2TMethodNameImpl operation2TMethodName = new Operation2TMethodNameImpl();
-		return operation2TMethodName;
+	public Type2TAbstractType createType2TAbstractType() {
+		Type2TAbstractTypeImpl type2TAbstractType = new Type2TAbstractTypeImpl();
+		return type2TAbstractType;
 	}
 
 	/**
@@ -128,9 +128,75 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public Operation2TMethodSignature createOperation2TMethodSignature() {
-		Operation2TMethodSignatureImpl operation2TMethodSignature = new Operation2TMethodSignatureImpl();
-		return operation2TMethodSignature;
+	public FDependency2TAccess createFDependency2TAccess() {
+		FDependency2TAccessImpl fDependency2TAccess = new FDependency2TAccessImpl();
+		return fDependency2TAccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Stereotype2TAnnotation createStereotype2TAnnotation() {
+		Stereotype2TAnnotationImpl stereotype2TAnnotation = new Stereotype2TAnnotationImpl();
+		return stereotype2TAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Property2TFieldName createProperty2TFieldName() {
+		Property2TFieldNameImpl property2TFieldName = new Property2TFieldNameImpl();
+		return property2TFieldName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Operation2TMethodName createOperation2TMethodName() {
+		Operation2TMethodNameImpl operation2TMethodName = new Operation2TMethodNameImpl();
+		return operation2TMethodName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PrimitiveType2TClass createPrimitiveType2TClass() {
+		PrimitiveType2TClassImpl primitiveType2TClass = new PrimitiveType2TClassImpl();
+		return primitiveType2TClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Model2TypeGraph createModel2TypeGraph() {
+		Model2TypeGraphImpl model2TypeGraph = new Model2TypeGraphImpl();
+		return model2TypeGraph;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Operation2TMethodDefinition createOperation2TMethodDefinition() {
+		Operation2TMethodDefinitionImpl operation2TMethodDefinition = new Operation2TMethodDefinitionImpl();
+		return operation2TMethodDefinition;
 	}
 
 	/**
@@ -142,6 +208,39 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	public Parameter2TParameter createParameter2TParameter() {
 		Parameter2TParameterImpl parameter2TParameter = new Parameter2TParameterImpl();
 		return parameter2TParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Interface2TInterface createInterface2TInterface() {
+		Interface2TInterfaceImpl interface2TInterface = new Interface2TInterfaceImpl();
+		return interface2TInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Class2TClass createClass2TClass() {
+		Class2TClassImpl class2TClass = new Class2TClassImpl();
+		return class2TClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Element2TAnnotatable createElement2TAnnotatable() {
+		Element2TAnnotatableImpl element2TAnnotatable = new Element2TAnnotatableImpl();
+		return element2TAnnotatable;
 	}
 
 	/**
@@ -172,97 +271,9 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public PrimitiveType2TClass createPrimitiveType2TClass() {
-		PrimitiveType2TClassImpl primitiveType2TClass = new PrimitiveType2TClassImpl();
-		return primitiveType2TClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Type2TAbstractType createType2TAbstractType() {
-		Type2TAbstractTypeImpl type2TAbstractType = new Type2TAbstractTypeImpl();
-		return type2TAbstractType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Element2TAnnotatable createElement2TAnnotatable() {
-		Element2TAnnotatableImpl element2TAnnotatable = new Element2TAnnotatableImpl();
-		return element2TAnnotatable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Model2TypeGraph createModel2TypeGraph() {
-		Model2TypeGraphImpl model2TypeGraph = new Model2TypeGraphImpl();
-		return model2TypeGraph;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public FDependency2TAccess createFDependency2TAccess() {
-		FDependency2TAccessImpl fDependency2TAccess = new FDependency2TAccessImpl();
-		return fDependency2TAccess;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operation2TMethodDefinition createOperation2TMethodDefinition() {
-		Operation2TMethodDefinitionImpl operation2TMethodDefinition = new Operation2TMethodDefinitionImpl();
-		return operation2TMethodDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Interface2TInterface createInterface2TInterface() {
-		Interface2TInterfaceImpl interface2TInterface = new Interface2TInterfaceImpl();
-		return interface2TInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Property2TFieldName createProperty2TFieldName() {
-		Property2TFieldNameImpl property2TFieldName = new Property2TFieldNameImpl();
-		return property2TFieldName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Feature2TMember createFeature2TMember() {
-		Feature2TMemberImpl feature2TMember = new Feature2TMemberImpl();
-		return feature2TMember;
+	public Operation2TMethodSignature createOperation2TMethodSignature() {
+		Operation2TMethodSignatureImpl operation2TMethodSignature = new Operation2TMethodSignatureImpl();
+		return operation2TMethodSignature;
 	}
 
 	/**
@@ -293,31 +304,20 @@ public class UmlFactoryImpl extends EFactoryImpl implements UmlFactory {
 	 * @generated
 	 */
 	@Override
-	public Stereotype2TAnnotation createStereotype2TAnnotation() {
-		Stereotype2TAnnotationImpl stereotype2TAnnotation = new Stereotype2TAnnotationImpl();
-		return stereotype2TAnnotation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Class2TClass createClass2TClass() {
-		Class2TClassImpl class2TClass = new Class2TClassImpl();
-		return class2TClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Property2TFieldDefinition createProperty2TFieldDefinition() {
 		Property2TFieldDefinitionImpl property2TFieldDefinition = new Property2TFieldDefinitionImpl();
 		return property2TFieldDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Feature2TMember createFeature2TMember() {
+		Feature2TMemberImpl feature2TMember = new Feature2TMemberImpl();
+		return feature2TMember;
 	}
 
 	/**
