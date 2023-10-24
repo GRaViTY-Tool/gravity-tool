@@ -36,7 +36,7 @@ public class SecureDependencyEditingSupportTests {
 		var problems = new ArrayList<>(Stream
 				.of(project.getResource().findMarkers(IMarker.PROBLEM, true, IResource.DEPTH_INFINITE)).filter(m -> {
 					try {
-						return SecurityMarkerUtil.MARKER_SOURCE.equals(m.getAttribute(IMarker.SOURCE_ID));
+						return SecurityMarkerUtil.MARKER_SOURCE.equals(m.getAttribute(IMarker.SOURCE_ID)) && IMarker.SEVERITY_ERROR == (Integer) m.getAttribute(IMarker.SEVERITY);
 					} catch (CoreException e) {
 						LOGGER.error(e);
 						return false;
