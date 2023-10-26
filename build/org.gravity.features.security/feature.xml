@@ -41,9 +41,9 @@
       <import plugin="org.junit"/>
       <import plugin="carisma.check.staticcheck" version="1.0.4" match="greaterOrEqual"/>
       <import plugin="carisma.core"/>
-      <import feature="feature.carisma.uml2" version="1.1.8.qualifier"/>
       <import feature="org.eclipse.emf.henshin.sdk" version="1.7.0.qualifier"/>
       <import feature="org.gravity.features.hulk" version="1.0.0.qualifier"/>
+      <import feature="feature.carisma.uml2" version="1.1.8.202306021405"/>
    </requires>
 
    <plugin
@@ -52,7 +52,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.gravity.security.annotations.pm"
          download-size="0"
