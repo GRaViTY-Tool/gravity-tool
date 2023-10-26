@@ -40,10 +40,6 @@
 					<argLine>${surefireArgLine} -Xms1g -Xmx6g</argLine>
 					<deleteOsgiDataDirectory>false</deleteOsgiDataDirectory>
 					<osgiDataDirectory>${project.basedir}/data</osgiDataDirectory>
-					<useUIHarness>true</useUIHarness>
-					<useUIThread>true</useUIThread>
-					<product>org.eclipse.platform.ide</product>
-					<testRuntime>default</testRuntime>
 				</configuration>
 			</plugin>
 		</plugins>
