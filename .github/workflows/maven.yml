@@ -28,13 +28,11 @@ jobs:
 #    - name: Build with Maven
     - name: Setup Maven Action
       uses: s4u/setup-maven-action@v1.9.0
+    - name: Run headless test   
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    - name: Run headless test
-      uses: coactions/setup-xvfb@v1
-      with:
-        run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Declipse.p2.mirrors=false
+      run: xvfb-run mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Declipse.p2.mirrors=false
     - name: Publisch Pre-Release
       if: ${{ github.ref == 'refs/heads/master' }}
       uses: "marvinpinto/action-automatic-releases@latest"
