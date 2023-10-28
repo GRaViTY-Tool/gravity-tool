@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Security Check
 Bundle-SymbolicName: org.gravity.security.annotations.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.gravity.security.annotations.SecurityAnnotationsUIActivator
+Bundle-Activator: org.gravity.security.annotations.ui.SecurityAnnotationsUIActivator
 Bundle-ClassPath: .
 Bundle-Vendor: Ruhr University Bochum
 Require-Bundle: org.eclipse.ui,

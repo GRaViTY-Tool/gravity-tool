@@ -24,7 +24,7 @@
       <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
-      <discovery label="CARiSMA" url="http://carisma.umlsec.de/beta-updatesite"/>
+      <discovery label="CARiSMA" url="https://rgse.uni-koblenz.de/carisma/updatesite/"/>
    </url>
 
    <includes

@@ -36,7 +36,8 @@ public class SecureDependencyEditingSupportTests {
 		var problems = new ArrayList<>(Stream
 				.of(project.getResource().findMarkers(IMarker.PROBLEM, true, IResource.DEPTH_INFINITE)).filter(m -> {
 					try {
-						return SecurityMarkerUtil.MARKER_SOURCE.equals(m.getAttribute(IMarker.SOURCE_ID)) && IMarker.SEVERITY_ERROR == (Integer) m.getAttribute(IMarker.SEVERITY);
+						return SecurityMarkerUtil.MARKER_SOURCE.equals(m.getAttribute(IMarker.SOURCE_ID))
+								&& IMarker.SEVERITY_ERROR == (Integer) m.getAttribute(IMarker.SEVERITY);
 					} catch (CoreException e) {
 						LOGGER.error(e);
 						return false;
@@ -50,11 +51,31 @@ public class SecureDependencyEditingSupportTests {
 		}
 		Map<Object, Object> map = new Gson().fromJson(new InputStreamReader(file.getContents()), Map.class);
 		for (Entry<Object, Object> entry : map.entrySet()) {
-			assertTrue(problems.removeIf(m -> {
-				return m.getResource().toString().equals(entry.getKey());
-			}));
+			assertTrue("Expected marker not found on resource \"" + entry.getKey() + "\" concerning the sigantures "
+					+ entry.getValue(), problems.removeIf(m -> {
+						if (m.getResource().getProjectRelativePath().toString().equals(entry.getKey())) {
+							try {
+								final var analyzed = m.getAttribute(SecurityMarkerUtil.MARKER_ATTR_ANALYZED);
+								if (analyzed instanceof String value) {
+									String[] foundSignatures = value.split(";");
+									List<String> expextedSignatures = (List<String>) entry.getValue();
+									if (foundSignatures.length == expextedSignatures.size()) {
+										for (String foundSiganture : foundSignatures) {
+											if (!expextedSignatures.contains(foundSiganture)) {
+												return false;
+											}
+										}
+										return true;
+									}
+								}
+							} catch (CoreException e) {
+								LOGGER.error(e);
+							}
+						}
+						return false;
+					}));
 		}
-		assertTrue(problems.isEmpty());
+		assertTrue("Unexpected markers have been found: " + problems, problems.isEmpty());
 
 	}
 

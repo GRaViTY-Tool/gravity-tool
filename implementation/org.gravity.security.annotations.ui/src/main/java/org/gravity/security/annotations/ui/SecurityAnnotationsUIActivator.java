@@ -1,4 +1,4 @@
-package org.gravity.security.annotations;
+package org.gravity.security.annotations.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -18,6 +18,7 @@ public class SecurityAnnotationsUIActivator extends AbstractUIPlugin {
 	 * The constructor
 	 */
 	public SecurityAnnotationsUIActivator() {
+		// Nothing to initialize
 	}
 
 	@Override

@@ -49,7 +49,7 @@ import org.gravity.security.annotations.requirements.Secrecy;
 
 @SuppressWarnings("restriction")
 public class SecureDependencyCheck extends CompilationParticipant {
-	
+
 	/**
 	 * The logger of this class
 	 */
@@ -113,8 +113,9 @@ public class SecureDependencyCheck extends CompilationParticipant {
 					if (!accessedSignatures.contains(signature)) {
 						annotations.forEach(a -> {
 							if (a.secrecy().contains(signature)) {
-								SecurityMarkerUtil.createWarningMarker(a.annotation, "There is a secrecy requirement for \"" + signature
-										+ "\" but the signature is neither defined nor accessed!");
+								SecurityMarkerUtil.createWarningMarker(a.annotation,
+										"There is a secrecy requirement for \"" + signature
+												+ "\" but the signature is neither defined nor accessed!");
 							}
 						});
 					}
@@ -123,8 +124,9 @@ public class SecureDependencyCheck extends CompilationParticipant {
 					if (!accessedSignatures.contains(signature)) {
 						annotations.forEach(a -> {
 							if (a.integrity().contains(signature)) {
-								SecurityMarkerUtil.createWarningMarker(a.annotation, "There is a integrity requirement for \"" + signature
-										+ "\" but the signature is neither defined nor accessed!");
+								SecurityMarkerUtil.createWarningMarker(a.annotation,
+										"There is a integrity requirement for \"" + signature
+												+ "\" but the signature is neither defined nor accessed!");
 							}
 						});
 					}
@@ -372,17 +374,20 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		}
 		int array = 0;
 		int arrayStart = type.indexOf('[');
-		if (arrayStart >= 0) {
-			for (; arrayStart < type.length(); arrayStart++) {
-				if ('[' == type.charAt(arrayStart)) {
+		if (arrayStart == -1) {
+			arrayStart = type.length();
+		} else {
+			for (int i = arrayStart; i < type.length(); i++) {
+				if ('[' == type.charAt(i)) {
 					array++;
 				}
 			}
 		}
 
-		String resolvedType = findType(cu, type);
+		String plainType = type.substring(0, arrayStart);
+		String resolvedType = findType(cu, plainType);
 		if (resolvedType == null) {
-			return buildArray(array, type);
+			return buildArray(array, plainType);
 		}
 		return buildArray(array, resolvedType);
 	}
@@ -464,11 +469,45 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			if (type != null) {
 				return type;
 			}
+
+			String qualifiedType = findQualifiedTypeUsage(cu, name);
+			if (qualifiedType != null) {
+				return qualifiedType;
+			}
 		} catch (CoreException e) {
 			throw new IllegalStateException(e);
 		}
 
 		return null;
+	}
+
+	private String findQualifiedTypeUsage(ICompilationUnit cu, String name) throws JavaModelException {
+		for (IType definedType : cu.getTypes()) {
+			for (IField field : definedType.getFields()) {
+				final var fieldType = field.getTypeSignature();
+				if (isQualifiedVersion(name, fieldType)) {
+					return getFullyQualifiedName4JDT(cu, fieldType);
+				}
+			}
+			for (IMethod method : definedType.getMethods()) {
+				final var returnType = method.getReturnType();
+				if (isQualifiedVersion(name, returnType)) {
+					return getFullyQualifiedName4JDT(cu, returnType);
+				}
+				for (String parameterType : method.getParameterTypes()) {
+					if (isQualifiedVersion(name, parameterType)) {
+						return getFullyQualifiedName4JDT(cu, parameterType);
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	private boolean isQualifiedVersion(String nonQualified, final String potentiallyQualified) {
+		int index = potentiallyQualified.lastIndexOf(Util.C_DOT);
+		return index >= 0 && nonQualified
+				.equals(potentiallyQualified.substring(index + 1, potentiallyQualified.indexOf(Util.C_SEMICOLON)));
 	}
 
 	/**
@@ -609,7 +648,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	}
 
-	public static Collection<IMarker> createErrorMarker(MethodCall methodCall, String message, String... relevantMember) {
+	public static Collection<IMarker> createErrorMarker(MethodCall methodCall, String message,
+			String... relevantMember) {
 		Collection<CallLocation> callLocations = methodCall.getCallLocations();
 		Collection<IMarker> marker = new ArrayList<>(callLocations.size());
 		for (CallLocation callLocation : callLocations) {

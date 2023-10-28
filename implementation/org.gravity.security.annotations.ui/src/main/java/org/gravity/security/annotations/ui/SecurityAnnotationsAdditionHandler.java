@@ -1,4 +1,4 @@
-package security.annotations.ui;
+package org.gravity.security.annotations.ui;
 
 import java.io.IOException;
 import java.util.Arrays;

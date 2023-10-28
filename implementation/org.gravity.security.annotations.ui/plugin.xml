@@ -29,7 +29,7 @@
             id="security.annotations.ui.add"
             name="Add Security Annotations Library">
          <defaultHandler
-               class="security.annotations.ui.SecurityAnnotationsAdditionHandler">
+               class="org.gravity.security.annotations.ui.SecurityAnnotationsAdditionHandler">
          </defaultHandler>
       </command>
     </extension>

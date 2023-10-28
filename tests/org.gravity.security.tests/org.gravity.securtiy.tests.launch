@@ -392,7 +392,6 @@
         <setEntry value="org.gravity.eclipse.tests@default:default"/>
         <setEntry value="org.gravity.eclipse.ui@default:default"/>
         <setEntry value="org.gravity.eclipse@default:default"/>
-        <setEntry value="org.gravity.goblin@default:default"/>
         <setEntry value="org.gravity.modisco@default:default"/>
         <setEntry value="org.gravity.security.annotations.pm@default:default"/>
         <setEntry value="org.gravity.security.annotations.ui@default:default"/>
