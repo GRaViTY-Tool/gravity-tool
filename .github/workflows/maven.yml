@@ -34,7 +34,7 @@ jobs:
     - name: Run headless test
       uses: coactions/setup-xvfb@v1
       with:
-        run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage -Declipse.p2.mirrors=false
+        run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Declipse.p2.mirrors=false
     - name: Publisch Pre-Release
       if: ${{ github.ref == 'refs/heads/master' }}
       uses: "marvinpinto/action-automatic-releases@latest"
