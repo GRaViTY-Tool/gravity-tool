@@ -112,8 +112,8 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mPackageToTPackage,
-			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject annotatable2Annotatable,
+			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType);
 
 	/**
@@ -196,8 +196,8 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mPackageToTPackage,
-			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject annotatable2Annotatable,
+			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType);
 
 	/**
@@ -214,7 +214,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_allTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_17(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface EnumInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_17(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->

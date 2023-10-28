@@ -107,8 +107,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject comment,
-			EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature,
+			EObject comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,8 +188,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject comment,
-			EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature,
+			EObject comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_115(EMoflonEdge _edge_annotatedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_144(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->

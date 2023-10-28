@@ -177,7 +177,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_115(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_149(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

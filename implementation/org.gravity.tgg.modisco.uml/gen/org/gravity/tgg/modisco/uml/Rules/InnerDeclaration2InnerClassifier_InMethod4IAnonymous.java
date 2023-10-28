@@ -216,7 +216,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4IAnonymous extends EO
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +224,7 @@ public interface InnerDeclaration2InnerClassifier_InMethod4IAnonymous extends EO
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_112(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_148(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

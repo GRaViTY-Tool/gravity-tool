@@ -673,7 +673,7 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_55(EMoflonEdge _edge_namespace) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_namespace) {
 
 		Object[] result1_bindingAndBlack = ClassFilePackageToNamespaceImpl
 				.pattern_ClassFilePackageToNamespace_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -732,7 +732,7 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_59(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = ClassFilePackageToNamespaceImpl
 				.pattern_ClassFilePackageToNamespace_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1161,10 +1161,10 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_55__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_55((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_59__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_59((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_2__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_2__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

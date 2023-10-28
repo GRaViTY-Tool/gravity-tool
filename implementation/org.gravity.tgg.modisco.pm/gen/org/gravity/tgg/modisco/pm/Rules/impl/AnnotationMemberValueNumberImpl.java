@@ -176,11 +176,11 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result1_bindingAndBlack[1];
 		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[2];
 		BodyDeclaration mOwner = (BodyDeclaration) result1_bindingAndBlack[3];
-		TAnnotationValue tAnnotationValue = (TAnnotationValue) result1_bindingAndBlack[4];
-		NumberLiteral mValue = (NumberLiteral) result1_bindingAndBlack[5];
+		NumberLiteral mValue = (NumberLiteral) result1_bindingAndBlack[4];
+		TAnnotationValue tAnnotationValue = (TAnnotationValue) result1_bindingAndBlack[5];
 		CSP csp = (CSP) result1_bindingAndBlack[6];
 		Object[] result1_green = AnnotationMemberValueNumberImpl
-				.pattern_AnnotationMemberValueNumber_1_1_performtransformation_greenFFBBB(tAnnotationValue, mValue,
+				.pattern_AnnotationMemberValueNumber_1_1_performtransformation_greenFFBBB(mValue, tAnnotationValue,
 						csp);
 		LiteralToTNode mTypeToTType = (LiteralToTNode) result1_green[0];
 		TNumberNode tValue = (TNumberNode) result1_green[1];
@@ -200,16 +200,16 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		Object[] result3_black = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, annotation,
 						AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, tValue, mOwner,
-						tAnnotationValue, mValue);
+						mValue, tAnnotationValue);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[annotation] = " + annotation + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 					+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = " + mAnnotationValue
 					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tValue] = " + tValue + ", " + "[mOwner] = "
-					+ mOwner + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
+					+ mOwner + ", " + "[mValue] = " + mValue + ", " + "[tAnnotationValue] = " + tAnnotationValue + ".");
 		}
 		AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-				ruleresult, mAnnotationValue, mTypeToTType, tValue, tAnnotationValue, mValue);
+				ruleresult, mAnnotationValue, mTypeToTType, tValue, mValue, tAnnotationValue);
 		//nothing EMoflonEdge mAnnotationValue__mValue____value = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge mTypeToTType__mValue____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
@@ -219,7 +219,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		// 
 		AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_1_5_registerobjects_expressionBBBBBBBBBB(
 				this, ruleresult, annotation, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mTypeToTType, tValue, mOwner, tAnnotationValue, mValue);
+				mTypeToTType, tValue, mOwner, mValue, tAnnotationValue);
 		return AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_1_6_expressionFB(ruleresult);
 	}
 
@@ -253,19 +253,19 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		BodyDeclaration mOwner = (BodyDeclaration) result2_binding[2];
 		NumberLiteral mValue = (NumberLiteral) result2_binding[3];
 		for (Object[] result2_black : AnnotationMemberValueNumberImpl
-				.pattern_AnnotationMemberValueNumber_2_2_corematch_blackBFBBFBB(annotation, mAnnotationValue, mOwner,
+				.pattern_AnnotationMemberValueNumber_2_2_corematch_blackBFBBBFB(annotation, mAnnotationValue, mOwner,
 						mValue, match)) {
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[1];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[4];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : AnnotationMemberValueNumberImpl
 					.pattern_AnnotationMemberValueNumber_2_3_findcontext_blackBBBBBB(annotation,
-							AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue,
-							mValue)) {
+							AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue,
+							tAnnotationValue)) {
 				Object[] result3_green = AnnotationMemberValueNumberImpl
 						.pattern_AnnotationMemberValueNumber_2_3_findcontext_greenBBBBBBFFFFFF(annotation,
-								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue,
-								mValue);
+								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue,
+								tAnnotationValue);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = (EMoflonEdge) result3_green[8];
@@ -276,14 +276,14 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 				Object[] result4_bindingAndBlack = AnnotationMemberValueNumberImpl
 						.pattern_AnnotationMemberValueNumber_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
 								isApplicableMatch, annotation, AnnotationMemberValuePairToTAnnotationValue,
-								mAnnotationValue, mOwner, tAnnotationValue, mValue);
+								mAnnotationValue, mOwner, mValue, tAnnotationValue);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation
 							+ ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 							+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = "
-							+ mAnnotationValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = "
-							+ tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
+							+ mAnnotationValue + ", " + "[mOwner] = " + mOwner + ", " + "[mValue] = " + mValue + ", "
+							+ "[tAnnotationValue] = " + tAnnotationValue + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -361,8 +361,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			NumberLiteral mValue) {// Create CSP
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, NumberLiteral mValue,
+			TAnnotationValue tAnnotationValue) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -392,8 +392,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 				AnnotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
 		isApplicableMatch.registerObject("mOwner", mOwner);
-		isApplicableMatch.registerObject("tAnnotationValue", tAnnotationValue);
 		isApplicableMatch.registerObject("mValue", mValue);
+		isApplicableMatch.registerObject("tAnnotationValue", tAnnotationValue);
 		return csp;
 	}
 
@@ -413,7 +413,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
 			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
+			EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue) {
 		ruleresult.registerObject("annotation", annotation);
 		ruleresult.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
@@ -421,8 +421,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tValue", tValue);
 		ruleresult.registerObject("mOwner", mOwner);
-		ruleresult.registerObject("tAnnotationValue", tAnnotationValue);
 		ruleresult.registerObject("mValue", mValue);
+		ruleresult.registerObject("tAnnotationValue", tAnnotationValue);
 
 	}
 
@@ -540,16 +540,16 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		Object[] result3_black = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, annotation,
 						AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, tValue, mOwner,
-						tAnnotationValue, mValue);
+						mValue, tAnnotationValue);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[annotation] = " + annotation + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 					+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = " + mAnnotationValue
 					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tValue] = " + tValue + ", " + "[mOwner] = "
-					+ mOwner + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
+					+ mOwner + ", " + "[mValue] = " + mValue + ", " + "[tAnnotationValue] = " + tAnnotationValue + ".");
 		}
 		AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-				ruleresult, mAnnotationValue, mTypeToTType, tValue, tAnnotationValue, mValue);
+				ruleresult, mAnnotationValue, mTypeToTType, tValue, mValue, tAnnotationValue);
 		//nothing EMoflonEdge mAnnotationValue__mValue____value = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge mTypeToTType__mValue____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
@@ -559,7 +559,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		// 
 		AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_11_5_registerobjects_expressionBBBBBBBBBB(
 				this, ruleresult, annotation, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mTypeToTType, tValue, mOwner, tAnnotationValue, mValue);
+				mTypeToTType, tValue, mOwner, mValue, tAnnotationValue);
 		return AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_11_6_expressionFB(ruleresult);
 	}
 
@@ -747,7 +747,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
 			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
+			EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue) {
 		ruleresult.registerObject("annotation", annotation);
 		ruleresult.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
@@ -755,8 +755,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tValue", tValue);
 		ruleresult.registerObject("mOwner", mOwner);
-		ruleresult.registerObject("tAnnotationValue", tAnnotationValue);
 		ruleresult.registerObject("mValue", mValue);
+		ruleresult.registerObject("tAnnotationValue", tAnnotationValue);
 
 	}
 
@@ -775,7 +775,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_99(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_40(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -834,7 +834,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_41(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1011,17 +1011,17 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_bindingAndBlack[1];
 		TNumberNode tValue = (TNumberNode) result2_bindingAndBlack[2];
 		BodyDeclaration mOwner = (BodyDeclaration) result2_bindingAndBlack[3];
-		TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_bindingAndBlack[4];
-		NumberLiteral mValue = (NumberLiteral) result2_bindingAndBlack[5];
+		NumberLiteral mValue = (NumberLiteral) result2_bindingAndBlack[4];
+		TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = AnnotationMemberValueNumberImpl
 				.pattern_AnnotationMemberValueNumber_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, annotation,
-						mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue, sourceMatch, targetMatch);
+						mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[annotation] = " + annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", "
-					+ "[tValue] = " + tValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = "
-					+ tAnnotationValue + ", " + "[mValue] = " + mValue + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[tValue] = " + tValue + ", " + "[mOwner] = " + mOwner + ", " + "[mValue] = " + mValue + ", "
+					+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1039,12 +1039,12 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 				Object[] result6_black = AnnotationMemberValueNumberImpl
 						.pattern_AnnotationMemberValueNumber_24_6_createcorrespondence_blackBBBBBBB(annotation,
-								mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue, ccMatch);
+								mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[annotation] = "
 							+ annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[tValue] = "
-							+ tValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = " + tAnnotationValue
-							+ ", " + "[mValue] = " + mValue + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ tValue + ", " + "[mOwner] = " + mOwner + ", " + "[mValue] = " + mValue + ", "
+							+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_24_6_createcorrespondence_greenFBBB(
 						tValue, mValue, ccMatch);
@@ -1072,7 +1072,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			TNumberNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, NumberLiteral mValue,
+			TNumberNode tValue, BodyDeclaration mOwner, NumberLiteral mValue, TAnnotationValue tAnnotationValue,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1205,11 +1205,11 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 								+ mAnnotationValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = "
 								+ tAnnotationValue + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_29_6_perform_greenBFFBFBB(
+					AnnotationMemberValueNumberImpl.pattern_AnnotationMemberValueNumber_29_6_perform_greenBFFFBBB(
 							mAnnotationValue, tAnnotationValue, ruleResult, csp);
 					//nothing LiteralToTNode mTypeToTType = (LiteralToTNode) result6_green[1];
 					//nothing TNumberNode tValue = (TNumberNode) result6_green[2];
-					//nothing NumberLiteral mValue = (NumberLiteral) result6_green[4];
+					//nothing NumberLiteral mValue = (NumberLiteral) result6_green[3];
 
 				} else {
 				}
@@ -1298,11 +1298,11 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 					(NumberLiteral) arguments.get(4));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_BODYDECLARATION_TANNOTATIONVALUE_NUMBERLITERAL:
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_BODYDECLARATION_NUMBERLITERAL_TANNOTATIONVALUE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
 					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(2),
 					(AnnotationMemberValuePair) arguments.get(3), (BodyDeclaration) arguments.get(4),
-					(TAnnotationValue) arguments.get(5), (NumberLiteral) arguments.get(6));
+					(NumberLiteral) arguments.get(5), (TAnnotationValue) arguments.get(6));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1344,20 +1344,20 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_99__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_99((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_104__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_104((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_40__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_41__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_41((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_TNUMBERNODE_BODYDECLARATION_TANNOTATIONVALUE_NUMBERLITERAL_MATCH_MATCH:
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_TNUMBERNODE_BODYDECLARATION_NUMBERLITERAL_TANNOTATIONVALUE_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((Annotation) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
 					(TNumberNode) arguments.get(2), (BodyDeclaration) arguments.get(3),
-					(TAnnotationValue) arguments.get(4), (NumberLiteral) arguments.get(5), (Match) arguments.get(6),
+					(NumberLiteral) arguments.get(4), (TAnnotationValue) arguments.get(5), (Match) arguments.get(6),
 					(Match) arguments.get(7));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_NUMBER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1494,14 +1494,14 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		EObject _localVariable_1 = isApplicableMatch.getObject("AnnotationMemberValuePairToTAnnotationValue");
 		EObject _localVariable_2 = isApplicableMatch.getObject("mAnnotationValue");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mOwner");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tAnnotationValue");
-		EObject _localVariable_5 = isApplicableMatch.getObject("mValue");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mValue");
+		EObject _localVariable_5 = isApplicableMatch.getObject("tAnnotationValue");
 		EObject tmpAnnotation = _localVariable_0;
 		EObject tmpAnnotationMemberValuePairToTAnnotationValue = _localVariable_1;
 		EObject tmpMAnnotationValue = _localVariable_2;
 		EObject tmpMOwner = _localVariable_3;
-		EObject tmpTAnnotationValue = _localVariable_4;
-		EObject tmpMValue = _localVariable_5;
+		EObject tmpMValue = _localVariable_4;
+		EObject tmpTAnnotationValue = _localVariable_5;
 		if (tmpAnnotation instanceof Annotation) {
 			Annotation annotation = (Annotation) tmpAnnotation;
 			if (tmpAnnotationMemberValuePairToTAnnotationValue instanceof AnnotationMemberValuePairToTAnnotationValue) {
@@ -1510,12 +1510,12 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 					AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
 					if (tmpMOwner instanceof BodyDeclaration) {
 						BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
-						if (tmpTAnnotationValue instanceof TAnnotationValue) {
-							TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-							if (tmpMValue instanceof NumberLiteral) {
-								NumberLiteral mValue = (NumberLiteral) tmpMValue;
+						if (tmpMValue instanceof NumberLiteral) {
+							NumberLiteral mValue = (NumberLiteral) tmpMValue;
+							if (tmpTAnnotationValue instanceof TAnnotationValue) {
+								TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
 								return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue,
-										mAnnotationValue, mOwner, tAnnotationValue, mValue, isApplicableMatch };
+										mAnnotationValue, mOwner, mValue, tAnnotationValue, isApplicableMatch };
 							}
 						}
 					}
@@ -1528,13 +1528,13 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_AnnotationMemberValueNumber_1_1_performtransformation_blackBBBBBBFBB(
 			Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			NumberLiteral mValue, AnnotationMemberValueNumber _this, IsApplicableMatch isApplicableMatch) {
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, NumberLiteral mValue,
+			TAnnotationValue tAnnotationValue, AnnotationMemberValueNumber _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
 				return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
-						tAnnotationValue, mValue, csp, _this, isApplicableMatch };
+						mValue, tAnnotationValue, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1549,24 +1549,24 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[1];
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[2];
 			BodyDeclaration mOwner = (BodyDeclaration) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[3];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[4];
-			NumberLiteral mValue = (NumberLiteral) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[5];
+			NumberLiteral mValue = (NumberLiteral) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[4];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_black = pattern_AnnotationMemberValueNumber_1_1_performtransformation_blackBBBBBBFBB(
-					annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue,
-					mValue, _this, isApplicableMatch);
+					annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue,
+					tAnnotationValue, _this, isApplicableMatch);
 			if (result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationMemberValueNumber_1_1_performtransformation_black[6];
 
 				return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
-						tAnnotationValue, mValue, csp, _this, isApplicableMatch };
+						mValue, tAnnotationValue, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_1_1_performtransformation_greenFFBBB(
-			TAnnotationValue tAnnotationValue, NumberLiteral mValue, CSP csp) {
+			NumberLiteral mValue, TAnnotationValue tAnnotationValue, CSP csp) {
 		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
 		TNumberNode tValue = AnnotationsFactory.eINSTANCE.createTNumberNode();
 		Object _localVariable_0 = csp.getValue("tValue", "tNumber");
@@ -1575,7 +1575,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		mTypeToTType.setTarget(tValue);
 		String tValue_tNumber_prime = (String) _localVariable_0;
 		tValue.setTNumber(tValue_tNumber_prime);
-		return new Object[] { mTypeToTType, tValue, tAnnotationValue, mValue, csp };
+		return new Object[] { mTypeToTType, tValue, mValue, tAnnotationValue, csp };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_1_2_collecttranslatedelements_blackBBB(
@@ -1594,48 +1594,46 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_1_3_bookkeepingforedges_blackBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject annotation, EObject annotationMemberValuePairToTAnnotationValue,
-			EObject mAnnotationValue, EObject mTypeToTType, EObject tValue, EObject mOwner, EObject tAnnotationValue,
-			EObject mValue) {
+			EObject mAnnotationValue, EObject mTypeToTType, EObject tValue, EObject mOwner, EObject mValue,
+			EObject tAnnotationValue) {
 		if (!annotation.equals(mAnnotationValue)) {
 			if (!annotation.equals(mTypeToTType)) {
 				if (!annotation.equals(tValue)) {
 					if (!annotation.equals(mOwner)) {
-						if (!annotation.equals(tAnnotationValue)) {
-							if (!annotation.equals(mValue)) {
+						if (!annotation.equals(mValue)) {
+							if (!annotation.equals(tAnnotationValue)) {
 								if (!annotationMemberValuePairToTAnnotationValue.equals(annotation)) {
 									if (!annotationMemberValuePairToTAnnotationValue.equals(mAnnotationValue)) {
 										if (!annotationMemberValuePairToTAnnotationValue.equals(mTypeToTType)) {
 											if (!annotationMemberValuePairToTAnnotationValue.equals(tValue)) {
 												if (!annotationMemberValuePairToTAnnotationValue.equals(mOwner)) {
-													if (!annotationMemberValuePairToTAnnotationValue
-															.equals(tAnnotationValue)) {
+													if (!annotationMemberValuePairToTAnnotationValue.equals(mValue)) {
 														if (!annotationMemberValuePairToTAnnotationValue
-																.equals(mValue)) {
+																.equals(tAnnotationValue)) {
 															if (!mAnnotationValue.equals(mTypeToTType)) {
 																if (!mAnnotationValue.equals(tValue)) {
 																	if (!mAnnotationValue.equals(mOwner)) {
-																		if (!mAnnotationValue
-																				.equals(tAnnotationValue)) {
-																			if (!mAnnotationValue.equals(mValue)) {
+																		if (!mAnnotationValue.equals(mValue)) {
+																			if (!mAnnotationValue
+																					.equals(tAnnotationValue)) {
 																				if (!mTypeToTType.equals(tValue)) {
-																					if (!mTypeToTType
-																							.equals(tAnnotationValue)) {
-																						if (!mTypeToTType
-																								.equals(mValue)) {
+																					if (!mTypeToTType.equals(mValue)) {
+																						if (!mTypeToTType.equals(
+																								tAnnotationValue)) {
 																							if (!mOwner.equals(
 																									mTypeToTType)) {
 																								if (!mOwner.equals(
 																										tValue)) {
 																									if (!mOwner.equals(
-																											tAnnotationValue)) {
+																											mValue)) {
 																										if (!mOwner
-																												.equals(mValue)) {
-																											if (!tAnnotationValue
+																												.equals(tAnnotationValue)) {
+																											if (!mValue
 																													.equals(tValue)) {
 																												if (!mValue
-																														.equals(tValue)) {
-																													if (!mValue
-																															.equals(tAnnotationValue)) {
+																														.equals(tAnnotationValue)) {
+																													if (!tAnnotationValue
+																															.equals(tValue)) {
 																														return new Object[] {
 																																ruleresult,
 																																annotation,
@@ -1644,8 +1642,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 																																mTypeToTType,
 																																tValue,
 																																mOwner,
-																																tAnnotationValue,
-																																mValue };
+																																mValue,
+																																tAnnotationValue };
 																													}
 																												}
 																											}
@@ -1679,7 +1677,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_1_3_bookkeepingforedges_greenBBBBBBFFFF(
 			PerformRuleResult ruleresult, EObject mAnnotationValue, EObject mTypeToTType, EObject tValue,
-			EObject tAnnotationValue, EObject mValue) {
+			EObject mValue, EObject tAnnotationValue) {
 		EMoflonEdge mAnnotationValue__mValue____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1706,7 +1704,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		mTypeToTType__mValue____source.setName(mTypeToTType__mValue____source_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
 		mTypeToTType__tValue____target.setName(mTypeToTType__tValue____target_name_prime);
-		return new Object[] { ruleresult, mAnnotationValue, mTypeToTType, tValue, tAnnotationValue, mValue,
+		return new Object[] { ruleresult, mAnnotationValue, mTypeToTType, tValue, mValue, tAnnotationValue,
 				mAnnotationValue__mValue____value, mTypeToTType__mValue____source, tAnnotationValue__tValue____tValue,
 				mTypeToTType__tValue____target };
 	}
@@ -1714,9 +1712,9 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final void pattern_AnnotationMemberValueNumber_1_5_registerobjects_expressionBBBBBBBBBB(
 			AnnotationMemberValueNumber _this, PerformRuleResult ruleresult, EObject annotation,
 			EObject annotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
+			EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue) {
 		_this.registerObjects_FWD(ruleresult, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mTypeToTType, tValue, mOwner, tAnnotationValue, mValue);
+				mTypeToTType, tValue, mOwner, mValue, tAnnotationValue);
 
 	}
 
@@ -1802,7 +1800,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueNumber_2_2_corematch_blackBFBBFBB(
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueNumber_2_2_corematch_blackBFBBBFB(
 			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner,
 			NumberLiteral mValue, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -1812,7 +1810,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 			TAnnotationValue tAnnotationValue = annotationMemberValuePairToTAnnotationValue.getTarget();
 			if (tAnnotationValue != null) {
 				_result.add(new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-						mOwner, tAnnotationValue, mValue, match });
+						mOwner, mValue, tAnnotationValue, match });
 			}
 
 		}
@@ -1822,8 +1820,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final Iterable<Object[]> pattern_AnnotationMemberValueNumber_2_3_findcontext_blackBBBBBB(
 			Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			NumberLiteral mValue) {
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, NumberLiteral mValue,
+			TAnnotationValue tAnnotationValue) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (mAnnotationValue.equals(annotationMemberValuePairToTAnnotationValue.getSource())) {
 			if (tAnnotationValue.equals(annotationMemberValuePairToTAnnotationValue.getTarget())) {
@@ -1831,7 +1829,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 					if (mValue.equals(mAnnotationValue.getValue())) {
 						if (annotation.getValues().contains(mAnnotationValue)) {
 							_result.add(new Object[] { annotation, annotationMemberValuePairToTAnnotationValue,
-									mAnnotationValue, mOwner, tAnnotationValue, mValue });
+									mAnnotationValue, mOwner, mValue, tAnnotationValue });
 						}
 					}
 				}
@@ -1843,8 +1841,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_AnnotationMemberValueNumber_2_3_findcontext_greenBBBBBBFFFFFF(
 			Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			NumberLiteral mValue) {
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, NumberLiteral mValue,
+			TAnnotationValue tAnnotationValue) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -1862,8 +1860,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		isApplicableMatch.getAllContextElements().add(annotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mOwner);
-		isApplicableMatch.getAllContextElements().add(tAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mValue);
+		isApplicableMatch.getAllContextElements().add(tAnnotationValue);
 		annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source
 				.setSrc(annotationMemberValuePairToTAnnotationValue);
 		annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source.setTrg(mAnnotationValue);
@@ -1890,8 +1888,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		mOwner__annotation____annotations.setName(mOwner__annotation____annotations_name_prime);
 		mAnnotationValue__mValue____value.setName(mAnnotationValue__mValue____value_name_prime);
 		annotation__mAnnotationValue____values.setName(annotation__mAnnotationValue____values_name_prime);
-		return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
-				tAnnotationValue, mValue, isApplicableMatch,
+		return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue,
+				tAnnotationValue, isApplicableMatch,
 				annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source,
 				annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target,
 				mOwner__annotation____annotations, mAnnotationValue__mValue____value,
@@ -1901,14 +1899,14 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_AnnotationMemberValueNumber_2_4_solveCSP_bindingFBBBBBBBB(
 			AnnotationMemberValueNumber _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			NumberLiteral mValue) {
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, NumberLiteral mValue,
+			TAnnotationValue tAnnotationValue) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, annotation,
-				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue, mValue);
+				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue, tAnnotationValue);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
 			return new Object[] { csp, _this, isApplicableMatch, annotation,
-					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue, mValue };
+					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue, tAnnotationValue };
 		}
 		return null;
 	}
@@ -1920,11 +1918,11 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_AnnotationMemberValueNumber_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			AnnotationMemberValueNumber _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			NumberLiteral mValue) {
+			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, NumberLiteral mValue,
+			TAnnotationValue tAnnotationValue) {
 		Object[] result_pattern_AnnotationMemberValueNumber_2_4_solveCSP_binding = pattern_AnnotationMemberValueNumber_2_4_solveCSP_bindingFBBBBBBBB(
 				_this, isApplicableMatch, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mOwner, tAnnotationValue, mValue);
+				mOwner, mValue, tAnnotationValue);
 		if (result_pattern_AnnotationMemberValueNumber_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueNumber_2_4_solveCSP_binding[0];
 
@@ -1933,8 +1931,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 			if (result_pattern_AnnotationMemberValueNumber_2_4_solveCSP_black != null) {
 
 				return new Object[] { csp, _this, isApplicableMatch, annotation,
-						annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue,
-						mValue };
+						annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, mValue,
+						tAnnotationValue };
 			}
 		}
 		return null;
@@ -2161,48 +2159,46 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_11_3_bookkeepingforedges_blackBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject annotation, EObject annotationMemberValuePairToTAnnotationValue,
-			EObject mAnnotationValue, EObject mTypeToTType, EObject tValue, EObject mOwner, EObject tAnnotationValue,
-			EObject mValue) {
+			EObject mAnnotationValue, EObject mTypeToTType, EObject tValue, EObject mOwner, EObject mValue,
+			EObject tAnnotationValue) {
 		if (!annotation.equals(mAnnotationValue)) {
 			if (!annotation.equals(mTypeToTType)) {
 				if (!annotation.equals(tValue)) {
 					if (!annotation.equals(mOwner)) {
-						if (!annotation.equals(tAnnotationValue)) {
-							if (!annotation.equals(mValue)) {
+						if (!annotation.equals(mValue)) {
+							if (!annotation.equals(tAnnotationValue)) {
 								if (!annotationMemberValuePairToTAnnotationValue.equals(annotation)) {
 									if (!annotationMemberValuePairToTAnnotationValue.equals(mAnnotationValue)) {
 										if (!annotationMemberValuePairToTAnnotationValue.equals(mTypeToTType)) {
 											if (!annotationMemberValuePairToTAnnotationValue.equals(tValue)) {
 												if (!annotationMemberValuePairToTAnnotationValue.equals(mOwner)) {
-													if (!annotationMemberValuePairToTAnnotationValue
-															.equals(tAnnotationValue)) {
+													if (!annotationMemberValuePairToTAnnotationValue.equals(mValue)) {
 														if (!annotationMemberValuePairToTAnnotationValue
-																.equals(mValue)) {
+																.equals(tAnnotationValue)) {
 															if (!mAnnotationValue.equals(mTypeToTType)) {
 																if (!mAnnotationValue.equals(tValue)) {
 																	if (!mAnnotationValue.equals(mOwner)) {
-																		if (!mAnnotationValue
-																				.equals(tAnnotationValue)) {
-																			if (!mAnnotationValue.equals(mValue)) {
+																		if (!mAnnotationValue.equals(mValue)) {
+																			if (!mAnnotationValue
+																					.equals(tAnnotationValue)) {
 																				if (!mTypeToTType.equals(tValue)) {
-																					if (!mTypeToTType
-																							.equals(tAnnotationValue)) {
-																						if (!mTypeToTType
-																								.equals(mValue)) {
+																					if (!mTypeToTType.equals(mValue)) {
+																						if (!mTypeToTType.equals(
+																								tAnnotationValue)) {
 																							if (!mOwner.equals(
 																									mTypeToTType)) {
 																								if (!mOwner.equals(
 																										tValue)) {
 																									if (!mOwner.equals(
-																											tAnnotationValue)) {
+																											mValue)) {
 																										if (!mOwner
-																												.equals(mValue)) {
-																											if (!tAnnotationValue
+																												.equals(tAnnotationValue)) {
+																											if (!mValue
 																													.equals(tValue)) {
 																												if (!mValue
-																														.equals(tValue)) {
-																													if (!mValue
-																															.equals(tAnnotationValue)) {
+																														.equals(tAnnotationValue)) {
+																													if (!tAnnotationValue
+																															.equals(tValue)) {
 																														return new Object[] {
 																																ruleresult,
 																																annotation,
@@ -2211,8 +2207,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 																																mTypeToTType,
 																																tValue,
 																																mOwner,
-																																tAnnotationValue,
-																																mValue };
+																																mValue,
+																																tAnnotationValue };
 																													}
 																												}
 																											}
@@ -2246,7 +2242,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_11_3_bookkeepingforedges_greenBBBBBBFFFF(
 			PerformRuleResult ruleresult, EObject mAnnotationValue, EObject mTypeToTType, EObject tValue,
-			EObject tAnnotationValue, EObject mValue) {
+			EObject mValue, EObject tAnnotationValue) {
 		EMoflonEdge mAnnotationValue__mValue____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2273,7 +2269,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		mTypeToTType__mValue____source.setName(mTypeToTType__mValue____source_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
 		mTypeToTType__tValue____target.setName(mTypeToTType__tValue____target_name_prime);
-		return new Object[] { ruleresult, mAnnotationValue, mTypeToTType, tValue, tAnnotationValue, mValue,
+		return new Object[] { ruleresult, mAnnotationValue, mTypeToTType, tValue, mValue, tAnnotationValue,
 				mAnnotationValue__mValue____value, mTypeToTType__mValue____source, tAnnotationValue__tValue____tValue,
 				mTypeToTType__tValue____target };
 	}
@@ -2281,9 +2277,9 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 	public static final void pattern_AnnotationMemberValueNumber_11_5_registerobjects_expressionBBBBBBBBBB(
 			AnnotationMemberValueNumber _this, PerformRuleResult ruleresult, EObject annotation,
 			EObject annotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
+			EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue) {
 		_this.registerObjects_BWD(ruleresult, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mTypeToTType, tValue, mOwner, tAnnotationValue, mValue);
+				mTypeToTType, tValue, mOwner, mValue, tAnnotationValue);
 
 	}
 
@@ -2785,14 +2781,14 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		EObject _localVariable_1 = sourceMatch.getObject("mAnnotationValue");
 		EObject _localVariable_2 = targetMatch.getObject("tValue");
 		EObject _localVariable_3 = sourceMatch.getObject("mOwner");
-		EObject _localVariable_4 = targetMatch.getObject("tAnnotationValue");
-		EObject _localVariable_5 = sourceMatch.getObject("mValue");
+		EObject _localVariable_4 = sourceMatch.getObject("mValue");
+		EObject _localVariable_5 = targetMatch.getObject("tAnnotationValue");
 		EObject tmpAnnotation = _localVariable_0;
 		EObject tmpMAnnotationValue = _localVariable_1;
 		EObject tmpTValue = _localVariable_2;
 		EObject tmpMOwner = _localVariable_3;
-		EObject tmpTAnnotationValue = _localVariable_4;
-		EObject tmpMValue = _localVariable_5;
+		EObject tmpMValue = _localVariable_4;
+		EObject tmpTAnnotationValue = _localVariable_5;
 		if (tmpAnnotation instanceof Annotation) {
 			Annotation annotation = (Annotation) tmpAnnotation;
 			if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
@@ -2801,12 +2797,12 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 					TNumberNode tValue = (TNumberNode) tmpTValue;
 					if (tmpMOwner instanceof BodyDeclaration) {
 						BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
-						if (tmpTAnnotationValue instanceof TAnnotationValue) {
-							TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-							if (tmpMValue instanceof NumberLiteral) {
-								NumberLiteral mValue = (NumberLiteral) tmpMValue;
-								return new Object[] { annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue,
-										mValue, sourceMatch, targetMatch };
+						if (tmpMValue instanceof NumberLiteral) {
+							NumberLiteral mValue = (NumberLiteral) tmpMValue;
+							if (tmpTAnnotationValue instanceof TAnnotationValue) {
+								TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
+								return new Object[] { annotation, mAnnotationValue, tValue, mOwner, mValue,
+										tAnnotationValue, sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -2818,10 +2814,10 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_blackBBBBBBBB(
 			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TNumberNode tValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, NumberLiteral mValue, Match sourceMatch,
+			BodyDeclaration mOwner, NumberLiteral mValue, TAnnotationValue tAnnotationValue, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue, sourceMatch,
+			return new Object[] { annotation, mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2836,14 +2832,14 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[1];
 			TNumberNode tValue = (TNumberNode) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[2];
 			BodyDeclaration mOwner = (BodyDeclaration) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[3];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[4];
-			NumberLiteral mValue = (NumberLiteral) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[5];
+			NumberLiteral mValue = (NumberLiteral) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[4];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_black = pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue, sourceMatch, targetMatch);
+					annotation, mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue, sourceMatch, targetMatch);
 			if (result_pattern_AnnotationMemberValueNumber_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue,
+				return new Object[] { annotation, mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2852,13 +2848,13 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_24_3_solvecsp_bindingFBBBBBBBBB(
 			AnnotationMemberValueNumber _this, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			TNumberNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, NumberLiteral mValue,
+			TNumberNode tValue, BodyDeclaration mOwner, NumberLiteral mValue, TAnnotationValue tAnnotationValue,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(annotation, mAnnotationValue, tValue, mOwner,
-				tAnnotationValue, mValue, sourceMatch, targetMatch);
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(annotation, mAnnotationValue, tValue, mOwner, mValue,
+				tAnnotationValue, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue,
+			return new Object[] { csp, _this, annotation, mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -2870,10 +2866,10 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
 			AnnotationMemberValueNumber _this, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			TNumberNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, NumberLiteral mValue,
+			TNumberNode tValue, BodyDeclaration mOwner, NumberLiteral mValue, TAnnotationValue tAnnotationValue,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnnotationMemberValueNumber_24_3_solvecsp_binding = pattern_AnnotationMemberValueNumber_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue, sourceMatch,
+				_this, annotation, mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue, sourceMatch,
 				targetMatch);
 		if (result_pattern_AnnotationMemberValueNumber_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueNumber_24_3_solvecsp_binding[0];
@@ -2882,8 +2878,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_AnnotationMemberValueNumber_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue,
-						mValue, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, annotation, mAnnotationValue, tValue, mOwner, mValue,
+						tAnnotationValue, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2926,8 +2922,8 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_24_6_createcorrespondence_blackBBBBBBB(
 			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, TNumberNode tValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, NumberLiteral mValue, CCMatch ccMatch) {
-		return new Object[] { annotation, mAnnotationValue, tValue, mOwner, tAnnotationValue, mValue, ccMatch };
+			BodyDeclaration mOwner, NumberLiteral mValue, TAnnotationValue tAnnotationValue, CCMatch ccMatch) {
+		return new Object[] { annotation, mAnnotationValue, tValue, mOwner, mValue, tAnnotationValue, ccMatch };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueNumber_24_6_createcorrespondence_greenFBBB(
@@ -3172,7 +3168,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 				tAnnotationValue, ruleResult };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueNumber_29_6_perform_greenBFFBFBB(
+	public static final Object[] pattern_AnnotationMemberValueNumber_29_6_perform_greenBFFFBBB(
 			AnnotationMemberValuePair mAnnotationValue, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
@@ -3196,7 +3192,7 @@ public class AnnotationMemberValueNumberImpl extends AbstractRuleImpl implements
 		tValue.setTNumber(tValue_tNumber_prime);
 		mValue.setTokenValue(mValue_tokenValue_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mAnnotationValue, mTypeToTType, tValue, tAnnotationValue, mValue, ruleResult, csp };
+		return new Object[] { mAnnotationValue, mTypeToTType, tValue, mValue, tAnnotationValue, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AnnotationMemberValueNumber_29_7_expressionFB(

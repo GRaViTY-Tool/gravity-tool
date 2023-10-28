@@ -99,7 +99,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Classifier feature, ASTNode2Element b2e,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AbstractTypeDeclaration bodyDeclaration, Enumeration uContainer, EnumDeclaration jContainer,
 			ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p);
 
@@ -117,8 +117,8 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject jPackage,
-			EObject uPackage, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject uPackage,
+			EObject jPackage, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne,
 			EObject p2p);
 
 	/**
@@ -187,7 +187,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier feature, ASTNode2Element b2e,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AbstractTypeDeclaration bodyDeclaration, Enumeration uContainer, EnumDeclaration jContainer,
 			ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p);
 
@@ -205,8 +205,8 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject jPackage,
-			EObject uPackage, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject uPackage,
+			EObject jPackage, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne,
 			EObject p2p);
 
 	/**
@@ -223,7 +223,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_143(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_155(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,8 +263,8 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Classifier feature, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package uPackage, AbstractTypeDeclaration bodyDeclaration, Enumeration uContainer,
+	CSP isApplicable_solveCsp_CC(Classifier feature, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.modisco.java.Package jPackage, AbstractTypeDeclaration bodyDeclaration, Enumeration uContainer,
 			EnumDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -299,7 +299,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element b2eParameter,
-			ASTNode2Element ne2neParameter);
+			JavaPackage2UmlPackage p2pParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,7 +308,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier feature, ASTNode2Element b2e,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage,
 			AbstractTypeDeclaration bodyDeclaration, Enumeration uContainer, EnumDeclaration jContainer,
 			ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p, ModelgeneratorRuleResult ruleResult);
 

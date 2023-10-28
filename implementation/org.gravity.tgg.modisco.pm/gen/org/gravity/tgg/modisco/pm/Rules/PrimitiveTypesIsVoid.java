@@ -213,7 +213,7 @@ public interface PrimitiveTypesIsVoid extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_allTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_94(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface PrimitiveTypesIsVoid extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_98(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -109,8 +109,8 @@ public interface FieldDec2Property extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject vdf, EObject b2e,
-			EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject vdf, EObject bodyDeclaration,
+			EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,8 +190,8 @@ public interface FieldDec2Property extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject vdf, EObject b2e,
-			EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject vdf, EObject bodyDeclaration,
+			EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface FieldDec2Property extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_137(EMoflonEdge _edge_variablesContainer);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_129(EMoflonEdge _edge_variablesContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,7 +247,7 @@ public interface FieldDec2Property extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Property feature, VariableDeclarationFragment vdf, MFieldDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(VariableDeclarationFragment vdf, MFieldDefinition bodyDeclaration, Property feature,
 			Match sourceMatch, Match targetMatch);
 
 	/**

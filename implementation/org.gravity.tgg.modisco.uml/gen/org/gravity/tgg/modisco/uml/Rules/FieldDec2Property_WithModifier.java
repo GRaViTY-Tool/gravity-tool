@@ -113,7 +113,7 @@ public interface FieldDec2Property_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier, EObject vdf);
 
 	/**
@@ -194,7 +194,7 @@ public interface FieldDec2Property_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier, EObject vdf);
 
 	/**
@@ -219,7 +219,7 @@ public interface FieldDec2Property_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_125(EMoflonEdge _edge_variablesContainer);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_variablesContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

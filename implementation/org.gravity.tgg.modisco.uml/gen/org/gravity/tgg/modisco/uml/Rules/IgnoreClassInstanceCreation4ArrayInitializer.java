@@ -178,7 +178,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_134(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
