@@ -3,6 +3,7 @@
  */
 package org.gravity.modisco.util;
 
+import java.util.Collection;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -14,9 +15,9 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.modisco.java.ArrayType;
 import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.InterfaceDeclaration;
 import org.eclipse.modisco.java.MethodDeclaration;
 import org.eclipse.modisco.java.Model;
 import org.eclipse.modisco.java.Package;
@@ -25,6 +26,7 @@ import org.eclipse.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.modisco.java.SingleVariableDeclaration;
 import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.UnresolvedClassDeclaration;
 import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.osgi.util.NLS;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -63,6 +65,20 @@ public final class MoDiscoUtil {
 			final var superType = superAccess.getType();
 			if (superType instanceof ClassDeclaration declaration) {
 				return declaration;
+			} else if (superType instanceof ParameterizedType paramterizedType) {
+				TypeAccess baseTypeAccess = paramterizedType.getType();
+				if (baseTypeAccess != null) {
+					var baseType = baseTypeAccess.getType();
+					if (baseType instanceof ClassDeclaration classDecl) {
+						return classDecl;
+					} else {
+						LOGGER.error("Super class of \"" + mClass + "\" is not a class: " + baseType);
+					}
+				} else {
+					LOGGER.warn("Type access points to null");
+				}
+			} else {
+				LOGGER.error("Super class of \"" + mClass + "\" is not a class: " + superType);
 			}
 		}
 		return null;
@@ -138,13 +154,12 @@ public final class MoDiscoUtil {
 		}
 		var returnType = ((MMethodDefinition) method).getReturnType().getType();
 		final var allTypes = getAllParentTypes(abstractTypeDeclaration);
-		for (final Type type : allTypes) {
+		for (final AbstractTypeDeclaration type : allTypes) {
 			if (!(type instanceof AbstractTypeDeclaration)) {
 				continue;
 			}
 
-			final var otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method,
-					(AbstractTypeDeclaration) type);
+			final var otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method, type);
 			if (otherDecl != null) {
 				final var returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {
@@ -183,28 +198,49 @@ public final class MoDiscoUtil {
 	 * @param child The given child
 	 * @return All parents
 	 */
-	public static Set<Type> getAllParentTypes(final AbstractTypeDeclaration child) {
-		final var allTypes = new HashSet<Type>();
-		final Deque<Type> stack = new LinkedList<>();
+	public static Set<AbstractTypeDeclaration> getAllParentTypes(final AbstractTypeDeclaration child) {
+		final var allTypes = new HashSet<AbstractTypeDeclaration>();
+		final Deque<AbstractTypeDeclaration> stack = new LinkedList<>();
 		if (child != null) {
 			stack.add(child);
 		}
 		while (!stack.isEmpty()) {
-			final var type = stack.pop();
-			if (type instanceof AbstractTypeDeclaration abstractTypeDecl) {
-				allTypes.addAll(getTypesOfImplementedInterface(abstractTypeDecl));
-				if (type instanceof ClassDeclaration declaration) {
-					final var superClass = declaration.getSuperClass();
-					if (superClass != null) {
-						allTypes.add(superClass.getType());
-					}
+			for (AbstractTypeDeclaration next : getParentsTypes(stack.pop())) {
+				// Only add the type to the stack if it has not been seen before
+				if (allTypes.add(next)) {
+					stack.add(next);
 				}
-			} else if (type instanceof ParameterizedType parameterizedType) {
-				allTypes.add(parameterizedType.getType().getType());
-			} else if (type instanceof ArrayType arrayType) {
-				allTypes.add(arrayType.getElementType().getType());
 			}
 		}
+		return allTypes;
+	}
+
+	/**
+	 * Creates a collection with the super class and all implemented interfaces
+	 * 
+	 * @param child The class for which the parents should be returned
+	 * @return The collection of parent types
+	 */
+	public static Collection<AbstractTypeDeclaration> getParentsTypes(AbstractTypeDeclaration type) {
+		final Collection<AbstractTypeDeclaration> allTypes = new LinkedList<>();
+
+		allTypes.addAll(getSuperInterfaces(type));
+
+		if (type instanceof ClassDeclaration classDecl) {
+			var parent = getSuperClass(classDecl);
+			if (parent != null) {
+				allTypes.add(parent);
+			}
+		} else if (type instanceof UnresolvedClassDeclaration unresolved) {
+			TypeAccess superAccess = unresolved.getSuperClass();
+			final var superType = superAccess.getType();
+			if (superType instanceof ClassDeclaration declaration) {
+				allTypes.add(declaration);
+			}
+		} else {
+			// Do not handle enum, interface, annotation type, they cannot have a parent
+		}
+
 		return allTypes;
 	}
 
@@ -214,14 +250,20 @@ public final class MoDiscoUtil {
 	 * @param type The given type
 	 * @return The implemented interfaces
 	 */
-	public static Set<Type> getTypesOfImplementedInterface(final AbstractTypeDeclaration type) {
-		final Set<Type> types = new HashSet<>();
+	public static Set<InterfaceDeclaration> getSuperInterfaces(final AbstractTypeDeclaration type) {
+		final Set<InterfaceDeclaration> types = new HashSet<>();
 		for (final TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
 			final var typeOfInterface = superInterfaceReference.getType();
-			if (typeOfInterface != null) {
-				types.add(typeOfInterface);
-			} else if (LOGGER.isEnabledFor(Level.WARN)) {
-				LOGGER.warn(NLS.bind(Messages.skippedType, superInterfaceReference));
+			if (typeOfInterface instanceof InterfaceDeclaration interfaceDecl) {
+				types.add(interfaceDecl);
+			} else if (typeOfInterface instanceof ParameterizedType parameterized) {
+				if (parameterized.getType().getType() instanceof InterfaceDeclaration interfaceDecl) {
+					types.add(interfaceDecl);
+				} else {
+					LOGGER.error("Unsupported type of interface implementation: " + type);
+				}
+			} else {
+				LOGGER.error(NLS.bind(Messages.skippedType, superInterfaceReference));
 			}
 		}
 		return types;
@@ -388,17 +430,17 @@ public final class MoDiscoUtil {
 		object.setName("Object"); //$NON-NLS-1$
 		object.setProxy(true);
 		javaLangPackage.getOwnedElements().add(object);
-	
+
 		final var file = JavaFactory.eINSTANCE.createClassFile();
 		file.setName("Object.class"); //$NON-NLS-1$
 		file.setPackage(javaLangPackage);
 		file.setType(object);
 		file.setOriginalFilePath("Object.class"); //$NON-NLS-1$
 		model.getClassFiles().add(file);
-	
+
 		LOGGER.warn("Class \"java.lang.Object\" is not contained in the MoDisco model and has been created");
 		return object;
-	
+
 	}
 
 	/**
