@@ -160,16 +160,17 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 		IMethod[] methods = type.getMethods();
 		IField[] fields = type.getFields();
+		ICompilationUnit cu = type.getCompilationUnit();
 		Collection<IMember> members = new ArrayList<>(methods.length + fields.length);
 		for (IMethod method : methods) {
 			members.add(method);
 
-			if (removeMember(method, secrecySignatures)
+			if (removeMember(method, secrecySignatures, cu)
 					|| method.getAnnotation(Secrecy.class.getSimpleName()).exists()) {
 				secrecyMembers.add(method);
 			}
 
-			if (removeMember(method, integritySignatures)
+			if (removeMember(method, integritySignatures, cu)
 					|| method.getAnnotation(Integrity.class.getSimpleName()).exists()) {
 				integrityMembers.add(method);
 			}
@@ -177,10 +178,11 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		for (IField field : fields) {
 			members.add(field);
 
-			if (removeMember(field, secrecySignatures) || field.getAnnotation(Secrecy.class.getSimpleName()).exists()) {
+			if (removeMember(field, secrecySignatures, cu)
+					|| field.getAnnotation(Secrecy.class.getSimpleName()).exists()) {
 				secrecyMembers.add(field);
 			}
-			if (removeMember(field, integritySignatures)
+			if (removeMember(field, integritySignatures, cu)
 					|| field.getAnnotation(Integrity.class.getSimpleName()).exists()) {
 				integrityMembers.add(field);
 			}
@@ -206,8 +208,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return accessedSignatures;
 	}
 
-	private boolean removeMember(IMember member, Collection<String> signatures) {
-		String remove = getCorrespondingEntry(member, signatures);
+	private boolean removeMember(IMember member, Collection<String> signatures, ICompilationUnit cu) {
+		String remove = getCorrespondingEntry(member, signatures, cu);
 		if (remove != null) {
 			return signatures.remove(remove);
 		}
@@ -246,7 +248,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return null;
 	}
 
-	private String getCorrespondingEntry(IMember member, Collection<String> signatures) {
+	private String getCorrespondingEntry(IMember member, Collection<String> signatures, ICompilationUnit cu) {
 		String name = member.getElementName();
 		switch (member.getElementType()) {
 		case IJavaElement.METHOD:
@@ -254,7 +256,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 			for (String signature : signatures) {
 				try {
-					if (isInExpectedType(signature, member) && isMethodWithName(name, signature)
+					if (isInExpectedType(signature, member, cu) && isMethodWithName(name, signature)
 							&& compareReturnType(method, signature) && compareParameters(method, signature)) {
 						return signature;
 					}
@@ -267,7 +269,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			IField field = (IField) member;
 
 			for (String signature : signatures) {
-				if (isInExpectedType(signature, member) && isFieldWithName(name, signature)
+				if (isInExpectedType(signature, member, cu) && isFieldWithName(name, signature)
 						&& compareFieldType(field, signature)) {
 					return signature;
 				}
@@ -282,14 +284,14 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return null;
 	}
 
-	private boolean isInExpectedType(String signature, IMember member) {
+	private boolean isInExpectedType(String signature, IMember member, ICompilationUnit cu) {
 		int method = signature.indexOf('(');
 		if (method == -1) {
-			method = signature.length();
+			method = signature.indexOf(':');
 		}
 		int dot = signature.substring(0, method).lastIndexOf('.');
 		if (dot >= 0) {
-			String signatureType = getFullyQualifiedName4Text(member.getCompilationUnit(), signature.substring(0, dot));
+			String signatureType = getFullyQualifiedName4Text(cu, signature.substring(0, dot));
 			String memberType = member.getDeclaringType().getFullyQualifiedName();
 			if (!signatureType.equals(memberType)) {
 				return false;
@@ -671,12 +673,14 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		private final IMember caller;
 		private final Set<String> secrecySignatures;
 		private final Set<String> integritySignatures;
+		private ICompilationUnit cu;
 
 		private OutgoingAccessCheck(Collection<String> accessedSignatures, MethodWrapper root, IMember caller,
 				Set<String> secrecySignatures, Set<String> integritySignatures) {
 			this.accessedSignatures = accessedSignatures;
 			this.root = root;
 			this.caller = caller;
+			this.cu = caller.getCompilationUnit();
 			this.secrecySignatures = secrecySignatures;
 			this.integritySignatures = integritySignatures;
 		}
@@ -695,7 +699,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			SecurityMarkerUtil.deleteOldMarkers(calledMember.getResource(), analyzedMemberSignature);
 
 			boolean calleeSecrecy = requiresSecrecy(calledMember);
-			String callerSecrecyRequirement = getCorrespondingEntry(calledMember, secrecySignatures);
+			String callerSecrecyRequirement = getCorrespondingEntry(calledMember, secrecySignatures, cu);
 			boolean callerSecrey = callerSecrecyRequirement != null;
 			if (callerSecrey) {
 				accessedSignatures.add(callerSecrecyRequirement);
@@ -720,7 +724,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			}
 
 			boolean calleeIntegrity = requiresIntegrity(calledMember);
-			String callerIntegrityRequirement = getCorrespondingEntry(calledMember, integritySignatures);
+			String callerIntegrityRequirement = getCorrespondingEntry(calledMember, integritySignatures, cu);
 			boolean callerIntegrity = callerIntegrityRequirement != null;
 			if (callerIntegrity) {
 				accessedSignatures.add(callerIntegrityRequirement);
@@ -754,8 +758,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 					return false;
 				}
 				return annotatable.getAnnotation(Secrecy.class.getSimpleName()).exists()
-						|| getCorrespondingEntry(member,
-								getSecurityRequirements(member.getDeclaringType()).secrecy()) != null;
+						|| getCorrespondingEntry(member, getSecurityRequirements(member.getDeclaringType()).secrecy(),
+								cu) != null;
 			}
 			return false;
 		}
@@ -763,8 +767,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		private boolean requiresIntegrity(IMember member) {
 			if (member instanceof IAnnotatable annotatable) {
 				return annotatable.getAnnotation(Integrity.class.getSimpleName()).exists()
-						|| getCorrespondingEntry(member,
-								getSecurityRequirements(member.getDeclaringType()).integrity()) != null;
+						|| getCorrespondingEntry(member, getSecurityRequirements(member.getDeclaringType()).integrity(),
+								cu) != null;
 			}
 			return false;
 		}
@@ -775,9 +779,11 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		private final boolean secrecy;
 		private final MethodWrapper root;
 		private final boolean integrity;
+		private ICompilationUnit cu;
 
 		private IncomingAccessCheck(IMember member, boolean secrecy, MethodWrapper root, boolean integrity) {
 			this.member = member;
+			this.cu = member.getCompilationUnit();
 			this.secrecy = secrecy;
 			this.root = root;
 			this.integrity = integrity;
@@ -795,7 +801,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 			Annotations annotations = getSecurityRequirements(caller.getDeclaringType());
 
-			String callerSecrecyRequirement = getCorrespondingEntry(member, annotations.secrecy());
+			String callerSecrecyRequirement = getCorrespondingEntry(member, annotations.secrecy(), cu);
 			boolean callerSecrecy = callerSecrecyRequirement != null;
 			if (callerSecrecy != secrecy) {
 				if (callerSecrecy) {
@@ -816,7 +822,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				}
 			}
 
-			String callerIntegrityRequirement = getCorrespondingEntry(member, annotations.integrity());
+			String callerIntegrityRequirement = getCorrespondingEntry(member, annotations.integrity(), cu);
 			boolean callerIntegrity = callerIntegrityRequirement != null;
 			if (callerIntegrity != integrity) {
 				if (callerIntegrity) {
