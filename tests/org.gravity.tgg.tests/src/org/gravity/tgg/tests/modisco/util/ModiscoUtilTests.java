@@ -2,15 +2,15 @@ package org.gravity.tgg.tests.modisco.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.InterfaceDeclaration;
 import org.eclipse.modisco.java.ParameterizedType;
+import org.eclipse.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.TypeParameter;
@@ -46,6 +46,7 @@ public class ModiscoUtilTests {
 		assertNull(result);
 	}
 	
+	@Test
 	public void testIisSuperInterfaceValid() {
 		ClassDeclaration child = ModiscoFactory.eINSTANCE.createMClass();
 		InterfaceDeclaration parent = JavaFactory.eINSTANCE.createInterfaceDeclaration();
@@ -75,7 +76,6 @@ public class ModiscoUtilTests {
 		var parents = MoDiscoUtil.getAllParentTypes(child);
 		assertEquals(1, parents.size());
 		assertTrue(parents.contains(parent));
-		assertFalse(parents.contains(illegalParentType));
 	}
 	
 	@Test
@@ -150,13 +150,40 @@ public class ModiscoUtilTests {
 		var parents = MoDiscoUtil.getAllParentTypes(child);
 		assertEquals(4, parents.size());
 		assertTrue(parents.contains(parent));
-		assertFalse(parents.contains(parameterized1));
 		assertTrue(parents.contains(baseType));
-		assertFalse(parents.contains(parameterized2));
 		assertTrue(parents.contains(iface1));
 		assertTrue(parents.contains(iface2));
 	}	
 
+	@Test
+	public void testIsSuperInterface() {
+		InterfaceDeclaration child = JavaFactory.eINSTANCE.createInterfaceDeclaration();
+		InterfaceDeclaration middle = JavaFactory.eINSTANCE.createInterfaceDeclaration();
+		InterfaceDeclaration parent = JavaFactory.eINSTANCE.createInterfaceDeclaration();
+		TypeAccess ta1 = JavaFactory.eINSTANCE.createTypeAccess();
+		TypeAccess ta2 = JavaFactory.eINSTANCE.createTypeAccess();
+		ta2.setType(parent);
+		middle.getSuperInterfaces().add(ta2);
+		ta1.setType(middle);
+		child.getSuperInterfaces().add(ta1);
+		
+		assertTrue(MoDiscoUtil.isSuperInterface(child, parent));
+		assertTrue(MoDiscoUtil.isSuperInterface(child, middle));
+		assertFalse(MoDiscoUtil.isSuperInterface(parent, child));
+	}
+	
+	@Test
+	public void testGetVoid() {
+		final var model = ModiscoFactory.eINSTANCE.createMGravityModel();
+		
+		final var v = MoDiscoUtil.getVoid(model);
+		assertNotNull(v);
+		assertEquals("void", v.getName());
+		EList<Type> orphanTypes = model.getOrphanTypes();
+		assertEquals(1,orphanTypes.size());
+		assertTrue(orphanTypes.get(0) instanceof PrimitiveTypeVoid);
+	}
+	
 	private void makeSuperClass(ClassDeclaration child, Type parent) {
 		TypeAccess typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		typeAccess.setType(parent);

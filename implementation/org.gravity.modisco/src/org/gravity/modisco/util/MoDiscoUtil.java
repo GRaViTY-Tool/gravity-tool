@@ -127,7 +127,7 @@ public final class MoDiscoUtil {
 	 * @param supertype The potential super interface
 	 * @return true iff supertype is a supertype of type
 	 */
-	private static boolean isSuperInterface(final Type type, final Type supertype) {
+	public static boolean isSuperInterface(final Type type, final Type supertype) {
 		for (final TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
 			final var superInterface = interf.getType();
 			if ((superInterface != null)
