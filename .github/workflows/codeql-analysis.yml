@@ -38,10 +38,11 @@ jobs:
 
     steps:
     - name: Clone repository with submodules
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
-        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
+        #ssh-key: ${{ secrets.SECPL_PULL_KEY }}
         submodules: 'recursive'
+        fetch-depth: 0
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -54,7 +55,11 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     # Only compile to be faster
+    - name: Setup Maven Action
+      uses: s4u/setup-maven-action@v1.9.0
     - name: Build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn test-compile
 
     - name: Perform CodeQL Analysis
