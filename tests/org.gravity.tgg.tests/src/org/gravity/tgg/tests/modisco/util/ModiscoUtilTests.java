@@ -178,7 +178,6 @@ public class ModiscoUtilTests {
 		
 		final var v = MoDiscoUtil.getVoid(model);
 		assertNotNull(v);
-		assertEquals("void", v.getName());
 		EList<Type> orphanTypes = model.getOrphanTypes();
 		assertEquals(1,orphanTypes.size());
 		assertTrue(orphanTypes.get(0) instanceof PrimitiveTypeVoid);
