@@ -24,7 +24,7 @@ public class AnnotationsActivator extends Plugin {
 	 * The id of this plugin
 	 */
 	public static final String PLUGIN_ID = "org.gravity.security.annotations.pm";
-	
+
 	/**
 	 * The name of the security annotations file
 	 */
@@ -38,9 +38,7 @@ public class AnnotationsActivator extends Plugin {
 	 * @throws IOException If the annotations can not be saved
 	 */
 	public static void storeAnnotationsToFile(final IFile file, final IProgressMonitor monitor) throws IOException {
-		try (var annotations = new URL(
-				"platform:/plugin/"+PLUGIN_ID + "/target/dependency/"
-						+ ANNOTATIONS_JAR) //$NON-NLS-1$
+		try (var annotations = new URL("platform:/plugin/" + PLUGIN_ID + "/target/dependency/" + ANNOTATIONS_JAR)
 				.openConnection().getInputStream()) {
 			file.create(annotations, true, monitor);
 		} catch (final CoreException e) {
@@ -78,12 +76,11 @@ public class AnnotationsActivator extends Plugin {
 					if (containingProject.getLocation() != null) {
 						path = containingProject.getLocation().append(path.removeFirstSegments(1));
 					}
-				}
-				else {
+				} else {
 					path = project.getProject().getFile(path).getLocation();
 				}
 				if (path.equals(annotationsFile.getLocation())) {
-					return entry.getPath();
+					return entry.getPath().makeRelativeTo(project.getPath());
 				}
 			}
 		}
