@@ -17,6 +17,7 @@ jobs:
       with: 
 #        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
         submodules: 'recursive'
+        fetch-depth: 0
 #    - name: Set up JDK
 #      uses: actions/setup-java@v2
 #      with:
