@@ -99,7 +99,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			if (LOGGER.isEnabledFor(Level.WARN)) {
 				LOGGER.warn(NLS.bind(Messages.returnTypeNotSetAssumeObject, method.getName()));
 			}
-			type = MoDiscoUtil.getJavaLangObject(model);
+			type = MoDiscoUtil.getOrCreateJavaLangObject(model);
 			if (type == null) {
 				LOGGER.error(NLS.bind(Messages.returnTypeIsNull, method.getName()));
 				return false;
@@ -453,7 +453,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			return null;
 		}
 		if (variable instanceof UnresolvedVariableDeclarationFragment) {
-			return MoDiscoUtil.getJavaLangObject(pg);
+			return MoDiscoUtil.getOrCreateJavaLangObject(pg);
 		} else if (variable instanceof VariableDeclarationFragment) {
 			final var container = ((VariableDeclarationFragment) variable).getVariablesContainer();
 			if (container != null) {
@@ -484,7 +484,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 			final var variable = ((SingleVariableAccess) expression).getVariable();
 			return getType(pg, variable);
 		} else if (expression instanceof AbstractMethodInvocation) {
-			return MoDiscoUtil.getJavaLangObject(pg);
+			return MoDiscoUtil.getOrCreateJavaLangObject(pg);
 		} else {
 			throw new IllegalStateException(NLS.bind(Messages.unknownType, expression.eClass().getName()));
 		}

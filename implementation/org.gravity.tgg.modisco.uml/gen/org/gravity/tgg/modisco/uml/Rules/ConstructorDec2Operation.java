@@ -107,8 +107,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment,
-			EObject feature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature,
+			EObject comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +124,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Comment comment, Operation feature);
+	boolean isAppropriate_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +148,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Comment comment, Operation feature);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Comment comment, Operation feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,7 +172,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Comment comment, Operation feature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,8 +188,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject comment,
-			EObject feature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature,
+			EObject comment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +205,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MConstructorDefinition_1(MConstructorDefinition bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_MConstructorDefinition_0(MConstructorDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_279(EMoflonEdge _edge_ownedComment);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_144(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,7 +245,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MConstructorDefinition bodyDeclaration, Comment comment, Operation feature,
+	CSP isApplicable_solveCsp_CC(MConstructorDefinition bodyDeclaration, Operation feature, Comment comment,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -270,7 +270,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Comment comment, Operation feature);
+	boolean checkDEC_BWD(Operation feature, Comment comment);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -283,8 +283,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 				//nothing EMoflonEdge jContainer__jPackage____package = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge jPackage__jContainer____ownedElements = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge mMember__mAnon____anonymousClassDeclaration = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge jContainer__mMember____enumConstants = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge jContainer__mMember____enumConstants = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[18];
 
 				Object[] result4_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 						.pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
@@ -637,14 +637,14 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 				//nothing EMoflonEdge p2p__jPackage____source = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge uContainer__uPackage____package = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge uPackage__uContainer____ownedType = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge feature__uPackage____package = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge uPackage__feature____ownedType = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge feature__uPackage____package = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge uPackage__feature____ownedType = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge uContainer__uPackage____package = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge uPackage__uContainer____ownedType = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge jContainer__jPackage____package = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge jPackage__jContainer____ownedElements = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge jContainer__mMember____enumConstants = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge jContainer__mMember____enumConstants = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[19];
 
 				Object[] result4_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 						.pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
@@ -818,7 +818,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_269(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_150(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -879,7 +879,7 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_289(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_162(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInPackageImpl
 				.pattern_AnonymousClass4EnumConstInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -952,10 +952,6 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_uContainer_name = CSPFactoryHelper.eINSTANCE.createVariable("uContainer", true, csp);
-		var_uContainer_name.setValue(__helper.getValue("uContainer", "name"));
-		var_uContainer_name.setType("String");
-
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("Anonymous");
 		var_literal0.setType("");
@@ -963,6 +959,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_uContainer_name = CSPFactoryHelper.eINSTANCE.createVariable("uContainer", true, csp);
+		var_uContainer_name.setValue(__helper.getValue("uContainer", "name"));
+		var_uContainer_name.setType("String");
 
 		AddPrefix addPrefix0 = new AddPrefix();
 		csp.getConstraints().add(addPrefix0);
@@ -1003,10 +1003,6 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_uContainer_name = CSPFactoryHelper.eINSTANCE.createVariable("uContainer", true, csp);
-		var_uContainer_name.setValue(__helper.getValue("uContainer", "name"));
-		var_uContainer_name.setType("String");
-
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("Anonymous");
 		var_literal0.setType("");
@@ -1014,6 +1010,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_uContainer_name = CSPFactoryHelper.eINSTANCE.createVariable("uContainer", true, csp);
+		var_uContainer_name.setValue(__helper.getValue("uContainer", "name"));
+		var_uContainer_name.setType("String");
 
 		AddPrefix addPrefix0 = new AddPrefix();
 		csp.getConstraints().add(addPrefix0);
@@ -1415,10 +1415,10 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_269__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_269((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_289__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_289((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_150__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_150((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_162__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_162((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1983,8 +1983,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 					if (uPackage.equals(uContainer.getPackage())) {
 						if (jPackage.equals(jContainer.getPackage())) {
 							if (mAnon.equals(mMember.getAnonymousClassDeclaration())) {
-								if (uContainer.equals(ne2ne.getTarget())) {
-									if (jContainer.getEnumConstants().contains(mMember)) {
+								if (jContainer.getEnumConstants().contains(mMember)) {
+									if (uContainer.equals(ne2ne.getTarget())) {
 										_result.add(new Object[] { jPackage, uPackage, mAnon, uContainer, mMember,
 												jContainer, ne2ne, p2p });
 									}
@@ -2011,8 +2011,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		EMoflonEdge jContainer__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__jContainer____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mAnon____anonymousClassDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__mMember____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String p2p__jPackage____source_name_prime = "source";
 		String ne2ne__jContainer____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
@@ -2021,8 +2021,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		String jContainer__jPackage____package_name_prime = "package";
 		String jPackage__jContainer____ownedElements_name_prime = "ownedElements";
 		String mMember__mAnon____anonymousClassDeclaration_name_prime = "anonymousClassDeclaration";
-		String ne2ne__uContainer____target_name_prime = "target";
 		String jContainer__mMember____enumConstants_name_prime = "enumConstants";
+		String ne2ne__uContainer____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(uPackage);
 		isApplicableMatch.getAllContextElements().add(mAnon);
@@ -2055,12 +2055,12 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		mMember__mAnon____anonymousClassDeclaration.setSrc(mMember);
 		mMember__mAnon____anonymousClassDeclaration.setTrg(mAnon);
 		isApplicableMatch.getAllContextElements().add(mMember__mAnon____anonymousClassDeclaration);
-		ne2ne__uContainer____target.setSrc(ne2ne);
-		ne2ne__uContainer____target.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		jContainer__mMember____enumConstants.setSrc(jContainer);
 		jContainer__mMember____enumConstants.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(jContainer__mMember____enumConstants);
+		ne2ne__uContainer____target.setSrc(ne2ne);
+		ne2ne__uContainer____target.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		p2p__jPackage____source.setName(p2p__jPackage____source_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
@@ -2069,13 +2069,13 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		jContainer__jPackage____package.setName(jContainer__jPackage____package_name_prime);
 		jPackage__jContainer____ownedElements.setName(jPackage__jContainer____ownedElements_name_prime);
 		mMember__mAnon____anonymousClassDeclaration.setName(mMember__mAnon____anonymousClassDeclaration_name_prime);
-		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		jContainer__mMember____enumConstants.setName(jContainer__mMember____enumConstants_name_prime);
+		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		return new Object[] { jPackage, uPackage, mAnon, uContainer, mMember, jContainer, ne2ne, p2p, isApplicableMatch,
 				p2p__jPackage____source, ne2ne__jContainer____source, p2p__uPackage____target,
 				uContainer__uPackage____package, uPackage__uContainer____ownedType, jContainer__jPackage____package,
 				jPackage__jContainer____ownedElements, mMember__mAnon____anonymousClassDeclaration,
-				ne2ne__uContainer____target, jContainer__mMember____enumConstants };
+				jContainer__mMember____enumConstants, ne2ne__uContainer____target };
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_2_4_solveCSP_bindingFBBBBBBBBBB(
@@ -2661,8 +2661,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		if (jPackage.equals(p2p.getSource())) {
 			if (jContainer.equals(ne2ne.getSource())) {
 				if (uPackage.equals(p2p.getTarget())) {
-					if (uPackage.equals(uContainer.getPackage())) {
-						if (uPackage.equals(feature.getPackage())) {
+					if (uPackage.equals(feature.getPackage())) {
+						if (uPackage.equals(uContainer.getPackage())) {
 							if (jPackage.equals(jContainer.getPackage())) {
 								if (uContainer.equals(ne2ne.getTarget())) {
 									for (EnumConstantDeclaration mMember : jContainer.getEnumConstants()) {
@@ -2687,25 +2687,25 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		EMoflonEdge p2p__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uContainer__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__uContainer____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uPackage__feature____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uContainer__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uContainer____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__jContainer____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__mMember____enumConstants = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String p2p__jPackage____source_name_prime = "source";
 		String ne2ne__jContainer____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
-		String uContainer__uPackage____package_name_prime = "package";
-		String uPackage__uContainer____ownedType_name_prime = "ownedType";
 		String feature__uPackage____package_name_prime = "package";
 		String uPackage__feature____ownedType_name_prime = "ownedType";
+		String uContainer__uPackage____package_name_prime = "package";
+		String uPackage__uContainer____ownedType_name_prime = "ownedType";
 		String jContainer__jPackage____package_name_prime = "package";
 		String jPackage__jContainer____ownedElements_name_prime = "ownedElements";
-		String ne2ne__uContainer____target_name_prime = "target";
 		String jContainer__mMember____enumConstants_name_prime = "enumConstants";
+		String ne2ne__uContainer____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(uPackage);
@@ -2723,46 +2723,47 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 		p2p__uPackage____target.setSrc(p2p);
 		p2p__uPackage____target.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		uContainer__uPackage____package.setSrc(uContainer);
-		uContainer__uPackage____package.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(uContainer__uPackage____package);
-		uPackage__uContainer____ownedType.setSrc(uPackage);
-		uPackage__uContainer____ownedType.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(uPackage__uContainer____ownedType);
 		feature__uPackage____package.setSrc(feature);
 		feature__uPackage____package.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(feature__uPackage____package);
 		uPackage__feature____ownedType.setSrc(uPackage);
 		uPackage__feature____ownedType.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(uPackage__feature____ownedType);
+		uContainer__uPackage____package.setSrc(uContainer);
+		uContainer__uPackage____package.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(uContainer__uPackage____package);
+		uPackage__uContainer____ownedType.setSrc(uPackage);
+		uPackage__uContainer____ownedType.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(uPackage__uContainer____ownedType);
 		jContainer__jPackage____package.setSrc(jContainer);
 		jContainer__jPackage____package.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jContainer__jPackage____package);
 		jPackage__jContainer____ownedElements.setSrc(jPackage);
 		jPackage__jContainer____ownedElements.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(jPackage__jContainer____ownedElements);
-		ne2ne__uContainer____target.setSrc(ne2ne);
-		ne2ne__uContainer____target.setTrg(uContainer);
-		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		jContainer__mMember____enumConstants.setSrc(jContainer);
 		jContainer__mMember____enumConstants.setTrg(mMember);
 		isApplicableMatch.getAllContextElements().add(jContainer__mMember____enumConstants);
+		ne2ne__uContainer____target.setSrc(ne2ne);
+		ne2ne__uContainer____target.setTrg(uContainer);
+		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
 		p2p__jPackage____source.setName(p2p__jPackage____source_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		uContainer__uPackage____package.setName(uContainer__uPackage____package_name_prime);
-		uPackage__uContainer____ownedType.setName(uPackage__uContainer____ownedType_name_prime);
 		feature__uPackage____package.setName(feature__uPackage____package_name_prime);
 		uPackage__feature____ownedType.setName(uPackage__feature____ownedType_name_prime);
+		uContainer__uPackage____package.setName(uContainer__uPackage____package_name_prime);
+		uPackage__uContainer____ownedType.setName(uPackage__uContainer____ownedType_name_prime);
 		jContainer__jPackage____package.setName(jContainer__jPackage____package_name_prime);
 		jPackage__jContainer____ownedElements.setName(jPackage__jContainer____ownedElements_name_prime);
-		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		jContainer__mMember____enumConstants.setName(jContainer__mMember____enumConstants_name_prime);
+		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
 		return new Object[] { feature, jPackage, uPackage, uContainer, mMember, jContainer, ne2ne, p2p,
 				isApplicableMatch, p2p__jPackage____source, ne2ne__jContainer____source, p2p__uPackage____target,
-				uContainer__uPackage____package, uPackage__uContainer____ownedType, feature__uPackage____package,
-				uPackage__feature____ownedType, jContainer__jPackage____package, jPackage__jContainer____ownedElements,
-				ne2ne__uContainer____target, jContainer__mMember____enumConstants };
+				feature__uPackage____package, uPackage__feature____ownedType, uContainer__uPackage____package,
+				uPackage__uContainer____ownedType, jContainer__jPackage____package,
+				jPackage__jContainer____ownedElements, jContainer__mMember____enumConstants,
+				ne2ne__uContainer____target };
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_12_4_solveCSP_bindingFBBBBBBBBBB(
@@ -3014,8 +3015,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_266406 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_266406 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_277220 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_277220 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3304,8 +3305,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_27_1_matchtggpattern_black_nac_0B(
 			AnonymousClassDeclaration mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_248932 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_248932 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_941447 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_941447 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3339,8 +3340,8 @@ public class AnonymousClass4EnumConstInPackageImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInPackage_28_1_matchtggpattern_blackBBB(
 			org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer) {
-		if (uPackage.equals(uContainer.getPackage())) {
-			if (uPackage.equals(feature.getPackage())) {
+		if (uPackage.equals(feature.getPackage())) {
+			if (uPackage.equals(uContainer.getPackage())) {
 				return new Object[] { feature, uPackage, uContainer };
 			}
 		}

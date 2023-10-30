@@ -164,12 +164,12 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result1_bindingAndBlack[0];
-		Interface uOwnerType = (Interface) result1_bindingAndBlack[1];
-		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[2];
+		Interface uOwnerType = (Interface) result1_bindingAndBlack[0];
+		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[1];
+		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result1_bindingAndBlack[2];
 		ASTNode2Element jo2uo = (ASTNode2Element) result1_bindingAndBlack[3];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[4];
-		Property feature = (Property) result1_bindingAndBlack[5];
+		Property feature = (Property) result1_bindingAndBlack[4];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		FieldDec2Property4InterfaceImpl
 				.pattern_FieldDec2Property4Interface_1_1_performtransformation_greenBB(uOwnerType, feature);
@@ -182,16 +182,16 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDec2Property4InterfaceImpl
-				.pattern_FieldDec2Property4Interface_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jOwnerType,
-						uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+				.pattern_FieldDec2Property4Interface_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, uOwnerType, nd2ne,
+						jOwnerType, jo2uo, feature, bodyDeclaration);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[uOwnerType] = " + uOwnerType + ", "
-					+ "[nd2ne] = " + nd2ne + ", " + "[jo2uo] = " + jo2uo + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[feature] = " + feature + ".");
+					+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[nd2ne] = " + nd2ne + ", " + "[jOwnerType] = "
+					+ jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[feature] = " + feature + ", "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_1_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, jOwnerType, uOwnerType, bodyDeclaration, feature);
+				ruleresult, uOwnerType, jOwnerType, feature, bodyDeclaration);
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge feature__uOwnerType____interface = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
@@ -200,7 +200,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+				ruleresult, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 		return FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_1_6_expressionFB(ruleresult);
 	}
 
@@ -232,34 +232,34 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_binding[0];
 		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_binding[1];
 		for (Object[] result2_black : FieldDec2Property4InterfaceImpl
-				.pattern_FieldDec2Property4Interface_2_2_corematch_blackBFFFBFB(jOwnerType, bodyDeclaration, match)) {
-			Interface uOwnerType = (Interface) result2_black[1];
-			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[2];
+				.pattern_FieldDec2Property4Interface_2_2_corematch_blackFFBFFBB(jOwnerType, bodyDeclaration, match)) {
+			Interface uOwnerType = (Interface) result2_black[0];
+			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[1];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[3];
-			Property feature = (Property) result2_black[5];
+			Property feature = (Property) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : FieldDec2Property4InterfaceImpl
-					.pattern_FieldDec2Property4Interface_2_3_findcontext_blackBBBBBB(jOwnerType, uOwnerType, nd2ne,
-							jo2uo, bodyDeclaration, feature)) {
+					.pattern_FieldDec2Property4Interface_2_3_findcontext_blackBBBBBB(uOwnerType, nd2ne, jOwnerType,
+							jo2uo, feature, bodyDeclaration)) {
 				Object[] result3_green = FieldDec2Property4InterfaceImpl
-						.pattern_FieldDec2Property4Interface_2_3_findcontext_greenBBBBBBFFFFFFF(jOwnerType, uOwnerType,
-								nd2ne, jo2uo, bodyDeclaration, feature);
+						.pattern_FieldDec2Property4Interface_2_3_findcontext_greenBBBBBBFFFFFFF(uOwnerType, nd2ne,
+								jOwnerType, jo2uo, feature, bodyDeclaration);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = FieldDec2Property4InterfaceImpl
 						.pattern_FieldDec2Property4Interface_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+								isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jOwnerType] = " + jOwnerType
-							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[nd2ne] = " + nd2ne + ", " + "[jo2uo] = "
-							+ jo2uo + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uOwnerType] = " + uOwnerType
+							+ ", " + "[nd2ne] = " + nd2ne + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = "
+							+ jo2uo + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -334,9 +334,9 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -351,12 +351,12 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
 		isApplicableMatch.registerObject("nd2ne", nd2ne);
+		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("jo2uo", jo2uo);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		return csp;
 	}
 
@@ -374,14 +374,14 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject nd2ne,
-			EObject jo2uo, EObject bodyDeclaration, EObject feature) {
-		ruleresult.registerObject("jOwnerType", jOwnerType);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne, EObject jOwnerType,
+			EObject jo2uo, EObject feature, EObject bodyDeclaration) {
 		ruleresult.registerObject("uOwnerType", uOwnerType);
 		ruleresult.registerObject("nd2ne", nd2ne);
+		ruleresult.registerObject("jOwnerType", jOwnerType);
 		ruleresult.registerObject("jo2uo", jo2uo);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 
 	}
 
@@ -470,12 +470,12 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result1_bindingAndBlack[0];
-		Interface uOwnerType = (Interface) result1_bindingAndBlack[1];
-		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[2];
+		Interface uOwnerType = (Interface) result1_bindingAndBlack[0];
+		ASTNode2Element nd2ne = (ASTNode2Element) result1_bindingAndBlack[1];
+		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result1_bindingAndBlack[2];
 		ASTNode2Element jo2uo = (ASTNode2Element) result1_bindingAndBlack[3];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[4];
-		Property feature = (Property) result1_bindingAndBlack[5];
+		Property feature = (Property) result1_bindingAndBlack[4];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		FieldDec2Property4InterfaceImpl
 				.pattern_FieldDec2Property4Interface_11_1_performtransformation_greenBB(jOwnerType, bodyDeclaration);
@@ -488,16 +488,16 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDec2Property4InterfaceImpl
-				.pattern_FieldDec2Property4Interface_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jOwnerType,
-						uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+				.pattern_FieldDec2Property4Interface_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, uOwnerType,
+						nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jOwnerType] = " + jOwnerType + ", " + "[uOwnerType] = " + uOwnerType + ", "
-					+ "[nd2ne] = " + nd2ne + ", " + "[jo2uo] = " + jo2uo + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ", " + "[feature] = " + feature + ".");
+					+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[nd2ne] = " + nd2ne + ", " + "[jOwnerType] = "
+					+ jOwnerType + ", " + "[jo2uo] = " + jo2uo + ", " + "[feature] = " + feature + ", "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_11_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, jOwnerType, uOwnerType, bodyDeclaration, feature);
+				ruleresult, uOwnerType, jOwnerType, feature, bodyDeclaration);
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge feature__uOwnerType____interface = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
@@ -506,7 +506,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_11_5_registerobjects_expressionBBBBBBBB(
-				this, ruleresult, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+				this, ruleresult, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 		return FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_11_6_expressionFB(ruleresult);
 	}
 
@@ -538,34 +538,34 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		Interface uOwnerType = (Interface) result2_binding[0];
 		Property feature = (Property) result2_binding[1];
 		for (Object[] result2_black : FieldDec2Property4InterfaceImpl
-				.pattern_FieldDec2Property4Interface_12_2_corematch_blackFBFFFBB(uOwnerType, feature, match)) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_black[0];
-			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[2];
+				.pattern_FieldDec2Property4Interface_12_2_corematch_blackBFFFBFB(uOwnerType, feature, match)) {
+			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[1];
+			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_black[2];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[3];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[4];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : FieldDec2Property4InterfaceImpl
-					.pattern_FieldDec2Property4Interface_12_3_findcontext_blackBBBBBB(jOwnerType, uOwnerType, nd2ne,
-							jo2uo, bodyDeclaration, feature)) {
+					.pattern_FieldDec2Property4Interface_12_3_findcontext_blackBBBBBB(uOwnerType, nd2ne, jOwnerType,
+							jo2uo, feature, bodyDeclaration)) {
 				Object[] result3_green = FieldDec2Property4InterfaceImpl
-						.pattern_FieldDec2Property4Interface_12_3_findcontext_greenBBBBBBFFFFFFF(jOwnerType, uOwnerType,
-								nd2ne, jo2uo, bodyDeclaration, feature);
+						.pattern_FieldDec2Property4Interface_12_3_findcontext_greenBBBBBBFFFFFFF(uOwnerType, nd2ne,
+								jOwnerType, jo2uo, feature, bodyDeclaration);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge feature__uOwnerType____interface = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge jo2uo__uOwnerType____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge nd2ne__feature____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jo2uo__jOwnerType____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge nd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = FieldDec2Property4InterfaceImpl
 						.pattern_FieldDec2Property4Interface_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+								isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jOwnerType] = " + jOwnerType
-							+ ", " + "[uOwnerType] = " + uOwnerType + ", " + "[nd2ne] = " + nd2ne + ", " + "[jo2uo] = "
-							+ jo2uo + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uOwnerType] = " + uOwnerType
+							+ ", " + "[nd2ne] = " + nd2ne + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = "
+							+ jo2uo + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -638,9 +638,9 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -655,12 +655,12 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
 		isApplicableMatch.registerObject("nd2ne", nd2ne);
+		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("jo2uo", jo2uo);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		return csp;
 	}
 
@@ -678,14 +678,14 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject nd2ne,
-			EObject jo2uo, EObject bodyDeclaration, EObject feature) {
-		ruleresult.registerObject("jOwnerType", jOwnerType);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne, EObject jOwnerType,
+			EObject jo2uo, EObject feature, EObject bodyDeclaration) {
 		ruleresult.registerObject("uOwnerType", uOwnerType);
 		ruleresult.registerObject("nd2ne", nd2ne);
+		ruleresult.registerObject("jOwnerType", jOwnerType);
 		ruleresult.registerObject("jo2uo", jo2uo);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 
 	}
 
@@ -703,7 +703,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_259(EMoflonEdge _edge_ownedAttribute) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_121(EMoflonEdge _edge_ownedAttribute) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4InterfaceImpl
 				.pattern_FieldDec2Property4Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -762,7 +762,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_279(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4InterfaceImpl
 				.pattern_FieldDec2Property4Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -899,28 +899,28 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_bindingAndBlack[0];
-		Interface uOwnerType = (Interface) result2_bindingAndBlack[1];
-		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_bindingAndBlack[2];
-		Property feature = (Property) result2_bindingAndBlack[3];
+		Interface uOwnerType = (Interface) result2_bindingAndBlack[0];
+		InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_bindingAndBlack[1];
+		Property feature = (Property) result2_bindingAndBlack[2];
+		MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = FieldDec2Property4InterfaceImpl
-				.pattern_FieldDec2Property4Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jOwnerType, uOwnerType,
-						bodyDeclaration, feature, sourceMatch, targetMatch);
+				.pattern_FieldDec2Property4Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, uOwnerType, jOwnerType,
+						feature, bodyDeclaration, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[jOwnerType] = " + jOwnerType + ", " + "[uOwnerType] = " + uOwnerType + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ", "
-					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[uOwnerType] = " + uOwnerType + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[feature] = "
+					+ feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[sourceMatch] = "
+					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : FieldDec2Property4InterfaceImpl
-					.pattern_FieldDec2Property4Interface_24_5_matchcorrcontext_blackBBFFBBBB(jOwnerType, uOwnerType,
-							bodyDeclaration, feature, sourceMatch, targetMatch)) {
-				ASTNode2Element nd2ne = (ASTNode2Element) result5_black[2];
+					.pattern_FieldDec2Property4Interface_24_5_matchcorrcontext_blackBFBFBBBB(uOwnerType, jOwnerType,
+							feature, bodyDeclaration, sourceMatch, targetMatch)) {
+				ASTNode2Element nd2ne = (ASTNode2Element) result5_black[1];
 				ASTNode2Element jo2uo = (ASTNode2Element) result5_black[3];
 				Object[] result5_green = FieldDec2Property4InterfaceImpl
 						.pattern_FieldDec2Property4Interface_24_5_matchcorrcontext_greenBBBBF(nd2ne, jo2uo, sourceMatch,
@@ -928,13 +928,12 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = FieldDec2Property4InterfaceImpl
-						.pattern_FieldDec2Property4Interface_24_6_createcorrespondence_blackBBBBB(jOwnerType,
-								uOwnerType, bodyDeclaration, feature, ccMatch);
+						.pattern_FieldDec2Property4Interface_24_6_createcorrespondence_blackBBBBB(uOwnerType,
+								jOwnerType, feature, bodyDeclaration, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[jOwnerType] = " + jOwnerType + ", "
-									+ "[uOwnerType] = " + uOwnerType + ", " + "[bodyDeclaration] = " + bodyDeclaration
-									+ ", " + "[feature] = " + feature + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uOwnerType] = "
+							+ uOwnerType + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[feature] = " + feature
+							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = FieldDec2Property4InterfaceImpl
@@ -958,8 +957,8 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(InterfaceDeclaration jOwnerType, Interface uOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature,
+			MFieldDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1038,23 +1037,23 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 				.pattern_FieldDec2Property4Interface_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList jo2uoList = (RuleEntryList) result2_black[0];
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_black[1];
+			Interface uOwnerType = (Interface) result2_black[1];
 			ASTNode2Element jo2uo = (ASTNode2Element) result2_black[2];
-			Interface uOwnerType = (Interface) result2_black[3];
+			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result2_black[3];
 			//nothing RuleEntryList nd2neList = (RuleEntryList) result2_black[4];
 			ASTNode2Element nd2ne = (ASTNode2Element) result2_black[5];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[6];
-			Property feature = (Property) result2_black[7];
+			Property feature = (Property) result2_black[6];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result2_black[7];
 
 			Object[] result3_bindingAndBlack = FieldDec2Property4InterfaceImpl
 					.pattern_FieldDec2Property4Interface_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature,
+							isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jOwnerType] = " + jOwnerType + ", "
-						+ "[uOwnerType] = " + uOwnerType + ", " + "[nd2ne] = " + nd2ne + ", " + "[jo2uo] = " + jo2uo
-						+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uOwnerType] = " + uOwnerType + ", "
+						+ "[nd2ne] = " + nd2ne + ", " + "[jOwnerType] = " + jOwnerType + ", " + "[jo2uo] = " + jo2uo
+						+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1063,21 +1062,22 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					csp)) {
 				// 
 				Object[] result5_black = FieldDec2Property4InterfaceImpl
-						.pattern_FieldDec2Property4Interface_29_5_checknacs_blackBBBBBB(jOwnerType, uOwnerType, nd2ne,
-								jo2uo, bodyDeclaration, feature);
+						.pattern_FieldDec2Property4Interface_29_5_checknacs_blackBBBBBB(uOwnerType, nd2ne, jOwnerType,
+								jo2uo, feature, bodyDeclaration);
 				if (result5_black != null) {
 
 					Object[] result6_black = FieldDec2Property4InterfaceImpl
-							.pattern_FieldDec2Property4Interface_29_6_perform_blackBBBBBBB(jOwnerType, uOwnerType,
-									nd2ne, jo2uo, bodyDeclaration, feature, ruleResult);
+							.pattern_FieldDec2Property4Interface_29_6_perform_blackBBBBBBB(uOwnerType, nd2ne,
+									jOwnerType, jo2uo, feature, bodyDeclaration, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jOwnerType] = "
-								+ jOwnerType + ", " + "[uOwnerType] = " + uOwnerType + ", " + "[nd2ne] = " + nd2ne
-								+ ", " + "[jo2uo] = " + jo2uo + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-								+ "[feature] = " + feature + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uOwnerType] = "
+								+ uOwnerType + ", " + "[nd2ne] = " + nd2ne + ", " + "[jOwnerType] = " + jOwnerType
+								+ ", " + "[jo2uo] = " + jo2uo + ", " + "[feature] = " + feature + ", "
+								+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ruleResult] = " + ruleResult
+								+ ".");
 					}
 					FieldDec2Property4InterfaceImpl.pattern_FieldDec2Property4Interface_29_6_perform_greenBBBBB(
-							jOwnerType, uOwnerType, bodyDeclaration, feature, ruleResult);
+							uOwnerType, jOwnerType, feature, bodyDeclaration, ruleResult);
 
 				} else {
 				}
@@ -1094,9 +1094,9 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1111,12 +1111,12 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("uOwnerType", uOwnerType);
 		isApplicableMatch.registerObject("nd2ne", nd2ne);
+		isApplicableMatch.registerObject("jOwnerType", jOwnerType);
 		isApplicableMatch.registerObject("jo2uo", jo2uo);
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		return csp;
 	}
 
@@ -1153,11 +1153,11 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					(MFieldDefinition) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_INTERFACE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MFIELDDEFINITION_PROPERTY:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (Interface) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(MFieldDefinition) arguments.get(5), (Property) arguments.get(6));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACE_ASTNODE2ELEMENT_INTERFACEDECLARATION_ASTNODE2ELEMENT_PROPERTY_MFIELDDEFINITION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (InterfaceDeclaration) arguments.get(3),
+					(ASTNode2Element) arguments.get(4), (Property) arguments.get(5),
+					(MFieldDefinition) arguments.get(6));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1183,11 +1183,11 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					(Property) arguments.get(2));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_INTERFACE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MFIELDDEFINITION_PROPERTY:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (Interface) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(MFieldDefinition) arguments.get(5), (Property) arguments.get(6));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACE_ASTNODE2ELEMENT_INTERFACEDECLARATION_ASTNODE2ELEMENT_PROPERTY_MFIELDDEFINITION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (InterfaceDeclaration) arguments.get(3),
+					(ASTNode2Element) arguments.get(4), (Property) arguments.get(5),
+					(MFieldDefinition) arguments.get(6));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1197,19 +1197,19 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_259__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_259((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_279__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_279((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_121__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_INTERFACE_MFIELDDEFINITION_PROPERTY_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (Interface) arguments.get(1),
-					(MFieldDefinition) arguments.get(2), (Property) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACE_INTERFACEDECLARATION_PROPERTY_MFIELDDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Interface) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(Property) arguments.get(2), (MFieldDefinition) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1220,12 +1220,11 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_INTERFACE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MFIELDDEFINITION_PROPERTY_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (Interface) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(MFieldDefinition) arguments.get(5), (Property) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACE_ASTNODE2ELEMENT_INTERFACEDECLARATION_ASTNODE2ELEMENT_PROPERTY_MFIELDDEFINITION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (InterfaceDeclaration) arguments.get(3),
+					(ASTNode2Element) arguments.get(4), (Property) arguments.get(5),
+					(MFieldDefinition) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1335,31 +1334,31 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_FieldDec2Property4Interface_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jOwnerType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("uOwnerType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_0 = isApplicableMatch.getObject("uOwnerType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jOwnerType");
 		EObject _localVariable_3 = isApplicableMatch.getObject("jo2uo");
-		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_5 = isApplicableMatch.getObject("feature");
-		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpUOwnerType = _localVariable_1;
-		EObject tmpNd2ne = _localVariable_2;
+		EObject _localVariable_4 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_5 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject tmpUOwnerType = _localVariable_0;
+		EObject tmpNd2ne = _localVariable_1;
+		EObject tmpJOwnerType = _localVariable_2;
 		EObject tmpJo2uo = _localVariable_3;
-		EObject tmpBodyDeclaration = _localVariable_4;
-		EObject tmpFeature = _localVariable_5;
-		if (tmpJOwnerType instanceof InterfaceDeclaration) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
-			if (tmpUOwnerType instanceof Interface) {
-				Interface uOwnerType = (Interface) tmpUOwnerType;
-				if (tmpNd2ne instanceof ASTNode2Element) {
-					ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+		EObject tmpFeature = _localVariable_4;
+		EObject tmpBodyDeclaration = _localVariable_5;
+		if (tmpUOwnerType instanceof Interface) {
+			Interface uOwnerType = (Interface) tmpUOwnerType;
+			if (tmpNd2ne instanceof ASTNode2Element) {
+				ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+				if (tmpJOwnerType instanceof InterfaceDeclaration) {
+					InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
 					if (tmpJo2uo instanceof ASTNode2Element) {
 						ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-						if (tmpBodyDeclaration instanceof MFieldDefinition) {
-							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-							if (tmpFeature instanceof Property) {
-								Property feature = (Property) tmpFeature;
-								return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature,
+						if (tmpFeature instanceof Property) {
+							Property feature = (Property) tmpFeature;
+							if (tmpBodyDeclaration instanceof MFieldDefinition) {
+								MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+								return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration,
 										isApplicableMatch };
 							}
 						}
@@ -1371,14 +1370,14 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_1_1_performtransformation_blackBBBBBBFBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature, FieldDec2Property4Interface _this,
+			Interface uOwnerType, ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo,
+			Property feature, MFieldDefinition bodyDeclaration, FieldDec2Property4Interface _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!jo2uo.equals(nd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, csp, _this,
+					return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1391,19 +1390,19 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding = pattern_FieldDec2Property4Interface_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding != null) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[0];
-			Interface uOwnerType = (Interface) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[1];
-			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[2];
+			Interface uOwnerType = (Interface) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[0];
+			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[1];
+			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[2];
 			ASTNode2Element jo2uo = (ASTNode2Element) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[3];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[4];
-			Property feature = (Property) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[5];
+			Property feature = (Property) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[4];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_FieldDec2Property4Interface_1_1_performtransformation_black = pattern_FieldDec2Property4Interface_1_1_performtransformation_blackBBBBBBFBB(
-					jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, _this, isApplicableMatch);
+					uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, _this, isApplicableMatch);
 			if (result_pattern_FieldDec2Property4Interface_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDec2Property4Interface_1_1_performtransformation_black[6];
 
-				return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, csp, _this,
+				return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1422,26 +1421,26 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject nd2ne, EObject jo2uo,
-			EObject bodyDeclaration, EObject feature) {
-		if (!jOwnerType.equals(uOwnerType)) {
-			if (!jOwnerType.equals(nd2ne)) {
-				if (!jOwnerType.equals(jo2uo)) {
-					if (!nd2ne.equals(uOwnerType)) {
+			PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne, EObject jOwnerType, EObject jo2uo,
+			EObject feature, EObject bodyDeclaration) {
+		if (!nd2ne.equals(uOwnerType)) {
+			if (!jOwnerType.equals(uOwnerType)) {
+				if (!jOwnerType.equals(nd2ne)) {
+					if (!jOwnerType.equals(jo2uo)) {
 						if (!jo2uo.equals(uOwnerType)) {
 							if (!jo2uo.equals(nd2ne)) {
-								if (!bodyDeclaration.equals(jOwnerType)) {
-									if (!bodyDeclaration.equals(uOwnerType)) {
-										if (!bodyDeclaration.equals(nd2ne)) {
-											if (!bodyDeclaration.equals(jo2uo)) {
-												if (!bodyDeclaration.equals(feature)) {
-													if (!feature.equals(jOwnerType)) {
-														if (!feature.equals(uOwnerType)) {
-															if (!feature.equals(nd2ne)) {
-																if (!feature.equals(jo2uo)) {
-																	return new Object[] { ruleresult, jOwnerType,
-																			uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-																			feature };
+								if (!feature.equals(uOwnerType)) {
+									if (!feature.equals(nd2ne)) {
+										if (!feature.equals(jOwnerType)) {
+											if (!feature.equals(jo2uo)) {
+												if (!bodyDeclaration.equals(uOwnerType)) {
+													if (!bodyDeclaration.equals(nd2ne)) {
+														if (!bodyDeclaration.equals(jOwnerType)) {
+															if (!bodyDeclaration.equals(jo2uo)) {
+																if (!bodyDeclaration.equals(feature)) {
+																	return new Object[] { ruleresult, uOwnerType, nd2ne,
+																			jOwnerType, jo2uo, feature,
+																			bodyDeclaration };
 																}
 															}
 														}
@@ -1461,8 +1460,8 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject bodyDeclaration,
-			EObject feature) {
+			PerformRuleResult ruleresult, EObject uOwnerType, EObject jOwnerType, EObject feature,
+			EObject bodyDeclaration) {
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uOwnerType____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1492,16 +1491,16 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 				.setName(jOwnerType__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
-		return new Object[] { ruleresult, jOwnerType, uOwnerType, bodyDeclaration, feature,
+		return new Object[] { ruleresult, uOwnerType, jOwnerType, feature, bodyDeclaration,
 				uOwnerType__feature____ownedAttribute, feature__uOwnerType____interface,
 				jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_FieldDec2Property4Interface_1_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property4Interface _this, PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType,
-			EObject nd2ne, EObject jo2uo, EObject bodyDeclaration, EObject feature) {
-		_this.registerObjects_FWD(ruleresult, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+			FieldDec2Property4Interface _this, PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne,
+			EObject jOwnerType, EObject jo2uo, EObject feature, EObject bodyDeclaration) {
+		_this.registerObjects_FWD(ruleresult, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 
 	}
 
@@ -1577,7 +1576,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_2_2_corematch_blackBFFFBFB(
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_2_2_corematch_blackFFBFFBB(
 			InterfaceDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jOwnerType,
@@ -1591,7 +1590,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 						Element tmpFeature = nd2ne.getTarget();
 						if (tmpFeature instanceof Property) {
 							Property feature = (Property) tmpFeature;
-							_result.add(new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature,
+							_result.add(new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration,
 									match });
 						}
 
@@ -1604,17 +1603,17 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_2_3_findcontext_blackBBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature) {
+			Interface uOwnerType, ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo,
+			Property feature, MFieldDefinition bodyDeclaration) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jo2uo.equals(nd2ne)) {
-			if (jOwnerType.equals(jo2uo.getSource())) {
-				if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
-					if (uOwnerType.equals(jo2uo.getTarget())) {
-						if (bodyDeclaration.equals(nd2ne.getSource())) {
-							if (feature.equals(nd2ne.getTarget())) {
-								_result.add(new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-										feature });
+			if (uOwnerType.equals(jo2uo.getTarget())) {
+				if (feature.equals(nd2ne.getTarget())) {
+					if (jOwnerType.getBodyDeclarations().contains(bodyDeclaration)) {
+						if (jOwnerType.equals(jo2uo.getSource())) {
+							if (bodyDeclaration.equals(nd2ne.getSource())) {
+								_result.add(new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+										bodyDeclaration });
 							}
 						}
 					}
@@ -1625,70 +1624,70 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_2_3_findcontext_greenBBBBBBFFFFFFF(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature) {
+			Interface uOwnerType, ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo,
+			Property feature, MFieldDefinition bodyDeclaration) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jo2uo__jOwnerType____source_name_prime = "source";
+		String jo2uo__uOwnerType____target_name_prime = "target";
+		String nd2ne__feature____target_name_prime = "target";
 		String jOwnerType__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String jo2uo__uOwnerType____target_name_prime = "target";
+		String jo2uo__jOwnerType____source_name_prime = "source";
 		String nd2ne__bodyDeclaration____source_name_prime = "source";
-		String nd2ne__feature____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(uOwnerType);
 		isApplicableMatch.getAllContextElements().add(nd2ne);
+		isApplicableMatch.getAllContextElements().add(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(feature);
-		jo2uo__jOwnerType____source.setSrc(jo2uo);
-		jo2uo__jOwnerType____source.setTrg(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		jo2uo__uOwnerType____target.setSrc(jo2uo);
+		jo2uo__uOwnerType____target.setTrg(uOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
+		nd2ne__feature____target.setSrc(nd2ne);
+		nd2ne__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
 		jOwnerType__bodyDeclaration____bodyDeclarations.setSrc(jOwnerType);
 		jOwnerType__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jOwnerType__bodyDeclaration____bodyDeclarations);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration.setSrc(bodyDeclaration);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration.setTrg(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jOwnerType____abstractTypeDeclaration);
-		jo2uo__uOwnerType____target.setSrc(jo2uo);
-		jo2uo__uOwnerType____target.setTrg(uOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
+		jo2uo__jOwnerType____source.setSrc(jo2uo);
+		jo2uo__jOwnerType____source.setTrg(jOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
 		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
 		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
-		nd2ne__feature____target.setSrc(nd2ne);
-		nd2ne__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
-		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
+		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
+		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
 		jOwnerType__bodyDeclaration____bodyDeclarations
 				.setName(jOwnerType__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
-		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
+		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
 		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
-		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
-		return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, isApplicableMatch,
-				jo2uo__jOwnerType____source, jOwnerType__bodyDeclaration____bodyDeclarations,
-				bodyDeclaration__jOwnerType____abstractTypeDeclaration, jo2uo__uOwnerType____target,
-				nd2ne__bodyDeclaration____source, nd2ne__feature____target };
+		return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, isApplicableMatch,
+				jo2uo__uOwnerType____target, nd2ne__feature____target, jOwnerType__bodyDeclaration____bodyDeclarations,
+				bodyDeclaration__jOwnerType____abstractTypeDeclaration, jo2uo__jOwnerType____source,
+				nd2ne__bodyDeclaration____source };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_2_4_solveCSP_bindingFBBBBBBBB(
-			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo,
-				bodyDeclaration, feature);
+			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo,
+				feature, bodyDeclaration);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-					feature };
+			return new Object[] { csp, _this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+					bodyDeclaration };
 		}
 		return null;
 	}
@@ -1698,11 +1697,11 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature) {
+			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {
 		Object[] result_pattern_FieldDec2Property4Interface_2_4_solveCSP_binding = pattern_FieldDec2Property4Interface_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+				_this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 		if (result_pattern_FieldDec2Property4Interface_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Interface_2_4_solveCSP_binding[0];
 
@@ -1710,8 +1709,8 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_FieldDec2Property4Interface_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo,
-						bodyDeclaration, feature };
+				return new Object[] { csp, _this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+						bodyDeclaration };
 			}
 		}
 		return null;
@@ -1841,31 +1840,31 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_FieldDec2Property4Interface_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jOwnerType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("uOwnerType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_0 = isApplicableMatch.getObject("uOwnerType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("nd2ne");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jOwnerType");
 		EObject _localVariable_3 = isApplicableMatch.getObject("jo2uo");
-		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_5 = isApplicableMatch.getObject("feature");
-		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpUOwnerType = _localVariable_1;
-		EObject tmpNd2ne = _localVariable_2;
+		EObject _localVariable_4 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_5 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject tmpUOwnerType = _localVariable_0;
+		EObject tmpNd2ne = _localVariable_1;
+		EObject tmpJOwnerType = _localVariable_2;
 		EObject tmpJo2uo = _localVariable_3;
-		EObject tmpBodyDeclaration = _localVariable_4;
-		EObject tmpFeature = _localVariable_5;
-		if (tmpJOwnerType instanceof InterfaceDeclaration) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
-			if (tmpUOwnerType instanceof Interface) {
-				Interface uOwnerType = (Interface) tmpUOwnerType;
-				if (tmpNd2ne instanceof ASTNode2Element) {
-					ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+		EObject tmpFeature = _localVariable_4;
+		EObject tmpBodyDeclaration = _localVariable_5;
+		if (tmpUOwnerType instanceof Interface) {
+			Interface uOwnerType = (Interface) tmpUOwnerType;
+			if (tmpNd2ne instanceof ASTNode2Element) {
+				ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
+				if (tmpJOwnerType instanceof InterfaceDeclaration) {
+					InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
 					if (tmpJo2uo instanceof ASTNode2Element) {
 						ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-						if (tmpBodyDeclaration instanceof MFieldDefinition) {
-							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-							if (tmpFeature instanceof Property) {
-								Property feature = (Property) tmpFeature;
-								return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature,
+						if (tmpFeature instanceof Property) {
+							Property feature = (Property) tmpFeature;
+							if (tmpBodyDeclaration instanceof MFieldDefinition) {
+								MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+								return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration,
 										isApplicableMatch };
 							}
 						}
@@ -1877,14 +1876,14 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_11_1_performtransformation_blackBBBBBBFBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature, FieldDec2Property4Interface _this,
+			Interface uOwnerType, ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo,
+			Property feature, MFieldDefinition bodyDeclaration, FieldDec2Property4Interface _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!jo2uo.equals(nd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, csp, _this,
+					return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1897,19 +1896,19 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		Object[] result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding = pattern_FieldDec2Property4Interface_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding != null) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[0];
-			Interface uOwnerType = (Interface) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[1];
-			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[2];
+			Interface uOwnerType = (Interface) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[0];
+			ASTNode2Element nd2ne = (ASTNode2Element) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[1];
+			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[2];
 			ASTNode2Element jo2uo = (ASTNode2Element) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[3];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[4];
-			Property feature = (Property) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[5];
+			Property feature = (Property) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[4];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_FieldDec2Property4Interface_11_1_performtransformation_black = pattern_FieldDec2Property4Interface_11_1_performtransformation_blackBBBBBBFBB(
-					jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, _this, isApplicableMatch);
+					uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, _this, isApplicableMatch);
 			if (result_pattern_FieldDec2Property4Interface_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_FieldDec2Property4Interface_11_1_performtransformation_black[6];
 
-				return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, csp, _this,
+				return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1928,26 +1927,26 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject nd2ne, EObject jo2uo,
-			EObject bodyDeclaration, EObject feature) {
-		if (!jOwnerType.equals(uOwnerType)) {
-			if (!jOwnerType.equals(nd2ne)) {
-				if (!jOwnerType.equals(jo2uo)) {
-					if (!nd2ne.equals(uOwnerType)) {
+			PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne, EObject jOwnerType, EObject jo2uo,
+			EObject feature, EObject bodyDeclaration) {
+		if (!nd2ne.equals(uOwnerType)) {
+			if (!jOwnerType.equals(uOwnerType)) {
+				if (!jOwnerType.equals(nd2ne)) {
+					if (!jOwnerType.equals(jo2uo)) {
 						if (!jo2uo.equals(uOwnerType)) {
 							if (!jo2uo.equals(nd2ne)) {
-								if (!bodyDeclaration.equals(jOwnerType)) {
-									if (!bodyDeclaration.equals(uOwnerType)) {
-										if (!bodyDeclaration.equals(nd2ne)) {
-											if (!bodyDeclaration.equals(jo2uo)) {
-												if (!bodyDeclaration.equals(feature)) {
-													if (!feature.equals(jOwnerType)) {
-														if (!feature.equals(uOwnerType)) {
-															if (!feature.equals(nd2ne)) {
-																if (!feature.equals(jo2uo)) {
-																	return new Object[] { ruleresult, jOwnerType,
-																			uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-																			feature };
+								if (!feature.equals(uOwnerType)) {
+									if (!feature.equals(nd2ne)) {
+										if (!feature.equals(jOwnerType)) {
+											if (!feature.equals(jo2uo)) {
+												if (!bodyDeclaration.equals(uOwnerType)) {
+													if (!bodyDeclaration.equals(nd2ne)) {
+														if (!bodyDeclaration.equals(jOwnerType)) {
+															if (!bodyDeclaration.equals(jo2uo)) {
+																if (!bodyDeclaration.equals(feature)) {
+																	return new Object[] { ruleresult, uOwnerType, nd2ne,
+																			jOwnerType, jo2uo, feature,
+																			bodyDeclaration };
 																}
 															}
 														}
@@ -1967,8 +1966,8 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject bodyDeclaration,
-			EObject feature) {
+			PerformRuleResult ruleresult, EObject uOwnerType, EObject jOwnerType, EObject feature,
+			EObject bodyDeclaration) {
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uOwnerType____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jOwnerType__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1998,16 +1997,16 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 				.setName(jOwnerType__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jOwnerType____abstractTypeDeclaration
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
-		return new Object[] { ruleresult, jOwnerType, uOwnerType, bodyDeclaration, feature,
+		return new Object[] { ruleresult, uOwnerType, jOwnerType, feature, bodyDeclaration,
 				uOwnerType__feature____ownedAttribute, feature__uOwnerType____interface,
 				jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_FieldDec2Property4Interface_11_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property4Interface _this, PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType,
-			EObject nd2ne, EObject jo2uo, EObject bodyDeclaration, EObject feature) {
-		_this.registerObjects_BWD(ruleresult, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+			FieldDec2Property4Interface _this, PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne,
+			EObject jOwnerType, EObject jo2uo, EObject feature, EObject bodyDeclaration) {
+		_this.registerObjects_BWD(ruleresult, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 
 	}
 
@@ -2083,7 +2082,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_12_2_corematch_blackFBFFFBB(
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_12_2_corematch_blackBFFFBFB(
 			Interface uOwnerType, Property feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uOwnerType,
@@ -2097,7 +2096,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 						ASTNode tmpBodyDeclaration = nd2ne.getSource();
 						if (tmpBodyDeclaration instanceof MFieldDefinition) {
 							MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-							_result.add(new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature,
+							_result.add(new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration,
 									match });
 						}
 
@@ -2110,17 +2109,17 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_12_3_findcontext_blackBBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature) {
+			Interface uOwnerType, ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo,
+			Property feature, MFieldDefinition bodyDeclaration) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!jo2uo.equals(nd2ne)) {
 			if (uOwnerType.getOwnedAttributes().contains(feature)) {
-				if (jOwnerType.equals(jo2uo.getSource())) {
-					if (uOwnerType.equals(jo2uo.getTarget())) {
-						if (bodyDeclaration.equals(nd2ne.getSource())) {
-							if (feature.equals(nd2ne.getTarget())) {
-								_result.add(new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-										feature });
+				if (uOwnerType.equals(jo2uo.getTarget())) {
+					if (feature.equals(nd2ne.getTarget())) {
+						if (jOwnerType.equals(jo2uo.getSource())) {
+							if (bodyDeclaration.equals(nd2ne.getSource())) {
+								_result.add(new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+										bodyDeclaration });
 							}
 						}
 					}
@@ -2131,66 +2130,66 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_12_3_findcontext_greenBBBBBBFFFFFFF(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature) {
+			Interface uOwnerType, ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo,
+			Property feature, MFieldDefinition bodyDeclaration) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uOwnerType____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jo2uo__uOwnerType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jo2uo__jOwnerType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge nd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
 		String feature__uOwnerType____interface_name_prime = "interface";
-		String jo2uo__jOwnerType____source_name_prime = "source";
 		String jo2uo__uOwnerType____target_name_prime = "target";
-		String nd2ne__bodyDeclaration____source_name_prime = "source";
 		String nd2ne__feature____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(jOwnerType);
+		String jo2uo__jOwnerType____source_name_prime = "source";
+		String nd2ne__bodyDeclaration____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(uOwnerType);
 		isApplicableMatch.getAllContextElements().add(nd2ne);
+		isApplicableMatch.getAllContextElements().add(jOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		uOwnerType__feature____ownedAttribute.setSrc(uOwnerType);
 		uOwnerType__feature____ownedAttribute.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(uOwnerType__feature____ownedAttribute);
 		feature__uOwnerType____interface.setSrc(feature);
 		feature__uOwnerType____interface.setTrg(uOwnerType);
 		isApplicableMatch.getAllContextElements().add(feature__uOwnerType____interface);
-		jo2uo__jOwnerType____source.setSrc(jo2uo);
-		jo2uo__jOwnerType____source.setTrg(jOwnerType);
-		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
 		jo2uo__uOwnerType____target.setSrc(jo2uo);
 		jo2uo__uOwnerType____target.setTrg(uOwnerType);
 		isApplicableMatch.getAllContextElements().add(jo2uo__uOwnerType____target);
-		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
-		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
 		nd2ne__feature____target.setSrc(nd2ne);
 		nd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(nd2ne__feature____target);
+		jo2uo__jOwnerType____source.setSrc(jo2uo);
+		jo2uo__jOwnerType____source.setTrg(jOwnerType);
+		isApplicableMatch.getAllContextElements().add(jo2uo__jOwnerType____source);
+		nd2ne__bodyDeclaration____source.setSrc(nd2ne);
+		nd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(nd2ne__bodyDeclaration____source);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		feature__uOwnerType____interface.setName(feature__uOwnerType____interface_name_prime);
-		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
 		jo2uo__uOwnerType____target.setName(jo2uo__uOwnerType____target_name_prime);
-		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
 		nd2ne__feature____target.setName(nd2ne__feature____target_name_prime);
-		return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, isApplicableMatch,
-				uOwnerType__feature____ownedAttribute, feature__uOwnerType____interface, jo2uo__jOwnerType____source,
-				jo2uo__uOwnerType____target, nd2ne__bodyDeclaration____source, nd2ne__feature____target };
+		jo2uo__jOwnerType____source.setName(jo2uo__jOwnerType____source_name_prime);
+		nd2ne__bodyDeclaration____source.setName(nd2ne__bodyDeclaration____source_name_prime);
+		return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, isApplicableMatch,
+				uOwnerType__feature____ownedAttribute, feature__uOwnerType____interface, jo2uo__uOwnerType____target,
+				nd2ne__feature____target, jo2uo__jOwnerType____source, nd2ne__bodyDeclaration____source };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_12_4_solveCSP_bindingFBBBBBBBB(
-			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo,
-				bodyDeclaration, feature);
+			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo,
+				feature, bodyDeclaration);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-					feature };
+			return new Object[] { csp, _this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+					bodyDeclaration };
 		}
 		return null;
 	}
@@ -2200,11 +2199,11 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature) {
+			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {
 		Object[] result_pattern_FieldDec2Property4Interface_12_4_solveCSP_binding = pattern_FieldDec2Property4Interface_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature);
+				_this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration);
 		if (result_pattern_FieldDec2Property4Interface_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Interface_12_4_solveCSP_binding[0];
 
@@ -2212,8 +2211,8 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_FieldDec2Property4Interface_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo,
-						bodyDeclaration, feature };
+				return new Object[] { csp, _this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+						bodyDeclaration };
 			}
 		}
 		return null;
@@ -2497,25 +2496,25 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_bindingFFFFBB(
-			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("jOwnerType");
-		EObject _localVariable_1 = targetMatch.getObject("uOwnerType");
-		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
-		EObject _localVariable_3 = targetMatch.getObject("feature");
-		EObject tmpJOwnerType = _localVariable_0;
-		EObject tmpUOwnerType = _localVariable_1;
-		EObject tmpBodyDeclaration = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
-		if (tmpJOwnerType instanceof InterfaceDeclaration) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
-			if (tmpUOwnerType instanceof Interface) {
-				Interface uOwnerType = (Interface) tmpUOwnerType;
-				if (tmpBodyDeclaration instanceof MFieldDefinition) {
-					MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-					if (tmpFeature instanceof Property) {
-						Property feature = (Property) tmpFeature;
-						return new Object[] { jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch,
-								targetMatch };
+			Match targetMatch, Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("uOwnerType");
+		EObject _localVariable_1 = sourceMatch.getObject("jOwnerType");
+		EObject _localVariable_2 = targetMatch.getObject("feature");
+		EObject _localVariable_3 = sourceMatch.getObject("bodyDeclaration");
+		EObject tmpUOwnerType = _localVariable_0;
+		EObject tmpJOwnerType = _localVariable_1;
+		EObject tmpFeature = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_3;
+		if (tmpUOwnerType instanceof Interface) {
+			Interface uOwnerType = (Interface) tmpUOwnerType;
+			if (tmpJOwnerType instanceof InterfaceDeclaration) {
+				InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
+				if (tmpFeature instanceof Property) {
+					Property feature = (Property) tmpFeature;
+					if (tmpBodyDeclaration instanceof MFieldDefinition) {
+						MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
+						return new Object[] { uOwnerType, jOwnerType, feature, bodyDeclaration, targetMatch,
+								sourceMatch };
 					}
 				}
 			}
@@ -2524,10 +2523,10 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_blackBBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature,
+			Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch, targetMatch };
+			return new Object[] { uOwnerType, jOwnerType, feature, bodyDeclaration, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2535,31 +2534,31 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding = pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding != null) {
-			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[0];
-			Interface uOwnerType = (Interface) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[1];
-			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[2];
-			Property feature = (Property) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[3];
+			Interface uOwnerType = (Interface) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[0];
+			InterfaceDeclaration jOwnerType = (InterfaceDeclaration) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[1];
+			Property feature = (Property) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[2];
+			MFieldDefinition bodyDeclaration = (MFieldDefinition) result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_black = pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_blackBBBBBB(
-					jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch, targetMatch);
+					uOwnerType, jOwnerType, feature, bodyDeclaration, sourceMatch, targetMatch);
 			if (result_pattern_FieldDec2Property4Interface_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch, targetMatch };
+				return new Object[] { uOwnerType, jOwnerType, feature, bodyDeclaration, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_24_3_solvecsp_bindingFBBBBBBB(
-			FieldDec2Property4Interface _this, InterfaceDeclaration jOwnerType, Interface uOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jOwnerType, uOwnerType, bodyDeclaration, feature,
+			FieldDec2Property4Interface _this, Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature,
+			MFieldDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(uOwnerType, jOwnerType, feature, bodyDeclaration,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch,
+			return new Object[] { csp, _this, uOwnerType, jOwnerType, feature, bodyDeclaration, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2570,10 +2569,10 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			FieldDec2Property4Interface _this, InterfaceDeclaration jOwnerType, Interface uOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Match sourceMatch, Match targetMatch) {
+			FieldDec2Property4Interface _this, Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature,
+			MFieldDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_FieldDec2Property4Interface_24_3_solvecsp_binding = pattern_FieldDec2Property4Interface_24_3_solvecsp_bindingFBBBBBBB(
-				_this, jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch, targetMatch);
+				_this, uOwnerType, jOwnerType, feature, bodyDeclaration, sourceMatch, targetMatch);
 		if (result_pattern_FieldDec2Property4Interface_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Interface_24_3_solvecsp_binding[0];
 
@@ -2581,7 +2580,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_FieldDec2Property4Interface_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, jOwnerType, uOwnerType, bodyDeclaration, feature, sourceMatch,
+				return new Object[] { csp, _this, uOwnerType, jOwnerType, feature, bodyDeclaration, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2594,20 +2593,20 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_24_5_matchcorrcontext_blackBBFFBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature,
+	public static final Iterable<Object[]> pattern_FieldDec2Property4Interface_24_5_matchcorrcontext_blackBFBFBBBB(
+			Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jOwnerType,
-					ASTNode2Element.class, "source")) {
-				if (uOwnerType.equals(jo2uo.getTarget())) {
+			for (ASTNode2Element jo2uo : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uOwnerType,
+					ASTNode2Element.class, "target")) {
+				if (jOwnerType.equals(jo2uo.getSource())) {
 					for (ASTNode2Element nd2ne : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
+							.getOppositeReferenceTyped(feature, ASTNode2Element.class, "target")) {
 						if (!jo2uo.equals(nd2ne)) {
-							if (feature.equals(nd2ne.getTarget())) {
-								_result.add(new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-										feature, sourceMatch, targetMatch });
+							if (bodyDeclaration.equals(nd2ne.getSource())) {
+								_result.add(new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+										bodyDeclaration, sourceMatch, targetMatch });
 							}
 						}
 					}
@@ -2630,9 +2629,9 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_24_6_createcorrespondence_blackBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature,
+			Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
 			CCMatch ccMatch) {
-		return new Object[] { jOwnerType, uOwnerType, bodyDeclaration, feature, ccMatch };
+		return new Object[] { uOwnerType, jOwnerType, feature, bodyDeclaration, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_24_7_addtoreturnedresult_blackBB(
@@ -2706,9 +2705,9 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration jOwnerType) {
-		if (ruleResult.getSourceObjects().contains(jOwnerType)) {
-			return new Object[] { ruleResult, jOwnerType };
+			ModelgeneratorRuleResult ruleResult, Interface uOwnerType) {
+		if (ruleResult.getTargetObjects().contains(uOwnerType)) {
+			return new Object[] { ruleResult, uOwnerType };
 		}
 		return null;
 	}
@@ -2722,9 +2721,9 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Interface uOwnerType) {
-		if (ruleResult.getTargetObjects().contains(uOwnerType)) {
-			return new Object[] { ruleResult, uOwnerType };
+			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration jOwnerType) {
+		if (ruleResult.getSourceObjects().contains(jOwnerType)) {
+			return new Object[] { ruleResult, jOwnerType };
 		}
 		return null;
 	}
@@ -2738,17 +2737,17 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, MFieldDefinition bodyDeclaration) {
-		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
-			return new Object[] { ruleResult, bodyDeclaration };
+			ModelgeneratorRuleResult ruleResult, Property feature) {
+		if (ruleResult.getTargetObjects().contains(feature)) {
+			return new Object[] { ruleResult, feature };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, Property feature) {
-		if (ruleResult.getTargetObjects().contains(feature)) {
-			return new Object[] { ruleResult, feature };
+			ModelgeneratorRuleResult ruleResult, MFieldDefinition bodyDeclaration) {
+		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
+			return new Object[] { ruleResult, bodyDeclaration };
 		}
 		return null;
 	}
@@ -2762,38 +2761,39 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					for (EObject tmpJo2uo : jo2uoList.getEntryObjects()) {
 						if (tmpJo2uo instanceof ASTNode2Element) {
 							ASTNode2Element jo2uo = (ASTNode2Element) tmpJo2uo;
-							ASTNode tmpJOwnerType = jo2uo.getSource();
-							if (tmpJOwnerType instanceof InterfaceDeclaration) {
-								InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
-								Element tmpUOwnerType = jo2uo.getTarget();
-								if (tmpUOwnerType instanceof Interface) {
-									Interface uOwnerType = (Interface) tmpUOwnerType;
+							Element tmpUOwnerType = jo2uo.getTarget();
+							if (tmpUOwnerType instanceof Interface) {
+								Interface uOwnerType = (Interface) tmpUOwnerType;
+								ASTNode tmpJOwnerType = jo2uo.getSource();
+								if (tmpJOwnerType instanceof InterfaceDeclaration) {
+									InterfaceDeclaration jOwnerType = (InterfaceDeclaration) tmpJOwnerType;
 									if (pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, jo2uo) == null) {
 										if (pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, jOwnerType) == null) {
+												ruleResult, uOwnerType) == null) {
 											if (pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, uOwnerType) == null) {
+													ruleResult, jOwnerType) == null) {
 												for (EObject tmpNd2ne : nd2neList.getEntryObjects()) {
 													if (tmpNd2ne instanceof ASTNode2Element) {
 														ASTNode2Element nd2ne = (ASTNode2Element) tmpNd2ne;
 														if (!jo2uo.equals(nd2ne)) {
-															ASTNode tmpBodyDeclaration = nd2ne.getSource();
-															if (tmpBodyDeclaration instanceof MFieldDefinition) {
-																MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
-																Element tmpFeature = nd2ne.getTarget();
-																if (tmpFeature instanceof Property) {
-																	Property feature = (Property) tmpFeature;
+															Element tmpFeature = nd2ne.getTarget();
+															if (tmpFeature instanceof Property) {
+																Property feature = (Property) tmpFeature;
+																ASTNode tmpBodyDeclaration = nd2ne.getSource();
+																if (tmpBodyDeclaration instanceof MFieldDefinition) {
+																	MFieldDefinition bodyDeclaration = (MFieldDefinition) tmpBodyDeclaration;
 																	if (pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_3BB(
 																			ruleResult, nd2ne) == null) {
 																		if (pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_4BB(
-																				ruleResult, bodyDeclaration) == null) {
+																				ruleResult, feature) == null) {
 																			if (pattern_FieldDec2Property4Interface_29_2_isapplicablecore_black_nac_5BB(
-																					ruleResult, feature) == null) {
+																					ruleResult,
+																					bodyDeclaration) == null) {
 																				_result.add(new Object[] { jo2uoList,
-																						jOwnerType, jo2uo, uOwnerType,
-																						nd2neList, nd2ne,
-																						bodyDeclaration, feature,
+																						uOwnerType, jo2uo, jOwnerType,
+																						nd2neList, nd2ne, feature,
+																						bodyDeclaration,
 																						ruleEntryContainer,
 																						ruleResult });
 																			}
@@ -2822,15 +2822,15 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_29_3_solveCSP_bindingFBBBBBBBBB(
-			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo,
-				bodyDeclaration, feature, ruleResult);
+			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo,
+				feature, bodyDeclaration, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration,
-					feature, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+					bodyDeclaration, ruleResult };
 		}
 		return null;
 	}
@@ -2840,11 +2840,11 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Interface_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature, ModelgeneratorRuleResult ruleResult) {
+			FieldDec2Property4Interface _this, IsApplicableMatch isApplicableMatch, Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_FieldDec2Property4Interface_29_3_solveCSP_binding = pattern_FieldDec2Property4Interface_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, ruleResult);
+				_this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, ruleResult);
 		if (result_pattern_FieldDec2Property4Interface_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_FieldDec2Property4Interface_29_3_solveCSP_binding[0];
 
@@ -2852,8 +2852,8 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_FieldDec2Property4Interface_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jOwnerType, uOwnerType, nd2ne, jo2uo,
-						bodyDeclaration, feature, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, uOwnerType, nd2ne, jOwnerType, jo2uo, feature,
+						bodyDeclaration, ruleResult };
 			}
 		}
 		return null;
@@ -2866,26 +2866,26 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		return _result;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Interface_29_5_checknacs_blackBBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature) {
+	public static final Object[] pattern_FieldDec2Property4Interface_29_5_checknacs_blackBBBBBB(Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration) {
 		if (!jo2uo.equals(nd2ne)) {
-			return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature };
+			return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Interface_29_6_perform_blackBBBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo,
-			MFieldDefinition bodyDeclaration, Property feature, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_FieldDec2Property4Interface_29_6_perform_blackBBBBBBB(Interface uOwnerType,
+			ASTNode2Element nd2ne, InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature,
+			MFieldDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
 		if (!jo2uo.equals(nd2ne)) {
-			return new Object[] { jOwnerType, uOwnerType, nd2ne, jo2uo, bodyDeclaration, feature, ruleResult };
+			return new Object[] { uOwnerType, nd2ne, jOwnerType, jo2uo, feature, bodyDeclaration, ruleResult };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property4Interface_29_6_perform_greenBBBBB(
-			InterfaceDeclaration jOwnerType, Interface uOwnerType, MFieldDefinition bodyDeclaration, Property feature,
+	public static final Object[] pattern_FieldDec2Property4Interface_29_6_perform_greenBBBBB(Interface uOwnerType,
+			InterfaceDeclaration jOwnerType, Property feature, MFieldDefinition bodyDeclaration,
 			ModelgeneratorRuleResult ruleResult) {
 		uOwnerType.getOwnedAttributes().add(feature);
 		jOwnerType.getBodyDeclarations().add(bodyDeclaration);
@@ -2894,7 +2894,7 @@ public class FieldDec2Property4InterfaceImpl extends AbstractRuleImpl implements
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { jOwnerType, uOwnerType, bodyDeclaration, feature, ruleResult };
+		return new Object[] { uOwnerType, jOwnerType, feature, bodyDeclaration, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FieldDec2Property4Interface_29_7_expressionFB(

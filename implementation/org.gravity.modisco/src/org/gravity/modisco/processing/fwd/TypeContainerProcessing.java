@@ -31,7 +31,7 @@ public class TypeContainerProcessing extends AbstractTypedModiscoProcessor<Abstr
 	@Override
 	public boolean process(final MGravityModel model, final Collection<AbstractTypeDeclaration> elements,
 			final IFolder debug, final IProgressMonitor monitor) {
-		elements.add(MoDiscoUtil.getJavaLangObject(model));
+		elements.add(MoDiscoUtil.getOrCreateJavaLangObject(model));
 		
 		List<ClassFile> classFiles = model.getClassFiles();
 		for (AbstractTypeDeclaration type : elements) {

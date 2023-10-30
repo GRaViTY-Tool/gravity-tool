@@ -875,7 +875,7 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_124(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_39(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = ClassInnerAnonClassMemberImpl
 				.pattern_ClassInnerAnonClassMember_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -935,7 +935,7 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_130(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = ClassInnerAnonClassMemberImpl
 				.pattern_ClassInnerAnonClassMember_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1004,29 +1004,29 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tInnerClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
-		var_tInnerClass_tLib.setValue(__helper.getValue("tInnerClass", "tLib"));
-		var_tInnerClass_tLib.setType("boolean");
-
 		Variable var_mInnerClass_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
 		var_mInnerClass_proxy.setValue(__helper.getValue("mInnerClass", "proxy"));
 		var_mInnerClass_proxy.setType("boolean");
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
+		Variable var_tInnerClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
+		var_tInnerClass_tLib.setValue(__helper.getValue("tInnerClass", "tLib"));
+		var_tInnerClass_tLib.setType("boolean");
+
+		Variable var_tInnerClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
+		var_tInnerClass_tName.setValue(__helper.getValue("tInnerClass", "tName"));
+		var_tInnerClass_tName.setType("String");
 
 		Variable var_tOuterClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterClass", true, csp);
 		var_tOuterClass_tName.setValue(__helper.getValue("tOuterClass", "tName"));
 		var_tOuterClass_tName.setType("String");
 
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
+
 		Variable var_mInnerClass_name = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
 		var_mInnerClass_name.setValue(__helper.getValue("mInnerClass", "name"));
 		var_mInnerClass_name.setType("String");
-
-		Variable var_tInnerClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
-		var_tInnerClass_tName.setValue(__helper.getValue("tInnerClass", "tName"));
-		var_tInnerClass_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1076,29 +1076,29 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tInnerClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
-		var_tInnerClass_tLib.setValue(__helper.getValue("tInnerClass", "tLib"));
-		var_tInnerClass_tLib.setType("boolean");
-
 		Variable var_mInnerClass_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
 		var_mInnerClass_proxy.setValue(__helper.getValue("mInnerClass", "proxy"));
 		var_mInnerClass_proxy.setType("boolean");
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
+		Variable var_tInnerClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
+		var_tInnerClass_tLib.setValue(__helper.getValue("tInnerClass", "tLib"));
+		var_tInnerClass_tLib.setType("boolean");
+
+		Variable var_tInnerClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
+		var_tInnerClass_tName.setValue(__helper.getValue("tInnerClass", "tName"));
+		var_tInnerClass_tName.setType("String");
 
 		Variable var_tOuterClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterClass", true, csp);
 		var_tOuterClass_tName.setValue(__helper.getValue("tOuterClass", "tName"));
 		var_tOuterClass_tName.setType("String");
 
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
+
 		Variable var_mInnerClass_name = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
 		var_mInnerClass_name.setValue(__helper.getValue("mInnerClass", "name"));
 		var_mInnerClass_name.setType("String");
-
-		Variable var_tInnerClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
-		var_tInnerClass_tName.setValue(__helper.getValue("tInnerClass", "tName"));
-		var_tInnerClass_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1521,10 +1521,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 			return null;
 		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_124__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_130__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_130((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_39__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_39((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_40__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_INNER_ANON_CLASS_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3218,9 +3218,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_20_2_testcorematchandDECs_black_nac_0BB(
 			TClass tInnerClass, TPackage tPackage) {
-		for (TPackage __DEC_tInnerClass_classes_803895 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tInnerClass_classes_78592 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tInnerClass_classes_803895)) {
+			if (!tPackage.equals(__DEC_tInnerClass_classes_78592)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3229,9 +3229,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tInnerClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tInnerClass_classes_194189 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tInnerClass_classes_989360 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tInnerClass_classes_194189)) {
+			if (!typeGraph.equals(__DEC_tInnerClass_classes_989360)) {
 				return new Object[] { tInnerClass, typeGraph };
 			}
 		}
@@ -3240,9 +3240,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_20_2_testcorematchandDECs_black_nac_2BB(
 			TClass tInnerClass, TPackage tPackage) {
-		TPackage __DEC_tInnerClass_allTypes_358403 = tInnerClass.getPackage();
-		if (__DEC_tInnerClass_allTypes_358403 != null) {
-			if (!tPackage.equals(__DEC_tInnerClass_allTypes_358403)) {
+		TPackage __DEC_tInnerClass_allTypes_326377 = tInnerClass.getPackage();
+		if (__DEC_tInnerClass_allTypes_326377 != null) {
+			if (!tPackage.equals(__DEC_tInnerClass_allTypes_326377)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3253,10 +3253,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 	public static final Object[] pattern_ClassInnerAnonClassMember_20_2_testcorematchandDECs_black_nac_3BB(
 			TClass tInnerClass, TClass tOuterClass) {
 		if (!tInnerClass.equals(tOuterClass)) {
-			TAbstractType __DEC_tInnerClass_innerTypes_639282 = tInnerClass.getOuterType();
-			if (__DEC_tInnerClass_innerTypes_639282 != null) {
-				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_639282)) {
-					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_639282)) {
+			TAbstractType __DEC_tInnerClass_innerTypes_660854 = tInnerClass.getOuterType();
+			if (__DEC_tInnerClass_innerTypes_660854 != null) {
+				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_660854)) {
+					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_660854)) {
 						return new Object[] { tInnerClass, tOuterClass };
 					}
 				}
@@ -3419,10 +3419,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_21_2_testcorematchandDECs_black_nac_0B(
 			MClass mInnerClass) {
-		AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_883075 = mInnerClass
+		AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_627494 = mInnerClass
 				.getAbstractTypeDeclaration();
-		if (__DEC_mInnerClass_abstractTypeDeclaration_883075 != null) {
-			if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_883075)) {
+		if (__DEC_mInnerClass_abstractTypeDeclaration_627494 != null) {
+			if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_627494)) {
 				return new Object[] { mInnerClass };
 			}
 		}
@@ -3432,10 +3432,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_21_2_testcorematchandDECs_black_nac_1BB(
 			MClass mInnerClass, AnonymousClassDeclaration eOuterClass) {
-		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_541444 = mInnerClass
+		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_539651 = mInnerClass
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_541444 != null) {
-			if (!eOuterClass.equals(__DEC_mInnerClass_anonymousClassDeclarationOwner_541444)) {
+		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_539651 != null) {
+			if (!eOuterClass.equals(__DEC_mInnerClass_anonymousClassDeclarationOwner_539651)) {
 				return new Object[] { mInnerClass, eOuterClass };
 			}
 		}
@@ -3445,7 +3445,7 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_21_2_testcorematchandDECs_black_nac_2B(
 			MClass mInnerClass) {
-		for (Model __DEC_mInnerClass_orphanTypes_539123 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mInnerClass_orphanTypes_255261 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, Model.class, "orphanTypes")) {
 			return new Object[] { mInnerClass };
 		}
@@ -3454,8 +3454,8 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_21_2_testcorematchandDECs_black_nac_3B(
 			MClass mInnerClass) {
-		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_42506 = mInnerClass.getPackage();
-		if (__DEC_mInnerClass_ownedElements_42506 != null) {
+		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_394897 = mInnerClass.getPackage();
+		if (__DEC_mInnerClass_ownedElements_394897 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3464,9 +3464,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_21_2_testcorematchandDECs_black_nac_4BB(
 			MClass mInnerClass, MAbstractMethodDefinition mDefinition) {
-		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_660830 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_262436 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_660830)) {
+			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_262436)) {
 				return new Object[] { mInnerClass, mDefinition };
 			}
 		}
@@ -3776,10 +3776,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_27_1_matchtggpattern_black_nac_0B(
 			MClass mInnerClass) {
-		AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_644099 = mInnerClass
+		AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_614992 = mInnerClass
 				.getAbstractTypeDeclaration();
-		if (__DEC_mInnerClass_abstractTypeDeclaration_644099 != null) {
-			if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_644099)) {
+		if (__DEC_mInnerClass_abstractTypeDeclaration_614992 != null) {
+			if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_614992)) {
 				return new Object[] { mInnerClass };
 			}
 		}
@@ -3789,10 +3789,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_27_1_matchtggpattern_black_nac_1BB(
 			MClass mInnerClass, AnonymousClassDeclaration eOuterClass) {
-		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_515448 = mInnerClass
+		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_953075 = mInnerClass
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_515448 != null) {
-			if (!eOuterClass.equals(__DEC_mInnerClass_anonymousClassDeclarationOwner_515448)) {
+		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_953075 != null) {
+			if (!eOuterClass.equals(__DEC_mInnerClass_anonymousClassDeclarationOwner_953075)) {
 				return new Object[] { mInnerClass, eOuterClass };
 			}
 		}
@@ -3802,7 +3802,7 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_27_1_matchtggpattern_black_nac_2B(
 			MClass mInnerClass) {
-		for (Model __DEC_mInnerClass_orphanTypes_539978 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mInnerClass_orphanTypes_993213 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, Model.class, "orphanTypes")) {
 			return new Object[] { mInnerClass };
 		}
@@ -3811,8 +3811,8 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_27_1_matchtggpattern_black_nac_3B(
 			MClass mInnerClass) {
-		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_52475 = mInnerClass.getPackage();
-		if (__DEC_mInnerClass_ownedElements_52475 != null) {
+		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_874302 = mInnerClass.getPackage();
+		if (__DEC_mInnerClass_ownedElements_874302 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3821,9 +3821,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_27_1_matchtggpattern_black_nac_4BB(
 			MClass mInnerClass, MAbstractMethodDefinition mDefinition) {
-		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_69299 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_918646 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_69299)) {
+			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_918646)) {
 				return new Object[] { mInnerClass, mDefinition };
 			}
 		}
@@ -3876,9 +3876,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_28_1_matchtggpattern_black_nac_0BB(
 			TClass tInnerClass, TPackage tPackage) {
-		for (TPackage __DEC_tInnerClass_classes_152664 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tInnerClass_classes_475885 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tInnerClass_classes_152664)) {
+			if (!tPackage.equals(__DEC_tInnerClass_classes_475885)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3887,9 +3887,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_28_1_matchtggpattern_black_nac_1BB(
 			TClass tInnerClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tInnerClass_classes_645387 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tInnerClass_classes_85229 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tInnerClass_classes_645387)) {
+			if (!typeGraph.equals(__DEC_tInnerClass_classes_85229)) {
 				return new Object[] { tInnerClass, typeGraph };
 			}
 		}
@@ -3898,9 +3898,9 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 
 	public static final Object[] pattern_ClassInnerAnonClassMember_28_1_matchtggpattern_black_nac_2BB(
 			TClass tInnerClass, TPackage tPackage) {
-		TPackage __DEC_tInnerClass_allTypes_212782 = tInnerClass.getPackage();
-		if (__DEC_tInnerClass_allTypes_212782 != null) {
-			if (!tPackage.equals(__DEC_tInnerClass_allTypes_212782)) {
+		TPackage __DEC_tInnerClass_allTypes_290842 = tInnerClass.getPackage();
+		if (__DEC_tInnerClass_allTypes_290842 != null) {
+			if (!tPackage.equals(__DEC_tInnerClass_allTypes_290842)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3911,10 +3911,10 @@ public class ClassInnerAnonClassMemberImpl extends AbstractRuleImpl implements C
 	public static final Object[] pattern_ClassInnerAnonClassMember_28_1_matchtggpattern_black_nac_3BB(
 			TClass tInnerClass, TClass tOuterClass) {
 		if (!tInnerClass.equals(tOuterClass)) {
-			TAbstractType __DEC_tInnerClass_innerTypes_368368 = tInnerClass.getOuterType();
-			if (__DEC_tInnerClass_innerTypes_368368 != null) {
-				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_368368)) {
-					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_368368)) {
+			TAbstractType __DEC_tInnerClass_innerTypes_699724 = tInnerClass.getOuterType();
+			if (__DEC_tInnerClass_innerTypes_699724 != null) {
+				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_699724)) {
+					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_699724)) {
 						return new Object[] { tInnerClass, tOuterClass };
 					}
 				}

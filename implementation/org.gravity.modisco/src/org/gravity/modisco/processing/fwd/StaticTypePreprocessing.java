@@ -167,7 +167,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else {
 			LOGGER.error(NLS.bind(Messages.errorFindStaticType,
 					new String[] { "unresolved method", NameUtil.getFullyQualifiedName(method) }));
-			type = MoDiscoUtil.getJavaLangObject(this.model);
+			type = MoDiscoUtil.getOrCreateJavaLangObject(this.model);
 		}
 		return type;
 	}
@@ -428,7 +428,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		final Type type = body.getAbstractTypeDeclaration();
 		if (type == null) {
 			if (body instanceof UnresolvedMethodDeclaration) {
-				return MoDiscoUtil.getJavaLangObject(this.model);
+				return MoDiscoUtil.getOrCreateJavaLangObject(this.model);
 			}
 			final var container = body.eContainer();
 			if (container instanceof AnonymousClassDeclaration) {

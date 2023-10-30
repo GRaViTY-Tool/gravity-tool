@@ -24,7 +24,7 @@
       <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
-      <discovery label="CARiSMA" url="http://carisma.umlsec.de/beta-updatesite"/>
+      <discovery label="CARiSMA" url="https://rgse.uni-koblenz.de/carisma/updatesite/"/>
    </url>
 
    <includes
@@ -37,7 +37,6 @@
       <import plugin="org.eclipse.modisco.java.discoverer"/>
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.gravity.modisco"/>
-      <import plugin="org.gravity.security.annotations"/>
       <import plugin="org.gravity.eclipse.ui"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.core.resources"/>
@@ -55,6 +54,7 @@
       <import plugin="org.eclipse.uml2.uml"/>
       <import plugin="org.gravity.tgg.modisco.pm"/>
       <import plugin="org.eclipse.core.commands"/>
+      <import feature="org.gravity.features.security" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin

@@ -7,6 +7,22 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
+  <name>GRaViTY</name>
+  <description>Static analysis for security compliance and design quality of Java projects.</description>
+  <url>https://gravity-tool.org</url>
+ 
+  <licenses>
+    <license>
+      <name>Eclipse Public License - v 2.0</name>
+      <url>https://www.eclipse.org/legal/epl-2.0/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <scm>
+    <url>https://github.com/GRaViTY-Tool/gravity-tool/</url>
+  </scm>
+
   <properties>
     <tycho-version>4.0.3</tycho-version>
     <jacoco.version>0.8.11</jacoco.version>
@@ -23,6 +39,8 @@
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>svenpeldszus-github</sonar.organization>
+    <sonar.projectKey>gravity</sonar.projectKey>
+    <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
     <sonar.coverage.jacoco.xmlReportPaths>${jacoco.aggregate.reportPaths}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <sonar.junit.reportPaths>${maven.multiModuleProjectDirectory}/target/surefire-reports</sonar.junit.reportPaths>
   </properties>
@@ -58,8 +76,8 @@
     <module>implementation/org.gravity.secdfd</module>
     <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
-    <!--<module>implementation/org.gravity.security.annotations.ui</module>
-    <module>implementation/org.gravity.security.annotations.pm</module>-->
+    <module>implementation/org.gravity.security.annotations.ui</module>
+    <module>implementation/org.gravity.security.annotations.pm</module>
     <module>implementation/org.gravity.security.violation.patterns</module>
     <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
@@ -74,6 +92,7 @@
     <module>tests/org.gravity.headless.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
+    <module>tests/org.gravity.security.tests</module>
     <module>tests/org.gravity.security.violation.patterns.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.typegraph.basic.tests</module>
@@ -202,7 +221,7 @@
     <repository>
       <id>FeatureIDE</id>
       <layout>p2</layout>
-      <url>http://featureide.cs.ovgu.de/update/v3/</url>
+      <url>https://featureide.cs.ovgu.de/update/v3/</url>
     </repository>
   </repositories>
 </project>

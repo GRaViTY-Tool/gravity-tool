@@ -160,11 +160,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[1];
-		AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result1_bindingAndBlack[2];
-		Operation feature = (Operation) result1_bindingAndBlack[3];
-		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[4];
-		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
+		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
+		AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result1_bindingAndBlack[3];
+		Operation feature = (Operation) result1_bindingAndBlack[4];
+		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		OperationInAnonymousImpl.pattern_OperationInAnonymous_1_1_performtransformation_greenBB(umlClass, feature);
 
@@ -176,13 +176,13 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OperationInAnonymousImpl
-				.pattern_OperationInAnonymous_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration,
-						umlClass, classDec, feature, a2c, bd2ne);
+				.pattern_OperationInAnonymous_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration, bd2ne,
+						umlClass, classDec, feature, a2c);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", "
-					+ "[classDec] = " + classDec + ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c + ", "
-					+ "[bd2ne] = " + bd2ne + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec + ", " + "[feature] = " + feature
+					+ ", " + "[a2c] = " + a2c + ".");
 		}
 		OperationInAnonymousImpl.pattern_OperationInAnonymous_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
 				bodyDeclaration, umlClass, classDec, feature);
@@ -194,7 +194,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		// 
 		// 
 		OperationInAnonymousImpl.pattern_OperationInAnonymous_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+				bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 		return OperationInAnonymousImpl.pattern_OperationInAnonymous_1_6_expressionFB(ruleresult);
 	}
 
@@ -226,34 +226,34 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_binding[0];
 		AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result2_binding[1];
 		for (Object[] result2_black : OperationInAnonymousImpl
-				.pattern_OperationInAnonymous_2_2_corematch_blackBFBFFFB(bodyDeclaration, classDec, match)) {
-			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_black[1];
-			Operation feature = (Operation) result2_black[3];
-			ASTNode2Element a2c = (ASTNode2Element) result2_black[4];
-			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[5];
+				.pattern_OperationInAnonymous_2_2_corematch_blackBFFBFFB(bodyDeclaration, classDec, match)) {
+			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[1];
+			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_black[2];
+			Operation feature = (Operation) result2_black[4];
+			ASTNode2Element a2c = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : OperationInAnonymousImpl
-					.pattern_OperationInAnonymous_2_3_findcontext_blackBBBBBB(bodyDeclaration, umlClass, classDec,
-							feature, a2c, bd2ne)) {
+					.pattern_OperationInAnonymous_2_3_findcontext_blackBBBBBB(bodyDeclaration, bd2ne, umlClass,
+							classDec, feature, a2c)) {
 				Object[] result3_green = OperationInAnonymousImpl
-						.pattern_OperationInAnonymous_2_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, umlClass,
-								classDec, feature, a2c, bd2ne);
+						.pattern_OperationInAnonymous_2_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, bd2ne,
+								umlClass, classDec, feature, a2c);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge a2c__umlClass____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge a2c__classDec____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge a2c__umlClass____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = OperationInAnonymousImpl
 						.pattern_OperationInAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+								bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec
-							+ ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c + ", " + "[bd2ne] = " + bd2ne
+							+ bodyDeclaration + ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass + ", "
+							+ "[classDec] = " + classDec + ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -327,8 +327,8 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne) {// Create CSP
+			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -344,11 +344,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		isApplicableMatch.registerObject("umlClass", umlClass);
 		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		return csp;
 	}
 
@@ -366,14 +366,14 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject classDec, EObject feature, EObject a2c, EObject bd2ne) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne,
+			EObject umlClass, EObject classDec, EObject feature, EObject a2c) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("umlClass", umlClass);
 		ruleresult.registerObject("classDec", classDec);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("bd2ne", bd2ne);
 
 	}
 
@@ -455,11 +455,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[1];
-		AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result1_bindingAndBlack[2];
-		Operation feature = (Operation) result1_bindingAndBlack[3];
-		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[4];
-		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
+		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
+		AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result1_bindingAndBlack[3];
+		Operation feature = (Operation) result1_bindingAndBlack[4];
+		ASTNode2Element a2c = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		OperationInAnonymousImpl.pattern_OperationInAnonymous_11_1_performtransformation_greenBB(bodyDeclaration,
 				classDec);
@@ -472,13 +472,13 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OperationInAnonymousImpl
-				.pattern_OperationInAnonymous_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration,
-						umlClass, classDec, feature, a2c, bd2ne);
+				.pattern_OperationInAnonymous_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration, bd2ne,
+						umlClass, classDec, feature, a2c);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", "
-					+ "[classDec] = " + classDec + ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c + ", "
-					+ "[bd2ne] = " + bd2ne + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec + ", " + "[feature] = " + feature
+					+ ", " + "[a2c] = " + a2c + ".");
 		}
 		OperationInAnonymousImpl.pattern_OperationInAnonymous_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
 				bodyDeclaration, umlClass, classDec, feature);
@@ -490,7 +490,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		// 
 		// 
 		OperationInAnonymousImpl.pattern_OperationInAnonymous_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-				bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+				bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 		return OperationInAnonymousImpl.pattern_OperationInAnonymous_11_6_expressionFB(ruleresult);
 	}
 
@@ -522,34 +522,34 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_binding[0];
 		Operation feature = (Operation) result2_binding[1];
 		for (Object[] result2_black : OperationInAnonymousImpl
-				.pattern_OperationInAnonymous_12_2_corematch_blackFBFBFFB(umlClass, feature, match)) {
+				.pattern_OperationInAnonymous_12_2_corematch_blackFFBFBFB(umlClass, feature, match)) {
 			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[0];
-			AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result2_black[2];
-			ASTNode2Element a2c = (ASTNode2Element) result2_black[4];
-			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[5];
+			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[1];
+			AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result2_black[3];
+			ASTNode2Element a2c = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : OperationInAnonymousImpl
-					.pattern_OperationInAnonymous_12_3_findcontext_blackBBBBBB(bodyDeclaration, umlClass, classDec,
-							feature, a2c, bd2ne)) {
+					.pattern_OperationInAnonymous_12_3_findcontext_blackBBBBBB(bodyDeclaration, bd2ne, umlClass,
+							classDec, feature, a2c)) {
 				Object[] result3_green = OperationInAnonymousImpl
-						.pattern_OperationInAnonymous_12_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, umlClass,
-								classDec, feature, a2c, bd2ne);
+						.pattern_OperationInAnonymous_12_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, bd2ne,
+								umlClass, classDec, feature, a2c);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge a2c__umlClass____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge a2c__classDec____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge a2c__umlClass____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = OperationInAnonymousImpl
 						.pattern_OperationInAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+								bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec
-							+ ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c + ", " + "[bd2ne] = " + bd2ne
+							+ bodyDeclaration + ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass + ", "
+							+ "[classDec] = " + classDec + ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -621,8 +621,8 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne) {// Create CSP
+			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -638,11 +638,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		isApplicableMatch.registerObject("umlClass", umlClass);
 		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		return csp;
 	}
 
@@ -660,14 +660,14 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject classDec, EObject feature, EObject a2c, EObject bd2ne) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne,
+			EObject umlClass, EObject classDec, EObject feature, EObject a2c) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("umlClass", umlClass);
 		ruleresult.registerObject("classDec", classDec);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("bd2ne", bd2ne);
 
 	}
 
@@ -685,7 +685,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_266(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_151(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = OperationInAnonymousImpl
 				.pattern_OperationInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,7 +742,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_286(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_163(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = OperationInAnonymousImpl
 				.pattern_OperationInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -893,12 +893,12 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		if (OperationInAnonymousImpl.pattern_OperationInAnonymous_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : OperationInAnonymousImpl
-					.pattern_OperationInAnonymous_24_5_matchcorrcontext_blackBBBBFFBB(bodyDeclaration, umlClass,
+					.pattern_OperationInAnonymous_24_5_matchcorrcontext_blackBFBBBFBB(bodyDeclaration, umlClass,
 							classDec, feature, sourceMatch, targetMatch)) {
-				ASTNode2Element a2c = (ASTNode2Element) result5_black[4];
-				ASTNode2Element bd2ne = (ASTNode2Element) result5_black[5];
+				ASTNode2Element bd2ne = (ASTNode2Element) result5_black[1];
+				ASTNode2Element a2c = (ASTNode2Element) result5_black[5];
 				Object[] result5_green = OperationInAnonymousImpl
-						.pattern_OperationInAnonymous_24_5_matchcorrcontext_greenBBBBF(a2c, bd2ne, sourceMatch,
+						.pattern_OperationInAnonymous_24_5_matchcorrcontext_greenBBBBF(bd2ne, a2c, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
@@ -1018,31 +1018,31 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 			Object[] result3_bindingAndBlack = OperationInAnonymousImpl
 					.pattern_OperationInAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, ruleResult);
+							bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = " + bodyDeclaration
-						+ ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec + ", " + "[feature] = "
-						+ feature + ", " + "[a2c] = " + a2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[ruleResult] = "
-						+ ruleResult + ".");
+						+ ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = "
+						+ classDec + ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c + ", "
+						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (OperationInAnonymousImpl.pattern_OperationInAnonymous_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = OperationInAnonymousImpl
-						.pattern_OperationInAnonymous_29_5_checknacs_blackBBBBBB(bodyDeclaration, umlClass, classDec,
-								feature, a2c, bd2ne);
+						.pattern_OperationInAnonymous_29_5_checknacs_blackBBBBBB(bodyDeclaration, bd2ne, umlClass,
+								classDec, feature, a2c);
 				if (result5_black != null) {
 
 					Object[] result6_black = OperationInAnonymousImpl
-							.pattern_OperationInAnonymous_29_6_perform_blackBBBBBBB(bodyDeclaration, umlClass, classDec,
-									feature, a2c, bd2ne, ruleResult);
+							.pattern_OperationInAnonymous_29_6_perform_blackBBBBBBB(bodyDeclaration, bd2ne, umlClass,
+									classDec, feature, a2c, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
-								+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = "
-								+ classDec + ", " + "[feature] = " + feature + ", " + "[a2c] = " + a2c + ", "
-								+ "[bd2ne] = " + bd2ne + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ bodyDeclaration + ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass
+								+ ", " + "[classDec] = " + classDec + ", " + "[feature] = " + feature + ", "
+								+ "[a2c] = " + a2c + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					OperationInAnonymousImpl.pattern_OperationInAnonymous_29_6_perform_greenBBBBB(bodyDeclaration,
 							umlClass, classDec, feature, ruleResult);
@@ -1063,8 +1063,8 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	 * @generated
 	 */
 	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1081,11 +1081,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		isApplicableMatch.registerObject("umlClass", umlClass);
 		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		return csp;
 	}
 
@@ -1122,11 +1122,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					(AnonymousClassDeclaration) arguments.get(2));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_CLASS_ANONYMOUSCLASSDECLARATION_OPERATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_CLASS_ANONYMOUSCLASSDECLARATION_OPERATION_ASTNODE2ELEMENT:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MAbstractMethodDefinition) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
-					(AnonymousClassDeclaration) arguments.get(3), (Operation) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6));
+					(MAbstractMethodDefinition) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(org.eclipse.uml2.uml.Class) arguments.get(3), (AnonymousClassDeclaration) arguments.get(4),
+					(Operation) arguments.get(5), (ASTNode2Element) arguments.get(6));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1152,11 +1152,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					(Operation) arguments.get(2));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_CLASS_ANONYMOUSCLASSDECLARATION_OPERATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_CLASS_ANONYMOUSCLASSDECLARATION_OPERATION_ASTNODE2ELEMENT:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MAbstractMethodDefinition) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
-					(AnonymousClassDeclaration) arguments.get(3), (Operation) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6));
+					(MAbstractMethodDefinition) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(org.eclipse.uml2.uml.Class) arguments.get(3), (AnonymousClassDeclaration) arguments.get(4),
+					(Operation) arguments.get(5), (ASTNode2Element) arguments.get(6));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1166,10 +1166,10 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 			return null;
 		case RulesPackage.OPERATION_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_266__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_266((EMoflonEdge) arguments.get(0));
-		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_286__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_286((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_151__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_163__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_163((EMoflonEdge) arguments.get(0));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1190,11 +1190,11 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		case RulesPackage.OPERATION_IN_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.OPERATION_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_CLASS_ANONYMOUSCLASSDECLARATION_OPERATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+		case RulesPackage.OPERATION_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_CLASS_ANONYMOUSCLASSDECLARATION_OPERATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MAbstractMethodDefinition) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
-					(AnonymousClassDeclaration) arguments.get(3), (Operation) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6),
+					(MAbstractMethodDefinition) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(org.eclipse.uml2.uml.Class) arguments.get(3), (AnonymousClassDeclaration) arguments.get(4),
+					(Operation) arguments.get(5), (ASTNode2Element) arguments.get(6),
 					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.OPERATION_IN_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1303,30 +1303,30 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	public static final Object[] pattern_OperationInAnonymous_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_1 = isApplicableMatch.getObject("umlClass");
-		EObject _localVariable_2 = isApplicableMatch.getObject("classDec");
-		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("a2c");
-		EObject _localVariable_5 = isApplicableMatch.getObject("bd2ne");
+		EObject _localVariable_1 = isApplicableMatch.getObject("bd2ne");
+		EObject _localVariable_2 = isApplicableMatch.getObject("umlClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_4 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_5 = isApplicableMatch.getObject("a2c");
 		EObject tmpBodyDeclaration = _localVariable_0;
-		EObject tmpUmlClass = _localVariable_1;
-		EObject tmpClassDec = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
-		EObject tmpA2c = _localVariable_4;
-		EObject tmpBd2ne = _localVariable_5;
+		EObject tmpBd2ne = _localVariable_1;
+		EObject tmpUmlClass = _localVariable_2;
+		EObject tmpClassDec = _localVariable_3;
+		EObject tmpFeature = _localVariable_4;
+		EObject tmpA2c = _localVariable_5;
 		if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
 			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-			if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
-				if (tmpClassDec instanceof AnonymousClassDeclaration) {
-					AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) tmpClassDec;
-					if (tmpFeature instanceof Operation) {
-						Operation feature = (Operation) tmpFeature;
-						if (tmpA2c instanceof ASTNode2Element) {
-							ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
-							if (tmpBd2ne instanceof ASTNode2Element) {
-								ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-								return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne,
+			if (tmpBd2ne instanceof ASTNode2Element) {
+				ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
+				if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
+					org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
+					if (tmpClassDec instanceof AnonymousClassDeclaration) {
+						AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) tmpClassDec;
+						if (tmpFeature instanceof Operation) {
+							Operation feature = (Operation) tmpFeature;
+							if (tmpA2c instanceof ASTNode2Element) {
+								ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
+								return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c,
 										isApplicableMatch };
 							}
 						}
@@ -1338,14 +1338,14 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_1_1_performtransformation_blackBBBBBBFBB(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne,
-			OperationInAnonymous _this, IsApplicableMatch isApplicableMatch) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, OperationInAnonymous _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!a2c.equals(bd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, csp, _this,
+					return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1359,18 +1359,18 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 				isApplicableMatch);
 		if (result_pattern_OperationInAnonymous_1_1_performtransformation_binding != null) {
 			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[1];
-			AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[2];
-			Operation feature = (Operation) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[3];
-			ASTNode2Element a2c = (ASTNode2Element) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[4];
-			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[5];
+			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[2];
+			AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[3];
+			Operation feature = (Operation) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[4];
+			ASTNode2Element a2c = (ASTNode2Element) result_pattern_OperationInAnonymous_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_OperationInAnonymous_1_1_performtransformation_black = pattern_OperationInAnonymous_1_1_performtransformation_blackBBBBBBFBB(
-					bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, _this, isApplicableMatch);
+					bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, _this, isApplicableMatch);
 			if (result_pattern_OperationInAnonymous_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OperationInAnonymous_1_1_performtransformation_black[6];
 
-				return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, csp, _this,
+				return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1389,25 +1389,25 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass, EObject classDec, EObject feature,
-			EObject a2c, EObject bd2ne) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne, EObject umlClass, EObject classDec,
+			EObject feature, EObject a2c) {
 		if (!bodyDeclaration.equals(umlClass)) {
 			if (!bodyDeclaration.equals(classDec)) {
 				if (!bodyDeclaration.equals(feature)) {
-					if (!classDec.equals(umlClass)) {
-						if (!classDec.equals(feature)) {
-							if (!feature.equals(umlClass)) {
-								if (!a2c.equals(bodyDeclaration)) {
-									if (!a2c.equals(umlClass)) {
-										if (!a2c.equals(classDec)) {
-											if (!a2c.equals(feature)) {
-												if (!a2c.equals(bd2ne)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
-														if (!bd2ne.equals(umlClass)) {
-															if (!bd2ne.equals(classDec)) {
-																if (!bd2ne.equals(feature)) {
+					if (!bd2ne.equals(bodyDeclaration)) {
+						if (!bd2ne.equals(umlClass)) {
+							if (!bd2ne.equals(classDec)) {
+								if (!bd2ne.equals(feature)) {
+									if (!classDec.equals(umlClass)) {
+										if (!classDec.equals(feature)) {
+											if (!feature.equals(umlClass)) {
+												if (!a2c.equals(bodyDeclaration)) {
+													if (!a2c.equals(bd2ne)) {
+														if (!a2c.equals(umlClass)) {
+															if (!a2c.equals(classDec)) {
+																if (!a2c.equals(feature)) {
 																	return new Object[] { ruleresult, bodyDeclaration,
-																			umlClass, classDec, feature, a2c, bd2ne };
+																			bd2ne, umlClass, classDec, feature, a2c };
 																}
 															}
 														}
@@ -1464,9 +1464,9 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final void pattern_OperationInAnonymous_1_5_registerobjects_expressionBBBBBBBB(
-			OperationInAnonymous _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject classDec, EObject feature, EObject a2c, EObject bd2ne) {
-		_this.registerObjects_FWD(ruleresult, bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+			OperationInAnonymous _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne,
+			EObject umlClass, EObject classDec, EObject feature, EObject a2c) {
+		_this.registerObjects_FWD(ruleresult, bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 
 	}
 
@@ -1541,7 +1541,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInAnonymous_2_2_corematch_blackBFBFFFB(
+	public static final Iterable<Object[]> pattern_OperationInAnonymous_2_2_corematch_blackBFFBFFB(
 			MAbstractMethodDefinition bodyDeclaration, AnonymousClassDeclaration classDec, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(classDec,
@@ -1556,7 +1556,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 						if (tmpFeature instanceof Operation) {
 							Operation feature = (Operation) tmpFeature;
 							_result.add(
-									new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, match });
+									new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, match });
 						}
 
 					}
@@ -1568,16 +1568,16 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Iterable<Object[]> pattern_OperationInAnonymous_2_3_findcontext_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a2c.equals(bd2ne)) {
-			if (classDec.getBodyDeclarations().contains(bodyDeclaration)) {
-				if (classDec.equals(a2c.getSource())) {
-					if (umlClass.equals(a2c.getTarget())) {
-						if (feature.equals(bd2ne.getTarget())) {
+			if (umlClass.equals(a2c.getTarget())) {
+				if (feature.equals(bd2ne.getTarget())) {
+					if (classDec.equals(a2c.getSource())) {
+						if (classDec.getBodyDeclarations().contains(bodyDeclaration)) {
 							if (bodyDeclaration.equals(bd2ne.getSource())) {
-								_result.add(new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne });
+								_result.add(new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c });
 							}
 						}
 					}
@@ -1588,69 +1588,69 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_2_3_findcontext_greenBBBBBBFFFFFFF(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge a2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge a2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
-		String bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
-		String a2c__classDec____source_name_prime = "source";
 		String a2c__umlClass____target_name_prime = "target";
 		String bd2ne__feature____target_name_prime = "target";
+		String a2c__classDec____source_name_prime = "source";
+		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
+		String bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(bd2ne);
 		isApplicableMatch.getAllContextElements().add(umlClass);
 		isApplicableMatch.getAllContextElements().add(classDec);
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(a2c);
-		isApplicableMatch.getAllContextElements().add(bd2ne);
-		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
-		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(classDec__bodyDeclaration____bodyDeclarations);
-		bodyDeclaration__classDec____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
-		bodyDeclaration__classDec____anonymousClassDeclarationOwner.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration__classDec____anonymousClassDeclarationOwner);
-		a2c__classDec____source.setSrc(a2c);
-		a2c__classDec____source.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(a2c__classDec____source);
 		a2c__umlClass____target.setSrc(a2c);
 		a2c__umlClass____target.setTrg(umlClass);
 		isApplicableMatch.getAllContextElements().add(a2c__umlClass____target);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
+		a2c__classDec____source.setSrc(a2c);
+		a2c__classDec____source.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(a2c__classDec____source);
+		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
+		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(classDec__bodyDeclaration____bodyDeclarations);
+		bodyDeclaration__classDec____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
+		bodyDeclaration__classDec____anonymousClassDeclarationOwner.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration__classDec____anonymousClassDeclarationOwner);
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
+		a2c__umlClass____target.setName(a2c__umlClass____target_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		a2c__classDec____source.setName(a2c__classDec____source_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__classDec____anonymousClassDeclarationOwner_name_prime);
-		a2c__classDec____source.setName(a2c__classDec____source_name_prime);
-		a2c__umlClass____target.setName(a2c__umlClass____target_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, isApplicableMatch,
+		return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, isApplicableMatch,
+				a2c__umlClass____target, bd2ne__feature____target, a2c__classDec____source,
 				classDec__bodyDeclaration____bodyDeclarations,
-				bodyDeclaration__classDec____anonymousClassDeclarationOwner, a2c__classDec____source,
-				a2c__umlClass____target, bd2ne__feature____target, bd2ne__bodyDeclaration____source };
+				bodyDeclaration__classDec____anonymousClassDeclarationOwner, bd2ne__bodyDeclaration____source };
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_2_4_solveCSP_bindingFBBBBBBBB(OperationInAnonymous _this,
-			IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
+			IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne,
 			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, umlClass, classDec,
-				feature, a2c, bd2ne);
+			ASTNode2Element a2c) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, bd2ne, umlClass,
+				classDec, feature, a2c);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c,
-					bd2ne };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec, feature,
+					a2c };
 		}
 		return null;
 	}
@@ -1661,10 +1661,10 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 	public static final Object[] pattern_OperationInAnonymous_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			OperationInAnonymous _this, IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c) {
 		Object[] result_pattern_OperationInAnonymous_2_4_solveCSP_binding = pattern_OperationInAnonymous_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+				_this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 		if (result_pattern_OperationInAnonymous_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnonymous_2_4_solveCSP_binding[0];
 
@@ -1672,8 +1672,8 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					csp);
 			if (result_pattern_OperationInAnonymous_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c,
-						bd2ne };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec,
+						feature, a2c };
 			}
 		}
 		return null;
@@ -1804,30 +1804,30 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	public static final Object[] pattern_OperationInAnonymous_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_1 = isApplicableMatch.getObject("umlClass");
-		EObject _localVariable_2 = isApplicableMatch.getObject("classDec");
-		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("a2c");
-		EObject _localVariable_5 = isApplicableMatch.getObject("bd2ne");
+		EObject _localVariable_1 = isApplicableMatch.getObject("bd2ne");
+		EObject _localVariable_2 = isApplicableMatch.getObject("umlClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_4 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_5 = isApplicableMatch.getObject("a2c");
 		EObject tmpBodyDeclaration = _localVariable_0;
-		EObject tmpUmlClass = _localVariable_1;
-		EObject tmpClassDec = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
-		EObject tmpA2c = _localVariable_4;
-		EObject tmpBd2ne = _localVariable_5;
+		EObject tmpBd2ne = _localVariable_1;
+		EObject tmpUmlClass = _localVariable_2;
+		EObject tmpClassDec = _localVariable_3;
+		EObject tmpFeature = _localVariable_4;
+		EObject tmpA2c = _localVariable_5;
 		if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
 			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-			if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
-				if (tmpClassDec instanceof AnonymousClassDeclaration) {
-					AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) tmpClassDec;
-					if (tmpFeature instanceof Operation) {
-						Operation feature = (Operation) tmpFeature;
-						if (tmpA2c instanceof ASTNode2Element) {
-							ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
-							if (tmpBd2ne instanceof ASTNode2Element) {
-								ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-								return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne,
+			if (tmpBd2ne instanceof ASTNode2Element) {
+				ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
+				if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
+					org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
+					if (tmpClassDec instanceof AnonymousClassDeclaration) {
+						AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) tmpClassDec;
+						if (tmpFeature instanceof Operation) {
+							Operation feature = (Operation) tmpFeature;
+							if (tmpA2c instanceof ASTNode2Element) {
+								ASTNode2Element a2c = (ASTNode2Element) tmpA2c;
+								return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c,
 										isApplicableMatch };
 							}
 						}
@@ -1839,14 +1839,14 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_11_1_performtransformation_blackBBBBBBFBB(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne,
-			OperationInAnonymous _this, IsApplicableMatch isApplicableMatch) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, OperationInAnonymous _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!a2c.equals(bd2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, csp, _this,
+					return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1860,18 +1860,18 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 				isApplicableMatch);
 		if (result_pattern_OperationInAnonymous_11_1_performtransformation_binding != null) {
 			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[1];
-			AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[2];
-			Operation feature = (Operation) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[3];
-			ASTNode2Element a2c = (ASTNode2Element) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[4];
-			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[5];
+			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[2];
+			AnonymousClassDeclaration classDec = (AnonymousClassDeclaration) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[3];
+			Operation feature = (Operation) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[4];
+			ASTNode2Element a2c = (ASTNode2Element) result_pattern_OperationInAnonymous_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_OperationInAnonymous_11_1_performtransformation_black = pattern_OperationInAnonymous_11_1_performtransformation_blackBBBBBBFBB(
-					bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, _this, isApplicableMatch);
+					bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, _this, isApplicableMatch);
 			if (result_pattern_OperationInAnonymous_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OperationInAnonymous_11_1_performtransformation_black[6];
 
-				return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, csp, _this,
+				return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1890,25 +1890,25 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass, EObject classDec, EObject feature,
-			EObject a2c, EObject bd2ne) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne, EObject umlClass, EObject classDec,
+			EObject feature, EObject a2c) {
 		if (!bodyDeclaration.equals(umlClass)) {
 			if (!bodyDeclaration.equals(classDec)) {
 				if (!bodyDeclaration.equals(feature)) {
-					if (!classDec.equals(umlClass)) {
-						if (!classDec.equals(feature)) {
-							if (!feature.equals(umlClass)) {
-								if (!a2c.equals(bodyDeclaration)) {
-									if (!a2c.equals(umlClass)) {
-										if (!a2c.equals(classDec)) {
-											if (!a2c.equals(feature)) {
-												if (!a2c.equals(bd2ne)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
-														if (!bd2ne.equals(umlClass)) {
-															if (!bd2ne.equals(classDec)) {
-																if (!bd2ne.equals(feature)) {
+					if (!bd2ne.equals(bodyDeclaration)) {
+						if (!bd2ne.equals(umlClass)) {
+							if (!bd2ne.equals(classDec)) {
+								if (!bd2ne.equals(feature)) {
+									if (!classDec.equals(umlClass)) {
+										if (!classDec.equals(feature)) {
+											if (!feature.equals(umlClass)) {
+												if (!a2c.equals(bodyDeclaration)) {
+													if (!a2c.equals(bd2ne)) {
+														if (!a2c.equals(umlClass)) {
+															if (!a2c.equals(classDec)) {
+																if (!a2c.equals(feature)) {
 																	return new Object[] { ruleresult, bodyDeclaration,
-																			umlClass, classDec, feature, a2c, bd2ne };
+																			bd2ne, umlClass, classDec, feature, a2c };
 																}
 															}
 														}
@@ -1965,9 +1965,9 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final void pattern_OperationInAnonymous_11_5_registerobjects_expressionBBBBBBBB(
-			OperationInAnonymous _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject classDec, EObject feature, EObject a2c, EObject bd2ne) {
-		_this.registerObjects_BWD(ruleresult, bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+			OperationInAnonymous _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne,
+			EObject umlClass, EObject classDec, EObject feature, EObject a2c) {
+		_this.registerObjects_BWD(ruleresult, bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 
 	}
 
@@ -2042,7 +2042,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInAnonymous_12_2_corematch_blackFBFBFFB(
+	public static final Iterable<Object[]> pattern_OperationInAnonymous_12_2_corematch_blackFFBFBFB(
 			org.eclipse.uml2.uml.Class umlClass, Operation feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(umlClass,
@@ -2057,7 +2057,7 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 						if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
 							MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 							_result.add(
-									new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, match });
+									new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, match });
 						}
 
 					}
@@ -2069,16 +2069,16 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Iterable<Object[]> pattern_OperationInAnonymous_12_3_findcontext_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a2c.equals(bd2ne)) {
-			if (umlClass.getOwnedOperations().contains(feature)) {
-				if (classDec.equals(a2c.getSource())) {
-					if (umlClass.equals(a2c.getTarget())) {
-						if (feature.equals(bd2ne.getTarget())) {
+			if (umlClass.equals(a2c.getTarget())) {
+				if (feature.equals(bd2ne.getTarget())) {
+					if (classDec.equals(a2c.getSource())) {
+						if (umlClass.getOwnedOperations().contains(feature)) {
 							if (bodyDeclaration.equals(bd2ne.getSource())) {
-								_result.add(new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne });
+								_result.add(new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c });
 							}
 						}
 					}
@@ -2089,66 +2089,66 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_12_3_findcontext_greenBBBBBBFFFFFFF(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
-		String feature__umlClass____class_name_prime = "class";
-		String a2c__classDec____source_name_prime = "source";
 		String a2c__umlClass____target_name_prime = "target";
 		String bd2ne__feature____target_name_prime = "target";
+		String a2c__classDec____source_name_prime = "source";
+		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
+		String feature__umlClass____class_name_prime = "class";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(bd2ne);
 		isApplicableMatch.getAllContextElements().add(umlClass);
 		isApplicableMatch.getAllContextElements().add(classDec);
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(a2c);
-		isApplicableMatch.getAllContextElements().add(bd2ne);
-		umlClass__feature____ownedOperation.setSrc(umlClass);
-		umlClass__feature____ownedOperation.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(umlClass__feature____ownedOperation);
-		feature__umlClass____class.setSrc(feature);
-		feature__umlClass____class.setTrg(umlClass);
-		isApplicableMatch.getAllContextElements().add(feature__umlClass____class);
-		a2c__classDec____source.setSrc(a2c);
-		a2c__classDec____source.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(a2c__classDec____source);
 		a2c__umlClass____target.setSrc(a2c);
 		a2c__umlClass____target.setTrg(umlClass);
 		isApplicableMatch.getAllContextElements().add(a2c__umlClass____target);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
+		a2c__classDec____source.setSrc(a2c);
+		a2c__classDec____source.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(a2c__classDec____source);
+		umlClass__feature____ownedOperation.setSrc(umlClass);
+		umlClass__feature____ownedOperation.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(umlClass__feature____ownedOperation);
+		feature__umlClass____class.setSrc(feature);
+		feature__umlClass____class.setTrg(umlClass);
+		isApplicableMatch.getAllContextElements().add(feature__umlClass____class);
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
-		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
-		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
-		a2c__classDec____source.setName(a2c__classDec____source_name_prime);
 		a2c__umlClass____target.setName(a2c__umlClass____target_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		a2c__classDec____source.setName(a2c__classDec____source_name_prime);
+		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
+		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, isApplicableMatch,
-				umlClass__feature____ownedOperation, feature__umlClass____class, a2c__classDec____source,
-				a2c__umlClass____target, bd2ne__feature____target, bd2ne__bodyDeclaration____source };
+		return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, isApplicableMatch,
+				a2c__umlClass____target, bd2ne__feature____target, a2c__classDec____source,
+				umlClass__feature____ownedOperation, feature__umlClass____class, bd2ne__bodyDeclaration____source };
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_12_4_solveCSP_bindingFBBBBBBBB(OperationInAnonymous _this,
-			IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
+			IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne,
 			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, bodyDeclaration, umlClass, classDec,
-				feature, a2c, bd2ne);
+			ASTNode2Element a2c) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, bodyDeclaration, bd2ne, umlClass,
+				classDec, feature, a2c);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c,
-					bd2ne };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec, feature,
+					a2c };
 		}
 		return null;
 	}
@@ -2159,10 +2159,10 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 	public static final Object[] pattern_OperationInAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
 			OperationInAnonymous _this, IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c) {
 		Object[] result_pattern_OperationInAnonymous_12_4_solveCSP_binding = pattern_OperationInAnonymous_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne);
+				_this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c);
 		if (result_pattern_OperationInAnonymous_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnonymous_12_4_solveCSP_binding[0];
 
@@ -2170,8 +2170,8 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					csp);
 			if (result_pattern_OperationInAnonymous_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c,
-						bd2ne };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec,
+						feature, a2c };
 			}
 		}
 		return null;
@@ -2545,19 +2545,19 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInAnonymous_24_5_matchcorrcontext_blackBBBBFFBB(
+	public static final Iterable<Object[]> pattern_OperationInAnonymous_24_5_matchcorrcontext_blackBFBBBFBB(
 			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
 			AnonymousClassDeclaration classDec, Operation feature, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(classDec,
-					ASTNode2Element.class, "source")) {
-				if (umlClass.equals(a2c.getTarget())) {
+			for (ASTNode2Element a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(umlClass,
+					ASTNode2Element.class, "target")) {
+				if (classDec.equals(a2c.getSource())) {
 					for (ASTNode2Element bd2ne : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(feature, ASTNode2Element.class, "target")) {
 						if (!a2c.equals(bd2ne)) {
 							if (bodyDeclaration.equals(bd2ne.getSource())) {
-								_result.add(new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne,
+								_result.add(new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c,
 										sourceMatch, targetMatch });
 							}
 						}
@@ -2568,16 +2568,16 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInAnonymous_24_5_matchcorrcontext_greenBBBBF(ASTNode2Element a2c,
-			ASTNode2Element bd2ne, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_OperationInAnonymous_24_5_matchcorrcontext_greenBBBBF(ASTNode2Element bd2ne,
+			ASTNode2Element a2c, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "OperationInAnonymous";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(a2c);
 		ccMatch.getAllContextElements().add(bd2ne);
+		ccMatch.getAllContextElements().add(a2c);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { a2c, bd2ne, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { bd2ne, a2c, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_24_6_createcorrespondence_blackBBBBB(
@@ -2772,14 +2772,14 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 	public static final Object[] pattern_OperationInAnonymous_29_3_solveCSP_bindingFBBBBBBBBB(
 			OperationInAnonymous _this, IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, bodyDeclaration, umlClass, classDec,
-				feature, a2c, bd2ne, ruleResult);
+			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, bodyDeclaration, bd2ne, umlClass,
+				classDec, feature, a2c, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c,
-					bd2ne, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec, feature,
+					a2c, ruleResult };
 		}
 		return null;
 	}
@@ -2790,10 +2790,10 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 
 	public static final Object[] pattern_OperationInAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
 			OperationInAnonymous _this, IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec, Operation feature,
-			ASTNode2Element a2c, ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult) {
+			ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_OperationInAnonymous_29_3_solveCSP_binding = pattern_OperationInAnonymous_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, ruleResult);
+				_this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, ruleResult);
 		if (result_pattern_OperationInAnonymous_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnonymous_29_3_solveCSP_binding[0];
 
@@ -2801,8 +2801,8 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 					csp);
 			if (result_pattern_OperationInAnonymous_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, classDec, feature, a2c,
-						bd2ne, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, bd2ne, umlClass, classDec,
+						feature, a2c, ruleResult };
 			}
 		}
 		return null;
@@ -2816,20 +2816,20 @@ public class OperationInAnonymousImpl extends AbstractRuleImpl implements Operat
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_29_5_checknacs_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne) {
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c) {
 		if (!a2c.equals(bd2ne)) {
-			return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne };
+			return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OperationInAnonymous_29_6_perform_blackBBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass,
-			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c, ASTNode2Element bd2ne,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, org.eclipse.uml2.uml.Class umlClass,
+			AnonymousClassDeclaration classDec, Operation feature, ASTNode2Element a2c,
 			ModelgeneratorRuleResult ruleResult) {
 		if (!a2c.equals(bd2ne)) {
-			return new Object[] { bodyDeclaration, umlClass, classDec, feature, a2c, bd2ne, ruleResult };
+			return new Object[] { bodyDeclaration, bd2ne, umlClass, classDec, feature, a2c, ruleResult };
 		}
 		return null;
 	}

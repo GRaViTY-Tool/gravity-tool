@@ -93,9 +93,10 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tSource,
-			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MFlow mSource, MAbstractFlowElement mTarget,
-			TAbstractFlowElement tFlow, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, MFlow mSource, MAbstractFlowElement mTarget,
+			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, TAbstractFlowElement tFlow,
+			TAbstractFlowElement tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +112,8 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSource, EObject mFlowToTFlow, EObject mSource,
-			EObject mTarget, EObject tFlow, EObject mSourceToTSource);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mSourceToTSource, EObject mSource, EObject mTarget,
+			EObject mFlowToTFlow, EObject tFlow, EObject tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +129,7 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAbstractFlowElement tSource, TAbstractFlowElement tFlow);
+	boolean isAppropriate_BWD(Match match, TAbstractFlowElement tFlow, TAbstractFlowElement tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +153,7 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAbstractFlowElement tSource, TAbstractFlowElement tFlow);
+	void registerObjectsToMatch_BWD(Match match, TAbstractFlowElement tFlow, TAbstractFlowElement tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +161,7 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractFlowElement tSource, TAbstractFlowElement tFlow);
+	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractFlowElement tFlow, TAbstractFlowElement tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,9 +177,10 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tSource,
-			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MFlow mSource, MAbstractFlowElement mTarget,
-			TAbstractFlowElement tFlow, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, MFlow mSource, MAbstractFlowElement mTarget,
+			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, TAbstractFlowElement tFlow,
+			TAbstractFlowElement tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +196,8 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSource, EObject mFlowToTFlow, EObject mSource,
-			EObject mTarget, EObject tFlow, EObject mSourceToTSource);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mSourceToTSource, EObject mSource, EObject mTarget,
+			EObject mFlowToTFlow, EObject tFlow, EObject tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +213,7 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_178(EMoflonEdge _edge_incomingFlows);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_77(EMoflonEdge _edge_incomingFlows);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +221,7 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_187(EMoflonEdge _edge_incomingFlows);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_80(EMoflonEdge _edge_incomingFlows);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +253,8 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAbstractFlowElement tSource, MFlow mSource, MAbstractFlowElement mTarget,
-			TAbstractFlowElement tFlow, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MFlow mSource, MAbstractFlowElement mTarget, TAbstractFlowElement tFlow,
+			TAbstractFlowElement tSource, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +278,7 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAbstractFlowElement tSource, TAbstractFlowElement tFlow);
+	boolean checkDEC_BWD(TAbstractFlowElement tFlow, TAbstractFlowElement tSource);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,10 +296,10 @@ public interface DataFlowIn extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tSource,
-			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, MFlow mSource, MAbstractFlowElement mTarget,
-			TAbstractFlowElement tFlow, MAbstractFlowElementToTAbstractFlowElement mSourceToTSource,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			MAbstractFlowElementToTAbstractFlowElement mSourceToTSource, MFlow mSource, MAbstractFlowElement mTarget,
+			MAbstractFlowElementToTAbstractFlowElement mFlowToTFlow, TAbstractFlowElement tFlow,
+			TAbstractFlowElement tSource, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

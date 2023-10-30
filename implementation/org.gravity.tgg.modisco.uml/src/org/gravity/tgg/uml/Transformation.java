@@ -393,7 +393,7 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 
 		final List<Model> models = root.getPackagedElements().stream().filter(Model.class::isInstance)
 				.filter(m -> !EXTERNALS.equals(m.getName())).filter(m -> !SOURCE_REFERENCES.equals(m.getName()))
-				.map(Model.class::cast).collect(Collectors.toList());
+				.map(Model.class::cast).toList();
 		if (models.size() != 1) {
 			throw new IllegalStateException();
 		}

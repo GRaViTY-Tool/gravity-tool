@@ -2,4 +2,4 @@ target/
 *.class
 *.png
 .antlr-generator-3.2.0-patch.jar
-
+.tycho-consumer-pom.xml

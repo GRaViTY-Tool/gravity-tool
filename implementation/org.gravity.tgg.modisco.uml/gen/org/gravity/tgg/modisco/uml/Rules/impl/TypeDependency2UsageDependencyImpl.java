@@ -96,25 +96,25 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package mPackage, MClass mSrcType,
-			Type mTrgType) {
+	public boolean isAppropriate_FWD(Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 
 		Object[] result1_black = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_0_1_initialbindings_blackBBBBB(this, match, mPackage, mSrcType,
-						mTrgType);
+				.pattern_TypeDependency2UsageDependency_0_1_initialbindings_blackBBBBB(this, match, mTrgType, mSrcType,
+						mPackage);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mPackage] = " + mPackage + ", " + "[mSrcType] = " + mSrcType
-					+ ", " + "[mTrgType] = " + mTrgType + ".");
+					+ "[match] = " + match + ", " + "[mTrgType] = " + mTrgType + ", " + "[mSrcType] = " + mSrcType
+					+ ", " + "[mPackage] = " + mPackage + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mPackage,
-						mSrcType, mTrgType);
+				.pattern_TypeDependency2UsageDependency_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, mTrgType,
+						mSrcType, mPackage);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mPackage] = " + mPackage + ", " + "[mSrcType] = " + mSrcType
-					+ ", " + "[mTrgType] = " + mTrgType + ".");
+					+ "[match] = " + match + ", " + "[mTrgType] = " + mTrgType + ", " + "[mSrcType] = " + mSrcType
+					+ ", " + "[mPackage] = " + mPackage + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -122,36 +122,36 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 				csp)) {
 
 			Object[] result4_black = TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_0_4_collectelementstobetranslated_blackBBBB(match, mPackage,
-							mSrcType, mTrgType);
+					.pattern_TypeDependency2UsageDependency_0_4_collectelementstobetranslated_blackBBBB(match, mTrgType,
+							mSrcType, mPackage);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mPackage] = " + mPackage + ", " + "[mSrcType] = " + mSrcType + ", " + "[mTrgType] = "
-						+ mTrgType + ".");
+						+ "[mTrgType] = " + mTrgType + ", " + "[mSrcType] = " + mSrcType + ", " + "[mPackage] = "
+						+ mPackage + ".");
 			}
 			TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_0_4_collectelementstobetranslated_greenBBBF(match, mSrcType,
-							mTrgType);
+					.pattern_TypeDependency2UsageDependency_0_4_collectelementstobetranslated_greenBBBF(match, mTrgType,
+							mSrcType);
 			//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_0_5_collectcontextelements_blackBBBB(match, mPackage,
-							mSrcType, mTrgType);
+					.pattern_TypeDependency2UsageDependency_0_5_collectcontextelements_blackBBBB(match, mTrgType,
+							mSrcType, mPackage);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mPackage] = " + mPackage + ", " + "[mSrcType] = " + mSrcType + ", " + "[mTrgType] = "
-						+ mTrgType + ".");
+						+ "[mTrgType] = " + mTrgType + ", " + "[mSrcType] = " + mSrcType + ", " + "[mPackage] = "
+						+ mPackage + ".");
 			}
 			TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_0_5_collectcontextelements_greenBBBBFF(match, mPackage,
-							mSrcType, mTrgType);
+					.pattern_TypeDependency2UsageDependency_0_5_collectcontextelements_greenBBBBFF(match, mTrgType,
+							mSrcType, mPackage);
 			//nothing EMoflonEdge mPackage__mSrcType____ownedElements = (EMoflonEdge) result5_green[4];
 			//nothing EMoflonEdge mSrcType__mPackage____package = (EMoflonEdge) result5_green[5];
 
 			// 
 			TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_0_6_registerobjectstomatch_expressionBBBBB(this, match,
-							mPackage, mSrcType, mTrgType);
+							mTrgType, mSrcType, mPackage);
 			return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_0_7_expressionF();
 		} else {
 			return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_0_8_expressionF();
@@ -173,20 +173,20 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Classifier uTrgType = (Classifier) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[2];
-		ASTNode2Element src2Src = (ASTNode2Element) result1_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[4];
+		Type mTrgType = (Type) result1_bindingAndBlack[0];
+		ASTNode2Element trg2Trg = (ASTNode2Element) result1_bindingAndBlack[1];
+		Classifier uTrgType = (Classifier) result1_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[3];
+		JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result1_bindingAndBlack[4];
 		MClass mSrcType = (MClass) result1_bindingAndBlack[5];
-		ASTNode2Element trg2Trg = (ASTNode2Element) result1_bindingAndBlack[6];
-		JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result1_bindingAndBlack[7];
-		Type mTrgType = (Type) result1_bindingAndBlack[8];
+		ASTNode2Element src2Src = (ASTNode2Element) result1_bindingAndBlack[6];
+		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[7];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[8];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
 		Object[] result1_green = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_1_1_performtransformation_greenBBFB(uTrgType, uPackage,
+				.pattern_TypeDependency2UsageDependency_1_1_performtransformation_greenFBBB(uTrgType, uPackage,
 						uSrcType);
-		Usage uUsage = (Usage) result1_green[2];
+		Usage uUsage = (Usage) result1_green[0];
 
 		Object[] result2_black = TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_1_2_collecttranslatedelements_blackB(uUsage);
@@ -198,28 +198,28 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, uTrgType,
-						uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+				.pattern_TypeDependency2UsageDependency_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, uUsage,
+						mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[uUsage] = "
-					+ uUsage + ", " + "[mPackage] = " + mPackage + ", " + "[src2Src] = " + src2Src + ", "
-					+ "[uSrcType] = " + uSrcType + ", " + "[mSrcType] = " + mSrcType + ", " + "[trg2Trg] = " + trg2Trg
-					+ ", " + "[p2p] = " + p2p + ", " + "[mTrgType] = " + mTrgType + ".");
+					+ ", " + "[uUsage] = " + uUsage + ", " + "[mTrgType] = " + mTrgType + ", " + "[trg2Trg] = "
+					+ trg2Trg + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", "
+					+ "[p2p] = " + p2p + ", " + "[mSrcType] = " + mSrcType + ", " + "[src2Src] = " + src2Src + ", "
+					+ "[uSrcType] = " + uSrcType + ", " + "[mPackage] = " + mPackage + ".");
 		}
 		TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_1_3_bookkeepingforedges_greenBBBBBBBFFFF(ruleresult, uTrgType,
-						uPackage, uUsage, uSrcType, mSrcType, mTrgType);
-		//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result3_green[10];
+				.pattern_TypeDependency2UsageDependency_1_3_bookkeepingforedges_greenBBBBBBBFFFF(ruleresult, uUsage,
+						mTrgType, uTrgType, uPackage, mSrcType, uSrcType);
+		//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_1_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-						uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+						uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 		return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_1_6_expressionFB(ruleresult);
 	}
 
@@ -248,49 +248,49 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_binding[0];
+		Type mTrgType = (Type) result2_binding[0];
 		MClass mSrcType = (MClass) result2_binding[1];
-		Type mTrgType = (Type) result2_binding[2];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_binding[2];
 		for (Object[] result2_black : TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_2_2_corematch_blackFFBFFBFFBB(mPackage, mSrcType, mTrgType,
+				.pattern_TypeDependency2UsageDependency_2_2_corematch_blackBFFFFBFFBB(mTrgType, mSrcType, mPackage,
 						match)) {
-			Classifier uTrgType = (Classifier) result2_black[0];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
-			ASTNode2Element src2Src = (ASTNode2Element) result2_black[3];
-			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_black[4];
-			ASTNode2Element trg2Trg = (ASTNode2Element) result2_black[6];
-			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[7];
+			ASTNode2Element trg2Trg = (ASTNode2Element) result2_black[1];
+			Classifier uTrgType = (Classifier) result2_black[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[3];
+			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[4];
+			ASTNode2Element src2Src = (ASTNode2Element) result2_black[6];
+			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_black[7];
 			// ForEach 
 			for (Object[] result3_black : TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_2_3_findcontext_blackBBBBBBBBB(uTrgType, uPackage, mPackage,
-							src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType)) {
+					.pattern_TypeDependency2UsageDependency_2_3_findcontext_blackBBBBBBBBB(mTrgType, trg2Trg, uTrgType,
+							uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage)) {
 				Object[] result3_green = TypeDependency2UsageDependencyImpl
-						.pattern_TypeDependency2UsageDependency_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(uTrgType,
-								uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+						.pattern_TypeDependency2UsageDependency_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(mTrgType,
+								trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
-				//nothing EMoflonEdge src2Src__uSrcType____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge trg2Trg__uTrgType____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge uPackage__uSrcType____ownedElement = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge uSrcType__uPackage____owner = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge src2Src__mSrcType____source = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge trg2Trg__mTrgType____source = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mPackage__mSrcType____ownedElements = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mSrcType__mPackage____package = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge trg2Trg__uTrgType____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge uPackage__uSrcType____ownedElement = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge uSrcType__uPackage____owner = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge trg2Trg__mTrgType____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mPackage__mSrcType____ownedElements = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mSrcType__mPackage____package = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge src2Src__uSrcType____target = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge src2Src__mSrcType____source = (EMoflonEdge) result3_green[20];
 
 				Object[] result4_bindingAndBlack = TypeDependency2UsageDependencyImpl
 						.pattern_TypeDependency2UsageDependency_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
-								isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg,
-								p2p, mTrgType);
+								isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src,
+								uSrcType, mPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uTrgType] = " + uTrgType + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ", " + "[src2Src] = "
-							+ src2Src + ", " + "[uSrcType] = " + uSrcType + ", " + "[mSrcType] = " + mSrcType + ", "
-							+ "[trg2Trg] = " + trg2Trg + ", " + "[p2p] = " + p2p + ", " + "[mTrgType] = " + mTrgType
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTrgType] = " + mTrgType + ", "
+							+ "[trg2Trg] = " + trg2Trg + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = "
+							+ uPackage + ", " + "[p2p] = " + p2p + ", " + "[mSrcType] = " + mSrcType + ", "
+							+ "[src2Src] = " + src2Src + ", " + "[uSrcType] = " + uSrcType + ", " + "[mPackage] = "
+							+ mPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -322,11 +322,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package mPackage, MClass mSrcType,
-			Type mTrgType) {
-		match.registerObject("mPackage", mPackage);
-		match.registerObject("mSrcType", mSrcType);
+	public void registerObjectsToMatch_FWD(Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		match.registerObject("mTrgType", mTrgType);
+		match.registerObject("mSrcType", mSrcType);
+		match.registerObject("mPackage", mPackage);
 
 	}
 
@@ -335,8 +335,8 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package mPackage, MClass mSrcType,
-			Type mTrgType) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -365,10 +365,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p,
-			Type mTrgType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type mTrgType, ASTNode2Element trg2Trg,
+			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType,
+			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -383,15 +382,15 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mTrgType", mTrgType);
+		isApplicableMatch.registerObject("trg2Trg", trg2Trg);
 		isApplicableMatch.registerObject("uTrgType", uTrgType);
 		isApplicableMatch.registerObject("uPackage", uPackage);
-		isApplicableMatch.registerObject("mPackage", mPackage);
+		isApplicableMatch.registerObject("p2p", p2p);
+		isApplicableMatch.registerObject("mSrcType", mSrcType);
 		isApplicableMatch.registerObject("src2Src", src2Src);
 		isApplicableMatch.registerObject("uSrcType", uSrcType);
-		isApplicableMatch.registerObject("mSrcType", mSrcType);
-		isApplicableMatch.registerObject("trg2Trg", trg2Trg);
-		isApplicableMatch.registerObject("p2p", p2p);
-		isApplicableMatch.registerObject("mTrgType", mTrgType);
+		isApplicableMatch.registerObject("mPackage", mPackage);
 		return csp;
 	}
 
@@ -409,19 +408,19 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage, EObject uUsage,
-			EObject mPackage, EObject src2Src, EObject uSrcType, EObject mSrcType, EObject trg2Trg, EObject p2p,
-			EObject mTrgType) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType, EObject trg2Trg,
+			EObject uTrgType, EObject uPackage, EObject p2p, EObject mSrcType, EObject src2Src, EObject uSrcType,
+			EObject mPackage) {
+		ruleresult.registerObject("uUsage", uUsage);
+		ruleresult.registerObject("mTrgType", mTrgType);
+		ruleresult.registerObject("trg2Trg", trg2Trg);
 		ruleresult.registerObject("uTrgType", uTrgType);
 		ruleresult.registerObject("uPackage", uPackage);
-		ruleresult.registerObject("uUsage", uUsage);
-		ruleresult.registerObject("mPackage", mPackage);
+		ruleresult.registerObject("p2p", p2p);
+		ruleresult.registerObject("mSrcType", mSrcType);
 		ruleresult.registerObject("src2Src", src2Src);
 		ruleresult.registerObject("uSrcType", uSrcType);
-		ruleresult.registerObject("mSrcType", mSrcType);
-		ruleresult.registerObject("trg2Trg", trg2Trg);
-		ruleresult.registerObject("p2p", p2p);
-		ruleresult.registerObject("mTrgType", mTrgType);
+		ruleresult.registerObject("mPackage", mPackage);
 
 	}
 
@@ -439,25 +438,25 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
+	public boolean isAppropriate_BWD(Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
 
 		Object[] result1_black = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_10_1_initialbindings_blackBBBBBB(this, match, uTrgType,
-						uPackage, uUsage, uSrcType);
+				.pattern_TypeDependency2UsageDependency_10_1_initialbindings_blackBBBBBB(this, match, uUsage, uTrgType,
+						uPackage, uSrcType);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage
-					+ ", " + "[uUsage] = " + uUsage + ", " + "[uSrcType] = " + uSrcType + ".");
+					+ "[match] = " + match + ", " + "[uUsage] = " + uUsage + ", " + "[uTrgType] = " + uTrgType + ", "
+					+ "[uPackage] = " + uPackage + ", " + "[uSrcType] = " + uSrcType + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_10_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, uTrgType,
-						uPackage, uUsage, uSrcType);
+				.pattern_TypeDependency2UsageDependency_10_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, uUsage,
+						uTrgType, uPackage, uSrcType);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage
-					+ ", " + "[uUsage] = " + uUsage + ", " + "[uSrcType] = " + uSrcType + ".");
+					+ "[match] = " + match + ", " + "[uUsage] = " + uUsage + ", " + "[uTrgType] = " + uTrgType + ", "
+					+ "[uPackage] = " + uPackage + ", " + "[uSrcType] = " + uSrcType + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -465,26 +464,26 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 				csp)) {
 
 			Object[] result4_black = TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_10_4_collectelementstobetranslated_blackBBBBB(match,
-							uTrgType, uPackage, uUsage, uSrcType);
+					.pattern_TypeDependency2UsageDependency_10_4_collectelementstobetranslated_blackBBBBB(match, uUsage,
+							uTrgType, uPackage, uSrcType);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[uUsage] = " + uUsage
+						+ "[uUsage] = " + uUsage + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage
 						+ ", " + "[uSrcType] = " + uSrcType + ".");
 			}
 			TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_10_4_collectelementstobetranslated_greenBBBBBFFF(match,
-							uTrgType, uPackage, uUsage, uSrcType);
-			//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result4_green[6];
+							uUsage, uTrgType, uPackage, uSrcType);
+			//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result4_green[6];
 			//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result4_green[7];
 
 			Object[] result5_black = TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_10_5_collectcontextelements_blackBBBBB(match, uTrgType,
-							uPackage, uUsage, uSrcType);
+					.pattern_TypeDependency2UsageDependency_10_5_collectcontextelements_blackBBBBB(match, uUsage,
+							uTrgType, uPackage, uSrcType);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[uUsage] = " + uUsage
+						+ "[uUsage] = " + uUsage + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage
 						+ ", " + "[uSrcType] = " + uSrcType + ".");
 			}
 			TypeDependency2UsageDependencyImpl
@@ -496,7 +495,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			// 
 			TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_10_6_registerobjectstomatch_expressionBBBBBB(this, match,
-							uTrgType, uPackage, uUsage, uSrcType);
+							uUsage, uTrgType, uPackage, uSrcType);
 			return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_10_7_expressionF();
 		} else {
 			return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_10_8_expressionF();
@@ -518,19 +517,19 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Classifier uTrgType = (Classifier) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
-		Usage uUsage = (Usage) result1_bindingAndBlack[2];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
-		ASTNode2Element src2Src = (ASTNode2Element) result1_bindingAndBlack[4];
-		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[5];
+		Usage uUsage = (Usage) result1_bindingAndBlack[0];
+		Type mTrgType = (Type) result1_bindingAndBlack[1];
+		ASTNode2Element trg2Trg = (ASTNode2Element) result1_bindingAndBlack[2];
+		Classifier uTrgType = (Classifier) result1_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[4];
+		JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result1_bindingAndBlack[5];
 		MClass mSrcType = (MClass) result1_bindingAndBlack[6];
-		ASTNode2Element trg2Trg = (ASTNode2Element) result1_bindingAndBlack[7];
-		JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result1_bindingAndBlack[8];
-		Type mTrgType = (Type) result1_bindingAndBlack[9];
+		ASTNode2Element src2Src = (ASTNode2Element) result1_bindingAndBlack[7];
+		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[8];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[9];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[10];
 		TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_11_1_performtransformation_greenBB(mSrcType, mTrgType);
+				.pattern_TypeDependency2UsageDependency_11_1_performtransformation_greenBB(mTrgType, mSrcType);
 
 		Object[] result2_black = TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_11_2_collecttranslatedelements_blackB(uUsage);
@@ -542,28 +541,28 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, uTrgType,
-						uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+				.pattern_TypeDependency2UsageDependency_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, uUsage,
+						mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[uUsage] = "
-					+ uUsage + ", " + "[mPackage] = " + mPackage + ", " + "[src2Src] = " + src2Src + ", "
-					+ "[uSrcType] = " + uSrcType + ", " + "[mSrcType] = " + mSrcType + ", " + "[trg2Trg] = " + trg2Trg
-					+ ", " + "[p2p] = " + p2p + ", " + "[mTrgType] = " + mTrgType + ".");
+					+ ", " + "[uUsage] = " + uUsage + ", " + "[mTrgType] = " + mTrgType + ", " + "[trg2Trg] = "
+					+ trg2Trg + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", "
+					+ "[p2p] = " + p2p + ", " + "[mSrcType] = " + mSrcType + ", " + "[src2Src] = " + src2Src + ", "
+					+ "[uSrcType] = " + uSrcType + ", " + "[mPackage] = " + mPackage + ".");
 		}
 		TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_11_3_bookkeepingforedges_greenBBBBBBBFFFF(ruleresult, uTrgType,
-						uPackage, uUsage, uSrcType, mSrcType, mTrgType);
-		//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result3_green[10];
+				.pattern_TypeDependency2UsageDependency_11_3_bookkeepingforedges_greenBBBBBBBFFFF(ruleresult, uUsage,
+						mTrgType, uTrgType, uPackage, mSrcType, uSrcType);
+		//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mSrcType__mTrgType____dependencies = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_11_5_registerobjects_expressionBBBBBBBBBBBB(this, ruleresult,
-						uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+						uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 		return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_11_6_expressionFB(ruleresult);
 	}
 
@@ -592,52 +591,52 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Classifier uTrgType = (Classifier) result2_binding[0];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_binding[1];
-		Usage uUsage = (Usage) result2_binding[2];
+		Usage uUsage = (Usage) result2_binding[0];
+		Classifier uTrgType = (Classifier) result2_binding[1];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_binding[2];
 		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_binding[3];
 		for (Object[] result2_black : TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_12_2_corematch_blackBBBFFBFFFFB(uTrgType, uPackage, uUsage,
+				.pattern_TypeDependency2UsageDependency_12_2_corematch_blackBFFBBFFFBFB(uUsage, uTrgType, uPackage,
 						uSrcType, match)) {
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[3];
-			ASTNode2Element src2Src = (ASTNode2Element) result2_black[4];
+			Type mTrgType = (Type) result2_black[1];
+			ASTNode2Element trg2Trg = (ASTNode2Element) result2_black[2];
+			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[5];
 			MClass mSrcType = (MClass) result2_black[6];
-			ASTNode2Element trg2Trg = (ASTNode2Element) result2_black[7];
-			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result2_black[8];
-			Type mTrgType = (Type) result2_black[9];
+			ASTNode2Element src2Src = (ASTNode2Element) result2_black[7];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[9];
 			// ForEach 
 			for (Object[] result3_black : TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_12_3_findcontext_blackBBBBBBBBBB(uTrgType, uPackage, uUsage,
-							mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType)) {
+					.pattern_TypeDependency2UsageDependency_12_3_findcontext_blackBBBBBBBBBB(uUsage, mTrgType, trg2Trg,
+							uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage)) {
 				Object[] result3_green = TypeDependency2UsageDependencyImpl
-						.pattern_TypeDependency2UsageDependency_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFF(uTrgType,
-								uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+						.pattern_TypeDependency2UsageDependency_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFF(uUsage,
+								mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[10];
-				//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge src2Src__uSrcType____target = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge trg2Trg__uTrgType____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge uUsage__uTrgType____supplier = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge trg2Trg__uTrgType____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge uPackage__uUsage____packagedElement = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge uPackage__uSrcType____ownedElement = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge uSrcType__uPackage____owner = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge src2Src__mSrcType____source = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge trg2Trg__mTrgType____source = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge mPackage__mSrcType____ownedElements = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge mSrcType__mPackage____package = (EMoflonEdge) result3_green[22];
-				//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result3_green[23];
+				//nothing EMoflonEdge trg2Trg__mTrgType____source = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge uUsage__uSrcType____client = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge mPackage__mSrcType____ownedElements = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge mSrcType__mPackage____package = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge src2Src__uSrcType____target = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge p2p__mPackage____source = (EMoflonEdge) result3_green[22];
+				//nothing EMoflonEdge src2Src__mSrcType____source = (EMoflonEdge) result3_green[23];
 
 				Object[] result4_bindingAndBlack = TypeDependency2UsageDependencyImpl
 						.pattern_TypeDependency2UsageDependency_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-								isApplicableMatch, uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType,
-								trg2Trg, p2p, mTrgType);
+								isApplicableMatch, uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType,
+								src2Src, uSrcType, mPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uTrgType] = " + uTrgType + ", "
-							+ "[uPackage] = " + uPackage + ", " + "[uUsage] = " + uUsage + ", " + "[mPackage] = "
-							+ mPackage + ", " + "[src2Src] = " + src2Src + ", " + "[uSrcType] = " + uSrcType + ", "
-							+ "[mSrcType] = " + mSrcType + ", " + "[trg2Trg] = " + trg2Trg + ", " + "[p2p] = " + p2p
-							+ ", " + "[mTrgType] = " + mTrgType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uUsage] = " + uUsage + ", "
+							+ "[mTrgType] = " + mTrgType + ", " + "[trg2Trg] = " + trg2Trg + ", " + "[uTrgType] = "
+							+ uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[p2p] = " + p2p + ", "
+							+ "[mSrcType] = " + mSrcType + ", " + "[src2Src] = " + src2Src + ", " + "[uSrcType] = "
+							+ uSrcType + ", " + "[mPackage] = " + mPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -669,11 +668,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
+	public void registerObjectsToMatch_BWD(Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
+		match.registerObject("uUsage", uUsage);
 		match.registerObject("uTrgType", uTrgType);
 		match.registerObject("uPackage", uPackage);
-		match.registerObject("uUsage", uUsage);
 		match.registerObject("uSrcType", uSrcType);
 
 	}
@@ -683,8 +682,8 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -713,10 +712,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Usage uUsage, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -731,16 +730,16 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("uUsage", uUsage);
+		isApplicableMatch.registerObject("mTrgType", mTrgType);
+		isApplicableMatch.registerObject("trg2Trg", trg2Trg);
 		isApplicableMatch.registerObject("uTrgType", uTrgType);
 		isApplicableMatch.registerObject("uPackage", uPackage);
-		isApplicableMatch.registerObject("uUsage", uUsage);
-		isApplicableMatch.registerObject("mPackage", mPackage);
+		isApplicableMatch.registerObject("p2p", p2p);
+		isApplicableMatch.registerObject("mSrcType", mSrcType);
 		isApplicableMatch.registerObject("src2Src", src2Src);
 		isApplicableMatch.registerObject("uSrcType", uSrcType);
-		isApplicableMatch.registerObject("mSrcType", mSrcType);
-		isApplicableMatch.registerObject("trg2Trg", trg2Trg);
-		isApplicableMatch.registerObject("p2p", p2p);
-		isApplicableMatch.registerObject("mTrgType", mTrgType);
+		isApplicableMatch.registerObject("mPackage", mPackage);
 		return csp;
 	}
 
@@ -758,19 +757,19 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage, EObject uUsage,
-			EObject mPackage, EObject src2Src, EObject uSrcType, EObject mSrcType, EObject trg2Trg, EObject p2p,
-			EObject mTrgType) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType, EObject trg2Trg,
+			EObject uTrgType, EObject uPackage, EObject p2p, EObject mSrcType, EObject src2Src, EObject uSrcType,
+			EObject mPackage) {
+		ruleresult.registerObject("uUsage", uUsage);
+		ruleresult.registerObject("mTrgType", mTrgType);
+		ruleresult.registerObject("trg2Trg", trg2Trg);
 		ruleresult.registerObject("uTrgType", uTrgType);
 		ruleresult.registerObject("uPackage", uPackage);
-		ruleresult.registerObject("uUsage", uUsage);
-		ruleresult.registerObject("mPackage", mPackage);
+		ruleresult.registerObject("p2p", p2p);
+		ruleresult.registerObject("mSrcType", mSrcType);
 		ruleresult.registerObject("src2Src", src2Src);
 		ruleresult.registerObject("uSrcType", uSrcType);
-		ruleresult.registerObject("mSrcType", mSrcType);
-		ruleresult.registerObject("trg2Trg", trg2Trg);
-		ruleresult.registerObject("p2p", p2p);
-		ruleresult.registerObject("mTrgType", mTrgType);
+		ruleresult.registerObject("mPackage", mPackage);
 
 	}
 
@@ -788,7 +787,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_293(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_131(EMoflonEdge _edge_supplier) {
 
 		Object[] result1_bindingAndBlack = TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -804,10 +803,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 
 		// ForEach 
 		for (Object[] result2_black : TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_blackFFFFB(_edge_packagedElement)) {
-			Classifier uTrgType = (Classifier) result2_black[0];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
-			Usage uUsage = (Usage) result2_black[2];
+				.pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_blackFFFFB(_edge_supplier)) {
+			Usage uUsage = (Usage) result2_black[0];
+			Classifier uTrgType = (Classifier) result2_black[1];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[2];
 			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_black[3];
 			Object[] result2_green = TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_greenFB(__eClass);
@@ -816,7 +815,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			// 
 			if (TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-							this, match, uTrgType, uPackage, uUsage, uSrcType)) {
+							this, match, uUsage, uTrgType, uPackage, uSrcType)) {
 				// 
 				if (TypeDependency2UsageDependencyImpl
 						.pattern_TypeDependency2UsageDependency_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -849,7 +848,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_315(EMoflonEdge _edge_dependencies) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_141(EMoflonEdge _edge_dependencies) {
 
 		Object[] result1_bindingAndBlack = TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -866,9 +865,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		// ForEach 
 		for (Object[] result2_black : TypeDependency2UsageDependencyImpl
 				.pattern_TypeDependency2UsageDependency_21_2_testcorematchandDECs_blackFFFB(_edge_dependencies)) {
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[0];
+			Type mTrgType = (Type) result2_black[0];
 			MClass mSrcType = (MClass) result2_black[1];
-			Type mTrgType = (Type) result2_black[2];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[2];
 			Object[] result2_green = TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -876,7 +875,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			// 
 			if (TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, mPackage, mSrcType, mTrgType)) {
+							this, match, mTrgType, mSrcType, mPackage)) {
 				// 
 				if (TypeDependency2UsageDependencyImpl
 						.pattern_TypeDependency2UsageDependency_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -987,22 +986,22 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Classifier uTrgType = (Classifier) result2_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[1];
-		Usage uUsage = (Usage) result2_bindingAndBlack[2];
-		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[4];
-		MClass mSrcType = (MClass) result2_bindingAndBlack[5];
-		Type mTrgType = (Type) result2_bindingAndBlack[6];
+		Usage uUsage = (Usage) result2_bindingAndBlack[0];
+		Type mTrgType = (Type) result2_bindingAndBlack[1];
+		Classifier uTrgType = (Classifier) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[3];
+		MClass mSrcType = (MClass) result2_bindingAndBlack[4];
+		org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[5];
+		org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[6];
 
 		Object[] result3_bindingAndBlack = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, uTrgType,
-						uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType, sourceMatch, targetMatch);
+				.pattern_TypeDependency2UsageDependency_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, uUsage, mTrgType,
+						uTrgType, uPackage, mSrcType, uSrcType, mPackage, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[uTrgType] = " + uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[uUsage] = " + uUsage
-					+ ", " + "[mPackage] = " + mPackage + ", " + "[uSrcType] = " + uSrcType + ", " + "[mSrcType] = "
-					+ mSrcType + ", " + "[mTrgType] = " + mTrgType + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[uUsage] = " + uUsage + ", " + "[mTrgType] = " + mTrgType + ", " + "[uTrgType] = " + uTrgType
+					+ ", " + "[uPackage] = " + uPackage + ", " + "[mSrcType] = " + mSrcType + ", " + "[uSrcType] = "
+					+ uSrcType + ", " + "[mPackage] = " + mPackage + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1010,24 +1009,24 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		if (TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : TypeDependency2UsageDependencyImpl
-					.pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_blackBBBFBBFFBBB(uTrgType, uPackage,
-							mPackage, uSrcType, mSrcType, mTrgType, sourceMatch, targetMatch)) {
-				ASTNode2Element src2Src = (ASTNode2Element) result5_black[3];
-				ASTNode2Element trg2Trg = (ASTNode2Element) result5_black[6];
-				JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result5_black[7];
+					.pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_blackBFBBFBFBBBB(mTrgType, uTrgType,
+							uPackage, mSrcType, uSrcType, mPackage, sourceMatch, targetMatch)) {
+				ASTNode2Element trg2Trg = (ASTNode2Element) result5_black[1];
+				JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result5_black[4];
+				ASTNode2Element src2Src = (ASTNode2Element) result5_black[6];
 				Object[] result5_green = TypeDependency2UsageDependencyImpl
-						.pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_greenBBBBBF(src2Src, trg2Trg, p2p,
+						.pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_greenBBBBBF(trg2Trg, p2p, src2Src,
 								sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[5];
 
 				Object[] result6_black = TypeDependency2UsageDependencyImpl
-						.pattern_TypeDependency2UsageDependency_24_6_createcorrespondence_blackBBBBBBBB(uTrgType,
-								uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType, ccMatch);
+						.pattern_TypeDependency2UsageDependency_24_6_createcorrespondence_blackBBBBBBBB(uUsage,
+								mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uTrgType] = " + uTrgType
-							+ ", " + "[uPackage] = " + uPackage + ", " + "[uUsage] = " + uUsage + ", " + "[mPackage] = "
-							+ mPackage + ", " + "[uSrcType] = " + uSrcType + ", " + "[mSrcType] = " + mSrcType + ", "
-							+ "[mTrgType] = " + mTrgType + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uUsage] = " + uUsage
+							+ ", " + "[mTrgType] = " + mTrgType + ", " + "[uTrgType] = " + uTrgType + ", "
+							+ "[uPackage] = " + uPackage + ", " + "[mSrcType] = " + mSrcType + ", " + "[uSrcType] = "
+							+ uSrcType + ", " + "[mPackage] = " + mPackage + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = TypeDependency2UsageDependencyImpl
@@ -1051,9 +1050,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType,
-			Type mTrgType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Usage uUsage, Type mTrgType, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, MClass mSrcType, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1082,9 +1081,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(org.eclipse.modisco.java.Package mPackage, MClass mSrcType, Type mTrgType) {// 
+	public boolean checkDEC_FWD(Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage) {// 
 		Object[] result1_black = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_27_1_matchtggpattern_blackBBB(mPackage, mSrcType, mTrgType);
+				.pattern_TypeDependency2UsageDependency_27_1_matchtggpattern_blackBBB(mTrgType, mSrcType, mPackage);
 		if (result1_black != null) {
 			return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_27_2_expressionF();
 		} else {
@@ -1098,10 +1097,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+	public boolean checkDEC_BWD(Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {// 
 		Object[] result1_black = TypeDependency2UsageDependencyImpl
-				.pattern_TypeDependency2UsageDependency_28_1_matchtggpattern_blackBBBB(uTrgType, uPackage, uUsage,
+				.pattern_TypeDependency2UsageDependency_28_1_matchtggpattern_blackBBBB(uUsage, uTrgType, uPackage,
 						uSrcType);
 		if (result1_black != null) {
 			return TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_28_2_expressionF();
@@ -1134,9 +1133,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 				.pattern_TypeDependency2UsageDependency_29_2_isapplicablecore_blackFFFFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList trg2TrgList = (RuleEntryList) result2_black[0];
-			Classifier uTrgType = (Classifier) result2_black[1];
+			Type mTrgType = (Type) result2_black[1];
 			ASTNode2Element trg2Trg = (ASTNode2Element) result2_black[2];
-			Type mTrgType = (Type) result2_black[3];
+			Classifier uTrgType = (Classifier) result2_black[3];
 			//nothing RuleEntryList src2SrcList = (RuleEntryList) result2_black[4];
 			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result2_black[5];
 			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result2_black[6];
@@ -1147,14 +1146,14 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 
 			Object[] result3_bindingAndBlack = TypeDependency2UsageDependencyImpl
 					.pattern_TypeDependency2UsageDependency_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-							isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p,
-							mTrgType, ruleResult);
+							isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType,
+							mPackage, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uTrgType] = " + uTrgType + ", "
-						+ "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage + ", " + "[src2Src] = "
-						+ src2Src + ", " + "[uSrcType] = " + uSrcType + ", " + "[mSrcType] = " + mSrcType + ", "
-						+ "[trg2Trg] = " + trg2Trg + ", " + "[p2p] = " + p2p + ", " + "[mTrgType] = " + mTrgType + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mTrgType] = " + mTrgType + ", "
+						+ "[trg2Trg] = " + trg2Trg + ", " + "[uTrgType] = " + uTrgType + ", " + "[uPackage] = "
+						+ uPackage + ", " + "[p2p] = " + p2p + ", " + "[mSrcType] = " + mSrcType + ", " + "[src2Src] = "
+						+ src2Src + ", " + "[uSrcType] = " + uSrcType + ", " + "[mPackage] = " + mPackage + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1163,23 +1162,23 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					.pattern_TypeDependency2UsageDependency_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = TypeDependency2UsageDependencyImpl
-						.pattern_TypeDependency2UsageDependency_29_5_checknacs_blackBBBBBBBBB(uTrgType, uPackage,
-								mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+						.pattern_TypeDependency2UsageDependency_29_5_checknacs_blackBBBBBBBBB(mTrgType, trg2Trg,
+								uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 				if (result5_black != null) {
 
 					Object[] result6_black = TypeDependency2UsageDependencyImpl
-							.pattern_TypeDependency2UsageDependency_29_6_perform_blackBBBBBBBBBB(uTrgType, uPackage,
-									mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType, ruleResult);
+							.pattern_TypeDependency2UsageDependency_29_6_perform_blackBBBBBBBBBB(mTrgType, trg2Trg,
+									uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uTrgType] = "
-								+ uTrgType + ", " + "[uPackage] = " + uPackage + ", " + "[mPackage] = " + mPackage
-								+ ", " + "[src2Src] = " + src2Src + ", " + "[uSrcType] = " + uSrcType + ", "
-								+ "[mSrcType] = " + mSrcType + ", " + "[trg2Trg] = " + trg2Trg + ", " + "[p2p] = " + p2p
-								+ ", " + "[mTrgType] = " + mTrgType + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTrgType] = "
+								+ mTrgType + ", " + "[trg2Trg] = " + trg2Trg + ", " + "[uTrgType] = " + uTrgType + ", "
+								+ "[uPackage] = " + uPackage + ", " + "[p2p] = " + p2p + ", " + "[mSrcType] = "
+								+ mSrcType + ", " + "[src2Src] = " + src2Src + ", " + "[uSrcType] = " + uSrcType + ", "
+								+ "[mPackage] = " + mPackage + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_29_6_perform_greenBBFBBBB(
-							uTrgType, uPackage, uSrcType, mSrcType, mTrgType, ruleResult);
-					//nothing Usage uUsage = (Usage) result6_green[2];
+					TypeDependency2UsageDependencyImpl.pattern_TypeDependency2UsageDependency_29_6_perform_greenFBBBBBB(
+							mTrgType, uTrgType, uPackage, mSrcType, uSrcType, ruleResult);
+					//nothing Usage uUsage = (Usage) result6_green[0];
 
 				} else {
 				}
@@ -1196,10 +1195,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p,
-			Type mTrgType, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mTrgType, ASTNode2Element trg2Trg,
+			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType,
+			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1214,15 +1213,15 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mTrgType", mTrgType);
+		isApplicableMatch.registerObject("trg2Trg", trg2Trg);
 		isApplicableMatch.registerObject("uTrgType", uTrgType);
 		isApplicableMatch.registerObject("uPackage", uPackage);
-		isApplicableMatch.registerObject("mPackage", mPackage);
+		isApplicableMatch.registerObject("p2p", p2p);
+		isApplicableMatch.registerObject("mSrcType", mSrcType);
 		isApplicableMatch.registerObject("src2Src", src2Src);
 		isApplicableMatch.registerObject("uSrcType", uSrcType);
-		isApplicableMatch.registerObject("mSrcType", mSrcType);
-		isApplicableMatch.registerObject("trg2Trg", trg2Trg);
-		isApplicableMatch.registerObject("p2p", p2p);
-		isApplicableMatch.registerObject("mTrgType", mTrgType);
+		isApplicableMatch.registerObject("mPackage", mPackage);
 		return csp;
 	}
 
@@ -1243,30 +1242,28 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD__MATCH_PACKAGE_MCLASS_TYPE:
-			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(MClass) arguments.get(2), (Type) arguments.get(3));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD__MATCH_TYPE_MCLASS_PACKAGE:
+			return isAppropriate_FWD((Match) arguments.get(0), (Type) arguments.get(1), (MClass) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(3));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_MCLASS_TYPE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(MClass) arguments.get(2), (Type) arguments.get(3));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPE_MCLASS_PACKAGE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Type) arguments.get(1), (MClass) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(3));
 			return null;
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_MCLASS_TYPE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (MClass) arguments.get(2),
-					(Type) arguments.get(3));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPE_MCLASS_PACKAGE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Type) arguments.get(1),
+					(MClass) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_PACKAGE_PACKAGE_ASTNODE2ELEMENT_CLASS_MCLASS_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE_TYPE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(org.eclipse.uml2.uml.Class) arguments.get(5), (MClass) arguments.get(6),
-					(ASTNode2Element) arguments.get(7), (JavaPackage2UmlPackage) arguments.get(8),
-					(Type) arguments.get(9));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPE_ASTNODE2ELEMENT_CLASSIFIER_PACKAGE_JAVAPACKAGE2UMLPACKAGE_MCLASS_ASTNODE2ELEMENT_CLASS_PACKAGE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (Classifier) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(4), (JavaPackage2UmlPackage) arguments.get(5),
+					(MClass) arguments.get(6), (ASTNode2Element) arguments.get(7),
+					(org.eclipse.uml2.uml.Class) arguments.get(8), (org.eclipse.modisco.java.Package) arguments.get(9));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1277,32 +1274,31 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_PACKAGE_USAGE_CLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (Usage) arguments.get(3),
-					(org.eclipse.uml2.uml.Class) arguments.get(4));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD__MATCH_USAGE_CLASSIFIER_PACKAGE_CLASS:
+			return isAppropriate_BWD((Match) arguments.get(0), (Usage) arguments.get(1), (Classifier) arguments.get(2),
+					(org.eclipse.uml2.uml.Package) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_PACKAGE_USAGE_CLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (Usage) arguments.get(3),
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_USAGE_CLASSIFIER_PACKAGE_CLASS:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Usage) arguments.get(1),
+					(Classifier) arguments.get(2), (org.eclipse.uml2.uml.Package) arguments.get(3),
 					(org.eclipse.uml2.uml.Class) arguments.get(4));
 			return null;
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_PACKAGE_USAGE_CLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (Usage) arguments.get(3),
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_USAGE_CLASSIFIER_PACKAGE_CLASS:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Usage) arguments.get(1),
+					(Classifier) arguments.get(2), (org.eclipse.uml2.uml.Package) arguments.get(3),
 					(org.eclipse.uml2.uml.Class) arguments.get(4));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_PACKAGE_USAGE_PACKAGE_ASTNODE2ELEMENT_CLASS_MCLASS_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE_TYPE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (Usage) arguments.get(3),
-					(org.eclipse.modisco.java.Package) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(org.eclipse.uml2.uml.Class) arguments.get(6), (MClass) arguments.get(7),
-					(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9),
-					(Type) arguments.get(10));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_USAGE_TYPE_ASTNODE2ELEMENT_CLASSIFIER_PACKAGE_JAVAPACKAGE2UMLPACKAGE_MCLASS_ASTNODE2ELEMENT_CLASS_PACKAGE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Usage) arguments.get(1),
+					(Type) arguments.get(2), (ASTNode2Element) arguments.get(3), (Classifier) arguments.get(4),
+					(org.eclipse.uml2.uml.Package) arguments.get(5), (JavaPackage2UmlPackage) arguments.get(6),
+					(MClass) arguments.get(7), (ASTNode2Element) arguments.get(8),
+					(org.eclipse.uml2.uml.Class) arguments.get(9),
+					(org.eclipse.modisco.java.Package) arguments.get(10));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1313,40 +1309,40 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_293__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_293((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_315__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_315((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_131__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_141__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_141((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_PACKAGE_USAGE_PACKAGE_CLASS_MCLASS_TYPE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Classifier) arguments.get(0),
-					(org.eclipse.uml2.uml.Package) arguments.get(1), (Usage) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
-					(MClass) arguments.get(5), (Type) arguments.get(6), (Match) arguments.get(7),
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_SOLVE_CSP_CC__USAGE_TYPE_CLASSIFIER_PACKAGE_MCLASS_CLASS_PACKAGE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Usage) arguments.get(0), (Type) arguments.get(1),
+					(Classifier) arguments.get(2), (org.eclipse.uml2.uml.Package) arguments.get(3),
+					(MClass) arguments.get(4), (org.eclipse.uml2.uml.Class) arguments.get(5),
+					(org.eclipse.modisco.java.Package) arguments.get(6), (Match) arguments.get(7),
 					(Match) arguments.get(8));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_DEC_FWD__PACKAGE_MCLASS_TYPE:
-			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0), (MClass) arguments.get(1),
-					(Type) arguments.get(2));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_DEC_BWD__CLASSIFIER_PACKAGE_USAGE_CLASS:
-			return checkDEC_BWD((Classifier) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
-					(Usage) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_DEC_FWD__TYPE_MCLASS_PACKAGE:
+			return checkDEC_FWD((Type) arguments.get(0), (MClass) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___CHECK_DEC_BWD__USAGE_CLASSIFIER_PACKAGE_CLASS:
+			return checkDEC_BWD((Usage) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_PACKAGE_PACKAGE_ASTNODE2ELEMENT_CLASS_MCLASS_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE_TYPE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(org.eclipse.uml2.uml.Class) arguments.get(5), (MClass) arguments.get(6),
-					(ASTNode2Element) arguments.get(7), (JavaPackage2UmlPackage) arguments.get(8),
-					(Type) arguments.get(9), (ModelgeneratorRuleResult) arguments.get(10));
+		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_ASTNODE2ELEMENT_CLASSIFIER_PACKAGE_JAVAPACKAGE2UMLPACKAGE_MCLASS_ASTNODE2ELEMENT_CLASS_PACKAGE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (Classifier) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(4), (JavaPackage2UmlPackage) arguments.get(5),
+					(MClass) arguments.get(6), (ASTNode2Element) arguments.get(7),
+					(org.eclipse.uml2.uml.Class) arguments.get(8), (org.eclipse.modisco.java.Package) arguments.get(9),
+					(ModelgeneratorRuleResult) arguments.get(10));
 		case RulesPackage.TYPE_DEPENDENCY2_USAGE_DEPENDENCY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1354,21 +1350,21 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_1_initialbindings_blackBBBBB(
-			TypeDependency2UsageDependency _this, Match match, org.eclipse.modisco.java.Package mPackage,
-			MClass mSrcType, Type mTrgType) {
+			TypeDependency2UsageDependency _this, Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		if (!mSrcType.equals(mTrgType)) {
-			return new Object[] { _this, match, mPackage, mSrcType, mTrgType };
+			return new Object[] { _this, match, mTrgType, mSrcType, mPackage };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_2_SolveCSP_bindingFBBBBB(
-			TypeDependency2UsageDependency _this, Match match, org.eclipse.modisco.java.Package mPackage,
-			MClass mSrcType, Type mTrgType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mPackage, mSrcType, mTrgType);
+			TypeDependency2UsageDependency _this, Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mTrgType, mSrcType, mPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mPackage, mSrcType, mTrgType };
+			return new Object[] { csp, _this, match, mTrgType, mSrcType, mPackage };
 		}
 		return null;
 	}
@@ -1378,10 +1374,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			TypeDependency2UsageDependency _this, Match match, org.eclipse.modisco.java.Package mPackage,
-			MClass mSrcType, Type mTrgType) {
+			TypeDependency2UsageDependency _this, Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		Object[] result_pattern_TypeDependency2UsageDependency_0_2_SolveCSP_binding = pattern_TypeDependency2UsageDependency_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, mPackage, mSrcType, mTrgType);
+				_this, match, mTrgType, mSrcType, mPackage);
 		if (result_pattern_TypeDependency2UsageDependency_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_0_2_SolveCSP_binding[0];
 
@@ -1389,7 +1385,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_TypeDependency2UsageDependency_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mPackage, mSrcType, mTrgType };
+				return new Object[] { csp, _this, match, mTrgType, mSrcType, mPackage };
 			}
 		}
 		return null;
@@ -1403,39 +1399,39 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, org.eclipse.modisco.java.Package mPackage, MClass mSrcType, Type mTrgType) {
+			Match match, Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage) {
 		if (!mSrcType.equals(mTrgType)) {
-			return new Object[] { match, mPackage, mSrcType, mTrgType };
+			return new Object[] { match, mTrgType, mSrcType, mPackage };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_4_collectelementstobetranslated_greenBBBF(
-			Match match, MClass mSrcType, Type mTrgType) {
+			Match match, Type mTrgType, MClass mSrcType) {
 		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
 		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
 		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
 		match.getToBeTranslatedEdges().add(mSrcType__mTrgType____dependencies);
 		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
-		return new Object[] { match, mSrcType, mTrgType, mSrcType__mTrgType____dependencies };
+		return new Object[] { match, mTrgType, mSrcType, mSrcType__mTrgType____dependencies };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_5_collectcontextelements_blackBBBB(
-			Match match, org.eclipse.modisco.java.Package mPackage, MClass mSrcType, Type mTrgType) {
+			Match match, Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage) {
 		if (!mSrcType.equals(mTrgType)) {
-			return new Object[] { match, mPackage, mSrcType, mTrgType };
+			return new Object[] { match, mTrgType, mSrcType, mPackage };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_0_5_collectcontextelements_greenBBBBFF(
-			Match match, org.eclipse.modisco.java.Package mPackage, MClass mSrcType, Type mTrgType) {
+			Match match, Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage) {
 		EMoflonEdge mPackage__mSrcType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSrcType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(mPackage);
-		match.getContextNodes().add(mSrcType);
 		match.getContextNodes().add(mTrgType);
+		match.getContextNodes().add(mSrcType);
+		match.getContextNodes().add(mPackage);
 		String mPackage__mSrcType____ownedElements_name_prime = "ownedElements";
 		String mSrcType__mPackage____package_name_prime = "package";
 		mPackage__mSrcType____ownedElements.setSrc(mPackage);
@@ -1446,14 +1442,14 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		match.getContextEdges().add(mSrcType__mPackage____package);
 		mPackage__mSrcType____ownedElements.setName(mPackage__mSrcType____ownedElements_name_prime);
 		mSrcType__mPackage____package.setName(mSrcType__mPackage____package_name_prime);
-		return new Object[] { match, mPackage, mSrcType, mTrgType, mPackage__mSrcType____ownedElements,
+		return new Object[] { match, mTrgType, mSrcType, mPackage, mPackage__mSrcType____ownedElements,
 				mSrcType__mPackage____package };
 	}
 
 	public static final void pattern_TypeDependency2UsageDependency_0_6_registerobjectstomatch_expressionBBBBB(
-			TypeDependency2UsageDependency _this, Match match, org.eclipse.modisco.java.Package mPackage,
-			MClass mSrcType, Type mTrgType) {
-		_this.registerObjectsToMatch_FWD(match, mPackage, mSrcType, mTrgType);
+			TypeDependency2UsageDependency _this, Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
+		_this.registerObjectsToMatch_FWD(match, mTrgType, mSrcType, mPackage);
 
 	}
 
@@ -1469,44 +1465,44 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_1_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("uTrgType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("uPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mPackage");
-		EObject _localVariable_3 = isApplicableMatch.getObject("src2Src");
-		EObject _localVariable_4 = isApplicableMatch.getObject("uSrcType");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mTrgType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("trg2Trg");
+		EObject _localVariable_2 = isApplicableMatch.getObject("uTrgType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("uPackage");
+		EObject _localVariable_4 = isApplicableMatch.getObject("p2p");
 		EObject _localVariable_5 = isApplicableMatch.getObject("mSrcType");
-		EObject _localVariable_6 = isApplicableMatch.getObject("trg2Trg");
-		EObject _localVariable_7 = isApplicableMatch.getObject("p2p");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mTrgType");
-		EObject tmpUTrgType = _localVariable_0;
-		EObject tmpUPackage = _localVariable_1;
-		EObject tmpMPackage = _localVariable_2;
-		EObject tmpSrc2Src = _localVariable_3;
-		EObject tmpUSrcType = _localVariable_4;
+		EObject _localVariable_6 = isApplicableMatch.getObject("src2Src");
+		EObject _localVariable_7 = isApplicableMatch.getObject("uSrcType");
+		EObject _localVariable_8 = isApplicableMatch.getObject("mPackage");
+		EObject tmpMTrgType = _localVariable_0;
+		EObject tmpTrg2Trg = _localVariable_1;
+		EObject tmpUTrgType = _localVariable_2;
+		EObject tmpUPackage = _localVariable_3;
+		EObject tmpP2p = _localVariable_4;
 		EObject tmpMSrcType = _localVariable_5;
-		EObject tmpTrg2Trg = _localVariable_6;
-		EObject tmpP2p = _localVariable_7;
-		EObject tmpMTrgType = _localVariable_8;
-		if (tmpUTrgType instanceof Classifier) {
-			Classifier uTrgType = (Classifier) tmpUTrgType;
-			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-					org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-					if (tmpSrc2Src instanceof ASTNode2Element) {
-						ASTNode2Element src2Src = (ASTNode2Element) tmpSrc2Src;
-						if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
-							org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+		EObject tmpSrc2Src = _localVariable_6;
+		EObject tmpUSrcType = _localVariable_7;
+		EObject tmpMPackage = _localVariable_8;
+		if (tmpMTrgType instanceof Type) {
+			Type mTrgType = (Type) tmpMTrgType;
+			if (tmpTrg2Trg instanceof ASTNode2Element) {
+				ASTNode2Element trg2Trg = (ASTNode2Element) tmpTrg2Trg;
+				if (tmpUTrgType instanceof Classifier) {
+					Classifier uTrgType = (Classifier) tmpUTrgType;
+					if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+						org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+						if (tmpP2p instanceof JavaPackage2UmlPackage) {
+							JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) tmpP2p;
 							if (tmpMSrcType instanceof MClass) {
 								MClass mSrcType = (MClass) tmpMSrcType;
-								if (tmpTrg2Trg instanceof ASTNode2Element) {
-									ASTNode2Element trg2Trg = (ASTNode2Element) tmpTrg2Trg;
-									if (tmpP2p instanceof JavaPackage2UmlPackage) {
-										JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) tmpP2p;
-										if (tmpMTrgType instanceof Type) {
-											Type mTrgType = (Type) tmpMTrgType;
-											return new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType,
-													mSrcType, trg2Trg, p2p, mTrgType, isApplicableMatch };
+								if (tmpSrc2Src instanceof ASTNode2Element) {
+									ASTNode2Element src2Src = (ASTNode2Element) tmpSrc2Src;
+									if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
+										org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+										if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+											org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+											return new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType,
+													src2Src, uSrcType, mPackage, isApplicableMatch };
 										}
 									}
 								}
@@ -1520,18 +1516,18 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_1_1_performtransformation_blackBBBBBBBBBFBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType, TypeDependency2UsageDependency _this,
+			Type mTrgType, ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, TypeDependency2UsageDependency _this,
 			IsApplicableMatch isApplicableMatch) {
-		if (!src2Src.equals(trg2Trg)) {
-			if (!uSrcType.equals(uTrgType)) {
-				if (!mSrcType.equals(mTrgType)) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!src2Src.equals(trg2Trg)) {
+				if (!uSrcType.equals(uTrgType)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg,
-									p2p, mTrgType, csp, _this, isApplicableMatch };
+							return new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src,
+									uSrcType, mPackage, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1545,36 +1541,36 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding = pattern_TypeDependency2UsageDependency_1_1_performtransformation_bindingFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding != null) {
-			Classifier uTrgType = (Classifier) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[1];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[2];
-			ASTNode2Element src2Src = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[3];
-			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[4];
+			Type mTrgType = (Type) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[0];
+			ASTNode2Element trg2Trg = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[1];
+			Classifier uTrgType = (Classifier) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[3];
+			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[4];
 			MClass mSrcType = (MClass) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[5];
-			ASTNode2Element trg2Trg = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[6];
-			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[7];
-			Type mTrgType = (Type) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[8];
+			ASTNode2Element src2Src = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[6];
+			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[7];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_binding[8];
 
 			Object[] result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_black = pattern_TypeDependency2UsageDependency_1_1_performtransformation_blackBBBBBBBBBFBB(
-					uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType, _this,
+					mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage, _this,
 					isApplicableMatch);
 			if (result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_1_1_performtransformation_black[9];
 
-				return new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType,
+				return new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage,
 						csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeDependency2UsageDependency_1_1_performtransformation_greenBBFB(
+	public static final Object[] pattern_TypeDependency2UsageDependency_1_1_performtransformation_greenFBBB(
 			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
 		Usage uUsage = UMLFactory.eINSTANCE.createUsage();
-		uPackage.getPackagedElements().add(uUsage);
 		uUsage.getSuppliers().add(uTrgType);
+		uPackage.getPackagedElements().add(uUsage);
 		uUsage.getClients().add(uSrcType);
-		return new Object[] { uTrgType, uPackage, uUsage, uSrcType };
+		return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_1_2_collecttranslatedelements_blackB(
@@ -1590,90 +1586,89 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage, EObject uUsage, EObject mPackage,
-			EObject src2Src, EObject uSrcType, EObject mSrcType, EObject trg2Trg, EObject p2p, EObject mTrgType) {
-		if (!uTrgType.equals(uUsage)) {
-			if (!uPackage.equals(uTrgType)) {
-				if (!uPackage.equals(uUsage)) {
-					if (!uPackage.equals(uSrcType)) {
-						if (!mPackage.equals(uTrgType)) {
-							if (!mPackage.equals(uPackage)) {
-								if (!mPackage.equals(uUsage)) {
-									if (!mPackage.equals(src2Src)) {
-										if (!mPackage.equals(uSrcType)) {
-											if (!mPackage.equals(mSrcType)) {
-												if (!mPackage.equals(trg2Trg)) {
-													if (!mPackage.equals(p2p)) {
-														if (!mPackage.equals(mTrgType)) {
-															if (!src2Src.equals(uTrgType)) {
-																if (!src2Src.equals(uPackage)) {
-																	if (!src2Src.equals(uUsage)) {
-																		if (!src2Src.equals(uSrcType)) {
-																			if (!src2Src.equals(trg2Trg)) {
-																				if (!uSrcType.equals(uTrgType)) {
-																					if (!uSrcType.equals(uUsage)) {
-																						if (!mSrcType
-																								.equals(uTrgType)) {
+			PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType, EObject trg2Trg, EObject uTrgType,
+			EObject uPackage, EObject p2p, EObject mSrcType, EObject src2Src, EObject uSrcType, EObject mPackage) {
+		if (!mTrgType.equals(uUsage)) {
+			if (!mTrgType.equals(trg2Trg)) {
+				if (!mTrgType.equals(uTrgType)) {
+					if (!mTrgType.equals(uPackage)) {
+						if (!mTrgType.equals(p2p)) {
+							if (!mTrgType.equals(src2Src)) {
+								if (!mTrgType.equals(uSrcType)) {
+									if (!trg2Trg.equals(uUsage)) {
+										if (!trg2Trg.equals(uTrgType)) {
+											if (!trg2Trg.equals(uPackage)) {
+												if (!trg2Trg.equals(uSrcType)) {
+													if (!uTrgType.equals(uUsage)) {
+														if (!uPackage.equals(uUsage)) {
+															if (!uPackage.equals(uTrgType)) {
+																if (!uPackage.equals(uSrcType)) {
+																	if (!p2p.equals(uUsage)) {
+																		if (!p2p.equals(trg2Trg)) {
+																			if (!p2p.equals(uTrgType)) {
+																				if (!p2p.equals(uPackage)) {
+																					if (!p2p.equals(src2Src)) {
+																						if (!p2p.equals(uSrcType)) {
 																							if (!mSrcType
-																									.equals(uPackage)) {
+																									.equals(uUsage)) {
 																								if (!mSrcType.equals(
-																										uUsage)) {
+																										mTrgType)) {
 																									if (!mSrcType
-																											.equals(src2Src)) {
+																											.equals(trg2Trg)) {
 																										if (!mSrcType
-																												.equals(uSrcType)) {
+																												.equals(uTrgType)) {
 																											if (!mSrcType
-																													.equals(trg2Trg)) {
+																													.equals(uPackage)) {
 																												if (!mSrcType
 																														.equals(p2p)) {
 																													if (!mSrcType
-																															.equals(mTrgType)) {
-																														if (!trg2Trg
-																																.equals(uTrgType)) {
-																															if (!trg2Trg
-																																	.equals(uPackage)) {
-																																if (!trg2Trg
-																																		.equals(uUsage)) {
-																																	if (!trg2Trg
-																																			.equals(uSrcType)) {
-																																		if (!p2p.equals(
-																																				uTrgType)) {
-																																			if (!p2p.equals(
-																																					uPackage)) {
-																																				if (!p2p.equals(
-																																						uUsage)) {
-																																					if (!p2p.equals(
-																																							src2Src)) {
-																																						if (!p2p.equals(
-																																								uSrcType)) {
-																																							if (!p2p.equals(
-																																									trg2Trg)) {
-																																								if (!mTrgType
-																																										.equals(uTrgType)) {
-																																									if (!mTrgType
-																																											.equals(uPackage)) {
-																																										if (!mTrgType
-																																												.equals(uUsage)) {
-																																											if (!mTrgType
-																																													.equals(src2Src)) {
-																																												if (!mTrgType
-																																														.equals(uSrcType)) {
-																																													if (!mTrgType
-																																															.equals(trg2Trg)) {
-																																														if (!mTrgType
-																																																.equals(p2p)) {
+																															.equals(src2Src)) {
+																														if (!mSrcType
+																																.equals(uSrcType)) {
+																															if (!src2Src
+																																	.equals(uUsage)) {
+																																if (!src2Src
+																																		.equals(trg2Trg)) {
+																																	if (!src2Src
+																																			.equals(uTrgType)) {
+																																		if (!src2Src
+																																				.equals(uPackage)) {
+																																			if (!src2Src
+																																					.equals(uSrcType)) {
+																																				if (!uSrcType
+																																						.equals(uUsage)) {
+																																					if (!uSrcType
+																																							.equals(uTrgType)) {
+																																						if (!mPackage
+																																								.equals(uUsage)) {
+																																							if (!mPackage
+																																									.equals(mTrgType)) {
+																																								if (!mPackage
+																																										.equals(trg2Trg)) {
+																																									if (!mPackage
+																																											.equals(uTrgType)) {
+																																										if (!mPackage
+																																												.equals(uPackage)) {
+																																											if (!mPackage
+																																													.equals(p2p)) {
+																																												if (!mPackage
+																																														.equals(mSrcType)) {
+																																													if (!mPackage
+																																															.equals(src2Src)) {
+																																														if (!mPackage
+																																																.equals(uSrcType)) {
 																																															return new Object[] {
 																																																	ruleresult,
+																																																	uUsage,
+																																																	mTrgType,
+																																																	trg2Trg,
 																																																	uTrgType,
 																																																	uPackage,
-																																																	uUsage,
-																																																	mPackage,
+																																																	p2p,
+																																																	mSrcType,
 																																																	src2Src,
 																																																	uSrcType,
-																																																	mSrcType,
-																																																	trg2Trg,
-																																																	p2p,
-																																																	mTrgType };
+																																																	mPackage };
 																																														}
 																																													}
 																																												}
@@ -1723,45 +1718,45 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_1_3_bookkeepingforedges_greenBBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage, EObject uUsage, EObject uSrcType,
-			EObject mSrcType, EObject mTrgType) {
-		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType, EObject uTrgType, EObject uPackage,
+			EObject mSrcType, EObject uSrcType) {
 		EMoflonEdge uUsage__uTrgType____supplier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uUsage__uSrcType____client = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeDependency2UsageDependency";
-		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
 		String uUsage__uTrgType____supplier_name_prime = "supplier";
-		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
+		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
 		String uUsage__uSrcType____client_name_prime = "client";
-		uPackage__uUsage____packagedElement.setSrc(uPackage);
-		uPackage__uUsage____packagedElement.setTrg(uUsage);
-		ruleresult.getCreatedEdges().add(uPackage__uUsage____packagedElement);
+		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
 		uUsage__uTrgType____supplier.setSrc(uUsage);
 		uUsage__uTrgType____supplier.setTrg(uTrgType);
 		ruleresult.getCreatedEdges().add(uUsage__uTrgType____supplier);
-		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
-		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
-		ruleresult.getTranslatedEdges().add(mSrcType__mTrgType____dependencies);
+		uPackage__uUsage____packagedElement.setSrc(uPackage);
+		uPackage__uUsage____packagedElement.setTrg(uUsage);
+		ruleresult.getCreatedEdges().add(uPackage__uUsage____packagedElement);
 		uUsage__uSrcType____client.setSrc(uUsage);
 		uUsage__uSrcType____client.setTrg(uSrcType);
 		ruleresult.getCreatedEdges().add(uUsage__uSrcType____client);
+		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
+		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
+		ruleresult.getTranslatedEdges().add(mSrcType__mTrgType____dependencies);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
 		uUsage__uTrgType____supplier.setName(uUsage__uTrgType____supplier_name_prime);
-		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
+		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
 		uUsage__uSrcType____client.setName(uUsage__uSrcType____client_name_prime);
-		return new Object[] { ruleresult, uTrgType, uPackage, uUsage, uSrcType, mSrcType, mTrgType,
-				uPackage__uUsage____packagedElement, uUsage__uTrgType____supplier, mSrcType__mTrgType____dependencies,
-				uUsage__uSrcType____client };
+		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
+		return new Object[] { ruleresult, uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType,
+				uUsage__uTrgType____supplier, uPackage__uUsage____packagedElement, uUsage__uSrcType____client,
+				mSrcType__mTrgType____dependencies };
 	}
 
 	public static final void pattern_TypeDependency2UsageDependency_1_5_registerobjects_expressionBBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage,
-			EObject uUsage, EObject mPackage, EObject src2Src, EObject uSrcType, EObject mSrcType, EObject trg2Trg,
-			EObject p2p, EObject mTrgType) {
-		_this.registerObjects_FWD(ruleresult, uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType,
-				trg2Trg, p2p, mTrgType);
+			TypeDependency2UsageDependency _this, PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType,
+			EObject trg2Trg, EObject uTrgType, EObject uPackage, EObject p2p, EObject mSrcType, EObject src2Src,
+			EObject uSrcType, EObject mPackage) {
+		_this.registerObjects_FWD(ruleresult, uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src,
+				uSrcType, mPackage);
 
 	}
 
@@ -1823,55 +1818,54 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mPackage");
+		EObject _localVariable_0 = match.getObject("mTrgType");
 		EObject _localVariable_1 = match.getObject("mSrcType");
-		EObject _localVariable_2 = match.getObject("mTrgType");
-		EObject tmpMPackage = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("mPackage");
+		EObject tmpMTrgType = _localVariable_0;
 		EObject tmpMSrcType = _localVariable_1;
-		EObject tmpMTrgType = _localVariable_2;
-		if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+		EObject tmpMPackage = _localVariable_2;
+		if (tmpMTrgType instanceof Type) {
+			Type mTrgType = (Type) tmpMTrgType;
 			if (tmpMSrcType instanceof MClass) {
 				MClass mSrcType = (MClass) tmpMSrcType;
-				if (tmpMTrgType instanceof Type) {
-					Type mTrgType = (Type) tmpMTrgType;
-					return new Object[] { mPackage, mSrcType, mTrgType, match };
+				if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+					return new Object[] { mTrgType, mSrcType, mPackage, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_2_2_corematch_blackFFBFFBFFBB(
-			org.eclipse.modisco.java.Package mPackage, MClass mSrcType, Type mTrgType, Match match) {
+	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_2_2_corematch_blackBFFFFBFFBB(
+			Type mTrgType, MClass mSrcType, org.eclipse.modisco.java.Package mPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mSrcType.equals(mTrgType)) {
-			for (ASTNode2Element src2Src : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mSrcType,
+			for (ASTNode2Element trg2Trg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(mTrgType,
 					ASTNode2Element.class, "source")) {
-				Element tmpUSrcType = src2Src.getTarget();
-				if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
-					org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
-					for (ASTNode2Element trg2Trg : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mTrgType, ASTNode2Element.class, "source")) {
-						if (!src2Src.equals(trg2Trg)) {
-							Element tmpUTrgType = trg2Trg.getTarget();
-							if (tmpUTrgType instanceof Classifier) {
-								Classifier uTrgType = (Classifier) tmpUTrgType;
-								if (!uSrcType.equals(uTrgType)) {
-									for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
-											.getOppositeReferenceTyped(mPackage, JavaPackage2UmlPackage.class,
-													"source")) {
-										org.eclipse.uml2.uml.Package uPackage = p2p.getTarget();
-										if (uPackage != null) {
-											_result.add(new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType,
-													mSrcType, trg2Trg, p2p, mTrgType, match });
+				Element tmpUTrgType = trg2Trg.getTarget();
+				if (tmpUTrgType instanceof Classifier) {
+					Classifier uTrgType = (Classifier) tmpUTrgType;
+					for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mPackage, JavaPackage2UmlPackage.class, "source")) {
+						org.eclipse.uml2.uml.Package uPackage = p2p.getTarget();
+						if (uPackage != null) {
+							for (ASTNode2Element src2Src : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(mSrcType, ASTNode2Element.class, "source")) {
+								if (!src2Src.equals(trg2Trg)) {
+									Element tmpUSrcType = src2Src.getTarget();
+									if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
+										org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+										if (!uSrcType.equals(uTrgType)) {
+											_result.add(new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p,
+													mSrcType, src2Src, uSrcType, mPackage, match });
 										}
-
 									}
+
 								}
 							}
-
 						}
+
 					}
 				}
 
@@ -1881,24 +1875,24 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_2_3_findcontext_blackBBBBBBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType) {
+			Type mTrgType, ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!src2Src.equals(trg2Trg)) {
-			if (!uSrcType.equals(uTrgType)) {
-				if (!mSrcType.equals(mTrgType)) {
-					if (uSrcType.equals(src2Src.getTarget())) {
-						if (uTrgType.equals(trg2Trg.getTarget())) {
-							if (mSrcType.getDependencies().contains(mTrgType)) {
-								if (uPackage.getOwnedElements().contains(uSrcType)) {
-									if (mSrcType.equals(src2Src.getSource())) {
-										if (mTrgType.equals(trg2Trg.getSource())) {
-											if (uPackage.equals(p2p.getTarget())) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!src2Src.equals(trg2Trg)) {
+				if (!uSrcType.equals(uTrgType)) {
+					if (uTrgType.equals(trg2Trg.getTarget())) {
+						if (uPackage.equals(p2p.getTarget())) {
+							if (uPackage.getOwnedElements().contains(uSrcType)) {
+								if (mTrgType.equals(trg2Trg.getSource())) {
+									if (mSrcType.getDependencies().contains(mTrgType)) {
+										if (mPackage.getOwnedElements().contains(mSrcType)) {
+											if (uSrcType.equals(src2Src.getTarget())) {
 												if (mPackage.equals(p2p.getSource())) {
-													if (mPackage.getOwnedElements().contains(mSrcType)) {
-														_result.add(new Object[] { uTrgType, uPackage, mPackage,
-																src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType });
+													if (mSrcType.equals(src2Src.getSource())) {
+														_result.add(new Object[] { mTrgType, trg2Trg, uTrgType,
+																uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage });
 													}
 												}
 											}
@@ -1915,103 +1909,103 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType) {
+			Type mTrgType, ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge src2Src__uSrcType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge trg2Trg__uTrgType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uPackage__uSrcType____ownedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uSrcType__uPackage____owner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge src2Src__mSrcType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge trg2Trg__mTrgType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mSrcType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSrcType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String src2Src__uSrcType____target_name_prime = "target";
+		EMoflonEdge src2Src__uSrcType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge src2Src__mSrcType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String trg2Trg__uTrgType____target_name_prime = "target";
-		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
+		String p2p__uPackage____target_name_prime = "target";
 		String uPackage__uSrcType____ownedElement_name_prime = "ownedElement";
 		String uSrcType__uPackage____owner_name_prime = "owner";
-		String src2Src__mSrcType____source_name_prime = "source";
 		String trg2Trg__mTrgType____source_name_prime = "source";
-		String p2p__uPackage____target_name_prime = "target";
-		String p2p__mPackage____source_name_prime = "source";
+		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
 		String mPackage__mSrcType____ownedElements_name_prime = "ownedElements";
 		String mSrcType__mPackage____package_name_prime = "package";
+		String src2Src__uSrcType____target_name_prime = "target";
+		String p2p__mPackage____source_name_prime = "source";
+		String src2Src__mSrcType____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(mTrgType);
+		isApplicableMatch.getAllContextElements().add(trg2Trg);
 		isApplicableMatch.getAllContextElements().add(uTrgType);
 		isApplicableMatch.getAllContextElements().add(uPackage);
-		isApplicableMatch.getAllContextElements().add(mPackage);
+		isApplicableMatch.getAllContextElements().add(p2p);
+		isApplicableMatch.getAllContextElements().add(mSrcType);
 		isApplicableMatch.getAllContextElements().add(src2Src);
 		isApplicableMatch.getAllContextElements().add(uSrcType);
-		isApplicableMatch.getAllContextElements().add(mSrcType);
-		isApplicableMatch.getAllContextElements().add(trg2Trg);
-		isApplicableMatch.getAllContextElements().add(p2p);
-		isApplicableMatch.getAllContextElements().add(mTrgType);
-		src2Src__uSrcType____target.setSrc(src2Src);
-		src2Src__uSrcType____target.setTrg(uSrcType);
-		isApplicableMatch.getAllContextElements().add(src2Src__uSrcType____target);
+		isApplicableMatch.getAllContextElements().add(mPackage);
 		trg2Trg__uTrgType____target.setSrc(trg2Trg);
 		trg2Trg__uTrgType____target.setTrg(uTrgType);
 		isApplicableMatch.getAllContextElements().add(trg2Trg__uTrgType____target);
-		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
-		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
-		isApplicableMatch.getAllContextElements().add(mSrcType__mTrgType____dependencies);
+		p2p__uPackage____target.setSrc(p2p);
+		p2p__uPackage____target.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
 		uPackage__uSrcType____ownedElement.setSrc(uPackage);
 		uPackage__uSrcType____ownedElement.setTrg(uSrcType);
 		isApplicableMatch.getAllContextElements().add(uPackage__uSrcType____ownedElement);
 		uSrcType__uPackage____owner.setSrc(uSrcType);
 		uSrcType__uPackage____owner.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(uSrcType__uPackage____owner);
-		src2Src__mSrcType____source.setSrc(src2Src);
-		src2Src__mSrcType____source.setTrg(mSrcType);
-		isApplicableMatch.getAllContextElements().add(src2Src__mSrcType____source);
 		trg2Trg__mTrgType____source.setSrc(trg2Trg);
 		trg2Trg__mTrgType____source.setTrg(mTrgType);
 		isApplicableMatch.getAllContextElements().add(trg2Trg__mTrgType____source);
-		p2p__uPackage____target.setSrc(p2p);
-		p2p__uPackage____target.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		p2p__mPackage____source.setSrc(p2p);
-		p2p__mPackage____source.setTrg(mPackage);
-		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
+		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
+		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
+		isApplicableMatch.getAllContextElements().add(mSrcType__mTrgType____dependencies);
 		mPackage__mSrcType____ownedElements.setSrc(mPackage);
 		mPackage__mSrcType____ownedElements.setTrg(mSrcType);
 		isApplicableMatch.getAllContextElements().add(mPackage__mSrcType____ownedElements);
 		mSrcType__mPackage____package.setSrc(mSrcType);
 		mSrcType__mPackage____package.setTrg(mPackage);
 		isApplicableMatch.getAllContextElements().add(mSrcType__mPackage____package);
-		src2Src__uSrcType____target.setName(src2Src__uSrcType____target_name_prime);
+		src2Src__uSrcType____target.setSrc(src2Src);
+		src2Src__uSrcType____target.setTrg(uSrcType);
+		isApplicableMatch.getAllContextElements().add(src2Src__uSrcType____target);
+		p2p__mPackage____source.setSrc(p2p);
+		p2p__mPackage____source.setTrg(mPackage);
+		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
+		src2Src__mSrcType____source.setSrc(src2Src);
+		src2Src__mSrcType____source.setTrg(mSrcType);
+		isApplicableMatch.getAllContextElements().add(src2Src__mSrcType____source);
 		trg2Trg__uTrgType____target.setName(trg2Trg__uTrgType____target_name_prime);
-		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
+		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
 		uPackage__uSrcType____ownedElement.setName(uPackage__uSrcType____ownedElement_name_prime);
 		uSrcType__uPackage____owner.setName(uSrcType__uPackage____owner_name_prime);
-		src2Src__mSrcType____source.setName(src2Src__mSrcType____source_name_prime);
 		trg2Trg__mTrgType____source.setName(trg2Trg__mTrgType____source_name_prime);
-		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
+		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
 		mPackage__mSrcType____ownedElements.setName(mPackage__mSrcType____ownedElements_name_prime);
 		mSrcType__mPackage____package.setName(mSrcType__mPackage____package_name_prime);
-		return new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType,
-				isApplicableMatch, src2Src__uSrcType____target, trg2Trg__uTrgType____target,
-				mSrcType__mTrgType____dependencies, uPackage__uSrcType____ownedElement, uSrcType__uPackage____owner,
-				src2Src__mSrcType____source, trg2Trg__mTrgType____source, p2p__uPackage____target,
-				p2p__mPackage____source, mPackage__mSrcType____ownedElements, mSrcType__mPackage____package };
+		src2Src__uSrcType____target.setName(src2Src__uSrcType____target_name_prime);
+		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
+		src2Src__mSrcType____source.setName(src2Src__mSrcType____source_name_prime);
+		return new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage,
+				isApplicableMatch, trg2Trg__uTrgType____target, p2p__uPackage____target,
+				uPackage__uSrcType____ownedElement, uSrcType__uPackage____owner, trg2Trg__mTrgType____source,
+				mSrcType__mTrgType____dependencies, mPackage__mSrcType____ownedElements, mSrcType__mPackage____package,
+				src2Src__uSrcType____target, p2p__mPackage____source, src2Src__mSrcType____source };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_2_4_solveCSP_bindingFBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p,
-			Type mTrgType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uTrgType, uPackage, mPackage, src2Src,
-				uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage,
+				p2p, mSrcType, src2Src, uSrcType, mPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType,
-					mSrcType, trg2Trg, p2p, mTrgType };
+			return new Object[] { csp, _this, isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType,
+					src2Src, uSrcType, mPackage };
 		}
 		return null;
 	}
@@ -2021,13 +2015,13 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p,
-			Type mTrgType) {
+			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		Object[] result_pattern_TypeDependency2UsageDependency_2_4_solveCSP_binding = pattern_TypeDependency2UsageDependency_2_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p,
-				mTrgType);
+				_this, isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType,
+				mPackage);
 		if (result_pattern_TypeDependency2UsageDependency_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_2_4_solveCSP_binding[0];
 
@@ -2035,8 +2029,8 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_TypeDependency2UsageDependency_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType,
-						mSrcType, trg2Trg, p2p, mTrgType };
+				return new Object[] { csp, _this, isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p,
+						mSrcType, src2Src, uSrcType, mPackage };
 			}
 		}
 		return null;
@@ -2071,21 +2065,21 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_10_1_initialbindings_blackBBBBBB(
-			TypeDependency2UsageDependency _this, Match match, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
+			TypeDependency2UsageDependency _this, Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			return new Object[] { _this, match, uTrgType, uPackage, uUsage, uSrcType };
+			return new Object[] { _this, match, uUsage, uTrgType, uPackage, uSrcType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_10_2_SolveCSP_bindingFBBBBBB(
-			TypeDependency2UsageDependency _this, Match match, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uTrgType, uPackage, uUsage, uSrcType);
+			TypeDependency2UsageDependency _this, Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uUsage, uTrgType, uPackage, uSrcType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, uTrgType, uPackage, uUsage, uSrcType };
+			return new Object[] { csp, _this, match, uUsage, uTrgType, uPackage, uSrcType };
 		}
 		return null;
 	}
@@ -2095,10 +2089,10 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_10_2_SolveCSP_bindingAndBlackFBBBBBB(
-			TypeDependency2UsageDependency _this, Match match, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
+			TypeDependency2UsageDependency _this, Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
 		Object[] result_pattern_TypeDependency2UsageDependency_10_2_SolveCSP_binding = pattern_TypeDependency2UsageDependency_10_2_SolveCSP_bindingFBBBBBB(
-				_this, match, uTrgType, uPackage, uUsage, uSrcType);
+				_this, match, uUsage, uTrgType, uPackage, uSrcType);
 		if (result_pattern_TypeDependency2UsageDependency_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_10_2_SolveCSP_binding[0];
 
@@ -2106,7 +2100,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_TypeDependency2UsageDependency_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, uTrgType, uPackage, uUsage, uSrcType };
+				return new Object[] { csp, _this, match, uUsage, uTrgType, uPackage, uSrcType };
 			}
 		}
 		return null;
@@ -2120,45 +2114,45 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_10_4_collectelementstobetranslated_blackBBBBB(
-			Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+			Match match, Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			return new Object[] { match, uTrgType, uPackage, uUsage, uSrcType };
+			return new Object[] { match, uUsage, uTrgType, uPackage, uSrcType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_10_4_collectelementstobetranslated_greenBBBBBFFF(
-			Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+			Match match, Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
-		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uUsage__uTrgType____supplier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uUsage__uSrcType____client = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(uUsage);
-		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
 		String uUsage__uTrgType____supplier_name_prime = "supplier";
+		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
 		String uUsage__uSrcType____client_name_prime = "client";
-		uPackage__uUsage____packagedElement.setSrc(uPackage);
-		uPackage__uUsage____packagedElement.setTrg(uUsage);
-		match.getToBeTranslatedEdges().add(uPackage__uUsage____packagedElement);
 		uUsage__uTrgType____supplier.setSrc(uUsage);
 		uUsage__uTrgType____supplier.setTrg(uTrgType);
 		match.getToBeTranslatedEdges().add(uUsage__uTrgType____supplier);
+		uPackage__uUsage____packagedElement.setSrc(uPackage);
+		uPackage__uUsage____packagedElement.setTrg(uUsage);
+		match.getToBeTranslatedEdges().add(uPackage__uUsage____packagedElement);
 		uUsage__uSrcType____client.setSrc(uUsage);
 		uUsage__uSrcType____client.setTrg(uSrcType);
 		match.getToBeTranslatedEdges().add(uUsage__uSrcType____client);
-		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
 		uUsage__uTrgType____supplier.setName(uUsage__uTrgType____supplier_name_prime);
+		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
 		uUsage__uSrcType____client.setName(uUsage__uSrcType____client_name_prime);
-		return new Object[] { match, uTrgType, uPackage, uUsage, uSrcType, uPackage__uUsage____packagedElement,
-				uUsage__uTrgType____supplier, uUsage__uSrcType____client };
+		return new Object[] { match, uUsage, uTrgType, uPackage, uSrcType, uUsage__uTrgType____supplier,
+				uPackage__uUsage____packagedElement, uUsage__uSrcType____client };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_10_5_collectcontextelements_blackBBBBB(
-			Match match, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+			Match match, Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			return new Object[] { match, uTrgType, uPackage, uUsage, uSrcType };
+			return new Object[] { match, uUsage, uTrgType, uPackage, uSrcType };
 		}
 		return null;
 	}
@@ -2186,9 +2180,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final void pattern_TypeDependency2UsageDependency_10_6_registerobjectstomatch_expressionBBBBBB(
-			TypeDependency2UsageDependency _this, Match match, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
-		_this.registerObjectsToMatch_BWD(match, uTrgType, uPackage, uUsage, uSrcType);
+			TypeDependency2UsageDependency _this, Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
+		_this.registerObjectsToMatch_BWD(match, uUsage, uTrgType, uPackage, uSrcType);
 
 	}
 
@@ -2204,48 +2198,48 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_11_1_performtransformation_bindingFFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("uTrgType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("uPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("uUsage");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mPackage");
-		EObject _localVariable_4 = isApplicableMatch.getObject("src2Src");
-		EObject _localVariable_5 = isApplicableMatch.getObject("uSrcType");
+		EObject _localVariable_0 = isApplicableMatch.getObject("uUsage");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mTrgType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("trg2Trg");
+		EObject _localVariable_3 = isApplicableMatch.getObject("uTrgType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("uPackage");
+		EObject _localVariable_5 = isApplicableMatch.getObject("p2p");
 		EObject _localVariable_6 = isApplicableMatch.getObject("mSrcType");
-		EObject _localVariable_7 = isApplicableMatch.getObject("trg2Trg");
-		EObject _localVariable_8 = isApplicableMatch.getObject("p2p");
-		EObject _localVariable_9 = isApplicableMatch.getObject("mTrgType");
-		EObject tmpUTrgType = _localVariable_0;
-		EObject tmpUPackage = _localVariable_1;
-		EObject tmpUUsage = _localVariable_2;
-		EObject tmpMPackage = _localVariable_3;
-		EObject tmpSrc2Src = _localVariable_4;
-		EObject tmpUSrcType = _localVariable_5;
+		EObject _localVariable_7 = isApplicableMatch.getObject("src2Src");
+		EObject _localVariable_8 = isApplicableMatch.getObject("uSrcType");
+		EObject _localVariable_9 = isApplicableMatch.getObject("mPackage");
+		EObject tmpUUsage = _localVariable_0;
+		EObject tmpMTrgType = _localVariable_1;
+		EObject tmpTrg2Trg = _localVariable_2;
+		EObject tmpUTrgType = _localVariable_3;
+		EObject tmpUPackage = _localVariable_4;
+		EObject tmpP2p = _localVariable_5;
 		EObject tmpMSrcType = _localVariable_6;
-		EObject tmpTrg2Trg = _localVariable_7;
-		EObject tmpP2p = _localVariable_8;
-		EObject tmpMTrgType = _localVariable_9;
-		if (tmpUTrgType instanceof Classifier) {
-			Classifier uTrgType = (Classifier) tmpUTrgType;
-			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (tmpUUsage instanceof Usage) {
-					Usage uUsage = (Usage) tmpUUsage;
-					if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-						if (tmpSrc2Src instanceof ASTNode2Element) {
-							ASTNode2Element src2Src = (ASTNode2Element) tmpSrc2Src;
-							if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
-								org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+		EObject tmpSrc2Src = _localVariable_7;
+		EObject tmpUSrcType = _localVariable_8;
+		EObject tmpMPackage = _localVariable_9;
+		if (tmpUUsage instanceof Usage) {
+			Usage uUsage = (Usage) tmpUUsage;
+			if (tmpMTrgType instanceof Type) {
+				Type mTrgType = (Type) tmpMTrgType;
+				if (tmpTrg2Trg instanceof ASTNode2Element) {
+					ASTNode2Element trg2Trg = (ASTNode2Element) tmpTrg2Trg;
+					if (tmpUTrgType instanceof Classifier) {
+						Classifier uTrgType = (Classifier) tmpUTrgType;
+						if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+							org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+							if (tmpP2p instanceof JavaPackage2UmlPackage) {
+								JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) tmpP2p;
 								if (tmpMSrcType instanceof MClass) {
 									MClass mSrcType = (MClass) tmpMSrcType;
-									if (tmpTrg2Trg instanceof ASTNode2Element) {
-										ASTNode2Element trg2Trg = (ASTNode2Element) tmpTrg2Trg;
-										if (tmpP2p instanceof JavaPackage2UmlPackage) {
-											JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) tmpP2p;
-											if (tmpMTrgType instanceof Type) {
-												Type mTrgType = (Type) tmpMTrgType;
-												return new Object[] { uTrgType, uPackage, uUsage, mPackage, src2Src,
-														uSrcType, mSrcType, trg2Trg, p2p, mTrgType, isApplicableMatch };
+									if (tmpSrc2Src instanceof ASTNode2Element) {
+										ASTNode2Element src2Src = (ASTNode2Element) tmpSrc2Src;
+										if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
+											org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+											if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+												org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+												return new Object[] { uUsage, mTrgType, trg2Trg, uTrgType, uPackage,
+														p2p, mSrcType, src2Src, uSrcType, mPackage, isApplicableMatch };
 											}
 										}
 									}
@@ -2260,18 +2254,18 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_11_1_performtransformation_blackBBBBBBBBBBFBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
-			MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p, Type mTrgType,
+			Usage uUsage, Type mTrgType, ASTNode2Element trg2Trg, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src,
+			org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage,
 			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch) {
-		if (!src2Src.equals(trg2Trg)) {
-			if (!uSrcType.equals(uTrgType)) {
-				if (!mSrcType.equals(mTrgType)) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!src2Src.equals(trg2Trg)) {
+				if (!uSrcType.equals(uTrgType)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType,
-									trg2Trg, p2p, mTrgType, csp, _this, isApplicableMatch };
+							return new Object[] { uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src,
+									uSrcType, mPackage, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -2285,34 +2279,34 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding = pattern_TypeDependency2UsageDependency_11_1_performtransformation_bindingFFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding != null) {
-			Classifier uTrgType = (Classifier) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[1];
-			Usage uUsage = (Usage) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[2];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[3];
-			ASTNode2Element src2Src = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[4];
-			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[5];
+			Usage uUsage = (Usage) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[0];
+			Type mTrgType = (Type) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[1];
+			ASTNode2Element trg2Trg = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[2];
+			Classifier uTrgType = (Classifier) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[3];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[4];
+			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[5];
 			MClass mSrcType = (MClass) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[6];
-			ASTNode2Element trg2Trg = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[7];
-			JavaPackage2UmlPackage p2p = (JavaPackage2UmlPackage) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[8];
-			Type mTrgType = (Type) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[9];
+			ASTNode2Element src2Src = (ASTNode2Element) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[7];
+			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[8];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_binding[9];
 
 			Object[] result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_black = pattern_TypeDependency2UsageDependency_11_1_performtransformation_blackBBBBBBBBBBFBB(
-					uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType, _this,
+					uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage, _this,
 					isApplicableMatch);
 			if (result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_11_1_performtransformation_black[10];
 
-				return new Object[] { uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p,
-						mTrgType, csp, _this, isApplicableMatch };
+				return new Object[] { uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType,
+						mPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_11_1_performtransformation_greenBB(
-			MClass mSrcType, Type mTrgType) {
+			Type mTrgType, MClass mSrcType) {
 		mSrcType.getDependencies().add(mTrgType);
-		return new Object[] { mSrcType, mTrgType };
+		return new Object[] { mTrgType, mSrcType };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_11_2_collecttranslatedelements_blackB(
@@ -2328,90 +2322,89 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage, EObject uUsage, EObject mPackage,
-			EObject src2Src, EObject uSrcType, EObject mSrcType, EObject trg2Trg, EObject p2p, EObject mTrgType) {
-		if (!uTrgType.equals(uUsage)) {
-			if (!uPackage.equals(uTrgType)) {
-				if (!uPackage.equals(uUsage)) {
-					if (!uPackage.equals(uSrcType)) {
-						if (!mPackage.equals(uTrgType)) {
-							if (!mPackage.equals(uPackage)) {
-								if (!mPackage.equals(uUsage)) {
-									if (!mPackage.equals(src2Src)) {
-										if (!mPackage.equals(uSrcType)) {
-											if (!mPackage.equals(mSrcType)) {
-												if (!mPackage.equals(trg2Trg)) {
-													if (!mPackage.equals(p2p)) {
-														if (!mPackage.equals(mTrgType)) {
-															if (!src2Src.equals(uTrgType)) {
-																if (!src2Src.equals(uPackage)) {
-																	if (!src2Src.equals(uUsage)) {
-																		if (!src2Src.equals(uSrcType)) {
-																			if (!src2Src.equals(trg2Trg)) {
-																				if (!uSrcType.equals(uTrgType)) {
-																					if (!uSrcType.equals(uUsage)) {
-																						if (!mSrcType
-																								.equals(uTrgType)) {
+			PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType, EObject trg2Trg, EObject uTrgType,
+			EObject uPackage, EObject p2p, EObject mSrcType, EObject src2Src, EObject uSrcType, EObject mPackage) {
+		if (!mTrgType.equals(uUsage)) {
+			if (!mTrgType.equals(trg2Trg)) {
+				if (!mTrgType.equals(uTrgType)) {
+					if (!mTrgType.equals(uPackage)) {
+						if (!mTrgType.equals(p2p)) {
+							if (!mTrgType.equals(src2Src)) {
+								if (!mTrgType.equals(uSrcType)) {
+									if (!trg2Trg.equals(uUsage)) {
+										if (!trg2Trg.equals(uTrgType)) {
+											if (!trg2Trg.equals(uPackage)) {
+												if (!trg2Trg.equals(uSrcType)) {
+													if (!uTrgType.equals(uUsage)) {
+														if (!uPackage.equals(uUsage)) {
+															if (!uPackage.equals(uTrgType)) {
+																if (!uPackage.equals(uSrcType)) {
+																	if (!p2p.equals(uUsage)) {
+																		if (!p2p.equals(trg2Trg)) {
+																			if (!p2p.equals(uTrgType)) {
+																				if (!p2p.equals(uPackage)) {
+																					if (!p2p.equals(src2Src)) {
+																						if (!p2p.equals(uSrcType)) {
 																							if (!mSrcType
-																									.equals(uPackage)) {
+																									.equals(uUsage)) {
 																								if (!mSrcType.equals(
-																										uUsage)) {
+																										mTrgType)) {
 																									if (!mSrcType
-																											.equals(src2Src)) {
+																											.equals(trg2Trg)) {
 																										if (!mSrcType
-																												.equals(uSrcType)) {
+																												.equals(uTrgType)) {
 																											if (!mSrcType
-																													.equals(trg2Trg)) {
+																													.equals(uPackage)) {
 																												if (!mSrcType
 																														.equals(p2p)) {
 																													if (!mSrcType
-																															.equals(mTrgType)) {
-																														if (!trg2Trg
-																																.equals(uTrgType)) {
-																															if (!trg2Trg
-																																	.equals(uPackage)) {
-																																if (!trg2Trg
-																																		.equals(uUsage)) {
-																																	if (!trg2Trg
-																																			.equals(uSrcType)) {
-																																		if (!p2p.equals(
-																																				uTrgType)) {
-																																			if (!p2p.equals(
-																																					uPackage)) {
-																																				if (!p2p.equals(
-																																						uUsage)) {
-																																					if (!p2p.equals(
-																																							src2Src)) {
-																																						if (!p2p.equals(
-																																								uSrcType)) {
-																																							if (!p2p.equals(
-																																									trg2Trg)) {
-																																								if (!mTrgType
-																																										.equals(uTrgType)) {
-																																									if (!mTrgType
-																																											.equals(uPackage)) {
-																																										if (!mTrgType
-																																												.equals(uUsage)) {
-																																											if (!mTrgType
-																																													.equals(src2Src)) {
-																																												if (!mTrgType
-																																														.equals(uSrcType)) {
-																																													if (!mTrgType
-																																															.equals(trg2Trg)) {
-																																														if (!mTrgType
-																																																.equals(p2p)) {
+																															.equals(src2Src)) {
+																														if (!mSrcType
+																																.equals(uSrcType)) {
+																															if (!src2Src
+																																	.equals(uUsage)) {
+																																if (!src2Src
+																																		.equals(trg2Trg)) {
+																																	if (!src2Src
+																																			.equals(uTrgType)) {
+																																		if (!src2Src
+																																				.equals(uPackage)) {
+																																			if (!src2Src
+																																					.equals(uSrcType)) {
+																																				if (!uSrcType
+																																						.equals(uUsage)) {
+																																					if (!uSrcType
+																																							.equals(uTrgType)) {
+																																						if (!mPackage
+																																								.equals(uUsage)) {
+																																							if (!mPackage
+																																									.equals(mTrgType)) {
+																																								if (!mPackage
+																																										.equals(trg2Trg)) {
+																																									if (!mPackage
+																																											.equals(uTrgType)) {
+																																										if (!mPackage
+																																												.equals(uPackage)) {
+																																											if (!mPackage
+																																													.equals(p2p)) {
+																																												if (!mPackage
+																																														.equals(mSrcType)) {
+																																													if (!mPackage
+																																															.equals(src2Src)) {
+																																														if (!mPackage
+																																																.equals(uSrcType)) {
 																																															return new Object[] {
 																																																	ruleresult,
+																																																	uUsage,
+																																																	mTrgType,
+																																																	trg2Trg,
 																																																	uTrgType,
 																																																	uPackage,
-																																																	uUsage,
-																																																	mPackage,
+																																																	p2p,
+																																																	mSrcType,
 																																																	src2Src,
 																																																	uSrcType,
-																																																	mSrcType,
-																																																	trg2Trg,
-																																																	p2p,
-																																																	mTrgType };
+																																																	mPackage };
 																																														}
 																																													}
 																																												}
@@ -2461,45 +2454,45 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_11_3_bookkeepingforedges_greenBBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage, EObject uUsage, EObject uSrcType,
-			EObject mSrcType, EObject mTrgType) {
-		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType, EObject uTrgType, EObject uPackage,
+			EObject mSrcType, EObject uSrcType) {
 		EMoflonEdge uUsage__uTrgType____supplier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uUsage__uSrcType____client = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mSrcType__mTrgType____dependencies = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeDependency2UsageDependency";
-		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
 		String uUsage__uTrgType____supplier_name_prime = "supplier";
-		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
+		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
 		String uUsage__uSrcType____client_name_prime = "client";
-		uPackage__uUsage____packagedElement.setSrc(uPackage);
-		uPackage__uUsage____packagedElement.setTrg(uUsage);
-		ruleresult.getTranslatedEdges().add(uPackage__uUsage____packagedElement);
+		String mSrcType__mTrgType____dependencies_name_prime = "dependencies";
 		uUsage__uTrgType____supplier.setSrc(uUsage);
 		uUsage__uTrgType____supplier.setTrg(uTrgType);
 		ruleresult.getTranslatedEdges().add(uUsage__uTrgType____supplier);
-		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
-		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
-		ruleresult.getCreatedEdges().add(mSrcType__mTrgType____dependencies);
+		uPackage__uUsage____packagedElement.setSrc(uPackage);
+		uPackage__uUsage____packagedElement.setTrg(uUsage);
+		ruleresult.getTranslatedEdges().add(uPackage__uUsage____packagedElement);
 		uUsage__uSrcType____client.setSrc(uUsage);
 		uUsage__uSrcType____client.setTrg(uSrcType);
 		ruleresult.getTranslatedEdges().add(uUsage__uSrcType____client);
+		mSrcType__mTrgType____dependencies.setSrc(mSrcType);
+		mSrcType__mTrgType____dependencies.setTrg(mTrgType);
+		ruleresult.getCreatedEdges().add(mSrcType__mTrgType____dependencies);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
 		uUsage__uTrgType____supplier.setName(uUsage__uTrgType____supplier_name_prime);
-		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
+		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
 		uUsage__uSrcType____client.setName(uUsage__uSrcType____client_name_prime);
-		return new Object[] { ruleresult, uTrgType, uPackage, uUsage, uSrcType, mSrcType, mTrgType,
-				uPackage__uUsage____packagedElement, uUsage__uTrgType____supplier, mSrcType__mTrgType____dependencies,
-				uUsage__uSrcType____client };
+		mSrcType__mTrgType____dependencies.setName(mSrcType__mTrgType____dependencies_name_prime);
+		return new Object[] { ruleresult, uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType,
+				uUsage__uTrgType____supplier, uPackage__uUsage____packagedElement, uUsage__uSrcType____client,
+				mSrcType__mTrgType____dependencies };
 	}
 
 	public static final void pattern_TypeDependency2UsageDependency_11_5_registerobjects_expressionBBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, PerformRuleResult ruleresult, EObject uTrgType, EObject uPackage,
-			EObject uUsage, EObject mPackage, EObject src2Src, EObject uSrcType, EObject mSrcType, EObject trg2Trg,
-			EObject p2p, EObject mTrgType) {
-		_this.registerObjects_BWD(ruleresult, uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType,
-				trg2Trg, p2p, mTrgType);
+			TypeDependency2UsageDependency _this, PerformRuleResult ruleresult, EObject uUsage, EObject mTrgType,
+			EObject trg2Trg, EObject uTrgType, EObject uPackage, EObject p2p, EObject mSrcType, EObject src2Src,
+			EObject uSrcType, EObject mPackage) {
+		_this.registerObjects_BWD(ruleresult, uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src,
+				uSrcType, mPackage);
 
 	}
 
@@ -2561,23 +2554,23 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_12_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("uTrgType");
-		EObject _localVariable_1 = match.getObject("uPackage");
-		EObject _localVariable_2 = match.getObject("uUsage");
+		EObject _localVariable_0 = match.getObject("uUsage");
+		EObject _localVariable_1 = match.getObject("uTrgType");
+		EObject _localVariable_2 = match.getObject("uPackage");
 		EObject _localVariable_3 = match.getObject("uSrcType");
-		EObject tmpUTrgType = _localVariable_0;
-		EObject tmpUPackage = _localVariable_1;
-		EObject tmpUUsage = _localVariable_2;
+		EObject tmpUUsage = _localVariable_0;
+		EObject tmpUTrgType = _localVariable_1;
+		EObject tmpUPackage = _localVariable_2;
 		EObject tmpUSrcType = _localVariable_3;
-		if (tmpUTrgType instanceof Classifier) {
-			Classifier uTrgType = (Classifier) tmpUTrgType;
-			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (tmpUUsage instanceof Usage) {
-					Usage uUsage = (Usage) tmpUUsage;
+		if (tmpUUsage instanceof Usage) {
+			Usage uUsage = (Usage) tmpUUsage;
+			if (tmpUTrgType instanceof Classifier) {
+				Classifier uTrgType = (Classifier) tmpUTrgType;
+				if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+					org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
 					if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
 						org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
-						return new Object[] { uTrgType, uPackage, uUsage, uSrcType, match };
+						return new Object[] { uUsage, uTrgType, uPackage, uSrcType, match };
 					}
 				}
 			}
@@ -2585,37 +2578,36 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_12_2_corematch_blackBBBFFBFFFFB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
+	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_12_2_corematch_blackBFFBBFFFBFB(
+			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!uSrcType.equals(uTrgType)) {
-			for (ASTNode2Element src2Src : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uSrcType,
+			for (ASTNode2Element trg2Trg : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(uTrgType,
 					ASTNode2Element.class, "target")) {
-				ASTNode tmpMSrcType = src2Src.getSource();
-				if (tmpMSrcType instanceof MClass) {
-					MClass mSrcType = (MClass) tmpMSrcType;
-					for (ASTNode2Element trg2Trg : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(uTrgType, ASTNode2Element.class, "target")) {
-						if (!src2Src.equals(trg2Trg)) {
-							ASTNode tmpMTrgType = trg2Trg.getSource();
-							if (tmpMTrgType instanceof Type) {
-								Type mTrgType = (Type) tmpMTrgType;
-								if (!mSrcType.equals(mTrgType)) {
-									for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
-											.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class,
-													"target")) {
-										org.eclipse.modisco.java.Package mPackage = p2p.getSource();
-										if (mPackage != null) {
-											_result.add(new Object[] { uTrgType, uPackage, uUsage, mPackage, src2Src,
-													uSrcType, mSrcType, trg2Trg, p2p, mTrgType, match });
+				ASTNode tmpMTrgType = trg2Trg.getSource();
+				if (tmpMTrgType instanceof Type) {
+					Type mTrgType = (Type) tmpMTrgType;
+					for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class, "target")) {
+						org.eclipse.modisco.java.Package mPackage = p2p.getSource();
+						if (mPackage != null) {
+							for (ASTNode2Element src2Src : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(uSrcType, ASTNode2Element.class, "target")) {
+								if (!src2Src.equals(trg2Trg)) {
+									ASTNode tmpMSrcType = src2Src.getSource();
+									if (tmpMSrcType instanceof MClass) {
+										MClass mSrcType = (MClass) tmpMSrcType;
+										if (!mSrcType.equals(mTrgType)) {
+											_result.add(new Object[] { uUsage, mTrgType, trg2Trg, uTrgType, uPackage,
+													p2p, mSrcType, src2Src, uSrcType, mPackage, match });
 										}
-
 									}
+
 								}
 							}
-
 						}
+
 					}
 				}
 
@@ -2625,27 +2617,27 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_12_3_findcontext_blackBBBBBBBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
-			MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p, Type mTrgType) {
+			Usage uUsage, Type mTrgType, ASTNode2Element trg2Trg, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src,
+			org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!src2Src.equals(trg2Trg)) {
-			if (!uSrcType.equals(uTrgType)) {
-				if (!mSrcType.equals(mTrgType)) {
-					if (uPackage.getPackagedElements().contains(uUsage)) {
-						if (uUsage.getSuppliers().contains(uTrgType)) {
-							if (uSrcType.equals(src2Src.getTarget())) {
-								if (uTrgType.equals(trg2Trg.getTarget())) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!src2Src.equals(trg2Trg)) {
+				if (!uSrcType.equals(uTrgType)) {
+					if (uUsage.getSuppliers().contains(uTrgType)) {
+						if (uTrgType.equals(trg2Trg.getTarget())) {
+							if (uPackage.getPackagedElements().contains(uUsage)) {
+								if (uPackage.equals(p2p.getTarget())) {
 									if (uPackage.getOwnedElements().contains(uSrcType)) {
-										if (mSrcType.equals(src2Src.getSource())) {
-											if (mTrgType.equals(trg2Trg.getSource())) {
-												if (uPackage.equals(p2p.getTarget())) {
-													if (mPackage.equals(p2p.getSource())) {
-														if (mPackage.getOwnedElements().contains(mSrcType)) {
-															if (uUsage.getClients().contains(uSrcType)) {
-																_result.add(new Object[] { uTrgType, uPackage, uUsage,
-																		mPackage, src2Src, uSrcType, mSrcType, trg2Trg,
-																		p2p, mTrgType });
+										if (mTrgType.equals(trg2Trg.getSource())) {
+											if (uUsage.getClients().contains(uSrcType)) {
+												if (mPackage.getOwnedElements().contains(mSrcType)) {
+													if (uSrcType.equals(src2Src.getTarget())) {
+														if (mPackage.equals(p2p.getSource())) {
+															if (mSrcType.equals(src2Src.getSource())) {
+																_result.add(new Object[] { uUsage, mTrgType, trg2Trg,
+																		uTrgType, uPackage, p2p, mSrcType, src2Src,
+																		uSrcType, mPackage });
 															}
 														}
 													}
@@ -2664,117 +2656,117 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFF(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
-			MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p, Type mTrgType) {
+			Usage uUsage, Type mTrgType, ASTNode2Element trg2Trg, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src,
+			org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uUsage__uTrgType____supplier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge src2Src__uSrcType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge trg2Trg__uTrgType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__uUsage____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uPackage__uSrcType____ownedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uSrcType__uPackage____owner = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge src2Src__mSrcType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge trg2Trg__mTrgType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uUsage__uSrcType____client = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mPackage__mSrcType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mSrcType__mPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uUsage__uSrcType____client = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
+		EMoflonEdge src2Src__uSrcType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2p__mPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge src2Src__mSrcType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uUsage__uTrgType____supplier_name_prime = "supplier";
-		String src2Src__uSrcType____target_name_prime = "target";
 		String trg2Trg__uTrgType____target_name_prime = "target";
+		String uPackage__uUsage____packagedElement_name_prime = "packagedElement";
+		String p2p__uPackage____target_name_prime = "target";
 		String uPackage__uSrcType____ownedElement_name_prime = "ownedElement";
 		String uSrcType__uPackage____owner_name_prime = "owner";
-		String src2Src__mSrcType____source_name_prime = "source";
 		String trg2Trg__mTrgType____source_name_prime = "source";
-		String p2p__uPackage____target_name_prime = "target";
-		String p2p__mPackage____source_name_prime = "source";
+		String uUsage__uSrcType____client_name_prime = "client";
 		String mPackage__mSrcType____ownedElements_name_prime = "ownedElements";
 		String mSrcType__mPackage____package_name_prime = "package";
-		String uUsage__uSrcType____client_name_prime = "client";
+		String src2Src__uSrcType____target_name_prime = "target";
+		String p2p__mPackage____source_name_prime = "source";
+		String src2Src__mSrcType____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(uUsage);
+		isApplicableMatch.getAllContextElements().add(mTrgType);
+		isApplicableMatch.getAllContextElements().add(trg2Trg);
 		isApplicableMatch.getAllContextElements().add(uTrgType);
 		isApplicableMatch.getAllContextElements().add(uPackage);
-		isApplicableMatch.getAllContextElements().add(uUsage);
-		isApplicableMatch.getAllContextElements().add(mPackage);
+		isApplicableMatch.getAllContextElements().add(p2p);
+		isApplicableMatch.getAllContextElements().add(mSrcType);
 		isApplicableMatch.getAllContextElements().add(src2Src);
 		isApplicableMatch.getAllContextElements().add(uSrcType);
-		isApplicableMatch.getAllContextElements().add(mSrcType);
-		isApplicableMatch.getAllContextElements().add(trg2Trg);
-		isApplicableMatch.getAllContextElements().add(p2p);
-		isApplicableMatch.getAllContextElements().add(mTrgType);
-		uPackage__uUsage____packagedElement.setSrc(uPackage);
-		uPackage__uUsage____packagedElement.setTrg(uUsage);
-		isApplicableMatch.getAllContextElements().add(uPackage__uUsage____packagedElement);
+		isApplicableMatch.getAllContextElements().add(mPackage);
 		uUsage__uTrgType____supplier.setSrc(uUsage);
 		uUsage__uTrgType____supplier.setTrg(uTrgType);
 		isApplicableMatch.getAllContextElements().add(uUsage__uTrgType____supplier);
-		src2Src__uSrcType____target.setSrc(src2Src);
-		src2Src__uSrcType____target.setTrg(uSrcType);
-		isApplicableMatch.getAllContextElements().add(src2Src__uSrcType____target);
 		trg2Trg__uTrgType____target.setSrc(trg2Trg);
 		trg2Trg__uTrgType____target.setTrg(uTrgType);
 		isApplicableMatch.getAllContextElements().add(trg2Trg__uTrgType____target);
+		uPackage__uUsage____packagedElement.setSrc(uPackage);
+		uPackage__uUsage____packagedElement.setTrg(uUsage);
+		isApplicableMatch.getAllContextElements().add(uPackage__uUsage____packagedElement);
+		p2p__uPackage____target.setSrc(p2p);
+		p2p__uPackage____target.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
 		uPackage__uSrcType____ownedElement.setSrc(uPackage);
 		uPackage__uSrcType____ownedElement.setTrg(uSrcType);
 		isApplicableMatch.getAllContextElements().add(uPackage__uSrcType____ownedElement);
 		uSrcType__uPackage____owner.setSrc(uSrcType);
 		uSrcType__uPackage____owner.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(uSrcType__uPackage____owner);
-		src2Src__mSrcType____source.setSrc(src2Src);
-		src2Src__mSrcType____source.setTrg(mSrcType);
-		isApplicableMatch.getAllContextElements().add(src2Src__mSrcType____source);
 		trg2Trg__mTrgType____source.setSrc(trg2Trg);
 		trg2Trg__mTrgType____source.setTrg(mTrgType);
 		isApplicableMatch.getAllContextElements().add(trg2Trg__mTrgType____source);
-		p2p__uPackage____target.setSrc(p2p);
-		p2p__uPackage____target.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		p2p__mPackage____source.setSrc(p2p);
-		p2p__mPackage____source.setTrg(mPackage);
-		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
+		uUsage__uSrcType____client.setSrc(uUsage);
+		uUsage__uSrcType____client.setTrg(uSrcType);
+		isApplicableMatch.getAllContextElements().add(uUsage__uSrcType____client);
 		mPackage__mSrcType____ownedElements.setSrc(mPackage);
 		mPackage__mSrcType____ownedElements.setTrg(mSrcType);
 		isApplicableMatch.getAllContextElements().add(mPackage__mSrcType____ownedElements);
 		mSrcType__mPackage____package.setSrc(mSrcType);
 		mSrcType__mPackage____package.setTrg(mPackage);
 		isApplicableMatch.getAllContextElements().add(mSrcType__mPackage____package);
-		uUsage__uSrcType____client.setSrc(uUsage);
-		uUsage__uSrcType____client.setTrg(uSrcType);
-		isApplicableMatch.getAllContextElements().add(uUsage__uSrcType____client);
-		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
+		src2Src__uSrcType____target.setSrc(src2Src);
+		src2Src__uSrcType____target.setTrg(uSrcType);
+		isApplicableMatch.getAllContextElements().add(src2Src__uSrcType____target);
+		p2p__mPackage____source.setSrc(p2p);
+		p2p__mPackage____source.setTrg(mPackage);
+		isApplicableMatch.getAllContextElements().add(p2p__mPackage____source);
+		src2Src__mSrcType____source.setSrc(src2Src);
+		src2Src__mSrcType____source.setTrg(mSrcType);
+		isApplicableMatch.getAllContextElements().add(src2Src__mSrcType____source);
 		uUsage__uTrgType____supplier.setName(uUsage__uTrgType____supplier_name_prime);
-		src2Src__uSrcType____target.setName(src2Src__uSrcType____target_name_prime);
 		trg2Trg__uTrgType____target.setName(trg2Trg__uTrgType____target_name_prime);
+		uPackage__uUsage____packagedElement.setName(uPackage__uUsage____packagedElement_name_prime);
+		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
 		uPackage__uSrcType____ownedElement.setName(uPackage__uSrcType____ownedElement_name_prime);
 		uSrcType__uPackage____owner.setName(uSrcType__uPackage____owner_name_prime);
-		src2Src__mSrcType____source.setName(src2Src__mSrcType____source_name_prime);
 		trg2Trg__mTrgType____source.setName(trg2Trg__mTrgType____source_name_prime);
-		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
+		uUsage__uSrcType____client.setName(uUsage__uSrcType____client_name_prime);
 		mPackage__mSrcType____ownedElements.setName(mPackage__mSrcType____ownedElements_name_prime);
 		mSrcType__mPackage____package.setName(mSrcType__mPackage____package_name_prime);
-		uUsage__uSrcType____client.setName(uUsage__uSrcType____client_name_prime);
-		return new Object[] { uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType,
-				isApplicableMatch, uPackage__uUsage____packagedElement, uUsage__uTrgType____supplier,
-				src2Src__uSrcType____target, trg2Trg__uTrgType____target, uPackage__uSrcType____ownedElement,
-				uSrcType__uPackage____owner, src2Src__mSrcType____source, trg2Trg__mTrgType____source,
-				p2p__uPackage____target, p2p__mPackage____source, mPackage__mSrcType____ownedElements,
-				mSrcType__mPackage____package, uUsage__uSrcType____client };
+		src2Src__uSrcType____target.setName(src2Src__uSrcType____target_name_prime);
+		p2p__mPackage____source.setName(p2p__mPackage____source_name_prime);
+		src2Src__mSrcType____source.setName(src2Src__mSrcType____source_name_prime);
+		return new Object[] { uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage,
+				isApplicableMatch, uUsage__uTrgType____supplier, trg2Trg__uTrgType____target,
+				uPackage__uUsage____packagedElement, p2p__uPackage____target, uPackage__uSrcType____ownedElement,
+				uSrcType__uPackage____owner, trg2Trg__mTrgType____source, uUsage__uSrcType____client,
+				mPackage__mSrcType____ownedElements, mSrcType__mPackage____package, src2Src__uSrcType____target,
+				p2p__mPackage____source, src2Src__mSrcType____source };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uTrgType, uPackage, uUsage, mPackage,
-				src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType);
+			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Usage uUsage, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uUsage, mTrgType, trg2Trg, uTrgType,
+				uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uTrgType, uPackage, uUsage, mPackage, src2Src,
-					uSrcType, mSrcType, trg2Trg, p2p, mTrgType };
+			return new Object[] { csp, _this, isApplicableMatch, uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p,
+					mSrcType, src2Src, uSrcType, mPackage };
 		}
 		return null;
 	}
@@ -2784,13 +2776,13 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType) {
+			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Usage uUsage, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
 		Object[] result_pattern_TypeDependency2UsageDependency_12_4_solveCSP_binding = pattern_TypeDependency2UsageDependency_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, uTrgType, uPackage, uUsage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg,
-				p2p, mTrgType);
+				_this, isApplicableMatch, uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src,
+				uSrcType, mPackage);
 		if (result_pattern_TypeDependency2UsageDependency_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_12_4_solveCSP_binding[0];
 
@@ -2798,8 +2790,8 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_TypeDependency2UsageDependency_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uTrgType, uPackage, uUsage, mPackage, src2Src,
-						uSrcType, mSrcType, trg2Trg, p2p, mTrgType };
+				return new Object[] { csp, _this, isApplicableMatch, uUsage, mTrgType, trg2Trg, uTrgType, uPackage, p2p,
+						mSrcType, src2Src, uSrcType, mPackage };
 			}
 		}
 		return null;
@@ -2891,11 +2883,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_client_273236 : uUsage.getClients()) {
-				if (!uUsage.equals(__DEC_uUsage_client_273236)) {
-					if (!uTrgType.equals(__DEC_uUsage_client_273236)) {
-						if (!uPackage.equals(__DEC_uUsage_client_273236)) {
-							if (!uSrcType.equals(__DEC_uUsage_client_273236)) {
+			for (NamedElement __DEC_uUsage_client_74482 : uUsage.getClients()) {
+				if (!uUsage.equals(__DEC_uUsage_client_74482)) {
+					if (!uTrgType.equals(__DEC_uUsage_client_74482)) {
+						if (!uPackage.equals(__DEC_uUsage_client_74482)) {
+							if (!uSrcType.equals(__DEC_uUsage_client_74482)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -2910,11 +2902,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_supplier_429461 : uUsage.getSuppliers()) {
-				if (!uUsage.equals(__DEC_uUsage_supplier_429461)) {
-					if (!uTrgType.equals(__DEC_uUsage_supplier_429461)) {
-						if (!uPackage.equals(__DEC_uUsage_supplier_429461)) {
-							if (!uSrcType.equals(__DEC_uUsage_supplier_429461)) {
+			for (NamedElement __DEC_uUsage_supplier_544950 : uUsage.getSuppliers()) {
+				if (!uUsage.equals(__DEC_uUsage_supplier_544950)) {
+					if (!uTrgType.equals(__DEC_uUsage_supplier_544950)) {
+						if (!uPackage.equals(__DEC_uUsage_supplier_544950)) {
+							if (!uSrcType.equals(__DEC_uUsage_supplier_544950)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -2958,38 +2950,37 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_blackFFFFB(
-			EMoflonEdge _edge_packagedElement) {
+			EMoflonEdge _edge_supplier) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpUPackage = _edge_packagedElement.getSrc();
-		if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-			EObject tmpUUsage = _edge_packagedElement.getTrg();
-			if (tmpUUsage instanceof Usage) {
-				Usage uUsage = (Usage) tmpUUsage;
-				if (uPackage.getPackagedElements().contains(uUsage)) {
-					if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_3BB(uUsage,
-							uPackage) == null) {
-						if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_4BB(uUsage,
-								uPackage) == null) {
-							for (Element tmpUSrcType : uPackage.getOwnedElements()) {
-								if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
-									org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
-									if (uUsage.getClients().contains(uSrcType)) {
-										if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_5BB(
-												uUsage, uSrcType) == null) {
-											for (NamedElement tmpUTrgType : uUsage.getSuppliers()) {
-												if (tmpUTrgType instanceof Classifier) {
-													Classifier uTrgType = (Classifier) tmpUTrgType;
-													if (!uSrcType.equals(uTrgType)) {
-														if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_0BBBB(
-																uUsage, uTrgType, uPackage, uSrcType) == null) {
-															if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_1BBBB(
-																	uUsage, uTrgType, uPackage, uSrcType) == null) {
-																if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_2BB(
-																		uUsage, uTrgType) == null) {
-																	_result.add(new Object[] { uTrgType, uPackage,
-																			uUsage, uSrcType, _edge_packagedElement });
-																}
+		EObject tmpUUsage = _edge_supplier.getSrc();
+		if (tmpUUsage instanceof Usage) {
+			Usage uUsage = (Usage) tmpUUsage;
+			EObject tmpUTrgType = _edge_supplier.getTrg();
+			if (tmpUTrgType instanceof Classifier) {
+				Classifier uTrgType = (Classifier) tmpUTrgType;
+				if (uUsage.getSuppliers().contains(uTrgType)) {
+					if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_2BB(uUsage,
+							uTrgType) == null) {
+						for (NamedElement tmpUSrcType : uUsage.getClients()) {
+							if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+								if (!uSrcType.equals(uTrgType)) {
+									Element tmpUPackage = uSrcType.getOwner();
+									if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+										org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+										if (uPackage.getPackagedElements().contains(uUsage)) {
+											if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_5BB(
+													uUsage, uSrcType) == null) {
+												if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_0BBBB(
+														uUsage, uTrgType, uPackage, uSrcType) == null) {
+													if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_1BBBB(
+															uUsage, uTrgType, uPackage, uSrcType) == null) {
+														if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_3BB(
+																uUsage, uPackage) == null) {
+															if (pattern_TypeDependency2UsageDependency_20_2_testcorematchandDECs_black_nac_4BB(
+																	uUsage, uPackage) == null) {
+																_result.add(new Object[] { uUsage, uTrgType, uPackage,
+																		uSrcType, _edge_supplier });
 															}
 														}
 													}
@@ -2997,6 +2988,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 											}
 										}
 									}
+
 								}
 							}
 						}
@@ -3020,9 +3012,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final boolean pattern_TypeDependency2UsageDependency_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			TypeDependency2UsageDependency _this, Match match, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, Usage uUsage, org.eclipse.uml2.uml.Class uSrcType) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uTrgType, uPackage, uUsage, uSrcType);
+			TypeDependency2UsageDependency _this, Match match, Usage uUsage, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uUsage, uTrgType, uPackage, uSrcType);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3123,7 +3115,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					if (mSrcType.getDependencies().contains(mTrgType)) {
 						org.eclipse.modisco.java.Package mPackage = mSrcType.getPackage();
 						if (mPackage != null) {
-							_result.add(new Object[] { mPackage, mSrcType, mTrgType, _edge_dependencies });
+							_result.add(new Object[] { mTrgType, mSrcType, mPackage, _edge_dependencies });
 						}
 
 					}
@@ -3146,9 +3138,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final boolean pattern_TypeDependency2UsageDependency_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			TypeDependency2UsageDependency _this, Match match, org.eclipse.modisco.java.Package mPackage,
-			MClass mSrcType, Type mTrgType) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mPackage, mSrcType, mTrgType);
+			TypeDependency2UsageDependency _this, Match match, Type mTrgType, MClass mSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mTrgType, mSrcType, mPackage);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3194,36 +3186,36 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("uTrgType");
-		EObject _localVariable_1 = targetMatch.getObject("uPackage");
-		EObject _localVariable_2 = targetMatch.getObject("uUsage");
-		EObject _localVariable_3 = sourceMatch.getObject("mPackage");
-		EObject _localVariable_4 = targetMatch.getObject("uSrcType");
-		EObject _localVariable_5 = sourceMatch.getObject("mSrcType");
-		EObject _localVariable_6 = sourceMatch.getObject("mTrgType");
-		EObject tmpUTrgType = _localVariable_0;
-		EObject tmpUPackage = _localVariable_1;
-		EObject tmpUUsage = _localVariable_2;
-		EObject tmpMPackage = _localVariable_3;
-		EObject tmpUSrcType = _localVariable_4;
-		EObject tmpMSrcType = _localVariable_5;
-		EObject tmpMTrgType = _localVariable_6;
-		if (tmpUTrgType instanceof Classifier) {
-			Classifier uTrgType = (Classifier) tmpUTrgType;
-			if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
-				if (tmpUUsage instanceof Usage) {
-					Usage uUsage = (Usage) tmpUUsage;
-					if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
-						if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
-							org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
-							if (tmpMSrcType instanceof MClass) {
-								MClass mSrcType = (MClass) tmpMSrcType;
-								if (tmpMTrgType instanceof Type) {
-									Type mTrgType = (Type) tmpMTrgType;
-									return new Object[] { uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType,
-											mTrgType, targetMatch, sourceMatch };
+		EObject _localVariable_0 = targetMatch.getObject("uUsage");
+		EObject _localVariable_1 = sourceMatch.getObject("mTrgType");
+		EObject _localVariable_2 = targetMatch.getObject("uTrgType");
+		EObject _localVariable_3 = targetMatch.getObject("uPackage");
+		EObject _localVariable_4 = sourceMatch.getObject("mSrcType");
+		EObject _localVariable_5 = targetMatch.getObject("uSrcType");
+		EObject _localVariable_6 = sourceMatch.getObject("mPackage");
+		EObject tmpUUsage = _localVariable_0;
+		EObject tmpMTrgType = _localVariable_1;
+		EObject tmpUTrgType = _localVariable_2;
+		EObject tmpUPackage = _localVariable_3;
+		EObject tmpMSrcType = _localVariable_4;
+		EObject tmpUSrcType = _localVariable_5;
+		EObject tmpMPackage = _localVariable_6;
+		if (tmpUUsage instanceof Usage) {
+			Usage uUsage = (Usage) tmpUUsage;
+			if (tmpMTrgType instanceof Type) {
+				Type mTrgType = (Type) tmpMTrgType;
+				if (tmpUTrgType instanceof Classifier) {
+					Classifier uTrgType = (Classifier) tmpUTrgType;
+					if (tmpUPackage instanceof org.eclipse.uml2.uml.Package) {
+						org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) tmpUPackage;
+						if (tmpMSrcType instanceof MClass) {
+							MClass mSrcType = (MClass) tmpMSrcType;
+							if (tmpUSrcType instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) tmpUSrcType;
+								if (tmpMPackage instanceof org.eclipse.modisco.java.Package) {
+									org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) tmpMPackage;
+									return new Object[] { uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType,
+											mPackage, targetMatch, sourceMatch };
 								}
 							}
 						}
@@ -3235,13 +3227,13 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType,
-			Type mTrgType, Match sourceMatch, Match targetMatch) {
-		if (!uSrcType.equals(uTrgType)) {
-			if (!mSrcType.equals(mTrgType)) {
+			Usage uUsage, Type mTrgType, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, MClass mSrcType,
+			org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage, Match sourceMatch,
+			Match targetMatch) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!uSrcType.equals(uTrgType)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType,
+					return new Object[] { uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage,
 							sourceMatch, targetMatch };
 				}
 			}
@@ -3254,19 +3246,19 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding = pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding != null) {
-			Classifier uTrgType = (Classifier) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[0];
-			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[1];
-			Usage uUsage = (Usage) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[2];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[3];
-			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[4];
-			MClass mSrcType = (MClass) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[5];
-			Type mTrgType = (Type) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[6];
+			Usage uUsage = (Usage) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[0];
+			Type mTrgType = (Type) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[1];
+			Classifier uTrgType = (Classifier) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Package uPackage = (org.eclipse.uml2.uml.Package) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[3];
+			MClass mSrcType = (MClass) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[4];
+			org.eclipse.uml2.uml.Class uSrcType = (org.eclipse.uml2.uml.Class) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[5];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_binding[6];
 
 			Object[] result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_black = pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType, sourceMatch, targetMatch);
+					uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage, sourceMatch, targetMatch);
 			if (result_pattern_TypeDependency2UsageDependency_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType, sourceMatch,
+				return new Object[] { uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3274,14 +3266,14 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_24_3_solvecsp_bindingFBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			Usage uUsage, org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType,
-			MClass mSrcType, Type mTrgType, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType,
-				mTrgType, sourceMatch, targetMatch);
+			TypeDependency2UsageDependency _this, Usage uUsage, Type mTrgType, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, MClass mSrcType, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType,
+				mPackage, sourceMatch, targetMatch);
 		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType,
+			return new Object[] { csp, _this, uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3292,11 +3284,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
-			Usage uUsage, org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType,
-			MClass mSrcType, Type mTrgType, Match sourceMatch, Match targetMatch) {
+			TypeDependency2UsageDependency _this, Usage uUsage, Type mTrgType, Classifier uTrgType,
+			org.eclipse.uml2.uml.Package uPackage, MClass mSrcType, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypeDependency2UsageDependency_24_3_solvecsp_binding = pattern_TypeDependency2UsageDependency_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType, sourceMatch, targetMatch);
+				_this, uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage, sourceMatch, targetMatch);
 		if (result_pattern_TypeDependency2UsageDependency_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_24_3_solvecsp_binding[0];
 
@@ -3304,7 +3296,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_TypeDependency2UsageDependency_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType,
+				return new Object[] { csp, _this, uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3317,26 +3309,26 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_blackBBBFBBFFBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, Type mTrgType, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_blackBFBBFBFBBBB(
+			Type mTrgType, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, MClass mSrcType,
+			org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage, Match sourceMatch,
+			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!uSrcType.equals(uTrgType)) {
-			if (!mSrcType.equals(mTrgType)) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!uSrcType.equals(uTrgType)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (ASTNode2Element src2Src : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(uSrcType, ASTNode2Element.class, "target")) {
-						if (mSrcType.equals(src2Src.getSource())) {
-							for (ASTNode2Element trg2Trg : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(uTrgType, ASTNode2Element.class, "target")) {
-								if (!src2Src.equals(trg2Trg)) {
-									if (mTrgType.equals(trg2Trg.getSource())) {
-										for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
-												.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class,
-														"target")) {
-											if (mPackage.equals(p2p.getSource())) {
-												_result.add(new Object[] { uTrgType, uPackage, mPackage, src2Src,
-														uSrcType, mSrcType, trg2Trg, p2p, mTrgType, sourceMatch,
+					for (ASTNode2Element trg2Trg : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(uTrgType, ASTNode2Element.class, "target")) {
+						if (mTrgType.equals(trg2Trg.getSource())) {
+							for (JavaPackage2UmlPackage p2p : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class, "target")) {
+								if (mPackage.equals(p2p.getSource())) {
+									for (ASTNode2Element src2Src : org.moflon.core.utilities.eMoflonEMFUtil
+											.getOppositeReferenceTyped(uSrcType, ASTNode2Element.class, "target")) {
+										if (!src2Src.equals(trg2Trg)) {
+											if (mSrcType.equals(src2Src.getSource())) {
+												_result.add(new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p,
+														mSrcType, src2Src, uSrcType, mPackage, sourceMatch,
 														targetMatch });
 											}
 										}
@@ -3352,26 +3344,25 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_24_5_matchcorrcontext_greenBBBBBF(
-			ASTNode2Element src2Src, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p, Match sourceMatch,
+			ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p, ASTNode2Element src2Src, Match sourceMatch,
 			Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "TypeDependency2UsageDependency";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(src2Src);
 		ccMatch.getAllContextElements().add(trg2Trg);
 		ccMatch.getAllContextElements().add(p2p);
+		ccMatch.getAllContextElements().add(src2Src);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { src2Src, trg2Trg, p2p, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { trg2Trg, p2p, src2Src, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_24_6_createcorrespondence_blackBBBBBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.modisco.java.Package mPackage, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType,
-			Type mTrgType, CCMatch ccMatch) {
-		if (!uSrcType.equals(uTrgType)) {
-			if (!mSrcType.equals(mTrgType)) {
-				return new Object[] { uTrgType, uPackage, uUsage, mPackage, uSrcType, mSrcType, mTrgType, ccMatch };
+			Usage uUsage, Type mTrgType, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, MClass mSrcType,
+			org.eclipse.uml2.uml.Class uSrcType, org.eclipse.modisco.java.Package mPackage, CCMatch ccMatch) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!uSrcType.equals(uTrgType)) {
+				return new Object[] { uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, mPackage, ccMatch };
 			}
 		}
 		return null;
@@ -3398,12 +3389,12 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeDependency2UsageDependency_27_1_matchtggpattern_blackBBB(
-			org.eclipse.modisco.java.Package mPackage, MClass mSrcType, Type mTrgType) {
+	public static final Object[] pattern_TypeDependency2UsageDependency_27_1_matchtggpattern_blackBBB(Type mTrgType,
+			MClass mSrcType, org.eclipse.modisco.java.Package mPackage) {
 		if (!mSrcType.equals(mTrgType)) {
 			if (mSrcType.getDependencies().contains(mTrgType)) {
 				if (mPackage.getOwnedElements().contains(mSrcType)) {
-					return new Object[] { mPackage, mSrcType, mTrgType };
+					return new Object[] { mTrgType, mSrcType, mPackage };
 				}
 			}
 		}
@@ -3424,11 +3415,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_client_417208 : uUsage.getClients()) {
-				if (!uUsage.equals(__DEC_uUsage_client_417208)) {
-					if (!uTrgType.equals(__DEC_uUsage_client_417208)) {
-						if (!uPackage.equals(__DEC_uUsage_client_417208)) {
-							if (!uSrcType.equals(__DEC_uUsage_client_417208)) {
+			for (NamedElement __DEC_uUsage_client_167680 : uUsage.getClients()) {
+				if (!uUsage.equals(__DEC_uUsage_client_167680)) {
+					if (!uTrgType.equals(__DEC_uUsage_client_167680)) {
+						if (!uPackage.equals(__DEC_uUsage_client_167680)) {
+							if (!uSrcType.equals(__DEC_uUsage_client_167680)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -3443,11 +3434,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 			Usage uUsage, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
 			org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			for (NamedElement __DEC_uUsage_supplier_833766 : uUsage.getSuppliers()) {
-				if (!uUsage.equals(__DEC_uUsage_supplier_833766)) {
-					if (!uTrgType.equals(__DEC_uUsage_supplier_833766)) {
-						if (!uPackage.equals(__DEC_uUsage_supplier_833766)) {
-							if (!uSrcType.equals(__DEC_uUsage_supplier_833766)) {
+			for (NamedElement __DEC_uUsage_supplier_752366 : uUsage.getSuppliers()) {
+				if (!uUsage.equals(__DEC_uUsage_supplier_752366)) {
+					if (!uTrgType.equals(__DEC_uUsage_supplier_752366)) {
+						if (!uPackage.equals(__DEC_uUsage_supplier_752366)) {
+							if (!uSrcType.equals(__DEC_uUsage_supplier_752366)) {
 								return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 							}
 						}
@@ -3490,12 +3481,11 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_TypeDependency2UsageDependency_28_1_matchtggpattern_blackBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, Usage uUsage,
-			org.eclipse.uml2.uml.Class uSrcType) {
+	public static final Object[] pattern_TypeDependency2UsageDependency_28_1_matchtggpattern_blackBBBB(Usage uUsage,
+			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType) {
 		if (!uSrcType.equals(uTrgType)) {
-			if (uPackage.getPackagedElements().contains(uUsage)) {
-				if (uUsage.getSuppliers().contains(uTrgType)) {
+			if (uUsage.getSuppliers().contains(uTrgType)) {
+				if (uPackage.getPackagedElements().contains(uUsage)) {
 					if (uPackage.getOwnedElements().contains(uSrcType)) {
 						if (uUsage.getClients().contains(uSrcType)) {
 							if (pattern_TypeDependency2UsageDependency_28_1_matchtggpattern_black_nac_0BBBB(uUsage,
@@ -3510,7 +3500,7 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 													uUsage, uPackage) == null) {
 												if (pattern_TypeDependency2UsageDependency_28_1_matchtggpattern_black_nac_5BB(
 														uUsage, uSrcType) == null) {
-													return new Object[] { uTrgType, uPackage, uUsage, uSrcType };
+													return new Object[] { uUsage, uTrgType, uPackage, uSrcType };
 												}
 											}
 										}
@@ -3549,9 +3539,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Classifier uTrgType) {
-		if (ruleResult.getTargetObjects().contains(uTrgType)) {
-			return new Object[] { ruleResult, uTrgType };
+			ModelgeneratorRuleResult ruleResult, Type mTrgType) {
+		if (ruleResult.getSourceObjects().contains(mTrgType)) {
+			return new Object[] { ruleResult, mTrgType };
 		}
 		return null;
 	}
@@ -3565,9 +3555,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Type mTrgType) {
-		if (ruleResult.getSourceObjects().contains(mTrgType)) {
-			return new Object[] { ruleResult, mTrgType };
+			ModelgeneratorRuleResult ruleResult, Classifier uTrgType) {
+		if (ruleResult.getTargetObjects().contains(uTrgType)) {
+			return new Object[] { ruleResult, uTrgType };
 		}
 		return null;
 	}
@@ -3629,18 +3619,18 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					for (EObject tmpTrg2Trg : trg2TrgList.getEntryObjects()) {
 						if (tmpTrg2Trg instanceof ASTNode2Element) {
 							ASTNode2Element trg2Trg = (ASTNode2Element) tmpTrg2Trg;
-							Element tmpUTrgType = trg2Trg.getTarget();
-							if (tmpUTrgType instanceof Classifier) {
-								Classifier uTrgType = (Classifier) tmpUTrgType;
-								ASTNode tmpMTrgType = trg2Trg.getSource();
-								if (tmpMTrgType instanceof Type) {
-									Type mTrgType = (Type) tmpMTrgType;
+							ASTNode tmpMTrgType = trg2Trg.getSource();
+							if (tmpMTrgType instanceof Type) {
+								Type mTrgType = (Type) tmpMTrgType;
+								Element tmpUTrgType = trg2Trg.getTarget();
+								if (tmpUTrgType instanceof Classifier) {
+									Classifier uTrgType = (Classifier) tmpUTrgType;
 									if (pattern_TypeDependency2UsageDependency_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, trg2Trg) == null) {
 										if (pattern_TypeDependency2UsageDependency_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, uTrgType) == null) {
+												ruleResult, mTrgType) == null) {
 											if (pattern_TypeDependency2UsageDependency_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, mTrgType) == null) {
+													ruleResult, uTrgType) == null) {
 												for (EObject tmpSrc2Src : src2SrcList.getEntryObjects()) {
 													if (tmpSrc2Src instanceof ASTNode2Element) {
 														ASTNode2Element src2Src = (ASTNode2Element) tmpSrc2Src;
@@ -3688,9 +3678,9 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 																													_result.add(
 																															new Object[] {
 																																	trg2TrgList,
-																																	uTrgType,
-																																	trg2Trg,
 																																	mTrgType,
+																																	trg2Trg,
+																																	uTrgType,
 																																	src2SrcList,
 																																	uPackage,
 																																	uSrcType,
@@ -3737,16 +3727,16 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_29_3_solveCSP_bindingFBBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p,
-			Type mTrgType, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uTrgType, uPackage, mPackage,
-				src2Src, uSrcType, mSrcType, trg2Trg, p2p, mTrgType, ruleResult);
+			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mTrgType, trg2Trg, uTrgType,
+				uPackage, p2p, mSrcType, src2Src, uSrcType, mPackage, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType,
-					mSrcType, trg2Trg, p2p, mTrgType, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType,
+					src2Src, uSrcType, mPackage, ruleResult };
 		}
 		return null;
 	}
@@ -3756,13 +3746,13 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_TypeDependency2UsageDependency_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
-			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage, ASTNode2Element src2Src,
-			org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg, JavaPackage2UmlPackage p2p,
-			Type mTrgType, ModelgeneratorRuleResult ruleResult) {
+			TypeDependency2UsageDependency _this, IsApplicableMatch isApplicableMatch, Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypeDependency2UsageDependency_29_3_solveCSP_binding = pattern_TypeDependency2UsageDependency_29_3_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p,
-				mTrgType, ruleResult);
+				_this, isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType,
+				mPackage, ruleResult);
 		if (result_pattern_TypeDependency2UsageDependency_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeDependency2UsageDependency_29_3_solveCSP_binding[0];
 
@@ -3770,8 +3760,8 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_TypeDependency2UsageDependency_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uTrgType, uPackage, mPackage, src2Src, uSrcType,
-						mSrcType, trg2Trg, p2p, mTrgType, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mTrgType, trg2Trg, uTrgType, uPackage, p2p,
+						mSrcType, src2Src, uSrcType, mPackage, ruleResult };
 			}
 		}
 		return null;
@@ -3784,51 +3774,51 @@ public class TypeDependency2UsageDependencyImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeDependency2UsageDependency_29_5_checknacs_blackBBBBBBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType) {
-		if (!src2Src.equals(trg2Trg)) {
-			if (!uSrcType.equals(uTrgType)) {
-				if (!mSrcType.equals(mTrgType)) {
-					return new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p,
-							mTrgType };
+	public static final Object[] pattern_TypeDependency2UsageDependency_29_5_checknacs_blackBBBBBBBBB(Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!src2Src.equals(trg2Trg)) {
+				if (!uSrcType.equals(uTrgType)) {
+					return new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType,
+							mPackage };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeDependency2UsageDependency_29_6_perform_blackBBBBBBBBBB(
-			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, ASTNode2Element trg2Trg,
-			JavaPackage2UmlPackage p2p, Type mTrgType, ModelgeneratorRuleResult ruleResult) {
-		if (!src2Src.equals(trg2Trg)) {
-			if (!uSrcType.equals(uTrgType)) {
-				if (!mSrcType.equals(mTrgType)) {
-					return new Object[] { uTrgType, uPackage, mPackage, src2Src, uSrcType, mSrcType, trg2Trg, p2p,
-							mTrgType, ruleResult };
+	public static final Object[] pattern_TypeDependency2UsageDependency_29_6_perform_blackBBBBBBBBBB(Type mTrgType,
+			ASTNode2Element trg2Trg, Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage,
+			JavaPackage2UmlPackage p2p, MClass mSrcType, ASTNode2Element src2Src, org.eclipse.uml2.uml.Class uSrcType,
+			org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult) {
+		if (!mSrcType.equals(mTrgType)) {
+			if (!src2Src.equals(trg2Trg)) {
+				if (!uSrcType.equals(uTrgType)) {
+					return new Object[] { mTrgType, trg2Trg, uTrgType, uPackage, p2p, mSrcType, src2Src, uSrcType,
+							mPackage, ruleResult };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeDependency2UsageDependency_29_6_perform_greenBBFBBBB(Classifier uTrgType,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.uml2.uml.Class uSrcType, MClass mSrcType, Type mTrgType,
-			ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_TypeDependency2UsageDependency_29_6_perform_greenFBBBBBB(Type mTrgType,
+			Classifier uTrgType, org.eclipse.uml2.uml.Package uPackage, MClass mSrcType,
+			org.eclipse.uml2.uml.Class uSrcType, ModelgeneratorRuleResult ruleResult) {
 		Usage uUsage = UMLFactory.eINSTANCE.createUsage();
 		mSrcType.getDependencies().add(mTrgType);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		uPackage.getPackagedElements().add(uUsage);
 		uUsage.getSuppliers().add(uTrgType);
+		uPackage.getPackagedElements().add(uUsage);
 		uUsage.getClients().add(uSrcType);
 		ruleResult.getTargetObjects().add(uUsage);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { uTrgType, uPackage, uUsage, uSrcType, mSrcType, mTrgType, ruleResult };
+		return new Object[] { uUsage, mTrgType, uTrgType, uPackage, mSrcType, uSrcType, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TypeDependency2UsageDependency_29_7_expressionFB(

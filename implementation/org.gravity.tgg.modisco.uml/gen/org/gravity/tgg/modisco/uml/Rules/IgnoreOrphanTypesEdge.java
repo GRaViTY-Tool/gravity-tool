@@ -41,7 +41,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Model model, ParameterizedType pt);
+	boolean isAppropriate_FWD(Match match, ParameterizedType pt, Model model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Model model, ParameterizedType pt);
+	void registerObjectsToMatch_FWD(Match match, ParameterizedType pt, Model model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Model model, ParameterizedType pt);
+	CSP isAppropriate_solveCsp_FWD(Match match, ParameterizedType pt, Model model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +89,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +105,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject pt);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pt, EObject model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_320(EMoflonEdge _edge_orphanTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_149(EMoflonEdge _edge_orphanTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Model model, ParameterizedType pt, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(ParameterizedType pt, Model model, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Model model, ParameterizedType pt);
+	boolean checkDEC_FWD(ParameterizedType pt, Model model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,8 +241,8 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, Model modelParameter,
-			ParameterizedType ptParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ParameterizedType ptParameter,
+			Model modelParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface IgnoreOrphanTypesEdge extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model model, ParameterizedType pt,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ParameterizedType pt, Model model,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

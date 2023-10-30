@@ -95,9 +95,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Interface uOwnerType, ASTNode2Element nd2ne,
+			InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature, MFieldDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +112,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject nd2ne,
-			EObject jo2uo, EObject bodyDeclaration, EObject feature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne, EObject jOwnerType,
+			EObject jo2uo, EObject feature, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,9 +177,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface uOwnerType, ASTNode2Element nd2ne,
+			InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature, MFieldDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +194,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject uOwnerType, EObject nd2ne,
-			EObject jo2uo, EObject bodyDeclaration, EObject feature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject uOwnerType, EObject nd2ne, EObject jOwnerType,
+			EObject jo2uo, EObject feature, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +211,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_259(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_121(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +219,7 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_279(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +251,8 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(InterfaceDeclaration jOwnerType, Interface uOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Interface uOwnerType, InterfaceDeclaration jOwnerType, Property feature,
+			MFieldDefinition bodyDeclaration, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +293,9 @@ public interface FieldDec2Property4Interface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration jOwnerType,
-			Interface uOwnerType, ASTNode2Element nd2ne, ASTNode2Element jo2uo, MFieldDefinition bodyDeclaration,
-			Property feature, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Interface uOwnerType, ASTNode2Element nd2ne,
+			InterfaceDeclaration jOwnerType, ASTNode2Element jo2uo, Property feature, MFieldDefinition bodyDeclaration,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

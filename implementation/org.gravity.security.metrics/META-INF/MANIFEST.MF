@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.eclipse,
  org.gravity.eclipse.ui,
  org.gravity.hulk;bundle-version="1.0.0",
- org.gravity.security.annotations;bundle-version="1.0.0",
+ org.gravity.security.annotations.pm;bundle-version="1.0.0",
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy

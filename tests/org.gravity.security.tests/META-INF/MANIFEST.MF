@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GRaViTY Security Tests
+Bundle-SymbolicName: org.gravity.security.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Ruhr University Bochum
+Automatic-Module-Name: org.gravity.security.tests
+Bundle-ClassPath: .,
+ target/dependency/gson.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Require-Bundle: org.junit,
+ junit-jupiter-api,
+ org.gravity.eclipse,
+ junit-jupiter-params,
+ org.apache.log4j,
+ org.gravity.security.annotations.ui,
+ org.gravity.security.annotations.pm

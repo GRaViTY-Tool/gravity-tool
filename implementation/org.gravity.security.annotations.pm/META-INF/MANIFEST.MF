@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.gravity.security.annotations
+Bundle-SymbolicName: org.gravity.security.annotations.pm;singleton:=true
+Export-Package: org.gravity.security.annotations,
+ org.gravity.security.annotations.access,
+ org.gravity.security.annotations.access.impl,
+ org.gravity.security.annotations.access.util,
+ org.gravity.security.annotations.actions,
+ org.gravity.security.annotations.actions.impl,
+ org.gravity.security.annotations.actions.util,
+ org.gravity.security.annotations.impl,
+ org.gravity.security.annotations.requirements,
+ org.gravity.security.annotations.requirements.impl,
+ org.gravity.security.annotations.requirements.util,
+ org.gravity.security.annotations.util
+Bundle-Name: Security Annotations for the Program Model
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ target/dependency/org.gravity.security.annotations.jar
+Require-Bundle: org.gravity.tgg.modisco.pm

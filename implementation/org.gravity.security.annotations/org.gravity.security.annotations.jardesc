@@ -11,13 +11,6 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/Integrity.class"/>
         <javaElement handleIdentifier="=org.gravity.security.annotations/annotations"/>
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/Tainted.class"/>
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/access/Api.class"/>
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/High.class"/>
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/CounterMeasure.class"/>
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/Critical.class"/>
-        <file path="/org.gravity.security.annotations/target/classes/org/gravity/security/annotations/requirements/Secrecy.class"/>
     </selectedElements>
 </jardesc>

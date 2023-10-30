@@ -248,8 +248,8 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge md2o__feature____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge md2o__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
@@ -707,7 +707,7 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_265(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_126(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
 				.pattern_OrphandedPrimitive2PrimitiveType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,7 +767,7 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_285(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_135(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
 				.pattern_OrphandedPrimitive2PrimitiveType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1217,10 +1217,10 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 			return null;
 		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_265__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_265((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_285__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_285((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_126__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_126((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_135__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_135((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1598,8 +1598,8 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (feature.equals(md2o.getTarget())) {
 			if (bodyDeclaration.equals(md2o.getSource())) {
-				if (umlPackage.equals(jp2up.getTarget())) {
-					if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
+				if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
+					if (umlPackage.equals(jp2up.getTarget())) {
 						if (jPackage.equals(jp2up.getSource())) {
 							String umlPackage_name = umlPackage.getName();
 							if (umlPackage_name.equals("Common Java datatypes")) {
@@ -1621,13 +1621,13 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge md2o__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge md2o__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String md2o__feature____target_name_prime = "target";
 		String md2o__bodyDeclaration____source_name_prime = "source";
-		String jp2up__umlPackage____target_name_prime = "target";
 		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
+		String jp2up__umlPackage____target_name_prime = "target";
 		String jp2up__jPackage____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(umlPackage);
 		isApplicableMatch.getAllContextElements().add(feature);
@@ -1641,23 +1641,23 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 		md2o__bodyDeclaration____source.setSrc(md2o);
 		md2o__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(md2o__bodyDeclaration____source);
-		jp2up__umlPackage____target.setSrc(jp2up);
-		jp2up__umlPackage____target.setTrg(umlPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
 		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____orphanTypes);
+		jp2up__umlPackage____target.setSrc(jp2up);
+		jp2up__umlPackage____target.setTrg(umlPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jp2up__jPackage____source.setSrc(jp2up);
 		jp2up__jPackage____source.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
 		md2o__feature____target.setName(md2o__feature____target_name_prime);
 		md2o__bodyDeclaration____source.setName(md2o__bodyDeclaration____source_name_prime);
-		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
+		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
 		return new Object[] { umlPackage, feature, jPackage, bodyDeclaration, md2o, jp2up, isApplicableMatch,
-				md2o__feature____target, md2o__bodyDeclaration____source, jp2up__umlPackage____target,
-				jPackage__bodyDeclaration____orphanTypes, jp2up__jPackage____source };
+				md2o__feature____target, md2o__bodyDeclaration____source, jPackage__bodyDeclaration____orphanTypes,
+				jp2up__umlPackage____target, jp2up__jPackage____source };
 	}
 
 	public static final Object[] pattern_OrphandedPrimitive2PrimitiveType_2_4_solveCSP_bindingFBBBBBBBB(

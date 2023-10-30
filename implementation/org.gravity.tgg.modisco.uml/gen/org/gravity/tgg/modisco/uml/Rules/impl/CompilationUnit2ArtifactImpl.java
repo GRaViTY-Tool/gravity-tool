@@ -159,47 +159,47 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		Model jm = (Model) result1_bindingAndBlack[0];
-		CompilationUnit compilationUnit = (CompilationUnit) result1_bindingAndBlack[1];
-		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[1];
+		CompilationUnit compilationUnit = (CompilationUnit) result1_bindingAndBlack[2];
+		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_1_1_performtransformation_greenBBFFB(compilationUnit, um, csp);
-		Artifact artifact = (Artifact) result1_green[2];
-		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result1_green[3];
+				.pattern_CompilationUnit2Artifact_1_1_performtransformation_greenFBBFB(um, compilationUnit, csp);
+		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result1_green[0];
+		Artifact artifact = (Artifact) result1_green[3];
 
 		Object[] result2_black = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_1_2_collecttranslatedelements_blackBBB(compilationUnit, artifact,
-						c2a);
+				.pattern_CompilationUnit2Artifact_1_2_collecttranslatedelements_blackBBB(c2a, compilationUnit,
+						artifact);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[compilationUnit] = "
-					+ compilationUnit + ", " + "[artifact] = " + artifact + ", " + "[c2a] = " + c2a + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c2a] = " + c2a + ", "
+					+ "[compilationUnit] = " + compilationUnit + ", " + "[artifact] = " + artifact + ".");
 		}
 		Object[] result2_green = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_1_2_collecttranslatedelements_greenFBBB(compilationUnit, artifact,
-						c2a);
+				.pattern_CompilationUnit2Artifact_1_2_collecttranslatedelements_greenFBBB(c2a, compilationUnit,
+						artifact);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm, compilationUnit,
-						jm2um, um, artifact, c2a);
+				.pattern_CompilationUnit2Artifact_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c2a, jm, um,
+						compilationUnit, artifact, jm2um);
 		if (result3_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[jm] = " + jm
-							+ ", " + "[compilationUnit] = " + compilationUnit + ", " + "[jm2um] = " + jm2um + ", "
-							+ "[um] = " + um + ", " + "[artifact] = " + artifact + ", " + "[c2a] = " + c2a + ".");
+					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[c2a] = "
+							+ c2a + ", " + "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[compilationUnit] = "
+							+ compilationUnit + ", " + "[artifact] = " + artifact + ", " + "[jm2um] = " + jm2um + ".");
 		}
 		CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-				ruleresult, jm, compilationUnit, um, artifact, c2a);
-		//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jm__compilationUnit____compilationUnits = (EMoflonEdge) result3_green[7];
+				ruleresult, c2a, jm, um, compilationUnit, artifact);
+		//nothing EMoflonEdge jm__compilationUnit____compilationUnits = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge um__artifact____packagedElement = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
 		CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, jm, compilationUnit, jm2um, um, artifact, c2a);
+				ruleresult, c2a, jm, um, compilationUnit, artifact, jm2um);
 		return CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_1_6_expressionFB(ruleresult);
 	}
 
@@ -231,14 +231,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		Model jm = (Model) result2_binding[0];
 		CompilationUnit compilationUnit = (CompilationUnit) result2_binding[1];
 		for (Object[] result2_black : CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_2_2_corematch_blackBBFFB(jm, compilationUnit, match)) {
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[2];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[3];
+				.pattern_CompilationUnit2Artifact_2_2_corematch_blackBFBFB(jm, compilationUnit, match)) {
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_black[1];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : CompilationUnit2ArtifactImpl
-					.pattern_CompilationUnit2Artifact_2_3_findcontext_blackBBBB(jm, compilationUnit, jm2um, um)) {
+					.pattern_CompilationUnit2Artifact_2_3_findcontext_blackBBBB(jm, um, compilationUnit, jm2um)) {
 				Object[] result3_green = CompilationUnit2ArtifactImpl
-						.pattern_CompilationUnit2Artifact_2_3_findcontext_greenBBBBFFFF(jm, compilationUnit, jm2um, um);
+						.pattern_CompilationUnit2Artifact_2_3_findcontext_greenBBBBFFFF(jm, um, compilationUnit, jm2um);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge jm__compilationUnit____compilationUnits = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge jm2um__jm____source = (EMoflonEdge) result3_green[6];
@@ -246,12 +246,11 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 				Object[] result4_bindingAndBlack = CompilationUnit2ArtifactImpl
 						.pattern_CompilationUnit2Artifact_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								jm, compilationUnit, jm2um, um);
+								jm, um, compilationUnit, jm2um);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", "
-							+ "[compilationUnit] = " + compilationUnit + ", " + "[jm2um] = " + jm2um + ", " + "[um] = "
-							+ um + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[um] = "
+							+ um + ", " + "[compilationUnit] = " + compilationUnit + ", " + "[jm2um] = " + jm2um + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -322,28 +321,28 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model jm, CompilationUnit compilationUnit,
-			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model jm, org.eclipse.uml2.uml.Model um,
+			CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", true,
-				csp);
-		var_compilationUnit_name.setValue(compilationUnit.getName());
-		var_compilationUnit_name.setType("String");
 		Variable var_compilationUnit_originalFilePath = CSPFactoryHelper.eINSTANCE
 				.createVariable("compilationUnit.originalFilePath", true, csp);
 		var_compilationUnit_originalFilePath.setValue(compilationUnit.getOriginalFilePath());
 		var_compilationUnit_originalFilePath.setType("String");
+		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", true,
+				csp);
+		var_compilationUnit_name.setValue(compilationUnit.getName());
+		var_compilationUnit_name.setType("String");
 
 		// Create unbound variables
-		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", csp);
-		var_artifact_name.setType("String");
 		Variable var_artifact_fileName = CSPFactoryHelper.eINSTANCE.createVariable("artifact.fileName", csp);
 		var_artifact_fileName.setType("String");
+		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", csp);
+		var_artifact_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -354,15 +353,15 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_compilationUnit_name, var_artifact_name);
+		eq.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+		eq_0.solve(var_compilationUnit_name, var_artifact_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("jm", jm);
+		isApplicableMatch.registerObject("um", um);
 		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
 		isApplicableMatch.registerObject("jm2um", jm2um);
-		isApplicableMatch.registerObject("um", um);
 		return csp;
 	}
 
@@ -380,14 +379,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject jm2um,
-			EObject um, EObject artifact, EObject c2a) {
-		ruleresult.registerObject("jm", jm);
-		ruleresult.registerObject("compilationUnit", compilationUnit);
-		ruleresult.registerObject("jm2um", jm2um);
-		ruleresult.registerObject("um", um);
-		ruleresult.registerObject("artifact", artifact);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um,
+			EObject compilationUnit, EObject artifact, EObject jm2um) {
 		ruleresult.registerObject("c2a", c2a);
+		ruleresult.registerObject("jm", jm);
+		ruleresult.registerObject("um", um);
+		ruleresult.registerObject("compilationUnit", compilationUnit);
+		ruleresult.registerObject("artifact", artifact);
+		ruleresult.registerObject("jm2um", jm2um);
 
 	}
 
@@ -469,47 +468,47 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		Model jm = (Model) result1_bindingAndBlack[0];
-		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[2];
-		Artifact artifact = (Artifact) result1_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[1];
+		Artifact artifact = (Artifact) result1_bindingAndBlack[2];
+		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_11_1_performtransformation_greenBFBFB(jm, artifact, csp);
-		CompilationUnit compilationUnit = (CompilationUnit) result1_green[1];
-		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result1_green[3];
+				.pattern_CompilationUnit2Artifact_11_1_performtransformation_greenFBFBB(jm, artifact, csp);
+		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result1_green[0];
+		CompilationUnit compilationUnit = (CompilationUnit) result1_green[2];
 
 		Object[] result2_black = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_11_2_collecttranslatedelements_blackBBB(compilationUnit, artifact,
-						c2a);
+				.pattern_CompilationUnit2Artifact_11_2_collecttranslatedelements_blackBBB(c2a, compilationUnit,
+						artifact);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[compilationUnit] = "
-					+ compilationUnit + ", " + "[artifact] = " + artifact + ", " + "[c2a] = " + c2a + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c2a] = " + c2a + ", "
+					+ "[compilationUnit] = " + compilationUnit + ", " + "[artifact] = " + artifact + ".");
 		}
 		Object[] result2_green = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_11_2_collecttranslatedelements_greenFBBB(compilationUnit, artifact,
-						c2a);
+				.pattern_CompilationUnit2Artifact_11_2_collecttranslatedelements_greenFBBB(c2a, compilationUnit,
+						artifact);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, jm, compilationUnit,
-						jm2um, um, artifact, c2a);
+				.pattern_CompilationUnit2Artifact_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c2a, jm, um,
+						compilationUnit, artifact, jm2um);
 		if (result3_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[jm] = " + jm
-							+ ", " + "[compilationUnit] = " + compilationUnit + ", " + "[jm2um] = " + jm2um + ", "
-							+ "[um] = " + um + ", " + "[artifact] = " + artifact + ", " + "[c2a] = " + c2a + ".");
+					"Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult + ", " + "[c2a] = "
+							+ c2a + ", " + "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[compilationUnit] = "
+							+ compilationUnit + ", " + "[artifact] = " + artifact + ", " + "[jm2um] = " + jm2um + ".");
 		}
 		CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-				ruleresult, jm, compilationUnit, um, artifact, c2a);
-		//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge jm__compilationUnit____compilationUnits = (EMoflonEdge) result3_green[7];
+				ruleresult, c2a, jm, um, compilationUnit, artifact);
+		//nothing EMoflonEdge jm__compilationUnit____compilationUnits = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge um__artifact____packagedElement = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
 		CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_11_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, jm, compilationUnit, jm2um, um, artifact, c2a);
+				ruleresult, c2a, jm, um, compilationUnit, artifact, jm2um);
 		return CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_11_6_expressionFB(ruleresult);
 	}
 
@@ -541,14 +540,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_binding[0];
 		Artifact artifact = (Artifact) result2_binding[1];
 		for (Object[] result2_black : CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_12_2_corematch_blackFFBBB(um, artifact, match)) {
+				.pattern_CompilationUnit2Artifact_12_2_corematch_blackFBBFB(um, artifact, match)) {
 			Model jm = (Model) result2_black[0];
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[1];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : CompilationUnit2ArtifactImpl
-					.pattern_CompilationUnit2Artifact_12_3_findcontext_blackBBBB(jm, jm2um, um, artifact)) {
+					.pattern_CompilationUnit2Artifact_12_3_findcontext_blackBBBB(jm, um, artifact, jm2um)) {
 				Object[] result3_green = CompilationUnit2ArtifactImpl
-						.pattern_CompilationUnit2Artifact_12_3_findcontext_greenBBBBFFFF(jm, jm2um, um, artifact);
+						.pattern_CompilationUnit2Artifact_12_3_findcontext_greenBBBBFFFF(jm, um, artifact, jm2um);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge um__artifact____packagedElement = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge jm2um__jm____source = (EMoflonEdge) result3_green[6];
@@ -556,11 +555,11 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 				Object[] result4_bindingAndBlack = CompilationUnit2ArtifactImpl
 						.pattern_CompilationUnit2Artifact_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								jm, jm2um, um, artifact);
+								jm, um, artifact, jm2um);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[jm2um] = "
-							+ jm2um + ", " + "[um] = " + um + ", " + "[artifact] = " + artifact + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[um] = "
+							+ um + ", " + "[artifact] = " + artifact + ", " + "[jm2um] = " + jm2um + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -631,27 +630,27 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Model um, Artifact artifact) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, org.eclipse.uml2.uml.Model um,
+			Artifact artifact, JavaModel2UMLPackage jm2um) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", true, csp);
-		var_artifact_name.setValue(artifact.getName());
-		var_artifact_name.setType("String");
 		Variable var_artifact_fileName = CSPFactoryHelper.eINSTANCE.createVariable("artifact.fileName", true, csp);
 		var_artifact_fileName.setValue(artifact.getFileName());
 		var_artifact_fileName.setType("String");
+		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", true, csp);
+		var_artifact_name.setValue(artifact.getName());
+		var_artifact_name.setType("String");
 
 		// Create unbound variables
-		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", csp);
-		var_compilationUnit_name.setType("String");
 		Variable var_compilationUnit_originalFilePath = CSPFactoryHelper.eINSTANCE
 				.createVariable("compilationUnit.originalFilePath", csp);
 		var_compilationUnit_originalFilePath.setType("String");
+		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", csp);
+		var_compilationUnit_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -662,15 +661,15 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_compilationUnit_name, var_artifact_name);
+		eq.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+		eq_0.solve(var_compilationUnit_name, var_artifact_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("jm", jm);
-		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("um", um);
 		isApplicableMatch.registerObject("artifact", artifact);
+		isApplicableMatch.registerObject("jm2um", jm2um);
 		return csp;
 	}
 
@@ -688,14 +687,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject jm2um,
-			EObject um, EObject artifact, EObject c2a) {
-		ruleresult.registerObject("jm", jm);
-		ruleresult.registerObject("compilationUnit", compilationUnit);
-		ruleresult.registerObject("jm2um", jm2um);
-		ruleresult.registerObject("um", um);
-		ruleresult.registerObject("artifact", artifact);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um,
+			EObject compilationUnit, EObject artifact, EObject jm2um) {
 		ruleresult.registerObject("c2a", c2a);
+		ruleresult.registerObject("jm", jm);
+		ruleresult.registerObject("um", um);
+		ruleresult.registerObject("compilationUnit", compilationUnit);
+		ruleresult.registerObject("artifact", artifact);
+		ruleresult.registerObject("jm2um", jm2um);
 
 	}
 
@@ -714,7 +713,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_262(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_149(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = CompilationUnit2ArtifactImpl
 				.pattern_CompilationUnit2Artifact_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -772,7 +771,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_282(EMoflonEdge _edge_compilationUnits) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_161(EMoflonEdge _edge_compilationUnits) {
 
 		Object[] result1_bindingAndBlack = CompilationUnit2ArtifactImpl
 				.pattern_CompilationUnit2Artifact_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -845,22 +844,22 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 			return ruleResult;
 		}
 
+		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact", true, csp);
+		var_artifact_name.setValue(__helper.getValue("artifact", "name"));
+		var_artifact_name.setType("String");
+
 		Variable var_artifact_fileName = CSPFactoryHelper.eINSTANCE.createVariable("artifact", true, csp);
 		var_artifact_fileName.setValue(__helper.getValue("artifact", "fileName"));
 		var_artifact_fileName.setType("String");
+
+		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit", true, csp);
+		var_compilationUnit_name.setValue(__helper.getValue("compilationUnit", "name"));
+		var_compilationUnit_name.setType("String");
 
 		Variable var_compilationUnit_originalFilePath = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit",
 				true, csp);
 		var_compilationUnit_originalFilePath.setValue(__helper.getValue("compilationUnit", "originalFilePath"));
 		var_compilationUnit_originalFilePath.setType("String");
-
-		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact", true, csp);
-		var_artifact_name.setValue(__helper.getValue("artifact", "name"));
-		var_artifact_name.setType("String");
-
-		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit", true, csp);
-		var_compilationUnit_name.setValue(__helper.getValue("compilationUnit", "name"));
-		var_compilationUnit_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -869,23 +868,23 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("CompilationUnit2Artifact");
-		eq0.solve(var_compilationUnit_name, var_artifact_name);
+		eq0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
 
 		eq1.setRuleName("CompilationUnit2Artifact");
-		eq1.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+		eq1.solve(var_compilationUnit_name, var_artifact_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_artifact_name.setBound(false);
 			var_artifact_fileName.setBound(false);
-			eq0.solve(var_compilationUnit_name, var_artifact_name);
-			eq1.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+			var_artifact_name.setBound(false);
+			eq0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+			eq1.solve(var_compilationUnit_name, var_artifact_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("artifact", "name", var_artifact_name.getValue());
 				__helper.setValue("artifact", "fileName", var_artifact_fileName.getValue());
+				__helper.setValue("artifact", "name", var_artifact_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -915,22 +914,22 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 			return ruleResult;
 		}
 
+		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact", true, csp);
+		var_artifact_name.setValue(__helper.getValue("artifact", "name"));
+		var_artifact_name.setType("String");
+
 		Variable var_artifact_fileName = CSPFactoryHelper.eINSTANCE.createVariable("artifact", true, csp);
 		var_artifact_fileName.setValue(__helper.getValue("artifact", "fileName"));
 		var_artifact_fileName.setType("String");
+
+		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit", true, csp);
+		var_compilationUnit_name.setValue(__helper.getValue("compilationUnit", "name"));
+		var_compilationUnit_name.setType("String");
 
 		Variable var_compilationUnit_originalFilePath = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit",
 				true, csp);
 		var_compilationUnit_originalFilePath.setValue(__helper.getValue("compilationUnit", "originalFilePath"));
 		var_compilationUnit_originalFilePath.setType("String");
-
-		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact", true, csp);
-		var_artifact_name.setValue(__helper.getValue("artifact", "name"));
-		var_artifact_name.setType("String");
-
-		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit", true, csp);
-		var_compilationUnit_name.setValue(__helper.getValue("compilationUnit", "name"));
-		var_compilationUnit_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -939,24 +938,24 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("CompilationUnit2Artifact");
-		eq0.solve(var_compilationUnit_name, var_artifact_name);
+		eq0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
 
 		eq1.setRuleName("CompilationUnit2Artifact");
-		eq1.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+		eq1.solve(var_compilationUnit_name, var_artifact_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_compilationUnit_name.setBound(false);
 			var_compilationUnit_originalFilePath.setBound(false);
-			eq0.solve(var_compilationUnit_name, var_artifact_name);
-			eq1.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+			var_compilationUnit_name.setBound(false);
+			eq0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+			eq1.solve(var_compilationUnit_name, var_artifact_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("compilationUnit", "name", var_compilationUnit_name.getValue());
 				__helper.setValue("compilationUnit", "originalFilePath",
 						var_compilationUnit_originalFilePath.getValue());
+				__helper.setValue("compilationUnit", "name", var_compilationUnit_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -989,16 +988,16 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		Model jm = (Model) result2_bindingAndBlack[0];
-		CompilationUnit compilationUnit = (CompilationUnit) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[1];
+		CompilationUnit compilationUnit = (CompilationUnit) result2_bindingAndBlack[2];
 		Artifact artifact = (Artifact) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = CompilationUnit2ArtifactImpl
-				.pattern_CompilationUnit2Artifact_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jm, compilationUnit, um,
+				.pattern_CompilationUnit2Artifact_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jm, um, compilationUnit,
 						artifact, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[jm] = " + jm + ", " + "[compilationUnit] = " + compilationUnit + ", " + "[um] = " + um + ", "
+					+ "[jm] = " + jm + ", " + "[um] = " + um + ", " + "[compilationUnit] = " + compilationUnit + ", "
 					+ "[artifact] = " + artifact + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
@@ -1007,25 +1006,25 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		if (CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : CompilationUnit2ArtifactImpl
-					.pattern_CompilationUnit2Artifact_24_5_matchcorrcontext_blackBFBBB(jm, um, sourceMatch,
+					.pattern_CompilationUnit2Artifact_24_5_matchcorrcontext_blackBBFBB(jm, um, sourceMatch,
 							targetMatch)) {
-				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result5_black[1];
+				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result5_black[2];
 				Object[] result5_green = CompilationUnit2ArtifactImpl
 						.pattern_CompilationUnit2Artifact_24_5_matchcorrcontext_greenBBBF(jm2um, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = CompilationUnit2ArtifactImpl
-						.pattern_CompilationUnit2Artifact_24_6_createcorrespondence_blackBBBBB(jm, compilationUnit, um,
+						.pattern_CompilationUnit2Artifact_24_6_createcorrespondence_blackBBBBB(jm, um, compilationUnit,
 								artifact, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jm] = " + jm + ", "
-							+ "[compilationUnit] = " + compilationUnit + ", " + "[um] = " + um + ", " + "[artifact] = "
+							+ "[um] = " + um + ", " + "[compilationUnit] = " + compilationUnit + ", " + "[artifact] = "
 							+ artifact + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_24_6_createcorrespondence_greenBBFB(
+				CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_24_6_createcorrespondence_greenFBBB(
 						compilationUnit, artifact, ccMatch);
-				//nothing org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result6_green[2];
+				//nothing org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result6_green[0];
 
 				Object[] result7_black = CompilationUnit2ArtifactImpl
 						.pattern_CompilationUnit2Artifact_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1048,20 +1047,13 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Model jm, CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um,
+	public CSP isApplicable_solveCsp_CC(Model jm, org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit,
 			Artifact artifact, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
 
 		// Create attribute variables
-		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", true,
-				csp);
-		var_compilationUnit_name.setValue(compilationUnit.getName());
-		var_compilationUnit_name.setType("String");
-		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", true, csp);
-		var_artifact_name.setValue(artifact.getName());
-		var_artifact_name.setType("String");
 		Variable var_compilationUnit_originalFilePath = CSPFactoryHelper.eINSTANCE
 				.createVariable("compilationUnit.originalFilePath", true, csp);
 		var_compilationUnit_originalFilePath.setValue(compilationUnit.getOriginalFilePath());
@@ -1069,6 +1061,13 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		Variable var_artifact_fileName = CSPFactoryHelper.eINSTANCE.createVariable("artifact.fileName", true, csp);
 		var_artifact_fileName.setValue(artifact.getFileName());
 		var_artifact_fileName.setType("String");
+		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", true,
+				csp);
+		var_compilationUnit_name.setValue(compilationUnit.getName());
+		var_compilationUnit_name.setType("String");
+		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", true, csp);
+		var_artifact_name.setValue(artifact.getName());
+		var_artifact_name.setType("String");
 
 		// Create unbound variables
 
@@ -1081,9 +1080,9 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_compilationUnit_name, var_artifact_name);
+		eq.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+		eq_0.solve(var_compilationUnit_name, var_artifact_name);
 		return csp;
 	}
 
@@ -1156,32 +1155,32 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 			Object[] result3_bindingAndBlack = CompilationUnit2ArtifactImpl
 					.pattern_CompilationUnit2Artifact_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jm,
-							jm2um, um, ruleResult);
+							um, jm2um, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[jm2um] = "
-						+ jm2um + ", " + "[um] = " + um + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jm] = " + jm + ", " + "[um] = " + um
+						+ ", " + "[jm2um] = " + jm2um + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = CompilationUnit2ArtifactImpl
-						.pattern_CompilationUnit2Artifact_29_5_checknacs_blackBBB(jm, jm2um, um);
+						.pattern_CompilationUnit2Artifact_29_5_checknacs_blackBBB(jm, um, jm2um);
 				if (result5_black != null) {
 
 					Object[] result6_black = CompilationUnit2ArtifactImpl
-							.pattern_CompilationUnit2Artifact_29_6_perform_blackBBBB(jm, jm2um, um, ruleResult);
+							.pattern_CompilationUnit2Artifact_29_6_perform_blackBBBB(jm, um, jm2um, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[jm] = " + jm + ", " + "[jm2um] = "
-										+ jm2um + ", " + "[um] = " + um + ", " + "[ruleResult] = " + ruleResult + ".");
+								"Pattern matching failed." + " Variables: " + "[jm] = " + jm + ", " + "[um] = " + um
+										+ ", " + "[jm2um] = " + jm2um + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_29_6_perform_greenBFBFFBB(jm, um,
+					CompilationUnit2ArtifactImpl.pattern_CompilationUnit2Artifact_29_6_perform_greenFBBFFBB(jm, um,
 							ruleResult, csp);
-					//nothing CompilationUnit compilationUnit = (CompilationUnit) result6_green[1];
-					//nothing Artifact artifact = (Artifact) result6_green[3];
-					//nothing org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result6_green[4];
+					//nothing org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = (org.gravity.tgg.modisco.uml.CompilationUnit2Artifact) result6_green[0];
+					//nothing CompilationUnit compilationUnit = (CompilationUnit) result6_green[3];
+					//nothing Artifact artifact = (Artifact) result6_green[4];
 
 				} else {
 				}
@@ -1198,8 +1197,8 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, org.eclipse.uml2.uml.Model um,
+			JavaModel2UMLPackage jm2um, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1208,15 +1207,15 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", csp);
-		var_compilationUnit_name.setType("String");
-		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", csp);
-		var_artifact_name.setType("String");
 		Variable var_compilationUnit_originalFilePath = CSPFactoryHelper.eINSTANCE
 				.createVariable("compilationUnit.originalFilePath", csp);
 		var_compilationUnit_originalFilePath.setType("String");
 		Variable var_artifact_fileName = CSPFactoryHelper.eINSTANCE.createVariable("artifact.fileName", csp);
 		var_artifact_fileName.setType("String");
+		Variable var_compilationUnit_name = CSPFactoryHelper.eINSTANCE.createVariable("compilationUnit.name", csp);
+		var_compilationUnit_name.setType("String");
+		Variable var_artifact_name = CSPFactoryHelper.eINSTANCE.createVariable("artifact.name", csp);
+		var_artifact_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -1227,14 +1226,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_compilationUnit_name, var_artifact_name);
+		eq.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_compilationUnit_originalFilePath, var_artifact_fileName);
+		eq_0.solve(var_compilationUnit_name, var_artifact_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("jm", jm);
-		isApplicableMatch.registerObject("jm2um", jm2um);
 		isApplicableMatch.registerObject("um", um);
+		isApplicableMatch.registerObject("jm2um", jm2um);
 		return csp;
 	}
 
@@ -1271,10 +1270,10 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					(CompilationUnit) arguments.get(2));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_COMPILATIONUNIT_JAVAMODEL2UMLPACKAGE_MODEL:
+		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_COMPILATIONUNIT_JAVAMODEL2UMLPACKAGE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(CompilationUnit) arguments.get(2), (JavaModel2UMLPackage) arguments.get(3),
-					(org.eclipse.uml2.uml.Model) arguments.get(4));
+					(org.eclipse.uml2.uml.Model) arguments.get(2), (CompilationUnit) arguments.get(3),
+					(JavaModel2UMLPackage) arguments.get(4));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1300,10 +1299,10 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					(Artifact) arguments.get(2));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_JAVAMODEL2UMLPACKAGE_MODEL_ARTIFACT:
+		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_ARTIFACT_JAVAMODEL2UMLPACKAGE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(JavaModel2UMLPackage) arguments.get(2), (org.eclipse.uml2.uml.Model) arguments.get(3),
-					(Artifact) arguments.get(4));
+					(org.eclipse.uml2.uml.Model) arguments.get(2), (Artifact) arguments.get(3),
+					(JavaModel2UMLPackage) arguments.get(4));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1313,20 +1312,20 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 			return null;
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_262__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_262((EMoflonEdge) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_282__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_282((EMoflonEdge) arguments.get(0));
+		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_149__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_149((EMoflonEdge) arguments.get(0));
+		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_161__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_161((EMoflonEdge) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_COMPILATIONUNIT_MODEL_ARTIFACT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Model) arguments.get(0), (CompilationUnit) arguments.get(1),
-					(org.eclipse.uml2.uml.Model) arguments.get(2), (Artifact) arguments.get(3),
-					(Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_COMPILATIONUNIT_ARTIFACT_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Model) arguments.get(0), (org.eclipse.uml2.uml.Model) arguments.get(1),
+					(CompilationUnit) arguments.get(2), (Artifact) arguments.get(3), (Match) arguments.get(4),
+					(Match) arguments.get(5));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___CHECK_DEC_FWD__MODEL_COMPILATIONUNIT:
@@ -1335,9 +1334,9 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 			return checkDEC_BWD((org.eclipse.uml2.uml.Model) arguments.get(0), (Artifact) arguments.get(1));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAMODEL2UMLPACKAGE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (JavaModel2UMLPackage) arguments.get(1));
-		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_JAVAMODEL2UMLPACKAGE_MODEL_MODELGENERATORRULERESULT:
+		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_JAVAMODEL2UMLPACKAGE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(JavaModel2UMLPackage) arguments.get(2), (org.eclipse.uml2.uml.Model) arguments.get(3),
+					(org.eclipse.uml2.uml.Model) arguments.get(2), (JavaModel2UMLPackage) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1435,22 +1434,22 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	public static final Object[] pattern_CompilationUnit2Artifact_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("jm");
-		EObject _localVariable_1 = isApplicableMatch.getObject("compilationUnit");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jm2um");
-		EObject _localVariable_3 = isApplicableMatch.getObject("um");
+		EObject _localVariable_1 = isApplicableMatch.getObject("um");
+		EObject _localVariable_2 = isApplicableMatch.getObject("compilationUnit");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jm2um");
 		EObject tmpJm = _localVariable_0;
-		EObject tmpCompilationUnit = _localVariable_1;
-		EObject tmpJm2um = _localVariable_2;
-		EObject tmpUm = _localVariable_3;
+		EObject tmpUm = _localVariable_1;
+		EObject tmpCompilationUnit = _localVariable_2;
+		EObject tmpJm2um = _localVariable_3;
 		if (tmpJm instanceof Model) {
 			Model jm = (Model) tmpJm;
-			if (tmpCompilationUnit instanceof CompilationUnit) {
-				CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
-				if (tmpJm2um instanceof JavaModel2UMLPackage) {
-					JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
-					if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-						org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-						return new Object[] { jm, compilationUnit, jm2um, um, isApplicableMatch };
+			if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+				org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+				if (tmpCompilationUnit instanceof CompilationUnit) {
+					CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
+					if (tmpJm2um instanceof JavaModel2UMLPackage) {
+						JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
+						return new Object[] { jm, um, compilationUnit, jm2um, isApplicableMatch };
 					}
 				}
 			}
@@ -1459,12 +1458,12 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_1_1_performtransformation_blackBBBBFBB(Model jm,
-			CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um,
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um,
 			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jm, compilationUnit, jm2um, um, csp, _this, isApplicableMatch };
+				return new Object[] { jm, um, compilationUnit, jm2um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1476,74 +1475,74 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 				isApplicableMatch);
 		if (result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding != null) {
 			Model jm = (Model) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[0];
-			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[1];
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[3];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[1];
+			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[2];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_CompilationUnit2Artifact_1_1_performtransformation_black = pattern_CompilationUnit2Artifact_1_1_performtransformation_blackBBBBFBB(
-					jm, compilationUnit, jm2um, um, _this, isApplicableMatch);
+					jm, um, compilationUnit, jm2um, _this, isApplicableMatch);
 			if (result_pattern_CompilationUnit2Artifact_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_CompilationUnit2Artifact_1_1_performtransformation_black[4];
 
-				return new Object[] { jm, compilationUnit, jm2um, um, csp, _this, isApplicableMatch };
+				return new Object[] { jm, um, compilationUnit, jm2um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_CompilationUnit2Artifact_1_1_performtransformation_greenBBFFB(
-			CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um, CSP csp) {
-		Artifact artifact = UMLFactory.eINSTANCE.createArtifact();
+	public static final Object[] pattern_CompilationUnit2Artifact_1_1_performtransformation_greenFBBFB(
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, CSP csp) {
 		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = UmlFactory.eINSTANCE
 				.createCompilationUnit2Artifact();
-		Object _localVariable_0 = csp.getValue("artifact", "name");
-		Object _localVariable_1 = csp.getValue("artifact", "fileName");
+		Artifact artifact = UMLFactory.eINSTANCE.createArtifact();
+		Object _localVariable_0 = csp.getValue("artifact", "fileName");
+		Object _localVariable_1 = csp.getValue("artifact", "name");
+		c2a.setSource(compilationUnit);
 		um.getPackagedElements().add(artifact);
 		c2a.setTarget(artifact);
-		c2a.setSource(compilationUnit);
-		String artifact_name_prime = (String) _localVariable_0;
-		String artifact_fileName_prime = (String) _localVariable_1;
-		artifact.setName(artifact_name_prime);
+		String artifact_fileName_prime = (String) _localVariable_0;
+		String artifact_name_prime = (String) _localVariable_1;
 		artifact.setFileName(artifact_fileName_prime);
-		return new Object[] { compilationUnit, um, artifact, c2a, csp };
+		artifact.setName(artifact_name_prime);
+		return new Object[] { c2a, um, compilationUnit, artifact, csp };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_1_2_collecttranslatedelements_blackBBB(
-			CompilationUnit compilationUnit, Artifact artifact,
-			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a) {
-		return new Object[] { compilationUnit, artifact, c2a };
+			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
+			Artifact artifact) {
+		return new Object[] { c2a, compilationUnit, artifact };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_1_2_collecttranslatedelements_greenFBBB(
-			CompilationUnit compilationUnit, Artifact artifact,
-			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a) {
+			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
+			Artifact artifact) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(c2a);
 		ruleresult.getTranslatedElements().add(compilationUnit);
 		ruleresult.getCreatedElements().add(artifact);
-		ruleresult.getCreatedLinkElements().add(c2a);
-		return new Object[] { ruleresult, compilationUnit, artifact, c2a };
+		return new Object[] { ruleresult, c2a, compilationUnit, artifact };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject jm2um, EObject um,
-			EObject artifact, EObject c2a) {
-		if (!jm.equals(jm2um)) {
-			if (!jm.equals(um)) {
-				if (!compilationUnit.equals(jm)) {
-					if (!compilationUnit.equals(jm2um)) {
-						if (!compilationUnit.equals(um)) {
-							if (!jm2um.equals(um)) {
-								if (!artifact.equals(jm)) {
-									if (!artifact.equals(compilationUnit)) {
-										if (!artifact.equals(jm2um)) {
-											if (!artifact.equals(um)) {
-												if (!artifact.equals(c2a)) {
-													if (!c2a.equals(jm)) {
-														if (!c2a.equals(compilationUnit)) {
-															if (!c2a.equals(jm2um)) {
-																if (!c2a.equals(um)) {
-																	return new Object[] { ruleresult, jm,
-																			compilationUnit, jm2um, um, artifact, c2a };
+			PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um, EObject compilationUnit,
+			EObject artifact, EObject jm2um) {
+		if (!c2a.equals(jm)) {
+			if (!c2a.equals(um)) {
+				if (!c2a.equals(compilationUnit)) {
+					if (!c2a.equals(jm2um)) {
+						if (!jm.equals(um)) {
+							if (!jm.equals(jm2um)) {
+								if (!compilationUnit.equals(jm)) {
+									if (!compilationUnit.equals(um)) {
+										if (!compilationUnit.equals(jm2um)) {
+											if (!artifact.equals(c2a)) {
+												if (!artifact.equals(jm)) {
+													if (!artifact.equals(um)) {
+														if (!artifact.equals(compilationUnit)) {
+															if (!artifact.equals(jm2um)) {
+																if (!jm2um.equals(um)) {
+																	return new Object[] { ruleresult, c2a, jm, um,
+																			compilationUnit, artifact, jm2um };
 																}
 															}
 														}
@@ -1563,43 +1562,43 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject um, EObject artifact,
-			EObject c2a) {
-		EMoflonEdge c2a__artifact____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um, EObject compilationUnit,
+			EObject artifact) {
 		EMoflonEdge jm__compilationUnit____compilationUnits = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge um__artifact____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2a__compilationUnit____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge um__artifact____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2a__artifact____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "CompilationUnit2Artifact";
-		String c2a__artifact____target_name_prime = "target";
 		String jm__compilationUnit____compilationUnits_name_prime = "compilationUnits";
-		String um__artifact____packagedElement_name_prime = "packagedElement";
 		String c2a__compilationUnit____source_name_prime = "source";
-		c2a__artifact____target.setSrc(c2a);
-		c2a__artifact____target.setTrg(artifact);
-		ruleresult.getCreatedEdges().add(c2a__artifact____target);
+		String um__artifact____packagedElement_name_prime = "packagedElement";
+		String c2a__artifact____target_name_prime = "target";
 		jm__compilationUnit____compilationUnits.setSrc(jm);
 		jm__compilationUnit____compilationUnits.setTrg(compilationUnit);
 		ruleresult.getTranslatedEdges().add(jm__compilationUnit____compilationUnits);
-		um__artifact____packagedElement.setSrc(um);
-		um__artifact____packagedElement.setTrg(artifact);
-		ruleresult.getCreatedEdges().add(um__artifact____packagedElement);
 		c2a__compilationUnit____source.setSrc(c2a);
 		c2a__compilationUnit____source.setTrg(compilationUnit);
 		ruleresult.getCreatedEdges().add(c2a__compilationUnit____source);
+		um__artifact____packagedElement.setSrc(um);
+		um__artifact____packagedElement.setTrg(artifact);
+		ruleresult.getCreatedEdges().add(um__artifact____packagedElement);
+		c2a__artifact____target.setSrc(c2a);
+		c2a__artifact____target.setTrg(artifact);
+		ruleresult.getCreatedEdges().add(c2a__artifact____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		c2a__artifact____target.setName(c2a__artifact____target_name_prime);
 		jm__compilationUnit____compilationUnits.setName(jm__compilationUnit____compilationUnits_name_prime);
-		um__artifact____packagedElement.setName(um__artifact____packagedElement_name_prime);
 		c2a__compilationUnit____source.setName(c2a__compilationUnit____source_name_prime);
-		return new Object[] { ruleresult, jm, compilationUnit, um, artifact, c2a, c2a__artifact____target,
-				jm__compilationUnit____compilationUnits, um__artifact____packagedElement,
-				c2a__compilationUnit____source };
+		um__artifact____packagedElement.setName(um__artifact____packagedElement_name_prime);
+		c2a__artifact____target.setName(c2a__artifact____target_name_prime);
+		return new Object[] { ruleresult, c2a, jm, um, compilationUnit, artifact,
+				jm__compilationUnit____compilationUnits, c2a__compilationUnit____source,
+				um__artifact____packagedElement, c2a__artifact____target };
 	}
 
 	public static final void pattern_CompilationUnit2Artifact_1_5_registerobjects_expressionBBBBBBBB(
-			CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject jm, EObject compilationUnit,
-			EObject jm2um, EObject um, EObject artifact, EObject c2a) {
-		_this.registerObjects_FWD(ruleresult, jm, compilationUnit, jm2um, um, artifact, c2a);
+			CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um,
+			EObject compilationUnit, EObject artifact, EObject jm2um) {
+		_this.registerObjects_FWD(ruleresult, c2a, jm, um, compilationUnit, artifact, jm2um);
 
 	}
 
@@ -1675,7 +1674,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_2_2_corematch_blackBBFFB(Model jm,
+	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_2_2_corematch_blackBFBFB(Model jm,
 			CompilationUnit compilationUnit, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaModel2UMLPackage jm2um : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jm,
@@ -1685,7 +1684,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 				org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
 				String um_name = um.getName();
 				if (um_name.equals("source references")) {
-					_result.add(new Object[] { jm, compilationUnit, jm2um, um, match });
+					_result.add(new Object[] { jm, um, compilationUnit, jm2um, match });
 				}
 
 			}
@@ -1695,14 +1694,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_2_3_findcontext_blackBBBB(Model jm,
-			CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (jm.getCompilationUnits().contains(compilationUnit)) {
 			if (jm.equals(jm2um.getSource())) {
 				if (um.equals(jm2um.getTarget())) {
 					String um_name = um.getName();
 					if (um_name.equals("source references")) {
-						_result.add(new Object[] { jm, compilationUnit, jm2um, um });
+						_result.add(new Object[] { jm, um, compilationUnit, jm2um });
 					}
 
 				}
@@ -1712,7 +1711,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_2_3_findcontext_greenBBBBFFFF(Model jm,
-			CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge jm__compilationUnit____compilationUnits = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1721,9 +1720,9 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		String jm2um__jm____source_name_prime = "source";
 		String jm2um__um____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jm);
+		isApplicableMatch.getAllContextElements().add(um);
 		isApplicableMatch.getAllContextElements().add(compilationUnit);
 		isApplicableMatch.getAllContextElements().add(jm2um);
-		isApplicableMatch.getAllContextElements().add(um);
 		jm__compilationUnit____compilationUnits.setSrc(jm);
 		jm__compilationUnit____compilationUnits.setTrg(compilationUnit);
 		isApplicableMatch.getAllContextElements().add(jm__compilationUnit____compilationUnits);
@@ -1736,17 +1735,17 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		jm__compilationUnit____compilationUnits.setName(jm__compilationUnit____compilationUnits_name_prime);
 		jm2um__jm____source.setName(jm2um__jm____source_name_prime);
 		jm2um__um____target.setName(jm2um__um____target_name_prime);
-		return new Object[] { jm, compilationUnit, jm2um, um, isApplicableMatch,
+		return new Object[] { jm, um, compilationUnit, jm2um, isApplicableMatch,
 				jm__compilationUnit____compilationUnits, jm2um__jm____source, jm2um__um____target };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_2_4_solveCSP_bindingFBBBBBB(
 			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm,
-			CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jm, compilationUnit, jm2um, um);
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jm, um, compilationUnit, jm2um);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm, compilationUnit, jm2um, um };
+			return new Object[] { csp, _this, isApplicableMatch, jm, um, compilationUnit, jm2um };
 		}
 		return null;
 	}
@@ -1757,9 +1756,9 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_CompilationUnit2Artifact_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm,
-			CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, JavaModel2UMLPackage jm2um) {
 		Object[] result_pattern_CompilationUnit2Artifact_2_4_solveCSP_binding = pattern_CompilationUnit2Artifact_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm, compilationUnit, jm2um, um);
+				_this, isApplicableMatch, jm, um, compilationUnit, jm2um);
 		if (result_pattern_CompilationUnit2Artifact_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_CompilationUnit2Artifact_2_4_solveCSP_binding[0];
 
@@ -1767,7 +1766,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_CompilationUnit2Artifact_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm, compilationUnit, jm2um, um };
+				return new Object[] { csp, _this, isApplicableMatch, jm, um, compilationUnit, jm2um };
 			}
 		}
 		return null;
@@ -1891,22 +1890,22 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	public static final Object[] pattern_CompilationUnit2Artifact_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("jm");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jm2um");
-		EObject _localVariable_2 = isApplicableMatch.getObject("um");
-		EObject _localVariable_3 = isApplicableMatch.getObject("artifact");
+		EObject _localVariable_1 = isApplicableMatch.getObject("um");
+		EObject _localVariable_2 = isApplicableMatch.getObject("artifact");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jm2um");
 		EObject tmpJm = _localVariable_0;
-		EObject tmpJm2um = _localVariable_1;
-		EObject tmpUm = _localVariable_2;
-		EObject tmpArtifact = _localVariable_3;
+		EObject tmpUm = _localVariable_1;
+		EObject tmpArtifact = _localVariable_2;
+		EObject tmpJm2um = _localVariable_3;
 		if (tmpJm instanceof Model) {
 			Model jm = (Model) tmpJm;
-			if (tmpJm2um instanceof JavaModel2UMLPackage) {
-				JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
-				if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-					org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
-					if (tmpArtifact instanceof Artifact) {
-						Artifact artifact = (Artifact) tmpArtifact;
-						return new Object[] { jm, jm2um, um, artifact, isApplicableMatch };
+			if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+				org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+				if (tmpArtifact instanceof Artifact) {
+					Artifact artifact = (Artifact) tmpArtifact;
+					if (tmpJm2um instanceof JavaModel2UMLPackage) {
+						JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) tmpJm2um;
+						return new Object[] { jm, um, artifact, jm2um, isApplicableMatch };
 					}
 				}
 			}
@@ -1915,12 +1914,12 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_11_1_performtransformation_blackBBBBFBB(Model jm,
-			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, Artifact artifact,
+			org.eclipse.uml2.uml.Model um, Artifact artifact, JavaModel2UMLPackage jm2um,
 			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jm, jm2um, um, artifact, csp, _this, isApplicableMatch };
+				return new Object[] { jm, um, artifact, jm2um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1932,74 +1931,74 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 				isApplicableMatch);
 		if (result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding != null) {
 			Model jm = (Model) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[0];
-			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[2];
-			Artifact artifact = (Artifact) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[3];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[1];
+			Artifact artifact = (Artifact) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[2];
+			JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_CompilationUnit2Artifact_11_1_performtransformation_black = pattern_CompilationUnit2Artifact_11_1_performtransformation_blackBBBBFBB(
-					jm, jm2um, um, artifact, _this, isApplicableMatch);
+					jm, um, artifact, jm2um, _this, isApplicableMatch);
 			if (result_pattern_CompilationUnit2Artifact_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_CompilationUnit2Artifact_11_1_performtransformation_black[4];
 
-				return new Object[] { jm, jm2um, um, artifact, csp, _this, isApplicableMatch };
+				return new Object[] { jm, um, artifact, jm2um, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_CompilationUnit2Artifact_11_1_performtransformation_greenBFBFB(Model jm,
+	public static final Object[] pattern_CompilationUnit2Artifact_11_1_performtransformation_greenFBFBB(Model jm,
 			Artifact artifact, CSP csp) {
-		CompilationUnit compilationUnit = JavaFactory.eINSTANCE.createCompilationUnit();
 		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = UmlFactory.eINSTANCE
 				.createCompilationUnit2Artifact();
-		Object _localVariable_0 = csp.getValue("compilationUnit", "name");
-		Object _localVariable_1 = csp.getValue("compilationUnit", "originalFilePath");
-		jm.getCompilationUnits().add(compilationUnit);
+		CompilationUnit compilationUnit = JavaFactory.eINSTANCE.createCompilationUnit();
+		Object _localVariable_0 = csp.getValue("compilationUnit", "originalFilePath");
+		Object _localVariable_1 = csp.getValue("compilationUnit", "name");
 		c2a.setTarget(artifact);
+		jm.getCompilationUnits().add(compilationUnit);
 		c2a.setSource(compilationUnit);
-		String compilationUnit_name_prime = (String) _localVariable_0;
-		String compilationUnit_originalFilePath_prime = (String) _localVariable_1;
-		compilationUnit.setName(compilationUnit_name_prime);
+		String compilationUnit_originalFilePath_prime = (String) _localVariable_0;
+		String compilationUnit_name_prime = (String) _localVariable_1;
 		compilationUnit.setOriginalFilePath(compilationUnit_originalFilePath_prime);
-		return new Object[] { jm, compilationUnit, artifact, c2a, csp };
+		compilationUnit.setName(compilationUnit_name_prime);
+		return new Object[] { c2a, jm, compilationUnit, artifact, csp };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_11_2_collecttranslatedelements_blackBBB(
-			CompilationUnit compilationUnit, Artifact artifact,
-			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a) {
-		return new Object[] { compilationUnit, artifact, c2a };
+			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
+			Artifact artifact) {
+		return new Object[] { c2a, compilationUnit, artifact };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_11_2_collecttranslatedelements_greenFBBB(
-			CompilationUnit compilationUnit, Artifact artifact,
-			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a) {
+			org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
+			Artifact artifact) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(c2a);
 		ruleresult.getCreatedElements().add(compilationUnit);
 		ruleresult.getTranslatedElements().add(artifact);
-		ruleresult.getCreatedLinkElements().add(c2a);
-		return new Object[] { ruleresult, compilationUnit, artifact, c2a };
+		return new Object[] { ruleresult, c2a, compilationUnit, artifact };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject jm2um, EObject um,
-			EObject artifact, EObject c2a) {
-		if (!jm.equals(jm2um)) {
-			if (!jm.equals(um)) {
-				if (!compilationUnit.equals(jm)) {
-					if (!compilationUnit.equals(jm2um)) {
-						if (!compilationUnit.equals(um)) {
-							if (!jm2um.equals(um)) {
-								if (!artifact.equals(jm)) {
-									if (!artifact.equals(compilationUnit)) {
-										if (!artifact.equals(jm2um)) {
-											if (!artifact.equals(um)) {
-												if (!artifact.equals(c2a)) {
-													if (!c2a.equals(jm)) {
-														if (!c2a.equals(compilationUnit)) {
-															if (!c2a.equals(jm2um)) {
-																if (!c2a.equals(um)) {
-																	return new Object[] { ruleresult, jm,
-																			compilationUnit, jm2um, um, artifact, c2a };
+			PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um, EObject compilationUnit,
+			EObject artifact, EObject jm2um) {
+		if (!c2a.equals(jm)) {
+			if (!c2a.equals(um)) {
+				if (!c2a.equals(compilationUnit)) {
+					if (!c2a.equals(jm2um)) {
+						if (!jm.equals(um)) {
+							if (!jm.equals(jm2um)) {
+								if (!compilationUnit.equals(jm)) {
+									if (!compilationUnit.equals(um)) {
+										if (!compilationUnit.equals(jm2um)) {
+											if (!artifact.equals(c2a)) {
+												if (!artifact.equals(jm)) {
+													if (!artifact.equals(um)) {
+														if (!artifact.equals(compilationUnit)) {
+															if (!artifact.equals(jm2um)) {
+																if (!jm2um.equals(um)) {
+																	return new Object[] { ruleresult, c2a, jm, um,
+																			compilationUnit, artifact, jm2um };
 																}
 															}
 														}
@@ -2019,43 +2018,43 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject jm, EObject compilationUnit, EObject um, EObject artifact,
-			EObject c2a) {
-		EMoflonEdge c2a__artifact____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um, EObject compilationUnit,
+			EObject artifact) {
 		EMoflonEdge jm__compilationUnit____compilationUnits = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge um__artifact____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2a__compilationUnit____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge um__artifact____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2a__artifact____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "CompilationUnit2Artifact";
-		String c2a__artifact____target_name_prime = "target";
 		String jm__compilationUnit____compilationUnits_name_prime = "compilationUnits";
-		String um__artifact____packagedElement_name_prime = "packagedElement";
 		String c2a__compilationUnit____source_name_prime = "source";
-		c2a__artifact____target.setSrc(c2a);
-		c2a__artifact____target.setTrg(artifact);
-		ruleresult.getCreatedEdges().add(c2a__artifact____target);
+		String um__artifact____packagedElement_name_prime = "packagedElement";
+		String c2a__artifact____target_name_prime = "target";
 		jm__compilationUnit____compilationUnits.setSrc(jm);
 		jm__compilationUnit____compilationUnits.setTrg(compilationUnit);
 		ruleresult.getCreatedEdges().add(jm__compilationUnit____compilationUnits);
-		um__artifact____packagedElement.setSrc(um);
-		um__artifact____packagedElement.setTrg(artifact);
-		ruleresult.getTranslatedEdges().add(um__artifact____packagedElement);
 		c2a__compilationUnit____source.setSrc(c2a);
 		c2a__compilationUnit____source.setTrg(compilationUnit);
 		ruleresult.getCreatedEdges().add(c2a__compilationUnit____source);
+		um__artifact____packagedElement.setSrc(um);
+		um__artifact____packagedElement.setTrg(artifact);
+		ruleresult.getTranslatedEdges().add(um__artifact____packagedElement);
+		c2a__artifact____target.setSrc(c2a);
+		c2a__artifact____target.setTrg(artifact);
+		ruleresult.getCreatedEdges().add(c2a__artifact____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		c2a__artifact____target.setName(c2a__artifact____target_name_prime);
 		jm__compilationUnit____compilationUnits.setName(jm__compilationUnit____compilationUnits_name_prime);
-		um__artifact____packagedElement.setName(um__artifact____packagedElement_name_prime);
 		c2a__compilationUnit____source.setName(c2a__compilationUnit____source_name_prime);
-		return new Object[] { ruleresult, jm, compilationUnit, um, artifact, c2a, c2a__artifact____target,
-				jm__compilationUnit____compilationUnits, um__artifact____packagedElement,
-				c2a__compilationUnit____source };
+		um__artifact____packagedElement.setName(um__artifact____packagedElement_name_prime);
+		c2a__artifact____target.setName(c2a__artifact____target_name_prime);
+		return new Object[] { ruleresult, c2a, jm, um, compilationUnit, artifact,
+				jm__compilationUnit____compilationUnits, c2a__compilationUnit____source,
+				um__artifact____packagedElement, c2a__artifact____target };
 	}
 
 	public static final void pattern_CompilationUnit2Artifact_11_5_registerobjects_expressionBBBBBBBB(
-			CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject jm, EObject compilationUnit,
-			EObject jm2um, EObject um, EObject artifact, EObject c2a) {
-		_this.registerObjects_BWD(ruleresult, jm, compilationUnit, jm2um, um, artifact, c2a);
+			CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject c2a, EObject jm, EObject um,
+			EObject compilationUnit, EObject artifact, EObject jm2um) {
+		_this.registerObjects_BWD(ruleresult, c2a, jm, um, compilationUnit, artifact, jm2um);
 
 	}
 
@@ -2131,7 +2130,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_12_2_corematch_blackFFBBB(
+	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_12_2_corematch_blackFBBFB(
 			org.eclipse.uml2.uml.Model um, Artifact artifact, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		String um_name = um.getName();
@@ -2140,7 +2139,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					JavaModel2UMLPackage.class, "target")) {
 				Model jm = jm2um.getSource();
 				if (jm != null) {
-					_result.add(new Object[] { jm, jm2um, um, artifact, match });
+					_result.add(new Object[] { jm, um, artifact, jm2um, match });
 				}
 
 			}
@@ -2150,14 +2149,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_12_3_findcontext_blackBBBB(Model jm,
-			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, Artifact artifact) {
+			org.eclipse.uml2.uml.Model um, Artifact artifact, JavaModel2UMLPackage jm2um) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (um.getPackagedElements().contains(artifact)) {
 			if (jm.equals(jm2um.getSource())) {
 				if (um.equals(jm2um.getTarget())) {
 					String um_name = um.getName();
 					if (um_name.equals("source references")) {
-						_result.add(new Object[] { jm, jm2um, um, artifact });
+						_result.add(new Object[] { jm, um, artifact, jm2um });
 					}
 
 				}
@@ -2167,7 +2166,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_12_3_findcontext_greenBBBBFFFF(Model jm,
-			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, Artifact artifact) {
+			org.eclipse.uml2.uml.Model um, Artifact artifact, JavaModel2UMLPackage jm2um) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge um__artifact____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um__jm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2176,9 +2175,9 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		String jm2um__jm____source_name_prime = "source";
 		String jm2um__um____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(jm);
-		isApplicableMatch.getAllContextElements().add(jm2um);
 		isApplicableMatch.getAllContextElements().add(um);
 		isApplicableMatch.getAllContextElements().add(artifact);
+		isApplicableMatch.getAllContextElements().add(jm2um);
 		um__artifact____packagedElement.setSrc(um);
 		um__artifact____packagedElement.setTrg(artifact);
 		isApplicableMatch.getAllContextElements().add(um__artifact____packagedElement);
@@ -2191,17 +2190,17 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		um__artifact____packagedElement.setName(um__artifact____packagedElement_name_prime);
 		jm2um__jm____source.setName(jm2um__jm____source_name_prime);
 		jm2um__um____target.setName(jm2um__um____target_name_prime);
-		return new Object[] { jm, jm2um, um, artifact, isApplicableMatch, um__artifact____packagedElement,
+		return new Object[] { jm, um, artifact, jm2um, isApplicableMatch, um__artifact____packagedElement,
 				jm2um__jm____source, jm2um__um____target };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_12_4_solveCSP_bindingFBBBBBB(
-			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Model um, Artifact artifact) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jm, jm2um, um, artifact);
+			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm,
+			org.eclipse.uml2.uml.Model um, Artifact artifact, JavaModel2UMLPackage jm2um) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jm, um, artifact, jm2um);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, um, artifact };
+			return new Object[] { csp, _this, isApplicableMatch, jm, um, artifact, jm2um };
 		}
 		return null;
 	}
@@ -2211,10 +2210,10 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Model um, Artifact artifact) {
+			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm,
+			org.eclipse.uml2.uml.Model um, Artifact artifact, JavaModel2UMLPackage jm2um) {
 		Object[] result_pattern_CompilationUnit2Artifact_12_4_solveCSP_binding = pattern_CompilationUnit2Artifact_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm, jm2um, um, artifact);
+				_this, isApplicableMatch, jm, um, artifact, jm2um);
 		if (result_pattern_CompilationUnit2Artifact_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_CompilationUnit2Artifact_12_4_solveCSP_binding[0];
 
@@ -2222,7 +2221,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_CompilationUnit2Artifact_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, um, artifact };
+				return new Object[] { csp, _this, isApplicableMatch, jm, um, artifact, jm2um };
 			}
 		}
 		return null;
@@ -2506,22 +2505,22 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	public static final Object[] pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_bindingFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("jm");
-		EObject _localVariable_1 = sourceMatch.getObject("compilationUnit");
-		EObject _localVariable_2 = targetMatch.getObject("um");
+		EObject _localVariable_1 = targetMatch.getObject("um");
+		EObject _localVariable_2 = sourceMatch.getObject("compilationUnit");
 		EObject _localVariable_3 = targetMatch.getObject("artifact");
 		EObject tmpJm = _localVariable_0;
-		EObject tmpCompilationUnit = _localVariable_1;
-		EObject tmpUm = _localVariable_2;
+		EObject tmpUm = _localVariable_1;
+		EObject tmpCompilationUnit = _localVariable_2;
 		EObject tmpArtifact = _localVariable_3;
 		if (tmpJm instanceof Model) {
 			Model jm = (Model) tmpJm;
-			if (tmpCompilationUnit instanceof CompilationUnit) {
-				CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
-				if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
-					org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+			if (tmpUm instanceof org.eclipse.uml2.uml.Model) {
+				org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) tmpUm;
+				if (tmpCompilationUnit instanceof CompilationUnit) {
+					CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
 					if (tmpArtifact instanceof Artifact) {
 						Artifact artifact = (Artifact) tmpArtifact;
-						return new Object[] { jm, compilationUnit, um, artifact, sourceMatch, targetMatch };
+						return new Object[] { jm, um, compilationUnit, artifact, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2530,12 +2529,12 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_blackBBBBBB(Model jm,
-			CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um, Artifact artifact, Match sourceMatch,
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, Artifact artifact, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
 			String um_name = um.getName();
 			if (um_name.equals("source references")) {
-				return new Object[] { jm, compilationUnit, um, artifact, sourceMatch, targetMatch };
+				return new Object[] { jm, um, compilationUnit, artifact, sourceMatch, targetMatch };
 			}
 
 		}
@@ -2548,28 +2547,28 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 				sourceMatch, targetMatch);
 		if (result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding != null) {
 			Model jm = (Model) result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[0];
-			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Model um = (org.eclipse.uml2.uml.Model) result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[1];
+			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[2];
 			Artifact artifact = (Artifact) result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_black = pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_blackBBBBBB(
-					jm, compilationUnit, um, artifact, sourceMatch, targetMatch);
+					jm, um, compilationUnit, artifact, sourceMatch, targetMatch);
 			if (result_pattern_CompilationUnit2Artifact_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { jm, compilationUnit, um, artifact, sourceMatch, targetMatch };
+				return new Object[] { jm, um, compilationUnit, artifact, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_24_3_solvecsp_bindingFBBBBBBB(
-			CompilationUnit2Artifact _this, Model jm, CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um,
+			CompilationUnit2Artifact _this, Model jm, org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit,
 			Artifact artifact, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jm, compilationUnit, um, artifact, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jm, um, compilationUnit, artifact, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, jm, compilationUnit, um, artifact, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, jm, um, compilationUnit, artifact, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2579,10 +2578,10 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			CompilationUnit2Artifact _this, Model jm, CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um,
+			CompilationUnit2Artifact _this, Model jm, org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit,
 			Artifact artifact, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_CompilationUnit2Artifact_24_3_solvecsp_binding = pattern_CompilationUnit2Artifact_24_3_solvecsp_bindingFBBBBBBB(
-				_this, jm, compilationUnit, um, artifact, sourceMatch, targetMatch);
+				_this, jm, um, compilationUnit, artifact, sourceMatch, targetMatch);
 		if (result_pattern_CompilationUnit2Artifact_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_CompilationUnit2Artifact_24_3_solvecsp_binding[0];
 
@@ -2590,7 +2589,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_CompilationUnit2Artifact_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, jm, compilationUnit, um, artifact, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, jm, um, compilationUnit, artifact, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2602,7 +2601,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_24_5_matchcorrcontext_blackBFBBB(Model jm,
+	public static final Iterable<Object[]> pattern_CompilationUnit2Artifact_24_5_matchcorrcontext_blackBBFBB(Model jm,
 			org.eclipse.uml2.uml.Model um, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
@@ -2611,7 +2610,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 				for (JavaModel2UMLPackage jm2um : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jm,
 						JavaModel2UMLPackage.class, "source")) {
 					if (um.equals(jm2um.getTarget())) {
-						_result.add(new Object[] { jm, jm2um, um, sourceMatch, targetMatch });
+						_result.add(new Object[] { jm, um, jm2um, sourceMatch, targetMatch });
 					}
 				}
 			}
@@ -2632,18 +2631,18 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_24_6_createcorrespondence_blackBBBBB(Model jm,
-			CompilationUnit compilationUnit, org.eclipse.uml2.uml.Model um, Artifact artifact, CCMatch ccMatch) {
-		return new Object[] { jm, compilationUnit, um, artifact, ccMatch };
+			org.eclipse.uml2.uml.Model um, CompilationUnit compilationUnit, Artifact artifact, CCMatch ccMatch) {
+		return new Object[] { jm, um, compilationUnit, artifact, ccMatch };
 	}
 
-	public static final Object[] pattern_CompilationUnit2Artifact_24_6_createcorrespondence_greenBBFB(
+	public static final Object[] pattern_CompilationUnit2Artifact_24_6_createcorrespondence_greenFBBB(
 			CompilationUnit compilationUnit, Artifact artifact, CCMatch ccMatch) {
 		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = UmlFactory.eINSTANCE
 				.createCompilationUnit2Artifact();
-		c2a.setTarget(artifact);
 		c2a.setSource(compilationUnit);
+		c2a.setTarget(artifact);
 		ccMatch.getCreateCorr().add(c2a);
-		return new Object[] { compilationUnit, artifact, c2a, ccMatch };
+		return new Object[] { c2a, compilationUnit, artifact, ccMatch };
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_24_7_addtoreturnedresult_blackBB(
@@ -2782,12 +2781,12 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_29_3_solveCSP_bindingFBBBBBB(
-			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jm, jm2um, um, ruleResult);
+			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm,
+			org.eclipse.uml2.uml.Model um, JavaModel2UMLPackage jm2um, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jm, um, jm2um, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, um, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jm, um, jm2um, ruleResult };
 		}
 		return null;
 	}
@@ -2797,10 +2796,10 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
+			CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, Model jm,
+			org.eclipse.uml2.uml.Model um, JavaModel2UMLPackage jm2um, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_CompilationUnit2Artifact_29_3_solveCSP_binding = pattern_CompilationUnit2Artifact_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jm, jm2um, um, ruleResult);
+				_this, isApplicableMatch, jm, um, jm2um, ruleResult);
 		if (result_pattern_CompilationUnit2Artifact_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_CompilationUnit2Artifact_29_3_solveCSP_binding[0];
 
@@ -2808,7 +2807,7 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 					csp);
 			if (result_pattern_CompilationUnit2Artifact_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jm, jm2um, um, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, jm, um, jm2um, ruleResult };
 			}
 		}
 		return null;
@@ -2822,56 +2821,56 @@ public class CompilationUnit2ArtifactImpl extends AbstractRuleImpl implements Co
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_29_5_checknacs_blackBBB(Model jm,
-			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um) {
+			org.eclipse.uml2.uml.Model um, JavaModel2UMLPackage jm2um) {
 		String um_name = um.getName();
 		if (um_name.equals("source references")) {
-			return new Object[] { jm, jm2um, um };
+			return new Object[] { jm, um, jm2um };
 		}
 
 		return null;
 	}
 
 	public static final Object[] pattern_CompilationUnit2Artifact_29_6_perform_blackBBBB(Model jm,
-			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult) {
+			org.eclipse.uml2.uml.Model um, JavaModel2UMLPackage jm2um, ModelgeneratorRuleResult ruleResult) {
 		String um_name = um.getName();
 		if (um_name.equals("source references")) {
-			return new Object[] { jm, jm2um, um, ruleResult };
+			return new Object[] { jm, um, jm2um, ruleResult };
 		}
 
 		return null;
 	}
 
-	public static final Object[] pattern_CompilationUnit2Artifact_29_6_perform_greenBFBFFBB(Model jm,
+	public static final Object[] pattern_CompilationUnit2Artifact_29_6_perform_greenFBBFFBB(Model jm,
 			org.eclipse.uml2.uml.Model um, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		CompilationUnit compilationUnit = JavaFactory.eINSTANCE.createCompilationUnit();
-		Artifact artifact = UMLFactory.eINSTANCE.createArtifact();
 		org.gravity.tgg.modisco.uml.CompilationUnit2Artifact c2a = UmlFactory.eINSTANCE
 				.createCompilationUnit2Artifact();
-		Object _localVariable_0 = csp.getValue("compilationUnit", "name");
-		Object _localVariable_1 = csp.getValue("compilationUnit", "originalFilePath");
-		Object _localVariable_2 = csp.getValue("artifact", "name");
-		Object _localVariable_3 = csp.getValue("artifact", "fileName");
+		CompilationUnit compilationUnit = JavaFactory.eINSTANCE.createCompilationUnit();
+		Artifact artifact = UMLFactory.eINSTANCE.createArtifact();
+		Object _localVariable_0 = csp.getValue("compilationUnit", "originalFilePath");
+		Object _localVariable_1 = csp.getValue("compilationUnit", "name");
+		Object _localVariable_2 = csp.getValue("artifact", "fileName");
+		Object _localVariable_3 = csp.getValue("artifact", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getCorrObjects().add(c2a);
 		jm.getCompilationUnits().add(compilationUnit);
+		c2a.setSource(compilationUnit);
 		ruleResult.getSourceObjects().add(compilationUnit);
 		um.getPackagedElements().add(artifact);
-		ruleResult.getTargetObjects().add(artifact);
 		c2a.setTarget(artifact);
-		c2a.setSource(compilationUnit);
-		ruleResult.getCorrObjects().add(c2a);
-		String compilationUnit_name_prime = (String) _localVariable_0;
-		String compilationUnit_originalFilePath_prime = (String) _localVariable_1;
-		String artifact_name_prime = (String) _localVariable_2;
-		String artifact_fileName_prime = (String) _localVariable_3;
+		ruleResult.getTargetObjects().add(artifact);
+		String compilationUnit_originalFilePath_prime = (String) _localVariable_0;
+		String compilationUnit_name_prime = (String) _localVariable_1;
+		String artifact_fileName_prime = (String) _localVariable_2;
+		String artifact_name_prime = (String) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		compilationUnit.setName(compilationUnit_name_prime);
 		compilationUnit.setOriginalFilePath(compilationUnit_originalFilePath_prime);
-		artifact.setName(artifact_name_prime);
+		compilationUnit.setName(compilationUnit_name_prime);
 		artifact.setFileName(artifact_fileName_prime);
+		artifact.setName(artifact_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { jm, compilationUnit, um, artifact, c2a, ruleResult, csp };
+		return new Object[] { c2a, jm, um, compilationUnit, artifact, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_CompilationUnit2Artifact_29_7_expressionFB(

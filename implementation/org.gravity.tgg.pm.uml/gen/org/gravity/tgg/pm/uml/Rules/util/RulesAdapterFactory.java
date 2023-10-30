@@ -69,13 +69,13 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RulesSwitch<Adapter> modelSwitch = new RulesSwitch<Adapter>() {
 		@Override
-		public Adapter caseModelNested2TypeGraph(ModelNested2TypeGraph object) {
-			return createModelNested2TypeGraphAdapter();
+		public Adapter caseModel2TypeGraph(Model2TypeGraph object) {
+			return createModel2TypeGraphAdapter();
 		}
 
 		@Override
-		public Adapter caseModel2TypeGraph(Model2TypeGraph object) {
-			return createModel2TypeGraphAdapter();
+		public Adapter caseModelNested2TypeGraph(ModelNested2TypeGraph object) {
+			return createModelNested2TypeGraphAdapter();
 		}
 
 		@Override
@@ -103,20 +103,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph <em>Model Nested2 Type Graph</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph
-	 * @generated
-	 */
-	public Adapter createModelNested2TypeGraphAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Rules.Model2TypeGraph <em>Model2 Type Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -127,6 +113,20 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModel2TypeGraphAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph <em>Model Nested2 Type Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph
+	 * @generated
+	 */
+	public Adapter createModelNested2TypeGraphAdapter() {
 		return null;
 	}
 

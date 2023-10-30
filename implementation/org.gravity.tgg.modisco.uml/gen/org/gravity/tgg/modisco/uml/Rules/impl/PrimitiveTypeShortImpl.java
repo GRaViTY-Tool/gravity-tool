@@ -615,7 +615,7 @@ public class PrimitiveTypeShortImpl extends AbstractRuleImpl implements Primitiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_16(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_5(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeShortImpl
 				.pattern_PrimitiveTypeShort_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -670,7 +670,7 @@ public class PrimitiveTypeShortImpl extends AbstractRuleImpl implements Primitiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_PrimitiveTypeShort_1(org.eclipse.modisco.java.PrimitiveTypeShort jpt) {
+	public EObjectContainer isAppropriate_FWD_PrimitiveTypeShort_0(org.eclipse.modisco.java.PrimitiveTypeShort jpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeShortImpl
 				.pattern_PrimitiveTypeShort_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -735,13 +735,13 @@ public class PrimitiveTypeShortImpl extends AbstractRuleImpl implements Primitiv
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
-		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
-		var_umpt_name.setType("String");
-
 		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
 		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
 		var_jpt_name.setType("String");
+
+		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
+		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
+		var_umpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -782,13 +782,13 @@ public class PrimitiveTypeShortImpl extends AbstractRuleImpl implements Primitiv
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
-		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
-		var_umpt_name.setType("String");
-
 		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
 		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
 		var_jpt_name.setType("String");
+
+		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
+		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
+		var_umpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1099,10 +1099,10 @@ public class PrimitiveTypeShortImpl extends AbstractRuleImpl implements Primitiv
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_SHORT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_16__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_16((PrimitiveType) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_SHORT_1__PRIMITIVETYPESHORT:
-			return isAppropriate_FWD_PrimitiveTypeShort_1(
+		case RulesPackage.PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_5__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_5((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_SHORT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_SHORT_0__PRIMITIVETYPESHORT:
+			return isAppropriate_FWD_PrimitiveTypeShort_0(
 					(org.eclipse.modisco.java.PrimitiveTypeShort) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_SHORT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));

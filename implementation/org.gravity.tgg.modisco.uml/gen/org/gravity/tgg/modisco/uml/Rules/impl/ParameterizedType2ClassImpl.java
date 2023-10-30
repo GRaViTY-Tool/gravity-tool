@@ -230,8 +230,8 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 				ruleresult, umlPackage, parameterizedClassifier, nonParamType, parameterizedType, ne2ne,
 				typeTypeAccess);
 		//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge ne2ne__parameterizedClassifier____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge typeTypeAccess__nonParamType____type = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge nonParamType__typeTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
@@ -600,8 +600,8 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 				ruleresult, umlPackage, parameterizedClassifier, nonParamType, parameterizedType, ne2ne,
 				typeTypeAccess);
 		//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge ne2ne__parameterizedType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge parameterizedType__typeTypeAccess____type = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge ne2ne__parameterizedClassifier____target = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge typeTypeAccess__nonParamType____type = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge nonParamType__typeTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
@@ -658,8 +658,8 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 								nonParamElement, ne2neNonParam, parameterizedClassifier, nonParamType, nonParamPackage,
 								jp2up);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge umlPackage__nonParamElement____packagedElement = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge umlPackage__nonParamElement____packagedElement = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge ne2neNonParam__nonParamType____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge ne2neNonParam__nonParamElement____target = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge jp2up__nonParamPackage____source = (EMoflonEdge) result3_green[12];
@@ -848,7 +848,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_280(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_120(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2ClassImpl
 				.pattern_ParameterizedType2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -907,7 +907,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_299(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_127(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2ClassImpl
 				.pattern_ParameterizedType2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1470,10 +1470,10 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			return null;
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_280__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_280((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_299__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_299((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_120__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_127__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_127((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1905,27 +1905,27 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			EObject parameterizedType, EObject ne2ne, EObject typeTypeAccess) {
 		EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeTypeAccess__nonParamType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__typeTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ParameterizedType2Class";
 		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
-		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String ne2ne__parameterizedType____source_name_prime = "source";
+		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String ne2ne__parameterizedClassifier____target_name_prime = "target";
 		String typeTypeAccess__nonParamType____type_name_prime = "type";
 		String nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		umlPackage__parameterizedClassifier____packagedElement.setSrc(umlPackage);
 		umlPackage__parameterizedClassifier____packagedElement.setTrg(parameterizedClassifier);
 		ruleresult.getCreatedEdges().add(umlPackage__parameterizedClassifier____packagedElement);
-		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
-		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
-		ruleresult.getTranslatedEdges().add(parameterizedType__typeTypeAccess____type);
 		ne2ne__parameterizedType____source.setSrc(ne2ne);
 		ne2ne__parameterizedType____source.setTrg(parameterizedType);
 		ruleresult.getCreatedEdges().add(ne2ne__parameterizedType____source);
+		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
+		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
+		ruleresult.getTranslatedEdges().add(parameterizedType__typeTypeAccess____type);
 		ne2ne__parameterizedClassifier____target.setSrc(ne2ne);
 		ne2ne__parameterizedClassifier____target.setTrg(parameterizedClassifier);
 		ruleresult.getCreatedEdges().add(ne2ne__parameterizedClassifier____target);
@@ -1938,15 +1938,15 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		umlPackage__parameterizedClassifier____packagedElement
 				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
-		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		ne2ne__parameterizedType____source.setName(ne2ne__parameterizedType____source_name_prime);
+		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		ne2ne__parameterizedClassifier____target.setName(ne2ne__parameterizedClassifier____target_name_prime);
 		typeTypeAccess__nonParamType____type.setName(typeTypeAccess__nonParamType____type_name_prime);
 		nonParamType__typeTypeAccess____usagesInTypeAccess
 				.setName(nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime);
 		return new Object[] { ruleresult, umlPackage, parameterizedClassifier, nonParamType, parameterizedType, ne2ne,
 				typeTypeAccess, umlPackage__parameterizedClassifier____packagedElement,
-				parameterizedType__typeTypeAccess____type, ne2ne__parameterizedType____source,
+				ne2ne__parameterizedType____source, parameterizedType__typeTypeAccess____type,
 				ne2ne__parameterizedClassifier____target, typeTypeAccess__nonParamType____type,
 				nonParamType__typeTypeAccess____usagesInTypeAccess };
 	}
@@ -2625,27 +2625,27 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			EObject parameterizedType, EObject ne2ne, EObject typeTypeAccess) {
 		EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge parameterizedType__typeTypeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__parameterizedClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeTypeAccess__nonParamType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__typeTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ParameterizedType2Class";
 		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
-		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String ne2ne__parameterizedType____source_name_prime = "source";
+		String parameterizedType__typeTypeAccess____type_name_prime = "type";
 		String ne2ne__parameterizedClassifier____target_name_prime = "target";
 		String typeTypeAccess__nonParamType____type_name_prime = "type";
 		String nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		umlPackage__parameterizedClassifier____packagedElement.setSrc(umlPackage);
 		umlPackage__parameterizedClassifier____packagedElement.setTrg(parameterizedClassifier);
 		ruleresult.getTranslatedEdges().add(umlPackage__parameterizedClassifier____packagedElement);
-		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
-		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
-		ruleresult.getCreatedEdges().add(parameterizedType__typeTypeAccess____type);
 		ne2ne__parameterizedType____source.setSrc(ne2ne);
 		ne2ne__parameterizedType____source.setTrg(parameterizedType);
 		ruleresult.getCreatedEdges().add(ne2ne__parameterizedType____source);
+		parameterizedType__typeTypeAccess____type.setSrc(parameterizedType);
+		parameterizedType__typeTypeAccess____type.setTrg(typeTypeAccess);
+		ruleresult.getCreatedEdges().add(parameterizedType__typeTypeAccess____type);
 		ne2ne__parameterizedClassifier____target.setSrc(ne2ne);
 		ne2ne__parameterizedClassifier____target.setTrg(parameterizedClassifier);
 		ruleresult.getCreatedEdges().add(ne2ne__parameterizedClassifier____target);
@@ -2658,15 +2658,15 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		umlPackage__parameterizedClassifier____packagedElement
 				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
-		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		ne2ne__parameterizedType____source.setName(ne2ne__parameterizedType____source_name_prime);
+		parameterizedType__typeTypeAccess____type.setName(parameterizedType__typeTypeAccess____type_name_prime);
 		ne2ne__parameterizedClassifier____target.setName(ne2ne__parameterizedClassifier____target_name_prime);
 		typeTypeAccess__nonParamType____type.setName(typeTypeAccess__nonParamType____type_name_prime);
 		nonParamType__typeTypeAccess____usagesInTypeAccess
 				.setName(nonParamType__typeTypeAccess____usagesInTypeAccess_name_prime);
 		return new Object[] { ruleresult, umlPackage, parameterizedClassifier, nonParamType, parameterizedType, ne2ne,
 				typeTypeAccess, umlPackage__parameterizedClassifier____packagedElement,
-				parameterizedType__typeTypeAccess____type, ne2ne__parameterizedType____source,
+				ne2ne__parameterizedType____source, parameterizedType__typeTypeAccess____type,
 				ne2ne__parameterizedClassifier____target, typeTypeAccess__nonParamType____type,
 				nonParamType__typeTypeAccess____usagesInTypeAccess };
 	}
@@ -2790,8 +2790,8 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			JavaPackage2UmlPackage jp2up) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!nonParamElement.equals(parameterizedClassifier)) {
-			if (umlPackage.getPackagedElements().contains(parameterizedClassifier)) {
-				if (umlPackage.getPackagedElements().contains(nonParamElement)) {
+			if (umlPackage.getPackagedElements().contains(nonParamElement)) {
+				if (umlPackage.getPackagedElements().contains(parameterizedClassifier)) {
 					if (nonParamType.equals(ne2neNonParam.getSource())) {
 						if (nonParamElement.equals(ne2neNonParam.getTarget())) {
 							if (nonParamPackage.equals(jp2up.getSource())) {
@@ -2816,17 +2816,17 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			AbstractTypeDeclaration nonParamType, org.eclipse.modisco.java.Package nonParamPackage,
 			JavaPackage2UmlPackage jp2up) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge umlPackage__nonParamElement____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__parameterizedClassifier____packagedElement = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge umlPackage__nonParamElement____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2neNonParam__nonParamType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2neNonParam__nonParamElement____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__nonParamPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamPackage__nonParamType____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge nonParamType__nonParamPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
 		String umlPackage__nonParamElement____packagedElement_name_prime = "packagedElement";
+		String umlPackage__parameterizedClassifier____packagedElement_name_prime = "packagedElement";
 		String ne2neNonParam__nonParamType____source_name_prime = "source";
 		String ne2neNonParam__nonParamElement____target_name_prime = "target";
 		String jp2up__nonParamPackage____source_name_prime = "source";
@@ -2840,12 +2840,12 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 		isApplicableMatch.getAllContextElements().add(nonParamType);
 		isApplicableMatch.getAllContextElements().add(nonParamPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up);
-		umlPackage__parameterizedClassifier____packagedElement.setSrc(umlPackage);
-		umlPackage__parameterizedClassifier____packagedElement.setTrg(parameterizedClassifier);
-		isApplicableMatch.getAllContextElements().add(umlPackage__parameterizedClassifier____packagedElement);
 		umlPackage__nonParamElement____packagedElement.setSrc(umlPackage);
 		umlPackage__nonParamElement____packagedElement.setTrg(nonParamElement);
 		isApplicableMatch.getAllContextElements().add(umlPackage__nonParamElement____packagedElement);
+		umlPackage__parameterizedClassifier____packagedElement.setSrc(umlPackage);
+		umlPackage__parameterizedClassifier____packagedElement.setTrg(parameterizedClassifier);
+		isApplicableMatch.getAllContextElements().add(umlPackage__parameterizedClassifier____packagedElement);
 		ne2neNonParam__nonParamType____source.setSrc(ne2neNonParam);
 		ne2neNonParam__nonParamType____source.setTrg(nonParamType);
 		isApplicableMatch.getAllContextElements().add(ne2neNonParam__nonParamType____source);
@@ -2864,10 +2864,10 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 		nonParamType__nonParamPackage____package.setSrc(nonParamType);
 		nonParamType__nonParamPackage____package.setTrg(nonParamPackage);
 		isApplicableMatch.getAllContextElements().add(nonParamType__nonParamPackage____package);
-		umlPackage__parameterizedClassifier____packagedElement
-				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
 		umlPackage__nonParamElement____packagedElement
 				.setName(umlPackage__nonParamElement____packagedElement_name_prime);
+		umlPackage__parameterizedClassifier____packagedElement
+				.setName(umlPackage__parameterizedClassifier____packagedElement_name_prime);
 		ne2neNonParam__nonParamType____source.setName(ne2neNonParam__nonParamType____source_name_prime);
 		ne2neNonParam__nonParamElement____target.setName(ne2neNonParam__nonParamElement____target_name_prime);
 		jp2up__nonParamPackage____source.setName(jp2up__nonParamPackage____source_name_prime);
@@ -2876,8 +2876,8 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 				.setName(nonParamPackage__nonParamType____ownedElements_name_prime);
 		nonParamType__nonParamPackage____package.setName(nonParamType__nonParamPackage____package_name_prime);
 		return new Object[] { umlPackage, nonParamElement, ne2neNonParam, parameterizedClassifier, nonParamType,
-				nonParamPackage, jp2up, isApplicableMatch, umlPackage__parameterizedClassifier____packagedElement,
-				umlPackage__nonParamElement____packagedElement, ne2neNonParam__nonParamType____source,
+				nonParamPackage, jp2up, isApplicableMatch, umlPackage__nonParamElement____packagedElement,
+				umlPackage__parameterizedClassifier____packagedElement, ne2neNonParam__nonParamType____source,
 				ne2neNonParam__nonParamElement____target, jp2up__nonParamPackage____source, jp2up__umlPackage____target,
 				nonParamPackage__nonParamType____ownedElements, nonParamType__nonParamPackage____package };
 	}
@@ -3133,9 +3133,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_437950 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_934167 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_437950)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_934167)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3144,7 +3144,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_86848 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_39751 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3153,7 +3153,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_850006 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_921797 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3162,9 +3162,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_3BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (ClassDeclaration __DEC_typeTypeAccess_superClass_443987 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeTypeAccess_superClass_81777 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_443987)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_81777)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3173,7 +3173,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_420611 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_74955 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3182,7 +3182,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_941375 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_43728 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3191,7 +3191,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_124090 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_214761 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3522,9 +3522,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_0BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_18691 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_197227 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_18691)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_197227)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3533,7 +3533,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_114034 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_2232 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3542,7 +3542,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_477940 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_450307 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3551,9 +3551,9 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_3BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (ClassDeclaration __DEC_typeTypeAccess_superClass_252514 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeTypeAccess_superClass_106641 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_252514)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_106641)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3562,7 +3562,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_426789 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_490684 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3571,7 +3571,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_905365 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_107420 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3580,7 +3580,7 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 
 	public static final Object[] pattern_ParameterizedType2Class_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_837002 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_272209 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3646,8 +3646,8 @@ public class ParameterizedType2ClassImpl extends AbstractRuleImpl implements Par
 			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.uml2.uml.Class nonParamElement,
 			org.eclipse.uml2.uml.Class parameterizedClassifier) {
 		if (!nonParamElement.equals(parameterizedClassifier)) {
-			if (umlPackage.getPackagedElements().contains(parameterizedClassifier)) {
-				if (umlPackage.getPackagedElements().contains(nonParamElement)) {
+			if (umlPackage.getPackagedElements().contains(nonParamElement)) {
+				if (umlPackage.getPackagedElements().contains(parameterizedClassifier)) {
 					return new Object[] { umlPackage, nonParamElement, parameterizedClassifier };
 				}
 			}

@@ -197,6 +197,10 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 	@Override
 	public MGravityModel discoverModel(final Collection<IPath> libs, final IProgressMonitor monitor)
 			throws DiscoveryException {
+		if(this.model != null && this.model.eResource() != null) {
+			this.model.eResource().unload();
+			this.model = null;
+		}
 		if (this.load && this.discoveredLibs.containsAll(libs)) {
 			try {
 				this.model = loadModel();

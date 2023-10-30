@@ -253,7 +253,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 				return type;
 			}
 		}
-		final var type = MoDiscoUtil.getJavaLangObject(model);
+		final var type = MoDiscoUtil.getOrCreateJavaLangObject(model);
 		typeAccess.setType(type);
 		return type;
 	}
