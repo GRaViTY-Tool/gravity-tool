@@ -25,7 +25,7 @@
     <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="security.annotations.ui.SecurityAnnotationsAdditionHandler"
+            defaultHandler="org.gravity.security.annotations.ui.SecurityAnnotationsAdditionHandler"
             id="security.annotations.ui.add"
             name="Add Security Annotations Library">
          <defaultHandler
