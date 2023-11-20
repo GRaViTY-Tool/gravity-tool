@@ -108,7 +108,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject modifier,
 			EObject bodyDeclaration);
 
 	/**
@@ -189,7 +189,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject modifier,
 			EObject bodyDeclaration);
 
 	/**
@@ -206,7 +206,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Interface_2(Interface feature);
+	EObjectContainer isAppropriate_BWD_Interface_1(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_131(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_31(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

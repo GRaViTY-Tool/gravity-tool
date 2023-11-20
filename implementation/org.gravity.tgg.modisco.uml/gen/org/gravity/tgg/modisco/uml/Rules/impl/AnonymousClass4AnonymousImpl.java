@@ -741,7 +741,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_140(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4AnonymousImpl
 				.pattern_AnonymousClass4Anonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,7 +799,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_151(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_26(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4AnonymousImpl
 				.pattern_AnonymousClass4Anonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1254,10 +1254,10 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 			return null;
 		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_140__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_151__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_22__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_26__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_26((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2657,7 +2657,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_21_2_testcorematchandDECs_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_634540 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_268811 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2666,9 +2666,9 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_21_2_testcorematchandDECs_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_678186 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_264498 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_678186)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_264498)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2677,7 +2677,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_21_2_testcorematchandDECs_black_nac_2B(
 			AnonymousClassDeclaration mAnon) {
-		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_187759 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_732012 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnon, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnon };
 		}
@@ -2967,7 +2967,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_27_1_matchtggpattern_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_515841 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_101982 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2976,9 +2976,9 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_27_1_matchtggpattern_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_370283 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_433494 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_370283)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_433494)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2987,7 +2987,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_27_1_matchtggpattern_black_nac_2B(
 			AnonymousClassDeclaration mAnon) {
-		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_576716 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_869723 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnon, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnon };
 		}

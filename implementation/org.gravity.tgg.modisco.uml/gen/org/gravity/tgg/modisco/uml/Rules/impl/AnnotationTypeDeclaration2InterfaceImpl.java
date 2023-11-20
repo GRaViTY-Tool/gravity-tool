@@ -190,8 +190,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature,
 						b2e, bodyDeclaration);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -481,8 +481,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		AnnotationTypeDeclaration2InterfaceImpl
 				.pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature,
 						b2e, bodyDeclaration);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -1365,8 +1365,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
 		return new Object[] { feature, b2e, bodyDeclaration, csp };
@@ -1400,22 +1400,22 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_1_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bodyDeclaration) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeDeclaration2Interface";
-		String b2e__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, feature, b2e, bodyDeclaration, b2e__feature____target,
-				b2e__bodyDeclaration____source };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		return new Object[] { ruleresult, feature, b2e, bodyDeclaration, b2e__bodyDeclaration____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_1_5_registerobjects_expressionBBBBB(
@@ -1729,22 +1729,22 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_11_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bodyDeclaration) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeDeclaration2Interface";
-		String b2e__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, feature, b2e, bodyDeclaration, b2e__feature____target,
-				b2e__bodyDeclaration____source };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		return new Object[] { ruleresult, feature, b2e, bodyDeclaration, b2e__bodyDeclaration____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_AnnotationTypeDeclaration2Interface_11_5_registerobjects_expressionBBBBB(
@@ -2064,8 +2064,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_449447 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_449447 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_713979 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_713979 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2246,8 +2246,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_24_6_createcorrespondence_greenBFBB(
 			Interface feature, AnnotationTypeDeclaration bodyDeclaration, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
 		return new Object[] { feature, b2e, bodyDeclaration, ccMatch };
 	}
@@ -2275,8 +2275,8 @@ public class AnnotationTypeDeclaration2InterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationTypeDeclaration2Interface_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_446818 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_446818 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_627625 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_627625 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

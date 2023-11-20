@@ -44,7 +44,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Model outerModel, Model model);
+	boolean isAppropriate_FWD(Match match, Model model, Model outerModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Model outerModel, Model model);
+	void registerObjectsToMatch_FWD(Match match, Model model, Model outerModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Model outerModel, Model model);
+	CSP isAppropriate_solveCsp_FWD(Match match, Model model, Model outerModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,7 +92,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model outerModel, Model model,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model model, Model outerModel,
 			Model2TypeGraph outerModel2PM);
 
 	/**
@@ -109,7 +109,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject outerModel, EObject model, EObject model2PM,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel,
 			EObject pm, EObject outerModel2PM);
 
 	/**
@@ -191,7 +191,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject outerModel, EObject model, EObject model2PM,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel,
 			EObject pm, EObject outerModel2PM);
 
 	/**
@@ -208,7 +208,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_1(TypeGraph pm);
+	EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_166(EMoflonEdge _edge_nestedPackage);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_nestedPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Model outerModel, Model model, TypeGraph pm, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Model model, Model outerModel, TypeGraph pm, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +264,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Model outerModel, Model model);
+	boolean checkDEC_FWD(Model model, Model outerModel);
 
 	/**
 	 * <!-- begin-user-doc -->

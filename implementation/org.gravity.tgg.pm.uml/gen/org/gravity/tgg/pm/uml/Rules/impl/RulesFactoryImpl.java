@@ -55,10 +55,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case RulesPackage.MODEL2_TYPE_GRAPH:
-			return createModel2TypeGraph();
 		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH:
 			return createModelNested2TypeGraph();
+		case RulesPackage.MODEL2_TYPE_GRAPH:
+			return createModel2TypeGraph();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,9 +70,9 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	@Override
-	public Model2TypeGraph createModel2TypeGraph() {
-		Model2TypeGraphImpl model2TypeGraph = new Model2TypeGraphImpl();
-		return model2TypeGraph;
+	public ModelNested2TypeGraph createModelNested2TypeGraph() {
+		ModelNested2TypeGraphImpl modelNested2TypeGraph = new ModelNested2TypeGraphImpl();
+		return modelNested2TypeGraph;
 	}
 
 	/**
@@ -81,9 +81,9 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * @generated
 	 */
 	@Override
-	public ModelNested2TypeGraph createModelNested2TypeGraph() {
-		ModelNested2TypeGraphImpl modelNested2TypeGraph = new ModelNested2TypeGraphImpl();
-		return modelNested2TypeGraph;
+	public Model2TypeGraph createModel2TypeGraph() {
+		Model2TypeGraphImpl model2TypeGraph = new Model2TypeGraphImpl();
+		return model2TypeGraph;
 	}
 
 	/**
