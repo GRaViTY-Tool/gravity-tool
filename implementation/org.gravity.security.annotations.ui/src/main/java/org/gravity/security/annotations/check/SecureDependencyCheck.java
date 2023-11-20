@@ -684,7 +684,11 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		final Collection<IMarker> marker = new ArrayList<>(callLocations.size());
 		for (final CallLocation callLocation : callLocations) {
 			try {
-				final var resource = callLocation.getMember().getResource();
+				final var member = callLocation.getMember();
+				var resource = member.getResource();
+				if (resource == null) {
+					resource = member.getJavaProject().getResource();
+				}
 				final var line = callLocation.getLineNumber();
 
 				marker.add(SecurityMarkerUtil.createErrorMarker(resource, line, message, relevantMember));
@@ -702,12 +706,14 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		private final Set<String> integritySignatures;
 		private final ICompilationUnit cu;
 		private final String analyzedMemberSignature;
+		private final IType type;
 
 		private OutgoingAccessCheck(final Collection<String> accessedSignatures, final MethodWrapper root,
 				final IMember caller, final Set<String> secrecySignatures, final Set<String> integritySignatures) {
 			this.accessedSignatures = accessedSignatures;
 			this.root = root;
 			this.cu = caller.getCompilationUnit();
+			this.type = caller.getDeclaringType();
 			this.secrecySignatures = secrecySignatures;
 			this.integritySignatures = integritySignatures;
 			this.analyzedMemberSignature = SecureDependencyCheck.this.getSignature(caller);
@@ -744,7 +750,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 				} else {
 					createErrorMarker(methodWrapper.getMethodCall(),
-							"This class must specify secrecy for accessing \"" + calledMemberSignature + "\"!",
+							"The class \"" + this.type.getElementName() + "\" must specify secrecy for accessing \""
+									+ calledMemberSignature + "\"!",
 							this.analyzedMemberSignature, calledMemberSignature);
 					SecurityMarkerUtil.createErrorMarker(calledMember,
 							this.analyzedMemberSignature + " accesses this member without the required secrecy!",
@@ -769,7 +776,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 							this.analyzedMemberSignature, calledMemberSignature);
 				} else {
 					createErrorMarker(methodWrapper.getMethodCall(),
-							"This class must specify integrity for accessing \"" + calledMemberSignature + "\"!",
+							"The class \"" + this.type.getElementName() + "\" must specify integrity for accessing \""
+									+ calledMemberSignature + "\"!",
 							this.analyzedMemberSignature, calledMemberSignature);
 					SecurityMarkerUtil.createErrorMarker(calledMember,
 							this.analyzedMemberSignature + " accesses this member without the required integrity!",
@@ -822,6 +830,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			this.root = root;
 			this.integrity = integrity;
 			this.analyzedMemberSignature = SecureDependencyCheck.this.getSignature(this.member);
+
 		}
 
 		@Override
@@ -834,7 +843,13 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			SecurityMarkerUtil.deleteOldMarkers(caller.getResource(), this.analyzedMemberSignature,
 					SecureDependencyCheck.this.timestamp);
 
-			final var callerAnnotations = SecureDependencyCheck.this.getSecurityRequirements(caller.getDeclaringType());
+			IType type;
+			if (caller instanceof IType) {
+				type = (IType) caller;
+			} else {
+				type = caller.getDeclaringType();
+			}
+			final var callerAnnotations = SecureDependencyCheck.this.getSecurityRequirements(type);
 
 			final var callerSecrecyRequirement = SecureDependencyCheck.this.getCorrespondingEntry(this.member,
 					callerAnnotations.secrecy(), this.cu);
