@@ -1,5 +1,8 @@
 package org.gravity.security.annotations.marker;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
@@ -7,8 +10,11 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IMember;
+import org.eclipse.jdt.internal.corext.callhierarchy.CallLocation;
+import org.eclipse.jdt.internal.corext.callhierarchy.MethodCall;
 import org.gravity.eclipse.util.JavaASTUtil;
 
+@SuppressWarnings("restriction")
 public class SecurityMarkerUtil {
 
 	public static final String MARKER_SOURCE = "org.gravity.security";
@@ -88,6 +94,27 @@ public class SecurityMarkerUtil {
 				LOGGER.error(e);
 			}
 		}
+	}
+
+	public static Collection<IMarker> createErrorMarker(final MethodCall methodCall, final String message,
+			final String... relevantMember) {
+		final var callLocations = methodCall.getCallLocations();
+		final Collection<IMarker> marker = new ArrayList<>(callLocations.size());
+		for (final CallLocation callLocation : callLocations) {
+			try {
+				final var member = callLocation.getMember();
+				var resource = member.getResource();
+				if (resource == null) {
+					resource = member.getJavaProject().getResource();
+				}
+				final var line = callLocation.getLineNumber();
+
+				marker.add(createErrorMarker(resource, line, message, relevantMember));
+			} catch (final CoreException e) {
+				throw new IllegalStateException(e);
+			}
+		}
+		return marker;
 	}
 
 }
