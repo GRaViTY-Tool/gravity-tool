@@ -119,18 +119,21 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			try {
 				final Collection<Annotations> annotations = new LinkedList<>();
 				for (final IType type : cu.getAllTypes()) {
-					annotations.add(this.getSecurityRequirements(type));
+					final var annotation = this.getSecurityRequirements(type);
+					if (annotation.annotation != null) {
+						annotations.add(annotation);
+					}
 				}
 
 				for (final String signature : secrecySignatures) {
 					if (!accessedSignatures.contains(signature)) {
-						annotations.forEach(a -> {
+						for (final var a : annotations) {
 							if (a.secrecy().contains(signature)) {
 								SecurityMarkerUtil.createWarningMarker(a.annotation,
 										"There is a secrecy requirement for \"" + signature
 												+ "\" but the signature is neither defined nor accessed!");
 							}
-						});
+						}
 					}
 				}
 				for (final String signature : integritySignatures) {
