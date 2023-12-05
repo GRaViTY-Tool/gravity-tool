@@ -33,16 +33,19 @@ public abstract class ProjectImport {
 	/**
 	 * Creates a new importer for the given project
 	 *
-	 * @param rootDir The root directory from which the project should be imported
-	 * @param rootFile The configuration file of the build system
-	 * @param ignoreBuildErrors If the project should be imported even if build errors occur
+	 * @param rootDir           The root directory from which the project should be
+	 *                          imported
+	 * @param ignoreBuildErrors If the project should be imported even if build
+	 *                          errors occur
+	 * @param rootFiles         Potential configuration files of the build system
 	 * @return The importer
 	 * @throws ImportException
 	 */
-	protected ProjectImport(final File rootDir, final String rootFile, final boolean ignoreBuildErrors) throws ImportException {
+	protected ProjectImport(final File rootDir, final boolean ignoreBuildErrors, final String... rootFiles)
+			throws ImportException {
 		this.ignoreBuildErrors = ignoreBuildErrors;
-		this.rootDir = getRoot(rootDir, rootFile);
-		this.rootFile = new File(this.rootDir, rootFile);
+		this.rootFile = this.getRootConfigurationFile(rootDir, rootFiles);
+		this.rootDir = this.rootFile.getParentFile();
 	}
 
 	/**
@@ -71,19 +74,25 @@ public abstract class ProjectImport {
 	}
 
 	/**
-	 * Searches the root directory containing the root file e.g. a build.gradle or pom.xml
+	 * Searches the root directory containing the root file e.g. a build.gradle or
+	 * pom.xml
 	 *
-	 * @param rootDir The top level root directory
-	 * @param rootFile The name of the root file
-	 * @return The root folder
+	 * @param rootDir   The top level root directory
+	 * @param rootFiles The names of potential root files
+	 * @return The root file
 	 * @throws NoRootFolderException If no root file has been found
 	 */
-	private final File getRoot(final File rootDir, final String rootFile) throws NoRootFolderException {
-		final var buildDotGradle = FileUtils.findRecursive(rootDir, rootFile);
+	private final File getRootConfigurationFile(final File rootDir, final String... rootFiles)
+			throws NoRootFolderException {
+		var i = 0;
+		File buildDotGradle = null;
+		while (i < rootFiles.length && (buildDotGradle = FileUtils.findRecursive(rootDir, rootFiles[i])) == null) {
+			i++;
+		}
 		if (buildDotGradle == null) {
 			throw new NoRootFolderException();
 		}
-		return buildDotGradle.getParentFile();
+		return buildDotGradle;
 	}
 
 	/**

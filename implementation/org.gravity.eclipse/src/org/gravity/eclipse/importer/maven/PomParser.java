@@ -86,14 +86,14 @@ public class PomParser {
 		this.seenPoms = new HashSet<>();
 		this.modules = new HashMap<>();
 		this.moduleProperties = new HashMap<>();
-		initXPath();
+		this.initXPath();
 	}
 
 	public PomParser(final Collection<File> modulePoms) throws ParserConfigurationException {
 		this();
 		for (final File file : modulePoms) {
 			try {
-				final var id = getModuleID(file);
+				final var id = this.getModuleID(file);
 				this.modules.put(id, file);
 			} catch (IOException | SAXException | XPathExpressionException e) {
 				LOGGER.error(e);
@@ -104,9 +104,9 @@ public class PomParser {
 	private String getModuleID(final File pomFile) throws SAXException, IOException, XPathExpressionException {
 		final var pom = this.builder.parse(pomFile);
 
-		final var groupId = getGroupId(pom);
-		final var artifactId = getArtifactId(pom);
-		final var version = getVersion(pom);
+		final var groupId = this.getGroupId(pom);
+		final var artifactId = this.getArtifactId(pom);
+		final var version = this.getVersion(pom);
 
 		return groupId + ":" + artifactId + ":" + version;
 	}
@@ -134,7 +134,7 @@ public class PomParser {
 		try {
 			final var document = this.builder.parse(pom);
 			document.getDocumentElement().normalize();
-			getDependencies(document, cacheFile);
+			this.getDependencies(document, cacheFile);
 			return this.libraries;
 		} catch (SAXException | IOException e) {
 			LOGGER.warn(e);
@@ -162,13 +162,11 @@ public class PomParser {
 	 * @param pom     The pom file
 	 * @param results A mapping between libs and their locations
 	 * @return The by now undiscovered libs
-	 * @throws IOException
-	 * @throws IllegalAccessError
 	 */
-	boolean getDependencies(final Document pom, final File cacheFile) throws IOException, IllegalAccessError {
+	boolean getDependencies(final Document pom, final File cacheFile) {
 		Map<String, String> properties;
 		try {
-			properties = getProperties(pom);
+			properties = this.getProperties(pom);
 		} catch (final XPathExpressionException e) {
 			LOGGER.error(e);
 			return false;
@@ -180,9 +178,15 @@ public class PomParser {
 			final var item = deps.item(i);
 			if (item.getNodeType() == 1) {
 				final var scopeElement = ((Element) item).getElementsByTagName("scope");
-				if ((scopeElement.getLength() == 0) || (!"system".equals(scopeElement.item(0).getTextContent()) && !"provided".equals(scopeElement.item(0).getTextContent())
+				if ((scopeElement.getLength() == 0) || (!"system".equals(scopeElement.item(0).getTextContent())
+						&& !"provided".equals(scopeElement.item(0).getTextContent())
 						&& !"include".equals(scopeElement.item(0).getTextContent()))) {
-					success &= getDependency(item, cacheFile, properties);
+					try {
+						success &= this.getDependency(item, cacheFile, properties);
+					} catch (IllegalAccessError | IOException e) {
+						LOGGER.error(e);
+						success &= false;
+					}
 				}
 			}
 		}
@@ -190,12 +194,12 @@ public class PomParser {
 	}
 
 	private Map<String, String> getProperties(final Document pom) throws XPathExpressionException {
-		final var groupId = getGroupId(pom);
-		final var artifactId = getArtifactId(pom);
-		final var version = getVersion(pom);
+		final var groupId = this.getGroupId(pom);
+		final var artifactId = this.getArtifactId(pom);
+		final var version = this.getVersion(pom);
 		final var id = groupId + ":" + artifactId + ":" + version;
 
-		final var properties = readAllVariables(id, pom);
+		final var properties = this.readAllVariables(id, pom);
 		properties.put("project.groupId", groupId);
 		properties.put("project.artifactId", artifactId);
 		properties.put("project.version", version);
@@ -203,8 +207,8 @@ public class PomParser {
 		final var parentArtifactId = this.xParent.evaluate(pom);
 		if ((parentArtifactId != null) && !parentArtifactId.isBlank()) {
 			final var parentId = groupId + ':' + parentArtifactId + ':' + version;
-			final var parentProperties = getProperties(parentId);
-			if(parentProperties != null) {
+			final var parentProperties = this.getProperties(parentId);
+			if (parentProperties != null) {
 				for (final Entry<String, String> entry : parentProperties.entrySet()) {
 					if (!properties.containsKey(entry.getKey())) {
 						properties.put(entry.getKey(), entry.getValue());
@@ -223,8 +227,7 @@ public class PomParser {
 	 * @return the properties or null if none have been found
 	 * @throws XPathExpressionException
 	 */
-	private Map<String, String> getProperties(final String moduleId)
-			throws XPathExpressionException {
+	private Map<String, String> getProperties(final String moduleId) throws XPathExpressionException {
 		final var parentProperties = this.moduleProperties.get(moduleId);
 		if (parentProperties != null) {
 			return parentProperties;
@@ -233,7 +236,7 @@ public class PomParser {
 		if (pomFile != null) {
 			try {
 				final var parentPom = this.builder.parse(pomFile);
-				return getProperties(parentPom);
+				return this.getProperties(parentPom);
 			} catch (SAXException | IOException e) {
 				LOGGER.error(e);
 			}
@@ -243,16 +246,16 @@ public class PomParser {
 
 	private boolean getDependency(final Node item, final File cache, final Map<String, String> properties)
 			throws IOException, IllegalAccessError {
-		final var dependency = getResolvedDependency(item, properties);
-		if (searchInCache(dependency, cache)) {
+		final var dependency = this.getResolvedDependency(item, properties);
+		if (this.searchInCache(dependency, cache)) {
 			return true;
 		}
-		final var jar = readLibFromMavenCentral(cache, dependency);
+		final var jar = this.readLibFromMavenCentral(cache, dependency);
 		if (jar.exists()) {
 			this.libraries.put(dependency, jar.toPath());
 			return true;
 		}
-		final var other = getAnyVersion(dependency, cache);
+		final var other = this.getAnyVersion(dependency, cache);
 		final var success = (other != null) && other.exists();
 		if (success) {
 			this.libraries.put(dependency, other.toPath());
@@ -378,13 +381,13 @@ public class PomParser {
 		final Map<String, Path> results = new ConcurrentHashMap<>();
 		final var pom = createPathToLibInCache(lib, cacheFile);
 		if (pom.exists()) {
-			if (isPomPackaging(pom)) {
-				results.putAll(parsePomFile(pom, cacheFile));
+			if (this.isPomPackaging(pom)) {
+				results.putAll(this.parsePomFile(pom, cacheFile));
 				this.seenPoms.add(lib);
 				return true;
 			}
 
-			final var libJar = getBinary(pom, "jar");
+			final var libJar = this.getBinary(pom, "jar");
 			if (libJar.exists()) {
 				this.libraries.put(lib, libJar.toPath());
 				this.seenPoms.add(lib);

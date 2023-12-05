@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -81,10 +82,10 @@ public class GradleImport extends ProjectImport {
 	 * @throws ImportException
 	 */
 	public GradleImport(final File rootDir, final boolean ignoreBuildErrors) throws IOException, ImportException {
-		super(rootDir, "build.gradle", ignoreBuildErrors);
+		super(rootDir, ignoreBuildErrors, "build.gradle", "build.gradle.kts");
 		this.buildSuccess = false;
-		this.gradleCache = new File(initGradleUserHome(), GRADLE_CACHE);
-		this.includes = new GradleIncludes(getRootDir());
+		this.gradleCache = new File(this.initGradleUserHome(), GRADLE_CACHE);
+		this.includes = new GradleIncludes(this.getRootDir());
 		this.gradleBuild = new GradleBuild();
 	}
 
@@ -97,7 +98,7 @@ public class GradleImport extends ProjectImport {
 	 */
 	@Override
 	public IJavaProject importProject(final IProgressMonitor monitor) throws ImportException {
-		return importProject(getRootDir().getName(), monitor);
+		return this.importProject(this.getRootDir().getName(), monitor);
 	}
 
 	/**
@@ -113,12 +114,13 @@ public class GradleImport extends ProjectImport {
 			monitor = new NullProgressMonitor();
 		}
 
-		this.androidApp = getAppliedPlugins(this.includes.getBuildDotGradleFiles()).contains("com.android.application");
+		this.androidApp = this.getAppliedPlugins(this.includes.getBuildDotGradleFiles())
+				.contains("com.android.application");
 
-		build();
+		this.build();
 
-		final var javaSourceFiles = getAllJavaSourceFiles(getRootFile().toPath());
-		return createJavaProject(name, javaSourceFiles, monitor);
+		final var javaSourceFiles = this.getAllJavaSourceFiles(this.getRootFile().toPath());
+		return this.createJavaProject(name, javaSourceFiles, monitor);
 	}
 
 	/**
@@ -134,7 +136,7 @@ public class GradleImport extends ProjectImport {
 		IJavaProject project = null;
 		try {
 			project = JavaProjectUtil.createJavaProjectWithUniqueName(name, monitor);
-			final var sourceFolders = getSourceFolderMapping(javaSourceFiles);
+			final var sourceFolders = this.getSourceFolderMapping(javaSourceFiles);
 			for (final Entry<String, Set<Path>> entry : sourceFolders.entrySet()) {
 				final var folder = project.getProject().getFolder(entry.getKey().replace("/", "-"));
 				if (!folder.exists()) {
@@ -147,9 +149,10 @@ public class GradleImport extends ProjectImport {
 			}
 
 			if (this.androidApp) {
-				linkApkFolderToProject(project, monitor);
+				this.linkApkFolderToProject(project, monitor);
 			}
-			addRequiredLibsToProject(project, monitor).getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
+			this.addRequiredLibsToProject(project, monitor).getProject().refreshLocal(IResource.DEPTH_INFINITE,
+					monitor);
 			return project;
 		} catch (IOException | CoreException e) {
 			try {
@@ -170,14 +173,14 @@ public class GradleImport extends ProjectImport {
 	 */
 	private void build() throws GradleImportException {
 		try {
-			this.buildSuccess = this.gradleBuild.buildGradleProject(getRootDir(),
+			this.buildSuccess = this.gradleBuild.buildGradleProject(this.getRootDir(),
 					this.includes.getBuildDotGradleFiles(), this.androidApp);
-			if (!this.buildSuccess && !ignoreBuildErrors()) {
+			if (!this.buildSuccess && !this.ignoreBuildErrors()) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!");
 			}
 		} catch (final UnsupportedOperationSystemException e) {
 			LOGGER.warn("WARNING: Build of gradle project failed, some lib imports might be missing.");
-			if (!ignoreBuildErrors()) {
+			if (!this.ignoreBuildErrors()) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!", e);
 			}
 		} catch (final IOException e) {
@@ -230,7 +233,7 @@ public class GradleImport extends ProjectImport {
 	private HashMap<String, Set<Path>> getSourceFolderMapping(final Set<Path> javaSourceFiles) {
 		final var sourceFolders = new HashMap<String, Set<Path>>();
 		for (final Path sourceFile : javaSourceFiles) {
-			final var path = getRootDir().getAbsoluteFile().toPath();
+			final var path = this.getRootDir().getAbsoluteFile().toPath();
 			String relativize;
 			try {
 				relativize = path.relativize(sourceFile).toString();
@@ -278,9 +281,8 @@ public class GradleImport extends ProjectImport {
 		final var tmpGradleHome = new File(new File(System.getProperty("user.home")), ".gradle");
 		if (tmpGradleHome.exists()) {
 			return tmpGradleHome;
-		} else {
-			throw new FileNotFoundException("Gradle user home not found");
 		}
+		throw new FileNotFoundException("Gradle user home not found");
 	}
 
 	/**
@@ -298,7 +300,7 @@ public class GradleImport extends ProjectImport {
 			outputLocationFolder.create(true, true, monitor);
 		}
 		outputLocationFolder.getFolder("apk").createLink(
-				new org.eclipse.core.runtime.Path(getRootDir().getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL,
+				new org.eclipse.core.runtime.Path(this.getRootDir().getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL,
 				monitor);
 	}
 
@@ -317,7 +319,7 @@ public class GradleImport extends ProjectImport {
 			throws IOException, CoreException, GradleImportException {
 		final var libFolder = project.getProject().getFolder("lib");
 		Stream<IClasspathEntry> entries = Stream.empty();
-		final var requiredLibs = getLibs(this.includes.getBuildDotGradleFiles());
+		final var requiredLibs = this.getLibs(this.includes.getBuildDotGradleFiles());
 		for (final Path libPath : requiredLibs) {
 			final List<IFile> jarFiles = new LinkedList<>();
 			final var file = libPath.toFile();
@@ -361,7 +363,7 @@ public class GradleImport extends ProjectImport {
 	private Set<String> getAppliedPlugins(final Set<Path> buildDotGradleFiles) {
 		final Set<String> appliedPlugins = new HashSet<>();
 		for (final Path path : buildDotGradleFiles) {
-			appliedPlugins.addAll(getAppliedPlugins(path));
+			appliedPlugins.addAll(this.getAppliedPlugins(path));
 		}
 		return appliedPlugins;
 	}
@@ -392,14 +394,14 @@ public class GradleImport extends ProjectImport {
 
 	private Collection<Path> getLibs(final Collection<Path> buildDotGradleFiles)
 			throws IOException, GradleImportException {
-		final var gradleDependencies = new GradleDependencies(readBuildDotGradleFiles(buildDotGradleFiles),
+		final var gradleDependencies = new GradleDependencies(this.readBuildDotGradleFiles(buildDotGradleFiles),
 				this.androidApp);
 		final var compileLibs = gradleDependencies.getCompileDependencies();
 
 		final Collection<Path> libsAsJar = new LinkedList<>();
 		final Collection<String> missing = new LinkedList<>();
 		for (final String lib : compileLibs) {
-			final var binary = findBinary(lib, false);
+			final var binary = this.findBinary(lib, false);
 			if (binary != null) {
 				missing.remove(lib);
 				libsAsJar.add(binary);
@@ -409,11 +411,10 @@ public class GradleImport extends ProjectImport {
 			try {
 				libsAsJar.addAll(GradleAndroid.getAndroidLibs(gradleDependencies).values());
 			} catch (final GradleImportException e) {
-				if (ignoreBuildErrors()) {
-					LOGGER.warn(e.getLocalizedMessage(), e);
-				} else {
+				if (!this.ignoreBuildErrors()) {
 					throw e;
 				}
+				LOGGER.warn(e.getLocalizedMessage(), e);
 			}
 
 		}
@@ -428,23 +429,23 @@ public class GradleImport extends ProjectImport {
 
 	public Path findBinary(final String lib, final boolean exactVersion) throws IOException {
 		final var cache = PomParser.getFolderInCacheLocation(lib.split(":"), this.gradleCache);
-		if(!cache.exists()) {
-			LOGGER.error("Cache location of \""+lib
-					+ "\" does not exist: "+cache );
+		if (!cache.exists()) {
+			LOGGER.error("Cache location of \"" + lib + "\" does not exist: " + cache);
 			return null;
 		}
 		final var visitor = new ExtensionFileVisitor("jar", "aar");
 		Files.walkFileTree(cache.toPath(), visitor);
 		if (!visitor.getFiles().isEmpty()) {
-			return getJarOrRandom(visitor.getFiles());
-		} else if(!exactVersion){
+			return this.getJarOrRandom(visitor.getFiles());
+		}
+		if (!exactVersion) {
 			LOGGER.warn("Didn't find expected version of the lib \"" + lib + "\", selecting a random version");
 			Files.walkFileTree(cache.getParentFile().toPath(), visitor);
 			final var files = visitor.getFiles();
 			if (!files.isEmpty()) {
 				// Sort to get the newest version
-				files.sort((o1, o2) -> o1.getFileName().compareTo(o2.getFileName()));
-				return getJarOrRandom(files);
+				files.sort(Comparator.comparing(Path::getFileName));
+				return this.getJarOrRandom(files);
 			} else {
 				LOGGER.error("Didn't find any version of the lib \"" + lib + "\"!");
 			}
@@ -454,7 +455,7 @@ public class GradleImport extends ProjectImport {
 
 	public Path getJarOrRandom(final List<Path> files) {
 		final var jar = files.stream().filter(f -> f.getFileName().toString().endsWith("jar")).findFirst();
-		if(jar.isPresent()) {
+		if (jar.isPresent()) {
 			return jar.get();
 		}
 		return files.get(0);
@@ -481,7 +482,7 @@ public class GradleImport extends ProjectImport {
 			final var unit = TimeUnit.MINUTES;
 			if (!pool.awaitTermination(duration, unit)) {
 				throw new GradleImportException("Parsing " + buildDotGradleFiles.size()
-				+ " build.gradle files timed out after " + duration + " " + unit.toString());
+						+ " build.gradle files timed out after " + duration + " " + unit.toString());
 			}
 
 			final List<String> results = new ArrayList<>(buildDotGradleFiles.size());
