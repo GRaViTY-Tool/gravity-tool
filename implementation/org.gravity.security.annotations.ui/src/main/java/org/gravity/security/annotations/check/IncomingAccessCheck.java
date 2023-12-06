@@ -45,8 +45,8 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 				this.secureDependencyCheck.timestamp);
 
 		IType type;
-		if (caller instanceof IType) {
-			type = (IType) caller;
+		if (caller instanceof final IType itype) {
+			type = itype;
 		} else if (caller instanceof final LambdaMethod lambda) {
 			type = lambda.getOuterMostLocalContext().getDeclaringType();
 		} else {
@@ -55,7 +55,7 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 		final var callerAnnotations = this.secureDependencyCheck.getSecurityRequirements(type);
 
 		final var callerSecrecyRequirement = SecureDependencyCheck.getCorrespondingEntry(this.member,
-				callerAnnotations.secrecy(), this.cu);
+				callerAnnotations.getSecrecySignatures(), this.cu);
 		final var callerSecrecy = callerSecrecyRequirement != null;
 		if (callerSecrecy != this.secrecy) {
 			if (callerSecrecy) {
@@ -77,7 +77,7 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 		}
 
 		final var callerIntegrityRequirement = SecureDependencyCheck.getCorrespondingEntry(this.member,
-				callerAnnotations.integrity(), this.cu);
+				callerAnnotations.getIntegritySignatures(), this.cu);
 		final var callerIntegrity = callerIntegrityRequirement != null;
 		if (callerIntegrity != this.integrity) {
 			if (callerIntegrity) {

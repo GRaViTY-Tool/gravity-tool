@@ -1,10 +1,10 @@
 package org.gravity.security.annotations.check;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -21,7 +21,6 @@ import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMember;
-import org.eclipse.jdt.core.IMemberValuePair;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
@@ -32,10 +31,11 @@ import org.eclipse.jdt.internal.core.LambdaMethod;
 import org.eclipse.jdt.internal.core.builder.CompilationParticipantResult;
 import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchy;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
+import org.gravity.security.annotations.check.data.SecurityRequirements;
+import org.gravity.security.annotations.check.data.SecurityRequirements.SecurityProperty;
 import org.gravity.security.annotations.check.helpers.ASTHelper;
 import org.gravity.security.annotations.check.helpers.MemberHelper;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
-import org.gravity.security.annotations.requirements.Critical;
 import org.gravity.security.annotations.requirements.Integrity;
 import org.gravity.security.annotations.requirements.Secrecy;
 
@@ -45,7 +45,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	/**
 	 * The logger of this class
 	 */
-	private static final Logger LOGGER = Logger.getLogger(SecureDependencyCheck.class);
+	static final Logger LOGGER = Logger.getLogger(SecureDependencyCheck.class);
 
 	long timestamp;
 
@@ -68,144 +68,161 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	private void processChangedFile(final BuildContext context) {
 		if (context instanceof final CompilationParticipantResult result) {
-//				&& (result.hasAnnotations(Secrecy.class.getName()) || result.hasAnnotations(Integrity.class.getName())
-//						|| result.hasAnnotations(Critical.class.getName()))) {
 
 			final var cu = (ICompilationUnit) JavaCore.create(result.getFile());
 			SecurityMarkerUtil.deleteOldMarkers(cu, this.timestamp);
 
-			final Set<String> secrecySignatures = new HashSet<>();
-			final Set<String> integritySignatures = new HashSet<>();
+			try {
+				for (final IType type : cu.getAllTypes()) {
+					final var requirements = this.getSecurityRequirements(type);
+					final Collection<IMember> accessed = requirements.getMembers().parallelStream().flatMap(member -> {
+						final var requiresSecrecy = requirements.isSecrecyMember(member);
+						final var requiresIntegrity = requirements.isIntegrityMember(member);
+						if (requiresSecrecy || requiresIntegrity) {
+							this.checkIncomingAccesses(member, requiresSecrecy, requiresIntegrity);
+						}
+						return this.checkOutgoingAccesses(requirements, member).stream();
+					}).collect(Collectors.toSet());
+					this.checkForUnusedRequirements(requirements, accessed);
 
-			final Set<IMember> secrecyMembers = new HashSet<>();
-			final Set<IMember> integrityMembers = new HashSet<>();
-
-			final Collection<String> accessedSignatures = new HashSet<>();
-			final var members = this.collectAllMembers(cu, secrecySignatures, integritySignatures, secrecyMembers,
-					integrityMembers);
-			members.parallelStream().forEach(member -> {
-				accessedSignatures.addAll(this.checkOutgoingAccesses(secrecySignatures, integritySignatures, member));
-				final var requiresSecrecy = secrecyMembers.contains(member);
-				final var requiresIntegrity = integrityMembers.contains(member);
-				if (requiresSecrecy || requiresIntegrity) {
-					this.checkIncomingAccesses(member, requiresSecrecy, requiresIntegrity);
 				}
-			});
-
-			this.checkForUnusedRequirements(cu, secrecySignatures, integritySignatures, accessedSignatures);
+			} catch (final CoreException e) {
+				LOGGER.error(e);
+			}
 		}
 	}
 
+	/**
+	 * Checks if calls of the member fulfill the secure dependency property
+	 *
+	 * @param member    The called member
+	 * @param secrecy   Whether the member is on the secrecy security level
+	 * @param integrity Whether the member is on the integrity security level
+	 */
 	private void checkIncomingAccesses(final IMember member, final boolean secrecy, final boolean integrity) {
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
 			root.accept(new IncomingAccessCheck(this, member, secrecy, root, integrity), new NullProgressMonitor());
 		}
 	}
 
-	private Collection<String> checkOutgoingAccesses(final Set<String> secrecySignatures,
-			final Set<String> integritySignatures, final IMember caller) {
-		final Collection<String> accessedSignatures = new HashSet<>();
+	/**
+	 * Checks if the member accesses any security-critical member for which secrecy
+	 * or integrity is not specified by the members class
+	 *
+	 * @param requirements The security requirements of the class defining the
+	 *                     member
+	 * @param caller       The member whose outgoing accesses should be analyzed
+	 * @return The members accessed by the analyzed member
+	 */
+	private Collection<IMember> checkOutgoingAccesses(final SecurityRequirements requirements, final IMember caller) {
+		final Collection<IMember> accessedMembers = new HashSet<>();
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
 			// Check outgoing calls
-			root.accept(new OutgoingAccessCheck(this, accessedSignatures, root, caller, secrecySignatures,
-					integritySignatures), new NullProgressMonitor());
+			root.accept(new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements),
+					new NullProgressMonitor());
 		}
-		return accessedSignatures;
+		return accessedMembers;
 	}
 
-	private void checkForUnusedRequirements(final ICompilationUnit cu, final Set<String> secrecySignatures,
-			final Set<String> integritySignatures, final Collection<String> accessedSignatures) {
-		if (!secrecySignatures.isEmpty() || !integritySignatures.isEmpty()) {
-			try {
-				final Collection<Annotations> annotations = new LinkedList<>();
-				for (final IType type : cu.getAllTypes()) {
-					final var annotation = this.getSecurityRequirements(type);
-					if (annotation.annotation != null) {
-						annotations.add(annotation);
-					}
-				}
+	/**
+	 * Checks if security requirements are defined that do not match a defined or
+	 * accessed member
+	 *
+	 * @param requirements    The security requirements of the analyzed type
+	 * @param accessedMembers All external security-critical members that are
+	 *                        accessed from the type
+	 */
+	private void checkForUnusedRequirements(final SecurityRequirements requirements,
+			final Collection<IMember> accessedMembers) {
+		this.checkForUnusedRequirements(requirements, accessedMembers, requirements.getSecrecySignatures(),
+				SecurityProperty.SECRECY);
+		this.checkForUnusedRequirements(requirements, accessedMembers, requirements.getIntegritySignatures(),
+				SecurityProperty.INTEGRITY);
+	}
 
-				for (final String signature : secrecySignatures) {
-					if (!accessedSignatures.contains(signature)) {
-						for (final var a : annotations) {
-							if (a.secrecy().contains(signature)) {
-								SecurityMarkerUtil.createWarningMarker(a.annotation,
-										"There is a secrecy requirement for \"" + signature
-												+ "\" but the signature is neither defined nor accessed!");
-							}
-						}
-					}
-				}
-				for (final String signature : integritySignatures) {
-					if (!accessedSignatures.contains(signature)) {
-						annotations.forEach(a -> {
-							if (a.integrity().contains(signature)) {
-								SecurityMarkerUtil.createWarningMarker(a.annotation,
-										"There is a integrity requirement for \"" + signature
-												+ "\" but the signature is neither defined nor accessed!");
-							}
-						});
-					}
-				}
-			} catch (final JavaModelException e) {
-				LOGGER.error(e);
+	private void checkForUnusedRequirements(final SecurityRequirements requirements,
+			final Collection<IMember> accessedMembers, final Set<String> classifiedSignatures,
+			final SecurityProperty property) {
+		final Collection<String> signatures = new ArrayList<>(classifiedSignatures);
+		final var cu = requirements.getType().getCompilationUnit();
+
+		if (!signatures.isEmpty()) {
+			for (final IMember member : accessedMembers) {
+				this.removeMember(member, signatures, cu);
 			}
 		}
+		if (!signatures.isEmpty()) {
+			for (final IMember member : requirements.getDefinedMembers()) {
+				this.removeMember(member, signatures, cu);
+			}
+		}
+
+		for (final String signature : signatures) {
+			for (final IAnnotation defines : requirements.getCriticals(signature, property)) {
+				SecurityMarkerUtil.createWarningMarker(defines, "There is a " + property + " requirement for \""
+						+ signature + "\" but the signature is neither defined nor accessed!");
+			}
+
+		}
 	}
 
-	private Set<IMember> collectAllMembers(final ICompilationUnit cu, final Set<String> secrecySignatures,
-			final Set<String> integritySignatures, final Set<IMember> secrecyMembers,
-			final Set<IMember> integrityMembers) {
-		final Set<IMember> members = new HashSet<>();
+	Map<IType, SecurityRequirements> cache = new HashMap<>();
+
+	SecurityRequirements getSecurityRequirements(final IType type) {
+		if (this.cache.containsKey(type)) {
+			return this.cache.get(type);
+		}
+		final var requirement = new SecurityRequirements(type);
+		this.cache.put(type, requirement);
+
 		try {
-			for (final IType type : cu.getAllTypes()) {
-				members.addAll(this.collectAllMembers(type, secrecySignatures, integritySignatures, secrecyMembers,
-						integrityMembers));
-			}
+			addRelevantMembers(type, requirement);
 		} catch (final JavaModelException e) {
-			throw new IllegalStateException(e);
+			LOGGER.error(e);
+			return requirement;
 		}
-		return members;
+
+		final var cu = type.getCompilationUnit();
+		for (final IMember method : requirement.getMembers()) {
+
+			List<String> memberAnnotations;
+			if (method instanceof final IAnnotatable annotatable) {
+				try {
+					memberAnnotations = Stream.of(annotatable.getAnnotations()).map(IAnnotation::getElementName)
+							.toList();
+				} catch (final JavaModelException e) {
+					LOGGER.error(e);
+					memberAnnotations = Collections.emptyList();
+				}
+			} else {
+				memberAnnotations = Collections.emptyList();
+			}
+
+			if (this.removeMember(method, requirement.getSecrecySignatures(), cu)
+					|| memberAnnotations.contains(Secrecy.class.getSimpleName())) {
+				requirement.addSecrecyMember(method);
+			}
+
+			if (this.removeMember(method, requirement.getIntegritySignatures(), cu)
+					|| memberAnnotations.contains(Integrity.class.getSimpleName())) {
+				requirement.addIntegrityMember(method);
+			}
+		}
+		return requirement;
 	}
 
-	private Collection<IMember> collectAllMembers(final IType type, final Set<String> secrecySignatures,
-			final Set<String> integritySignatures, final Set<IMember> secrecyMembers,
-			final Set<IMember> integrityMembers) throws JavaModelException {
-		final var annotations = this.getSecurityRequirements(type);
-		secrecySignatures.addAll(annotations.secrecy());
-		integritySignatures.addAll(annotations.integrity());
-
-		final var members = new LinkedList<IMember>();
+	private static void addRelevantMembers(final IType type, final SecurityRequirements requirement)
+			throws JavaModelException {
 		for (final IJavaElement element : type.getChildren()) {
 			final var elementType = element.getElementType();
 			if (elementType == IJavaElement.FIELD || elementType == IJavaElement.METHOD
 					|| elementType == IJavaElement.INITIALIZER) {
 				final var member = (IMember) element;
-				members.add(member);
-			}
-		}
-
-		final var cu = type.getCompilationUnit();
-		for (final IMember method : members) {
-
-			final List<String> memberAnnotations;
-			if (method instanceof final IAnnotatable annotatable) {
-				memberAnnotations = Stream.of((annotatable).getAnnotations()).map(IAnnotation::getElementName).toList();
+				requirement.addMember(member);
 			} else {
-				memberAnnotations = Collections.emptyList();
-			}
-
-			if (this.removeMember(method, secrecySignatures, cu)
-					|| memberAnnotations.contains(Secrecy.class.getSimpleName())) {
-				secrecyMembers.add(method);
-			}
-
-			if (this.removeMember(method, integritySignatures, cu)
-					|| memberAnnotations.contains(Integrity.class.getSimpleName())) {
-				integrityMembers.add(method);
+				LOGGER.info("The member \"" + element + "\" will not be analyzed.");
 			}
 		}
-		return members;
 	}
 
 	private boolean removeMember(final IMember member, final Collection<String> signatures, final ICompilationUnit cu) {
@@ -299,48 +316,5 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			throw new IllegalStateException("Unhandled member type: " + member.getElementType());
 		}
 		return null;
-	}
-
-	Map<IType, Annotations> cache = new HashMap<>();
-
-	Annotations getSecurityRequirements(final IType type) {
-		final var entry = this.cache.get(type);
-		if (entry != null) {
-			return entry;
-		}
-		final Set<String> secrecySignatures = new HashSet<>();
-		final Set<String> integritySignatures = new HashSet<>();
-		final IAnnotation critical = null;
-		try {
-			for (final var a : type.getAnnotations()) {
-				if (Critical.class.getSimpleName().equals(a.getElementName())) {
-					for (final IMemberValuePair pair : a.getMemberValuePairs()) {
-						final var memberName = pair.getMemberName();
-						if ("secrecy".equals(memberName)) {
-							this.addToSignatures(secrecySignatures, pair);
-						} else if ("integrity".equals(memberName)) {
-							this.addToSignatures(integritySignatures, pair);
-						}
-					}
-				}
-			}
-		} catch (final JavaModelException e) {
-			LOGGER.error(e);
-		}
-		final var annotations = new Annotations(secrecySignatures, integritySignatures, type, critical);
-		this.cache.put(type, annotations);
-		return annotations;
-
-	}
-
-	private void addToSignatures(final Set<String> signatures, final IMemberValuePair pair) {
-		final var secrecyValue = pair.getValue();
-		if (secrecyValue instanceof final String string) {
-			signatures.add(string);
-		} else {
-			for (final Object secrecy : (Object[]) secrecyValue) {
-				signatures.add((String) secrecy);
-			}
-		}
 	}
 }

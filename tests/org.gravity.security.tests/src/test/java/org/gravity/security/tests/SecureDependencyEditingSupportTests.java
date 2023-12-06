@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -49,34 +50,45 @@ public class SecureDependencyEditingSupportTests {
 			LOGGER.warn("No exectation for project \"" + project.getProject().getName() + "\"");
 			return;
 		}
-		final Map<?, ?> map = new Gson().fromJson(new InputStreamReader(file.getContents()), Map.class);
+		final Map<?, List<?>> map = new Gson().fromJson(new InputStreamReader(file.getContents()), Map.class);
 		for (final Entry<?, ?> entry : map.entrySet()) {
-			assertTrue("Expected marker not found on resource \"" + entry.getKey() + "\" concerning the sigantures "
-					+ entry.getValue(), problems.removeIf(m -> {
-						if (m.getResource().getProjectRelativePath().toString().equals(entry.getKey())) {
-							try {
-								final var analyzed = m.getAttribute(SecurityMarkerUtil.MARKER_ATTR_ANALYZED);
-								if (analyzed instanceof final String value) {
-									final var foundSignatures = value.split(";");
-									final var expextedSignatures = (List<?>) entry.getValue();
-									if (foundSignatures.length == expextedSignatures.size()) {
-										for (final String foundSiganture : foundSignatures) {
-											if (!expextedSignatures.contains(foundSiganture)) {
-												return false;
-											}
-										}
-										return true;
-									}
-								}
-							} catch (final CoreException e) {
-								LOGGER.error(e);
-							}
-						}
-						return false;
-					}));
+			assertTrue(
+					"Expected marker not found on resource \"" + entry.getKey() + "\" concerning the sigantures "
+							+ entry.getValue(),
+					problems.removeIf(m -> SecureDependencyEditingSupportTests.isExpectedMarker(entry, m)));
 		}
 		assertTrue("Unexpected markers have been found: " + problems, problems.isEmpty());
 
+	}
+
+	private static boolean isExpectedMarker(final Entry<?, ?> expectations, final IMarker marker) {
+		if (marker.getResource().getProjectRelativePath().toString().equals(expectations.getKey())) {
+			try {
+				final var analyzed = marker.getAttribute(SecurityMarkerUtil.MARKER_ATTR_ANALYZED);
+				if (analyzed instanceof final String value) {
+					final var foundSignatures = value.split(";");
+					for (final Object expectedMarker : getExpectedMarkers(expectations)) {
+						final var expextedSignatures = (List<?>) expectedMarker;
+						if (foundSignatures.length == expextedSignatures.size()
+								&& Stream.of(foundSignatures).allMatch(expextedSignatures::contains)) {
+							return true;
+						}
+					}
+					return false;
+				}
+			} catch (final CoreException e) {
+				LOGGER.error(e);
+			}
+		}
+		return false;
+	}
+
+	private static List<List<String>> getExpectedMarkers(final Entry<?, ?> expectations) {
+		final var value = (List<?>) expectations.getValue();
+		if (!(value.get(0) instanceof List<?>)) {
+			return Arrays.asList((List<String>) value);
+		}
+		return (List<List<String>>) value;
 	}
 
 	public static List<IJavaProject> collectProjects() throws CoreException {

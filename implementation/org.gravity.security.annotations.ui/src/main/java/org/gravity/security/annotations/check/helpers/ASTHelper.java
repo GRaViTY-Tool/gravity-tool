@@ -1,5 +1,6 @@
 package org.gravity.security.annotations.check.helpers;
 
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
@@ -20,6 +21,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.internal.compiler.util.Util;
 
+@SuppressWarnings("restriction")
 public class ASTHelper {
 
 	private static final Logger LOGGER = Logger.getLogger(ASTHelper.class);
@@ -28,7 +30,7 @@ public class ASTHelper {
 		// This class only provides static methods
 	}
 
-	static String getFullyQualifiedName4Text(final ICompilationUnit cu, String type) {
+	public static String getFullyQualifiedName4Text(final ICompilationUnit cu, String type) {
 		type = type.replace(" ", "");
 		final var genericStart = type.indexOf('<');
 		if (genericStart >= 0) {
@@ -69,7 +71,53 @@ public class ASTHelper {
 			arrays++;
 		}
 
-		var type = typeName.substring(arrays);
+		final var type = resolveTypeParameters(typeParameters, typeName.substring(arrays));
+
+		final var result = switch (type) {
+		case Signature.SIG_VOID -> void.class.toString();
+		case Signature.SIG_BOOLEAN -> boolean.class.toString();
+		case Signature.SIG_BYTE -> byte.class.toString();
+		case Signature.SIG_CHAR -> char.class.toString();
+		case Signature.SIG_DOUBLE -> double.class.toString();
+		case Signature.SIG_FLOAT -> float.class.toString();
+		case Signature.SIG_INT -> int.class.toString();
+		case Signature.SIG_LONG -> long.class.toString();
+		case Signature.SIG_SHORT -> short.class.toString();
+		default -> fullyQualifiedNameForNonPrimitiveType(type, cu);
+		};
+		return buildArray(arrays, result);
+	}
+
+	private static String fullyQualifiedNameForNonPrimitiveType(final String type, final ICompilationUnit cu) {
+		final var genericStart = type.indexOf(Util.C_GENERIC_START);
+		final var end = genericStart == -1 ? type.indexOf(Util.C_NAME_END) : genericStart;
+		final var prefix = type.charAt(0);
+		return switch (prefix) {
+		case Util.C_UNRESOLVED -> {
+			var resolvedType = findType(cu, type.substring(1, end));
+			if (resolvedType == null) {
+				resolvedType = type.substring(1, type.indexOf(';'));
+				LOGGER.warn("Could not resolve type \"" + type + "\" in JDT, assuming \"" + resolvedType + ".\"");
+			}
+			yield resolvedType;
+		}
+		case Util.C_RESOLVED -> type.substring(1, end);
+		default -> {
+			LOGGER.error("Unhandled JDT type prefix: " + prefix);
+			throw new IllegalStateException("Unhandled return type \"" + type + "\" in " + cu.getPath());
+		}
+		};
+	}
+
+	/**
+	 * Checks whether the type is a type parameter and returns the most general type
+	 * that can be expected
+	 *
+	 * @param typeParameters The the relevant type parameter definitions
+	 * @param type           The type to be resolved
+	 * @return the resolved type signature
+	 */
+	private static String resolveTypeParameters(final ITypeParameter[] typeParameters, final String type) {
 		if (type.charAt(0) == Util.C_TYPE_VARIABLE) {
 			final var name = type.substring(1, type.lastIndexOf(';'));
 			final var result = Stream.of(typeParameters).filter(t -> t.getElementName().equals(name)).findAny();
@@ -77,55 +125,24 @@ public class ASTHelper {
 				final var param = result.get();
 				try {
 					final var bounds = param.getBoundsSignatures();
-					type = bounds[0];
+					if (bounds.length > 0) {
+						if (bounds.length > 1) {
+							LOGGER.warn("Bounds of type parameter \"" + type
+									+ "\" mights have been processed falsely, bounds are: "
+									+ Stream.of(bounds).collect(Collectors.joining("\"", "\", \"", "\"")));
+						}
+						return bounds[0];
+					}
+					LOGGER.error("The bounds for the type parameter \"" + type
+							+ "\" have the size 0. Defined type parameters are: " + Stream.of(typeParameters)
+									.map(ITypeParameter::toString).collect(Collectors.joining("\"", "\", \"", "\"")));
 				} catch (final JavaModelException e) {
 					LOGGER.error(e);
-					type = "Qjava.lang.Object";
 				}
 			}
+			return "Qjava.lang.Object;";
 		}
-
-		switch (type) {
-		case Signature.SIG_VOID:
-			return buildArray(arrays, void.class.toString());
-		case Signature.SIG_BOOLEAN:
-			return buildArray(arrays, boolean.class.toString());
-		case Signature.SIG_BYTE:
-			return buildArray(arrays, byte.class.toString());
-		case Signature.SIG_CHAR:
-			return buildArray(arrays, char.class.toString());
-		case Signature.SIG_DOUBLE:
-			return buildArray(arrays, double.class.toString());
-		case Signature.SIG_FLOAT:
-			return buildArray(arrays, float.class.toString());
-		case Signature.SIG_INT:
-			return buildArray(arrays, int.class.toString());
-		case Signature.SIG_LONG:
-			return buildArray(arrays, long.class.toString());
-		case Signature.SIG_SHORT:
-			return buildArray(arrays, short.class.toString());
-		default:
-			final var genericStart = type.indexOf(Util.C_GENERIC_START);
-			final var end = genericStart == -1 ? type.indexOf(Util.C_NAME_END) : genericStart;
-			final var prefix = type.charAt(0);
-			switch (prefix) {
-			case Util.C_UNRESOLVED:
-				var resolvedType = findType(cu, type.substring(1, end));
-				if (resolvedType == null) {
-					resolvedType = type.substring(1, type.indexOf(';'));
-					LOGGER.warn(
-							"Could not resolve type \"" + typeName + "\" in JDT, assuming \"" + resolvedType + ".\"");
-				}
-				return buildArray(arrays, resolvedType);
-			case Util.C_RESOLVED:
-				return buildArray(arrays, type.substring(1, end));
-			case Util.C_TYPE_VARIABLE:
-				return buildArray(arrays, type.substring(1, end));
-			default:
-				LOGGER.error("Unhandled JDT type prefix: " + prefix);
-			}
-		}
-		throw new IllegalStateException("Unhandled return type \"" + type + "\" in " + cu.getPath());
+		return type;
 	}
 
 	private static String findType(final ICompilationUnit cu, final String name) {
