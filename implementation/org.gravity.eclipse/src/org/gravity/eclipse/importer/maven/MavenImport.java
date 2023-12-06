@@ -61,6 +61,7 @@ public class MavenImport extends ProjectImport {
 
 	private final File m2;
 	private final File mavenRepository;
+
 	/**
 	 * Creates an new instance of the maven project importer
 	 *
@@ -69,7 +70,7 @@ public class MavenImport extends ProjectImport {
 	 * @throws ImportException If the importer cannot be created for the project
 	 */
 	public MavenImport(final File rootDir, final boolean ignoreBuildErrors) throws ImportException {
-		super(rootDir, "pom.xml", ignoreBuildErrors);
+		super(rootDir, ignoreBuildErrors, "pom.xml");
 		this.modulePoms = new LinkedList<>();
 		this.sourceFolders = new HashSet<>();
 		try {
@@ -93,12 +94,12 @@ public class MavenImport extends ProjectImport {
 	 */
 	@Override
 	public IJavaProject importProject(final IProgressMonitor monitor) throws ImportException {
-		build();
-		final var parentPom = getRootFile();
+		this.build();
+		final var parentPom = this.getRootFile();
 		final Deque<File> stack = new LinkedList<>();
 		stack.add(parentPom);
 		while (!stack.isEmpty()) {
-			stack.addAll(processPOM(stack.pop()));
+			stack.addAll(this.processPOM(stack.pop()));
 		}
 
 		PomParser parser;
@@ -116,17 +117,16 @@ public class MavenImport extends ProjectImport {
 		}
 
 		final Set<File> libs = parser.allPaths().parallelStream().map(Path::toFile).collect(Collectors.toSet());
-		final var javaProject = createJavaProject(this.sourceFolders, libs, monitor);
+		final var javaProject = this.createJavaProject(this.sourceFolders, libs, monitor);
 		try {
 			final var project = javaProject.getProject();
 			project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			project.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
 		} catch (final CoreException e) {
-			if (!ignoreBuildErrors()) {
+			if (!this.ignoreBuildErrors()) {
 				throw new ImportException(e);
-			} else {
-				LOGGER.error(e.getLocalizedMessage(), e);
 			}
+			LOGGER.error(e.getLocalizedMessage(), e);
 		}
 		return javaProject;
 	}
@@ -140,21 +140,20 @@ public class MavenImport extends ProjectImport {
 	private void build() throws ImportException {
 		try {
 			final List<String> args = Arrays.asList("clean", "compile");
-			final var rootDir = getRootDir();
+			final var rootDir = this.getRootDir();
 			final var process = Execute.run(rootDir, "mvn", args, null);
 			final var success = Execute.execute(process);
 			if (!success) {
 				LOGGER.warn("Couldn't build the project!");
-				if (!ignoreBuildErrors()) {
+				if (!this.ignoreBuildErrors()) {
 					throw new ImportException("Couldn't build the maven project");
 				}
 			}
 		} catch (UnsupportedOperationSystemException | IOException e) {
-			if (ignoreBuildErrors()) {
-				LOGGER.warn(e.getLocalizedMessage(), e);
-			} else {
+			if (!this.ignoreBuildErrors()) {
 				throw new ImportException(e);
 			}
+			LOGGER.warn(e.getLocalizedMessage(), e);
 		}
 	}
 
@@ -171,9 +170,9 @@ public class MavenImport extends ProjectImport {
 			final IProgressMonitor monitor) throws ImportException {
 		IJavaProject project;
 		try {
-			project = JavaProjectUtil.createJavaProjectWithUniqueName(getRootDir().getName(), monitor);
-			addSourceFolders(sourceFolders, project, monitor);
-			addLibsToProject(libs, project, monitor);
+			project = JavaProjectUtil.createJavaProjectWithUniqueName(this.getRootDir().getName(), monitor);
+			this.addSourceFolders(sourceFolders, project, monitor);
+			this.addLibsToProject(libs, project, monitor);
 		} catch (CoreException | IOException e) {
 			throw new ImportException(e);
 		}
@@ -192,7 +191,7 @@ public class MavenImport extends ProjectImport {
 	private void addSourceFolders(final Set<File> sources, final IJavaProject project, final IProgressMonitor monitor)
 			throws CoreException, IOException {
 		for (final File src : sources) {
-			final var srcFolderName = getRootDir().toPath().relativize(src.toPath()).toString();
+			final var srcFolderName = this.getRootDir().toPath().relativize(src.toPath()).toString();
 			final var names = srcFolderName.split("/|(\\\\)");
 			var folder = project.getProject().getFolder(names[0]);
 			for (var i = 1; i < names.length; i++) {

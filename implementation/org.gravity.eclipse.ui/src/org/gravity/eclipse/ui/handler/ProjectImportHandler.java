@@ -14,9 +14,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.ImportException;
@@ -36,42 +34,40 @@ public class ProjectImportHandler extends AbstractHandler {
 	private static final Logger LOGGER = Logger.getLogger(ProjectImportHandler.class);
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final IWorkbench workbench = PlatformUI.getWorkbench();
-		final FileDialog dialog = new FileDialog(workbench.getActiveWorkbenchWindow().getShell());
-		dialog.setFilterExtensions(new String[] { "*.gradle", "pom.xml" });
-		final String result = dialog.open();
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
+		final var workbench = PlatformUI.getWorkbench();
+		final var dialog = new FileDialog(workbench.getActiveWorkbenchWindow().getShell());
+		dialog.setFilterExtensions(new String[] { "*.gradle", "*.gradle.kts", "pom.xml" });
+		final var result = dialog.open();
 
-		final File parentFile = new File(result).getParentFile();
+		final var parentFile = new File(result).getParentFile();
 
 		final Job job;
-		if(result.endsWith(".gradle")) {
+		if (result.endsWith(".gradle") || result.endsWith(".gradle.kts")) {
 			job = new GradleImportJob(parentFile);
-		}
-		else if(result.endsWith("pom.xml")) {
+		} else if (result.endsWith("pom.xml")) {
 			job = new MavenImportJob(parentFile);
-		}
-		else {
-			throw new ExecutionException("No supported root file has been selected: \""+result+'\"');
+		} else {
+			throw new ExecutionException("No supported root file has been selected: \"" + result + '\"');
 		}
 		job.setUser(true);
 		job.schedule();
 		return null;
 	}
 
-	private final class GradleImportJob extends Job {
-	
+	private static final class GradleImportJob extends Job {
+
 		private final File parentFile;
-	
-		private GradleImportJob(File parentFile) {
+
+		private GradleImportJob(final File parentFile) {
 			super("Import gradle project");
 			this.parentFile = parentFile;
 		}
-	
+
 		@Override
-		protected IStatus run(IProgressMonitor monitor) {
+		protected IStatus run(final IProgressMonitor monitor) {
 			try {
-				final IJavaProject project = new GradleImport(this.parentFile, true).importProject(monitor);
+				final var project = new GradleImport(this.parentFile, true).importProject(monitor);
 				if (project != null) {
 					project.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 				}
@@ -83,7 +79,8 @@ public class ProjectImportHandler extends AbstractHandler {
 			} catch (final NoRootFolderException e) {
 				LOGGER.log(Level.ERROR, e);
 				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "The import of the gradle project at \""
-						+ this.parentFile.getPath() + "\" failed. The root of the gradle project couldn't be found!", e);
+						+ this.parentFile.getPath() + "\" failed. The root of the gradle project couldn't be found!",
+						e);
 			} catch (IOException | ImportException e) {
 				LOGGER.log(Level.ERROR, e);
 				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
@@ -91,20 +88,20 @@ public class ProjectImportHandler extends AbstractHandler {
 			}
 		}
 	}
-	
-	private final class MavenImportJob extends Job {
-		
+
+	private static final class MavenImportJob extends Job {
+
 		private final File parentFile;
-	
-		private MavenImportJob(File parentFile) {
+
+		private MavenImportJob(final File parentFile) {
 			super("Import maven project");
 			this.parentFile = parentFile;
 		}
-	
+
 		@Override
-		protected IStatus run(IProgressMonitor monitor) {
+		protected IStatus run(final IProgressMonitor monitor) {
 			try {
-				final IJavaProject project = new MavenImport(this.parentFile, true).importProject(monitor);
+				final var project = new MavenImport(this.parentFile, true).importProject(monitor);
 				if (project != null) {
 					project.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 				}
@@ -117,7 +114,7 @@ public class ProjectImportHandler extends AbstractHandler {
 				LOGGER.log(Level.ERROR, e);
 				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "The import of the maven project at \""
 						+ this.parentFile.getPath() + "\" failed. The root of the maven project couldn't be found!", e);
-			} catch (ImportException e) {
+			} catch (final ImportException e) {
 				LOGGER.log(Level.ERROR, e);
 				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
 						"The import of the maven project at \"" + this.parentFile.getPath() + "\" failed.", e);

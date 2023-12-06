@@ -177,8 +177,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		}
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
 				bodyDeclaration, feature);
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -452,8 +452,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		}
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
 				bodyDeclaration, feature);
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -645,7 +645,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_1(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_0(Interface feature) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1161,8 +1161,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			return null;
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_1__INTERFACE:
-			return isAppropriate_BWD_Interface_1((Interface) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_0__INTERFACE:
+			return isAppropriate_BWD_Interface_0((Interface) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_0__INTERFACEDECLARATION:
 			return isAppropriate_FWD_InterfaceDeclaration_0((InterfaceDeclaration) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -1346,22 +1346,22 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__feature____target,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_1_5_registerobjects_expressionBBBBB(
@@ -1673,22 +1673,22 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__feature____target,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_11_5_registerobjects_expressionBBBBB(
@@ -2004,8 +2004,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_418809 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_418809 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_820528 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_820528 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2182,8 +2182,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenFBBB(
 			InterfaceDeclaration bodyDeclaration, Interface feature, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		ccMatch.getCreateCorr().add(b2e);
 		return new Object[] { b2e, bodyDeclaration, feature, ccMatch };
 	}
@@ -2211,8 +2211,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_868431 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_868431 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_598885 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_598885 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

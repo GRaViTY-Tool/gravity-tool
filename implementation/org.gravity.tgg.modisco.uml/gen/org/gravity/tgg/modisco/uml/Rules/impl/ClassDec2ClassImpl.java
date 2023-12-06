@@ -631,7 +631,7 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Class_1(org.eclipse.uml2.uml.Class feature) {
+	public EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature) {
 
 		Object[] result1_bindingAndBlack = ClassDec2ClassImpl
 				.pattern_ClassDec2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -749,13 +749,13 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -805,13 +805,13 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -1135,8 +1135,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 			return null;
 		case RulesPackage.CLASS_DEC2_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_1__CLASS:
-			return isAppropriate_BWD_Class_1((org.eclipse.uml2.uml.Class) arguments.get(0));
+		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_0__CLASS:
+			return isAppropriate_BWD_Class_0((org.eclipse.uml2.uml.Class) arguments.get(0));
 		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_0__MCLASS:
 			return isAppropriate_FWD_MClass_0((MClass) arguments.get(0));
 		case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -1960,8 +1960,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_21_2_testcorematchandDECs_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_130053 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_130053 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_1260 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_1260 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2163,8 +2163,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_27_1_matchtggpattern_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_301375 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_301375 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_948081 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_948081 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

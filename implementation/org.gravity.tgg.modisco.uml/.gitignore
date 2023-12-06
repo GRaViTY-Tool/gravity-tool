@@ -73,3 +73,6 @@ local.properties
 
 sh.exe.stackdump
 /testdata/
+
+# Generated unnecessary eMoflon handlers
+src/org/gravity/tgg/modisco/uml/org/moflon/tie/

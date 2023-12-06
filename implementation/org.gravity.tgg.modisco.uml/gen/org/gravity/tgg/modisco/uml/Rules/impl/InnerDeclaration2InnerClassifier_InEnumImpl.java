@@ -278,8 +278,8 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 				//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[17];
 				//nothing EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[18];
 				//nothing EMoflonEdge bodyDeclaration__jContainer____abstractTypeDeclaration = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[21];
 
 				Object[] result4_bindingAndBlack = InnerDeclaration2InnerClassifier_InEnumImpl
 						.pattern_InnerDeclaration2InnerClassifier_InEnum_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
@@ -617,15 +617,15 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 				//nothing EMoflonEdge p2p__jPackage____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge ne2ne__jContainer____source = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge p2p__uPackage____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge feature__uPackage____package = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge uPackage__feature____ownedType = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge uContainer__uPackage____package = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge uPackage__uContainer____ownedType = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge uContainer__uPackage____package = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge uPackage__uContainer____ownedType = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge feature__uPackage____package = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge uPackage__feature____ownedType = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge jPackage__jContainer____ownedElements = (EMoflonEdge) result3_green[17];
 				//nothing EMoflonEdge jContainer__jPackage____package = (EMoflonEdge) result3_green[18];
 				//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge ne2ne__uContainer____target = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[21];
 
 				Object[] result4_bindingAndBlack = InnerDeclaration2InnerClassifier_InEnumImpl
 						.pattern_InnerDeclaration2InnerClassifier_InEnum_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
@@ -786,7 +786,7 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_37(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InEnumImpl
 				.pattern_InnerDeclaration2InnerClassifier_InEnum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -847,7 +847,7 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_124(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_45(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InEnumImpl
 				.pattern_InnerDeclaration2InnerClassifier_InEnum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1319,10 +1319,10 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 			return null;
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_117__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_124__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_37__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_45__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_45((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1881,8 +1881,8 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 									if (jPackage.getOwnedElements().contains(jContainer)) {
 										if (bodyDeclaration.equals(b2e.getSource())) {
 											if (jContainer.getBodyDeclarations().contains(bodyDeclaration)) {
-												if (feature.equals(b2e.getTarget())) {
-													if (uContainer.equals(ne2ne.getTarget())) {
+												if (uContainer.equals(ne2ne.getTarget())) {
+													if (feature.equals(b2e.getTarget())) {
 														_result.add(new Object[] { feature, b2e, uPackage, jPackage,
 																bodyDeclaration, uContainer, jContainer, ne2ne, p2p });
 													}
@@ -1916,8 +1916,8 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 		EMoflonEdge jContainer__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jContainer____abstractTypeDeclaration = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String p2p__jPackage____source_name_prime = "source";
 		String ne2ne__jContainer____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
@@ -1928,8 +1928,8 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String jContainer__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String b2e__feature____target_name_prime = "target";
 		String ne2ne__uContainer____target_name_prime = "target";
+		String b2e__feature____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(b2e);
 		isApplicableMatch.getAllContextElements().add(uPackage);
@@ -1969,12 +1969,12 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 		bodyDeclaration__jContainer____abstractTypeDeclaration.setSrc(bodyDeclaration);
 		bodyDeclaration__jContainer____abstractTypeDeclaration.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jContainer____abstractTypeDeclaration);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
 		ne2ne__uContainer____target.setSrc(ne2ne);
 		ne2ne__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
 		p2p__jPackage____source.setName(p2p__jPackage____source_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
@@ -1987,14 +1987,14 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 				.setName(jContainer__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__jContainer____abstractTypeDeclaration
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { feature, b2e, uPackage, jPackage, bodyDeclaration, uContainer, jContainer, ne2ne, p2p,
 				isApplicableMatch, p2p__jPackage____source, ne2ne__jContainer____source, p2p__uPackage____target,
 				uContainer__uPackage____package, uPackage__uContainer____ownedType,
 				jPackage__jContainer____ownedElements, jContainer__jPackage____package, b2e__bodyDeclaration____source,
 				jContainer__bodyDeclaration____bodyDeclarations, bodyDeclaration__jContainer____abstractTypeDeclaration,
-				b2e__feature____target, ne2ne__uContainer____target };
+				ne2ne__uContainer____target, b2e__feature____target };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InEnum_2_4_solveCSP_bindingFBBBBBBBBBBB(
@@ -2536,17 +2536,17 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 					.getOppositeReferenceTyped(uPackage, JavaPackage2UmlPackage.class, "target")) {
 				org.eclipse.modisco.java.Package jPackage = p2p.getSource();
 				if (jPackage != null) {
-					for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(feature, ASTNode2Element.class, "target")) {
-						ASTNode tmpBodyDeclaration = b2e.getSource();
-						if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
-							AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
-							for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(uContainer, ASTNode2Element.class, "target")) {
+					for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(uContainer, ASTNode2Element.class, "target")) {
+						ASTNode tmpJContainer = ne2ne.getSource();
+						if (tmpJContainer instanceof EnumDeclaration) {
+							EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
+							for (ASTNode2Element b2e : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(feature, ASTNode2Element.class, "target")) {
 								if (!b2e.equals(ne2ne)) {
-									ASTNode tmpJContainer = ne2ne.getSource();
-									if (tmpJContainer instanceof EnumDeclaration) {
-										EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
+									ASTNode tmpBodyDeclaration = b2e.getSource();
+									if (tmpBodyDeclaration instanceof AbstractTypeDeclaration) {
+										AbstractTypeDeclaration bodyDeclaration = (AbstractTypeDeclaration) tmpBodyDeclaration;
 										if (!bodyDeclaration.equals(jContainer)) {
 											_result.add(new Object[] { feature, b2e, uPackage, jPackage,
 													bodyDeclaration, uContainer, jContainer, ne2ne, p2p, match });
@@ -2576,12 +2576,12 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 					if (jPackage.equals(p2p.getSource())) {
 						if (jContainer.equals(ne2ne.getSource())) {
 							if (uPackage.equals(p2p.getTarget())) {
-								if (uPackage.equals(feature.getPackage())) {
-									if (uPackage.equals(uContainer.getPackage())) {
+								if (uPackage.equals(uContainer.getPackage())) {
+									if (uPackage.equals(feature.getPackage())) {
 										if (jPackage.getOwnedElements().contains(jContainer)) {
 											if (bodyDeclaration.equals(b2e.getSource())) {
-												if (feature.equals(b2e.getTarget())) {
-													if (uContainer.equals(ne2ne.getTarget())) {
+												if (uContainer.equals(ne2ne.getTarget())) {
+													if (feature.equals(b2e.getTarget())) {
 														_result.add(new Object[] { feature, b2e, uPackage, jPackage,
 																bodyDeclaration, uContainer, jContainer, ne2ne, p2p });
 													}
@@ -2607,27 +2607,27 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 		EMoflonEdge p2p__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jContainer____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__uPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge feature__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge uPackage__feature____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uPackage__uContainer____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge feature__uPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge uPackage__feature____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__jContainer____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jContainer__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uContainer____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String p2p__jPackage____source_name_prime = "source";
 		String ne2ne__jContainer____source_name_prime = "source";
 		String p2p__uPackage____target_name_prime = "target";
-		String feature__uPackage____package_name_prime = "package";
-		String uPackage__feature____ownedType_name_prime = "ownedType";
 		String uContainer__uPackage____package_name_prime = "package";
 		String uPackage__uContainer____ownedType_name_prime = "ownedType";
+		String feature__uPackage____package_name_prime = "package";
+		String uPackage__feature____ownedType_name_prime = "ownedType";
 		String jPackage__jContainer____ownedElements_name_prime = "ownedElements";
 		String jContainer__jPackage____package_name_prime = "package";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		String b2e__feature____target_name_prime = "target";
 		String ne2ne__uContainer____target_name_prime = "target";
+		String b2e__feature____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(b2e);
 		isApplicableMatch.getAllContextElements().add(uPackage);
@@ -2646,18 +2646,18 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 		p2p__uPackage____target.setSrc(p2p);
 		p2p__uPackage____target.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(p2p__uPackage____target);
-		feature__uPackage____package.setSrc(feature);
-		feature__uPackage____package.setTrg(uPackage);
-		isApplicableMatch.getAllContextElements().add(feature__uPackage____package);
-		uPackage__feature____ownedType.setSrc(uPackage);
-		uPackage__feature____ownedType.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(uPackage__feature____ownedType);
 		uContainer__uPackage____package.setSrc(uContainer);
 		uContainer__uPackage____package.setTrg(uPackage);
 		isApplicableMatch.getAllContextElements().add(uContainer__uPackage____package);
 		uPackage__uContainer____ownedType.setSrc(uPackage);
 		uPackage__uContainer____ownedType.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(uPackage__uContainer____ownedType);
+		feature__uPackage____package.setSrc(feature);
+		feature__uPackage____package.setTrg(uPackage);
+		isApplicableMatch.getAllContextElements().add(feature__uPackage____package);
+		uPackage__feature____ownedType.setSrc(uPackage);
+		uPackage__feature____ownedType.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(uPackage__feature____ownedType);
 		jPackage__jContainer____ownedElements.setSrc(jPackage);
 		jPackage__jContainer____ownedElements.setTrg(jContainer);
 		isApplicableMatch.getAllContextElements().add(jPackage__jContainer____ownedElements);
@@ -2667,30 +2667,29 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(b2e__bodyDeclaration____source);
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
 		ne2ne__uContainer____target.setSrc(ne2ne);
 		ne2ne__uContainer____target.setTrg(uContainer);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uContainer____target);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(b2e__feature____target);
 		p2p__jPackage____source.setName(p2p__jPackage____source_name_prime);
 		ne2ne__jContainer____source.setName(ne2ne__jContainer____source_name_prime);
 		p2p__uPackage____target.setName(p2p__uPackage____target_name_prime);
-		feature__uPackage____package.setName(feature__uPackage____package_name_prime);
-		uPackage__feature____ownedType.setName(uPackage__feature____ownedType_name_prime);
 		uContainer__uPackage____package.setName(uContainer__uPackage____package_name_prime);
 		uPackage__uContainer____ownedType.setName(uPackage__uContainer____ownedType_name_prime);
+		feature__uPackage____package.setName(feature__uPackage____package_name_prime);
+		uPackage__feature____ownedType.setName(uPackage__feature____ownedType_name_prime);
 		jPackage__jContainer____ownedElements.setName(jPackage__jContainer____ownedElements_name_prime);
 		jContainer__jPackage____package.setName(jContainer__jPackage____package_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		ne2ne__uContainer____target.setName(ne2ne__uContainer____target_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { feature, b2e, uPackage, jPackage, bodyDeclaration, uContainer, jContainer, ne2ne, p2p,
 				isApplicableMatch, p2p__jPackage____source, ne2ne__jContainer____source, p2p__uPackage____target,
-				feature__uPackage____package, uPackage__feature____ownedType, uContainer__uPackage____package,
-				uPackage__uContainer____ownedType, jPackage__jContainer____ownedElements,
-				jContainer__jPackage____package, b2e__bodyDeclaration____source, b2e__feature____target,
-				ne2ne__uContainer____target };
+				uContainer__uPackage____package, uPackage__uContainer____ownedType, feature__uPackage____package,
+				uPackage__feature____ownedType, jPackage__jContainer____ownedElements, jContainer__jPackage____package,
+				b2e__bodyDeclaration____source, ne2ne__uContainer____target, b2e__feature____target };
 	}
 
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InEnum_12_4_solveCSP_bindingFBBBBBBBBBBB(
@@ -3252,8 +3251,8 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 	public static final Object[] pattern_InnerDeclaration2InnerClassifier_InEnum_28_1_matchtggpattern_blackBBB(
 			Classifier feature, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer) {
 		if (!feature.equals(uContainer)) {
-			if (uPackage.equals(feature.getPackage())) {
-				if (uPackage.equals(uContainer.getPackage())) {
+			if (uPackage.equals(uContainer.getPackage())) {
+				if (uPackage.equals(feature.getPackage())) {
 					return new Object[] { feature, uPackage, uContainer };
 				}
 			}

@@ -1,0 +1,4 @@
+{
+	"src/example/Client.java":["Supplier.method(List):boolean","Client.call(Supplier):void"],
+	"src/example/Supplier.java":["Supplier.method(List):boolean","Client.call(Supplier):void"]
+}

@@ -1,0 +1,4 @@
+{
+	"src/test/Access.java":["ExampleRecord.secret:String","Access.main(String[]):void"],
+	"src/test/ExampleRecord.java":["ExampleRecord.secret:String","Access.main(String[]):void"]
+}

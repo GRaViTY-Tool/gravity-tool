@@ -1,0 +1,30 @@
+{
+	"src/example/OuterClient.java": [
+		[
+			"InnerSupplier.method():void",
+			"InnerClient.call():void"
+		],
+		[
+			"OuterSupplier.method():void",
+			"InnerClient.call():void"
+		],
+		[
+			"OuterSupplier.method():void",
+			"InnerClient.call():void"
+		]
+	],
+	"src/example/OuterSupplier.java":[ 
+		[
+			"OuterSupplier.method():void",
+			"InnerClient.call():void"
+		],
+		[
+			"OuterSupplier.method():void",
+			"InnerClient.call():void"
+		],
+		[
+			"InnerSupplier.method():void",
+			"InnerClient.call():void"
+		]
+	]
+}

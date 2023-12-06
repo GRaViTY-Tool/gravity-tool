@@ -99,9 +99,9 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, ASTNode2Element cd2c2,
-			Interface superInterface, TypeAccess typeAcc, BehavioredClassifier umlClass, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element cd2c, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Interface superInterface, TypeAccess typeAcc,
+			InterfaceDeclaration superInterfaceDec, BehavioredClassifier umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,9 +117,9 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject ta2g, EObject classDec, EObject cd2c2,
-			EObject superInterface, EObject typeAcc, EObject umlClass, EObject cd2c, EObject interfaceRealization,
-			EObject superInterfaceDec);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject cd2c, EObject ta2g, EObject interfaceRealization,
+			EObject cd2c2, EObject classDec, EObject superInterface, EObject typeAcc, EObject superInterfaceDec,
+			EObject umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,8 +135,8 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Interface superInterface, BehavioredClassifier umlClass,
-			InterfaceRealization interfaceRealization);
+	boolean isAppropriate_BWD(Match match, InterfaceRealization interfaceRealization, Interface superInterface,
+			BehavioredClassifier umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,8 +160,8 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Interface superInterface, BehavioredClassifier umlClass,
-			InterfaceRealization interfaceRealization);
+	void registerObjectsToMatch_BWD(Match match, InterfaceRealization interfaceRealization, Interface superInterface,
+			BehavioredClassifier umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,8 +169,8 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Interface superInterface, BehavioredClassifier umlClass,
-			InterfaceRealization interfaceRealization);
+	CSP isAppropriate_solveCsp_BWD(Match match, InterfaceRealization interfaceRealization, Interface superInterface,
+			BehavioredClassifier umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,9 +186,9 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, ASTNode2Element cd2c2,
-			Interface superInterface, BehavioredClassifier umlClass, ASTNode2Element cd2c,
-			InterfaceRealization interfaceRealization, InterfaceDeclaration superInterfaceDec);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element cd2c,
+			InterfaceRealization interfaceRealization, ASTNode2Element cd2c2, ClassDeclaration classDec,
+			Interface superInterface, InterfaceDeclaration superInterfaceDec, BehavioredClassifier umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,9 +204,9 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject ta2g, EObject classDec, EObject cd2c2,
-			EObject superInterface, EObject typeAcc, EObject umlClass, EObject cd2c, EObject interfaceRealization,
-			EObject superInterfaceDec);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject cd2c, EObject ta2g, EObject interfaceRealization,
+			EObject cd2c2, EObject classDec, EObject superInterface, EObject typeAcc, EObject superInterfaceDec,
+			EObject umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_143(EMoflonEdge _edge_interfaceRealization);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_47(EMoflonEdge _edge_contract);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_154(EMoflonEdge _edge_superInterfaces);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_superInterfaces);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,9 +262,9 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(ClassDeclaration classDec, Interface superInterface, TypeAccess typeAcc,
-			BehavioredClassifier umlClass, InterfaceRealization interfaceRealization,
-			InterfaceDeclaration superInterfaceDec, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(InterfaceRealization interfaceRealization, ClassDeclaration classDec,
+			Interface superInterface, TypeAccess typeAcc, InterfaceDeclaration superInterfaceDec,
+			BehavioredClassifier umlClass, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,8 +288,8 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Interface superInterface, BehavioredClassifier umlClass,
-			InterfaceRealization interfaceRealization);
+	boolean checkDEC_BWD(InterfaceRealization interfaceRealization, Interface superInterface,
+			BehavioredClassifier umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,9 +306,9 @@ public interface TypeAccess2InterfaceRealization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec,
-			ASTNode2Element cd2c2, Interface superInterface, BehavioredClassifier umlClass, ASTNode2Element cd2c,
-			InterfaceDeclaration superInterfaceDec, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element cd2c, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Interface superInterface, InterfaceDeclaration superInterfaceDec,
+			BehavioredClassifier umlClass, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

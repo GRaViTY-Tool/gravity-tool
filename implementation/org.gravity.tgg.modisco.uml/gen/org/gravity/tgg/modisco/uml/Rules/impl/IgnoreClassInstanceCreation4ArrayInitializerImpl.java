@@ -481,7 +481,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -881,8 +881,8 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_140__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
+		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_2__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
