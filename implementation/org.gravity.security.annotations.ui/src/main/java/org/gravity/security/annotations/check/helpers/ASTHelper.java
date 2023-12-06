@@ -71,10 +71,12 @@ public class ASTHelper {
 			arrays++;
 		}
 
-		final var type = resolveTypeParameters(typeParameters, typeName.substring(arrays));
+		var type = typeName.substring(arrays);
+		if (type.charAt(0) == Util.C_TYPE_VARIABLE) {
+			type = resolveTypeParameters(typeParameters, type);
+		}
 
 		final var result = switch (type) {
-		case Signature.SIG_VOID -> void.class.toString();
 		case Signature.SIG_BOOLEAN -> boolean.class.toString();
 		case Signature.SIG_BYTE -> byte.class.toString();
 		case Signature.SIG_CHAR -> char.class.toString();
@@ -83,20 +85,29 @@ public class ASTHelper {
 		case Signature.SIG_INT -> int.class.toString();
 		case Signature.SIG_LONG -> long.class.toString();
 		case Signature.SIG_SHORT -> short.class.toString();
-		default -> fullyQualifiedNameForNonPrimitiveType(type, cu);
+		default -> fullyQualifiedNameForNonPrimitiveType(type, typeParameters, cu);
 		};
 		return buildArray(arrays, result);
 	}
 
-	private static String fullyQualifiedNameForNonPrimitiveType(final String type, final ICompilationUnit cu) {
+	private static String fullyQualifiedNameForNonPrimitiveType(final String typeSignature,
+			final ITypeParameter[] typeParameters, final ICompilationUnit cu) {
+		var type = typeSignature;
+
 		final var genericStart = type.indexOf(Util.C_GENERIC_START);
 		final var end = genericStart == -1 ? type.indexOf(Util.C_NAME_END) : genericStart;
+
 		final var prefix = type.charAt(0);
 		return switch (prefix) {
 		case Util.C_UNRESOLVED -> {
-			var resolvedType = findType(cu, type.substring(1, end));
+			type = type.substring(1, end);
+			if (genericStart == -1) {
+				// A type parameter cannot have type arguments
+				type = resolveTypeParameters(typeParameters, type);
+			}
+			var resolvedType = findType(cu, type);
 			if (resolvedType == null) {
-				resolvedType = type.substring(1, type.indexOf(';'));
+				resolvedType = type;
 				LOGGER.warn("Could not resolve type \"" + type + "\" in JDT, assuming \"" + resolvedType + ".\"");
 			}
 			yield resolvedType;
@@ -117,32 +128,29 @@ public class ASTHelper {
 	 * @param type           The type to be resolved
 	 * @return the resolved type signature
 	 */
-	private static String resolveTypeParameters(final ITypeParameter[] typeParameters, final String type) {
-		if (type.charAt(0) == Util.C_TYPE_VARIABLE) {
-			final var name = type.substring(1, type.lastIndexOf(';'));
-			final var result = Stream.of(typeParameters).filter(t -> t.getElementName().equals(name)).findAny();
-			if (result.isPresent()) {
-				final var param = result.get();
-				try {
-					final var bounds = param.getBoundsSignatures();
-					if (bounds.length > 0) {
-						if (bounds.length > 1) {
-							LOGGER.warn("Bounds of type parameter \"" + type
-									+ "\" mights have been processed falsely, bounds are: "
-									+ Stream.of(bounds).collect(Collectors.joining("\"", "\", \"", "\"")));
-						}
-						return bounds[0];
+	private static String resolveTypeParameters(final ITypeParameter[] typeParameters, final String name) {
+		final var result = Stream.of(typeParameters).filter(t -> t.getElementName().equals(name)).findAny();
+		if (result.isPresent()) {
+			final var param = result.get();
+			try {
+				final var bounds = param.getBoundsSignatures();
+				if (bounds.length > 0) {
+					if (bounds.length > 1) {
+						LOGGER.warn("Bounds of type parameter \"" + name
+								+ "\" mights have been processed falsely, bounds are: "
+								+ Stream.of(bounds).collect(Collectors.joining("\"", "\", \"", "\"")));
 					}
-					LOGGER.error("The bounds for the type parameter \"" + type
-							+ "\" have the size 0. Defined type parameters are: " + Stream.of(typeParameters)
-									.map(ITypeParameter::toString).collect(Collectors.joining("\"", "\", \"", "\"")));
-				} catch (final JavaModelException e) {
-					LOGGER.error(e);
+					return bounds[0];
 				}
+				LOGGER.error("The bounds for the type parameter \"" + name
+						+ "\" have the size 0. Defined type parameters are: " + Stream.of(typeParameters)
+								.map(ITypeParameter::toString).collect(Collectors.joining("\"", "\", \"", "\"")));
+				return "java.lang.Object";
+			} catch (final JavaModelException e) {
+				LOGGER.error(e);
 			}
-			return "Qjava.lang.Object;";
 		}
-		return type;
+		return name;
 	}
 
 	private static String findType(final ICompilationUnit cu, final String name) {

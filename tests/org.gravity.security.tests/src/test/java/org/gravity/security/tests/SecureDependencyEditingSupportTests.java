@@ -67,8 +67,7 @@ public class SecureDependencyEditingSupportTests {
 				final var analyzed = marker.getAttribute(SecurityMarkerUtil.MARKER_ATTR_ANALYZED);
 				if (analyzed instanceof final String value) {
 					final var foundSignatures = value.split(";");
-					for (final Object expectedMarker : getExpectedMarkers(expectations)) {
-						final var expextedSignatures = (List<?>) expectedMarker;
+					for (final var expextedSignatures : getExpectedMarkers(expectations)) {
 						if (foundSignatures.length == expextedSignatures.size()
 								&& Stream.of(foundSignatures).allMatch(expextedSignatures::contains)) {
 							return true;

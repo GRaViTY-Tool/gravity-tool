@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,6 +24,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
+import org.eclipse.jdt.core.ITypeParameter;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.compiler.BuildContext;
@@ -243,7 +245,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			String suffix;
 			try {
 				final var returnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(),
-						method.getTypeParameters());
+						getTypeParameters(method));
 				suffix = "):" + returnType.substring(returnType.lastIndexOf('.') + 1);
 			} catch (final JavaModelException e) {
 				LOGGER.error(e);
@@ -252,7 +254,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			final var type = context.getDeclaringType().getElementName();
 			return Stream.of(method.getParameterTypes()).map(p -> {
 				try {
-					final var fqn = ASTHelper.getFullyQualifiedName4JDT(cu, p, method.getTypeParameters());
+					final var fqn = ASTHelper.getFullyQualifiedName4JDT(cu, p, getTypeParameters(method));
 					return fqn.substring(fqn.lastIndexOf('.') + 1);
 				} catch (final JavaModelException e) {
 					LOGGER.error(e);
@@ -275,6 +277,21 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			return signature.toString();
 		}
 		return null;
+	}
+
+	private static ITypeParameter[] getTypeParameters(final IMethod method) throws JavaModelException {
+		final List<ITypeParameter> params = new LinkedList<>();
+		Collections.addAll(params, method.getTypeParameters());
+		IJavaElement parent = method.getDeclaringType();
+		while (parent != null) {
+			if (parent instanceof final IType type) {
+				Collections.addAll(params, type.getTypeParameters());
+			} else if (parent instanceof final IMethod outer) {
+				Collections.addAll(params, outer.getTypeParameters());
+			}
+			parent = parent.getParent();
+		}
+		return params.toArray(new ITypeParameter[0]);
 	}
 
 	static String getCorrespondingEntry(final IMember member, final Collection<String> signatures,
