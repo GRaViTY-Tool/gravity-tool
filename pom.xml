@@ -174,9 +174,9 @@
 
   <repositories>
     <repository>
-      <id>Eclipse 2023-09</id>
+      <id>Eclipse 2023-12</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2023-09</url>
+      <url>https://download.eclipse.org/releases/2023-12</url>
     </repository>
     <repository>
       <id>Papyrus 2023-06</id>
