@@ -40,6 +40,7 @@ import org.gravity.security.annotations.check.helpers.MemberHelper;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 import org.gravity.security.annotations.requirements.Integrity;
 import org.gravity.security.annotations.requirements.Secrecy;
+import org.gravity.security.annotations.ui.EnableSecurityCheckHandler;
 
 @SuppressWarnings("restriction")
 public class SecureDependencyCheck extends CompilationParticipant {
@@ -58,7 +59,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	@Override
 	public boolean isActive(final IJavaProject project) {
-		return true;
+		return EnableSecurityCheckHandler.checksEnabled();
 	}
 
 	@Override

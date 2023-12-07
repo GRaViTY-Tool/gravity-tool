@@ -12,14 +12,22 @@
    </extension>
    <extension
          point="org.eclipse.ui.menus">
-      <menuContribution
+      	<menuContribution
             allPopups="false"
             locationURI="popup:org.gravity.mainmenu">
-        <command
+        <menu
+            id="org.gravity.security.menu"
+            label="security">
+       		 <command
                   commandId="security.annotations.ui.add"
                   label="Add Security Annotations Library"
                   style="push">
-        </command>
+       		</command>
+        	<command
+                  commandId="security.annotations.ui.check.enable"
+                  style="push">
+        	</command>
+        </menu>
       </menuContribution>
    </extension>
     <extension
@@ -30,6 +38,22 @@
             name="Add Security Annotations Library">
          <defaultHandler
                class="org.gravity.security.annotations.ui.SecurityAnnotationsAdditionHandler">
+            <parameter
+                  name="org.gravity.security.annotations.ui.addlib.parameter"
+                  value="org.gravity.security.annotations.ui.addlib.parameter">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            defaultHandler="org.gravity.security.annotations.ui.EnableSecurityCheckHandler"
+            id="security.annotations.ui.check.enable"
+            name="Enable/Disable Secure Dependency Check">
+         <defaultHandler
+               class="org.gravity.security.annotations.ui.EnableSecurityCheckHandler">
+            <parameter
+                  name="org.gravity.security.annotations.ui.enable.check.parameter"
+                  value="org.gravity.security.annotations.ui.enable.check.parameter">
+            </parameter>
          </defaultHandler>
       </command>
     </extension>
