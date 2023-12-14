@@ -15,7 +15,7 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 	 *
 	 */
 	private final SecureDependencyCheck secureDependencyCheck;
-	private final IMember member;
+	private final IMember analyzedMember;
 	private final boolean secrecy;
 	private final MethodWrapper root;
 	private final boolean integrity;
@@ -25,12 +25,12 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 	IncomingAccessCheck(final SecureDependencyCheck secureDependencyCheck, final IMember member, final boolean secrecy,
 			final MethodWrapper root, final boolean integrity) {
 		this.secureDependencyCheck = secureDependencyCheck;
-		this.member = member;
+		this.analyzedMember = member;
 		this.cu = member.getCompilationUnit();
 		this.secrecy = secrecy;
 		this.root = root;
 		this.integrity = integrity;
-		this.analyzedMemberSignature = SecureDependencyCheck.getSignature(this.member);
+		this.analyzedMemberSignature = SecureDependencyCheck.getSignature(this.analyzedMember);
 
 	}
 
@@ -39,22 +39,22 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 		if (this.root == methodWrapper) {
 			return true;
 		}
-		final var caller = methodWrapper.getMember();
-		final var callingMemberSignature = SecureDependencyCheck.getSignature(caller);
-		SecurityMarkerUtil.deleteOldMarkers(caller.getResource(), this.analyzedMemberSignature,
+		final var callingMember = methodWrapper.getMember();
+		final var callingMemberSignature = SecureDependencyCheck.getSignature(callingMember);
+		SecurityMarkerUtil.deleteOldMarkers(callingMember.getResource(), this.analyzedMemberSignature,
 				this.secureDependencyCheck.timestamp);
 
 		IType type;
-		if (caller instanceof final IType itype) {
+		if (callingMember instanceof final IType itype) {
 			type = itype;
-		} else if (caller instanceof final LambdaMethod lambda) {
+		} else if (callingMember instanceof final LambdaMethod lambda) {
 			type = lambda.getOuterMostLocalContext().getDeclaringType();
 		} else {
-			type = caller.getDeclaringType();
+			type = callingMember.getDeclaringType();
 		}
 		final var callerAnnotations = this.secureDependencyCheck.getSecurityRequirements(type);
 
-		final var callerSecrecyRequirement = SecureDependencyCheck.getCorrespondingEntry(this.member,
+		final var callerSecrecyRequirement = SecureDependencyCheck.getCorrespondingEntry(this.analyzedMember,
 				callerAnnotations.getSecrecySignatures(), this.cu);
 		final var callerSecrecy = callerSecrecyRequirement != null;
 		if (callerSecrecy != this.secrecy) {
@@ -62,37 +62,43 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
 						"Secrecy is required but not provided by the accessed member!", this.analyzedMemberSignature,
 						callingMemberSignature);
-				SecurityMarkerUtil.createErrorMarker(this.member,
-						"Secrecy is required for this member by \"" + callingMemberSignature + "\"",
+				SecurityMarkerUtil.createErrorMarker(this.analyzedMember,
+						"Secrecy is required for this member by \""
+								+ SecureDependencyCheck.getSimpleSignature(callingMember) + "\"",
 						this.analyzedMemberSignature, callingMemberSignature);
 			} else {
-				SecurityMarkerUtil.createErrorMarker(this.member,
-						callingMemberSignature + " accesses this member without the required secrecy!",
+				SecurityMarkerUtil.createErrorMarker(this.analyzedMember,
+						SecureDependencyCheck.getSimpleSignature(callingMember)
+								+ " accesses this member without the required secrecy!",
 						this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"This class must specify secrecy for accessing \"" + this.analyzedMemberSignature + "\"!",
+						"This class must specify secrecy for accessing \""
+								+ SecureDependencyCheck.getSimpleSignature(this.analyzedMember) + "\"!",
 						this.analyzedMemberSignature, callingMemberSignature);
 
 			}
 		}
 
-		final var callerIntegrityRequirement = SecureDependencyCheck.getCorrespondingEntry(this.member,
+		final var callerIntegrityRequirement = SecureDependencyCheck.getCorrespondingEntry(this.analyzedMember,
 				callerAnnotations.getIntegritySignatures(), this.cu);
 		final var callerIntegrity = callerIntegrityRequirement != null;
 		if (callerIntegrity != this.integrity) {
 			if (callerIntegrity) {
-				SecurityMarkerUtil.createErrorMarker(this.member,
-						"Integrity is required for this member by \"" + callingMemberSignature + "\"",
+				SecurityMarkerUtil.createErrorMarker(this.analyzedMember,
+						"Integrity is required for this member by \""
+								+ SecureDependencyCheck.getSimpleSignature(callingMember) + "\"",
 						this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
 						"Integrity is required but not provided by the accessed member!", this.analyzedMemberSignature,
 						callingMemberSignature);
 			} else {
-				SecurityMarkerUtil.createErrorMarker(this.member,
-						callingMemberSignature + " accesses this member without the required integrity!",
+				SecurityMarkerUtil.createErrorMarker(this.analyzedMember,
+						SecureDependencyCheck.getSimpleSignature(callingMember)
+								+ " accesses this member without the required integrity!",
 						this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"This class must specify integrity for accessing \"" + this.analyzedMemberSignature + "\"!",
+						"This class must specify integrity for accessing \""
+								+ SecureDependencyCheck.getSimpleSignature(this.analyzedMember) + "\"!",
 						this.analyzedMemberSignature, callingMemberSignature);
 
 			}

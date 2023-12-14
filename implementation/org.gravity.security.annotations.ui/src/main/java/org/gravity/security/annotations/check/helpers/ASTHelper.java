@@ -1,22 +1,27 @@
 package org.gravity.security.annotations.check.helpers;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IImportDeclaration;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageDeclaration;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeParameter;
-import org.eclipse.jdt.core.ITypeRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.internal.compiler.util.Util;
@@ -56,11 +61,29 @@ public class ASTHelper {
 		return buildArray(array, resolvedType);
 	}
 
-	public static String getFullyQualifiedName4JDT(final ICompilationUnit cu, final String typeName) {
-		return getFullyQualifiedName4JDT(cu, typeName, new ITypeParameter[0]);
+	public static String getFullyQualifiedName4JDT(final ICompilationUnit cu, final String typeName,
+			final IMember context) throws JavaModelException {
+		return getFullyQualifiedName4JDT(cu, typeName, getTypeParameters(context));
 	}
 
-	public static String getFullyQualifiedName4JDT(final ICompilationUnit cu, final String typeName,
+	public static ITypeParameter[] getTypeParameters(final IMember member) throws JavaModelException {
+		final List<ITypeParameter> params = new LinkedList<>();
+		if (member instanceof final IMethod method) {
+			Collections.addAll(params, method.getTypeParameters());
+		}
+		IJavaElement parent = member.getDeclaringType();
+		while (parent != null) {
+			if (parent instanceof final IType type) {
+				Collections.addAll(params, type.getTypeParameters());
+			} else if (parent instanceof final IMethod outer) {
+				Collections.addAll(params, outer.getTypeParameters());
+			}
+			parent = parent.getParent();
+		}
+		return params.toArray(new ITypeParameter[0]);
+	}
+
+	private static String getFullyQualifiedName4JDT(final ICompilationUnit cu, final String typeName,
 			final ITypeParameter[] typeParameters) {
 		if (typeName.length() == 1 && typeName.charAt(0) == Util.C_VOID) {
 			return "void";
@@ -102,13 +125,16 @@ public class ASTHelper {
 		case Util.C_UNRESOLVED -> {
 			type = type.substring(1, end);
 			if (genericStart == -1) {
-				// A type parameter cannot have type arguments
-				type = resolveTypeParameters(typeParameters, type);
+				final var typeParam = findTypeParameter(typeParameters, type);
+				if (typeParam.isPresent()) {
+					yield getFullyQualifiedName4JDT(cu, resolveTypeParameter(typeParam.get()), typeParameters);
+				}
 			}
 			var resolvedType = findType(cu, type);
 			if (resolvedType == null) {
 				resolvedType = type;
-				LOGGER.warn("Could not resolve type \"" + type + "\" in JDT, assuming \"" + resolvedType + ".\"");
+				LOGGER.warn("Could not resolve the type \"" + type + "\" used in the scope of \""
+						+ cu.getResource().getName() + "\", assuming \"" + resolvedType + "\".");
 			}
 			yield resolvedType;
 		}
@@ -120,6 +146,11 @@ public class ASTHelper {
 		};
 	}
 
+	private static Optional<ITypeParameter> findTypeParameter(final ITypeParameter[] typeParameters,
+			final String type) {
+		return Stream.of(typeParameters).filter(t -> t.getElementName().equals(type)).findAny();
+	}
+
 	/**
 	 * Checks whether the type is a type parameter and returns the most general type
 	 * that can be expected
@@ -129,28 +160,32 @@ public class ASTHelper {
 	 * @return the resolved type signature
 	 */
 	private static String resolveTypeParameters(final ITypeParameter[] typeParameters, final String name) {
-		final var result = Stream.of(typeParameters).filter(t -> t.getElementName().equals(name)).findAny();
+		final var result = findTypeParameter(typeParameters, name);
 		if (result.isPresent()) {
-			final var param = result.get();
-			try {
-				final var bounds = param.getBoundsSignatures();
-				if (bounds.length > 0) {
-					if (bounds.length > 1) {
-						LOGGER.warn("Bounds of type parameter \"" + name
-								+ "\" mights have been processed falsely, bounds are: "
-								+ Stream.of(bounds).collect(Collectors.joining("\"", "\", \"", "\"")));
-					}
-					return bounds[0];
-				}
-				LOGGER.error("The bounds for the type parameter \"" + name
-						+ "\" have the size 0. Defined type parameters are: " + Stream.of(typeParameters)
-								.map(ITypeParameter::toString).collect(Collectors.joining("\"", "\", \"", "\"")));
-				return "java.lang.Object";
-			} catch (final JavaModelException e) {
-				LOGGER.error(e);
+			final var type = resolveTypeParameter(result.get());
+			if (type != null) {
+				return type;
 			}
 		}
 		return name;
+	}
+
+	private static String resolveTypeParameter(final ITypeParameter param) {
+		try {
+			final var bounds = param.getBoundsSignatures();
+			if (bounds.length > 0) {
+				if (bounds.length > 1) {
+					LOGGER.warn("Bounds of type parameter \"" + param.getElementName()
+							+ "\" mights have been processed falsely, bounds are: "
+							+ Stream.of(bounds).collect(Collectors.joining("\"", "\", \"", "\"")));
+				}
+				return bounds[0];
+			}
+			return "Qjava.lang.Object;";
+		} catch (final JavaModelException e) {
+			LOGGER.error(e);
+			return null;
+		}
 	}
 
 	private static String findType(final ICompilationUnit cu, final String name) {
@@ -160,6 +195,13 @@ public class ASTHelper {
 				return name;
 			}
 
+			// Search inner types
+			for (final var defined : cu.getAllTypes()) {
+				if (defined.getElementName().equals(name)) {
+					return defined.getFullyQualifiedName();
+				}
+			}
+
 			// Search the imports for the type
 			final var importedType = searchTypeInImports(cu, name);
 			if (importedType != null) {
@@ -167,18 +209,15 @@ public class ASTHelper {
 			}
 
 			// Search java.lang for the type
-			final var packageFragment = getPackageFragment(cu.getJavaProject(), "java.lang");
-			if (packageFragment != null) {
-				final var fullyQualifiedName = findTypeInPackage(name, packageFragment);
-				if (fullyQualifiedName != null) {
-					return fullyQualifiedName;
-				}
+			final var javaType = cu.getJavaProject().findType("java.lang", name);
+			if (javaType != null) {
+				return javaType.getFullyQualifiedName();
 			}
 
 			// Search the own package
 			final var type = findTypeOwnPackage(cu, name);
 			if (type != null) {
-				return type;
+				return type.getFullyQualifiedName();
 			}
 
 			final var qualifiedType = findQualifiedTypeUsage(cu, name);
@@ -198,17 +237,17 @@ public class ASTHelper {
 			for (final IField field : definedType.getFields()) {
 				final var fieldType = field.getTypeSignature();
 				if (isQualifiedVersion(name, fieldType)) {
-					return getFullyQualifiedName4JDT(cu, fieldType);
+					return getFullyQualifiedName4JDT(cu, fieldType, field);
 				}
 			}
 			for (final IMethod method : definedType.getMethods()) {
 				final var returnType = method.getReturnType();
 				if (isQualifiedVersion(name, returnType)) {
-					return getFullyQualifiedName4JDT(cu, returnType);
+					return getFullyQualifiedName4JDT(cu, returnType, method);
 				}
 				for (final String parameterType : method.getParameterTypes()) {
 					if (isQualifiedVersion(name, parameterType)) {
-						return getFullyQualifiedName4JDT(cu, parameterType);
+						return getFullyQualifiedName4JDT(cu, parameterType, method);
 					}
 				}
 			}
@@ -241,27 +280,71 @@ public class ASTHelper {
 	private static String searchTypeInImports(final ICompilationUnit cu, final String name) throws JavaModelException {
 		if (cu != null) {
 			for (final IImportDeclaration imp : cu.getImports()) {
-				final var importName = imp.getElementName();
+				var importName = imp.getElementName();
 
-				if (Util.C_STAR == importName.charAt(importName.length() - 1)) {
+				if (imp.isOnDemand()) {
 					// Resolve import all
 					final var packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
-					final var packageFragment = getPackageFragment(cu.getJavaProject(), packageName);
-					if (packageFragment != null) {
-						final var fullyQualifiedName = findTypeInPackage(name, packageFragment);
-						if (fullyQualifiedName != null) {
-							return fullyQualifiedName;
-						}
+					final var importedType = findType(cu, name, packageName);
+					if (importedType != null) {
+						return importedType.getFullyQualifiedName();
 					}
-
 				} else {
-					// Check imported types
 					final var simpleName = getSimpleName(importName);
 					if (simpleName.equals(name)) {
-						return imp.getElementName();
+						return importName;
+					}
+
+					// Check imported types
+					String memberName = null;
+					if (Flags.isStatic(imp.getFlags())) {
+						final var index = importName.lastIndexOf(Util.C_DOT);
+						memberName = importName.substring(index + 1);
+						importName = importName.substring(0, index);
+					}
+
+					// Search using JDT
+					var importedType = cu.getJavaProject().findType(importName);
+					if (importedType == null) {
+						// Try manual search in packages
+						final var packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
+						importedType = findType(cu, simpleName, packageName);
+
+					}
+					if (importedType != null) {
+						// Check if the member represents an inner type
+						importedType = optionallyReplaceWithInnerType(importedType, memberName);
+						if (importedType.getElementName().equals(name)) {
+							return importedType.getFullyQualifiedName();
+						}
 					}
 				}
 			}
+		}
+		return null;
+	}
+
+	private static IType optionallyReplaceWithInnerType(final IType type, final String memberName)
+			throws JavaModelException {
+		if (memberName != null) {
+			for (final var inner : type.getTypes()) {
+				if (inner.getElementName().equals(memberName)) {
+					return inner;
+				}
+			}
+		}
+		return type;
+	}
+
+	private static IType findType(final ICompilationUnit cu, final String simpleName, final String packageName)
+			throws JavaModelException {
+		final var type = cu.getJavaProject().findType(packageName, simpleName);
+		if (type != null) {
+			return type;
+		}
+		final var packageFragment = getPackageFragment(cu.getJavaProject(), packageName);
+		if (packageFragment != null) {
+			return findTypeInPackage(simpleName, packageFragment);
 		}
 		return null;
 	}
@@ -286,19 +369,16 @@ public class ASTHelper {
 	 *
 	 * @param cu
 	 * @param name
-	 * @return
+	 * @return the type object
 	 * @throws JavaModelException
 	 */
-	private static String findTypeOwnPackage(final ICompilationUnit cu, final String name) throws JavaModelException {
+	private static IType findTypeOwnPackage(final ICompilationUnit cu, final String name) throws JavaModelException {
 		if (cu != null) {
 			for (final IPackageDeclaration packageDeclaration : cu.getPackageDeclarations()) {
-				final var cuPackageFragment = getPackageFragment(cu.getJavaProject(),
-						packageDeclaration.getElementName());
-				if (cuPackageFragment != null) {
-					final var ownName = findTypeInPackage(name, cuPackageFragment);
-					if (ownName != null) {
-						return ownName;
-					}
+				final var packageName = packageDeclaration.getElementName();
+				final var type = findType(cu, name, packageName);
+				if (type != null) {
+					return type;
 				}
 			}
 		}
@@ -313,12 +393,19 @@ public class ASTHelper {
 		return typeSignature.toString();
 	}
 
-	private static String findTypeInPackage(final String name, final IPackageFragment packageFragment)
+	private static IType findTypeInPackage(final String name, final IPackageFragment packageFragment)
 			throws JavaModelException {
-		for (final IJavaElement child : packageFragment.getChildren()) {
-			final var primaryType = ((ITypeRoot) child).findPrimaryType();
-			if (primaryType.getElementName().equals(name)) {
-				return primaryType.getFullyQualifiedName();
+		for (final var cu : packageFragment.getCompilationUnits()) {
+			for (final var type : cu.getTypes()) {
+				if (type.getElementName().equals(name)) {
+					return type;
+				}
+			}
+		}
+		for (final var cf : packageFragment.getOrdinaryClassFiles()) {
+			final var type = cf.getType();
+			if (type.getElementName().equals(name)) {
+				return type;
 			}
 		}
 		return null;
@@ -329,9 +416,8 @@ public class ASTHelper {
 		for (final IPackageFragmentRoot root : project.getAllPackageFragmentRoots()) {
 			for (final IJavaElement element : root.getChildren()) {
 				if (element instanceof final IPackageFragment packageFragment
-						&& (packageFragment.getElementName().equals(packageName))) {
+						&& packageFragment.getElementName().equals(packageName)) {
 					return packageFragment;
-
 				}
 			}
 		}

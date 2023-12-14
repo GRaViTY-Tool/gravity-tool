@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,7 +23,6 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.core.ITypeParameter;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.compiler.BuildContext;
@@ -104,7 +102,13 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	 */
 	private void checkIncomingAccesses(final IMember member, final boolean secrecy, final boolean integrity) {
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
-			root.accept(new IncomingAccessCheck(this, member, secrecy, root, integrity), new NullProgressMonitor());
+			try {
+				root.accept(new IncomingAccessCheck(this, member, secrecy, root, integrity), new NullProgressMonitor());
+			} catch (final Exception e) {
+				// Only log all errors and let JDT handle the compile errors
+				LOGGER.error("Searching incoming accesses for \"" + getSignature(member) + "\".");
+				LOGGER.error(e);
+			}
 		}
 	}
 
@@ -121,8 +125,14 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		final Collection<IMember> accessedMembers = new HashSet<>();
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
 			// Check outgoing calls
-			root.accept(new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements),
-					new NullProgressMonitor());
+			try {
+				root.accept(new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements),
+						new NullProgressMonitor());
+			} catch (final Exception e) {
+				// Only log all errors and let JDT handle the compile errors
+				LOGGER.error("Searching outgoing accesses for \"" + getSignature(caller) + "\".");
+				LOGGER.error(e);
+			}
 		}
 		return accessedMembers;
 	}
@@ -201,12 +211,12 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				memberAnnotations = Collections.emptyList();
 			}
 
-			if (this.removeMember(method, requirement.getSecrecySignatures(), cu)
+			if (getCorrespondingEntry(method, requirement.getSecrecySignatures(), cu) != null
 					|| memberAnnotations.contains(Secrecy.class.getSimpleName())) {
 				requirement.addSecrecyMember(method);
 			}
 
-			if (this.removeMember(method, requirement.getIntegritySignatures(), cu)
+			if (getCorrespondingEntry(method, requirement.getIntegritySignatures(), cu) != null
 					|| memberAnnotations.contains(Integrity.class.getSimpleName())) {
 				requirement.addIntegrityMember(method);
 			}
@@ -222,6 +232,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 					|| elementType == IJavaElement.INITIALIZER) {
 				final var member = (IMember) element;
 				requirement.addMember(member);
+			} else if (elementType == IJavaElement.TYPE) {
+				// We do not want to consider inner classes as members
 			} else {
 				LOGGER.info("The member \"" + element + "\" will not be analyzed.");
 			}
@@ -234,65 +246,6 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			return signatures.remove(remove);
 		}
 		return false;
-	}
-
-	static String getSignature(final IMember member) {
-		var context = member;
-		if (member instanceof final LambdaMethod lambda) {
-			context = lambda.getOuterMostLocalContext();
-		}
-		final var cu = context.getCompilationUnit();
-		if (context instanceof final IMethod method) {
-			String suffix;
-			try {
-				final var returnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(),
-						getTypeParameters(method));
-				suffix = "):" + returnType.substring(returnType.lastIndexOf('.') + 1);
-			} catch (final JavaModelException e) {
-				LOGGER.error(e);
-				suffix = ")";
-			}
-			final var type = context.getDeclaringType().getElementName();
-			return Stream.of(method.getParameterTypes()).map(p -> {
-				try {
-					final var fqn = ASTHelper.getFullyQualifiedName4JDT(cu, p, getTypeParameters(method));
-					return fqn.substring(fqn.lastIndexOf('.') + 1);
-				} catch (final JavaModelException e) {
-					LOGGER.error(e);
-					// Fallback: Object
-					return "java.lang.Object";
-				}
-			}).collect(Collectors.joining(",", type + '.' + method.getElementName() + '(', suffix));
-		}
-		if (context instanceof final IField field) {
-			final var signature = new StringBuilder(context.getDeclaringType().getElementName());
-			signature.append('.');
-			signature.append(field.getElementName());
-			try {
-				final var type = ASTHelper.getFullyQualifiedName4JDT(cu, field.getTypeSignature());
-				signature.append(':');
-				signature.append(type.substring(type.lastIndexOf(':') + 1));
-			} catch (final CoreException e) {
-				LOGGER.error(e);
-			}
-			return signature.toString();
-		}
-		return null;
-	}
-
-	private static ITypeParameter[] getTypeParameters(final IMethod method) throws JavaModelException {
-		final List<ITypeParameter> params = new LinkedList<>();
-		Collections.addAll(params, method.getTypeParameters());
-		IJavaElement parent = method.getDeclaringType();
-		while (parent != null) {
-			if (parent instanceof final IType type) {
-				Collections.addAll(params, type.getTypeParameters());
-			} else if (parent instanceof final IMethod outer) {
-				Collections.addAll(params, outer.getTypeParameters());
-			}
-			parent = parent.getParent();
-		}
-		return params.toArray(new ITypeParameter[0]);
 	}
 
 	static String getCorrespondingEntry(final IMember member, final Collection<String> signatures,
@@ -310,7 +263,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 			for (final String signature : signatures) {
 				try {
-					if (MemberHelper.isExpectedMethod(member, cu, name, method, signature)) {
+					if (MemberHelper.isExpectedMethod(cu, name, method, signature)) {
 						return signature;
 					}
 				} catch (final JavaModelException e) {
@@ -322,17 +275,112 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			final var field = (IField) context;
 
 			for (final String signature : signatures) {
-				if (MemberHelper.isExpectedField(member, cu, name, field, signature)) {
+				if (MemberHelper.isExpectedField(cu, name, field, signature)) {
 					return signature;
 				}
 			}
 			break;
-		case IJavaElement.TYPE, IJavaElement.INITIALIZER:
-			LOGGER.warn("Skipped getting corresponding entry for an IMember: " + member);
+		case IJavaElement.TYPE:
+			// Handle default constructor
+			final var constructor = (IType) member;
+			for (final String signature : signatures) {
+				if (MemberHelper.isExpectedConstructor(cu, name, constructor, signature)) {
+					return signature;
+				}
+			}
+			break;
+		case IJavaElement.INITIALIZER:
+			// Skip silently
 			break;
 		default:
 			throw new IllegalStateException("Unhandled member type: " + member.getElementType());
 		}
 		return null;
+	}
+
+	static String getSignature(final IMember member) {
+		return getSignature(member, false);
+	}
+
+	static String getSignature(final IMember member, final boolean simple) {
+		var context = member;
+		if (member instanceof final LambdaMethod lambda) {
+			context = lambda.getOuterMostLocalContext();
+		}
+		final var cu = context.getCompilationUnit();
+		if (context instanceof final IMethod method) {
+			String suffix;
+			try {
+				if (method.isConstructor()) {
+					suffix = ")";
+				} else {
+					final var returnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(), method);
+					suffix = "):";
+					if (simple) {
+						suffix += returnType.substring(returnType.lastIndexOf('.') + 1);
+					} else {
+						suffix += returnType;
+					}
+				}
+			} catch (final JavaModelException e) {
+				LOGGER.error(e);
+				suffix = ")";
+			}
+			final var type = getNameOfDeclaringType(context, simple);
+			return Stream.of(method.getParameterTypes()).map(p -> {
+				try {
+					final var name = ASTHelper.getFullyQualifiedName4JDT(cu, p, method);
+					if (simple) {
+						return name.substring(name.lastIndexOf('.') + 1);
+					}
+					return name;
+				} catch (final JavaModelException e) {
+					LOGGER.error(e);
+					return null;
+				}
+			}).collect(Collectors.joining(",", type + '.' + method.getElementName() + '(', suffix));
+		}
+		if (context instanceof final IField field) {
+			final var signature = new StringBuilder(getNameOfDeclaringType(context, simple));
+			signature.append('.');
+			signature.append(field.getElementName());
+			try {
+				final var type = ASTHelper.getFullyQualifiedName4JDT(cu, field.getTypeSignature(), field);
+				signature.append(':');
+				if (simple) {
+					signature.append(type.substring(type.lastIndexOf('.') + 1));
+				} else {
+					signature.append(type);
+				}
+			} catch (final CoreException e) {
+				LOGGER.error(e);
+			}
+			return signature.toString();
+		}
+		if (context instanceof final IType constructor) {
+			final var name = constructor.getElementName();
+			String typeName;
+			if (simple) {
+				typeName = name;
+			} else {
+				typeName = constructor.getFullyQualifiedName();
+			}
+			return typeName + '.' + name + "()";
+		}
+		return null;
+	}
+
+	private static String getNameOfDeclaringType(final IMember member, final boolean simple) {
+		String type;
+		if (simple) {
+			type = member.getDeclaringType().getElementName();
+		} else {
+			type = member.getDeclaringType().getFullyQualifiedName();
+		}
+		return type;
+	}
+
+	static String getSimpleSignature(final IMember member) {
+		return getSignature(member, true);
 	}
 }

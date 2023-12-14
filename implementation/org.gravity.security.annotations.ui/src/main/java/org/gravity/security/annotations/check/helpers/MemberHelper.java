@@ -3,28 +3,38 @@ package org.gravity.security.annotations.check.helpers;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IMethod;
+import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 
 public class MemberHelper {
+
+	private static final Logger LOGGER = Logger.getLogger(MemberHelper.class);
 
 	private MemberHelper() {
 		// This class only provides static methods
 	}
 
-	public static boolean isExpectedField(final IMember member, final ICompilationUnit cu, final String name,
-			final IField field, final String signature) {
-		return isInExpectedType(signature, member, cu) && isFieldWithName(name, signature)
+	public static boolean isExpectedField(final ICompilationUnit cu, final String name, final IField field,
+			final String signature) {
+		return isInExpectedType(signature, field, cu) && isFieldWithName(name, signature)
 				&& compareFieldType(field, signature);
 	}
 
-	public static boolean isExpectedMethod(final IMember member, final ICompilationUnit cu, final String name,
-			final IMethod method, final String signature) throws JavaModelException {
-		return isInExpectedType(signature, member, cu) && isMethodWithName(name, signature)
+	public static boolean isExpectedMethod(final ICompilationUnit cu, final String name, final IMethod method,
+			final String signature) throws JavaModelException {
+		return isInExpectedType(signature, method, cu) && isMethodWithName(name, signature)
 				&& compareReturnType(method, signature) && compareParameters(method, signature);
+	}
+
+	public static boolean isExpectedConstructor(final ICompilationUnit cu, final String name, final IType constructor,
+			final String signature) {
+		return isInExpectedType(signature, constructor, cu) && isMethodWithName(name, signature)
+				&& signature.substring(signature.indexOf('('), signature.lastIndexOf(')') - 1).isBlank();
 	}
 
 	private static boolean isInExpectedType(final String signature, final IMember member, final ICompilationUnit cu) {
@@ -56,7 +66,7 @@ public class MemberHelper {
 			final var signatureType = ASTHelper.getFullyQualifiedName4Text(field.getCompilationUnit(),
 					signature.substring(signature.indexOf(':') + 1));
 			final var fieldType = ASTHelper.getFullyQualifiedName4JDT(field.getCompilationUnit(),
-					field.getTypeSignature());
+					field.getTypeSignature(), field);
 			return signatureType.equals(fieldType);
 		} catch (final JavaModelException e) {
 			throw new IllegalStateException(e);
@@ -79,8 +89,14 @@ public class MemberHelper {
 		if (signaturePlainParameters.length == methodPlainParameters.length) {
 			final var signatureParameters = Stream.of(signaturePlainParameters).map(String::trim)
 					.map(p -> ASTHelper.getFullyQualifiedName4Text(method.getCompilationUnit(), p)).toList();
-			final var methodParameters = Stream.of(methodPlainParameters)
-					.map(p -> ASTHelper.getFullyQualifiedName4JDT(method.getCompilationUnit(), p)).toList();
+			final var methodParameters = Stream.of(methodPlainParameters).map(p -> {
+				try {
+					return ASTHelper.getFullyQualifiedName4JDT(method.getCompilationUnit(), p, method);
+				} catch (final JavaModelException e) {
+					LOGGER.error(e);
+					return null;
+				}
+			}).toList();
 			if (equals(signatureParameters, methodParameters)) {
 				return true;
 			}
@@ -102,7 +118,7 @@ public class MemberHelper {
 		} else {
 			signatureReturnType = "void";
 		}
-		final var methodReturnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType());
+		final var methodReturnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(), method);
 		return methodReturnType.equals(signatureReturnType);
 	}
 
@@ -114,5 +130,4 @@ public class MemberHelper {
 		}
 		return true;
 	}
-
 }

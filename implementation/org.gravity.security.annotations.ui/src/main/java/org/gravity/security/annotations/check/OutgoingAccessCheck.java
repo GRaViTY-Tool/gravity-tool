@@ -24,12 +24,14 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 	private final ICompilationUnit cu;
 	private final String analyzedMemberSignature;
 	private final IType type;
+	private final IMember analyzedMember;
 
 	OutgoingAccessCheck(final SecureDependencyCheck secureDependencyCheck, final Collection<IMember> accessedMembers,
 			final MethodWrapper root, final IMember caller, final SecurityRequirements requirements) {
 		this.outgoing = secureDependencyCheck;
 		this.accessedMembers = accessedMembers;
 		this.root = root;
+		this.analyzedMember = caller;
 		this.cu = caller.getCompilationUnit();
 		this.type = caller.getDeclaringType();
 		this.secrecySignatures = requirements.getSecrecySignatures();
@@ -43,13 +45,18 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 			return true;
 		}
 		final var calledMember = methodWrapper.getMember();
-		if (calledMember instanceof IType) {
-			return false;
-		}
+
 		SecurityMarkerUtil.deleteOldMarkers(calledMember.getResource(), this.analyzedMemberSignature,
 				this.outgoing.timestamp);
 
-		final var calleeRequirements = this.outgoing.getSecurityRequirements(calledMember.getDeclaringType());
+		IType declaringType;
+		if (calledMember instanceof final IType itype) {
+			// Call to default constructor
+			declaringType = itype;
+		} else {
+			declaringType = calledMember.getDeclaringType();
+		}
+		final var calleeRequirements = this.outgoing.getSecurityRequirements(declaringType);
 
 		final var callerSecrecyRequirement = SecureDependencyCheck.getCorrespondingEntry(calledMember,
 				this.secrecySignatures, this.cu);
@@ -57,23 +64,26 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		if (callerSecrey) {
 			this.accessedMembers.add(calledMember);
 		}
-		if (callerSecrey != calleeRequirements.isSecrecyMember(calledMember)) {
+		if (callerSecrey != (calleeRequirements.isSecrecyMember(calledMember) || SecureDependencyCheck
+				.getCorrespondingEntry(calledMember, calleeRequirements.getSecrecySignatures(), this.cu) != null)) {
 			final var calledMemberSignature = SecureDependencyCheck.getSignature(calledMember);
 			if (callerSecrey) {
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
 						"Secrecy is required but not provided by the accessed member!", this.analyzedMemberSignature,
 						calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
-						"Secrecy is required for this member by \"" + this.analyzedMemberSignature + "\"",
+						"Secrecy is required for this member by \""
+								+ SecureDependencyCheck.getSimpleSignature(this.analyzedMember) + "\"",
 						this.analyzedMemberSignature, calledMemberSignature);
 
 			} else {
-				SecurityMarkerUtil.createErrorMarker(
-						methodWrapper.getMethodCall(), "The class \"" + this.type.getElementName()
-								+ "\" must specify secrecy for accessing \"" + calledMemberSignature + "\"!",
+				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
+						"The class \"" + this.type.getElementName() + "\" must specify secrecy for accessing \""
+								+ SecureDependencyCheck.getSimpleSignature(calledMember) + "\"!",
 						this.analyzedMemberSignature, calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
-						this.analyzedMemberSignature + " accesses this member without the required secrecy!",
+						SecureDependencyCheck.getSimpleSignature(this.analyzedMember)
+								+ " accesses this member without the required secrecy!",
 						this.analyzedMemberSignature, calledMemberSignature);
 			}
 		}
@@ -84,22 +94,25 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		if (callerIntegrity) {
 			this.accessedMembers.add(calledMember);
 		}
-		if (callerIntegrity != calleeRequirements.isIntegrityMember(calledMember)) {
+		if (callerIntegrity != (calleeRequirements.isIntegrityMember(calledMember) || SecureDependencyCheck
+				.getCorrespondingEntry(calledMember, calleeRequirements.getIntegritySignatures(), this.cu) != null)) {
 			final var calledMemberSignature = SecureDependencyCheck.getSignature(calledMember);
 			if (callerIntegrity) {
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
 						"Integrity is required but not provided by the accessed member!", this.analyzedMemberSignature,
 						calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
-						"Integrity is required for this member by \"" + this.analyzedMemberSignature + "\"",
+						"Integrity is required for this member by \""
+								+ SecureDependencyCheck.getSimpleSignature(this.analyzedMember) + "\"",
 						this.analyzedMemberSignature, calledMemberSignature);
 			} else {
-				SecurityMarkerUtil.createErrorMarker(
-						methodWrapper.getMethodCall(), "The class \"" + this.type.getElementName()
-								+ "\" must specify integrity for accessing \"" + calledMemberSignature + "\"!",
+				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
+						"The class \"" + this.type.getElementName() + "\" must specify integrity for accessing \""
+								+ SecureDependencyCheck.getSimpleSignature(calledMember) + "\"!",
 						this.analyzedMemberSignature, calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
-						this.analyzedMemberSignature + " accesses this member without the required integrity!",
+						SecureDependencyCheck.getSimpleSignature(this.analyzedMember)
+								+ " accesses this member without the required integrity!",
 						this.analyzedMemberSignature, calledMemberSignature);
 
 			}

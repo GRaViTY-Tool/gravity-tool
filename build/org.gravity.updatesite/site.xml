@@ -18,11 +18,11 @@
    <feature url="features/org.gravity.features.eclipse_1.0.0.qualifier.jar" id="org.gravity.features.eclipse" version="1.0.0.qualifier">
       <category name="org.gravity.basics"/>
    </feature>
-   <feature url="features/org.gravity.features.security_1.0.2.qualifier.jar" id="org.gravity.features.security" version="1.0.0.qualifier">
-      <category name="org.gravity.security"/>
-   </feature>
    <feature url="features/org.gravity.features.uml_1.0.0.qualifier.jar" id="org.gravity.features.uml" version="1.0.0.qualifier">
       <category name="org.gravity.uml"/>
+   </feature>
+   <feature url="features/org.gravity.features.security_1.0.3.qualifier.jar" id="org.gravity.features.security" version="1.0.3.qualifier">
+      <category name="org.gravity.security"/>
    </feature>
    <category-def name="org.gravity.basics" label="Parsing">
       <description>

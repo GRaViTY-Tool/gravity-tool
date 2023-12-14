@@ -2,7 +2,7 @@
 <feature
       id="org.gravity.features.security"
       label="GRaViTY Security"
-      version="1.0.2.qualifier"
+      version="1.0.3.qualifier"
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0.qualifier">
 
@@ -27,29 +27,17 @@
          version="0.0.0"/>
 
    <requires>
-      <import plugin="org.eclipse.core.resources"/>
       <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
       <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.apache.log4j"/>
-      <import feature="org.gravity.features.hulk" version="1.0.0.qualifier"/>
-      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202207071646"/>
-      <import feature="feature.carisma.uml2.checks" version="1.0.9.202306021405"/>
       <import feature="org.gravity.features.eclipse" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
          id="org.gravity.security.annotations.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.security.annotations.pm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
