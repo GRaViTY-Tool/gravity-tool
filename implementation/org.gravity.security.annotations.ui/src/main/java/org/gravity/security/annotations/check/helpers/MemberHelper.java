@@ -48,7 +48,12 @@ public class MemberHelper {
 		final var dot = signature.substring(0, method).lastIndexOf('.');
 		if (dot >= 0) {
 			final var signatureType = ASTHelper.getFullyQualifiedName4Text(cu, signature.substring(0, dot));
-			final var memberType = member.getDeclaringType().getFullyQualifiedName();
+			String memberType;
+			if (member instanceof final IType type) {
+				memberType = type.getFullyQualifiedName();
+			} else {
+				memberType = member.getDeclaringType().getFullyQualifiedName();
+			}
 			if (!signatureType.equals(memberType)) {
 				return false;
 			}

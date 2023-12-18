@@ -79,7 +79,7 @@ public class SecurityRequirements {
 	}
 
 	public List<IAnnotation> getCriticals(final String signature,
-			final SecurityRequirements.SecurityProperty property) {
+			final SecurityProperty property) {
 		return switch (property) {
 		case INTEGRITY -> this.integritySignatures.get(signature);
 		case SECRECY -> this.secrecySignatures.get(signature);
@@ -124,22 +124,6 @@ public class SecurityRequirements {
 
 	public Set<IMember> getDefinedMembers() {
 		return this.definedMembers;
-	}
-
-	public enum SecurityProperty {
-
-		SECRECY("secrecy"), INTEGRITY("integrity");
-
-		private final String name;
-
-		private SecurityProperty(final String name) {
-			this.name = name;
-		}
-
-		@Override
-		public String toString() {
-			return this.name;
-		}
 	}
 
 	public IType getType() {

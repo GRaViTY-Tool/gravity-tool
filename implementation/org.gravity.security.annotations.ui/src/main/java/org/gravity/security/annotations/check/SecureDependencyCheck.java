@@ -31,8 +31,9 @@ import org.eclipse.jdt.internal.core.LambdaMethod;
 import org.eclipse.jdt.internal.core.builder.CompilationParticipantResult;
 import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchy;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
+import org.gravity.security.annotations.check.data.SecurityProperty;
 import org.gravity.security.annotations.check.data.SecurityRequirements;
-import org.gravity.security.annotations.check.data.SecurityRequirements.SecurityProperty;
+import org.gravity.security.annotations.check.data.SecurityViolation;
 import org.gravity.security.annotations.check.helpers.ASTHelper;
 import org.gravity.security.annotations.check.helpers.MemberHelper;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
@@ -50,6 +51,8 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	long timestamp;
 
+	private Set<SecurityViolation> violations;
+
 	@Override
 	public boolean isAnnotationProcessor() {
 		return true;
@@ -64,7 +67,11 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	public void processAnnotations(final BuildContext[] files) {
 		this.cache = new HashMap<>();
 		this.timestamp = System.currentTimeMillis();
+		this.violations = new HashSet<>();
 		Stream.of(files).parallel().forEach(this::processChangedFile);
+		for (final var violation : this.violations) {
+			SecurityMarkerUtil.createErrorMarker(violation);
+		}
 	}
 
 	private void processChangedFile(final BuildContext context) {
@@ -103,7 +110,9 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	private void checkIncomingAccesses(final IMember member, final boolean secrecy, final boolean integrity) {
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
 			try {
-				root.accept(new IncomingAccessCheck(this, member, secrecy, root, integrity), new NullProgressMonitor());
+				final var check = new IncomingAccessCheck(this, member, secrecy, root, integrity);
+				root.accept(check, new NullProgressMonitor());
+				this.violations.addAll(check.getViolations());
 			} catch (final Exception e) {
 				// Only log all errors and let JDT handle the compile errors
 				LOGGER.error("Searching incoming accesses for \"" + getSignature(member) + "\".");
@@ -126,8 +135,9 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
 			// Check outgoing calls
 			try {
-				root.accept(new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements),
-						new NullProgressMonitor());
+				final var check = new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements);
+				root.accept(check, new NullProgressMonitor());
+				this.violations.addAll(check.getViolations());
 			} catch (final Exception e) {
 				// Only log all errors and let JDT handle the compile errors
 				LOGGER.error("Searching outgoing accesses for \"" + getSignature(caller) + "\".");
@@ -298,7 +308,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return null;
 	}
 
-	static String getSignature(final IMember member) {
+	public static String getSignature(final IMember member) {
 		return getSignature(member, false);
 	}
 
@@ -380,7 +390,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return type;
 	}
 
-	static String getSimpleSignature(final IMember member) {
+	public static String getSimpleSignature(final IMember member) {
 		return getSignature(member, true);
 	}
 }

@@ -1,6 +1,7 @@
 package org.gravity.security.annotations.check;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -8,7 +9,9 @@ import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchyVisitor;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
+import org.gravity.security.annotations.check.data.SecurityProperty;
 import org.gravity.security.annotations.check.data.SecurityRequirements;
+import org.gravity.security.annotations.check.data.SecurityViolation;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 
 @SuppressWarnings("restriction")
@@ -16,27 +19,28 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 	/**
 	 *
 	 */
-	private final SecureDependencyCheck outgoing;
+	private final SecureDependencyCheck check;
 	private final Collection<IMember> accessedMembers;
 	private final MethodWrapper root;
 	private final Set<String> secrecySignatures;
 	private final Set<String> integritySignatures;
 	private final ICompilationUnit cu;
-	private final String analyzedMemberSignature;
-	private final IType type;
-	private final IMember analyzedMember;
+//	private final String analyzedMemberSignature;
+	private final IMember callingMember;
+
+	private final Collection<SecurityViolation> violations;
 
 	OutgoingAccessCheck(final SecureDependencyCheck secureDependencyCheck, final Collection<IMember> accessedMembers,
 			final MethodWrapper root, final IMember caller, final SecurityRequirements requirements) {
-		this.outgoing = secureDependencyCheck;
+		this.check = secureDependencyCheck;
 		this.accessedMembers = accessedMembers;
 		this.root = root;
-		this.analyzedMember = caller;
+		this.callingMember = caller;
 		this.cu = caller.getCompilationUnit();
-		this.type = caller.getDeclaringType();
 		this.secrecySignatures = requirements.getSecrecySignatures();
 		this.integritySignatures = requirements.getIntegritySignatures();
-		this.analyzedMemberSignature = SecureDependencyCheck.getSignature(caller);
+
+		this.violations = new HashSet<>();
 	}
 
 	@Override
@@ -46,8 +50,8 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		}
 		final var calledMember = methodWrapper.getMember();
 
-		SecurityMarkerUtil.deleteOldMarkers(calledMember.getResource(), this.analyzedMemberSignature,
-				this.outgoing.timestamp);
+		SecurityMarkerUtil.deleteOldMarkers(calledMember.getResource(),
+				SecureDependencyCheck.getSignature(this.callingMember), this.check.timestamp);
 
 		IType declaringType;
 		if (calledMember instanceof final IType itype) {
@@ -56,7 +60,7 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		} else {
 			declaringType = calledMember.getDeclaringType();
 		}
-		final var calleeRequirements = this.outgoing.getSecurityRequirements(declaringType);
+		final var calleeRequirements = this.check.getSecurityRequirements(declaringType);
 
 		final var callerSecrecyRequirement = SecureDependencyCheck.getCorrespondingEntry(calledMember,
 				this.secrecySignatures, this.cu);
@@ -66,25 +70,12 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		}
 		if (callerSecrey != (calleeRequirements.isSecrecyMember(calledMember) || SecureDependencyCheck
 				.getCorrespondingEntry(calledMember, calleeRequirements.getSecrecySignatures(), this.cu) != null)) {
-			final var calledMemberSignature = SecureDependencyCheck.getSignature(calledMember);
 			if (callerSecrey) {
-				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"Secrecy is required but not provided by the accessed member!", this.analyzedMemberSignature,
-						calledMemberSignature);
-				SecurityMarkerUtil.createErrorMarker(calledMember,
-						"Secrecy is required for this member by \""
-								+ SecureDependencyCheck.getSimpleSignature(this.analyzedMember) + "\"",
-						this.analyzedMemberSignature, calledMemberSignature);
-
+				this.violations.add(new SecurityViolation(this.callingMember, calledMember, calledMember,
+						SecurityProperty.SECRECY));
 			} else {
-				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"The class \"" + this.type.getElementName() + "\" must specify secrecy for accessing \""
-								+ SecureDependencyCheck.getSimpleSignature(calledMember) + "\"!",
-						this.analyzedMemberSignature, calledMemberSignature);
-				SecurityMarkerUtil.createErrorMarker(calledMember,
-						SecureDependencyCheck.getSimpleSignature(this.analyzedMember)
-								+ " accesses this member without the required secrecy!",
-						this.analyzedMemberSignature, calledMemberSignature);
+				this.violations.add(new SecurityViolation(this.callingMember, calledMember, this.callingMember,
+						SecurityProperty.SECRECY));
 			}
 		}
 
@@ -96,29 +87,20 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		}
 		if (callerIntegrity != (calleeRequirements.isIntegrityMember(calledMember) || SecureDependencyCheck
 				.getCorrespondingEntry(calledMember, calleeRequirements.getIntegritySignatures(), this.cu) != null)) {
-			final var calledMemberSignature = SecureDependencyCheck.getSignature(calledMember);
 			if (callerIntegrity) {
-				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"Integrity is required but not provided by the accessed member!", this.analyzedMemberSignature,
-						calledMemberSignature);
-				SecurityMarkerUtil.createErrorMarker(calledMember,
-						"Integrity is required for this member by \""
-								+ SecureDependencyCheck.getSimpleSignature(this.analyzedMember) + "\"",
-						this.analyzedMemberSignature, calledMemberSignature);
+				this.violations.add(new SecurityViolation(this.callingMember, calledMember, calledMember,
+						SecurityProperty.INTEGRITY));
 			} else {
-				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"The class \"" + this.type.getElementName() + "\" must specify integrity for accessing \""
-								+ SecureDependencyCheck.getSimpleSignature(calledMember) + "\"!",
-						this.analyzedMemberSignature, calledMemberSignature);
-				SecurityMarkerUtil.createErrorMarker(calledMember,
-						SecureDependencyCheck.getSimpleSignature(this.analyzedMember)
-								+ " accesses this member without the required integrity!",
-						this.analyzedMemberSignature, calledMemberSignature);
-
+				this.violations.add(new SecurityViolation(this.callingMember, calledMember, this.callingMember,
+						SecurityProperty.INTEGRITY));
 			}
 		}
 
 		// Do not continue tree traversal
 		return false;
+	}
+
+	public Collection<SecurityViolation> getViolations() {
+		return this.violations;
 	}
 }

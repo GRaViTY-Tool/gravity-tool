@@ -13,6 +13,7 @@ import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.internal.corext.callhierarchy.CallLocation;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodCall;
 import org.gravity.eclipse.util.JavaASTUtil;
+import org.gravity.security.annotations.check.data.SecurityViolation;
 
 @SuppressWarnings("restriction")
 public class SecurityMarkerUtil {
@@ -29,8 +30,8 @@ public class SecurityMarkerUtil {
 		// This class should not be instantiated
 	}
 
-	public static IMarker createErrorMarker(final IMember member, final String message,
-			final String... relevantMember) {
+	private static IMarker createErrorMarker(final IMember member, final String message,
+			final Collection<String> relevantMember) {
 		try {
 			final var resource = member.getResource();
 			final var line = JavaASTUtil.getLine(member);
@@ -41,8 +42,8 @@ public class SecurityMarkerUtil {
 		}
 	}
 
-	public static IMarker createErrorMarker(final IResource resource, final int line, final String message,
-			final String... relevantMember) throws CoreException {
+	private static IMarker createErrorMarker(final IResource resource, final int line, final String message,
+			final Collection<String> relevantMember) throws CoreException {
 		final var m = resource.createMarker(IMarker.PROBLEM);
 		m.setAttribute(IMarker.LINE_NUMBER, line);
 		m.setAttribute(IMarker.MESSAGE, message);
@@ -97,7 +98,7 @@ public class SecurityMarkerUtil {
 	}
 
 	public static Collection<IMarker> createErrorMarker(final MethodCall methodCall, final String message,
-			final String... relevantMember) {
+			final Collection<String> relevantMember) {
 		final var callLocations = methodCall.getCallLocations();
 		final Collection<IMarker> marker = new ArrayList<>(callLocations.size());
 		for (final CallLocation callLocation : callLocations) {
@@ -115,6 +116,12 @@ public class SecurityMarkerUtil {
 			}
 		}
 		return marker;
+	}
+
+	public static void createErrorMarker(final SecurityViolation violation) {
+		final var relevantElementSignatures = violation.getRelevantElementSignatures();
+		createErrorMarker(violation.source(), violation.getSourceMessage(), relevantElementSignatures);
+		createErrorMarker(violation.target(), violation.getTargetMessage(), relevantElementSignatures);
 	}
 
 }
