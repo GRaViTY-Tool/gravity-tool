@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -43,20 +44,23 @@ public abstract class ModelCreatorJob extends Job {
 
 	@Override
 	protected IStatus run(final IProgressMonitor monitor) {
-		final ArrayList<String> fails = new ArrayList<>();
+		final var fails = new ArrayList<String>();
 		for (final Object entry : this.selection) {
 			if (monitor.isCanceled()) {
 				return Status.CANCEL_STATUS;
 			}
-			if (entry instanceof IJavaProject) {
-				final IJavaProject iJavaProject = (IJavaProject) entry;
-				if (!process(iJavaProject, monitor)) {
-					fails.add(iJavaProject.getProject().getName());
-				}
+			IProject project;
+			if (entry instanceof final IProject iproject) {
+				project = iproject;
+			} else if (entry instanceof final IJavaProject ijavaproject) {
+				project = ijavaproject.getProject();
 			} else {
-				final UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+				final var exception = new UnsupportedSelectionException(entry.getClass());
 				LOGGER.log(Level.ERROR, exception.getMessage());
 				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
+			}
+			if (!this.process(project, monitor)) {
+				fails.add(project.getName());
 			}
 		}
 		return fails.isEmpty() ? Status.OK_STATUS
@@ -72,6 +76,6 @@ public abstract class ModelCreatorJob extends Job {
 	 * @param monitor      A progress monitor
 	 * @return true, iff the model has been created successfully
 	 */
-	protected abstract boolean process(IJavaProject iJavaProject, IProgressMonitor monitor);
+	protected abstract boolean process(IProject iJavaProject, IProgressMonitor monitor);
 
 }

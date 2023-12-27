@@ -617,7 +617,7 @@ public class PrimitiveTypeDoubleImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_6(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_8(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeDoubleImpl
 				.pattern_PrimitiveTypeDouble_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1101,8 +1101,8 @@ public class PrimitiveTypeDoubleImpl extends AbstractRuleImpl implements Primiti
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_DOUBLE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_6__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_6((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_8__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_8((PrimitiveType) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_DOUBLE___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_DOUBLE_0__PRIMITIVETYPEDOUBLE:
 			return isAppropriate_FWD_PrimitiveTypeDouble_0(
 					(org.eclipse.modisco.java.PrimitiveTypeDouble) arguments.get(0));

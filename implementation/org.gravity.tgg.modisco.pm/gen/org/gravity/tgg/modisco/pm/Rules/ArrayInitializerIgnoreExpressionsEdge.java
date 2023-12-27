@@ -41,7 +41,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ArrayInitializer array, MethodInvocation invocation);
+	boolean isAppropriate_FWD(Match match, MethodInvocation invocation, ArrayInitializer array);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ArrayInitializer array, MethodInvocation invocation);
+	void registerObjectsToMatch_FWD(Match match, MethodInvocation invocation, ArrayInitializer array);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ArrayInitializer array, MethodInvocation invocation);
+	CSP isAppropriate_solveCsp_FWD(Match match, MethodInvocation invocation, ArrayInitializer array);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,8 +89,8 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array,
-			MethodInvocation invocation);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MethodInvocation invocation,
+			ArrayInitializer array);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,7 +106,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject array, EObject invocation);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject invocation, EObject array);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +178,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_74(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(ArrayInitializer array, MethodInvocation invocation, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(MethodInvocation invocation, ArrayInitializer array, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -227,7 +227,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ArrayInitializer array, MethodInvocation invocation);
+	boolean checkDEC_FWD(MethodInvocation invocation, ArrayInitializer array);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -243,8 +243,8 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ArrayInitializer arrayParameter,
-			MethodInvocation invocationParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, MethodInvocation invocationParameter,
+			ArrayInitializer arrayParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +252,8 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array,
-			MethodInvocation invocation, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MethodInvocation invocation,
+			ArrayInitializer array, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

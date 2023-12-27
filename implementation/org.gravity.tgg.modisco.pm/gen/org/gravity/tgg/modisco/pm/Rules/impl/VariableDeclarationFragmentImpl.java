@@ -169,8 +169,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result1_bindingAndBlack[0];
-		TFieldDefinition tDefinition = (TFieldDefinition) result1_bindingAndBlack[1];
-		MFieldDefinition mDefinition = (MFieldDefinition) result1_bindingAndBlack[2];
+		MFieldDefinition mDefinition = (MFieldDefinition) result1_bindingAndBlack[1];
+		TFieldDefinition tDefinition = (TFieldDefinition) result1_bindingAndBlack[2];
 		MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = VariableDeclarationFragmentImpl
@@ -192,17 +192,17 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 		Object[] result3_black = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, varDeclFragment,
-						tDefinition, mDefinition, varDeclFragmentToTFieldDefinition,
+						mDefinition, tDefinition, varDeclFragmentToTFieldDefinition,
 						eFieldDeclarationToTFieldDefinition);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[varDeclFragment] = " + varDeclFragment + ", " + "[tDefinition] = " + tDefinition + ", "
-					+ "[mDefinition] = " + mDefinition + ", " + "[varDeclFragmentToTFieldDefinition] = "
+					+ ", " + "[varDeclFragment] = " + varDeclFragment + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[tDefinition] = " + tDefinition + ", " + "[varDeclFragmentToTFieldDefinition] = "
 					+ varDeclFragmentToTFieldDefinition + ", " + "[eFieldDeclarationToTFieldDefinition] = "
 					+ eFieldDeclarationToTFieldDefinition + ".");
 		}
 		VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition);
+				ruleresult, varDeclFragment, mDefinition, tDefinition, varDeclFragmentToTFieldDefinition);
 		//nothing EMoflonEdge varDeclFragment__mDefinition____variablesContainer = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge mDefinition__varDeclFragment____fragments = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge varDeclFragmentToTFieldDefinition__tDefinition____target = (EMoflonEdge) result3_green[7];
@@ -211,7 +211,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		// 
 		// 
 		VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_1_5_registerobjects_expressionBBBBBBB(this,
-				ruleresult, varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition,
+				ruleresult, varDeclFragment, mDefinition, tDefinition, varDeclFragmentToTFieldDefinition,
 				eFieldDeclarationToTFieldDefinition);
 		return VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_1_6_expressionFB(ruleresult);
 	}
@@ -244,31 +244,31 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result2_binding[0];
 		MFieldDefinition mDefinition = (MFieldDefinition) result2_binding[1];
 		for (Object[] result2_black : VariableDeclarationFragmentImpl
-				.pattern_VariableDeclarationFragment_2_2_corematch_blackBFBFB(varDeclFragment, mDefinition, match)) {
-			TFieldDefinition tDefinition = (TFieldDefinition) result2_black[1];
+				.pattern_VariableDeclarationFragment_2_2_corematch_blackBBFFB(varDeclFragment, mDefinition, match)) {
+			TFieldDefinition tDefinition = (TFieldDefinition) result2_black[2];
 			MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : VariableDeclarationFragmentImpl
-					.pattern_VariableDeclarationFragment_2_3_findcontext_blackBBBB(varDeclFragment, tDefinition,
-							mDefinition, eFieldDeclarationToTFieldDefinition)) {
+					.pattern_VariableDeclarationFragment_2_3_findcontext_blackBBBB(varDeclFragment, mDefinition,
+							tDefinition, eFieldDeclarationToTFieldDefinition)) {
 				Object[] result3_green = VariableDeclarationFragmentImpl
 						.pattern_VariableDeclarationFragment_2_3_findcontext_greenBBBBFFFFF(varDeclFragment,
-								tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition);
+								mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge varDeclFragment__mDefinition____variablesContainer = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge mDefinition__varDeclFragment____fragments = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge eFieldDeclarationToTFieldDefinition__tDefinition____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge eFieldDeclarationToTFieldDefinition__mDefinition____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge eFieldDeclarationToTFieldDefinition__mDefinition____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge eFieldDeclarationToTFieldDefinition__tDefinition____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = VariableDeclarationFragmentImpl
 						.pattern_VariableDeclarationFragment_2_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, varDeclFragment, tDefinition, mDefinition,
+								isApplicableMatch, varDeclFragment, mDefinition, tDefinition,
 								eFieldDeclarationToTFieldDefinition);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[varDeclFragment] = "
-							+ varDeclFragment + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = "
-							+ mDefinition + ", " + "[eFieldDeclarationToTFieldDefinition] = "
+							+ varDeclFragment + ", " + "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = "
+							+ tDefinition + ", " + "[eFieldDeclarationToTFieldDefinition] = "
 							+ eFieldDeclarationToTFieldDefinition + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -344,8 +344,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {// Create CSP
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -361,8 +361,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("varDeclFragment", varDeclFragment);
-		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("eFieldDeclarationToTFieldDefinition", eFieldDeclarationToTFieldDefinition);
 		return csp;
 	}
@@ -381,12 +381,12 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition,
-			EObject mDefinition, EObject varDeclFragmentToTFieldDefinition,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject varDeclFragment, EObject mDefinition,
+			EObject tDefinition, EObject varDeclFragmentToTFieldDefinition,
 			EObject eFieldDeclarationToTFieldDefinition) {
 		ruleresult.registerObject("varDeclFragment", varDeclFragment);
-		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("mDefinition", mDefinition);
+		ruleresult.registerObject("tDefinition", tDefinition);
 		ruleresult.registerObject("varDeclFragmentToTFieldDefinition", varDeclFragmentToTFieldDefinition);
 		ruleresult.registerObject("eFieldDeclarationToTFieldDefinition", eFieldDeclarationToTFieldDefinition);
 
@@ -588,7 +588,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_97(EMoflonEdge _edge_variablesContainer) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_variablesContainer) {
 
 		Object[] result1_bindingAndBlack = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -726,16 +726,16 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result2_bindingAndBlack[0];
-		TFieldDefinition tDefinition = (TFieldDefinition) result2_bindingAndBlack[1];
-		MFieldDefinition mDefinition = (MFieldDefinition) result2_bindingAndBlack[2];
+		MFieldDefinition mDefinition = (MFieldDefinition) result2_bindingAndBlack[1];
+		TFieldDefinition tDefinition = (TFieldDefinition) result2_bindingAndBlack[2];
 
 		Object[] result3_bindingAndBlack = VariableDeclarationFragmentImpl
 				.pattern_VariableDeclarationFragment_21_3_solvecsp_bindingAndBlackFBBBBBB(this, varDeclFragment,
-						tDefinition, mDefinition, sourceMatch, targetMatch);
+						mDefinition, tDefinition, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[varDeclFragment] = " + varDeclFragment + ", " + "[tDefinition] = " + tDefinition + ", "
-					+ "[mDefinition] = " + mDefinition + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[varDeclFragment] = " + varDeclFragment + ", " + "[mDefinition] = " + mDefinition + ", "
+					+ "[tDefinition] = " + tDefinition + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -743,7 +743,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		if (VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : VariableDeclarationFragmentImpl
-					.pattern_VariableDeclarationFragment_21_5_matchcorrcontext_blackBBFBB(tDefinition, mDefinition,
+					.pattern_VariableDeclarationFragment_21_5_matchcorrcontext_blackBBFBB(mDefinition, tDefinition,
 							sourceMatch, targetMatch)) {
 				MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) result5_black[2];
 				Object[] result5_green = VariableDeclarationFragmentImpl
@@ -753,11 +753,11 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 				Object[] result6_black = VariableDeclarationFragmentImpl
 						.pattern_VariableDeclarationFragment_21_6_createcorrespondence_blackBBBB(varDeclFragment,
-								tDefinition, mDefinition, ccMatch);
+								mDefinition, tDefinition, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[varDeclFragment] = "
-							+ varDeclFragment + ", " + "[tDefinition] = " + tDefinition + ", " + "[mDefinition] = "
-							+ mDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ varDeclFragment + ", " + "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = "
+							+ tDefinition + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_21_6_createcorrespondence_greenBBFB(
 						varDeclFragment, tDefinition, ccMatch);
@@ -785,7 +785,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {// Create CSP
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -865,17 +865,17 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 				.pattern_VariableDeclarationFragment_26_2_isapplicablecore_blackFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList eFieldDeclarationToTFieldDefinitionList = (RuleEntryList) result2_black[0];
-			TFieldDefinition tDefinition = (TFieldDefinition) result2_black[1];
+			MFieldDefinition mDefinition = (MFieldDefinition) result2_black[1];
 			MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) result2_black[2];
-			MFieldDefinition mDefinition = (MFieldDefinition) result2_black[3];
+			TFieldDefinition tDefinition = (TFieldDefinition) result2_black[3];
 
 			Object[] result3_bindingAndBlack = VariableDeclarationFragmentImpl
 					.pattern_VariableDeclarationFragment_26_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition, ruleResult);
+							mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tDefinition] = " + tDefinition + ", "
-						+ "[mDefinition] = " + mDefinition + ", " + "[eFieldDeclarationToTFieldDefinition] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mDefinition] = " + mDefinition + ", "
+						+ "[tDefinition] = " + tDefinition + ", " + "[eFieldDeclarationToTFieldDefinition] = "
 						+ eFieldDeclarationToTFieldDefinition + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -884,21 +884,21 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					csp)) {
 				// 
 				Object[] result5_black = VariableDeclarationFragmentImpl
-						.pattern_VariableDeclarationFragment_26_5_checknacs_blackBBB(tDefinition, mDefinition,
+						.pattern_VariableDeclarationFragment_26_5_checknacs_blackBBB(mDefinition, tDefinition,
 								eFieldDeclarationToTFieldDefinition);
 				if (result5_black != null) {
 
 					Object[] result6_black = VariableDeclarationFragmentImpl
-							.pattern_VariableDeclarationFragment_26_6_perform_blackBBBB(tDefinition, mDefinition,
+							.pattern_VariableDeclarationFragment_26_6_perform_blackBBBB(mDefinition, tDefinition,
 									eFieldDeclarationToTFieldDefinition, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tDefinition] = "
-								+ tDefinition + ", " + "[mDefinition] = " + mDefinition + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mDefinition] = "
+								+ mDefinition + ", " + "[tDefinition] = " + tDefinition + ", "
 								+ "[eFieldDeclarationToTFieldDefinition] = " + eFieldDeclarationToTFieldDefinition
 								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					VariableDeclarationFragmentImpl.pattern_VariableDeclarationFragment_26_6_perform_greenFBBFB(
-							tDefinition, mDefinition, ruleResult);
+							mDefinition, tDefinition, ruleResult);
 					//nothing org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result6_green[0];
 					//nothing VariableDeclarationFragmentToTFieldDefinition varDeclFragmentToTFieldDefinition = (VariableDeclarationFragmentToTFieldDefinition) result6_green[3];
 
@@ -917,8 +917,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -934,8 +934,8 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
+		isApplicableMatch.registerObject("tDefinition", tDefinition);
 		isApplicableMatch.registerObject("eFieldDeclarationToTFieldDefinition", eFieldDeclarationToTFieldDefinition);
 		return csp;
 	}
@@ -976,10 +976,10 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					(MFieldDefinition) arguments.get(2));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_VARIABLEDECLARATIONFRAGMENT_TFIELDDEFINITION_MFIELDDEFINITION_MDEFINITIONTOTMEMBER:
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_TFIELDDEFINITION_MDEFINITIONTOTMEMBER:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
 					(org.eclipse.modisco.java.VariableDeclarationFragment) arguments.get(1),
-					(TFieldDefinition) arguments.get(2), (MFieldDefinition) arguments.get(3),
+					(MFieldDefinition) arguments.get(2), (TFieldDefinition) arguments.get(3),
 					(MDefinitionToTMember) arguments.get(4));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1007,17 +1007,17 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_BWD_TFIELD_DEFINITION_0__TFIELDDEFINITION:
 			return isAppropriate_BWD_TFieldDefinition_0((TFieldDefinition) arguments.get(0));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_97__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_97((EMoflonEdge) arguments.get(0));
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_6__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_6((EMoflonEdge) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_SOLVE_CSP_CC__VARIABLEDECLARATIONFRAGMENT_TFIELDDEFINITION_MFIELDDEFINITION_MATCH_MATCH:
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_SOLVE_CSP_CC__VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_TFIELDDEFINITION_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((org.eclipse.modisco.java.VariableDeclarationFragment) arguments.get(0),
-					(TFieldDefinition) arguments.get(1), (MFieldDefinition) arguments.get(2), (Match) arguments.get(3),
+					(MFieldDefinition) arguments.get(1), (TFieldDefinition) arguments.get(2), (Match) arguments.get(3),
 					(Match) arguments.get(4));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1028,9 +1028,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 			return checkDEC_BWD((TFieldDefinition) arguments.get(0));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
 			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
-		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TFIELDDEFINITION_MFIELDDEFINITION_MDEFINITIONTOTMEMBER_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TFieldDefinition) arguments.get(1),
-					(MFieldDefinition) arguments.get(2), (MDefinitionToTMember) arguments.get(3),
+		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_TFIELDDEFINITION_MDEFINITIONTOTMEMBER_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MFieldDefinition) arguments.get(1),
+					(TFieldDefinition) arguments.get(2), (MDefinitionToTMember) arguments.get(3),
 					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.VARIABLE_DECLARATION_FRAGMENT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1142,22 +1142,22 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_VariableDeclarationFragment_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("varDeclFragment");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tDefinition");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mDefinition");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tDefinition");
 		EObject _localVariable_3 = isApplicableMatch.getObject("eFieldDeclarationToTFieldDefinition");
 		EObject tmpVarDeclFragment = _localVariable_0;
-		EObject tmpTDefinition = _localVariable_1;
-		EObject tmpMDefinition = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_1;
+		EObject tmpTDefinition = _localVariable_2;
 		EObject tmpEFieldDeclarationToTFieldDefinition = _localVariable_3;
 		if (tmpVarDeclFragment instanceof org.eclipse.modisco.java.VariableDeclarationFragment) {
 			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) tmpVarDeclFragment;
-			if (tmpTDefinition instanceof TFieldDefinition) {
-				TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-				if (tmpMDefinition instanceof MFieldDefinition) {
-					MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+			if (tmpMDefinition instanceof MFieldDefinition) {
+				MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+				if (tmpTDefinition instanceof TFieldDefinition) {
+					TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
 					if (tmpEFieldDeclarationToTFieldDefinition instanceof MDefinitionToTMember) {
 						MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) tmpEFieldDeclarationToTFieldDefinition;
-						return new Object[] { varDeclFragment, tDefinition, mDefinition,
+						return new Object[] { varDeclFragment, mDefinition, tDefinition,
 								eFieldDeclarationToTFieldDefinition, isApplicableMatch };
 					}
 				}
@@ -1167,13 +1167,13 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_1_1_performtransformation_blackBBBBFBB(
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
 			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { varDeclFragment, tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition,
+				return new Object[] { varDeclFragment, mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition,
 						csp, _this, isApplicableMatch };
 			}
 		}
@@ -1186,17 +1186,17 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 				isApplicableMatch);
 		if (result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding != null) {
 			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding[0];
-			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding[1];
-			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding[2];
+			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding[1];
+			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding[2];
 			MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) result_pattern_VariableDeclarationFragment_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_VariableDeclarationFragment_1_1_performtransformation_black = pattern_VariableDeclarationFragment_1_1_performtransformation_blackBBBBFBB(
-					varDeclFragment, tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition, _this,
+					varDeclFragment, mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition, _this,
 					isApplicableMatch);
 			if (result_pattern_VariableDeclarationFragment_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_VariableDeclarationFragment_1_1_performtransformation_black[4];
 
-				return new Object[] { varDeclFragment, tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition,
+				return new Object[] { varDeclFragment, mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition,
 						csp, _this, isApplicableMatch };
 			}
 		}
@@ -1228,21 +1228,21 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition, EObject mDefinition,
+			PerformRuleResult ruleresult, EObject varDeclFragment, EObject mDefinition, EObject tDefinition,
 			EObject varDeclFragmentToTFieldDefinition, EObject eFieldDeclarationToTFieldDefinition) {
 		if (!varDeclFragment.equals(varDeclFragmentToTFieldDefinition)) {
-			if (!tDefinition.equals(varDeclFragment)) {
-				if (!tDefinition.equals(varDeclFragmentToTFieldDefinition)) {
-					if (!mDefinition.equals(varDeclFragment)) {
-						if (!mDefinition.equals(tDefinition)) {
-							if (!mDefinition.equals(varDeclFragmentToTFieldDefinition)) {
+			if (!mDefinition.equals(varDeclFragment)) {
+				if (!mDefinition.equals(tDefinition)) {
+					if (!mDefinition.equals(varDeclFragmentToTFieldDefinition)) {
+						if (!tDefinition.equals(varDeclFragment)) {
+							if (!tDefinition.equals(varDeclFragmentToTFieldDefinition)) {
 								if (!eFieldDeclarationToTFieldDefinition.equals(varDeclFragment)) {
-									if (!eFieldDeclarationToTFieldDefinition.equals(tDefinition)) {
-										if (!eFieldDeclarationToTFieldDefinition.equals(mDefinition)) {
+									if (!eFieldDeclarationToTFieldDefinition.equals(mDefinition)) {
+										if (!eFieldDeclarationToTFieldDefinition.equals(tDefinition)) {
 											if (!eFieldDeclarationToTFieldDefinition
 													.equals(varDeclFragmentToTFieldDefinition)) {
-												return new Object[] { ruleresult, varDeclFragment, tDefinition,
-														mDefinition, varDeclFragmentToTFieldDefinition,
+												return new Object[] { ruleresult, varDeclFragment, mDefinition,
+														tDefinition, varDeclFragmentToTFieldDefinition,
 														eFieldDeclarationToTFieldDefinition };
 											}
 										}
@@ -1258,7 +1258,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition, EObject mDefinition,
+			PerformRuleResult ruleresult, EObject varDeclFragment, EObject mDefinition, EObject tDefinition,
 			EObject varDeclFragmentToTFieldDefinition) {
 		EMoflonEdge varDeclFragment__mDefinition____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__varDeclFragment____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1291,7 +1291,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 				.setName(varDeclFragmentToTFieldDefinition__tDefinition____target_name_prime);
 		varDeclFragmentToTFieldDefinition__varDeclFragment____source
 				.setName(varDeclFragmentToTFieldDefinition__varDeclFragment____source_name_prime);
-		return new Object[] { ruleresult, varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition,
+		return new Object[] { ruleresult, varDeclFragment, mDefinition, tDefinition, varDeclFragmentToTFieldDefinition,
 				varDeclFragment__mDefinition____variablesContainer, mDefinition__varDeclFragment____fragments,
 				varDeclFragmentToTFieldDefinition__tDefinition____target,
 				varDeclFragmentToTFieldDefinition__varDeclFragment____source };
@@ -1299,9 +1299,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 	public static final void pattern_VariableDeclarationFragment_1_5_registerobjects_expressionBBBBBBB(
 			VariableDeclarationFragment _this, PerformRuleResult ruleresult, EObject varDeclFragment,
-			EObject tDefinition, EObject mDefinition, EObject varDeclFragmentToTFieldDefinition,
+			EObject mDefinition, EObject tDefinition, EObject varDeclFragmentToTFieldDefinition,
 			EObject eFieldDeclarationToTFieldDefinition) {
-		_this.registerObjects_FWD(ruleresult, varDeclFragment, tDefinition, mDefinition,
+		_this.registerObjects_FWD(ruleresult, varDeclFragment, mDefinition, tDefinition,
 				varDeclFragmentToTFieldDefinition, eFieldDeclarationToTFieldDefinition);
 
 	}
@@ -1378,7 +1378,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_VariableDeclarationFragment_2_2_corematch_blackBFBFB(
+	public static final Iterable<Object[]> pattern_VariableDeclarationFragment_2_2_corematch_blackBBFFB(
 			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -1387,7 +1387,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 			TMember tmpTDefinition = eFieldDeclarationToTFieldDefinition.getTarget();
 			if (tmpTDefinition instanceof TFieldDefinition) {
 				TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-				_result.add(new Object[] { varDeclFragment, tDefinition, mDefinition,
+				_result.add(new Object[] { varDeclFragment, mDefinition, tDefinition,
 						eFieldDeclarationToTFieldDefinition, match });
 			}
 
@@ -1396,13 +1396,13 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_VariableDeclarationFragment_2_3_findcontext_blackBBBB(
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (mDefinition.equals(varDeclFragment.getVariablesContainer())) {
-			if (tDefinition.equals(eFieldDeclarationToTFieldDefinition.getTarget())) {
-				if (mDefinition.equals(eFieldDeclarationToTFieldDefinition.getSource())) {
-					_result.add(new Object[] { varDeclFragment, tDefinition, mDefinition,
+			if (mDefinition.equals(eFieldDeclarationToTFieldDefinition.getSource())) {
+				if (tDefinition.equals(eFieldDeclarationToTFieldDefinition.getTarget())) {
+					_result.add(new Object[] { varDeclFragment, mDefinition, tDefinition,
 							eFieldDeclarationToTFieldDefinition });
 				}
 			}
@@ -1411,22 +1411,22 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_2_3_findcontext_greenBBBBFFFFF(
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge varDeclFragment__mDefinition____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinition__varDeclFragment____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eFieldDeclarationToTFieldDefinition__tDefinition____target = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge eFieldDeclarationToTFieldDefinition__mDefinition____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eFieldDeclarationToTFieldDefinition__tDefinition____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		String varDeclFragment__mDefinition____variablesContainer_name_prime = "variablesContainer";
 		String mDefinition__varDeclFragment____fragments_name_prime = "fragments";
-		String eFieldDeclarationToTFieldDefinition__tDefinition____target_name_prime = "target";
 		String eFieldDeclarationToTFieldDefinition__mDefinition____source_name_prime = "source";
+		String eFieldDeclarationToTFieldDefinition__tDefinition____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(varDeclFragment);
-		isApplicableMatch.getAllContextElements().add(tDefinition);
 		isApplicableMatch.getAllContextElements().add(mDefinition);
+		isApplicableMatch.getAllContextElements().add(tDefinition);
 		isApplicableMatch.getAllContextElements().add(eFieldDeclarationToTFieldDefinition);
 		varDeclFragment__mDefinition____variablesContainer.setSrc(varDeclFragment);
 		varDeclFragment__mDefinition____variablesContainer.setTrg(mDefinition);
@@ -1434,34 +1434,34 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		mDefinition__varDeclFragment____fragments.setSrc(mDefinition);
 		mDefinition__varDeclFragment____fragments.setTrg(varDeclFragment);
 		isApplicableMatch.getAllContextElements().add(mDefinition__varDeclFragment____fragments);
-		eFieldDeclarationToTFieldDefinition__tDefinition____target.setSrc(eFieldDeclarationToTFieldDefinition);
-		eFieldDeclarationToTFieldDefinition__tDefinition____target.setTrg(tDefinition);
-		isApplicableMatch.getAllContextElements().add(eFieldDeclarationToTFieldDefinition__tDefinition____target);
 		eFieldDeclarationToTFieldDefinition__mDefinition____source.setSrc(eFieldDeclarationToTFieldDefinition);
 		eFieldDeclarationToTFieldDefinition__mDefinition____source.setTrg(mDefinition);
 		isApplicableMatch.getAllContextElements().add(eFieldDeclarationToTFieldDefinition__mDefinition____source);
+		eFieldDeclarationToTFieldDefinition__tDefinition____target.setSrc(eFieldDeclarationToTFieldDefinition);
+		eFieldDeclarationToTFieldDefinition__tDefinition____target.setTrg(tDefinition);
+		isApplicableMatch.getAllContextElements().add(eFieldDeclarationToTFieldDefinition__tDefinition____target);
 		varDeclFragment__mDefinition____variablesContainer
 				.setName(varDeclFragment__mDefinition____variablesContainer_name_prime);
 		mDefinition__varDeclFragment____fragments.setName(mDefinition__varDeclFragment____fragments_name_prime);
-		eFieldDeclarationToTFieldDefinition__tDefinition____target
-				.setName(eFieldDeclarationToTFieldDefinition__tDefinition____target_name_prime);
 		eFieldDeclarationToTFieldDefinition__mDefinition____source
 				.setName(eFieldDeclarationToTFieldDefinition__mDefinition____source_name_prime);
-		return new Object[] { varDeclFragment, tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition,
+		eFieldDeclarationToTFieldDefinition__tDefinition____target
+				.setName(eFieldDeclarationToTFieldDefinition__tDefinition____target_name_prime);
+		return new Object[] { varDeclFragment, mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition,
 				isApplicableMatch, varDeclFragment__mDefinition____variablesContainer,
-				mDefinition__varDeclFragment____fragments, eFieldDeclarationToTFieldDefinition__tDefinition____target,
-				eFieldDeclarationToTFieldDefinition__mDefinition____source };
+				mDefinition__varDeclFragment____fragments, eFieldDeclarationToTFieldDefinition__mDefinition____source,
+				eFieldDeclarationToTFieldDefinition__tDefinition____target };
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_2_4_solveCSP_bindingFBBBBBB(
 			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, varDeclFragment, tDefinition,
-				mDefinition, eFieldDeclarationToTFieldDefinition);
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, varDeclFragment, mDefinition,
+				tDefinition, eFieldDeclarationToTFieldDefinition);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, varDeclFragment, tDefinition, mDefinition,
+			return new Object[] { csp, _this, isApplicableMatch, varDeclFragment, mDefinition, tDefinition,
 					eFieldDeclarationToTFieldDefinition };
 		}
 		return null;
@@ -1473,10 +1473,10 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_VariableDeclarationFragment_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
 		Object[] result_pattern_VariableDeclarationFragment_2_4_solveCSP_binding = pattern_VariableDeclarationFragment_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, varDeclFragment, tDefinition, mDefinition,
+				_this, isApplicableMatch, varDeclFragment, mDefinition, tDefinition,
 				eFieldDeclarationToTFieldDefinition);
 		if (result_pattern_VariableDeclarationFragment_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDeclarationFragment_2_4_solveCSP_binding[0];
@@ -1485,7 +1485,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_VariableDeclarationFragment_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, varDeclFragment, tDefinition, mDefinition,
+				return new Object[] { csp, _this, isApplicableMatch, varDeclFragment, mDefinition, tDefinition,
 						eFieldDeclarationToTFieldDefinition };
 			}
 		}
@@ -1835,18 +1835,18 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_bindingFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("varDeclFragment");
-		EObject _localVariable_1 = targetMatch.getObject("tDefinition");
-		EObject _localVariable_2 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_1 = sourceMatch.getObject("mDefinition");
+		EObject _localVariable_2 = targetMatch.getObject("tDefinition");
 		EObject tmpVarDeclFragment = _localVariable_0;
-		EObject tmpTDefinition = _localVariable_1;
-		EObject tmpMDefinition = _localVariable_2;
+		EObject tmpMDefinition = _localVariable_1;
+		EObject tmpTDefinition = _localVariable_2;
 		if (tmpVarDeclFragment instanceof org.eclipse.modisco.java.VariableDeclarationFragment) {
 			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) tmpVarDeclFragment;
-			if (tmpTDefinition instanceof TFieldDefinition) {
-				TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-				if (tmpMDefinition instanceof MFieldDefinition) {
-					MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
-					return new Object[] { varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch };
+			if (tmpMDefinition instanceof MFieldDefinition) {
+				MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+				if (tmpTDefinition instanceof TFieldDefinition) {
+					TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
+					return new Object[] { varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -1854,10 +1854,10 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_blackBBBBB(
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch };
+			return new Object[] { varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1868,14 +1868,14 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 				sourceMatch, targetMatch);
 		if (result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_binding != null) {
 			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = (org.eclipse.modisco.java.VariableDeclarationFragment) result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_binding[0];
-			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_binding[1];
-			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_binding[2];
+			MFieldDefinition mDefinition = (MFieldDefinition) result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_binding[1];
+			TFieldDefinition tDefinition = (TFieldDefinition) result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_binding[2];
 
 			Object[] result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_black = pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_blackBBBBB(
-					varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch);
+					varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch);
 			if (result_pattern_VariableDeclarationFragment_21_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch };
+				return new Object[] { varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -1883,12 +1883,12 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_VariableDeclarationFragment_21_3_solvecsp_bindingFBBBBBB(
 			VariableDeclarationFragment _this, org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(varDeclFragment, tDefinition, mDefinition, sourceMatch,
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(varDeclFragment, mDefinition, tDefinition, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_3;
 		if (csp != null) {
-			return new Object[] { csp, _this, varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1899,9 +1899,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_VariableDeclarationFragment_21_3_solvecsp_bindingAndBlackFBBBBBB(
 			VariableDeclarationFragment _this, org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_VariableDeclarationFragment_21_3_solvecsp_binding = pattern_VariableDeclarationFragment_21_3_solvecsp_bindingFBBBBBB(
-				_this, varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch);
+				_this, varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch);
 		if (result_pattern_VariableDeclarationFragment_21_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDeclarationFragment_21_3_solvecsp_binding[0];
 
@@ -1909,7 +1909,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_VariableDeclarationFragment_21_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, varDeclFragment, tDefinition, mDefinition, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, varDeclFragment, mDefinition, tDefinition, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -1922,13 +1922,13 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Iterable<Object[]> pattern_VariableDeclarationFragment_21_5_matchcorrcontext_blackBBFBB(
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch) {
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MDefinitionToTMember eFieldDeclarationToTFieldDefinition : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tDefinition, MDefinitionToTMember.class, "target")) {
-				if (mDefinition.equals(eFieldDeclarationToTFieldDefinition.getSource())) {
-					_result.add(new Object[] { tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition,
+					.getOppositeReferenceTyped(mDefinition, MDefinitionToTMember.class, "source")) {
+				if (tDefinition.equals(eFieldDeclarationToTFieldDefinition.getTarget())) {
+					_result.add(new Object[] { mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition,
 							sourceMatch, targetMatch });
 				}
 			}
@@ -1948,9 +1948,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_21_6_createcorrespondence_blackBBBB(
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, CCMatch ccMatch) {
-		return new Object[] { varDeclFragment, tDefinition, mDefinition, ccMatch };
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, CCMatch ccMatch) {
+		return new Object[] { varDeclFragment, mDefinition, tDefinition, ccMatch };
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_21_6_createcorrespondence_greenBBFB(
@@ -2032,9 +2032,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TFieldDefinition tDefinition) {
-		if (ruleResult.getTargetObjects().contains(tDefinition)) {
-			return new Object[] { ruleResult, tDefinition };
+			ModelgeneratorRuleResult ruleResult, MFieldDefinition mDefinition) {
+		if (ruleResult.getSourceObjects().contains(mDefinition)) {
+			return new Object[] { ruleResult, mDefinition };
 		}
 		return null;
 	}
@@ -2048,9 +2048,9 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MFieldDefinition mDefinition) {
-		if (ruleResult.getSourceObjects().contains(mDefinition)) {
-			return new Object[] { ruleResult, mDefinition };
+			ModelgeneratorRuleResult ruleResult, TFieldDefinition tDefinition) {
+		if (ruleResult.getTargetObjects().contains(tDefinition)) {
+			return new Object[] { ruleResult, tDefinition };
 		}
 		return null;
 	}
@@ -2063,20 +2063,20 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					.getEntryObjects()) {
 				if (tmpEFieldDeclarationToTFieldDefinition instanceof MDefinitionToTMember) {
 					MDefinitionToTMember eFieldDeclarationToTFieldDefinition = (MDefinitionToTMember) tmpEFieldDeclarationToTFieldDefinition;
-					TMember tmpTDefinition = eFieldDeclarationToTFieldDefinition.getTarget();
-					if (tmpTDefinition instanceof TFieldDefinition) {
-						TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
-						BodyDeclaration tmpMDefinition = eFieldDeclarationToTFieldDefinition.getSource();
-						if (tmpMDefinition instanceof MFieldDefinition) {
-							MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+					BodyDeclaration tmpMDefinition = eFieldDeclarationToTFieldDefinition.getSource();
+					if (tmpMDefinition instanceof MFieldDefinition) {
+						MFieldDefinition mDefinition = (MFieldDefinition) tmpMDefinition;
+						TMember tmpTDefinition = eFieldDeclarationToTFieldDefinition.getTarget();
+						if (tmpTDefinition instanceof TFieldDefinition) {
+							TFieldDefinition tDefinition = (TFieldDefinition) tmpTDefinition;
 							if (pattern_VariableDeclarationFragment_26_2_isapplicablecore_black_nac_1BB(ruleResult,
 									eFieldDeclarationToTFieldDefinition) == null) {
 								if (pattern_VariableDeclarationFragment_26_2_isapplicablecore_black_nac_0BB(ruleResult,
-										tDefinition) == null) {
+										mDefinition) == null) {
 									if (pattern_VariableDeclarationFragment_26_2_isapplicablecore_black_nac_2BB(
-											ruleResult, mDefinition) == null) {
-										_result.add(new Object[] { eFieldDeclarationToTFieldDefinitionList, tDefinition,
-												eFieldDeclarationToTFieldDefinition, mDefinition, ruleEntryContainer,
+											ruleResult, tDefinition) == null) {
+										_result.add(new Object[] { eFieldDeclarationToTFieldDefinitionList, mDefinition,
+												eFieldDeclarationToTFieldDefinition, tDefinition, ruleEntryContainer,
 												ruleResult });
 									}
 								}
@@ -2092,14 +2092,14 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_3_solveCSP_bindingFBBBBBB(
-			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
+			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tDefinition, mDefinition,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mDefinition, tDefinition,
 				eFieldDeclarationToTFieldDefinition, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tDefinition, mDefinition,
+			return new Object[] { csp, _this, isApplicableMatch, mDefinition, tDefinition,
 					eFieldDeclarationToTFieldDefinition, ruleResult };
 		}
 		return null;
@@ -2110,11 +2110,11 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_3_solveCSP_bindingAndBlackFBBBBBB(
-			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
+			VariableDeclarationFragment _this, IsApplicableMatch isApplicableMatch, MFieldDefinition mDefinition,
+			TFieldDefinition tDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_VariableDeclarationFragment_26_3_solveCSP_binding = pattern_VariableDeclarationFragment_26_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition, ruleResult);
+				_this, isApplicableMatch, mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition, ruleResult);
 		if (result_pattern_VariableDeclarationFragment_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDeclarationFragment_26_3_solveCSP_binding[0];
 
@@ -2122,7 +2122,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 					csp);
 			if (result_pattern_VariableDeclarationFragment_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tDefinition, mDefinition,
+				return new Object[] { csp, _this, isApplicableMatch, mDefinition, tDefinition,
 						eFieldDeclarationToTFieldDefinition, ruleResult };
 			}
 		}
@@ -2137,19 +2137,19 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_5_checknacs_blackBBB(
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition,
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition,
 			MDefinitionToTMember eFieldDeclarationToTFieldDefinition) {
-		return new Object[] { tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition };
+		return new Object[] { mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition };
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_6_perform_blackBBBB(
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition,
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition,
 			MDefinitionToTMember eFieldDeclarationToTFieldDefinition, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tDefinition, mDefinition, eFieldDeclarationToTFieldDefinition, ruleResult };
+		return new Object[] { mDefinition, tDefinition, eFieldDeclarationToTFieldDefinition, ruleResult };
 	}
 
 	public static final Object[] pattern_VariableDeclarationFragment_26_6_perform_greenFBBFB(
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, ModelgeneratorRuleResult ruleResult) {
+			MFieldDefinition mDefinition, TFieldDefinition tDefinition, ModelgeneratorRuleResult ruleResult) {
 		org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment = JavaFactory.eINSTANCE
 				.createVariableDeclarationFragment();
 		VariableDeclarationFragmentToTFieldDefinition varDeclFragmentToTFieldDefinition = PmFactory.eINSTANCE
@@ -2164,7 +2164,7 @@ public class VariableDeclarationFragmentImpl extends AbstractRuleImpl implements
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { varDeclFragment, tDefinition, mDefinition, varDeclFragmentToTFieldDefinition,
+		return new Object[] { varDeclFragment, mDefinition, tDefinition, varDeclFragmentToTFieldDefinition,
 				ruleResult };
 	}
 

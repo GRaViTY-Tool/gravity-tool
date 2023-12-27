@@ -163,12 +163,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TAbstractType tStaticType = (TAbstractType) result1_bindingAndBlack[0];
-		TCall tAccess = (TCall) result1_bindingAndBlack[1];
-		Type mStaticType = (Type) result1_bindingAndBlack[2];
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[3];
-		TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result1_bindingAndBlack[4];
-		MMethodInvocation invocation = (MMethodInvocation) result1_bindingAndBlack[5];
+		Type mStaticType = (Type) result1_bindingAndBlack[0];
+		MMethodInvocation invocation = (MMethodInvocation) result1_bindingAndBlack[1];
+		TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TAbstractType tStaticType = (TAbstractType) result1_bindingAndBlack[3];
+		TCall tAccess = (TCall) result1_bindingAndBlack[4];
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_1_1_performtransformation_greenBB(tStaticType,
 				tAccess);
@@ -181,25 +181,25 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodInvocationStaticTypeImpl
-				.pattern_MethodInvocationStaticType_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, tStaticType,
-						tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation);
+				.pattern_MethodInvocationStaticType_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, mStaticType,
+						invocation, mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tStaticType] = " + tStaticType + ", " + "[tAccess] = " + tAccess + ", "
-					+ "[mStaticType] = " + mStaticType + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-					+ "[mStaticTypeTotStaticType] = " + mStaticTypeTotStaticType + ", " + "[invocation] = " + invocation
-					+ ".");
+					+ ", " + "[mStaticType] = " + mStaticType + ", " + "[invocation] = " + invocation + ", "
+					+ "[mStaticTypeTotStaticType] = " + mStaticTypeTotStaticType + ", " + "[tStaticType] = "
+					+ tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[invocationToTAccess] = "
+					+ invocationToTAccess + ".");
 		}
 		MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_1_3_bookkeepingforedges_greenBBBBBFF(
-				ruleresult, tStaticType, tAccess, mStaticType, invocation);
-		//nothing EMoflonEdge tAccess__tStaticType____staticType = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[6];
+				ruleresult, mStaticType, invocation, tStaticType, tAccess);
+		//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tAccess__tStaticType____staticType = (EMoflonEdge) result3_green[6];
 
 		// 
 		// 
 		MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-				invocation);
+				ruleresult, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess);
 		return MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_1_6_expressionFB(ruleresult);
 	}
 
@@ -231,35 +231,35 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		Type mStaticType = (Type) result2_binding[0];
 		MMethodInvocation invocation = (MMethodInvocation) result2_binding[1];
 		for (Object[] result2_black : MethodInvocationStaticTypeImpl
-				.pattern_MethodInvocationStaticType_2_2_corematch_blackFFBFFBB(mStaticType, invocation, match)) {
-			TAbstractType tStaticType = (TAbstractType) result2_black[0];
-			TCall tAccess = (TCall) result2_black[1];
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[3];
-			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[4];
+				.pattern_MethodInvocationStaticType_2_2_corematch_blackBBFFFFB(mStaticType, invocation, match)) {
+			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[2];
+			TAbstractType tStaticType = (TAbstractType) result2_black[3];
+			TCall tAccess = (TCall) result2_black[4];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodInvocationStaticTypeImpl
-					.pattern_MethodInvocationStaticType_2_3_findcontext_blackBBBBBB(tStaticType, tAccess, mStaticType,
-							invocationToTAccess, mStaticTypeTotStaticType, invocation)) {
+					.pattern_MethodInvocationStaticType_2_3_findcontext_blackBBBBBB(mStaticType, invocation,
+							mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess)) {
 				Object[] result3_green = MethodInvocationStaticTypeImpl
-						.pattern_MethodInvocationStaticType_2_3_findcontext_greenBBBBBBFFFFFF(tStaticType, tAccess,
-								mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation);
+						.pattern_MethodInvocationStaticType_2_3_findcontext_greenBBBBBBFFFFFF(mStaticType, invocation,
+								mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = MethodInvocationStaticTypeImpl
 						.pattern_MethodInvocationStaticType_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-								mStaticTypeTotStaticType, invocation);
+								isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+								tAccess, invocationToTAccess);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tStaticType] = " + tStaticType
-							+ ", " + "[tAccess] = " + tAccess + ", " + "[mStaticType] = " + mStaticType + ", "
-							+ "[invocationToTAccess] = " + invocationToTAccess + ", " + "[mStaticTypeTotStaticType] = "
-							+ mStaticTypeTotStaticType + ", " + "[invocation] = " + invocation + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mStaticType] = " + mStaticType
+							+ ", " + "[invocation] = " + invocation + ", " + "[mStaticTypeTotStaticType] = "
+							+ mStaticTypeTotStaticType + ", " + "[tStaticType] = " + tStaticType + ", " + "[tAccess] = "
+							+ tAccess + ", " + "[invocationToTAccess] = " + invocationToTAccess + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -330,9 +330,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAbstractType tStaticType, TCall tAccess,
-			Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -347,12 +347,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mStaticType", mStaticType);
+		isApplicableMatch.registerObject("invocation", invocation);
+		isApplicableMatch.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
 		isApplicableMatch.registerObject("tStaticType", tStaticType);
 		isApplicableMatch.registerObject("tAccess", tAccess);
-		isApplicableMatch.registerObject("mStaticType", mStaticType);
 		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
-		isApplicableMatch.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
-		isApplicableMatch.registerObject("invocation", invocation);
 		return csp;
 	}
 
@@ -370,14 +370,14 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess,
-			EObject mStaticType, EObject invocationToTAccess, EObject mStaticTypeTotStaticType, EObject invocation) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mStaticType, EObject invocation,
+			EObject mStaticTypeTotStaticType, EObject tStaticType, EObject tAccess, EObject invocationToTAccess) {
+		ruleresult.registerObject("mStaticType", mStaticType);
+		ruleresult.registerObject("invocation", invocation);
+		ruleresult.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
 		ruleresult.registerObject("tStaticType", tStaticType);
 		ruleresult.registerObject("tAccess", tAccess);
-		ruleresult.registerObject("mStaticType", mStaticType);
 		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
-		ruleresult.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
-		ruleresult.registerObject("invocation", invocation);
 
 	}
 
@@ -464,12 +464,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TAbstractType tStaticType = (TAbstractType) result1_bindingAndBlack[0];
-		TCall tAccess = (TCall) result1_bindingAndBlack[1];
-		Type mStaticType = (Type) result1_bindingAndBlack[2];
-		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[3];
-		TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result1_bindingAndBlack[4];
-		MMethodInvocation invocation = (MMethodInvocation) result1_bindingAndBlack[5];
+		Type mStaticType = (Type) result1_bindingAndBlack[0];
+		MMethodInvocation invocation = (MMethodInvocation) result1_bindingAndBlack[1];
+		TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TAbstractType tStaticType = (TAbstractType) result1_bindingAndBlack[3];
+		TCall tAccess = (TCall) result1_bindingAndBlack[4];
+		AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		MethodInvocationStaticTypeImpl
 				.pattern_MethodInvocationStaticType_11_1_performtransformation_greenBB(mStaticType, invocation);
@@ -482,25 +482,25 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodInvocationStaticTypeImpl
-				.pattern_MethodInvocationStaticType_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, tStaticType,
-						tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation);
+				.pattern_MethodInvocationStaticType_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, mStaticType,
+						invocation, mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tStaticType] = " + tStaticType + ", " + "[tAccess] = " + tAccess + ", "
-					+ "[mStaticType] = " + mStaticType + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-					+ "[mStaticTypeTotStaticType] = " + mStaticTypeTotStaticType + ", " + "[invocation] = " + invocation
-					+ ".");
+					+ ", " + "[mStaticType] = " + mStaticType + ", " + "[invocation] = " + invocation + ", "
+					+ "[mStaticTypeTotStaticType] = " + mStaticTypeTotStaticType + ", " + "[tStaticType] = "
+					+ tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[invocationToTAccess] = "
+					+ invocationToTAccess + ".");
 		}
 		MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_11_3_bookkeepingforedges_greenBBBBBFF(
-				ruleresult, tStaticType, tAccess, mStaticType, invocation);
-		//nothing EMoflonEdge tAccess__tStaticType____staticType = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[6];
+				ruleresult, mStaticType, invocation, tStaticType, tAccess);
+		//nothing EMoflonEdge invocation__mStaticType____mStaticType = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge tAccess__tStaticType____staticType = (EMoflonEdge) result3_green[6];
 
 		// 
 		// 
 		MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_11_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-				invocation);
+				ruleresult, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess);
 		return MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_11_6_expressionFB(ruleresult);
 	}
 
@@ -532,35 +532,35 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		TAbstractType tStaticType = (TAbstractType) result2_binding[0];
 		TCall tAccess = (TCall) result2_binding[1];
 		for (Object[] result2_black : MethodInvocationStaticTypeImpl
-				.pattern_MethodInvocationStaticType_12_2_corematch_blackBBFFFFB(tStaticType, tAccess, match)) {
-			Type mStaticType = (Type) result2_black[2];
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[3];
-			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[4];
-			MMethodInvocation invocation = (MMethodInvocation) result2_black[5];
+				.pattern_MethodInvocationStaticType_12_2_corematch_blackFFFBBFB(tStaticType, tAccess, match)) {
+			Type mStaticType = (Type) result2_black[0];
+			MMethodInvocation invocation = (MMethodInvocation) result2_black[1];
+			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[2];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : MethodInvocationStaticTypeImpl
-					.pattern_MethodInvocationStaticType_12_3_findcontext_blackBBBBBB(tStaticType, tAccess, mStaticType,
-							invocationToTAccess, mStaticTypeTotStaticType, invocation)) {
+					.pattern_MethodInvocationStaticType_12_3_findcontext_blackBBBBBB(mStaticType, invocation,
+							mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess)) {
 				Object[] result3_green = MethodInvocationStaticTypeImpl
-						.pattern_MethodInvocationStaticType_12_3_findcontext_greenBBBBBBFFFFFF(tStaticType, tAccess,
-								mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation);
+						.pattern_MethodInvocationStaticType_12_3_findcontext_greenBBBBBBFFFFFF(mStaticType, invocation,
+								mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge tAccess__tStaticType____staticType = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = MethodInvocationStaticTypeImpl
 						.pattern_MethodInvocationStaticType_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-								mStaticTypeTotStaticType, invocation);
+								isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+								tAccess, invocationToTAccess);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tStaticType] = " + tStaticType
-							+ ", " + "[tAccess] = " + tAccess + ", " + "[mStaticType] = " + mStaticType + ", "
-							+ "[invocationToTAccess] = " + invocationToTAccess + ", " + "[mStaticTypeTotStaticType] = "
-							+ mStaticTypeTotStaticType + ", " + "[invocation] = " + invocation + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mStaticType] = " + mStaticType
+							+ ", " + "[invocation] = " + invocation + ", " + "[mStaticTypeTotStaticType] = "
+							+ mStaticTypeTotStaticType + ", " + "[tStaticType] = " + tStaticType + ", " + "[tAccess] = "
+							+ tAccess + ", " + "[invocationToTAccess] = " + invocationToTAccess + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -631,9 +631,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tStaticType, TCall tAccess,
-			Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -648,12 +648,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mStaticType", mStaticType);
+		isApplicableMatch.registerObject("invocation", invocation);
+		isApplicableMatch.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
 		isApplicableMatch.registerObject("tStaticType", tStaticType);
 		isApplicableMatch.registerObject("tAccess", tAccess);
-		isApplicableMatch.registerObject("mStaticType", mStaticType);
 		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
-		isApplicableMatch.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
-		isApplicableMatch.registerObject("invocation", invocation);
 		return csp;
 	}
 
@@ -671,14 +671,14 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess,
-			EObject mStaticType, EObject invocationToTAccess, EObject mStaticTypeTotStaticType, EObject invocation) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mStaticType, EObject invocation,
+			EObject mStaticTypeTotStaticType, EObject tStaticType, EObject tAccess, EObject invocationToTAccess) {
+		ruleresult.registerObject("mStaticType", mStaticType);
+		ruleresult.registerObject("invocation", invocation);
+		ruleresult.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
 		ruleresult.registerObject("tStaticType", tStaticType);
 		ruleresult.registerObject("tAccess", tAccess);
-		ruleresult.registerObject("mStaticType", mStaticType);
 		ruleresult.registerObject("invocationToTAccess", invocationToTAccess);
-		ruleresult.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
-		ruleresult.registerObject("invocation", invocation);
 
 	}
 
@@ -696,7 +696,7 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_31(EMoflonEdge _edge_staticType) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_41(EMoflonEdge _edge_staticType) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationStaticTypeImpl
 				.pattern_MethodInvocationStaticType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -755,7 +755,7 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_32(EMoflonEdge _edge_mStaticType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_mStaticType) {
 
 		Object[] result1_bindingAndBlack = MethodInvocationStaticTypeImpl
 				.pattern_MethodInvocationStaticType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -892,41 +892,41 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TAbstractType tStaticType = (TAbstractType) result2_bindingAndBlack[0];
-		TCall tAccess = (TCall) result2_bindingAndBlack[1];
-		Type mStaticType = (Type) result2_bindingAndBlack[2];
-		MMethodInvocation invocation = (MMethodInvocation) result2_bindingAndBlack[3];
+		Type mStaticType = (Type) result2_bindingAndBlack[0];
+		MMethodInvocation invocation = (MMethodInvocation) result2_bindingAndBlack[1];
+		TAbstractType tStaticType = (TAbstractType) result2_bindingAndBlack[2];
+		TCall tAccess = (TCall) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = MethodInvocationStaticTypeImpl
-				.pattern_MethodInvocationStaticType_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tStaticType, tAccess,
-						mStaticType, invocation, sourceMatch, targetMatch);
+				.pattern_MethodInvocationStaticType_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mStaticType, invocation,
+						tStaticType, tAccess, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tStaticType] = " + tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[mStaticType] = "
-					+ mStaticType + ", " + "[invocation] = " + invocation + ", " + "[sourceMatch] = " + sourceMatch
-					+ ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[mStaticType] = " + mStaticType + ", " + "[invocation] = " + invocation + ", "
+					+ "[tStaticType] = " + tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[sourceMatch] = "
+					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodInvocationStaticTypeImpl
-					.pattern_MethodInvocationStaticType_24_5_matchcorrcontext_blackBBBFFBBB(tStaticType, tAccess,
-							mStaticType, invocation, sourceMatch, targetMatch)) {
-				AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result5_black[3];
-				TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result5_black[4];
+					.pattern_MethodInvocationStaticType_24_5_matchcorrcontext_blackBBFBBFBB(mStaticType, invocation,
+							tStaticType, tAccess, sourceMatch, targetMatch)) {
+				TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result5_black[2];
+				AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result5_black[5];
 				Object[] result5_green = MethodInvocationStaticTypeImpl
-						.pattern_MethodInvocationStaticType_24_5_matchcorrcontext_greenBBBBF(invocationToTAccess,
-								mStaticTypeTotStaticType, sourceMatch, targetMatch);
+						.pattern_MethodInvocationStaticType_24_5_matchcorrcontext_greenBBBBF(mStaticTypeTotStaticType,
+								invocationToTAccess, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = MethodInvocationStaticTypeImpl
-						.pattern_MethodInvocationStaticType_24_6_createcorrespondence_blackBBBBB(tStaticType, tAccess,
-								mStaticType, invocation, ccMatch);
+						.pattern_MethodInvocationStaticType_24_6_createcorrespondence_blackBBBBB(mStaticType,
+								invocation, tStaticType, tAccess, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tStaticType] = "
-							+ tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[mStaticType] = " + mStaticType
-							+ ", " + "[invocation] = " + invocation + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mStaticType] = "
+							+ mStaticType + ", " + "[invocation] = " + invocation + ", " + "[tStaticType] = "
+							+ tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = MethodInvocationStaticTypeImpl
@@ -950,8 +950,8 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			MMethodInvocation invocation, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Type mStaticType, MMethodInvocation invocation, TAbstractType tStaticType,
+			TCall tAccess, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1031,24 +1031,24 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 				.pattern_MethodInvocationStaticType_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList mStaticTypeTotStaticTypeList = (RuleEntryList) result2_black[0];
-			TAbstractType tStaticType = (TAbstractType) result2_black[1];
+			Type mStaticType = (Type) result2_black[1];
 			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result2_black[2];
-			Type mStaticType = (Type) result2_black[3];
+			TAbstractType tStaticType = (TAbstractType) result2_black[3];
 			//nothing RuleEntryList invocationToTAccessList = (RuleEntryList) result2_black[4];
-			TCall tAccess = (TCall) result2_black[5];
+			MMethodInvocation invocation = (MMethodInvocation) result2_black[5];
 			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result2_black[6];
-			MMethodInvocation invocation = (MMethodInvocation) result2_black[7];
+			TCall tAccess = (TCall) result2_black[7];
 
 			Object[] result3_bindingAndBlack = MethodInvocationStaticTypeImpl
 					.pattern_MethodInvocationStaticType_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-							invocation, ruleResult);
+							mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+							invocationToTAccess, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tStaticType] = " + tStaticType + ", "
-						+ "[tAccess] = " + tAccess + ", " + "[mStaticType] = " + mStaticType + ", "
-						+ "[invocationToTAccess] = " + invocationToTAccess + ", " + "[mStaticTypeTotStaticType] = "
-						+ mStaticTypeTotStaticType + ", " + "[invocation] = " + invocation + ", " + "[ruleResult] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mStaticType] = " + mStaticType + ", "
+						+ "[invocation] = " + invocation + ", " + "[mStaticTypeTotStaticType] = "
+						+ mStaticTypeTotStaticType + ", " + "[tStaticType] = " + tStaticType + ", " + "[tAccess] = "
+						+ tAccess + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", " + "[ruleResult] = "
 						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1057,22 +1057,22 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					csp)) {
 				// 
 				Object[] result5_black = MethodInvocationStaticTypeImpl
-						.pattern_MethodInvocationStaticType_29_5_checknacs_blackBBBBBB(tStaticType, tAccess,
-								mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation);
+						.pattern_MethodInvocationStaticType_29_5_checknacs_blackBBBBBB(mStaticType, invocation,
+								mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodInvocationStaticTypeImpl
-							.pattern_MethodInvocationStaticType_29_6_perform_blackBBBBBBB(tStaticType, tAccess,
-									mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation, ruleResult);
+							.pattern_MethodInvocationStaticType_29_6_perform_blackBBBBBBB(mStaticType, invocation,
+									mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tStaticType] = "
-								+ tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[mStaticType] = "
-								+ mStaticType + ", " + "[invocationToTAccess] = " + invocationToTAccess + ", "
-								+ "[mStaticTypeTotStaticType] = " + mStaticTypeTotStaticType + ", " + "[invocation] = "
-								+ invocation + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mStaticType] = "
+								+ mStaticType + ", " + "[invocation] = " + invocation + ", "
+								+ "[mStaticTypeTotStaticType] = " + mStaticTypeTotStaticType + ", " + "[tStaticType] = "
+								+ tStaticType + ", " + "[tAccess] = " + tAccess + ", " + "[invocationToTAccess] = "
+								+ invocationToTAccess + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					MethodInvocationStaticTypeImpl.pattern_MethodInvocationStaticType_29_6_perform_greenBBBBB(
-							tStaticType, tAccess, mStaticType, invocation, ruleResult);
+							mStaticType, invocation, tStaticType, tAccess, ruleResult);
 
 				} else {
 				}
@@ -1089,10 +1089,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tStaticType, TCall tAccess,
-			Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation,
-			ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1107,12 +1106,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("mStaticType", mStaticType);
+		isApplicableMatch.registerObject("invocation", invocation);
+		isApplicableMatch.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
 		isApplicableMatch.registerObject("tStaticType", tStaticType);
 		isApplicableMatch.registerObject("tAccess", tAccess);
-		isApplicableMatch.registerObject("mStaticType", mStaticType);
 		isApplicableMatch.registerObject("invocationToTAccess", invocationToTAccess);
-		isApplicableMatch.registerObject("mStaticTypeTotStaticType", mStaticTypeTotStaticType);
-		isApplicableMatch.registerObject("invocation", invocation);
 		return csp;
 	}
 
@@ -1149,11 +1148,11 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					(MMethodInvocation) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_TCALL_TYPE_ABSTRACTMETHODINVOCATIONTOTACCESS_TYPETOTABSTRACTTYPE_MMETHODINVOCATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TCall) arguments.get(2), (Type) arguments.get(3),
-					(AbstractMethodInvocationToTAccess) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(MMethodInvocation) arguments.get(6));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPE_MMETHODINVOCATION_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TCALL_ABSTRACTMETHODINVOCATIONTOTACCESS:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
+					(MMethodInvocation) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(TAbstractType) arguments.get(4), (TCall) arguments.get(5),
+					(AbstractMethodInvocationToTAccess) arguments.get(6));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1179,11 +1178,11 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					(TCall) arguments.get(2));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_TCALL_TYPE_ABSTRACTMETHODINVOCATIONTOTACCESS_TYPETOTABSTRACTTYPE_MMETHODINVOCATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TCall) arguments.get(2), (Type) arguments.get(3),
-					(AbstractMethodInvocationToTAccess) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(MMethodInvocation) arguments.get(6));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_MMETHODINVOCATION_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TCALL_ABSTRACTMETHODINVOCATIONTOTACCESS:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
+					(MMethodInvocation) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(TAbstractType) arguments.get(4), (TCall) arguments.get(5),
+					(AbstractMethodInvocationToTAccess) arguments.get(6));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1193,19 +1192,19 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 			return null;
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_31__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_32__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_32((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_41__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_41((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_44__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_44((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__TABSTRACTTYPE_TCALL_TYPE_MMETHODINVOCATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TAbstractType) arguments.get(0), (TCall) arguments.get(1),
-					(Type) arguments.get(2), (MMethodInvocation) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__TYPE_MMETHODINVOCATION_TABSTRACTTYPE_TCALL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Type) arguments.get(0), (MMethodInvocation) arguments.get(1),
+					(TAbstractType) arguments.get(2), (TCall) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1216,11 +1215,11 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE_ABSTRACTMETHODINVOCATIONTOTACCESS:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1),
 					(AbstractMethodInvocationToTAccess) arguments.get(2));
-		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_TCALL_TYPE_ABSTRACTMETHODINVOCATIONTOTACCESS_TYPETOTABSTRACTTYPE_MMETHODINVOCATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TCall) arguments.get(2), (Type) arguments.get(3),
-					(AbstractMethodInvocationToTAccess) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(MMethodInvocation) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_MMETHODINVOCATION_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TCALL_ABSTRACTMETHODINVOCATIONTOTACCESS_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
+					(MMethodInvocation) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+					(TAbstractType) arguments.get(4), (TCall) arguments.get(5),
+					(AbstractMethodInvocationToTAccess) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.METHOD_INVOCATION_STATIC_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1316,32 +1315,32 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_MethodInvocationStaticType_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tStaticType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tAccess");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mStaticType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("invocationToTAccess");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mStaticTypeTotStaticType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("invocation");
-		EObject tmpTStaticType = _localVariable_0;
-		EObject tmpTAccess = _localVariable_1;
-		EObject tmpMStaticType = _localVariable_2;
-		EObject tmpInvocationToTAccess = _localVariable_3;
-		EObject tmpMStaticTypeTotStaticType = _localVariable_4;
-		EObject tmpInvocation = _localVariable_5;
-		if (tmpTStaticType instanceof TAbstractType) {
-			TAbstractType tStaticType = (TAbstractType) tmpTStaticType;
-			if (tmpTAccess instanceof TCall) {
-				TCall tAccess = (TCall) tmpTAccess;
-				if (tmpMStaticType instanceof Type) {
-					Type mStaticType = (Type) tmpMStaticType;
-					if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
-						AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
-						if (tmpMStaticTypeTotStaticType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) tmpMStaticTypeTotStaticType;
-							if (tmpInvocation instanceof MMethodInvocation) {
-								MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
-								return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-										mStaticTypeTotStaticType, invocation, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mStaticType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("invocation");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mStaticTypeTotStaticType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tStaticType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_5 = isApplicableMatch.getObject("invocationToTAccess");
+		EObject tmpMStaticType = _localVariable_0;
+		EObject tmpInvocation = _localVariable_1;
+		EObject tmpMStaticTypeTotStaticType = _localVariable_2;
+		EObject tmpTStaticType = _localVariable_3;
+		EObject tmpTAccess = _localVariable_4;
+		EObject tmpInvocationToTAccess = _localVariable_5;
+		if (tmpMStaticType instanceof Type) {
+			Type mStaticType = (Type) tmpMStaticType;
+			if (tmpInvocation instanceof MMethodInvocation) {
+				MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+				if (tmpMStaticTypeTotStaticType instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) tmpMStaticTypeTotStaticType;
+					if (tmpTStaticType instanceof TAbstractType) {
+						TAbstractType tStaticType = (TAbstractType) tmpTStaticType;
+						if (tmpTAccess instanceof TCall) {
+							TCall tAccess = (TCall) tmpTAccess;
+							if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
+								AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
+								return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+										tAccess, invocationToTAccess, isApplicableMatch };
 							}
 						}
 					}
@@ -1352,14 +1351,14 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_1_1_performtransformation_blackBBBBBBFBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation, MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch) {
+			Type mStaticType, MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-						invocation, csp, _this, isApplicableMatch };
+				return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+						invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1370,21 +1369,21 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		Object[] result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding = pattern_MethodInvocationStaticType_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding != null) {
-			TAbstractType tStaticType = (TAbstractType) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[0];
-			TCall tAccess = (TCall) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[1];
-			Type mStaticType = (Type) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[2];
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[3];
-			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[4];
-			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[5];
+			Type mStaticType = (Type) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[0];
+			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[1];
+			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[2];
+			TAbstractType tStaticType = (TAbstractType) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[3];
+			TCall tAccess = (TCall) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[4];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationStaticType_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodInvocationStaticType_1_1_performtransformation_black = pattern_MethodInvocationStaticType_1_1_performtransformation_blackBBBBBBFBB(
-					tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation, _this,
+					mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess, _this,
 					isApplicableMatch);
 			if (result_pattern_MethodInvocationStaticType_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodInvocationStaticType_1_1_performtransformation_black[6];
 
-				return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-						invocation, csp, _this, isApplicableMatch };
+				return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+						invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1402,26 +1401,26 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess, EObject mStaticType,
-			EObject invocationToTAccess, EObject mStaticTypeTotStaticType, EObject invocation) {
-		if (!tAccess.equals(tStaticType)) {
+			PerformRuleResult ruleresult, EObject mStaticType, EObject invocation, EObject mStaticTypeTotStaticType,
+			EObject tStaticType, EObject tAccess, EObject invocationToTAccess) {
+		if (!mStaticType.equals(mStaticTypeTotStaticType)) {
 			if (!mStaticType.equals(tStaticType)) {
 				if (!mStaticType.equals(tAccess)) {
-					if (!mStaticType.equals(mStaticTypeTotStaticType)) {
-						if (!invocationToTAccess.equals(tStaticType)) {
-							if (!invocationToTAccess.equals(tAccess)) {
-								if (!invocationToTAccess.equals(mStaticType)) {
-									if (!invocationToTAccess.equals(mStaticTypeTotStaticType)) {
+					if (!invocation.equals(mStaticType)) {
+						if (!invocation.equals(mStaticTypeTotStaticType)) {
+							if (!invocation.equals(tStaticType)) {
+								if (!invocation.equals(tAccess)) {
+									if (!invocation.equals(invocationToTAccess)) {
 										if (!mStaticTypeTotStaticType.equals(tStaticType)) {
 											if (!mStaticTypeTotStaticType.equals(tAccess)) {
-												if (!invocation.equals(tStaticType)) {
-													if (!invocation.equals(tAccess)) {
-														if (!invocation.equals(mStaticType)) {
-															if (!invocation.equals(invocationToTAccess)) {
-																if (!invocation.equals(mStaticTypeTotStaticType)) {
-																	return new Object[] { ruleresult, tStaticType,
-																			tAccess, mStaticType, invocationToTAccess,
-																			mStaticTypeTotStaticType, invocation };
+												if (!tAccess.equals(tStaticType)) {
+													if (!invocationToTAccess.equals(mStaticType)) {
+														if (!invocationToTAccess.equals(mStaticTypeTotStaticType)) {
+															if (!invocationToTAccess.equals(tStaticType)) {
+																if (!invocationToTAccess.equals(tAccess)) {
+																	return new Object[] { ruleresult, mStaticType,
+																			invocation, mStaticTypeTotStaticType,
+																			tStaticType, tAccess, invocationToTAccess };
 																}
 															}
 														}
@@ -1441,31 +1440,31 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_1_3_bookkeepingforedges_greenBBBBBFF(
-			PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess, EObject mStaticType,
-			EObject invocation) {
-		EMoflonEdge tAccess__tStaticType____staticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mStaticType, EObject invocation, EObject tStaticType,
+			EObject tAccess) {
 		EMoflonEdge invocation__mStaticType____mStaticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tStaticType____staticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodInvocationStaticType";
-		String tAccess__tStaticType____staticType_name_prime = "staticType";
 		String invocation__mStaticType____mStaticType_name_prime = "mStaticType";
-		tAccess__tStaticType____staticType.setSrc(tAccess);
-		tAccess__tStaticType____staticType.setTrg(tStaticType);
-		ruleresult.getCreatedEdges().add(tAccess__tStaticType____staticType);
+		String tAccess__tStaticType____staticType_name_prime = "staticType";
 		invocation__mStaticType____mStaticType.setSrc(invocation);
 		invocation__mStaticType____mStaticType.setTrg(mStaticType);
 		ruleresult.getTranslatedEdges().add(invocation__mStaticType____mStaticType);
+		tAccess__tStaticType____staticType.setSrc(tAccess);
+		tAccess__tStaticType____staticType.setTrg(tStaticType);
+		ruleresult.getCreatedEdges().add(tAccess__tStaticType____staticType);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tAccess__tStaticType____staticType.setName(tAccess__tStaticType____staticType_name_prime);
 		invocation__mStaticType____mStaticType.setName(invocation__mStaticType____mStaticType_name_prime);
-		return new Object[] { ruleresult, tStaticType, tAccess, mStaticType, invocation,
-				tAccess__tStaticType____staticType, invocation__mStaticType____mStaticType };
+		tAccess__tStaticType____staticType.setName(tAccess__tStaticType____staticType_name_prime);
+		return new Object[] { ruleresult, mStaticType, invocation, tStaticType, tAccess,
+				invocation__mStaticType____mStaticType, tAccess__tStaticType____staticType };
 	}
 
 	public static final void pattern_MethodInvocationStaticType_1_5_registerobjects_expressionBBBBBBBB(
-			MethodInvocationStaticType _this, PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess,
-			EObject mStaticType, EObject invocationToTAccess, EObject mStaticTypeTotStaticType, EObject invocation) {
-		_this.registerObjects_FWD(ruleresult, tStaticType, tAccess, mStaticType, invocationToTAccess,
-				mStaticTypeTotStaticType, invocation);
+			MethodInvocationStaticType _this, PerformRuleResult ruleresult, EObject mStaticType, EObject invocation,
+			EObject mStaticTypeTotStaticType, EObject tStaticType, EObject tAccess, EObject invocationToTAccess) {
+		_this.registerObjects_FWD(ruleresult, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess);
 
 	}
 
@@ -1541,7 +1540,7 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_2_2_corematch_blackFFBFFBB(
+	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_2_2_corematch_blackBBFFFFB(
 			Type mStaticType, MMethodInvocation invocation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (TypeToTAbstractType mStaticTypeTotStaticType : org.moflon.core.utilities.eMoflonEMFUtil
@@ -1553,8 +1552,8 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					TAccess tmpTAccess = invocationToTAccess.getTarget();
 					if (tmpTAccess instanceof TCall) {
 						TCall tAccess = (TCall) tmpTAccess;
-						_result.add(new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-								mStaticTypeTotStaticType, invocation, match });
+						_result.add(new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+								tAccess, invocationToTAccess, match });
 					}
 
 				}
@@ -1565,17 +1564,16 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_2_3_findcontext_blackBBBBBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation) {
+			Type mStaticType, MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tAccess.equals(invocationToTAccess.getTarget())) {
-			if (tStaticType.equals(mStaticTypeTotStaticType.getTarget())) {
-				if (mStaticType.equals(mStaticTypeTotStaticType.getSource())) {
-					if (invocation.equals(invocationToTAccess.getSource())) {
-						if (mStaticType.equals(invocation.getMStaticType())) {
-							_result.add(new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-									mStaticTypeTotStaticType, invocation });
+		if (mStaticType.equals(invocation.getMStaticType())) {
+			if (mStaticType.equals(mStaticTypeTotStaticType.getSource())) {
+				if (tStaticType.equals(mStaticTypeTotStaticType.getTarget())) {
+					if (tAccess.equals(invocationToTAccess.getTarget())) {
+						if (invocation.equals(invocationToTAccess.getSource())) {
+							_result.add(new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+									tAccess, invocationToTAccess });
 						}
 					}
 				}
@@ -1584,65 +1582,64 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodInvocationStaticType_2_3_findcontext_greenBBBBBBFFFFFF(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation) {
+	public static final Object[] pattern_MethodInvocationStaticType_2_3_findcontext_greenBBBBBBFFFFFF(Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocation__mStaticType____mStaticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String invocationToTAccess__tAccess____target_name_prime = "target";
-		String mStaticTypeTotStaticType__tStaticType____target_name_prime = "target";
-		String mStaticTypeTotStaticType__mStaticType____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
+		EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String invocation__mStaticType____mStaticType_name_prime = "mStaticType";
+		String mStaticTypeTotStaticType__mStaticType____source_name_prime = "source";
+		String mStaticTypeTotStaticType__tStaticType____target_name_prime = "target";
+		String invocationToTAccess__tAccess____target_name_prime = "target";
+		String invocationToTAccess__invocation____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(mStaticType);
+		isApplicableMatch.getAllContextElements().add(invocation);
+		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType);
 		isApplicableMatch.getAllContextElements().add(tStaticType);
 		isApplicableMatch.getAllContextElements().add(tAccess);
-		isApplicableMatch.getAllContextElements().add(mStaticType);
 		isApplicableMatch.getAllContextElements().add(invocationToTAccess);
-		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType);
-		isApplicableMatch.getAllContextElements().add(invocation);
-		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
-		invocationToTAccess__tAccess____target.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
-		mStaticTypeTotStaticType__tStaticType____target.setSrc(mStaticTypeTotStaticType);
-		mStaticTypeTotStaticType__tStaticType____target.setTrg(tStaticType);
-		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__tStaticType____target);
-		mStaticTypeTotStaticType__mStaticType____source.setSrc(mStaticTypeTotStaticType);
-		mStaticTypeTotStaticType__mStaticType____source.setTrg(mStaticType);
-		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__mStaticType____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
 		invocation__mStaticType____mStaticType.setSrc(invocation);
 		invocation__mStaticType____mStaticType.setTrg(mStaticType);
 		isApplicableMatch.getAllContextElements().add(invocation__mStaticType____mStaticType);
-		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
-		mStaticTypeTotStaticType__tStaticType____target
-				.setName(mStaticTypeTotStaticType__tStaticType____target_name_prime);
+		mStaticTypeTotStaticType__mStaticType____source.setSrc(mStaticTypeTotStaticType);
+		mStaticTypeTotStaticType__mStaticType____source.setTrg(mStaticType);
+		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__mStaticType____source);
+		mStaticTypeTotStaticType__tStaticType____target.setSrc(mStaticTypeTotStaticType);
+		mStaticTypeTotStaticType__tStaticType____target.setTrg(tStaticType);
+		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__tStaticType____target);
+		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
+		invocationToTAccess__tAccess____target.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
+		invocation__mStaticType____mStaticType.setName(invocation__mStaticType____mStaticType_name_prime);
 		mStaticTypeTotStaticType__mStaticType____source
 				.setName(mStaticTypeTotStaticType__mStaticType____source_name_prime);
+		mStaticTypeTotStaticType__tStaticType____target
+				.setName(mStaticTypeTotStaticType__tStaticType____target_name_prime);
+		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
-		invocation__mStaticType____mStaticType.setName(invocation__mStaticType____mStaticType_name_prime);
-		return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-				invocation, isApplicableMatch, invocationToTAccess__tAccess____target,
-				mStaticTypeTotStaticType__tStaticType____target, mStaticTypeTotStaticType__mStaticType____source,
-				invocationToTAccess__invocation____source, invocation__mStaticType____mStaticType };
+		return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess, isApplicableMatch, invocation__mStaticType____mStaticType,
+				mStaticTypeTotStaticType__mStaticType____source, mStaticTypeTotStaticType__tStaticType____target,
+				invocationToTAccess__tAccess____target, invocationToTAccess__invocation____source };
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_2_4_solveCSP_bindingFBBBBBBBB(
-			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tStaticType, tAccess, mStaticType,
-				invocationToTAccess, mStaticTypeTotStaticType, invocation);
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mStaticType, invocation,
+				mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-					mStaticTypeTotStaticType, invocation };
+			return new Object[] { csp, _this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType,
+					tStaticType, tAccess, invocationToTAccess };
 		}
 		return null;
 	}
@@ -1652,12 +1649,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation) {
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
 		Object[] result_pattern_MethodInvocationStaticType_2_4_solveCSP_binding = pattern_MethodInvocationStaticType_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-				mStaticTypeTotStaticType, invocation);
+				_this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess);
 		if (result_pattern_MethodInvocationStaticType_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationStaticType_2_4_solveCSP_binding[0];
 
@@ -1665,8 +1662,8 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_MethodInvocationStaticType_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tStaticType, tAccess, mStaticType,
-						invocationToTAccess, mStaticTypeTotStaticType, invocation };
+				return new Object[] { csp, _this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType,
+						tStaticType, tAccess, invocationToTAccess };
 			}
 		}
 		return null;
@@ -1789,32 +1786,32 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 
 	public static final Object[] pattern_MethodInvocationStaticType_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("tStaticType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tAccess");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mStaticType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("invocationToTAccess");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mStaticTypeTotStaticType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("invocation");
-		EObject tmpTStaticType = _localVariable_0;
-		EObject tmpTAccess = _localVariable_1;
-		EObject tmpMStaticType = _localVariable_2;
-		EObject tmpInvocationToTAccess = _localVariable_3;
-		EObject tmpMStaticTypeTotStaticType = _localVariable_4;
-		EObject tmpInvocation = _localVariable_5;
-		if (tmpTStaticType instanceof TAbstractType) {
-			TAbstractType tStaticType = (TAbstractType) tmpTStaticType;
-			if (tmpTAccess instanceof TCall) {
-				TCall tAccess = (TCall) tmpTAccess;
-				if (tmpMStaticType instanceof Type) {
-					Type mStaticType = (Type) tmpMStaticType;
-					if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
-						AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
-						if (tmpMStaticTypeTotStaticType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) tmpMStaticTypeTotStaticType;
-							if (tmpInvocation instanceof MMethodInvocation) {
-								MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
-								return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-										mStaticTypeTotStaticType, invocation, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mStaticType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("invocation");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mStaticTypeTotStaticType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tStaticType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tAccess");
+		EObject _localVariable_5 = isApplicableMatch.getObject("invocationToTAccess");
+		EObject tmpMStaticType = _localVariable_0;
+		EObject tmpInvocation = _localVariable_1;
+		EObject tmpMStaticTypeTotStaticType = _localVariable_2;
+		EObject tmpTStaticType = _localVariable_3;
+		EObject tmpTAccess = _localVariable_4;
+		EObject tmpInvocationToTAccess = _localVariable_5;
+		if (tmpMStaticType instanceof Type) {
+			Type mStaticType = (Type) tmpMStaticType;
+			if (tmpInvocation instanceof MMethodInvocation) {
+				MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+				if (tmpMStaticTypeTotStaticType instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) tmpMStaticTypeTotStaticType;
+					if (tmpTStaticType instanceof TAbstractType) {
+						TAbstractType tStaticType = (TAbstractType) tmpTStaticType;
+						if (tmpTAccess instanceof TCall) {
+							TCall tAccess = (TCall) tmpTAccess;
+							if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
+								AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
+								return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+										tAccess, invocationToTAccess, isApplicableMatch };
 							}
 						}
 					}
@@ -1825,14 +1822,14 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_11_1_performtransformation_blackBBBBBBFBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation, MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch) {
+			Type mStaticType, MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess,
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-						invocation, csp, _this, isApplicableMatch };
+				return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+						invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1843,21 +1840,21 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		Object[] result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding = pattern_MethodInvocationStaticType_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding != null) {
-			TAbstractType tStaticType = (TAbstractType) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[0];
-			TCall tAccess = (TCall) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[1];
-			Type mStaticType = (Type) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[2];
-			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[3];
-			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[4];
-			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[5];
+			Type mStaticType = (Type) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[0];
+			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[1];
+			TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[2];
+			TAbstractType tStaticType = (TAbstractType) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[3];
+			TCall tAccess = (TCall) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[4];
+			AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) result_pattern_MethodInvocationStaticType_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_MethodInvocationStaticType_11_1_performtransformation_black = pattern_MethodInvocationStaticType_11_1_performtransformation_blackBBBBBBFBB(
-					tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType, invocation, _this,
+					mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess, _this,
 					isApplicableMatch);
 			if (result_pattern_MethodInvocationStaticType_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodInvocationStaticType_11_1_performtransformation_black[6];
 
-				return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-						invocation, csp, _this, isApplicableMatch };
+				return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+						invocationToTAccess, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1875,26 +1872,26 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess, EObject mStaticType,
-			EObject invocationToTAccess, EObject mStaticTypeTotStaticType, EObject invocation) {
-		if (!tAccess.equals(tStaticType)) {
+			PerformRuleResult ruleresult, EObject mStaticType, EObject invocation, EObject mStaticTypeTotStaticType,
+			EObject tStaticType, EObject tAccess, EObject invocationToTAccess) {
+		if (!mStaticType.equals(mStaticTypeTotStaticType)) {
 			if (!mStaticType.equals(tStaticType)) {
 				if (!mStaticType.equals(tAccess)) {
-					if (!mStaticType.equals(mStaticTypeTotStaticType)) {
-						if (!invocationToTAccess.equals(tStaticType)) {
-							if (!invocationToTAccess.equals(tAccess)) {
-								if (!invocationToTAccess.equals(mStaticType)) {
-									if (!invocationToTAccess.equals(mStaticTypeTotStaticType)) {
+					if (!invocation.equals(mStaticType)) {
+						if (!invocation.equals(mStaticTypeTotStaticType)) {
+							if (!invocation.equals(tStaticType)) {
+								if (!invocation.equals(tAccess)) {
+									if (!invocation.equals(invocationToTAccess)) {
 										if (!mStaticTypeTotStaticType.equals(tStaticType)) {
 											if (!mStaticTypeTotStaticType.equals(tAccess)) {
-												if (!invocation.equals(tStaticType)) {
-													if (!invocation.equals(tAccess)) {
-														if (!invocation.equals(mStaticType)) {
-															if (!invocation.equals(invocationToTAccess)) {
-																if (!invocation.equals(mStaticTypeTotStaticType)) {
-																	return new Object[] { ruleresult, tStaticType,
-																			tAccess, mStaticType, invocationToTAccess,
-																			mStaticTypeTotStaticType, invocation };
+												if (!tAccess.equals(tStaticType)) {
+													if (!invocationToTAccess.equals(mStaticType)) {
+														if (!invocationToTAccess.equals(mStaticTypeTotStaticType)) {
+															if (!invocationToTAccess.equals(tStaticType)) {
+																if (!invocationToTAccess.equals(tAccess)) {
+																	return new Object[] { ruleresult, mStaticType,
+																			invocation, mStaticTypeTotStaticType,
+																			tStaticType, tAccess, invocationToTAccess };
 																}
 															}
 														}
@@ -1914,31 +1911,31 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_11_3_bookkeepingforedges_greenBBBBBFF(
-			PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess, EObject mStaticType,
-			EObject invocation) {
-		EMoflonEdge tAccess__tStaticType____staticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mStaticType, EObject invocation, EObject tStaticType,
+			EObject tAccess) {
 		EMoflonEdge invocation__mStaticType____mStaticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAccess__tStaticType____staticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodInvocationStaticType";
-		String tAccess__tStaticType____staticType_name_prime = "staticType";
 		String invocation__mStaticType____mStaticType_name_prime = "mStaticType";
-		tAccess__tStaticType____staticType.setSrc(tAccess);
-		tAccess__tStaticType____staticType.setTrg(tStaticType);
-		ruleresult.getTranslatedEdges().add(tAccess__tStaticType____staticType);
+		String tAccess__tStaticType____staticType_name_prime = "staticType";
 		invocation__mStaticType____mStaticType.setSrc(invocation);
 		invocation__mStaticType____mStaticType.setTrg(mStaticType);
 		ruleresult.getCreatedEdges().add(invocation__mStaticType____mStaticType);
+		tAccess__tStaticType____staticType.setSrc(tAccess);
+		tAccess__tStaticType____staticType.setTrg(tStaticType);
+		ruleresult.getTranslatedEdges().add(tAccess__tStaticType____staticType);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		tAccess__tStaticType____staticType.setName(tAccess__tStaticType____staticType_name_prime);
 		invocation__mStaticType____mStaticType.setName(invocation__mStaticType____mStaticType_name_prime);
-		return new Object[] { ruleresult, tStaticType, tAccess, mStaticType, invocation,
-				tAccess__tStaticType____staticType, invocation__mStaticType____mStaticType };
+		tAccess__tStaticType____staticType.setName(tAccess__tStaticType____staticType_name_prime);
+		return new Object[] { ruleresult, mStaticType, invocation, tStaticType, tAccess,
+				invocation__mStaticType____mStaticType, tAccess__tStaticType____staticType };
 	}
 
 	public static final void pattern_MethodInvocationStaticType_11_5_registerobjects_expressionBBBBBBBB(
-			MethodInvocationStaticType _this, PerformRuleResult ruleresult, EObject tStaticType, EObject tAccess,
-			EObject mStaticType, EObject invocationToTAccess, EObject mStaticTypeTotStaticType, EObject invocation) {
-		_this.registerObjects_BWD(ruleresult, tStaticType, tAccess, mStaticType, invocationToTAccess,
-				mStaticTypeTotStaticType, invocation);
+			MethodInvocationStaticType _this, PerformRuleResult ruleresult, EObject mStaticType, EObject invocation,
+			EObject mStaticTypeTotStaticType, EObject tStaticType, EObject tAccess, EObject invocationToTAccess) {
+		_this.registerObjects_BWD(ruleresult, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess);
 
 	}
 
@@ -2014,20 +2011,20 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_12_2_corematch_blackBBFFFFB(
+	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_12_2_corematch_blackFFFBBFB(
 			TAbstractType tStaticType, TCall tAccess, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (AbstractMethodInvocationToTAccess invocationToTAccess : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(tAccess, AbstractMethodInvocationToTAccess.class, "target")) {
-			AbstractMethodInvocation tmpInvocation = invocationToTAccess.getSource();
-			if (tmpInvocation instanceof MMethodInvocation) {
-				MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
-				for (TypeToTAbstractType mStaticTypeTotStaticType : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(tStaticType, TypeToTAbstractType.class, "target")) {
-					Type mStaticType = mStaticTypeTotStaticType.getSource();
-					if (mStaticType != null) {
-						_result.add(new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-								mStaticTypeTotStaticType, invocation, match });
+		for (TypeToTAbstractType mStaticTypeTotStaticType : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(tStaticType, TypeToTAbstractType.class, "target")) {
+			Type mStaticType = mStaticTypeTotStaticType.getSource();
+			if (mStaticType != null) {
+				for (AbstractMethodInvocationToTAccess invocationToTAccess : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(tAccess, AbstractMethodInvocationToTAccess.class, "target")) {
+					AbstractMethodInvocation tmpInvocation = invocationToTAccess.getSource();
+					if (tmpInvocation instanceof MMethodInvocation) {
+						MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+						_result.add(new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+								tAccess, invocationToTAccess, match });
 					}
 
 				}
@@ -2038,17 +2035,16 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_12_3_findcontext_blackBBBBBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation) {
+			Type mStaticType, MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType,
+			TAbstractType tStaticType, TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (tAccess.equals(invocationToTAccess.getTarget())) {
+		if (mStaticType.equals(mStaticTypeTotStaticType.getSource())) {
 			if (tStaticType.equals(mStaticTypeTotStaticType.getTarget())) {
-				if (mStaticType.equals(mStaticTypeTotStaticType.getSource())) {
+				if (tAccess.equals(invocationToTAccess.getTarget())) {
 					if (tStaticType.equals(tAccess.getStaticType())) {
 						if (invocation.equals(invocationToTAccess.getSource())) {
-							_result.add(new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-									mStaticTypeTotStaticType, invocation });
+							_result.add(new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+									tAccess, invocationToTAccess });
 						}
 					}
 				}
@@ -2057,65 +2053,64 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodInvocationStaticType_12_3_findcontext_greenBBBBBBFFFFFF(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation) {
+	public static final Object[] pattern_MethodInvocationStaticType_12_3_findcontext_greenBBBBBBFFFFFF(Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mStaticTypeTotStaticType__mStaticType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mStaticTypeTotStaticType__tStaticType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tStaticType____staticType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String invocationToTAccess__tAccess____target_name_prime = "target";
-		String mStaticTypeTotStaticType__tStaticType____target_name_prime = "target";
 		String mStaticTypeTotStaticType__mStaticType____source_name_prime = "source";
+		String mStaticTypeTotStaticType__tStaticType____target_name_prime = "target";
+		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String tAccess__tStaticType____staticType_name_prime = "staticType";
 		String invocationToTAccess__invocation____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(mStaticType);
+		isApplicableMatch.getAllContextElements().add(invocation);
+		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType);
 		isApplicableMatch.getAllContextElements().add(tStaticType);
 		isApplicableMatch.getAllContextElements().add(tAccess);
-		isApplicableMatch.getAllContextElements().add(mStaticType);
 		isApplicableMatch.getAllContextElements().add(invocationToTAccess);
-		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType);
-		isApplicableMatch.getAllContextElements().add(invocation);
-		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
-		invocationToTAccess__tAccess____target.setTrg(tAccess);
-		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
-		mStaticTypeTotStaticType__tStaticType____target.setSrc(mStaticTypeTotStaticType);
-		mStaticTypeTotStaticType__tStaticType____target.setTrg(tStaticType);
-		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__tStaticType____target);
 		mStaticTypeTotStaticType__mStaticType____source.setSrc(mStaticTypeTotStaticType);
 		mStaticTypeTotStaticType__mStaticType____source.setTrg(mStaticType);
 		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__mStaticType____source);
+		mStaticTypeTotStaticType__tStaticType____target.setSrc(mStaticTypeTotStaticType);
+		mStaticTypeTotStaticType__tStaticType____target.setTrg(tStaticType);
+		isApplicableMatch.getAllContextElements().add(mStaticTypeTotStaticType__tStaticType____target);
+		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
+		invocationToTAccess__tAccess____target.setTrg(tAccess);
+		isApplicableMatch.getAllContextElements().add(invocationToTAccess__tAccess____target);
 		tAccess__tStaticType____staticType.setSrc(tAccess);
 		tAccess__tStaticType____staticType.setTrg(tStaticType);
 		isApplicableMatch.getAllContextElements().add(tAccess__tStaticType____staticType);
 		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
 		invocationToTAccess__invocation____source.setTrg(invocation);
 		isApplicableMatch.getAllContextElements().add(invocationToTAccess__invocation____source);
-		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
-		mStaticTypeTotStaticType__tStaticType____target
-				.setName(mStaticTypeTotStaticType__tStaticType____target_name_prime);
 		mStaticTypeTotStaticType__mStaticType____source
 				.setName(mStaticTypeTotStaticType__mStaticType____source_name_prime);
+		mStaticTypeTotStaticType__tStaticType____target
+				.setName(mStaticTypeTotStaticType__tStaticType____target_name_prime);
+		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		tAccess__tStaticType____staticType.setName(tAccess__tStaticType____staticType_name_prime);
 		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
-		return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-				invocation, isApplicableMatch, invocationToTAccess__tAccess____target,
-				mStaticTypeTotStaticType__tStaticType____target, mStaticTypeTotStaticType__mStaticType____source,
+		return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess, isApplicableMatch, mStaticTypeTotStaticType__mStaticType____source,
+				mStaticTypeTotStaticType__tStaticType____target, invocationToTAccess__tAccess____target,
 				tAccess__tStaticType____staticType, invocationToTAccess__invocation____source };
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_12_4_solveCSP_bindingFBBBBBBBB(
-			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tStaticType, tAccess, mStaticType,
-				invocationToTAccess, mStaticTypeTotStaticType, invocation);
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mStaticType, invocation,
+				mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-					mStaticTypeTotStaticType, invocation };
+			return new Object[] { csp, _this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType,
+					tStaticType, tAccess, invocationToTAccess };
 		}
 		return null;
 	}
@@ -2125,12 +2120,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation) {
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
 		Object[] result_pattern_MethodInvocationStaticType_12_4_solveCSP_binding = pattern_MethodInvocationStaticType_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-				mStaticTypeTotStaticType, invocation);
+				_this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess);
 		if (result_pattern_MethodInvocationStaticType_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationStaticType_12_4_solveCSP_binding[0];
 
@@ -2138,8 +2133,8 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_MethodInvocationStaticType_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tStaticType, tAccess, mStaticType,
-						invocationToTAccess, mStaticTypeTotStaticType, invocation };
+				return new Object[] { csp, _this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType,
+						tStaticType, tAccess, invocationToTAccess };
 			}
 		}
 		return null;
@@ -2420,24 +2415,24 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_bindingFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("tStaticType");
-		EObject _localVariable_1 = targetMatch.getObject("tAccess");
-		EObject _localVariable_2 = sourceMatch.getObject("mStaticType");
-		EObject _localVariable_3 = sourceMatch.getObject("invocation");
-		EObject tmpTStaticType = _localVariable_0;
-		EObject tmpTAccess = _localVariable_1;
-		EObject tmpMStaticType = _localVariable_2;
-		EObject tmpInvocation = _localVariable_3;
-		if (tmpTStaticType instanceof TAbstractType) {
-			TAbstractType tStaticType = (TAbstractType) tmpTStaticType;
-			if (tmpTAccess instanceof TCall) {
-				TCall tAccess = (TCall) tmpTAccess;
-				if (tmpMStaticType instanceof Type) {
-					Type mStaticType = (Type) tmpMStaticType;
-					if (tmpInvocation instanceof MMethodInvocation) {
-						MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
-						return new Object[] { tStaticType, tAccess, mStaticType, invocation, targetMatch, sourceMatch };
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mStaticType");
+		EObject _localVariable_1 = sourceMatch.getObject("invocation");
+		EObject _localVariable_2 = targetMatch.getObject("tStaticType");
+		EObject _localVariable_3 = targetMatch.getObject("tAccess");
+		EObject tmpMStaticType = _localVariable_0;
+		EObject tmpInvocation = _localVariable_1;
+		EObject tmpTStaticType = _localVariable_2;
+		EObject tmpTAccess = _localVariable_3;
+		if (tmpMStaticType instanceof Type) {
+			Type mStaticType = (Type) tmpMStaticType;
+			if (tmpInvocation instanceof MMethodInvocation) {
+				MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+				if (tmpTStaticType instanceof TAbstractType) {
+					TAbstractType tStaticType = (TAbstractType) tmpTStaticType;
+					if (tmpTAccess instanceof TCall) {
+						TCall tAccess = (TCall) tmpTAccess;
+						return new Object[] { mStaticType, invocation, tStaticType, tAccess, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2446,10 +2441,10 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_blackBBBBBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType, MMethodInvocation invocation, Match sourceMatch,
+			Type mStaticType, MMethodInvocation invocation, TAbstractType tStaticType, TCall tAccess, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { tStaticType, tAccess, mStaticType, invocation, sourceMatch, targetMatch };
+			return new Object[] { mStaticType, invocation, tStaticType, tAccess, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2457,31 +2452,31 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	public static final Object[] pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding = pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding != null) {
-			TAbstractType tStaticType = (TAbstractType) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[0];
-			TCall tAccess = (TCall) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[1];
-			Type mStaticType = (Type) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[2];
-			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[3];
+			Type mStaticType = (Type) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[0];
+			MMethodInvocation invocation = (MMethodInvocation) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[1];
+			TAbstractType tStaticType = (TAbstractType) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[2];
+			TCall tAccess = (TCall) result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_black = pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_blackBBBBBB(
-					tStaticType, tAccess, mStaticType, invocation, sourceMatch, targetMatch);
+					mStaticType, invocation, tStaticType, tAccess, sourceMatch, targetMatch);
 			if (result_pattern_MethodInvocationStaticType_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tStaticType, tAccess, mStaticType, invocation, sourceMatch, targetMatch };
+				return new Object[] { mStaticType, invocation, tStaticType, tAccess, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_3_solvecsp_bindingFBBBBBBB(
-			MethodInvocationStaticType _this, TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			MMethodInvocation invocation, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tStaticType, tAccess, mStaticType, invocation,
+			MethodInvocationStaticType _this, Type mStaticType, MMethodInvocation invocation, TAbstractType tStaticType,
+			TCall tAccess, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mStaticType, invocation, tStaticType, tAccess,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, tStaticType, tAccess, mStaticType, invocation, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mStaticType, invocation, tStaticType, tAccess, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2491,10 +2486,10 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			MethodInvocationStaticType _this, TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			MMethodInvocation invocation, Match sourceMatch, Match targetMatch) {
+			MethodInvocationStaticType _this, Type mStaticType, MMethodInvocation invocation, TAbstractType tStaticType,
+			TCall tAccess, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodInvocationStaticType_24_3_solvecsp_binding = pattern_MethodInvocationStaticType_24_3_solvecsp_bindingFBBBBBBB(
-				_this, tStaticType, tAccess, mStaticType, invocation, sourceMatch, targetMatch);
+				_this, mStaticType, invocation, tStaticType, tAccess, sourceMatch, targetMatch);
 		if (result_pattern_MethodInvocationStaticType_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationStaticType_24_3_solvecsp_binding[0];
 
@@ -2502,7 +2497,7 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_MethodInvocationStaticType_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tStaticType, tAccess, mStaticType, invocation, sourceMatch,
+				return new Object[] { csp, _this, mStaticType, invocation, tStaticType, tAccess, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2515,19 +2510,19 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_24_5_matchcorrcontext_blackBBBFFBBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType, MMethodInvocation invocation, Match sourceMatch,
+	public static final Iterable<Object[]> pattern_MethodInvocationStaticType_24_5_matchcorrcontext_blackBBFBBFBB(
+			Type mStaticType, MMethodInvocation invocation, TAbstractType tStaticType, TCall tAccess, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (AbstractMethodInvocationToTAccess invocationToTAccess : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tAccess, AbstractMethodInvocationToTAccess.class, "target")) {
-				if (invocation.equals(invocationToTAccess.getSource())) {
-					for (TypeToTAbstractType mStaticTypeTotStaticType : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tStaticType, TypeToTAbstractType.class, "target")) {
-						if (mStaticType.equals(mStaticTypeTotStaticType.getSource())) {
-							_result.add(new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess,
-									mStaticTypeTotStaticType, invocation, sourceMatch, targetMatch });
+			for (TypeToTAbstractType mStaticTypeTotStaticType : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mStaticType, TypeToTAbstractType.class, "source")) {
+				if (tStaticType.equals(mStaticTypeTotStaticType.getTarget())) {
+					for (AbstractMethodInvocationToTAccess invocationToTAccess : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tAccess, AbstractMethodInvocationToTAccess.class, "target")) {
+						if (invocation.equals(invocationToTAccess.getSource())) {
+							_result.add(new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType,
+									tAccess, invocationToTAccess, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -2537,21 +2532,21 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_5_matchcorrcontext_greenBBBBF(
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
+			TypeToTAbstractType mStaticTypeTotStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
 			Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "MethodInvocationStaticType";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(invocationToTAccess);
 		ccMatch.getAllContextElements().add(mStaticTypeTotStaticType);
+		ccMatch.getAllContextElements().add(invocationToTAccess);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { invocationToTAccess, mStaticTypeTotStaticType, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { mStaticTypeTotStaticType, invocationToTAccess, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_6_createcorrespondence_blackBBBBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType, MMethodInvocation invocation, CCMatch ccMatch) {
-		return new Object[] { tStaticType, tAccess, mStaticType, invocation, ccMatch };
+			Type mStaticType, MMethodInvocation invocation, TAbstractType tStaticType, TCall tAccess, CCMatch ccMatch) {
+		return new Object[] { mStaticType, invocation, tStaticType, tAccess, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_24_7_addtoreturnedresult_blackBB(
@@ -2625,9 +2620,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tStaticType) {
-		if (ruleResult.getTargetObjects().contains(tStaticType)) {
-			return new Object[] { ruleResult, tStaticType };
+			ModelgeneratorRuleResult ruleResult, Type mStaticType) {
+		if (ruleResult.getSourceObjects().contains(mStaticType)) {
+			return new Object[] { ruleResult, mStaticType };
 		}
 		return null;
 	}
@@ -2641,17 +2636,17 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Type mStaticType) {
-		if (ruleResult.getSourceObjects().contains(mStaticType)) {
-			return new Object[] { ruleResult, mStaticType };
+			ModelgeneratorRuleResult ruleResult, TAbstractType tStaticType) {
+		if (ruleResult.getTargetObjects().contains(tStaticType)) {
+			return new Object[] { ruleResult, tStaticType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, TCall tAccess) {
-		if (ruleResult.getTargetObjects().contains(tAccess)) {
-			return new Object[] { ruleResult, tAccess };
+			ModelgeneratorRuleResult ruleResult, MMethodInvocation invocation) {
+		if (ruleResult.getSourceObjects().contains(invocation)) {
+			return new Object[] { ruleResult, invocation };
 		}
 		return null;
 	}
@@ -2665,9 +2660,9 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, MMethodInvocation invocation) {
-		if (ruleResult.getSourceObjects().contains(invocation)) {
-			return new Object[] { ruleResult, invocation };
+			ModelgeneratorRuleResult ruleResult, TCall tAccess) {
+		if (ruleResult.getTargetObjects().contains(tAccess)) {
+			return new Object[] { ruleResult, tAccess };
 		}
 		return null;
 	}
@@ -2681,40 +2676,40 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					for (EObject tmpMStaticTypeTotStaticType : mStaticTypeTotStaticTypeList.getEntryObjects()) {
 						if (tmpMStaticTypeTotStaticType instanceof TypeToTAbstractType) {
 							TypeToTAbstractType mStaticTypeTotStaticType = (TypeToTAbstractType) tmpMStaticTypeTotStaticType;
-							TAbstractType tStaticType = mStaticTypeTotStaticType.getTarget();
-							if (tStaticType != null) {
-								Type mStaticType = mStaticTypeTotStaticType.getSource();
-								if (mStaticType != null) {
+							Type mStaticType = mStaticTypeTotStaticType.getSource();
+							if (mStaticType != null) {
+								TAbstractType tStaticType = mStaticTypeTotStaticType.getTarget();
+								if (tStaticType != null) {
 									if (pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, mStaticTypeTotStaticType) == null) {
 										if (pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, tStaticType) == null) {
+												ruleResult, mStaticType) == null) {
 											if (pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, mStaticType) == null) {
+													ruleResult, tStaticType) == null) {
 												for (EObject tmpInvocationToTAccess : invocationToTAccessList
 														.getEntryObjects()) {
 													if (tmpInvocationToTAccess instanceof AbstractMethodInvocationToTAccess) {
 														AbstractMethodInvocationToTAccess invocationToTAccess = (AbstractMethodInvocationToTAccess) tmpInvocationToTAccess;
-														TAccess tmpTAccess = invocationToTAccess.getTarget();
-														if (tmpTAccess instanceof TCall) {
-															TCall tAccess = (TCall) tmpTAccess;
-															AbstractMethodInvocation tmpInvocation = invocationToTAccess
-																	.getSource();
-															if (tmpInvocation instanceof MMethodInvocation) {
-																MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+														AbstractMethodInvocation tmpInvocation = invocationToTAccess
+																.getSource();
+														if (tmpInvocation instanceof MMethodInvocation) {
+															MMethodInvocation invocation = (MMethodInvocation) tmpInvocation;
+															TAccess tmpTAccess = invocationToTAccess.getTarget();
+															if (tmpTAccess instanceof TCall) {
+																TCall tAccess = (TCall) tmpTAccess;
 																if (pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_4BB(
 																		ruleResult, invocationToTAccess) == null) {
 																	if (pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_3BB(
-																			ruleResult, tAccess) == null) {
+																			ruleResult, invocation) == null) {
 																		if (pattern_MethodInvocationStaticType_29_2_isapplicablecore_black_nac_5BB(
-																				ruleResult, invocation) == null) {
+																				ruleResult, tAccess) == null) {
 																			_result.add(new Object[] {
 																					mStaticTypeTotStaticTypeList,
-																					tStaticType,
-																					mStaticTypeTotStaticType,
 																					mStaticType,
-																					invocationToTAccessList, tAccess,
-																					invocationToTAccess, invocation,
+																					mStaticTypeTotStaticType,
+																					tStaticType,
+																					invocationToTAccessList, invocation,
+																					invocationToTAccess, tAccess,
 																					ruleEntryContainer, ruleResult });
 																		}
 																	}
@@ -2741,16 +2736,15 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_29_3_solveCSP_bindingFBBBBBBBBB(
-			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tStaticType, tAccess, mStaticType,
-				invocationToTAccess, mStaticTypeTotStaticType, invocation, ruleResult);
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mStaticType, invocation,
+				mStaticTypeTotStaticType, tStaticType, tAccess, invocationToTAccess, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-					mStaticTypeTotStaticType, invocation, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType,
+					tStaticType, tAccess, invocationToTAccess, ruleResult };
 		}
 		return null;
 	}
@@ -2760,13 +2754,12 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 	}
 
 	public static final Object[] pattern_MethodInvocationStaticType_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation,
-			ModelgeneratorRuleResult ruleResult) {
+			MethodInvocationStaticType _this, IsApplicableMatch isApplicableMatch, Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodInvocationStaticType_29_3_solveCSP_binding = pattern_MethodInvocationStaticType_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tStaticType, tAccess, mStaticType, invocationToTAccess,
-				mStaticTypeTotStaticType, invocation, ruleResult);
+				_this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess, ruleResult);
 		if (result_pattern_MethodInvocationStaticType_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodInvocationStaticType_29_3_solveCSP_binding[0];
 
@@ -2774,8 +2767,8 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 					csp);
 			if (result_pattern_MethodInvocationStaticType_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tStaticType, tAccess, mStaticType,
-						invocationToTAccess, mStaticTypeTotStaticType, invocation, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mStaticType, invocation, mStaticTypeTotStaticType,
+						tStaticType, tAccess, invocationToTAccess, ruleResult };
 			}
 		}
 		return null;
@@ -2788,32 +2781,31 @@ public class MethodInvocationStaticTypeImpl extends AbstractRuleImpl implements 
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodInvocationStaticType_29_5_checknacs_blackBBBBBB(
-			TAbstractType tStaticType, TCall tAccess, Type mStaticType,
-			AbstractMethodInvocationToTAccess invocationToTAccess, TypeToTAbstractType mStaticTypeTotStaticType,
-			MMethodInvocation invocation) {
-		return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-				invocation };
+	public static final Object[] pattern_MethodInvocationStaticType_29_5_checknacs_blackBBBBBB(Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess) {
+		return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess };
 	}
 
-	public static final Object[] pattern_MethodInvocationStaticType_29_6_perform_blackBBBBBBB(TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, AbstractMethodInvocationToTAccess invocationToTAccess,
-			TypeToTAbstractType mStaticTypeTotStaticType, MMethodInvocation invocation,
+	public static final Object[] pattern_MethodInvocationStaticType_29_6_perform_blackBBBBBBB(Type mStaticType,
+			MMethodInvocation invocation, TypeToTAbstractType mStaticTypeTotStaticType, TAbstractType tStaticType,
+			TCall tAccess, AbstractMethodInvocationToTAccess invocationToTAccess, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mStaticType, invocation, mStaticTypeTotStaticType, tStaticType, tAccess,
+				invocationToTAccess, ruleResult };
+	}
+
+	public static final Object[] pattern_MethodInvocationStaticType_29_6_perform_greenBBBBB(Type mStaticType,
+			MMethodInvocation invocation, TAbstractType tStaticType, TCall tAccess,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tStaticType, tAccess, mStaticType, invocationToTAccess, mStaticTypeTotStaticType,
-				invocation, ruleResult };
-	}
-
-	public static final Object[] pattern_MethodInvocationStaticType_29_6_perform_greenBBBBB(TAbstractType tStaticType,
-			TCall tAccess, Type mStaticType, MMethodInvocation invocation, ModelgeneratorRuleResult ruleResult) {
-		tAccess.setStaticType(tStaticType);
 		invocation.setMStaticType(mStaticType);
+		tAccess.setStaticType(tStaticType);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tStaticType, tAccess, mStaticType, invocation, ruleResult };
+		return new Object[] { mStaticType, invocation, tStaticType, tAccess, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodInvocationStaticType_29_7_expressionFB(

@@ -810,7 +810,7 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_23(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_35(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanArrayImpl
 				.pattern_AnnotationMemberValueBooleanArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -870,7 +870,7 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_24(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_38(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanArrayImpl
 				.pattern_AnnotationMemberValueBooleanArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1391,10 +1391,10 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_23__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_23((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_24__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_35__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_35((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_38__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_38((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2853,9 +2853,9 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueBooleanArray_21_2_testcorematchandDECs_black_nac_0BB(
 			BooleanLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_314456 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_288932 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_314456)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_288932)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3155,9 +3155,9 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueBooleanArray_27_1_matchtggpattern_black_nac_0BB(
 			BooleanLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_560487 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_251753 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_560487)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_251753)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}

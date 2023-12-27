@@ -189,11 +189,11 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 		}
 		AnnotationImpl.pattern_Annotation_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, AnnotationToTAnnotation,
 				tAnnotable, Annotation, astNode, tAnnotation);
-		//nothing EMoflonEdge AnnotationToTAnnotation__Annotation____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge astNode__Annotation____annotations = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAnnotation__tAnnotable____tAnnotated = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tAnnotable__tAnnotation____tAnnotation = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge AnnotationToTAnnotation__tAnnotation____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotation__tAnnotable____tAnnotated = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tAnnotable__tAnnotation____tAnnotation = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge AnnotationToTAnnotation__Annotation____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge astNode__Annotation____annotations = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
@@ -237,9 +237,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 				Object[] result3_green = AnnotationImpl.pattern_Annotation_2_3_findcontext_greenBBBBFFFF(
 						aSTNodeToTAnnotable, tAnnotable, Annotation, astNode);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge aSTNodeToTAnnotable__astNode____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge astNode__Annotation____annotations = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge aSTNodeToTAnnotable__astNode____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = AnnotationImpl
 						.pattern_Annotation_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
@@ -476,11 +476,11 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 		}
 		AnnotationImpl.pattern_Annotation_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, AnnotationToTAnnotation,
 				tAnnotable, Annotation, astNode, tAnnotation);
-		//nothing EMoflonEdge AnnotationToTAnnotation__Annotation____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge astNode__Annotation____annotations = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAnnotation__tAnnotable____tAnnotated = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tAnnotable__tAnnotation____tAnnotation = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge AnnotationToTAnnotation__tAnnotation____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotation__tAnnotable____tAnnotated = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tAnnotable__tAnnotation____tAnnotation = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge AnnotationToTAnnotation__Annotation____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge astNode__Annotation____annotations = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
@@ -524,10 +524,10 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 				Object[] result3_green = AnnotationImpl.pattern_Annotation_12_3_findcontext_greenBBBBFFFFF(
 						aSTNodeToTAnnotable, tAnnotable, astNode, tAnnotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge aSTNodeToTAnnotable__astNode____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge tAnnotation__tAnnotable____tAnnotated = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge tAnnotable__tAnnotation____tAnnotation = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge aSTNodeToTAnnotable__astNode____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = AnnotationImpl
 						.pattern_Annotation_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
@@ -668,7 +668,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_15(EMoflonEdge _edge_tAnnotated) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_50(EMoflonEdge _edge_tAnnotated) {
 
 		Object[] result1_bindingAndBlack = AnnotationImpl
 				.pattern_Annotation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -721,7 +721,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_15(EMoflonEdge _edge_annotations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_53(EMoflonEdge _edge_annotations) {
 
 		Object[] result1_bindingAndBlack = AnnotationImpl
 				.pattern_Annotation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -980,8 +980,8 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 				.pattern_Annotation_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList aSTNodeToTAnnotableList = (RuleEntryList) result2_black[0];
 			ASTNodeToTAnnotatable aSTNodeToTAnnotable = (ASTNodeToTAnnotatable) result2_black[1];
-			BodyDeclaration astNode = (BodyDeclaration) result2_black[2];
-			TAnnotatable tAnnotable = (TAnnotatable) result2_black[3];
+			TAnnotatable tAnnotable = (TAnnotatable) result2_black[2];
+			BodyDeclaration astNode = (BodyDeclaration) result2_black[3];
 
 			Object[] result3_bindingAndBlack = AnnotationImpl.pattern_Annotation_29_3_solveCSP_bindingAndBlackFBBBBBB(
 					this, isApplicableMatch, aSTNodeToTAnnotable, tAnnotable, astNode, ruleResult);
@@ -1125,10 +1125,10 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			return null;
 		case RulesPackage.ANNOTATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_15__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_15((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_15__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_15((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_50__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_50((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_53__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_53((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1310,8 +1310,8 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 		AnnotationToTAnnotation annotationToTAnnotation = PmFactory.eINSTANCE.createAnnotationToTAnnotation();
 		TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 		annotationToTAnnotation.setSource(annotation);
-		annotationToTAnnotation.setTarget(tAnnotation);
 		tAnnotation.setTAnnotated(tAnnotable);
+		annotationToTAnnotation.setTarget(tAnnotation);
 		return new Object[] { annotationToTAnnotation, tAnnotable, annotation, tAnnotation };
 	}
 
@@ -1374,43 +1374,43 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	public static final Object[] pattern_Annotation_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
 			PerformRuleResult ruleresult, EObject annotationToTAnnotation, EObject tAnnotable, EObject annotation,
 			EObject astNode, EObject tAnnotation) {
-		EMoflonEdge annotationToTAnnotation__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge astNode__Annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotationToTAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tAnnotable____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotable__tAnnotation____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotationToTAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotationToTAnnotation__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge astNode__Annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Annotation";
-		String annotationToTAnnotation__Annotation____source_name_prime = "source";
-		String astNode__Annotation____annotations_name_prime = "annotations";
-		String annotationToTAnnotation__tAnnotation____target_name_prime = "target";
 		String tAnnotation__tAnnotable____tAnnotated_name_prime = "tAnnotated";
 		String tAnnotable__tAnnotation____tAnnotation_name_prime = "tAnnotation";
-		annotationToTAnnotation__Annotation____source.setSrc(annotationToTAnnotation);
-		annotationToTAnnotation__Annotation____source.setTrg(annotation);
-		ruleresult.getCreatedEdges().add(annotationToTAnnotation__Annotation____source);
-		astNode__Annotation____annotations.setSrc(astNode);
-		astNode__Annotation____annotations.setTrg(annotation);
-		ruleresult.getTranslatedEdges().add(astNode__Annotation____annotations);
-		annotationToTAnnotation__tAnnotation____target.setSrc(annotationToTAnnotation);
-		annotationToTAnnotation__tAnnotation____target.setTrg(tAnnotation);
-		ruleresult.getCreatedEdges().add(annotationToTAnnotation__tAnnotation____target);
+		String annotationToTAnnotation__tAnnotation____target_name_prime = "target";
+		String annotationToTAnnotation__Annotation____source_name_prime = "source";
+		String astNode__Annotation____annotations_name_prime = "annotations";
 		tAnnotation__tAnnotable____tAnnotated.setSrc(tAnnotation);
 		tAnnotation__tAnnotable____tAnnotated.setTrg(tAnnotable);
 		ruleresult.getCreatedEdges().add(tAnnotation__tAnnotable____tAnnotated);
 		tAnnotable__tAnnotation____tAnnotation.setSrc(tAnnotable);
 		tAnnotable__tAnnotation____tAnnotation.setTrg(tAnnotation);
 		ruleresult.getCreatedEdges().add(tAnnotable__tAnnotation____tAnnotation);
+		annotationToTAnnotation__tAnnotation____target.setSrc(annotationToTAnnotation);
+		annotationToTAnnotation__tAnnotation____target.setTrg(tAnnotation);
+		ruleresult.getCreatedEdges().add(annotationToTAnnotation__tAnnotation____target);
+		annotationToTAnnotation__Annotation____source.setSrc(annotationToTAnnotation);
+		annotationToTAnnotation__Annotation____source.setTrg(annotation);
+		ruleresult.getCreatedEdges().add(annotationToTAnnotation__Annotation____source);
+		astNode__Annotation____annotations.setSrc(astNode);
+		astNode__Annotation____annotations.setTrg(annotation);
+		ruleresult.getTranslatedEdges().add(astNode__Annotation____annotations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		annotationToTAnnotation__Annotation____source.setName(annotationToTAnnotation__Annotation____source_name_prime);
-		astNode__Annotation____annotations.setName(astNode__Annotation____annotations_name_prime);
-		annotationToTAnnotation__tAnnotation____target
-				.setName(annotationToTAnnotation__tAnnotation____target_name_prime);
 		tAnnotation__tAnnotable____tAnnotated.setName(tAnnotation__tAnnotable____tAnnotated_name_prime);
 		tAnnotable__tAnnotation____tAnnotation.setName(tAnnotable__tAnnotation____tAnnotation_name_prime);
+		annotationToTAnnotation__tAnnotation____target
+				.setName(annotationToTAnnotation__tAnnotation____target_name_prime);
+		annotationToTAnnotation__Annotation____source.setName(annotationToTAnnotation__Annotation____source_name_prime);
+		astNode__Annotation____annotations.setName(astNode__Annotation____annotations_name_prime);
 		return new Object[] { ruleresult, annotationToTAnnotation, tAnnotable, annotation, astNode, tAnnotation,
-				annotationToTAnnotation__Annotation____source, astNode__Annotation____annotations,
-				annotationToTAnnotation__tAnnotation____target, tAnnotation__tAnnotable____tAnnotated,
-				tAnnotable__tAnnotation____tAnnotation };
+				tAnnotation__tAnnotable____tAnnotated, tAnnotable__tAnnotation____tAnnotation,
+				annotationToTAnnotation__tAnnotation____target, annotationToTAnnotation__Annotation____source,
+				astNode__Annotation____annotations };
 	}
 
 	public static final void pattern_Annotation_1_5_registerobjects_expressionBBBBBBBB(Annotation _this,
@@ -1506,9 +1506,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable,
 			org.eclipse.modisco.java.Annotation annotation, BodyDeclaration astNode) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (astNode.equals(aSTNodeToTAnnotable.getSource())) {
+		if (tAnnotable.equals(aSTNodeToTAnnotable.getTarget())) {
 			if (astNode.getAnnotations().contains(annotation)) {
-				if (tAnnotable.equals(aSTNodeToTAnnotable.getTarget())) {
+				if (astNode.equals(aSTNodeToTAnnotable.getSource())) {
 					_result.add(new Object[] { aSTNodeToTAnnotable, tAnnotable, annotation, astNode });
 				}
 			}
@@ -1520,31 +1520,31 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable,
 			org.eclipse.modisco.java.Annotation annotation, BodyDeclaration astNode) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge aSTNodeToTAnnotable__astNode____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge astNode__Annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String aSTNodeToTAnnotable__astNode____source_name_prime = "source";
-		String astNode__Annotation____annotations_name_prime = "annotations";
+		EMoflonEdge astNode__Annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge aSTNodeToTAnnotable__astNode____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String aSTNodeToTAnnotable__tAnnotable____target_name_prime = "target";
+		String astNode__Annotation____annotations_name_prime = "annotations";
+		String aSTNodeToTAnnotable__astNode____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable);
 		isApplicableMatch.getAllContextElements().add(tAnnotable);
 		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(astNode);
-		aSTNodeToTAnnotable__astNode____source.setSrc(aSTNodeToTAnnotable);
-		aSTNodeToTAnnotable__astNode____source.setTrg(astNode);
-		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__astNode____source);
-		astNode__Annotation____annotations.setSrc(astNode);
-		astNode__Annotation____annotations.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(astNode__Annotation____annotations);
 		aSTNodeToTAnnotable__tAnnotable____target.setSrc(aSTNodeToTAnnotable);
 		aSTNodeToTAnnotable__tAnnotable____target.setTrg(tAnnotable);
 		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__tAnnotable____target);
-		aSTNodeToTAnnotable__astNode____source.setName(aSTNodeToTAnnotable__astNode____source_name_prime);
-		astNode__Annotation____annotations.setName(astNode__Annotation____annotations_name_prime);
+		astNode__Annotation____annotations.setSrc(astNode);
+		astNode__Annotation____annotations.setTrg(annotation);
+		isApplicableMatch.getAllContextElements().add(astNode__Annotation____annotations);
+		aSTNodeToTAnnotable__astNode____source.setSrc(aSTNodeToTAnnotable);
+		aSTNodeToTAnnotable__astNode____source.setTrg(astNode);
+		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__astNode____source);
 		aSTNodeToTAnnotable__tAnnotable____target.setName(aSTNodeToTAnnotable__tAnnotable____target_name_prime);
+		astNode__Annotation____annotations.setName(astNode__Annotation____annotations_name_prime);
+		aSTNodeToTAnnotable__astNode____source.setName(aSTNodeToTAnnotable__astNode____source_name_prime);
 		return new Object[] { aSTNodeToTAnnotable, tAnnotable, annotation, astNode, isApplicableMatch,
-				aSTNodeToTAnnotable__astNode____source, astNode__Annotation____annotations,
-				aSTNodeToTAnnotable__tAnnotable____target };
+				aSTNodeToTAnnotable__tAnnotable____target, astNode__Annotation____annotations,
+				aSTNodeToTAnnotable__astNode____source };
 	}
 
 	public static final Object[] pattern_Annotation_2_4_solveCSP_bindingFBBBBBB(Annotation _this,
@@ -1830,43 +1830,43 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	public static final Object[] pattern_Annotation_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
 			PerformRuleResult ruleresult, EObject annotationToTAnnotation, EObject tAnnotable, EObject annotation,
 			EObject astNode, EObject tAnnotation) {
-		EMoflonEdge annotationToTAnnotation__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge astNode__Annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotationToTAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tAnnotable____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotable__tAnnotation____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotationToTAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotationToTAnnotation__Annotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge astNode__Annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Annotation";
-		String annotationToTAnnotation__Annotation____source_name_prime = "source";
-		String astNode__Annotation____annotations_name_prime = "annotations";
-		String annotationToTAnnotation__tAnnotation____target_name_prime = "target";
 		String tAnnotation__tAnnotable____tAnnotated_name_prime = "tAnnotated";
 		String tAnnotable__tAnnotation____tAnnotation_name_prime = "tAnnotation";
-		annotationToTAnnotation__Annotation____source.setSrc(annotationToTAnnotation);
-		annotationToTAnnotation__Annotation____source.setTrg(annotation);
-		ruleresult.getCreatedEdges().add(annotationToTAnnotation__Annotation____source);
-		astNode__Annotation____annotations.setSrc(astNode);
-		astNode__Annotation____annotations.setTrg(annotation);
-		ruleresult.getCreatedEdges().add(astNode__Annotation____annotations);
-		annotationToTAnnotation__tAnnotation____target.setSrc(annotationToTAnnotation);
-		annotationToTAnnotation__tAnnotation____target.setTrg(tAnnotation);
-		ruleresult.getCreatedEdges().add(annotationToTAnnotation__tAnnotation____target);
+		String annotationToTAnnotation__tAnnotation____target_name_prime = "target";
+		String annotationToTAnnotation__Annotation____source_name_prime = "source";
+		String astNode__Annotation____annotations_name_prime = "annotations";
 		tAnnotation__tAnnotable____tAnnotated.setSrc(tAnnotation);
 		tAnnotation__tAnnotable____tAnnotated.setTrg(tAnnotable);
 		ruleresult.getTranslatedEdges().add(tAnnotation__tAnnotable____tAnnotated);
 		tAnnotable__tAnnotation____tAnnotation.setSrc(tAnnotable);
 		tAnnotable__tAnnotation____tAnnotation.setTrg(tAnnotation);
 		ruleresult.getTranslatedEdges().add(tAnnotable__tAnnotation____tAnnotation);
+		annotationToTAnnotation__tAnnotation____target.setSrc(annotationToTAnnotation);
+		annotationToTAnnotation__tAnnotation____target.setTrg(tAnnotation);
+		ruleresult.getCreatedEdges().add(annotationToTAnnotation__tAnnotation____target);
+		annotationToTAnnotation__Annotation____source.setSrc(annotationToTAnnotation);
+		annotationToTAnnotation__Annotation____source.setTrg(annotation);
+		ruleresult.getCreatedEdges().add(annotationToTAnnotation__Annotation____source);
+		astNode__Annotation____annotations.setSrc(astNode);
+		astNode__Annotation____annotations.setTrg(annotation);
+		ruleresult.getCreatedEdges().add(astNode__Annotation____annotations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		annotationToTAnnotation__Annotation____source.setName(annotationToTAnnotation__Annotation____source_name_prime);
-		astNode__Annotation____annotations.setName(astNode__Annotation____annotations_name_prime);
-		annotationToTAnnotation__tAnnotation____target
-				.setName(annotationToTAnnotation__tAnnotation____target_name_prime);
 		tAnnotation__tAnnotable____tAnnotated.setName(tAnnotation__tAnnotable____tAnnotated_name_prime);
 		tAnnotable__tAnnotation____tAnnotation.setName(tAnnotable__tAnnotation____tAnnotation_name_prime);
+		annotationToTAnnotation__tAnnotation____target
+				.setName(annotationToTAnnotation__tAnnotation____target_name_prime);
+		annotationToTAnnotation__Annotation____source.setName(annotationToTAnnotation__Annotation____source_name_prime);
+		astNode__Annotation____annotations.setName(astNode__Annotation____annotations_name_prime);
 		return new Object[] { ruleresult, annotationToTAnnotation, tAnnotable, annotation, astNode, tAnnotation,
-				annotationToTAnnotation__Annotation____source, astNode__Annotation____annotations,
-				annotationToTAnnotation__tAnnotation____target, tAnnotation__tAnnotable____tAnnotated,
-				tAnnotable__tAnnotation____tAnnotation };
+				tAnnotation__tAnnotable____tAnnotated, tAnnotable__tAnnotation____tAnnotation,
+				annotationToTAnnotation__tAnnotation____target, annotationToTAnnotation__Annotation____source,
+				astNode__Annotation____annotations };
 	}
 
 	public static final void pattern_Annotation_11_5_registerobjects_expressionBBBBBBBB(Annotation _this,
@@ -1963,9 +1963,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable, BodyDeclaration astNode,
 			TAnnotation tAnnotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (astNode.equals(aSTNodeToTAnnotable.getSource())) {
+		if (tAnnotable.equals(aSTNodeToTAnnotable.getTarget())) {
 			if (tAnnotable.equals(tAnnotation.getTAnnotated())) {
-				if (tAnnotable.equals(aSTNodeToTAnnotable.getTarget())) {
+				if (astNode.equals(aSTNodeToTAnnotable.getSource())) {
 					_result.add(new Object[] { aSTNodeToTAnnotable, tAnnotable, astNode, tAnnotation });
 				}
 			}
@@ -1977,37 +1977,37 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TAnnotatable tAnnotable, BodyDeclaration astNode,
 			TAnnotation tAnnotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge aSTNodeToTAnnotable__astNode____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tAnnotable____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotable__tAnnotation____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge aSTNodeToTAnnotable__tAnnotable____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String aSTNodeToTAnnotable__astNode____source_name_prime = "source";
+		EMoflonEdge aSTNodeToTAnnotable__astNode____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String aSTNodeToTAnnotable__tAnnotable____target_name_prime = "target";
 		String tAnnotation__tAnnotable____tAnnotated_name_prime = "tAnnotated";
 		String tAnnotable__tAnnotation____tAnnotation_name_prime = "tAnnotation";
-		String aSTNodeToTAnnotable__tAnnotable____target_name_prime = "target";
+		String aSTNodeToTAnnotable__astNode____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable);
 		isApplicableMatch.getAllContextElements().add(tAnnotable);
 		isApplicableMatch.getAllContextElements().add(astNode);
 		isApplicableMatch.getAllContextElements().add(tAnnotation);
-		aSTNodeToTAnnotable__astNode____source.setSrc(aSTNodeToTAnnotable);
-		aSTNodeToTAnnotable__astNode____source.setTrg(astNode);
-		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__astNode____source);
+		aSTNodeToTAnnotable__tAnnotable____target.setSrc(aSTNodeToTAnnotable);
+		aSTNodeToTAnnotable__tAnnotable____target.setTrg(tAnnotable);
+		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__tAnnotable____target);
 		tAnnotation__tAnnotable____tAnnotated.setSrc(tAnnotation);
 		tAnnotation__tAnnotable____tAnnotated.setTrg(tAnnotable);
 		isApplicableMatch.getAllContextElements().add(tAnnotation__tAnnotable____tAnnotated);
 		tAnnotable__tAnnotation____tAnnotation.setSrc(tAnnotable);
 		tAnnotable__tAnnotation____tAnnotation.setTrg(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(tAnnotable__tAnnotation____tAnnotation);
-		aSTNodeToTAnnotable__tAnnotable____target.setSrc(aSTNodeToTAnnotable);
-		aSTNodeToTAnnotable__tAnnotable____target.setTrg(tAnnotable);
-		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__tAnnotable____target);
-		aSTNodeToTAnnotable__astNode____source.setName(aSTNodeToTAnnotable__astNode____source_name_prime);
+		aSTNodeToTAnnotable__astNode____source.setSrc(aSTNodeToTAnnotable);
+		aSTNodeToTAnnotable__astNode____source.setTrg(astNode);
+		isApplicableMatch.getAllContextElements().add(aSTNodeToTAnnotable__astNode____source);
+		aSTNodeToTAnnotable__tAnnotable____target.setName(aSTNodeToTAnnotable__tAnnotable____target_name_prime);
 		tAnnotation__tAnnotable____tAnnotated.setName(tAnnotation__tAnnotable____tAnnotated_name_prime);
 		tAnnotable__tAnnotation____tAnnotation.setName(tAnnotable__tAnnotation____tAnnotation_name_prime);
-		aSTNodeToTAnnotable__tAnnotable____target.setName(aSTNodeToTAnnotable__tAnnotable____target_name_prime);
+		aSTNodeToTAnnotable__astNode____source.setName(aSTNodeToTAnnotable__astNode____source_name_prime);
 		return new Object[] { aSTNodeToTAnnotable, tAnnotable, astNode, tAnnotation, isApplicableMatch,
-				aSTNodeToTAnnotable__astNode____source, tAnnotation__tAnnotable____tAnnotated,
-				tAnnotable__tAnnotation____tAnnotation, aSTNodeToTAnnotable__tAnnotable____target };
+				aSTNodeToTAnnotable__tAnnotable____target, tAnnotation__tAnnotable____tAnnotated,
+				tAnnotable__tAnnotation____tAnnotation, aSTNodeToTAnnotable__astNode____source };
 	}
 
 	public static final Object[] pattern_Annotation_12_4_solveCSP_bindingFBBBBBB(Annotation _this,
@@ -2125,9 +2125,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_20_2_testcorematchandDECs_black_nac_0BB(TAnnotation tAnnotation,
 			TAnnotatable tAnnotable) {
-		TAnnotatable __DEC_tAnnotation_tAnnotation_224596 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotation_224596 != null) {
-			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_224596)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotation_80724 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotation_80724 != null) {
+			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_80724)) {
 				return new Object[] { tAnnotation, tAnnotable };
 			}
 		}
@@ -2254,7 +2254,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_Annotation_value_221445 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_Annotation_value_64864 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -2435,8 +2435,8 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (ASTNodeToTAnnotatable aSTNodeToTAnnotable : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(astNode, ASTNodeToTAnnotatable.class, "source")) {
-				if (tAnnotable.equals(aSTNodeToTAnnotable.getTarget())) {
+					.getOppositeReferenceTyped(tAnnotable, ASTNodeToTAnnotatable.class, "target")) {
+				if (astNode.equals(aSTNodeToTAnnotable.getSource())) {
 					_result.add(new Object[] { aSTNodeToTAnnotable, tAnnotable, astNode, sourceMatch, targetMatch });
 				}
 			}
@@ -2464,8 +2464,8 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	public static final Object[] pattern_Annotation_24_6_createcorrespondence_greenFBBB(
 			org.eclipse.modisco.java.Annotation annotation, TAnnotation tAnnotation, CCMatch ccMatch) {
 		AnnotationToTAnnotation annotationToTAnnotation = PmFactory.eINSTANCE.createAnnotationToTAnnotation();
-		annotationToTAnnotation.setSource(annotation);
 		annotationToTAnnotation.setTarget(tAnnotation);
+		annotationToTAnnotation.setSource(annotation);
 		ccMatch.getCreateCorr().add(annotationToTAnnotation);
 		return new Object[] { annotationToTAnnotation, annotation, tAnnotation, ccMatch };
 	}
@@ -2492,7 +2492,7 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_Annotation_value_134509 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_Annotation_value_630491 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -2521,9 +2521,9 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 
 	public static final Object[] pattern_Annotation_28_1_matchtggpattern_black_nac_0BB(TAnnotation tAnnotation,
 			TAnnotatable tAnnotable) {
-		TAnnotatable __DEC_tAnnotation_tAnnotation_121099 = tAnnotation.getTAnnotated();
-		if (__DEC_tAnnotation_tAnnotation_121099 != null) {
-			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_121099)) {
+		TAnnotatable __DEC_tAnnotation_tAnnotation_670997 = tAnnotation.getTAnnotated();
+		if (__DEC_tAnnotation_tAnnotation_670997 != null) {
+			if (!tAnnotable.equals(__DEC_tAnnotation_tAnnotation_670997)) {
 				return new Object[] { tAnnotation, tAnnotable };
 			}
 		}
@@ -2572,17 +2572,17 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 	}
 
 	public static final Object[] pattern_Annotation_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, BodyDeclaration astNode) {
-		if (ruleResult.getSourceObjects().contains(astNode)) {
-			return new Object[] { ruleResult, astNode };
+			ModelgeneratorRuleResult ruleResult, TAnnotatable tAnnotable) {
+		if (ruleResult.getTargetObjects().contains(tAnnotable)) {
+			return new Object[] { ruleResult, tAnnotable };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Annotation_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TAnnotatable tAnnotable) {
-		if (ruleResult.getTargetObjects().contains(tAnnotable)) {
-			return new Object[] { ruleResult, tAnnotable };
+			ModelgeneratorRuleResult ruleResult, BodyDeclaration astNode) {
+		if (ruleResult.getSourceObjects().contains(astNode)) {
+			return new Object[] { ruleResult, astNode };
 		}
 		return null;
 	}
@@ -2594,19 +2594,19 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 			for (EObject tmpASTNodeToTAnnotable : aSTNodeToTAnnotableList.getEntryObjects()) {
 				if (tmpASTNodeToTAnnotable instanceof ASTNodeToTAnnotatable) {
 					ASTNodeToTAnnotatable aSTNodeToTAnnotable = (ASTNodeToTAnnotatable) tmpASTNodeToTAnnotable;
-					ASTNode tmpAstNode = aSTNodeToTAnnotable.getSource();
-					if (tmpAstNode instanceof BodyDeclaration) {
-						BodyDeclaration astNode = (BodyDeclaration) tmpAstNode;
-						TAnnotatable tAnnotable = aSTNodeToTAnnotable.getTarget();
-						if (tAnnotable != null) {
+					TAnnotatable tAnnotable = aSTNodeToTAnnotable.getTarget();
+					if (tAnnotable != null) {
+						ASTNode tmpAstNode = aSTNodeToTAnnotable.getSource();
+						if (tmpAstNode instanceof BodyDeclaration) {
+							BodyDeclaration astNode = (BodyDeclaration) tmpAstNode;
 							if (pattern_Annotation_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									aSTNodeToTAnnotable) == null) {
 								if (pattern_Annotation_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-										astNode) == null) {
+										tAnnotable) == null) {
 									if (pattern_Annotation_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											tAnnotable) == null) {
+											astNode) == null) {
 										_result.add(new Object[] { aSTNodeToTAnnotableList, aSTNodeToTAnnotable,
-												astNode, tAnnotable, ruleEntryContainer, ruleResult });
+												tAnnotable, astNode, ruleEntryContainer, ruleResult });
 									}
 								}
 							}
@@ -2681,8 +2681,8 @@ public class AnnotationImpl extends AbstractRuleImpl implements Annotation {
 		annotationToTAnnotation.setSource(annotation);
 		astNode.getAnnotations().add(annotation);
 		ruleResult.getSourceObjects().add(annotation);
-		annotationToTAnnotation.setTarget(tAnnotation);
 		tAnnotation.setTAnnotated(tAnnotable);
+		annotationToTAnnotation.setTarget(tAnnotation);
 		ruleResult.getTargetObjects().add(tAnnotation);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);

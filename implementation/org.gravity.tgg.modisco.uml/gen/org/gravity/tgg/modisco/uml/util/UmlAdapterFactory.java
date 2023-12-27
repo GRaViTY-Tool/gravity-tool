@@ -79,8 +79,13 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeAccess2Property(TypeAccess2Property object) {
-			return createTypeAccess2PropertyAdapter();
+		public Adapter caseJavaModel2UMLPackage(JavaModel2UMLPackage object) {
+			return createJavaModel2UMLPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseASTNode2Element(ASTNode2Element object) {
+			return createASTNode2ElementAdapter();
 		}
 
 		@Override
@@ -94,17 +99,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseASTNode2Element(ASTNode2Element object) {
-			return createASTNode2ElementAdapter();
-		}
-
-		@Override
-		public Adapter caseParameterizedType2RedefinableTemplateSignature(
-				ParameterizedType2RedefinableTemplateSignature object) {
-			return createParameterizedType2RedefinableTemplateSignatureAdapter();
-		}
-
-		@Override
 		public Adapter caseTypeAccess2InterfaceRealization(TypeAccess2InterfaceRealization object) {
 			return createTypeAccess2InterfaceRealizationAdapter();
 		}
@@ -115,18 +109,24 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeAccess2Generalization(TypeAccess2Generalization object) {
-			return createTypeAccess2GeneralizationAdapter();
-		}
-
-		@Override
 		public Adapter caseCompilationUnit2Artifact(CompilationUnit2Artifact object) {
 			return createCompilationUnit2ArtifactAdapter();
 		}
 
 		@Override
-		public Adapter caseJavaModel2UMLPackage(JavaModel2UMLPackage object) {
-			return createJavaModel2UMLPackageAdapter();
+		public Adapter caseParameterizedType2RedefinableTemplateSignature(
+				ParameterizedType2RedefinableTemplateSignature object) {
+			return createParameterizedType2RedefinableTemplateSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeAccess2Property(TypeAccess2Property object) {
+			return createTypeAccess2PropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeAccess2Generalization(TypeAccess2Generalization object) {
+			return createTypeAccess2GeneralizationAdapter();
 		}
 
 		@Override
@@ -182,16 +182,30 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property <em>Type Access2 Property</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage <em>Java Model2 UML Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property
+	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage
 	 * @generated
 	 */
-	public Adapter createTypeAccess2PropertyAdapter() {
+	public Adapter createJavaModel2UMLPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.ASTNode2Element <em>AST Node2 Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.ASTNode2Element
+	 * @generated
+	 */
+	public Adapter createASTNode2ElementAdapter() {
 		return null;
 	}
 
@@ -224,34 +238,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.ASTNode2Element <em>AST Node2 Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.ASTNode2Element
-	 * @generated
-	 */
-	public Adapter createASTNode2ElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature <em>Parameterized Type2 Redefinable Template Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature
-	 * @generated
-	 */
-	public Adapter createParameterizedType2RedefinableTemplateSignatureAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2InterfaceRealization <em>Type Access2 Interface Realization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -280,20 +266,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization <em>Type Access2 Generalization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization
-	 * @generated
-	 */
-	public Adapter createTypeAccess2GeneralizationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.CompilationUnit2Artifact <em>Compilation Unit2 Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -308,16 +280,44 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.JavaModel2UMLPackage <em>Java Model2 UML Package</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature <em>Parameterized Type2 Redefinable Template Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.uml.JavaModel2UMLPackage
+	 * @see org.gravity.tgg.modisco.uml.ParameterizedType2RedefinableTemplateSignature
 	 * @generated
 	 */
-	public Adapter createJavaModel2UMLPackageAdapter() {
+	public Adapter createParameterizedType2RedefinableTemplateSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Property <em>Type Access2 Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Property
+	 * @generated
+	 */
+	public Adapter createTypeAccess2PropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.uml.TypeAccess2Generalization <em>Type Access2 Generalization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.uml.TypeAccess2Generalization
+	 * @generated
+	 */
+	public Adapter createTypeAccess2GeneralizationAdapter() {
 		return null;
 	}
 

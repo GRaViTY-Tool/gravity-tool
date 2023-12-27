@@ -6,6 +6,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -72,6 +73,16 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	@Override
 	public boolean supportsBWDSync() {
 		return true;
+	}
+
+	@Override
+	public boolean supported(final IProject project) {
+		try {
+			return project.hasNature(JavaCore.NATURE_ID);
+		} catch (final CoreException e) {
+			LOGGER.error(e);
+			return false;
+		}
 	}
 
 }

@@ -7,7 +7,9 @@ Bundle-Activator: org.gravity.eclipse.ui.GravityUiActivator
 Require-Bundle: org.gravity.eclipse,
  org.eclipse.jface,
  org.eclipse.ui.workbench,
- org.apache.log4j
+ org.apache.log4j,
+ org.eclipse.jdt.core,
+ org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.eclipse.ui,

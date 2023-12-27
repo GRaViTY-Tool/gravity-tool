@@ -610,7 +610,7 @@ public class PrimitiveTypeCharImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_3(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_4(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeCharImpl
 				.pattern_PrimitiveTypeChar_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1093,8 +1093,8 @@ public class PrimitiveTypeCharImpl extends AbstractRuleImpl implements Primitive
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_CHAR___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_3__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_3((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_4__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_4((PrimitiveType) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_CHAR___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_CHAR_0__PRIMITIVETYPECHAR:
 			return isAppropriate_FWD_PrimitiveTypeChar_0((org.eclipse.modisco.java.PrimitiveTypeChar) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_CHAR___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:

@@ -1,13 +1,20 @@
 package org.gravity.eclipse;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -32,7 +39,7 @@ import org.osgi.framework.BundleContext;
 public class GravityActivator extends Plugin {
 
 	/** The ID of the extensionpoint where converters are registered. */
-	private static final String GRAVITY_CONVERTER_EXTENSION_POINT_ID = "org.gravity.eclipse.converters"; //$NON-NLS-1$
+	public static final String GRAVITY_CONVERTER_EXTENSION_POINT_ID = "org.gravity.eclipse.converters"; //$NON-NLS-1$
 
 	/** The plug-in ID. */
 	public static final String PLUGIN_ID = "org.gravity.eclipse"; //$NON-NLS-1$
@@ -42,7 +49,7 @@ public class GravityActivator extends Plugin {
 	 */
 	public static final String GRAVITY_FOLDER_NAME = ".gravity"; //$NON-NLS-1$
 
-	/*
+	/**
 	 * File extensions
 	 */
 	public static final String FILE_EXTENSION_JAVA = "java"; //$NON-NLS-1$
@@ -61,9 +68,7 @@ public class GravityActivator extends Plugin {
 
 	/** The converters for java projects (project name as key). */
 	private final Map<IProject, IPGConverter> converters;
-
-	/** The selected converter factory. */
-	private IPGConverterFactory factory;
+	private final Map<IProject, IPGConverterFactory> factories;
 
 	/** A listener for changes in java files */
 	private IResourceChangeListener listener;
@@ -78,6 +83,7 @@ public class GravityActivator extends Plugin {
 	 */
 	public GravityActivator() {
 		this.converters = new HashMap<>();
+		this.factories = new HashMap<>();
 	}
 
 	/**
@@ -101,25 +107,6 @@ public class GravityActivator extends Plugin {
 			}
 		};
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(this.listener);
-	}
-
-	/**
-	 * Selects the first converter registered at "org.gravity.eclipse.converters"
-	 *
-	 * @throws NoConverterRegisteredException If no converter has been registered at
-	 *                                        the extension point
-	 * @throws CoreException                  If the extension point couldn't be
-	 *                                        read
-	 */
-	private boolean initializeSelectedConverter() throws NoConverterRegisteredException, CoreException {
-		final var extensionRegistry = Platform.getExtensionRegistry();
-		final var configurationElements = extensionRegistry
-				.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID);
-		if (configurationElements.length <= 0) {
-			throw new NoConverterRegisteredException();
-		}
-		this.factory = ((IPGConverterFactory) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
-		return this.factory != null;
 	}
 
 	/**
@@ -182,13 +169,10 @@ public class GravityActivator extends Plugin {
 	 */
 	public IPGConverter getConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
 		if (this.converters.containsKey(project)) {
-			final var converter = this.converters.get(project);
-			if (this.factory.belongsToFactory(converter)) {
-				return converter;
-			}
+			return this.converters.get(project);
 		}
-		final var converter = getNewConverter(project);
-		converter.setDebug(isVerbose());
+		final var converter = this.getNewConverter(project);
+		converter.setDebug(this.isVerbose());
 		return converter;
 	}
 
@@ -219,8 +203,18 @@ public class GravityActivator extends Plugin {
 	 *                                        read
 	 */
 	public IPGConverter getNewConverter(final IProject project) throws NoConverterRegisteredException, CoreException {
-		final var converter = getSelectedConverterFactory().createConverter(project);
-		converter.setDebug(isVerbose());
+		IPGConverterFactory factory;
+		if (this.factories.containsKey(project)) {
+			factory = this.factories.get(project);
+		} else {
+			final var compatibleFactories = this.getCompatibleConverterFactories(project);
+			if (compatibleFactories.isEmpty()) {
+				throw new NoConverterRegisteredException();
+			}
+			factory = compatibleFactories.iterator().next();
+		}
+		final var converter = factory.createConverter(project);
+		converter.setDebug(this.isVerbose());
 		final var old = this.converters.put(project, converter);
 		if ((old != null) && (old != converter)) {
 			old.discard();
@@ -228,30 +222,18 @@ public class GravityActivator extends Plugin {
 		return converter;
 	}
 
-	/**
-	 * Sets the selected converter factory.
-	 *
-	 * @param factory the new selected converter factory
-	 */
-	public void setSelectedConverterFactory(final IPGConverterFactory selectedConverterFactory) {
-		this.factory = selectedConverterFactory;
-	}
+	public Collection<IPGConverterFactory> getCompatibleConverterFactories(final IProject project)
+			throws CoreException {
+		final var extensionRegistry = Platform.getExtensionRegistry();
 
-	/**
-	 * Gets the selected converter factory.
-	 *
-	 * @return the selected converter factory
-	 *
-	 * @throws NoConverterRegisteredException If no converter has been registered at
-	 *                                        the extension point
-	 * @throws CoreException                  If the extension point couldn't be
-	 *                                        read
-	 */
-	public IPGConverterFactory getSelectedConverterFactory() throws NoConverterRegisteredException, CoreException {
-		if ((this.factory == null) && !initializeSelectedConverter()) {
-			throw new NoConverterRegisteredException();
+		final var compatibleFactories = new LinkedList<IPGConverterFactory>();
+		for (final var element : extensionRegistry.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID)) {
+			final var tmp = ((IPGConverterFactory) element.createExecutableExtension("class")); //$NON-NLS-1$
+			if (tmp.supported(project)) {
+				compatibleFactories.add(tmp);
+			}
 		}
-		return this.factory;
+		return compatibleFactories;
 	}
 
 	private static String measureRecordsKey;
@@ -286,5 +268,74 @@ public class GravityActivator extends Plugin {
 	public static IFolder getProgramModelFolder(final IProject project, final IProgressMonitor monitor)
 			throws IOException {
 		return EclipseProjectUtil.getGravityFolder(project, monitor).getFolder("pm");
+	}
+
+	private IFile getConverterSelectionFile(final IProject project, final NullProgressMonitor monitor)
+			throws IOException {
+		return EclipseProjectUtil.getGravityFolder(project, monitor).getFile(".converter");
+	}
+
+	public IPGConverterFactory setSelectedConverterFactory(final IProject project,
+			final IPGConverterFactory converter) {
+		try {
+			final var monitor = new NullProgressMonitor();
+			final var file = this.getConverterSelectionFile(project, monitor);
+
+			try (var stream = new ByteArrayInputStream(converter.getClass().getName().getBytes())) {
+				if (file.exists()) {
+					file.setContents(stream, IResource.FORCE, monitor);
+				} else {
+					file.create(stream, IResource.FORCE, monitor);
+				}
+			}
+		} catch (IOException | CoreException e) {
+			LOGGER.error(e);
+		}
+		return this.factories.put(project, converter);
+	}
+
+	/**
+	 * Gets the selected converter factory.
+	 *
+	 * @param project The project for which a converter has been selected
+	 *
+	 * @return the selected converter factory
+	 */
+	public IPGConverterFactory getSelectedConverterFactory(final IProject project) {
+		return this.factories.computeIfAbsent(project, this::readFactory);
+	}
+
+	private IPGConverterFactory readFactory(final IProject project) {
+		try {
+			final var file = this.getConverterSelectionFile(project, new NullProgressMonitor());
+			if (file.exists()) {
+				try (var stream = new BufferedReader(new InputStreamReader(file.getContents()))) {
+					final var line = stream.readLine();
+					if (line != null && !line.isBlank()) {
+						final var factoryClass = Class.forName(line);
+						final var factory = (IPGConverterFactory) factoryClass.getDeclaredConstructor().newInstance();
+						this.factories.put(project, factory);
+						return factory;
+					}
+				}
+			}
+		} catch (final IOException | CoreException | ReflectiveOperationException e) {
+			LOGGER.error(e);
+		}
+		return null;
+	}
+
+	public IPGConverterFactory getSuitableConverterFactory(final IProject project,
+			final Predicate<IPGConverterFactory> constraint) {
+		try {
+			for (final var factory : this.getCompatibleConverterFactories(project)) {
+				if (constraint.test(factory)) {
+					return factory;
+				}
+			}
+		} catch (final CoreException e) {
+			LOGGER.error(e);
+		}
+		return null;
 	}
 }
