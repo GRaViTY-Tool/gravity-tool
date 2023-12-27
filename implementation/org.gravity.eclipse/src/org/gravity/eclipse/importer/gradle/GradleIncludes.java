@@ -21,9 +21,9 @@ public final class GradleIncludes {
 	public GradleIncludes(final File rootDir) throws NoRootFolderException, IOException {
 		this.includes = new HashSet<>();
 		if (new File(rootDir, "src").exists()) {
-			getIncludes().add(rootDir.toPath());
+			this.getIncludes().add(rootDir.toPath());
 		}
-		this.buildDotGradleFiles = scanDirectoryForSubRoots(rootDir);
+		this.buildDotGradleFiles = this.scanDirectoryForSubRoots(rootDir);
 
 	}
 
@@ -34,7 +34,7 @@ public final class GradleIncludes {
 	/**
 	 * Searches if the included sub project and all its sub projects in the root
 	 *
-	 * @param contentString             The the include specification
+	 * @param contentString       The the include specification
 	 * @param rootDir             The root of the project
 	 * @param buildDotGradleFiles All included build.gradle files
 	 * @throws IOException If a settings file cannot be read
@@ -45,29 +45,27 @@ public final class GradleIncludes {
 		while (includeMatcher.find()) {
 			final var match = includeMatcher.group(1);
 			for (final String includeMatch : match.split(",")) {
-				addInclude(includeMatch.trim(), rootDir, buildDotGradleFiles);
+				this.addInclude(includeMatch.trim(), rootDir, buildDotGradleFiles);
 			}
 		}
 	}
 
 	/**
-	 * @param include The name of the include
-	 * @param rootDir The root of the project
+	 * @param include             The name of the include
+	 * @param rootDir             The root of the project
 	 * @param buildDotGradleFiles All included build.gradle files
 	 * @throws IOException If a settings file cannot be read
 	 */
 	private void addInclude(final String include, final File rootDir, final Set<Path> buildDotGradleFiles)
 			throws IOException {
-		final var subProject = include.replace("'", "").replace("\"", "").replace(':',
-				File.separatorChar);
+		final var subProject = include.replace("'", "").replace("\"", "").replace(':', File.separatorChar);
 		final var nextRoot = FileUtils.findRecursive(rootDir, subProject);
 		if (nextRoot != null) {
 			if (this.includes.add(nextRoot.toPath())) {
 				try {
-					buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
+					buildDotGradleFiles.addAll(this.scanDirectoryForSubRoots(nextRoot));
 				} catch (final NoRootFolderException e) {
-					GradleImport.LOGGER.log(Level.WARN,
-							"The subroot \"" + nextRoot + "\" has no build.gradle file!");
+					GradleImport.LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
 				}
 			}
 		} else {
@@ -95,7 +93,7 @@ public final class GradleIncludes {
 			GradleImport.LOGGER.warn("Falling back to manual analysis of build.gradle files!");
 			javaSourceFiles = new HashSet<>();
 			for (final Path root : this.includes) {
-				scanRootForSourceFiles(root.toFile(), javaSourceFiles);
+				this.scanRootForSourceFiles(root.toFile(), javaSourceFiles);
 			}
 		}
 		return javaSourceFiles;
@@ -103,12 +101,11 @@ public final class GradleIncludes {
 
 	public Set<Path> scanDirectoryForSubRoots(final File rootDir) throws IOException, NoRootFolderException {
 		final Set<Path> subRoots = new HashSet<>();
-		final var buildFile = new File(rootDir, "build.gradle");
-		if (buildFile.exists()) {
-			subRoots.add(buildFile.toPath());
-		} else {
+		var buildFile = new File(rootDir, "build.gradle");
+		if (!buildFile.exists() && !(buildFile = new File(rootDir, "build.gradle.kts")).exists()) {
 			throw new NoRootFolderException();
 		}
+		subRoots.add(buildFile.toPath());
 		var settingsFile = new File(rootDir, "settings.gradle");
 		var exists = settingsFile.exists();
 		if (!exists) {
@@ -122,7 +119,7 @@ public final class GradleIncludes {
 			while (defMatcher.find()) {
 				defs.put(defMatcher.group(1), defMatcher.group(2));
 			}
-			subRoots.addAll(searchIncludes(settingsContentString, rootDir, defs));
+			subRoots.addAll(this.searchIncludes(settingsContentString, rootDir, defs));
 		}
 		return subRoots;
 	}
@@ -139,10 +136,10 @@ public final class GradleIncludes {
 	public Set<Path> searchIncludes(final String contentString, final File rootDir, final Map<String, String> defs)
 			throws IOException {
 		final Set<Path> includedFiles = new HashSet<>();
-		searchSingleInclude(contentString, rootDir, includedFiles);
+		this.searchSingleInclude(contentString, rootDir, includedFiles);
 		final var matcher = GradleRegexPatterns.INCLUDE_VAR.matcher(contentString);
-		while(matcher.find()) {
-			addInclude(matcher.group(2), rootDir, includedFiles);
+		while (matcher.find()) {
+			this.addInclude(matcher.group(2), rootDir, includedFiles);
 		}
 		return includedFiles;
 	}

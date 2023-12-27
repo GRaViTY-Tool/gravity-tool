@@ -2,6 +2,7 @@ package org.gravity.security.annotations.check;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -10,40 +11,33 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IMarker;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IAnnotatable;
 import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
-import org.eclipse.jdt.core.IImportDeclaration;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMember;
-import org.eclipse.jdt.core.IMemberValuePair;
 import org.eclipse.jdt.core.IMethod;
-import org.eclipse.jdt.core.IPackageDeclaration;
-import org.eclipse.jdt.core.IPackageFragment;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.core.ITypeRoot;
+import org.eclipse.jdt.core.ITypeParameter;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.core.compiler.BuildContext;
 import org.eclipse.jdt.core.compiler.CompilationParticipant;
-import org.eclipse.jdt.internal.compiler.util.Util;
+import org.eclipse.jdt.internal.core.LambdaMethod;
 import org.eclipse.jdt.internal.core.builder.CompilationParticipantResult;
 import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchy;
-import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchyVisitor;
-import org.eclipse.jdt.internal.corext.callhierarchy.CallLocation;
-import org.eclipse.jdt.internal.corext.callhierarchy.MethodCall;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
+import org.gravity.security.annotations.check.data.SecurityRequirements;
+import org.gravity.security.annotations.check.data.SecurityRequirements.SecurityProperty;
+import org.gravity.security.annotations.check.helpers.ASTHelper;
+import org.gravity.security.annotations.check.helpers.MemberHelper;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
-import org.gravity.security.annotations.requirements.Critical;
 import org.gravity.security.annotations.requirements.Integrity;
 import org.gravity.security.annotations.requirements.Secrecy;
 
@@ -53,9 +47,9 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	/**
 	 * The logger of this class
 	 */
-	private static final Logger LOGGER = Logger.getLogger(SecureDependencyCheck.class);
+	static final Logger LOGGER = Logger.getLogger(SecureDependencyCheck.class);
 
-	private IJavaProject project;
+	long timestamp;
 
 	@Override
 	public boolean isAnnotationProcessor() {
@@ -63,184 +57,221 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	}
 
 	@Override
-	public boolean isActive(IJavaProject project) {
+	public boolean isActive(final IJavaProject project) {
 		return true;
 	}
 
 	@Override
-	public void processAnnotations(BuildContext[] files) {
-		cache = new HashMap<>();
-		for (BuildContext context : files) {
-			if (context instanceof CompilationParticipantResult result
-					&& (result.hasAnnotations(Secrecy.class.getName())
-							|| result.hasAnnotations(Integrity.class.getName())
-							|| result.hasAnnotations(Critical.class.getName()))) {
-
-				final ICompilationUnit cu = (ICompilationUnit) JavaCore.create(result.getFile());
-				project = cu.getJavaProject();
-
-				SecurityMarkerUtil.deleteOldMarkers(cu);
-
-				Set<String> secrecySignatures = new HashSet<>();
-				Set<String> integritySignatures = new HashSet<>();
-
-				Set<IMember> secrecyMembers = new HashSet<>();
-				Set<IMember> integrityMembers = new HashSet<>();
-
-				Collection<String> accessedSignatures = new HashSet<>();
-				Set<IMember> members = collectAllMembers(cu, secrecySignatures, integritySignatures, secrecyMembers,
-						integrityMembers);
-				for (IMember member : members) {
-					accessedSignatures.addAll(checkOutgoingAccesses(secrecySignatures, integritySignatures, member));
-					checkIncomingAccesses(member, secrecyMembers.contains(member), integrityMembers.contains(member));
-				}
-
-				checkForUnusedRequirements(cu, secrecySignatures, integritySignatures, accessedSignatures);
-			}
-		}
+	public void processAnnotations(final BuildContext[] files) {
+		this.cache = new HashMap<>();
+		this.timestamp = System.currentTimeMillis();
+		Stream.of(files).parallel().forEach(this::processChangedFile);
 	}
 
-	private void checkForUnusedRequirements(final ICompilationUnit cu, Set<String> secrecySignatures,
-			Set<String> integritySignatures, Collection<String> accessedSignatures) {
-		if (!secrecySignatures.isEmpty() || !integritySignatures.isEmpty()) {
-			try {
-				Collection<Annotations> annotations = new LinkedList<>();
-				for (IType type : cu.getAllTypes()) {
-					annotations.add(getSecurityRequirements(type));
-				}
+	private void processChangedFile(final BuildContext context) {
+		if (context instanceof final CompilationParticipantResult result) {
 
-				for (String signature : secrecySignatures) {
-					if (!accessedSignatures.contains(signature)) {
-						annotations.forEach(a -> {
-							if (a.secrecy().contains(signature)) {
-								SecurityMarkerUtil.createWarningMarker(a.annotation,
-										"There is a secrecy requirement for \"" + signature
-												+ "\" but the signature is neither defined nor accessed!");
-							}
-						});
-					}
+			final var cu = (ICompilationUnit) JavaCore.create(result.getFile());
+			SecurityMarkerUtil.deleteOldMarkers(cu, this.timestamp);
+
+			try {
+				for (final IType type : cu.getAllTypes()) {
+					final var requirements = this.getSecurityRequirements(type);
+					final Collection<IMember> accessed = requirements.getMembers().parallelStream().flatMap(member -> {
+						final var requiresSecrecy = requirements.isSecrecyMember(member);
+						final var requiresIntegrity = requirements.isIntegrityMember(member);
+						if (requiresSecrecy || requiresIntegrity) {
+							this.checkIncomingAccesses(member, requiresSecrecy, requiresIntegrity);
+						}
+						return this.checkOutgoingAccesses(requirements, member).stream();
+					}).collect(Collectors.toSet());
+					this.checkForUnusedRequirements(requirements, accessed);
+
 				}
-				for (String signature : integritySignatures) {
-					if (!accessedSignatures.contains(signature)) {
-						annotations.forEach(a -> {
-							if (a.integrity().contains(signature)) {
-								SecurityMarkerUtil.createWarningMarker(a.annotation,
-										"There is a integrity requirement for \"" + signature
-												+ "\" but the signature is neither defined nor accessed!");
-							}
-						});
-					}
-				}
-			} catch (JavaModelException e) {
+			} catch (final CoreException e) {
 				LOGGER.error(e);
 			}
 		}
 	}
 
-	private Set<IMember> collectAllMembers(final ICompilationUnit cu, Set<String> secrecySignatures,
-			Set<String> integritySignatures, Set<IMember> secrecyMembers, Set<IMember> integrityMembers) {
-		Set<IMember> members = new HashSet<>();
-		try {
-			for (IType type : cu.getAllTypes()) {
-				members.addAll(collectAllMembers(type, secrecySignatures, integritySignatures, secrecyMembers,
-						integrityMembers));
-			}
-		} catch (JavaModelException e) {
-			throw new IllegalStateException(e);
-		}
-		return members;
-	}
-
-	private Collection<IMember> collectAllMembers(IType type, Set<String> secrecySignatures,
-			Set<String> integritySignatures, Set<IMember> secrecyMembers, Set<IMember> integrityMembers)
-			throws JavaModelException {
-		final var annotations = getSecurityRequirements(type);
-		secrecySignatures.addAll(annotations.secrecy());
-		integritySignatures.addAll(annotations.integrity());
-
-		IMethod[] methods = type.getMethods();
-		IField[] fields = type.getFields();
-		ICompilationUnit cu = type.getCompilationUnit();
-		Collection<IMember> members = new ArrayList<>(methods.length + fields.length);
-		for (IMethod method : methods) {
-			members.add(method);
-
-			if (removeMember(method, secrecySignatures, cu)
-					|| method.getAnnotation(Secrecy.class.getSimpleName()).exists()) {
-				secrecyMembers.add(method);
-			}
-
-			if (removeMember(method, integritySignatures, cu)
-					|| method.getAnnotation(Integrity.class.getSimpleName()).exists()) {
-				integrityMembers.add(method);
-			}
-		}
-		for (IField field : fields) {
-			members.add(field);
-
-			if (removeMember(field, secrecySignatures, cu)
-					|| field.getAnnotation(Secrecy.class.getSimpleName()).exists()) {
-				secrecyMembers.add(field);
-			}
-			if (removeMember(field, integritySignatures, cu)
-					|| field.getAnnotation(Integrity.class.getSimpleName()).exists()) {
-				integrityMembers.add(field);
-			}
-		}
-		return members;
-	}
-
-	private void checkIncomingAccesses(IMember member, boolean secrecy, boolean integrity) {
-		for (MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
-			root.accept(new IncomingAccessCheck(member, secrecy, root, integrity), new NullProgressMonitor());
+	/**
+	 * Checks if calls of the member fulfill the secure dependency property
+	 *
+	 * @param member    The called member
+	 * @param secrecy   Whether the member is on the secrecy security level
+	 * @param integrity Whether the member is on the integrity security level
+	 */
+	private void checkIncomingAccesses(final IMember member, final boolean secrecy, final boolean integrity) {
+		for (final MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
+			root.accept(new IncomingAccessCheck(this, member, secrecy, root, integrity), new NullProgressMonitor());
 		}
 	}
 
-	private Collection<String> checkOutgoingAccesses(Set<String> secrecySignatures, Set<String> integritySignatures,
-			IMember caller) {
-		Collection<String> accessedSignatures = new HashSet<>();
-		for (MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
+	/**
+	 * Checks if the member accesses any security-critical member for which secrecy
+	 * or integrity is not specified by the members class
+	 *
+	 * @param requirements The security requirements of the class defining the
+	 *                     member
+	 * @param caller       The member whose outgoing accesses should be analyzed
+	 * @return The members accessed by the analyzed member
+	 */
+	private Collection<IMember> checkOutgoingAccesses(final SecurityRequirements requirements, final IMember caller) {
+		final Collection<IMember> accessedMembers = new HashSet<>();
+		for (final MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
 			// Check outgoing calls
-			root.accept(
-					new OutgoingAccessCheck(accessedSignatures, root, caller, secrecySignatures, integritySignatures),
+			root.accept(new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements),
 					new NullProgressMonitor());
 		}
-		return accessedSignatures;
+		return accessedMembers;
 	}
 
-	private boolean removeMember(IMember member, Collection<String> signatures, ICompilationUnit cu) {
-		String remove = getCorrespondingEntry(member, signatures, cu);
+	/**
+	 * Checks if security requirements are defined that do not match a defined or
+	 * accessed member
+	 *
+	 * @param requirements    The security requirements of the analyzed type
+	 * @param accessedMembers All external security-critical members that are
+	 *                        accessed from the type
+	 */
+	private void checkForUnusedRequirements(final SecurityRequirements requirements,
+			final Collection<IMember> accessedMembers) {
+		this.checkForUnusedRequirements(requirements, accessedMembers, requirements.getSecrecySignatures(),
+				SecurityProperty.SECRECY);
+		this.checkForUnusedRequirements(requirements, accessedMembers, requirements.getIntegritySignatures(),
+				SecurityProperty.INTEGRITY);
+	}
+
+	private void checkForUnusedRequirements(final SecurityRequirements requirements,
+			final Collection<IMember> accessedMembers, final Set<String> classifiedSignatures,
+			final SecurityProperty property) {
+		final Collection<String> signatures = new ArrayList<>(classifiedSignatures);
+		final var cu = requirements.getType().getCompilationUnit();
+
+		if (!signatures.isEmpty()) {
+			for (final IMember member : accessedMembers) {
+				this.removeMember(member, signatures, cu);
+			}
+		}
+		if (!signatures.isEmpty()) {
+			for (final IMember member : requirements.getDefinedMembers()) {
+				this.removeMember(member, signatures, cu);
+			}
+		}
+
+		for (final String signature : signatures) {
+			for (final IAnnotation defines : requirements.getCriticals(signature, property)) {
+				SecurityMarkerUtil.createWarningMarker(defines, "There is a " + property + " requirement for \""
+						+ signature + "\" but the signature is neither defined nor accessed!");
+			}
+
+		}
+	}
+
+	Map<IType, SecurityRequirements> cache = new HashMap<>();
+
+	SecurityRequirements getSecurityRequirements(final IType type) {
+		if (this.cache.containsKey(type)) {
+			return this.cache.get(type);
+		}
+		final var requirement = new SecurityRequirements(type);
+		this.cache.put(type, requirement);
+
+		try {
+			addRelevantMembers(type, requirement);
+		} catch (final JavaModelException e) {
+			LOGGER.error(e);
+			return requirement;
+		}
+
+		final var cu = type.getCompilationUnit();
+		for (final IMember method : requirement.getMembers()) {
+
+			List<String> memberAnnotations;
+			if (method instanceof final IAnnotatable annotatable) {
+				try {
+					memberAnnotations = Stream.of(annotatable.getAnnotations()).map(IAnnotation::getElementName)
+							.toList();
+				} catch (final JavaModelException e) {
+					LOGGER.error(e);
+					memberAnnotations = Collections.emptyList();
+				}
+			} else {
+				memberAnnotations = Collections.emptyList();
+			}
+
+			if (this.removeMember(method, requirement.getSecrecySignatures(), cu)
+					|| memberAnnotations.contains(Secrecy.class.getSimpleName())) {
+				requirement.addSecrecyMember(method);
+			}
+
+			if (this.removeMember(method, requirement.getIntegritySignatures(), cu)
+					|| memberAnnotations.contains(Integrity.class.getSimpleName())) {
+				requirement.addIntegrityMember(method);
+			}
+		}
+		return requirement;
+	}
+
+	private static void addRelevantMembers(final IType type, final SecurityRequirements requirement)
+			throws JavaModelException {
+		for (final IJavaElement element : type.getChildren()) {
+			final var elementType = element.getElementType();
+			if (elementType == IJavaElement.FIELD || elementType == IJavaElement.METHOD
+					|| elementType == IJavaElement.INITIALIZER) {
+				final var member = (IMember) element;
+				requirement.addMember(member);
+			} else {
+				LOGGER.info("The member \"" + element + "\" will not be analyzed.");
+			}
+		}
+	}
+
+	private boolean removeMember(final IMember member, final Collection<String> signatures, final ICompilationUnit cu) {
+		final var remove = SecureDependencyCheck.getCorrespondingEntry(member, signatures, cu);
 		if (remove != null) {
 			return signatures.remove(remove);
 		}
 		return false;
 	}
 
-	private String getSignature(IMember member) {
-		var cu = member.getCompilationUnit();
-		if (member instanceof IMethod method) {
+	static String getSignature(final IMember member) {
+		var context = member;
+		if (member instanceof final LambdaMethod lambda) {
+			context = lambda.getOuterMostLocalContext();
+		}
+		final var cu = context.getCompilationUnit();
+		if (context instanceof final IMethod method) {
 			String suffix;
 			try {
-				String returnType = getFullyQualifiedName4JDT(cu, method.getReturnType());
+				final var returnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(),
+						getTypeParameters(method));
 				suffix = "):" + returnType.substring(returnType.lastIndexOf('.') + 1);
-			} catch (JavaModelException e) {
+			} catch (final JavaModelException e) {
 				LOGGER.error(e);
 				suffix = ")";
 			}
+			final var type = context.getDeclaringType().getElementName();
 			return Stream.of(method.getParameterTypes()).map(p -> {
-				String fqn = getFullyQualifiedName4JDT(cu, p);
-				return fqn.substring(fqn.lastIndexOf('.') + 1);
-			}).collect(Collectors.joining(",",
-					member.getDeclaringType().getElementName() + '.' + method.getElementName() + '(', suffix));
-		} else if (member instanceof IField field) {
-			StringBuilder signature = new StringBuilder(member.getDeclaringType().getElementName());
+				try {
+					final var fqn = ASTHelper.getFullyQualifiedName4JDT(cu, p, getTypeParameters(method));
+					return fqn.substring(fqn.lastIndexOf('.') + 1);
+				} catch (final JavaModelException e) {
+					LOGGER.error(e);
+					// Fallback: Object
+					return "java.lang.Object";
+				}
+			}).collect(Collectors.joining(",", type + '.' + method.getElementName() + '(', suffix));
+		}
+		if (context instanceof final IField field) {
+			final var signature = new StringBuilder(context.getDeclaringType().getElementName());
 			signature.append('.');
 			signature.append(field.getElementName());
 			try {
-				String type = getFullyQualifiedName4JDT(cu, field.getTypeSignature());
+				final var type = ASTHelper.getFullyQualifiedName4JDT(cu, field.getTypeSignature());
 				signature.append(':');
 				signature.append(type.substring(type.lastIndexOf(':') + 1));
-			} catch (CoreException e) {
+			} catch (final CoreException e) {
 				LOGGER.error(e);
 			}
 			return signature.toString();
@@ -248,625 +279,59 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return null;
 	}
 
-	private String getCorrespondingEntry(IMember member, Collection<String> signatures, ICompilationUnit cu) {
-		String name = member.getElementName();
-		switch (member.getElementType()) {
-		case IJavaElement.METHOD:
-			IMethod method = (IMethod) member;
+	private static ITypeParameter[] getTypeParameters(final IMethod method) throws JavaModelException {
+		final List<ITypeParameter> params = new LinkedList<>();
+		Collections.addAll(params, method.getTypeParameters());
+		IJavaElement parent = method.getDeclaringType();
+		while (parent != null) {
+			if (parent instanceof final IType type) {
+				Collections.addAll(params, type.getTypeParameters());
+			} else if (parent instanceof final IMethod outer) {
+				Collections.addAll(params, outer.getTypeParameters());
+			}
+			parent = parent.getParent();
+		}
+		return params.toArray(new ITypeParameter[0]);
+	}
 
-			for (String signature : signatures) {
+	static String getCorrespondingEntry(final IMember member, final Collection<String> signatures,
+			final ICompilationUnit cu) {
+		final var name = member.getElementName();
+
+		var context = member;
+		if (member instanceof final LambdaMethod lambda) {
+			context = lambda.getOuterMostLocalContext();
+		}
+
+		switch (context.getElementType()) {
+		case IJavaElement.METHOD:
+			final var method = (IMethod) context;
+
+			for (final String signature : signatures) {
 				try {
-					if (isInExpectedType(signature, member, cu) && isMethodWithName(name, signature)
-							&& compareReturnType(method, signature) && compareParameters(method, signature)) {
+					if (MemberHelper.isExpectedMethod(member, cu, name, method, signature)) {
 						return signature;
 					}
-				} catch (JavaModelException e) {
+				} catch (final JavaModelException e) {
 					LOGGER.error(e);
 				}
 			}
 			break;
 		case IJavaElement.FIELD:
-			IField field = (IField) member;
+			final var field = (IField) context;
 
-			for (String signature : signatures) {
-				if (isInExpectedType(signature, member, cu) && isFieldWithName(name, signature)
-						&& compareFieldType(field, signature)) {
+			for (final String signature : signatures) {
+				if (MemberHelper.isExpectedField(member, cu, name, field, signature)) {
 					return signature;
 				}
 			}
 			break;
-		case IJavaElement.TYPE:
+		case IJavaElement.TYPE, IJavaElement.INITIALIZER:
 			LOGGER.warn("Skipped getting corresponding entry for an IMember: " + member);
 			break;
 		default:
 			throw new IllegalStateException("Unhandled member type: " + member.getElementType());
 		}
 		return null;
-	}
-
-	private boolean isInExpectedType(String signature, IMember member, ICompilationUnit cu) {
-		int method = signature.indexOf('(');
-		if (method == -1) {
-			method = signature.indexOf(':');
-		}
-		int dot = signature.substring(0, method).lastIndexOf('.');
-		if (dot >= 0) {
-			String signatureType = getFullyQualifiedName4Text(cu, signature.substring(0, dot));
-			String memberType = member.getDeclaringType().getFullyQualifiedName();
-			if (!signatureType.equals(memberType)) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	private boolean isFieldWithName(String name, String signature) {
-		boolean notMethod = signature.indexOf('(') == -1;
-		return notMethod && signature.substring(0, signature.indexOf(':')).endsWith(name);
-	}
-
-	private boolean compareFieldType(IField field, String signature) {
-		try {
-			String signatureType = getFullyQualifiedName4Text(field.getCompilationUnit(),
-					signature.substring(signature.indexOf(':') + 1));
-			String fieldType = getFullyQualifiedName4JDT(field.getCompilationUnit(), field.getTypeSignature());
-			return signatureType.equals(fieldType);
-		} catch (JavaModelException e) {
-			throw new IllegalStateException(e);
-		}
-	}
-
-	private boolean isMethodWithName(String name, String signature) {
-		int open = signature.indexOf('(');
-		return open > 0 && signature.substring(0, open).trim().endsWith(name);
-	}
-
-	private boolean compareParameters(IMethod method, String signature) {
-		int end = signature.indexOf(')');
-		int start = signature.indexOf('(') + 1;
-		if (start == end) {
-			return true;
-		}
-		String[] signaturePlainParameters = signature.substring(start, end).split(",");
-		String[] methodPlainParameters = method.getParameterTypes();
-		if (signaturePlainParameters.length == methodPlainParameters.length) {
-			List<String> signatureParameters = Stream.of(signaturePlainParameters).map(String::trim)
-					.map(p -> getFullyQualifiedName4Text(method.getCompilationUnit(), p)).toList();
-			List<String> methodParameters = Stream.of(methodPlainParameters)
-					.map(p -> getFullyQualifiedName4JDT(method.getCompilationUnit(), p)).toList();
-			if (equals(signatureParameters, methodParameters)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean compareReturnType(IMethod method, String signature) throws JavaModelException {
-		String signatureReturnType;
-		int colon = signature.indexOf(':');
-		ICompilationUnit cu = method.getCompilationUnit();
-		if (colon >= 0) {
-			signatureReturnType = signature.substring(colon + 1).trim();
-			if ("void".equalsIgnoreCase(signatureReturnType)) {
-				signatureReturnType = "void";
-			} else {
-				signatureReturnType = getFullyQualifiedName4Text(cu, signatureReturnType);
-			}
-		} else {
-			signatureReturnType = "void";
-		}
-		String methodReturnType = getFullyQualifiedName4JDT(cu, method.getReturnType());
-		return methodReturnType.equals(signatureReturnType);
-	}
-
-	private boolean equals(List<String> signatureParameters, List<String> methodParameters) {
-		for (int i = 0; i < signatureParameters.size(); i++) {
-			if (!methodParameters.get(i).equals(signatureParameters.get(i))) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	private String getFullyQualifiedName4Text(ICompilationUnit cu, String type) {
-		type = type.replace(" ", "");
-		int genericStart = type.indexOf('<');
-		if (genericStart >= 0) {
-			type = type.substring(0, genericStart);
-		}
-		int array = 0;
-		int arrayStart = type.indexOf('[');
-		if (arrayStart == -1) {
-			arrayStart = type.length();
-		} else {
-			for (int i = arrayStart; i < type.length(); i++) {
-				if ('[' == type.charAt(i)) {
-					array++;
-				}
-			}
-		}
-
-		String plainType = type.substring(0, arrayStart);
-		String resolvedType = findType(cu, plainType);
-		if (resolvedType == null) {
-			return buildArray(array, plainType);
-		}
-		return buildArray(array, resolvedType);
-	}
-
-	private String getFullyQualifiedName4JDT(ICompilationUnit cu, String typeName) {
-		int arrays = 0;
-		while (typeName.charAt(arrays) == Util.C_ARRAY) {
-			arrays++;
-		}
-
-		String type = typeName.substring(arrays);
-
-		switch (type) {
-		case Signature.SIG_VOID:
-			return buildArray(arrays, void.class.toString());
-		case Signature.SIG_BOOLEAN:
-			return buildArray(arrays, boolean.class.toString());
-		case Signature.SIG_BYTE:
-			return buildArray(arrays, byte.class.toString());
-		case Signature.SIG_CHAR:
-			return buildArray(arrays, char.class.toString());
-		case Signature.SIG_DOUBLE:
-			return buildArray(arrays, double.class.toString());
-		case Signature.SIG_FLOAT:
-			return buildArray(arrays, float.class.toString());
-		case Signature.SIG_INT:
-			return buildArray(arrays, int.class.toString());
-		case Signature.SIG_LONG:
-			return buildArray(arrays, long.class.toString());
-		case Signature.SIG_SHORT:
-			return buildArray(arrays, short.class.toString());
-		default:
-			int genericStart = type.indexOf(Util.C_GENERIC_START);
-			int end = genericStart == -1 ? type.indexOf(Util.C_NAME_END) : genericStart;
-			char prefix = type.charAt(0);
-			switch (prefix) {
-			case Util.C_UNRESOLVED:
-				String resolvedType = findType(cu, type.substring(1, end));
-				if (resolvedType == null) {
-					LOGGER.error("Could not resolve type in JDT: " + typeName);
-					resolvedType = type.substring(1, type.indexOf(';'));
-				}
-				return buildArray(arrays, resolvedType);
-			case Util.C_RESOLVED:
-				return buildArray(arrays, type.substring(1, end));
-			case Util.C_TYPE_VARIABLE:
-				return buildArray(arrays, type.substring(1, end));
-			default:
-				LOGGER.error("Unhandled JDT type prefix: " + prefix);
-			}
-		}
-		throw new IllegalStateException("Unhandled return type \"" + type + "\" in " + cu.getPath());
-	}
-
-	private String findType(ICompilationUnit cu, String name) {
-		try {
-			// Check if the type already has a fully qualified name
-			if (name.indexOf(Util.C_DOT) > -1) {
-				return name;
-			}
-
-			// Search the imports for the type
-			var importedType = searchTypeInImports(cu, name);
-			if (importedType != null) {
-				return importedType;
-			}
-
-			// Search java.lang for the type
-			IPackageFragment packageFragment = getPackageFragment("java.lang");
-			if (packageFragment != null) {
-				String fullyQualifiedName = findTypeInPackage(name, packageFragment);
-				if (fullyQualifiedName != null) {
-					return fullyQualifiedName;
-				}
-			}
-
-			// Search the own package
-			String type = findTypeOwnPackage(cu, name);
-			if (type != null) {
-				return type;
-			}
-
-			String qualifiedType = findQualifiedTypeUsage(cu, name);
-			if (qualifiedType != null) {
-				return qualifiedType;
-			}
-		} catch (CoreException e) {
-			throw new IllegalStateException(e);
-		}
-
-		return null;
-	}
-
-	private String findQualifiedTypeUsage(ICompilationUnit cu, String name) throws JavaModelException {
-		for (IType definedType : cu.getTypes()) {
-			for (IField field : definedType.getFields()) {
-				final var fieldType = field.getTypeSignature();
-				if (isQualifiedVersion(name, fieldType)) {
-					return getFullyQualifiedName4JDT(cu, fieldType);
-				}
-			}
-			for (IMethod method : definedType.getMethods()) {
-				final var returnType = method.getReturnType();
-				if (isQualifiedVersion(name, returnType)) {
-					return getFullyQualifiedName4JDT(cu, returnType);
-				}
-				for (String parameterType : method.getParameterTypes()) {
-					if (isQualifiedVersion(name, parameterType)) {
-						return getFullyQualifiedName4JDT(cu, parameterType);
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	private boolean isQualifiedVersion(String nonQualified, final String potentiallyQualified) {
-		int index = potentiallyQualified.lastIndexOf(Util.C_DOT);
-		return index >= 0 && nonQualified
-				.equals(potentiallyQualified.substring(index + 1, potentiallyQualified.indexOf(Util.C_SEMICOLON)));
-	}
-
-	/**
-	 * Searches the type in the imports of the compilation unit
-	 * 
-	 * @param cu
-	 * @param name
-	 * @return
-	 * @throws JavaModelException
-	 */
-	private String searchTypeInImports(ICompilationUnit cu, String name) throws JavaModelException {
-		if (cu != null) {
-			for (IImportDeclaration imp : cu.getImports()) {
-				String importName = imp.getElementName();
-
-				if (Util.C_STAR == importName.charAt(importName.length() - 1)) {
-					// Resolve import all
-					String packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
-					IPackageFragment packageFragment = getPackageFragment(packageName);
-					if (packageFragment != null) {
-						String fullyQualifiedName = findTypeInPackage(name, packageFragment);
-						if (fullyQualifiedName != null) {
-							return fullyQualifiedName;
-						}
-					}
-
-				} else {
-					// Check imported types
-					String simpleName = importName;
-					int index = simpleName.lastIndexOf(Util.C_DOT);
-					if (index >= 0) {
-						simpleName = simpleName.substring(index + 1);
-					}
-					if (simpleName.equals(name)) {
-						return imp.getElementName();
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Searches the type in the package of the compilation unit
-	 * 
-	 * @param cu
-	 * @param name
-	 * @return
-	 * @throws JavaModelException
-	 */
-	private String findTypeOwnPackage(ICompilationUnit cu, String name) throws JavaModelException {
-		if (cu != null) {
-			for (IPackageDeclaration packageDeclaration : cu.getPackageDeclarations()) {
-				IPackageFragment cuPackageFragment = getPackageFragment(packageDeclaration.getElementName());
-				if (cuPackageFragment != null) {
-					String ownName = findTypeInPackage(name, cuPackageFragment);
-					if (ownName != null) {
-						return ownName;
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	private String buildArray(int arrays, String type) {
-		StringBuilder typeSignature = new StringBuilder(type);
-		for (int i = 0; i < arrays; i++) {
-			typeSignature.append("[]");
-		}
-		return typeSignature.toString();
-	}
-
-	private String findTypeInPackage(String name, IPackageFragment packageFragment) throws JavaModelException {
-		for (IJavaElement child : packageFragment.getChildren()) {
-			IType primaryType = ((ITypeRoot) child).findPrimaryType();
-			if (primaryType.getElementName().equals(name)) {
-				return primaryType.getFullyQualifiedName();
-			}
-		}
-		return null;
-	}
-
-	private IPackageFragment getPackageFragment(String packageName) throws JavaModelException {
-		for (IPackageFragmentRoot root : project.getAllPackageFragmentRoots()) {
-			for (IJavaElement element : root.getChildren()) {
-				if (element instanceof IPackageFragment packageFragment
-						&& (packageFragment.getElementName().equals(packageName))) {
-					return packageFragment;
-
-				}
-			}
-		}
-		return null;
-	}
-
-	Map<IType, Annotations> cache = new HashMap<>();
-
-	private Annotations getSecurityRequirements(IType type) {
-		Annotations entry = cache.get(type);
-		if (entry != null) {
-			return entry;
-		}
-		Set<String> secrecySignatures = new HashSet<>();
-		Set<String> integritySignatures = new HashSet<>();
-		final var critical = type.getAnnotation(Critical.class.getSimpleName());
-		if (critical != null && critical.exists()) {
-			try {
-				for (IMemberValuePair pair : critical.getMemberValuePairs()) {
-					String memberName = pair.getMemberName();
-					if ("secrecy".equals(memberName)) {
-						Object secrecyValue = pair.getValue();
-						if (secrecyValue instanceof String string) {
-							secrecySignatures.add(string);
-						} else {
-							for (Object secrecy : (Object[]) secrecyValue) {
-								secrecySignatures.add((String) secrecy);
-							}
-						}
-					} else if ("integrity".equals(memberName)) {
-						Object integrityValue = pair.getValue();
-						if (integrityValue instanceof String string) {
-							integritySignatures.add(string);
-						} else {
-							for (Object integrity : (Object[]) integrityValue) {
-								integritySignatures.add((String) integrity);
-							}
-						}
-					}
-				}
-			} catch (JavaModelException e) {
-				throw new IllegalStateException(e);
-			}
-		}
-		Annotations annotations = new Annotations(secrecySignatures, integritySignatures, type, critical);
-		cache.put(type, annotations);
-		return annotations;
-
-	}
-
-	public static Collection<IMarker> createErrorMarker(MethodCall methodCall, String message,
-			String... relevantMember) {
-		Collection<CallLocation> callLocations = methodCall.getCallLocations();
-		Collection<IMarker> marker = new ArrayList<>(callLocations.size());
-		for (CallLocation callLocation : callLocations) {
-			try {
-				IResource resource = callLocation.getMember().getResource();
-				int line = callLocation.getLineNumber();
-
-				marker.add(SecurityMarkerUtil.createErrorMarker(resource, line, message, relevantMember));
-			} catch (CoreException e) {
-				throw new IllegalStateException(e);
-			}
-		}
-		return marker;
-	}
-
-	private final class OutgoingAccessCheck extends CallHierarchyVisitor {
-		private final Collection<String> accessedSignatures;
-		private final MethodWrapper root;
-		private final IMember caller;
-		private final Set<String> secrecySignatures;
-		private final Set<String> integritySignatures;
-		private ICompilationUnit cu;
-
-		private OutgoingAccessCheck(Collection<String> accessedSignatures, MethodWrapper root, IMember caller,
-				Set<String> secrecySignatures, Set<String> integritySignatures) {
-			this.accessedSignatures = accessedSignatures;
-			this.root = root;
-			this.caller = caller;
-			this.cu = caller.getCompilationUnit();
-			this.secrecySignatures = secrecySignatures;
-			this.integritySignatures = integritySignatures;
-		}
-
-		@Override
-		public boolean visit(MethodWrapper methodWrapper) {
-			if (root == methodWrapper) {
-				return true;
-			}
-			IMember calledMember = methodWrapper.getMember();
-			if (calledMember instanceof IType) {
-				return false;
-			}
-			String calledMemberSignature = getSignature(calledMember);
-			String analyzedMemberSignature = getSignature(caller);
-			SecurityMarkerUtil.deleteOldMarkers(calledMember.getResource(), analyzedMemberSignature);
-
-			boolean calleeSecrecy = requiresSecrecy(calledMember);
-			String callerSecrecyRequirement = getCorrespondingEntry(calledMember, secrecySignatures, cu);
-			boolean callerSecrey = callerSecrecyRequirement != null;
-			if (callerSecrey) {
-				accessedSignatures.add(callerSecrecyRequirement);
-			}
-			if (callerSecrey != calleeSecrecy) {
-				if (callerSecrey) {
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"Secrecy is required but not provided by the accessed member!", analyzedMemberSignature,
-							calledMemberSignature);
-					SecurityMarkerUtil.createErrorMarker(calledMember,
-							"Secrecy is required for this member by \"" + analyzedMemberSignature + "\"",
-							analyzedMemberSignature, calledMemberSignature);
-
-				} else {
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"This class must specify secrecy for accessing \"" + calledMemberSignature + "\"!",
-							analyzedMemberSignature, calledMemberSignature);
-					SecurityMarkerUtil.createErrorMarker(calledMember,
-							analyzedMemberSignature + " accesses this member without the required secrecy!",
-							analyzedMemberSignature, calledMemberSignature);
-				}
-			}
-
-			boolean calleeIntegrity = requiresIntegrity(calledMember);
-			String callerIntegrityRequirement = getCorrespondingEntry(calledMember, integritySignatures, cu);
-			boolean callerIntegrity = callerIntegrityRequirement != null;
-			if (callerIntegrity) {
-				accessedSignatures.add(callerIntegrityRequirement);
-			}
-			if (callerIntegrity != calleeIntegrity) {
-				if (callerIntegrity) {
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"Integrity is required but not provided by the accessed member!", analyzedMemberSignature,
-							calledMemberSignature);
-					SecurityMarkerUtil.createErrorMarker(calledMember,
-							"Integrity is required for this member by \"" + analyzedMemberSignature + "\"",
-							analyzedMemberSignature, calledMemberSignature);
-				} else {
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"This class must specify integrity for accessing \"" + calledMemberSignature + "\"!",
-							analyzedMemberSignature, calledMemberSignature);
-					SecurityMarkerUtil.createErrorMarker(calledMember,
-							analyzedMemberSignature + " accesses this member without the required integrity!",
-							analyzedMemberSignature, calledMemberSignature);
-
-				}
-			}
-
-			// Do not continue tree traversal
-			return false;
-		}
-
-		private boolean requiresSecrecy(IMember member) {
-			if (member instanceof IAnnotatable annotatable) {
-				if (member instanceof IType) {
-					return false;
-				}
-				return annotatable.getAnnotation(Secrecy.class.getSimpleName()).exists()
-						|| getCorrespondingEntry(member, getSecurityRequirements(member.getDeclaringType()).secrecy(),
-								cu) != null;
-			}
-			return false;
-		}
-
-		private boolean requiresIntegrity(IMember member) {
-			if (member instanceof IAnnotatable annotatable) {
-				return annotatable.getAnnotation(Integrity.class.getSimpleName()).exists()
-						|| getCorrespondingEntry(member, getSecurityRequirements(member.getDeclaringType()).integrity(),
-								cu) != null;
-			}
-			return false;
-		}
-	}
-
-	private final class IncomingAccessCheck extends CallHierarchyVisitor {
-		private final IMember member;
-		private final boolean secrecy;
-		private final MethodWrapper root;
-		private final boolean integrity;
-		private ICompilationUnit cu;
-
-		private IncomingAccessCheck(IMember member, boolean secrecy, MethodWrapper root, boolean integrity) {
-			this.member = member;
-			this.cu = member.getCompilationUnit();
-			this.secrecy = secrecy;
-			this.root = root;
-			this.integrity = integrity;
-		}
-
-		@Override
-		public boolean visit(MethodWrapper methodWrapper) {
-			if (root == methodWrapper) {
-				return true;
-			}
-			IMember caller = methodWrapper.getMember();
-			String callingMemberSignature = getSignature(caller);
-			String analyzedMemberSignature = getSignature(member);
-			SecurityMarkerUtil.deleteOldMarkers(caller.getResource(), analyzedMemberSignature);
-
-			Annotations annotations = getSecurityRequirements(caller.getDeclaringType());
-
-			String callerSecrecyRequirement = getCorrespondingEntry(member, annotations.secrecy(), cu);
-			boolean callerSecrecy = callerSecrecyRequirement != null;
-			if (callerSecrecy != secrecy) {
-				if (callerSecrecy) {
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"Secrecy is required but not provided by the accessed member!", analyzedMemberSignature,
-							callingMemberSignature);
-					SecurityMarkerUtil.createErrorMarker(member,
-							"Secrecy is required for this member by \"" + callingMemberSignature + "\"",
-							analyzedMemberSignature, callingMemberSignature);
-				} else {
-					SecurityMarkerUtil.createErrorMarker(member,
-							callingMemberSignature + " accesses this member without the required secrecy!",
-							analyzedMemberSignature, callingMemberSignature);
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"This class must specify secrecy for accessing \"" + analyzedMemberSignature + "\"!",
-							analyzedMemberSignature, callingMemberSignature);
-
-				}
-			}
-
-			String callerIntegrityRequirement = getCorrespondingEntry(member, annotations.integrity(), cu);
-			boolean callerIntegrity = callerIntegrityRequirement != null;
-			if (callerIntegrity != integrity) {
-				if (callerIntegrity) {
-					SecurityMarkerUtil.createErrorMarker(member,
-							"Integrity is required for this member by \"" + callingMemberSignature + "\"",
-							analyzedMemberSignature, callingMemberSignature);
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"Integrity is required but not provided by the accessed member!", analyzedMemberSignature,
-							callingMemberSignature);
-				} else {
-					SecurityMarkerUtil.createErrorMarker(member,
-							callingMemberSignature + " accesses this member without the required integrity!",
-							analyzedMemberSignature, callingMemberSignature);
-					createErrorMarker(methodWrapper.getMethodCall(),
-							"This class must specify integrity for accessing \"" + analyzedMemberSignature + "\"!",
-							analyzedMemberSignature, callingMemberSignature);
-
-				}
-			}
-
-			return false;
-		}
-	}
-
-	class Annotations {
-		final Set<String> secrecySignatures;
-		final Set<String> integritySignatures;
-		final IType type;
-		final IAnnotation annotation;
-
-		public Annotations(Set<String> secrecySignatures, Set<String> integritySignatures, IType type,
-				IAnnotation critical) {
-			this.annotation = critical;
-			this.type = type;
-			this.secrecySignatures = secrecySignatures;
-			this.integritySignatures = integritySignatures;
-		}
-
-		public Set<String> secrecy() {
-			return new HashSet<>(secrecySignatures);
-		}
-
-		public Set<String> integrity() {
-			return new HashSet<>(integritySignatures);
-		}
 	}
 }

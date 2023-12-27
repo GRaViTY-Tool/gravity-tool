@@ -743,7 +743,7 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_11(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InMethod4IAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -806,7 +806,7 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_148(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_13(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl
 				.pattern_InnerDeclaration2InnerClassifier_InMethod4IAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -1268,10 +1268,10 @@ public class InnerDeclaration2InnerClassifier_InMethod4IAnonymousImpl extends Ab
 			return null;
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_138__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_148__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_148((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_11__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_13__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_13((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_IANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

@@ -22,15 +22,6 @@ public interface RulesFactory extends EFactory {
 	RulesFactory eINSTANCE = org.gravity.tgg.pm.uml.Rules.impl.RulesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Model2 Type Graph</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model2 Type Graph</em>'.
-	 * @generated
-	 */
-	Model2TypeGraph createModel2TypeGraph();
-
-	/**
 	 * Returns a new object of class '<em>Model Nested2 Type Graph</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +29,15 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	ModelNested2TypeGraph createModelNested2TypeGraph();
+
+	/**
+	 * Returns a new object of class '<em>Model2 Type Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model2 Type Graph</em>'.
+	 * @generated
+	 */
+	Model2TypeGraph createModel2TypeGraph();
 
 	/**
 	 * Returns the package supported by this factory.

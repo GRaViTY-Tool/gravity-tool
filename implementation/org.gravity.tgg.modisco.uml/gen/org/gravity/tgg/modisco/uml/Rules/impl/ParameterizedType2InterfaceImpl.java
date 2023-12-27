@@ -219,14 +219,14 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 		Object[] result3_black = ParameterizedType2InterfaceImpl
 				.pattern_ParameterizedType2Interface_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, umlPackage,
 						nonParamElement, ne2neNonParam, parameterizedClassifier, nonParamType, nonParamPackage,
-						parameterizedType, jp2up, ne2ne, typeTypeAccess);
+						parameterizedType, ne2ne, jp2up, typeTypeAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[nonParamElement] = " + nonParamElement + ", "
 					+ "[ne2neNonParam] = " + ne2neNonParam + ", " + "[parameterizedClassifier] = "
 					+ parameterizedClassifier + ", " + "[nonParamType] = " + nonParamType + ", "
 					+ "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = " + parameterizedType
-					+ ", " + "[jp2up] = " + jp2up + ", " + "[ne2ne] = " + ne2ne + ", " + "[typeTypeAccess] = "
+					+ ", " + "[ne2ne] = " + ne2ne + ", " + "[jp2up] = " + jp2up + ", " + "[typeTypeAccess] = "
 					+ typeTypeAccess + ".");
 		}
 		ParameterizedType2InterfaceImpl.pattern_ParameterizedType2Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
@@ -243,7 +243,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 		// 
 		ParameterizedType2InterfaceImpl.pattern_ParameterizedType2Interface_1_5_registerobjects_expressionBBBBBBBBBBBB(
 				this, ruleresult, umlPackage, nonParamElement, ne2neNonParam, parameterizedClassifier, nonParamType,
-				nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess);
+				nonParamPackage, parameterizedType, ne2ne, jp2up, typeTypeAccess);
 		return ParameterizedType2InterfaceImpl.pattern_ParameterizedType2Interface_1_6_expressionFB(ruleresult);
 	}
 
@@ -456,7 +456,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement,
 			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess) {
+			EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess) {
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("nonParamElement", nonParamElement);
 		ruleresult.registerObject("ne2neNonParam", ne2neNonParam);
@@ -464,8 +464,8 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 		ruleresult.registerObject("nonParamType", nonParamType);
 		ruleresult.registerObject("nonParamPackage", nonParamPackage);
 		ruleresult.registerObject("parameterizedType", parameterizedType);
-		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("typeTypeAccess", typeTypeAccess);
 
 	}
@@ -594,14 +594,14 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 		Object[] result3_black = ParameterizedType2InterfaceImpl
 				.pattern_ParameterizedType2Interface_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, umlPackage,
 						nonParamElement, ne2neNonParam, parameterizedClassifier, nonParamType, nonParamPackage,
-						parameterizedType, jp2up, ne2ne, typeTypeAccess);
+						parameterizedType, ne2ne, jp2up, typeTypeAccess);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[nonParamElement] = " + nonParamElement + ", "
 					+ "[ne2neNonParam] = " + ne2neNonParam + ", " + "[parameterizedClassifier] = "
 					+ parameterizedClassifier + ", " + "[nonParamType] = " + nonParamType + ", "
 					+ "[nonParamPackage] = " + nonParamPackage + ", " + "[parameterizedType] = " + parameterizedType
-					+ ", " + "[jp2up] = " + jp2up + ", " + "[ne2ne] = " + ne2ne + ", " + "[typeTypeAccess] = "
+					+ ", " + "[ne2ne] = " + ne2ne + ", " + "[jp2up] = " + jp2up + ", " + "[typeTypeAccess] = "
 					+ typeTypeAccess + ".");
 		}
 		ParameterizedType2InterfaceImpl.pattern_ParameterizedType2Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
@@ -618,7 +618,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 		// 
 		ParameterizedType2InterfaceImpl.pattern_ParameterizedType2Interface_11_5_registerobjects_expressionBBBBBBBBBBBB(
 				this, ruleresult, umlPackage, nonParamElement, ne2neNonParam, parameterizedClassifier, nonParamType,
-				nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess);
+				nonParamPackage, parameterizedType, ne2ne, jp2up, typeTypeAccess);
 		return ParameterizedType2InterfaceImpl.pattern_ParameterizedType2Interface_11_6_expressionFB(ruleresult);
 	}
 
@@ -828,7 +828,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement,
 			EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage,
-			EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess) {
+			EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess) {
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("nonParamElement", nonParamElement);
 		ruleresult.registerObject("ne2neNonParam", ne2neNonParam);
@@ -836,8 +836,8 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 		ruleresult.registerObject("nonParamType", nonParamType);
 		ruleresult.registerObject("nonParamPackage", nonParamPackage);
 		ruleresult.registerObject("parameterizedType", parameterizedType);
-		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("typeTypeAccess", typeTypeAccess);
 
 	}
@@ -857,7 +857,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_119(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_31(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2InterfaceImpl
 				.pattern_ParameterizedType2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -917,7 +917,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_126(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_37(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ParameterizedType2InterfaceImpl
 				.pattern_ParameterizedType2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1485,10 +1485,10 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 			return null;
 		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_119__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_126__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_126((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_31__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_37__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PARAMETERIZED_TYPE2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1778,7 +1778,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_ParameterizedType2Interface_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement, EObject ne2neNonParam,
 			EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage, EObject parameterizedType,
-			EObject jp2up, EObject ne2ne, EObject typeTypeAccess) {
+			EObject ne2ne, EObject jp2up, EObject typeTypeAccess) {
 		if (!nonParamElement.equals(umlPackage)) {
 			if (!nonParamElement.equals(parameterizedClassifier)) {
 				if (!nonParamElement.equals(nonParamType)) {
@@ -1818,39 +1818,39 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 																													.equals(umlPackage)) {
 																												if (!parameterizedType
 																														.equals(typeTypeAccess)) {
-																													if (!jp2up
+																													if (!ne2ne
 																															.equals(umlPackage)) {
-																														if (!jp2up
+																														if (!ne2ne
 																																.equals(nonParamElement)) {
-																															if (!jp2up
+																															if (!ne2ne
 																																	.equals(ne2neNonParam)) {
-																																if (!jp2up
+																																if (!ne2ne
 																																		.equals(parameterizedClassifier)) {
-																																	if (!jp2up
+																																	if (!ne2ne
 																																			.equals(nonParamType)) {
-																																		if (!jp2up
+																																		if (!ne2ne
 																																				.equals(nonParamPackage)) {
-																																			if (!jp2up
+																																			if (!ne2ne
 																																					.equals(parameterizedType)) {
-																																				if (!jp2up
-																																						.equals(ne2ne)) {
+																																				if (!ne2ne
+																																						.equals(typeTypeAccess)) {
 																																					if (!jp2up
-																																							.equals(typeTypeAccess)) {
-																																						if (!ne2ne
-																																								.equals(umlPackage)) {
-																																							if (!ne2ne
-																																									.equals(nonParamElement)) {
-																																								if (!ne2ne
-																																										.equals(ne2neNonParam)) {
-																																									if (!ne2ne
-																																											.equals(parameterizedClassifier)) {
-																																										if (!ne2ne
-																																												.equals(nonParamType)) {
-																																											if (!ne2ne
-																																													.equals(nonParamPackage)) {
-																																												if (!ne2ne
-																																														.equals(parameterizedType)) {
-																																													if (!ne2ne
+																																							.equals(umlPackage)) {
+																																						if (!jp2up
+																																								.equals(nonParamElement)) {
+																																							if (!jp2up
+																																									.equals(ne2neNonParam)) {
+																																								if (!jp2up
+																																										.equals(parameterizedClassifier)) {
+																																									if (!jp2up
+																																											.equals(nonParamType)) {
+																																										if (!jp2up
+																																												.equals(nonParamPackage)) {
+																																											if (!jp2up
+																																													.equals(parameterizedType)) {
+																																												if (!jp2up
+																																														.equals(ne2ne)) {
+																																													if (!jp2up
 																																															.equals(typeTypeAccess)) {
 																																														if (!typeTypeAccess
 																																																.equals(umlPackage)) {
@@ -1863,8 +1863,8 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 																																																	nonParamType,
 																																																	nonParamPackage,
 																																																	parameterizedType,
-																																																	jp2up,
 																																																	ne2ne,
+																																																	jp2up,
 																																																	typeTypeAccess };
 																																														}
 																																													}
@@ -1968,9 +1968,9 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	public static final void pattern_ParameterizedType2Interface_1_5_registerobjects_expressionBBBBBBBBBBBB(
 			ParameterizedType2Interface _this, PerformRuleResult ruleresult, EObject umlPackage,
 			EObject nonParamElement, EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType,
-			EObject nonParamPackage, EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess) {
+			EObject nonParamPackage, EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess) {
 		_this.registerObjects_FWD(ruleresult, umlPackage, nonParamElement, ne2neNonParam, parameterizedClassifier,
-				nonParamType, nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess);
+				nonParamType, nonParamPackage, parameterizedType, ne2ne, jp2up, typeTypeAccess);
 
 	}
 
@@ -2495,7 +2495,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	public static final Object[] pattern_ParameterizedType2Interface_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject umlPackage, EObject nonParamElement, EObject ne2neNonParam,
 			EObject parameterizedClassifier, EObject nonParamType, EObject nonParamPackage, EObject parameterizedType,
-			EObject jp2up, EObject ne2ne, EObject typeTypeAccess) {
+			EObject ne2ne, EObject jp2up, EObject typeTypeAccess) {
 		if (!nonParamElement.equals(umlPackage)) {
 			if (!nonParamElement.equals(parameterizedClassifier)) {
 				if (!nonParamElement.equals(nonParamType)) {
@@ -2535,39 +2535,39 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 																													.equals(umlPackage)) {
 																												if (!parameterizedType
 																														.equals(typeTypeAccess)) {
-																													if (!jp2up
+																													if (!ne2ne
 																															.equals(umlPackage)) {
-																														if (!jp2up
+																														if (!ne2ne
 																																.equals(nonParamElement)) {
-																															if (!jp2up
+																															if (!ne2ne
 																																	.equals(ne2neNonParam)) {
-																																if (!jp2up
+																																if (!ne2ne
 																																		.equals(parameterizedClassifier)) {
-																																	if (!jp2up
+																																	if (!ne2ne
 																																			.equals(nonParamType)) {
-																																		if (!jp2up
+																																		if (!ne2ne
 																																				.equals(nonParamPackage)) {
-																																			if (!jp2up
+																																			if (!ne2ne
 																																					.equals(parameterizedType)) {
-																																				if (!jp2up
-																																						.equals(ne2ne)) {
+																																				if (!ne2ne
+																																						.equals(typeTypeAccess)) {
 																																					if (!jp2up
-																																							.equals(typeTypeAccess)) {
-																																						if (!ne2ne
-																																								.equals(umlPackage)) {
-																																							if (!ne2ne
-																																									.equals(nonParamElement)) {
-																																								if (!ne2ne
-																																										.equals(ne2neNonParam)) {
-																																									if (!ne2ne
-																																											.equals(parameterizedClassifier)) {
-																																										if (!ne2ne
-																																												.equals(nonParamType)) {
-																																											if (!ne2ne
-																																													.equals(nonParamPackage)) {
-																																												if (!ne2ne
-																																														.equals(parameterizedType)) {
-																																													if (!ne2ne
+																																							.equals(umlPackage)) {
+																																						if (!jp2up
+																																								.equals(nonParamElement)) {
+																																							if (!jp2up
+																																									.equals(ne2neNonParam)) {
+																																								if (!jp2up
+																																										.equals(parameterizedClassifier)) {
+																																									if (!jp2up
+																																											.equals(nonParamType)) {
+																																										if (!jp2up
+																																												.equals(nonParamPackage)) {
+																																											if (!jp2up
+																																													.equals(parameterizedType)) {
+																																												if (!jp2up
+																																														.equals(ne2ne)) {
+																																													if (!jp2up
 																																															.equals(typeTypeAccess)) {
 																																														if (!typeTypeAccess
 																																																.equals(umlPackage)) {
@@ -2580,8 +2580,8 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 																																																	nonParamType,
 																																																	nonParamPackage,
 																																																	parameterizedType,
-																																																	jp2up,
 																																																	ne2ne,
+																																																	jp2up,
 																																																	typeTypeAccess };
 																																														}
 																																													}
@@ -2685,9 +2685,9 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 	public static final void pattern_ParameterizedType2Interface_11_5_registerobjects_expressionBBBBBBBBBBBB(
 			ParameterizedType2Interface _this, PerformRuleResult ruleresult, EObject umlPackage,
 			EObject nonParamElement, EObject ne2neNonParam, EObject parameterizedClassifier, EObject nonParamType,
-			EObject nonParamPackage, EObject parameterizedType, EObject jp2up, EObject ne2ne, EObject typeTypeAccess) {
+			EObject nonParamPackage, EObject parameterizedType, EObject ne2ne, EObject jp2up, EObject typeTypeAccess) {
 		_this.registerObjects_BWD(ruleresult, umlPackage, nonParamElement, ne2neNonParam, parameterizedClassifier,
-				nonParamType, nonParamPackage, parameterizedType, jp2up, ne2ne, typeTypeAccess);
+				nonParamType, nonParamPackage, parameterizedType, ne2ne, jp2up, typeTypeAccess);
 
 	}
 
@@ -3144,9 +3144,9 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_648978 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_704123 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_648978)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_704123)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3155,7 +3155,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_729253 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_922664 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3164,7 +3164,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_249514 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_431919 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3173,9 +3173,9 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_3BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (ClassDeclaration __DEC_typeTypeAccess_superClass_32120 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeTypeAccess_superClass_905845 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_32120)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_905845)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3184,7 +3184,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_468641 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_638518 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3193,7 +3193,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_610960 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_813920 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3202,7 +3202,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_686450 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_265451 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3533,9 +3533,9 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_0BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_767923 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeTypeAccess_superInterfaces_789438 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_767923)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superInterfaces_789438)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3544,7 +3544,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeTypeAccess) {
-		for (Annotation __DEC_typeTypeAccess_type_898562 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeTypeAccess_type_702305 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, Annotation.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3553,7 +3553,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess typeTypeAccess) {
-		for (ArrayType __DEC_typeTypeAccess_elementType_83036 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeTypeAccess_elementType_256085 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3562,9 +3562,9 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_3BB(
 			TypeAccess typeTypeAccess, AbstractTypeDeclaration nonParamType) {
-		for (ClassDeclaration __DEC_typeTypeAccess_superClass_30140 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeTypeAccess_superClass_408884 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_30140)) {
+			if (!nonParamType.equals(__DEC_typeTypeAccess_superClass_408884)) {
 				return new Object[] { typeTypeAccess, nonParamType };
 			}
 		}
@@ -3573,7 +3573,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess typeTypeAccess) {
-		for (MethodDeclaration __DEC_typeTypeAccess_returnType_936950 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeTypeAccess_returnType_490140 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3582,7 +3582,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeTypeAccess) {
-		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_884376 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeTypeAccess_type_519855 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeTypeAccess };
 		}
@@ -3591,7 +3591,7 @@ public class ParameterizedType2InterfaceImpl extends AbstractRuleImpl implements
 
 	public static final Object[] pattern_ParameterizedType2Interface_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_572139 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeTypeAccess_value_358281 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeTypeAccess };
 		}

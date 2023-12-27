@@ -131,7 +131,7 @@ public final class JavaASTUtil {
 		}
 		return tParam.getType().getFullyQualifiedName().endsWith(iParamSignature) && iArray
 				? ((tParam.getUpperBound() > 1) || (tParam.getUpperBound() == -1))
-						: tParam.getUpperBound() == 1;
+				: tParam.getUpperBound() == 1;
 	}
 
 	/**
@@ -145,13 +145,9 @@ public final class JavaASTUtil {
 		final var iType = method.getDeclaringType();
 		final var tType = pm.getType(iType.getFullyQualifiedName());
 		for (final TMember tMember : tType.getDefines()) {
-			if (tMember instanceof TMethodDefinition) {
-				final var tMethodDefinition = (TMethodDefinition) tMember;
-				if (equivalent(tMethodDefinition, method)) {
-					return tMethodDefinition;
-				}
+			if (tMember instanceof final TMethodDefinition tMethodDefinition && equivalent(tMethodDefinition, method)) {
+				return tMethodDefinition;
 			}
-
 		}
 		return null;
 	}
@@ -188,9 +184,7 @@ public final class JavaASTUtil {
 		}
 
 		final var parent = type.getParent();
-		if (parent instanceof CompilationUnit) {
-			final var childcu = (CompilationUnit) parent;
-
+		if (parent instanceof final CompilationUnit childcu) {
 			final var expectedPackage = childcu.getPackage();
 			if (expectedPackage == null) {
 				return pm.getType(fullyQualifiedName);
@@ -199,12 +193,13 @@ public final class JavaASTUtil {
 			if (tPackage == null) {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
-			return tPackage.getAllTypes().parallelStream()
-					.filter(tType -> fullyQualifiedName.equals(tType.getTName())).findAny().orElse(null);
-		} else if (parent instanceof TypeDeclaration) {
-			final var tParent = getType((TypeDeclaration) parent, pm);
+			return tPackage.getAllTypes().parallelStream().filter(tType -> fullyQualifiedName.equals(tType.getTName()))
+					.findAny().orElse(null);
+		}
+		if (parent instanceof final TypeDeclaration declaration) {
+			final var tParent = getType(declaration, pm);
 			for (final TAbstractType inner : tParent.getInnerTypes()) {
-				if (inner.getTName().equals(tParent.getTName()+"$"+name )) {
+				if (inner.getTName().equals(tParent.getTName() + "$" + name)) {
 					return inner;
 				}
 			}
@@ -228,9 +223,7 @@ public final class JavaASTUtil {
 			return pm.getType(fullyQualifiedName);
 		}
 		final var root = type.getRoot();
-		if (root instanceof CompilationUnit) {
-			final var cu = (CompilationUnit) root;
-
+		if (root instanceof final CompilationUnit cu) {
 			// Search in imports
 			final var importedType = searchTypeInImports(pm, cu, fullyQualifiedName);
 			if (importedType != null) {
@@ -272,8 +265,8 @@ public final class JavaASTUtil {
 	private static TAbstractType searchForNestedTypes(final TypeGraph pm, final CompilationUnit cu,
 			final String fullyQualifiedName) {
 		for (final Object outer : cu.types()) {
-			if (outer instanceof TypeDeclaration) {
-				for (final TypeDeclaration inner : ((TypeDeclaration) outer).getTypes()) {
+			if (outer instanceof final TypeDeclaration declaration) {
+				for (final TypeDeclaration inner : declaration.getTypes()) {
 					if (inner.getName().getFullyQualifiedName().equals(fullyQualifiedName)) {
 						return pm.getType(cu.getPackage().getName().getFullyQualifiedName() + '.'
 								+ ((TypeDeclaration) outer).getName().getFullyQualifiedName() + '$'
@@ -374,12 +367,15 @@ public final class JavaASTUtil {
 	private static String getName(final Type type) {
 		if (type.isSimpleType()) {
 			return ((SimpleType) type).getName().getFullyQualifiedName();
-		} else if (type.isArrayType()) {
+		}
+		if (type.isArrayType()) {
 			return getName(((ArrayType) type).getElementType());
 
-		} else if (type.isParameterizedType()) {
+		}
+		if (type.isParameterizedType()) {
 			return getName(((ParameterizedType) type).getType());
-		} else if (type.isPrimitiveType()) {
+		}
+		if (type.isPrimitiveType()) {
 			return ((PrimitiveType) type).toString();
 		}
 		throw new IllegalStateException("Type is not covered: " + type);
@@ -476,8 +472,8 @@ public final class JavaASTUtil {
 
 		for (final TMethodSignature signature : tMethod.getSignatures()) {
 			if (
-					// Return type have to be the same type
-					!signature.getReturnType().equals(tExpectedReturnType)
+			// Return type have to be the same type
+			!signature.getReturnType().equals(tExpectedReturnType)
 					// Both have to be either arrays or not arrays
 					|| (!method.isConstructor() && ((signature.isArray() != method.getReturnType2().isArrayType())
 							// The parameter lists have to have the same size
@@ -533,16 +529,15 @@ public final class JavaASTUtil {
 		if (signature.getParameters().size() != method.parameters().size()) {
 			return false;
 		}
-		for (final Object p : method.parameters()) {
-			if (p instanceof SingleVariableDeclaration) {
-				final var variableType = ((SingleVariableDeclaration) p).getType();
+		for (final Object parameter : method.parameters()) {
+			if (parameter instanceof final SingleVariableDeclaration declaration) {
+				final var variableType = (declaration).getType();
 				final var name = getName(variableType);
-				if (tParam.getType().getFullyQualifiedName().endsWith(name)
-						&& (variableType.isArrayType() == tParam.isArray())) {
-					tParam = tParam.getNext();
-				} else {
+				if (!tParam.getType().getFullyQualifiedName().endsWith(name)
+						|| (variableType.isArrayType() != tParam.isArray())) {
 					return false;
 				}
+				tParam = tParam.getNext();
 			}
 		}
 		return true;
