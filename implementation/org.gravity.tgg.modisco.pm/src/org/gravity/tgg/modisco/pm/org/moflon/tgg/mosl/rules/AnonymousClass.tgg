@@ -9,7 +9,7 @@
 		-mMethodInvocations -> mCreation
 	}
 
-	mCreation:ClassInstanceCreation {
+	mCreation:MClassInstanceCreation {
 		++-anonymousClassDeclaration -> mAnonymous
 	}
 
@@ -52,7 +52,7 @@
 }
 
 #attributeConditions {
-	addSuffix(tType.tName, "$Anonymous", tAnonymous.tName)
+	concat("$", tType.tName, mCreation.id, tAnonymous.tName)
 
 	eq(tType.tLib, tAnonymous.tLib)
 }
@@ -161,7 +161,7 @@
 }
 
 #attributeConditions {
-	addSuffix(tType.tName, "$Anonymous", tAnonymous.tName)
+	concat("$", tType.tName, "Anonymous", tAnonymous.tName)
 
 	eq(tType.tLib, tAnonymous.tLib)
 }

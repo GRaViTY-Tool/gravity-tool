@@ -578,9 +578,9 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 				//nothing EMoflonEdge typeGraph__tPrimitiveClass____classes = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge typeGraph__tPrimitiveClass____allTypes = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge tPrimitiveClass__typeGraph____model = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge primitives__tPrimitiveClass____contains = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tPrimitiveClass__primitives____module = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eModelToTypeGraph__eModel____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eModelToTypeGraph__eModel____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge primitives__tPrimitiveClass____contains = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tPrimitiveClass__primitives____module = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge eModelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge typeGraph__primitives____modules = (EMoflonEdge) result3_green[13];
 
@@ -731,7 +731,7 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_39(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsBooleanImpl
 				.pattern_PrimitiveTypeIsBoolean_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -790,7 +790,7 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_30(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsBooleanImpl
 				.pattern_PrimitiveTypeIsBoolean_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1098,9 +1098,9 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 				.pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList eModelToTypeGraphList = (RuleEntryList) result2_black[0];
 			ModelToTypeGraph eModelToTypeGraph = (ModelToTypeGraph) result2_black[1];
-			TypeGraph typeGraph = (TypeGraph) result2_black[2];
-			TModule primitives = (TModule) result2_black[3];
-			Model eModel = (Model) result2_black[4];
+			Model eModel = (Model) result2_black[2];
+			TypeGraph typeGraph = (TypeGraph) result2_black[3];
+			TModule primitives = (TModule) result2_black[4];
 
 			Object[] result3_bindingAndBlack = PrimitiveTypeIsBooleanImpl
 					.pattern_PrimitiveTypeIsBoolean_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
@@ -1248,10 +1248,10 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_28__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_30__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_30((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_39__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_39((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_40__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_IS_BOOLEAN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2258,8 +2258,8 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (typeGraph.getClasses().contains(tPrimitiveClass)) {
 			if (typeGraph.getAllTypes().contains(tPrimitiveClass)) {
-				if (primitives.getContains().contains(tPrimitiveClass)) {
-					if (eModel.equals(eModelToTypeGraph.getSource())) {
+				if (eModel.equals(eModelToTypeGraph.getSource())) {
+					if (primitives.getContains().contains(tPrimitiveClass)) {
 						if (typeGraph.equals(eModelToTypeGraph.getTarget())) {
 							if (typeGraph.getModules().contains(primitives)) {
 								String primitives_location = primitives.getLocation();
@@ -2292,17 +2292,17 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 		EMoflonEdge typeGraph__tPrimitiveClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tPrimitiveClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPrimitiveClass__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModelToTypeGraph__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge primitives__tPrimitiveClass____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPrimitiveClass__primitives____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToTypeGraph__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eModelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__primitives____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String typeGraph__tPrimitiveClass____classes_name_prime = "classes";
 		String typeGraph__tPrimitiveClass____allTypes_name_prime = "allTypes";
 		String tPrimitiveClass__typeGraph____model_name_prime = "model";
+		String eModelToTypeGraph__eModel____source_name_prime = "source";
 		String primitives__tPrimitiveClass____contains_name_prime = "contains";
 		String tPrimitiveClass__primitives____module_name_prime = "module";
-		String eModelToTypeGraph__eModel____source_name_prime = "source";
 		String eModelToTypeGraph__typeGraph____target_name_prime = "target";
 		String typeGraph__primitives____modules_name_prime = "modules";
 		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph);
@@ -2319,15 +2319,15 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 		tPrimitiveClass__typeGraph____model.setSrc(tPrimitiveClass);
 		tPrimitiveClass__typeGraph____model.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(tPrimitiveClass__typeGraph____model);
+		eModelToTypeGraph__eModel____source.setSrc(eModelToTypeGraph);
+		eModelToTypeGraph__eModel____source.setTrg(eModel);
+		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph__eModel____source);
 		primitives__tPrimitiveClass____contains.setSrc(primitives);
 		primitives__tPrimitiveClass____contains.setTrg(tPrimitiveClass);
 		isApplicableMatch.getAllContextElements().add(primitives__tPrimitiveClass____contains);
 		tPrimitiveClass__primitives____module.setSrc(tPrimitiveClass);
 		tPrimitiveClass__primitives____module.setTrg(primitives);
 		isApplicableMatch.getAllContextElements().add(tPrimitiveClass__primitives____module);
-		eModelToTypeGraph__eModel____source.setSrc(eModelToTypeGraph);
-		eModelToTypeGraph__eModel____source.setTrg(eModel);
-		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph__eModel____source);
 		eModelToTypeGraph__typeGraph____target.setSrc(eModelToTypeGraph);
 		eModelToTypeGraph__typeGraph____target.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph__typeGraph____target);
@@ -2337,15 +2337,15 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 		typeGraph__tPrimitiveClass____classes.setName(typeGraph__tPrimitiveClass____classes_name_prime);
 		typeGraph__tPrimitiveClass____allTypes.setName(typeGraph__tPrimitiveClass____allTypes_name_prime);
 		tPrimitiveClass__typeGraph____model.setName(tPrimitiveClass__typeGraph____model_name_prime);
+		eModelToTypeGraph__eModel____source.setName(eModelToTypeGraph__eModel____source_name_prime);
 		primitives__tPrimitiveClass____contains.setName(primitives__tPrimitiveClass____contains_name_prime);
 		tPrimitiveClass__primitives____module.setName(tPrimitiveClass__primitives____module_name_prime);
-		eModelToTypeGraph__eModel____source.setName(eModelToTypeGraph__eModel____source_name_prime);
 		eModelToTypeGraph__typeGraph____target.setName(eModelToTypeGraph__typeGraph____target_name_prime);
 		typeGraph__primitives____modules.setName(typeGraph__primitives____modules_name_prime);
 		return new Object[] { eModelToTypeGraph, primitives, typeGraph, tPrimitiveClass, eModel, isApplicableMatch,
 				typeGraph__tPrimitiveClass____classes, typeGraph__tPrimitiveClass____allTypes,
-				tPrimitiveClass__typeGraph____model, primitives__tPrimitiveClass____contains,
-				tPrimitiveClass__primitives____module, eModelToTypeGraph__eModel____source,
+				tPrimitiveClass__typeGraph____model, eModelToTypeGraph__eModel____source,
+				primitives__tPrimitiveClass____contains, tPrimitiveClass__primitives____module,
 				eModelToTypeGraph__typeGraph____target, typeGraph__primitives____modules };
 	}
 
@@ -2469,7 +2469,7 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_513994 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_149091 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2478,9 +2478,9 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_977955 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_747121 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_977955)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_747121)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2489,9 +2489,11 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_82396 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_82396 != null) {
-			return new Object[] { tPrimitiveClass };
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_312619 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_312619 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_312619)) {
+				return new Object[] { tPrimitiveClass };
+			}
 		}
 
 		return null;
@@ -2499,11 +2501,9 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_20_2_testcorematchandDECs_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_497041 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_497041 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_497041)) {
-				return new Object[] { tPrimitiveClass };
-			}
+		TPackage __DEC_tPrimitiveClass_allTypes_146658 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_146658 != null) {
+			return new Object[] { tPrimitiveClass };
 		}
 
 		return null;
@@ -2931,7 +2931,7 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_28_1_matchtggpattern_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_900116 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_295691 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2940,9 +2940,9 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_28_1_matchtggpattern_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_971548 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_640665 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_971548)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_640665)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2951,9 +2951,11 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_28_1_matchtggpattern_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_676427 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_676427 != null) {
-			return new Object[] { tPrimitiveClass };
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_139913 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_139913 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_139913)) {
+				return new Object[] { tPrimitiveClass };
+			}
 		}
 
 		return null;
@@ -2961,11 +2963,9 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_28_1_matchtggpattern_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_520906 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_520906 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_520906)) {
-				return new Object[] { tPrimitiveClass };
-			}
+		TPackage __DEC_tPrimitiveClass_allTypes_456587 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_456587 != null) {
+			return new Object[] { tPrimitiveClass };
 		}
 
 		return null;
@@ -3040,6 +3040,14 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, Model eModel) {
+		if (ruleResult.getSourceObjects().contains(eModel)) {
+			return new Object[] { ruleResult, eModel };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, TypeGraph typeGraph) {
 		if (ruleResult.getTargetObjects().contains(typeGraph)) {
 			return new Object[] { ruleResult, typeGraph };
@@ -3047,18 +3055,10 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 		return null;
 	}
 
-	public static final Object[] pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, TModule primitives) {
 		if (ruleResult.getTargetObjects().contains(primitives)) {
 			return new Object[] { ruleResult, primitives };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, Model eModel) {
-		if (ruleResult.getSourceObjects().contains(eModel)) {
-			return new Object[] { ruleResult, eModel };
 		}
 		return null;
 	}
@@ -3070,23 +3070,23 @@ public class PrimitiveTypeIsBooleanImpl extends AbstractRuleImpl implements Prim
 			for (EObject tmpEModelToTypeGraph : eModelToTypeGraphList.getEntryObjects()) {
 				if (tmpEModelToTypeGraph instanceof ModelToTypeGraph) {
 					ModelToTypeGraph eModelToTypeGraph = (ModelToTypeGraph) tmpEModelToTypeGraph;
-					TypeGraph typeGraph = eModelToTypeGraph.getTarget();
-					if (typeGraph != null) {
-						Model eModel = eModelToTypeGraph.getSource();
-						if (eModel != null) {
+					Model eModel = eModelToTypeGraph.getSource();
+					if (eModel != null) {
+						TypeGraph typeGraph = eModelToTypeGraph.getTarget();
+						if (typeGraph != null) {
 							if (pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									eModelToTypeGraph) == null) {
 								if (pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-										typeGraph) == null) {
-									if (pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_3BB(ruleResult,
-											eModel) == null) {
+										eModel) == null) {
+									if (pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_2BB(ruleResult,
+											typeGraph) == null) {
 										for (TModule primitives : typeGraph.getModules()) {
 											String primitives_location = primitives.getLocation();
 											if (primitives_location.equals("${JVM.PRIMITIVES}")) {
-												if (pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_2BB(
+												if (pattern_PrimitiveTypeIsBoolean_29_2_isapplicablecore_black_nac_3BB(
 														ruleResult, primitives) == null) {
 													_result.add(new Object[] { eModelToTypeGraphList, eModelToTypeGraph,
-															typeGraph, primitives, eModel, ruleEntryContainer,
+															eModel, typeGraph, primitives, ruleEntryContainer,
 															ruleResult });
 												}
 											}

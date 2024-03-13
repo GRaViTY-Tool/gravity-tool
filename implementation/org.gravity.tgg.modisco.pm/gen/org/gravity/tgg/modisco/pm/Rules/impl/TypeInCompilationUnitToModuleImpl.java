@@ -536,9 +536,9 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 				//nothing EMoflonEdge type__tType____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge cu2m__cu____source = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge type__mType____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tType__module____module = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge module__tType____contains = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tType__module____module = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge module__tType____contains = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = TypeInCompilationUnitToModuleImpl
 						.pattern_TypeInCompilationUnitToModule_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
@@ -683,7 +683,7 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_19(EMoflonEdge _edge_module) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_88(EMoflonEdge _edge_module) {
 
 		Object[] result1_bindingAndBlack = TypeInCompilationUnitToModuleImpl
 				.pattern_TypeInCompilationUnitToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,7 +742,7 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_originalCompilationUnit) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_92(EMoflonEdge _edge_originalCompilationUnit) {
 
 		Object[] result1_bindingAndBlack = TypeInCompilationUnitToModuleImpl
 				.pattern_TypeInCompilationUnitToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1172,10 +1172,10 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 			return null;
 		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_19__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_19((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_21__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_88__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_88((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_92__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_92((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2013,8 +2013,8 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 		if (tType.equals(type.getTarget())) {
 			if (cu.equals(cu2m.getSource())) {
 				if (mType.equals(type.getSource())) {
-					if (module.equals(cu2m.getTarget())) {
-						if (module.equals(tType.getModule())) {
+					if (module.equals(tType.getModule())) {
+						if (module.equals(cu2m.getTarget())) {
 							_result.add(new Object[] { cu, cu2m, tType, module, type, mType });
 						}
 					}
@@ -2031,15 +2031,15 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 		EMoflonEdge type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cu2m__cu____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__module____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge module__tType____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String type__tType____target_name_prime = "target";
 		String cu2m__cu____source_name_prime = "source";
 		String type__mType____source_name_prime = "source";
-		String cu2m__module____target_name_prime = "target";
 		String tType__module____module_name_prime = "module";
 		String module__tType____contains_name_prime = "contains";
+		String cu2m__module____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(cu);
 		isApplicableMatch.getAllContextElements().add(cu2m);
 		isApplicableMatch.getAllContextElements().add(tType);
@@ -2055,24 +2055,24 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 		type__mType____source.setSrc(type);
 		type__mType____source.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(type__mType____source);
-		cu2m__module____target.setSrc(cu2m);
-		cu2m__module____target.setTrg(module);
-		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		tType__module____module.setSrc(tType);
 		tType__module____module.setTrg(module);
 		isApplicableMatch.getAllContextElements().add(tType__module____module);
 		module__tType____contains.setSrc(module);
 		module__tType____contains.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(module__tType____contains);
+		cu2m__module____target.setSrc(cu2m);
+		cu2m__module____target.setTrg(module);
+		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		type__tType____target.setName(type__tType____target_name_prime);
 		cu2m__cu____source.setName(cu2m__cu____source_name_prime);
 		type__mType____source.setName(type__mType____source_name_prime);
-		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		tType__module____module.setName(tType__module____module_name_prime);
 		module__tType____contains.setName(module__tType____contains_name_prime);
+		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		return new Object[] { cu, cu2m, tType, module, type, mType, isApplicableMatch, type__tType____target,
-				cu2m__cu____source, type__mType____source, cu2m__module____target, tType__module____module,
-				module__tType____contains };
+				cu2m__cu____source, type__mType____source, tType__module____module, module__tType____contains,
+				cu2m__module____target };
 	}
 
 	public static final Object[] pattern_TypeInCompilationUnitToModule_12_4_solveCSP_bindingFBBBBBBBB(

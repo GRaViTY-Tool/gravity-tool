@@ -94,9 +94,9 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo,
-			ClassDeclaration jOwnerType, ASTNode2Element nd2ne, org.eclipse.uml2.uml.Class uOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration jOwnerType,
+			MFieldDefinition bodyDeclaration, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
+			ASTNode2Element nd2ne, Property feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jo2uo, EObject jOwnerType, EObject nd2ne,
-			EObject uOwnerType, EObject feature, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject jo2uo,
+			EObject uOwnerType, EObject nd2ne, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,9 +177,9 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo,
-			ClassDeclaration jOwnerType, ASTNode2Element nd2ne, org.eclipse.uml2.uml.Class uOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration jOwnerType,
+			MFieldDefinition bodyDeclaration, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
+			ASTNode2Element nd2ne, Property feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jo2uo, EObject jOwnerType, EObject nd2ne,
-			EObject uOwnerType, EObject feature, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject jo2uo,
+			EObject uOwnerType, EObject nd2ne, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_106(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_136(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_111(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_145(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +252,8 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(ClassDeclaration jOwnerType, org.eclipse.uml2.uml.Class uOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(ClassDeclaration jOwnerType, MFieldDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class uOwnerType, Property feature, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,9 +294,9 @@ public interface FieldDec2Property4Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo,
-			ClassDeclaration jOwnerType, ASTNode2Element nd2ne, org.eclipse.uml2.uml.Class uOwnerType, Property feature,
-			MFieldDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration jOwnerType,
+			MFieldDefinition bodyDeclaration, ASTNode2Element jo2uo, org.eclipse.uml2.uml.Class uOwnerType,
+			ASTNode2Element nd2ne, Property feature, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

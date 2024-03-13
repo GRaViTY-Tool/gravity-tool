@@ -94,8 +94,8 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFlow mFlow, TAbstractFlowElement tOwner,
-			MAbstractFlowElement mOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner, MFlow mFlow,
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mFlow, EObject tOwner, EObject mAbstFlowToTAbstFlow,
-			EObject tFlow, EObject mFlowToTFlow, EObject mOwner, EObject mOwnerToTOwner);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tOwner, EObject mFlow, EObject mAbstFlowToTAbstFlow,
+			EObject mOwnerToTOwner, EObject tFlow, EObject mFlowToTFlow, EObject mOwner);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,8 +176,8 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner, TFlow tFlow,
-			MAbstractFlowElement mOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner,
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, TFlow tFlow, MAbstractFlowElement mOwner);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mFlow, EObject tOwner, EObject mAbstFlowToTAbstFlow,
-			EObject tFlow, EObject mFlowToTFlow, EObject mOwner, EObject mOwnerToTOwner);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tOwner, EObject mFlow, EObject mAbstFlowToTAbstFlow,
+			EObject mOwnerToTOwner, EObject tFlow, EObject mFlowToTFlow, EObject mOwner);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_5(EMoflonEdge _edge_ownedFlows);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_12(EMoflonEdge _edge_ownedFlows);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_8(EMoflonEdge _edge_ownedFlows);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_13(EMoflonEdge _edge_ownedFlows);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MFlow mFlow, TAbstractFlowElement tOwner, TFlow tFlow, MAbstractFlowElement mOwner,
+	CSP isApplicable_solveCsp_CC(TAbstractFlowElement tOwner, MFlow mFlow, TFlow tFlow, MAbstractFlowElement mOwner,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -293,7 +293,7 @@ public interface FlowNode extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractFlowElement tOwner,
-			MAbstractFlowElement mOwner, MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner,
+			MAbstractFlowElementToTAbstractFlowElement mOwnerToTOwner, MAbstractFlowElement mOwner,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

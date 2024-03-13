@@ -4,6 +4,7 @@ package org.gravity.modisco.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -35,6 +37,7 @@ import org.gravity.modisco.ModiscoPackage;
  *   <li>{@link org.gravity.modisco.impl.MClassInstanceCreationImpl#getOwnedFlows <em>Owned Flows</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MClassInstanceCreationImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MClassInstanceCreationImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MClassInstanceCreationImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +72,26 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 	 * @ordered
 	 */
 	protected EList<MFlow> outgoingFlows;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +156,29 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MCLASS_INSTANCE_CREATION__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -179,6 +225,8 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 				return getIncomingFlows();
 			case ModiscoPackage.MCLASS_INSTANCE_CREATION__OUTGOING_FLOWS:
 				return getOutgoingFlows();
+			case ModiscoPackage.MCLASS_INSTANCE_CREATION__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +252,9 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 				getOutgoingFlows().clear();
 				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
 				return;
+			case ModiscoPackage.MCLASS_INSTANCE_CREATION__ID:
+				setId((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -225,6 +276,9 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 			case ModiscoPackage.MCLASS_INSTANCE_CREATION__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
 				return;
+			case ModiscoPackage.MCLASS_INSTANCE_CREATION__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,6 +297,8 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 				return incomingFlows != null && !incomingFlows.isEmpty();
 			case ModiscoPackage.MCLASS_INSTANCE_CREATION__OUTGOING_FLOWS:
 				return outgoingFlows != null && !outgoingFlows.isEmpty();
+			case ModiscoPackage.MCLASS_INSTANCE_CREATION__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -301,6 +357,22 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MClassInstanceCreationImpl

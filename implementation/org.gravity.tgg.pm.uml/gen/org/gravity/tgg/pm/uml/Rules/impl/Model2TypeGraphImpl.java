@@ -603,7 +603,7 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TypeGraph_4(TypeGraph pm) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_3(TypeGraph pm) {
 
 		Object[] result1_bindingAndBlack = Model2TypeGraphImpl
 				.pattern_Model2TypeGraph_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1079,8 +1079,8 @@ public class Model2TypeGraphImpl extends AbstractRuleImpl implements Model2TypeG
 			return null;
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_4__TYPEGRAPH:
-			return isAppropriate_BWD_TypeGraph_4((TypeGraph) arguments.get(0));
+		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_3__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_3((TypeGraph) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_1__MODEL:
 			return isAppropriate_FWD_Model_1((Model) arguments.get(0));
 		case RulesPackage.MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:

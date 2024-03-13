@@ -105,24 +105,24 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {
+	public boolean isAppropriate_FWD(Match match, TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {
 
 		Object[] result1_black = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_0_1_initialbindings_blackBBBBB(this, match, typeAcc, superClassDec,
-						classDec);
+				.pattern_TypeAccess2Generalization_0_1_initialbindings_blackBBBBB(this, match, typeAcc, classDec,
+						superClassDec);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[typeAcc] = " + typeAcc + ", " + "[superClassDec] = "
-					+ superClassDec + ", " + "[classDec] = " + classDec + ".");
+					+ "[match] = " + match + ", " + "[typeAcc] = " + typeAcc + ", " + "[classDec] = " + classDec + ", "
+					+ "[superClassDec] = " + superClassDec + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, typeAcc,
-						superClassDec, classDec);
+				.pattern_TypeAccess2Generalization_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, typeAcc, classDec,
+						superClassDec);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[typeAcc] = " + typeAcc + ", " + "[superClassDec] = "
-					+ superClassDec + ", " + "[classDec] = " + classDec + ".");
+					+ "[match] = " + match + ", " + "[typeAcc] = " + typeAcc + ", " + "[classDec] = " + classDec + ", "
+					+ "[superClassDec] = " + superClassDec + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -130,33 +130,33 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 			Object[] result4_black = TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_0_4_collectelementstobetranslated_blackBBBB(match, typeAcc,
-							superClassDec, classDec);
+							classDec, superClassDec);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[typeAcc] = " + typeAcc + ", " + "[superClassDec] = " + superClassDec + ", "
-						+ "[classDec] = " + classDec + ".");
+						+ "[typeAcc] = " + typeAcc + ", " + "[classDec] = " + classDec + ", " + "[superClassDec] = "
+						+ superClassDec + ".");
 			}
 			TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_0_4_collectelementstobetranslated_greenBBBBFFF(match, typeAcc,
-							superClassDec, classDec);
-			//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result4_green[6];
+							classDec, superClassDec);
+			//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = TypeAccess2GeneralizationImpl
-					.pattern_TypeAccess2Generalization_0_5_collectcontextelements_blackBBBB(match, typeAcc,
-							superClassDec, classDec);
+					.pattern_TypeAccess2Generalization_0_5_collectcontextelements_blackBBBB(match, typeAcc, classDec,
+							superClassDec);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[typeAcc] = " + typeAcc + ", " + "[superClassDec] = " + superClassDec + ", "
-						+ "[classDec] = " + classDec + ".");
+						+ "[typeAcc] = " + typeAcc + ", " + "[classDec] = " + classDec + ", " + "[superClassDec] = "
+						+ superClassDec + ".");
 			}
 			TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_0_5_collectcontextelements_greenBBB(match,
-					superClassDec, classDec);
+					classDec, superClassDec);
 
 			// 
 			TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_0_6_registerobjectstomatch_expressionBBBBB(
-					this, match, typeAcc, superClassDec, classDec);
+					this, match, typeAcc, classDec, superClassDec);
 			return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_0_7_expressionF();
 		} else {
 			return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_0_8_expressionF();
@@ -178,17 +178,17 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[0];
+		Classifier umlClassifier = (Classifier) result1_bindingAndBlack[0];
 		TypeAccess typeAcc = (TypeAccess) result1_bindingAndBlack[1];
-		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[2];
-		Classifier umlClassifier = (Classifier) result1_bindingAndBlack[3];
-		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[4];
+		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
+		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[3];
+		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[4];
 		Type superClassDec = (Type) result1_bindingAndBlack[5];
-		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[6];
+		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_1_1_performtransformation_greenBBBFF(superClass, typeAcc,
-						umlClassifier);
+				.pattern_TypeAccess2Generalization_1_1_performtransformation_greenBBBFF(umlClassifier, typeAcc,
+						superClass);
 		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = (org.gravity.tgg.modisco.uml.TypeAccess2Generalization) result1_green[3];
 		Generalization generalization = (Generalization) result1_green[4];
 
@@ -205,31 +205,31 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, superClass,
-						typeAcc, cd2c2, umlClassifier, cd2c, ta2g, generalization, superClassDec, classDec);
+				.pattern_TypeAccess2Generalization_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, umlClassifier,
+						typeAcc, superClass, cd2c2, classDec, ta2g, superClassDec, generalization, cd2c);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[superClass] = " + superClass + ", " + "[typeAcc] = " + typeAcc + ", " + "[cd2c2] = "
-					+ cd2c2 + ", " + "[umlClassifier] = " + umlClassifier + ", " + "[cd2c] = " + cd2c + ", "
-					+ "[ta2g] = " + ta2g + ", " + "[generalization] = " + generalization + ", " + "[superClassDec] = "
-					+ superClassDec + ", " + "[classDec] = " + classDec + ".");
+					+ ", " + "[umlClassifier] = " + umlClassifier + ", " + "[typeAcc] = " + typeAcc + ", "
+					+ "[superClass] = " + superClass + ", " + "[cd2c2] = " + cd2c2 + ", " + "[classDec] = " + classDec
+					+ ", " + "[ta2g] = " + ta2g + ", " + "[superClassDec] = " + superClassDec + ", "
+					+ "[generalization] = " + generalization + ", " + "[cd2c] = " + cd2c + ".");
 		}
 		TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFF(
-				ruleresult, superClass, typeAcc, umlClassifier, ta2g, generalization, superClassDec, classDec);
-		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge ta2g__generalization____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result3_green[15];
+				ruleresult, umlClassifier, typeAcc, superClass, classDec, ta2g, superClassDec, generalization);
+		//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge ta2g__generalization____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result3_green[15];
 
 		// 
 		// 
 		TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_1_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, superClass, typeAcc, cd2c2, umlClassifier, cd2c, ta2g, generalization, superClassDec,
-				classDec);
+				ruleresult, umlClassifier, typeAcc, superClass, cd2c2, classDec, ta2g, superClassDec, generalization,
+				cd2c);
 		return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_1_6_expressionFB(ruleresult);
 	}
 
@@ -259,41 +259,41 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		TypeAccess typeAcc = (TypeAccess) result2_binding[0];
-		Type superClassDec = (Type) result2_binding[1];
-		ClassDeclaration classDec = (ClassDeclaration) result2_binding[2];
+		ClassDeclaration classDec = (ClassDeclaration) result2_binding[1];
+		Type superClassDec = (Type) result2_binding[2];
 		for (Object[] result2_black : TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_2_2_corematch_blackFBFFFBBB(typeAcc, superClassDec, classDec,
+				.pattern_TypeAccess2Generalization_2_2_corematch_blackFBFFBBFB(typeAcc, classDec, superClassDec,
 						match)) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_black[0];
-			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[2];
-			Classifier umlClassifier = (Classifier) result2_black[3];
-			ASTNode2Element cd2c = (ASTNode2Element) result2_black[4];
+			Classifier umlClassifier = (Classifier) result2_black[0];
+			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_black[2];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[3];
+			ASTNode2Element cd2c = (ASTNode2Element) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : TypeAccess2GeneralizationImpl
-					.pattern_TypeAccess2Generalization_2_3_findcontext_blackBBBBBBB(superClass, typeAcc, cd2c2,
-							umlClassifier, cd2c, superClassDec, classDec)) {
+					.pattern_TypeAccess2Generalization_2_3_findcontext_blackBBBBBBB(umlClassifier, typeAcc, superClass,
+							cd2c2, classDec, superClassDec, cd2c)) {
 				Object[] result3_green = TypeAccess2GeneralizationImpl
-						.pattern_TypeAccess2Generalization_2_3_findcontext_greenBBBBBBBFFFFFFFF(superClass, typeAcc,
-								cd2c2, umlClassifier, cd2c, superClassDec, classDec);
+						.pattern_TypeAccess2Generalization_2_3_findcontext_greenBBBBBBBFFFFFFFF(umlClassifier, typeAcc,
+								superClass, cd2c2, classDec, superClassDec, cd2c);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge cd2c2__superClass____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge cd2c__umlClassifier____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge cd2c2__superClassDec____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge cd2c2__superClassDec____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cd2c__umlClassifier____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge cd2c2__superClass____target = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge cd2c__classDec____source = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = TypeAccess2GeneralizationImpl
 						.pattern_TypeAccess2Generalization_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, superClass, typeAcc, cd2c2, umlClassifier, cd2c, superClassDec,
-								classDec);
+								isApplicableMatch, umlClassifier, typeAcc, superClass, cd2c2, classDec, superClassDec,
+								cd2c);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[superClass] = " + superClass
-							+ ", " + "[typeAcc] = " + typeAcc + ", " + "[cd2c2] = " + cd2c2 + ", "
-							+ "[umlClassifier] = " + umlClassifier + ", " + "[cd2c] = " + cd2c + ", "
-							+ "[superClassDec] = " + superClassDec + ", " + "[classDec] = " + classDec + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umlClassifier] = " + umlClassifier
+							+ ", " + "[typeAcc] = " + typeAcc + ", " + "[superClass] = " + superClass + ", "
+							+ "[cd2c2] = " + cd2c2 + ", " + "[classDec] = " + classDec + ", " + "[superClassDec] = "
+							+ superClassDec + ", " + "[cd2c] = " + cd2c + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -324,11 +324,11 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {
+	public void registerObjectsToMatch_FWD(Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {
 		match.registerObject("typeAcc", typeAcc);
-		match.registerObject("superClassDec", superClassDec);
 		match.registerObject("classDec", classDec);
+		match.registerObject("superClassDec", superClassDec);
 
 	}
 
@@ -337,8 +337,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -367,9 +367,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			TypeAccess typeAcc, ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c,
-			Type superClassDec, ClassDeclaration classDec) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec,
+			Type superClassDec, ASTNode2Element cd2c) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -384,13 +384,13 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("superClass", superClass);
-		isApplicableMatch.registerObject("typeAcc", typeAcc);
-		isApplicableMatch.registerObject("cd2c2", cd2c2);
 		isApplicableMatch.registerObject("umlClassifier", umlClassifier);
-		isApplicableMatch.registerObject("cd2c", cd2c);
-		isApplicableMatch.registerObject("superClassDec", superClassDec);
+		isApplicableMatch.registerObject("typeAcc", typeAcc);
+		isApplicableMatch.registerObject("superClass", superClass);
+		isApplicableMatch.registerObject("cd2c2", cd2c2);
 		isApplicableMatch.registerObject("classDec", classDec);
+		isApplicableMatch.registerObject("superClassDec", superClassDec);
+		isApplicableMatch.registerObject("cd2c", cd2c);
 		return csp;
 	}
 
@@ -408,18 +408,18 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject superClass, EObject typeAcc, EObject cd2c2,
-			EObject umlClassifier, EObject cd2c, EObject ta2g, EObject generalization, EObject superClassDec,
-			EObject classDec) {
-		ruleresult.registerObject("superClass", superClass);
-		ruleresult.registerObject("typeAcc", typeAcc);
-		ruleresult.registerObject("cd2c2", cd2c2);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc,
+			EObject superClass, EObject cd2c2, EObject classDec, EObject ta2g, EObject superClassDec,
+			EObject generalization, EObject cd2c) {
 		ruleresult.registerObject("umlClassifier", umlClassifier);
-		ruleresult.registerObject("cd2c", cd2c);
-		ruleresult.registerObject("ta2g", ta2g);
-		ruleresult.registerObject("generalization", generalization);
-		ruleresult.registerObject("superClassDec", superClassDec);
+		ruleresult.registerObject("typeAcc", typeAcc);
+		ruleresult.registerObject("superClass", superClass);
+		ruleresult.registerObject("cd2c2", cd2c2);
 		ruleresult.registerObject("classDec", classDec);
+		ruleresult.registerObject("ta2g", ta2g);
+		ruleresult.registerObject("superClassDec", superClassDec);
+		ruleresult.registerObject("generalization", generalization);
+		ruleresult.registerObject("cd2c", cd2c);
 
 	}
 
@@ -438,59 +438,59 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier,
+	public boolean isAppropriate_BWD(Match match, Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass,
 			Generalization generalization) {
 
 		Object[] result1_black = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_10_1_initialbindings_blackBBBBB(this, match, superClass,
-						umlClassifier, generalization);
+				.pattern_TypeAccess2Generalization_10_1_initialbindings_blackBBBBB(this, match, umlClassifier,
+						superClass, generalization);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[superClass] = " + superClass + ", " + "[umlClassifier] = "
-					+ umlClassifier + ", " + "[generalization] = " + generalization + ".");
+					+ "[match] = " + match + ", " + "[umlClassifier] = " + umlClassifier + ", " + "[superClass] = "
+					+ superClass + ", " + "[generalization] = " + generalization + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, superClass,
-						umlClassifier, generalization);
+				.pattern_TypeAccess2Generalization_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, umlClassifier,
+						superClass, generalization);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[superClass] = " + superClass + ", " + "[umlClassifier] = "
-					+ umlClassifier + ", " + "[generalization] = " + generalization + ".");
+					+ "[match] = " + match + ", " + "[umlClassifier] = " + umlClassifier + ", " + "[superClass] = "
+					+ superClass + ", " + "[generalization] = " + generalization + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = TypeAccess2GeneralizationImpl
-					.pattern_TypeAccess2Generalization_10_4_collectelementstobetranslated_blackBBBB(match, superClass,
-							umlClassifier, generalization);
+					.pattern_TypeAccess2Generalization_10_4_collectelementstobetranslated_blackBBBB(match,
+							umlClassifier, superClass, generalization);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[superClass] = " + superClass + ", " + "[umlClassifier] = " + umlClassifier + ", "
+						+ "[umlClassifier] = " + umlClassifier + ", " + "[superClass] = " + superClass + ", "
 						+ "[generalization] = " + generalization + ".");
 			}
 			TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_10_4_collectelementstobetranslated_greenBBBBFFF(match,
-							superClass, umlClassifier, generalization);
-			//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result4_green[6];
+							umlClassifier, superClass, generalization);
+			//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = TypeAccess2GeneralizationImpl
-					.pattern_TypeAccess2Generalization_10_5_collectcontextelements_blackBBBB(match, superClass,
-							umlClassifier, generalization);
+					.pattern_TypeAccess2Generalization_10_5_collectcontextelements_blackBBBB(match, umlClassifier,
+							superClass, generalization);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[superClass] = " + superClass + ", " + "[umlClassifier] = " + umlClassifier + ", "
+						+ "[umlClassifier] = " + umlClassifier + ", " + "[superClass] = " + superClass + ", "
 						+ "[generalization] = " + generalization + ".");
 			}
 			TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_10_5_collectcontextelements_greenBBB(match,
-					superClass, umlClassifier);
+					umlClassifier, superClass);
 
 			// 
 			TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_10_6_registerobjectstomatch_expressionBBBBB(
-					this, match, superClass, umlClassifier, generalization);
+					this, match, umlClassifier, superClass, generalization);
 			return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_10_7_expressionF();
 		} else {
 			return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_10_8_expressionF();
@@ -512,19 +512,19 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[0];
-		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[1];
-		Classifier umlClassifier = (Classifier) result1_bindingAndBlack[2];
-		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[3];
-		Generalization generalization = (Generalization) result1_bindingAndBlack[4];
-		Type superClassDec = (Type) result1_bindingAndBlack[5];
-		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[6];
+		Classifier umlClassifier = (Classifier) result1_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[1];
+		ASTNode2Element cd2c2 = (ASTNode2Element) result1_bindingAndBlack[2];
+		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[3];
+		Type superClassDec = (Type) result1_bindingAndBlack[4];
+		Generalization generalization = (Generalization) result1_bindingAndBlack[5];
+		ASTNode2Element cd2c = (ASTNode2Element) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_11_1_performtransformation_greenFFBBB(generalization, superClassDec,
-						classDec);
+				.pattern_TypeAccess2Generalization_11_1_performtransformation_greenFBFBB(classDec, superClassDec,
+						generalization);
 		TypeAccess typeAcc = (TypeAccess) result1_green[0];
-		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = (org.gravity.tgg.modisco.uml.TypeAccess2Generalization) result1_green[1];
+		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = (org.gravity.tgg.modisco.uml.TypeAccess2Generalization) result1_green[2];
 
 		Object[] result2_black = TypeAccess2GeneralizationImpl
 				.pattern_TypeAccess2Generalization_11_2_collecttranslatedelements_blackBBB(typeAcc, ta2g,
@@ -539,31 +539,31 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, superClass,
-						typeAcc, cd2c2, umlClassifier, cd2c, ta2g, generalization, superClassDec, classDec);
+				.pattern_TypeAccess2Generalization_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, umlClassifier,
+						typeAcc, superClass, cd2c2, classDec, ta2g, superClassDec, generalization, cd2c);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[superClass] = " + superClass + ", " + "[typeAcc] = " + typeAcc + ", " + "[cd2c2] = "
-					+ cd2c2 + ", " + "[umlClassifier] = " + umlClassifier + ", " + "[cd2c] = " + cd2c + ", "
-					+ "[ta2g] = " + ta2g + ", " + "[generalization] = " + generalization + ", " + "[superClassDec] = "
-					+ superClassDec + ", " + "[classDec] = " + classDec + ".");
+					+ ", " + "[umlClassifier] = " + umlClassifier + ", " + "[typeAcc] = " + typeAcc + ", "
+					+ "[superClass] = " + superClass + ", " + "[cd2c2] = " + cd2c2 + ", " + "[classDec] = " + classDec
+					+ ", " + "[ta2g] = " + ta2g + ", " + "[superClassDec] = " + superClassDec + ", "
+					+ "[generalization] = " + generalization + ", " + "[cd2c] = " + cd2c + ".");
 		}
 		TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFF(
-				ruleresult, superClass, typeAcc, umlClassifier, ta2g, generalization, superClassDec, classDec);
-		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge ta2g__generalization____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result3_green[15];
+				ruleresult, umlClassifier, typeAcc, superClass, classDec, ta2g, superClassDec, generalization);
+		//nothing EMoflonEdge classDec__typeAcc____superClass = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge typeAcc__superClassDec____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge ta2g__generalization____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge ta2g__typeAcc____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result3_green[15];
 
 		// 
 		// 
 		TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_11_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, superClass, typeAcc, cd2c2, umlClassifier, cd2c, ta2g, generalization, superClassDec,
-				classDec);
+				ruleresult, umlClassifier, typeAcc, superClass, cd2c2, classDec, ta2g, superClassDec, generalization,
+				cd2c);
 		return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_11_6_expressionFB(ruleresult);
 	}
 
@@ -592,42 +592,42 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_binding[0];
-		Classifier umlClassifier = (Classifier) result2_binding[1];
+		Classifier umlClassifier = (Classifier) result2_binding[0];
+		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_binding[1];
 		Generalization generalization = (Generalization) result2_binding[2];
 		for (Object[] result2_black : TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_12_2_corematch_blackBFBFBFFB(superClass, umlClassifier,
+				.pattern_TypeAccess2Generalization_12_2_corematch_blackBBFFFBFB(umlClassifier, superClass,
 						generalization, match)) {
-			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[1];
-			ASTNode2Element cd2c = (ASTNode2Element) result2_black[3];
-			Type superClassDec = (Type) result2_black[5];
-			ClassDeclaration classDec = (ClassDeclaration) result2_black[6];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[2];
+			ClassDeclaration classDec = (ClassDeclaration) result2_black[3];
+			Type superClassDec = (Type) result2_black[4];
+			ASTNode2Element cd2c = (ASTNode2Element) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : TypeAccess2GeneralizationImpl
-					.pattern_TypeAccess2Generalization_12_3_findcontext_blackBBBBBBB(superClass, cd2c2, umlClassifier,
-							cd2c, generalization, superClassDec, classDec)) {
+					.pattern_TypeAccess2Generalization_12_3_findcontext_blackBBBBBBB(umlClassifier, superClass, cd2c2,
+							classDec, superClassDec, generalization, cd2c)) {
 				Object[] result3_green = TypeAccess2GeneralizationImpl
-						.pattern_TypeAccess2Generalization_12_3_findcontext_greenBBBBBBBFFFFFFFF(superClass, cd2c2,
-								umlClassifier, cd2c, generalization, superClassDec, classDec);
+						.pattern_TypeAccess2Generalization_12_3_findcontext_greenBBBBBBBFFFFFFFF(umlClassifier,
+								superClass, cd2c2, classDec, superClassDec, generalization, cd2c);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge cd2c2__superClass____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge cd2c__umlClassifier____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge cd2c2__superClassDec____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge cd2c2__superClassDec____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge umlClassifier__generalization____generalization = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge generalization__umlClassifier____specific = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge cd2c__umlClassifier____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cd2c2__superClass____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge generalization__superClass____general = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge cd2c__classDec____source = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = TypeAccess2GeneralizationImpl
 						.pattern_TypeAccess2Generalization_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c, generalization,
-								superClassDec, classDec);
+								isApplicableMatch, umlClassifier, superClass, cd2c2, classDec, superClassDec,
+								generalization, cd2c);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[superClass] = " + superClass
-							+ ", " + "[cd2c2] = " + cd2c2 + ", " + "[umlClassifier] = " + umlClassifier + ", "
-							+ "[cd2c] = " + cd2c + ", " + "[generalization] = " + generalization + ", "
-							+ "[superClassDec] = " + superClassDec + ", " + "[classDec] = " + classDec + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umlClassifier] = " + umlClassifier
+							+ ", " + "[superClass] = " + superClass + ", " + "[cd2c2] = " + cd2c2 + ", "
+							+ "[classDec] = " + classDec + ", " + "[superClassDec] = " + superClassDec + ", "
+							+ "[generalization] = " + generalization + ", " + "[cd2c] = " + cd2c + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -658,10 +658,10 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier,
+	public void registerObjectsToMatch_BWD(Match match, Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass,
 			Generalization generalization) {
-		match.registerObject("superClass", superClass);
 		match.registerObject("umlClassifier", umlClassifier);
+		match.registerObject("superClass", superClass);
 		match.registerObject("generalization", generalization);
 
 	}
@@ -671,7 +671,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier,
+	public CSP isAppropriate_solveCsp_BWD(Match match, Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass,
 			Generalization generalization) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -701,9 +701,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c, Generalization generalization,
-			Type superClassDec, ClassDeclaration classDec) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			Generalization generalization, ASTNode2Element cd2c) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -718,13 +718,13 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("umlClassifier", umlClassifier);
 		isApplicableMatch.registerObject("superClass", superClass);
 		isApplicableMatch.registerObject("cd2c2", cd2c2);
-		isApplicableMatch.registerObject("umlClassifier", umlClassifier);
-		isApplicableMatch.registerObject("cd2c", cd2c);
-		isApplicableMatch.registerObject("generalization", generalization);
-		isApplicableMatch.registerObject("superClassDec", superClassDec);
 		isApplicableMatch.registerObject("classDec", classDec);
+		isApplicableMatch.registerObject("superClassDec", superClassDec);
+		isApplicableMatch.registerObject("generalization", generalization);
+		isApplicableMatch.registerObject("cd2c", cd2c);
 		return csp;
 	}
 
@@ -742,18 +742,18 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject superClass, EObject typeAcc, EObject cd2c2,
-			EObject umlClassifier, EObject cd2c, EObject ta2g, EObject generalization, EObject superClassDec,
-			EObject classDec) {
-		ruleresult.registerObject("superClass", superClass);
-		ruleresult.registerObject("typeAcc", typeAcc);
-		ruleresult.registerObject("cd2c2", cd2c2);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc,
+			EObject superClass, EObject cd2c2, EObject classDec, EObject ta2g, EObject superClassDec,
+			EObject generalization, EObject cd2c) {
 		ruleresult.registerObject("umlClassifier", umlClassifier);
-		ruleresult.registerObject("cd2c", cd2c);
-		ruleresult.registerObject("ta2g", ta2g);
-		ruleresult.registerObject("generalization", generalization);
-		ruleresult.registerObject("superClassDec", superClassDec);
+		ruleresult.registerObject("typeAcc", typeAcc);
+		ruleresult.registerObject("superClass", superClass);
+		ruleresult.registerObject("cd2c2", cd2c2);
 		ruleresult.registerObject("classDec", classDec);
+		ruleresult.registerObject("ta2g", ta2g);
+		ruleresult.registerObject("superClassDec", superClassDec);
+		ruleresult.registerObject("generalization", generalization);
+		ruleresult.registerObject("cd2c", cd2c);
 
 	}
 
@@ -772,7 +772,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_general) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_141(EMoflonEdge _edge_generalization) {
 
 		Object[] result1_bindingAndBlack = TypeAccess2GeneralizationImpl
 				.pattern_TypeAccess2Generalization_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -788,9 +788,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 		// ForEach 
 		for (Object[] result2_black : TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_20_2_testcorematchandDECs_blackFFFB(_edge_general)) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_black[0];
-			Classifier umlClassifier = (Classifier) result2_black[1];
+				.pattern_TypeAccess2Generalization_20_2_testcorematchandDECs_blackFFFB(_edge_generalization)) {
+			Classifier umlClassifier = (Classifier) result2_black[0];
+			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_black[1];
 			Generalization generalization = (Generalization) result2_black[2];
 			Object[] result2_green = TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_20_2_testcorematchandDECs_greenFB(__eClass);
@@ -799,7 +799,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			// 
 			if (TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, superClass, umlClassifier, generalization)) {
+							this, match, umlClassifier, superClass, generalization)) {
 				// 
 				if (TypeAccess2GeneralizationImpl
 						.pattern_TypeAccess2Generalization_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -831,7 +831,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_127(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_151(EMoflonEdge _edge_superClass) {
 
 		Object[] result1_bindingAndBlack = TypeAccess2GeneralizationImpl
 				.pattern_TypeAccess2Generalization_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -847,10 +847,10 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 		// ForEach 
 		for (Object[] result2_black : TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_blackFFFB(_edge_type)) {
+				.pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_blackFFFB(_edge_superClass)) {
 			TypeAccess typeAcc = (TypeAccess) result2_black[0];
-			Type superClassDec = (Type) result2_black[1];
-			ClassDeclaration classDec = (ClassDeclaration) result2_black[2];
+			ClassDeclaration classDec = (ClassDeclaration) result2_black[1];
+			Type superClassDec = (Type) result2_black[2];
 			Object[] result2_green = TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -858,7 +858,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			// 
 			if (TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, typeAcc, superClassDec, classDec)) {
+							this, match, typeAcc, classDec, superClassDec)) {
 				// 
 				if (TypeAccess2GeneralizationImpl
 						.pattern_TypeAccess2Generalization_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -967,21 +967,21 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[0];
+		Classifier umlClassifier = (Classifier) result2_bindingAndBlack[0];
 		TypeAccess typeAcc = (TypeAccess) result2_bindingAndBlack[1];
-		Classifier umlClassifier = (Classifier) result2_bindingAndBlack[2];
-		Generalization generalization = (Generalization) result2_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[2];
+		ClassDeclaration classDec = (ClassDeclaration) result2_bindingAndBlack[3];
 		Type superClassDec = (Type) result2_bindingAndBlack[4];
-		ClassDeclaration classDec = (ClassDeclaration) result2_bindingAndBlack[5];
+		Generalization generalization = (Generalization) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, superClass, typeAcc,
-						umlClassifier, generalization, superClassDec, classDec, sourceMatch, targetMatch);
+				.pattern_TypeAccess2Generalization_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, umlClassifier, typeAcc,
+						superClass, classDec, superClassDec, generalization, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[superClass] = " + superClass + ", " + "[typeAcc] = " + typeAcc + ", " + "[umlClassifier] = "
-					+ umlClassifier + ", " + "[generalization] = " + generalization + ", " + "[superClassDec] = "
-					+ superClassDec + ", " + "[classDec] = " + classDec + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[umlClassifier] = " + umlClassifier + ", " + "[typeAcc] = " + typeAcc + ", " + "[superClass] = "
+					+ superClass + ", " + "[classDec] = " + classDec + ", " + "[superClassDec] = " + superClassDec
+					+ ", " + "[generalization] = " + generalization + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -989,24 +989,23 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		if (TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : TypeAccess2GeneralizationImpl
-					.pattern_TypeAccess2Generalization_24_5_matchcorrcontext_blackBFBFBBBB(superClass, umlClassifier,
-							superClassDec, classDec, sourceMatch, targetMatch)) {
-				ASTNode2Element cd2c2 = (ASTNode2Element) result5_black[1];
-				ASTNode2Element cd2c = (ASTNode2Element) result5_black[3];
+					.pattern_TypeAccess2Generalization_24_5_matchcorrcontext_blackBBFBBFBB(umlClassifier, superClass,
+							classDec, superClassDec, sourceMatch, targetMatch)) {
+				ASTNode2Element cd2c2 = (ASTNode2Element) result5_black[2];
+				ASTNode2Element cd2c = (ASTNode2Element) result5_black[5];
 				Object[] result5_green = TypeAccess2GeneralizationImpl
 						.pattern_TypeAccess2Generalization_24_5_matchcorrcontext_greenBBBBF(cd2c2, cd2c, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = TypeAccess2GeneralizationImpl
-						.pattern_TypeAccess2Generalization_24_6_createcorrespondence_blackBBBBBBB(superClass, typeAcc,
-								umlClassifier, generalization, superClassDec, classDec, ccMatch);
+						.pattern_TypeAccess2Generalization_24_6_createcorrespondence_blackBBBBBBB(umlClassifier,
+								typeAcc, superClass, classDec, superClassDec, generalization, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[superClass] = "
-							+ superClass + ", " + "[typeAcc] = " + typeAcc + ", " + "[umlClassifier] = " + umlClassifier
-							+ ", " + "[generalization] = " + generalization + ", " + "[superClassDec] = "
-							+ superClassDec + ", " + "[classDec] = " + classDec + ", " + "[ccMatch] = " + ccMatch
-							+ ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[umlClassifier] = "
+							+ umlClassifier + ", " + "[typeAcc] = " + typeAcc + ", " + "[superClass] = " + superClass
+							+ ", " + "[classDec] = " + classDec + ", " + "[superClassDec] = " + superClassDec + ", "
+							+ "[generalization] = " + generalization + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_24_6_createcorrespondence_greenBFBB(
 						typeAcc, generalization, ccMatch);
@@ -1033,9 +1032,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc,
-			Classifier umlClassifier, Generalization generalization, Type superClassDec, ClassDeclaration classDec,
-			Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Classifier umlClassifier, TypeAccess typeAcc,
+			org.eclipse.uml2.uml.Class superClass, ClassDeclaration classDec, Type superClassDec,
+			Generalization generalization, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1064,9 +1063,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {// 
+	public boolean checkDEC_FWD(TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {// 
 		Object[] result1_black = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_27_1_matchtggpattern_blackBBB(typeAcc, superClassDec, classDec);
+				.pattern_TypeAccess2Generalization_27_1_matchtggpattern_blackBBB(typeAcc, classDec, superClassDec);
 		if (result1_black != null) {
 			return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_27_2_expressionF();
 		} else {
@@ -1080,10 +1079,10 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier,
+	public boolean checkDEC_BWD(Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass,
 			Generalization generalization) {// 
 		Object[] result1_black = TypeAccess2GeneralizationImpl
-				.pattern_TypeAccess2Generalization_28_1_matchtggpattern_blackBBB(superClass, umlClassifier,
+				.pattern_TypeAccess2Generalization_28_1_matchtggpattern_blackBBB(umlClassifier, superClass,
 						generalization);
 		if (result1_black != null) {
 			return TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_28_2_expressionF();
@@ -1098,8 +1097,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element cd2c2Parameter,
-			ASTNode2Element cd2cParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element cd2cParameter,
+			ASTNode2Element cd2c2Parameter) {
 
 		Object[] result1_black = TypeAccess2GeneralizationImpl
 				.pattern_TypeAccess2Generalization_29_1_createresult_blackB(this);
@@ -1115,23 +1114,23 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		for (Object[] result2_black : TypeAccess2GeneralizationImpl
 				.pattern_TypeAccess2Generalization_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
-			//nothing RuleEntryList cd2c2List = (RuleEntryList) result2_black[0];
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_black[1];
-			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[2];
-			Type superClassDec = (Type) result2_black[3];
-			//nothing RuleEntryList cd2cList = (RuleEntryList) result2_black[4];
-			Classifier umlClassifier = (Classifier) result2_black[5];
-			ASTNode2Element cd2c = (ASTNode2Element) result2_black[6];
-			ClassDeclaration classDec = (ClassDeclaration) result2_black[7];
+			//nothing RuleEntryList cd2cList = (RuleEntryList) result2_black[0];
+			Classifier umlClassifier = (Classifier) result2_black[1];
+			ASTNode2Element cd2c = (ASTNode2Element) result2_black[2];
+			ClassDeclaration classDec = (ClassDeclaration) result2_black[3];
+			//nothing RuleEntryList cd2c2List = (RuleEntryList) result2_black[4];
+			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result2_black[5];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result2_black[6];
+			Type superClassDec = (Type) result2_black[7];
 
 			Object[] result3_bindingAndBlack = TypeAccess2GeneralizationImpl
 					.pattern_TypeAccess2Generalization_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							superClass, cd2c2, umlClassifier, cd2c, superClassDec, classDec, ruleResult);
+							umlClassifier, superClass, cd2c2, classDec, superClassDec, cd2c, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[superClass] = " + superClass + ", "
-						+ "[cd2c2] = " + cd2c2 + ", " + "[umlClassifier] = " + umlClassifier + ", " + "[cd2c] = " + cd2c
-						+ ", " + "[superClassDec] = " + superClassDec + ", " + "[classDec] = " + classDec + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[umlClassifier] = " + umlClassifier
+						+ ", " + "[superClass] = " + superClass + ", " + "[cd2c2] = " + cd2c2 + ", " + "[classDec] = "
+						+ classDec + ", " + "[superClassDec] = " + superClassDec + ", " + "[cd2c] = " + cd2c + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1140,24 +1139,24 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp)) {
 				// 
 				Object[] result5_black = TypeAccess2GeneralizationImpl
-						.pattern_TypeAccess2Generalization_29_5_checknacs_blackBBBBBB(superClass, cd2c2, umlClassifier,
-								cd2c, superClassDec, classDec);
+						.pattern_TypeAccess2Generalization_29_5_checknacs_blackBBBBBB(umlClassifier, superClass, cd2c2,
+								classDec, superClassDec, cd2c);
 				if (result5_black != null) {
 
 					Object[] result6_black = TypeAccess2GeneralizationImpl
-							.pattern_TypeAccess2Generalization_29_6_perform_blackBBBBBBB(superClass, cd2c2,
-									umlClassifier, cd2c, superClassDec, classDec, ruleResult);
+							.pattern_TypeAccess2Generalization_29_6_perform_blackBBBBBBB(umlClassifier, superClass,
+									cd2c2, classDec, superClassDec, cd2c, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[superClass] = "
-								+ superClass + ", " + "[cd2c2] = " + cd2c2 + ", " + "[umlClassifier] = " + umlClassifier
-								+ ", " + "[cd2c] = " + cd2c + ", " + "[superClassDec] = " + superClassDec + ", "
-								+ "[classDec] = " + classDec + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[umlClassifier] = "
+								+ umlClassifier + ", " + "[superClass] = " + superClass + ", " + "[cd2c2] = " + cd2c2
+								+ ", " + "[classDec] = " + classDec + ", " + "[superClassDec] = " + superClassDec + ", "
+								+ "[cd2c] = " + cd2c + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_29_6_perform_greenBFBFFBBB(
-							superClass, umlClassifier, superClassDec, classDec, ruleResult);
+					TypeAccess2GeneralizationImpl.pattern_TypeAccess2Generalization_29_6_perform_greenBFBBFBFB(
+							umlClassifier, superClass, classDec, superClassDec, ruleResult);
 					//nothing TypeAccess typeAcc = (TypeAccess) result6_green[1];
-					//nothing org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = (org.gravity.tgg.modisco.uml.TypeAccess2Generalization) result6_green[3];
-					//nothing Generalization generalization = (Generalization) result6_green[4];
+					//nothing org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = (org.gravity.tgg.modisco.uml.TypeAccess2Generalization) result6_green[4];
+					//nothing Generalization generalization = (Generalization) result6_green[6];
 
 				} else {
 				}
@@ -1174,9 +1173,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c, Type superClassDec,
-			ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			ASTNode2Element cd2c, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1191,12 +1190,12 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("umlClassifier", umlClassifier);
 		isApplicableMatch.registerObject("superClass", superClass);
 		isApplicableMatch.registerObject("cd2c2", cd2c2);
-		isApplicableMatch.registerObject("umlClassifier", umlClassifier);
-		isApplicableMatch.registerObject("cd2c", cd2c);
-		isApplicableMatch.registerObject("superClassDec", superClassDec);
 		isApplicableMatch.registerObject("classDec", classDec);
+		isApplicableMatch.registerObject("superClassDec", superClassDec);
+		isApplicableMatch.registerObject("cd2c", cd2c);
 		return csp;
 	}
 
@@ -1217,27 +1216,27 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_TYPE_CLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1), (Type) arguments.get(2),
-					(ClassDeclaration) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_CLASSDECLARATION_TYPE:
+			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (Type) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_TYPE_CLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1), (Type) arguments.get(2),
-					(ClassDeclaration) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_CLASSDECLARATION_TYPE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (Type) arguments.get(3));
 			return null;
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_TYPE_CLASSDECLARATION:
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_CLASSDECLARATION_TYPE:
 			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(Type) arguments.get(2), (ClassDeclaration) arguments.get(3));
+					(ClassDeclaration) arguments.get(2), (Type) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASS_TYPEACCESS_ASTNODE2ELEMENT_CLASSIFIER_ASTNODE2ELEMENT_TYPE_CLASSDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (TypeAccess) arguments.get(2),
-					(ASTNode2Element) arguments.get(3), (Classifier) arguments.get(4),
-					(ASTNode2Element) arguments.get(5), (Type) arguments.get(6), (ClassDeclaration) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_TYPEACCESS_CLASS_ASTNODE2ELEMENT_CLASSDECLARATION_TYPE_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(TypeAccess) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
+					(ASTNode2Element) arguments.get(4), (ClassDeclaration) arguments.get(5), (Type) arguments.get(6),
+					(ASTNode2Element) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1248,27 +1247,27 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			return null;
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_BWD__MATCH_CLASS_CLASSIFIER_GENERALIZATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(Classifier) arguments.get(2), (Generalization) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_CLASS_GENERALIZATION:
+			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2), (Generalization) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_CLASSIFIER_GENERALIZATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(Classifier) arguments.get(2), (Generalization) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_CLASS_GENERALIZATION:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2), (Generalization) arguments.get(3));
 			return null;
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_CLASSIFIER_GENERALIZATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(Classifier) arguments.get(2), (Generalization) arguments.get(3));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_CLASS_GENERALIZATION:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2), (Generalization) arguments.get(3));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_ASTNODE2ELEMENT_CLASSIFIER_ASTNODE2ELEMENT_GENERALIZATION_TYPE_CLASSDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (ASTNode2Element) arguments.get(2),
-					(Classifier) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(Generalization) arguments.get(5), (Type) arguments.get(6), (ClassDeclaration) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_CLASS_ASTNODE2ELEMENT_CLASSDECLARATION_TYPE_GENERALIZATION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (Type) arguments.get(5), (Generalization) arguments.get(6),
+					(ASTNode2Element) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1279,37 +1278,37 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			return null;
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_117__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_127__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_127((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_141__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_141((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_151__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_151((EMoflonEdge) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_TYPEACCESS_CLASSIFIER_GENERALIZATION_TYPE_CLASSDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0),
-					(TypeAccess) arguments.get(1), (Classifier) arguments.get(2), (Generalization) arguments.get(3),
-					(Type) arguments.get(4), (ClassDeclaration) arguments.get(5), (Match) arguments.get(6),
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_TYPEACCESS_CLASS_CLASSDECLARATION_TYPE_GENERALIZATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Classifier) arguments.get(0), (TypeAccess) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2), (ClassDeclaration) arguments.get(3),
+					(Type) arguments.get(4), (Generalization) arguments.get(5), (Match) arguments.get(6),
 					(Match) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_DEC_FWD__TYPEACCESS_TYPE_CLASSDECLARATION:
-			return checkDEC_FWD((TypeAccess) arguments.get(0), (Type) arguments.get(1),
-					(ClassDeclaration) arguments.get(2));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_DEC_BWD__CLASS_CLASSIFIER_GENERALIZATION:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0), (Classifier) arguments.get(1),
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_DEC_FWD__TYPEACCESS_CLASSDECLARATION_TYPE:
+			return checkDEC_FWD((TypeAccess) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(Type) arguments.get(2));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___CHECK_DEC_BWD__CLASSIFIER_CLASS_GENERALIZATION:
+			return checkDEC_BWD((Classifier) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
 					(Generalization) arguments.get(2));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_ASTNODE2ELEMENT_CLASSIFIER_ASTNODE2ELEMENT_TYPE_CLASSDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (ASTNode2Element) arguments.get(2),
-					(Classifier) arguments.get(3), (ASTNode2Element) arguments.get(4), (Type) arguments.get(5),
-					(ClassDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_CLASS_ASTNODE2ELEMENT_CLASSDECLARATION_TYPE_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (Type) arguments.get(5), (ASTNode2Element) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.TYPE_ACCESS2_GENERALIZATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1317,21 +1316,21 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_1_initialbindings_blackBBBBB(
-			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {
+			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {
 		if (!classDec.equals(superClassDec)) {
-			return new Object[] { _this, match, typeAcc, superClassDec, classDec };
+			return new Object[] { _this, match, typeAcc, classDec, superClassDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_2_SolveCSP_bindingFBBBBB(
-			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, typeAcc, superClassDec, classDec);
+			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, typeAcc, classDec, superClassDec);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, typeAcc, superClassDec, classDec };
+			return new Object[] { csp, _this, match, typeAcc, classDec, superClassDec };
 		}
 		return null;
 	}
@@ -1341,10 +1340,10 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {
+			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {
 		Object[] result_pattern_TypeAccess2Generalization_0_2_SolveCSP_binding = pattern_TypeAccess2Generalization_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, typeAcc, superClassDec, classDec);
+				_this, match, typeAcc, classDec, superClassDec);
 		if (result_pattern_TypeAccess2Generalization_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2Generalization_0_2_SolveCSP_binding[0];
 
@@ -1352,7 +1351,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp);
 			if (result_pattern_TypeAccess2Generalization_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, typeAcc, superClassDec, classDec };
+				return new Object[] { csp, _this, match, typeAcc, classDec, superClassDec };
 			}
 		}
 		return null;
@@ -1366,57 +1365,57 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {
+			Match match, TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {
 		if (!classDec.equals(superClassDec)) {
-			return new Object[] { match, typeAcc, superClassDec, classDec };
+			return new Object[] { match, typeAcc, classDec, superClassDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {
+			Match match, TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {
+		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAcc__superClassDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(typeAcc);
+		String classDec__typeAcc____superClass_name_prime = "superClass";
 		String typeAcc__superClassDec____type_name_prime = "type";
 		String superClassDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String classDec__typeAcc____superClass_name_prime = "superClass";
+		classDec__typeAcc____superClass.setSrc(classDec);
+		classDec__typeAcc____superClass.setTrg(typeAcc);
+		match.getToBeTranslatedEdges().add(classDec__typeAcc____superClass);
 		typeAcc__superClassDec____type.setSrc(typeAcc);
 		typeAcc__superClassDec____type.setTrg(superClassDec);
 		match.getToBeTranslatedEdges().add(typeAcc__superClassDec____type);
 		superClassDec__typeAcc____usagesInTypeAccess.setSrc(superClassDec);
 		superClassDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
 		match.getToBeTranslatedEdges().add(superClassDec__typeAcc____usagesInTypeAccess);
-		classDec__typeAcc____superClass.setSrc(classDec);
-		classDec__typeAcc____superClass.setTrg(typeAcc);
-		match.getToBeTranslatedEdges().add(classDec__typeAcc____superClass);
+		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
 		typeAcc__superClassDec____type.setName(typeAcc__superClassDec____type_name_prime);
 		superClassDec__typeAcc____usagesInTypeAccess.setName(superClassDec__typeAcc____usagesInTypeAccess_name_prime);
-		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
-		return new Object[] { match, typeAcc, superClassDec, classDec, typeAcc__superClassDec____type,
-				superClassDec__typeAcc____usagesInTypeAccess, classDec__typeAcc____superClass };
+		return new Object[] { match, typeAcc, classDec, superClassDec, classDec__typeAcc____superClass,
+				typeAcc__superClassDec____type, superClassDec__typeAcc____usagesInTypeAccess };
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_5_collectcontextelements_blackBBBB(Match match,
-			TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {
+			TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {
 		if (!classDec.equals(superClassDec)) {
-			return new Object[] { match, typeAcc, superClassDec, classDec };
+			return new Object[] { match, typeAcc, classDec, superClassDec };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_0_5_collectcontextelements_greenBBB(Match match,
-			Type superClassDec, ClassDeclaration classDec) {
-		match.getContextNodes().add(superClassDec);
+			ClassDeclaration classDec, Type superClassDec) {
 		match.getContextNodes().add(classDec);
-		return new Object[] { match, superClassDec, classDec };
+		match.getContextNodes().add(superClassDec);
+		return new Object[] { match, classDec, superClassDec };
 	}
 
 	public static final void pattern_TypeAccess2Generalization_0_6_registerobjectstomatch_expressionBBBBB(
-			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {
-		_this.registerObjectsToMatch_FWD(match, typeAcc, superClassDec, classDec);
+			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {
+		_this.registerObjectsToMatch_FWD(match, typeAcc, classDec, superClassDec);
 
 	}
 
@@ -1432,36 +1431,36 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("superClass");
+		EObject _localVariable_0 = isApplicableMatch.getObject("umlClassifier");
 		EObject _localVariable_1 = isApplicableMatch.getObject("typeAcc");
-		EObject _localVariable_2 = isApplicableMatch.getObject("cd2c2");
-		EObject _localVariable_3 = isApplicableMatch.getObject("umlClassifier");
-		EObject _localVariable_4 = isApplicableMatch.getObject("cd2c");
+		EObject _localVariable_2 = isApplicableMatch.getObject("superClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("cd2c2");
+		EObject _localVariable_4 = isApplicableMatch.getObject("classDec");
 		EObject _localVariable_5 = isApplicableMatch.getObject("superClassDec");
-		EObject _localVariable_6 = isApplicableMatch.getObject("classDec");
-		EObject tmpSuperClass = _localVariable_0;
+		EObject _localVariable_6 = isApplicableMatch.getObject("cd2c");
+		EObject tmpUmlClassifier = _localVariable_0;
 		EObject tmpTypeAcc = _localVariable_1;
-		EObject tmpCd2c2 = _localVariable_2;
-		EObject tmpUmlClassifier = _localVariable_3;
-		EObject tmpCd2c = _localVariable_4;
+		EObject tmpSuperClass = _localVariable_2;
+		EObject tmpCd2c2 = _localVariable_3;
+		EObject tmpClassDec = _localVariable_4;
 		EObject tmpSuperClassDec = _localVariable_5;
-		EObject tmpClassDec = _localVariable_6;
-		if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
+		EObject tmpCd2c = _localVariable_6;
+		if (tmpUmlClassifier instanceof Classifier) {
+			Classifier umlClassifier = (Classifier) tmpUmlClassifier;
 			if (tmpTypeAcc instanceof TypeAccess) {
 				TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-				if (tmpCd2c2 instanceof ASTNode2Element) {
-					ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
-					if (tmpUmlClassifier instanceof Classifier) {
-						Classifier umlClassifier = (Classifier) tmpUmlClassifier;
-						if (tmpCd2c instanceof ASTNode2Element) {
-							ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+				if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
+					org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
+					if (tmpCd2c2 instanceof ASTNode2Element) {
+						ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
+						if (tmpClassDec instanceof ClassDeclaration) {
+							ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
 							if (tmpSuperClassDec instanceof Type) {
 								Type superClassDec = (Type) tmpSuperClassDec;
-								if (tmpClassDec instanceof ClassDeclaration) {
-									ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
-									return new Object[] { superClass, typeAcc, cd2c2, umlClassifier, cd2c,
-											superClassDec, classDec, isApplicableMatch };
+								if (tmpCd2c instanceof ASTNode2Element) {
+									ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+									return new Object[] { umlClassifier, typeAcc, superClass, cd2c2, classDec,
+											superClassDec, cd2c, isApplicableMatch };
 								}
 							}
 						}
@@ -1473,17 +1472,17 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_1_1_performtransformation_blackBBBBBBBFBB(
-			org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Type superClassDec, ClassDeclaration classDec, TypeAccess2Generalization _this,
+			Classifier umlClassifier, TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Type superClassDec, ASTNode2Element cd2c, TypeAccess2Generalization _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!superClass.equals(umlClassifier)) {
-			if (!cd2c.equals(cd2c2)) {
-				if (!classDec.equals(superClassDec)) {
+			if (!classDec.equals(superClassDec)) {
+				if (!cd2c.equals(cd2c2)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { superClass, typeAcc, cd2c2, umlClassifier, cd2c, superClassDec,
-									classDec, csp, _this, isApplicableMatch };
+							return new Object[] { umlClassifier, typeAcc, superClass, cd2c2, classDec, superClassDec,
+									cd2c, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1497,20 +1496,20 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		Object[] result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding = pattern_TypeAccess2Generalization_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding != null) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[0];
+			Classifier umlClassifier = (Classifier) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[0];
 			TypeAccess typeAcc = (TypeAccess) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[1];
-			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[2];
-			Classifier umlClassifier = (Classifier) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[3];
-			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[4];
+			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[2];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[3];
+			ClassDeclaration classDec = (ClassDeclaration) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[4];
 			Type superClassDec = (Type) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[5];
-			ClassDeclaration classDec = (ClassDeclaration) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[6];
+			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2Generalization_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_TypeAccess2Generalization_1_1_performtransformation_black = pattern_TypeAccess2Generalization_1_1_performtransformation_blackBBBBBBBFBB(
-					superClass, typeAcc, cd2c2, umlClassifier, cd2c, superClassDec, classDec, _this, isApplicableMatch);
+					umlClassifier, typeAcc, superClass, cd2c2, classDec, superClassDec, cd2c, _this, isApplicableMatch);
 			if (result_pattern_TypeAccess2Generalization_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeAccess2Generalization_1_1_performtransformation_black[7];
 
-				return new Object[] { superClass, typeAcc, cd2c2, umlClassifier, cd2c, superClassDec, classDec, csp,
+				return new Object[] { umlClassifier, typeAcc, superClass, cd2c2, classDec, superClassDec, cd2c, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -1518,15 +1517,15 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_1_1_performtransformation_greenBBBFF(
-			org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc, Classifier umlClassifier) {
+			Classifier umlClassifier, TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass) {
 		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE
 				.createTypeAccess2Generalization();
 		Generalization generalization = UMLFactory.eINSTANCE.createGeneralization();
 		ta2g.setSource(typeAcc);
 		ta2g.setTarget(generalization);
-		generalization.setGeneral(superClass);
 		umlClassifier.getGeneralizations().add(generalization);
-		return new Object[] { superClass, typeAcc, umlClassifier, ta2g, generalization };
+		generalization.setGeneral(superClass);
+		return new Object[] { umlClassifier, typeAcc, superClass, ta2g, generalization };
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_1_2_collecttranslatedelements_blackBBB(
@@ -1546,70 +1545,71 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject superClass, EObject typeAcc, EObject cd2c2, EObject umlClassifier,
-			EObject cd2c, EObject ta2g, EObject generalization, EObject superClassDec, EObject classDec) {
-		if (!superClass.equals(typeAcc)) {
+			PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc, EObject superClass, EObject cd2c2,
+			EObject classDec, EObject ta2g, EObject superClassDec, EObject generalization, EObject cd2c) {
+		if (!typeAcc.equals(umlClassifier)) {
 			if (!superClass.equals(umlClassifier)) {
-				if (!superClass.equals(ta2g)) {
-					if (!superClass.equals(superClassDec)) {
-						if (!typeAcc.equals(umlClassifier)) {
-							if (!cd2c2.equals(superClass)) {
+				if (!superClass.equals(typeAcc)) {
+					if (!superClass.equals(ta2g)) {
+						if (!superClass.equals(superClassDec)) {
+							if (!cd2c2.equals(umlClassifier)) {
 								if (!cd2c2.equals(typeAcc)) {
-									if (!cd2c2.equals(umlClassifier)) {
-										if (!cd2c2.equals(ta2g)) {
-											if (!cd2c2.equals(generalization)) {
+									if (!cd2c2.equals(superClass)) {
+										if (!cd2c2.equals(classDec)) {
+											if (!cd2c2.equals(ta2g)) {
 												if (!cd2c2.equals(superClassDec)) {
-													if (!cd2c2.equals(classDec)) {
-														if (!cd2c.equals(superClass)) {
-															if (!cd2c.equals(typeAcc)) {
-																if (!cd2c.equals(cd2c2)) {
-																	if (!cd2c.equals(umlClassifier)) {
-																		if (!cd2c.equals(ta2g)) {
-																			if (!cd2c.equals(generalization)) {
-																				if (!cd2c.equals(superClassDec)) {
-																					if (!cd2c.equals(classDec)) {
-																						if (!ta2g.equals(typeAcc)) {
-																							if (!ta2g.equals(
-																									umlClassifier)) {
-																								if (!generalization
-																										.equals(superClass)) {
+													if (!cd2c2.equals(generalization)) {
+														if (!classDec.equals(umlClassifier)) {
+															if (!classDec.equals(typeAcc)) {
+																if (!classDec.equals(superClass)) {
+																	if (!classDec.equals(ta2g)) {
+																		if (!classDec.equals(superClassDec)) {
+																			if (!classDec.equals(generalization)) {
+																				if (!ta2g.equals(umlClassifier)) {
+																					if (!ta2g.equals(typeAcc)) {
+																						if (!superClassDec.equals(
+																								umlClassifier)) {
+																							if (!superClassDec
+																									.equals(typeAcc)) {
+																								if (!superClassDec
+																										.equals(ta2g)) {
 																									if (!generalization
-																											.equals(typeAcc)) {
+																											.equals(umlClassifier)) {
 																										if (!generalization
-																												.equals(umlClassifier)) {
+																												.equals(typeAcc)) {
 																											if (!generalization
-																													.equals(ta2g)) {
+																													.equals(superClass)) {
 																												if (!generalization
-																														.equals(superClassDec)) {
-																													if (!superClassDec
-																															.equals(typeAcc)) {
-																														if (!superClassDec
+																														.equals(ta2g)) {
+																													if (!generalization
+																															.equals(superClassDec)) {
+																														if (!cd2c
 																																.equals(umlClassifier)) {
-																															if (!superClassDec
-																																	.equals(ta2g)) {
-																																if (!classDec
+																															if (!cd2c
+																																	.equals(typeAcc)) {
+																																if (!cd2c
 																																		.equals(superClass)) {
-																																	if (!classDec
-																																			.equals(typeAcc)) {
-																																		if (!classDec
-																																				.equals(umlClassifier)) {
-																																			if (!classDec
+																																	if (!cd2c
+																																			.equals(cd2c2)) {
+																																		if (!cd2c
+																																				.equals(classDec)) {
+																																			if (!cd2c
 																																					.equals(ta2g)) {
-																																				if (!classDec
-																																						.equals(generalization)) {
-																																					if (!classDec
-																																							.equals(superClassDec)) {
+																																				if (!cd2c
+																																						.equals(superClassDec)) {
+																																					if (!cd2c
+																																							.equals(generalization)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								superClass,
-																																								typeAcc,
-																																								cd2c2,
 																																								umlClassifier,
-																																								cd2c,
+																																								typeAcc,
+																																								superClass,
+																																								cd2c2,
+																																								classDec,
 																																								ta2g,
-																																								generalization,
 																																								superClassDec,
-																																								classDec };
+																																								generalization,
+																																								cd2c };
 																																					}
 																																				}
 																																			}
@@ -1650,72 +1650,72 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject superClass, EObject typeAcc, EObject umlClassifier, EObject ta2g,
-			EObject generalization, EObject superClassDec, EObject classDec) {
-		EMoflonEdge ta2g__typeAcc____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ta2g__generalization____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc, EObject superClass, EObject classDec,
+			EObject ta2g, EObject superClassDec, EObject generalization) {
+		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAcc__superClassDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ta2g__generalization____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClassifier__generalization____generalization = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge generalization__umlClassifier____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ta2g__typeAcc____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeAccess2Generalization";
-		String ta2g__typeAcc____source_name_prime = "source";
-		String ta2g__generalization____target_name_prime = "target";
-		String generalization__superClass____general_name_prime = "general";
+		String classDec__typeAcc____superClass_name_prime = "superClass";
 		String typeAcc__superClassDec____type_name_prime = "type";
 		String superClassDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String ta2g__generalization____target_name_prime = "target";
 		String umlClassifier__generalization____generalization_name_prime = "generalization";
 		String generalization__umlClassifier____specific_name_prime = "specific";
-		String classDec__typeAcc____superClass_name_prime = "superClass";
-		ta2g__typeAcc____source.setSrc(ta2g);
-		ta2g__typeAcc____source.setTrg(typeAcc);
-		ruleresult.getCreatedEdges().add(ta2g__typeAcc____source);
-		ta2g__generalization____target.setSrc(ta2g);
-		ta2g__generalization____target.setTrg(generalization);
-		ruleresult.getCreatedEdges().add(ta2g__generalization____target);
-		generalization__superClass____general.setSrc(generalization);
-		generalization__superClass____general.setTrg(superClass);
-		ruleresult.getCreatedEdges().add(generalization__superClass____general);
+		String ta2g__typeAcc____source_name_prime = "source";
+		String generalization__superClass____general_name_prime = "general";
+		classDec__typeAcc____superClass.setSrc(classDec);
+		classDec__typeAcc____superClass.setTrg(typeAcc);
+		ruleresult.getTranslatedEdges().add(classDec__typeAcc____superClass);
 		typeAcc__superClassDec____type.setSrc(typeAcc);
 		typeAcc__superClassDec____type.setTrg(superClassDec);
 		ruleresult.getTranslatedEdges().add(typeAcc__superClassDec____type);
 		superClassDec__typeAcc____usagesInTypeAccess.setSrc(superClassDec);
 		superClassDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
 		ruleresult.getTranslatedEdges().add(superClassDec__typeAcc____usagesInTypeAccess);
+		ta2g__generalization____target.setSrc(ta2g);
+		ta2g__generalization____target.setTrg(generalization);
+		ruleresult.getCreatedEdges().add(ta2g__generalization____target);
 		umlClassifier__generalization____generalization.setSrc(umlClassifier);
 		umlClassifier__generalization____generalization.setTrg(generalization);
 		ruleresult.getCreatedEdges().add(umlClassifier__generalization____generalization);
 		generalization__umlClassifier____specific.setSrc(generalization);
 		generalization__umlClassifier____specific.setTrg(umlClassifier);
 		ruleresult.getCreatedEdges().add(generalization__umlClassifier____specific);
-		classDec__typeAcc____superClass.setSrc(classDec);
-		classDec__typeAcc____superClass.setTrg(typeAcc);
-		ruleresult.getTranslatedEdges().add(classDec__typeAcc____superClass);
+		ta2g__typeAcc____source.setSrc(ta2g);
+		ta2g__typeAcc____source.setTrg(typeAcc);
+		ruleresult.getCreatedEdges().add(ta2g__typeAcc____source);
+		generalization__superClass____general.setSrc(generalization);
+		generalization__superClass____general.setTrg(superClass);
+		ruleresult.getCreatedEdges().add(generalization__superClass____general);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		ta2g__typeAcc____source.setName(ta2g__typeAcc____source_name_prime);
-		ta2g__generalization____target.setName(ta2g__generalization____target_name_prime);
-		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
+		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
 		typeAcc__superClassDec____type.setName(typeAcc__superClassDec____type_name_prime);
 		superClassDec__typeAcc____usagesInTypeAccess.setName(superClassDec__typeAcc____usagesInTypeAccess_name_prime);
+		ta2g__generalization____target.setName(ta2g__generalization____target_name_prime);
 		umlClassifier__generalization____generalization
 				.setName(umlClassifier__generalization____generalization_name_prime);
 		generalization__umlClassifier____specific.setName(generalization__umlClassifier____specific_name_prime);
-		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
-		return new Object[] { ruleresult, superClass, typeAcc, umlClassifier, ta2g, generalization, superClassDec,
-				classDec, ta2g__typeAcc____source, ta2g__generalization____target,
-				generalization__superClass____general, typeAcc__superClassDec____type,
-				superClassDec__typeAcc____usagesInTypeAccess, umlClassifier__generalization____generalization,
-				generalization__umlClassifier____specific, classDec__typeAcc____superClass };
+		ta2g__typeAcc____source.setName(ta2g__typeAcc____source_name_prime);
+		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
+		return new Object[] { ruleresult, umlClassifier, typeAcc, superClass, classDec, ta2g, superClassDec,
+				generalization, classDec__typeAcc____superClass, typeAcc__superClassDec____type,
+				superClassDec__typeAcc____usagesInTypeAccess, ta2g__generalization____target,
+				umlClassifier__generalization____generalization, generalization__umlClassifier____specific,
+				ta2g__typeAcc____source, generalization__superClass____general };
 	}
 
 	public static final void pattern_TypeAccess2Generalization_1_5_registerobjects_expressionBBBBBBBBBBB(
-			TypeAccess2Generalization _this, PerformRuleResult ruleresult, EObject superClass, EObject typeAcc,
-			EObject cd2c2, EObject umlClassifier, EObject cd2c, EObject ta2g, EObject generalization,
-			EObject superClassDec, EObject classDec) {
-		_this.registerObjects_FWD(ruleresult, superClass, typeAcc, cd2c2, umlClassifier, cd2c, ta2g, generalization,
-				superClassDec, classDec);
+			TypeAccess2Generalization _this, PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc,
+			EObject superClass, EObject cd2c2, EObject classDec, EObject ta2g, EObject superClassDec,
+			EObject generalization, EObject cd2c) {
+		_this.registerObjects_FWD(ruleresult, umlClassifier, typeAcc, superClass, cd2c2, classDec, ta2g, superClassDec,
+				generalization, cd2c);
 
 	}
 
@@ -1778,26 +1778,26 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_2_2_corematch_bindingFFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("typeAcc");
-		EObject _localVariable_1 = match.getObject("superClassDec");
-		EObject _localVariable_2 = match.getObject("classDec");
+		EObject _localVariable_1 = match.getObject("classDec");
+		EObject _localVariable_2 = match.getObject("superClassDec");
 		EObject tmpTypeAcc = _localVariable_0;
-		EObject tmpSuperClassDec = _localVariable_1;
-		EObject tmpClassDec = _localVariable_2;
+		EObject tmpClassDec = _localVariable_1;
+		EObject tmpSuperClassDec = _localVariable_2;
 		if (tmpTypeAcc instanceof TypeAccess) {
 			TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-			if (tmpSuperClassDec instanceof Type) {
-				Type superClassDec = (Type) tmpSuperClassDec;
-				if (tmpClassDec instanceof ClassDeclaration) {
-					ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
-					return new Object[] { typeAcc, superClassDec, classDec, match };
+			if (tmpClassDec instanceof ClassDeclaration) {
+				ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+				if (tmpSuperClassDec instanceof Type) {
+					Type superClassDec = (Type) tmpSuperClassDec;
+					return new Object[] { typeAcc, classDec, superClassDec, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_2_2_corematch_blackFBFFFBBB(
-			TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec, Match match) {
+	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_2_2_corematch_blackFBFFBBFB(
+			TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!classDec.equals(superClassDec)) {
 			for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
@@ -1812,8 +1812,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 							if (tmpUmlClassifier instanceof Classifier) {
 								Classifier umlClassifier = (Classifier) tmpUmlClassifier;
 								if (!superClass.equals(umlClassifier)) {
-									_result.add(new Object[] { superClass, typeAcc, cd2c2, umlClassifier, cd2c,
-											superClassDec, classDec, match });
+									_result.add(new Object[] { umlClassifier, typeAcc, superClass, cd2c2, classDec,
+											superClassDec, cd2c, match });
 								}
 							}
 
@@ -1827,20 +1827,20 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_2_3_findcontext_blackBBBBBBB(
-			org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Type superClassDec, ClassDeclaration classDec) {
+			Classifier umlClassifier, TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Type superClassDec, ASTNode2Element cd2c) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!superClass.equals(umlClassifier)) {
-			if (!cd2c.equals(cd2c2)) {
-				if (!classDec.equals(superClassDec)) {
-					if (superClass.equals(cd2c2.getTarget())) {
-						if (umlClassifier.equals(cd2c.getTarget())) {
+			if (!classDec.equals(superClassDec)) {
+				if (!cd2c.equals(cd2c2)) {
+					if (typeAcc.equals(classDec.getSuperClass())) {
+						if (superClassDec.equals(typeAcc.getType())) {
 							if (superClassDec.equals(cd2c2.getSource())) {
-								if (superClassDec.equals(typeAcc.getType())) {
-									if (typeAcc.equals(classDec.getSuperClass())) {
+								if (umlClassifier.equals(cd2c.getTarget())) {
+									if (superClass.equals(cd2c2.getTarget())) {
 										if (classDec.equals(cd2c.getSource())) {
-											_result.add(new Object[] { superClass, typeAcc, cd2c2, umlClassifier, cd2c,
-													superClassDec, classDec });
+											_result.add(new Object[] { umlClassifier, typeAcc, superClass, cd2c2,
+													classDec, superClassDec, cd2c });
 										}
 									}
 								}
@@ -1854,75 +1854,74 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_2_3_findcontext_greenBBBBBBBFFFFFFFF(
-			org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Type superClassDec, ClassDeclaration classDec) {
+			Classifier umlClassifier, TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Type superClassDec, ASTNode2Element cd2c) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge cd2c2__superClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c__umlClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c2__superClassDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAcc__superClassDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c2__superClassDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c__umlClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c2__superClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String cd2c2__superClass____target_name_prime = "target";
-		String cd2c__umlClassifier____target_name_prime = "target";
-		String cd2c2__superClassDec____source_name_prime = "source";
+		String classDec__typeAcc____superClass_name_prime = "superClass";
 		String typeAcc__superClassDec____type_name_prime = "type";
 		String superClassDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String classDec__typeAcc____superClass_name_prime = "superClass";
+		String cd2c2__superClassDec____source_name_prime = "source";
+		String cd2c__umlClassifier____target_name_prime = "target";
+		String cd2c2__superClass____target_name_prime = "target";
 		String cd2c__classDec____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(superClass);
-		isApplicableMatch.getAllContextElements().add(typeAcc);
-		isApplicableMatch.getAllContextElements().add(cd2c2);
 		isApplicableMatch.getAllContextElements().add(umlClassifier);
-		isApplicableMatch.getAllContextElements().add(cd2c);
-		isApplicableMatch.getAllContextElements().add(superClassDec);
+		isApplicableMatch.getAllContextElements().add(typeAcc);
+		isApplicableMatch.getAllContextElements().add(superClass);
+		isApplicableMatch.getAllContextElements().add(cd2c2);
 		isApplicableMatch.getAllContextElements().add(classDec);
-		cd2c2__superClass____target.setSrc(cd2c2);
-		cd2c2__superClass____target.setTrg(superClass);
-		isApplicableMatch.getAllContextElements().add(cd2c2__superClass____target);
-		cd2c__umlClassifier____target.setSrc(cd2c);
-		cd2c__umlClassifier____target.setTrg(umlClassifier);
-		isApplicableMatch.getAllContextElements().add(cd2c__umlClassifier____target);
-		cd2c2__superClassDec____source.setSrc(cd2c2);
-		cd2c2__superClassDec____source.setTrg(superClassDec);
-		isApplicableMatch.getAllContextElements().add(cd2c2__superClassDec____source);
+		isApplicableMatch.getAllContextElements().add(superClassDec);
+		isApplicableMatch.getAllContextElements().add(cd2c);
+		classDec__typeAcc____superClass.setSrc(classDec);
+		classDec__typeAcc____superClass.setTrg(typeAcc);
+		isApplicableMatch.getAllContextElements().add(classDec__typeAcc____superClass);
 		typeAcc__superClassDec____type.setSrc(typeAcc);
 		typeAcc__superClassDec____type.setTrg(superClassDec);
 		isApplicableMatch.getAllContextElements().add(typeAcc__superClassDec____type);
 		superClassDec__typeAcc____usagesInTypeAccess.setSrc(superClassDec);
 		superClassDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
 		isApplicableMatch.getAllContextElements().add(superClassDec__typeAcc____usagesInTypeAccess);
-		classDec__typeAcc____superClass.setSrc(classDec);
-		classDec__typeAcc____superClass.setTrg(typeAcc);
-		isApplicableMatch.getAllContextElements().add(classDec__typeAcc____superClass);
+		cd2c2__superClassDec____source.setSrc(cd2c2);
+		cd2c2__superClassDec____source.setTrg(superClassDec);
+		isApplicableMatch.getAllContextElements().add(cd2c2__superClassDec____source);
+		cd2c__umlClassifier____target.setSrc(cd2c);
+		cd2c__umlClassifier____target.setTrg(umlClassifier);
+		isApplicableMatch.getAllContextElements().add(cd2c__umlClassifier____target);
+		cd2c2__superClass____target.setSrc(cd2c2);
+		cd2c2__superClass____target.setTrg(superClass);
+		isApplicableMatch.getAllContextElements().add(cd2c2__superClass____target);
 		cd2c__classDec____source.setSrc(cd2c);
 		cd2c__classDec____source.setTrg(classDec);
 		isApplicableMatch.getAllContextElements().add(cd2c__classDec____source);
-		cd2c2__superClass____target.setName(cd2c2__superClass____target_name_prime);
-		cd2c__umlClassifier____target.setName(cd2c__umlClassifier____target_name_prime);
-		cd2c2__superClassDec____source.setName(cd2c2__superClassDec____source_name_prime);
+		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
 		typeAcc__superClassDec____type.setName(typeAcc__superClassDec____type_name_prime);
 		superClassDec__typeAcc____usagesInTypeAccess.setName(superClassDec__typeAcc____usagesInTypeAccess_name_prime);
-		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
+		cd2c2__superClassDec____source.setName(cd2c2__superClassDec____source_name_prime);
+		cd2c__umlClassifier____target.setName(cd2c__umlClassifier____target_name_prime);
+		cd2c2__superClass____target.setName(cd2c2__superClass____target_name_prime);
 		cd2c__classDec____source.setName(cd2c__classDec____source_name_prime);
-		return new Object[] { superClass, typeAcc, cd2c2, umlClassifier, cd2c, superClassDec, classDec,
-				isApplicableMatch, cd2c2__superClass____target, cd2c__umlClassifier____target,
-				cd2c2__superClassDec____source, typeAcc__superClassDec____type,
-				superClassDec__typeAcc____usagesInTypeAccess, classDec__typeAcc____superClass,
-				cd2c__classDec____source };
+		return new Object[] { umlClassifier, typeAcc, superClass, cd2c2, classDec, superClassDec, cd2c,
+				isApplicableMatch, classDec__typeAcc____superClass, typeAcc__superClassDec____type,
+				superClassDec__typeAcc____usagesInTypeAccess, cd2c2__superClassDec____source,
+				cd2c__umlClassifier____target, cd2c2__superClass____target, cd2c__classDec____source };
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_2_4_solveCSP_bindingFBBBBBBBBB(
-			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			TypeAccess typeAcc, ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c,
-			Type superClassDec, ClassDeclaration classDec) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, superClass, typeAcc, cd2c2,
-				umlClassifier, cd2c, superClassDec, classDec);
+			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec,
+			Type superClassDec, ASTNode2Element cd2c) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, umlClassifier, typeAcc, superClass,
+				cd2c2, classDec, superClassDec, cd2c);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, superClass, typeAcc, cd2c2, umlClassifier, cd2c,
-					superClassDec, classDec };
+			return new Object[] { csp, _this, isApplicableMatch, umlClassifier, typeAcc, superClass, cd2c2, classDec,
+					superClassDec, cd2c };
 		}
 		return null;
 	}
@@ -1932,11 +1931,11 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			TypeAccess typeAcc, ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c,
-			Type superClassDec, ClassDeclaration classDec) {
+			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec,
+			Type superClassDec, ASTNode2Element cd2c) {
 		Object[] result_pattern_TypeAccess2Generalization_2_4_solveCSP_binding = pattern_TypeAccess2Generalization_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, superClass, typeAcc, cd2c2, umlClassifier, cd2c, superClassDec, classDec);
+				_this, isApplicableMatch, umlClassifier, typeAcc, superClass, cd2c2, classDec, superClassDec, cd2c);
 		if (result_pattern_TypeAccess2Generalization_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2Generalization_2_4_solveCSP_binding[0];
 
@@ -1944,8 +1943,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp);
 			if (result_pattern_TypeAccess2Generalization_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, superClass, typeAcc, cd2c2, umlClassifier, cd2c,
-						superClassDec, classDec };
+				return new Object[] { csp, _this, isApplicableMatch, umlClassifier, typeAcc, superClass, cd2c2,
+						classDec, superClassDec, cd2c };
 			}
 		}
 		return null;
@@ -1980,21 +1979,21 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_1_initialbindings_blackBBBBB(
-			TypeAccess2Generalization _this, Match match, org.eclipse.uml2.uml.Class superClass,
-			Classifier umlClassifier, Generalization generalization) {
+			TypeAccess2Generalization _this, Match match, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
 		if (!superClass.equals(umlClassifier)) {
-			return new Object[] { _this, match, superClass, umlClassifier, generalization };
+			return new Object[] { _this, match, umlClassifier, superClass, generalization };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_2_SolveCSP_bindingFBBBBB(
-			TypeAccess2Generalization _this, Match match, org.eclipse.uml2.uml.Class superClass,
-			Classifier umlClassifier, Generalization generalization) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, superClass, umlClassifier, generalization);
+			TypeAccess2Generalization _this, Match match, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, umlClassifier, superClass, generalization);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, superClass, umlClassifier, generalization };
+			return new Object[] { csp, _this, match, umlClassifier, superClass, generalization };
 		}
 		return null;
 	}
@@ -2004,10 +2003,10 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			TypeAccess2Generalization _this, Match match, org.eclipse.uml2.uml.Class superClass,
-			Classifier umlClassifier, Generalization generalization) {
+			TypeAccess2Generalization _this, Match match, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
 		Object[] result_pattern_TypeAccess2Generalization_10_2_SolveCSP_binding = pattern_TypeAccess2Generalization_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, superClass, umlClassifier, generalization);
+				_this, match, umlClassifier, superClass, generalization);
 		if (result_pattern_TypeAccess2Generalization_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2Generalization_10_2_SolveCSP_binding[0];
 
@@ -2015,7 +2014,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp);
 			if (result_pattern_TypeAccess2Generalization_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, superClass, umlClassifier, generalization };
+				return new Object[] { csp, _this, match, umlClassifier, superClass, generalization };
 			}
 		}
 		return null;
@@ -2029,60 +2028,61 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier,
+			Match match, Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass,
 			Generalization generalization) {
 		if (!superClass.equals(umlClassifier)) {
-			return new Object[] { match, superClass, umlClassifier, generalization };
+			return new Object[] { match, umlClassifier, superClass, generalization };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier,
+			Match match, Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass,
 			Generalization generalization) {
-		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClassifier__generalization____generalization = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge generalization__umlClassifier____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(generalization);
-		String generalization__superClass____general_name_prime = "general";
 		String umlClassifier__generalization____generalization_name_prime = "generalization";
 		String generalization__umlClassifier____specific_name_prime = "specific";
-		generalization__superClass____general.setSrc(generalization);
-		generalization__superClass____general.setTrg(superClass);
-		match.getToBeTranslatedEdges().add(generalization__superClass____general);
+		String generalization__superClass____general_name_prime = "general";
 		umlClassifier__generalization____generalization.setSrc(umlClassifier);
 		umlClassifier__generalization____generalization.setTrg(generalization);
 		match.getToBeTranslatedEdges().add(umlClassifier__generalization____generalization);
 		generalization__umlClassifier____specific.setSrc(generalization);
 		generalization__umlClassifier____specific.setTrg(umlClassifier);
 		match.getToBeTranslatedEdges().add(generalization__umlClassifier____specific);
-		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
+		generalization__superClass____general.setSrc(generalization);
+		generalization__superClass____general.setTrg(superClass);
+		match.getToBeTranslatedEdges().add(generalization__superClass____general);
 		umlClassifier__generalization____generalization
 				.setName(umlClassifier__generalization____generalization_name_prime);
 		generalization__umlClassifier____specific.setName(generalization__umlClassifier____specific_name_prime);
-		return new Object[] { match, superClass, umlClassifier, generalization, generalization__superClass____general,
-				umlClassifier__generalization____generalization, generalization__umlClassifier____specific };
+		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
+		return new Object[] { match, umlClassifier, superClass, generalization,
+				umlClassifier__generalization____generalization, generalization__umlClassifier____specific,
+				generalization__superClass____general };
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_5_collectcontextelements_blackBBBB(Match match,
-			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier, Generalization generalization) {
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
 		if (!superClass.equals(umlClassifier)) {
-			return new Object[] { match, superClass, umlClassifier, generalization };
+			return new Object[] { match, umlClassifier, superClass, generalization };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_10_5_collectcontextelements_greenBBB(Match match,
-			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier) {
-		match.getContextNodes().add(superClass);
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass) {
 		match.getContextNodes().add(umlClassifier);
-		return new Object[] { match, superClass, umlClassifier };
+		match.getContextNodes().add(superClass);
+		return new Object[] { match, umlClassifier, superClass };
 	}
 
 	public static final void pattern_TypeAccess2Generalization_10_6_registerobjectstomatch_expressionBBBBB(
-			TypeAccess2Generalization _this, Match match, org.eclipse.uml2.uml.Class superClass,
-			Classifier umlClassifier, Generalization generalization) {
-		_this.registerObjectsToMatch_BWD(match, superClass, umlClassifier, generalization);
+			TypeAccess2Generalization _this, Match match, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
+		_this.registerObjectsToMatch_BWD(match, umlClassifier, superClass, generalization);
 
 	}
 
@@ -2098,36 +2098,36 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("superClass");
-		EObject _localVariable_1 = isApplicableMatch.getObject("cd2c2");
-		EObject _localVariable_2 = isApplicableMatch.getObject("umlClassifier");
-		EObject _localVariable_3 = isApplicableMatch.getObject("cd2c");
-		EObject _localVariable_4 = isApplicableMatch.getObject("generalization");
-		EObject _localVariable_5 = isApplicableMatch.getObject("superClassDec");
-		EObject _localVariable_6 = isApplicableMatch.getObject("classDec");
-		EObject tmpSuperClass = _localVariable_0;
-		EObject tmpCd2c2 = _localVariable_1;
-		EObject tmpUmlClassifier = _localVariable_2;
-		EObject tmpCd2c = _localVariable_3;
-		EObject tmpGeneralization = _localVariable_4;
-		EObject tmpSuperClassDec = _localVariable_5;
-		EObject tmpClassDec = _localVariable_6;
-		if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
-			if (tmpCd2c2 instanceof ASTNode2Element) {
-				ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
-				if (tmpUmlClassifier instanceof Classifier) {
-					Classifier umlClassifier = (Classifier) tmpUmlClassifier;
-					if (tmpCd2c instanceof ASTNode2Element) {
-						ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
-						if (tmpGeneralization instanceof Generalization) {
-							Generalization generalization = (Generalization) tmpGeneralization;
-							if (tmpSuperClassDec instanceof Type) {
-								Type superClassDec = (Type) tmpSuperClassDec;
-								if (tmpClassDec instanceof ClassDeclaration) {
-									ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
-									return new Object[] { superClass, cd2c2, umlClassifier, cd2c, generalization,
-											superClassDec, classDec, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("umlClassifier");
+		EObject _localVariable_1 = isApplicableMatch.getObject("superClass");
+		EObject _localVariable_2 = isApplicableMatch.getObject("cd2c2");
+		EObject _localVariable_3 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_4 = isApplicableMatch.getObject("superClassDec");
+		EObject _localVariable_5 = isApplicableMatch.getObject("generalization");
+		EObject _localVariable_6 = isApplicableMatch.getObject("cd2c");
+		EObject tmpUmlClassifier = _localVariable_0;
+		EObject tmpSuperClass = _localVariable_1;
+		EObject tmpCd2c2 = _localVariable_2;
+		EObject tmpClassDec = _localVariable_3;
+		EObject tmpSuperClassDec = _localVariable_4;
+		EObject tmpGeneralization = _localVariable_5;
+		EObject tmpCd2c = _localVariable_6;
+		if (tmpUmlClassifier instanceof Classifier) {
+			Classifier umlClassifier = (Classifier) tmpUmlClassifier;
+			if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
+				org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
+				if (tmpCd2c2 instanceof ASTNode2Element) {
+					ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
+					if (tmpClassDec instanceof ClassDeclaration) {
+						ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+						if (tmpSuperClassDec instanceof Type) {
+							Type superClassDec = (Type) tmpSuperClassDec;
+							if (tmpGeneralization instanceof Generalization) {
+								Generalization generalization = (Generalization) tmpGeneralization;
+								if (tmpCd2c instanceof ASTNode2Element) {
+									ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+									return new Object[] { umlClassifier, superClass, cd2c2, classDec, superClassDec,
+											generalization, cd2c, isApplicableMatch };
 								}
 							}
 						}
@@ -2139,17 +2139,17 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_11_1_performtransformation_blackBBBBBBBFBB(
-			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Generalization generalization, Type superClassDec, ClassDeclaration classDec,
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Type superClassDec, Generalization generalization, ASTNode2Element cd2c,
 			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch) {
 		if (!superClass.equals(umlClassifier)) {
-			if (!cd2c.equals(cd2c2)) {
-				if (!classDec.equals(superClassDec)) {
+			if (!classDec.equals(superClassDec)) {
+				if (!cd2c.equals(cd2c2)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { superClass, cd2c2, umlClassifier, cd2c, generalization, superClassDec,
-									classDec, csp, _this, isApplicableMatch };
+							return new Object[] { umlClassifier, superClass, cd2c2, classDec, superClassDec,
+									generalization, cd2c, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -2163,37 +2163,37 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		Object[] result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding = pattern_TypeAccess2Generalization_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding != null) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[0];
-			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[1];
-			Classifier umlClassifier = (Classifier) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[2];
-			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[3];
-			Generalization generalization = (Generalization) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[4];
-			Type superClassDec = (Type) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[5];
-			ClassDeclaration classDec = (ClassDeclaration) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[6];
+			Classifier umlClassifier = (Classifier) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[0];
+			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[1];
+			ASTNode2Element cd2c2 = (ASTNode2Element) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[2];
+			ClassDeclaration classDec = (ClassDeclaration) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[3];
+			Type superClassDec = (Type) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[4];
+			Generalization generalization = (Generalization) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[5];
+			ASTNode2Element cd2c = (ASTNode2Element) result_pattern_TypeAccess2Generalization_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_TypeAccess2Generalization_11_1_performtransformation_black = pattern_TypeAccess2Generalization_11_1_performtransformation_blackBBBBBBBFBB(
-					superClass, cd2c2, umlClassifier, cd2c, generalization, superClassDec, classDec, _this,
+					umlClassifier, superClass, cd2c2, classDec, superClassDec, generalization, cd2c, _this,
 					isApplicableMatch);
 			if (result_pattern_TypeAccess2Generalization_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeAccess2Generalization_11_1_performtransformation_black[7];
 
-				return new Object[] { superClass, cd2c2, umlClassifier, cd2c, generalization, superClassDec, classDec,
+				return new Object[] { umlClassifier, superClass, cd2c2, classDec, superClassDec, generalization, cd2c,
 						csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2Generalization_11_1_performtransformation_greenFFBBB(
-			Generalization generalization, Type superClassDec, ClassDeclaration classDec) {
+	public static final Object[] pattern_TypeAccess2Generalization_11_1_performtransformation_greenFBFBB(
+			ClassDeclaration classDec, Type superClassDec, Generalization generalization) {
 		TypeAccess typeAcc = JavaFactory.eINSTANCE.createTypeAccess();
 		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE
 				.createTypeAccess2Generalization();
-		typeAcc.setType(superClassDec);
 		classDec.setSuperClass(typeAcc);
-		ta2g.setSource(typeAcc);
+		typeAcc.setType(superClassDec);
 		ta2g.setTarget(generalization);
-		return new Object[] { typeAcc, ta2g, generalization, superClassDec, classDec };
+		ta2g.setSource(typeAcc);
+		return new Object[] { typeAcc, classDec, ta2g, superClassDec, generalization };
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_11_2_collecttranslatedelements_blackBBB(
@@ -2213,70 +2213,71 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject superClass, EObject typeAcc, EObject cd2c2, EObject umlClassifier,
-			EObject cd2c, EObject ta2g, EObject generalization, EObject superClassDec, EObject classDec) {
-		if (!superClass.equals(typeAcc)) {
+			PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc, EObject superClass, EObject cd2c2,
+			EObject classDec, EObject ta2g, EObject superClassDec, EObject generalization, EObject cd2c) {
+		if (!typeAcc.equals(umlClassifier)) {
 			if (!superClass.equals(umlClassifier)) {
-				if (!superClass.equals(ta2g)) {
-					if (!superClass.equals(superClassDec)) {
-						if (!typeAcc.equals(umlClassifier)) {
-							if (!cd2c2.equals(superClass)) {
+				if (!superClass.equals(typeAcc)) {
+					if (!superClass.equals(ta2g)) {
+						if (!superClass.equals(superClassDec)) {
+							if (!cd2c2.equals(umlClassifier)) {
 								if (!cd2c2.equals(typeAcc)) {
-									if (!cd2c2.equals(umlClassifier)) {
-										if (!cd2c2.equals(ta2g)) {
-											if (!cd2c2.equals(generalization)) {
+									if (!cd2c2.equals(superClass)) {
+										if (!cd2c2.equals(classDec)) {
+											if (!cd2c2.equals(ta2g)) {
 												if (!cd2c2.equals(superClassDec)) {
-													if (!cd2c2.equals(classDec)) {
-														if (!cd2c.equals(superClass)) {
-															if (!cd2c.equals(typeAcc)) {
-																if (!cd2c.equals(cd2c2)) {
-																	if (!cd2c.equals(umlClassifier)) {
-																		if (!cd2c.equals(ta2g)) {
-																			if (!cd2c.equals(generalization)) {
-																				if (!cd2c.equals(superClassDec)) {
-																					if (!cd2c.equals(classDec)) {
-																						if (!ta2g.equals(typeAcc)) {
-																							if (!ta2g.equals(
-																									umlClassifier)) {
-																								if (!generalization
-																										.equals(superClass)) {
+													if (!cd2c2.equals(generalization)) {
+														if (!classDec.equals(umlClassifier)) {
+															if (!classDec.equals(typeAcc)) {
+																if (!classDec.equals(superClass)) {
+																	if (!classDec.equals(ta2g)) {
+																		if (!classDec.equals(superClassDec)) {
+																			if (!classDec.equals(generalization)) {
+																				if (!ta2g.equals(umlClassifier)) {
+																					if (!ta2g.equals(typeAcc)) {
+																						if (!superClassDec.equals(
+																								umlClassifier)) {
+																							if (!superClassDec
+																									.equals(typeAcc)) {
+																								if (!superClassDec
+																										.equals(ta2g)) {
 																									if (!generalization
-																											.equals(typeAcc)) {
+																											.equals(umlClassifier)) {
 																										if (!generalization
-																												.equals(umlClassifier)) {
+																												.equals(typeAcc)) {
 																											if (!generalization
-																													.equals(ta2g)) {
+																													.equals(superClass)) {
 																												if (!generalization
-																														.equals(superClassDec)) {
-																													if (!superClassDec
-																															.equals(typeAcc)) {
-																														if (!superClassDec
+																														.equals(ta2g)) {
+																													if (!generalization
+																															.equals(superClassDec)) {
+																														if (!cd2c
 																																.equals(umlClassifier)) {
-																															if (!superClassDec
-																																	.equals(ta2g)) {
-																																if (!classDec
+																															if (!cd2c
+																																	.equals(typeAcc)) {
+																																if (!cd2c
 																																		.equals(superClass)) {
-																																	if (!classDec
-																																			.equals(typeAcc)) {
-																																		if (!classDec
-																																				.equals(umlClassifier)) {
-																																			if (!classDec
+																																	if (!cd2c
+																																			.equals(cd2c2)) {
+																																		if (!cd2c
+																																				.equals(classDec)) {
+																																			if (!cd2c
 																																					.equals(ta2g)) {
-																																				if (!classDec
-																																						.equals(generalization)) {
-																																					if (!classDec
-																																							.equals(superClassDec)) {
+																																				if (!cd2c
+																																						.equals(superClassDec)) {
+																																					if (!cd2c
+																																							.equals(generalization)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								superClass,
-																																								typeAcc,
-																																								cd2c2,
 																																								umlClassifier,
-																																								cd2c,
+																																								typeAcc,
+																																								superClass,
+																																								cd2c2,
+																																								classDec,
 																																								ta2g,
-																																								generalization,
 																																								superClassDec,
-																																								classDec };
+																																								generalization,
+																																								cd2c };
 																																					}
 																																				}
 																																			}
@@ -2317,72 +2318,72 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject superClass, EObject typeAcc, EObject umlClassifier, EObject ta2g,
-			EObject generalization, EObject superClassDec, EObject classDec) {
-		EMoflonEdge ta2g__typeAcc____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ta2g__generalization____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc, EObject superClass, EObject classDec,
+			EObject ta2g, EObject superClassDec, EObject generalization) {
+		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAcc__superClassDec____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge superClassDec__typeAcc____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ta2g__generalization____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClassifier__generalization____generalization = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge generalization__umlClassifier____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge classDec__typeAcc____superClass = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ta2g__typeAcc____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeAccess2Generalization";
-		String ta2g__typeAcc____source_name_prime = "source";
-		String ta2g__generalization____target_name_prime = "target";
-		String generalization__superClass____general_name_prime = "general";
+		String classDec__typeAcc____superClass_name_prime = "superClass";
 		String typeAcc__superClassDec____type_name_prime = "type";
 		String superClassDec__typeAcc____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String ta2g__generalization____target_name_prime = "target";
 		String umlClassifier__generalization____generalization_name_prime = "generalization";
 		String generalization__umlClassifier____specific_name_prime = "specific";
-		String classDec__typeAcc____superClass_name_prime = "superClass";
-		ta2g__typeAcc____source.setSrc(ta2g);
-		ta2g__typeAcc____source.setTrg(typeAcc);
-		ruleresult.getCreatedEdges().add(ta2g__typeAcc____source);
-		ta2g__generalization____target.setSrc(ta2g);
-		ta2g__generalization____target.setTrg(generalization);
-		ruleresult.getCreatedEdges().add(ta2g__generalization____target);
-		generalization__superClass____general.setSrc(generalization);
-		generalization__superClass____general.setTrg(superClass);
-		ruleresult.getTranslatedEdges().add(generalization__superClass____general);
+		String ta2g__typeAcc____source_name_prime = "source";
+		String generalization__superClass____general_name_prime = "general";
+		classDec__typeAcc____superClass.setSrc(classDec);
+		classDec__typeAcc____superClass.setTrg(typeAcc);
+		ruleresult.getCreatedEdges().add(classDec__typeAcc____superClass);
 		typeAcc__superClassDec____type.setSrc(typeAcc);
 		typeAcc__superClassDec____type.setTrg(superClassDec);
 		ruleresult.getCreatedEdges().add(typeAcc__superClassDec____type);
 		superClassDec__typeAcc____usagesInTypeAccess.setSrc(superClassDec);
 		superClassDec__typeAcc____usagesInTypeAccess.setTrg(typeAcc);
 		ruleresult.getCreatedEdges().add(superClassDec__typeAcc____usagesInTypeAccess);
+		ta2g__generalization____target.setSrc(ta2g);
+		ta2g__generalization____target.setTrg(generalization);
+		ruleresult.getCreatedEdges().add(ta2g__generalization____target);
 		umlClassifier__generalization____generalization.setSrc(umlClassifier);
 		umlClassifier__generalization____generalization.setTrg(generalization);
 		ruleresult.getTranslatedEdges().add(umlClassifier__generalization____generalization);
 		generalization__umlClassifier____specific.setSrc(generalization);
 		generalization__umlClassifier____specific.setTrg(umlClassifier);
 		ruleresult.getTranslatedEdges().add(generalization__umlClassifier____specific);
-		classDec__typeAcc____superClass.setSrc(classDec);
-		classDec__typeAcc____superClass.setTrg(typeAcc);
-		ruleresult.getCreatedEdges().add(classDec__typeAcc____superClass);
+		ta2g__typeAcc____source.setSrc(ta2g);
+		ta2g__typeAcc____source.setTrg(typeAcc);
+		ruleresult.getCreatedEdges().add(ta2g__typeAcc____source);
+		generalization__superClass____general.setSrc(generalization);
+		generalization__superClass____general.setTrg(superClass);
+		ruleresult.getTranslatedEdges().add(generalization__superClass____general);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		ta2g__typeAcc____source.setName(ta2g__typeAcc____source_name_prime);
-		ta2g__generalization____target.setName(ta2g__generalization____target_name_prime);
-		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
+		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
 		typeAcc__superClassDec____type.setName(typeAcc__superClassDec____type_name_prime);
 		superClassDec__typeAcc____usagesInTypeAccess.setName(superClassDec__typeAcc____usagesInTypeAccess_name_prime);
+		ta2g__generalization____target.setName(ta2g__generalization____target_name_prime);
 		umlClassifier__generalization____generalization
 				.setName(umlClassifier__generalization____generalization_name_prime);
 		generalization__umlClassifier____specific.setName(generalization__umlClassifier____specific_name_prime);
-		classDec__typeAcc____superClass.setName(classDec__typeAcc____superClass_name_prime);
-		return new Object[] { ruleresult, superClass, typeAcc, umlClassifier, ta2g, generalization, superClassDec,
-				classDec, ta2g__typeAcc____source, ta2g__generalization____target,
-				generalization__superClass____general, typeAcc__superClassDec____type,
-				superClassDec__typeAcc____usagesInTypeAccess, umlClassifier__generalization____generalization,
-				generalization__umlClassifier____specific, classDec__typeAcc____superClass };
+		ta2g__typeAcc____source.setName(ta2g__typeAcc____source_name_prime);
+		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
+		return new Object[] { ruleresult, umlClassifier, typeAcc, superClass, classDec, ta2g, superClassDec,
+				generalization, classDec__typeAcc____superClass, typeAcc__superClassDec____type,
+				superClassDec__typeAcc____usagesInTypeAccess, ta2g__generalization____target,
+				umlClassifier__generalization____generalization, generalization__umlClassifier____specific,
+				ta2g__typeAcc____source, generalization__superClass____general };
 	}
 
 	public static final void pattern_TypeAccess2Generalization_11_5_registerobjects_expressionBBBBBBBBBBB(
-			TypeAccess2Generalization _this, PerformRuleResult ruleresult, EObject superClass, EObject typeAcc,
-			EObject cd2c2, EObject umlClassifier, EObject cd2c, EObject ta2g, EObject generalization,
-			EObject superClassDec, EObject classDec) {
-		_this.registerObjects_BWD(ruleresult, superClass, typeAcc, cd2c2, umlClassifier, cd2c, ta2g, generalization,
-				superClassDec, classDec);
+			TypeAccess2Generalization _this, PerformRuleResult ruleresult, EObject umlClassifier, EObject typeAcc,
+			EObject superClass, EObject cd2c2, EObject classDec, EObject ta2g, EObject superClassDec,
+			EObject generalization, EObject cd2c) {
+		_this.registerObjects_BWD(ruleresult, umlClassifier, typeAcc, superClass, cd2c2, classDec, ta2g, superClassDec,
+				generalization, cd2c);
 
 	}
 
@@ -2444,44 +2445,44 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("superClass");
-		EObject _localVariable_1 = match.getObject("umlClassifier");
+		EObject _localVariable_0 = match.getObject("umlClassifier");
+		EObject _localVariable_1 = match.getObject("superClass");
 		EObject _localVariable_2 = match.getObject("generalization");
-		EObject tmpSuperClass = _localVariable_0;
-		EObject tmpUmlClassifier = _localVariable_1;
+		EObject tmpUmlClassifier = _localVariable_0;
+		EObject tmpSuperClass = _localVariable_1;
 		EObject tmpGeneralization = _localVariable_2;
-		if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
-			if (tmpUmlClassifier instanceof Classifier) {
-				Classifier umlClassifier = (Classifier) tmpUmlClassifier;
+		if (tmpUmlClassifier instanceof Classifier) {
+			Classifier umlClassifier = (Classifier) tmpUmlClassifier;
+			if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
+				org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
 				if (tmpGeneralization instanceof Generalization) {
 					Generalization generalization = (Generalization) tmpGeneralization;
-					return new Object[] { superClass, umlClassifier, generalization, match };
+					return new Object[] { umlClassifier, superClass, generalization, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_12_2_corematch_blackBFBFBFFB(
-			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier, Generalization generalization,
+	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_12_2_corematch_blackBBFFFBFB(
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, Generalization generalization,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!superClass.equals(umlClassifier)) {
-			for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(superClass,
-					ASTNode2Element.class, "target")) {
-				ASTNode tmpSuperClassDec = cd2c2.getSource();
-				if (tmpSuperClassDec instanceof Type) {
-					Type superClassDec = (Type) tmpSuperClassDec;
-					for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(umlClassifier, ASTNode2Element.class, "target")) {
+			for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(umlClassifier, ASTNode2Element.class, "target")) {
+				ASTNode tmpClassDec = cd2c.getSource();
+				if (tmpClassDec instanceof ClassDeclaration) {
+					ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+					for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(superClass, ASTNode2Element.class, "target")) {
 						if (!cd2c.equals(cd2c2)) {
-							ASTNode tmpClassDec = cd2c.getSource();
-							if (tmpClassDec instanceof ClassDeclaration) {
-								ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+							ASTNode tmpSuperClassDec = cd2c2.getSource();
+							if (tmpSuperClassDec instanceof Type) {
+								Type superClassDec = (Type) tmpSuperClassDec;
 								if (!classDec.equals(superClassDec)) {
-									_result.add(new Object[] { superClass, cd2c2, umlClassifier, cd2c, generalization,
-											superClassDec, classDec, match });
+									_result.add(new Object[] { umlClassifier, superClass, cd2c2, classDec,
+											superClassDec, generalization, cd2c, match });
 								}
 							}
 
@@ -2495,20 +2496,20 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_12_3_findcontext_blackBBBBBBB(
-			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Generalization generalization, Type superClassDec, ClassDeclaration classDec) {
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Type superClassDec, Generalization generalization, ASTNode2Element cd2c) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!superClass.equals(umlClassifier)) {
-			if (!cd2c.equals(cd2c2)) {
-				if (!classDec.equals(superClassDec)) {
-					if (superClass.equals(cd2c2.getTarget())) {
-						if (umlClassifier.equals(cd2c.getTarget())) {
-							if (superClass.equals(generalization.getGeneral())) {
-								if (superClassDec.equals(cd2c2.getSource())) {
-									if (umlClassifier.getGeneralizations().contains(generalization)) {
+			if (!classDec.equals(superClassDec)) {
+				if (!cd2c.equals(cd2c2)) {
+					if (superClassDec.equals(cd2c2.getSource())) {
+						if (umlClassifier.getGeneralizations().contains(generalization)) {
+							if (umlClassifier.equals(cd2c.getTarget())) {
+								if (superClass.equals(cd2c2.getTarget())) {
+									if (superClass.equals(generalization.getGeneral())) {
 										if (classDec.equals(cd2c.getSource())) {
-											_result.add(new Object[] { superClass, cd2c2, umlClassifier, cd2c,
-													generalization, superClassDec, classDec });
+											_result.add(new Object[] { umlClassifier, superClass, cd2c2, classDec,
+													superClassDec, generalization, cd2c });
 										}
 									}
 								}
@@ -2522,39 +2523,30 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_12_3_findcontext_greenBBBBBBBFFFFFFFF(
-			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Generalization generalization, Type superClassDec, ClassDeclaration classDec) {
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2,
+			ClassDeclaration classDec, Type superClassDec, Generalization generalization, ASTNode2Element cd2c) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge cd2c2__superClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2c__umlClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2c2__superClassDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClassifier__generalization____generalization = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge generalization__umlClassifier____specific = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c__umlClassifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2c2__superClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge generalization__superClass____general = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String cd2c2__superClass____target_name_prime = "target";
-		String cd2c__umlClassifier____target_name_prime = "target";
-		String generalization__superClass____general_name_prime = "general";
 		String cd2c2__superClassDec____source_name_prime = "source";
 		String umlClassifier__generalization____generalization_name_prime = "generalization";
 		String generalization__umlClassifier____specific_name_prime = "specific";
+		String cd2c__umlClassifier____target_name_prime = "target";
+		String cd2c2__superClass____target_name_prime = "target";
+		String generalization__superClass____general_name_prime = "general";
 		String cd2c__classDec____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(umlClassifier);
 		isApplicableMatch.getAllContextElements().add(superClass);
 		isApplicableMatch.getAllContextElements().add(cd2c2);
-		isApplicableMatch.getAllContextElements().add(umlClassifier);
-		isApplicableMatch.getAllContextElements().add(cd2c);
-		isApplicableMatch.getAllContextElements().add(generalization);
-		isApplicableMatch.getAllContextElements().add(superClassDec);
 		isApplicableMatch.getAllContextElements().add(classDec);
-		cd2c2__superClass____target.setSrc(cd2c2);
-		cd2c2__superClass____target.setTrg(superClass);
-		isApplicableMatch.getAllContextElements().add(cd2c2__superClass____target);
-		cd2c__umlClassifier____target.setSrc(cd2c);
-		cd2c__umlClassifier____target.setTrg(umlClassifier);
-		isApplicableMatch.getAllContextElements().add(cd2c__umlClassifier____target);
-		generalization__superClass____general.setSrc(generalization);
-		generalization__superClass____general.setTrg(superClass);
-		isApplicableMatch.getAllContextElements().add(generalization__superClass____general);
+		isApplicableMatch.getAllContextElements().add(superClassDec);
+		isApplicableMatch.getAllContextElements().add(generalization);
+		isApplicableMatch.getAllContextElements().add(cd2c);
 		cd2c2__superClassDec____source.setSrc(cd2c2);
 		cd2c2__superClassDec____source.setTrg(superClassDec);
 		isApplicableMatch.getAllContextElements().add(cd2c2__superClassDec____source);
@@ -2564,34 +2556,42 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		generalization__umlClassifier____specific.setSrc(generalization);
 		generalization__umlClassifier____specific.setTrg(umlClassifier);
 		isApplicableMatch.getAllContextElements().add(generalization__umlClassifier____specific);
+		cd2c__umlClassifier____target.setSrc(cd2c);
+		cd2c__umlClassifier____target.setTrg(umlClassifier);
+		isApplicableMatch.getAllContextElements().add(cd2c__umlClassifier____target);
+		cd2c2__superClass____target.setSrc(cd2c2);
+		cd2c2__superClass____target.setTrg(superClass);
+		isApplicableMatch.getAllContextElements().add(cd2c2__superClass____target);
+		generalization__superClass____general.setSrc(generalization);
+		generalization__superClass____general.setTrg(superClass);
+		isApplicableMatch.getAllContextElements().add(generalization__superClass____general);
 		cd2c__classDec____source.setSrc(cd2c);
 		cd2c__classDec____source.setTrg(classDec);
 		isApplicableMatch.getAllContextElements().add(cd2c__classDec____source);
-		cd2c2__superClass____target.setName(cd2c2__superClass____target_name_prime);
-		cd2c__umlClassifier____target.setName(cd2c__umlClassifier____target_name_prime);
-		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
 		cd2c2__superClassDec____source.setName(cd2c2__superClassDec____source_name_prime);
 		umlClassifier__generalization____generalization
 				.setName(umlClassifier__generalization____generalization_name_prime);
 		generalization__umlClassifier____specific.setName(generalization__umlClassifier____specific_name_prime);
+		cd2c__umlClassifier____target.setName(cd2c__umlClassifier____target_name_prime);
+		cd2c2__superClass____target.setName(cd2c2__superClass____target_name_prime);
+		generalization__superClass____general.setName(generalization__superClass____general_name_prime);
 		cd2c__classDec____source.setName(cd2c__classDec____source_name_prime);
-		return new Object[] { superClass, cd2c2, umlClassifier, cd2c, generalization, superClassDec, classDec,
-				isApplicableMatch, cd2c2__superClass____target, cd2c__umlClassifier____target,
-				generalization__superClass____general, cd2c2__superClassDec____source,
-				umlClassifier__generalization____generalization, generalization__umlClassifier____specific,
-				cd2c__classDec____source };
+		return new Object[] { umlClassifier, superClass, cd2c2, classDec, superClassDec, generalization, cd2c,
+				isApplicableMatch, cd2c2__superClassDec____source, umlClassifier__generalization____generalization,
+				generalization__umlClassifier____specific, cd2c__umlClassifier____target, cd2c2__superClass____target,
+				generalization__superClass____general, cd2c__classDec____source };
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_12_4_solveCSP_bindingFBBBBBBBBB(
-			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c, Generalization generalization,
-			Type superClassDec, ClassDeclaration classDec) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, superClass, cd2c2, umlClassifier,
-				cd2c, generalization, superClassDec, classDec);
+			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			Generalization generalization, ASTNode2Element cd2c) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, umlClassifier, superClass, cd2c2,
+				classDec, superClassDec, generalization, cd2c);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c, generalization,
-					superClassDec, classDec };
+			return new Object[] { csp, _this, isApplicableMatch, umlClassifier, superClass, cd2c2, classDec,
+					superClassDec, generalization, cd2c };
 		}
 		return null;
 	}
@@ -2601,12 +2601,12 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c, Generalization generalization,
-			Type superClassDec, ClassDeclaration classDec) {
+			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			Generalization generalization, ASTNode2Element cd2c) {
 		Object[] result_pattern_TypeAccess2Generalization_12_4_solveCSP_binding = pattern_TypeAccess2Generalization_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c, generalization, superClassDec,
-				classDec);
+				_this, isApplicableMatch, umlClassifier, superClass, cd2c2, classDec, superClassDec, generalization,
+				cd2c);
 		if (result_pattern_TypeAccess2Generalization_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2Generalization_12_4_solveCSP_binding[0];
 
@@ -2614,8 +2614,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp);
 			if (result_pattern_TypeAccess2Generalization_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c,
-						generalization, superClassDec, classDec };
+				return new Object[] { csp, _this, isApplicableMatch, umlClassifier, superClass, cd2c2, classDec,
+						superClassDec, generalization, cd2c };
 			}
 		}
 		return null;
@@ -2704,19 +2704,21 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_general) {
+			EMoflonEdge _edge_generalization) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpGeneralization = _edge_general.getSrc();
-		if (tmpGeneralization instanceof Generalization) {
-			Generalization generalization = (Generalization) tmpGeneralization;
-			EObject tmpSuperClass = _edge_general.getTrg();
-			if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
-				if (superClass.equals(generalization.getGeneral())) {
-					Classifier umlClassifier = generalization.getSpecific();
-					if (umlClassifier != null) {
+		EObject tmpUmlClassifier = _edge_generalization.getSrc();
+		if (tmpUmlClassifier instanceof Classifier) {
+			Classifier umlClassifier = (Classifier) tmpUmlClassifier;
+			EObject tmpGeneralization = _edge_generalization.getTrg();
+			if (tmpGeneralization instanceof Generalization) {
+				Generalization generalization = (Generalization) tmpGeneralization;
+				if (umlClassifier.getGeneralizations().contains(generalization)) {
+					Classifier tmpSuperClass = generalization.getGeneral();
+					if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
+						org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
 						if (!superClass.equals(umlClassifier)) {
-							_result.add(new Object[] { superClass, umlClassifier, generalization, _edge_general });
+							_result.add(
+									new Object[] { umlClassifier, superClass, generalization, _edge_generalization });
 						}
 					}
 
@@ -2738,9 +2740,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final boolean pattern_TypeAccess2Generalization_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			TypeAccess2Generalization _this, Match match, org.eclipse.uml2.uml.Class superClass,
-			Classifier umlClassifier, Generalization generalization) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, superClass, umlClassifier, generalization);
+			TypeAccess2Generalization _this, Match match, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, umlClassifier, superClass, generalization);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2829,13 +2831,13 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_0BBB(
-			TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {
+			TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {
 		if (!classDec.equals(superClassDec)) {
-			for (AbstractTypeDeclaration __DEC_typeAcc_superInterfaces_791931 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_typeAcc_superInterfaces_238731 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeAcc, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!superClassDec.equals(__DEC_typeAcc_superInterfaces_791931)) {
-					if (!classDec.equals(__DEC_typeAcc_superInterfaces_791931)) {
-						return new Object[] { typeAcc, superClassDec, classDec };
+				if (!classDec.equals(__DEC_typeAcc_superInterfaces_238731)) {
+					if (!superClassDec.equals(__DEC_typeAcc_superInterfaces_238731)) {
+						return new Object[] { typeAcc, classDec, superClassDec };
 					}
 				}
 			}
@@ -2845,7 +2847,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeAcc) {
-		for (Annotation __DEC_typeAcc_type_763532 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAcc_type_705182 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, Annotation.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2854,9 +2856,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess typeAcc, Type superClassDec) {
-		for (ArrayType __DEC_typeAcc_elementType_555000 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAcc_elementType_665304 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ArrayType.class, "elementType")) {
-			if (!superClassDec.equals(__DEC_typeAcc_elementType_555000)) {
+			if (!superClassDec.equals(__DEC_typeAcc_elementType_665304)) {
 				return new Object[] { typeAcc, superClassDec };
 			}
 		}
@@ -2865,7 +2867,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess typeAcc) {
-		for (MethodDeclaration __DEC_typeAcc_returnType_595618 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAcc_returnType_154392 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAcc };
 		}
@@ -2874,9 +2876,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess typeAcc, Type superClassDec) {
-		for (ParameterizedType __DEC_typeAcc_type_860864 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAcc_type_629882 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ParameterizedType.class, "type")) {
-			if (!superClassDec.equals(__DEC_typeAcc_type_860864)) {
+			if (!superClassDec.equals(__DEC_typeAcc_type_629882)) {
 				return new Object[] { typeAcc, superClassDec };
 			}
 		}
@@ -2885,7 +2887,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeAcc) {
-		for (SingleVariableDeclaration __DEC_typeAcc_type_272005 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAcc_type_71578 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -2894,7 +2896,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeAcc) {
-		for (AnnotationMemberValuePair __DEC_typeAcc_value_456641 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAcc_value_815822 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAcc };
 		}
@@ -2910,35 +2912,36 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_type) {
+			EMoflonEdge _edge_superClass) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTypeAcc = _edge_type.getSrc();
-		if (tmpTypeAcc instanceof TypeAccess) {
-			TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-			EObject tmpSuperClassDec = _edge_type.getTrg();
-			if (tmpSuperClassDec instanceof Type) {
-				Type superClassDec = (Type) tmpSuperClassDec;
-				if (superClassDec.equals(typeAcc.getType())) {
-					if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_1B(typeAcc) == null) {
-						if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_3B(typeAcc) == null) {
-							if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_5B(
+		EObject tmpClassDec = _edge_superClass.getSrc();
+		if (tmpClassDec instanceof ClassDeclaration) {
+			ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+			EObject tmpTypeAcc = _edge_superClass.getTrg();
+			if (tmpTypeAcc instanceof TypeAccess) {
+				TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
+				if (typeAcc.equals(classDec.getSuperClass())) {
+					Type superClassDec = typeAcc.getType();
+					if (superClassDec != null) {
+						if (!classDec.equals(superClassDec)) {
+							if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_1B(
 									typeAcc) == null) {
-								if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_6B(
+								if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_3B(
 										typeAcc) == null) {
-									if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_2BB(
-											typeAcc, superClassDec) == null) {
-										if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_4BB(
-												typeAcc, superClassDec) == null) {
-											for (ClassDeclaration classDec : org.moflon.core.utilities.eMoflonEMFUtil
-													.getOppositeReferenceTyped(typeAcc, ClassDeclaration.class,
-															"superClass")) {
-												if (!classDec.equals(superClassDec)) {
-													if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_0BBB(
-															typeAcc, superClassDec, classDec) == null) {
-														if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_7BB(
-																classDec, typeAcc) == null) {
-															_result.add(new Object[] { typeAcc, superClassDec, classDec,
-																	_edge_type });
+									if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_5B(
+											typeAcc) == null) {
+										if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_6B(
+												typeAcc) == null) {
+											if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_7BB(
+													classDec, typeAcc) == null) {
+												if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_0BBB(
+														typeAcc, classDec, superClassDec) == null) {
+													if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_2BB(
+															typeAcc, superClassDec) == null) {
+														if (pattern_TypeAccess2Generalization_21_2_testcorematchandDECs_black_nac_4BB(
+																typeAcc, superClassDec) == null) {
+															_result.add(new Object[] { typeAcc, classDec, superClassDec,
+																	_edge_superClass });
 														}
 													}
 												}
@@ -2949,6 +2952,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 							}
 						}
 					}
+
 				}
 			}
 
@@ -2967,9 +2971,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final boolean pattern_TypeAccess2Generalization_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, Type superClassDec,
-			ClassDeclaration classDec) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, typeAcc, superClassDec, classDec);
+			TypeAccess2Generalization _this, Match match, TypeAccess typeAcc, ClassDeclaration classDec,
+			Type superClassDec) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, typeAcc, classDec, superClassDec);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3015,32 +3019,32 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("superClass");
+		EObject _localVariable_0 = targetMatch.getObject("umlClassifier");
 		EObject _localVariable_1 = sourceMatch.getObject("typeAcc");
-		EObject _localVariable_2 = targetMatch.getObject("umlClassifier");
-		EObject _localVariable_3 = targetMatch.getObject("generalization");
+		EObject _localVariable_2 = targetMatch.getObject("superClass");
+		EObject _localVariable_3 = sourceMatch.getObject("classDec");
 		EObject _localVariable_4 = sourceMatch.getObject("superClassDec");
-		EObject _localVariable_5 = sourceMatch.getObject("classDec");
-		EObject tmpSuperClass = _localVariable_0;
+		EObject _localVariable_5 = targetMatch.getObject("generalization");
+		EObject tmpUmlClassifier = _localVariable_0;
 		EObject tmpTypeAcc = _localVariable_1;
-		EObject tmpUmlClassifier = _localVariable_2;
-		EObject tmpGeneralization = _localVariable_3;
+		EObject tmpSuperClass = _localVariable_2;
+		EObject tmpClassDec = _localVariable_3;
 		EObject tmpSuperClassDec = _localVariable_4;
-		EObject tmpClassDec = _localVariable_5;
-		if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
+		EObject tmpGeneralization = _localVariable_5;
+		if (tmpUmlClassifier instanceof Classifier) {
+			Classifier umlClassifier = (Classifier) tmpUmlClassifier;
 			if (tmpTypeAcc instanceof TypeAccess) {
 				TypeAccess typeAcc = (TypeAccess) tmpTypeAcc;
-				if (tmpUmlClassifier instanceof Classifier) {
-					Classifier umlClassifier = (Classifier) tmpUmlClassifier;
-					if (tmpGeneralization instanceof Generalization) {
-						Generalization generalization = (Generalization) tmpGeneralization;
+				if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
+					org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
+					if (tmpClassDec instanceof ClassDeclaration) {
+						ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
 						if (tmpSuperClassDec instanceof Type) {
 							Type superClassDec = (Type) tmpSuperClassDec;
-							if (tmpClassDec instanceof ClassDeclaration) {
-								ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
-								return new Object[] { superClass, typeAcc, umlClassifier, generalization, superClassDec,
-										classDec, targetMatch, sourceMatch };
+							if (tmpGeneralization instanceof Generalization) {
+								Generalization generalization = (Generalization) tmpGeneralization;
+								return new Object[] { umlClassifier, typeAcc, superClass, classDec, superClassDec,
+										generalization, targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -3051,13 +3055,13 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc, Classifier umlClassifier,
-			Generalization generalization, Type superClassDec, ClassDeclaration classDec, Match sourceMatch,
+			Classifier umlClassifier, TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass,
+			ClassDeclaration classDec, Type superClassDec, Generalization generalization, Match sourceMatch,
 			Match targetMatch) {
 		if (!superClass.equals(umlClassifier)) {
 			if (!classDec.equals(superClassDec)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { superClass, typeAcc, umlClassifier, generalization, superClassDec, classDec,
+					return new Object[] { umlClassifier, typeAcc, superClass, classDec, superClassDec, generalization,
 							sourceMatch, targetMatch };
 				}
 			}
@@ -3070,19 +3074,19 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		Object[] result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding = pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding != null) {
-			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[0];
+			Classifier umlClassifier = (Classifier) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[0];
 			TypeAccess typeAcc = (TypeAccess) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[1];
-			Classifier umlClassifier = (Classifier) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[2];
-			Generalization generalization = (Generalization) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[3];
+			org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[2];
+			ClassDeclaration classDec = (ClassDeclaration) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[3];
 			Type superClassDec = (Type) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[4];
-			ClassDeclaration classDec = (ClassDeclaration) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[5];
+			Generalization generalization = (Generalization) result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_black = pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					superClass, typeAcc, umlClassifier, generalization, superClassDec, classDec, sourceMatch,
+					umlClassifier, typeAcc, superClass, classDec, superClassDec, generalization, sourceMatch,
 					targetMatch);
 			if (result_pattern_TypeAccess2Generalization_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { superClass, typeAcc, umlClassifier, generalization, superClassDec, classDec,
+				return new Object[] { umlClassifier, typeAcc, superClass, classDec, superClassDec, generalization,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3090,15 +3094,15 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_24_3_solvecsp_bindingFBBBBBBBBB(
-			TypeAccess2Generalization _this, org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc,
-			Classifier umlClassifier, Generalization generalization, Type superClassDec, ClassDeclaration classDec,
-			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(superClass, typeAcc, umlClassifier, generalization,
-				superClassDec, classDec, sourceMatch, targetMatch);
+			TypeAccess2Generalization _this, Classifier umlClassifier, TypeAccess typeAcc,
+			org.eclipse.uml2.uml.Class superClass, ClassDeclaration classDec, Type superClassDec,
+			Generalization generalization, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(umlClassifier, typeAcc, superClass, classDec,
+				superClassDec, generalization, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, superClass, typeAcc, umlClassifier, generalization, superClassDec,
-					classDec, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, umlClassifier, typeAcc, superClass, classDec, superClassDec,
+					generalization, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3108,11 +3112,11 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2Generalization _this, org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc,
-			Classifier umlClassifier, Generalization generalization, Type superClassDec, ClassDeclaration classDec,
-			Match sourceMatch, Match targetMatch) {
+			TypeAccess2Generalization _this, Classifier umlClassifier, TypeAccess typeAcc,
+			org.eclipse.uml2.uml.Class superClass, ClassDeclaration classDec, Type superClassDec,
+			Generalization generalization, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypeAccess2Generalization_24_3_solvecsp_binding = pattern_TypeAccess2Generalization_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, superClass, typeAcc, umlClassifier, generalization, superClassDec, classDec, sourceMatch,
+				_this, umlClassifier, typeAcc, superClass, classDec, superClassDec, generalization, sourceMatch,
 				targetMatch);
 		if (result_pattern_TypeAccess2Generalization_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2Generalization_24_3_solvecsp_binding[0];
@@ -3121,8 +3125,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp);
 			if (result_pattern_TypeAccess2Generalization_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, superClass, typeAcc, umlClassifier, generalization, superClassDec,
-						classDec, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, umlClassifier, typeAcc, superClass, classDec, superClassDec,
+						generalization, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3134,22 +3138,22 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_24_5_matchcorrcontext_blackBFBFBBBB(
-			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier, Type superClassDec,
-			ClassDeclaration classDec, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_24_5_matchcorrcontext_blackBBFBBFBB(
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, ClassDeclaration classDec,
+			Type superClassDec, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!superClass.equals(umlClassifier)) {
 			if (!classDec.equals(superClassDec)) {
 				if (!sourceMatch.equals(targetMatch)) {
 					for (ASTNode2Element cd2c2 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(superClass, ASTNode2Element.class, "target")) {
-						if (superClassDec.equals(cd2c2.getSource())) {
+							.getOppositeReferenceTyped(superClassDec, ASTNode2Element.class, "source")) {
+						if (superClass.equals(cd2c2.getTarget())) {
 							for (ASTNode2Element cd2c : org.moflon.core.utilities.eMoflonEMFUtil
 									.getOppositeReferenceTyped(umlClassifier, ASTNode2Element.class, "target")) {
 								if (!cd2c.equals(cd2c2)) {
 									if (classDec.equals(cd2c.getSource())) {
-										_result.add(new Object[] { superClass, cd2c2, umlClassifier, cd2c,
-												superClassDec, classDec, sourceMatch, targetMatch });
+										_result.add(new Object[] { umlClassifier, superClass, cd2c2, classDec,
+												superClassDec, cd2c, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -3174,11 +3178,11 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_24_6_createcorrespondence_blackBBBBBBB(
-			org.eclipse.uml2.uml.Class superClass, TypeAccess typeAcc, Classifier umlClassifier,
-			Generalization generalization, Type superClassDec, ClassDeclaration classDec, CCMatch ccMatch) {
+			Classifier umlClassifier, TypeAccess typeAcc, org.eclipse.uml2.uml.Class superClass,
+			ClassDeclaration classDec, Type superClassDec, Generalization generalization, CCMatch ccMatch) {
 		if (!superClass.equals(umlClassifier)) {
 			if (!classDec.equals(superClassDec)) {
-				return new Object[] { superClass, typeAcc, umlClassifier, generalization, superClassDec, classDec,
+				return new Object[] { umlClassifier, typeAcc, superClass, classDec, superClassDec, generalization,
 						ccMatch };
 			}
 		}
@@ -3189,8 +3193,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 			TypeAccess typeAcc, Generalization generalization, CCMatch ccMatch) {
 		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE
 				.createTypeAccess2Generalization();
-		ta2g.setSource(typeAcc);
 		ta2g.setTarget(generalization);
+		ta2g.setSource(typeAcc);
 		ccMatch.getCreateCorr().add(ta2g);
 		return new Object[] { typeAcc, ta2g, generalization, ccMatch };
 	}
@@ -3217,13 +3221,13 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_0BBB(
-			TypeAccess typeAcc, Type superClassDec, ClassDeclaration classDec) {
+			TypeAccess typeAcc, ClassDeclaration classDec, Type superClassDec) {
 		if (!classDec.equals(superClassDec)) {
-			for (AbstractTypeDeclaration __DEC_typeAcc_superInterfaces_465675 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_typeAcc_superInterfaces_545657 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(typeAcc, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!superClassDec.equals(__DEC_typeAcc_superInterfaces_465675)) {
-					if (!classDec.equals(__DEC_typeAcc_superInterfaces_465675)) {
-						return new Object[] { typeAcc, superClassDec, classDec };
+				if (!classDec.equals(__DEC_typeAcc_superInterfaces_545657)) {
+					if (!superClassDec.equals(__DEC_typeAcc_superInterfaces_545657)) {
+						return new Object[] { typeAcc, classDec, superClassDec };
 					}
 				}
 			}
@@ -3233,7 +3237,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeAcc) {
-		for (Annotation __DEC_typeAcc_type_390401 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAcc_type_598699 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, Annotation.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3242,9 +3246,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess typeAcc, Type superClassDec) {
-		for (ArrayType __DEC_typeAcc_elementType_231213 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAcc_elementType_308294 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ArrayType.class, "elementType")) {
-			if (!superClassDec.equals(__DEC_typeAcc_elementType_231213)) {
+			if (!superClassDec.equals(__DEC_typeAcc_elementType_308294)) {
 				return new Object[] { typeAcc, superClassDec };
 			}
 		}
@@ -3253,7 +3257,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess typeAcc) {
-		for (MethodDeclaration __DEC_typeAcc_returnType_87151 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAcc_returnType_673503 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, MethodDeclaration.class, "returnType")) {
 			return new Object[] { typeAcc };
 		}
@@ -3262,9 +3266,9 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_4BB(
 			TypeAccess typeAcc, Type superClassDec) {
-		for (ParameterizedType __DEC_typeAcc_type_740657 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAcc_type_92420 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, ParameterizedType.class, "type")) {
-			if (!superClassDec.equals(__DEC_typeAcc_type_740657)) {
+			if (!superClassDec.equals(__DEC_typeAcc_type_92420)) {
 				return new Object[] { typeAcc, superClassDec };
 			}
 		}
@@ -3273,7 +3277,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeAcc) {
-		for (SingleVariableDeclaration __DEC_typeAcc_type_49019 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAcc_type_237529 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAcc };
 		}
@@ -3282,7 +3286,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeAcc) {
-		for (AnnotationMemberValuePair __DEC_typeAcc_value_457511 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAcc_value_648499 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAcc, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAcc };
 		}
@@ -3298,12 +3302,12 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_27_1_matchtggpattern_blackBBB(TypeAccess typeAcc,
-			Type superClassDec, ClassDeclaration classDec) {
+			ClassDeclaration classDec, Type superClassDec) {
 		if (!classDec.equals(superClassDec)) {
-			if (superClassDec.equals(typeAcc.getType())) {
-				if (typeAcc.equals(classDec.getSuperClass())) {
-					if (pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_0BBB(typeAcc, superClassDec,
-							classDec) == null) {
+			if (typeAcc.equals(classDec.getSuperClass())) {
+				if (superClassDec.equals(typeAcc.getType())) {
+					if (pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_0BBB(typeAcc, classDec,
+							superClassDec) == null) {
 						if (pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_1B(typeAcc) == null) {
 							if (pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_2BB(typeAcc,
 									superClassDec) == null) {
@@ -3317,7 +3321,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 													typeAcc) == null) {
 												if (pattern_TypeAccess2Generalization_27_1_matchtggpattern_black_nac_7BB(
 														classDec, typeAcc) == null) {
-													return new Object[] { typeAcc, superClassDec, classDec };
+													return new Object[] { typeAcc, classDec, superClassDec };
 												}
 											}
 										}
@@ -3343,11 +3347,11 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_28_1_matchtggpattern_blackBBB(
-			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier, Generalization generalization) {
+			Classifier umlClassifier, org.eclipse.uml2.uml.Class superClass, Generalization generalization) {
 		if (!superClass.equals(umlClassifier)) {
-			if (superClass.equals(generalization.getGeneral())) {
-				if (umlClassifier.getGeneralizations().contains(generalization)) {
-					return new Object[] { superClass, umlClassifier, generalization };
+			if (umlClassifier.getGeneralizations().contains(generalization)) {
+				if (superClass.equals(generalization.getGeneral())) {
+					return new Object[] { umlClassifier, superClass, generalization };
 				}
 			}
 		}
@@ -3378,30 +3382,6 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Class superClass) {
-		if (ruleResult.getTargetObjects().contains(superClass)) {
-			return new Object[] { ruleResult, superClass };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element cd2c2) {
-		if (ruleResult.getCorrObjects().contains(cd2c2)) {
-			return new Object[] { ruleResult, cd2c2 };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Type superClassDec) {
-		if (ruleResult.getSourceObjects().contains(superClassDec)) {
-			return new Object[] { ruleResult, superClassDec };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, Classifier umlClassifier) {
 		if (ruleResult.getTargetObjects().contains(umlClassifier)) {
 			return new Object[] { ruleResult, umlClassifier };
@@ -3409,7 +3389,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, ASTNode2Element cd2c) {
 		if (ruleResult.getCorrObjects().contains(cd2c)) {
 			return new Object[] { ruleResult, cd2c };
@@ -3417,7 +3397,7 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, ClassDeclaration classDec) {
 		if (ruleResult.getSourceObjects().contains(classDec)) {
 			return new Object[] { ruleResult, classDec };
@@ -3425,52 +3405,76 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		return null;
 	}
 
+	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Class superClass) {
+		if (ruleResult.getTargetObjects().contains(superClass)) {
+			return new Object[] { ruleResult, superClass };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element cd2c2) {
+		if (ruleResult.getCorrObjects().contains(cd2c2)) {
+			return new Object[] { ruleResult, cd2c2 };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, Type superClassDec) {
+		if (ruleResult.getSourceObjects().contains(superClassDec)) {
+			return new Object[] { ruleResult, superClassDec };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_TypeAccess2Generalization_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList cd2c2List : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList cd2cList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList cd2cList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList cd2c2List : ruleEntryContainer.getRuleEntryList()) {
 				if (!cd2c2List.equals(cd2cList)) {
-					for (EObject tmpCd2c2 : cd2c2List.getEntryObjects()) {
-						if (tmpCd2c2 instanceof ASTNode2Element) {
-							ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
-							Element tmpSuperClass = cd2c2.getTarget();
-							if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
-								org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
-								ASTNode tmpSuperClassDec = cd2c2.getSource();
-								if (tmpSuperClassDec instanceof Type) {
-									Type superClassDec = (Type) tmpSuperClassDec;
+					for (EObject tmpCd2c : cd2cList.getEntryObjects()) {
+						if (tmpCd2c instanceof ASTNode2Element) {
+							ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+							Element tmpUmlClassifier = cd2c.getTarget();
+							if (tmpUmlClassifier instanceof Classifier) {
+								Classifier umlClassifier = (Classifier) tmpUmlClassifier;
+								ASTNode tmpClassDec = cd2c.getSource();
+								if (tmpClassDec instanceof ClassDeclaration) {
+									ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
 									if (pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_1BB(
-											ruleResult, cd2c2) == null) {
+											ruleResult, cd2c) == null) {
 										if (pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, superClass) == null) {
+												ruleResult, umlClassifier) == null) {
 											if (pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, superClassDec) == null) {
-												for (EObject tmpCd2c : cd2cList.getEntryObjects()) {
-													if (tmpCd2c instanceof ASTNode2Element) {
-														ASTNode2Element cd2c = (ASTNode2Element) tmpCd2c;
+													ruleResult, classDec) == null) {
+												for (EObject tmpCd2c2 : cd2c2List.getEntryObjects()) {
+													if (tmpCd2c2 instanceof ASTNode2Element) {
+														ASTNode2Element cd2c2 = (ASTNode2Element) tmpCd2c2;
 														if (!cd2c.equals(cd2c2)) {
-															Element tmpUmlClassifier = cd2c.getTarget();
-															if (tmpUmlClassifier instanceof Classifier) {
-																Classifier umlClassifier = (Classifier) tmpUmlClassifier;
+															Element tmpSuperClass = cd2c2.getTarget();
+															if (tmpSuperClass instanceof org.eclipse.uml2.uml.Class) {
+																org.eclipse.uml2.uml.Class superClass = (org.eclipse.uml2.uml.Class) tmpSuperClass;
 																if (!superClass.equals(umlClassifier)) {
-																	ASTNode tmpClassDec = cd2c.getSource();
-																	if (tmpClassDec instanceof ClassDeclaration) {
-																		ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+																	ASTNode tmpSuperClassDec = cd2c2.getSource();
+																	if (tmpSuperClassDec instanceof Type) {
+																		Type superClassDec = (Type) tmpSuperClassDec;
 																		if (!classDec.equals(superClassDec)) {
 																			if (pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_4BB(
-																					ruleResult, cd2c) == null) {
+																					ruleResult, cd2c2) == null) {
 																				if (pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_3BB(
 																						ruleResult,
-																						umlClassifier) == null) {
+																						superClass) == null) {
 																					if (pattern_TypeAccess2Generalization_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
-																							classDec) == null) {
+																							superClassDec) == null) {
 																						_result.add(new Object[] {
-																								cd2c2List, superClass,
-																								cd2c2, superClassDec,
 																								cd2cList, umlClassifier,
 																								cd2c, classDec,
+																								cd2c2List, superClass,
+																								cd2c2, superClassDec,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -3501,15 +3505,15 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_29_3_solveCSP_bindingFBBBBBBBBB(
-			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c, Type superClassDec,
-			ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, superClass, cd2c2, umlClassifier,
-				cd2c, superClassDec, classDec, ruleResult);
+			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			ASTNode2Element cd2c, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, umlClassifier, superClass, cd2c2,
+				classDec, superClassDec, cd2c, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c, superClassDec,
-					classDec, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, umlClassifier, superClass, cd2c2, classDec,
+					superClassDec, cd2c, ruleResult };
 		}
 		return null;
 	}
@@ -3519,11 +3523,11 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 	}
 
 	public static final Object[] pattern_TypeAccess2Generalization_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
-			ASTNode2Element cd2c2, Classifier umlClassifier, ASTNode2Element cd2c, Type superClassDec,
-			ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+			TypeAccess2Generalization _this, IsApplicableMatch isApplicableMatch, Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			ASTNode2Element cd2c, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypeAccess2Generalization_29_3_solveCSP_binding = pattern_TypeAccess2Generalization_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c, superClassDec, classDec, ruleResult);
+				_this, isApplicableMatch, umlClassifier, superClass, cd2c2, classDec, superClassDec, cd2c, ruleResult);
 		if (result_pattern_TypeAccess2Generalization_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeAccess2Generalization_29_3_solveCSP_binding[0];
 
@@ -3531,8 +3535,8 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 					csp);
 			if (result_pattern_TypeAccess2Generalization_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, superClass, cd2c2, umlClassifier, cd2c,
-						superClassDec, classDec, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, umlClassifier, superClass, cd2c2, classDec,
+						superClassDec, cd2c, ruleResult };
 			}
 		}
 		return null;
@@ -3545,54 +3549,54 @@ public class TypeAccess2GeneralizationImpl extends AbstractRuleImpl implements T
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeAccess2Generalization_29_5_checknacs_blackBBBBBB(
-			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Type superClassDec, ClassDeclaration classDec) {
+	public static final Object[] pattern_TypeAccess2Generalization_29_5_checknacs_blackBBBBBB(Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			ASTNode2Element cd2c) {
 		if (!superClass.equals(umlClassifier)) {
-			if (!cd2c.equals(cd2c2)) {
-				if (!classDec.equals(superClassDec)) {
-					return new Object[] { superClass, cd2c2, umlClassifier, cd2c, superClassDec, classDec };
+			if (!classDec.equals(superClassDec)) {
+				if (!cd2c.equals(cd2c2)) {
+					return new Object[] { umlClassifier, superClass, cd2c2, classDec, superClassDec, cd2c };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2Generalization_29_6_perform_blackBBBBBBB(
-			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, Classifier umlClassifier,
-			ASTNode2Element cd2c, Type superClassDec, ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_TypeAccess2Generalization_29_6_perform_blackBBBBBBB(Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ASTNode2Element cd2c2, ClassDeclaration classDec, Type superClassDec,
+			ASTNode2Element cd2c, ModelgeneratorRuleResult ruleResult) {
 		if (!superClass.equals(umlClassifier)) {
-			if (!cd2c.equals(cd2c2)) {
-				if (!classDec.equals(superClassDec)) {
-					return new Object[] { superClass, cd2c2, umlClassifier, cd2c, superClassDec, classDec, ruleResult };
+			if (!classDec.equals(superClassDec)) {
+				if (!cd2c.equals(cd2c2)) {
+					return new Object[] { umlClassifier, superClass, cd2c2, classDec, superClassDec, cd2c, ruleResult };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeAccess2Generalization_29_6_perform_greenBFBFFBBB(
-			org.eclipse.uml2.uml.Class superClass, Classifier umlClassifier, Type superClassDec,
-			ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_TypeAccess2Generalization_29_6_perform_greenBFBBFBFB(Classifier umlClassifier,
+			org.eclipse.uml2.uml.Class superClass, ClassDeclaration classDec, Type superClassDec,
+			ModelgeneratorRuleResult ruleResult) {
 		TypeAccess typeAcc = JavaFactory.eINSTANCE.createTypeAccess();
 		org.gravity.tgg.modisco.uml.TypeAccess2Generalization ta2g = UmlFactory.eINSTANCE
 				.createTypeAccess2Generalization();
 		Generalization generalization = UMLFactory.eINSTANCE.createGeneralization();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		typeAcc.setType(superClassDec);
 		classDec.setSuperClass(typeAcc);
+		typeAcc.setType(superClassDec);
 		ruleResult.getSourceObjects().add(typeAcc);
 		ta2g.setSource(typeAcc);
 		ruleResult.getCorrObjects().add(ta2g);
 		ta2g.setTarget(generalization);
-		generalization.setGeneral(superClass);
 		umlClassifier.getGeneralizations().add(generalization);
+		generalization.setGeneral(superClass);
 		ruleResult.getTargetObjects().add(generalization);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { superClass, typeAcc, umlClassifier, ta2g, generalization, superClassDec, classDec,
+		return new Object[] { umlClassifier, typeAcc, superClass, classDec, ta2g, superClassDec, generalization,
 				ruleResult };
 	}
 

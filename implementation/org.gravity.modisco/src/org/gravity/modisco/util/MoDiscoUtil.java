@@ -63,17 +63,17 @@ public final class MoDiscoUtil {
 		final var superAccess = mClass.getSuperClass();
 		if (superAccess != null) {
 			final var superType = superAccess.getType();
-			if (superType instanceof ClassDeclaration declaration) {
+			if (superType instanceof final ClassDeclaration declaration) {
 				return declaration;
-			} else if (superType instanceof ParameterizedType paramterizedType) {
-				TypeAccess baseTypeAccess = paramterizedType.getType();
+			}
+			if (superType instanceof final ParameterizedType paramterizedType) {
+				final var baseTypeAccess = paramterizedType.getType();
 				if (baseTypeAccess != null) {
-					var baseType = baseTypeAccess.getType();
-					if (baseType instanceof ClassDeclaration classDecl) {
+					final var baseType = baseTypeAccess.getType();
+					if (baseType instanceof final ClassDeclaration classDecl) {
 						return classDecl;
-					} else {
-						LOGGER.error("Super class of \"" + mClass + "\" is not a class: " + baseType);
 					}
+					LOGGER.error("Super class of \"" + mClass + "\" is not a class: " + baseType);
 				} else {
 					LOGGER.warn("Type access points to null");
 				}
@@ -93,7 +93,7 @@ public final class MoDiscoUtil {
 	 */
 	public static boolean isSuperType(final Type type, final Type supertype) {
 		if (type instanceof AbstractTypeDeclaration) {
-			if (type instanceof ClassDeclaration declaration) {
+			if (type instanceof final ClassDeclaration declaration) {
 				final var superType = isSuperType(declaration, supertype);
 				if (superType) {
 					return true;
@@ -149,7 +149,7 @@ public final class MoDiscoUtil {
 	 */
 	public static Type getMostGenericReturnType(final MAbstractMethodDefinition method) {
 		final var abstractTypeDeclaration = method.getAbstractTypeDeclaration();
-		if (method instanceof MConstructorDefinition constructor) {
+		if (method instanceof final MConstructorDefinition constructor) {
 			return getType(constructor);
 		}
 		var returnType = ((MMethodDefinition) method).getReturnType().getType();
@@ -205,7 +205,7 @@ public final class MoDiscoUtil {
 			stack.add(child);
 		}
 		while (!stack.isEmpty()) {
-			for (AbstractTypeDeclaration next : getParentsTypes(stack.pop())) {
+			for (final AbstractTypeDeclaration next : getParentsTypes(stack.pop())) {
 				// Only add the type to the stack if it has not been seen before
 				if (allTypes.add(next)) {
 					stack.add(next);
@@ -217,24 +217,24 @@ public final class MoDiscoUtil {
 
 	/**
 	 * Creates a collection with the super class and all implemented interfaces
-	 * 
+	 *
 	 * @param child The class for which the parents should be returned
 	 * @return The collection of parent types
 	 */
-	public static Collection<AbstractTypeDeclaration> getParentsTypes(AbstractTypeDeclaration type) {
+	public static Collection<AbstractTypeDeclaration> getParentsTypes(final AbstractTypeDeclaration type) {
 		final Collection<AbstractTypeDeclaration> allTypes = new LinkedList<>();
 
 		allTypes.addAll(getSuperInterfaces(type));
 
-		if (type instanceof ClassDeclaration classDecl) {
-			var parent = getSuperClass(classDecl);
+		if (type instanceof final ClassDeclaration classDecl) {
+			final var parent = getSuperClass(classDecl);
 			if (parent != null) {
 				allTypes.add(parent);
 			}
-		} else if (type instanceof UnresolvedClassDeclaration unresolved) {
-			TypeAccess superAccess = unresolved.getSuperClass();
+		} else if (type instanceof final UnresolvedClassDeclaration unresolved) {
+			final var superAccess = unresolved.getSuperClass();
 			final var superType = superAccess.getType();
-			if (superType instanceof ClassDeclaration declaration) {
+			if (superType instanceof final ClassDeclaration declaration) {
 				allTypes.add(declaration);
 			}
 		} else {
@@ -254,10 +254,10 @@ public final class MoDiscoUtil {
 		final Set<InterfaceDeclaration> types = new HashSet<>();
 		for (final TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
 			final var typeOfInterface = superInterfaceReference.getType();
-			if (typeOfInterface instanceof InterfaceDeclaration interfaceDecl) {
+			if (typeOfInterface instanceof final InterfaceDeclaration interfaceDecl) {
 				types.add(interfaceDecl);
-			} else if (typeOfInterface instanceof ParameterizedType parameterized) {
-				if (parameterized.getType().getType() instanceof InterfaceDeclaration interfaceDecl) {
+			} else if (typeOfInterface instanceof final ParameterizedType parameterized) {
+				if (parameterized.getType().getType() instanceof final InterfaceDeclaration interfaceDecl) {
 					types.add(interfaceDecl);
 				} else {
 					LOGGER.error("Unsupported type of interface implementation: " + type);
@@ -278,7 +278,7 @@ public final class MoDiscoUtil {
 	public static PrimitiveTypeVoid getVoid(final MGravityModel pg) {
 		return pg.getOrphanTypes().stream().filter(PrimitiveTypeVoid.class::isInstance)
 				.map(PrimitiveTypeVoid.class::cast).findAny().orElseGet(() -> {
-					var type = JavaFactory.eINSTANCE.createPrimitiveTypeVoid();
+					final var type = JavaFactory.eINSTANCE.createPrimitiveTypeVoid();
 					pg.getOrphanTypes().add(type);
 					return type;
 				});
@@ -295,7 +295,7 @@ public final class MoDiscoUtil {
 			final AbstractTypeDeclaration type) {
 		MethodDeclaration otherDecl = null;
 		for (final BodyDeclaration body : type.getBodyDeclarations()) {
-			if (body instanceof MethodDeclaration decl && method.getName().equals(decl.getName())
+			if (body instanceof final MethodDeclaration decl && method.getName().equals(decl.getName())
 					&& isParamListEqual(method.getParameters(), decl.getParameters())) {
 				otherDecl = decl;
 
@@ -435,7 +435,8 @@ public final class MoDiscoUtil {
 		file.setName("Object.class"); //$NON-NLS-1$
 		file.setPackage(javaLangPackage);
 		file.setType(object);
-		file.setOriginalFilePath("Object.class"); //$NON-NLS-1$
+		file.setOriginalFilePath("${CP}/Object.class"); //$NON-NLS-1$
+		object.setOriginalClassFile(file);
 		model.getClassFiles().add(file);
 
 		LOGGER.warn("Class \"java.lang.Object\" is not contained in the MoDisco model and has been created");

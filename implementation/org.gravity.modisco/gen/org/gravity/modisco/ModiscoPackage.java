@@ -3157,13 +3157,22 @@ public interface ModiscoPackage extends EPackage {
 	int MCLASS_INSTANCE_CREATION__OUTGOING_FLOWS = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCLASS_INSTANCE_CREATION__ID = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>MClass Instance Creation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_INSTANCE_CREATION_FEATURE_COUNT = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 3;
+	int MCLASS_INSTANCE_CREATION_FEATURE_COUNT = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
@@ -4404,6 +4413,17 @@ public interface ModiscoPackage extends EPackage {
 	EClass getMClassInstanceCreation();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gravity.modisco.MClassInstanceCreation#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.gravity.modisco.MClassInstanceCreation#getId()
+	 * @see #getMClassInstanceCreation()
+	 * @generated
+	 */
+	EAttribute getMClassInstanceCreation_Id();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MSuperConstructorInvocation <em>MSuper Constructor Invocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5065,6 +5085,14 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MCLASS_INSTANCE_CREATION = eINSTANCE.getMClassInstanceCreation();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MCLASS_INSTANCE_CREATION__ID = eINSTANCE.getMClassInstanceCreation_Id();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.

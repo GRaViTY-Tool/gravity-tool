@@ -95,9 +95,8 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration jOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Enumeration uOwnerType, ASTNode2Element nd2ne,
-			ASTNode2Element jo2uo);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			ASTNode2Element nd2ne, Property feature, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +112,8 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject feature,
-			EObject uOwnerType, EObject nd2ne, EObject jo2uo);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jo2uo, EObject uOwnerType, EObject nd2ne,
+			EObject feature, EObject jOwnerType, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +129,7 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Property feature, Enumeration uOwnerType);
+	boolean isAppropriate_BWD(Match match, Enumeration uOwnerType, Property feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +153,7 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Property feature, Enumeration uOwnerType);
+	void registerObjectsToMatch_BWD(Match match, Enumeration uOwnerType, Property feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +161,7 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Property feature, Enumeration uOwnerType);
+	CSP isAppropriate_solveCsp_BWD(Match match, Enumeration uOwnerType, Property feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,9 +177,8 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, EnumDeclaration jOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Enumeration uOwnerType, ASTNode2Element nd2ne,
-			ASTNode2Element jo2uo);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			ASTNode2Element nd2ne, Property feature, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +194,8 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jOwnerType, EObject bodyDeclaration, EObject feature,
-			EObject uOwnerType, EObject nd2ne, EObject jo2uo);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jo2uo, EObject uOwnerType, EObject nd2ne,
+			EObject feature, EObject jOwnerType, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +211,7 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_150(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +219,7 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_112(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_163(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +251,8 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration, Property feature,
-			Enumeration uOwnerType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Enumeration uOwnerType, Property feature, EnumDeclaration jOwnerType,
+			MFieldDefinition bodyDeclaration, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +276,7 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Property feature, Enumeration uOwnerType);
+	boolean checkDEC_BWD(Enumeration uOwnerType, Property feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +293,9 @@ public interface FieldDec2Property4Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, EnumDeclaration jOwnerType,
-			MFieldDefinition bodyDeclaration, Property feature, Enumeration uOwnerType, ASTNode2Element nd2ne,
-			ASTNode2Element jo2uo, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element jo2uo, Enumeration uOwnerType,
+			ASTNode2Element nd2ne, Property feature, EnumDeclaration jOwnerType, MFieldDefinition bodyDeclaration,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

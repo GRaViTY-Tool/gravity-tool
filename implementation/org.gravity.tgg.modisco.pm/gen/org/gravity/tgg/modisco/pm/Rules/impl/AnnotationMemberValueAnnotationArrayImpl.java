@@ -794,7 +794,7 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_47(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueAnnotationArrayImpl
 				.pattern_AnnotationMemberValueAnnotationArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -854,7 +854,7 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_62(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_49(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueAnnotationArrayImpl
 				.pattern_AnnotationMemberValueAnnotationArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1327,10 +1327,10 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_59__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_59((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_62__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_62((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_47__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_47((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_49__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_49((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_MEMBER_VALUE_ANNOTATION_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2681,8 +2681,8 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_20_2_testcorematchandDECs_black_nac_0B(
 			TAnnotation tValue) {
-		TAnnotatable __DEC_tValue_tAnnotated_829712 = tValue.getTAnnotated();
-		if (__DEC_tValue_tAnnotated_829712 != null) {
+		TAnnotatable __DEC_tValue_tAnnotated_528974 = tValue.getTAnnotated();
+		if (__DEC_tValue_tAnnotated_528974 != null) {
 			return new Object[] { tValue };
 		}
 
@@ -2691,8 +2691,8 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_20_2_testcorematchandDECs_black_nac_1B(
 			TAnnotation tValue) {
-		TAnnotatable __DEC_tValue_tAnnotation_117972 = tValue.getTAnnotated();
-		if (__DEC_tValue_tAnnotation_117972 != null) {
+		TAnnotatable __DEC_tValue_tAnnotation_56589 = tValue.getTAnnotated();
+		if (__DEC_tValue_tAnnotation_56589 != null) {
 			return new Object[] { tValue };
 		}
 
@@ -2827,9 +2827,9 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_21_2_testcorematchandDECs_black_nac_0BB(
 			Annotation mValue, BodyDeclaration mOwner) {
-		for (BodyDeclaration __DEC_mValue_annotations_620513 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (BodyDeclaration __DEC_mValue_annotations_445824 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, BodyDeclaration.class, "annotations")) {
-			if (!mOwner.equals(__DEC_mValue_annotations_620513)) {
+			if (!mOwner.equals(__DEC_mValue_annotations_445824)) {
 				return new Object[] { mValue, mOwner };
 			}
 		}
@@ -2838,9 +2838,9 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_21_2_testcorematchandDECs_black_nac_1BB(
 			Annotation mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_840714 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_297294 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_840714)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_297294)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3164,9 +3164,9 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_27_1_matchtggpattern_black_nac_0BB(
 			Annotation mValue, BodyDeclaration mOwner) {
-		for (BodyDeclaration __DEC_mValue_annotations_265115 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (BodyDeclaration __DEC_mValue_annotations_376306 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, BodyDeclaration.class, "annotations")) {
-			if (!mOwner.equals(__DEC_mValue_annotations_265115)) {
+			if (!mOwner.equals(__DEC_mValue_annotations_376306)) {
 				return new Object[] { mValue, mOwner };
 			}
 		}
@@ -3175,9 +3175,9 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_27_1_matchtggpattern_black_nac_1BB(
 			Annotation mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_135797 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_75098 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_135797)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_75098)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3242,8 +3242,8 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_28_1_matchtggpattern_black_nac_0B(
 			TAnnotation tValue) {
-		TAnnotatable __DEC_tValue_tAnnotated_489753 = tValue.getTAnnotated();
-		if (__DEC_tValue_tAnnotated_489753 != null) {
+		TAnnotatable __DEC_tValue_tAnnotated_780342 = tValue.getTAnnotated();
+		if (__DEC_tValue_tAnnotated_780342 != null) {
 			return new Object[] { tValue };
 		}
 
@@ -3252,8 +3252,8 @@ public class AnnotationMemberValueAnnotationArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueAnnotationArray_28_1_matchtggpattern_black_nac_1B(
 			TAnnotation tValue) {
-		TAnnotatable __DEC_tValue_tAnnotation_333438 = tValue.getTAnnotated();
-		if (__DEC_tValue_tAnnotation_333438 != null) {
+		TAnnotatable __DEC_tValue_tAnnotation_516637 = tValue.getTAnnotated();
+		if (__DEC_tValue_tAnnotation_516637 != null) {
 			return new Object[] { tValue };
 		}
 

@@ -29,6 +29,8 @@
     <dependency-plugin>3.6.1</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -149,7 +151,7 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <executionEnvironment>JavaSE-17</executionEnvironment>
+          <executionEnvironment>JavaSE-21</executionEnvironment>
           <environments>
             <environment>
               <os>linux</os>

@@ -201,7 +201,7 @@ public interface Model2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_4(TypeGraph pm);
+	EObjectContainer isAppropriate_BWD_TypeGraph_3(TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->

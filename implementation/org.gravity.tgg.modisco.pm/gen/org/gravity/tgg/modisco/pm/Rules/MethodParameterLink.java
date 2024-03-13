@@ -92,9 +92,9 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TParameter tParameter,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter, MEntry mEntry, TParameter tPrevParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TParameter tParameter, MEntry mEntry,
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntryToTParameter eSingleVariableDeclarationToTParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,9 +110,9 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tParameter,
-			EObject eSingleVariableDeclarationToTParameter, EObject mEntry, EObject tPrevParameter,
-			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tParameter, EObject mEntry, EObject tPrevParameter,
+			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry,
+			EObject eSingleVariableDeclarationToTParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,9 +176,9 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tParameter,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter, MEntry mEntry, TParameter tPrevParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tParameter, MEntry mEntry,
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntryToTParameter eSingleVariableDeclarationToTParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,9 +194,9 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tParameter,
-			EObject eSingleVariableDeclarationToTParameter, EObject mEntry, EObject tPrevParameter,
-			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tParameter, EObject mEntry, EObject tPrevParameter,
+			EObject mmethodSignatureToTMethodSignature, EObject mPrevEntry,
+			EObject eSingleVariableDeclarationToTParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_36(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_39(EMoflonEdge _edge_mNext);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1(EMoflonEdge _edge_mNext);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,10 +295,9 @@ public interface MethodParameterLink extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tParameter,
-			MEntryToTParameter eSingleVariableDeclarationToTParameter, MEntry mEntry, TParameter tPrevParameter,
-			MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tParameter, MEntry mEntry,
+			TParameter tPrevParameter, MEntryToTParameter mmethodSignatureToTMethodSignature, MEntry mPrevEntry,
+			MEntryToTParameter eSingleVariableDeclarationToTParameter, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

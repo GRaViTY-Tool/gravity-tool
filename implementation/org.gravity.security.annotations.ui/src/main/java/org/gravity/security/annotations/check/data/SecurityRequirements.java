@@ -78,8 +78,7 @@ public class SecurityRequirements {
 		return this.integritySignatures.keySet();
 	}
 
-	public List<IAnnotation> getCriticals(final String signature,
-			final SecurityProperty property) {
+	public List<IAnnotation> getCriticals(final String signature, final SecurityProperty property) {
 		return switch (property) {
 		case INTEGRITY -> this.integritySignatures.get(signature);
 		case SECRECY -> this.secrecySignatures.get(signature);
@@ -112,12 +111,12 @@ public class SecurityRequirements {
 	}
 
 	private void addToSignatures(final Set<String> signatures, final IMemberValuePair pair) {
-		final var secrecyValue = pair.getValue();
-		if (secrecyValue instanceof final String string) {
+		final var values = pair.getValue();
+		if (values instanceof final String string) {
 			signatures.add(string);
-		} else {
-			for (final Object secrecy : (Object[]) secrecyValue) {
-				signatures.add((String) secrecy);
+		} else if (values != null) {
+			for (final Object val : (Object[]) values) {
+				signatures.add((String) val);
 			}
 		}
 	}

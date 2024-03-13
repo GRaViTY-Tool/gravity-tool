@@ -97,9 +97,9 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, AnonymousClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element a2c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject bodyDeclaration, EObject feature,
-			EObject classDec, EObject umlClass, EObject a2c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlClass, EObject bodyDeclaration, EObject bd2ne,
+			EObject classDec, EObject feature, EObject a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class umlClass, Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class umlClass, Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +164,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class umlClass, Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +180,9 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, AnonymousClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element a2c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject bodyDeclaration, EObject feature,
-			EObject classDec, EObject umlClass, EObject a2c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlClass, EObject bodyDeclaration, EObject bd2ne,
+			EObject classDec, EObject feature, EObject a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_141(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_102(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_152(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_107(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,9 +255,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MAbstractMethodDefinition bodyDeclaration, Operation feature,
-			AnonymousClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, Match sourceMatch,
-			Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnonymousClassDeclaration classDec, Operation feature, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,7 +280,7 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Operation feature, org.eclipse.uml2.uml.Class umlClass);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Class umlClass, Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +288,8 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element bd2neParameter,
-			ASTNode2Element a2cParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element a2cParameter,
+			ASTNode2Element bd2neParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,9 +297,9 @@ public interface OperationInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, AnonymousClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element a2c, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, AnonymousClassDeclaration classDec,
+			Operation feature, ASTNode2Element a2c, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

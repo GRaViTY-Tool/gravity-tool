@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.AnnotationMemberValuePair;
 import org.eclipse.modisco.java.AnnotationTypeMemberDeclaration;
@@ -138,9 +137,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 			InterfaceExtendsInterfaceImpl
 					.pattern_InterfaceExtendsInterface_0_4_collectelementstobetranslated_greenBBBBFFF(match,
 							eSuperInterface, eTypeAccess, eInterfaceDeclaration);
-			//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = InterfaceExtendsInterfaceImpl
 					.pattern_InterfaceExtendsInterface_0_5_collectcontextelements_blackBBBB(match, eSuperInterface,
@@ -177,11 +176,11 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result1_bindingAndBlack[1];
-		TypeAccess eTypeAccess = (TypeAccess) result1_bindingAndBlack[2];
-		TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result1_bindingAndBlack[3];
-		TInterface tSuperInterface = (TInterface) result1_bindingAndBlack[4];
+		InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result1_bindingAndBlack[0];
+		TInterface tSuperInterface = (TInterface) result1_bindingAndBlack[1];
+		TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TypeAccess eTypeAccess = (TypeAccess) result1_bindingAndBlack[3];
+		TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result1_bindingAndBlack[4];
 		InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[5];
 		TInterface tInterface = (TInterface) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
@@ -199,30 +198,30 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceExtendsInterfaceImpl
-				.pattern_InterfaceExtendsInterface_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
-						eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-						eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+				.pattern_InterfaceExtendsInterface_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, eSuperInterface,
+						tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+						eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
-					+ "[eSuperInterface] = " + eSuperInterface + ", " + "[eTypeAccess] = " + eTypeAccess + ", "
-					+ "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
-					+ "[tSuperInterface] = " + tSuperInterface + ", " + "[eInterfaceDeclaration] = "
-					+ eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface + ".");
+					+ ", " + "[eSuperInterface] = " + eSuperInterface + ", " + "[tSuperInterface] = " + tSuperInterface
+					+ ", " + "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
+					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eSuperInterfaceToTSuperInterface] = "
+					+ eSuperInterfaceToTSuperInterface + ", " + "[eInterfaceDeclaration] = " + eInterfaceDeclaration
+					+ ", " + "[tInterface] = " + tInterface + ".");
 		}
 		InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-				ruleresult, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface);
-		//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[7];
+				ruleresult, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface);
+		//nothing EMoflonEdge tInterface__tSuperInterface____parentInterfaces = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tSuperInterface__tInterface____childInterfaces = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tInterface__tSuperInterface____parentInterfaces = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tSuperInterface__tInterface____childInterfaces = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_1_5_registerobjects_expressionBBBBBBBBB(this,
-				ruleresult, eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+				ruleresult, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+				eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		return InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_1_6_expressionFB(ruleresult);
 	}
 
@@ -255,41 +254,41 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		TypeAccess eTypeAccess = (TypeAccess) result2_binding[1];
 		InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result2_binding[2];
 		for (Object[] result2_black : InterfaceExtendsInterfaceImpl
-				.pattern_InterfaceExtendsInterface_2_2_corematch_blackFBBFFBFB(eSuperInterface, eTypeAccess,
+				.pattern_InterfaceExtendsInterface_2_2_corematch_blackBFFBFBFB(eSuperInterface, eTypeAccess,
 						eInterfaceDeclaration, match)) {
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result2_black[0];
-			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result2_black[3];
-			TInterface tSuperInterface = (TInterface) result2_black[4];
+			TInterface tSuperInterface = (TInterface) result2_black[1];
+			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result2_black[2];
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result2_black[4];
 			TInterface tInterface = (TInterface) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : InterfaceExtendsInterfaceImpl
-					.pattern_InterfaceExtendsInterface_2_3_findcontext_blackBBBBBBB(eSuperInterfaceToTSuperInterface,
-							eSuperInterface, eTypeAccess, eInterfaceDeclarationToTInterface, tSuperInterface,
+					.pattern_InterfaceExtendsInterface_2_3_findcontext_blackBBBBBBB(eSuperInterface, tSuperInterface,
+							eInterfaceDeclarationToTInterface, eTypeAccess, eSuperInterfaceToTSuperInterface,
 							eInterfaceDeclaration, tInterface)) {
 				Object[] result3_green = InterfaceExtendsInterfaceImpl
-						.pattern_InterfaceExtendsInterface_2_3_findcontext_greenBBBBBBBFFFFFFFF(
-								eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-								eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+						.pattern_InterfaceExtendsInterface_2_3_findcontext_greenBBBBBBBFFFFFFFF(eSuperInterface,
+								tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+								eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__tSuperInterface____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__tSuperInterface____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = InterfaceExtendsInterfaceImpl
 						.pattern_InterfaceExtendsInterface_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-								eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+								isApplicableMatch, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+								eTypeAccess, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", "
-							+ "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
-							+ "[eSuperInterface] = " + eSuperInterface + ", " + "[eTypeAccess] = " + eTypeAccess + ", "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eSuperInterface] = "
+							+ eSuperInterface + ", " + "[tSuperInterface] = " + tSuperInterface + ", "
 							+ "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
-							+ "[tSuperInterface] = " + tSuperInterface + ", " + "[eInterfaceDeclaration] = "
+							+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eSuperInterfaceToTSuperInterface] = "
+							+ eSuperInterfaceToTSuperInterface + ", " + "[eInterfaceDeclaration] = "
 							+ eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -364,10 +363,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeAccess eTypeAccess, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeAccess eTypeAccess,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -382,11 +381,11 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.registerObject("eSuperInterface", eSuperInterface);
-		isApplicableMatch.registerObject("eTypeAccess", eTypeAccess);
-		isApplicableMatch.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
 		isApplicableMatch.registerObject("tSuperInterface", tSuperInterface);
+		isApplicableMatch.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
+		isApplicableMatch.registerObject("eTypeAccess", eTypeAccess);
+		isApplicableMatch.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.registerObject("eInterfaceDeclaration", eInterfaceDeclaration);
 		isApplicableMatch.registerObject("tInterface", tInterface);
 		return csp;
@@ -406,14 +405,14 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject eSuperInterfaceToTSuperInterface,
-			EObject eSuperInterface, EObject eTypeAccess, EObject eInterfaceDeclarationToTInterface,
-			EObject tSuperInterface, EObject eInterfaceDeclaration, EObject tInterface) {
-		ruleresult.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject eSuperInterface, EObject tSuperInterface,
+			EObject eInterfaceDeclarationToTInterface, EObject eTypeAccess, EObject eSuperInterfaceToTSuperInterface,
+			EObject eInterfaceDeclaration, EObject tInterface) {
 		ruleresult.registerObject("eSuperInterface", eSuperInterface);
-		ruleresult.registerObject("eTypeAccess", eTypeAccess);
-		ruleresult.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
 		ruleresult.registerObject("tSuperInterface", tSuperInterface);
+		ruleresult.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
+		ruleresult.registerObject("eTypeAccess", eTypeAccess);
+		ruleresult.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		ruleresult.registerObject("eInterfaceDeclaration", eInterfaceDeclaration);
 		ruleresult.registerObject("tInterface", tInterface);
 
@@ -504,10 +503,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result1_bindingAndBlack[0];
-		InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result1_bindingAndBlack[1];
+		InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result1_bindingAndBlack[0];
+		TInterface tSuperInterface = (TInterface) result1_bindingAndBlack[1];
 		TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result1_bindingAndBlack[2];
-		TInterface tSuperInterface = (TInterface) result1_bindingAndBlack[3];
+		TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result1_bindingAndBlack[3];
 		InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[4];
 		TInterface tInterface = (TInterface) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
@@ -527,30 +526,30 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceExtendsInterfaceImpl
-				.pattern_InterfaceExtendsInterface_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
-						eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-						eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+				.pattern_InterfaceExtendsInterface_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, eSuperInterface,
+						tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+						eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
-					+ "[eSuperInterface] = " + eSuperInterface + ", " + "[eTypeAccess] = " + eTypeAccess + ", "
-					+ "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
-					+ "[tSuperInterface] = " + tSuperInterface + ", " + "[eInterfaceDeclaration] = "
-					+ eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface + ".");
+					+ ", " + "[eSuperInterface] = " + eSuperInterface + ", " + "[tSuperInterface] = " + tSuperInterface
+					+ ", " + "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
+					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eSuperInterfaceToTSuperInterface] = "
+					+ eSuperInterfaceToTSuperInterface + ", " + "[eInterfaceDeclaration] = " + eInterfaceDeclaration
+					+ ", " + "[tInterface] = " + tInterface + ".");
 		}
 		InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-				ruleresult, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface);
-		//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[7];
+				ruleresult, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface);
+		//nothing EMoflonEdge tInterface__tSuperInterface____parentInterfaces = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tSuperInterface__tInterface____childInterfaces = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tInterface__tSuperInterface____parentInterfaces = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tSuperInterface__tInterface____childInterfaces = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge eTypeAccess__eSuperInterface____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_11_5_registerobjects_expressionBBBBBBBBB(this,
-				ruleresult, eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+				ruleresult, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+				eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		return InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_11_6_expressionFB(ruleresult);
 	}
 
@@ -582,38 +581,38 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		TInterface tSuperInterface = (TInterface) result2_binding[0];
 		TInterface tInterface = (TInterface) result2_binding[1];
 		for (Object[] result2_black : InterfaceExtendsInterfaceImpl
-				.pattern_InterfaceExtendsInterface_12_2_corematch_blackFFFBFBB(tSuperInterface, tInterface, match)) {
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result2_black[0];
-			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result2_black[1];
+				.pattern_InterfaceExtendsInterface_12_2_corematch_blackFBFFFBB(tSuperInterface, tInterface, match)) {
+			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result2_black[0];
 			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result2_black[2];
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result2_black[3];
 			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : InterfaceExtendsInterfaceImpl
-					.pattern_InterfaceExtendsInterface_12_3_findcontext_blackBBBBBB(eSuperInterfaceToTSuperInterface,
-							eSuperInterface, eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
+					.pattern_InterfaceExtendsInterface_12_3_findcontext_blackBBBBBB(eSuperInterface, tSuperInterface,
+							eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
 							tInterface)) {
 				Object[] result3_green = InterfaceExtendsInterfaceImpl
-						.pattern_InterfaceExtendsInterface_12_3_findcontext_greenBBBBBBFFFFFFF(
-								eSuperInterfaceToTSuperInterface, eSuperInterface, eInterfaceDeclarationToTInterface,
-								tSuperInterface, eInterfaceDeclaration, tInterface);
+						.pattern_InterfaceExtendsInterface_12_3_findcontext_greenBBBBBBFFFFFFF(eSuperInterface,
+								tSuperInterface, eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface,
+								eInterfaceDeclaration, tInterface);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__tSuperInterface____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__tSuperInterface____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge tInterface__tSuperInterface____parentInterfaces = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge tSuperInterface__tInterface____childInterfaces = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = InterfaceExtendsInterfaceImpl
 						.pattern_InterfaceExtendsInterface_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-								eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+								isApplicableMatch, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+								eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eSuperInterface] = "
+							+ eSuperInterface + ", " + "[tSuperInterface] = " + tSuperInterface + ", "
+							+ "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
 							+ "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
-							+ "[eSuperInterface] = " + eSuperInterface + ", " + "[eInterfaceDeclarationToTInterface] = "
-							+ eInterfaceDeclarationToTInterface + ", " + "[tSuperInterface] = " + tSuperInterface + ", "
 							+ "[eInterfaceDeclaration] = " + eInterfaceDeclaration + ", " + "[tInterface] = "
 							+ tInterface + ".");
 				}
@@ -686,10 +685,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -704,10 +703,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.registerObject("eSuperInterface", eSuperInterface);
-		isApplicableMatch.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
 		isApplicableMatch.registerObject("tSuperInterface", tSuperInterface);
+		isApplicableMatch.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
+		isApplicableMatch.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.registerObject("eInterfaceDeclaration", eInterfaceDeclaration);
 		isApplicableMatch.registerObject("tInterface", tInterface);
 		return csp;
@@ -727,14 +726,14 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject eSuperInterfaceToTSuperInterface,
-			EObject eSuperInterface, EObject eTypeAccess, EObject eInterfaceDeclarationToTInterface,
-			EObject tSuperInterface, EObject eInterfaceDeclaration, EObject tInterface) {
-		ruleresult.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject eSuperInterface, EObject tSuperInterface,
+			EObject eInterfaceDeclarationToTInterface, EObject eTypeAccess, EObject eSuperInterfaceToTSuperInterface,
+			EObject eInterfaceDeclaration, EObject tInterface) {
 		ruleresult.registerObject("eSuperInterface", eSuperInterface);
-		ruleresult.registerObject("eTypeAccess", eTypeAccess);
-		ruleresult.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
 		ruleresult.registerObject("tSuperInterface", tSuperInterface);
+		ruleresult.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
+		ruleresult.registerObject("eTypeAccess", eTypeAccess);
+		ruleresult.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		ruleresult.registerObject("eInterfaceDeclaration", eInterfaceDeclaration);
 		ruleresult.registerObject("tInterface", tInterface);
 
@@ -754,7 +753,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_23(EMoflonEdge _edge_parentInterfaces) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_parentInterfaces) {
 
 		Object[] result1_bindingAndBlack = InterfaceExtendsInterfaceImpl
 				.pattern_InterfaceExtendsInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -812,7 +811,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_25(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_71(EMoflonEdge _edge_superInterfaces) {
 
 		Object[] result1_bindingAndBlack = InterfaceExtendsInterfaceImpl
 				.pattern_InterfaceExtendsInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -828,7 +827,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 		// ForEach 
 		for (Object[] result2_black : InterfaceExtendsInterfaceImpl
-				.pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_blackFFFB(_edge_type)) {
+				.pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_blackFFFB(_edge_superInterfaces)) {
 			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result2_black[0];
 			TypeAccess eTypeAccess = (TypeAccess) result2_black[1];
 			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result2_black[2];
@@ -949,44 +948,45 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result2_bindingAndBlack[0];
-		TypeAccess eTypeAccess = (TypeAccess) result2_bindingAndBlack[1];
-		TInterface tSuperInterface = (TInterface) result2_bindingAndBlack[2];
+		TInterface tSuperInterface = (TInterface) result2_bindingAndBlack[1];
+		TypeAccess eTypeAccess = (TypeAccess) result2_bindingAndBlack[2];
 		InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result2_bindingAndBlack[3];
 		TInterface tInterface = (TInterface) result2_bindingAndBlack[4];
 
 		Object[] result3_bindingAndBlack = InterfaceExtendsInterfaceImpl
 				.pattern_InterfaceExtendsInterface_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, eSuperInterface,
-						eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface, sourceMatch, targetMatch);
+						tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[eSuperInterface] = " + eSuperInterface + ", " + "[eTypeAccess] = " + eTypeAccess + ", "
-					+ "[tSuperInterface] = " + tSuperInterface + ", " + "[eInterfaceDeclaration] = "
-					+ eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface + ", " + "[sourceMatch] = "
-					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[eSuperInterface] = " + eSuperInterface + ", " + "[tSuperInterface] = " + tSuperInterface + ", "
+					+ "[eTypeAccess] = " + eTypeAccess + ", " + "[eInterfaceDeclaration] = " + eInterfaceDeclaration
+					+ ", " + "[tInterface] = " + tInterface + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : InterfaceExtendsInterfaceImpl
-					.pattern_InterfaceExtendsInterface_24_5_matchcorrcontext_blackFBFBBBBB(eSuperInterface,
+					.pattern_InterfaceExtendsInterface_24_5_matchcorrcontext_blackBBFFBBBB(eSuperInterface,
 							tSuperInterface, eInterfaceDeclaration, tInterface, sourceMatch, targetMatch)) {
-				TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result5_black[0];
 				TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result5_black[2];
+				TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result5_black[3];
 				Object[] result5_green = InterfaceExtendsInterfaceImpl
 						.pattern_InterfaceExtendsInterface_24_5_matchcorrcontext_greenBBBBF(
-								eSuperInterfaceToTSuperInterface, eInterfaceDeclarationToTInterface, sourceMatch,
+								eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = InterfaceExtendsInterfaceImpl
 						.pattern_InterfaceExtendsInterface_24_6_createcorrespondence_blackBBBBBB(eSuperInterface,
-								eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface, ccMatch);
+								tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[eSuperInterface] = "
-							+ eSuperInterface + ", " + "[eTypeAccess] = " + eTypeAccess + ", " + "[tSuperInterface] = "
-							+ tSuperInterface + ", " + "[eInterfaceDeclaration] = " + eInterfaceDeclaration + ", "
-							+ "[tInterface] = " + tInterface + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException(
+							"Pattern matching failed." + " Variables: " + "[eSuperInterface] = " + eSuperInterface
+									+ ", " + "[tSuperInterface] = " + tSuperInterface + ", " + "[eTypeAccess] = "
+									+ eTypeAccess + ", " + "[eInterfaceDeclaration] = " + eInterfaceDeclaration + ", "
+									+ "[tInterface] = " + tInterface + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = InterfaceExtendsInterfaceImpl
@@ -1010,8 +1010,8 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess,
-			TInterface tSuperInterface, InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface,
+	public CSP isApplicable_solveCsp_CC(InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeAccess eTypeAccess, InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1094,26 +1094,26 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 				.pattern_InterfaceExtendsInterface_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList eSuperInterfaceToTSuperInterfaceList = (RuleEntryList) result2_black[0];
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result2_black[1];
-			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result2_black[2];
+			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result2_black[1];
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result2_black[2];
 			TInterface tSuperInterface = (TInterface) result2_black[3];
 			//nothing RuleEntryList eInterfaceDeclarationToTInterfaceList = (RuleEntryList) result2_black[4];
 			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result2_black[5];
-			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result2_black[6];
-			TInterface tInterface = (TInterface) result2_black[7];
+			TInterface tInterface = (TInterface) result2_black[6];
+			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = InterfaceExtendsInterfaceImpl
 					.pattern_InterfaceExtendsInterface_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							eSuperInterfaceToTSuperInterface, eSuperInterface, eInterfaceDeclarationToTInterface,
-							tSuperInterface, eInterfaceDeclaration, tInterface, ruleResult);
+							eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+							eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eSuperInterfaceToTSuperInterface] = "
-						+ eSuperInterfaceToTSuperInterface + ", " + "[eSuperInterface] = " + eSuperInterface + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[eSuperInterface] = " + eSuperInterface
+						+ ", " + "[tSuperInterface] = " + tSuperInterface + ", "
 						+ "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
-						+ "[tSuperInterface] = " + tSuperInterface + ", " + "[eInterfaceDeclaration] = "
-						+ eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface + ", " + "[ruleResult] = "
-						+ ruleResult + ".");
+						+ "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
+						+ "[eInterfaceDeclaration] = " + eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface
+						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1121,28 +1121,26 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					csp)) {
 				// 
 				Object[] result5_black = InterfaceExtendsInterfaceImpl
-						.pattern_InterfaceExtendsInterface_29_5_checknacs_blackBBBBBB(eSuperInterfaceToTSuperInterface,
-								eSuperInterface, eInterfaceDeclarationToTInterface, tSuperInterface,
+						.pattern_InterfaceExtendsInterface_29_5_checknacs_blackBBBBBB(eSuperInterface, tSuperInterface,
+								eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface,
 								eInterfaceDeclaration, tInterface);
 				if (result5_black != null) {
 
 					Object[] result6_black = InterfaceExtendsInterfaceImpl
-							.pattern_InterfaceExtendsInterface_29_6_perform_blackBBBBBBB(
-									eSuperInterfaceToTSuperInterface, eSuperInterface,
-									eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-									tInterface, ruleResult);
+							.pattern_InterfaceExtendsInterface_29_6_perform_blackBBBBBBB(eSuperInterface,
+									tSuperInterface, eInterfaceDeclarationToTInterface,
+									eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: "
-								+ "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
-								+ "[eSuperInterface] = " + eSuperInterface + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[eSuperInterface] = "
+								+ eSuperInterface + ", " + "[tSuperInterface] = " + tSuperInterface + ", "
 								+ "[eInterfaceDeclarationToTInterface] = " + eInterfaceDeclarationToTInterface + ", "
-								+ "[tSuperInterface] = " + tSuperInterface + ", " + "[eInterfaceDeclaration] = "
-								+ eInterfaceDeclaration + ", " + "[tInterface] = " + tInterface + ", "
-								+ "[ruleResult] = " + ruleResult + ".");
+								+ "[eSuperInterfaceToTSuperInterface] = " + eSuperInterfaceToTSuperInterface + ", "
+								+ "[eInterfaceDeclaration] = " + eInterfaceDeclaration + ", " + "[tInterface] = "
+								+ tInterface + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_29_6_perform_greenBFBBBB(
+					InterfaceExtendsInterfaceImpl.pattern_InterfaceExtendsInterface_29_6_perform_greenBBFBBB(
 							eSuperInterface, tSuperInterface, eInterfaceDeclaration, tInterface, ruleResult);
-					//nothing TypeAccess eTypeAccess = (TypeAccess) result6_green[1];
+					//nothing TypeAccess eTypeAccess = (TypeAccess) result6_green[2];
 
 				} else {
 				}
@@ -1159,10 +1157,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1177,10 +1175,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.registerObject("eSuperInterface", eSuperInterface);
-		isApplicableMatch.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
 		isApplicableMatch.registerObject("tSuperInterface", tSuperInterface);
+		isApplicableMatch.registerObject("eInterfaceDeclarationToTInterface", eInterfaceDeclarationToTInterface);
+		isApplicableMatch.registerObject("eSuperInterfaceToTSuperInterface", eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.registerObject("eInterfaceDeclaration", eInterfaceDeclaration);
 		isApplicableMatch.registerObject("tInterface", tInterface);
 		return csp;
@@ -1219,11 +1217,11 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					(TypeAccess) arguments.get(2), (InterfaceDeclaration) arguments.get(3));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_INTERFACEDECLARATION_TYPEACCESS_TYPETOTABSTRACTTYPE_TINTERFACE_INTERFACEDECLARATION_TINTERFACE:
+		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_TINTERFACE_TYPETOTABSTRACTTYPE_TYPEACCESS_TYPETOTABSTRACTTYPE_INTERFACEDECLARATION_TINTERFACE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (InterfaceDeclaration) arguments.get(2),
-					(TypeAccess) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
-					(TInterface) arguments.get(5), (InterfaceDeclaration) arguments.get(6),
+					(InterfaceDeclaration) arguments.get(1), (TInterface) arguments.get(2),
+					(TypeToTAbstractType) arguments.get(3), (TypeAccess) arguments.get(4),
+					(TypeToTAbstractType) arguments.get(5), (InterfaceDeclaration) arguments.get(6),
 					(TInterface) arguments.get(7));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1250,10 +1248,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					(TInterface) arguments.get(2));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_INTERFACEDECLARATION_TYPETOTABSTRACTTYPE_TINTERFACE_INTERFACEDECLARATION_TINTERFACE:
+		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_TINTERFACE_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE_INTERFACEDECLARATION_TINTERFACE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (InterfaceDeclaration) arguments.get(2),
-					(TypeToTAbstractType) arguments.get(3), (TInterface) arguments.get(4),
+					(InterfaceDeclaration) arguments.get(1), (TInterface) arguments.get(2),
+					(TypeToTAbstractType) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
 					(InterfaceDeclaration) arguments.get(5), (TInterface) arguments.get(6));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
@@ -1264,19 +1262,19 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 			return null;
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_23__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_23((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_25__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_25((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_68__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_68((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_71__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_71((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_TYPEACCESS_TINTERFACE_INTERFACEDECLARATION_TINTERFACE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (TypeAccess) arguments.get(1),
-					(TInterface) arguments.get(2), (InterfaceDeclaration) arguments.get(3),
+		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_TINTERFACE_TYPEACCESS_INTERFACEDECLARATION_TINTERFACE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (TInterface) arguments.get(1),
+					(TypeAccess) arguments.get(2), (InterfaceDeclaration) arguments.get(3),
 					(TInterface) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1288,10 +1286,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1),
 					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPETOTABSTRACTTYPE_INTERFACEDECLARATION_TYPETOTABSTRACTTYPE_TINTERFACE_INTERFACEDECLARATION_TINTERFACE_MODELGENERATORRULERESULT:
+		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_TINTERFACE_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE_INTERFACEDECLARATION_TINTERFACE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(TypeToTAbstractType) arguments.get(1), (InterfaceDeclaration) arguments.get(2),
-					(TypeToTAbstractType) arguments.get(3), (TInterface) arguments.get(4),
+					(InterfaceDeclaration) arguments.get(1), (TInterface) arguments.get(2),
+					(TypeToTAbstractType) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
 					(InterfaceDeclaration) arguments.get(5), (TInterface) arguments.get(6),
 					(ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.INTERFACE_EXTENDS_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
@@ -1362,31 +1360,31 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	public static final Object[] pattern_InterfaceExtendsInterface_0_4_collectelementstobetranslated_greenBBBBFFF(
 			Match match, InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess,
 			InterfaceDeclaration eInterfaceDeclaration) {
-		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
+		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(eTypeAccess);
+		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
 		String eTypeAccess__eSuperInterface____type_name_prime = "type";
 		String eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
+		match.getToBeTranslatedEdges().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
 		eTypeAccess__eSuperInterface____type.setSrc(eTypeAccess);
 		eTypeAccess__eSuperInterface____type.setTrg(eSuperInterface);
 		match.getToBeTranslatedEdges().add(eTypeAccess__eSuperInterface____type);
 		eSuperInterface__eTypeAccess____usagesInTypeAccess.setSrc(eSuperInterface);
 		eSuperInterface__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		match.getToBeTranslatedEdges().add(eSuperInterface__eTypeAccess____usagesInTypeAccess);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
-		match.getToBeTranslatedEdges().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces
+				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
 		eTypeAccess__eSuperInterface____type.setName(eTypeAccess__eSuperInterface____type_name_prime);
 		eSuperInterface__eTypeAccess____usagesInTypeAccess
 				.setName(eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces
-				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
 		return new Object[] { match, eSuperInterface, eTypeAccess, eInterfaceDeclaration,
-				eTypeAccess__eSuperInterface____type, eSuperInterface__eTypeAccess____usagesInTypeAccess,
-				eInterfaceDeclaration__eTypeAccess____superInterfaces };
+				eInterfaceDeclaration__eTypeAccess____superInterfaces, eTypeAccess__eSuperInterface____type,
+				eSuperInterface__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_0_5_collectcontextelements_blackBBBB(Match match,
@@ -1423,37 +1421,38 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("eSuperInterfaceToTSuperInterface");
-		EObject _localVariable_1 = isApplicableMatch.getObject("eSuperInterface");
-		EObject _localVariable_2 = isApplicableMatch.getObject("eTypeAccess");
-		EObject _localVariable_3 = isApplicableMatch.getObject("eInterfaceDeclarationToTInterface");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tSuperInterface");
+		EObject _localVariable_0 = isApplicableMatch.getObject("eSuperInterface");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tSuperInterface");
+		EObject _localVariable_2 = isApplicableMatch.getObject("eInterfaceDeclarationToTInterface");
+		EObject _localVariable_3 = isApplicableMatch.getObject("eTypeAccess");
+		EObject _localVariable_4 = isApplicableMatch.getObject("eSuperInterfaceToTSuperInterface");
 		EObject _localVariable_5 = isApplicableMatch.getObject("eInterfaceDeclaration");
 		EObject _localVariable_6 = isApplicableMatch.getObject("tInterface");
-		EObject tmpESuperInterfaceToTSuperInterface = _localVariable_0;
-		EObject tmpESuperInterface = _localVariable_1;
-		EObject tmpETypeAccess = _localVariable_2;
-		EObject tmpEInterfaceDeclarationToTInterface = _localVariable_3;
-		EObject tmpTSuperInterface = _localVariable_4;
+		EObject tmpESuperInterface = _localVariable_0;
+		EObject tmpTSuperInterface = _localVariable_1;
+		EObject tmpEInterfaceDeclarationToTInterface = _localVariable_2;
+		EObject tmpETypeAccess = _localVariable_3;
+		EObject tmpESuperInterfaceToTSuperInterface = _localVariable_4;
 		EObject tmpEInterfaceDeclaration = _localVariable_5;
 		EObject tmpTInterface = _localVariable_6;
-		if (tmpESuperInterfaceToTSuperInterface instanceof TypeToTAbstractType) {
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) tmpESuperInterfaceToTSuperInterface;
-			if (tmpESuperInterface instanceof InterfaceDeclaration) {
-				InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
-				if (tmpETypeAccess instanceof TypeAccess) {
-					TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-					if (tmpEInterfaceDeclarationToTInterface instanceof TypeToTAbstractType) {
-						TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) tmpEInterfaceDeclarationToTInterface;
-						if (tmpTSuperInterface instanceof TInterface) {
-							TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
+		if (tmpESuperInterface instanceof InterfaceDeclaration) {
+			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
+			if (tmpTSuperInterface instanceof TInterface) {
+				TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
+				if (tmpEInterfaceDeclarationToTInterface instanceof TypeToTAbstractType) {
+					TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) tmpEInterfaceDeclarationToTInterface;
+					if (tmpETypeAccess instanceof TypeAccess) {
+						TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+						if (tmpESuperInterfaceToTSuperInterface instanceof TypeToTAbstractType) {
+							TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) tmpESuperInterfaceToTSuperInterface;
 							if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
 								InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
 								if (tmpTInterface instanceof TInterface) {
 									TInterface tInterface = (TInterface) tmpTInterface;
-									return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-											eTypeAccess, eInterfaceDeclarationToTInterface, tSuperInterface,
-											eInterfaceDeclaration, tInterface, isApplicableMatch };
+									return new Object[] { eSuperInterface, tSuperInterface,
+											eInterfaceDeclarationToTInterface, eTypeAccess,
+											eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface,
+											isApplicableMatch };
 								}
 							}
 						}
@@ -1465,19 +1464,19 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_1_1_performtransformation_blackBBBBBBBFBB(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeAccess eTypeAccess, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, InterfaceExtendsInterface _this,
-			IsApplicableMatch isApplicableMatch) {
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeAccess eTypeAccess,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface, InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch) {
 		if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
 			if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 				if (!tInterface.equals(tSuperInterface)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-									eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-									tInterface, csp, _this, isApplicableMatch };
+							return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+									eTypeAccess, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface,
+									csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1491,23 +1490,23 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		Object[] result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding = pattern_InterfaceExtendsInterface_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding != null) {
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[0];
-			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[1];
-			TypeAccess eTypeAccess = (TypeAccess) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[2];
-			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[3];
-			TInterface tSuperInterface = (TInterface) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[4];
+			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[0];
+			TInterface tSuperInterface = (TInterface) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[1];
+			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[2];
+			TypeAccess eTypeAccess = (TypeAccess) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[3];
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[4];
 			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[5];
 			TInterface tInterface = (TInterface) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_InterfaceExtendsInterface_1_1_performtransformation_black = pattern_InterfaceExtendsInterface_1_1_performtransformation_blackBBBBBBBFBB(
-					eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess, eInterfaceDeclarationToTInterface,
-					tSuperInterface, eInterfaceDeclaration, tInterface, _this, isApplicableMatch);
+					eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+					eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, _this, isApplicableMatch);
 			if (result_pattern_InterfaceExtendsInterface_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InterfaceExtendsInterface_1_1_performtransformation_black[7];
 
-				return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-						eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface, csp,
-						_this, isApplicableMatch };
+				return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+						eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, csp, _this,
+						isApplicableMatch };
 			}
 		}
 		return null;
@@ -1532,46 +1531,43 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject eSuperInterfaceToTSuperInterface, EObject eSuperInterface,
-			EObject eTypeAccess, EObject eInterfaceDeclarationToTInterface, EObject tSuperInterface,
+			PerformRuleResult ruleresult, EObject eSuperInterface, EObject tSuperInterface,
+			EObject eInterfaceDeclarationToTInterface, EObject eTypeAccess, EObject eSuperInterfaceToTSuperInterface,
 			EObject eInterfaceDeclaration, EObject tInterface) {
-		if (!eSuperInterfaceToTSuperInterface.equals(eTypeAccess)) {
-			if (!eSuperInterfaceToTSuperInterface.equals(tSuperInterface)) {
-				if (!eSuperInterfaceToTSuperInterface.equals(tInterface)) {
-					if (!eSuperInterface.equals(eSuperInterfaceToTSuperInterface)) {
-						if (!eSuperInterface.equals(eTypeAccess)) {
-							if (!eSuperInterface.equals(tSuperInterface)) {
-								if (!eSuperInterface.equals(tInterface)) {
-									if (!eTypeAccess.equals(tSuperInterface)) {
-										if (!eTypeAccess.equals(tInterface)) {
-											if (!eInterfaceDeclarationToTInterface
-													.equals(eSuperInterfaceToTSuperInterface)) {
-												if (!eInterfaceDeclarationToTInterface.equals(eSuperInterface)) {
-													if (!eInterfaceDeclarationToTInterface.equals(eTypeAccess)) {
-														if (!eInterfaceDeclarationToTInterface
-																.equals(tSuperInterface)) {
-															if (!eInterfaceDeclarationToTInterface.equals(tInterface)) {
-																if (!eInterfaceDeclaration
-																		.equals(eSuperInterfaceToTSuperInterface)) {
+		if (!eSuperInterface.equals(tSuperInterface)) {
+			if (!eSuperInterface.equals(eTypeAccess)) {
+				if (!eSuperInterface.equals(eSuperInterfaceToTSuperInterface)) {
+					if (!eSuperInterface.equals(tInterface)) {
+						if (!eInterfaceDeclarationToTInterface.equals(eSuperInterface)) {
+							if (!eInterfaceDeclarationToTInterface.equals(tSuperInterface)) {
+								if (!eInterfaceDeclarationToTInterface.equals(eTypeAccess)) {
+									if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
+										if (!eInterfaceDeclarationToTInterface.equals(tInterface)) {
+											if (!eTypeAccess.equals(tSuperInterface)) {
+												if (!eTypeAccess.equals(tInterface)) {
+													if (!eSuperInterfaceToTSuperInterface.equals(tSuperInterface)) {
+														if (!eSuperInterfaceToTSuperInterface.equals(eTypeAccess)) {
+															if (!eSuperInterfaceToTSuperInterface.equals(tInterface)) {
+																if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 																	if (!eInterfaceDeclaration
-																			.equals(eSuperInterface)) {
-																		if (!eInterfaceDeclaration
-																				.equals(eTypeAccess)) {
-																			if (!eInterfaceDeclaration.equals(
-																					eInterfaceDeclarationToTInterface)) {
-																				if (!eInterfaceDeclaration
-																						.equals(tSuperInterface)) {
+																			.equals(tSuperInterface)) {
+																		if (!eInterfaceDeclaration.equals(
+																				eInterfaceDeclarationToTInterface)) {
+																			if (!eInterfaceDeclaration
+																					.equals(eTypeAccess)) {
+																				if (!eInterfaceDeclaration.equals(
+																						eSuperInterfaceToTSuperInterface)) {
 																					if (!eInterfaceDeclaration
 																							.equals(tInterface)) {
 																						if (!tInterface.equals(
 																								tSuperInterface)) {
 																							return new Object[] {
 																									ruleresult,
-																									eSuperInterfaceToTSuperInterface,
 																									eSuperInterface,
-																									eTypeAccess,
-																									eInterfaceDeclarationToTInterface,
 																									tSuperInterface,
+																									eInterfaceDeclarationToTInterface,
+																									eTypeAccess,
+																									eSuperInterfaceToTSuperInterface,
 																									eInterfaceDeclaration,
 																									tInterface };
 																						}
@@ -1599,57 +1595,57 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject eSuperInterface, EObject eTypeAccess, EObject tSuperInterface,
+			PerformRuleResult ruleresult, EObject eSuperInterface, EObject tSuperInterface, EObject eTypeAccess,
 			EObject eInterfaceDeclaration, EObject tInterface) {
-		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge tInterface__tSuperInterface____parentInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSuperInterface__tInterface____childInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceExtendsInterface";
-		String eTypeAccess__eSuperInterface____type_name_prime = "type";
-		String eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
 		String tInterface__tSuperInterface____parentInterfaces_name_prime = "parentInterfaces";
 		String tSuperInterface__tInterface____childInterfaces_name_prime = "childInterfaces";
-		eTypeAccess__eSuperInterface____type.setSrc(eTypeAccess);
-		eTypeAccess__eSuperInterface____type.setTrg(eSuperInterface);
-		ruleresult.getTranslatedEdges().add(eTypeAccess__eSuperInterface____type);
-		eSuperInterface__eTypeAccess____usagesInTypeAccess.setSrc(eSuperInterface);
-		eSuperInterface__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
-		ruleresult.getTranslatedEdges().add(eSuperInterface__eTypeAccess____usagesInTypeAccess);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
-		ruleresult.getTranslatedEdges().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
+		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
+		String eTypeAccess__eSuperInterface____type_name_prime = "type";
+		String eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		tInterface__tSuperInterface____parentInterfaces.setSrc(tInterface);
 		tInterface__tSuperInterface____parentInterfaces.setTrg(tSuperInterface);
 		ruleresult.getCreatedEdges().add(tInterface__tSuperInterface____parentInterfaces);
 		tSuperInterface__tInterface____childInterfaces.setSrc(tSuperInterface);
 		tSuperInterface__tInterface____childInterfaces.setTrg(tInterface);
 		ruleresult.getCreatedEdges().add(tSuperInterface__tInterface____childInterfaces);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
+		ruleresult.getTranslatedEdges().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
+		eTypeAccess__eSuperInterface____type.setSrc(eTypeAccess);
+		eTypeAccess__eSuperInterface____type.setTrg(eSuperInterface);
+		ruleresult.getTranslatedEdges().add(eTypeAccess__eSuperInterface____type);
+		eSuperInterface__eTypeAccess____usagesInTypeAccess.setSrc(eSuperInterface);
+		eSuperInterface__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
+		ruleresult.getTranslatedEdges().add(eSuperInterface__eTypeAccess____usagesInTypeAccess);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		eTypeAccess__eSuperInterface____type.setName(eTypeAccess__eSuperInterface____type_name_prime);
-		eSuperInterface__eTypeAccess____usagesInTypeAccess
-				.setName(eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces
-				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
 		tInterface__tSuperInterface____parentInterfaces
 				.setName(tInterface__tSuperInterface____parentInterfaces_name_prime);
 		tSuperInterface__tInterface____childInterfaces
 				.setName(tSuperInterface__tInterface____childInterfaces_name_prime);
-		return new Object[] { ruleresult, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration,
-				tInterface, eTypeAccess__eSuperInterface____type, eSuperInterface__eTypeAccess____usagesInTypeAccess,
-				eInterfaceDeclaration__eTypeAccess____superInterfaces, tInterface__tSuperInterface____parentInterfaces,
-				tSuperInterface__tInterface____childInterfaces };
+		eInterfaceDeclaration__eTypeAccess____superInterfaces
+				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
+		eTypeAccess__eSuperInterface____type.setName(eTypeAccess__eSuperInterface____type_name_prime);
+		eSuperInterface__eTypeAccess____usagesInTypeAccess
+				.setName(eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime);
+		return new Object[] { ruleresult, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration,
+				tInterface, tInterface__tSuperInterface____parentInterfaces,
+				tSuperInterface__tInterface____childInterfaces, eInterfaceDeclaration__eTypeAccess____superInterfaces,
+				eTypeAccess__eSuperInterface____type, eSuperInterface__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final void pattern_InterfaceExtendsInterface_1_5_registerobjects_expressionBBBBBBBBB(
-			InterfaceExtendsInterface _this, PerformRuleResult ruleresult, EObject eSuperInterfaceToTSuperInterface,
-			EObject eSuperInterface, EObject eTypeAccess, EObject eInterfaceDeclarationToTInterface,
-			EObject tSuperInterface, EObject eInterfaceDeclaration, EObject tInterface) {
-		_this.registerObjects_FWD(ruleresult, eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+			InterfaceExtendsInterface _this, PerformRuleResult ruleresult, EObject eSuperInterface,
+			EObject tSuperInterface, EObject eInterfaceDeclarationToTInterface, EObject eTypeAccess,
+			EObject eSuperInterfaceToTSuperInterface, EObject eInterfaceDeclaration, EObject tInterface) {
+		_this.registerObjects_FWD(ruleresult, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+				eTypeAccess, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 
 	}
 
@@ -1730,7 +1726,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_2_2_corematch_blackFBBFFBFB(
+	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_2_2_corematch_blackBFFBFBFB(
 			InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess, InterfaceDeclaration eInterfaceDeclaration,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -1747,9 +1743,10 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 							if (tmpTInterface instanceof TInterface) {
 								TInterface tInterface = (TInterface) tmpTInterface;
 								if (!tInterface.equals(tSuperInterface)) {
-									_result.add(new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-											eTypeAccess, eInterfaceDeclarationToTInterface, tSuperInterface,
-											eInterfaceDeclaration, tInterface, match });
+									_result.add(new Object[] { eSuperInterface, tSuperInterface,
+											eInterfaceDeclarationToTInterface, eTypeAccess,
+											eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface,
+											match });
 								}
 							}
 
@@ -1763,22 +1760,24 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_2_3_findcontext_blackBBBBBBB(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeAccess eTypeAccess, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeAccess eTypeAccess,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
 			if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 				if (!tInterface.equals(tSuperInterface)) {
-					if (eSuperInterface.equals(eSuperInterfaceToTSuperInterface.getSource())) {
-						if (eSuperInterface.equals(eTypeAccess.getType())) {
-							if (eInterfaceDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
-								if (tSuperInterface.equals(eSuperInterfaceToTSuperInterface.getTarget())) {
-									if (eInterfaceDeclaration.equals(eInterfaceDeclarationToTInterface.getSource())) {
-										if (tInterface.equals(eInterfaceDeclarationToTInterface.getTarget())) {
-											_result.add(new Object[] { eSuperInterfaceToTSuperInterface,
-													eSuperInterface, eTypeAccess, eInterfaceDeclarationToTInterface,
-													tSuperInterface, eInterfaceDeclaration, tInterface });
+					if (tSuperInterface.equals(eSuperInterfaceToTSuperInterface.getTarget())) {
+						if (eSuperInterface.equals(eSuperInterfaceToTSuperInterface.getSource())) {
+							if (tInterface.equals(eInterfaceDeclarationToTInterface.getTarget())) {
+								if (eInterfaceDeclaration.equals(eInterfaceDeclarationToTInterface.getSource())) {
+									if (eInterfaceDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
+										if (eSuperInterface.equals(eTypeAccess.getType())) {
+											_result.add(new Object[] { eSuperInterface, tSuperInterface,
+													eInterfaceDeclarationToTInterface, eTypeAccess,
+													eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
+													tInterface });
 										}
 									}
 								}
@@ -1792,94 +1791,95 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_2_3_findcontext_greenBBBBBBBFFFFFFFF(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeAccess eTypeAccess, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeAccess eTypeAccess,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
-		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge eSuperInterfaceToTSuperInterface__tSuperInterface____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = RuntimeFactory.eINSTANCE
+		EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
+		EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String eSuperInterfaceToTSuperInterface__tSuperInterface____target_name_prime = "target";
 		String eSuperInterfaceToTSuperInterface__eSuperInterface____source_name_prime = "source";
+		String eInterfaceDeclarationToTInterface__tInterface____target_name_prime = "target";
+		String eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime = "source";
+		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
 		String eTypeAccess__eSuperInterface____type_name_prime = "type";
 		String eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
-		String eSuperInterfaceToTSuperInterface__tSuperInterface____target_name_prime = "target";
-		String eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime = "source";
-		String eInterfaceDeclarationToTInterface__tInterface____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.getAllContextElements().add(eSuperInterface);
-		isApplicableMatch.getAllContextElements().add(eTypeAccess);
-		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface);
 		isApplicableMatch.getAllContextElements().add(tSuperInterface);
+		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface);
+		isApplicableMatch.getAllContextElements().add(eTypeAccess);
+		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.getAllContextElements().add(eInterfaceDeclaration);
 		isApplicableMatch.getAllContextElements().add(tInterface);
+		eSuperInterfaceToTSuperInterface__tSuperInterface____target.setSrc(eSuperInterfaceToTSuperInterface);
+		eSuperInterfaceToTSuperInterface__tSuperInterface____target.setTrg(tSuperInterface);
+		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface__tSuperInterface____target);
 		eSuperInterfaceToTSuperInterface__eSuperInterface____source.setSrc(eSuperInterfaceToTSuperInterface);
 		eSuperInterfaceToTSuperInterface__eSuperInterface____source.setTrg(eSuperInterface);
 		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface__eSuperInterface____source);
+		eInterfaceDeclarationToTInterface__tInterface____target.setSrc(eInterfaceDeclarationToTInterface);
+		eInterfaceDeclarationToTInterface__tInterface____target.setTrg(tInterface);
+		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface__tInterface____target);
+		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setSrc(eInterfaceDeclarationToTInterface);
+		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setTrg(eInterfaceDeclaration);
+		isApplicableMatch.getAllContextElements()
+				.add(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
+		isApplicableMatch.getAllContextElements().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
 		eTypeAccess__eSuperInterface____type.setSrc(eTypeAccess);
 		eTypeAccess__eSuperInterface____type.setTrg(eSuperInterface);
 		isApplicableMatch.getAllContextElements().add(eTypeAccess__eSuperInterface____type);
 		eSuperInterface__eTypeAccess____usagesInTypeAccess.setSrc(eSuperInterface);
 		eSuperInterface__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
 		isApplicableMatch.getAllContextElements().add(eSuperInterface__eTypeAccess____usagesInTypeAccess);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
-		isApplicableMatch.getAllContextElements().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
-		eSuperInterfaceToTSuperInterface__tSuperInterface____target.setSrc(eSuperInterfaceToTSuperInterface);
-		eSuperInterfaceToTSuperInterface__tSuperInterface____target.setTrg(tSuperInterface);
-		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface__tSuperInterface____target);
-		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setSrc(eInterfaceDeclarationToTInterface);
-		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setTrg(eInterfaceDeclaration);
-		isApplicableMatch.getAllContextElements()
-				.add(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source);
-		eInterfaceDeclarationToTInterface__tInterface____target.setSrc(eInterfaceDeclarationToTInterface);
-		eInterfaceDeclarationToTInterface__tInterface____target.setTrg(tInterface);
-		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface__tInterface____target);
+		eSuperInterfaceToTSuperInterface__tSuperInterface____target
+				.setName(eSuperInterfaceToTSuperInterface__tSuperInterface____target_name_prime);
 		eSuperInterfaceToTSuperInterface__eSuperInterface____source
 				.setName(eSuperInterfaceToTSuperInterface__eSuperInterface____source_name_prime);
+		eInterfaceDeclarationToTInterface__tInterface____target
+				.setName(eInterfaceDeclarationToTInterface__tInterface____target_name_prime);
+		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source
+				.setName(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces
+				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
 		eTypeAccess__eSuperInterface____type.setName(eTypeAccess__eSuperInterface____type_name_prime);
 		eSuperInterface__eTypeAccess____usagesInTypeAccess
 				.setName(eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces
-				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
-		eSuperInterfaceToTSuperInterface__tSuperInterface____target
-				.setName(eSuperInterfaceToTSuperInterface__tSuperInterface____target_name_prime);
-		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source
-				.setName(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime);
-		eInterfaceDeclarationToTInterface__tInterface____target
-				.setName(eInterfaceDeclarationToTInterface__tInterface____target_name_prime);
-		return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface,
-				isApplicableMatch, eSuperInterfaceToTSuperInterface__eSuperInterface____source,
-				eTypeAccess__eSuperInterface____type, eSuperInterface__eTypeAccess____usagesInTypeAccess,
-				eInterfaceDeclaration__eTypeAccess____superInterfaces,
+		return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface, eTypeAccess,
+				eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, isApplicableMatch,
 				eSuperInterfaceToTSuperInterface__tSuperInterface____target,
+				eSuperInterfaceToTSuperInterface__eSuperInterface____source,
+				eInterfaceDeclarationToTInterface__tInterface____target,
 				eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source,
-				eInterfaceDeclarationToTInterface__tInterface____target };
+				eInterfaceDeclaration__eTypeAccess____superInterfaces, eTypeAccess__eSuperInterface____type,
+				eSuperInterface__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_2_4_solveCSP_bindingFBBBBBBBBB(
-			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeAccess eTypeAccess, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, eSuperInterfaceToTSuperInterface,
-				eSuperInterface, eTypeAccess, eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
+			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeAccess eTypeAccess,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, eSuperInterface, tSuperInterface,
+				eInterfaceDeclarationToTInterface, eTypeAccess, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
 				tInterface);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-					eTypeAccess, eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-					tInterface };
+			return new Object[] { csp, _this, isApplicableMatch, eSuperInterface, tSuperInterface,
+					eInterfaceDeclarationToTInterface, eTypeAccess, eSuperInterfaceToTSuperInterface,
+					eInterfaceDeclaration, tInterface };
 		}
 		return null;
 	}
@@ -1889,13 +1889,13 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeAccess eTypeAccess, TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
+			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeAccess eTypeAccess,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {
 		Object[] result_pattern_InterfaceExtendsInterface_2_4_solveCSP_binding = pattern_InterfaceExtendsInterface_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+				_this, isApplicableMatch, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+				eTypeAccess, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		if (result_pattern_InterfaceExtendsInterface_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceExtendsInterface_2_4_solveCSP_binding[0];
 
@@ -1903,9 +1903,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					csp);
 			if (result_pattern_InterfaceExtendsInterface_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-						eTypeAccess, eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-						tInterface };
+				return new Object[] { csp, _this, isApplicableMatch, eSuperInterface, tSuperInterface,
+						eInterfaceDeclarationToTInterface, eTypeAccess, eSuperInterfaceToTSuperInterface,
+						eInterfaceDeclaration, tInterface };
 			}
 		}
 		return null;
@@ -2046,33 +2046,33 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("eSuperInterfaceToTSuperInterface");
-		EObject _localVariable_1 = isApplicableMatch.getObject("eSuperInterface");
+		EObject _localVariable_0 = isApplicableMatch.getObject("eSuperInterface");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tSuperInterface");
 		EObject _localVariable_2 = isApplicableMatch.getObject("eInterfaceDeclarationToTInterface");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tSuperInterface");
+		EObject _localVariable_3 = isApplicableMatch.getObject("eSuperInterfaceToTSuperInterface");
 		EObject _localVariable_4 = isApplicableMatch.getObject("eInterfaceDeclaration");
 		EObject _localVariable_5 = isApplicableMatch.getObject("tInterface");
-		EObject tmpESuperInterfaceToTSuperInterface = _localVariable_0;
-		EObject tmpESuperInterface = _localVariable_1;
+		EObject tmpESuperInterface = _localVariable_0;
+		EObject tmpTSuperInterface = _localVariable_1;
 		EObject tmpEInterfaceDeclarationToTInterface = _localVariable_2;
-		EObject tmpTSuperInterface = _localVariable_3;
+		EObject tmpESuperInterfaceToTSuperInterface = _localVariable_3;
 		EObject tmpEInterfaceDeclaration = _localVariable_4;
 		EObject tmpTInterface = _localVariable_5;
-		if (tmpESuperInterfaceToTSuperInterface instanceof TypeToTAbstractType) {
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) tmpESuperInterfaceToTSuperInterface;
-			if (tmpESuperInterface instanceof InterfaceDeclaration) {
-				InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
+		if (tmpESuperInterface instanceof InterfaceDeclaration) {
+			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
+			if (tmpTSuperInterface instanceof TInterface) {
+				TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
 				if (tmpEInterfaceDeclarationToTInterface instanceof TypeToTAbstractType) {
 					TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) tmpEInterfaceDeclarationToTInterface;
-					if (tmpTSuperInterface instanceof TInterface) {
-						TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
+					if (tmpESuperInterfaceToTSuperInterface instanceof TypeToTAbstractType) {
+						TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) tmpESuperInterfaceToTSuperInterface;
 						if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
 							InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
 							if (tmpTInterface instanceof TInterface) {
 								TInterface tInterface = (TInterface) tmpTInterface;
-								return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-										eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-										tInterface, isApplicableMatch };
+								return new Object[] { eSuperInterface, tSuperInterface,
+										eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface,
+										eInterfaceDeclaration, tInterface, isApplicableMatch };
 							}
 						}
 					}
@@ -2083,8 +2083,8 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_11_1_performtransformation_blackBBBBBBFBB(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, InterfaceExtendsInterface _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
@@ -2093,9 +2093,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-									eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-									tInterface, csp, _this, isApplicableMatch };
+							return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+									eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, csp, _this,
+									isApplicableMatch };
 						}
 					}
 				}
@@ -2109,22 +2109,22 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		Object[] result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding = pattern_InterfaceExtendsInterface_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding != null) {
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[0];
-			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[1];
+			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[0];
+			TInterface tSuperInterface = (TInterface) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[1];
 			TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[2];
-			TInterface tSuperInterface = (TInterface) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[3];
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface = (TypeToTAbstractType) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[3];
 			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[4];
 			TInterface tInterface = (TInterface) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_InterfaceExtendsInterface_11_1_performtransformation_black = pattern_InterfaceExtendsInterface_11_1_performtransformation_blackBBBBBBFBB(
-					eSuperInterfaceToTSuperInterface, eSuperInterface, eInterfaceDeclarationToTInterface,
-					tSuperInterface, eInterfaceDeclaration, tInterface, _this, isApplicableMatch);
+					eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+					eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, _this, isApplicableMatch);
 			if (result_pattern_InterfaceExtendsInterface_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InterfaceExtendsInterface_11_1_performtransformation_black[6];
 
-				return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-						eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface, csp,
-						_this, isApplicableMatch };
+				return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+						eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, csp, _this,
+						isApplicableMatch };
 			}
 		}
 		return null;
@@ -2133,8 +2133,8 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	public static final Object[] pattern_InterfaceExtendsInterface_11_1_performtransformation_greenBFB(
 			InterfaceDeclaration eSuperInterface, InterfaceDeclaration eInterfaceDeclaration) {
 		TypeAccess eTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		eTypeAccess.setType(eSuperInterface);
 		eInterfaceDeclaration.getSuperInterfaces().add(eTypeAccess);
+		eTypeAccess.setType(eSuperInterface);
 		return new Object[] { eSuperInterface, eTypeAccess, eInterfaceDeclaration };
 	}
 
@@ -2151,46 +2151,43 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject eSuperInterfaceToTSuperInterface, EObject eSuperInterface,
-			EObject eTypeAccess, EObject eInterfaceDeclarationToTInterface, EObject tSuperInterface,
+			PerformRuleResult ruleresult, EObject eSuperInterface, EObject tSuperInterface,
+			EObject eInterfaceDeclarationToTInterface, EObject eTypeAccess, EObject eSuperInterfaceToTSuperInterface,
 			EObject eInterfaceDeclaration, EObject tInterface) {
-		if (!eSuperInterfaceToTSuperInterface.equals(eTypeAccess)) {
-			if (!eSuperInterfaceToTSuperInterface.equals(tSuperInterface)) {
-				if (!eSuperInterfaceToTSuperInterface.equals(tInterface)) {
-					if (!eSuperInterface.equals(eSuperInterfaceToTSuperInterface)) {
-						if (!eSuperInterface.equals(eTypeAccess)) {
-							if (!eSuperInterface.equals(tSuperInterface)) {
-								if (!eSuperInterface.equals(tInterface)) {
-									if (!eTypeAccess.equals(tSuperInterface)) {
-										if (!eTypeAccess.equals(tInterface)) {
-											if (!eInterfaceDeclarationToTInterface
-													.equals(eSuperInterfaceToTSuperInterface)) {
-												if (!eInterfaceDeclarationToTInterface.equals(eSuperInterface)) {
-													if (!eInterfaceDeclarationToTInterface.equals(eTypeAccess)) {
-														if (!eInterfaceDeclarationToTInterface
-																.equals(tSuperInterface)) {
-															if (!eInterfaceDeclarationToTInterface.equals(tInterface)) {
-																if (!eInterfaceDeclaration
-																		.equals(eSuperInterfaceToTSuperInterface)) {
+		if (!eSuperInterface.equals(tSuperInterface)) {
+			if (!eSuperInterface.equals(eTypeAccess)) {
+				if (!eSuperInterface.equals(eSuperInterfaceToTSuperInterface)) {
+					if (!eSuperInterface.equals(tInterface)) {
+						if (!eInterfaceDeclarationToTInterface.equals(eSuperInterface)) {
+							if (!eInterfaceDeclarationToTInterface.equals(tSuperInterface)) {
+								if (!eInterfaceDeclarationToTInterface.equals(eTypeAccess)) {
+									if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
+										if (!eInterfaceDeclarationToTInterface.equals(tInterface)) {
+											if (!eTypeAccess.equals(tSuperInterface)) {
+												if (!eTypeAccess.equals(tInterface)) {
+													if (!eSuperInterfaceToTSuperInterface.equals(tSuperInterface)) {
+														if (!eSuperInterfaceToTSuperInterface.equals(eTypeAccess)) {
+															if (!eSuperInterfaceToTSuperInterface.equals(tInterface)) {
+																if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 																	if (!eInterfaceDeclaration
-																			.equals(eSuperInterface)) {
-																		if (!eInterfaceDeclaration
-																				.equals(eTypeAccess)) {
-																			if (!eInterfaceDeclaration.equals(
-																					eInterfaceDeclarationToTInterface)) {
-																				if (!eInterfaceDeclaration
-																						.equals(tSuperInterface)) {
+																			.equals(tSuperInterface)) {
+																		if (!eInterfaceDeclaration.equals(
+																				eInterfaceDeclarationToTInterface)) {
+																			if (!eInterfaceDeclaration
+																					.equals(eTypeAccess)) {
+																				if (!eInterfaceDeclaration.equals(
+																						eSuperInterfaceToTSuperInterface)) {
 																					if (!eInterfaceDeclaration
 																							.equals(tInterface)) {
 																						if (!tInterface.equals(
 																								tSuperInterface)) {
 																							return new Object[] {
 																									ruleresult,
-																									eSuperInterfaceToTSuperInterface,
 																									eSuperInterface,
-																									eTypeAccess,
-																									eInterfaceDeclarationToTInterface,
 																									tSuperInterface,
+																									eInterfaceDeclarationToTInterface,
+																									eTypeAccess,
+																									eSuperInterfaceToTSuperInterface,
 																									eInterfaceDeclaration,
 																									tInterface };
 																						}
@@ -2218,57 +2215,57 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject eSuperInterface, EObject eTypeAccess, EObject tSuperInterface,
+			PerformRuleResult ruleresult, EObject eSuperInterface, EObject tSuperInterface, EObject eTypeAccess,
 			EObject eInterfaceDeclaration, EObject tInterface) {
-		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge tInterface__tSuperInterface____parentInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSuperInterface__tInterface____childInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eInterfaceDeclaration__eTypeAccess____superInterfaces = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eTypeAccess__eSuperInterface____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eSuperInterface__eTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceExtendsInterface";
-		String eTypeAccess__eSuperInterface____type_name_prime = "type";
-		String eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
 		String tInterface__tSuperInterface____parentInterfaces_name_prime = "parentInterfaces";
 		String tSuperInterface__tInterface____childInterfaces_name_prime = "childInterfaces";
-		eTypeAccess__eSuperInterface____type.setSrc(eTypeAccess);
-		eTypeAccess__eSuperInterface____type.setTrg(eSuperInterface);
-		ruleresult.getCreatedEdges().add(eTypeAccess__eSuperInterface____type);
-		eSuperInterface__eTypeAccess____usagesInTypeAccess.setSrc(eSuperInterface);
-		eSuperInterface__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
-		ruleresult.getCreatedEdges().add(eSuperInterface__eTypeAccess____usagesInTypeAccess);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
-		ruleresult.getCreatedEdges().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
+		String eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime = "superInterfaces";
+		String eTypeAccess__eSuperInterface____type_name_prime = "type";
+		String eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		tInterface__tSuperInterface____parentInterfaces.setSrc(tInterface);
 		tInterface__tSuperInterface____parentInterfaces.setTrg(tSuperInterface);
 		ruleresult.getTranslatedEdges().add(tInterface__tSuperInterface____parentInterfaces);
 		tSuperInterface__tInterface____childInterfaces.setSrc(tSuperInterface);
 		tSuperInterface__tInterface____childInterfaces.setTrg(tInterface);
 		ruleresult.getTranslatedEdges().add(tSuperInterface__tInterface____childInterfaces);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setSrc(eInterfaceDeclaration);
+		eInterfaceDeclaration__eTypeAccess____superInterfaces.setTrg(eTypeAccess);
+		ruleresult.getCreatedEdges().add(eInterfaceDeclaration__eTypeAccess____superInterfaces);
+		eTypeAccess__eSuperInterface____type.setSrc(eTypeAccess);
+		eTypeAccess__eSuperInterface____type.setTrg(eSuperInterface);
+		ruleresult.getCreatedEdges().add(eTypeAccess__eSuperInterface____type);
+		eSuperInterface__eTypeAccess____usagesInTypeAccess.setSrc(eSuperInterface);
+		eSuperInterface__eTypeAccess____usagesInTypeAccess.setTrg(eTypeAccess);
+		ruleresult.getCreatedEdges().add(eSuperInterface__eTypeAccess____usagesInTypeAccess);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		eTypeAccess__eSuperInterface____type.setName(eTypeAccess__eSuperInterface____type_name_prime);
-		eSuperInterface__eTypeAccess____usagesInTypeAccess
-				.setName(eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime);
-		eInterfaceDeclaration__eTypeAccess____superInterfaces
-				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
 		tInterface__tSuperInterface____parentInterfaces
 				.setName(tInterface__tSuperInterface____parentInterfaces_name_prime);
 		tSuperInterface__tInterface____childInterfaces
 				.setName(tSuperInterface__tInterface____childInterfaces_name_prime);
-		return new Object[] { ruleresult, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration,
-				tInterface, eTypeAccess__eSuperInterface____type, eSuperInterface__eTypeAccess____usagesInTypeAccess,
-				eInterfaceDeclaration__eTypeAccess____superInterfaces, tInterface__tSuperInterface____parentInterfaces,
-				tSuperInterface__tInterface____childInterfaces };
+		eInterfaceDeclaration__eTypeAccess____superInterfaces
+				.setName(eInterfaceDeclaration__eTypeAccess____superInterfaces_name_prime);
+		eTypeAccess__eSuperInterface____type.setName(eTypeAccess__eSuperInterface____type_name_prime);
+		eSuperInterface__eTypeAccess____usagesInTypeAccess
+				.setName(eSuperInterface__eTypeAccess____usagesInTypeAccess_name_prime);
+		return new Object[] { ruleresult, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration,
+				tInterface, tInterface__tSuperInterface____parentInterfaces,
+				tSuperInterface__tInterface____childInterfaces, eInterfaceDeclaration__eTypeAccess____superInterfaces,
+				eTypeAccess__eSuperInterface____type, eSuperInterface__eTypeAccess____usagesInTypeAccess };
 	}
 
 	public static final void pattern_InterfaceExtendsInterface_11_5_registerobjects_expressionBBBBBBBBB(
-			InterfaceExtendsInterface _this, PerformRuleResult ruleresult, EObject eSuperInterfaceToTSuperInterface,
-			EObject eSuperInterface, EObject eTypeAccess, EObject eInterfaceDeclarationToTInterface,
-			EObject tSuperInterface, EObject eInterfaceDeclaration, EObject tInterface) {
-		_this.registerObjects_BWD(ruleresult, eSuperInterfaceToTSuperInterface, eSuperInterface, eTypeAccess,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+			InterfaceExtendsInterface _this, PerformRuleResult ruleresult, EObject eSuperInterface,
+			EObject tSuperInterface, EObject eInterfaceDeclarationToTInterface, EObject eTypeAccess,
+			EObject eSuperInterfaceToTSuperInterface, EObject eInterfaceDeclaration, EObject tInterface) {
+		_this.registerObjects_BWD(ruleresult, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+				eTypeAccess, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 
 	}
 
@@ -2344,7 +2341,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_12_2_corematch_blackFFFBFBB(
+	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_12_2_corematch_blackFBFFFBB(
 			TInterface tSuperInterface, TInterface tInterface, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tInterface.equals(tSuperInterface)) {
@@ -2360,9 +2357,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 							if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
 								InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
 								if (!eInterfaceDeclaration.equals(eSuperInterface)) {
-									_result.add(new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-											eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration,
-											tInterface, match });
+									_result.add(new Object[] { eSuperInterface, tSuperInterface,
+											eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface,
+											eInterfaceDeclaration, tInterface, match });
 								}
 							}
 
@@ -2376,20 +2373,20 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_12_3_findcontext_blackBBBBBB(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
 			if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 				if (!tInterface.equals(tSuperInterface)) {
-					if (eSuperInterface.equals(eSuperInterfaceToTSuperInterface.getSource())) {
-						if (tSuperInterface.equals(eSuperInterfaceToTSuperInterface.getTarget())) {
-							if (eInterfaceDeclaration.equals(eInterfaceDeclarationToTInterface.getSource())) {
+					if (tSuperInterface.equals(eSuperInterfaceToTSuperInterface.getTarget())) {
+						if (eSuperInterface.equals(eSuperInterfaceToTSuperInterface.getSource())) {
+							if (tInterface.equals(eInterfaceDeclarationToTInterface.getTarget())) {
 								if (tInterface.getParentInterfaces().contains(tSuperInterface)) {
-									if (tInterface.equals(eInterfaceDeclarationToTInterface.getTarget())) {
-										_result.add(new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-												eInterfaceDeclarationToTInterface, tSuperInterface,
+									if (eInterfaceDeclaration.equals(eInterfaceDeclarationToTInterface.getSource())) {
+										_result.add(new Object[] { eSuperInterface, tSuperInterface,
+												eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface,
 												eInterfaceDeclaration, tInterface });
 									}
 								}
@@ -2403,83 +2400,84 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_12_3_findcontext_greenBBBBBBFFFFFFF(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = RuntimeFactory.eINSTANCE
-				.createEMoflonEdge();
 		EMoflonEdge eSuperInterfaceToTSuperInterface__tSuperInterface____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = RuntimeFactory.eINSTANCE
+		EMoflonEdge eSuperInterfaceToTSuperInterface__eSuperInterface____source = RuntimeFactory.eINSTANCE
+				.createEMoflonEdge();
+		EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge tInterface__tSuperInterface____parentInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSuperInterface__tInterface____childInterfaces = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eInterfaceDeclarationToTInterface__tInterface____target = RuntimeFactory.eINSTANCE
+		EMoflonEdge eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		String eSuperInterfaceToTSuperInterface__eSuperInterface____source_name_prime = "source";
 		String eSuperInterfaceToTSuperInterface__tSuperInterface____target_name_prime = "target";
-		String eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime = "source";
+		String eSuperInterfaceToTSuperInterface__eSuperInterface____source_name_prime = "source";
+		String eInterfaceDeclarationToTInterface__tInterface____target_name_prime = "target";
 		String tInterface__tSuperInterface____parentInterfaces_name_prime = "parentInterfaces";
 		String tSuperInterface__tInterface____childInterfaces_name_prime = "childInterfaces";
-		String eInterfaceDeclarationToTInterface__tInterface____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface);
+		String eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(eSuperInterface);
-		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface);
 		isApplicableMatch.getAllContextElements().add(tSuperInterface);
+		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface);
+		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface);
 		isApplicableMatch.getAllContextElements().add(eInterfaceDeclaration);
 		isApplicableMatch.getAllContextElements().add(tInterface);
-		eSuperInterfaceToTSuperInterface__eSuperInterface____source.setSrc(eSuperInterfaceToTSuperInterface);
-		eSuperInterfaceToTSuperInterface__eSuperInterface____source.setTrg(eSuperInterface);
-		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface__eSuperInterface____source);
 		eSuperInterfaceToTSuperInterface__tSuperInterface____target.setSrc(eSuperInterfaceToTSuperInterface);
 		eSuperInterfaceToTSuperInterface__tSuperInterface____target.setTrg(tSuperInterface);
 		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface__tSuperInterface____target);
-		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setSrc(eInterfaceDeclarationToTInterface);
-		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setTrg(eInterfaceDeclaration);
-		isApplicableMatch.getAllContextElements()
-				.add(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source);
+		eSuperInterfaceToTSuperInterface__eSuperInterface____source.setSrc(eSuperInterfaceToTSuperInterface);
+		eSuperInterfaceToTSuperInterface__eSuperInterface____source.setTrg(eSuperInterface);
+		isApplicableMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface__eSuperInterface____source);
+		eInterfaceDeclarationToTInterface__tInterface____target.setSrc(eInterfaceDeclarationToTInterface);
+		eInterfaceDeclarationToTInterface__tInterface____target.setTrg(tInterface);
+		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface__tInterface____target);
 		tInterface__tSuperInterface____parentInterfaces.setSrc(tInterface);
 		tInterface__tSuperInterface____parentInterfaces.setTrg(tSuperInterface);
 		isApplicableMatch.getAllContextElements().add(tInterface__tSuperInterface____parentInterfaces);
 		tSuperInterface__tInterface____childInterfaces.setSrc(tSuperInterface);
 		tSuperInterface__tInterface____childInterfaces.setTrg(tInterface);
 		isApplicableMatch.getAllContextElements().add(tSuperInterface__tInterface____childInterfaces);
-		eInterfaceDeclarationToTInterface__tInterface____target.setSrc(eInterfaceDeclarationToTInterface);
-		eInterfaceDeclarationToTInterface__tInterface____target.setTrg(tInterface);
-		isApplicableMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface__tInterface____target);
-		eSuperInterfaceToTSuperInterface__eSuperInterface____source
-				.setName(eSuperInterfaceToTSuperInterface__eSuperInterface____source_name_prime);
+		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setSrc(eInterfaceDeclarationToTInterface);
+		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source.setTrg(eInterfaceDeclaration);
+		isApplicableMatch.getAllContextElements()
+				.add(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source);
 		eSuperInterfaceToTSuperInterface__tSuperInterface____target
 				.setName(eSuperInterfaceToTSuperInterface__tSuperInterface____target_name_prime);
-		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source
-				.setName(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime);
+		eSuperInterfaceToTSuperInterface__eSuperInterface____source
+				.setName(eSuperInterfaceToTSuperInterface__eSuperInterface____source_name_prime);
+		eInterfaceDeclarationToTInterface__tInterface____target
+				.setName(eInterfaceDeclarationToTInterface__tInterface____target_name_prime);
 		tInterface__tSuperInterface____parentInterfaces
 				.setName(tInterface__tSuperInterface____parentInterfaces_name_prime);
 		tSuperInterface__tInterface____childInterfaces
 				.setName(tSuperInterface__tInterface____childInterfaces_name_prime);
-		eInterfaceDeclarationToTInterface__tInterface____target
-				.setName(eInterfaceDeclarationToTInterface__tInterface____target_name_prime);
-		return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface, eInterfaceDeclarationToTInterface,
-				tSuperInterface, eInterfaceDeclaration, tInterface, isApplicableMatch,
-				eSuperInterfaceToTSuperInterface__eSuperInterface____source,
+		eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source
+				.setName(eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source_name_prime);
+		return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+				eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, isApplicableMatch,
 				eSuperInterfaceToTSuperInterface__tSuperInterface____target,
-				eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source,
+				eSuperInterfaceToTSuperInterface__eSuperInterface____source,
+				eInterfaceDeclarationToTInterface__tInterface____target,
 				tInterface__tSuperInterface____parentInterfaces, tSuperInterface__tInterface____childInterfaces,
-				eInterfaceDeclarationToTInterface__tInterface____target };
+				eInterfaceDeclarationToTInterface__eInterfaceDeclaration____source };
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_12_4_solveCSP_bindingFBBBBBBBB(
-			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, eSuperInterfaceToTSuperInterface,
-				eSuperInterface, eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, eSuperInterface, tSuperInterface,
+				eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-					eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface };
+			return new Object[] { csp, _this, isApplicableMatch, eSuperInterface, tSuperInterface,
+					eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
+					tInterface };
 		}
 		return null;
 	}
@@ -2489,13 +2487,13 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
+			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface) {
 		Object[] result_pattern_InterfaceExtendsInterface_12_4_solveCSP_binding = pattern_InterfaceExtendsInterface_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface);
+				_this, isApplicableMatch, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+				eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface);
 		if (result_pattern_InterfaceExtendsInterface_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceExtendsInterface_12_4_solveCSP_binding[0];
 
@@ -2503,8 +2501,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					csp);
 			if (result_pattern_InterfaceExtendsInterface_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-						eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface };
+				return new Object[] { csp, _this, isApplicableMatch, eSuperInterface, tSuperInterface,
+						eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
+						tInterface };
 			}
 		}
 		return null;
@@ -2714,7 +2713,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_0B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_447355 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_267728 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2723,7 +2722,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_297766 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_77686 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2732,7 +2731,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_269543 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_853379 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2741,7 +2740,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_574316 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_852745 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2750,7 +2749,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess eTypeAccess) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_807810 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_308427 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2759,7 +2758,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_822062 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_625633 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2768,7 +2767,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (ParameterizedType __DEC_eTypeAccess_type_712207 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_eTypeAccess_type_227048 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ParameterizedType.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2777,7 +2776,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_234350 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_647731 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2786,7 +2785,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_965108 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_90154 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2794,43 +2793,39 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_type) {
+			EMoflonEdge _edge_superInterfaces) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpETypeAccess = _edge_type.getSrc();
-		if (tmpETypeAccess instanceof TypeAccess) {
-			TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-			EObject tmpESuperInterface = _edge_type.getTrg();
-			if (tmpESuperInterface instanceof InterfaceDeclaration) {
-				InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
-				if (eSuperInterface.equals(eTypeAccess.getType())) {
-					if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_0B(eTypeAccess) == null) {
-						if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_1B(
-								eTypeAccess) == null) {
-							if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_2B(
+		EObject tmpEInterfaceDeclaration = _edge_superInterfaces.getSrc();
+		if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
+			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
+			EObject tmpETypeAccess = _edge_superInterfaces.getTrg();
+			if (tmpETypeAccess instanceof TypeAccess) {
+				TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
+				if (eInterfaceDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
+					Type tmpESuperInterface = eTypeAccess.getType();
+					if (tmpESuperInterface instanceof InterfaceDeclaration) {
+						InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
+						if (!eInterfaceDeclaration.equals(eSuperInterface)) {
+							if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_0B(
 									eTypeAccess) == null) {
-								if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_3B(
+								if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_1B(
 										eTypeAccess) == null) {
-									if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_4B(
+									if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_2B(
 											eTypeAccess) == null) {
-										if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_5B(
+										if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_3B(
 												eTypeAccess) == null) {
-											if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_6B(
+											if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_4B(
 													eTypeAccess) == null) {
-												if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_7B(
+												if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_5B(
 														eTypeAccess) == null) {
-													if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_8B(
+													if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_6B(
 															eTypeAccess) == null) {
-														for (AbstractTypeDeclaration tmpEInterfaceDeclaration : org.moflon.core.utilities.eMoflonEMFUtil
-																.getOppositeReferenceTyped(eTypeAccess,
-																		AbstractTypeDeclaration.class,
-																		"superInterfaces")) {
-															if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
-																InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
-																if (!eInterfaceDeclaration.equals(eSuperInterface)) {
-																	_result.add(new Object[] { eSuperInterface,
-																			eTypeAccess, eInterfaceDeclaration,
-																			_edge_type });
-																}
+														if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_7B(
+																eTypeAccess) == null) {
+															if (pattern_InterfaceExtendsInterface_21_2_testcorematchandDECs_black_nac_8B(
+																	eTypeAccess) == null) {
+																_result.add(new Object[] { eSuperInterface, eTypeAccess,
+																		eInterfaceDeclaration, _edge_superInterfaces });
 															}
 														}
 													}
@@ -2842,6 +2837,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 							}
 						}
 					}
+
 				}
 			}
 
@@ -2909,26 +2905,26 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	public static final Object[] pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_bindingFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("eSuperInterface");
-		EObject _localVariable_1 = sourceMatch.getObject("eTypeAccess");
-		EObject _localVariable_2 = targetMatch.getObject("tSuperInterface");
+		EObject _localVariable_1 = targetMatch.getObject("tSuperInterface");
+		EObject _localVariable_2 = sourceMatch.getObject("eTypeAccess");
 		EObject _localVariable_3 = sourceMatch.getObject("eInterfaceDeclaration");
 		EObject _localVariable_4 = targetMatch.getObject("tInterface");
 		EObject tmpESuperInterface = _localVariable_0;
-		EObject tmpETypeAccess = _localVariable_1;
-		EObject tmpTSuperInterface = _localVariable_2;
+		EObject tmpTSuperInterface = _localVariable_1;
+		EObject tmpETypeAccess = _localVariable_2;
 		EObject tmpEInterfaceDeclaration = _localVariable_3;
 		EObject tmpTInterface = _localVariable_4;
 		if (tmpESuperInterface instanceof InterfaceDeclaration) {
 			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) tmpESuperInterface;
-			if (tmpETypeAccess instanceof TypeAccess) {
-				TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
-				if (tmpTSuperInterface instanceof TInterface) {
-					TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
+			if (tmpTSuperInterface instanceof TInterface) {
+				TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
+				if (tmpETypeAccess instanceof TypeAccess) {
+					TypeAccess eTypeAccess = (TypeAccess) tmpETypeAccess;
 					if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
 						InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
 						if (tmpTInterface instanceof TInterface) {
 							TInterface tInterface = (TInterface) tmpTInterface;
-							return new Object[] { eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration,
+							return new Object[] { eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration,
 									tInterface, sourceMatch, targetMatch };
 						}
 					}
@@ -2939,12 +2935,12 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_blackBBBBBBB(
-			InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface, TypeAccess eTypeAccess,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, Match sourceMatch, Match targetMatch) {
 		if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 			if (!tInterface.equals(tSuperInterface)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration,
+					return new Object[] { eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration,
 							tInterface, sourceMatch, targetMatch };
 				}
 			}
@@ -2958,17 +2954,17 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 				sourceMatch, targetMatch);
 		if (result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding != null) {
 			InterfaceDeclaration eSuperInterface = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[0];
-			TypeAccess eTypeAccess = (TypeAccess) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[1];
-			TInterface tSuperInterface = (TInterface) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[2];
+			TInterface tSuperInterface = (TInterface) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[1];
+			TypeAccess eTypeAccess = (TypeAccess) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[2];
 			InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[3];
 			TInterface tInterface = (TInterface) result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_binding[4];
 
 			Object[] result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_black = pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_blackBBBBBBB(
-					eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface, sourceMatch,
+					eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface, sourceMatch,
 					targetMatch);
 			if (result_pattern_InterfaceExtendsInterface_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface,
+				return new Object[] { eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2976,14 +2972,14 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_24_3_solvecsp_bindingFBBBBBBBB(
-			InterfaceExtendsInterface _this, InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess,
-			TInterface tSuperInterface, InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface,
+			InterfaceExtendsInterface _this, InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeAccess eTypeAccess, InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(eSuperInterface, eTypeAccess, tSuperInterface,
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(eSuperInterface, tSuperInterface, eTypeAccess,
 				eInterfaceDeclaration, tInterface, sourceMatch, targetMatch);
 		CSP csp = _localVariable_5;
 		if (csp != null) {
-			return new Object[] { csp, _this, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration,
+			return new Object[] { csp, _this, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration,
 					tInterface, sourceMatch, targetMatch };
 		}
 		return null;
@@ -2994,11 +2990,11 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
-			InterfaceExtendsInterface _this, InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess,
-			TInterface tSuperInterface, InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface,
+			InterfaceExtendsInterface _this, InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeAccess eTypeAccess, InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_InterfaceExtendsInterface_24_3_solvecsp_binding = pattern_InterfaceExtendsInterface_24_3_solvecsp_bindingFBBBBBBBB(
-				_this, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface, sourceMatch,
+				_this, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface, sourceMatch,
 				targetMatch);
 		if (result_pattern_InterfaceExtendsInterface_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceExtendsInterface_24_3_solvecsp_binding[0];
@@ -3007,7 +3003,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					csp);
 			if (result_pattern_InterfaceExtendsInterface_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration,
+				return new Object[] { csp, _this, eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration,
 						tInterface, sourceMatch, targetMatch };
 			}
 		}
@@ -3020,7 +3016,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_24_5_matchcorrcontext_blackFBFBBBBB(
+	public static final Iterable<Object[]> pattern_InterfaceExtendsInterface_24_5_matchcorrcontext_blackBBFFBBBB(
 			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -3028,15 +3024,14 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 			if (!tInterface.equals(tSuperInterface)) {
 				if (!sourceMatch.equals(targetMatch)) {
 					for (TypeToTAbstractType eSuperInterfaceToTSuperInterface : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(eSuperInterface, TypeToTAbstractType.class, "source")) {
-						if (tSuperInterface.equals(eSuperInterfaceToTSuperInterface.getTarget())) {
+							.getOppositeReferenceTyped(tSuperInterface, TypeToTAbstractType.class, "target")) {
+						if (eSuperInterface.equals(eSuperInterfaceToTSuperInterface.getSource())) {
 							for (TypeToTAbstractType eInterfaceDeclarationToTInterface : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(eInterfaceDeclaration, TypeToTAbstractType.class,
-											"source")) {
+									.getOppositeReferenceTyped(tInterface, TypeToTAbstractType.class, "target")) {
 								if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
-									if (tInterface.equals(eInterfaceDeclarationToTInterface.getTarget())) {
-										_result.add(new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-												eInterfaceDeclarationToTInterface, tSuperInterface,
+									if (eInterfaceDeclaration.equals(eInterfaceDeclarationToTInterface.getSource())) {
+										_result.add(new Object[] { eSuperInterface, tSuperInterface,
+												eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface,
 												eInterfaceDeclaration, tInterface, sourceMatch, targetMatch });
 									}
 								}
@@ -3050,25 +3045,25 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_24_5_matchcorrcontext_greenBBBBF(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "InterfaceExtendsInterface";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface);
 		ccMatch.getAllContextElements().add(eInterfaceDeclarationToTInterface);
+		ccMatch.getAllContextElements().add(eSuperInterfaceToTSuperInterface);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { eSuperInterfaceToTSuperInterface, eInterfaceDeclarationToTInterface, sourceMatch,
+		return new Object[] { eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, sourceMatch,
 				targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_24_6_createcorrespondence_blackBBBBBB(
-			InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface, TypeAccess eTypeAccess,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, CCMatch ccMatch) {
 		if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 			if (!tInterface.equals(tSuperInterface)) {
-				return new Object[] { eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface,
+				return new Object[] { eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface,
 						ccMatch };
 			}
 		}
@@ -3098,7 +3093,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_0B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_78615 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_391581 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3107,7 +3102,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_898497 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_931946 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3116,7 +3111,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_362342 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_584101 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3125,7 +3120,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_982494 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_390129 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3134,7 +3129,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess eTypeAccess) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_907 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_966226 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3143,7 +3138,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_906473 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_476201 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3152,7 +3147,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess eTypeAccess) {
-		for (ParameterizedType __DEC_eTypeAccess_type_844861 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_eTypeAccess_type_976367 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ParameterizedType.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3161,7 +3156,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_362192 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_410260 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3170,7 +3165,7 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_249139 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_399505 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3180,8 +3175,8 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	public static final Object[] pattern_InterfaceExtendsInterface_27_1_matchtggpattern_blackBBB(
 			InterfaceDeclaration eSuperInterface, TypeAccess eTypeAccess, InterfaceDeclaration eInterfaceDeclaration) {
 		if (!eInterfaceDeclaration.equals(eSuperInterface)) {
-			if (eSuperInterface.equals(eTypeAccess.getType())) {
-				if (eInterfaceDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
+			if (eInterfaceDeclaration.getSuperInterfaces().contains(eTypeAccess)) {
+				if (eSuperInterface.equals(eTypeAccess.getType())) {
 					if (pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_0B(eTypeAccess) == null) {
 						if (pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_1B(eTypeAccess) == null) {
 							if (pattern_InterfaceExtendsInterface_27_1_matchtggpattern_black_nac_2B(
@@ -3259,17 +3254,17 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType eSuperInterfaceToTSuperInterface) {
-		if (ruleResult.getCorrObjects().contains(eSuperInterfaceToTSuperInterface)) {
-			return new Object[] { ruleResult, eSuperInterfaceToTSuperInterface };
+			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration eSuperInterface) {
+		if (ruleResult.getSourceObjects().contains(eSuperInterface)) {
+			return new Object[] { ruleResult, eSuperInterface };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration eSuperInterface) {
-		if (ruleResult.getSourceObjects().contains(eSuperInterface)) {
-			return new Object[] { ruleResult, eSuperInterface };
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType eSuperInterfaceToTSuperInterface) {
+		if (ruleResult.getCorrObjects().contains(eSuperInterfaceToTSuperInterface)) {
+			return new Object[] { ruleResult, eSuperInterfaceToTSuperInterface };
 		}
 		return null;
 	}
@@ -3291,17 +3286,17 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration eInterfaceDeclaration) {
-		if (ruleResult.getSourceObjects().contains(eInterfaceDeclaration)) {
-			return new Object[] { ruleResult, eInterfaceDeclaration };
+			ModelgeneratorRuleResult ruleResult, TInterface tInterface) {
+		if (ruleResult.getTargetObjects().contains(tInterface)) {
+			return new Object[] { ruleResult, tInterface };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TInterface tInterface) {
-		if (ruleResult.getTargetObjects().contains(tInterface)) {
-			return new Object[] { ruleResult, tInterface };
+			ModelgeneratorRuleResult ruleResult, InterfaceDeclaration eInterfaceDeclaration) {
+		if (ruleResult.getSourceObjects().contains(eInterfaceDeclaration)) {
+			return new Object[] { ruleResult, eInterfaceDeclaration };
 		}
 		return null;
 	}
@@ -3322,9 +3317,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 								TAbstractType tmpTSuperInterface = eSuperInterfaceToTSuperInterface.getTarget();
 								if (tmpTSuperInterface instanceof TInterface) {
 									TInterface tSuperInterface = (TInterface) tmpTSuperInterface;
-									if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_0BB(
+									if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, eSuperInterfaceToTSuperInterface) == null) {
-										if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_1BB(
+										if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_0BB(
 												ruleResult, eSuperInterface) == null) {
 											if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_2BB(
 													ruleResult, tSuperInterface) == null) {
@@ -3334,34 +3329,35 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 														TypeToTAbstractType eInterfaceDeclarationToTInterface = (TypeToTAbstractType) tmpEInterfaceDeclarationToTInterface;
 														if (!eInterfaceDeclarationToTInterface
 																.equals(eSuperInterfaceToTSuperInterface)) {
-															Type tmpEInterfaceDeclaration = eInterfaceDeclarationToTInterface
-																	.getSource();
-															if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
-																InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
-																if (!eInterfaceDeclaration.equals(eSuperInterface)) {
-																	TAbstractType tmpTInterface = eInterfaceDeclarationToTInterface
-																			.getTarget();
-																	if (tmpTInterface instanceof TInterface) {
-																		TInterface tInterface = (TInterface) tmpTInterface;
-																		if (!tInterface.equals(tSuperInterface)) {
+															TAbstractType tmpTInterface = eInterfaceDeclarationToTInterface
+																	.getTarget();
+															if (tmpTInterface instanceof TInterface) {
+																TInterface tInterface = (TInterface) tmpTInterface;
+																if (!tInterface.equals(tSuperInterface)) {
+																	Type tmpEInterfaceDeclaration = eInterfaceDeclarationToTInterface
+																			.getSource();
+																	if (tmpEInterfaceDeclaration instanceof InterfaceDeclaration) {
+																		InterfaceDeclaration eInterfaceDeclaration = (InterfaceDeclaration) tmpEInterfaceDeclaration;
+																		if (!eInterfaceDeclaration
+																				.equals(eSuperInterface)) {
 																			if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_3BB(
 																					ruleResult,
 																					eInterfaceDeclarationToTInterface) == null) {
 																				if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_4BB(
 																						ruleResult,
-																						eInterfaceDeclaration) == null) {
+																						tInterface) == null) {
 																					if (pattern_InterfaceExtendsInterface_29_2_isapplicablecore_black_nac_5BB(
 																							ruleResult,
-																							tInterface) == null) {
+																							eInterfaceDeclaration) == null) {
 																						_result.add(new Object[] {
 																								eSuperInterfaceToTSuperInterfaceList,
-																								eSuperInterfaceToTSuperInterface,
 																								eSuperInterface,
+																								eSuperInterfaceToTSuperInterface,
 																								tSuperInterface,
 																								eInterfaceDeclarationToTInterfaceList,
 																								eInterfaceDeclarationToTInterface,
-																								eInterfaceDeclaration,
 																								tInterface,
+																								eInterfaceDeclaration,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -3392,17 +3388,18 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_3_solveCSP_bindingFBBBBBBBBB(
-			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, eSuperInterfaceToTSuperInterface,
-				eSuperInterface, eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface,
+			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, eSuperInterface, tSuperInterface,
+				eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-					eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, eSuperInterface, tSuperInterface,
+					eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
+					tInterface, ruleResult };
 		}
 		return null;
 	}
@@ -3412,13 +3409,13 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch,
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
-			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, ModelgeneratorRuleResult ruleResult) {
+			InterfaceExtendsInterface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration eSuperInterface,
+			TInterface tSuperInterface, TypeToTAbstractType eInterfaceDeclarationToTInterface,
+			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eInterfaceDeclaration,
+			TInterface tInterface, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_InterfaceExtendsInterface_29_3_solveCSP_binding = pattern_InterfaceExtendsInterface_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-				eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface, ruleResult);
+				_this, isApplicableMatch, eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+				eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, ruleResult);
 		if (result_pattern_InterfaceExtendsInterface_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceExtendsInterface_29_3_solveCSP_binding[0];
 
@@ -3426,9 +3423,9 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 					csp);
 			if (result_pattern_InterfaceExtendsInterface_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, eSuperInterfaceToTSuperInterface, eSuperInterface,
-						eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface,
-						ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, eSuperInterface, tSuperInterface,
+						eInterfaceDeclarationToTInterface, eSuperInterfaceToTSuperInterface, eInterfaceDeclaration,
+						tInterface, ruleResult };
 			}
 		}
 		return null;
@@ -3442,14 +3439,14 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_5_checknacs_blackBBBBBB(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface) {
 		if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
 			if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 				if (!tInterface.equals(tSuperInterface)) {
-					return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-							eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface };
+					return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+							eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface };
 				}
 			}
 		}
@@ -3457,35 +3454,34 @@ public class InterfaceExtendsInterfaceImpl extends AbstractRuleImpl implements I
 	}
 
 	public static final Object[] pattern_InterfaceExtendsInterface_29_6_perform_blackBBBBBBB(
-			TypeToTAbstractType eSuperInterfaceToTSuperInterface, InterfaceDeclaration eSuperInterface,
-			TypeToTAbstractType eInterfaceDeclarationToTInterface, TInterface tSuperInterface,
+			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
+			TypeToTAbstractType eInterfaceDeclarationToTInterface, TypeToTAbstractType eSuperInterfaceToTSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, ModelgeneratorRuleResult ruleResult) {
 		if (!eInterfaceDeclarationToTInterface.equals(eSuperInterfaceToTSuperInterface)) {
 			if (!eInterfaceDeclaration.equals(eSuperInterface)) {
 				if (!tInterface.equals(tSuperInterface)) {
-					return new Object[] { eSuperInterfaceToTSuperInterface, eSuperInterface,
-							eInterfaceDeclarationToTInterface, tSuperInterface, eInterfaceDeclaration, tInterface,
-							ruleResult };
+					return new Object[] { eSuperInterface, tSuperInterface, eInterfaceDeclarationToTInterface,
+							eSuperInterfaceToTSuperInterface, eInterfaceDeclaration, tInterface, ruleResult };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceExtendsInterface_29_6_perform_greenBFBBBB(
+	public static final Object[] pattern_InterfaceExtendsInterface_29_6_perform_greenBBFBBB(
 			InterfaceDeclaration eSuperInterface, TInterface tSuperInterface,
 			InterfaceDeclaration eInterfaceDeclaration, TInterface tInterface, ModelgeneratorRuleResult ruleResult) {
 		TypeAccess eTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		tInterface.getParentInterfaces().add(tSuperInterface);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		eTypeAccess.setType(eSuperInterface);
 		eInterfaceDeclaration.getSuperInterfaces().add(eTypeAccess);
+		eTypeAccess.setType(eSuperInterface);
 		ruleResult.getSourceObjects().add(eTypeAccess);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { eSuperInterface, eTypeAccess, tSuperInterface, eInterfaceDeclaration, tInterface,
+		return new Object[] { eSuperInterface, tSuperInterface, eTypeAccess, eInterfaceDeclaration, tInterface,
 				ruleResult };
 	}
 

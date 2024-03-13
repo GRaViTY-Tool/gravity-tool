@@ -823,7 +823,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_annotationTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_83(EMoflonEdge _edge_annotationTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeNestedImpl
 				.pattern_AnnotationTypeNested_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -882,7 +882,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_78(EMoflonEdge _edge_abstractTypeDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_87(EMoflonEdge _edge_abstractTypeDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeNestedImpl
 				.pattern_AnnotationTypeNested_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -949,21 +949,21 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
-		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
-		var_tNestedType_tName.setType("String");
-
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
 		var_literal0.setType("");
 
-		Variable var_eNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("eNestedType", true, csp);
-		var_eNestedType_name.setValue(__helper.getValue("eNestedType", "name"));
-		var_eNestedType_name.setType("String");
-
 		Variable var_tOuterType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterType", true, csp);
 		var_tOuterType_tName.setValue(__helper.getValue("tOuterType", "tName"));
 		var_tOuterType_tName.setType("String");
+
+		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
+		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
+		var_tNestedType_tName.setType("String");
+
+		Variable var_eNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("eNestedType", true, csp);
+		var_eNestedType_name.setValue(__helper.getValue("eNestedType", "name"));
+		var_eNestedType_name.setType("String");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1004,21 +1004,21 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
-		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
-		var_tNestedType_tName.setType("String");
-
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
 		var_literal0.setType("");
 
-		Variable var_eNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("eNestedType", true, csp);
-		var_eNestedType_name.setValue(__helper.getValue("eNestedType", "name"));
-		var_eNestedType_name.setType("String");
-
 		Variable var_tOuterType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterType", true, csp);
 		var_tOuterType_tName.setValue(__helper.getValue("tOuterType", "tName"));
 		var_tOuterType_tName.setType("String");
+
+		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
+		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
+		var_tNestedType_tName.setType("String");
+
+		Variable var_eNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("eNestedType", true, csp);
+		var_eNestedType_name.setValue(__helper.getValue("eNestedType", "name"));
+		var_eNestedType_name.setType("String");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1401,10 +1401,10 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_NESTED___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_BWD_EMOFLON_EDGE_74__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_74((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_FWD_EMOFLON_EDGE_78__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_78((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_BWD_EMOFLON_EDGE_83__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_83((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_NESTED___IS_APPROPRIATE_FWD_EMOFLON_EDGE_87__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_87((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_NESTED___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_NESTED___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2997,9 +2997,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tNestedType_annotationTypes_941076 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_annotationTypes_727832 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
-			if (!typeGraph.equals(__DEC_tNestedType_annotationTypes_941076)) {
+			if (!typeGraph.equals(__DEC_tNestedType_annotationTypes_727832)) {
 				return new Object[] { tNestedType, typeGraph };
 			}
 		}
@@ -3007,30 +3007,30 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_1BB(
-			TAnnotationType tNestedType, TPackage tOuterPackage) {
-		TPackage __DEC_tNestedType_allTypes_755032 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_755032 != null) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_allTypes_755032)) {
-				return new Object[] { tNestedType, tOuterPackage };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_2BB(
 			TAnnotationType tNestedType, TAbstractType tOuterType) {
 		if (!tNestedType.equals(tOuterType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_567788 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_567788 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_567788)) {
-					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_567788)) {
+			TAbstractType __DEC_tNestedType_innerTypes_40077 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_40077 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_40077)) {
+					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_40077)) {
 						return new Object[] { tNestedType, tOuterType };
 					}
 				}
 			}
 
 		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_2BB(
+			TAnnotationType tNestedType, TPackage tOuterPackage) {
+		TPackage __DEC_tNestedType_allTypes_417106 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_417106 != null) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_allTypes_417106)) {
+				return new Object[] { tNestedType, tOuterPackage };
+			}
+		}
+
 		return null;
 	}
 
@@ -3055,9 +3055,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 											if (tOuterPackage.equals(tOuterType.getPackage())) {
 												if (pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_0BB(
 														tNestedType, typeGraph) == null) {
-													if (pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_2BB(
+													if (pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_1BB(
 															tNestedType, tOuterType) == null) {
-														if (pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_1BB(
+														if (pattern_AnnotationTypeNested_20_2_testcorematchandDECs_black_nac_2BB(
 																tNestedType, tOuterPackage) == null) {
 															_result.add(new Object[] { typeGraph, tNestedType,
 																	tOuterType, tOuterPackage, _edge_annotationTypes });
@@ -3182,9 +3182,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration eNestedType) {
-		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_45723 = eNestedType
+		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_759773 = eNestedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_eNestedType_anonymousClassDeclarationOwner_45723 != null) {
+		if (__DEC_eNestedType_anonymousClassDeclarationOwner_759773 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3193,7 +3193,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (Model __DEC_eNestedType_orphanTypes_728225 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_eNestedType_orphanTypes_417132 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3202,8 +3202,8 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration eNestedType) {
-		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_232545 = eNestedType.getPackage();
-		if (__DEC_eNestedType_ownedElements_232545 != null) {
+		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_572216 = eNestedType.getPackage();
+		if (__DEC_eNestedType_ownedElements_572216 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3212,7 +3212,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_649455 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_930436 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3501,9 +3501,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration eNestedType) {
-		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_507581 = eNestedType
+		AnonymousClassDeclaration __DEC_eNestedType_anonymousClassDeclarationOwner_273570 = eNestedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_eNestedType_anonymousClassDeclarationOwner_507581 != null) {
+		if (__DEC_eNestedType_anonymousClassDeclarationOwner_273570 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3512,7 +3512,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (Model __DEC_eNestedType_orphanTypes_839507 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_eNestedType_orphanTypes_980093 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3521,8 +3521,8 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration eNestedType) {
-		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_921964 = eNestedType.getPackage();
-		if (__DEC_eNestedType_ownedElements_921964 != null) {
+		org.eclipse.modisco.java.Package __DEC_eNestedType_ownedElements_206309 = eNestedType.getPackage();
+		if (__DEC_eNestedType_ownedElements_206309 != null) {
 			return new Object[] { eNestedType };
 		}
 
@@ -3531,7 +3531,7 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration eNestedType) {
-		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_831546 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_eNestedType_mInnerTypes_920687 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { eNestedType };
 		}
@@ -3568,9 +3568,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tNestedType_annotationTypes_346800 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_annotationTypes_396297 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
-			if (!typeGraph.equals(__DEC_tNestedType_annotationTypes_346800)) {
+			if (!typeGraph.equals(__DEC_tNestedType_annotationTypes_396297)) {
 				return new Object[] { tNestedType, typeGraph };
 			}
 		}
@@ -3578,30 +3578,30 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_1BB(
-			TAnnotationType tNestedType, TPackage tOuterPackage) {
-		TPackage __DEC_tNestedType_allTypes_239271 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_239271 != null) {
-			if (!tOuterPackage.equals(__DEC_tNestedType_allTypes_239271)) {
-				return new Object[] { tNestedType, tOuterPackage };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_2BB(
 			TAnnotationType tNestedType, TAbstractType tOuterType) {
 		if (!tNestedType.equals(tOuterType)) {
-			TAbstractType __DEC_tNestedType_innerTypes_656827 = tNestedType.getOuterType();
-			if (__DEC_tNestedType_innerTypes_656827 != null) {
-				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_656827)) {
-					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_656827)) {
+			TAbstractType __DEC_tNestedType_innerTypes_457864 = tNestedType.getOuterType();
+			if (__DEC_tNestedType_innerTypes_457864 != null) {
+				if (!tNestedType.equals(__DEC_tNestedType_innerTypes_457864)) {
+					if (!tOuterType.equals(__DEC_tNestedType_innerTypes_457864)) {
 						return new Object[] { tNestedType, tOuterType };
 					}
 				}
 			}
 
 		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_2BB(
+			TAnnotationType tNestedType, TPackage tOuterPackage) {
+		TPackage __DEC_tNestedType_allTypes_9677 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_9677 != null) {
+			if (!tOuterPackage.equals(__DEC_tNestedType_allTypes_9677)) {
+				return new Object[] { tNestedType, tOuterPackage };
+			}
+		}
+
 		return null;
 	}
 
@@ -3618,9 +3618,9 @@ public class AnnotationTypeNestedImpl extends AbstractRuleImpl implements Annota
 										if (pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_0BB(tNestedType,
 												typeGraph) == null) {
 											if (pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_1BB(
-													tNestedType, tOuterPackage) == null) {
+													tNestedType, tOuterType) == null) {
 												if (pattern_AnnotationTypeNested_28_1_matchtggpattern_black_nac_2BB(
-														tNestedType, tOuterType) == null) {
+														tNestedType, tOuterPackage) == null) {
 													return new Object[] { typeGraph, tNestedType, tOuterType,
 															tOuterPackage };
 												}

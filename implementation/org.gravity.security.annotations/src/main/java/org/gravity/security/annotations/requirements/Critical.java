@@ -18,10 +18,25 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Critical {
 
+	/**
+	 * The member signatures on the high level secrecy.
+	 *
+	 * @return A list of member signatures
+	 */
 	String[] high() default {};
 
+	/**
+	 * The member signatures on the integrity level secrecy.
+	 *
+	 * @return A list of member signatures
+	 */
 	String[] integrity() default {};
 
+	/**
+	 * The member signatures on the security level secrecy.
+	 *
+	 * @return A list of member signatures
+	 */
 	String[] secrecy() default {};
 
 }

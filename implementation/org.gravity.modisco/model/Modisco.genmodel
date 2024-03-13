@@ -99,7 +99,9 @@
     </genClasses>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAbstractMethodInvocation"/>
     <genClasses ecoreClass="Modisco.ecore#//MSuperMethodInvocation"/>
-    <genClasses ecoreClass="Modisco.ecore#//MClassInstanceCreation"/>
+    <genClasses ecoreClass="Modisco.ecore#//MClassInstanceCreation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modisco.ecore#//MClassInstanceCreation/id"/>
+    </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MSuperConstructorInvocation"/>
     <genClasses ecoreClass="Modisco.ecore#//MInitializer"/>
     <genClasses ecoreClass="Modisco.ecore#//MEnumConstantDeclaration"/>

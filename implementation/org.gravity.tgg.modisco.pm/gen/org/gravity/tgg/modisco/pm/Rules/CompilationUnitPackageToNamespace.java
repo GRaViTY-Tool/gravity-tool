@@ -210,7 +210,7 @@ public interface CompilationUnitPackageToNamespace extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_55(EMoflonEdge _edge_namespace);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_67(EMoflonEdge _edge_namespace);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface CompilationUnitPackageToNamespace extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_58(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_70(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1028,6 +1028,16 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMClassInstanceCreation_Id() {
+		return (EAttribute)mClassInstanceCreationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMSuperConstructorInvocation() {
 		return mSuperConstructorInvocationEClass;
 	}
@@ -1186,6 +1196,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mSuperMethodInvocationEClass = createEClass(MSUPER_METHOD_INVOCATION);
 
 		mClassInstanceCreationEClass = createEClass(MCLASS_INSTANCE_CREATION);
+		createEAttribute(mClassInstanceCreationEClass, MCLASS_INSTANCE_CREATION__ID);
 
 		mSuperConstructorInvocationEClass = createEClass(MSUPER_CONSTRUCTOR_INVOCATION);
 
@@ -1368,6 +1379,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEClass(mSuperMethodInvocationEClass, MSuperMethodInvocation.class, "MSuperMethodInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mClassInstanceCreationEClass, MClassInstanceCreation.class, "MClassInstanceCreation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMClassInstanceCreation_Id(), ecorePackage.getEInt(), "id", null, 0, 1, MClassInstanceCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mSuperConstructorInvocationEClass, MSuperConstructorInvocation.class, "MSuperConstructorInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

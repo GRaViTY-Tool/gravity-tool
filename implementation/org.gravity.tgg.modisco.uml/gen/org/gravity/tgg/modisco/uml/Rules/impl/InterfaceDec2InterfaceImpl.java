@@ -314,17 +314,17 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		var_feature_name.setType("String");
 
 		// Create constraints
-		NonParameterizedName nonParameterizedName = new NonParameterizedName();
 		Eq eq = new Eq();
+		NonParameterizedName nonParameterizedName = new NonParameterizedName();
 
-		csp.getConstraints().add(nonParameterizedName);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(nonParameterizedName);
 
 		// Solve CSP
-		nonParameterizedName.setRuleName("NoRuleName");
-		nonParameterizedName.solve(var_feature_name);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		nonParameterizedName.setRuleName("NoRuleName");
+		nonParameterizedName.solve(var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
@@ -645,7 +645,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_0(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_3(Interface feature) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,33 +767,33 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
 
-		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
-		csp.getConstraints().add(nonParameterizedName0);
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
-		Eq eq1 = new Eq();
-		csp.getConstraints().add(eq1);
+		Eq eq0 = new Eq();
+		csp.getConstraints().add(eq0);
 
-		nonParameterizedName0.setRuleName("InterfaceDec2Interface");
-		nonParameterizedName0.solve(var_feature_name);
+		NonParameterizedName nonParameterizedName1 = new NonParameterizedName();
+		csp.getConstraints().add(nonParameterizedName1);
 
-		eq1.setRuleName("InterfaceDec2Interface");
-		eq1.solve(var_bodyDeclaration_name, var_feature_name);
+		eq0.setRuleName("InterfaceDec2Interface");
+		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+
+		nonParameterizedName1.setRuleName("InterfaceDec2Interface");
+		nonParameterizedName1.solve(var_feature_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
 			var_feature_name.setBound(false);
 			var_feature_name.setBound(false);
-			nonParameterizedName0.solve(var_feature_name);
-			eq1.solve(var_bodyDeclaration_name, var_feature_name);
+			eq0.solve(var_bodyDeclaration_name, var_feature_name);
+			nonParameterizedName1.solve(var_feature_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
@@ -823,13 +823,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -943,28 +943,28 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		// Create literals
 
 		// Create attribute variables
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 
 		// Create unbound variables
 
 		// Create constraints
-		NonParameterizedName nonParameterizedName = new NonParameterizedName();
 		Eq eq = new Eq();
+		NonParameterizedName nonParameterizedName = new NonParameterizedName();
 
-		csp.getConstraints().add(nonParameterizedName);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(nonParameterizedName);
 
 		// Solve CSP
-		nonParameterizedName.setRuleName("NoRuleName");
-		nonParameterizedName.solve(var_feature_name);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
+		nonParameterizedName.setRuleName("NoRuleName");
+		nonParameterizedName.solve(var_feature_name);
 		return csp;
 	}
 
@@ -1075,10 +1075,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
 		var_bodyDeclaration_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 
 		// Create constraints
 		NonParameterizedName nonParameterizedName = new NonParameterizedName();
@@ -1161,8 +1161,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			return null;
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_0__INTERFACE:
-			return isAppropriate_BWD_Interface_0((Interface) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_3__INTERFACE:
+			return isAppropriate_BWD_Interface_3((Interface) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_0__INTERFACEDECLARATION:
 			return isAppropriate_FWD_InterfaceDeclaration_0((InterfaceDeclaration) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
@@ -2004,8 +2004,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_650031 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_650031 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_139708 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_139708 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2211,8 +2211,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_505968 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_505968 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_381711 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_381711 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

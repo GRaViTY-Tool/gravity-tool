@@ -81,7 +81,7 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 						SecurityProperty.INTEGRITY));
 			} else {
 				this.violations.add(new SecurityViolation(callingMember, this.calledMember, callingMember,
-						SecurityProperty.SECRECY));
+						SecurityProperty.INTEGRITY));
 			}
 		}
 

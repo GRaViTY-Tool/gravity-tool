@@ -21,7 +21,6 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLFactory;
 
 import org.gravity.tgg.modisco.uml.ASTNode2Element;
@@ -172,17 +171,17 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ASTNode2Element t2c = (ASTNode2Element) result1_bindingAndBlack[0];
-		Classifier classifier = (Classifier) result1_bindingAndBlack[1];
-		CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result1_bindingAndBlack[2];
-		CompilationUnit compilationUnit = (CompilationUnit) result1_bindingAndBlack[3];
-		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
-		Artifact artifact = (Artifact) result1_bindingAndBlack[5];
+		CompilationUnit compilationUnit = (CompilationUnit) result1_bindingAndBlack[0];
+		ASTNode2Element t2c = (ASTNode2Element) result1_bindingAndBlack[1];
+		Classifier classifier = (Classifier) result1_bindingAndBlack[2];
+		CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result1_bindingAndBlack[3];
+		Artifact artifact = (Artifact) result1_bindingAndBlack[4];
+		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		Object[] result1_green = Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_greenBFB(classifier,
+				.pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_greenBBF(classifier,
 						artifact);
-		Manifestation manifestation = (Manifestation) result1_green[1];
+		Manifestation manifestation = (Manifestation) result1_green[2];
 
 		Object[] result2_black = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_1_2_collecttranslatedelements_blackB(manifestation);
@@ -195,26 +194,26 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, t2c,
-						classifier, c2a, compilationUnit, type, manifestation, artifact);
+				.pattern_Manifestation4CompilationUnit2Artifact_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
+						compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[t2c] = " + t2c + ", " + "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", "
-					+ "[compilationUnit] = " + compilationUnit + ", " + "[type] = " + type + ", " + "[manifestation] = "
-					+ manifestation + ", " + "[artifact] = " + artifact + ".");
+					+ ", " + "[compilationUnit] = " + compilationUnit + ", " + "[t2c] = " + t2c + ", "
+					+ "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", " + "[artifact] = " + artifact
+					+ ", " + "[type] = " + type + ", " + "[manifestation] = " + manifestation + ".");
 		}
 		Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_1_3_bookkeepingforedges_greenBBBBBBFFF(ruleresult,
-						classifier, compilationUnit, type, manifestation, artifact);
-		//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result3_green[6];
+						compilationUnit, classifier, artifact, type, manifestation);
+		//nothing EMoflonEdge compilationUnit__type____types = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge manifestation__classifier____utilizedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge compilationUnit__type____types = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_1_5_registerobjects_expressionBBBBBBBBB(this,
-						ruleresult, t2c, classifier, c2a, compilationUnit, type, manifestation, artifact);
+						ruleresult, compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 		return Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_1_6_expressionFB(ruleresult);
 	}
@@ -247,34 +246,34 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		CompilationUnit compilationUnit = (CompilationUnit) result2_binding[0];
 		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_binding[1];
 		for (Object[] result2_black : Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_2_2_corematch_blackFFFBBFB(compilationUnit, type,
+				.pattern_Manifestation4CompilationUnit2Artifact_2_2_corematch_blackBFFFFBB(compilationUnit, type,
 						match)) {
-			ASTNode2Element t2c = (ASTNode2Element) result2_black[0];
-			Classifier classifier = (Classifier) result2_black[1];
-			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result2_black[2];
-			Artifact artifact = (Artifact) result2_black[5];
+			ASTNode2Element t2c = (ASTNode2Element) result2_black[1];
+			Classifier classifier = (Classifier) result2_black[2];
+			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result2_black[3];
+			Artifact artifact = (Artifact) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : Manifestation4CompilationUnit2ArtifactImpl
-					.pattern_Manifestation4CompilationUnit2Artifact_2_3_findcontext_blackBBBBBB(t2c, classifier, c2a,
-							compilationUnit, type, artifact)) {
+					.pattern_Manifestation4CompilationUnit2Artifact_2_3_findcontext_blackBBBBBB(compilationUnit, t2c,
+							classifier, c2a, artifact, type)) {
 				Object[] result3_green = Manifestation4CompilationUnit2ArtifactImpl
-						.pattern_Manifestation4CompilationUnit2Artifact_2_3_findcontext_greenBBBBBBFFFFFF(t2c,
-								classifier, c2a, compilationUnit, type, artifact);
+						.pattern_Manifestation4CompilationUnit2Artifact_2_3_findcontext_greenBBBBBBFFFFFF(
+								compilationUnit, t2c, classifier, c2a, artifact, type);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge t2c__classifier____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge compilationUnit__type____types = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge t2c__type____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge compilationUnit__type____types = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 						.pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, artifact);
+								isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[t2c] = " + t2c + ", "
-							+ "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", " + "[compilationUnit] = "
-							+ compilationUnit + ", " + "[type] = " + type + ", " + "[artifact] = " + artifact + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[compilationUnit] = "
+							+ compilationUnit + ", " + "[t2c] = " + t2c + ", " + "[classifier] = " + classifier + ", "
+							+ "[c2a] = " + c2a + ", " + "[artifact] = " + artifact + ", " + "[type] = " + type + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -347,9 +346,9 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, CompilationUnit compilationUnit,
+			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, Artifact artifact,
+			AbstractTypeDeclaration type) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -364,12 +363,12 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
 		isApplicableMatch.registerObject("t2c", t2c);
 		isApplicableMatch.registerObject("classifier", classifier);
 		isApplicableMatch.registerObject("c2a", c2a);
-		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
-		isApplicableMatch.registerObject("type", type);
 		isApplicableMatch.registerObject("artifact", artifact);
+		isApplicableMatch.registerObject("type", type);
 		return csp;
 	}
 
@@ -387,15 +386,15 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject t2c, EObject classifier, EObject c2a,
-			EObject compilationUnit, EObject type, EObject manifestation, EObject artifact) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject compilationUnit, EObject t2c,
+			EObject classifier, EObject c2a, EObject artifact, EObject type, EObject manifestation) {
+		ruleresult.registerObject("compilationUnit", compilationUnit);
 		ruleresult.registerObject("t2c", t2c);
 		ruleresult.registerObject("classifier", classifier);
 		ruleresult.registerObject("c2a", c2a);
-		ruleresult.registerObject("compilationUnit", compilationUnit);
+		ruleresult.registerObject("artifact", artifact);
 		ruleresult.registerObject("type", type);
 		ruleresult.registerObject("manifestation", manifestation);
-		ruleresult.registerObject("artifact", artifact);
 
 	}
 
@@ -413,25 +412,25 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Classifier classifier, Manifestation manifestation,
-			Artifact artifact) {
+	public boolean isAppropriate_BWD(Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
 
 		Object[] result1_black = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_10_1_initialbindings_blackBBBBB(this, match, classifier,
-						manifestation, artifact);
+						artifact, manifestation);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[classifier] = " + classifier + ", " + "[manifestation] = "
-					+ manifestation + ", " + "[artifact] = " + artifact + ".");
+					+ "[match] = " + match + ", " + "[classifier] = " + classifier + ", " + "[artifact] = " + artifact
+					+ ", " + "[manifestation] = " + manifestation + ".");
 		}
 
 		Object[] result2_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match,
-						classifier, manifestation, artifact);
+						classifier, artifact, manifestation);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[classifier] = " + classifier + ", " + "[manifestation] = "
-					+ manifestation + ", " + "[artifact] = " + artifact + ".");
+					+ "[match] = " + match + ", " + "[classifier] = " + classifier + ", " + "[artifact] = " + artifact
+					+ ", " + "[manifestation] = " + manifestation + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -440,25 +439,25 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 
 			Object[] result4_black = Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_10_4_collectelementstobetranslated_blackBBBB(match,
-							classifier, manifestation, artifact);
+							classifier, artifact, manifestation);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[classifier] = " + classifier + ", " + "[manifestation] = " + manifestation + ", "
-						+ "[artifact] = " + artifact + ".");
+						+ "[classifier] = " + classifier + ", " + "[artifact] = " + artifact + ", "
+						+ "[manifestation] = " + manifestation + ".");
 			}
 			Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_10_4_collectelementstobetranslated_greenBBBBFF(
-							match, classifier, manifestation, artifact);
-			//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge manifestation__classifier____utilizedElement = (EMoflonEdge) result4_green[5];
+							match, classifier, artifact, manifestation);
+			//nothing EMoflonEdge manifestation__classifier____utilizedElement = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_10_5_collectcontextelements_blackBBBB(match,
-							classifier, manifestation, artifact);
+							classifier, artifact, manifestation);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[classifier] = " + classifier + ", " + "[manifestation] = " + manifestation + ", "
-						+ "[artifact] = " + artifact + ".");
+						+ "[classifier] = " + classifier + ", " + "[artifact] = " + artifact + ", "
+						+ "[manifestation] = " + manifestation + ".");
 			}
 			Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_10_5_collectcontextelements_greenBBB(match,
@@ -467,7 +466,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			// 
 			Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_10_6_registerobjectstomatch_expressionBBBBB(this,
-							match, classifier, manifestation, artifact);
+							match, classifier, artifact, manifestation);
 			return Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_10_7_expressionF();
 		} else {
@@ -491,13 +490,13 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ASTNode2Element t2c = (ASTNode2Element) result1_bindingAndBlack[0];
-		Classifier classifier = (Classifier) result1_bindingAndBlack[1];
-		CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result1_bindingAndBlack[2];
-		CompilationUnit compilationUnit = (CompilationUnit) result1_bindingAndBlack[3];
-		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
-		Manifestation manifestation = (Manifestation) result1_bindingAndBlack[5];
-		Artifact artifact = (Artifact) result1_bindingAndBlack[6];
+		CompilationUnit compilationUnit = (CompilationUnit) result1_bindingAndBlack[0];
+		ASTNode2Element t2c = (ASTNode2Element) result1_bindingAndBlack[1];
+		Classifier classifier = (Classifier) result1_bindingAndBlack[2];
+		CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result1_bindingAndBlack[3];
+		Artifact artifact = (Artifact) result1_bindingAndBlack[4];
+		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result1_bindingAndBlack[5];
+		Manifestation manifestation = (Manifestation) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_greenBB(compilationUnit,
@@ -514,26 +513,26 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, t2c,
-						classifier, c2a, compilationUnit, type, manifestation, artifact);
+				.pattern_Manifestation4CompilationUnit2Artifact_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
+						compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[t2c] = " + t2c + ", " + "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", "
-					+ "[compilationUnit] = " + compilationUnit + ", " + "[type] = " + type + ", " + "[manifestation] = "
-					+ manifestation + ", " + "[artifact] = " + artifact + ".");
+					+ ", " + "[compilationUnit] = " + compilationUnit + ", " + "[t2c] = " + t2c + ", "
+					+ "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", " + "[artifact] = " + artifact
+					+ ", " + "[type] = " + type + ", " + "[manifestation] = " + manifestation + ".");
 		}
 		Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_11_3_bookkeepingforedges_greenBBBBBBFFF(ruleresult,
-						classifier, compilationUnit, type, manifestation, artifact);
-		//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result3_green[6];
+						compilationUnit, classifier, artifact, type, manifestation);
+		//nothing EMoflonEdge compilationUnit__type____types = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge manifestation__classifier____utilizedElement = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge compilationUnit__type____types = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_11_5_registerobjects_expressionBBBBBBBBB(this,
-						ruleresult, t2c, classifier, c2a, compilationUnit, type, manifestation, artifact);
+						ruleresult, compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 		return Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_11_6_expressionFB(ruleresult);
 	}
@@ -564,40 +563,40 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		Classifier classifier = (Classifier) result2_binding[0];
-		Manifestation manifestation = (Manifestation) result2_binding[1];
-		Artifact artifact = (Artifact) result2_binding[2];
+		Artifact artifact = (Artifact) result2_binding[1];
+		Manifestation manifestation = (Manifestation) result2_binding[2];
 		for (Object[] result2_black : Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_12_2_corematch_blackFBFFFBBB(classifier, manifestation,
-						artifact, match)) {
-			ASTNode2Element t2c = (ASTNode2Element) result2_black[0];
-			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result2_black[2];
-			CompilationUnit compilationUnit = (CompilationUnit) result2_black[3];
-			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_black[4];
+				.pattern_Manifestation4CompilationUnit2Artifact_12_2_corematch_blackFFBFBFBB(classifier, artifact,
+						manifestation, match)) {
+			CompilationUnit compilationUnit = (CompilationUnit) result2_black[0];
+			ASTNode2Element t2c = (ASTNode2Element) result2_black[1];
+			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result2_black[3];
+			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : Manifestation4CompilationUnit2ArtifactImpl
-					.pattern_Manifestation4CompilationUnit2Artifact_12_3_findcontext_blackBBBBBBB(t2c, classifier, c2a,
-							compilationUnit, type, manifestation, artifact)) {
+					.pattern_Manifestation4CompilationUnit2Artifact_12_3_findcontext_blackBBBBBBB(compilationUnit, t2c,
+							classifier, c2a, artifact, type, manifestation)) {
 				Object[] result3_green = Manifestation4CompilationUnit2ArtifactImpl
-						.pattern_Manifestation4CompilationUnit2Artifact_12_3_findcontext_greenBBBBBBBFFFFFFF(t2c,
-								classifier, c2a, compilationUnit, type, manifestation, artifact);
+						.pattern_Manifestation4CompilationUnit2Artifact_12_3_findcontext_greenBBBBBBBFFFFFFF(
+								compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
 				//nothing EMoflonEdge t2c__classifier____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge t2c__type____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge manifestation__classifier____utilizedElement = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge c2a__artifact____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge t2c__type____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge manifestation__classifier____utilizedElement = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge artifact__manifestation____manifestation = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge c2a__compilationUnit____source = (EMoflonEdge) result3_green[13];
 
 				Object[] result4_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 						.pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, manifestation,
-								artifact);
+								isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type,
+								manifestation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[t2c] = " + t2c + ", "
-							+ "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", " + "[compilationUnit] = "
-							+ compilationUnit + ", " + "[type] = " + type + ", " + "[manifestation] = " + manifestation
-							+ ", " + "[artifact] = " + artifact + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[compilationUnit] = "
+							+ compilationUnit + ", " + "[t2c] = " + t2c + ", " + "[classifier] = " + classifier + ", "
+							+ "[c2a] = " + c2a + ", " + "[artifact] = " + artifact + ", " + "[type] = " + type + ", "
+							+ "[manifestation] = " + manifestation + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -630,11 +629,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Classifier classifier, Manifestation manifestation,
-			Artifact artifact) {
+	public void registerObjectsToMatch_BWD(Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
 		match.registerObject("classifier", classifier);
-		match.registerObject("manifestation", manifestation);
 		match.registerObject("artifact", artifact);
+		match.registerObject("manifestation", manifestation);
 
 	}
 
@@ -643,8 +642,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Classifier classifier, Manifestation manifestation,
-			Artifact artifact) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -673,9 +672,9 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, CompilationUnit compilationUnit,
+			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, Artifact artifact,
+			AbstractTypeDeclaration type, Manifestation manifestation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -690,13 +689,13 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
 		isApplicableMatch.registerObject("t2c", t2c);
 		isApplicableMatch.registerObject("classifier", classifier);
 		isApplicableMatch.registerObject("c2a", c2a);
-		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
+		isApplicableMatch.registerObject("artifact", artifact);
 		isApplicableMatch.registerObject("type", type);
 		isApplicableMatch.registerObject("manifestation", manifestation);
-		isApplicableMatch.registerObject("artifact", artifact);
 		return csp;
 	}
 
@@ -714,15 +713,15 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject t2c, EObject classifier, EObject c2a,
-			EObject compilationUnit, EObject type, EObject manifestation, EObject artifact) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject compilationUnit, EObject t2c,
+			EObject classifier, EObject c2a, EObject artifact, EObject type, EObject manifestation) {
+		ruleresult.registerObject("compilationUnit", compilationUnit);
 		ruleresult.registerObject("t2c", t2c);
 		ruleresult.registerObject("classifier", classifier);
 		ruleresult.registerObject("c2a", c2a);
-		ruleresult.registerObject("compilationUnit", compilationUnit);
+		ruleresult.registerObject("artifact", artifact);
 		ruleresult.registerObject("type", type);
 		ruleresult.registerObject("manifestation", manifestation);
-		ruleresult.registerObject("artifact", artifact);
 
 	}
 
@@ -741,7 +740,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_114(EMoflonEdge _edge_manifestation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_103(EMoflonEdge _edge_utilizedElement) {
 
 		Object[] result1_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -758,10 +757,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		// ForEach 
 		for (Object[] result2_black : Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_blackFFFB(
-						_edge_manifestation)) {
+						_edge_utilizedElement)) {
 			Classifier classifier = (Classifier) result2_black[0];
-			Manifestation manifestation = (Manifestation) result2_black[1];
-			Artifact artifact = (Artifact) result2_black[2];
+			Artifact artifact = (Artifact) result2_black[1];
+			Manifestation manifestation = (Manifestation) result2_black[2];
 			Object[] result2_green = Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -769,7 +768,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			// 
 			if (Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, classifier, manifestation, artifact)) {
+							this, match, classifier, artifact, manifestation)) {
 				// 
 				if (Manifestation4CompilationUnit2ArtifactImpl
 						.pattern_Manifestation4CompilationUnit2Artifact_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -803,7 +802,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_types) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_109(EMoflonEdge _edge_types) {
 
 		Object[] result1_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -941,20 +940,20 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Classifier classifier = (Classifier) result2_bindingAndBlack[0];
-		CompilationUnit compilationUnit = (CompilationUnit) result2_bindingAndBlack[1];
-		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_bindingAndBlack[2];
-		Manifestation manifestation = (Manifestation) result2_bindingAndBlack[3];
-		Artifact artifact = (Artifact) result2_bindingAndBlack[4];
+		CompilationUnit compilationUnit = (CompilationUnit) result2_bindingAndBlack[0];
+		Classifier classifier = (Classifier) result2_bindingAndBlack[1];
+		Artifact artifact = (Artifact) result2_bindingAndBlack[2];
+		AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_bindingAndBlack[3];
+		Manifestation manifestation = (Manifestation) result2_bindingAndBlack[4];
 
 		Object[] result3_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, classifier,
-						compilationUnit, type, manifestation, artifact, sourceMatch, targetMatch);
+				.pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this,
+						compilationUnit, classifier, artifact, type, manifestation, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[classifier] = "
-							+ classifier + ", " + "[compilationUnit] = " + compilationUnit + ", " + "[type] = " + type
-							+ ", " + "[manifestation] = " + manifestation + ", " + "[artifact] = " + artifact + ", "
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[compilationUnit] = "
+							+ compilationUnit + ", " + "[classifier] = " + classifier + ", " + "[artifact] = "
+							+ artifact + ", " + "[type] = " + type + ", " + "[manifestation] = " + manifestation + ", "
 							+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -963,10 +962,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : Manifestation4CompilationUnit2ArtifactImpl
-					.pattern_Manifestation4CompilationUnit2Artifact_24_5_matchcorrcontext_blackFBFBBBBB(classifier,
-							compilationUnit, type, artifact, sourceMatch, targetMatch)) {
-				ASTNode2Element t2c = (ASTNode2Element) result5_black[0];
-				CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result5_black[2];
+					.pattern_Manifestation4CompilationUnit2Artifact_24_5_matchcorrcontext_blackBFBFBBBB(compilationUnit,
+							classifier, artifact, type, sourceMatch, targetMatch)) {
+				ASTNode2Element t2c = (ASTNode2Element) result5_black[1];
+				CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result5_black[3];
 				Object[] result5_green = Manifestation4CompilationUnit2ArtifactImpl
 						.pattern_Manifestation4CompilationUnit2Artifact_24_5_matchcorrcontext_greenBBBBF(t2c, c2a,
 								sourceMatch, targetMatch);
@@ -974,11 +973,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 
 				Object[] result6_black = Manifestation4CompilationUnit2ArtifactImpl
 						.pattern_Manifestation4CompilationUnit2Artifact_24_6_createcorrespondence_blackBBBBBB(
-								classifier, compilationUnit, type, manifestation, artifact, ccMatch);
+								compilationUnit, classifier, artifact, type, manifestation, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[classifier] = "
-							+ classifier + ", " + "[compilationUnit] = " + compilationUnit + ", " + "[type] = " + type
-							+ ", " + "[manifestation] = " + manifestation + ", " + "[artifact] = " + artifact + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[compilationUnit] = "
+							+ compilationUnit + ", " + "[classifier] = " + classifier + ", " + "[artifact] = "
+							+ artifact + ", " + "[type] = " + type + ", " + "[manifestation] = " + manifestation + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
 
@@ -1006,9 +1005,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Classifier classifier, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(CompilationUnit compilationUnit, Classifier classifier, Artifact artifact,
+			AbstractTypeDeclaration type, Manifestation manifestation, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1055,10 +1053,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Classifier classifier, Manifestation manifestation, Artifact artifact) {// 
+	public boolean checkDEC_BWD(Classifier classifier, Artifact artifact, Manifestation manifestation) {// 
 		Object[] result1_black = Manifestation4CompilationUnit2ArtifactImpl
-				.pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_blackBBB(classifier, manifestation,
-						artifact);
+				.pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_blackBBB(classifier, artifact,
+						manifestation);
 		if (result1_black != null) {
 			return Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_28_2_expressionF();
@@ -1074,8 +1072,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element t2cParameter,
-			CompilationUnit2Artifact c2aParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
+			CompilationUnit2Artifact c2aParameter, ASTNode2Element t2cParameter) {
 
 		Object[] result1_black = Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_29_1_createresult_blackB(this);
@@ -1091,24 +1089,24 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		for (Object[] result2_black : Manifestation4CompilationUnit2ArtifactImpl
 				.pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_blackFFFFFFFFBB(
 						ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList t2cList = (RuleEntryList) result2_black[0];
-			ASTNode2Element t2c = (ASTNode2Element) result2_black[1];
-			Classifier classifier = (Classifier) result2_black[2];
-			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_black[3];
-			//nothing RuleEntryList c2aList = (RuleEntryList) result2_black[4];
-			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result2_black[5];
-			CompilationUnit compilationUnit = (CompilationUnit) result2_black[6];
-			Artifact artifact = (Artifact) result2_black[7];
+			//nothing RuleEntryList c2aList = (RuleEntryList) result2_black[0];
+			CompilationUnit compilationUnit = (CompilationUnit) result2_black[1];
+			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result2_black[2];
+			Artifact artifact = (Artifact) result2_black[3];
+			//nothing RuleEntryList t2cList = (RuleEntryList) result2_black[4];
+			ASTNode2Element t2c = (ASTNode2Element) result2_black[5];
+			Classifier classifier = (Classifier) result2_black[6];
+			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = Manifestation4CompilationUnit2ArtifactImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, artifact, ruleResult);
+							isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[t2c] = " + t2c + ", "
-						+ "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", " + "[compilationUnit] = "
-						+ compilationUnit + ", " + "[type] = " + type + ", " + "[artifact] = " + artifact + ", "
-						+ "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[compilationUnit] = " + compilationUnit
+						+ ", " + "[t2c] = " + t2c + ", " + "[classifier] = " + classifier + ", " + "[c2a] = " + c2a
+						+ ", " + "[artifact] = " + artifact + ", " + "[type] = " + type + ", " + "[ruleResult] = "
+						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1116,23 +1114,23 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					.pattern_Manifestation4CompilationUnit2Artifact_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = Manifestation4CompilationUnit2ArtifactImpl
-						.pattern_Manifestation4CompilationUnit2Artifact_29_5_checknacs_blackBBBBBB(t2c, classifier, c2a,
-								compilationUnit, type, artifact);
+						.pattern_Manifestation4CompilationUnit2Artifact_29_5_checknacs_blackBBBBBB(compilationUnit, t2c,
+								classifier, c2a, artifact, type);
 				if (result5_black != null) {
 
 					Object[] result6_black = Manifestation4CompilationUnit2ArtifactImpl
-							.pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_blackBBBBBBB(t2c, classifier,
-									c2a, compilationUnit, type, artifact, ruleResult);
+							.pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_blackBBBBBBB(compilationUnit,
+									t2c, classifier, c2a, artifact, type, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[t2c] = " + t2c + ", "
-								+ "[classifier] = " + classifier + ", " + "[c2a] = " + c2a + ", "
-								+ "[compilationUnit] = " + compilationUnit + ", " + "[type] = " + type + ", "
-								+ "[artifact] = " + artifact + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[compilationUnit] = "
+								+ compilationUnit + ", " + "[t2c] = " + t2c + ", " + "[classifier] = " + classifier
+								+ ", " + "[c2a] = " + c2a + ", " + "[artifact] = " + artifact + ", " + "[type] = "
+								+ type + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					Manifestation4CompilationUnit2ArtifactImpl
-							.pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_greenBBBFBB(classifier,
-									compilationUnit, type, artifact, ruleResult);
-					//nothing Manifestation manifestation = (Manifestation) result6_green[3];
+							.pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_greenBBBBFB(compilationUnit,
+									classifier, artifact, type, ruleResult);
+					//nothing Manifestation manifestation = (Manifestation) result6_green[4];
 
 				} else {
 				}
@@ -1150,9 +1148,9 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, CompilationUnit compilationUnit,
+			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, Artifact artifact,
+			AbstractTypeDeclaration type, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1167,12 +1165,12 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
 		isApplicableMatch.registerObject("t2c", t2c);
 		isApplicableMatch.registerObject("classifier", classifier);
 		isApplicableMatch.registerObject("c2a", c2a);
-		isApplicableMatch.registerObject("compilationUnit", compilationUnit);
-		isApplicableMatch.registerObject("type", type);
 		isApplicableMatch.registerObject("artifact", artifact);
+		isApplicableMatch.registerObject("type", type);
 		return csp;
 	}
 
@@ -1209,11 +1207,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					(AbstractTypeDeclaration) arguments.get(2));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_CLASSIFIER_COMPILATIONUNIT2ARTIFACT_COMPILATIONUNIT_ABSTRACTTYPEDECLARATION_ARTIFACT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
-					(Classifier) arguments.get(2), (CompilationUnit2Artifact) arguments.get(3),
-					(CompilationUnit) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-					(Artifact) arguments.get(6));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_COMPILATIONUNIT_ASTNODE2ELEMENT_CLASSIFIER_COMPILATIONUNIT2ARTIFACT_ARTIFACT_ABSTRACTTYPEDECLARATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (CompilationUnit) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (Classifier) arguments.get(3),
+					(CompilationUnit2Artifact) arguments.get(4), (Artifact) arguments.get(5),
+					(AbstractTypeDeclaration) arguments.get(6));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1223,27 +1221,27 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_MANIFESTATION_ARTIFACT:
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_ARTIFACT_MANIFESTATION:
 			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(Manifestation) arguments.get(2), (Artifact) arguments.get(3));
+					(Artifact) arguments.get(2), (Manifestation) arguments.get(3));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_MANIFESTATION_ARTIFACT:
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_ARTIFACT_MANIFESTATION:
 			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(Manifestation) arguments.get(2), (Artifact) arguments.get(3));
+					(Artifact) arguments.get(2), (Manifestation) arguments.get(3));
 			return null;
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_MANIFESTATION_ARTIFACT:
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_ARTIFACT_MANIFESTATION:
 			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-					(Manifestation) arguments.get(2), (Artifact) arguments.get(3));
+					(Artifact) arguments.get(2), (Manifestation) arguments.get(3));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_CLASSIFIER_COMPILATIONUNIT2ARTIFACT_COMPILATIONUNIT_ABSTRACTTYPEDECLARATION_MANIFESTATION_ARTIFACT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
-					(Classifier) arguments.get(2), (CompilationUnit2Artifact) arguments.get(3),
-					(CompilationUnit) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-					(Manifestation) arguments.get(6), (Artifact) arguments.get(7));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMPILATIONUNIT_ASTNODE2ELEMENT_CLASSIFIER_COMPILATIONUNIT2ARTIFACT_ARTIFACT_ABSTRACTTYPEDECLARATION_MANIFESTATION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (CompilationUnit) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (Classifier) arguments.get(3),
+					(CompilationUnit2Artifact) arguments.get(4), (Artifact) arguments.get(5),
+					(AbstractTypeDeclaration) arguments.get(6), (Manifestation) arguments.get(7));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1253,35 +1251,35 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_114__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_114((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_103__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_103((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_109__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_109((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_COMPILATIONUNIT_ABSTRACTTYPEDECLARATION_MANIFESTATION_ARTIFACT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Classifier) arguments.get(0), (CompilationUnit) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (Manifestation) arguments.get(3),
-					(Artifact) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_SOLVE_CSP_CC__COMPILATIONUNIT_CLASSIFIER_ARTIFACT_ABSTRACTTYPEDECLARATION_MANIFESTATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((CompilationUnit) arguments.get(0), (Classifier) arguments.get(1),
+					(Artifact) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+					(Manifestation) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_DEC_FWD__COMPILATIONUNIT_ABSTRACTTYPEDECLARATION:
 			return checkDEC_FWD((CompilationUnit) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_DEC_BWD__CLASSIFIER_MANIFESTATION_ARTIFACT:
-			return checkDEC_BWD((Classifier) arguments.get(0), (Manifestation) arguments.get(1),
-					(Artifact) arguments.get(2));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_COMPILATIONUNIT2ARTIFACT:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-					(CompilationUnit2Artifact) arguments.get(2));
-		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_CLASSIFIER_COMPILATIONUNIT2ARTIFACT_COMPILATIONUNIT_ABSTRACTTYPEDECLARATION_ARTIFACT_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
-					(Classifier) arguments.get(2), (CompilationUnit2Artifact) arguments.get(3),
-					(CompilationUnit) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-					(Artifact) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___CHECK_DEC_BWD__CLASSIFIER_ARTIFACT_MANIFESTATION:
+			return checkDEC_BWD((Classifier) arguments.get(0), (Artifact) arguments.get(1),
+					(Manifestation) arguments.get(2));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL__RULEENTRYCONTAINER_COMPILATIONUNIT2ARTIFACT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (CompilationUnit2Artifact) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMPILATIONUNIT_ASTNODE2ELEMENT_CLASSIFIER_COMPILATIONUNIT2ARTIFACT_ARTIFACT_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (CompilationUnit) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (Classifier) arguments.get(3),
+					(CompilationUnit2Artifact) arguments.get(4), (Artifact) arguments.get(5),
+					(AbstractTypeDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.MANIFESTATION4_COMPILATION_UNIT2_ARTIFACT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1381,31 +1379,31 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("t2c");
-		EObject _localVariable_1 = isApplicableMatch.getObject("classifier");
-		EObject _localVariable_2 = isApplicableMatch.getObject("c2a");
-		EObject _localVariable_3 = isApplicableMatch.getObject("compilationUnit");
-		EObject _localVariable_4 = isApplicableMatch.getObject("type");
-		EObject _localVariable_5 = isApplicableMatch.getObject("artifact");
-		EObject tmpT2c = _localVariable_0;
-		EObject tmpClassifier = _localVariable_1;
-		EObject tmpC2a = _localVariable_2;
-		EObject tmpCompilationUnit = _localVariable_3;
-		EObject tmpType = _localVariable_4;
-		EObject tmpArtifact = _localVariable_5;
-		if (tmpT2c instanceof ASTNode2Element) {
-			ASTNode2Element t2c = (ASTNode2Element) tmpT2c;
-			if (tmpClassifier instanceof Classifier) {
-				Classifier classifier = (Classifier) tmpClassifier;
-				if (tmpC2a instanceof CompilationUnit2Artifact) {
-					CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) tmpC2a;
-					if (tmpCompilationUnit instanceof CompilationUnit) {
-						CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
-						if (tmpType instanceof AbstractTypeDeclaration) {
-							AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
-							if (tmpArtifact instanceof Artifact) {
-								Artifact artifact = (Artifact) tmpArtifact;
-								return new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact,
+		EObject _localVariable_0 = isApplicableMatch.getObject("compilationUnit");
+		EObject _localVariable_1 = isApplicableMatch.getObject("t2c");
+		EObject _localVariable_2 = isApplicableMatch.getObject("classifier");
+		EObject _localVariable_3 = isApplicableMatch.getObject("c2a");
+		EObject _localVariable_4 = isApplicableMatch.getObject("artifact");
+		EObject _localVariable_5 = isApplicableMatch.getObject("type");
+		EObject tmpCompilationUnit = _localVariable_0;
+		EObject tmpT2c = _localVariable_1;
+		EObject tmpClassifier = _localVariable_2;
+		EObject tmpC2a = _localVariable_3;
+		EObject tmpArtifact = _localVariable_4;
+		EObject tmpType = _localVariable_5;
+		if (tmpCompilationUnit instanceof CompilationUnit) {
+			CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
+			if (tmpT2c instanceof ASTNode2Element) {
+				ASTNode2Element t2c = (ASTNode2Element) tmpT2c;
+				if (tmpClassifier instanceof Classifier) {
+					Classifier classifier = (Classifier) tmpClassifier;
+					if (tmpC2a instanceof CompilationUnit2Artifact) {
+						CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) tmpC2a;
+						if (tmpArtifact instanceof Artifact) {
+							Artifact artifact = (Artifact) tmpArtifact;
+							if (tmpType instanceof AbstractTypeDeclaration) {
+								AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
+								return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type,
 										isApplicableMatch };
 							}
 						}
@@ -1417,14 +1415,14 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_blackBBBBBBFBB(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact, Manifestation4CompilationUnit2Artifact _this,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation4CompilationUnit2Artifact _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!artifact.equals(classifier)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact, csp, _this,
+					return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1437,31 +1435,31 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding = pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding != null) {
-			ASTNode2Element t2c = (ASTNode2Element) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[0];
-			Classifier classifier = (Classifier) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[1];
-			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[2];
-			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[3];
-			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[4];
-			Artifact artifact = (Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[5];
+			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[0];
+			ASTNode2Element t2c = (ASTNode2Element) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[1];
+			Classifier classifier = (Classifier) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[2];
+			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[3];
+			Artifact artifact = (Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[4];
+			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_black = pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_blackBBBBBBFBB(
-					t2c, classifier, c2a, compilationUnit, type, artifact, _this, isApplicableMatch);
+					compilationUnit, t2c, classifier, c2a, artifact, type, _this, isApplicableMatch);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_black[6];
 
-				return new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact, csp, _this,
+				return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_greenBFB(
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_1_performtransformation_greenBBF(
 			Classifier classifier, Artifact artifact) {
 		Manifestation manifestation = UMLFactory.eINSTANCE.createManifestation();
-		artifact.getManifestations().add(manifestation);
 		manifestation.setUtilizedElement(classifier);
-		return new Object[] { classifier, manifestation, artifact };
+		artifact.getManifestations().add(manifestation);
+		return new Object[] { classifier, artifact, manifestation };
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_2_collecttranslatedelements_blackB(
@@ -1477,36 +1475,36 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject t2c, EObject classifier, EObject c2a, EObject compilationUnit,
-			EObject type, EObject manifestation, EObject artifact) {
-		if (!t2c.equals(type)) {
-			if (!classifier.equals(t2c)) {
-				if (!classifier.equals(compilationUnit)) {
-					if (!classifier.equals(type)) {
-						if (!classifier.equals(manifestation)) {
-							if (!c2a.equals(t2c)) {
-								if (!c2a.equals(classifier)) {
-									if (!c2a.equals(compilationUnit)) {
-										if (!c2a.equals(type)) {
-											if (!c2a.equals(manifestation)) {
-												if (!compilationUnit.equals(t2c)) {
-													if (!compilationUnit.equals(type)) {
-														if (!compilationUnit.equals(manifestation)) {
-															if (!manifestation.equals(t2c)) {
-																if (!manifestation.equals(type)) {
-																	if (!artifact.equals(t2c)) {
-																		if (!artifact.equals(classifier)) {
-																			if (!artifact.equals(c2a)) {
-																				if (!artifact.equals(compilationUnit)) {
-																					if (!artifact.equals(type)) {
-																						if (!artifact.equals(
-																								manifestation)) {
+			PerformRuleResult ruleresult, EObject compilationUnit, EObject t2c, EObject classifier, EObject c2a,
+			EObject artifact, EObject type, EObject manifestation) {
+		if (!compilationUnit.equals(t2c)) {
+			if (!compilationUnit.equals(type)) {
+				if (!compilationUnit.equals(manifestation)) {
+					if (!t2c.equals(type)) {
+						if (!classifier.equals(compilationUnit)) {
+							if (!classifier.equals(t2c)) {
+								if (!classifier.equals(type)) {
+									if (!classifier.equals(manifestation)) {
+										if (!c2a.equals(compilationUnit)) {
+											if (!c2a.equals(t2c)) {
+												if (!c2a.equals(classifier)) {
+													if (!c2a.equals(type)) {
+														if (!c2a.equals(manifestation)) {
+															if (!artifact.equals(compilationUnit)) {
+																if (!artifact.equals(t2c)) {
+																	if (!artifact.equals(classifier)) {
+																		if (!artifact.equals(c2a)) {
+																			if (!artifact.equals(type)) {
+																				if (!artifact.equals(manifestation)) {
+																					if (!manifestation.equals(t2c)) {
+																						if (!manifestation
+																								.equals(type)) {
 																							return new Object[] {
-																									ruleresult, t2c,
-																									classifier, c2a,
+																									ruleresult,
 																									compilationUnit,
-																									type, manifestation,
-																									artifact };
+																									t2c, classifier,
+																									c2a, artifact, type,
+																									manifestation };
 																						}
 																					}
 																				}
@@ -1532,37 +1530,37 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_1_3_bookkeepingforedges_greenBBBBBBFFF(
-			PerformRuleResult ruleresult, EObject classifier, EObject compilationUnit, EObject type,
-			EObject manifestation, EObject artifact) {
-		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge manifestation__classifier____utilizedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject compilationUnit, EObject classifier, EObject artifact, EObject type,
+			EObject manifestation) {
 		EMoflonEdge compilationUnit__type____types = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge manifestation__classifier____utilizedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Manifestation4CompilationUnit2Artifact";
-		String artifact__manifestation____manifestation_name_prime = "manifestation";
-		String manifestation__classifier____utilizedElement_name_prime = "utilizedElement";
 		String compilationUnit__type____types_name_prime = "types";
-		artifact__manifestation____manifestation.setSrc(artifact);
-		artifact__manifestation____manifestation.setTrg(manifestation);
-		ruleresult.getCreatedEdges().add(artifact__manifestation____manifestation);
-		manifestation__classifier____utilizedElement.setSrc(manifestation);
-		manifestation__classifier____utilizedElement.setTrg(classifier);
-		ruleresult.getCreatedEdges().add(manifestation__classifier____utilizedElement);
+		String manifestation__classifier____utilizedElement_name_prime = "utilizedElement";
+		String artifact__manifestation____manifestation_name_prime = "manifestation";
 		compilationUnit__type____types.setSrc(compilationUnit);
 		compilationUnit__type____types.setTrg(type);
 		ruleresult.getTranslatedEdges().add(compilationUnit__type____types);
+		manifestation__classifier____utilizedElement.setSrc(manifestation);
+		manifestation__classifier____utilizedElement.setTrg(classifier);
+		ruleresult.getCreatedEdges().add(manifestation__classifier____utilizedElement);
+		artifact__manifestation____manifestation.setSrc(artifact);
+		artifact__manifestation____manifestation.setTrg(manifestation);
+		ruleresult.getCreatedEdges().add(artifact__manifestation____manifestation);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
-		manifestation__classifier____utilizedElement.setName(manifestation__classifier____utilizedElement_name_prime);
 		compilationUnit__type____types.setName(compilationUnit__type____types_name_prime);
-		return new Object[] { ruleresult, classifier, compilationUnit, type, manifestation, artifact,
-				artifact__manifestation____manifestation, manifestation__classifier____utilizedElement,
-				compilationUnit__type____types };
+		manifestation__classifier____utilizedElement.setName(manifestation__classifier____utilizedElement_name_prime);
+		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
+		return new Object[] { ruleresult, compilationUnit, classifier, artifact, type, manifestation,
+				compilationUnit__type____types, manifestation__classifier____utilizedElement,
+				artifact__manifestation____manifestation };
 	}
 
 	public static final void pattern_Manifestation4CompilationUnit2Artifact_1_5_registerobjects_expressionBBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject t2c, EObject classifier,
-			EObject c2a, EObject compilationUnit, EObject type, EObject manifestation, EObject artifact) {
-		_this.registerObjects_FWD(ruleresult, t2c, classifier, c2a, compilationUnit, type, manifestation, artifact);
+			Manifestation4CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject compilationUnit,
+			EObject t2c, EObject classifier, EObject c2a, EObject artifact, EObject type, EObject manifestation) {
+		_this.registerObjects_FWD(ruleresult, compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 
 	}
 
@@ -1638,20 +1636,20 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_2_2_corematch_blackFFFBBFB(
+	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_2_2_corematch_blackBFFFFBB(
 			CompilationUnit compilationUnit, AbstractTypeDeclaration type, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (CompilationUnit2Artifact c2a : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(compilationUnit, CompilationUnit2Artifact.class, "source")) {
-			Artifact artifact = c2a.getTarget();
-			if (artifact != null) {
-				for (ASTNode2Element t2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(type,
-						ASTNode2Element.class, "source")) {
-					Element tmpClassifier = t2c.getTarget();
-					if (tmpClassifier instanceof Classifier) {
-						Classifier classifier = (Classifier) tmpClassifier;
+		for (ASTNode2Element t2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(type,
+				ASTNode2Element.class, "source")) {
+			Element tmpClassifier = t2c.getTarget();
+			if (tmpClassifier instanceof Classifier) {
+				Classifier classifier = (Classifier) tmpClassifier;
+				for (CompilationUnit2Artifact c2a : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(compilationUnit, CompilationUnit2Artifact.class, "source")) {
+					Artifact artifact = c2a.getTarget();
+					if (artifact != null) {
 						if (!artifact.equals(classifier)) {
-							_result.add(new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact, match });
+							_result.add(new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, match });
 						}
 					}
 
@@ -1663,16 +1661,16 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_2_3_findcontext_blackBBBBBB(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact) {
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!artifact.equals(classifier)) {
 			if (classifier.equals(t2c.getTarget())) {
-				if (compilationUnit.equals(c2a.getSource())) {
+				if (compilationUnit.getTypes().contains(type)) {
 					if (artifact.equals(c2a.getTarget())) {
 						if (type.equals(t2c.getSource())) {
-							if (compilationUnit.getTypes().contains(type)) {
-								_result.add(new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact });
+							if (compilationUnit.equals(c2a.getSource())) {
+								_result.add(new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type });
 							}
 						}
 					}
@@ -1683,60 +1681,60 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_2_3_findcontext_greenBBBBBBFFFFFF(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact) {
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge t2c__classifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2a__compilationUnit____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge compilationUnit__type____types = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2a__artifact____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge t2c__type____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge compilationUnit__type____types = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2a__compilationUnit____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String t2c__classifier____target_name_prime = "target";
-		String c2a__compilationUnit____source_name_prime = "source";
+		String compilationUnit__type____types_name_prime = "types";
 		String c2a__artifact____target_name_prime = "target";
 		String t2c__type____source_name_prime = "source";
-		String compilationUnit__type____types_name_prime = "types";
+		String c2a__compilationUnit____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(compilationUnit);
 		isApplicableMatch.getAllContextElements().add(t2c);
 		isApplicableMatch.getAllContextElements().add(classifier);
 		isApplicableMatch.getAllContextElements().add(c2a);
-		isApplicableMatch.getAllContextElements().add(compilationUnit);
-		isApplicableMatch.getAllContextElements().add(type);
 		isApplicableMatch.getAllContextElements().add(artifact);
+		isApplicableMatch.getAllContextElements().add(type);
 		t2c__classifier____target.setSrc(t2c);
 		t2c__classifier____target.setTrg(classifier);
 		isApplicableMatch.getAllContextElements().add(t2c__classifier____target);
-		c2a__compilationUnit____source.setSrc(c2a);
-		c2a__compilationUnit____source.setTrg(compilationUnit);
-		isApplicableMatch.getAllContextElements().add(c2a__compilationUnit____source);
+		compilationUnit__type____types.setSrc(compilationUnit);
+		compilationUnit__type____types.setTrg(type);
+		isApplicableMatch.getAllContextElements().add(compilationUnit__type____types);
 		c2a__artifact____target.setSrc(c2a);
 		c2a__artifact____target.setTrg(artifact);
 		isApplicableMatch.getAllContextElements().add(c2a__artifact____target);
 		t2c__type____source.setSrc(t2c);
 		t2c__type____source.setTrg(type);
 		isApplicableMatch.getAllContextElements().add(t2c__type____source);
-		compilationUnit__type____types.setSrc(compilationUnit);
-		compilationUnit__type____types.setTrg(type);
-		isApplicableMatch.getAllContextElements().add(compilationUnit__type____types);
+		c2a__compilationUnit____source.setSrc(c2a);
+		c2a__compilationUnit____source.setTrg(compilationUnit);
+		isApplicableMatch.getAllContextElements().add(c2a__compilationUnit____source);
 		t2c__classifier____target.setName(t2c__classifier____target_name_prime);
-		c2a__compilationUnit____source.setName(c2a__compilationUnit____source_name_prime);
+		compilationUnit__type____types.setName(compilationUnit__type____types_name_prime);
 		c2a__artifact____target.setName(c2a__artifact____target_name_prime);
 		t2c__type____source.setName(t2c__type____source_name_prime);
-		compilationUnit__type____types.setName(compilationUnit__type____types_name_prime);
-		return new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact, isApplicableMatch,
-				t2c__classifier____target, c2a__compilationUnit____source, c2a__artifact____target, t2c__type____source,
-				compilationUnit__type____types };
+		c2a__compilationUnit____source.setName(c2a__compilationUnit____source_name_prime);
+		return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, isApplicableMatch,
+				t2c__classifier____target, compilationUnit__type____types, c2a__artifact____target, t2c__type____source,
+				c2a__compilationUnit____source };
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_bindingFBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, t2c, classifier, c2a, compilationUnit,
-				type, artifact);
+			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, compilationUnit, t2c, classifier, c2a,
+				artifact, type);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type,
-					artifact };
+			return new Object[] { csp, _this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact,
+					type };
 		}
 		return null;
 	}
@@ -1746,11 +1744,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact) {
+			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type) {
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_binding = pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, artifact);
+				_this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_binding[0];
 
@@ -1758,8 +1756,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type,
-						artifact };
+				return new Object[] { csp, _this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact,
+						type };
 			}
 		}
 		return null;
@@ -1794,21 +1792,21 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_10_1_initialbindings_blackBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier,
-			Manifestation manifestation, Artifact artifact) {
+			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
 		if (!artifact.equals(classifier)) {
-			return new Object[] { _this, match, classifier, manifestation, artifact };
+			return new Object[] { _this, match, classifier, artifact, manifestation };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_bindingFBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier,
-			Manifestation manifestation, Artifact artifact) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, classifier, manifestation, artifact);
+			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, classifier, artifact, manifestation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, classifier, manifestation, artifact };
+			return new Object[] { csp, _this, match, classifier, artifact, manifestation };
 		}
 		return null;
 	}
@@ -1818,10 +1816,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier,
-			Manifestation manifestation, Artifact artifact) {
+			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_binding = pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, classifier, manifestation, artifact);
+				_this, match, classifier, artifact, manifestation);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_binding[0];
 
@@ -1829,7 +1827,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, classifier, manifestation, artifact };
+				return new Object[] { csp, _this, match, classifier, artifact, manifestation };
 			}
 		}
 		return null;
@@ -1843,36 +1841,36 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, Classifier classifier, Manifestation manifestation, Artifact artifact) {
+			Match match, Classifier classifier, Artifact artifact, Manifestation manifestation) {
 		if (!artifact.equals(classifier)) {
-			return new Object[] { match, classifier, manifestation, artifact };
+			return new Object[] { match, classifier, artifact, manifestation };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_10_4_collectelementstobetranslated_greenBBBBFF(
-			Match match, Classifier classifier, Manifestation manifestation, Artifact artifact) {
-		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, Classifier classifier, Artifact artifact, Manifestation manifestation) {
 		EMoflonEdge manifestation__classifier____utilizedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(manifestation);
-		String artifact__manifestation____manifestation_name_prime = "manifestation";
 		String manifestation__classifier____utilizedElement_name_prime = "utilizedElement";
-		artifact__manifestation____manifestation.setSrc(artifact);
-		artifact__manifestation____manifestation.setTrg(manifestation);
-		match.getToBeTranslatedEdges().add(artifact__manifestation____manifestation);
+		String artifact__manifestation____manifestation_name_prime = "manifestation";
 		manifestation__classifier____utilizedElement.setSrc(manifestation);
 		manifestation__classifier____utilizedElement.setTrg(classifier);
 		match.getToBeTranslatedEdges().add(manifestation__classifier____utilizedElement);
-		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
+		artifact__manifestation____manifestation.setSrc(artifact);
+		artifact__manifestation____manifestation.setTrg(manifestation);
+		match.getToBeTranslatedEdges().add(artifact__manifestation____manifestation);
 		manifestation__classifier____utilizedElement.setName(manifestation__classifier____utilizedElement_name_prime);
-		return new Object[] { match, classifier, manifestation, artifact, artifact__manifestation____manifestation,
-				manifestation__classifier____utilizedElement };
+		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
+		return new Object[] { match, classifier, artifact, manifestation, manifestation__classifier____utilizedElement,
+				artifact__manifestation____manifestation };
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_10_5_collectcontextelements_blackBBBB(
-			Match match, Classifier classifier, Manifestation manifestation, Artifact artifact) {
+			Match match, Classifier classifier, Artifact artifact, Manifestation manifestation) {
 		if (!artifact.equals(classifier)) {
-			return new Object[] { match, classifier, manifestation, artifact };
+			return new Object[] { match, classifier, artifact, manifestation };
 		}
 		return null;
 	}
@@ -1885,9 +1883,9 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final void pattern_Manifestation4CompilationUnit2Artifact_10_6_registerobjectstomatch_expressionBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier,
-			Manifestation manifestation, Artifact artifact) {
-		_this.registerObjectsToMatch_BWD(match, classifier, manifestation, artifact);
+			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
+		_this.registerObjectsToMatch_BWD(match, classifier, artifact, manifestation);
 
 	}
 
@@ -1903,36 +1901,36 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("t2c");
-		EObject _localVariable_1 = isApplicableMatch.getObject("classifier");
-		EObject _localVariable_2 = isApplicableMatch.getObject("c2a");
-		EObject _localVariable_3 = isApplicableMatch.getObject("compilationUnit");
-		EObject _localVariable_4 = isApplicableMatch.getObject("type");
-		EObject _localVariable_5 = isApplicableMatch.getObject("manifestation");
-		EObject _localVariable_6 = isApplicableMatch.getObject("artifact");
-		EObject tmpT2c = _localVariable_0;
-		EObject tmpClassifier = _localVariable_1;
-		EObject tmpC2a = _localVariable_2;
-		EObject tmpCompilationUnit = _localVariable_3;
-		EObject tmpType = _localVariable_4;
-		EObject tmpManifestation = _localVariable_5;
-		EObject tmpArtifact = _localVariable_6;
-		if (tmpT2c instanceof ASTNode2Element) {
-			ASTNode2Element t2c = (ASTNode2Element) tmpT2c;
-			if (tmpClassifier instanceof Classifier) {
-				Classifier classifier = (Classifier) tmpClassifier;
-				if (tmpC2a instanceof CompilationUnit2Artifact) {
-					CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) tmpC2a;
-					if (tmpCompilationUnit instanceof CompilationUnit) {
-						CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
-						if (tmpType instanceof AbstractTypeDeclaration) {
-							AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
-							if (tmpManifestation instanceof Manifestation) {
-								Manifestation manifestation = (Manifestation) tmpManifestation;
-								if (tmpArtifact instanceof Artifact) {
-									Artifact artifact = (Artifact) tmpArtifact;
-									return new Object[] { t2c, classifier, c2a, compilationUnit, type, manifestation,
-											artifact, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("compilationUnit");
+		EObject _localVariable_1 = isApplicableMatch.getObject("t2c");
+		EObject _localVariable_2 = isApplicableMatch.getObject("classifier");
+		EObject _localVariable_3 = isApplicableMatch.getObject("c2a");
+		EObject _localVariable_4 = isApplicableMatch.getObject("artifact");
+		EObject _localVariable_5 = isApplicableMatch.getObject("type");
+		EObject _localVariable_6 = isApplicableMatch.getObject("manifestation");
+		EObject tmpCompilationUnit = _localVariable_0;
+		EObject tmpT2c = _localVariable_1;
+		EObject tmpClassifier = _localVariable_2;
+		EObject tmpC2a = _localVariable_3;
+		EObject tmpArtifact = _localVariable_4;
+		EObject tmpType = _localVariable_5;
+		EObject tmpManifestation = _localVariable_6;
+		if (tmpCompilationUnit instanceof CompilationUnit) {
+			CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
+			if (tmpT2c instanceof ASTNode2Element) {
+				ASTNode2Element t2c = (ASTNode2Element) tmpT2c;
+				if (tmpClassifier instanceof Classifier) {
+					Classifier classifier = (Classifier) tmpClassifier;
+					if (tmpC2a instanceof CompilationUnit2Artifact) {
+						CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) tmpC2a;
+						if (tmpArtifact instanceof Artifact) {
+							Artifact artifact = (Artifact) tmpArtifact;
+							if (tmpType instanceof AbstractTypeDeclaration) {
+								AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
+								if (tmpManifestation instanceof Manifestation) {
+									Manifestation manifestation = (Manifestation) tmpManifestation;
+									return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type,
+											manifestation, isApplicableMatch };
 								}
 							}
 						}
@@ -1944,14 +1942,14 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_blackBBBBBBBFBB(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation,
 			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch) {
 		if (!artifact.equals(classifier)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { t2c, classifier, c2a, compilationUnit, type, manifestation, artifact, csp,
+					return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, manifestation, csp,
 							_this, isApplicableMatch };
 				}
 			}
@@ -1964,20 +1962,20 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding = pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding != null) {
-			ASTNode2Element t2c = (ASTNode2Element) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[0];
-			Classifier classifier = (Classifier) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[1];
-			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[2];
-			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[3];
-			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[4];
-			Manifestation manifestation = (Manifestation) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[5];
-			Artifact artifact = (Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[6];
+			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[0];
+			ASTNode2Element t2c = (ASTNode2Element) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[1];
+			Classifier classifier = (Classifier) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[2];
+			CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[3];
+			Artifact artifact = (Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[4];
+			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[5];
+			Manifestation manifestation = (Manifestation) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_black = pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_blackBBBBBBBFBB(
-					t2c, classifier, c2a, compilationUnit, type, manifestation, artifact, _this, isApplicableMatch);
+					compilationUnit, t2c, classifier, c2a, artifact, type, manifestation, _this, isApplicableMatch);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_11_1_performtransformation_black[7];
 
-				return new Object[] { t2c, classifier, c2a, compilationUnit, type, manifestation, artifact, csp, _this,
+				return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, manifestation, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -2003,36 +2001,36 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject t2c, EObject classifier, EObject c2a, EObject compilationUnit,
-			EObject type, EObject manifestation, EObject artifact) {
-		if (!t2c.equals(type)) {
-			if (!classifier.equals(t2c)) {
-				if (!classifier.equals(compilationUnit)) {
-					if (!classifier.equals(type)) {
-						if (!classifier.equals(manifestation)) {
-							if (!c2a.equals(t2c)) {
-								if (!c2a.equals(classifier)) {
-									if (!c2a.equals(compilationUnit)) {
-										if (!c2a.equals(type)) {
-											if (!c2a.equals(manifestation)) {
-												if (!compilationUnit.equals(t2c)) {
-													if (!compilationUnit.equals(type)) {
-														if (!compilationUnit.equals(manifestation)) {
-															if (!manifestation.equals(t2c)) {
-																if (!manifestation.equals(type)) {
-																	if (!artifact.equals(t2c)) {
-																		if (!artifact.equals(classifier)) {
-																			if (!artifact.equals(c2a)) {
-																				if (!artifact.equals(compilationUnit)) {
-																					if (!artifact.equals(type)) {
-																						if (!artifact.equals(
-																								manifestation)) {
+			PerformRuleResult ruleresult, EObject compilationUnit, EObject t2c, EObject classifier, EObject c2a,
+			EObject artifact, EObject type, EObject manifestation) {
+		if (!compilationUnit.equals(t2c)) {
+			if (!compilationUnit.equals(type)) {
+				if (!compilationUnit.equals(manifestation)) {
+					if (!t2c.equals(type)) {
+						if (!classifier.equals(compilationUnit)) {
+							if (!classifier.equals(t2c)) {
+								if (!classifier.equals(type)) {
+									if (!classifier.equals(manifestation)) {
+										if (!c2a.equals(compilationUnit)) {
+											if (!c2a.equals(t2c)) {
+												if (!c2a.equals(classifier)) {
+													if (!c2a.equals(type)) {
+														if (!c2a.equals(manifestation)) {
+															if (!artifact.equals(compilationUnit)) {
+																if (!artifact.equals(t2c)) {
+																	if (!artifact.equals(classifier)) {
+																		if (!artifact.equals(c2a)) {
+																			if (!artifact.equals(type)) {
+																				if (!artifact.equals(manifestation)) {
+																					if (!manifestation.equals(t2c)) {
+																						if (!manifestation
+																								.equals(type)) {
 																							return new Object[] {
-																									ruleresult, t2c,
-																									classifier, c2a,
+																									ruleresult,
 																									compilationUnit,
-																									type, manifestation,
-																									artifact };
+																									t2c, classifier,
+																									c2a, artifact, type,
+																									manifestation };
 																						}
 																					}
 																				}
@@ -2058,37 +2056,37 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_11_3_bookkeepingforedges_greenBBBBBBFFF(
-			PerformRuleResult ruleresult, EObject classifier, EObject compilationUnit, EObject type,
-			EObject manifestation, EObject artifact) {
-		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge manifestation__classifier____utilizedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject compilationUnit, EObject classifier, EObject artifact, EObject type,
+			EObject manifestation) {
 		EMoflonEdge compilationUnit__type____types = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge manifestation__classifier____utilizedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Manifestation4CompilationUnit2Artifact";
-		String artifact__manifestation____manifestation_name_prime = "manifestation";
-		String manifestation__classifier____utilizedElement_name_prime = "utilizedElement";
 		String compilationUnit__type____types_name_prime = "types";
-		artifact__manifestation____manifestation.setSrc(artifact);
-		artifact__manifestation____manifestation.setTrg(manifestation);
-		ruleresult.getTranslatedEdges().add(artifact__manifestation____manifestation);
-		manifestation__classifier____utilizedElement.setSrc(manifestation);
-		manifestation__classifier____utilizedElement.setTrg(classifier);
-		ruleresult.getTranslatedEdges().add(manifestation__classifier____utilizedElement);
+		String manifestation__classifier____utilizedElement_name_prime = "utilizedElement";
+		String artifact__manifestation____manifestation_name_prime = "manifestation";
 		compilationUnit__type____types.setSrc(compilationUnit);
 		compilationUnit__type____types.setTrg(type);
 		ruleresult.getCreatedEdges().add(compilationUnit__type____types);
+		manifestation__classifier____utilizedElement.setSrc(manifestation);
+		manifestation__classifier____utilizedElement.setTrg(classifier);
+		ruleresult.getTranslatedEdges().add(manifestation__classifier____utilizedElement);
+		artifact__manifestation____manifestation.setSrc(artifact);
+		artifact__manifestation____manifestation.setTrg(manifestation);
+		ruleresult.getTranslatedEdges().add(artifact__manifestation____manifestation);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
-		manifestation__classifier____utilizedElement.setName(manifestation__classifier____utilizedElement_name_prime);
 		compilationUnit__type____types.setName(compilationUnit__type____types_name_prime);
-		return new Object[] { ruleresult, classifier, compilationUnit, type, manifestation, artifact,
-				artifact__manifestation____manifestation, manifestation__classifier____utilizedElement,
-				compilationUnit__type____types };
+		manifestation__classifier____utilizedElement.setName(manifestation__classifier____utilizedElement_name_prime);
+		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
+		return new Object[] { ruleresult, compilationUnit, classifier, artifact, type, manifestation,
+				compilationUnit__type____types, manifestation__classifier____utilizedElement,
+				artifact__manifestation____manifestation };
 	}
 
 	public static final void pattern_Manifestation4CompilationUnit2Artifact_11_5_registerobjects_expressionBBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject t2c, EObject classifier,
-			EObject c2a, EObject compilationUnit, EObject type, EObject manifestation, EObject artifact) {
-		_this.registerObjects_BWD(ruleresult, t2c, classifier, c2a, compilationUnit, type, manifestation, artifact);
+			Manifestation4CompilationUnit2Artifact _this, PerformRuleResult ruleresult, EObject compilationUnit,
+			EObject t2c, EObject classifier, EObject c2a, EObject artifact, EObject type, EObject manifestation) {
+		_this.registerObjects_BWD(ruleresult, compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 
 	}
 
@@ -2152,26 +2150,26 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_12_2_corematch_bindingFFFB(
 			Match match) {
 		EObject _localVariable_0 = match.getObject("classifier");
-		EObject _localVariable_1 = match.getObject("manifestation");
-		EObject _localVariable_2 = match.getObject("artifact");
+		EObject _localVariable_1 = match.getObject("artifact");
+		EObject _localVariable_2 = match.getObject("manifestation");
 		EObject tmpClassifier = _localVariable_0;
-		EObject tmpManifestation = _localVariable_1;
-		EObject tmpArtifact = _localVariable_2;
+		EObject tmpArtifact = _localVariable_1;
+		EObject tmpManifestation = _localVariable_2;
 		if (tmpClassifier instanceof Classifier) {
 			Classifier classifier = (Classifier) tmpClassifier;
-			if (tmpManifestation instanceof Manifestation) {
-				Manifestation manifestation = (Manifestation) tmpManifestation;
-				if (tmpArtifact instanceof Artifact) {
-					Artifact artifact = (Artifact) tmpArtifact;
-					return new Object[] { classifier, manifestation, artifact, match };
+			if (tmpArtifact instanceof Artifact) {
+				Artifact artifact = (Artifact) tmpArtifact;
+				if (tmpManifestation instanceof Manifestation) {
+					Manifestation manifestation = (Manifestation) tmpManifestation;
+					return new Object[] { classifier, artifact, manifestation, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_12_2_corematch_blackFBFFFBBB(
-			Classifier classifier, Manifestation manifestation, Artifact artifact, Match match) {
+	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_12_2_corematch_blackFFBFBFBB(
+			Classifier classifier, Artifact artifact, Manifestation manifestation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!artifact.equals(classifier)) {
 			for (ASTNode2Element t2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(classifier,
@@ -2183,8 +2181,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 							.getOppositeReferenceTyped(artifact, CompilationUnit2Artifact.class, "target")) {
 						CompilationUnit compilationUnit = c2a.getSource();
 						if (compilationUnit != null) {
-							_result.add(new Object[] { t2c, classifier, c2a, compilationUnit, type, manifestation,
-									artifact, match });
+							_result.add(new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type,
+									manifestation, match });
 						}
 
 					}
@@ -2196,18 +2194,18 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_12_3_findcontext_blackBBBBBBB(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact) {
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!artifact.equals(classifier)) {
 			if (classifier.equals(t2c.getTarget())) {
-				if (compilationUnit.equals(c2a.getSource())) {
-					if (artifact.equals(c2a.getTarget())) {
-						if (artifact.getManifestations().contains(manifestation)) {
-							if (type.equals(t2c.getSource())) {
-								if (classifier.equals(manifestation.getUtilizedElement())) {
-									_result.add(new Object[] { t2c, classifier, c2a, compilationUnit, type,
-											manifestation, artifact });
+				if (artifact.equals(c2a.getTarget())) {
+					if (type.equals(t2c.getSource())) {
+						if (classifier.equals(manifestation.getUtilizedElement())) {
+							if (artifact.getManifestations().contains(manifestation)) {
+								if (compilationUnit.equals(c2a.getSource())) {
+									_result.add(new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type,
+											manifestation });
 								}
 							}
 						}
@@ -2219,68 +2217,68 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_12_3_findcontext_greenBBBBBBBFFFFFFF(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact) {
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge t2c__classifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2a__compilationUnit____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2a__artifact____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge t2c__type____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge manifestation__classifier____utilizedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge artifact__manifestation____manifestation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2a__compilationUnit____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String t2c__classifier____target_name_prime = "target";
-		String c2a__compilationUnit____source_name_prime = "source";
 		String c2a__artifact____target_name_prime = "target";
-		String artifact__manifestation____manifestation_name_prime = "manifestation";
 		String t2c__type____source_name_prime = "source";
 		String manifestation__classifier____utilizedElement_name_prime = "utilizedElement";
+		String artifact__manifestation____manifestation_name_prime = "manifestation";
+		String c2a__compilationUnit____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(compilationUnit);
 		isApplicableMatch.getAllContextElements().add(t2c);
 		isApplicableMatch.getAllContextElements().add(classifier);
 		isApplicableMatch.getAllContextElements().add(c2a);
-		isApplicableMatch.getAllContextElements().add(compilationUnit);
+		isApplicableMatch.getAllContextElements().add(artifact);
 		isApplicableMatch.getAllContextElements().add(type);
 		isApplicableMatch.getAllContextElements().add(manifestation);
-		isApplicableMatch.getAllContextElements().add(artifact);
 		t2c__classifier____target.setSrc(t2c);
 		t2c__classifier____target.setTrg(classifier);
 		isApplicableMatch.getAllContextElements().add(t2c__classifier____target);
-		c2a__compilationUnit____source.setSrc(c2a);
-		c2a__compilationUnit____source.setTrg(compilationUnit);
-		isApplicableMatch.getAllContextElements().add(c2a__compilationUnit____source);
 		c2a__artifact____target.setSrc(c2a);
 		c2a__artifact____target.setTrg(artifact);
 		isApplicableMatch.getAllContextElements().add(c2a__artifact____target);
-		artifact__manifestation____manifestation.setSrc(artifact);
-		artifact__manifestation____manifestation.setTrg(manifestation);
-		isApplicableMatch.getAllContextElements().add(artifact__manifestation____manifestation);
 		t2c__type____source.setSrc(t2c);
 		t2c__type____source.setTrg(type);
 		isApplicableMatch.getAllContextElements().add(t2c__type____source);
 		manifestation__classifier____utilizedElement.setSrc(manifestation);
 		manifestation__classifier____utilizedElement.setTrg(classifier);
 		isApplicableMatch.getAllContextElements().add(manifestation__classifier____utilizedElement);
+		artifact__manifestation____manifestation.setSrc(artifact);
+		artifact__manifestation____manifestation.setTrg(manifestation);
+		isApplicableMatch.getAllContextElements().add(artifact__manifestation____manifestation);
+		c2a__compilationUnit____source.setSrc(c2a);
+		c2a__compilationUnit____source.setTrg(compilationUnit);
+		isApplicableMatch.getAllContextElements().add(c2a__compilationUnit____source);
 		t2c__classifier____target.setName(t2c__classifier____target_name_prime);
-		c2a__compilationUnit____source.setName(c2a__compilationUnit____source_name_prime);
 		c2a__artifact____target.setName(c2a__artifact____target_name_prime);
-		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
 		t2c__type____source.setName(t2c__type____source_name_prime);
 		manifestation__classifier____utilizedElement.setName(manifestation__classifier____utilizedElement_name_prime);
-		return new Object[] { t2c, classifier, c2a, compilationUnit, type, manifestation, artifact, isApplicableMatch,
-				t2c__classifier____target, c2a__compilationUnit____source, c2a__artifact____target,
-				artifact__manifestation____manifestation, t2c__type____source,
-				manifestation__classifier____utilizedElement };
+		artifact__manifestation____manifestation.setName(artifact__manifestation____manifestation_name_prime);
+		c2a__compilationUnit____source.setName(c2a__compilationUnit____source_name_prime);
+		return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, manifestation, isApplicableMatch,
+				t2c__classifier____target, c2a__artifact____target, t2c__type____source,
+				manifestation__classifier____utilizedElement, artifact__manifestation____manifestation,
+				c2a__compilationUnit____source };
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_bindingFBBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, t2c, classifier, c2a, compilationUnit,
-				type, manifestation, artifact);
+			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, compilationUnit, t2c, classifier, c2a,
+				artifact, type, manifestation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type,
-					manifestation, artifact };
+			return new Object[] { csp, _this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type,
+					manifestation };
 		}
 		return null;
 	}
@@ -2290,11 +2288,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact) {
+			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation) {
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_binding = pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, manifestation, artifact);
+				_this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type, manifestation);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_binding[0];
 
@@ -2302,8 +2300,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type,
-						manifestation, artifact };
+				return new Object[] { csp, _this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact,
+						type, manifestation };
 			}
 		}
 		return null;
@@ -2394,10 +2392,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_0BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_client_579203 : manifestation.getClients()) {
-				if (!manifestation.equals(__DEC_manifestation_client_579203)) {
-					if (!classifier.equals(__DEC_manifestation_client_579203)) {
-						if (!artifact.equals(__DEC_manifestation_client_579203)) {
+			for (NamedElement __DEC_manifestation_client_274118 : manifestation.getClients()) {
+				if (!manifestation.equals(__DEC_manifestation_client_274118)) {
+					if (!classifier.equals(__DEC_manifestation_client_274118)) {
+						if (!artifact.equals(__DEC_manifestation_client_274118)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2410,10 +2408,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_1BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_supplier_526700 : manifestation.getSuppliers()) {
-				if (!manifestation.equals(__DEC_manifestation_supplier_526700)) {
-					if (!classifier.equals(__DEC_manifestation_supplier_526700)) {
-						if (!artifact.equals(__DEC_manifestation_supplier_526700)) {
+			for (NamedElement __DEC_manifestation_supplier_494048 : manifestation.getSuppliers()) {
+				if (!manifestation.equals(__DEC_manifestation_supplier_494048)) {
+					if (!classifier.equals(__DEC_manifestation_supplier_494048)) {
+						if (!artifact.equals(__DEC_manifestation_supplier_494048)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2456,33 +2454,32 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_manifestation) {
+			EMoflonEdge _edge_utilizedElement) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpArtifact = _edge_manifestation.getSrc();
-		if (tmpArtifact instanceof Artifact) {
-			Artifact artifact = (Artifact) tmpArtifact;
-			EObject tmpManifestation = _edge_manifestation.getTrg();
-			if (tmpManifestation instanceof Manifestation) {
-				Manifestation manifestation = (Manifestation) tmpManifestation;
-				if (artifact.getManifestations().contains(manifestation)) {
-					PackageableElement tmpClassifier = manifestation.getUtilizedElement();
-					if (tmpClassifier instanceof Classifier) {
-						Classifier classifier = (Classifier) tmpClassifier;
-						if (!artifact.equals(classifier)) {
-							if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_3BB(
-									manifestation, artifact) == null) {
-								if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_5BB(
-										manifestation, artifact) == null) {
+		EObject tmpManifestation = _edge_utilizedElement.getSrc();
+		if (tmpManifestation instanceof Manifestation) {
+			Manifestation manifestation = (Manifestation) tmpManifestation;
+			EObject tmpClassifier = _edge_utilizedElement.getTrg();
+			if (tmpClassifier instanceof Classifier) {
+				Classifier classifier = (Classifier) tmpClassifier;
+				if (classifier.equals(manifestation.getUtilizedElement())) {
+					if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_2BB(
+							manifestation, classifier) == null) {
+						if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_4BB(
+								manifestation, classifier) == null) {
+							for (Artifact artifact : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(manifestation, Artifact.class, "manifestation")) {
+								if (!artifact.equals(classifier)) {
 									if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_0BBB(
 											manifestation, classifier, artifact) == null) {
 										if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_1BBB(
 												manifestation, classifier, artifact) == null) {
-											if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_2BB(
-													manifestation, classifier) == null) {
-												if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_4BB(
-														manifestation, classifier) == null) {
-													_result.add(new Object[] { classifier, manifestation, artifact,
-															_edge_manifestation });
+											if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_3BB(
+													manifestation, artifact) == null) {
+												if (pattern_Manifestation4CompilationUnit2Artifact_20_2_testcorematchandDECs_black_nac_5BB(
+														manifestation, artifact) == null) {
+													_result.add(new Object[] { classifier, artifact, manifestation,
+															_edge_utilizedElement });
 												}
 											}
 										}
@@ -2491,7 +2488,6 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 							}
 						}
 					}
-
 				}
 			}
 
@@ -2511,9 +2507,9 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final boolean pattern_Manifestation4CompilationUnit2Artifact_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier,
-			Manifestation manifestation, Artifact artifact) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, classifier, manifestation, artifact);
+			Manifestation4CompilationUnit2Artifact _this, Match match, Classifier classifier, Artifact artifact,
+			Manifestation manifestation) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, classifier, artifact, manifestation);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2678,29 +2674,29 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_bindingFFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("classifier");
-		EObject _localVariable_1 = sourceMatch.getObject("compilationUnit");
-		EObject _localVariable_2 = sourceMatch.getObject("type");
-		EObject _localVariable_3 = targetMatch.getObject("manifestation");
-		EObject _localVariable_4 = targetMatch.getObject("artifact");
-		EObject tmpClassifier = _localVariable_0;
-		EObject tmpCompilationUnit = _localVariable_1;
-		EObject tmpType = _localVariable_2;
-		EObject tmpManifestation = _localVariable_3;
-		EObject tmpArtifact = _localVariable_4;
-		if (tmpClassifier instanceof Classifier) {
-			Classifier classifier = (Classifier) tmpClassifier;
-			if (tmpCompilationUnit instanceof CompilationUnit) {
-				CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
-				if (tmpType instanceof AbstractTypeDeclaration) {
-					AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
-					if (tmpManifestation instanceof Manifestation) {
-						Manifestation manifestation = (Manifestation) tmpManifestation;
-						if (tmpArtifact instanceof Artifact) {
-							Artifact artifact = (Artifact) tmpArtifact;
-							return new Object[] { classifier, compilationUnit, type, manifestation, artifact,
-									targetMatch, sourceMatch };
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("compilationUnit");
+		EObject _localVariable_1 = targetMatch.getObject("classifier");
+		EObject _localVariable_2 = targetMatch.getObject("artifact");
+		EObject _localVariable_3 = sourceMatch.getObject("type");
+		EObject _localVariable_4 = targetMatch.getObject("manifestation");
+		EObject tmpCompilationUnit = _localVariable_0;
+		EObject tmpClassifier = _localVariable_1;
+		EObject tmpArtifact = _localVariable_2;
+		EObject tmpType = _localVariable_3;
+		EObject tmpManifestation = _localVariable_4;
+		if (tmpCompilationUnit instanceof CompilationUnit) {
+			CompilationUnit compilationUnit = (CompilationUnit) tmpCompilationUnit;
+			if (tmpClassifier instanceof Classifier) {
+				Classifier classifier = (Classifier) tmpClassifier;
+				if (tmpArtifact instanceof Artifact) {
+					Artifact artifact = (Artifact) tmpArtifact;
+					if (tmpType instanceof AbstractTypeDeclaration) {
+						AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
+						if (tmpManifestation instanceof Manifestation) {
+							Manifestation manifestation = (Manifestation) tmpManifestation;
+							return new Object[] { compilationUnit, classifier, artifact, type, manifestation,
+									sourceMatch, targetMatch };
 						}
 					}
 				}
@@ -2710,11 +2706,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_blackBBBBBBB(
-			Classifier classifier, CompilationUnit compilationUnit, AbstractTypeDeclaration type,
-			Manifestation manifestation, Artifact artifact, Match sourceMatch, Match targetMatch) {
+			CompilationUnit compilationUnit, Classifier classifier, Artifact artifact, AbstractTypeDeclaration type,
+			Manifestation manifestation, Match sourceMatch, Match targetMatch) {
 		if (!artifact.equals(classifier)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { classifier, compilationUnit, type, manifestation, artifact, sourceMatch,
+				return new Object[] { compilationUnit, classifier, artifact, type, manifestation, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2724,19 +2720,19 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding = pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_bindingFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding != null) {
-			Classifier classifier = (Classifier) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[0];
-			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[1];
-			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[2];
-			Manifestation manifestation = (Manifestation) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[3];
-			Artifact artifact = (Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[4];
+			CompilationUnit compilationUnit = (CompilationUnit) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[0];
+			Classifier classifier = (Classifier) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[1];
+			Artifact artifact = (Artifact) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[2];
+			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[3];
+			Manifestation manifestation = (Manifestation) result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_binding[4];
 
 			Object[] result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_black = pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_blackBBBBBBB(
-					classifier, compilationUnit, type, manifestation, artifact, sourceMatch, targetMatch);
+					compilationUnit, classifier, artifact, type, manifestation, sourceMatch, targetMatch);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { classifier, compilationUnit, type, manifestation, artifact, sourceMatch,
+				return new Object[] { compilationUnit, classifier, artifact, type, manifestation, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2744,14 +2740,14 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_bindingFBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Classifier classifier, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact, Match sourceMatch,
+			Manifestation4CompilationUnit2Artifact _this, CompilationUnit compilationUnit, Classifier classifier,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(classifier, compilationUnit, type, manifestation,
-				artifact, sourceMatch, targetMatch);
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(compilationUnit, classifier, artifact, type,
+				manifestation, sourceMatch, targetMatch);
 		CSP csp = _localVariable_5;
 		if (csp != null) {
-			return new Object[] { csp, _this, classifier, compilationUnit, type, manifestation, artifact, sourceMatch,
+			return new Object[] { csp, _this, compilationUnit, classifier, artifact, type, manifestation, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2762,11 +2758,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, Classifier classifier, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Manifestation manifestation, Artifact artifact, Match sourceMatch,
+			Manifestation4CompilationUnit2Artifact _this, CompilationUnit compilationUnit, Classifier classifier,
+			Artifact artifact, AbstractTypeDeclaration type, Manifestation manifestation, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_binding = pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_bindingFBBBBBBBB(
-				_this, classifier, compilationUnit, type, manifestation, artifact, sourceMatch, targetMatch);
+				_this, compilationUnit, classifier, artifact, type, manifestation, sourceMatch, targetMatch);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_binding[0];
 
@@ -2774,7 +2770,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, classifier, compilationUnit, type, manifestation, artifact,
+				return new Object[] { csp, _this, compilationUnit, classifier, artifact, type, manifestation,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2787,8 +2783,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_24_5_matchcorrcontext_blackFBFBBBBB(
-			Classifier classifier, CompilationUnit compilationUnit, AbstractTypeDeclaration type, Artifact artifact,
+	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_24_5_matchcorrcontext_blackBFBFBBBB(
+			CompilationUnit compilationUnit, Classifier classifier, Artifact artifact, AbstractTypeDeclaration type,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!artifact.equals(classifier)) {
@@ -2797,9 +2793,9 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 						.getOppositeReferenceTyped(classifier, ASTNode2Element.class, "target")) {
 					if (type.equals(t2c.getSource())) {
 						for (CompilationUnit2Artifact c2a : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(compilationUnit, CompilationUnit2Artifact.class, "source")) {
-							if (artifact.equals(c2a.getTarget())) {
-								_result.add(new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact,
+								.getOppositeReferenceTyped(artifact, CompilationUnit2Artifact.class, "target")) {
+							if (compilationUnit.equals(c2a.getSource())) {
+								_result.add(new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type,
 										sourceMatch, targetMatch });
 							}
 						}
@@ -2823,10 +2819,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_24_6_createcorrespondence_blackBBBBBB(
-			Classifier classifier, CompilationUnit compilationUnit, AbstractTypeDeclaration type,
-			Manifestation manifestation, Artifact artifact, CCMatch ccMatch) {
+			CompilationUnit compilationUnit, Classifier classifier, Artifact artifact, AbstractTypeDeclaration type,
+			Manifestation manifestation, CCMatch ccMatch) {
 		if (!artifact.equals(classifier)) {
-			return new Object[] { classifier, compilationUnit, type, manifestation, artifact, ccMatch };
+			return new Object[] { compilationUnit, classifier, artifact, type, manifestation, ccMatch };
 		}
 		return null;
 	}
@@ -2873,10 +2869,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_0BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_client_746423 : manifestation.getClients()) {
-				if (!manifestation.equals(__DEC_manifestation_client_746423)) {
-					if (!classifier.equals(__DEC_manifestation_client_746423)) {
-						if (!artifact.equals(__DEC_manifestation_client_746423)) {
+			for (NamedElement __DEC_manifestation_client_816920 : manifestation.getClients()) {
+				if (!manifestation.equals(__DEC_manifestation_client_816920)) {
+					if (!classifier.equals(__DEC_manifestation_client_816920)) {
+						if (!artifact.equals(__DEC_manifestation_client_816920)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2889,10 +2885,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_1BBB(
 			Manifestation manifestation, Classifier classifier, Artifact artifact) {
 		if (!artifact.equals(classifier)) {
-			for (NamedElement __DEC_manifestation_supplier_991419 : manifestation.getSuppliers()) {
-				if (!manifestation.equals(__DEC_manifestation_supplier_991419)) {
-					if (!classifier.equals(__DEC_manifestation_supplier_991419)) {
-						if (!artifact.equals(__DEC_manifestation_supplier_991419)) {
+			for (NamedElement __DEC_manifestation_supplier_452486 : manifestation.getSuppliers()) {
+				if (!manifestation.equals(__DEC_manifestation_supplier_452486)) {
+					if (!classifier.equals(__DEC_manifestation_supplier_452486)) {
+						if (!artifact.equals(__DEC_manifestation_supplier_452486)) {
 							return new Object[] { manifestation, classifier, artifact };
 						}
 					}
@@ -2935,10 +2931,10 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_blackBBB(
-			Classifier classifier, Manifestation manifestation, Artifact artifact) {
+			Classifier classifier, Artifact artifact, Manifestation manifestation) {
 		if (!artifact.equals(classifier)) {
-			if (artifact.getManifestations().contains(manifestation)) {
-				if (classifier.equals(manifestation.getUtilizedElement())) {
+			if (classifier.equals(manifestation.getUtilizedElement())) {
+				if (artifact.getManifestations().contains(manifestation)) {
 					if (pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_0BBB(
 							manifestation, classifier, artifact) == null) {
 						if (pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_1BBB(
@@ -2951,7 +2947,7 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 											manifestation, classifier) == null) {
 										if (pattern_Manifestation4CompilationUnit2Artifact_28_1_matchtggpattern_black_nac_5BB(
 												manifestation, artifact) == null) {
-											return new Object[] { classifier, manifestation, artifact };
+											return new Object[] { classifier, artifact, manifestation };
 										}
 									}
 								}
@@ -2988,38 +2984,6 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element t2c) {
-		if (ruleResult.getCorrObjects().contains(t2c)) {
-			return new Object[] { ruleResult, t2c };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Classifier classifier) {
-		if (ruleResult.getTargetObjects().contains(classifier)) {
-			return new Object[] { ruleResult, classifier };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration type) {
-		if (ruleResult.getSourceObjects().contains(type)) {
-			return new Object[] { ruleResult, type };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, CompilationUnit2Artifact c2a) {
-		if (ruleResult.getCorrObjects().contains(c2a)) {
-			return new Object[] { ruleResult, c2a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, CompilationUnit compilationUnit) {
 		if (ruleResult.getSourceObjects().contains(compilationUnit)) {
 			return new Object[] { ruleResult, compilationUnit };
@@ -3027,7 +2991,15 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, CompilationUnit2Artifact c2a) {
+		if (ruleResult.getCorrObjects().contains(c2a)) {
+			return new Object[] { ruleResult, c2a };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, Artifact artifact) {
 		if (ruleResult.getTargetObjects().contains(artifact)) {
 			return new Object[] { ruleResult, artifact };
@@ -3035,52 +3007,76 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 		return null;
 	}
 
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element t2c) {
+		if (ruleResult.getCorrObjects().contains(t2c)) {
+			return new Object[] { ruleResult, t2c };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, Classifier classifier) {
+		if (ruleResult.getTargetObjects().contains(classifier)) {
+			return new Object[] { ruleResult, classifier };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration type) {
+		if (ruleResult.getSourceObjects().contains(type)) {
+			return new Object[] { ruleResult, type };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList t2cList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList c2aList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList c2aList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList t2cList : ruleEntryContainer.getRuleEntryList()) {
 				if (!c2aList.equals(t2cList)) {
-					for (EObject tmpT2c : t2cList.getEntryObjects()) {
-						if (tmpT2c instanceof ASTNode2Element) {
-							ASTNode2Element t2c = (ASTNode2Element) tmpT2c;
-							Element tmpClassifier = t2c.getTarget();
-							if (tmpClassifier instanceof Classifier) {
-								Classifier classifier = (Classifier) tmpClassifier;
-								ASTNode tmpType = t2c.getSource();
-								if (tmpType instanceof AbstractTypeDeclaration) {
-									AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
-									if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_0BB(
-											ruleResult, t2c) == null) {
-										if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, classifier) == null) {
+					for (EObject tmpC2a : c2aList.getEntryObjects()) {
+						if (tmpC2a instanceof CompilationUnit2Artifact) {
+							CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) tmpC2a;
+							CompilationUnit compilationUnit = c2a.getSource();
+							if (compilationUnit != null) {
+								Artifact artifact = c2a.getTarget();
+								if (artifact != null) {
+									if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_1BB(
+											ruleResult, c2a) == null) {
+										if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_0BB(
+												ruleResult, compilationUnit) == null) {
 											if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, type) == null) {
-												for (EObject tmpC2a : c2aList.getEntryObjects()) {
-													if (tmpC2a instanceof CompilationUnit2Artifact) {
-														CompilationUnit2Artifact c2a = (CompilationUnit2Artifact) tmpC2a;
-														CompilationUnit compilationUnit = c2a.getSource();
-														if (compilationUnit != null) {
-															Artifact artifact = c2a.getTarget();
-															if (artifact != null) {
-																if (!artifact.equals(classifier)) {
+													ruleResult, artifact) == null) {
+												for (EObject tmpT2c : t2cList.getEntryObjects()) {
+													if (tmpT2c instanceof ASTNode2Element) {
+														ASTNode2Element t2c = (ASTNode2Element) tmpT2c;
+														Element tmpClassifier = t2c.getTarget();
+														if (tmpClassifier instanceof Classifier) {
+															Classifier classifier = (Classifier) tmpClassifier;
+															if (!artifact.equals(classifier)) {
+																ASTNode tmpType = t2c.getSource();
+																if (tmpType instanceof AbstractTypeDeclaration) {
+																	AbstractTypeDeclaration type = (AbstractTypeDeclaration) tmpType;
 																	if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_3BB(
-																			ruleResult, c2a) == null) {
+																			ruleResult, t2c) == null) {
 																		if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_4BB(
-																				ruleResult, compilationUnit) == null) {
+																				ruleResult, classifier) == null) {
 																			if (pattern_Manifestation4CompilationUnit2Artifact_29_2_isapplicablecore_black_nac_5BB(
-																					ruleResult, artifact) == null) {
-																				_result.add(new Object[] { t2cList, t2c,
-																						classifier, type, c2aList, c2a,
-																						compilationUnit, artifact,
+																					ruleResult, type) == null) {
+																				_result.add(new Object[] { c2aList,
+																						compilationUnit, c2a, artifact,
+																						t2cList, t2c, classifier, type,
 																						ruleEntryContainer,
 																						ruleResult });
 																			}
 																		}
 																	}
 																}
-															}
 
+															}
 														}
 
 													}
@@ -3101,14 +3097,14 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_bindingFBBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, t2c, classifier, c2a,
-				compilationUnit, type, artifact, ruleResult);
+			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, compilationUnit, t2c, classifier,
+				c2a, artifact, type, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, artifact,
+			return new Object[] { csp, _this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type,
 					ruleResult };
 		}
 		return null;
@@ -3119,11 +3115,11 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch, ASTNode2Element t2c,
-			Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact, ModelgeneratorRuleResult ruleResult) {
+			Manifestation4CompilationUnit2Artifact _this, IsApplicableMatch isApplicableMatch,
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_binding = pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type, artifact, ruleResult);
+				_this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact, type, ruleResult);
 		if (result_pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_binding[0];
 
@@ -3131,8 +3127,8 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 					csp);
 			if (result_pattern_Manifestation4CompilationUnit2Artifact_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, t2c, classifier, c2a, compilationUnit, type,
-						artifact, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, compilationUnit, t2c, classifier, c2a, artifact,
+						type, ruleResult };
 			}
 		}
 		return null;
@@ -3146,37 +3142,37 @@ public class Manifestation4CompilationUnit2ArtifactImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_5_checknacs_blackBBBBBB(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact) {
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type) {
 		if (!artifact.equals(classifier)) {
-			return new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact };
+			return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_blackBBBBBBB(
-			ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a, CompilationUnit compilationUnit,
-			AbstractTypeDeclaration type, Artifact artifact, ModelgeneratorRuleResult ruleResult) {
+			CompilationUnit compilationUnit, ASTNode2Element t2c, Classifier classifier, CompilationUnit2Artifact c2a,
+			Artifact artifact, AbstractTypeDeclaration type, ModelgeneratorRuleResult ruleResult) {
 		if (!artifact.equals(classifier)) {
-			return new Object[] { t2c, classifier, c2a, compilationUnit, type, artifact, ruleResult };
+			return new Object[] { compilationUnit, t2c, classifier, c2a, artifact, type, ruleResult };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_greenBBBFBB(
-			Classifier classifier, CompilationUnit compilationUnit, AbstractTypeDeclaration type, Artifact artifact,
+	public static final Object[] pattern_Manifestation4CompilationUnit2Artifact_29_6_perform_greenBBBBFB(
+			CompilationUnit compilationUnit, Classifier classifier, Artifact artifact, AbstractTypeDeclaration type,
 			ModelgeneratorRuleResult ruleResult) {
 		Manifestation manifestation = UMLFactory.eINSTANCE.createManifestation();
 		compilationUnit.getTypes().add(type);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		artifact.getManifestations().add(manifestation);
 		manifestation.setUtilizedElement(classifier);
+		artifact.getManifestations().add(manifestation);
 		ruleResult.getTargetObjects().add(manifestation);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { classifier, compilationUnit, type, manifestation, artifact, ruleResult };
+		return new Object[] { compilationUnit, classifier, artifact, type, manifestation, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_Manifestation4CompilationUnit2Artifact_29_7_expressionFB(

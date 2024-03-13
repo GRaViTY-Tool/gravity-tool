@@ -789,7 +789,7 @@ public class InnerDeclaration2InnerClassifier_InAnnotationTypeImpl extends Abstr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnnotationTypeImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnnotationType_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -1241,8 +1241,8 @@ public class InnerDeclaration2InnerClassifier_InAnnotationTypeImpl extends Abstr
 			return checkTypes_BWD((Match) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_118__EMOFLONEDGE:
 			return isAppropriate_BWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_123__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_123((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

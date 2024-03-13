@@ -11,8 +11,8 @@ public record SecurityViolation(IMember source, IMember target, IMember violatin
 
 	public String getSourceMessage() {
 		if (this.violating == this.source) {
-			return MessageFormat.format("{0} is required for this member by \"{1}\"", this.property,
-					SecureDependencyCheck.getSimpleSignature(this.source));
+			return MessageFormat.format("This member is required to guarantee {0} for accessing \"{1}\".",
+					this.property, SecureDependencyCheck.getSimpleSignature(this.target));
 		}
 		if (this.violating == this.target) {
 			return MessageFormat.format("{0} is required but not provided by the accessed member!", this.property);
