@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.moflon.tgg.runtime;visibility:=reexport,
  MocaTree
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Export-Package: org.gravity.tgg.modisco.pm,
