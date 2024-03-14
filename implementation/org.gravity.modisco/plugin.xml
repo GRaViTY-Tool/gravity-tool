@@ -10,7 +10,7 @@
           optional="true"
           priority="0"
           processor="org.gravity.modisco.processing.fwd.dataflow.DataFlowProcessor"/>-->
-    <processor priority="0" processor="org.gravity.modisco.processing.fwd.AnonyomousTypeNameProcessing"/>
+    <processor priority="0" processor="org.gravity.modisco.processing.fwd.AnonymousTypeNameProcessing"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.BrokenTypeAccessProcessor"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.VisibilityRepairPreprocessor"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.StaticTypePreprocessing"/>

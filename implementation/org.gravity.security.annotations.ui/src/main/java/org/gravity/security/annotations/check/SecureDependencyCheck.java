@@ -267,43 +267,52 @@ public class SecureDependencyCheck extends CompilationParticipant {
 			context = lambda.getOuterMostLocalContext();
 		}
 
-		switch (context.getElementType()) {
-		case IJavaElement.METHOD:
+		return switch (context.getElementType()) {
+		case IJavaElement.METHOD -> {
 			final var method = (IMethod) context;
+			yield getMethod(method, name, signatures, cu);
+		}
+		case IJavaElement.FIELD -> getField(name, signatures, cu, context);
+		case IJavaElement.TYPE -> getDefaultConstructor(name, member, signatures, cu);
+		case IJavaElement.INITIALIZER -> /* Skip silently */ null;
+		default -> throw new IllegalStateException("Unhandled member type: " + member.getElementType());
+		};
+	}
 
-			for (final String signature : signatures) {
-				try {
-					if (MemberHelper.isExpectedMethod(cu, name, method, signature)) {
-						return signature;
-					}
-				} catch (final JavaModelException e) {
-					LOGGER.error(e);
-				}
+	private static String getDefaultConstructor(final String name, final IMember member,
+			final Collection<String> signatures, final ICompilationUnit cu) {
+		// Handle default constructor
+		final var constructor = (IType) member;
+		for (final String signature : signatures) {
+			if (MemberHelper.isExpectedConstructor(cu, name, constructor, signature)) {
+				return signature;
 			}
-			break;
-		case IJavaElement.FIELD:
-			final var field = (IField) context;
+		}
+		return null;
+	}
 
-			for (final String signature : signatures) {
-				if (MemberHelper.isExpectedField(cu, name, field, signature)) {
+	private static String getField(final String name, final Collection<String> signatures, final ICompilationUnit cu,
+			final IMember context) {
+		final var field = (IField) context;
+
+		for (final String signature : signatures) {
+			if (MemberHelper.isExpectedField(cu, name, field, signature)) {
+				return signature;
+			}
+		}
+		return null;
+	}
+
+	private static String getMethod(final IMethod method, final String name, final Collection<String> signatures,
+			final ICompilationUnit cu) {
+		for (final String signature : signatures) {
+			try {
+				if (MemberHelper.isExpectedMethod(cu, name, method, signature)) {
 					return signature;
 				}
+			} catch (final JavaModelException e) {
+				LOGGER.error(e);
 			}
-			break;
-		case IJavaElement.TYPE:
-			// Handle default constructor
-			final var constructor = (IType) member;
-			for (final String signature : signatures) {
-				if (MemberHelper.isExpectedConstructor(cu, name, constructor, signature)) {
-					return signature;
-				}
-			}
-			break;
-		case IJavaElement.INITIALIZER:
-			// Skip silently
-			break;
-		default:
-			throw new IllegalStateException("Unhandled member type: " + member.getElementType());
 		}
 		return null;
 	}
@@ -319,65 +328,88 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		}
 		final var cu = context.getCompilationUnit();
 		if (context instanceof final IMethod method) {
-			String suffix;
-			try {
-				if (method.isConstructor()) {
-					suffix = ")";
-				} else {
-					final var returnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(), method);
-					suffix = "):";
-					if (simple) {
-						suffix += returnType.substring(returnType.lastIndexOf('.') + 1);
-					} else {
-						suffix += returnType;
-					}
-				}
-			} catch (final JavaModelException e) {
-				LOGGER.error(e);
-				suffix = ")";
-			}
-			final var type = getNameOfDeclaringType(context, simple);
-			return Stream.of(method.getParameterTypes()).map(p -> {
-				try {
-					final var name = ASTHelper.getFullyQualifiedName4JDT(cu, p, method);
-					if (simple) {
-						return name.substring(name.lastIndexOf('.') + 1);
-					}
-					return name;
-				} catch (final JavaModelException e) {
-					LOGGER.error(e);
-					return null;
-				}
-			}).collect(Collectors.joining(",", type + '.' + method.getElementName() + '(', suffix));
+			return getMethodSignature(method, simple, context, cu);
 		}
 		if (context instanceof final IField field) {
-			final var signature = new StringBuilder(getNameOfDeclaringType(context, simple));
-			signature.append('.');
-			signature.append(field.getElementName());
-			try {
-				final var type = ASTHelper.getFullyQualifiedName4JDT(cu, field.getTypeSignature(), field);
-				signature.append(':');
-				if (simple) {
-					signature.append(type.substring(type.lastIndexOf('.') + 1));
-				} else {
-					signature.append(type);
-				}
-			} catch (final CoreException e) {
-				LOGGER.error(e);
-			}
-			return signature.toString();
+			return getFieldSignature(field, simple, context, cu);
 		}
 		if (context instanceof final IType constructor) {
-			final var name = constructor.getElementName();
-			String typeName;
-			if (simple) {
-				typeName = name;
-			} else {
-				typeName = constructor.getFullyQualifiedName();
-			}
-			return typeName + '.' + name + "()";
+			return getDefaultConstructorSignature(constructor, simple);
 		}
 		return null;
+	}
+
+	private static String getDefaultConstructorSignature(final IType constructor, final boolean simple) {
+		final var name = constructor.getElementName();
+		String typeName;
+		if (simple) {
+			typeName = name;
+		} else {
+			typeName = constructor.getFullyQualifiedName();
+		}
+		return typeName + '.' + name + "()";
+	}
+
+	private static String getFieldSignature(final IField field, final boolean simple, final IMember context,
+			final ICompilationUnit cu) {
+		final var signature = new StringBuilder(getNameOfDeclaringType(context, simple));
+		signature.append('.');
+		signature.append(field.getElementName());
+		try {
+			final var type = ASTHelper.getFullyQualifiedName4JDT(cu, field.getTypeSignature(), field);
+			signature.append(':');
+			if (simple) {
+				signature.append(type.substring(type.lastIndexOf('.') + 1));
+			} else {
+				signature.append(type);
+			}
+		} catch (final CoreException e) {
+			LOGGER.error(e);
+		}
+		return signature.toString();
+	}
+
+	private static String getMethodSignature(final IMethod method, final boolean simple, final IMember context,
+			final ICompilationUnit cu) {
+		final var suffix = getMethodSuffix(simple, method, cu);
+		final var type = getNameOfDeclaringType(context, simple);
+		return Stream.of(method.getParameterTypes()).map(p -> getParameterTypeName(p, simple, method, cu))
+				.collect(Collectors.joining(",", type + '.' + method.getElementName() + '(', suffix));
+	}
+
+	private static String getParameterTypeName(final String parameter, final boolean simple, final IMethod method,
+			final ICompilationUnit cu) {
+		try {
+			final var name = ASTHelper.getFullyQualifiedName4JDT(cu, parameter, method);
+			if (simple) {
+				return name.substring(name.lastIndexOf('.') + 1);
+			}
+			return name;
+		} catch (final JavaModelException e) {
+			LOGGER.error(e);
+			return null;
+		}
+	}
+
+	private static String getMethodSuffix(final boolean simple, final IMethod method, final ICompilationUnit cu) {
+		String suffix;
+		try {
+			if (method.isConstructor()) {
+				suffix = ")";
+			} else {
+				final var returnType = ASTHelper.getFullyQualifiedName4JDT(cu, method.getReturnType(), method);
+				suffix = "):";
+				if (simple) {
+					suffix += returnType.substring(returnType.lastIndexOf('.') + 1);
+				} else {
+					suffix += returnType;
+				}
+			}
+		} catch (final JavaModelException e) {
+			LOGGER.error(e);
+			suffix = ")";
+		}
+		return suffix;
 	}
 
 	private static String getNameOfDeclaringType(final IMember member, final boolean simple) {

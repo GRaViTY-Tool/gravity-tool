@@ -99,13 +99,13 @@ public class SecureDependencyEditingSupportTests {
 	}
 
 	private static List<List<String>> getExpectedMarkers(final Object expectations) {
-		if (expectations instanceof final List list) {
+		if (expectations instanceof final List<?> list) {
 			if (!(list.get(0) instanceof List<?>)) {
 				return Arrays.asList((List<String>) expectations);
 			}
 			return (List<List<String>>) expectations;
 		}
-		return null;
+		throw new IllegalStateException("Failed to calculate expected markers for: " + expectations);
 	}
 
 	public static List<IJavaProject> collectProjects() throws CoreException {

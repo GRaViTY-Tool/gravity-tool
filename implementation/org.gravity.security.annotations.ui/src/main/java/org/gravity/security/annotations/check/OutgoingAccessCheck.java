@@ -16,16 +16,13 @@ import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 
 @SuppressWarnings("restriction")
 final class OutgoingAccessCheck extends CallHierarchyVisitor {
-	/**
-	 *
-	 */
+
 	private final SecureDependencyCheck check;
 	private final Collection<IMember> accessedMembers;
 	private final MethodWrapper root;
 	private final Set<String> secrecySignatures;
 	private final Set<String> integritySignatures;
 	private final ICompilationUnit cu;
-//	private final String analyzedMemberSignature;
 	private final IMember callingMember;
 
 	private final Collection<SecurityViolation> violations;

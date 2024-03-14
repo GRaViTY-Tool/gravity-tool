@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -15,17 +14,13 @@ import org.gravity.modisco.MAnonymousClass;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 
-public class AnonyomousTypeNameProcessing extends AbstractTypedModiscoProcessor<Type> {
-
-	Logger LOGGER = Logger.getLogger(AnonyomousTypeNameProcessing.class);
+public class AnonymousTypeNameProcessing extends AbstractTypedModiscoProcessor<Type> {
 
 	@Override
 	public boolean process(final MGravityModel model, final Collection<Type> elements, final IFolder debug,
 			final IProgressMonitor monitor) {
 		final var pool = ForkJoinPool.commonPool();
-		elements.parallelStream().forEach(cu -> {
-			pool.submit(new Processor(cu, pool));
-		});
+		elements.parallelStream().forEach(type -> pool.submit(new Processor(type, pool)));
 		return pool.awaitQuiescence(2, TimeUnit.HOURS);
 	}
 
