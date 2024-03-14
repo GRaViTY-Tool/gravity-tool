@@ -105,7 +105,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Operation_0(Operation feature);
+	EObjectContainer isAppropriate_BWD_Operation_6(Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface MethodDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MMethodDefinition_0(MMethodDefinition bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_MMethodDefinition_3(MMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -812,7 +812,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_implements) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_633(EMoflonEdge _edge_implements) {
 
 		Object[] result1_bindingAndBlack = ClassImplementsPatrameterizedInterfaceImpl
 				.pattern_ClassImplementsPatrameterizedInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -872,7 +872,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_superInterfaces) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_680(EMoflonEdge _edge_superInterfaces) {
 
 		Object[] result1_bindingAndBlack = ClassImplementsPatrameterizedInterfaceImpl
 				.pattern_ClassImplementsPatrameterizedInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1360,10 +1360,10 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_46__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_46((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_48__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_48((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_633__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_633((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_680__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_680((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS_IMPLEMENTS_PATRAMETERIZED_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2981,7 +2981,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_0B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_900068 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_826875 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2990,7 +2990,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_326776 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_604608 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -2999,7 +2999,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_610761 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_288042 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3008,7 +3008,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_876582 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_382521 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3017,9 +3017,9 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_795579 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_636329 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!eClassDeclaration.equals(__DEC_eTypeAccess_superClass_795579)) {
+			if (!eClassDeclaration.equals(__DEC_eTypeAccess_superClass_636329)) {
 				return new Object[] { eTypeAccess, eClassDeclaration };
 			}
 		}
@@ -3028,7 +3028,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_904053 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_373295 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3037,9 +3037,9 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_6BB(
 			TypeAccess eTypeAccess, ParameterizedType eType) {
-		for (ParameterizedType __DEC_eTypeAccess_type_173282 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_eTypeAccess_type_600872 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ParameterizedType.class, "type")) {
-			if (!eType.equals(__DEC_eTypeAccess_type_173282)) {
+			if (!eType.equals(__DEC_eTypeAccess_type_600872)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -3048,7 +3048,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_349585 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_481400 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3057,7 +3057,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_211984 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_986022 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3410,7 +3410,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_0B(
 			TypeAccess eTypeAccess) {
-		for (Annotation __DEC_eTypeAccess_type_941960 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_eTypeAccess_type_859474 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, Annotation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3419,7 +3419,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_861286 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_eTypeAccess_type_816833 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3428,7 +3428,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess eTypeAccess) {
-		for (ArrayType __DEC_eTypeAccess_elementType_475590 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_eTypeAccess_elementType_862507 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ArrayType.class, "elementType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3437,7 +3437,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess eTypeAccess) {
-		for (ClassInstanceCreation __DEC_eTypeAccess_type_878853 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_eTypeAccess_type_437082 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3446,9 +3446,9 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_4BB(
 			TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration) {
-		for (ClassDeclaration __DEC_eTypeAccess_superClass_5017 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_eTypeAccess_superClass_828614 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!eClassDeclaration.equals(__DEC_eTypeAccess_superClass_5017)) {
+			if (!eClassDeclaration.equals(__DEC_eTypeAccess_superClass_828614)) {
 				return new Object[] { eTypeAccess, eClassDeclaration };
 			}
 		}
@@ -3457,7 +3457,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess eTypeAccess) {
-		for (MethodDeclaration __DEC_eTypeAccess_returnType_570063 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_eTypeAccess_returnType_889576 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3466,9 +3466,9 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_6BB(
 			TypeAccess eTypeAccess, ParameterizedType eType) {
-		for (ParameterizedType __DEC_eTypeAccess_type_419683 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_eTypeAccess_type_595304 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, ParameterizedType.class, "type")) {
-			if (!eType.equals(__DEC_eTypeAccess_type_419683)) {
+			if (!eType.equals(__DEC_eTypeAccess_type_595304)) {
 				return new Object[] { eTypeAccess, eType };
 			}
 		}
@@ -3477,7 +3477,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess eTypeAccess) {
-		for (TypeLiteral __DEC_eTypeAccess_type_359628 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_eTypeAccess_type_487676 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { eTypeAccess };
 		}
@@ -3486,7 +3486,7 @@ public class ClassImplementsPatrameterizedInterfaceImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ClassImplementsPatrameterizedInterface_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess eTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_97818 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_eTypeAccess_value_709817 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(eTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { eTypeAccess };
 		}

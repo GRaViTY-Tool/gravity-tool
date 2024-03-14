@@ -124,8 +124,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodInvocation" abstract="true"
       eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation #//MAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSuperMethodInvocation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperMethodInvocation #//MAbstractMethodInvocation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MClassInstanceCreation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassInstanceCreation #//MAbstractMethodInvocation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MClassInstanceCreation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassInstanceCreation #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAnonymousClass" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MSuperConstructorInvocation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperConstructorInvocation #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EEnum" name="AccessKind">

@@ -606,7 +606,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_8(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_34(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIntImpl
 				.pattern_PrimitiveTypeInt_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -661,7 +661,7 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_PrimitiveTypeInt_0(org.eclipse.modisco.java.PrimitiveTypeInt jpt) {
+	public EObjectContainer isAppropriate_FWD_PrimitiveTypeInt_3(org.eclipse.modisco.java.PrimitiveTypeInt jpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIntImpl
 				.pattern_PrimitiveTypeInt_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1088,10 +1088,10 @@ public class PrimitiveTypeIntImpl extends AbstractRuleImpl implements PrimitiveT
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_INT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_8__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_8((PrimitiveType) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_INT_0__PRIMITIVETYPEINT:
-			return isAppropriate_FWD_PrimitiveTypeInt_0((org.eclipse.modisco.java.PrimitiveTypeInt) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_34__PRIMITIVETYPE:
+			return isAppropriate_BWD_PrimitiveType_34((PrimitiveType) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_INT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_INT_3__PRIMITIVETYPEINT:
+			return isAppropriate_FWD_PrimitiveTypeInt_3((org.eclipse.modisco.java.PrimitiveTypeInt) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_INT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_INT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

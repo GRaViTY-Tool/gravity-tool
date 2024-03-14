@@ -98,9 +98,9 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, Interface umlClass,
-			AnnotationTypeDeclaration classDec, ASTNode2Element bd2ne);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne, Operation feature, Interface umlClass, ASTNode2Element c2c,
+			AnnotationTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,8 +116,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2c, EObject bodyDeclaration, EObject feature,
-			EObject umlClass, EObject classDec, EObject bd2ne);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne, EObject feature,
+			EObject umlClass, EObject c2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,9 +181,9 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, Interface umlClass,
-			AnnotationTypeDeclaration classDec, ASTNode2Element bd2ne);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne, Operation feature, Interface umlClass, ASTNode2Element c2c,
+			AnnotationTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +199,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2c, EObject bodyDeclaration, EObject feature,
-			EObject umlClass, EObject classDec, EObject bd2ne);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject bd2ne, EObject feature,
+			EObject umlClass, EObject c2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_668(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +224,7 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_147(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_718(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +289,8 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element c2cParameter,
-			ASTNode2Element bd2neParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element bd2neParameter,
+			ASTNode2Element c2cParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,9 +298,9 @@ public interface OperationInAnnotationType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c,
-			MAbstractMethodDefinition bodyDeclaration, Operation feature, Interface umlClass,
-			AnnotationTypeDeclaration classDec, ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne, Operation feature, Interface umlClass, ASTNode2Element c2c,
+			AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

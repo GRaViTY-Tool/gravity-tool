@@ -223,7 +223,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_121(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_667(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_125(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_717(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,7 +299,7 @@ public interface InnerDeclaration2InnerClassifier_InEnum extends EObject, Abstra
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element b2eParameter,
-			ASTNode2Element ne2neParameter);
+			JavaPackage2UmlPackage p2pParameter);
 
 	/**
 	 * <!-- begin-user-doc -->

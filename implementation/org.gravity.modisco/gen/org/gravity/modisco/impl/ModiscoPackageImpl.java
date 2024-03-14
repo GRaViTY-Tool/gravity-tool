@@ -17,6 +17,7 @@ import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MAccess;
+import org.gravity.modisco.MAnonymousClass;
 import org.gravity.modisco.MClass;
 import org.gravity.modisco.MClassInstanceCreation;
 import org.gravity.modisco.MConstructorDefinition;
@@ -249,6 +250,13 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	private EClass mClassInstanceCreationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mAnonymousClassEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1028,8 +1036,18 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMClassInstanceCreation_Id() {
-		return (EAttribute)mClassInstanceCreationEClass.getEStructuralFeatures().get(0);
+	public EClass getMAnonymousClass() {
+		return mAnonymousClassEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMAnonymousClass_Index() {
+		return (EAttribute)mAnonymousClassEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1196,7 +1214,9 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mSuperMethodInvocationEClass = createEClass(MSUPER_METHOD_INVOCATION);
 
 		mClassInstanceCreationEClass = createEClass(MCLASS_INSTANCE_CREATION);
-		createEAttribute(mClassInstanceCreationEClass, MCLASS_INSTANCE_CREATION__ID);
+
+		mAnonymousClassEClass = createEClass(MANONYMOUS_CLASS);
+		createEAttribute(mAnonymousClassEClass, MANONYMOUS_CLASS__INDEX);
 
 		mSuperConstructorInvocationEClass = createEClass(MSUPER_CONSTRUCTOR_INVOCATION);
 
@@ -1276,6 +1296,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mSuperMethodInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mClassInstanceCreationEClass.getESuperTypes().add(theJavaPackage.getClassInstanceCreation());
 		mClassInstanceCreationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
+		mAnonymousClassEClass.getESuperTypes().add(theJavaPackage.getAnonymousClassDeclaration());
 		mSuperConstructorInvocationEClass.getESuperTypes().add(theJavaPackage.getSuperConstructorInvocation());
 		mSuperConstructorInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mInitializerEClass.getESuperTypes().add(this.getMDefinition());
@@ -1379,7 +1400,9 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEClass(mSuperMethodInvocationEClass, MSuperMethodInvocation.class, "MSuperMethodInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mClassInstanceCreationEClass, MClassInstanceCreation.class, "MClassInstanceCreation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMClassInstanceCreation_Id(), ecorePackage.getEInt(), "id", null, 0, 1, MClassInstanceCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mAnonymousClassEClass, MAnonymousClass.class, "MAnonymousClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMAnonymousClass_Index(), ecorePackage.getEInt(), "index", null, 0, 1, MAnonymousClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mSuperConstructorInvocationEClass, MSuperConstructorInvocation.class, "MSuperConstructorInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

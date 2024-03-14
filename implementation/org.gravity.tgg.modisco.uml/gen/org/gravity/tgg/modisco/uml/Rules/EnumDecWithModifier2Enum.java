@@ -108,7 +108,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier);
 
 	/**
@@ -189,7 +189,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier);
 
 	/**
@@ -206,7 +206,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature);
+	EObjectContainer isAppropriate_BWD_Enumeration_7(Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_108(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_752(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

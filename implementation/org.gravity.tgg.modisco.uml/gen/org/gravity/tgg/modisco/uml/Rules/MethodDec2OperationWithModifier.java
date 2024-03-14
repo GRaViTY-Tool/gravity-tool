@@ -207,7 +207,7 @@ public interface MethodDec2OperationWithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Operation_1(Operation feature);
+	EObjectContainer isAppropriate_BWD_Operation_7(Operation feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface MethodDec2OperationWithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_156(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_751(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

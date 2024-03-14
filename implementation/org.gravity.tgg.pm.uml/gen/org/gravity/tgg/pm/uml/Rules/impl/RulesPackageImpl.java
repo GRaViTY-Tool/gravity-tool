@@ -352,7 +352,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_3__TypeGraph() {
+	public EOperation getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_14__TypeGraph() {
 		return model2TypeGraphEClass.getEOperations().get(20);
 	}
 
@@ -362,7 +362,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModel2TypeGraph__IsAppropriate_FWD_Model_1__Model() {
+	public EOperation getModel2TypeGraph__IsAppropriate_FWD_Model_6__Model() {
 		return model2TypeGraphEClass.getEOperations().get(21);
 	}
 
@@ -682,7 +682,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_4__TypeGraph() {
+	public EOperation getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_15__TypeGraph() {
 		return modelNested2TypeGraphEClass.getEOperations().get(20);
 	}
 
@@ -692,7 +692,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_167__EMoflonEdge() {
+	public EOperation getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_775__EMoflonEdge() {
 		return modelNested2TypeGraphEClass.getEOperations().get(21);
 	}
 
@@ -851,8 +851,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(model2TypeGraphEClass,
 				MODEL2_TYPE_GRAPH___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH);
-		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_3__TYPEGRAPH);
-		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_1__MODEL);
+		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_14__TYPEGRAPH);
+		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_6__MODEL);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
 		createEOperation(model2TypeGraphEClass, MODEL2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH);
@@ -896,9 +896,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH);
 		createEOperation(modelNested2TypeGraphEClass,
-				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_4__TYPEGRAPH);
+				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_15__TYPEGRAPH);
 		createEOperation(modelNested2TypeGraphEClass,
-				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_167__EMOFLONEDGE);
+				MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_775__EMOFLONEDGE);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
 		createEOperation(modelNested2TypeGraphEClass, MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH);
@@ -1054,12 +1054,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_3__TypeGraph(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_TypeGraph_3", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_14__TypeGraph(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_TypeGraph_14", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModel2TypeGraph__IsAppropriate_FWD_Model_1__Model(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_Model_1", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getModel2TypeGraph__IsAppropriate_FWD_Model_6__Model(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_Model_6", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUMLPackage.getModel(), "model", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getModel2TypeGraph__CheckAttributes_FWD__TripleMatch(),
@@ -1223,12 +1223,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				"checkTypes_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_4__TypeGraph(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_TypeGraph_4", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_15__TypeGraph(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_TypeGraph_15", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasicPackage.getTypeGraph(), "pm", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_167__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_167", 0, 1, IS_UNIQUE,
+		op = initEOperation(getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_775__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_775", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_nestedPackage", 0, 1, IS_UNIQUE, IS_ORDERED);
 

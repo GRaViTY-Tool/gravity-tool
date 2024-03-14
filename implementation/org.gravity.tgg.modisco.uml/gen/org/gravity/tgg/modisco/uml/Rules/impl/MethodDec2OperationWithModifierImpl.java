@@ -200,9 +200,9 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, m2f,
 						feature, b2e, modifier, bodyDeclaration);
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -515,9 +515,9 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(ruleresult, m2f,
 						feature, b2e, modifier, bodyDeclaration);
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -729,7 +729,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Operation_1(Operation feature) {
+	public EObjectContainer isAppropriate_BWD_Operation_7(Operation feature) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,7 +786,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_156(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_751(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -863,13 +863,13 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
@@ -944,13 +944,13 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
-
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
@@ -1349,10 +1349,10 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_1__OPERATION:
-			return isAppropriate_BWD_Operation_1((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_156__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_156((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_7__OPERATION:
+			return isAppropriate_BWD_Operation_7((Operation) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_751__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_751((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1585,28 +1585,28 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	public static final Object[] pattern_MethodDec2OperationWithModifier_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
 			EObject bodyDeclaration) {
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodDec2OperationWithModifier";
+		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
-		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1617,16 +1617,15 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration,
+		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
-				b2e__feature____target };
+				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_MethodDec2OperationWithModifier_1_5_registerobjects_expressionBBBBBBB(
@@ -1993,28 +1992,28 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	public static final Object[] pattern_MethodDec2OperationWithModifier_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject modifier,
 			EObject bodyDeclaration) {
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodDec2OperationWithModifier";
+		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
-		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -2025,16 +2024,15 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration,
+		return new Object[] { ruleresult, m2f, feature, b2e, modifier, bodyDeclaration, m2f__feature____target,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
-				b2e__feature____target };
+				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_MethodDec2OperationWithModifier_11_5_registerobjects_expressionBBBBBBB(

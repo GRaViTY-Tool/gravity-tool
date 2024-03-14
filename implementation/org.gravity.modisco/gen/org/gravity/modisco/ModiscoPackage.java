@@ -3157,22 +3157,86 @@ public interface ModiscoPackage extends EPackage {
 	int MCLASS_INSTANCE_CREATION__OUTGOING_FLOWS = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCLASS_INSTANCE_CREATION__ID = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>MClass Instance Creation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCLASS_INSTANCE_CREATION_FEATURE_COUNT = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 4;
+	int MCLASS_INSTANCE_CREATION_FEATURE_COUNT = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MAnonymousClassImpl <em>MAnonymous Class</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MAnonymousClassImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnonymousClass()
+	 * @generated
+	 */
+	int MANONYMOUS_CLASS = 28;
+
+	/**
+	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS__COMMENTS = JavaPackage.ANONYMOUS_CLASS_DECLARATION__COMMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Original Compilation Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS__ORIGINAL_COMPILATION_UNIT = JavaPackage.ANONYMOUS_CLASS_DECLARATION__ORIGINAL_COMPILATION_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Original Class File</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS__ORIGINAL_CLASS_FILE = JavaPackage.ANONYMOUS_CLASS_DECLARATION__ORIGINAL_CLASS_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Body Declarations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS__BODY_DECLARATIONS = JavaPackage.ANONYMOUS_CLASS_DECLARATION__BODY_DECLARATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Class Instance Creation</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS__CLASS_INSTANCE_CREATION = JavaPackage.ANONYMOUS_CLASS_DECLARATION__CLASS_INSTANCE_CREATION;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS__INDEX = JavaPackage.ANONYMOUS_CLASS_DECLARATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>MAnonymous Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANONYMOUS_CLASS_FEATURE_COUNT = JavaPackage.ANONYMOUS_CLASS_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
@@ -3182,7 +3246,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
 	 * @generated
 	 */
-	int MSUPER_CONSTRUCTOR_INVOCATION = 28;
+	int MSUPER_CONSTRUCTOR_INVOCATION = 29;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3291,7 +3355,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMInitializer()
 	 * @generated
 	 */
-	int MINITIALIZER = 29;
+	int MINITIALIZER = 30;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3472,7 +3536,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMEnumConstantDeclaration()
 	 * @generated
 	 */
-	int MENUM_CONSTANT_DECLARATION = 30;
+	int MENUM_CONSTANT_DECLARATION = 31;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3689,7 +3753,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
 	 * @generated
 	 */
-	int ACCESS_KIND = 31;
+	int ACCESS_KIND = 32;
 
 
 	/**
@@ -4413,15 +4477,25 @@ public interface ModiscoPackage extends EPackage {
 	EClass getMClassInstanceCreation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.gravity.modisco.MClassInstanceCreation#getId <em>Id</em>}'.
+	 * Returns the meta object for class '{@link org.gravity.modisco.MAnonymousClass <em>MAnonymous Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.gravity.modisco.MClassInstanceCreation#getId()
-	 * @see #getMClassInstanceCreation()
+	 * @return the meta object for class '<em>MAnonymous Class</em>'.
+	 * @see org.gravity.modisco.MAnonymousClass
 	 * @generated
 	 */
-	EAttribute getMClassInstanceCreation_Id();
+	EClass getMAnonymousClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gravity.modisco.MAnonymousClass#getIndex <em>Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Index</em>'.
+	 * @see org.gravity.modisco.MAnonymousClass#getIndex()
+	 * @see #getMAnonymousClass()
+	 * @generated
+	 */
+	EAttribute getMAnonymousClass_Index();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MSuperConstructorInvocation <em>MSuper Constructor Invocation</em>}'.
@@ -5087,12 +5161,22 @@ public interface ModiscoPackage extends EPackage {
 		EClass MCLASS_INSTANCE_CREATION = eINSTANCE.getMClassInstanceCreation();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAnonymousClassImpl <em>MAnonymous Class</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MAnonymousClassImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnonymousClass()
+		 * @generated
+		 */
+		EClass MANONYMOUS_CLASS = eINSTANCE.getMAnonymousClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MCLASS_INSTANCE_CREATION__ID = eINSTANCE.getMClassInstanceCreation_Id();
+		EAttribute MANONYMOUS_CLASS__INDEX = eINSTANCE.getMAnonymousClass_Index();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.

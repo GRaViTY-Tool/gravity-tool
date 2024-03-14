@@ -5,8 +5,8 @@ package org.gravity.tgg.modisco.pm.Rules;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.modisco.java.AnonymousClassDeclaration;
 
+import org.gravity.modisco.MAnonymousClass;
 import org.gravity.modisco.MClassInstanceCreation;
 import org.gravity.modisco.MDefinition;
 
@@ -54,7 +54,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	boolean isAppropriate_FWD(Match match, MClassInstanceCreation mCreation, MDefinition mMember,
-			AnonymousClassDeclaration mAnonymous, AbstractTypeDeclaration mType);
+			MAnonymousClass mAnonymous, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjectsToMatch_FWD(Match match, MClassInstanceCreation mCreation, MDefinition mMember,
-			AnonymousClassDeclaration mAnonymous, AbstractTypeDeclaration mType);
+			MAnonymousClass mAnonymous, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,7 +88,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isAppropriate_solveCsp_FWD(Match match, MClassInstanceCreation mCreation, MDefinition mMember,
-			AnonymousClassDeclaration mAnonymous, AbstractTypeDeclaration mType);
+			MAnonymousClass mAnonymous, AbstractTypeDeclaration mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,7 +106,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
 			MClassInstanceCreation mCreation, TAbstractType tType, TypeToTAbstractType mTypeToTType, TPackage tPackage,
-			TMember tMember, TypeGraph pg, MDefinition mMember, AnonymousClassDeclaration mAnonymous,
+			TMember tMember, TypeGraph pg, MDefinition mMember, MAnonymousClass mAnonymous,
 			AbstractTypeDeclaration mType);
 
 	/**
@@ -228,7 +228,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_8(EMoflonEdge _edge_allTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_588(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,7 +236,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_9(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_634(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,7 +269,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(MClassInstanceCreation mCreation, TAbstractType tType, TClass tAnonymous,
-			TPackage tPackage, TMember tMember, TypeGraph pg, MDefinition mMember, AnonymousClassDeclaration mAnonymous,
+			TPackage tPackage, TMember tMember, TypeGraph pg, MDefinition mMember, MAnonymousClass mAnonymous,
 			AbstractTypeDeclaration mType, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -286,7 +286,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MClassInstanceCreation mCreation, MDefinition mMember, AnonymousClassDeclaration mAnonymous,
+	boolean checkDEC_FWD(MClassInstanceCreation mCreation, MDefinition mMember, MAnonymousClass mAnonymous,
 			AbstractTypeDeclaration mType);
 
 	/**

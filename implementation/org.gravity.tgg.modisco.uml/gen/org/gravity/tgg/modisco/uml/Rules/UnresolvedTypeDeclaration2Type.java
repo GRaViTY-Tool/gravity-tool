@@ -91,8 +91,8 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
-			UnresolvedTypeDeclaration mType, org.eclipse.uml2.uml.Model externals, Model model);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, UnresolvedTypeDeclaration mType,
+			JavaModel2UMLPackage m2m, Model model, org.eclipse.uml2.uml.Model externals);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,8 +108,8 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject uClass, EObject m2m, EObject mType, EObject u2c,
-			EObject externals, EObject model);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject m2m, EObject u2c, EObject uClass,
+			EObject model, EObject externals);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,8 +175,8 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uClass,
-			JavaModel2UMLPackage m2m, org.eclipse.uml2.uml.Model externals, Model model);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			org.eclipse.uml2.uml.Class uClass, Model model, org.eclipse.uml2.uml.Model externals);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,8 +192,8 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject uClass, EObject m2m, EObject mType, EObject u2c,
-			EObject externals, EObject model);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject m2m, EObject u2c, EObject uClass,
+			EObject model, EObject externals);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_145(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_702(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_155(EMoflonEdge _edge_unresolvedItems);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_756(EMoflonEdge _edge_unresolvedItems);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,8 +249,8 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType,
-			org.eclipse.uml2.uml.Model externals, Model model, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(UnresolvedTypeDeclaration mType, org.eclipse.uml2.uml.Class uClass, Model model,
+			org.eclipse.uml2.uml.Model externals, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,8 +290,8 @@ public interface UnresolvedTypeDeclaration2Type extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
-			org.eclipse.uml2.uml.Model externals, Model model, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m, Model model,
+			org.eclipse.uml2.uml.Model externals, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

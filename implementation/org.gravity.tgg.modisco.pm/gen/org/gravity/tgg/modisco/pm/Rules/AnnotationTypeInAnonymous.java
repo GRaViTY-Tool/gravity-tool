@@ -225,7 +225,7 @@ public interface AnnotationTypeInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_annotationTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_660(EMoflonEdge _edge_annotationTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +233,7 @@ public interface AnnotationTypeInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_64(EMoflonEdge _edge_anonymousClassDeclarationOwner);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_710(EMoflonEdge _edge_anonymousClassDeclarationOwner);
 
 	/**
 	 * <!-- begin-user-doc -->

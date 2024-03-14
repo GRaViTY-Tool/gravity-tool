@@ -782,7 +782,7 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_72(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_611(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = FieldAccessWriteImpl
 				.pattern_FieldAccessWrite_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -840,7 +840,7 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_mAbstractFieldAccess) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_657(EMoflonEdge _edge_mAbstractFieldAccess) {
 
 		Object[] result1_bindingAndBlack = FieldAccessWriteImpl
 				.pattern_FieldAccessWrite_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1305,10 +1305,10 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 			return null;
 		case RulesPackage.FIELD_ACCESS_WRITE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_WRITE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_72__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_72((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_WRITE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_75__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_75((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_ACCESS_WRITE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_611__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_611((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_ACCESS_WRITE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_657__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_657((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_ACCESS_WRITE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_ACCESS_WRITE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3100,10 +3100,10 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 	public static final Object[] pattern_FieldAccessWrite_21_2_testcorematchandDECs_black_nac_0BBB(
 			MSingleVariableAccess mAccess, MFieldDefinition mField, MDefinition mMember) {
 		if (!mField.equals(mMember)) {
-			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_781337 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_511090 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, MDefinition.class, "mAbstractFieldAccess")) {
-				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_781337)) {
-					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_781337)) {
+				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_511090)) {
+					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_511090)) {
 						return new Object[] { mAccess, mField, mMember };
 					}
 				}
@@ -3114,7 +3114,7 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 
 	public static final Object[] pattern_FieldAccessWrite_21_2_testcorematchandDECs_black_nac_1B(
 			MSingleVariableAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_65339 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_769063 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}
@@ -3446,10 +3446,10 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 	public static final Object[] pattern_FieldAccessWrite_27_1_matchtggpattern_black_nac_0BBB(
 			MSingleVariableAccess mAccess, MFieldDefinition mField, MDefinition mMember) {
 		if (!mField.equals(mMember)) {
-			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_259546 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_559467 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, MDefinition.class, "mAbstractFieldAccess")) {
-				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_259546)) {
-					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_259546)) {
+				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_559467)) {
+					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_559467)) {
 						return new Object[] { mAccess, mField, mMember };
 					}
 				}
@@ -3460,7 +3460,7 @@ public class FieldAccessWriteImpl extends AbstractRuleImpl implements FieldAcces
 
 	public static final Object[] pattern_FieldAccessWrite_27_1_matchtggpattern_black_nac_1B(
 			MSingleVariableAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_403512 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_162771 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}

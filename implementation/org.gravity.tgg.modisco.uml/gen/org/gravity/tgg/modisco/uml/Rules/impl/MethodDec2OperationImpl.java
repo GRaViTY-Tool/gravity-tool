@@ -153,36 +153,36 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = MethodDec2OperationImpl
-				.pattern_MethodDec2Operation_1_1_performtransformation_greenFFBB(bodyDeclaration, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		Operation feature = (Operation) result1_green[1];
+				.pattern_MethodDec2Operation_1_1_performtransformation_greenFBFB(bodyDeclaration, csp);
+		Operation feature = (Operation) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = MethodDec2OperationImpl
-				.pattern_MethodDec2Operation_1_2_collecttranslatedelements_blackBBB(b2e, feature, bodyDeclaration);
+				.pattern_MethodDec2Operation_1_2_collecttranslatedelements_blackBBB(feature, bodyDeclaration, b2e);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ".");
 		}
 		Object[] result2_green = MethodDec2OperationImpl
-				.pattern_MethodDec2Operation_1_2_collecttranslatedelements_greenFBBB(b2e, feature, bodyDeclaration);
+				.pattern_MethodDec2Operation_1_2_collecttranslatedelements_greenFBBB(feature, bodyDeclaration, b2e);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodDec2OperationImpl.pattern_MethodDec2Operation_1_3_bookkeepingforedges_blackBBBB(
-				ruleresult, b2e, feature, bodyDeclaration);
+				ruleresult, feature, bodyDeclaration, b2e);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[b2e] = " + b2e + ".");
 		}
-		MethodDec2OperationImpl.pattern_MethodDec2Operation_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
-				feature, bodyDeclaration);
+		MethodDec2OperationImpl.pattern_MethodDec2Operation_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature,
+				bodyDeclaration, b2e);
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		MethodDec2OperationImpl.pattern_MethodDec2Operation_1_5_registerobjects_expressionBBBBB(this, ruleresult, b2e,
-				feature, bodyDeclaration);
+		MethodDec2OperationImpl.pattern_MethodDec2Operation_1_5_registerobjects_expressionBBBBB(this, ruleresult,
+				feature, bodyDeclaration, b2e);
 		return MethodDec2OperationImpl.pattern_MethodDec2Operation_1_6_expressionFB(ruleresult);
 	}
 
@@ -339,11 +339,11 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject feature,
-			EObject bodyDeclaration) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration,
+			EObject b2e) {
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -422,36 +422,36 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		Operation feature = (Operation) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = MethodDec2OperationImpl
-				.pattern_MethodDec2Operation_11_1_performtransformation_greenFBFB(feature, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_green[2];
+				.pattern_MethodDec2Operation_11_1_performtransformation_greenBFFB(feature, csp);
+		MMethodDefinition bodyDeclaration = (MMethodDefinition) result1_green[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = MethodDec2OperationImpl
-				.pattern_MethodDec2Operation_11_2_collecttranslatedelements_blackBBB(b2e, feature, bodyDeclaration);
+				.pattern_MethodDec2Operation_11_2_collecttranslatedelements_blackBBB(feature, bodyDeclaration, b2e);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ".");
 		}
 		Object[] result2_green = MethodDec2OperationImpl
-				.pattern_MethodDec2Operation_11_2_collecttranslatedelements_greenFBBB(b2e, feature, bodyDeclaration);
+				.pattern_MethodDec2Operation_11_2_collecttranslatedelements_greenFBBB(feature, bodyDeclaration, b2e);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodDec2OperationImpl.pattern_MethodDec2Operation_11_3_bookkeepingforedges_blackBBBB(
-				ruleresult, b2e, feature, bodyDeclaration);
+				ruleresult, feature, bodyDeclaration, b2e);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[b2e] = " + b2e + ".");
 		}
-		MethodDec2OperationImpl.pattern_MethodDec2Operation_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
-				feature, bodyDeclaration);
+		MethodDec2OperationImpl.pattern_MethodDec2Operation_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature,
+				bodyDeclaration, b2e);
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		MethodDec2OperationImpl.pattern_MethodDec2Operation_11_5_registerobjects_expressionBBBBB(this, ruleresult, b2e,
-				feature, bodyDeclaration);
+		MethodDec2OperationImpl.pattern_MethodDec2Operation_11_5_registerobjects_expressionBBBBB(this, ruleresult,
+				feature, bodyDeclaration, b2e);
 		return MethodDec2OperationImpl.pattern_MethodDec2Operation_11_6_expressionFB(ruleresult);
 	}
 
@@ -606,11 +606,11 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject feature,
-			EObject bodyDeclaration) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration,
+			EObject b2e) {
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -629,7 +629,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Operation_0(Operation feature) {
+	public EObjectContainer isAppropriate_BWD_Operation_6(Operation feature) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationImpl
 				.pattern_MethodDec2Operation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -684,7 +684,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MMethodDefinition_0(MMethodDefinition bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_MMethodDefinition_3(MMethodDefinition bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationImpl
 				.pattern_MethodDec2Operation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -876,9 +876,9 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
 							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				MethodDec2OperationImpl.pattern_MethodDec2Operation_24_6_createcorrespondence_greenFBBB(feature,
+				MethodDec2OperationImpl.pattern_MethodDec2Operation_24_6_createcorrespondence_greenBBFB(feature,
 						bodyDeclaration, ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 				Object[] result7_black = MethodDec2OperationImpl
 						.pattern_MethodDec2Operation_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1006,9 +1006,9 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				MethodDec2OperationImpl.pattern_MethodDec2Operation_29_6_perform_greenFFFBB(ruleResult, csp);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-				//nothing Operation feature = (Operation) result6_green[1];
-				//nothing MMethodDefinition bodyDeclaration = (MMethodDefinition) result6_green[2];
+				//nothing Operation feature = (Operation) result6_green[0];
+				//nothing MMethodDefinition bodyDeclaration = (MMethodDefinition) result6_green[1];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 			} else {
 			}
@@ -1114,10 +1114,10 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_BWD_OPERATION_0__OPERATION:
-			return isAppropriate_BWD_Operation_0((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_FWD_MMETHOD_DEFINITION_0__MMETHODDEFINITION:
-			return isAppropriate_FWD_MMethodDefinition_0((MMethodDefinition) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_BWD_OPERATION_6__OPERATION:
+			return isAppropriate_BWD_Operation_6((Operation) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION___IS_APPROPRIATE_FWD_MMETHOD_DEFINITION_3__MMETHODDEFINITION:
+			return isAppropriate_FWD_MMethodDefinition_3((MMethodDefinition) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1259,38 +1259,38 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_1_1_performtransformation_greenFFBB(
+	public static final Object[] pattern_MethodDec2Operation_1_1_performtransformation_greenFBFB(
 			MMethodDefinition bodyDeclaration, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Operation feature = UMLFactory.eINSTANCE.createOperation();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
-		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { b2e, feature, bodyDeclaration, csp };
+		return new Object[] { feature, bodyDeclaration, b2e, csp };
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_1_2_collecttranslatedelements_blackBBB(ASTNode2Element b2e,
-			Operation feature, MMethodDefinition bodyDeclaration) {
-		return new Object[] { b2e, feature, bodyDeclaration };
+	public static final Object[] pattern_MethodDec2Operation_1_2_collecttranslatedelements_blackBBB(Operation feature,
+			MMethodDefinition bodyDeclaration, ASTNode2Element b2e) {
+		return new Object[] { feature, bodyDeclaration, b2e };
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_1_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element b2e, Operation feature, MMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_MethodDec2Operation_1_2_collecttranslatedelements_greenFBBB(Operation feature,
+			MMethodDefinition bodyDeclaration, ASTNode2Element b2e) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 	}
 
 	public static final Object[] pattern_MethodDec2Operation_1_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		if (!b2e.equals(feature)) {
-			if (!b2e.equals(bodyDeclaration)) {
-				if (!bodyDeclaration.equals(feature)) {
-					return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
+		if (!bodyDeclaration.equals(feature)) {
+			if (!b2e.equals(feature)) {
+				if (!b2e.equals(bodyDeclaration)) {
+					return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 				}
 			}
 		}
@@ -1298,7 +1298,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	}
 
 	public static final Object[] pattern_MethodDec2Operation_1_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodDec2Operation";
@@ -1313,13 +1313,13 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration, b2e__feature____target,
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e, b2e__feature____target,
 				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_MethodDec2Operation_1_5_registerobjects_expressionBBBBB(MethodDec2Operation _this,
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		_this.registerObjects_FWD(ruleresult, b2e, feature, bodyDeclaration);
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
+		_this.registerObjects_FWD(ruleresult, feature, bodyDeclaration, b2e);
 
 	}
 
@@ -1584,38 +1584,38 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		return null;
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_11_1_performtransformation_greenFBFB(Operation feature,
+	public static final Object[] pattern_MethodDec2Operation_11_1_performtransformation_greenBFFB(Operation feature,
 			CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		MMethodDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMMethodDefinition();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
 		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { b2e, feature, bodyDeclaration, csp };
+		return new Object[] { feature, bodyDeclaration, b2e, csp };
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_11_2_collecttranslatedelements_blackBBB(
-			ASTNode2Element b2e, Operation feature, MMethodDefinition bodyDeclaration) {
-		return new Object[] { b2e, feature, bodyDeclaration };
+	public static final Object[] pattern_MethodDec2Operation_11_2_collecttranslatedelements_blackBBB(Operation feature,
+			MMethodDefinition bodyDeclaration, ASTNode2Element b2e) {
+		return new Object[] { feature, bodyDeclaration, b2e };
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_11_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element b2e, Operation feature, MMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_MethodDec2Operation_11_2_collecttranslatedelements_greenFBBB(Operation feature,
+			MMethodDefinition bodyDeclaration, ASTNode2Element b2e) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 	}
 
 	public static final Object[] pattern_MethodDec2Operation_11_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		if (!b2e.equals(feature)) {
-			if (!b2e.equals(bodyDeclaration)) {
-				if (!bodyDeclaration.equals(feature)) {
-					return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
+		if (!bodyDeclaration.equals(feature)) {
+			if (!b2e.equals(feature)) {
+				if (!b2e.equals(bodyDeclaration)) {
+					return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
 				}
 			}
 		}
@@ -1623,7 +1623,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 	}
 
 	public static final Object[] pattern_MethodDec2Operation_11_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodDec2Operation";
@@ -1638,13 +1638,13 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, feature, bodyDeclaration, b2e__feature____target,
+		return new Object[] { ruleresult, feature, bodyDeclaration, b2e, b2e__feature____target,
 				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_MethodDec2Operation_11_5_registerobjects_expressionBBBBB(MethodDec2Operation _this,
-			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
-		_this.registerObjects_BWD(ruleresult, b2e, feature, bodyDeclaration);
+			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
+		_this.registerObjects_BWD(ruleresult, feature, bodyDeclaration, b2e);
 
 	}
 
@@ -1953,8 +1953,8 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 
 	public static final Object[] pattern_MethodDec2Operation_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_69685 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_69685 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_647677 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_647677 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2127,13 +2127,13 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		return new Object[] { feature, bodyDeclaration, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodDec2Operation_24_6_createcorrespondence_greenFBBB(Operation feature,
+	public static final Object[] pattern_MethodDec2Operation_24_6_createcorrespondence_greenBBFB(Operation feature,
 			MMethodDefinition bodyDeclaration, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { b2e, feature, bodyDeclaration, ccMatch };
+		return new Object[] { feature, bodyDeclaration, b2e, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodDec2Operation_24_7_addtoreturnedresult_blackBB(
@@ -2159,8 +2159,8 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 
 	public static final Object[] pattern_MethodDec2Operation_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_937260 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_937260 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_981493 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_981493 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2259,18 +2259,18 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 
 	public static final Object[] pattern_MethodDec2Operation_29_6_perform_greenFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		MMethodDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMMethodDefinition();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2e);
-		b2e.setTarget(feature);
 		ruleResult.getTargetObjects().add(feature);
-		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
+		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(b2e);
 		String feature_name_prime = (String) _localVariable_0;
 		String bodyDeclaration_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2278,7 +2278,7 @@ public class MethodDec2OperationImpl extends AbstractRuleImpl implements MethodD
 		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2e, feature, bodyDeclaration, ruleResult, csp };
+		return new Object[] { feature, bodyDeclaration, b2e, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodDec2Operation_29_7_expressionFB(

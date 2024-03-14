@@ -13,7 +13,7 @@
 		++-anonymousClassDeclaration -> mAnonymous
 	}
 
-	++mAnonymous:AnonymousClassDeclaration
+	++mAnonymous:MAnonymousClass
 }
 
 #target {
@@ -52,7 +52,7 @@
 }
 
 #attributeConditions {
-	concat("$", tType.tName, mCreation.id, tAnonymous.tName)
+	concat("$", tType.tName, mAnonymous.index, tAnonymous.tName)
 
 	eq(tType.tLib, tAnonymous.tLib)
 }
@@ -122,7 +122,7 @@
 		++-anonymousClassDeclaration -> mAnonymous
 	}
 
-	++mAnonymous:AnonymousClassDeclaration
+	++mAnonymous:MAnonymousClass
 }
 
 #target {
@@ -132,7 +132,7 @@
 		-model -> pg
 	}
 
-	tType:TAbstractType {
+	tType:TClass {
 		-package -> tPackage
 		-defines -> tMember
 		++-innerTypes -> tAnonymous
@@ -140,7 +140,9 @@
 
 	tMember:TMember
 
-	++tAnonymous:TClass
+	++tAnonymous:TClass {
+		++-parentClasses->tType
+	}
 
 	pg:TypeGraph {
 		++  -classes -> tAnonymous
@@ -161,7 +163,7 @@
 }
 
 #attributeConditions {
-	concat("$", tType.tName, "Anonymous", tAnonymous.tName)
+	concat("$", tType.tName, mAnonymous.index, tAnonymous.tName)
 
 	eq(tType.tLib, tAnonymous.tLib)
 }

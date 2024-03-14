@@ -226,9 +226,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tNestedType____allTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tNestedType__pg____model = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge pg__tNestedType____allTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tNestedType__pg____model = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mASTNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[18];
@@ -594,9 +594,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		//nothing EMoflonEdge tClass__tNestedType____innerTypes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge tNestedType__tClass____outerType = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge pg__tNestedType____allTypes = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge tNestedType__pg____model = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge pg__tNestedType____allTypes = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge tNestedType__pg____model = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge mASTNodeToAnnotatable__tNestedType____target = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge eAnonymousClassDeclaration__mNestedType____bodyDeclarations = (EMoflonEdge) result3_green[18];
@@ -837,7 +837,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_annotationTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_660(EMoflonEdge _edge_annotationTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInAnonymousImpl
 				.pattern_AnnotationTypeInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -897,7 +897,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_64(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_710(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInAnonymousImpl
 				.pattern_AnnotationTypeInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -966,21 +966,21 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
-
 		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
 		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
 		var_mNestedType_name.setType("String");
 
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
-		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
-		var_tClass_tName.setType("String");
-
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
+
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
+		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
+		var_tClass_tName.setType("String");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1021,21 +1021,21 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
-
 		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
 		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
 		var_mNestedType_name.setType("String");
 
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
-		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
-		var_tClass_tName.setType("String");
-
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
+
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
+		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
+		var_tClass_tName.setType("String");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1427,10 +1427,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 			return null;
 		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_61__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_64__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_64((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_660__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_660((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_710__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_710((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1797,9 +1797,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		EMoflonEdge tClass__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tClass____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mASTNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -1811,9 +1811,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		String tClass__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tClass____outerType_name_prime = "outerType";
 		String mNestedTypeToTNestedType__mNestedType____source_name_prime = "source";
+		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String pg__tNestedType____allTypes_name_prime = "allTypes";
 		String tNestedType__pg____model_name_prime = "model";
-		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String mASTNodeToAnnotatable__tNestedType____target_name_prime = "target";
 		String mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
@@ -1832,15 +1832,15 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		mNestedTypeToTNestedType__mNestedType____source.setSrc(mNestedTypeToTNestedType);
 		mNestedTypeToTNestedType__mNestedType____source.setTrg(mNestedType);
 		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__mNestedType____source);
+		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
+		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		pg__tNestedType____allTypes.setSrc(pg);
 		pg__tNestedType____allTypes.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(pg__tNestedType____allTypes);
 		tNestedType__pg____model.setSrc(tNestedType);
 		tNestedType__pg____model.setTrg(pg);
 		ruleresult.getCreatedEdges().add(tNestedType__pg____model);
-		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
-		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		mASTNodeToAnnotatable__tNestedType____target.setSrc(mASTNodeToAnnotatable);
 		mASTNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(mASTNodeToAnnotatable__tNestedType____target);
@@ -1857,10 +1857,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
 		mNestedTypeToTNestedType__mNestedType____source
 				.setName(mNestedTypeToTNestedType__mNestedType____source_name_prime);
-		pg__tNestedType____allTypes.setName(pg__tNestedType____allTypes_name_prime);
-		tNestedType__pg____model.setName(tNestedType__pg____model_name_prime);
 		mNestedTypeToTNestedType__tNestedType____target
 				.setName(mNestedTypeToTNestedType__tNestedType____target_name_prime);
+		pg__tNestedType____allTypes.setName(pg__tNestedType____allTypes_name_prime);
+		tNestedType__pg____model.setName(tNestedType__pg____model_name_prime);
 		mASTNodeToAnnotatable__tNestedType____target.setName(mASTNodeToAnnotatable__tNestedType____target_name_prime);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner
 				.setName(mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime);
@@ -1869,8 +1869,8 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		return new Object[] { ruleresult, tClass, mNestedType, mASTNodeToAnnotatable, pg, tNestedType,
 				mNestedTypeToTNestedType, eAnonymousClassDeclaration, mASTNodeToAnnotatable__mNestedType____source,
 				pg__tNestedType____annotationTypes, tClass__tNestedType____innerTypes, tNestedType__tClass____outerType,
-				mNestedTypeToTNestedType__mNestedType____source, pg__tNestedType____allTypes, tNestedType__pg____model,
-				mNestedTypeToTNestedType__tNestedType____target, mASTNodeToAnnotatable__tNestedType____target,
+				mNestedTypeToTNestedType__mNestedType____source, mNestedTypeToTNestedType__tNestedType____target,
+				pg__tNestedType____allTypes, tNestedType__pg____model, mASTNodeToAnnotatable__tNestedType____target,
 				mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
 				eAnonymousClassDeclaration__mNestedType____bodyDeclarations };
 	}
@@ -2529,9 +2529,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		EMoflonEdge tClass__tNestedType____innerTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__tClass____outerType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mNestedTypeToTNestedType__mNestedType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tNestedType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tNestedType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mNestedTypeToTNestedType__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mASTNodeToAnnotatable__tNestedType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
@@ -2543,9 +2543,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		String tClass__tNestedType____innerTypes_name_prime = "innerTypes";
 		String tNestedType__tClass____outerType_name_prime = "outerType";
 		String mNestedTypeToTNestedType__mNestedType____source_name_prime = "source";
+		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String pg__tNestedType____allTypes_name_prime = "allTypes";
 		String tNestedType__pg____model_name_prime = "model";
-		String mNestedTypeToTNestedType__tNestedType____target_name_prime = "target";
 		String mASTNodeToAnnotatable__tNestedType____target_name_prime = "target";
 		String mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
 		String eAnonymousClassDeclaration__mNestedType____bodyDeclarations_name_prime = "bodyDeclarations";
@@ -2564,15 +2564,15 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		mNestedTypeToTNestedType__mNestedType____source.setSrc(mNestedTypeToTNestedType);
 		mNestedTypeToTNestedType__mNestedType____source.setTrg(mNestedType);
 		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__mNestedType____source);
+		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
+		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
+		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		pg__tNestedType____allTypes.setSrc(pg);
 		pg__tNestedType____allTypes.setTrg(tNestedType);
 		ruleresult.getTranslatedEdges().add(pg__tNestedType____allTypes);
 		tNestedType__pg____model.setSrc(tNestedType);
 		tNestedType__pg____model.setTrg(pg);
 		ruleresult.getTranslatedEdges().add(tNestedType__pg____model);
-		mNestedTypeToTNestedType__tNestedType____target.setSrc(mNestedTypeToTNestedType);
-		mNestedTypeToTNestedType__tNestedType____target.setTrg(tNestedType);
-		ruleresult.getCreatedEdges().add(mNestedTypeToTNestedType__tNestedType____target);
 		mASTNodeToAnnotatable__tNestedType____target.setSrc(mASTNodeToAnnotatable);
 		mASTNodeToAnnotatable__tNestedType____target.setTrg(tNestedType);
 		ruleresult.getCreatedEdges().add(mASTNodeToAnnotatable__tNestedType____target);
@@ -2589,10 +2589,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		tNestedType__tClass____outerType.setName(tNestedType__tClass____outerType_name_prime);
 		mNestedTypeToTNestedType__mNestedType____source
 				.setName(mNestedTypeToTNestedType__mNestedType____source_name_prime);
-		pg__tNestedType____allTypes.setName(pg__tNestedType____allTypes_name_prime);
-		tNestedType__pg____model.setName(tNestedType__pg____model_name_prime);
 		mNestedTypeToTNestedType__tNestedType____target
 				.setName(mNestedTypeToTNestedType__tNestedType____target_name_prime);
+		pg__tNestedType____allTypes.setName(pg__tNestedType____allTypes_name_prime);
+		tNestedType__pg____model.setName(tNestedType__pg____model_name_prime);
 		mASTNodeToAnnotatable__tNestedType____target.setName(mASTNodeToAnnotatable__tNestedType____target_name_prime);
 		mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner
 				.setName(mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner_name_prime);
@@ -2601,8 +2601,8 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		return new Object[] { ruleresult, tClass, mNestedType, mASTNodeToAnnotatable, pg, tNestedType,
 				mNestedTypeToTNestedType, eAnonymousClassDeclaration, mASTNodeToAnnotatable__mNestedType____source,
 				pg__tNestedType____annotationTypes, tClass__tNestedType____innerTypes, tNestedType__tClass____outerType,
-				mNestedTypeToTNestedType__mNestedType____source, pg__tNestedType____allTypes, tNestedType__pg____model,
-				mNestedTypeToTNestedType__tNestedType____target, mASTNodeToAnnotatable__tNestedType____target,
+				mNestedTypeToTNestedType__mNestedType____source, mNestedTypeToTNestedType__tNestedType____target,
+				pg__tNestedType____allTypes, tNestedType__pg____model, mASTNodeToAnnotatable__tNestedType____target,
 				mNestedType__eAnonymousClassDeclaration____anonymousClassDeclarationOwner,
 				eAnonymousClassDeclaration__mNestedType____bodyDeclarations };
 	}
@@ -2962,9 +2962,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_annotationTypes_158720 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_annotationTypes_329153 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tNestedType_annotationTypes_158720)) {
+			if (!pg.equals(__DEC_tNestedType_annotationTypes_329153)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -2973,10 +2973,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 			TAnnotationType tNestedType, TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_942238 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_942238 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_942238)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_942238)) {
+		TAbstractType __DEC_tNestedType_innerTypes_586448 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_586448 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_586448)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_586448)) {
 					return new Object[] { tNestedType, tClass };
 				}
 			}
@@ -2987,9 +2987,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
 			TAnnotationType tNestedType, TPackage tPackage) {
-		TPackage __DEC_tNestedType_allTypes_88485 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_88485 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_allTypes_88485)) {
+		TPackage __DEC_tNestedType_allTypes_633982 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_633982 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_allTypes_633982)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
@@ -3154,10 +3154,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_371033 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_635356 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_371033 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_371033)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_635356 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_635356)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3167,7 +3167,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_880510 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_223418 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3176,8 +3176,8 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_102101 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_102101 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_603694 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_603694 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3186,7 +3186,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_901791 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_596349 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3465,10 +3465,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_363380 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_615516 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_363380 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_363380)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_615516 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_615516)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3478,7 +3478,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_119558 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_953888 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3487,8 +3487,8 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_883239 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_883239 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_405188 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_405188 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3497,7 +3497,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_794202 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_724595 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3532,9 +3532,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_annotationTypes_442489 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_annotationTypes_155998 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tNestedType_annotationTypes_442489)) {
+			if (!pg.equals(__DEC_tNestedType_annotationTypes_155998)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -3543,10 +3543,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_1BB(
 			TAnnotationType tNestedType, TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_533496 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_533496 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_533496)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_533496)) {
+		TAbstractType __DEC_tNestedType_innerTypes_778856 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_778856 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_778856)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_778856)) {
 					return new Object[] { tNestedType, tClass };
 				}
 			}
@@ -3557,9 +3557,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_2BB(
 			TAnnotationType tNestedType, TPackage tPackage) {
-		TPackage __DEC_tNestedType_allTypes_549851 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_549851 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_allTypes_549851)) {
+		TPackage __DEC_tNestedType_allTypes_905320 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_905320 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_allTypes_905320)) {
 				return new Object[] { tNestedType, tPackage };
 			}
 		}
