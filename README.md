@@ -15,9 +15,9 @@ The GRaViTY tool is a research prototype for the analysis of software design and
 
 ## Installation
 
-The tool can be installed from the following updatesite into Eclipse: https://gravity-tool.github.io/updatesite
+The tool can be installed from the following updatesite into Eclipse 2023-12: https://gravity-tool.github.io/updatesite
 
-All dependencies should be installed automatically. Some times it is necessary to activate the updated sides added while installing manually.
+All dependencies should be installed automatically. Sometimes it is necessary to activate the updated sides added while installing manually.
 
 ## Repository description
 
