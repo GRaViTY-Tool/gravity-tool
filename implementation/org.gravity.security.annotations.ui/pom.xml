@@ -12,4 +12,34 @@
   <artifactId>org.gravity.security.annotations.ui</artifactId>
   <version>1.0.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>${dependency-plugin}</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<excludeScope>provided</excludeScope>
+							<includeScope>runtime</includeScope>
+							<stripVersion>true</stripVersion>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.gravity</groupId>
+			<artifactId>org.gravity.security.annotations</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
 </project>

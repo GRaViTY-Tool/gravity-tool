@@ -14,4 +14,4 @@ Require-Bundle: org.junit,
  junit-jupiter-params,
  org.apache.log4j,
  org.gravity.security.annotations.ui,
- org.gravity.security.annotations.pm
+ org.eclipse.ui.workbench

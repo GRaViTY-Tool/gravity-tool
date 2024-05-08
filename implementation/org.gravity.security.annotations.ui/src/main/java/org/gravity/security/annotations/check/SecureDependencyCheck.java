@@ -103,7 +103,10 @@ public class SecureDependencyCheck extends CompilationParticipant {
 	 */
 	private void checkIncomingAccesses(final IMember member, final boolean secrecy, final boolean integrity) {
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCallerRoots(new IMember[] { member })) {
-			root.accept(new IncomingAccessCheck(this, member, secrecy, root, integrity), new NullProgressMonitor());
+			IncomingAccessCheck check = new IncomingAccessCheck(this, member, secrecy, root, integrity);
+			for(var call : root.getCalls(new NullProgressMonitor())) {
+				check.visit(call);
+			}
 		}
 	}
 
@@ -120,8 +123,10 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		final Collection<IMember> accessedMembers = new HashSet<>();
 		for (final MethodWrapper root : CallHierarchy.getDefault().getCalleeRoots(new IMember[] { caller })) {
 			// Check outgoing calls
-			root.accept(new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements),
-					new NullProgressMonitor());
+			OutgoingAccessCheck check = new OutgoingAccessCheck(this, accessedMembers, root, caller, requirements);
+			for(var call : root.getCalls(new NullProgressMonitor())) {
+				check.visit(call);
+			}
 		}
 		return accessedMembers;
 	}

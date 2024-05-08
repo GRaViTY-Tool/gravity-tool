@@ -6,13 +6,12 @@ import java.util.Set;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchyVisitor;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
 import org.gravity.security.annotations.check.data.SecurityRequirements;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 
 @SuppressWarnings("restriction")
-final class OutgoingAccessCheck extends CallHierarchyVisitor {
+final class OutgoingAccessCheck {
 	/**
 	 *
 	 */
@@ -37,7 +36,6 @@ final class OutgoingAccessCheck extends CallHierarchyVisitor {
 		this.analyzedMemberSignature = SecureDependencyCheck.getSignature(caller);
 	}
 
-	@Override
 	public boolean visit(final MethodWrapper methodWrapper) {
 		if (this.root == methodWrapper) {
 			return true;

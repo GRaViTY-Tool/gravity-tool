@@ -4,20 +4,16 @@ Bundle-Name: Security Check
 Bundle-SymbolicName: org.gravity.security.annotations.ui;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: org.gravity.security.annotations.ui.SecurityAnnotationsUIActivator
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ target/dependency/org.gravity.security.annotations.jar
 Bundle-Vendor: Ruhr University Bochum
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.eclipse.core.resources,
- org.eclipse.jdt.core,
  org.gravity.eclipse,
  org.eclipse.jdt.ui,
- org.eclipse.jdt.core.compiler.batch,
- org.eclipse.jdt.launching,
  org.eclipse.debug.core,
- org.apache.log4j,
- org.gravity.security.annotations.pm
+ org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.gravity.security.annotations.check
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gravity.security.annotations.marker
+Export-Package: org.gravity.security.annotations.marker,
+ org.gravity.security.annotations.ui

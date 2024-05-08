@@ -4,12 +4,11 @@ import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.internal.core.LambdaMethod;
-import org.eclipse.jdt.internal.corext.callhierarchy.CallHierarchyVisitor;
 import org.eclipse.jdt.internal.corext.callhierarchy.MethodWrapper;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 
 @SuppressWarnings("restriction")
-final class IncomingAccessCheck extends CallHierarchyVisitor {
+final class IncomingAccessCheck {
 
 	/**
 	 *
@@ -34,7 +33,6 @@ final class IncomingAccessCheck extends CallHierarchyVisitor {
 
 	}
 
-	@Override
 	public boolean visit(final MethodWrapper methodWrapper) {
 		if (this.root == methodWrapper) {
 			return true;

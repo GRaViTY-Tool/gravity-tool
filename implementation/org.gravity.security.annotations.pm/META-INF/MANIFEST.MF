@@ -19,6 +19,5 @@ Bundle-ManifestVersion: 2
 Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .,
- target/dependency/org.gravity.security.annotations.jar
+Bundle-ClassPath: .
 Require-Bundle: org.gravity.tgg.modisco.pm
