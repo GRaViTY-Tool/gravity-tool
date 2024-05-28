@@ -4,6 +4,7 @@
 package org.gravity.modisco.util;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -357,9 +358,10 @@ public final class MoDiscoUtil {
 		MEntry prev = null;
 		for (final SingleVariableDeclaration param : definition.getParameters()) {
 			final var entry = ModiscoFactory.eINSTANCE.createMEntry();
-			entry.getParameters().add((MSingleVariableDeclaration) param);
+			entry.getAllParameterInstances().add((MSingleVariableDeclaration) param);
 			mEntrys.add(entry);
 			entry.setType(param.getType().getType());
+
 			if (prev == null) {
 				list.setMFirstEntry(entry);
 			} else {
@@ -509,13 +511,54 @@ public final class MoDiscoUtil {
 		return null;
 	}
 
+	/**
+	 * Searches for the given name space in the model and creates it if not present
+	 *
+	 * @param model     The model
+	 * @param namespace The name space
+	 * @return The last package of the namespace
+	 */
+	public static Package getOrCreatePackage(final Model model, final String[] namespace) {
+		List<Package> next = model.getOwnedElements();
+		Package previous = null;
+		for (var i = 0; i < namespace.length; i++) {
+			final var name = namespace[i];
+			var contains = false;
+			for (final Package tPackage : next) {
+				if (name.equals(tPackage.getName())) {
+					if (i == (namespace.length - 1)) {
+						return tPackage;
+					}
+					next = tPackage.getOwnedPackages();
+					previous = tPackage;
+					contains = true;
+					break;
+				}
+			}
+			if (!contains) {
+				final var tPackage = JavaFactory.eINSTANCE.createPackage();
+				tPackage.setName(name);
+				if (previous == null) {
+					model.getOwnedElements().add(tPackage);
+				}
+				previous = tPackage;
+				next = Collections.emptyList();
+			}
+		}
+		return previous;
+	}
+
 	public static String getQualifiedName(final AbstractTypeDeclaration type) {
 		return getQualifiedName(type, ".");
 	}
 
 	public static String getQualifiedName(final AbstractTypeDeclaration type, final CharSequence separator) {
-		final var namespace = getNameSpace(type.getPackage());
+		final var namespace = getNameSpace(type.getPackage(), separator);
 		if (namespace == null) {
+			final var container = type.eContainer();
+			if (container instanceof final AbstractTypeDeclaration owner) {
+				return getQualifiedName(owner, separator) + '$' + type.getName();
+			}
 			return type.getName();
 		}
 		return namespace + separator + type.getName();
@@ -526,7 +569,7 @@ public final class MoDiscoUtil {
 	}
 
 	public static String getNameSpace(final Package packageDecl, final CharSequence separator) {
-		if (DEFAULT_PACKAGE.equals(packageDecl.getName())) {
+		if (packageDecl == null || DEFAULT_PACKAGE.equals(packageDecl.getName())) {
 			return null;
 		}
 		final List<String> names = new LinkedList<>();

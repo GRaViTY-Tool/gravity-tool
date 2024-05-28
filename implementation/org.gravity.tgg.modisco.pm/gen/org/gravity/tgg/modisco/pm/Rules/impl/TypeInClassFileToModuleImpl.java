@@ -671,7 +671,7 @@ public class TypeInClassFileToModuleImpl extends AbstractRuleImpl implements Typ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_646(EMoflonEdge _edge_module) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_972(EMoflonEdge _edge_module) {
 
 		Object[] result1_bindingAndBlack = TypeInClassFileToModuleImpl
 				.pattern_TypeInClassFileToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class TypeInClassFileToModuleImpl extends AbstractRuleImpl implements Typ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_694(EMoflonEdge _edge_originalClassFile) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1067(EMoflonEdge _edge_originalClassFile) {
 
 		Object[] result1_bindingAndBlack = TypeInClassFileToModuleImpl
 				.pattern_TypeInClassFileToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1096,94 +1096,96 @@ public class TypeInClassFileToModuleImpl extends AbstractRuleImpl implements Typ
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD__MATCH_CLASSFILE_ABSTRACTTYPEDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSFILE_ABSTRACTTYPEDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2));
-			return null;
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSFILE_ABSTRACTTYPEDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TABSTRACTTYPE_TMODULE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
-					(ElementToModule) arguments.get(2), (TAbstractType) arguments.get(3), (TModule) arguments.get(4),
-					(TypeToTAbstractType) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD__MATCH_TABSTRACTTYPE_TMODULE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TModule) arguments.get(2));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TABSTRACTTYPE_TMODULE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TModule) arguments.get(2));
-			return null;
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TABSTRACTTYPE_TMODULE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TModule) arguments.get(2));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TABSTRACTTYPE_TMODULE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
-					(ElementToModule) arguments.get(2), (TAbstractType) arguments.get(3), (TModule) arguments.get(4),
-					(TypeToTAbstractType) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_646__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_646((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_694__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_694((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSFILE_TABSTRACTTYPE_TMODULE_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((ClassFile) arguments.get(0), (TAbstractType) arguments.get(1),
-					(TModule) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_FWD__CLASSFILE_ABSTRACTTYPEDECLARATION:
-			return checkDEC_FWD((ClassFile) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_BWD__TABSTRACTTYPE_TMODULE:
-			return checkDEC_BWD((TAbstractType) arguments.get(0), (TModule) arguments.get(1));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL__RULEENTRYCONTAINER_ELEMENTTOMODULE_TYPETOTABSTRACTTYPE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ElementToModule) arguments.get(1),
-					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TABSTRACTTYPE_TMODULE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
-					(ElementToModule) arguments.get(2), (TAbstractType) arguments.get(3), (TModule) arguments.get(4),
-					(TypeToTAbstractType) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
-		case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD__MATCH_CLASSFILE_ABSTRACTTYPEDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
+						(AbstractTypeDeclaration) arguments.get(2));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSFILE_ABSTRACTTYPEDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
+						(AbstractTypeDeclaration) arguments.get(2));
+				return null;
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSFILE_ABSTRACTTYPEDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
+						(AbstractTypeDeclaration) arguments.get(2));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TABSTRACTTYPE_TMODULE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
+						(ElementToModule) arguments.get(2), (TAbstractType) arguments.get(3),
+						(TModule) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
+						(AbstractTypeDeclaration) arguments.get(6));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD__MATCH_TABSTRACTTYPE_TMODULE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
+						(TModule) arguments.get(2));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TABSTRACTTYPE_TMODULE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
+						(TModule) arguments.get(2));
+				return null;
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TABSTRACTTYPE_TMODULE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAbstractType) arguments.get(1),
+						(TModule) arguments.get(2));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TABSTRACTTYPE_TMODULE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
+						(ElementToModule) arguments.get(2), (TAbstractType) arguments.get(3),
+						(TModule) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
+						(AbstractTypeDeclaration) arguments.get(6));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_972__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_972((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1067__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1067((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSFILE_TABSTRACTTYPE_TMODULE_ABSTRACTTYPEDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((ClassFile) arguments.get(0), (TAbstractType) arguments.get(1),
+						(TModule) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+						(Match) arguments.get(4), (Match) arguments.get(5));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_FWD__CLASSFILE_ABSTRACTTYPEDECLARATION:
+				return checkDEC_FWD((ClassFile) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_BWD__TABSTRACTTYPE_TMODULE:
+				return checkDEC_BWD((TAbstractType) arguments.get(0), (TModule) arguments.get(1));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL__RULEENTRYCONTAINER_ELEMENTTOMODULE_TYPETOTABSTRACTTYPE:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ElementToModule) arguments.get(1),
+						(TypeToTAbstractType) arguments.get(2));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TABSTRACTTYPE_TMODULE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
+						(ElementToModule) arguments.get(2), (TAbstractType) arguments.get(3),
+						(TModule) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
+						(AbstractTypeDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+			case RulesPackage.TYPE_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

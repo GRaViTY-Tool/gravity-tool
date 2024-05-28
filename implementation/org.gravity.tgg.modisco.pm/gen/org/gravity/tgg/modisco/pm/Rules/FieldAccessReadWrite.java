@@ -222,7 +222,7 @@ public interface FieldAccessReadWrite extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_649(EMoflonEdge _edge_accessing);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1006(EMoflonEdge _edge_accessing);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface FieldAccessReadWrite extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_698(EMoflonEdge _edge_mAbstractFieldAccess);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1104(EMoflonEdge _edge_mAbstractFieldAccess);
 
 	/**
 	 * <!-- begin-user-doc -->

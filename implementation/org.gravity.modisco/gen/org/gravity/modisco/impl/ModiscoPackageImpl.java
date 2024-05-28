@@ -686,7 +686,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMEntry_Parameters() {
+	public EReference getMEntry_AllParameterInstances() {
 		return (EReference)mEntryEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1165,7 +1165,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		createEReference(mEntryEClass, MENTRY__MNEXT);
 		createEReference(mEntryEClass, MENTRY__MPREVIOUS);
 		createEReference(mEntryEClass, MENTRY__TYPE);
-		createEReference(mEntryEClass, MENTRY__PARAMETERS);
+		createEReference(mEntryEClass, MENTRY__ALL_PARAMETER_INSTANCES);
 
 		mGravityModelEClass = createEClass(MGRAVITY_MODEL);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MFIELD_DEFINITIONS);
@@ -1351,7 +1351,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEReference(getMEntry_MNext(), this.getMEntry(), this.getMEntry_MPrevious(), "mNext", null, 0, 1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEntry_MPrevious(), this.getMEntry(), this.getMEntry_MNext(), "mPrevious", null, 0, 1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEntry_Type(), theJavaPackage.getType(), null, "type", null, 0, 1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEntry_Parameters(), this.getMSingleVariableDeclaration(), this.getMSingleVariableDeclaration_MEntry(), "parameters", null, 0, -1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEntry_AllParameterInstances(), this.getMSingleVariableDeclaration(), this.getMSingleVariableDeclaration_MEntry(), "allParameterInstances", null, 0, -1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mGravityModelEClass, MGravityModel.class, "MGravityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMGravityModel_MFieldDefinitions(), this.getMFieldDefinition(), null, "mFieldDefinitions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1393,7 +1393,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEClass(mConstructorInvocationEClass, MConstructorInvocation.class, "MConstructorInvocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mSingleVariableDeclarationEClass, MSingleVariableDeclaration.class, "MSingleVariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMSingleVariableDeclaration_MEntry(), this.getMEntry(), this.getMEntry_Parameters(), "mEntry", null, 1, 1, MSingleVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMSingleVariableDeclaration_MEntry(), this.getMEntry(), this.getMEntry_AllParameterInstances(), "mEntry", null, 1, 1, MSingleVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mAbstractMethodInvocationEClass, MAbstractMethodInvocation.class, "MAbstractMethodInvocation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

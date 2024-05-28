@@ -738,7 +738,7 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_701(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1058(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InMethod_InInterfaceImpl
 				.pattern_TypeParameter2Object_InMethod_InInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,7 +799,7 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_754(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1162(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InMethod_InInterfaceImpl
 				.pattern_TypeParameter2Object_InMethod_InInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1201,96 +1201,97 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
-			return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
-					(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
-					(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
-			return null;
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
-					(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_TYPEPARAMETER_ASTNODE2ELEMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
-					(Interface) arguments.get(3), (TypeParameter) arguments.get(4), (ASTNode2Element) arguments.get(5));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD__MATCH_INTERFACE_CLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE_CLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
-			return null;
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE_CLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_CLASS_ASTNODE2ELEMENT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
-					(Interface) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
-					(ASTNode2Element) arguments.get(5));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_701__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_701((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_754__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_754((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_CLASS_TYPEPARAMETER_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0),
-					(AbstractMethodDeclaration) arguments.get(1), (Interface) arguments.get(2),
-					(org.eclipse.uml2.uml.Class) arguments.get(3), (TypeParameter) arguments.get(4),
-					(Match) arguments.get(5), (Match) arguments.get(6));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
-			return checkDEC_FWD((InterfaceDeclaration) arguments.get(0), (AbstractMethodDeclaration) arguments.get(1),
-					(TypeParameter) arguments.get(2));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_DEC_BWD__INTERFACE_CLASS:
-			return checkDEC_BWD((Interface) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
-					(Interface) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(ModelgeneratorRuleResult) arguments.get(5));
-		case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
+				return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+						(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+						(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
+				return null;
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+						(AbstractMethodDeclaration) arguments.get(2), (TypeParameter) arguments.get(3));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_TYPEPARAMETER_ASTNODE2ELEMENT:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(InterfaceDeclaration) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
+						(Interface) arguments.get(3), (TypeParameter) arguments.get(4),
+						(ASTNode2Element) arguments.get(5));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD__MATCH_INTERFACE_CLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE_CLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2));
+				return null;
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE_CLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_CLASS_ASTNODE2ELEMENT:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(InterfaceDeclaration) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
+						(Interface) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4),
+						(ASTNode2Element) arguments.get(5));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1058__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1058((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1162__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1162((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_CLASS_TYPEPARAMETER_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0),
+						(AbstractMethodDeclaration) arguments.get(1), (Interface) arguments.get(2),
+						(org.eclipse.uml2.uml.Class) arguments.get(3), (TypeParameter) arguments.get(4),
+						(Match) arguments.get(5), (Match) arguments.get(6));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_TYPEPARAMETER:
+				return checkDEC_FWD((InterfaceDeclaration) arguments.get(0),
+						(AbstractMethodDeclaration) arguments.get(1), (TypeParameter) arguments.get(2));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_DEC_BWD__INTERFACE_CLASS:
+				return checkDEC_BWD((Interface) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ABSTRACTMETHODDECLARATION_INTERFACE_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(InterfaceDeclaration) arguments.get(1), (AbstractMethodDeclaration) arguments.get(2),
+						(Interface) arguments.get(3), (ASTNode2Element) arguments.get(4),
+						(ModelgeneratorRuleResult) arguments.get(5));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2501,9 +2502,9 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InInterface_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeParameter mparam, InterfaceDeclaration mowner) {
-		for (TypeDeclaration __DEC_mparam_typeParameters_231851 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeDeclaration __DEC_mparam_typeParameters_386555 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, TypeDeclaration.class, "typeParameters")) {
-			if (!mowner.equals(__DEC_mparam_typeParameters_231851)) {
+			if (!mowner.equals(__DEC_mparam_typeParameters_386555)) {
 				return new Object[] { mparam, mowner };
 			}
 		}
@@ -2775,9 +2776,9 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InInterface_27_1_matchtggpattern_black_nac_0BB(
 			TypeParameter mparam, InterfaceDeclaration mowner) {
-		for (TypeDeclaration __DEC_mparam_typeParameters_474964 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeDeclaration __DEC_mparam_typeParameters_968931 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, TypeDeclaration.class, "typeParameters")) {
-			if (!mowner.equals(__DEC_mparam_typeParameters_474964)) {
+			if (!mowner.equals(__DEC_mparam_typeParameters_968931)) {
 				return new Object[] { mparam, mowner };
 			}
 		}

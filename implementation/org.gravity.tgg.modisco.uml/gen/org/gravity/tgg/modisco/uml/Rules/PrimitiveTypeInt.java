@@ -199,7 +199,7 @@ public interface PrimitiveTypeInt extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_34(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_60(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +207,7 @@ public interface PrimitiveTypeInt extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_PrimitiveTypeInt_3(org.eclipse.modisco.java.PrimitiveTypeInt jpt);
+	EObjectContainer isAppropriate_FWD_PrimitiveTypeInt_6(org.eclipse.modisco.java.PrimitiveTypeInt jpt);
 
 	/**
 	 * <!-- begin-user-doc -->

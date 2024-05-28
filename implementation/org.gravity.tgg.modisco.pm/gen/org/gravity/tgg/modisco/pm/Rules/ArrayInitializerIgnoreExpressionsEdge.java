@@ -178,7 +178,7 @@ public interface ArrayInitializerIgnoreExpressionsEdge extends EObject, Abstract
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_696(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1105(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->

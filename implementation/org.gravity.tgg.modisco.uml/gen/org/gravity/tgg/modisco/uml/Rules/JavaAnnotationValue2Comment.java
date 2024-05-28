@@ -115,7 +115,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject comment, EObject value,
-			EObject c2c, EObject tag, EObject array, EObject a2c);
+			EObject tag, EObject array, EObject a2c, EObject c2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,7 +197,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject comment, EObject value,
-			EObject c2c, EObject tag, EObject array, EObject a2c);
+			EObject tag, EObject array, EObject a2c, EObject c2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_703(EMoflonEdge _edge_annotatedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1037(EMoflonEdge _edge_ownedComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface JavaAnnotationValue2Comment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_757(EMoflonEdge _edge_values);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1136(EMoflonEdge _edge_value);
 
 	/**
 	 * <!-- begin-user-doc -->

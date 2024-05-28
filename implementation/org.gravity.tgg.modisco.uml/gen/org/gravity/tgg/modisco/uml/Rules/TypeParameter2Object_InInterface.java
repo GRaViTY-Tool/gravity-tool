@@ -209,7 +209,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_689(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1076(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface TypeParameter2Object_InInterface extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_740(EMoflonEdge _edge_typeParameters);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1182(EMoflonEdge _edge_typeParameters);
 
 	/**
 	 * <!-- begin-user-doc -->

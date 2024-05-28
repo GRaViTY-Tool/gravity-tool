@@ -481,7 +481,7 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_734(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1135(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = IgnoreClassInstanceCreation4ArrayInitializerImpl
 				.pattern_IgnoreClassInstanceCreation4ArrayInitializer_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -839,74 +839,74 @@ public class IgnoreClassInstanceCreation4ArrayInitializerImpl extends AbstractRu
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return isAppropriate_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
-			return null;
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(ClassInstanceCreation) arguments.get(1), (ArrayInitializer) arguments.get(2));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2));
-			return null;
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_BWD__MATCH:
-			return isAppropriate_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0));
-			return null;
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_734__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_734((EMoflonEdge) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_CC__CLASSINSTANCECREATION_ARRAYINITIALIZER_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((ClassInstanceCreation) arguments.get(0),
-					(ArrayInitializer) arguments.get(1), (Match) arguments.get(2), (Match) arguments.get(3));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_FWD__CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return checkDEC_FWD((ClassInstanceCreation) arguments.get(0), (ArrayInitializer) arguments.get(1));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_BWD:
-			return checkDEC_BWD();
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL__RULEENTRYCONTAINER_CLASSINSTANCECREATION_ARRAYINITIALIZER:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
-					(ArrayInitializer) arguments.get(2));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ClassInstanceCreation) arguments.get(1), (ArrayInitializer) arguments.get(2),
-					(ModelgeneratorRuleResult) arguments.get(3));
-		case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
+				return isAppropriate_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
+						(ArrayInitializer) arguments.get(2));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
+						(ArrayInitializer) arguments.get(2));
+				return null;
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
+						(ArrayInitializer) arguments.get(2));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(ClassInstanceCreation) arguments.get(1), (ArrayInitializer) arguments.get(2));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2));
+				return null;
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_BWD__MATCH:
+				return isAppropriate_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH:
+				registerObjectsToMatch_BWD((Match) arguments.get(0));
+				return null;
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1135__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1135((EMoflonEdge) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_SOLVE_CSP_CC__CLASSINSTANCECREATION_ARRAYINITIALIZER_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((ClassInstanceCreation) arguments.get(0),
+						(ArrayInitializer) arguments.get(1), (Match) arguments.get(2), (Match) arguments.get(3));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_FWD__CLASSINSTANCECREATION_ARRAYINITIALIZER:
+				return checkDEC_FWD((ClassInstanceCreation) arguments.get(0), (ArrayInitializer) arguments.get(1));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___CHECK_DEC_BWD:
+				return checkDEC_BWD();
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL__RULEENTRYCONTAINER_CLASSINSTANCECREATION_ARRAYINITIALIZER:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ClassInstanceCreation) arguments.get(1),
+						(ArrayInitializer) arguments.get(2));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSINSTANCECREATION_ARRAYINITIALIZER_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ClassInstanceCreation) arguments.get(1), (ArrayInitializer) arguments.get(2),
+						(ModelgeneratorRuleResult) arguments.get(3));
+			case RulesPackage.IGNORE_CLASS_INSTANCE_CREATION4_ARRAY_INITIALIZER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

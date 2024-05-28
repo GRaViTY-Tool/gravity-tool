@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EOperation;
 
 import org.eclipse.modisco.java.ASTNode;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
 import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.EnumDeclaration;
@@ -804,7 +803,7 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_710(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1033(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -864,7 +863,7 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_766(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1131(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1191,7 +1190,8 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element p2pParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
+			ASTNode2Element ne2neParameter) {
 
 		Object[] result1_black = AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_29_1_createresult_blackB(this);
@@ -1207,14 +1207,14 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 		for (Object[] result2_black : AnonymousClass4EnumConstInTypeImpl
 				.pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
-			//nothing RuleEntryList p2pList = (RuleEntryList) result2_black[0];
+			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
 			org.eclipse.uml2.uml.Class uType = (org.eclipse.uml2.uml.Class) result2_black[1];
-			ASTNode2Element p2p = (ASTNode2Element) result2_black[2];
-			AbstractTypeDeclaration jType = (AbstractTypeDeclaration) result2_black[3];
+			Enumeration uContainer = (Enumeration) result2_black[2];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[3];
 			EnumDeclaration jContainer = (EnumDeclaration) result2_black[4];
 			EnumConstantDeclaration mMember = (EnumConstantDeclaration) result2_black[5];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[6];
-			Enumeration uContainer = (Enumeration) result2_black[7];
+			AbstractTypeDeclaration jType = (AbstractTypeDeclaration) result2_black[6];
+			ASTNode2Element p2p = (ASTNode2Element) result2_black[7];
 
 			Object[] result3_bindingAndBlack = AnonymousClass4EnumConstInTypeImpl
 					.pattern_AnonymousClass4EnumConstInType_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(this,
@@ -1324,107 +1324,108 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD__MATCH_MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MAnonymousClass) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (EnumConstantDeclaration) arguments.get(3),
-					(EnumDeclaration) arguments.get(4));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MAnonymousClass) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (EnumConstantDeclaration) arguments.get(3),
-					(EnumDeclaration) arguments.get(4));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MAnonymousClass) arguments.get(1),
-					(AbstractTypeDeclaration) arguments.get(2), (EnumConstantDeclaration) arguments.get(3),
-					(EnumDeclaration) arguments.get(4));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MANONYMOUSCLASS_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MAnonymousClass) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2), (Enumeration) arguments.get(3),
-					(AbstractTypeDeclaration) arguments.get(4), (EnumConstantDeclaration) arguments.get(5),
-					(EnumDeclaration) arguments.get(6), (ASTNode2Element) arguments.get(7),
-					(ASTNode2Element) arguments.get(8));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD__MATCH_CLASS_CLASS_ENUMERATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2), (Enumeration) arguments.get(3));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_CLASS_ENUMERATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2), (Enumeration) arguments.get(3));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_CLASS_ENUMERATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2), (Enumeration) arguments.get(3));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
-					(Enumeration) arguments.get(3), (AbstractTypeDeclaration) arguments.get(4),
-					(EnumConstantDeclaration) arguments.get(5), (EnumDeclaration) arguments.get(6),
-					(ASTNode2Element) arguments.get(7), (ASTNode2Element) arguments.get(8));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_710__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_710((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_766__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_766((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_MANONYMOUSCLASS_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0),
-					(MAnonymousClass) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
-					(Enumeration) arguments.get(3), (AbstractTypeDeclaration) arguments.get(4),
-					(EnumConstantDeclaration) arguments.get(5), (EnumDeclaration) arguments.get(6),
-					(Match) arguments.get(7), (Match) arguments.get(8));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_DEC_FWD__MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
-			return checkDEC_FWD((MAnonymousClass) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-					(EnumConstantDeclaration) arguments.get(2), (EnumDeclaration) arguments.get(3));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_DEC_BWD__CLASS_CLASS_ENUMERATION:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (Enumeration) arguments.get(2));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (Enumeration) arguments.get(2),
-					(AbstractTypeDeclaration) arguments.get(3), (EnumConstantDeclaration) arguments.get(4),
-					(EnumDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6),
-					(ASTNode2Element) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
-		case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD__MATCH_MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (MAnonymousClass) arguments.get(1),
+						(AbstractTypeDeclaration) arguments.get(2), (EnumConstantDeclaration) arguments.get(3),
+						(EnumDeclaration) arguments.get(4));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MAnonymousClass) arguments.get(1),
+						(AbstractTypeDeclaration) arguments.get(2), (EnumConstantDeclaration) arguments.get(3),
+						(EnumDeclaration) arguments.get(4));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MAnonymousClass) arguments.get(1),
+						(AbstractTypeDeclaration) arguments.get(2), (EnumConstantDeclaration) arguments.get(3),
+						(EnumDeclaration) arguments.get(4));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MANONYMOUSCLASS_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MAnonymousClass) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+						(Enumeration) arguments.get(3), (AbstractTypeDeclaration) arguments.get(4),
+						(EnumConstantDeclaration) arguments.get(5), (EnumDeclaration) arguments.get(6),
+						(ASTNode2Element) arguments.get(7), (ASTNode2Element) arguments.get(8));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD__MATCH_CLASS_CLASS_ENUMERATION:
+				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2), (Enumeration) arguments.get(3));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_CLASS_ENUMERATION:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2), (Enumeration) arguments.get(3));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_CLASS_ENUMERATION:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+						(Enumeration) arguments.get(3));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+						(Enumeration) arguments.get(3), (AbstractTypeDeclaration) arguments.get(4),
+						(EnumConstantDeclaration) arguments.get(5), (EnumDeclaration) arguments.get(6),
+						(ASTNode2Element) arguments.get(7), (ASTNode2Element) arguments.get(8));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1033__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1033((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1131__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1131((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_MANONYMOUSCLASS_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0),
+						(MAnonymousClass) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+						(Enumeration) arguments.get(3), (AbstractTypeDeclaration) arguments.get(4),
+						(EnumConstantDeclaration) arguments.get(5), (EnumDeclaration) arguments.get(6),
+						(Match) arguments.get(7), (Match) arguments.get(8));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_DEC_FWD__MANONYMOUSCLASS_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION:
+				return checkDEC_FWD((MAnonymousClass) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+						(EnumConstantDeclaration) arguments.get(2), (EnumDeclaration) arguments.get(3));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___CHECK_DEC_BWD__CLASS_CLASS_ENUMERATION:
+				return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (Enumeration) arguments.get(2));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_ENUMERATION_ABSTRACTTYPEDECLARATION_ENUMCONSTANTDECLARATION_ENUMDECLARATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (Enumeration) arguments.get(2),
+						(AbstractTypeDeclaration) arguments.get(3), (EnumConstantDeclaration) arguments.get(4),
+						(EnumDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6),
+						(ASTNode2Element) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
+			case RulesPackage.ANONYMOUS_CLASS4_ENUM_CONST_IN_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -3002,8 +3003,8 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_21_2_testcorematchandDECs_black_nac_0B(
 			MAnonymousClass mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_854289 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_854289 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_125190 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_125190 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3304,8 +3305,8 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_27_1_matchtggpattern_black_nac_0B(
 			MAnonymousClass mAnon) {
-		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_379617 = mAnon.getClassInstanceCreation();
-		if (__DEC_mAnon_anonymousClassDeclaration_379617 != null) {
+		ClassInstanceCreation __DEC_mAnon_anonymousClassDeclaration_133984 = mAnon.getClassInstanceCreation();
+		if (__DEC_mAnon_anonymousClassDeclaration_133984 != null) {
 			return new Object[] { mAnon };
 		}
 
@@ -3383,17 +3384,17 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element p2p) {
-		if (ruleResult.getCorrObjects().contains(p2p)) {
-			return new Object[] { ruleResult, p2p };
+			ModelgeneratorRuleResult ruleResult, Enumeration uContainer) {
+		if (ruleResult.getTargetObjects().contains(uContainer)) {
+			return new Object[] { ruleResult, uContainer };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jType) {
-		if (ruleResult.getSourceObjects().contains(jType)) {
-			return new Object[] { ruleResult, jType };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
+		if (ruleResult.getCorrObjects().contains(ne2ne)) {
+			return new Object[] { ruleResult, ne2ne };
 		}
 		return null;
 	}
@@ -3415,17 +3416,17 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
-		if (ruleResult.getCorrObjects().contains(ne2ne)) {
-			return new Object[] { ruleResult, ne2ne };
+			ModelgeneratorRuleResult ruleResult, AbstractTypeDeclaration jType) {
+		if (ruleResult.getSourceObjects().contains(jType)) {
+			return new Object[] { ruleResult, jType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_6BB(
-			ModelgeneratorRuleResult ruleResult, Enumeration uContainer) {
-		if (ruleResult.getTargetObjects().contains(uContainer)) {
-			return new Object[] { ruleResult, uContainer };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element p2p) {
+		if (ruleResult.getCorrObjects().contains(p2p)) {
+			return new Object[] { ruleResult, p2p };
 		}
 		return null;
 	}
@@ -3433,57 +3434,49 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 	public static final Iterable<Object[]> pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList p2pList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpP2p : p2pList.getEntryObjects()) {
-				if (tmpP2p instanceof ASTNode2Element) {
-					ASTNode2Element p2p = (ASTNode2Element) tmpP2p;
-					Element tmpUType = p2p.getTarget();
-					if (tmpUType instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class uType = (org.eclipse.uml2.uml.Class) tmpUType;
-						ASTNode tmpJType = p2p.getSource();
-						if (tmpJType instanceof AbstractTypeDeclaration) {
-							AbstractTypeDeclaration jType = (AbstractTypeDeclaration) tmpJType;
-							if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-									p2p) == null) {
-								if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_0BB(
-										ruleResult, uType) == null) {
-									if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_2BB(
-											ruleResult, jType) == null) {
-										for (Element tmpUContainer : uType.getOwnedElements()) {
-											if (tmpUContainer instanceof Enumeration) {
-												Enumeration uContainer = (Enumeration) tmpUContainer;
-												if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_6BB(
-														ruleResult, uContainer) == null) {
-													for (BodyDeclaration tmpJContainer : jType.getBodyDeclarations()) {
-														if (tmpJContainer instanceof EnumDeclaration) {
-															EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
-															if (!jContainer.equals(jType)) {
-																if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_3BB(
-																		ruleResult, jContainer) == null) {
-																	for (EnumConstantDeclaration mMember : jContainer
-																			.getEnumConstants()) {
-																		if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_4BB(
-																				ruleResult, mMember) == null) {
-																			for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-																					.getOppositeReferenceTyped(
-																							uContainer,
-																							ASTNode2Element.class,
-																							"target")) {
-																				if (!ne2ne.equals(p2p)) {
-																					if (jContainer.equals(
-																							ne2ne.getSource())) {
-																						if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_5BB(
-																								ruleResult,
-																								ne2ne) == null) {
-																							_result.add(new Object[] {
-																									p2pList, uType, p2p,
-																									jType, jContainer,
-																									mMember, ne2ne,
-																									uContainer,
-																									ruleEntryContainer,
-																									ruleResult });
-																						}
-																					}
+		for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
+			for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
+				if (tmpNe2ne instanceof ASTNode2Element) {
+					ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+					Element tmpUContainer = ne2ne.getTarget();
+					if (tmpUContainer instanceof Enumeration) {
+						Enumeration uContainer = (Enumeration) tmpUContainer;
+						ASTNode tmpJContainer = ne2ne.getSource();
+						if (tmpJContainer instanceof EnumDeclaration) {
+							EnumDeclaration jContainer = (EnumDeclaration) tmpJContainer;
+							Element tmpUType = uContainer.getOwner();
+							if (tmpUType instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class uType = (org.eclipse.uml2.uml.Class) tmpUType;
+								AbstractTypeDeclaration jType = jContainer.getAbstractTypeDeclaration();
+								if (jType != null) {
+									if (!jContainer.equals(jType)) {
+										if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_2BB(
+												ruleResult, ne2ne) == null) {
+											if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_1BB(
+													ruleResult, uContainer) == null) {
+												if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_3BB(
+														ruleResult, jContainer) == null) {
+													if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_0BB(
+															ruleResult, uType) == null) {
+														if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_5BB(
+																ruleResult, jType) == null) {
+															for (EnumConstantDeclaration mMember : jContainer
+																	.getEnumConstants()) {
+																if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_4BB(
+																		ruleResult, mMember) == null) {
+																	for (ASTNode2Element p2p : org.moflon.core.utilities.eMoflonEMFUtil
+																			.getOppositeReferenceTyped(uType,
+																					ASTNode2Element.class, "target")) {
+																		if (!ne2ne.equals(p2p)) {
+																			if (jType.equals(p2p.getSource())) {
+																				if (pattern_AnonymousClass4EnumConstInType_29_2_isapplicablecore_black_nac_6BB(
+																						ruleResult, p2p) == null) {
+																					_result.add(new Object[] {
+																							ne2neList, uType,
+																							uContainer, ne2ne,
+																							jContainer, mMember, jType,
+																							p2p, ruleEntryContainer,
+																							ruleResult });
 																				}
 																			}
 																		}
@@ -3497,7 +3490,9 @@ public class AnonymousClass4EnumConstInTypeImpl extends AbstractRuleImpl impleme
 										}
 									}
 								}
+
 							}
+
 						}
 
 					}

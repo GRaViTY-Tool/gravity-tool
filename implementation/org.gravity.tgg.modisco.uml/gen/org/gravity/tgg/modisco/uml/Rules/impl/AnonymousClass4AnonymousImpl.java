@@ -740,7 +740,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_695(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1061(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4AnonymousImpl
 				.pattern_AnonymousClass4Anonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -798,7 +798,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_746(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1167(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClass4AnonymousImpl
 				.pattern_AnonymousClass4Anonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1188,103 +1188,104 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-					(MAnonymousClass) arguments.get(2), (MDefinition) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-					(MAnonymousClass) arguments.get(2), (MDefinition) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-					(MAnonymousClass) arguments.get(2), (MDefinition) arguments.get(3),
-					(AnonymousClassDeclaration) arguments.get(4));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MClassInstanceCreation) arguments.get(1), (MAnonymousClass) arguments.get(2),
-					(org.eclipse.uml2.uml.Class) arguments.get(3), (MDefinition) arguments.get(4),
-					(AnonymousClassDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_CLASS_CLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_CLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_CLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(org.eclipse.uml2.uml.Class) arguments.get(2));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
-					(MDefinition) arguments.get(3), (AnonymousClassDeclaration) arguments.get(4),
-					(ASTNode2Element) arguments.get(5));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8));
-			return null;
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_695__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_695((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_746__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_746((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__MCLASSINSTANCECREATION_CLASS_MANONYMOUSCLASS_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MClassInstanceCreation) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (MAnonymousClass) arguments.get(2),
-					(org.eclipse.uml2.uml.Class) arguments.get(3), (MDefinition) arguments.get(4),
-					(AnonymousClassDeclaration) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_DEC_FWD__MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-			return checkDEC_FWD((MClassInstanceCreation) arguments.get(0), (MAnonymousClass) arguments.get(1),
-					(MDefinition) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_DEC_BWD__CLASS_CLASS:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1), (MDefinition) arguments.get(2),
-					(AnonymousClassDeclaration) arguments.get(3), (ASTNode2Element) arguments.get(4),
-					(ModelgeneratorRuleResult) arguments.get(5));
-		case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
+						(MAnonymousClass) arguments.get(2), (MDefinition) arguments.get(3),
+						(AnonymousClassDeclaration) arguments.get(4));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
+						(MAnonymousClass) arguments.get(2), (MDefinition) arguments.get(3),
+						(AnonymousClassDeclaration) arguments.get(4));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
+						(MAnonymousClass) arguments.get(2), (MDefinition) arguments.get(3),
+						(AnonymousClassDeclaration) arguments.get(4));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASSINSTANCECREATION_MANONYMOUSCLASS_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MClassInstanceCreation) arguments.get(1), (MAnonymousClass) arguments.get(2),
+						(org.eclipse.uml2.uml.Class) arguments.get(3), (MDefinition) arguments.get(4),
+						(AnonymousClassDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_CLASS_CLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_CLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_CLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2),
+						(MDefinition) arguments.get(3), (AnonymousClassDeclaration) arguments.get(4),
+						(ASTNode2Element) arguments.get(5));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8));
+				return null;
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1061__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1061((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1167__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1167((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__MCLASSINSTANCECREATION_CLASS_MANONYMOUSCLASS_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((MClassInstanceCreation) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (MAnonymousClass) arguments.get(2),
+						(org.eclipse.uml2.uml.Class) arguments.get(3), (MDefinition) arguments.get(4),
+						(AnonymousClassDeclaration) arguments.get(5), (Match) arguments.get(6),
+						(Match) arguments.get(7));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_DEC_FWD__MCLASSINSTANCECREATION_MANONYMOUSCLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION:
+				return checkDEC_FWD((MClassInstanceCreation) arguments.get(0), (MAnonymousClass) arguments.get(1),
+						(MDefinition) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___CHECK_DEC_BWD__CLASS_CLASS:
+				return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS_MDEFINITION_ANONYMOUSCLASSDECLARATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (MDefinition) arguments.get(2),
+						(AnonymousClassDeclaration) arguments.get(3), (ASTNode2Element) arguments.get(4),
+						(ModelgeneratorRuleResult) arguments.get(5));
+			case RulesPackage.ANONYMOUS_CLASS4_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2656,7 +2657,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_21_2_testcorematchandDECs_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_814202 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_337194 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2665,9 +2666,9 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_21_2_testcorematchandDECs_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_12920 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_356189 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_12920)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_356189)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2676,7 +2677,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_21_2_testcorematchandDECs_black_nac_2B(
 			MAnonymousClass mAnon) {
-		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_624373 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_776077 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnon, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnon };
 		}
@@ -2966,7 +2967,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_27_1_matchtggpattern_black_nac_0B(
 			MClassInstanceCreation mConstructor) {
-		for (AnnotationMemberValuePair __DEC_mConstructor_value_832369 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mConstructor_value_495670 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mConstructor };
 		}
@@ -2975,9 +2976,9 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_27_1_matchtggpattern_black_nac_1BB(
 			MClassInstanceCreation mConstructor, MDefinition mMember) {
-		for (MDefinition __DEC_mConstructor_mMethodInvocations_761313 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_mConstructor_mMethodInvocations_734154 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mConstructor, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_761313)) {
+			if (!mMember.equals(__DEC_mConstructor_mMethodInvocations_734154)) {
 				return new Object[] { mConstructor, mMember };
 			}
 		}
@@ -2986,7 +2987,7 @@ public class AnonymousClass4AnonymousImpl extends AbstractRuleImpl implements An
 
 	public static final Object[] pattern_AnonymousClass4Anonymous_27_1_matchtggpattern_black_nac_2B(
 			MAnonymousClass mAnon) {
-		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_349053 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnon_anonymousClassDeclaration_624088 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnon, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnon };
 		}

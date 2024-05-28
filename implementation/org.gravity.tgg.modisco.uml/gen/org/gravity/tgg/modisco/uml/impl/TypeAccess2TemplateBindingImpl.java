@@ -162,14 +162,14 @@ public class TypeAccess2TemplateBindingImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class TypeAccess2TemplateBindingImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
-			setSource((TypeAccess) newValue);
-			return;
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
-			setTarget((TemplateBinding) newValue);
-			return;
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
+				setSource((TypeAccess) newValue);
+				return;
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
+				setTarget((TemplateBinding) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class TypeAccess2TemplateBindingImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
-			setSource((TypeAccess) null);
-			return;
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
-			setTarget((TemplateBinding) null);
-			return;
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
+				setSource((TypeAccess) null);
+				return;
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
+				setTarget((TemplateBinding) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class TypeAccess2TemplateBindingImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
-			return source != null;
-		case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
-			return target != null;
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__SOURCE:
+				return source != null;
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -162,14 +162,14 @@ public class ModelToTypeGraphImpl extends AbstractCorrespondenceImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class ModelToTypeGraphImpl extends AbstractCorrespondenceImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
-			setSource((Model) newValue);
-			return;
-		case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
-			setTarget((TypeGraph) newValue);
-			return;
+			case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
+				setSource((Model) newValue);
+				return;
+			case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
+				setTarget((TypeGraph) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class ModelToTypeGraphImpl extends AbstractCorrespondenceImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
-			setSource((Model) null);
-			return;
-		case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
-			setTarget((TypeGraph) null);
-			return;
+			case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
+				setSource((Model) null);
+				return;
+			case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
+				setTarget((TypeGraph) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class ModelToTypeGraphImpl extends AbstractCorrespondenceImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
-			return source != null;
-		case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
-			return target != null;
+			case PmPackage.MODEL_TO_TYPE_GRAPH__SOURCE:
+				return source != null;
+			case PmPackage.MODEL_TO_TYPE_GRAPH__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

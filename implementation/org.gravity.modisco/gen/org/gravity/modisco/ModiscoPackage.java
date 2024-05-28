@@ -1740,13 +1740,13 @@ public interface ModiscoPackage extends EPackage {
 	int MENTRY__TYPE = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>All Parameter Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENTRY__PARAMETERS = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
+	int MENTRY__ALL_PARAMETER_INSTANCES = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>MEntry</em>' class.
@@ -4106,15 +4106,15 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMEntry_Type();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.gravity.modisco.MEntry#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.modisco.MEntry#getAllParameterInstances <em>All Parameter Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Parameters</em>'.
-	 * @see org.gravity.modisco.MEntry#getParameters()
+	 * @return the meta object for the reference list '<em>All Parameter Instances</em>'.
+	 * @see org.gravity.modisco.MEntry#getAllParameterInstances()
 	 * @see #getMEntry()
 	 * @generated
 	 */
-	EReference getMEntry_Parameters();
+	EReference getMEntry_AllParameterInstances();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MGravityModel <em>MGravity Model</em>}'.
@@ -4853,12 +4853,12 @@ public interface ModiscoPackage extends EPackage {
 		EReference MENTRY__TYPE = eINSTANCE.getMEntry_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>All Parameter Instances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MENTRY__PARAMETERS = eINSTANCE.getMEntry_Parameters();
+		EReference MENTRY__ALL_PARAMETER_INSTANCES = eINSTANCE.getMEntry_AllParameterInstances();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MGravityModelImpl <em>MGravity Model</em>}' class.

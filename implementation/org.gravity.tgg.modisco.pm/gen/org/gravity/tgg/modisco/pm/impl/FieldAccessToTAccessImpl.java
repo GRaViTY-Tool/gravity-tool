@@ -162,14 +162,14 @@ public class FieldAccessToTAccessImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class FieldAccessToTAccessImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
-			setSource((FieldAccess) newValue);
-			return;
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
-			setTarget((TAccess) newValue);
-			return;
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
+				setSource((FieldAccess) newValue);
+				return;
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
+				setTarget((TAccess) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class FieldAccessToTAccessImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
-			setSource((FieldAccess) null);
-			return;
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
-			setTarget((TAccess) null);
-			return;
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
+				setSource((FieldAccess) null);
+				return;
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
+				setTarget((TAccess) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class FieldAccessToTAccessImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
-			return source != null;
-		case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
-			return target != null;
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__SOURCE:
+				return source != null;
+			case PmPackage.FIELD_ACCESS_TO_TACCESS__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

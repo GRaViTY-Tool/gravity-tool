@@ -162,14 +162,14 @@ public class Expression2CommentImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.EXPRESSION2_COMMENT__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.EXPRESSION2_COMMENT__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Expression2CommentImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
-			setSource((Expression) newValue);
-			return;
-		case UmlPackage.EXPRESSION2_COMMENT__TARGET:
-			setTarget((Comment) newValue);
-			return;
+			case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
+				setSource((Expression) newValue);
+				return;
+			case UmlPackage.EXPRESSION2_COMMENT__TARGET:
+				setTarget((Comment) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Expression2CommentImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
-			setSource((Expression) null);
-			return;
-		case UmlPackage.EXPRESSION2_COMMENT__TARGET:
-			setTarget((Comment) null);
-			return;
+			case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
+				setSource((Expression) null);
+				return;
+			case UmlPackage.EXPRESSION2_COMMENT__TARGET:
+				setTarget((Comment) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Expression2CommentImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
-			return source != null;
-		case UmlPackage.EXPRESSION2_COMMENT__TARGET:
-			return target != null;
+			case UmlPackage.EXPRESSION2_COMMENT__SOURCE:
+				return source != null;
+			case UmlPackage.EXPRESSION2_COMMENT__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

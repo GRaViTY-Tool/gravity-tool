@@ -248,8 +248,8 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge md2o__feature____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge md2o__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge jPackage__bodyDeclaration____orphanTypes = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
@@ -707,7 +707,7 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_679(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1062(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
 				.pattern_OrphandedPrimitive2PrimitiveType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,7 +767,7 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_728(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1168(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
 				.pattern_OrphandedPrimitive2PrimitiveType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1155,100 +1155,101 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD__MATCH_MODEL_PRIMITIVETYPE:
-			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(PrimitiveType) arguments.get(2));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_PRIMITIVETYPE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(PrimitiveType) arguments.get(2));
-			return null;
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_PRIMITIVETYPE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(PrimitiveType) arguments.get(2));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_ASTNODE2ELEMENT_JAVAMODEL2UMLPACKAGE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2), (Model) arguments.get(3),
-					(PrimitiveType) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(JavaModel2UMLPackage) arguments.get(6));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD__MATCH_PACKAGE_PRIMITIVETYPE:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PACKAGE_PRIMITIVETYPE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2));
-			return null;
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PACKAGE_PRIMITIVETYPE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_ASTNODE2ELEMENT_JAVAMODEL2UMLPACKAGE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2), (Model) arguments.get(3),
-					(PrimitiveType) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(JavaModel2UMLPackage) arguments.get(6));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_679__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_679((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_728__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_728((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Package) arguments.get(0),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(1), (Model) arguments.get(2),
-					(PrimitiveType) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_DEC_FWD__MODEL_PRIMITIVETYPE:
-			return checkDEC_FWD((Model) arguments.get(0), (PrimitiveType) arguments.get(1));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_DEC_BWD__PACKAGE_PRIMITIVETYPE:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Package) arguments.get(0),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(1));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAMODEL2UMLPACKAGE_ASTNODE2ELEMENT:
-			return generateModel((RuleEntryContainer) arguments.get(0), (JavaModel2UMLPackage) arguments.get(1),
-					(ASTNode2Element) arguments.get(2));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_ASTNODE2ELEMENT_JAVAMODEL2UMLPACKAGE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2), (Model) arguments.get(3),
-					(PrimitiveType) arguments.get(4), (ASTNode2Element) arguments.get(5),
-					(JavaModel2UMLPackage) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
-		case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD__MATCH_MODEL_PRIMITIVETYPE:
+				return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+						(PrimitiveType) arguments.get(2));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_PRIMITIVETYPE:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+						(PrimitiveType) arguments.get(2));
+				return null;
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_PRIMITIVETYPE:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+						(PrimitiveType) arguments.get(2));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_ASTNODE2ELEMENT_JAVAMODEL2UMLPACKAGE:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Package) arguments.get(1),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2), (Model) arguments.get(3),
+						(PrimitiveType) arguments.get(4), (ASTNode2Element) arguments.get(5),
+						(JavaModel2UMLPackage) arguments.get(6));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD__MATCH_PACKAGE_PRIMITIVETYPE:
+				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PACKAGE_PRIMITIVETYPE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2));
+				return null;
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PACKAGE_PRIMITIVETYPE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
+						(org.eclipse.uml2.uml.Package) arguments.get(1),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_ASTNODE2ELEMENT_JAVAMODEL2UMLPACKAGE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Package) arguments.get(1),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2), (Model) arguments.get(3),
+						(PrimitiveType) arguments.get(4), (ASTNode2Element) arguments.get(5),
+						(JavaModel2UMLPackage) arguments.get(6));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1062__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1062((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1168__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1168((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Package) arguments.get(0),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(1), (Model) arguments.get(2),
+						(PrimitiveType) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_DEC_FWD__MODEL_PRIMITIVETYPE:
+				return checkDEC_FWD((Model) arguments.get(0), (PrimitiveType) arguments.get(1));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_DEC_BWD__PACKAGE_PRIMITIVETYPE:
+				return checkDEC_BWD((org.eclipse.uml2.uml.Package) arguments.get(0),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(1));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAMODEL2UMLPACKAGE_ASTNODE2ELEMENT:
+				return generateModel((RuleEntryContainer) arguments.get(0), (JavaModel2UMLPackage) arguments.get(1),
+						(ASTNode2Element) arguments.get(2));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PRIMITIVETYPE_MODEL_PRIMITIVETYPE_ASTNODE2ELEMENT_JAVAMODEL2UMLPACKAGE_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Package) arguments.get(1),
+						(org.eclipse.uml2.uml.PrimitiveType) arguments.get(2), (Model) arguments.get(3),
+						(PrimitiveType) arguments.get(4), (ASTNode2Element) arguments.get(5),
+						(JavaModel2UMLPackage) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1598,8 +1599,8 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (feature.equals(md2o.getTarget())) {
 			if (bodyDeclaration.equals(md2o.getSource())) {
-				if (umlPackage.equals(jp2up.getTarget())) {
-					if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
+				if (jPackage.getOrphanTypes().contains(bodyDeclaration)) {
+					if (umlPackage.equals(jp2up.getTarget())) {
 						if (jPackage.equals(jp2up.getSource())) {
 							String umlPackage_name = umlPackage.getName();
 							if (umlPackage_name.equals("Common Java datatypes")) {
@@ -1621,13 +1622,13 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge md2o__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge md2o__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__bodyDeclaration____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String md2o__feature____target_name_prime = "target";
 		String md2o__bodyDeclaration____source_name_prime = "source";
-		String jp2up__umlPackage____target_name_prime = "target";
 		String jPackage__bodyDeclaration____orphanTypes_name_prime = "orphanTypes";
+		String jp2up__umlPackage____target_name_prime = "target";
 		String jp2up__jPackage____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(umlPackage);
 		isApplicableMatch.getAllContextElements().add(feature);
@@ -1641,23 +1642,23 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 		md2o__bodyDeclaration____source.setSrc(md2o);
 		md2o__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(md2o__bodyDeclaration____source);
-		jp2up__umlPackage____target.setSrc(jp2up);
-		jp2up__umlPackage____target.setTrg(umlPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jPackage__bodyDeclaration____orphanTypes.setSrc(jPackage);
 		jPackage__bodyDeclaration____orphanTypes.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____orphanTypes);
+		jp2up__umlPackage____target.setSrc(jp2up);
+		jp2up__umlPackage____target.setTrg(umlPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jp2up__jPackage____source.setSrc(jp2up);
 		jp2up__jPackage____source.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
 		md2o__feature____target.setName(md2o__feature____target_name_prime);
 		md2o__bodyDeclaration____source.setName(md2o__bodyDeclaration____source_name_prime);
-		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jPackage__bodyDeclaration____orphanTypes.setName(jPackage__bodyDeclaration____orphanTypes_name_prime);
+		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
 		return new Object[] { umlPackage, feature, jPackage, bodyDeclaration, md2o, jp2up, isApplicableMatch,
-				md2o__feature____target, md2o__bodyDeclaration____source, jp2up__umlPackage____target,
-				jPackage__bodyDeclaration____orphanTypes, jp2up__jPackage____source };
+				md2o__feature____target, md2o__bodyDeclaration____source, jPackage__bodyDeclaration____orphanTypes,
+				jp2up__umlPackage____target, jp2up__jPackage____source };
 	}
 
 	public static final Object[] pattern_OrphandedPrimitive2PrimitiveType_2_4_solveCSP_bindingFBBBBBBBB(

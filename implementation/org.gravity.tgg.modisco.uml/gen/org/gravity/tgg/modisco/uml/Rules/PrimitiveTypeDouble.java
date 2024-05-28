@@ -200,7 +200,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_33(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_54(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface PrimitiveTypeDouble extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_PrimitiveTypeDouble_3(org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
+	EObjectContainer isAppropriate_FWD_PrimitiveTypeDouble_6(org.eclipse.modisco.java.PrimitiveTypeDouble jpt);
 
 	/**
 	 * <!-- begin-user-doc -->

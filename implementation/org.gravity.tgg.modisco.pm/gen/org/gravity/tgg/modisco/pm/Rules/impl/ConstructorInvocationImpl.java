@@ -199,8 +199,8 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 				invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
@@ -498,8 +498,8 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 				invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement, invocationToTAccess);
 		//nothing EMoflonEdge tMember__tAccess____accessing = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge tAccess__tMember____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mFlowElementToTFlowElement__tAccess____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge invocationToTAccess__invocation____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge invocationToTAccess__tAccess____target = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge mFlowElementToTFlowElement__invocation____source = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mMember__invocation____mMethodInvocations = (EMoflonEdge) result3_green[13];
@@ -698,7 +698,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_639(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_959(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -756,7 +756,7 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_686(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1054(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = ConstructorInvocationImpl
 				.pattern_ConstructorInvocation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1117,90 +1117,92 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD__MATCH_MCONSTRUCTORINVOCATION_MDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MConstructorInvocation) arguments.get(1),
-					(MDefinition) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCONSTRUCTORINVOCATION_MDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MConstructorInvocation) arguments.get(1),
-					(MDefinition) arguments.get(2));
-			return null;
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCONSTRUCTORINVOCATION_MDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MConstructorInvocation) arguments.get(1),
-					(MDefinition) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCONSTRUCTORINVOCATION_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MConstructorInvocation) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
-					(TMember) arguments.get(3), (MDefinition) arguments.get(4));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TCALL:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TCall) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TCALL:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TCall) arguments.get(2));
-			return null;
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TCALL:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TCall) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_TCALL_MDEFINITION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2), (TCall) arguments.get(3),
-					(MDefinition) arguments.get(4));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_639__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_639((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_686__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_686((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_CC__MCONSTRUCTORINVOCATION_TMEMBER_TCALL_MDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MConstructorInvocation) arguments.get(0), (TMember) arguments.get(1),
-					(TCall) arguments.get(2), (MDefinition) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_DEC_FWD__MCONSTRUCTORINVOCATION_MDEFINITION:
-			return checkDEC_FWD((MConstructorInvocation) arguments.get(0), (MDefinition) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_DEC_BWD__TMEMBER_TCALL:
-			return checkDEC_BWD((TMember) arguments.get(0), (TCall) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
-			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2), (MDefinition) arguments.get(3),
-					(ModelgeneratorRuleResult) arguments.get(4));
-		case RulesPackage.CONSTRUCTOR_INVOCATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD__MATCH_MCONSTRUCTORINVOCATION_MDEFINITION:
+				return isAppropriate_FWD((Match) arguments.get(0), (MConstructorInvocation) arguments.get(1),
+						(MDefinition) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCONSTRUCTORINVOCATION_MDEFINITION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MConstructorInvocation) arguments.get(1),
+						(MDefinition) arguments.get(2));
+				return null;
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCONSTRUCTORINVOCATION_MDEFINITION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MConstructorInvocation) arguments.get(1),
+						(MDefinition) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCONSTRUCTORINVOCATION_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MConstructorInvocation) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
+						(TMember) arguments.get(3), (MDefinition) arguments.get(4));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TCALL:
+				return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+						(TCall) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TCALL:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+						(TCall) arguments.get(2));
+				return null;
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TCALL:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+						(TCall) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_TCALL_MDEFINITION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2), (TCall) arguments.get(3),
+						(MDefinition) arguments.get(4));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_959__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_959((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1054__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1054((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_SOLVE_CSP_CC__MCONSTRUCTORINVOCATION_TMEMBER_TCALL_MDEFINITION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((MConstructorInvocation) arguments.get(0), (TMember) arguments.get(1),
+						(TCall) arguments.get(2), (MDefinition) arguments.get(3), (Match) arguments.get(4),
+						(Match) arguments.get(5));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_DEC_FWD__MCONSTRUCTORINVOCATION_MDEFINITION:
+				return checkDEC_FWD((MConstructorInvocation) arguments.get(0), (MDefinition) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___CHECK_DEC_BWD__TMEMBER_TCALL:
+				return checkDEC_BWD((TMember) arguments.get(0), (TCall) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
+				return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_TMEMBER_MDEFINITION_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(MDefinitionToTMember) arguments.get(1), (TMember) arguments.get(2),
+						(MDefinition) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+			case RulesPackage.CONSTRUCTOR_INVOCATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1450,16 +1452,16 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorInvocation";
 		String tMember__tAccess____accessing_name_prime = "accessing";
 		String tAccess__tMember____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
+		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
@@ -1469,12 +1471,12 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		tAccess__tMember____source.setSrc(tAccess);
 		tAccess__tMember____source.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(tAccess__tMember____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__tAccess____target);
@@ -1487,15 +1489,15 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
 		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
-		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
+		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
-				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__invocation____source,
 				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
 				mMember__invocation____mMethodInvocations };
 	}
@@ -1952,16 +1954,16 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 			EObject mFlowElementToTFlowElement, EObject invocationToTAccess) {
 		EMoflonEdge tMember__tAccess____accessing = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAccess__tMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge invocationToTAccess__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge invocationToTAccess__tAccess____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mFlowElementToTFlowElement__invocation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__invocation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorInvocation";
 		String tMember__tAccess____accessing_name_prime = "accessing";
 		String tAccess__tMember____source_name_prime = "source";
-		String invocationToTAccess__invocation____source_name_prime = "source";
 		String mFlowElementToTFlowElement__tAccess____target_name_prime = "target";
+		String invocationToTAccess__invocation____source_name_prime = "source";
 		String invocationToTAccess__tAccess____target_name_prime = "target";
 		String mFlowElementToTFlowElement__invocation____source_name_prime = "source";
 		String mMember__invocation____mMethodInvocations_name_prime = "mMethodInvocations";
@@ -1971,12 +1973,12 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		tAccess__tMember____source.setSrc(tAccess);
 		tAccess__tMember____source.setTrg(tMember);
 		ruleresult.getTranslatedEdges().add(tAccess__tMember____source);
-		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
-		invocationToTAccess__invocation____source.setTrg(invocation);
-		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		mFlowElementToTFlowElement__tAccess____target.setSrc(mFlowElementToTFlowElement);
 		mFlowElementToTFlowElement__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(mFlowElementToTFlowElement__tAccess____target);
+		invocationToTAccess__invocation____source.setSrc(invocationToTAccess);
+		invocationToTAccess__invocation____source.setTrg(invocation);
+		ruleresult.getCreatedEdges().add(invocationToTAccess__invocation____source);
 		invocationToTAccess__tAccess____target.setSrc(invocationToTAccess);
 		invocationToTAccess__tAccess____target.setTrg(tAccess);
 		ruleresult.getCreatedEdges().add(invocationToTAccess__tAccess____target);
@@ -1989,15 +1991,15 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		tMember__tAccess____accessing.setName(tMember__tAccess____accessing_name_prime);
 		tAccess__tMember____source.setName(tAccess__tMember____source_name_prime);
-		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		mFlowElementToTFlowElement__tAccess____target.setName(mFlowElementToTFlowElement__tAccess____target_name_prime);
+		invocationToTAccess__invocation____source.setName(invocationToTAccess__invocation____source_name_prime);
 		invocationToTAccess__tAccess____target.setName(invocationToTAccess__tAccess____target_name_prime);
 		mFlowElementToTFlowElement__invocation____source
 				.setName(mFlowElementToTFlowElement__invocation____source_name_prime);
 		mMember__invocation____mMethodInvocations.setName(mMember__invocation____mMethodInvocations_name_prime);
 		return new Object[] { ruleresult, invocation, tMember, tAccess, mMember, mFlowElementToTFlowElement,
 				invocationToTAccess, tMember__tAccess____accessing, tAccess__tMember____source,
-				invocationToTAccess__invocation____source, mFlowElementToTFlowElement__tAccess____target,
+				mFlowElementToTFlowElement__tAccess____target, invocationToTAccess__invocation____source,
 				invocationToTAccess__tAccess____target, mFlowElementToTFlowElement__invocation____source,
 				mMember__invocation____mMethodInvocations };
 	}
@@ -2382,9 +2384,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_21_2_testcorematchandDECs_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_806417 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_803888 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_806417)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_803888)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2629,9 +2631,9 @@ public class ConstructorInvocationImpl extends AbstractRuleImpl implements Const
 
 	public static final Object[] pattern_ConstructorInvocation_27_1_matchtggpattern_black_nac_0BB(
 			MConstructorInvocation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_479977 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_780917 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_479977)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_780917)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

@@ -631,7 +631,7 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Class_6(org.eclipse.uml2.uml.Class feature) {
+	public EObjectContainer isAppropriate_BWD_Class_12(org.eclipse.uml2.uml.Class feature) {
 
 		Object[] result1_bindingAndBlack = ClassDec2ClassImpl
 				.pattern_ClassDec2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -685,7 +685,7 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MClass_3(MClass bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_MClass_6(MClass bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = ClassDec2ClassImpl
 				.pattern_ClassDec2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1088,79 +1088,81 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD__MATCH_MCLASS:
-			return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1));
-			return null;
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASS:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MClass) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.CLASS_DEC2_CLASS___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD__MATCH_CLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-			return null;
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.CLASS_DEC2_CLASS___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_6__CLASS:
-			return isAppropriate_BWD_Class_6((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_3__MCLASS:
-			return isAppropriate_FWD_MClass_3((MClass) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__MCLASS_CLASS_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MClass) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
-					(Match) arguments.get(2), (Match) arguments.get(3));
-		case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___CHECK_DEC_FWD__MCLASS:
-			return checkDEC_FWD((MClass) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___CHECK_DEC_BWD__CLASS:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.CLASS_DEC2_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.CLASS_DEC2_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD__MATCH_MCLASS:
+				return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1));
+				return null;
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASS:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MClass) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.CLASS_DEC2_CLASS___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD__MATCH_CLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+				return null;
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.CLASS_DEC2_CLASS___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_BWD_CLASS_12__CLASS:
+				return isAppropriate_BWD_Class_12((org.eclipse.uml2.uml.Class) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPROPRIATE_FWD_MCLASS_6__MCLASS:
+				return isAppropriate_FWD_MClass_6((MClass) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__MCLASS_CLASS_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((MClass) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (Match) arguments.get(2),
+						(Match) arguments.get(3));
+			case RulesPackage.CLASS_DEC2_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___CHECK_DEC_FWD__MCLASS:
+				return checkDEC_FWD((MClass) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___CHECK_DEC_BWD__CLASS:
+				return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.CLASS_DEC2_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.CLASS_DEC2_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1960,8 +1962,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_21_2_testcorematchandDECs_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_404955 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_404955 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_320371 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_320371 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2163,8 +2165,8 @@ public class ClassDec2ClassImpl extends AbstractRuleImpl implements ClassDec2Cla
 	}
 
 	public static final Object[] pattern_ClassDec2Class_27_1_matchtggpattern_black_nac_0B(MClass bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_596053 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_596053 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_554213 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_554213 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

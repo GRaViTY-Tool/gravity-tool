@@ -97,9 +97,9 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation feature,
 			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element c2c, InterfaceDeclaration classDec,
-			Interface umlClass, Operation feature);
+			ASTNode2Element bd2ne, Interface umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject bodyDeclaration, EObject c2c,
-			EObject classDec, EObject umlClass, EObject feature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject c2c,
+			EObject classDec, EObject bd2ne, EObject umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Interface umlClass, Operation feature);
+	boolean isAppropriate_BWD(Match match, Operation feature, Interface umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Interface umlClass, Operation feature);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, Interface umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +164,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Interface umlClass, Operation feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Interface umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +180,9 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
 			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element c2c, InterfaceDeclaration classDec,
-			Interface umlClass, Operation feature);
+			ASTNode2Element bd2ne, Interface umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject bodyDeclaration, EObject c2c,
-			EObject classDec, EObject umlClass, EObject feature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject c2c,
+			EObject classDec, EObject bd2ne, EObject umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_683(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1040(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_732(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1139(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MAbstractMethodDefinition bodyDeclaration, InterfaceDeclaration classDec,
-			Interface umlClass, Operation feature, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Operation feature, MAbstractMethodDefinition bodyDeclaration,
+			InterfaceDeclaration classDec, Interface umlClass, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,7 +280,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Interface umlClass, Operation feature);
+	boolean checkDEC_BWD(Operation feature, Interface umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,9 +297,9 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
 			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element c2c, InterfaceDeclaration classDec,
-			Interface umlClass, Operation feature, ModelgeneratorRuleResult ruleResult);
+			ASTNode2Element bd2ne, Interface umlClass, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

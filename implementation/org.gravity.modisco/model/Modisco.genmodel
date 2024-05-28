@@ -55,7 +55,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/mNext"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/mPrevious"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/allParameterInstances"/>
     </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MGravityModel">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MGravityModel/mFieldDefinitions"/>

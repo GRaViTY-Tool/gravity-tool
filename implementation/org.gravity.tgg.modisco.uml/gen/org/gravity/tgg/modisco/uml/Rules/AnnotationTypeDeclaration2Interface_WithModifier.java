@@ -206,7 +206,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Interface_14(Interface feature);
+	EObjectContainer isAppropriate_BWD_Interface_25(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface AnnotationTypeDeclaration2Interface_WithModifier extends EObjec
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_755(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1144(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

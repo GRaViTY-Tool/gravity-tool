@@ -46,7 +46,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MAbstractMethodDefinition bodyDeclaration, ClassDeclaration classDec);
+	boolean isAppropriate_FWD(Match match, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MAbstractMethodDefinition bodyDeclaration, ClassDeclaration classDec);
+	void registerObjectsToMatch_FWD(Match match, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MAbstractMethodDefinition bodyDeclaration, ClassDeclaration classDec);
+	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,9 +94,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
-			ASTNode2Element bd2ne, Operation feature, ASTNode2Element c2c, MAbstractMethodDefinition bodyDeclaration,
-			ClassDeclaration classDec);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, ASTNode2Element c2c,
+			Operation feature, ASTNode2Element bd2ne, MAbstractMethodDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject umlClass, EObject bd2ne, EObject feature,
-			EObject c2c, EObject bodyDeclaration, EObject classDec);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject classDec, EObject c2c, EObject feature,
+			EObject bd2ne, EObject bodyDeclaration, EObject umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class umlClass, Operation feature);
+	boolean isAppropriate_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class umlClass, Operation feature);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class umlClass, Operation feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,9 +177,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
-			ASTNode2Element bd2ne, Operation feature, ASTNode2Element c2c, MAbstractMethodDefinition bodyDeclaration,
-			ClassDeclaration classDec);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, ASTNode2Element c2c,
+			Operation feature, ASTNode2Element bd2ne, MAbstractMethodDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject umlClass, EObject bd2ne, EObject feature,
-			EObject c2c, EObject bodyDeclaration, EObject classDec);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject classDec, EObject c2c, EObject feature,
+			EObject bd2ne, EObject bodyDeclaration, EObject umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_706(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1034(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_761(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1132(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +252,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class umlClass, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ClassDeclaration classDec, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(ClassDeclaration classDec, Operation feature,
+			MAbstractMethodDefinition bodyDeclaration, org.eclipse.uml2.uml.Class umlClass, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,7 +270,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MAbstractMethodDefinition bodyDeclaration, ClassDeclaration classDec);
+	boolean checkDEC_FWD(ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,7 +278,7 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(org.eclipse.uml2.uml.Class umlClass, Operation feature);
+	boolean checkDEC_BWD(Operation feature, org.eclipse.uml2.uml.Class umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,9 +295,9 @@ public interface OperationInClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class umlClass,
-			ASTNode2Element bd2ne, Operation feature, ASTNode2Element c2c, MAbstractMethodDefinition bodyDeclaration,
-			ClassDeclaration classDec, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration classDec, ASTNode2Element c2c,
+			Operation feature, ASTNode2Element bd2ne, MAbstractMethodDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class umlClass, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

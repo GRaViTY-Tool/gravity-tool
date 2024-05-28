@@ -107,8 +107,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject comment, EObject feature,
-			EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject comment, EObject bodyDeclaration, EObject b2e,
+			EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,8 +188,8 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject comment, EObject feature,
-			EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject comment, EObject bodyDeclaration, EObject b2e,
+			EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +205,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MConstructorDefinition_3(MConstructorDefinition bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_MConstructorDefinition_6(MConstructorDefinition bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_673(EMoflonEdge _edge_annotatedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1047(EMoflonEdge _edge_annotatedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,7 +245,7 @@ public interface ConstructorDec2Operation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Comment comment, Operation feature, MConstructorDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Comment comment, MConstructorDefinition bodyDeclaration, Operation feature,
 			Match sourceMatch, Match targetMatch);
 
 	/**

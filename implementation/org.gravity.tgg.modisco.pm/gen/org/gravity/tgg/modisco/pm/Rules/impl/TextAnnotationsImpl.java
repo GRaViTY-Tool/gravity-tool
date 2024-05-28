@@ -99,46 +99,46 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, LineComment mComment, MDefinition mMember) {
+	public boolean isAppropriate_FWD(Match match, MDefinition mMember, LineComment mComment) {
 
 		Object[] result1_black = TextAnnotationsImpl.pattern_TextAnnotations_0_1_initialbindings_blackBBBB(this, match,
-				mComment, mMember);
+				mMember, mComment);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mComment] = " + mComment + ", " + "[mMember] = " + mMember + ".");
+					+ "[match] = " + match + ", " + "[mMember] = " + mMember + ", " + "[mComment] = " + mComment + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TextAnnotationsImpl
-				.pattern_TextAnnotations_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mComment, mMember);
+				.pattern_TextAnnotations_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mMember, mComment);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mComment] = " + mComment + ", " + "[mMember] = " + mMember + ".");
+					+ "[match] = " + match + ", " + "[mMember] = " + mMember + ", " + "[mComment] = " + mComment + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (TextAnnotationsImpl.pattern_TextAnnotations_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = TextAnnotationsImpl
-					.pattern_TextAnnotations_0_4_collectelementstobetranslated_blackBBB(match, mComment, mMember);
+					.pattern_TextAnnotations_0_4_collectelementstobetranslated_blackBBB(match, mMember, mComment);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mComment] = " + mComment + ", " + "[mMember] = " + mMember + ".");
+						+ "[mMember] = " + mMember + ", " + "[mComment] = " + mComment + ".");
 			}
-			TextAnnotationsImpl.pattern_TextAnnotations_0_4_collectelementstobetranslated_greenBBBF(match, mComment,
-					mMember);
+			TextAnnotationsImpl.pattern_TextAnnotations_0_4_collectelementstobetranslated_greenBBBF(match, mMember,
+					mComment);
 			//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = TextAnnotationsImpl
-					.pattern_TextAnnotations_0_5_collectcontextelements_blackBBB(match, mComment, mMember);
+					.pattern_TextAnnotations_0_5_collectcontextelements_blackBBB(match, mMember, mComment);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mComment] = " + mComment + ", " + "[mMember] = " + mMember + ".");
+						+ "[mMember] = " + mMember + ", " + "[mComment] = " + mComment + ".");
 			}
 			TextAnnotationsImpl.pattern_TextAnnotations_0_5_collectcontextelements_greenBB(match, mMember);
 
 			// 
-			TextAnnotationsImpl.pattern_TextAnnotations_0_6_registerobjectstomatch_expressionBBBB(this, match, mComment,
-					mMember);
+			TextAnnotationsImpl.pattern_TextAnnotations_0_6_registerobjectstomatch_expressionBBBB(this, match, mMember,
+					mComment);
 			return TextAnnotationsImpl.pattern_TextAnnotations_0_7_expressionF();
 		} else {
 			return TextAnnotationsImpl.pattern_TextAnnotations_0_8_expressionF();
@@ -159,46 +159,46 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		LineComment mComment = (LineComment) result1_bindingAndBlack[0];
+		MDefinition mMember = (MDefinition) result1_bindingAndBlack[0];
 		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[1];
-		MDefinition mMember = (MDefinition) result1_bindingAndBlack[2];
-		TMember tMember = (TMember) result1_bindingAndBlack[3];
+		TMember tMember = (TMember) result1_bindingAndBlack[2];
+		LineComment mComment = (LineComment) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = TextAnnotationsImpl
-				.pattern_TextAnnotations_1_1_performtransformation_greenBFBFB(mComment, tMember, csp);
-		LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result1_green[1];
-		TTextAnnotation tText = (TTextAnnotation) result1_green[3];
+				.pattern_TextAnnotations_1_1_performtransformation_greenFBFBB(tMember, mComment, csp);
+		TTextAnnotation tText = (TTextAnnotation) result1_green[0];
+		LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result1_green[2];
 
 		Object[] result2_black = TextAnnotationsImpl
-				.pattern_TextAnnotations_1_2_collecttranslatedelements_blackBBB(mComment, mCommentToTText, tText);
+				.pattern_TextAnnotations_1_2_collecttranslatedelements_blackBBB(tText, mCommentToTText, mComment);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mComment] = " + mComment + ", "
-					+ "[mCommentToTText] = " + mCommentToTText + ", " + "[tText] = " + tText + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tText] = " + tText + ", "
+					+ "[mCommentToTText] = " + mCommentToTText + ", " + "[mComment] = " + mComment + ".");
 		}
 		Object[] result2_green = TextAnnotationsImpl
-				.pattern_TextAnnotations_1_2_collecttranslatedelements_greenFBBB(mComment, mCommentToTText, tText);
+				.pattern_TextAnnotations_1_2_collecttranslatedelements_greenFBBB(tText, mCommentToTText, mComment);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TextAnnotationsImpl.pattern_TextAnnotations_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mComment, mMemberToTMember, mCommentToTText, mMember, tMember, tText);
+				ruleresult, tText, mMember, mMemberToTMember, tMember, mCommentToTText, mComment);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mComment] = " + mComment + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
-					+ "[mCommentToTText] = " + mCommentToTText + ", " + "[mMember] = " + mMember + ", " + "[tMember] = "
-					+ tMember + ", " + "[tText] = " + tText + ".");
+					+ ", " + "[tText] = " + tText + ", " + "[mMember] = " + mMember + ", " + "[mMemberToTMember] = "
+					+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mCommentToTText] = "
+					+ mCommentToTText + ", " + "[mComment] = " + mComment + ".");
 		}
-		TextAnnotationsImpl.pattern_TextAnnotations_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mComment,
-				mCommentToTText, mMember, tMember, tText);
-		//nothing EMoflonEdge mCommentToTText__mComment____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mCommentToTText__tText____target = (EMoflonEdge) result3_green[10];
+		TextAnnotationsImpl.pattern_TextAnnotations_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, tText, mMember,
+				tMember, mCommentToTText, mComment);
+		//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mCommentToTText__tText____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mCommentToTText__mComment____source = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
-		TextAnnotationsImpl.pattern_TextAnnotations_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mComment,
-				mMemberToTMember, mCommentToTText, mMember, tMember, tText);
+		TextAnnotationsImpl.pattern_TextAnnotations_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, tText,
+				mMember, mMemberToTMember, tMember, mCommentToTText, mComment);
 		return TextAnnotationsImpl.pattern_TextAnnotations_1_6_expressionFB(ruleresult);
 	}
 
@@ -226,30 +226,30 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		LineComment mComment = (LineComment) result2_binding[0];
-		MDefinition mMember = (MDefinition) result2_binding[1];
-		for (Object[] result2_black : TextAnnotationsImpl.pattern_TextAnnotations_2_2_corematch_blackBFBFB(mComment,
-				mMember, match)) {
+		MDefinition mMember = (MDefinition) result2_binding[0];
+		LineComment mComment = (LineComment) result2_binding[1];
+		for (Object[] result2_black : TextAnnotationsImpl.pattern_TextAnnotations_2_2_corematch_blackBFFBB(mMember,
+				mComment, match)) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
-			TMember tMember = (TMember) result2_black[3];
+			TMember tMember = (TMember) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : TextAnnotationsImpl
-					.pattern_TextAnnotations_2_3_findcontext_blackBBBB(mComment, mMemberToTMember, mMember, tMember)) {
+			for (Object[] result3_black : TextAnnotationsImpl.pattern_TextAnnotations_2_3_findcontext_blackBBBB(mMember,
+					mMemberToTMember, tMember, mComment)) {
 				Object[] result3_green = TextAnnotationsImpl.pattern_TextAnnotations_2_3_findcontext_greenBBBBFFFF(
-						mComment, mMemberToTMember, mMember, tMember);
+						mMember, mMemberToTMember, tMember, mComment);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = TextAnnotationsImpl
-						.pattern_TextAnnotations_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mComment,
-								mMemberToTMember, mMember, tMember);
+						.pattern_TextAnnotations_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mMember,
+								mMemberToTMember, tMember, mComment);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mComment] = " + mComment + ", "
-							+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[mMember] = " + mMember + ", "
-							+ "[tMember] = " + tMember + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
+							+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tMember] = " + tMember + ", "
+							+ "[mComment] = " + mComment + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -278,9 +278,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, LineComment mComment, MDefinition mMember) {
-		match.registerObject("mComment", mComment);
+	public void registerObjectsToMatch_FWD(Match match, MDefinition mMember, LineComment mComment) {
 		match.registerObject("mMember", mMember);
+		match.registerObject("mComment", mComment);
 
 	}
 
@@ -289,7 +289,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, LineComment mComment, MDefinition mMember) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mMember, LineComment mComment) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -318,8 +318,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, LineComment mComment,
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, LineComment mComment) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -344,10 +344,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		eq.solve(var_mComment_content, var_tText_text);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mComment", mComment);
-		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("mMember", mMember);
+		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("tMember", tMember);
+		isApplicableMatch.registerObject("mComment", mComment);
 		return csp;
 	}
 
@@ -365,14 +365,14 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mComment, EObject mMemberToTMember,
-			EObject mCommentToTText, EObject mMember, EObject tMember, EObject tText) {
-		ruleresult.registerObject("mComment", mComment);
-		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
-		ruleresult.registerObject("mCommentToTText", mCommentToTText);
-		ruleresult.registerObject("mMember", mMember);
-		ruleresult.registerObject("tMember", tMember);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tText, EObject mMember,
+			EObject mMemberToTMember, EObject tMember, EObject mCommentToTText, EObject mComment) {
 		ruleresult.registerObject("tText", tText);
+		ruleresult.registerObject("mMember", mMember);
+		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
+		ruleresult.registerObject("tMember", tMember);
+		ruleresult.registerObject("mCommentToTText", mCommentToTText);
+		ruleresult.registerObject("mComment", mComment);
 
 	}
 
@@ -391,47 +391,47 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TMember tMember, TTextAnnotation tText) {
+	public boolean isAppropriate_BWD(Match match, TTextAnnotation tText, TMember tMember) {
 
 		Object[] result1_black = TextAnnotationsImpl.pattern_TextAnnotations_10_1_initialbindings_blackBBBB(this, match,
-				tMember, tText);
+				tText, tMember);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tText] = " + tText + ".");
+					+ "[match] = " + match + ", " + "[tText] = " + tText + ", " + "[tMember] = " + tMember + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TextAnnotationsImpl
-				.pattern_TextAnnotations_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tMember, tText);
+				.pattern_TextAnnotations_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, tText, tMember);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tMember] = " + tMember + ", " + "[tText] = " + tText + ".");
+					+ "[match] = " + match + ", " + "[tText] = " + tText + ", " + "[tMember] = " + tMember + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (TextAnnotationsImpl.pattern_TextAnnotations_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = TextAnnotationsImpl
-					.pattern_TextAnnotations_10_4_collectelementstobetranslated_blackBBB(match, tMember, tText);
+					.pattern_TextAnnotations_10_4_collectelementstobetranslated_blackBBB(match, tText, tMember);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tMember] = " + tMember + ", " + "[tText] = " + tText + ".");
+						+ "[tText] = " + tText + ", " + "[tMember] = " + tMember + ".");
 			}
-			TextAnnotationsImpl.pattern_TextAnnotations_10_4_collectelementstobetranslated_greenBBBFF(match, tMember,
-					tText);
+			TextAnnotationsImpl.pattern_TextAnnotations_10_4_collectelementstobetranslated_greenBBBFF(match, tText,
+					tMember);
 			//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = TextAnnotationsImpl
-					.pattern_TextAnnotations_10_5_collectcontextelements_blackBBB(match, tMember, tText);
+					.pattern_TextAnnotations_10_5_collectcontextelements_blackBBB(match, tText, tMember);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tMember] = " + tMember + ", " + "[tText] = " + tText + ".");
+						+ "[tText] = " + tText + ", " + "[tMember] = " + tMember + ".");
 			}
 			TextAnnotationsImpl.pattern_TextAnnotations_10_5_collectcontextelements_greenBB(match, tMember);
 
 			// 
-			TextAnnotationsImpl.pattern_TextAnnotations_10_6_registerobjectstomatch_expressionBBBB(this, match, tMember,
-					tText);
+			TextAnnotationsImpl.pattern_TextAnnotations_10_6_registerobjectstomatch_expressionBBBB(this, match, tText,
+					tMember);
 			return TextAnnotationsImpl.pattern_TextAnnotations_10_7_expressionF();
 		} else {
 			return TextAnnotationsImpl.pattern_TextAnnotations_10_8_expressionF();
@@ -452,46 +452,46 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
+		TTextAnnotation tText = (TTextAnnotation) result1_bindingAndBlack[0];
 		MDefinition mMember = (MDefinition) result1_bindingAndBlack[1];
-		TMember tMember = (TMember) result1_bindingAndBlack[2];
-		TTextAnnotation tText = (TTextAnnotation) result1_bindingAndBlack[3];
+		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[2];
+		TMember tMember = (TMember) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = TextAnnotationsImpl
-				.pattern_TextAnnotations_11_1_performtransformation_greenFFBBB(mMember, tText, csp);
-		LineComment mComment = (LineComment) result1_green[0];
-		LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result1_green[1];
+				.pattern_TextAnnotations_11_1_performtransformation_greenBBFFB(tText, mMember, csp);
+		LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result1_green[2];
+		LineComment mComment = (LineComment) result1_green[3];
 
 		Object[] result2_black = TextAnnotationsImpl
-				.pattern_TextAnnotations_11_2_collecttranslatedelements_blackBBB(mComment, mCommentToTText, tText);
+				.pattern_TextAnnotations_11_2_collecttranslatedelements_blackBBB(tText, mCommentToTText, mComment);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mComment] = " + mComment + ", "
-					+ "[mCommentToTText] = " + mCommentToTText + ", " + "[tText] = " + tText + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tText] = " + tText + ", "
+					+ "[mCommentToTText] = " + mCommentToTText + ", " + "[mComment] = " + mComment + ".");
 		}
 		Object[] result2_green = TextAnnotationsImpl
-				.pattern_TextAnnotations_11_2_collecttranslatedelements_greenFBBB(mComment, mCommentToTText, tText);
+				.pattern_TextAnnotations_11_2_collecttranslatedelements_greenFBBB(tText, mCommentToTText, mComment);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TextAnnotationsImpl.pattern_TextAnnotations_11_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mComment, mMemberToTMember, mCommentToTText, mMember, tMember, tText);
+				ruleresult, tText, mMember, mMemberToTMember, tMember, mCommentToTText, mComment);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mComment] = " + mComment + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
-					+ "[mCommentToTText] = " + mCommentToTText + ", " + "[mMember] = " + mMember + ", " + "[tMember] = "
-					+ tMember + ", " + "[tText] = " + tText + ".");
+					+ ", " + "[tText] = " + tText + ", " + "[mMember] = " + mMember + ", " + "[mMemberToTMember] = "
+					+ mMemberToTMember + ", " + "[tMember] = " + tMember + ", " + "[mCommentToTText] = "
+					+ mCommentToTText + ", " + "[mComment] = " + mComment + ".");
 		}
-		TextAnnotationsImpl.pattern_TextAnnotations_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mComment,
-				mCommentToTText, mMember, tMember, tText);
-		//nothing EMoflonEdge mCommentToTText__mComment____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mCommentToTText__tText____target = (EMoflonEdge) result3_green[10];
+		TextAnnotationsImpl.pattern_TextAnnotations_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, tText,
+				mMember, tMember, mCommentToTText, mComment);
+		//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mMember__mComment____comments = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mCommentToTText__tText____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mCommentToTText__mComment____source = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
-		TextAnnotationsImpl.pattern_TextAnnotations_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mComment,
-				mMemberToTMember, mCommentToTText, mMember, tMember, tText);
+		TextAnnotationsImpl.pattern_TextAnnotations_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, tText,
+				mMember, mMemberToTMember, tMember, mCommentToTText, mComment);
 		return TextAnnotationsImpl.pattern_TextAnnotations_11_6_expressionFB(ruleresult);
 	}
 
@@ -519,31 +519,31 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TMember tMember = (TMember) result2_binding[0];
-		TTextAnnotation tText = (TTextAnnotation) result2_binding[1];
-		for (Object[] result2_black : TextAnnotationsImpl.pattern_TextAnnotations_12_2_corematch_blackFFBBB(tMember,
-				tText, match)) {
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[0];
+		TTextAnnotation tText = (TTextAnnotation) result2_binding[0];
+		TMember tMember = (TMember) result2_binding[1];
+		for (Object[] result2_black : TextAnnotationsImpl.pattern_TextAnnotations_12_2_corematch_blackBFFBB(tText,
+				tMember, match)) {
 			MDefinition mMember = (MDefinition) result2_black[1];
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : TextAnnotationsImpl
-					.pattern_TextAnnotations_12_3_findcontext_blackBBBB(mMemberToTMember, mMember, tMember, tText)) {
+			for (Object[] result3_black : TextAnnotationsImpl.pattern_TextAnnotations_12_3_findcontext_blackBBBB(tText,
+					mMember, mMemberToTMember, tMember)) {
 				Object[] result3_green = TextAnnotationsImpl.pattern_TextAnnotations_12_3_findcontext_greenBBBBFFFFF(
-						mMemberToTMember, mMember, tMember, tText);
+						tText, mMember, mMemberToTMember, tMember);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tText__tMember____tAnnotated = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge tMember__tText____tAnnotation = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mMemberToTMember__tMember____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mMemberToTMember__mMember____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = TextAnnotationsImpl
-						.pattern_TextAnnotations_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mMemberToTMember, mMember, tMember, tText);
+						.pattern_TextAnnotations_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, tText,
+								mMember, mMemberToTMember, tMember);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMemberToTMember] = "
-							+ mMemberToTMember + ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember
-							+ ", " + "[tText] = " + tText + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tText] = " + tText + ", "
+							+ "[mMember] = " + mMember + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", "
+							+ "[tMember] = " + tMember + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -572,9 +572,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TMember tMember, TTextAnnotation tText) {
-		match.registerObject("tMember", tMember);
+	public void registerObjectsToMatch_BWD(Match match, TTextAnnotation tText, TMember tMember) {
 		match.registerObject("tText", tText);
+		match.registerObject("tMember", tMember);
 
 	}
 
@@ -583,7 +583,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TTextAnnotation tText) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TTextAnnotation tText, TMember tMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -612,8 +612,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember, TTextAnnotation tText) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TTextAnnotation tText,
+			MDefinition mMember, MDefinitionToTMember mMemberToTMember, TMember tMember) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -638,10 +638,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		eq.solve(var_mComment_content, var_tText_text);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
-		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("tText", tText);
+		isApplicableMatch.registerObject("mMember", mMember);
+		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
+		isApplicableMatch.registerObject("tMember", tMember);
 		return csp;
 	}
 
@@ -659,14 +659,14 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mComment, EObject mMemberToTMember,
-			EObject mCommentToTText, EObject mMember, EObject tMember, EObject tText) {
-		ruleresult.registerObject("mComment", mComment);
-		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
-		ruleresult.registerObject("mCommentToTText", mCommentToTText);
-		ruleresult.registerObject("mMember", mMember);
-		ruleresult.registerObject("tMember", tMember);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tText, EObject mMember,
+			EObject mMemberToTMember, EObject tMember, EObject mCommentToTText, EObject mComment) {
 		ruleresult.registerObject("tText", tText);
+		ruleresult.registerObject("mMember", mMember);
+		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
+		ruleresult.registerObject("tMember", tMember);
+		ruleresult.registerObject("mCommentToTText", mCommentToTText);
+		ruleresult.registerObject("mComment", mComment);
 
 	}
 
@@ -685,7 +685,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_615(EMoflonEdge _edge_tAnnotated) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_934(EMoflonEdge _edge_tAnnotated) {
 
 		Object[] result1_bindingAndBlack = TextAnnotationsImpl
 				.pattern_TextAnnotations_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -701,8 +701,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		// ForEach 
 		for (Object[] result2_black : TextAnnotationsImpl
 				.pattern_TextAnnotations_20_2_testcorematchandDECs_blackFFB(_edge_tAnnotated)) {
-			TMember tMember = (TMember) result2_black[0];
-			TTextAnnotation tText = (TTextAnnotation) result2_black[1];
+			TTextAnnotation tText = (TTextAnnotation) result2_black[0];
+			TMember tMember = (TMember) result2_black[1];
 			Object[] result2_green = TextAnnotationsImpl
 					.pattern_TextAnnotations_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -710,7 +710,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			// 
 			if (TextAnnotationsImpl
 					.pattern_TextAnnotations_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this, match,
-							tMember, tText)) {
+							tText, tMember)) {
 				// 
 				if (TextAnnotationsImpl
 						.pattern_TextAnnotations_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -742,7 +742,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_661(EMoflonEdge _edge_comments) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1027(EMoflonEdge _edge_comments) {
 
 		Object[] result1_bindingAndBlack = TextAnnotationsImpl
 				.pattern_TextAnnotations_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -758,8 +758,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		// ForEach 
 		for (Object[] result2_black : TextAnnotationsImpl
 				.pattern_TextAnnotations_21_2_testcorematchandDECs_blackFFB(_edge_comments)) {
-			LineComment mComment = (LineComment) result2_black[0];
-			MDefinition mMember = (MDefinition) result2_black[1];
+			MDefinition mMember = (MDefinition) result2_black[0];
+			LineComment mComment = (LineComment) result2_black[1];
 			Object[] result2_green = TextAnnotationsImpl
 					.pattern_TextAnnotations_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -767,7 +767,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			// 
 			if (TextAnnotationsImpl
 					.pattern_TextAnnotations_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this, match,
-							mComment, mMember)) {
+							mMember, mComment)) {
 				// 
 				if (TextAnnotationsImpl
 						.pattern_TextAnnotations_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -814,13 +814,13 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			return ruleResult;
 		}
 
-		Variable var_tText_text = CSPFactoryHelper.eINSTANCE.createVariable("tText", true, csp);
-		var_tText_text.setValue(__helper.getValue("tText", "text"));
-		var_tText_text.setType("String");
-
 		Variable var_mComment_content = CSPFactoryHelper.eINSTANCE.createVariable("mComment", true, csp);
 		var_mComment_content.setValue(__helper.getValue("mComment", "content"));
 		var_mComment_content.setType("String");
+
+		Variable var_tText_text = CSPFactoryHelper.eINSTANCE.createVariable("tText", true, csp);
+		var_tText_text.setValue(__helper.getValue("tText", "text"));
+		var_tText_text.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -866,13 +866,13 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			return ruleResult;
 		}
 
-		Variable var_tText_text = CSPFactoryHelper.eINSTANCE.createVariable("tText", true, csp);
-		var_tText_text.setValue(__helper.getValue("tText", "text"));
-		var_tText_text.setType("String");
-
 		Variable var_mComment_content = CSPFactoryHelper.eINSTANCE.createVariable("mComment", true, csp);
 		var_mComment_content.setValue(__helper.getValue("mComment", "content"));
 		var_mComment_content.setType("String");
+
+		Variable var_tText_text = CSPFactoryHelper.eINSTANCE.createVariable("tText", true, csp);
+		var_tText_text.setValue(__helper.getValue("tText", "text"));
+		var_tText_text.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -918,40 +918,40 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		LineComment mComment = (LineComment) result2_bindingAndBlack[0];
+		TTextAnnotation tText = (TTextAnnotation) result2_bindingAndBlack[0];
 		MDefinition mMember = (MDefinition) result2_bindingAndBlack[1];
 		TMember tMember = (TMember) result2_bindingAndBlack[2];
-		TTextAnnotation tText = (TTextAnnotation) result2_bindingAndBlack[3];
+		LineComment mComment = (LineComment) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = TextAnnotationsImpl
-				.pattern_TextAnnotations_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mComment, mMember, tMember, tText,
+				.pattern_TextAnnotations_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, tText, mMember, tMember, mComment,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mComment] = " + mComment + ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember
-					+ ", " + "[tText] = " + tText + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[tText] = " + tText + ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", "
+					+ "[mComment] = " + mComment + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (TextAnnotationsImpl.pattern_TextAnnotations_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : TextAnnotationsImpl.pattern_TextAnnotations_24_5_matchcorrcontext_blackFBBBB(
+			for (Object[] result5_black : TextAnnotationsImpl.pattern_TextAnnotations_24_5_matchcorrcontext_blackBFBBB(
 					mMember, tMember, sourceMatch, targetMatch)) {
-				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result5_black[0];
+				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result5_black[1];
 				Object[] result5_green = TextAnnotationsImpl.pattern_TextAnnotations_24_5_matchcorrcontext_greenBBBF(
 						mMemberToTMember, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = TextAnnotationsImpl
-						.pattern_TextAnnotations_24_6_createcorrespondence_blackBBBBB(mComment, mMember, tMember, tText,
+						.pattern_TextAnnotations_24_6_createcorrespondence_blackBBBBB(tText, mMember, tMember, mComment,
 								ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mComment] = " + mComment
-							+ ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", " + "[tText] = "
-							+ tText + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tText] = " + tText + ", "
+							+ "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", " + "[mComment] = "
+							+ mComment + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				TextAnnotationsImpl.pattern_TextAnnotations_24_6_createcorrespondence_greenBFBB(mComment, tText,
+				TextAnnotationsImpl.pattern_TextAnnotations_24_6_createcorrespondence_greenBFBB(tText, mComment,
 						ccMatch);
 				//nothing LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result6_green[1];
 
@@ -975,8 +975,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(LineComment mComment, MDefinition mMember, TMember tMember,
-			TTextAnnotation tText, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TTextAnnotation tText, MDefinition mMember, TMember tMember,
+			LineComment mComment, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1016,9 +1016,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(LineComment mComment, MDefinition mMember) {// 
-		Object[] result1_black = TextAnnotationsImpl.pattern_TextAnnotations_27_1_matchtggpattern_blackBB(mComment,
-				mMember);
+	public boolean checkDEC_FWD(MDefinition mMember, LineComment mComment) {// 
+		Object[] result1_black = TextAnnotationsImpl.pattern_TextAnnotations_27_1_matchtggpattern_blackBB(mMember,
+				mComment);
 		if (result1_black != null) {
 			TextAnnotationsImpl.pattern_TextAnnotations_27_1_matchtggpattern_greenB(mComment);
 
@@ -1034,9 +1034,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TMember tMember, TTextAnnotation tText) {// 
-		Object[] result1_black = TextAnnotationsImpl.pattern_TextAnnotations_28_1_matchtggpattern_blackBB(tMember,
-				tText);
+	public boolean checkDEC_BWD(TTextAnnotation tText, TMember tMember) {// 
+		Object[] result1_black = TextAnnotationsImpl.pattern_TextAnnotations_28_1_matchtggpattern_blackBB(tText,
+				tMember);
 		if (result1_black != null) {
 			return TextAnnotationsImpl.pattern_TextAnnotations_28_2_expressionF();
 		} else {
@@ -1065,39 +1065,39 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		for (Object[] result2_black : TextAnnotationsImpl
 				.pattern_TextAnnotations_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mMemberToTMemberList = (RuleEntryList) result2_black[0];
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
-			MDefinition mMember = (MDefinition) result2_black[2];
+			MDefinition mMember = (MDefinition) result2_black[1];
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[2];
 			TMember tMember = (TMember) result2_black[3];
 
 			Object[] result3_bindingAndBlack = TextAnnotationsImpl
-					.pattern_TextAnnotations_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							mMemberToTMember, mMember, tMember, ruleResult);
+					.pattern_TextAnnotations_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mMember,
+							mMemberToTMember, tMember, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMemberToTMember] = "
-						+ mMemberToTMember + ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMember] = " + mMember + ", "
+						+ "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tMember] = " + tMember + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (TextAnnotationsImpl.pattern_TextAnnotations_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = TextAnnotationsImpl
-						.pattern_TextAnnotations_29_5_checknacs_blackBBB(mMemberToTMember, mMember, tMember);
+				Object[] result5_black = TextAnnotationsImpl.pattern_TextAnnotations_29_5_checknacs_blackBBB(mMember,
+						mMemberToTMember, tMember);
 				if (result5_black != null) {
 
-					Object[] result6_black = TextAnnotationsImpl.pattern_TextAnnotations_29_6_perform_blackBBBB(
-							mMemberToTMember, mMember, tMember, ruleResult);
+					Object[] result6_black = TextAnnotationsImpl.pattern_TextAnnotations_29_6_perform_blackBBBB(mMember,
+							mMemberToTMember, tMember, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMemberToTMember] = "
-								+ mMemberToTMember + ", " + "[mMember] = " + mMember + ", " + "[tMember] = " + tMember
-								+ ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mMember] = "
+								+ mMember + ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[tMember] = "
+								+ tMember + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					TextAnnotationsImpl.pattern_TextAnnotations_29_6_perform_greenFFBBFBB(mMember, tMember, ruleResult,
+					TextAnnotationsImpl.pattern_TextAnnotations_29_6_perform_greenFBBFFBB(mMember, tMember, ruleResult,
 							csp);
-					//nothing LineComment mComment = (LineComment) result6_green[0];
-					//nothing LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result6_green[1];
-					//nothing TTextAnnotation tText = (TTextAnnotation) result6_green[4];
+					//nothing TTextAnnotation tText = (TTextAnnotation) result6_green[0];
+					//nothing LineCommentToTTextAnnotation mCommentToTText = (LineCommentToTTextAnnotation) result6_green[3];
+					//nothing LineComment mComment = (LineComment) result6_green[4];
 
 				} else {
 				}
@@ -1114,8 +1114,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1139,8 +1139,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		eq.solve(var_mComment_content, var_tText_text);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("mMember", mMember);
+		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("tMember", tMember);
 		return csp;
 	}
@@ -1162,107 +1162,107 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_FWD__MATCH_LINECOMMENT_MDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (LineComment) arguments.get(1),
-					(MDefinition) arguments.get(2));
-		case RulesPackage.TEXT_ANNOTATIONS___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_LINECOMMENT_MDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (LineComment) arguments.get(1),
-					(MDefinition) arguments.get(2));
-			return null;
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_LINECOMMENT_MDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (LineComment) arguments.get(1),
-					(MDefinition) arguments.get(2));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_LINECOMMENT_MDEFINITIONTOTMEMBER_MDEFINITION_TMEMBER:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (LineComment) arguments.get(1),
-					(MDefinitionToTMember) arguments.get(2), (MDefinition) arguments.get(3),
-					(TMember) arguments.get(4));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.TEXT_ANNOTATIONS___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TTEXTANNOTATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TTextAnnotation) arguments.get(2));
-		case RulesPackage.TEXT_ANNOTATIONS___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TTEXTANNOTATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TTextAnnotation) arguments.get(2));
-			return null;
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TTEXTANNOTATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TTextAnnotation) arguments.get(2));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MDEFINITION_TMEMBER_TTEXTANNOTATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
-					(TTextAnnotation) arguments.get(4));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.TEXT_ANNOTATIONS___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_615__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_615((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_661__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_661((EMoflonEdge) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_SOLVE_CSP_CC__LINECOMMENT_MDEFINITION_TMEMBER_TTEXTANNOTATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((LineComment) arguments.get(0), (MDefinition) arguments.get(1),
-					(TMember) arguments.get(2), (TTextAnnotation) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
-		case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.TEXT_ANNOTATIONS___CHECK_DEC_FWD__LINECOMMENT_MDEFINITION:
-			return checkDEC_FWD((LineComment) arguments.get(0), (MDefinition) arguments.get(1));
-		case RulesPackage.TEXT_ANNOTATIONS___CHECK_DEC_BWD__TMEMBER_TTEXTANNOTATION:
-			return checkDEC_BWD((TMember) arguments.get(0), (TTextAnnotation) arguments.get(1));
-		case RulesPackage.TEXT_ANNOTATIONS___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
-			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
-		case RulesPackage.TEXT_ANNOTATIONS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MDEFINITION_TMEMBER_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (MDefinition) arguments.get(2), (TMember) arguments.get(3),
-					(ModelgeneratorRuleResult) arguments.get(4));
-		case RulesPackage.TEXT_ANNOTATIONS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_FWD__MATCH_MDEFINITION_LINECOMMENT:
+				return isAppropriate_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+						(LineComment) arguments.get(2));
+			case RulesPackage.TEXT_ANNOTATIONS___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MDEFINITION_LINECOMMENT:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+						(LineComment) arguments.get(2));
+				return null;
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MDEFINITION_LINECOMMENT:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MDefinition) arguments.get(1),
+						(LineComment) arguments.get(2));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITION_MDEFINITIONTOTMEMBER_TMEMBER_LINECOMMENT:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
+						(MDefinitionToTMember) arguments.get(2), (TMember) arguments.get(3),
+						(LineComment) arguments.get(4));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.TEXT_ANNOTATIONS___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_BWD__MATCH_TTEXTANNOTATION_TMEMBER:
+				return isAppropriate_BWD((Match) arguments.get(0), (TTextAnnotation) arguments.get(1),
+						(TMember) arguments.get(2));
+			case RulesPackage.TEXT_ANNOTATIONS___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TTEXTANNOTATION_TMEMBER:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TTextAnnotation) arguments.get(1),
+						(TMember) arguments.get(2));
+				return null;
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TTEXTANNOTATION_TMEMBER:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TTextAnnotation) arguments.get(1),
+						(TMember) arguments.get(2));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TTEXTANNOTATION_MDEFINITION_MDEFINITIONTOTMEMBER_TMEMBER:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(TTextAnnotation) arguments.get(1), (MDefinition) arguments.get(2),
+						(MDefinitionToTMember) arguments.get(3), (TMember) arguments.get(4));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.TEXT_ANNOTATIONS___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_934__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_934((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1027__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1027((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_SOLVE_CSP_CC__TTEXTANNOTATION_MDEFINITION_TMEMBER_LINECOMMENT_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((TTextAnnotation) arguments.get(0), (MDefinition) arguments.get(1),
+						(TMember) arguments.get(2), (LineComment) arguments.get(3), (Match) arguments.get(4),
+						(Match) arguments.get(5));
+			case RulesPackage.TEXT_ANNOTATIONS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.TEXT_ANNOTATIONS___CHECK_DEC_FWD__MDEFINITION_LINECOMMENT:
+				return checkDEC_FWD((MDefinition) arguments.get(0), (LineComment) arguments.get(1));
+			case RulesPackage.TEXT_ANNOTATIONS___CHECK_DEC_BWD__TTEXTANNOTATION_TMEMBER:
+				return checkDEC_BWD((TTextAnnotation) arguments.get(0), (TMember) arguments.get(1));
+			case RulesPackage.TEXT_ANNOTATIONS___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
+				return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
+			case RulesPackage.TEXT_ANNOTATIONS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITION_MDEFINITIONTOTMEMBER_TMEMBER_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MDefinition) arguments.get(1),
+						(MDefinitionToTMember) arguments.get(2), (TMember) arguments.get(3),
+						(ModelgeneratorRuleResult) arguments.get(4));
+			case RulesPackage.TEXT_ANNOTATIONS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_1_initialbindings_blackBBBB(TextAnnotations _this,
-			Match match, LineComment mComment, MDefinition mMember) {
-		return new Object[] { _this, match, mComment, mMember };
+			Match match, MDefinition mMember, LineComment mComment) {
+		return new Object[] { _this, match, mMember, mComment };
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_2_SolveCSP_bindingFBBBB(TextAnnotations _this, Match match,
-			LineComment mComment, MDefinition mMember) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mComment, mMember);
+			MDefinition mMember, LineComment mComment) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mMember, mComment);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mComment, mMember };
+			return new Object[] { csp, _this, match, mMember, mComment };
 		}
 		return null;
 	}
@@ -1272,9 +1272,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_2_SolveCSP_bindingAndBlackFBBBB(TextAnnotations _this,
-			Match match, LineComment mComment, MDefinition mMember) {
+			Match match, MDefinition mMember, LineComment mComment) {
 		Object[] result_pattern_TextAnnotations_0_2_SolveCSP_binding = pattern_TextAnnotations_0_2_SolveCSP_bindingFBBBB(
-				_this, match, mComment, mMember);
+				_this, match, mMember, mComment);
 		if (result_pattern_TextAnnotations_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TextAnnotations_0_2_SolveCSP_binding[0];
 
@@ -1282,7 +1282,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					csp);
 			if (result_pattern_TextAnnotations_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mComment, mMember };
+				return new Object[] { csp, _this, match, mMember, mComment };
 			}
 		}
 		return null;
@@ -1295,12 +1295,12 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_4_collectelementstobetranslated_blackBBB(Match match,
-			LineComment mComment, MDefinition mMember) {
-		return new Object[] { match, mComment, mMember };
+			MDefinition mMember, LineComment mComment) {
+		return new Object[] { match, mMember, mComment };
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_4_collectelementstobetranslated_greenBBBF(Match match,
-			LineComment mComment, MDefinition mMember) {
+			MDefinition mMember, LineComment mComment) {
 		EMoflonEdge mMember__mComment____comments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mComment);
 		String mMember__mComment____comments_name_prime = "comments";
@@ -1308,12 +1308,12 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		mMember__mComment____comments.setTrg(mComment);
 		match.getToBeTranslatedEdges().add(mMember__mComment____comments);
 		mMember__mComment____comments.setName(mMember__mComment____comments_name_prime);
-		return new Object[] { match, mComment, mMember, mMember__mComment____comments };
+		return new Object[] { match, mMember, mComment, mMember__mComment____comments };
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_5_collectcontextelements_blackBBB(Match match,
-			LineComment mComment, MDefinition mMember) {
-		return new Object[] { match, mComment, mMember };
+			MDefinition mMember, LineComment mComment) {
+		return new Object[] { match, mMember, mComment };
 	}
 
 	public static final Object[] pattern_TextAnnotations_0_5_collectcontextelements_greenBB(Match match,
@@ -1323,8 +1323,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final void pattern_TextAnnotations_0_6_registerobjectstomatch_expressionBBBB(TextAnnotations _this,
-			Match match, LineComment mComment, MDefinition mMember) {
-		_this.registerObjectsToMatch_FWD(match, mComment, mMember);
+			Match match, MDefinition mMember, LineComment mComment) {
+		_this.registerObjectsToMatch_FWD(match, mMember, mComment);
 
 	}
 
@@ -1340,23 +1340,23 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 
 	public static final Object[] pattern_TextAnnotations_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mComment");
+		EObject _localVariable_0 = isApplicableMatch.getObject("mMember");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mMemberToTMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
-		EObject tmpMComment = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("tMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mComment");
+		EObject tmpMMember = _localVariable_0;
 		EObject tmpMMemberToTMember = _localVariable_1;
-		EObject tmpMMember = _localVariable_2;
-		EObject tmpTMember = _localVariable_3;
-		if (tmpMComment instanceof LineComment) {
-			LineComment mComment = (LineComment) tmpMComment;
+		EObject tmpTMember = _localVariable_2;
+		EObject tmpMComment = _localVariable_3;
+		if (tmpMMember instanceof MDefinition) {
+			MDefinition mMember = (MDefinition) tmpMMember;
 			if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 				MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-				if (tmpMMember instanceof MDefinition) {
-					MDefinition mMember = (MDefinition) tmpMMember;
-					if (tmpTMember instanceof TMember) {
-						TMember tMember = (TMember) tmpTMember;
-						return new Object[] { mComment, mMemberToTMember, mMember, tMember, isApplicableMatch };
+				if (tmpTMember instanceof TMember) {
+					TMember tMember = (TMember) tmpTMember;
+					if (tmpMComment instanceof LineComment) {
+						LineComment mComment = (LineComment) tmpMComment;
+						return new Object[] { mMember, mMemberToTMember, tMember, mComment, isApplicableMatch };
 					}
 				}
 			}
@@ -1364,13 +1364,13 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return null;
 	}
 
-	public static final Object[] pattern_TextAnnotations_1_1_performtransformation_blackBBBBFBB(LineComment mComment,
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember, TextAnnotations _this,
+	public static final Object[] pattern_TextAnnotations_1_1_performtransformation_blackBBBBFBB(MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, LineComment mComment, TextAnnotations _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mComment, mMemberToTMember, mMember, tMember, csp, _this, isApplicableMatch };
+				return new Object[] { mMember, mMemberToTMember, tMember, mComment, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1381,70 +1381,70 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		Object[] result_pattern_TextAnnotations_1_1_performtransformation_binding = pattern_TextAnnotations_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TextAnnotations_1_1_performtransformation_binding != null) {
-			LineComment mComment = (LineComment) result_pattern_TextAnnotations_1_1_performtransformation_binding[0];
+			MDefinition mMember = (MDefinition) result_pattern_TextAnnotations_1_1_performtransformation_binding[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_TextAnnotations_1_1_performtransformation_binding[1];
-			MDefinition mMember = (MDefinition) result_pattern_TextAnnotations_1_1_performtransformation_binding[2];
-			TMember tMember = (TMember) result_pattern_TextAnnotations_1_1_performtransformation_binding[3];
+			TMember tMember = (TMember) result_pattern_TextAnnotations_1_1_performtransformation_binding[2];
+			LineComment mComment = (LineComment) result_pattern_TextAnnotations_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TextAnnotations_1_1_performtransformation_black = pattern_TextAnnotations_1_1_performtransformation_blackBBBBFBB(
-					mComment, mMemberToTMember, mMember, tMember, _this, isApplicableMatch);
+					mMember, mMemberToTMember, tMember, mComment, _this, isApplicableMatch);
 			if (result_pattern_TextAnnotations_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TextAnnotations_1_1_performtransformation_black[4];
 
-				return new Object[] { mComment, mMemberToTMember, mMember, tMember, csp, _this, isApplicableMatch };
+				return new Object[] { mMember, mMemberToTMember, tMember, mComment, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TextAnnotations_1_1_performtransformation_greenBFBFB(LineComment mComment,
-			TMember tMember, CSP csp) {
-		LineCommentToTTextAnnotation mCommentToTText = PmFactory.eINSTANCE.createLineCommentToTTextAnnotation();
+	public static final Object[] pattern_TextAnnotations_1_1_performtransformation_greenFBFBB(TMember tMember,
+			LineComment mComment, CSP csp) {
 		TTextAnnotation tText = AnnotationsFactory.eINSTANCE.createTTextAnnotation();
+		LineCommentToTTextAnnotation mCommentToTText = PmFactory.eINSTANCE.createLineCommentToTTextAnnotation();
 		Object _localVariable_0 = csp.getValue("tText", "text");
-		mCommentToTText.setSource(mComment);
 		tText.setTAnnotated(tMember);
 		mCommentToTText.setTarget(tText);
+		mCommentToTText.setSource(mComment);
 		String tText_text_prime = (String) _localVariable_0;
 		tText.setText(tText_text_prime);
-		return new Object[] { mComment, mCommentToTText, tMember, tText, csp };
+		return new Object[] { tText, tMember, mCommentToTText, mComment, csp };
 	}
 
-	public static final Object[] pattern_TextAnnotations_1_2_collecttranslatedelements_blackBBB(LineComment mComment,
-			LineCommentToTTextAnnotation mCommentToTText, TTextAnnotation tText) {
-		return new Object[] { mComment, mCommentToTText, tText };
+	public static final Object[] pattern_TextAnnotations_1_2_collecttranslatedelements_blackBBB(TTextAnnotation tText,
+			LineCommentToTTextAnnotation mCommentToTText, LineComment mComment) {
+		return new Object[] { tText, mCommentToTText, mComment };
 	}
 
-	public static final Object[] pattern_TextAnnotations_1_2_collecttranslatedelements_greenFBBB(LineComment mComment,
-			LineCommentToTTextAnnotation mCommentToTText, TTextAnnotation tText) {
+	public static final Object[] pattern_TextAnnotations_1_2_collecttranslatedelements_greenFBBB(TTextAnnotation tText,
+			LineCommentToTTextAnnotation mCommentToTText, LineComment mComment) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(mComment);
-		ruleresult.getCreatedLinkElements().add(mCommentToTText);
 		ruleresult.getCreatedElements().add(tText);
-		return new Object[] { ruleresult, mComment, mCommentToTText, tText };
+		ruleresult.getCreatedLinkElements().add(mCommentToTText);
+		ruleresult.getTranslatedElements().add(mComment);
+		return new Object[] { ruleresult, tText, mCommentToTText, mComment };
 	}
 
 	public static final Object[] pattern_TextAnnotations_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mComment, EObject mMemberToTMember, EObject mCommentToTText,
-			EObject mMember, EObject tMember, EObject tText) {
-		if (!mComment.equals(mMemberToTMember)) {
-			if (!mComment.equals(mCommentToTText)) {
-				if (!mComment.equals(mMember)) {
-					if (!mComment.equals(tMember)) {
-						if (!mComment.equals(tText)) {
-							if (!mMemberToTMember.equals(tMember)) {
-								if (!mMemberToTMember.equals(tText)) {
-									if (!mCommentToTText.equals(mMemberToTMember)) {
-										if (!mCommentToTText.equals(mMember)) {
+			PerformRuleResult ruleresult, EObject tText, EObject mMember, EObject mMemberToTMember, EObject tMember,
+			EObject mCommentToTText, EObject mComment) {
+		if (!mMember.equals(tText)) {
+			if (!mMember.equals(mMemberToTMember)) {
+				if (!mMember.equals(tMember)) {
+					if (!mMemberToTMember.equals(tText)) {
+						if (!mMemberToTMember.equals(tMember)) {
+							if (!tMember.equals(tText)) {
+								if (!mCommentToTText.equals(tText)) {
+									if (!mCommentToTText.equals(mMember)) {
+										if (!mCommentToTText.equals(mMemberToTMember)) {
 											if (!mCommentToTText.equals(tMember)) {
-												if (!mCommentToTText.equals(tText)) {
-													if (!mMember.equals(mMemberToTMember)) {
-														if (!mMember.equals(tMember)) {
-															if (!mMember.equals(tText)) {
-																if (!tMember.equals(tText)) {
-																	return new Object[] { ruleresult, mComment,
-																			mMemberToTMember, mCommentToTText, mMember,
-																			tMember, tText };
+												if (!mComment.equals(tText)) {
+													if (!mComment.equals(mMember)) {
+														if (!mComment.equals(mMemberToTMember)) {
+															if (!mComment.equals(tMember)) {
+																if (!mComment.equals(mCommentToTText)) {
+																	return new Object[] { ruleresult, tText, mMember,
+																			mMemberToTMember, tMember, mCommentToTText,
+																			mComment };
 																}
 															}
 														}
@@ -1464,49 +1464,49 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mComment, EObject mCommentToTText, EObject mMember, EObject tMember,
-			EObject tText) {
-		EMoflonEdge mCommentToTText__mComment____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__mComment____comments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tText, EObject mMember, EObject tMember, EObject mCommentToTText,
+			EObject mComment) {
 		EMoflonEdge tText__tMember____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tText____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__mComment____comments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mCommentToTText__tText____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mCommentToTText__mComment____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TextAnnotations";
-		String mCommentToTText__mComment____source_name_prime = "source";
-		String mMember__mComment____comments_name_prime = "comments";
 		String tText__tMember____tAnnotated_name_prime = "tAnnotated";
 		String tMember__tText____tAnnotation_name_prime = "tAnnotation";
+		String mMember__mComment____comments_name_prime = "comments";
 		String mCommentToTText__tText____target_name_prime = "target";
-		mCommentToTText__mComment____source.setSrc(mCommentToTText);
-		mCommentToTText__mComment____source.setTrg(mComment);
-		ruleresult.getCreatedEdges().add(mCommentToTText__mComment____source);
-		mMember__mComment____comments.setSrc(mMember);
-		mMember__mComment____comments.setTrg(mComment);
-		ruleresult.getTranslatedEdges().add(mMember__mComment____comments);
+		String mCommentToTText__mComment____source_name_prime = "source";
 		tText__tMember____tAnnotated.setSrc(tText);
 		tText__tMember____tAnnotated.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(tText__tMember____tAnnotated);
 		tMember__tText____tAnnotation.setSrc(tMember);
 		tMember__tText____tAnnotation.setTrg(tText);
 		ruleresult.getCreatedEdges().add(tMember__tText____tAnnotation);
+		mMember__mComment____comments.setSrc(mMember);
+		mMember__mComment____comments.setTrg(mComment);
+		ruleresult.getTranslatedEdges().add(mMember__mComment____comments);
 		mCommentToTText__tText____target.setSrc(mCommentToTText);
 		mCommentToTText__tText____target.setTrg(tText);
 		ruleresult.getCreatedEdges().add(mCommentToTText__tText____target);
+		mCommentToTText__mComment____source.setSrc(mCommentToTText);
+		mCommentToTText__mComment____source.setTrg(mComment);
+		ruleresult.getCreatedEdges().add(mCommentToTText__mComment____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mCommentToTText__mComment____source.setName(mCommentToTText__mComment____source_name_prime);
-		mMember__mComment____comments.setName(mMember__mComment____comments_name_prime);
 		tText__tMember____tAnnotated.setName(tText__tMember____tAnnotated_name_prime);
 		tMember__tText____tAnnotation.setName(tMember__tText____tAnnotation_name_prime);
+		mMember__mComment____comments.setName(mMember__mComment____comments_name_prime);
 		mCommentToTText__tText____target.setName(mCommentToTText__tText____target_name_prime);
-		return new Object[] { ruleresult, mComment, mCommentToTText, mMember, tMember, tText,
-				mCommentToTText__mComment____source, mMember__mComment____comments, tText__tMember____tAnnotated,
-				tMember__tText____tAnnotation, mCommentToTText__tText____target };
+		mCommentToTText__mComment____source.setName(mCommentToTText__mComment____source_name_prime);
+		return new Object[] { ruleresult, tText, mMember, tMember, mCommentToTText, mComment,
+				tText__tMember____tAnnotated, tMember__tText____tAnnotation, mMember__mComment____comments,
+				mCommentToTText__tText____target, mCommentToTText__mComment____source };
 	}
 
 	public static final void pattern_TextAnnotations_1_5_registerobjects_expressionBBBBBBBB(TextAnnotations _this,
-			PerformRuleResult ruleresult, EObject mComment, EObject mMemberToTMember, EObject mCommentToTText,
-			EObject mMember, EObject tMember, EObject tText) {
-		_this.registerObjects_FWD(ruleresult, mComment, mMemberToTMember, mCommentToTText, mMember, tMember, tText);
+			PerformRuleResult ruleresult, EObject tText, EObject mMember, EObject mMemberToTMember, EObject tMember,
+			EObject mCommentToTText, EObject mComment) {
+		_this.registerObjects_FWD(ruleresult, tText, mMember, mMemberToTMember, tMember, mCommentToTText, mComment);
 
 	}
 
@@ -1565,22 +1565,22 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mComment");
-		EObject _localVariable_1 = match.getObject("mMember");
-		EObject tmpMComment = _localVariable_0;
-		EObject tmpMMember = _localVariable_1;
-		if (tmpMComment instanceof LineComment) {
-			LineComment mComment = (LineComment) tmpMComment;
-			if (tmpMMember instanceof MDefinition) {
-				MDefinition mMember = (MDefinition) tmpMMember;
-				return new Object[] { mComment, mMember, match };
+		EObject _localVariable_0 = match.getObject("mMember");
+		EObject _localVariable_1 = match.getObject("mComment");
+		EObject tmpMMember = _localVariable_0;
+		EObject tmpMComment = _localVariable_1;
+		if (tmpMMember instanceof MDefinition) {
+			MDefinition mMember = (MDefinition) tmpMMember;
+			if (tmpMComment instanceof LineComment) {
+				LineComment mComment = (LineComment) tmpMComment;
+				return new Object[] { mMember, mComment, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TextAnnotations_2_2_corematch_blackBFBFB(LineComment mComment,
-			MDefinition mMember, Match match) {
+	public static final Iterable<Object[]> pattern_TextAnnotations_2_2_corematch_blackBFFBB(MDefinition mMember,
+			LineComment mComment, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		boolean mComment_prefixOfParent = mComment.isPrefixOfParent();
 		if (Boolean.valueOf(mComment_prefixOfParent).equals(Boolean.valueOf(true))) {
@@ -1588,7 +1588,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					.getOppositeReferenceTyped(mMember, MDefinitionToTMember.class, "source")) {
 				TMember tMember = mMemberToTMember.getTarget();
 				if (tMember != null) {
-					_result.add(new Object[] { mComment, mMemberToTMember, mMember, tMember, match });
+					_result.add(new Object[] { mMember, mMemberToTMember, tMember, mComment, match });
 				}
 
 			}
@@ -1597,15 +1597,15 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TextAnnotations_2_3_findcontext_blackBBBB(LineComment mComment,
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember) {
+	public static final Iterable<Object[]> pattern_TextAnnotations_2_3_findcontext_blackBBBB(MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, LineComment mComment) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mMember.equals(mMemberToTMember.getSource())) {
+		if (mMember.getComments().contains(mComment)) {
 			if (tMember.equals(mMemberToTMember.getTarget())) {
-				if (mMember.getComments().contains(mComment)) {
+				if (mMember.equals(mMemberToTMember.getSource())) {
 					boolean mComment_prefixOfParent = mComment.isPrefixOfParent();
 					if (Boolean.valueOf(mComment_prefixOfParent).equals(Boolean.valueOf(true))) {
-						_result.add(new Object[] { mComment, mMemberToTMember, mMember, tMember });
+						_result.add(new Object[] { mMember, mMemberToTMember, tMember, mComment });
 					}
 
 				}
@@ -1614,44 +1614,44 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return _result;
 	}
 
-	public static final Object[] pattern_TextAnnotations_2_3_findcontext_greenBBBBFFFF(LineComment mComment,
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember) {
+	public static final Object[] pattern_TextAnnotations_2_3_findcontext_greenBBBBFFFF(MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, LineComment mComment) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__mComment____comments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mMemberToTMember__mMember____source_name_prime = "source";
-		String mMemberToTMember__tMember____target_name_prime = "target";
+		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String mMember__mComment____comments_name_prime = "comments";
-		isApplicableMatch.getAllContextElements().add(mComment);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
+		String mMemberToTMember__tMember____target_name_prime = "target";
+		String mMemberToTMember__mMember____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(mMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
 		isApplicableMatch.getAllContextElements().add(tMember);
-		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
-		mMemberToTMember__mMember____source.setTrg(mMember);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
-		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
-		mMemberToTMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
+		isApplicableMatch.getAllContextElements().add(mComment);
 		mMember__mComment____comments.setSrc(mMember);
 		mMember__mComment____comments.setTrg(mComment);
 		isApplicableMatch.getAllContextElements().add(mMember__mComment____comments);
-		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
-		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
+		mMemberToTMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
+		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
+		mMemberToTMember__mMember____source.setTrg(mMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
 		mMember__mComment____comments.setName(mMember__mComment____comments_name_prime);
-		return new Object[] { mComment, mMemberToTMember, mMember, tMember, isApplicableMatch,
-				mMemberToTMember__mMember____source, mMemberToTMember__tMember____target,
-				mMember__mComment____comments };
+		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
+		return new Object[] { mMember, mMemberToTMember, tMember, mComment, isApplicableMatch,
+				mMember__mComment____comments, mMemberToTMember__tMember____target,
+				mMemberToTMember__mMember____source };
 	}
 
 	public static final Object[] pattern_TextAnnotations_2_4_solveCSP_bindingFBBBBBB(TextAnnotations _this,
-			IsApplicableMatch isApplicableMatch, LineComment mComment, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mComment, mMemberToTMember, mMember,
-				tMember);
+			IsApplicableMatch isApplicableMatch, MDefinition mMember, MDefinitionToTMember mMemberToTMember,
+			TMember tMember, LineComment mComment) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mMember, mMemberToTMember, tMember,
+				mComment);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mComment, mMemberToTMember, mMember, tMember };
+			return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tMember, mComment };
 		}
 		return null;
 	}
@@ -1661,10 +1661,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_2_4_solveCSP_bindingAndBlackFBBBBBB(TextAnnotations _this,
-			IsApplicableMatch isApplicableMatch, LineComment mComment, MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember) {
+			IsApplicableMatch isApplicableMatch, MDefinition mMember, MDefinitionToTMember mMemberToTMember,
+			TMember tMember, LineComment mComment) {
 		Object[] result_pattern_TextAnnotations_2_4_solveCSP_binding = pattern_TextAnnotations_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mComment, mMemberToTMember, mMember, tMember);
+				_this, isApplicableMatch, mMember, mMemberToTMember, tMember, mComment);
 		if (result_pattern_TextAnnotations_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TextAnnotations_2_4_solveCSP_binding[0];
 
@@ -1672,7 +1672,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					csp);
 			if (result_pattern_TextAnnotations_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mComment, mMemberToTMember, mMember, tMember };
+				return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tMember, mComment };
 			}
 		}
 		return null;
@@ -1706,16 +1706,16 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_1_initialbindings_blackBBBB(TextAnnotations _this,
-			Match match, TMember tMember, TTextAnnotation tText) {
-		return new Object[] { _this, match, tMember, tText };
+			Match match, TTextAnnotation tText, TMember tMember) {
+		return new Object[] { _this, match, tText, tMember };
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_2_SolveCSP_bindingFBBBB(TextAnnotations _this, Match match,
-			TMember tMember, TTextAnnotation tText) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tMember, tText);
+			TTextAnnotation tText, TMember tMember) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tText, tMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tMember, tText };
+			return new Object[] { csp, _this, match, tText, tMember };
 		}
 		return null;
 	}
@@ -1725,9 +1725,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_2_SolveCSP_bindingAndBlackFBBBB(TextAnnotations _this,
-			Match match, TMember tMember, TTextAnnotation tText) {
+			Match match, TTextAnnotation tText, TMember tMember) {
 		Object[] result_pattern_TextAnnotations_10_2_SolveCSP_binding = pattern_TextAnnotations_10_2_SolveCSP_bindingFBBBB(
-				_this, match, tMember, tText);
+				_this, match, tText, tMember);
 		if (result_pattern_TextAnnotations_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TextAnnotations_10_2_SolveCSP_binding[0];
 
@@ -1735,7 +1735,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					csp);
 			if (result_pattern_TextAnnotations_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tMember, tText };
+				return new Object[] { csp, _this, match, tText, tMember };
 			}
 		}
 		return null;
@@ -1748,12 +1748,12 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_4_collectelementstobetranslated_blackBBB(Match match,
-			TMember tMember, TTextAnnotation tText) {
-		return new Object[] { match, tMember, tText };
+			TTextAnnotation tText, TMember tMember) {
+		return new Object[] { match, tText, tMember };
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_4_collectelementstobetranslated_greenBBBFF(Match match,
-			TMember tMember, TTextAnnotation tText) {
+			TTextAnnotation tText, TMember tMember) {
 		EMoflonEdge tText__tMember____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tText____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tText);
@@ -1767,12 +1767,12 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		match.getToBeTranslatedEdges().add(tMember__tText____tAnnotation);
 		tText__tMember____tAnnotated.setName(tText__tMember____tAnnotated_name_prime);
 		tMember__tText____tAnnotation.setName(tMember__tText____tAnnotation_name_prime);
-		return new Object[] { match, tMember, tText, tText__tMember____tAnnotated, tMember__tText____tAnnotation };
+		return new Object[] { match, tText, tMember, tText__tMember____tAnnotated, tMember__tText____tAnnotation };
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_5_collectcontextelements_blackBBB(Match match,
-			TMember tMember, TTextAnnotation tText) {
-		return new Object[] { match, tMember, tText };
+			TTextAnnotation tText, TMember tMember) {
+		return new Object[] { match, tText, tMember };
 	}
 
 	public static final Object[] pattern_TextAnnotations_10_5_collectcontextelements_greenBB(Match match,
@@ -1782,8 +1782,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final void pattern_TextAnnotations_10_6_registerobjectstomatch_expressionBBBB(TextAnnotations _this,
-			Match match, TMember tMember, TTextAnnotation tText) {
-		_this.registerObjectsToMatch_BWD(match, tMember, tText);
+			Match match, TTextAnnotation tText, TMember tMember) {
+		_this.registerObjectsToMatch_BWD(match, tText, tMember);
 
 	}
 
@@ -1799,23 +1799,23 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 
 	public static final Object[] pattern_TextAnnotations_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mMemberToTMember");
+		EObject _localVariable_0 = isApplicableMatch.getObject("tText");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tText");
-		EObject tmpMMemberToTMember = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("mMemberToTMember");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
+		EObject tmpTText = _localVariable_0;
 		EObject tmpMMember = _localVariable_1;
-		EObject tmpTMember = _localVariable_2;
-		EObject tmpTText = _localVariable_3;
-		if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
+		EObject tmpMMemberToTMember = _localVariable_2;
+		EObject tmpTMember = _localVariable_3;
+		if (tmpTText instanceof TTextAnnotation) {
+			TTextAnnotation tText = (TTextAnnotation) tmpTText;
 			if (tmpMMember instanceof MDefinition) {
 				MDefinition mMember = (MDefinition) tmpMMember;
-				if (tmpTMember instanceof TMember) {
-					TMember tMember = (TMember) tmpTMember;
-					if (tmpTText instanceof TTextAnnotation) {
-						TTextAnnotation tText = (TTextAnnotation) tmpTText;
-						return new Object[] { mMemberToTMember, mMember, tMember, tText, isApplicableMatch };
+				if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
+					MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
+					if (tmpTMember instanceof TMember) {
+						TMember tMember = (TMember) tmpTMember;
+						return new Object[] { tText, mMember, mMemberToTMember, tMember, isApplicableMatch };
 					}
 				}
 			}
@@ -1823,13 +1823,13 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return null;
 	}
 
-	public static final Object[] pattern_TextAnnotations_11_1_performtransformation_blackBBBBFBB(
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember, TTextAnnotation tText,
-			TextAnnotations _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_TextAnnotations_11_1_performtransformation_blackBBBBFBB(TTextAnnotation tText,
+			MDefinition mMember, MDefinitionToTMember mMemberToTMember, TMember tMember, TextAnnotations _this,
+			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mMemberToTMember, mMember, tMember, tText, csp, _this, isApplicableMatch };
+				return new Object[] { tText, mMember, mMemberToTMember, tMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1840,72 +1840,72 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		Object[] result_pattern_TextAnnotations_11_1_performtransformation_binding = pattern_TextAnnotations_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TextAnnotations_11_1_performtransformation_binding != null) {
-			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_TextAnnotations_11_1_performtransformation_binding[0];
+			TTextAnnotation tText = (TTextAnnotation) result_pattern_TextAnnotations_11_1_performtransformation_binding[0];
 			MDefinition mMember = (MDefinition) result_pattern_TextAnnotations_11_1_performtransformation_binding[1];
-			TMember tMember = (TMember) result_pattern_TextAnnotations_11_1_performtransformation_binding[2];
-			TTextAnnotation tText = (TTextAnnotation) result_pattern_TextAnnotations_11_1_performtransformation_binding[3];
+			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_TextAnnotations_11_1_performtransformation_binding[2];
+			TMember tMember = (TMember) result_pattern_TextAnnotations_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TextAnnotations_11_1_performtransformation_black = pattern_TextAnnotations_11_1_performtransformation_blackBBBBFBB(
-					mMemberToTMember, mMember, tMember, tText, _this, isApplicableMatch);
+					tText, mMember, mMemberToTMember, tMember, _this, isApplicableMatch);
 			if (result_pattern_TextAnnotations_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TextAnnotations_11_1_performtransformation_black[4];
 
-				return new Object[] { mMemberToTMember, mMember, tMember, tText, csp, _this, isApplicableMatch };
+				return new Object[] { tText, mMember, mMemberToTMember, tMember, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TextAnnotations_11_1_performtransformation_greenFFBBB(MDefinition mMember,
-			TTextAnnotation tText, CSP csp) {
-		LineComment mComment = JavaFactory.eINSTANCE.createLineComment();
+	public static final Object[] pattern_TextAnnotations_11_1_performtransformation_greenBBFFB(TTextAnnotation tText,
+			MDefinition mMember, CSP csp) {
 		LineCommentToTTextAnnotation mCommentToTText = PmFactory.eINSTANCE.createLineCommentToTTextAnnotation();
+		LineComment mComment = JavaFactory.eINSTANCE.createLineComment();
 		boolean mComment_prefixOfParent_prime = Boolean.valueOf(true);
 		Object _localVariable_0 = csp.getValue("mComment", "content");
+		mCommentToTText.setTarget(tText);
 		mMember.getComments().add(mComment);
 		mCommentToTText.setSource(mComment);
-		mCommentToTText.setTarget(tText);
 		mComment.setPrefixOfParent(Boolean.valueOf(mComment_prefixOfParent_prime));
 		String mComment_content_prime = (String) _localVariable_0;
 		mComment.setContent(mComment_content_prime);
-		return new Object[] { mComment, mCommentToTText, mMember, tText, csp };
+		return new Object[] { tText, mMember, mCommentToTText, mComment, csp };
 	}
 
-	public static final Object[] pattern_TextAnnotations_11_2_collecttranslatedelements_blackBBB(LineComment mComment,
-			LineCommentToTTextAnnotation mCommentToTText, TTextAnnotation tText) {
-		return new Object[] { mComment, mCommentToTText, tText };
+	public static final Object[] pattern_TextAnnotations_11_2_collecttranslatedelements_blackBBB(TTextAnnotation tText,
+			LineCommentToTTextAnnotation mCommentToTText, LineComment mComment) {
+		return new Object[] { tText, mCommentToTText, mComment };
 	}
 
-	public static final Object[] pattern_TextAnnotations_11_2_collecttranslatedelements_greenFBBB(LineComment mComment,
-			LineCommentToTTextAnnotation mCommentToTText, TTextAnnotation tText) {
+	public static final Object[] pattern_TextAnnotations_11_2_collecttranslatedelements_greenFBBB(TTextAnnotation tText,
+			LineCommentToTTextAnnotation mCommentToTText, LineComment mComment) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(mComment);
-		ruleresult.getCreatedLinkElements().add(mCommentToTText);
 		ruleresult.getTranslatedElements().add(tText);
-		return new Object[] { ruleresult, mComment, mCommentToTText, tText };
+		ruleresult.getCreatedLinkElements().add(mCommentToTText);
+		ruleresult.getCreatedElements().add(mComment);
+		return new Object[] { ruleresult, tText, mCommentToTText, mComment };
 	}
 
 	public static final Object[] pattern_TextAnnotations_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mComment, EObject mMemberToTMember, EObject mCommentToTText,
-			EObject mMember, EObject tMember, EObject tText) {
-		if (!mComment.equals(mMemberToTMember)) {
-			if (!mComment.equals(mCommentToTText)) {
-				if (!mComment.equals(mMember)) {
-					if (!mComment.equals(tMember)) {
-						if (!mComment.equals(tText)) {
-							if (!mMemberToTMember.equals(tMember)) {
-								if (!mMemberToTMember.equals(tText)) {
-									if (!mCommentToTText.equals(mMemberToTMember)) {
-										if (!mCommentToTText.equals(mMember)) {
+			PerformRuleResult ruleresult, EObject tText, EObject mMember, EObject mMemberToTMember, EObject tMember,
+			EObject mCommentToTText, EObject mComment) {
+		if (!mMember.equals(tText)) {
+			if (!mMember.equals(mMemberToTMember)) {
+				if (!mMember.equals(tMember)) {
+					if (!mMemberToTMember.equals(tText)) {
+						if (!mMemberToTMember.equals(tMember)) {
+							if (!tMember.equals(tText)) {
+								if (!mCommentToTText.equals(tText)) {
+									if (!mCommentToTText.equals(mMember)) {
+										if (!mCommentToTText.equals(mMemberToTMember)) {
 											if (!mCommentToTText.equals(tMember)) {
-												if (!mCommentToTText.equals(tText)) {
-													if (!mMember.equals(mMemberToTMember)) {
-														if (!mMember.equals(tMember)) {
-															if (!mMember.equals(tText)) {
-																if (!tMember.equals(tText)) {
-																	return new Object[] { ruleresult, mComment,
-																			mMemberToTMember, mCommentToTText, mMember,
-																			tMember, tText };
+												if (!mComment.equals(tText)) {
+													if (!mComment.equals(mMember)) {
+														if (!mComment.equals(mMemberToTMember)) {
+															if (!mComment.equals(tMember)) {
+																if (!mComment.equals(mCommentToTText)) {
+																	return new Object[] { ruleresult, tText, mMember,
+																			mMemberToTMember, tMember, mCommentToTText,
+																			mComment };
 																}
 															}
 														}
@@ -1925,49 +1925,49 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mComment, EObject mCommentToTText, EObject mMember, EObject tMember,
-			EObject tText) {
-		EMoflonEdge mCommentToTText__mComment____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__mComment____comments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tText, EObject mMember, EObject tMember, EObject mCommentToTText,
+			EObject mComment) {
 		EMoflonEdge tText__tMember____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tText____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__mComment____comments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mCommentToTText__tText____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mCommentToTText__mComment____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TextAnnotations";
-		String mCommentToTText__mComment____source_name_prime = "source";
-		String mMember__mComment____comments_name_prime = "comments";
 		String tText__tMember____tAnnotated_name_prime = "tAnnotated";
 		String tMember__tText____tAnnotation_name_prime = "tAnnotation";
+		String mMember__mComment____comments_name_prime = "comments";
 		String mCommentToTText__tText____target_name_prime = "target";
-		mCommentToTText__mComment____source.setSrc(mCommentToTText);
-		mCommentToTText__mComment____source.setTrg(mComment);
-		ruleresult.getCreatedEdges().add(mCommentToTText__mComment____source);
-		mMember__mComment____comments.setSrc(mMember);
-		mMember__mComment____comments.setTrg(mComment);
-		ruleresult.getCreatedEdges().add(mMember__mComment____comments);
+		String mCommentToTText__mComment____source_name_prime = "source";
 		tText__tMember____tAnnotated.setSrc(tText);
 		tText__tMember____tAnnotated.setTrg(tMember);
 		ruleresult.getTranslatedEdges().add(tText__tMember____tAnnotated);
 		tMember__tText____tAnnotation.setSrc(tMember);
 		tMember__tText____tAnnotation.setTrg(tText);
 		ruleresult.getTranslatedEdges().add(tMember__tText____tAnnotation);
+		mMember__mComment____comments.setSrc(mMember);
+		mMember__mComment____comments.setTrg(mComment);
+		ruleresult.getCreatedEdges().add(mMember__mComment____comments);
 		mCommentToTText__tText____target.setSrc(mCommentToTText);
 		mCommentToTText__tText____target.setTrg(tText);
 		ruleresult.getCreatedEdges().add(mCommentToTText__tText____target);
+		mCommentToTText__mComment____source.setSrc(mCommentToTText);
+		mCommentToTText__mComment____source.setTrg(mComment);
+		ruleresult.getCreatedEdges().add(mCommentToTText__mComment____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mCommentToTText__mComment____source.setName(mCommentToTText__mComment____source_name_prime);
-		mMember__mComment____comments.setName(mMember__mComment____comments_name_prime);
 		tText__tMember____tAnnotated.setName(tText__tMember____tAnnotated_name_prime);
 		tMember__tText____tAnnotation.setName(tMember__tText____tAnnotation_name_prime);
+		mMember__mComment____comments.setName(mMember__mComment____comments_name_prime);
 		mCommentToTText__tText____target.setName(mCommentToTText__tText____target_name_prime);
-		return new Object[] { ruleresult, mComment, mCommentToTText, mMember, tMember, tText,
-				mCommentToTText__mComment____source, mMember__mComment____comments, tText__tMember____tAnnotated,
-				tMember__tText____tAnnotation, mCommentToTText__tText____target };
+		mCommentToTText__mComment____source.setName(mCommentToTText__mComment____source_name_prime);
+		return new Object[] { ruleresult, tText, mMember, tMember, mCommentToTText, mComment,
+				tText__tMember____tAnnotated, tMember__tText____tAnnotation, mMember__mComment____comments,
+				mCommentToTText__tText____target, mCommentToTText__mComment____source };
 	}
 
 	public static final void pattern_TextAnnotations_11_5_registerobjects_expressionBBBBBBBB(TextAnnotations _this,
-			PerformRuleResult ruleresult, EObject mComment, EObject mMemberToTMember, EObject mCommentToTText,
-			EObject mMember, EObject tMember, EObject tText) {
-		_this.registerObjects_BWD(ruleresult, mComment, mMemberToTMember, mCommentToTText, mMember, tMember, tText);
+			PerformRuleResult ruleresult, EObject tText, EObject mMember, EObject mMemberToTMember, EObject tMember,
+			EObject mCommentToTText, EObject mComment) {
+		_this.registerObjects_BWD(ruleresult, tText, mMember, mMemberToTMember, tMember, mCommentToTText, mComment);
 
 	}
 
@@ -2026,92 +2026,92 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tMember");
-		EObject _localVariable_1 = match.getObject("tText");
-		EObject tmpTMember = _localVariable_0;
-		EObject tmpTText = _localVariable_1;
-		if (tmpTMember instanceof TMember) {
-			TMember tMember = (TMember) tmpTMember;
-			if (tmpTText instanceof TTextAnnotation) {
-				TTextAnnotation tText = (TTextAnnotation) tmpTText;
-				return new Object[] { tMember, tText, match };
+		EObject _localVariable_0 = match.getObject("tText");
+		EObject _localVariable_1 = match.getObject("tMember");
+		EObject tmpTText = _localVariable_0;
+		EObject tmpTMember = _localVariable_1;
+		if (tmpTText instanceof TTextAnnotation) {
+			TTextAnnotation tText = (TTextAnnotation) tmpTText;
+			if (tmpTMember instanceof TMember) {
+				TMember tMember = (TMember) tmpTMember;
+				return new Object[] { tText, tMember, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TextAnnotations_12_2_corematch_blackFFBBB(TMember tMember,
-			TTextAnnotation tText, Match match) {
+	public static final Iterable<Object[]> pattern_TextAnnotations_12_2_corematch_blackBFFBB(TTextAnnotation tText,
+			TMember tMember, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
 			BodyDeclaration tmpMMember = mMemberToTMember.getSource();
 			if (tmpMMember instanceof MDefinition) {
 				MDefinition mMember = (MDefinition) tmpMMember;
-				_result.add(new Object[] { mMemberToTMember, mMember, tMember, tText, match });
+				_result.add(new Object[] { tText, mMember, mMemberToTMember, tMember, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TextAnnotations_12_3_findcontext_blackBBBB(
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember, TTextAnnotation tText) {
+	public static final Iterable<Object[]> pattern_TextAnnotations_12_3_findcontext_blackBBBB(TTextAnnotation tText,
+			MDefinition mMember, MDefinitionToTMember mMemberToTMember, TMember tMember) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mMember.equals(mMemberToTMember.getSource())) {
+		if (tMember.equals(tText.getTAnnotated())) {
 			if (tMember.equals(mMemberToTMember.getTarget())) {
-				if (tMember.equals(tText.getTAnnotated())) {
-					_result.add(new Object[] { mMemberToTMember, mMember, tMember, tText });
+				if (mMember.equals(mMemberToTMember.getSource())) {
+					_result.add(new Object[] { tText, mMember, mMemberToTMember, tMember });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_TextAnnotations_12_3_findcontext_greenBBBBFFFFF(
-			MDefinitionToTMember mMemberToTMember, MDefinition mMember, TMember tMember, TTextAnnotation tText) {
+	public static final Object[] pattern_TextAnnotations_12_3_findcontext_greenBBBBFFFFF(TTextAnnotation tText,
+			MDefinition mMember, MDefinitionToTMember mMemberToTMember, TMember tMember) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tText__tMember____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tText____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mMemberToTMember__mMember____source_name_prime = "source";
-		String mMemberToTMember__tMember____target_name_prime = "target";
+		EMoflonEdge mMemberToTMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMemberToTMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tText__tMember____tAnnotated_name_prime = "tAnnotated";
 		String tMember__tText____tAnnotation_name_prime = "tAnnotation";
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
-		isApplicableMatch.getAllContextElements().add(mMember);
-		isApplicableMatch.getAllContextElements().add(tMember);
+		String mMemberToTMember__tMember____target_name_prime = "target";
+		String mMemberToTMember__mMember____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(tText);
-		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
-		mMemberToTMember__mMember____source.setTrg(mMember);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
-		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
-		mMemberToTMember__tMember____target.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
+		isApplicableMatch.getAllContextElements().add(mMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
+		isApplicableMatch.getAllContextElements().add(tMember);
 		tText__tMember____tAnnotated.setSrc(tText);
 		tText__tMember____tAnnotated.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(tText__tMember____tAnnotated);
 		tMember__tText____tAnnotation.setSrc(tMember);
 		tMember__tText____tAnnotation.setTrg(tText);
 		isApplicableMatch.getAllContextElements().add(tMember__tText____tAnnotation);
-		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
-		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		mMemberToTMember__tMember____target.setSrc(mMemberToTMember);
+		mMemberToTMember__tMember____target.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember__tMember____target);
+		mMemberToTMember__mMember____source.setSrc(mMemberToTMember);
+		mMemberToTMember__mMember____source.setTrg(mMember);
+		isApplicableMatch.getAllContextElements().add(mMemberToTMember__mMember____source);
 		tText__tMember____tAnnotated.setName(tText__tMember____tAnnotated_name_prime);
 		tMember__tText____tAnnotation.setName(tMember__tText____tAnnotation_name_prime);
-		return new Object[] { mMemberToTMember, mMember, tMember, tText, isApplicableMatch,
-				mMemberToTMember__mMember____source, mMemberToTMember__tMember____target, tText__tMember____tAnnotated,
-				tMember__tText____tAnnotation };
+		mMemberToTMember__tMember____target.setName(mMemberToTMember__tMember____target_name_prime);
+		mMemberToTMember__mMember____source.setName(mMemberToTMember__mMember____source_name_prime);
+		return new Object[] { tText, mMember, mMemberToTMember, tMember, isApplicableMatch,
+				tText__tMember____tAnnotated, tMember__tText____tAnnotation, mMemberToTMember__tMember____target,
+				mMemberToTMember__mMember____source };
 	}
 
 	public static final Object[] pattern_TextAnnotations_12_4_solveCSP_bindingFBBBBBB(TextAnnotations _this,
-			IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember, MDefinition mMember,
-			TMember tMember, TTextAnnotation tText) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMemberToTMember, mMember, tMember,
-				tText);
+			IsApplicableMatch isApplicableMatch, TTextAnnotation tText, MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tText, mMember, mMemberToTMember,
+				tMember);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mMember, tMember, tText };
+			return new Object[] { csp, _this, isApplicableMatch, tText, mMember, mMemberToTMember, tMember };
 		}
 		return null;
 	}
@@ -2121,10 +2121,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_12_4_solveCSP_bindingAndBlackFBBBBBB(TextAnnotations _this,
-			IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember, MDefinition mMember,
-			TMember tMember, TTextAnnotation tText) {
+			IsApplicableMatch isApplicableMatch, TTextAnnotation tText, MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember) {
 		Object[] result_pattern_TextAnnotations_12_4_solveCSP_binding = pattern_TextAnnotations_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mMemberToTMember, mMember, tMember, tText);
+				_this, isApplicableMatch, tText, mMember, mMemberToTMember, tMember);
 		if (result_pattern_TextAnnotations_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TextAnnotations_12_4_solveCSP_binding[0];
 
@@ -2132,7 +2132,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					csp);
 			if (result_pattern_TextAnnotations_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mMember, tMember, tText };
+				return new Object[] { csp, _this, isApplicableMatch, tText, mMember, mMemberToTMember, tMember };
 			}
 		}
 		return null;
@@ -2220,9 +2220,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 
 	public static final Object[] pattern_TextAnnotations_20_2_testcorematchandDECs_black_nac_0BB(TTextAnnotation tText,
 			TMember tMember) {
-		TAnnotatable __DEC_tText_tAnnotation_273384 = tText.getTAnnotated();
-		if (__DEC_tText_tAnnotation_273384 != null) {
-			if (!tMember.equals(__DEC_tText_tAnnotation_273384)) {
+		TAnnotatable __DEC_tText_tAnnotation_942979 = tText.getTAnnotated();
+		if (__DEC_tText_tAnnotation_942979 != null) {
+			if (!tMember.equals(__DEC_tText_tAnnotation_942979)) {
 				return new Object[] { tText, tMember };
 			}
 		}
@@ -2241,7 +2241,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 				TMember tMember = (TMember) tmpTMember;
 				if (tMember.equals(tText.getTAnnotated())) {
 					if (pattern_TextAnnotations_20_2_testcorematchandDECs_black_nac_0BB(tText, tMember) == null) {
-						_result.add(new Object[] { tMember, tText, _edge_tAnnotated });
+						_result.add(new Object[] { tText, tMember, _edge_tAnnotated });
 					}
 				}
 			}
@@ -2261,8 +2261,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final boolean pattern_TextAnnotations_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			TextAnnotations _this, Match match, TMember tMember, TTextAnnotation tText) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tMember, tText);
+			TextAnnotations _this, Match match, TTextAnnotation tText, TMember tMember) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tText, tMember);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2360,7 +2360,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 				if (mMember.getComments().contains(mComment)) {
 					boolean mComment_prefixOfParent = mComment.isPrefixOfParent();
 					if (Boolean.valueOf(mComment_prefixOfParent).equals(Boolean.valueOf(true))) {
-						_result.add(new Object[] { mComment, mMember, _edge_comments });
+						_result.add(new Object[] { mMember, mComment, _edge_comments });
 					}
 
 				}
@@ -2381,8 +2381,8 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final boolean pattern_TextAnnotations_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			TextAnnotations _this, Match match, LineComment mComment, MDefinition mMember) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mComment, mMember);
+			TextAnnotations _this, Match match, MDefinition mMember, LineComment mComment) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mMember, mComment);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2424,25 +2424,25 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_TextAnnotations_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mComment");
+	public static final Object[] pattern_TextAnnotations_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("tText");
 		EObject _localVariable_1 = sourceMatch.getObject("mMember");
 		EObject _localVariable_2 = targetMatch.getObject("tMember");
-		EObject _localVariable_3 = targetMatch.getObject("tText");
-		EObject tmpMComment = _localVariable_0;
+		EObject _localVariable_3 = sourceMatch.getObject("mComment");
+		EObject tmpTText = _localVariable_0;
 		EObject tmpMMember = _localVariable_1;
 		EObject tmpTMember = _localVariable_2;
-		EObject tmpTText = _localVariable_3;
-		if (tmpMComment instanceof LineComment) {
-			LineComment mComment = (LineComment) tmpMComment;
+		EObject tmpMComment = _localVariable_3;
+		if (tmpTText instanceof TTextAnnotation) {
+			TTextAnnotation tText = (TTextAnnotation) tmpTText;
 			if (tmpMMember instanceof MDefinition) {
 				MDefinition mMember = (MDefinition) tmpMMember;
 				if (tmpTMember instanceof TMember) {
 					TMember tMember = (TMember) tmpTMember;
-					if (tmpTText instanceof TTextAnnotation) {
-						TTextAnnotation tText = (TTextAnnotation) tmpTText;
-						return new Object[] { mComment, mMember, tMember, tText, sourceMatch, targetMatch };
+					if (tmpMComment instanceof LineComment) {
+						LineComment mComment = (LineComment) tmpMComment;
+						return new Object[] { tText, mMember, tMember, mComment, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2450,12 +2450,12 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return null;
 	}
 
-	public static final Object[] pattern_TextAnnotations_24_2_matchsrctrgcontext_blackBBBBBB(LineComment mComment,
-			MDefinition mMember, TMember tMember, TTextAnnotation tText, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_TextAnnotations_24_2_matchsrctrgcontext_blackBBBBBB(TTextAnnotation tText,
+			MDefinition mMember, TMember tMember, LineComment mComment, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
 			boolean mComment_prefixOfParent = mComment.isPrefixOfParent();
 			if (Boolean.valueOf(mComment_prefixOfParent).equals(Boolean.valueOf(true))) {
-				return new Object[] { mComment, mMember, tMember, tText, sourceMatch, targetMatch };
+				return new Object[] { tText, mMember, tMember, mComment, sourceMatch, targetMatch };
 			}
 
 		}
@@ -2465,31 +2465,31 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	public static final Object[] pattern_TextAnnotations_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding = pattern_TextAnnotations_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding != null) {
-			LineComment mComment = (LineComment) result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding[0];
+			TTextAnnotation tText = (TTextAnnotation) result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding[0];
 			MDefinition mMember = (MDefinition) result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding[1];
 			TMember tMember = (TMember) result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding[2];
-			TTextAnnotation tText = (TTextAnnotation) result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding[3];
+			LineComment mComment = (LineComment) result_pattern_TextAnnotations_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_TextAnnotations_24_2_matchsrctrgcontext_black = pattern_TextAnnotations_24_2_matchsrctrgcontext_blackBBBBBB(
-					mComment, mMember, tMember, tText, sourceMatch, targetMatch);
+					tText, mMember, tMember, mComment, sourceMatch, targetMatch);
 			if (result_pattern_TextAnnotations_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mComment, mMember, tMember, tText, sourceMatch, targetMatch };
+				return new Object[] { tText, mMember, tMember, mComment, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TextAnnotations_24_3_solvecsp_bindingFBBBBBBB(TextAnnotations _this,
-			LineComment mComment, MDefinition mMember, TMember tMember, TTextAnnotation tText, Match sourceMatch,
+			TTextAnnotation tText, MDefinition mMember, TMember tMember, LineComment mComment, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mComment, mMember, tMember, tText, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(tText, mMember, tMember, mComment, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mComment, mMember, tMember, tText, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, tText, mMember, tMember, mComment, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2499,10 +2499,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_24_3_solvecsp_bindingAndBlackFBBBBBBB(TextAnnotations _this,
-			LineComment mComment, MDefinition mMember, TMember tMember, TTextAnnotation tText, Match sourceMatch,
+			TTextAnnotation tText, MDefinition mMember, TMember tMember, LineComment mComment, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_TextAnnotations_24_3_solvecsp_binding = pattern_TextAnnotations_24_3_solvecsp_bindingFBBBBBBB(
-				_this, mComment, mMember, tMember, tText, sourceMatch, targetMatch);
+				_this, tText, mMember, tMember, mComment, sourceMatch, targetMatch);
 		if (result_pattern_TextAnnotations_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TextAnnotations_24_3_solvecsp_binding[0];
 
@@ -2510,7 +2510,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					csp);
 			if (result_pattern_TextAnnotations_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mComment, mMember, tMember, tText, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tText, mMember, tMember, mComment, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2522,14 +2522,14 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TextAnnotations_24_5_matchcorrcontext_blackFBBBB(MDefinition mMember,
+	public static final Iterable<Object[]> pattern_TextAnnotations_24_5_matchcorrcontext_blackBFBBB(MDefinition mMember,
 			TMember tMember, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MDefinitionToTMember mMemberToTMember : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mMember, MDefinitionToTMember.class, "source")) {
-				if (tMember.equals(mMemberToTMember.getTarget())) {
-					_result.add(new Object[] { mMemberToTMember, mMember, tMember, sourceMatch, targetMatch });
+					.getOppositeReferenceTyped(tMember, MDefinitionToTMember.class, "target")) {
+				if (mMember.equals(mMemberToTMember.getSource())) {
+					_result.add(new Object[] { mMember, mMemberToTMember, tMember, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2547,18 +2547,18 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return new Object[] { mMemberToTMember, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_TextAnnotations_24_6_createcorrespondence_blackBBBBB(LineComment mComment,
-			MDefinition mMember, TMember tMember, TTextAnnotation tText, CCMatch ccMatch) {
-		return new Object[] { mComment, mMember, tMember, tText, ccMatch };
+	public static final Object[] pattern_TextAnnotations_24_6_createcorrespondence_blackBBBBB(TTextAnnotation tText,
+			MDefinition mMember, TMember tMember, LineComment mComment, CCMatch ccMatch) {
+		return new Object[] { tText, mMember, tMember, mComment, ccMatch };
 	}
 
-	public static final Object[] pattern_TextAnnotations_24_6_createcorrespondence_greenBFBB(LineComment mComment,
-			TTextAnnotation tText, CCMatch ccMatch) {
+	public static final Object[] pattern_TextAnnotations_24_6_createcorrespondence_greenBFBB(TTextAnnotation tText,
+			LineComment mComment, CCMatch ccMatch) {
 		LineCommentToTTextAnnotation mCommentToTText = PmFactory.eINSTANCE.createLineCommentToTTextAnnotation();
-		mCommentToTText.setSource(mComment);
 		mCommentToTText.setTarget(tText);
+		mCommentToTText.setSource(mComment);
 		ccMatch.getCreateCorr().add(mCommentToTText);
-		return new Object[] { mComment, mCommentToTText, tText, ccMatch };
+		return new Object[] { tText, mCommentToTText, mComment, ccMatch };
 	}
 
 	public static final Object[] pattern_TextAnnotations_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2582,10 +2582,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return _result;
 	}
 
-	public static final Object[] pattern_TextAnnotations_27_1_matchtggpattern_blackBB(LineComment mComment,
-			MDefinition mMember) {
+	public static final Object[] pattern_TextAnnotations_27_1_matchtggpattern_blackBB(MDefinition mMember,
+			LineComment mComment) {
 		if (mMember.getComments().contains(mComment)) {
-			return new Object[] { mComment, mMember };
+			return new Object[] { mMember, mComment };
 		}
 		return null;
 	}
@@ -2608,9 +2608,9 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 
 	public static final Object[] pattern_TextAnnotations_28_1_matchtggpattern_black_nac_0BB(TTextAnnotation tText,
 			TMember tMember) {
-		TAnnotatable __DEC_tText_tAnnotation_259890 = tText.getTAnnotated();
-		if (__DEC_tText_tAnnotation_259890 != null) {
-			if (!tMember.equals(__DEC_tText_tAnnotation_259890)) {
+		TAnnotatable __DEC_tText_tAnnotation_351709 = tText.getTAnnotated();
+		if (__DEC_tText_tAnnotation_351709 != null) {
+			if (!tMember.equals(__DEC_tText_tAnnotation_351709)) {
 				return new Object[] { tText, tMember };
 			}
 		}
@@ -2618,11 +2618,11 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return null;
 	}
 
-	public static final Object[] pattern_TextAnnotations_28_1_matchtggpattern_blackBB(TMember tMember,
-			TTextAnnotation tText) {
+	public static final Object[] pattern_TextAnnotations_28_1_matchtggpattern_blackBB(TTextAnnotation tText,
+			TMember tMember) {
 		if (tMember.equals(tText.getTAnnotated())) {
 			if (pattern_TextAnnotations_28_1_matchtggpattern_black_nac_0BB(tText, tMember) == null) {
-				return new Object[] { tMember, tText };
+				return new Object[] { tText, tMember };
 			}
 		}
 		return null;
@@ -2651,17 +2651,17 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, MDefinitionToTMember mMemberToTMember) {
-		if (ruleResult.getCorrObjects().contains(mMemberToTMember)) {
-			return new Object[] { ruleResult, mMemberToTMember };
+			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TextAnnotations_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
+			ModelgeneratorRuleResult ruleResult, MDefinitionToTMember mMemberToTMember) {
+		if (ruleResult.getCorrObjects().contains(mMemberToTMember)) {
+			return new Object[] { ruleResult, mMemberToTMember };
 		}
 		return null;
 	}
@@ -2686,13 +2686,13 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 						MDefinition mMember = (MDefinition) tmpMMember;
 						TMember tMember = mMemberToTMember.getTarget();
 						if (tMember != null) {
-							if (pattern_TextAnnotations_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+							if (pattern_TextAnnotations_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 									mMemberToTMember) == null) {
-								if (pattern_TextAnnotations_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+								if (pattern_TextAnnotations_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 										mMember) == null) {
 									if (pattern_TextAnnotations_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 											tMember) == null) {
-										_result.add(new Object[] { mMemberToTMemberList, mMemberToTMember, mMember,
+										_result.add(new Object[] { mMemberToTMemberList, mMember, mMemberToTMember,
 												tMember, ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2708,13 +2708,13 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_29_3_solveCSP_bindingFBBBBBB(TextAnnotations _this,
-			IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember, MDefinition mMember,
+			IsApplicableMatch isApplicableMatch, MDefinition mMember, MDefinitionToTMember mMemberToTMember,
 			TMember tMember, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMemberToTMember, mMember, tMember,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mMember, mMemberToTMember, tMember,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mMember, tMember, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tMember, ruleResult };
 		}
 		return null;
 	}
@@ -2724,10 +2724,10 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 	}
 
 	public static final Object[] pattern_TextAnnotations_29_3_solveCSP_bindingAndBlackFBBBBBB(TextAnnotations _this,
-			IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember, MDefinition mMember,
+			IsApplicableMatch isApplicableMatch, MDefinition mMember, MDefinitionToTMember mMemberToTMember,
 			TMember tMember, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TextAnnotations_29_3_solveCSP_binding = pattern_TextAnnotations_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mMemberToTMember, mMember, tMember, ruleResult);
+				_this, isApplicableMatch, mMember, mMemberToTMember, tMember, ruleResult);
 		if (result_pattern_TextAnnotations_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TextAnnotations_29_3_solveCSP_binding[0];
 
@@ -2735,7 +2735,7 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 					csp);
 			if (result_pattern_TextAnnotations_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mMember, tMember, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mMember, mMemberToTMember, tMember, ruleResult };
 			}
 		}
 		return null;
@@ -2747,42 +2747,42 @@ public class TextAnnotationsImpl extends AbstractRuleImpl implements TextAnnotat
 		return _result;
 	}
 
-	public static final Object[] pattern_TextAnnotations_29_5_checknacs_blackBBB(MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember) {
-		return new Object[] { mMemberToTMember, mMember, tMember };
+	public static final Object[] pattern_TextAnnotations_29_5_checknacs_blackBBB(MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember) {
+		return new Object[] { mMember, mMemberToTMember, tMember };
 	}
 
-	public static final Object[] pattern_TextAnnotations_29_6_perform_blackBBBB(MDefinitionToTMember mMemberToTMember,
-			MDefinition mMember, TMember tMember, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mMemberToTMember, mMember, tMember, ruleResult };
+	public static final Object[] pattern_TextAnnotations_29_6_perform_blackBBBB(MDefinition mMember,
+			MDefinitionToTMember mMemberToTMember, TMember tMember, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mMember, mMemberToTMember, tMember, ruleResult };
 	}
 
-	public static final Object[] pattern_TextAnnotations_29_6_perform_greenFFBBFBB(MDefinition mMember, TMember tMember,
+	public static final Object[] pattern_TextAnnotations_29_6_perform_greenFBBFFBB(MDefinition mMember, TMember tMember,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		LineComment mComment = JavaFactory.eINSTANCE.createLineComment();
-		LineCommentToTTextAnnotation mCommentToTText = PmFactory.eINSTANCE.createLineCommentToTTextAnnotation();
 		TTextAnnotation tText = AnnotationsFactory.eINSTANCE.createTTextAnnotation();
+		LineCommentToTTextAnnotation mCommentToTText = PmFactory.eINSTANCE.createLineCommentToTTextAnnotation();
+		LineComment mComment = JavaFactory.eINSTANCE.createLineComment();
+		Object _localVariable_0 = csp.getValue("tText", "text");
 		boolean mComment_prefixOfParent_prime = Boolean.valueOf(true);
-		Object _localVariable_0 = csp.getValue("mComment", "content");
-		Object _localVariable_1 = csp.getValue("tText", "text");
+		Object _localVariable_1 = csp.getValue("mComment", "content");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		mMember.getComments().add(mComment);
-		ruleResult.getSourceObjects().add(mComment);
-		mCommentToTText.setSource(mComment);
-		ruleResult.getCorrObjects().add(mCommentToTText);
 		tText.setTAnnotated(tMember);
-		mCommentToTText.setTarget(tText);
 		ruleResult.getTargetObjects().add(tText);
+		mCommentToTText.setTarget(tText);
+		ruleResult.getCorrObjects().add(mCommentToTText);
+		mMember.getComments().add(mComment);
+		mCommentToTText.setSource(mComment);
+		ruleResult.getSourceObjects().add(mComment);
+		String tText_text_prime = (String) _localVariable_0;
 		mComment.setPrefixOfParent(Boolean.valueOf(mComment_prefixOfParent_prime));
-		String mComment_content_prime = (String) _localVariable_0;
-		String tText_text_prime = (String) _localVariable_1;
+		String mComment_content_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		mComment.setContent(mComment_content_prime);
 		tText.setText(tText_text_prime);
+		mComment.setContent(mComment_content_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mComment, mCommentToTText, mMember, tMember, tText, ruleResult, csp };
+		return new Object[] { tText, mMember, tMember, mCommentToTText, mComment, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TextAnnotations_29_7_expressionFB(

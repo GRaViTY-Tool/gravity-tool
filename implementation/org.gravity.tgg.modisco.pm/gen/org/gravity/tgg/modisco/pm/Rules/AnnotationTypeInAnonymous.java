@@ -121,8 +121,8 @@ public interface AnnotationTypeInAnonymous extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType,
 			EObject mASTNodeToAnnotatable, EObject tPackage, EObject pg, EObject tNestedType,
-			EObject eAnonymousClassDeclarationToTClass, EObject mNestedTypeToTNestedType,
-			EObject eAnonymousClassDeclaration);
+			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,8 +208,8 @@ public interface AnnotationTypeInAnonymous extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mNestedType,
 			EObject mASTNodeToAnnotatable, EObject tPackage, EObject pg, EObject tNestedType,
-			EObject eAnonymousClassDeclarationToTClass, EObject mNestedTypeToTNestedType,
-			EObject eAnonymousClassDeclaration);
+			EObject eAnonymousClassDeclarationToTClass, EObject eAnonymousClassDeclaration,
+			EObject mNestedTypeToTNestedType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface AnnotationTypeInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_660(EMoflonEdge _edge_annotationTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_975(EMoflonEdge _edge_annotationTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +233,7 @@ public interface AnnotationTypeInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_710(EMoflonEdge _edge_anonymousClassDeclarationOwner);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1070(EMoflonEdge _edge_anonymousClassDeclarationOwner);
 
 	/**
 	 * <!-- begin-user-doc -->

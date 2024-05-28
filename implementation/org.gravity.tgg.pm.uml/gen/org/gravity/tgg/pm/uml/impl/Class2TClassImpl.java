@@ -158,14 +158,14 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.CLASS2_TCLASS__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.CLASS2_TCLASS__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.CLASS2_TCLASS__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.CLASS2_TCLASS__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,12 +178,12 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.CLASS2_TCLASS__SOURCE:
-			setSource((org.eclipse.uml2.uml.Class) newValue);
-			return;
-		case UmlPackage.CLASS2_TCLASS__TARGET:
-			setTarget((TClass) newValue);
-			return;
+			case UmlPackage.CLASS2_TCLASS__SOURCE:
+				setSource((org.eclipse.uml2.uml.Class) newValue);
+				return;
+			case UmlPackage.CLASS2_TCLASS__TARGET:
+				setTarget((TClass) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -196,12 +196,12 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.CLASS2_TCLASS__SOURCE:
-			setSource((org.eclipse.uml2.uml.Class) null);
-			return;
-		case UmlPackage.CLASS2_TCLASS__TARGET:
-			setTarget((TClass) null);
-			return;
+			case UmlPackage.CLASS2_TCLASS__SOURCE:
+				setSource((org.eclipse.uml2.uml.Class) null);
+				return;
+			case UmlPackage.CLASS2_TCLASS__TARGET:
+				setTarget((TClass) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -214,10 +214,10 @@ public class Class2TClassImpl extends AbstractCorrespondenceImpl implements Clas
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.CLASS2_TCLASS__SOURCE:
-			return source != null;
-		case UmlPackage.CLASS2_TCLASS__TARGET:
-			return target != null;
+			case UmlPackage.CLASS2_TCLASS__SOURCE:
+				return source != null;
+			case UmlPackage.CLASS2_TCLASS__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

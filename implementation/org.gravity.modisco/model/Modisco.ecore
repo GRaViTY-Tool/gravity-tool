@@ -61,8 +61,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mPrevious" eType="#//MEntry"
         eOpposite="#//MEntry/mNext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//MSingleVariableDeclaration" eOpposite="#//MSingleVariableDeclaration/mEntry"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allParameterInstances"
+        upperBound="-1" eType="#//MSingleVariableDeclaration" eOpposite="#//MSingleVariableDeclaration/mEntry"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MGravityModel" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldDefinitions" upperBound="-1"
@@ -119,7 +119,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MConstructorInvocation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableDeclaration" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mEntry" lowerBound="1"
-        eType="#//MEntry" eOpposite="#//MEntry/parameters"/>
+        eType="#//MEntry" eOpposite="#//MEntry/allParameterInstances"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodInvocation" abstract="true"
       eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation #//MAccess"/>

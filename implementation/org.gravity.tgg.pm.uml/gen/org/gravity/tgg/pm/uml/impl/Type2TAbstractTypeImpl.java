@@ -162,14 +162,14 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
-			setSource((Type) newValue);
-			return;
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
-			setTarget((TAbstractType) newValue);
-			return;
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
+				setSource((Type) newValue);
+				return;
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
+				setTarget((TAbstractType) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
-			setSource((Type) null);
-			return;
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
-			setTarget((TAbstractType) null);
-			return;
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
+				setSource((Type) null);
+				return;
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
+				setTarget((TAbstractType) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Type2TAbstractTypeImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
-			return source != null;
-		case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
-			return target != null;
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__SOURCE:
+				return source != null;
+			case UmlPackage.TYPE2_TABSTRACT_TYPE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

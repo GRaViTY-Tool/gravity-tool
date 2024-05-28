@@ -163,14 +163,14 @@ public class LineCommentToTTextAnnotationImpl extends AbstractCorrespondenceImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class LineCommentToTTextAnnotationImpl extends AbstractCorrespondenceImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
-			setSource((LineComment) newValue);
-			return;
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
-			setTarget((TTextAnnotation) newValue);
-			return;
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
+				setSource((LineComment) newValue);
+				return;
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
+				setTarget((TTextAnnotation) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class LineCommentToTTextAnnotationImpl extends AbstractCorrespondenceImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
-			setSource((LineComment) null);
-			return;
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
-			setTarget((TTextAnnotation) null);
-			return;
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
+				setSource((LineComment) null);
+				return;
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
+				setTarget((TTextAnnotation) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class LineCommentToTTextAnnotationImpl extends AbstractCorrespondenceImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
-			return source != null;
-		case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
-			return target != null;
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__SOURCE:
+				return source != null;
+			case PmPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

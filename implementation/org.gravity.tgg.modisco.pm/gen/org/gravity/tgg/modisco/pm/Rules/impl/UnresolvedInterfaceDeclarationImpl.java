@@ -364,19 +364,19 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		// Create literals
 
 		// Create attribute variables
-		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", true, csp);
-		var_unresolvedType_name.setValue(unresolvedType.getName());
-		var_unresolvedType_name.setType("String");
 		Variable var_unresolvedType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.proxy", true,
 				csp);
 		var_unresolvedType_proxy.setValue(unresolvedType.isProxy());
 		var_unresolvedType_proxy.setType("Boolean");
+		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", true, csp);
+		var_unresolvedType_name.setValue(unresolvedType.getName());
+		var_unresolvedType_name.setType("String");
 
 		// Create unbound variables
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", csp);
-		var_tClass_tName.setType("String");
 		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tLib", csp);
 		var_tClass_tLib.setType("Boolean");
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", csp);
+		var_tClass_tName.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -387,9 +387,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_unresolvedType_name, var_tClass_tName);
+		eq.solve(var_unresolvedType_proxy, var_tClass_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_unresolvedType_proxy, var_tClass_tLib);
+		eq_0.solve(var_unresolvedType_name, var_tClass_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("unresolvedType", unresolvedType);
@@ -612,9 +612,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge eModelToPg__eModel____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge pg__tModule____modules = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge pg__tClass____allTypes = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tClass__pg____model = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge pg__tClass____allTypes = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tClass__pg____model = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge pg__tModule____modules = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge tModule__tClass____contains = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge tClass__tModule____module = (EMoflonEdge) result3_green[12];
 
@@ -706,18 +706,18 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		// Create literals
 
 		// Create attribute variables
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", true, csp);
-		var_tClass_tName.setValue(tClass.getTName());
-		var_tClass_tName.setType("String");
 		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tLib", true, csp);
 		var_tClass_tLib.setValue(tClass.isTLib());
 		var_tClass_tLib.setType("Boolean");
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", true, csp);
+		var_tClass_tName.setValue(tClass.getTName());
+		var_tClass_tName.setType("String");
 
 		// Create unbound variables
-		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", csp);
-		var_unresolvedType_name.setType("String");
 		Variable var_unresolvedType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.proxy", csp);
 		var_unresolvedType_proxy.setType("Boolean");
+		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", csp);
+		var_unresolvedType_name.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -728,9 +728,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_unresolvedType_name, var_tClass_tName);
+		eq.solve(var_unresolvedType_proxy, var_tClass_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_unresolvedType_proxy, var_tClass_tLib);
+		eq_0.solve(var_unresolvedType_name, var_tClass_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tClass", tClass);
@@ -783,7 +783,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_590(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_994(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = UnresolvedInterfaceDeclarationImpl
 				.pattern_UnresolvedInterfaceDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -843,7 +843,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_636(EMoflonEdge _edge_unresolvedItems) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1090(EMoflonEdge _edge_unresolvedItems) {
 
 		Object[] result1_bindingAndBlack = UnresolvedInterfaceDeclarationImpl
 				.pattern_UnresolvedInterfaceDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -917,6 +917,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 			return ruleResult;
 		}
 
+		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
+		var_tClass_tLib.setValue(__helper.getValue("tClass", "tLib"));
+		var_tClass_tLib.setType("boolean");
+
 		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
 		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
 		var_tClass_tName.setType("String");
@@ -924,10 +928,6 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType", true, csp);
 		var_unresolvedType_name.setValue(__helper.getValue("unresolvedType", "name"));
 		var_unresolvedType_name.setType("String");
-
-		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
-		var_tClass_tLib.setValue(__helper.getValue("tClass", "tLib"));
-		var_tClass_tLib.setType("boolean");
 
 		Variable var_unresolvedType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType", true, csp);
 		var_unresolvedType_proxy.setValue(__helper.getValue("unresolvedType", "proxy"));
@@ -940,23 +940,23 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("UnresolvedInterfaceDeclaration");
-		eq0.solve(var_unresolvedType_name, var_tClass_tName);
+		eq0.solve(var_unresolvedType_proxy, var_tClass_tLib);
 
 		eq1.setRuleName("UnresolvedInterfaceDeclaration");
-		eq1.solve(var_unresolvedType_proxy, var_tClass_tLib);
+		eq1.solve(var_unresolvedType_name, var_tClass_tName);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_tClass_tName.setBound(false);
 			var_tClass_tLib.setBound(false);
-			eq0.solve(var_unresolvedType_name, var_tClass_tName);
-			eq1.solve(var_unresolvedType_proxy, var_tClass_tLib);
+			var_tClass_tName.setBound(false);
+			eq0.solve(var_unresolvedType_proxy, var_tClass_tLib);
+			eq1.solve(var_unresolvedType_name, var_tClass_tName);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("tClass", "tName", var_tClass_tName.getValue());
 				__helper.setValue("tClass", "tLib", var_tClass_tLib.getValue());
+				__helper.setValue("tClass", "tName", var_tClass_tName.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -986,6 +986,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 			return ruleResult;
 		}
 
+		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
+		var_tClass_tLib.setValue(__helper.getValue("tClass", "tLib"));
+		var_tClass_tLib.setType("boolean");
+
 		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
 		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
 		var_tClass_tName.setType("String");
@@ -993,10 +997,6 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType", true, csp);
 		var_unresolvedType_name.setValue(__helper.getValue("unresolvedType", "name"));
 		var_unresolvedType_name.setType("String");
-
-		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
-		var_tClass_tLib.setValue(__helper.getValue("tClass", "tLib"));
-		var_tClass_tLib.setType("boolean");
 
 		Variable var_unresolvedType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType", true, csp);
 		var_unresolvedType_proxy.setValue(__helper.getValue("unresolvedType", "proxy"));
@@ -1009,23 +1009,23 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		csp.getConstraints().add(eq1);
 
 		eq0.setRuleName("UnresolvedInterfaceDeclaration");
-		eq0.solve(var_unresolvedType_name, var_tClass_tName);
+		eq0.solve(var_unresolvedType_proxy, var_tClass_tLib);
 
 		eq1.setRuleName("UnresolvedInterfaceDeclaration");
-		eq1.solve(var_unresolvedType_proxy, var_tClass_tLib);
+		eq1.solve(var_unresolvedType_name, var_tClass_tName);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_unresolvedType_name.setBound(false);
 			var_unresolvedType_proxy.setBound(false);
-			eq0.solve(var_unresolvedType_name, var_tClass_tName);
-			eq1.solve(var_unresolvedType_proxy, var_tClass_tLib);
+			var_unresolvedType_name.setBound(false);
+			eq0.solve(var_unresolvedType_proxy, var_tClass_tLib);
+			eq1.solve(var_unresolvedType_name, var_tClass_tName);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("unresolvedType", "name", var_unresolvedType_name.getValue());
 				__helper.setValue("unresolvedType", "proxy", var_unresolvedType_proxy.getValue());
+				__helper.setValue("unresolvedType", "name", var_unresolvedType_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1128,12 +1128,6 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		// Create literals
 
 		// Create attribute variables
-		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", true, csp);
-		var_unresolvedType_name.setValue(unresolvedType.getName());
-		var_unresolvedType_name.setType("String");
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", true, csp);
-		var_tClass_tName.setValue(tClass.getTName());
-		var_tClass_tName.setType("String");
 		Variable var_unresolvedType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.proxy", true,
 				csp);
 		var_unresolvedType_proxy.setValue(unresolvedType.isProxy());
@@ -1141,6 +1135,12 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tLib", true, csp);
 		var_tClass_tLib.setValue(tClass.isTLib());
 		var_tClass_tLib.setType("Boolean");
+		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", true, csp);
+		var_unresolvedType_name.setValue(unresolvedType.getName());
+		var_unresolvedType_name.setType("String");
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", true, csp);
+		var_tClass_tName.setValue(tClass.getTName());
+		var_tClass_tName.setType("String");
 
 		// Create unbound variables
 
@@ -1153,9 +1153,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_unresolvedType_name, var_tClass_tName);
+		eq.solve(var_unresolvedType_proxy, var_tClass_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_unresolvedType_proxy, var_tClass_tLib);
+		eq_0.solve(var_unresolvedType_name, var_tClass_tName);
 		return csp;
 	}
 
@@ -1288,14 +1288,14 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", csp);
-		var_unresolvedType_name.setType("String");
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", csp);
-		var_tClass_tName.setType("String");
 		Variable var_unresolvedType_proxy = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.proxy", csp);
 		var_unresolvedType_proxy.setType("Boolean");
 		Variable var_tClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tLib", csp);
 		var_tClass_tLib.setType("Boolean");
+		Variable var_unresolvedType_name = CSPFactoryHelper.eINSTANCE.createVariable("unresolvedType.name", csp);
+		var_unresolvedType_name.setType("String");
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass.tName", csp);
+		var_tClass_tName.setType("String");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -1306,9 +1306,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 		// Solve CSP
 		eq.setRuleName("NoRuleName");
-		eq.solve(var_unresolvedType_name, var_tClass_tName);
+		eq.solve(var_unresolvedType_proxy, var_tClass_tLib);
 		eq_0.setRuleName("NoRuleName");
-		eq_0.solve(var_unresolvedType_proxy, var_tClass_tLib);
+		eq_0.solve(var_unresolvedType_name, var_tClass_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tModule", tModule);
@@ -1335,99 +1335,100 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_FWD__MATCH_UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
-			return isAppropriate_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
-					(MGravityModel) arguments.get(2));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
-					(MGravityModel) arguments.get(2));
-			return null;
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
-					(MGravityModel) arguments.get(2));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_UNRESOLVEDINTERFACEDECLARATION_TMODULE_MODELTOTYPEGRAPH_TYPEGRAPH_MGRAVITYMODEL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
-					(TModule) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (TypeGraph) arguments.get(4),
-					(MGravityModel) arguments.get(5));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_BWD__MATCH_TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
-			return isAppropriate_BWD((Match) arguments.get(0), (TUnresolvedType) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TUnresolvedType) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3));
-			return null;
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TUnresolvedType) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TUNRESOLVEDTYPE_TMODULE_MODELTOTYPEGRAPH_TYPEGRAPH_MGRAVITYMODEL:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TUnresolvedType) arguments.get(1),
-					(TModule) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (TypeGraph) arguments.get(4),
-					(MGravityModel) arguments.get(5));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_590__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_590((EMoflonEdge) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_636__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_636((EMoflonEdge) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_CC__TUNRESOLVEDTYPE_UNRESOLVEDINTERFACEDECLARATION_TMODULE_TYPEGRAPH_MGRAVITYMODEL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TUnresolvedType) arguments.get(0),
-					(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (MGravityModel) arguments.get(4),
-					(Match) arguments.get(5), (Match) arguments.get(6));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_DEC_FWD__UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
-			return checkDEC_FWD((org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(0),
-					(MGravityModel) arguments.get(1));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_DEC_BWD__TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
-			return checkDEC_BWD((TUnresolvedType) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMODULE_MODELTOTYPEGRAPH_TYPEGRAPH_MGRAVITYMODEL_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TModule) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (TypeGraph) arguments.get(3), (MGravityModel) arguments.get(4),
-					(ModelgeneratorRuleResult) arguments.get(5));
-		case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_FWD__MATCH_UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
+				return isAppropriate_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
+						(MGravityModel) arguments.get(2));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
+						(MGravityModel) arguments.get(2));
+				return null;
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
+						(MGravityModel) arguments.get(2));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_UNRESOLVEDINTERFACEDECLARATION_TMODULE_MODELTOTYPEGRAPH_TYPEGRAPH_MGRAVITYMODEL:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
+						(TModule) arguments.get(2), (ModelToTypeGraph) arguments.get(3), (TypeGraph) arguments.get(4),
+						(MGravityModel) arguments.get(5));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_BWD__MATCH_TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
+				return isAppropriate_BWD((Match) arguments.get(0), (TUnresolvedType) arguments.get(1),
+						(TModule) arguments.get(2), (TypeGraph) arguments.get(3));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TUnresolvedType) arguments.get(1),
+						(TModule) arguments.get(2), (TypeGraph) arguments.get(3));
+				return null;
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TUnresolvedType) arguments.get(1),
+						(TModule) arguments.get(2), (TypeGraph) arguments.get(3));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TUNRESOLVEDTYPE_TMODULE_MODELTOTYPEGRAPH_TYPEGRAPH_MGRAVITYMODEL:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(TUnresolvedType) arguments.get(1), (TModule) arguments.get(2),
+						(ModelToTypeGraph) arguments.get(3), (TypeGraph) arguments.get(4),
+						(MGravityModel) arguments.get(5));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_994__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_994((EMoflonEdge) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1090__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1090((EMoflonEdge) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_CC__TUNRESOLVEDTYPE_UNRESOLVEDINTERFACEDECLARATION_TMODULE_TYPEGRAPH_MGRAVITYMODEL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((TUnresolvedType) arguments.get(0),
+						(org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(1),
+						(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (MGravityModel) arguments.get(4),
+						(Match) arguments.get(5), (Match) arguments.get(6));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_DEC_FWD__UNRESOLVEDINTERFACEDECLARATION_MGRAVITYMODEL:
+				return checkDEC_FWD((org.eclipse.modisco.java.UnresolvedInterfaceDeclaration) arguments.get(0),
+						(MGravityModel) arguments.get(1));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___CHECK_DEC_BWD__TUNRESOLVEDTYPE_TMODULE_TYPEGRAPH:
+				return checkDEC_BWD((TUnresolvedType) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TMODULE_MODELTOTYPEGRAPH_TYPEGRAPH_MGRAVITYMODEL_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TModule) arguments.get(1),
+						(ModelToTypeGraph) arguments.get(2), (TypeGraph) arguments.get(3),
+						(MGravityModel) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+			case RulesPackage.UNRESOLVED_INTERFACE_DECLARATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1594,16 +1595,16 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 			CSP csp) {
 		TUnresolvedType tClass = BasicFactory.eINSTANCE.createTUnresolvedType();
 		TypeToTAbstractType eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		Object _localVariable_0 = csp.getValue("tClass", "tName");
-		Object _localVariable_1 = csp.getValue("tClass", "tLib");
+		Object _localVariable_0 = csp.getValue("tClass", "tLib");
+		Object _localVariable_1 = csp.getValue("tClass", "tName");
 		pg.getAllTypes().add(tClass);
 		tModule.getContains().add(tClass);
 		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(unresolvedType);
-		String tClass_tName_prime = (String) _localVariable_0;
-		boolean tClass_tLib_prime = (boolean) _localVariable_1;
-		tClass.setTName(tClass_tName_prime);
+		boolean tClass_tLib_prime = (boolean) _localVariable_0;
+		String tClass_tName_prime = (String) _localVariable_1;
 		tClass.setTLib(Boolean.valueOf(tClass_tLib_prime));
+		tClass.setTName(tClass_tName_prime);
 		return new Object[] { tClass, unresolvedType, tModule, pg, eAnonymousClassDeclarationToTClass, csp };
 	}
 
@@ -2136,15 +2137,15 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType = JavaFactory.eINSTANCE
 				.createUnresolvedInterfaceDeclaration();
 		TypeToTAbstractType eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		Object _localVariable_0 = csp.getValue("unresolvedType", "name");
-		Object _localVariable_1 = csp.getValue("unresolvedType", "proxy");
+		Object _localVariable_0 = csp.getValue("unresolvedType", "proxy");
+		Object _localVariable_1 = csp.getValue("unresolvedType", "name");
 		eModel.getUnresolvedItems().add(unresolvedType);
 		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(unresolvedType);
-		String unresolvedType_name_prime = (String) _localVariable_0;
-		boolean unresolvedType_proxy_prime = (boolean) _localVariable_1;
-		unresolvedType.setName(unresolvedType_name_prime);
+		boolean unresolvedType_proxy_prime = (boolean) _localVariable_0;
+		String unresolvedType_name_prime = (String) _localVariable_1;
 		unresolvedType.setProxy(Boolean.valueOf(unresolvedType_proxy_prime));
+		unresolvedType.setName(unresolvedType_name_prime);
 		return new Object[] { tClass, unresolvedType, eAnonymousClassDeclarationToTClass, eModel, csp };
 	}
 
@@ -2387,8 +2388,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (pg.equals(eModelToPg.getTarget())) {
 			if (eModel.equals(eModelToPg.getSource())) {
-				if (pg.getModules().contains(tModule)) {
-					if (pg.getAllTypes().contains(tClass)) {
+				if (pg.getAllTypes().contains(tClass)) {
+					if (pg.getModules().contains(tModule)) {
 						if (tModule.getContains().contains(tClass)) {
 							String tModule_location = tModule.getLocation();
 							if (tModule_location.equals("${PROXIES}")) {
@@ -2408,16 +2409,16 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eModelToPg__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pg__tModule____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tModule____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tModule__tClass____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tClass__tModule____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String eModelToPg__pg____target_name_prime = "target";
 		String eModelToPg__eModel____source_name_prime = "source";
-		String pg__tModule____modules_name_prime = "modules";
 		String pg__tClass____allTypes_name_prime = "allTypes";
 		String tClass__pg____model_name_prime = "model";
+		String pg__tModule____modules_name_prime = "modules";
 		String tModule__tClass____contains_name_prime = "contains";
 		String tClass__tModule____module_name_prime = "module";
 		isApplicableMatch.getAllContextElements().add(tClass);
@@ -2431,15 +2432,15 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		eModelToPg__eModel____source.setSrc(eModelToPg);
 		eModelToPg__eModel____source.setTrg(eModel);
 		isApplicableMatch.getAllContextElements().add(eModelToPg__eModel____source);
-		pg__tModule____modules.setSrc(pg);
-		pg__tModule____modules.setTrg(tModule);
-		isApplicableMatch.getAllContextElements().add(pg__tModule____modules);
 		pg__tClass____allTypes.setSrc(pg);
 		pg__tClass____allTypes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(pg__tClass____allTypes);
 		tClass__pg____model.setSrc(tClass);
 		tClass__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tClass__pg____model);
+		pg__tModule____modules.setSrc(pg);
+		pg__tModule____modules.setTrg(tModule);
+		isApplicableMatch.getAllContextElements().add(pg__tModule____modules);
 		tModule__tClass____contains.setSrc(tModule);
 		tModule__tClass____contains.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(tModule__tClass____contains);
@@ -2448,13 +2449,13 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		isApplicableMatch.getAllContextElements().add(tClass__tModule____module);
 		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
 		eModelToPg__eModel____source.setName(eModelToPg__eModel____source_name_prime);
-		pg__tModule____modules.setName(pg__tModule____modules_name_prime);
 		pg__tClass____allTypes.setName(pg__tClass____allTypes_name_prime);
 		tClass__pg____model.setName(tClass__pg____model_name_prime);
+		pg__tModule____modules.setName(pg__tModule____modules_name_prime);
 		tModule__tClass____contains.setName(tModule__tClass____contains_name_prime);
 		tClass__tModule____module.setName(tClass__tModule____module_name_prime);
 		return new Object[] { tClass, tModule, eModelToPg, pg, eModel, isApplicableMatch, eModelToPg__pg____target,
-				eModelToPg__eModel____source, pg__tModule____modules, pg__tClass____allTypes, tClass__pg____model,
+				eModelToPg__eModel____source, pg__tClass____allTypes, tClass__pg____model, pg__tModule____modules,
 				tModule__tClass____contains, tClass__tModule____module };
 	}
 
@@ -2576,9 +2577,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_0B(
 			TUnresolvedType tClass) {
-		TAbstractType __DEC_tClass_innerTypes_501314 = tClass.getOuterType();
-		if (__DEC_tClass_innerTypes_501314 != null) {
-			if (!tClass.equals(__DEC_tClass_innerTypes_501314)) {
+		TAbstractType __DEC_tClass_innerTypes_935898 = tClass.getOuterType();
+		if (__DEC_tClass_innerTypes_935898 != null) {
+			if (!tClass.equals(__DEC_tClass_innerTypes_935898)) {
 				return new Object[] { tClass };
 			}
 		}
@@ -2588,8 +2589,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_1B(
 			TUnresolvedType tClass) {
-		TPackage __DEC_tClass_allTypes_678179 = tClass.getPackage();
-		if (__DEC_tClass_allTypes_678179 != null) {
+		TPackage __DEC_tClass_allTypes_741023 = tClass.getPackage();
+		if (__DEC_tClass_allTypes_741023 != null) {
 			return new Object[] { tClass };
 		}
 
@@ -2598,7 +2599,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_2B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_classes_324830 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_classes_967246 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "classes")) {
 			return new Object[] { tClass };
 		}
@@ -2607,9 +2608,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_3BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_classes_331768 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_classes_272962 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tClass_classes_331768)) {
+			if (!pg.equals(__DEC_tClass_classes_272962)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -2618,7 +2619,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_4B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_interfaces_147801 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_interfaces_546785 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "interfaces")) {
 			return new Object[] { tClass };
 		}
@@ -2627,9 +2628,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_20_2_testcorematchandDECs_black_nac_5BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_interfaces_415604 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_interfaces_973671 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tClass_interfaces_415604)) {
+			if (!pg.equals(__DEC_tClass_interfaces_973671)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -2808,10 +2809,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_832371 = unresolvedType
+		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_427721 = unresolvedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_unresolvedType_abstractTypeDeclaration_832371 != null) {
-			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_832371)) {
+		if (__DEC_unresolvedType_abstractTypeDeclaration_427721 != null) {
+			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_427721)) {
 				return new Object[] { unresolvedType };
 			}
 		}
@@ -2821,9 +2822,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_47336 = unresolvedType
+		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_822888 = unresolvedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_47336 != null) {
+		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_822888 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -2832,9 +2833,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_2BB(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType, MGravityModel eModel) {
-		for (Model __DEC_unresolvedType_orphanTypes_832209 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_unresolvedType_orphanTypes_800553 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, Model.class, "orphanTypes")) {
-			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_832209)) {
+			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_800553)) {
 				return new Object[] { unresolvedType, eModel };
 			}
 		}
@@ -2843,8 +2844,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_3B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_763234 = unresolvedType.getPackage();
-		if (__DEC_unresolvedType_ownedElements_763234 != null) {
+		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_14261 = unresolvedType.getPackage();
+		if (__DEC_unresolvedType_ownedElements_14261 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -2853,7 +2854,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_21_2_testcorematchandDECs_black_nac_4B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_399006 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_789925 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { unresolvedType };
 		}
@@ -3135,10 +3136,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_0B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_506513 = unresolvedType
+		AbstractTypeDeclaration __DEC_unresolvedType_abstractTypeDeclaration_83404 = unresolvedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_unresolvedType_abstractTypeDeclaration_506513 != null) {
-			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_506513)) {
+		if (__DEC_unresolvedType_abstractTypeDeclaration_83404 != null) {
+			if (!unresolvedType.equals(__DEC_unresolvedType_abstractTypeDeclaration_83404)) {
 				return new Object[] { unresolvedType };
 			}
 		}
@@ -3148,9 +3149,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_1B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_522904 = unresolvedType
+		AnonymousClassDeclaration __DEC_unresolvedType_anonymousClassDeclarationOwner_753637 = unresolvedType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_522904 != null) {
+		if (__DEC_unresolvedType_anonymousClassDeclarationOwner_753637 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -3159,9 +3160,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_2BB(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType, MGravityModel eModel) {
-		for (Model __DEC_unresolvedType_orphanTypes_573405 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_unresolvedType_orphanTypes_292729 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, Model.class, "orphanTypes")) {
-			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_573405)) {
+			if (!eModel.equals(__DEC_unresolvedType_orphanTypes_292729)) {
 				return new Object[] { unresolvedType, eModel };
 			}
 		}
@@ -3170,8 +3171,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_3B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_81411 = unresolvedType.getPackage();
-		if (__DEC_unresolvedType_ownedElements_81411 != null) {
+		org.eclipse.modisco.java.Package __DEC_unresolvedType_ownedElements_448546 = unresolvedType.getPackage();
+		if (__DEC_unresolvedType_ownedElements_448546 != null) {
 			return new Object[] { unresolvedType };
 		}
 
@@ -3180,7 +3181,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_27_1_matchtggpattern_black_nac_4B(
 			org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType) {
-		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_493578 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_unresolvedType_mInnerTypes_962129 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(unresolvedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { unresolvedType };
 		}
@@ -3231,9 +3232,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_0B(
 			TUnresolvedType tClass) {
-		TAbstractType __DEC_tClass_innerTypes_548624 = tClass.getOuterType();
-		if (__DEC_tClass_innerTypes_548624 != null) {
-			if (!tClass.equals(__DEC_tClass_innerTypes_548624)) {
+		TAbstractType __DEC_tClass_innerTypes_964978 = tClass.getOuterType();
+		if (__DEC_tClass_innerTypes_964978 != null) {
+			if (!tClass.equals(__DEC_tClass_innerTypes_964978)) {
 				return new Object[] { tClass };
 			}
 		}
@@ -3243,8 +3244,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_1B(
 			TUnresolvedType tClass) {
-		TPackage __DEC_tClass_allTypes_918660 = tClass.getPackage();
-		if (__DEC_tClass_allTypes_918660 != null) {
+		TPackage __DEC_tClass_allTypes_563125 = tClass.getPackage();
+		if (__DEC_tClass_allTypes_563125 != null) {
 			return new Object[] { tClass };
 		}
 
@@ -3253,7 +3254,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_2B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_classes_139990 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_classes_845842 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "classes")) {
 			return new Object[] { tClass };
 		}
@@ -3262,9 +3263,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_3BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_classes_549803 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_classes_608276 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tClass_classes_549803)) {
+			if (!pg.equals(__DEC_tClass_classes_608276)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -3273,7 +3274,7 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_4B(
 			TUnresolvedType tClass) {
-		for (TPackage __DEC_tClass_interfaces_956141 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tClass_interfaces_268607 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TPackage.class, "interfaces")) {
 			return new Object[] { tClass };
 		}
@@ -3282,9 +3283,9 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_black_nac_5BB(
 			TUnresolvedType tClass, TypeGraph pg) {
-		for (TypeGraph __DEC_tClass_interfaces_21412 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tClass_interfaces_864830 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tClass, TypeGraph.class, "interfaces")) {
-			if (!pg.equals(__DEC_tClass_interfaces_21412)) {
+			if (!pg.equals(__DEC_tClass_interfaces_864830)) {
 				return new Object[] { tClass, pg };
 			}
 		}
@@ -3309,8 +3310,8 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedInterfaceDeclaration_28_1_matchtggpattern_blackBBB(
 			TUnresolvedType tClass, TModule tModule, TypeGraph pg) {
-		if (pg.getModules().contains(tModule)) {
-			if (pg.getAllTypes().contains(tClass)) {
+		if (pg.getAllTypes().contains(tClass)) {
+			if (pg.getModules().contains(tModule)) {
 				if (tModule.getContains().contains(tClass)) {
 					String tModule_location = tModule.getLocation();
 					if (tModule_location.equals("${PROXIES}")) {
@@ -3510,10 +3511,10 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		org.eclipse.modisco.java.UnresolvedInterfaceDeclaration unresolvedType = JavaFactory.eINSTANCE
 				.createUnresolvedInterfaceDeclaration();
 		TypeToTAbstractType eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		Object _localVariable_0 = csp.getValue("tClass", "tName");
-		Object _localVariable_1 = csp.getValue("tClass", "tLib");
-		Object _localVariable_2 = csp.getValue("unresolvedType", "name");
-		Object _localVariable_3 = csp.getValue("unresolvedType", "proxy");
+		Object _localVariable_0 = csp.getValue("tClass", "tLib");
+		Object _localVariable_1 = csp.getValue("tClass", "tName");
+		Object _localVariable_2 = csp.getValue("unresolvedType", "proxy");
+		Object _localVariable_3 = csp.getValue("unresolvedType", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		pg.getAllTypes().add(tClass);
@@ -3524,16 +3525,16 @@ public class UnresolvedInterfaceDeclarationImpl extends AbstractRuleImpl impleme
 		eAnonymousClassDeclarationToTClass.setTarget(tClass);
 		eAnonymousClassDeclarationToTClass.setSource(unresolvedType);
 		ruleResult.getCorrObjects().add(eAnonymousClassDeclarationToTClass);
-		String tClass_tName_prime = (String) _localVariable_0;
-		boolean tClass_tLib_prime = (boolean) _localVariable_1;
-		String unresolvedType_name_prime = (String) _localVariable_2;
-		boolean unresolvedType_proxy_prime = (boolean) _localVariable_3;
+		boolean tClass_tLib_prime = (boolean) _localVariable_0;
+		String tClass_tName_prime = (String) _localVariable_1;
+		boolean unresolvedType_proxy_prime = (boolean) _localVariable_2;
+		String unresolvedType_name_prime = (String) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		tClass.setTName(tClass_tName_prime);
 		tClass.setTLib(Boolean.valueOf(tClass_tLib_prime));
-		unresolvedType.setName(unresolvedType_name_prime);
+		tClass.setTName(tClass_tName_prime);
 		unresolvedType.setProxy(Boolean.valueOf(unresolvedType_proxy_prime));
+		unresolvedType.setName(unresolvedType_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
 		return new Object[] { tClass, unresolvedType, tModule, pg, eAnonymousClassDeclarationToTClass, eModel,
 				ruleResult, csp };

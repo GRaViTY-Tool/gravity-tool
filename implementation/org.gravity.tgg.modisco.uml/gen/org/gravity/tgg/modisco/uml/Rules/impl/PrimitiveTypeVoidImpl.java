@@ -610,7 +610,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_29(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_56(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeVoidImpl
 				.pattern_PrimitiveTypeVoid_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -665,7 +665,7 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_PrimitiveTypeVoid_3(org.eclipse.modisco.java.PrimitiveTypeVoid jpt) {
+	public EObjectContainer isAppropriate_FWD_PrimitiveTypeVoid_6(org.eclipse.modisco.java.PrimitiveTypeVoid jpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeVoidImpl
 				.pattern_PrimitiveTypeVoid_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -730,13 +730,13 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -777,13 +777,13 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
-		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
-		var_jpt_name.setType("String");
-
 		Variable var_umpt_name = CSPFactoryHelper.eINSTANCE.createVariable("umpt", true, csp);
 		var_umpt_name.setValue(__helper.getValue("umpt", "name"));
 		var_umpt_name.setType("String");
+
+		Variable var_jpt_name = CSPFactoryHelper.eINSTANCE.createVariable("jpt", true, csp);
+		var_jpt_name.setValue(__helper.getValue("jpt", "name"));
+		var_jpt_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1043,83 +1043,85 @@ public class PrimitiveTypeVoidImpl extends AbstractRuleImpl implements Primitive
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPEVOID:
-			return isAppropriate_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPEVOID:
-			registerObjectsToMatch_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPEVOID:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPEVOID:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD__MATCH_PRIMITIVETYPE:
-			return isAppropriate_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PRIMITIVETYPE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PRIMITIVETYPE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PRIMITIVETYPE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (PrimitiveType) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_29__PRIMITIVETYPE:
-			return isAppropriate_BWD_PrimitiveType_29((PrimitiveType) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_VOID_3__PRIMITIVETYPEVOID:
-			return isAppropriate_FWD_PrimitiveTypeVoid_3((org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPE_PRIMITIVETYPEVOID_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((PrimitiveType) arguments.get(0),
-					(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1), (Match) arguments.get(2),
-					(Match) arguments.get(3));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_DEC_FWD__PRIMITIVETYPEVOID:
-			return checkDEC_FWD((org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_DEC_BWD__PRIMITIVETYPE:
-			return checkDEC_BWD((PrimitiveType) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_VOID___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPEVOID:
+				return isAppropriate_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPEVOID:
+				registerObjectsToMatch_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPEVOID:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPEVOID:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD__MATCH_PRIMITIVETYPE:
+				return isAppropriate_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PRIMITIVETYPE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PRIMITIVETYPE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (PrimitiveType) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PRIMITIVETYPE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(PrimitiveType) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_56__PRIMITIVETYPE:
+				return isAppropriate_BWD_PrimitiveType_56((PrimitiveType) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_VOID_6__PRIMITIVETYPEVOID:
+				return isAppropriate_FWD_PrimitiveTypeVoid_6(
+						(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPE_PRIMITIVETYPEVOID_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((PrimitiveType) arguments.get(0),
+						(org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(1), (Match) arguments.get(2),
+						(Match) arguments.get(3));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_DEC_FWD__PRIMITIVETYPEVOID:
+				return checkDEC_FWD((org.eclipse.modisco.java.PrimitiveTypeVoid) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___CHECK_DEC_BWD__PRIMITIVETYPE:
+				return checkDEC_BWD((PrimitiveType) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_VOID___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

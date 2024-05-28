@@ -115,7 +115,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject mPackageToTPackage,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject annotatable2Annotatable,
 			EObject tType, EObject mPackage, EObject tPackage, EObject pg, EObject type2Type, EObject mType);
 
 	/**
@@ -197,7 +197,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject mPackageToTPackage,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject annotatable2Annotatable,
 			EObject tType, EObject mPackage, EObject tPackage, EObject pg, EObject type2Type, EObject mType);
 
 	/**
@@ -214,7 +214,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_632(EMoflonEdge _edge_allTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1019(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface AnnotationTypeInPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_679(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1117(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->

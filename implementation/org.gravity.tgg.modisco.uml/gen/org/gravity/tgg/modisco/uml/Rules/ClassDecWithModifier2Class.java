@@ -204,7 +204,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Class_7(org.eclipse.uml2.uml.Class feature);
+	EObjectContainer isAppropriate_BWD_Class_13(org.eclipse.uml2.uml.Class feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface ClassDecWithModifier2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_763(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1145(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

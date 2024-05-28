@@ -162,14 +162,14 @@ public class MMethodNameToTMethodImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class MMethodNameToTMethodImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
-			setSource((MMethodName) newValue);
-			return;
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
-			setTarget((TMethod) newValue);
-			return;
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
+				setSource((MMethodName) newValue);
+				return;
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
+				setTarget((TMethod) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class MMethodNameToTMethodImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
-			setSource((MMethodName) null);
-			return;
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
-			setTarget((TMethod) null);
-			return;
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
+				setSource((MMethodName) null);
+				return;
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
+				setTarget((TMethod) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class MMethodNameToTMethodImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
-			return source != null;
-		case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
-			return target != null;
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__SOURCE:
+				return source != null;
+			case PmPackage.MMETHOD_NAME_TO_TMETHOD__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

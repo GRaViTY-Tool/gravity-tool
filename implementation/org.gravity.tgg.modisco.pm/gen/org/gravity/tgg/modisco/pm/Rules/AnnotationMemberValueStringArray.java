@@ -4,10 +4,8 @@ package org.gravity.tgg.modisco.pm.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.AnnotationMemberValuePair;
 import org.eclipse.modisco.java.ArrayInitializer;
-import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.StringLiteral;
 
 import org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue;
@@ -49,8 +47,8 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, StringLiteral mValue);
+	boolean isAppropriate_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			StringLiteral mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,8 +72,8 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, StringLiteral mValue);
+	void registerObjectsToMatch_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			StringLiteral mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,8 +81,8 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, StringLiteral mValue);
+	CSP isAppropriate_solveCsp_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			StringLiteral mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,10 +98,10 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, StringLiteral mValue, TAnnotationValue tAnnotationValue);
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,9 +117,9 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue,
-			EObject mOwner, EObject mValue, EObject tAnnotationValue);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject AnnotationMemberValuePairToTAnnotationValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue,
+			EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,10 +183,10 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue,
-			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue, TTextNode tValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
+			TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,9 +202,9 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation, EObject mAnnotationValue,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue,
-			EObject mOwner, EObject mValue, EObject tAnnotationValue);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject AnnotationMemberValuePairToTAnnotationValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue,
+			EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +220,7 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_567(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_980(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +228,7 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_614(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1075(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,9 +260,8 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, TTextNode tValue, BodyDeclaration mOwner, StringLiteral mValue,
-			TAnnotationValue tAnnotationValue, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
+			TAnnotationValue tAnnotationValue, StringLiteral mValue, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,8 +277,7 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			BodyDeclaration mOwner, StringLiteral mValue);
+	boolean checkDEC_FWD(AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, StringLiteral mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,10 +302,10 @@ public interface AnnotationMemberValueStringArray extends EObject, AbstractRule 
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult);
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

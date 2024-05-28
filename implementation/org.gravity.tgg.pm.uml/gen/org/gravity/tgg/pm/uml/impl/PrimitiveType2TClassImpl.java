@@ -162,14 +162,14 @@ public class PrimitiveType2TClassImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class PrimitiveType2TClassImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
-			setSource((PrimitiveType) newValue);
-			return;
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
-			setTarget((TClass) newValue);
-			return;
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
+				setSource((PrimitiveType) newValue);
+				return;
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
+				setTarget((TClass) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class PrimitiveType2TClassImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
-			setSource((PrimitiveType) null);
-			return;
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
-			setTarget((TClass) null);
-			return;
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
+				setSource((PrimitiveType) null);
+				return;
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
+				setTarget((TClass) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class PrimitiveType2TClassImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
-			return source != null;
-		case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
-			return target != null;
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__SOURCE:
+				return source != null;
+			case UmlPackage.PRIMITIVE_TYPE2_TCLASS__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

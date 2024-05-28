@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.moflon.tgg.language,
  org.apache.xmlgraphics
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Export-Package: org.gravity.modisco,

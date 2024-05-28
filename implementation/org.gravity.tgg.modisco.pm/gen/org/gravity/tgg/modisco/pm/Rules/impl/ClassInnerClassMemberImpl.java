@@ -177,15 +177,15 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		TPackage tPackage = (TPackage) result1_bindingAndBlack[0];
-		MClass mInnerClass = (MClass) result1_bindingAndBlack[1];
-		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[2];
+		TypeGraph typeGraph = (TypeGraph) result1_bindingAndBlack[1];
+		MClass mInnerClass = (MClass) result1_bindingAndBlack[2];
 		ClassDeclaration eOuterClass = (ClassDeclaration) result1_bindingAndBlack[3];
 		MAbstractMethodDefinition mDefinition = (MAbstractMethodDefinition) result1_bindingAndBlack[4];
 		TClass tOuterClass = (TClass) result1_bindingAndBlack[5];
 		TypeToTAbstractType eOuterClassToTOuterClass = (TypeToTAbstractType) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = ClassInnerClassMemberImpl
-				.pattern_ClassInnerClassMember_1_1_performtransformation_greenFFBBBBFB(tPackage, mInnerClass, typeGraph,
+				.pattern_ClassInnerClassMember_1_1_performtransformation_greenFFBBBBFB(tPackage, typeGraph, mInnerClass,
 						tOuterClass, csp);
 		ASTNodeToTAnnotatable astNodeToAnnotatable = (ASTNodeToTAnnotatable) result1_green[0];
 		TypeToTAbstractType tInnerTypeToTInnerAbstractType = (TypeToTAbstractType) result1_green[1];
@@ -207,19 +207,19 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 		Object[] result3_black = ClassInnerClassMemberImpl
 				.pattern_ClassInnerClassMember_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult,
-						astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+						astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 						eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[astNodeToAnnotatable] = " + astNodeToAnnotatable + ", "
 					+ "[tInnerTypeToTInnerAbstractType] = " + tInnerTypeToTInnerAbstractType + ", " + "[tPackage] = "
-					+ tPackage + ", " + "[mInnerClass] = " + mInnerClass + ", " + "[typeGraph] = " + typeGraph + ", "
+					+ tPackage + ", " + "[typeGraph] = " + typeGraph + ", " + "[mInnerClass] = " + mInnerClass + ", "
 					+ "[eOuterClass] = " + eOuterClass + ", " + "[mDefinition] = " + mDefinition + ", "
 					+ "[tOuterClass] = " + tOuterClass + ", " + "[tInnerClass] = " + tInnerClass + ", "
 					+ "[eOuterClassToTOuterClass] = " + eOuterClassToTOuterClass + ".");
 		}
 		ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
-				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 				mDefinition, tOuterClass, tInnerClass);
 		//nothing EMoflonEdge astNodeToAnnotatable__tInnerClass____target = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge typeGraph__tInnerClass____classes = (EMoflonEdge) result3_green[10];
@@ -238,7 +238,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		// 
 		// 
 		ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_1_5_registerobjects_expressionBBBBBBBBBBBB(this,
-				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 				eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
 		return ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_1_6_expressionFB(ruleresult);
 	}
@@ -277,13 +277,13 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 			TypeToTAbstractType eOuterClassToTOuterClass = (TypeToTAbstractType) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : ClassInnerClassMemberImpl
-					.pattern_ClassInnerClassMember_2_3_findcontext_blackFBFBBBB(mInnerClass, eOuterClass, mDefinition,
+					.pattern_ClassInnerClassMember_2_3_findcontext_blackFFBBBBB(mInnerClass, eOuterClass, mDefinition,
 							tOuterClass, eOuterClassToTOuterClass)) {
 				TPackage tPackage = (TPackage) result3_black[0];
-				TypeGraph typeGraph = (TypeGraph) result3_black[2];
+				TypeGraph typeGraph = (TypeGraph) result3_black[1];
 				Object[] result3_green = ClassInnerClassMemberImpl
-						.pattern_ClassInnerClassMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFF(tPackage, mInnerClass,
-								typeGraph, eOuterClass, mDefinition, tOuterClass, eOuterClassToTOuterClass);
+						.pattern_ClassInnerClassMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFF(tPackage, typeGraph,
+								mInnerClass, eOuterClass, mDefinition, tOuterClass, eOuterClassToTOuterClass);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
 				//nothing EMoflonEdge tOuterClass__typeGraph____model = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge typeGraph__tOuterClass____allTypes = (EMoflonEdge) result3_green[9];
@@ -297,12 +297,12 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 				Object[] result4_bindingAndBlack = ClassInnerClassMemberImpl
 						.pattern_ClassInnerClassMember_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+								tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 								eOuterClassToTOuterClass);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPackage] = " + tPackage + ", "
-							+ "[mInnerClass] = " + mInnerClass + ", " + "[typeGraph] = " + typeGraph + ", "
+							+ "[typeGraph] = " + typeGraph + ", " + "[mInnerClass] = " + mInnerClass + ", "
 							+ "[eOuterClass] = " + eOuterClass + ", " + "[mDefinition] = " + mDefinition + ", "
 							+ "[tOuterClass] = " + tOuterClass + ", " + "[eOuterClassToTOuterClass] = "
 							+ eOuterClassToTOuterClass + ".");
@@ -378,9 +378,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, MClass mInnerClass,
-			TypeGraph typeGraph, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition,
-			TClass tOuterClass, TypeToTAbstractType eOuterClassToTOuterClass) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
+			MClass mInnerClass, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
+			TypeToTAbstractType eOuterClassToTOuterClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -421,8 +421,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPackage", tPackage);
-		isApplicableMatch.registerObject("mInnerClass", mInnerClass);
 		isApplicableMatch.registerObject("typeGraph", typeGraph);
+		isApplicableMatch.registerObject("mInnerClass", mInnerClass);
 		isApplicableMatch.registerObject("eOuterClass", eOuterClass);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("tOuterClass", tOuterClass);
@@ -445,14 +445,14 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject astNodeToAnnotatable,
-			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject mInnerClass, EObject typeGraph,
+			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject typeGraph, EObject mInnerClass,
 			EObject eOuterClass, EObject mDefinition, EObject tOuterClass, EObject tInnerClass,
 			EObject eOuterClassToTOuterClass) {
 		ruleresult.registerObject("astNodeToAnnotatable", astNodeToAnnotatable);
 		ruleresult.registerObject("tInnerTypeToTInnerAbstractType", tInnerTypeToTInnerAbstractType);
 		ruleresult.registerObject("tPackage", tPackage);
-		ruleresult.registerObject("mInnerClass", mInnerClass);
 		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mInnerClass", mInnerClass);
 		ruleresult.registerObject("eOuterClass", eOuterClass);
 		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("tOuterClass", tOuterClass);
@@ -589,19 +589,19 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 		Object[] result3_black = ClassInnerClassMemberImpl
 				.pattern_ClassInnerClassMember_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult,
-						astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+						astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 						eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[astNodeToAnnotatable] = " + astNodeToAnnotatable + ", "
 					+ "[tInnerTypeToTInnerAbstractType] = " + tInnerTypeToTInnerAbstractType + ", " + "[tPackage] = "
-					+ tPackage + ", " + "[mInnerClass] = " + mInnerClass + ", " + "[typeGraph] = " + typeGraph + ", "
+					+ tPackage + ", " + "[typeGraph] = " + typeGraph + ", " + "[mInnerClass] = " + mInnerClass + ", "
 					+ "[eOuterClass] = " + eOuterClass + ", " + "[mDefinition] = " + mDefinition + ", "
 					+ "[tOuterClass] = " + tOuterClass + ", " + "[tInnerClass] = " + tInnerClass + ", "
 					+ "[eOuterClassToTOuterClass] = " + eOuterClassToTOuterClass + ".");
 		}
 		ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
-				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 				mDefinition, tOuterClass, tInnerClass);
 		//nothing EMoflonEdge astNodeToAnnotatable__tInnerClass____target = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge typeGraph__tInnerClass____classes = (EMoflonEdge) result3_green[10];
@@ -620,7 +620,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		// 
 		// 
 		ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_11_5_registerobjects_expressionBBBBBBBBBBBB(this,
-				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+				ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 				eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
 		return ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_11_6_expressionFB(ruleresult);
 	}
@@ -837,14 +837,14 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject astNodeToAnnotatable,
-			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject mInnerClass, EObject typeGraph,
+			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject typeGraph, EObject mInnerClass,
 			EObject eOuterClass, EObject mDefinition, EObject tOuterClass, EObject tInnerClass,
 			EObject eOuterClassToTOuterClass) {
 		ruleresult.registerObject("astNodeToAnnotatable", astNodeToAnnotatable);
 		ruleresult.registerObject("tInnerTypeToTInnerAbstractType", tInnerTypeToTInnerAbstractType);
 		ruleresult.registerObject("tPackage", tPackage);
-		ruleresult.registerObject("mInnerClass", mInnerClass);
 		ruleresult.registerObject("typeGraph", typeGraph);
+		ruleresult.registerObject("mInnerClass", mInnerClass);
 		ruleresult.registerObject("eOuterClass", eOuterClass);
 		ruleresult.registerObject("mDefinition", mDefinition);
 		ruleresult.registerObject("tOuterClass", tOuterClass);
@@ -868,7 +868,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_594(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_987(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = ClassInnerClassMemberImpl
 				.pattern_ClassInnerClassMember_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -928,7 +928,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_640(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1083(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = ClassInnerClassMemberImpl
 				.pattern_ClassInnerClassMember_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -997,17 +997,17 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mInnerClass_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
-		var_mInnerClass_proxy.setValue(__helper.getValue("mInnerClass", "proxy"));
-		var_mInnerClass_proxy.setType("boolean");
-
 		Variable var_tInnerClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
 		var_tInnerClass_tLib.setValue(__helper.getValue("tInnerClass", "tLib"));
 		var_tInnerClass_tLib.setType("boolean");
 
-		Variable var_tOuterClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterClass", true, csp);
-		var_tOuterClass_tName.setValue(__helper.getValue("tOuterClass", "tName"));
-		var_tOuterClass_tName.setType("String");
+		Variable var_mInnerClass_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
+		var_mInnerClass_proxy.setValue(__helper.getValue("mInnerClass", "proxy"));
+		var_mInnerClass_proxy.setType("boolean");
+
+		Variable var_mInnerClass_name = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
+		var_mInnerClass_name.setValue(__helper.getValue("mInnerClass", "name"));
+		var_mInnerClass_name.setType("String");
 
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
@@ -1017,9 +1017,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		var_tInnerClass_tName.setValue(__helper.getValue("tInnerClass", "tName"));
 		var_tInnerClass_tName.setType("String");
 
-		Variable var_mInnerClass_name = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
-		var_mInnerClass_name.setValue(__helper.getValue("mInnerClass", "name"));
-		var_mInnerClass_name.setType("String");
+		Variable var_tOuterClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterClass", true, csp);
+		var_tOuterClass_tName.setValue(__helper.getValue("tOuterClass", "tName"));
+		var_tOuterClass_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1069,17 +1069,17 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mInnerClass_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
-		var_mInnerClass_proxy.setValue(__helper.getValue("mInnerClass", "proxy"));
-		var_mInnerClass_proxy.setType("boolean");
-
 		Variable var_tInnerClass_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tInnerClass", true, csp);
 		var_tInnerClass_tLib.setValue(__helper.getValue("tInnerClass", "tLib"));
 		var_tInnerClass_tLib.setType("boolean");
 
-		Variable var_tOuterClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterClass", true, csp);
-		var_tOuterClass_tName.setValue(__helper.getValue("tOuterClass", "tName"));
-		var_tOuterClass_tName.setType("String");
+		Variable var_mInnerClass_proxy = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
+		var_mInnerClass_proxy.setValue(__helper.getValue("mInnerClass", "proxy"));
+		var_mInnerClass_proxy.setType("boolean");
+
+		Variable var_mInnerClass_name = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
+		var_mInnerClass_name.setValue(__helper.getValue("mInnerClass", "name"));
+		var_mInnerClass_name.setType("String");
 
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
@@ -1089,9 +1089,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		var_tInnerClass_tName.setValue(__helper.getValue("tInnerClass", "tName"));
 		var_tInnerClass_tName.setType("String");
 
-		Variable var_mInnerClass_name = CSPFactoryHelper.eINSTANCE.createVariable("mInnerClass", true, csp);
-		var_mInnerClass_name.setValue(__helper.getValue("mInnerClass", "name"));
-		var_mInnerClass_name.setType("String");
+		Variable var_tOuterClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tOuterClass", true, csp);
+		var_tOuterClass_tName.setValue(__helper.getValue("tOuterClass", "tName"));
+		var_tOuterClass_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1148,20 +1148,20 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		TPackage tPackage = (TPackage) result2_bindingAndBlack[0];
-		MClass mInnerClass = (MClass) result2_bindingAndBlack[1];
-		TypeGraph typeGraph = (TypeGraph) result2_bindingAndBlack[2];
+		TypeGraph typeGraph = (TypeGraph) result2_bindingAndBlack[1];
+		MClass mInnerClass = (MClass) result2_bindingAndBlack[2];
 		ClassDeclaration eOuterClass = (ClassDeclaration) result2_bindingAndBlack[3];
 		MAbstractMethodDefinition mDefinition = (MAbstractMethodDefinition) result2_bindingAndBlack[4];
 		TClass tOuterClass = (TClass) result2_bindingAndBlack[5];
 		TClass tInnerClass = (TClass) result2_bindingAndBlack[6];
 
 		Object[] result3_bindingAndBlack = ClassInnerClassMemberImpl
-				.pattern_ClassInnerClassMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tPackage, mInnerClass,
-						typeGraph, eOuterClass, mDefinition, tOuterClass, tInnerClass, sourceMatch, targetMatch);
+				.pattern_ClassInnerClassMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, tPackage, typeGraph,
+						mInnerClass, eOuterClass, mDefinition, tOuterClass, tInnerClass, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tPackage] = " + tPackage + ", " + "[mInnerClass] = " + mInnerClass + ", " + "[typeGraph] = "
-					+ typeGraph + ", " + "[eOuterClass] = " + eOuterClass + ", " + "[mDefinition] = " + mDefinition
+					+ "[tPackage] = " + tPackage + ", " + "[typeGraph] = " + typeGraph + ", " + "[mInnerClass] = "
+					+ mInnerClass + ", " + "[eOuterClass] = " + eOuterClass + ", " + "[mDefinition] = " + mDefinition
 					+ ", " + "[tOuterClass] = " + tOuterClass + ", " + "[tInnerClass] = " + tInnerClass + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
@@ -1179,11 +1179,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = ClassInnerClassMemberImpl
-						.pattern_ClassInnerClassMember_24_6_createcorrespondence_blackBBBBBBBB(tPackage, mInnerClass,
-								typeGraph, eOuterClass, mDefinition, tOuterClass, tInnerClass, ccMatch);
+						.pattern_ClassInnerClassMember_24_6_createcorrespondence_blackBBBBBBBB(tPackage, typeGraph,
+								mInnerClass, eOuterClass, mDefinition, tOuterClass, tInnerClass, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPackage] = " + tPackage
-							+ ", " + "[mInnerClass] = " + mInnerClass + ", " + "[typeGraph] = " + typeGraph + ", "
+							+ ", " + "[typeGraph] = " + typeGraph + ", " + "[mInnerClass] = " + mInnerClass + ", "
 							+ "[eOuterClass] = " + eOuterClass + ", " + "[mDefinition] = " + mDefinition + ", "
 							+ "[tOuterClass] = " + tOuterClass + ", " + "[tInnerClass] = " + tInnerClass + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
@@ -1214,7 +1214,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph,
+	public CSP isApplicable_solveCsp_CC(TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass,
 			ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -1358,11 +1358,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 								+ tOuterClass + ", " + "[eOuterClassToTOuterClass] = " + eOuterClassToTOuterClass + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_29_6_perform_greenFFBFBBBFBB(tPackage,
+					ClassInnerClassMemberImpl.pattern_ClassInnerClassMember_29_6_perform_greenFFBBFBBFBB(tPackage,
 							typeGraph, mDefinition, tOuterClass, ruleResult, csp);
 					//nothing ASTNodeToTAnnotatable astNodeToAnnotatable = (ASTNodeToTAnnotatable) result6_green[0];
 					//nothing TypeToTAbstractType tInnerTypeToTInnerAbstractType = (TypeToTAbstractType) result6_green[1];
-					//nothing MClass mInnerClass = (MClass) result6_green[3];
+					//nothing MClass mInnerClass = (MClass) result6_green[4];
 					//nothing TClass tInnerClass = (TClass) result6_green[7];
 
 				} else {
@@ -1446,100 +1446,100 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_FWD__MATCH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3));
-			return null;
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
-					(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TPACKAGE_MCLASS_TYPEGRAPH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TYPETOTABSTRACTTYPE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
-					(MClass) arguments.get(2), (TypeGraph) arguments.get(3), (ClassDeclaration) arguments.get(4),
-					(MAbstractMethodDefinition) arguments.get(5), (TClass) arguments.get(6),
-					(TypeToTAbstractType) arguments.get(7));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-			return null;
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_BWD__MATCH_TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (TPackage) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (TClass) arguments.get(4));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TPackage) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (TClass) arguments.get(4));
-			return null;
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TPackage) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (TClass) arguments.get(4));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPACKAGE_TYPEGRAPH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TCLASS_TYPETOTABSTRACTTYPE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
-					(TypeGraph) arguments.get(2), (ClassDeclaration) arguments.get(3),
-					(MAbstractMethodDefinition) arguments.get(4), (TClass) arguments.get(5), (TClass) arguments.get(6),
-					(TypeToTAbstractType) arguments.get(7));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-			return null;
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_594__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_594((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_640__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_640((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_SOLVE_CSP_CC__TPACKAGE_MCLASS_TYPEGRAPH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TCLASS_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TPackage) arguments.get(0), (MClass) arguments.get(1),
-					(TypeGraph) arguments.get(2), (ClassDeclaration) arguments.get(3),
-					(MAbstractMethodDefinition) arguments.get(4), (TClass) arguments.get(5), (TClass) arguments.get(6),
-					(Match) arguments.get(7), (Match) arguments.get(8));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_DEC_FWD__MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-			return checkDEC_FWD((MClass) arguments.get(0), (ClassDeclaration) arguments.get(1),
-					(MAbstractMethodDefinition) arguments.get(2));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_DEC_BWD__TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
-			return checkDEC_BWD((TPackage) arguments.get(0), (TypeGraph) arguments.get(1), (TClass) arguments.get(2),
-					(TClass) arguments.get(3));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPACKAGE_TYPEGRAPH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TYPETOTABSTRACTTYPE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
-					(TypeGraph) arguments.get(2), (ClassDeclaration) arguments.get(3),
-					(MAbstractMethodDefinition) arguments.get(4), (TClass) arguments.get(5),
-					(TypeToTAbstractType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
-		case RulesPackage.CLASS_INNER_CLASS_MEMBER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_FWD__MATCH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+				return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+						(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+						(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3));
+				return null;
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+						(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TPACKAGE_TYPEGRAPH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TYPETOTABSTRACTTYPE:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (MClass) arguments.get(3), (ClassDeclaration) arguments.get(4),
+						(MAbstractMethodDefinition) arguments.get(5), (TClass) arguments.get(6),
+						(TypeToTAbstractType) arguments.get(7));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+				return null;
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_BWD__MATCH_TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (TClass) arguments.get(4));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (TClass) arguments.get(4));
+				return null;
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (TClass) arguments.get(4));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPACKAGE_TYPEGRAPH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TCLASS_TYPETOTABSTRACTTYPE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (ClassDeclaration) arguments.get(3),
+						(MAbstractMethodDefinition) arguments.get(4), (TClass) arguments.get(5),
+						(TClass) arguments.get(6), (TypeToTAbstractType) arguments.get(7));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+				return null;
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_987__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_987((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1083__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1083((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_SOLVE_CSP_CC__TPACKAGE_TYPEGRAPH_MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TCLASS_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((TPackage) arguments.get(0), (TypeGraph) arguments.get(1),
+						(MClass) arguments.get(2), (ClassDeclaration) arguments.get(3),
+						(MAbstractMethodDefinition) arguments.get(4), (TClass) arguments.get(5),
+						(TClass) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_DEC_FWD__MCLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+				return checkDEC_FWD((MClass) arguments.get(0), (ClassDeclaration) arguments.get(1),
+						(MAbstractMethodDefinition) arguments.get(2));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___CHECK_DEC_BWD__TPACKAGE_TYPEGRAPH_TCLASS_TCLASS:
+				return checkDEC_BWD((TPackage) arguments.get(0), (TypeGraph) arguments.get(1),
+						(TClass) arguments.get(2), (TClass) arguments.get(3));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
+				return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TPACKAGE_TYPEGRAPH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_TCLASS_TYPETOTABSTRACTTYPE_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (ClassDeclaration) arguments.get(3),
+						(MAbstractMethodDefinition) arguments.get(4), (TClass) arguments.get(5),
+						(TypeToTAbstractType) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+			case RulesPackage.CLASS_INNER_CLASS_MEMBER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1661,25 +1661,25 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tPackage");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mInnerClass");
-		EObject _localVariable_2 = isApplicableMatch.getObject("typeGraph");
+		EObject _localVariable_1 = isApplicableMatch.getObject("typeGraph");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mInnerClass");
 		EObject _localVariable_3 = isApplicableMatch.getObject("eOuterClass");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mDefinition");
 		EObject _localVariable_5 = isApplicableMatch.getObject("tOuterClass");
 		EObject _localVariable_6 = isApplicableMatch.getObject("eOuterClassToTOuterClass");
 		EObject tmpTPackage = _localVariable_0;
-		EObject tmpMInnerClass = _localVariable_1;
-		EObject tmpTypeGraph = _localVariable_2;
+		EObject tmpTypeGraph = _localVariable_1;
+		EObject tmpMInnerClass = _localVariable_2;
 		EObject tmpEOuterClass = _localVariable_3;
 		EObject tmpMDefinition = _localVariable_4;
 		EObject tmpTOuterClass = _localVariable_5;
 		EObject tmpEOuterClassToTOuterClass = _localVariable_6;
 		if (tmpTPackage instanceof TPackage) {
 			TPackage tPackage = (TPackage) tmpTPackage;
-			if (tmpMInnerClass instanceof MClass) {
-				MClass mInnerClass = (MClass) tmpMInnerClass;
-				if (tmpTypeGraph instanceof TypeGraph) {
-					TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+			if (tmpTypeGraph instanceof TypeGraph) {
+				TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+				if (tmpMInnerClass instanceof MClass) {
+					MClass mInnerClass = (MClass) tmpMInnerClass;
 					if (tmpEOuterClass instanceof ClassDeclaration) {
 						ClassDeclaration eOuterClass = (ClassDeclaration) tmpEOuterClass;
 						if (tmpMDefinition instanceof MAbstractMethodDefinition) {
@@ -1688,7 +1688,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 								TClass tOuterClass = (TClass) tmpTOuterClass;
 								if (tmpEOuterClassToTOuterClass instanceof TypeToTAbstractType) {
 									TypeToTAbstractType eOuterClassToTOuterClass = (TypeToTAbstractType) tmpEOuterClassToTOuterClass;
-									return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition,
+									return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition,
 											tOuterClass, eOuterClassToTOuterClass, isApplicableMatch };
 								}
 							}
@@ -1701,14 +1701,14 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_1_1_performtransformation_blackBBBBBBBFBB(
-			TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph, ClassDeclaration eOuterClass,
+			TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass, ClassDeclaration eOuterClass,
 			MAbstractMethodDefinition mDefinition, TClass tOuterClass, TypeToTAbstractType eOuterClassToTOuterClass,
 			ClassInnerClassMember _this, IsApplicableMatch isApplicableMatch) {
 		if (!eOuterClass.equals(mInnerClass)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+					return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 							eOuterClassToTOuterClass, csp, _this, isApplicableMatch };
 				}
 			}
@@ -1722,20 +1722,20 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 				isApplicableMatch);
 		if (result_pattern_ClassInnerClassMember_1_1_performtransformation_binding != null) {
 			TPackage tPackage = (TPackage) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[0];
-			MClass mInnerClass = (MClass) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[1];
-			TypeGraph typeGraph = (TypeGraph) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[2];
+			TypeGraph typeGraph = (TypeGraph) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[1];
+			MClass mInnerClass = (MClass) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[2];
 			ClassDeclaration eOuterClass = (ClassDeclaration) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[3];
 			MAbstractMethodDefinition mDefinition = (MAbstractMethodDefinition) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[4];
 			TClass tOuterClass = (TClass) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[5];
 			TypeToTAbstractType eOuterClassToTOuterClass = (TypeToTAbstractType) result_pattern_ClassInnerClassMember_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_ClassInnerClassMember_1_1_performtransformation_black = pattern_ClassInnerClassMember_1_1_performtransformation_blackBBBBBBBFBB(
-					tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass, eOuterClassToTOuterClass,
+					tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass, eOuterClassToTOuterClass,
 					_this, isApplicableMatch);
 			if (result_pattern_ClassInnerClassMember_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ClassInnerClassMember_1_1_performtransformation_black[7];
 
-				return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+				return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 						eOuterClassToTOuterClass, csp, _this, isApplicableMatch };
 			}
 		}
@@ -1743,7 +1743,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_1_1_performtransformation_greenFFBBBBFB(
-			TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph, TClass tOuterClass, CSP csp) {
+			TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass, TClass tOuterClass, CSP csp) {
 		ASTNodeToTAnnotatable astNodeToAnnotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TypeToTAbstractType tInnerTypeToTInnerAbstractType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		TClass tInnerClass = BasicFactory.eINSTANCE.createTClass();
@@ -1762,7 +1762,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		String tInnerClass_tName_prime = (String) _localVariable_1;
 		tInnerClass.setTLib(Boolean.valueOf(tInnerClass_tLib_prime));
 		tInnerClass.setTName(tInnerClass_tName_prime);
-		return new Object[] { astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+		return new Object[] { astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 				tOuterClass, tInnerClass, csp };
 	}
 
@@ -1786,12 +1786,12 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject astNodeToAnnotatable, EObject tInnerTypeToTInnerAbstractType,
-			EObject tPackage, EObject mInnerClass, EObject typeGraph, EObject eOuterClass, EObject mDefinition,
+			EObject tPackage, EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject mDefinition,
 			EObject tOuterClass, EObject tInnerClass, EObject eOuterClassToTOuterClass) {
 		if (!astNodeToAnnotatable.equals(tInnerTypeToTInnerAbstractType)) {
 			if (!astNodeToAnnotatable.equals(tPackage)) {
-				if (!astNodeToAnnotatable.equals(mInnerClass)) {
-					if (!astNodeToAnnotatable.equals(typeGraph)) {
+				if (!astNodeToAnnotatable.equals(typeGraph)) {
+					if (!astNodeToAnnotatable.equals(mInnerClass)) {
 						if (!astNodeToAnnotatable.equals(eOuterClass)) {
 							if (!astNodeToAnnotatable.equals(mDefinition)) {
 								if (!astNodeToAnnotatable.equals(tOuterClass)) {
@@ -1810,9 +1810,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																						tInnerTypeToTInnerAbstractType)) {
 																					if (!eOuterClass.equals(tPackage)) {
 																						if (!eOuterClass
-																								.equals(mInnerClass)) {
+																								.equals(typeGraph)) {
 																							if (!eOuterClass.equals(
-																									typeGraph)) {
+																									mInnerClass)) {
 																								if (!eOuterClass.equals(
 																										mDefinition)) {
 																									if (!eOuterClass
@@ -1826,9 +1826,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																													if (!mDefinition
 																															.equals(tPackage)) {
 																														if (!mDefinition
-																																.equals(mInnerClass)) {
+																																.equals(typeGraph)) {
 																															if (!mDefinition
-																																	.equals(typeGraph)) {
+																																	.equals(mInnerClass)) {
 																																if (!mDefinition
 																																		.equals(tOuterClass)) {
 																																	if (!mDefinition
@@ -1850,9 +1850,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																																									if (!eOuterClassToTOuterClass
 																																											.equals(tPackage)) {
 																																										if (!eOuterClassToTOuterClass
-																																												.equals(mInnerClass)) {
+																																												.equals(typeGraph)) {
 																																											if (!eOuterClassToTOuterClass
-																																													.equals(typeGraph)) {
+																																													.equals(mInnerClass)) {
 																																												if (!eOuterClassToTOuterClass
 																																														.equals(mDefinition)) {
 																																													if (!eOuterClassToTOuterClass
@@ -1864,8 +1864,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																																																	astNodeToAnnotatable,
 																																																	tInnerTypeToTInnerAbstractType,
 																																																	tPackage,
-																																																	mInnerClass,
 																																																	typeGraph,
+																																																	mInnerClass,
 																																																	eOuterClass,
 																																																	mDefinition,
 																																																	tOuterClass,
@@ -1921,7 +1921,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject astNodeToAnnotatable, EObject tInnerTypeToTInnerAbstractType,
-			EObject tPackage, EObject mInnerClass, EObject typeGraph, EObject mDefinition, EObject tOuterClass,
+			EObject tPackage, EObject typeGraph, EObject mInnerClass, EObject mDefinition, EObject tOuterClass,
 			EObject tInnerClass) {
 		EMoflonEdge astNodeToAnnotatable__tInnerClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tInnerClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2007,8 +2007,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		tPackage__tInnerClass____allTypes.setName(tPackage__tInnerClass____allTypes_name_prime);
 		tInnerClass__tPackage____package.setName(tInnerClass__tPackage____package_name_prime);
 		mDefinition__mInnerClass____mInnerTypes.setName(mDefinition__mInnerClass____mInnerTypes_name_prime);
-		return new Object[] { ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass,
-				typeGraph, mDefinition, tOuterClass, tInnerClass, astNodeToAnnotatable__tInnerClass____target,
+		return new Object[] { ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph,
+				mInnerClass, mDefinition, tOuterClass, tInnerClass, astNodeToAnnotatable__tInnerClass____target,
 				typeGraph__tInnerClass____classes, tInnerTypeToTInnerAbstractType__mInnerClass____source,
 				astNodeToAnnotatable__mInnerClass____source, tInnerTypeToTInnerAbstractType__tInnerClass____target,
 				tPackage__tInnerClass____classes, typeGraph__tInnerClass____allTypes, tInnerClass__typeGraph____model,
@@ -2019,11 +2019,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final void pattern_ClassInnerClassMember_1_5_registerobjects_expressionBBBBBBBBBBBB(
 			ClassInnerClassMember _this, PerformRuleResult ruleresult, EObject astNodeToAnnotatable,
-			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject mInnerClass, EObject typeGraph,
+			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject typeGraph, EObject mInnerClass,
 			EObject eOuterClass, EObject mDefinition, EObject tOuterClass, EObject tInnerClass,
 			EObject eOuterClassToTOuterClass) {
-		_this.registerObjects_FWD(ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage,
-				mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
+		_this.registerObjects_FWD(ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph,
+				mInnerClass, eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
 
 	}
 
@@ -2121,7 +2121,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ClassInnerClassMember_2_3_findcontext_blackFBFBBBB(
+	public static final Iterable<Object[]> pattern_ClassInnerClassMember_2_3_findcontext_blackFFBBBBB(
 			MClass mInnerClass, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
 			TypeToTAbstractType eOuterClassToTOuterClass) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2134,7 +2134,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 							if (typeGraph != null) {
 								TPackage tPackage = tOuterClass.getPackage();
 								if (tPackage != null) {
-									_result.add(new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass,
+									_result.add(new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass,
 											mDefinition, tOuterClass, eOuterClassToTOuterClass });
 								}
 
@@ -2149,7 +2149,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_2_3_findcontext_greenBBBBBBBFFFFFFFFFF(TPackage tPackage,
-			MClass mInnerClass, TypeGraph typeGraph, ClassDeclaration eOuterClass,
+			TypeGraph typeGraph, MClass mInnerClass, ClassDeclaration eOuterClass,
 			MAbstractMethodDefinition mDefinition, TClass tOuterClass, TypeToTAbstractType eOuterClassToTOuterClass) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tOuterClass__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2171,8 +2171,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		String mDefinition__eOuterClass____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String mDefinition__mInnerClass____mInnerTypes_name_prime = "mInnerTypes";
 		isApplicableMatch.getAllContextElements().add(tPackage);
-		isApplicableMatch.getAllContextElements().add(mInnerClass);
 		isApplicableMatch.getAllContextElements().add(typeGraph);
+		isApplicableMatch.getAllContextElements().add(mInnerClass);
 		isApplicableMatch.getAllContextElements().add(eOuterClass);
 		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(tOuterClass);
@@ -2216,7 +2216,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		mDefinition__eOuterClass____abstractTypeDeclaration
 				.setName(mDefinition__eOuterClass____abstractTypeDeclaration_name_prime);
 		mDefinition__mInnerClass____mInnerTypes.setName(mDefinition__mInnerClass____mInnerTypes_name_prime);
-		return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+		return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 				eOuterClassToTOuterClass, isApplicableMatch, tOuterClass__typeGraph____model,
 				typeGraph__tOuterClass____allTypes, eOuterClassToTOuterClass__eOuterClass____source,
 				eOuterClassToTOuterClass__tOuterClass____target, tOuterClass__tPackage____package,
@@ -2225,14 +2225,14 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_2_4_solveCSP_bindingFBBBBBBBBB(
-			ClassInnerClassMember _this, IsApplicableMatch isApplicableMatch, TPackage tPackage, MClass mInnerClass,
-			TypeGraph typeGraph, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition,
-			TClass tOuterClass, TypeToTAbstractType eOuterClassToTOuterClass) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tPackage, mInnerClass, typeGraph,
+			ClassInnerClassMember _this, IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
+			MClass mInnerClass, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
+			TypeToTAbstractType eOuterClassToTOuterClass) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tPackage, typeGraph, mInnerClass,
 				eOuterClass, mDefinition, tOuterClass, eOuterClassToTOuterClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPackage, mInnerClass, typeGraph, eOuterClass,
+			return new Object[] { csp, _this, isApplicableMatch, tPackage, typeGraph, mInnerClass, eOuterClass,
 					mDefinition, tOuterClass, eOuterClassToTOuterClass };
 		}
 		return null;
@@ -2243,11 +2243,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			ClassInnerClassMember _this, IsApplicableMatch isApplicableMatch, TPackage tPackage, MClass mInnerClass,
-			TypeGraph typeGraph, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition,
-			TClass tOuterClass, TypeToTAbstractType eOuterClassToTOuterClass) {
+			ClassInnerClassMember _this, IsApplicableMatch isApplicableMatch, TPackage tPackage, TypeGraph typeGraph,
+			MClass mInnerClass, ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
+			TypeToTAbstractType eOuterClassToTOuterClass) {
 		Object[] result_pattern_ClassInnerClassMember_2_4_solveCSP_binding = pattern_ClassInnerClassMember_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+				_this, isApplicableMatch, tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 				eOuterClassToTOuterClass);
 		if (result_pattern_ClassInnerClassMember_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassInnerClassMember_2_4_solveCSP_binding[0];
@@ -2256,7 +2256,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 					csp);
 			if (result_pattern_ClassInnerClassMember_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPackage, mInnerClass, typeGraph, eOuterClass,
+				return new Object[] { csp, _this, isApplicableMatch, tPackage, typeGraph, mInnerClass, eOuterClass,
 						mDefinition, tOuterClass, eOuterClassToTOuterClass };
 			}
 		}
@@ -2587,12 +2587,12 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
 			PerformRuleResult ruleresult, EObject astNodeToAnnotatable, EObject tInnerTypeToTInnerAbstractType,
-			EObject tPackage, EObject mInnerClass, EObject typeGraph, EObject eOuterClass, EObject mDefinition,
+			EObject tPackage, EObject typeGraph, EObject mInnerClass, EObject eOuterClass, EObject mDefinition,
 			EObject tOuterClass, EObject tInnerClass, EObject eOuterClassToTOuterClass) {
 		if (!astNodeToAnnotatable.equals(tInnerTypeToTInnerAbstractType)) {
 			if (!astNodeToAnnotatable.equals(tPackage)) {
-				if (!astNodeToAnnotatable.equals(mInnerClass)) {
-					if (!astNodeToAnnotatable.equals(typeGraph)) {
+				if (!astNodeToAnnotatable.equals(typeGraph)) {
+					if (!astNodeToAnnotatable.equals(mInnerClass)) {
 						if (!astNodeToAnnotatable.equals(eOuterClass)) {
 							if (!astNodeToAnnotatable.equals(mDefinition)) {
 								if (!astNodeToAnnotatable.equals(tOuterClass)) {
@@ -2611,9 +2611,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																						tInnerTypeToTInnerAbstractType)) {
 																					if (!eOuterClass.equals(tPackage)) {
 																						if (!eOuterClass
-																								.equals(mInnerClass)) {
+																								.equals(typeGraph)) {
 																							if (!eOuterClass.equals(
-																									typeGraph)) {
+																									mInnerClass)) {
 																								if (!eOuterClass.equals(
 																										mDefinition)) {
 																									if (!eOuterClass
@@ -2627,9 +2627,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																													if (!mDefinition
 																															.equals(tPackage)) {
 																														if (!mDefinition
-																																.equals(mInnerClass)) {
+																																.equals(typeGraph)) {
 																															if (!mDefinition
-																																	.equals(typeGraph)) {
+																																	.equals(mInnerClass)) {
 																																if (!mDefinition
 																																		.equals(tOuterClass)) {
 																																	if (!mDefinition
@@ -2651,9 +2651,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																																									if (!eOuterClassToTOuterClass
 																																											.equals(tPackage)) {
 																																										if (!eOuterClassToTOuterClass
-																																												.equals(mInnerClass)) {
+																																												.equals(typeGraph)) {
 																																											if (!eOuterClassToTOuterClass
-																																													.equals(typeGraph)) {
+																																													.equals(mInnerClass)) {
 																																												if (!eOuterClassToTOuterClass
 																																														.equals(mDefinition)) {
 																																													if (!eOuterClassToTOuterClass
@@ -2665,8 +2665,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 																																																	astNodeToAnnotatable,
 																																																	tInnerTypeToTInnerAbstractType,
 																																																	tPackage,
-																																																	mInnerClass,
 																																																	typeGraph,
+																																																	mInnerClass,
 																																																	eOuterClass,
 																																																	mDefinition,
 																																																	tOuterClass,
@@ -2722,7 +2722,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject astNodeToAnnotatable, EObject tInnerTypeToTInnerAbstractType,
-			EObject tPackage, EObject mInnerClass, EObject typeGraph, EObject mDefinition, EObject tOuterClass,
+			EObject tPackage, EObject typeGraph, EObject mInnerClass, EObject mDefinition, EObject tOuterClass,
 			EObject tInnerClass) {
 		EMoflonEdge astNodeToAnnotatable__tInnerClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tInnerClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2808,8 +2808,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		tPackage__tInnerClass____allTypes.setName(tPackage__tInnerClass____allTypes_name_prime);
 		tInnerClass__tPackage____package.setName(tInnerClass__tPackage____package_name_prime);
 		mDefinition__mInnerClass____mInnerTypes.setName(mDefinition__mInnerClass____mInnerTypes_name_prime);
-		return new Object[] { ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass,
-				typeGraph, mDefinition, tOuterClass, tInnerClass, astNodeToAnnotatable__tInnerClass____target,
+		return new Object[] { ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph,
+				mInnerClass, mDefinition, tOuterClass, tInnerClass, astNodeToAnnotatable__tInnerClass____target,
 				typeGraph__tInnerClass____classes, tInnerTypeToTInnerAbstractType__mInnerClass____source,
 				astNodeToAnnotatable__mInnerClass____source, tInnerTypeToTInnerAbstractType__tInnerClass____target,
 				tPackage__tInnerClass____classes, typeGraph__tInnerClass____allTypes, tInnerClass__typeGraph____model,
@@ -2820,11 +2820,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final void pattern_ClassInnerClassMember_11_5_registerobjects_expressionBBBBBBBBBBBB(
 			ClassInnerClassMember _this, PerformRuleResult ruleresult, EObject astNodeToAnnotatable,
-			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject mInnerClass, EObject typeGraph,
+			EObject tInnerTypeToTInnerAbstractType, EObject tPackage, EObject typeGraph, EObject mInnerClass,
 			EObject eOuterClass, EObject mDefinition, EObject tOuterClass, EObject tInnerClass,
 			EObject eOuterClassToTOuterClass) {
-		_this.registerObjects_BWD(ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage,
-				mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
+		_this.registerObjects_BWD(ruleresult, astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph,
+				mInnerClass, eOuterClass, mDefinition, tOuterClass, tInnerClass, eOuterClassToTOuterClass);
 
 	}
 
@@ -3208,9 +3208,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_0BB(
 			TClass tInnerClass, TPackage tPackage) {
-		for (TPackage __DEC_tInnerClass_classes_842022 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tInnerClass_classes_968994 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tInnerClass_classes_842022)) {
+			if (!tPackage.equals(__DEC_tInnerClass_classes_968994)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3219,9 +3219,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tInnerClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tInnerClass_classes_715032 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tInnerClass_classes_167056 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tInnerClass_classes_715032)) {
+			if (!typeGraph.equals(__DEC_tInnerClass_classes_167056)) {
 				return new Object[] { tInnerClass, typeGraph };
 			}
 		}
@@ -3231,10 +3231,10 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_2BB(
 			TClass tInnerClass, TClass tOuterClass) {
 		if (!tInnerClass.equals(tOuterClass)) {
-			TAbstractType __DEC_tInnerClass_innerTypes_80962 = tInnerClass.getOuterType();
-			if (__DEC_tInnerClass_innerTypes_80962 != null) {
-				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_80962)) {
-					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_80962)) {
+			TAbstractType __DEC_tInnerClass_innerTypes_369429 = tInnerClass.getOuterType();
+			if (__DEC_tInnerClass_innerTypes_369429 != null) {
+				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_369429)) {
+					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_369429)) {
 						return new Object[] { tInnerClass, tOuterClass };
 					}
 				}
@@ -3246,9 +3246,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_20_2_testcorematchandDECs_black_nac_3BB(
 			TClass tInnerClass, TPackage tPackage) {
-		TPackage __DEC_tInnerClass_allTypes_959809 = tInnerClass.getPackage();
-		if (__DEC_tInnerClass_allTypes_959809 != null) {
-			if (!tPackage.equals(__DEC_tInnerClass_allTypes_959809)) {
+		TPackage __DEC_tInnerClass_allTypes_140436 = tInnerClass.getPackage();
+		if (__DEC_tInnerClass_allTypes_140436 != null) {
+			if (!tPackage.equals(__DEC_tInnerClass_allTypes_140436)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3409,11 +3409,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_0BB(
 			MClass mInnerClass, ClassDeclaration eOuterClass) {
 		if (!eOuterClass.equals(mInnerClass)) {
-			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_962302 = mInnerClass
+			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_855955 = mInnerClass
 					.getAbstractTypeDeclaration();
-			if (__DEC_mInnerClass_abstractTypeDeclaration_962302 != null) {
-				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_962302)) {
-					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_962302)) {
+			if (__DEC_mInnerClass_abstractTypeDeclaration_855955 != null) {
+				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_855955)) {
+					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_855955)) {
 						return new Object[] { mInnerClass, eOuterClass };
 					}
 				}
@@ -3425,9 +3425,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_1B(
 			MClass mInnerClass) {
-		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_897598 = mInnerClass
+		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_142102 = mInnerClass
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_897598 != null) {
+		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_142102 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3436,7 +3436,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_2B(
 			MClass mInnerClass) {
-		for (Model __DEC_mInnerClass_orphanTypes_79026 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mInnerClass_orphanTypes_894837 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, Model.class, "orphanTypes")) {
 			return new Object[] { mInnerClass };
 		}
@@ -3445,8 +3445,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_3B(
 			MClass mInnerClass) {
-		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_732659 = mInnerClass.getPackage();
-		if (__DEC_mInnerClass_ownedElements_732659 != null) {
+		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_883905 = mInnerClass.getPackage();
+		if (__DEC_mInnerClass_ownedElements_883905 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3455,9 +3455,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_21_2_testcorematchandDECs_black_nac_4BB(
 			MClass mInnerClass, MAbstractMethodDefinition mDefinition) {
-		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_209693 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_938839 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_209693)) {
+			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_938839)) {
 				return new Object[] { mInnerClass, mDefinition };
 			}
 		}
@@ -3574,25 +3574,25 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("tPackage");
-		EObject _localVariable_1 = sourceMatch.getObject("mInnerClass");
-		EObject _localVariable_2 = targetMatch.getObject("typeGraph");
+		EObject _localVariable_1 = targetMatch.getObject("typeGraph");
+		EObject _localVariable_2 = sourceMatch.getObject("mInnerClass");
 		EObject _localVariable_3 = sourceMatch.getObject("eOuterClass");
 		EObject _localVariable_4 = sourceMatch.getObject("mDefinition");
 		EObject _localVariable_5 = targetMatch.getObject("tOuterClass");
 		EObject _localVariable_6 = targetMatch.getObject("tInnerClass");
 		EObject tmpTPackage = _localVariable_0;
-		EObject tmpMInnerClass = _localVariable_1;
-		EObject tmpTypeGraph = _localVariable_2;
+		EObject tmpTypeGraph = _localVariable_1;
+		EObject tmpMInnerClass = _localVariable_2;
 		EObject tmpEOuterClass = _localVariable_3;
 		EObject tmpMDefinition = _localVariable_4;
 		EObject tmpTOuterClass = _localVariable_5;
 		EObject tmpTInnerClass = _localVariable_6;
 		if (tmpTPackage instanceof TPackage) {
 			TPackage tPackage = (TPackage) tmpTPackage;
-			if (tmpMInnerClass instanceof MClass) {
-				MClass mInnerClass = (MClass) tmpMInnerClass;
-				if (tmpTypeGraph instanceof TypeGraph) {
-					TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+			if (tmpTypeGraph instanceof TypeGraph) {
+				TypeGraph typeGraph = (TypeGraph) tmpTypeGraph;
+				if (tmpMInnerClass instanceof MClass) {
+					MClass mInnerClass = (MClass) tmpMInnerClass;
 					if (tmpEOuterClass instanceof ClassDeclaration) {
 						ClassDeclaration eOuterClass = (ClassDeclaration) tmpEOuterClass;
 						if (tmpMDefinition instanceof MAbstractMethodDefinition) {
@@ -3601,7 +3601,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 								TClass tOuterClass = (TClass) tmpTOuterClass;
 								if (tmpTInnerClass instanceof TClass) {
 									TClass tInnerClass = (TClass) tmpTInnerClass;
-									return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition,
+									return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition,
 											tOuterClass, tInnerClass, targetMatch, sourceMatch };
 								}
 							}
@@ -3614,13 +3614,13 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_blackBBBBBBBBB(TPackage tPackage,
-			MClass mInnerClass, TypeGraph typeGraph, ClassDeclaration eOuterClass,
+			TypeGraph typeGraph, MClass mInnerClass, ClassDeclaration eOuterClass,
 			MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass, Match sourceMatch,
 			Match targetMatch) {
 		if (!eOuterClass.equals(mInnerClass)) {
 			if (!tInnerClass.equals(tOuterClass)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+					return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 							tInnerClass, sourceMatch, targetMatch };
 				}
 			}
@@ -3634,19 +3634,19 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 				targetMatch, sourceMatch);
 		if (result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding != null) {
 			TPackage tPackage = (TPackage) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[0];
-			MClass mInnerClass = (MClass) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[1];
-			TypeGraph typeGraph = (TypeGraph) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[2];
+			TypeGraph typeGraph = (TypeGraph) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[1];
+			MClass mInnerClass = (MClass) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[2];
 			ClassDeclaration eOuterClass = (ClassDeclaration) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[3];
 			MAbstractMethodDefinition mDefinition = (MAbstractMethodDefinition) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[4];
 			TClass tOuterClass = (TClass) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[5];
 			TClass tInnerClass = (TClass) result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_binding[6];
 
 			Object[] result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_black = pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass, tInnerClass, sourceMatch,
+					tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass, tInnerClass, sourceMatch,
 					targetMatch);
 			if (result_pattern_ClassInnerClassMember_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+				return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 						tInnerClass, sourceMatch, targetMatch };
 			}
 		}
@@ -3654,14 +3654,14 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_24_3_solvecsp_bindingFBBBBBBBBBB(
-			ClassInnerClassMember _this, TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph,
+			ClassInnerClassMember _this, TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass,
 			ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tPackage, mInnerClass, typeGraph, eOuterClass,
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(tPackage, typeGraph, mInnerClass, eOuterClass,
 				mDefinition, tOuterClass, tInnerClass, sourceMatch, targetMatch);
 		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+			return new Object[] { csp, _this, tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 					tInnerClass, sourceMatch, targetMatch };
 		}
 		return null;
@@ -3672,11 +3672,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
-			ClassInnerClassMember _this, TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph,
+			ClassInnerClassMember _this, TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass,
 			ClassDeclaration eOuterClass, MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ClassInnerClassMember_24_3_solvecsp_binding = pattern_ClassInnerClassMember_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass, tInnerClass,
+				_this, tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass, tInnerClass,
 				sourceMatch, targetMatch);
 		if (result_pattern_ClassInnerClassMember_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ClassInnerClassMember_24_3_solvecsp_binding[0];
@@ -3685,7 +3685,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 					csp);
 			if (result_pattern_ClassInnerClassMember_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition,
+				return new Object[] { csp, _this, tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition,
 						tOuterClass, tInnerClass, sourceMatch, targetMatch };
 			}
 		}
@@ -3725,11 +3725,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_24_6_createcorrespondence_blackBBBBBBBB(
-			TPackage tPackage, MClass mInnerClass, TypeGraph typeGraph, ClassDeclaration eOuterClass,
+			TPackage tPackage, TypeGraph typeGraph, MClass mInnerClass, ClassDeclaration eOuterClass,
 			MAbstractMethodDefinition mDefinition, TClass tOuterClass, TClass tInnerClass, CCMatch ccMatch) {
 		if (!eOuterClass.equals(mInnerClass)) {
 			if (!tInnerClass.equals(tOuterClass)) {
-				return new Object[] { tPackage, mInnerClass, typeGraph, eOuterClass, mDefinition, tOuterClass,
+				return new Object[] { tPackage, typeGraph, mInnerClass, eOuterClass, mDefinition, tOuterClass,
 						tInnerClass, ccMatch };
 			}
 		}
@@ -3773,11 +3773,11 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_0BB(MClass mInnerClass,
 			ClassDeclaration eOuterClass) {
 		if (!eOuterClass.equals(mInnerClass)) {
-			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_710628 = mInnerClass
+			AbstractTypeDeclaration __DEC_mInnerClass_abstractTypeDeclaration_114884 = mInnerClass
 					.getAbstractTypeDeclaration();
-			if (__DEC_mInnerClass_abstractTypeDeclaration_710628 != null) {
-				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_710628)) {
-					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_710628)) {
+			if (__DEC_mInnerClass_abstractTypeDeclaration_114884 != null) {
+				if (!mInnerClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_114884)) {
+					if (!eOuterClass.equals(__DEC_mInnerClass_abstractTypeDeclaration_114884)) {
 						return new Object[] { mInnerClass, eOuterClass };
 					}
 				}
@@ -3788,9 +3788,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_1B(MClass mInnerClass) {
-		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_488531 = mInnerClass
+		AnonymousClassDeclaration __DEC_mInnerClass_anonymousClassDeclarationOwner_671746 = mInnerClass
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_488531 != null) {
+		if (__DEC_mInnerClass_anonymousClassDeclarationOwner_671746 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3798,7 +3798,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_2B(MClass mInnerClass) {
-		for (Model __DEC_mInnerClass_orphanTypes_452868 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mInnerClass_orphanTypes_134942 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, Model.class, "orphanTypes")) {
 			return new Object[] { mInnerClass };
 		}
@@ -3806,8 +3806,8 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	}
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_3B(MClass mInnerClass) {
-		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_990263 = mInnerClass.getPackage();
-		if (__DEC_mInnerClass_ownedElements_990263 != null) {
+		org.eclipse.modisco.java.Package __DEC_mInnerClass_ownedElements_110987 = mInnerClass.getPackage();
+		if (__DEC_mInnerClass_ownedElements_110987 != null) {
 			return new Object[] { mInnerClass };
 		}
 
@@ -3816,9 +3816,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_27_1_matchtggpattern_black_nac_4BB(MClass mInnerClass,
 			MAbstractMethodDefinition mDefinition) {
-		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_359535 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mInnerClass_mInnerTypes_820974 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mInnerClass, MAbstractMethodDefinition.class, "mInnerTypes")) {
-			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_359535)) {
+			if (!mDefinition.equals(__DEC_mInnerClass_mInnerTypes_820974)) {
 				return new Object[] { mInnerClass, mDefinition };
 			}
 		}
@@ -3873,9 +3873,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_0BB(TClass tInnerClass,
 			TPackage tPackage) {
-		for (TPackage __DEC_tInnerClass_classes_908726 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tInnerClass_classes_186657 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tInnerClass_classes_908726)) {
+			if (!tPackage.equals(__DEC_tInnerClass_classes_186657)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -3884,9 +3884,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_1BB(TClass tInnerClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tInnerClass_classes_307334 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tInnerClass_classes_978981 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tInnerClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tInnerClass_classes_307334)) {
+			if (!typeGraph.equals(__DEC_tInnerClass_classes_978981)) {
 				return new Object[] { tInnerClass, typeGraph };
 			}
 		}
@@ -3896,10 +3896,10 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_2BB(TClass tInnerClass,
 			TClass tOuterClass) {
 		if (!tInnerClass.equals(tOuterClass)) {
-			TAbstractType __DEC_tInnerClass_innerTypes_911404 = tInnerClass.getOuterType();
-			if (__DEC_tInnerClass_innerTypes_911404 != null) {
-				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_911404)) {
-					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_911404)) {
+			TAbstractType __DEC_tInnerClass_innerTypes_182594 = tInnerClass.getOuterType();
+			if (__DEC_tInnerClass_innerTypes_182594 != null) {
+				if (!tInnerClass.equals(__DEC_tInnerClass_innerTypes_182594)) {
+					if (!tOuterClass.equals(__DEC_tInnerClass_innerTypes_182594)) {
 						return new Object[] { tInnerClass, tOuterClass };
 					}
 				}
@@ -3911,9 +3911,9 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInnerClassMember_28_1_matchtggpattern_black_nac_3BB(TClass tInnerClass,
 			TPackage tPackage) {
-		TPackage __DEC_tInnerClass_allTypes_242180 = tInnerClass.getPackage();
-		if (__DEC_tInnerClass_allTypes_242180 != null) {
-			if (!tPackage.equals(__DEC_tInnerClass_allTypes_242180)) {
+		TPackage __DEC_tInnerClass_allTypes_674994 = tInnerClass.getPackage();
+		if (__DEC_tInnerClass_allTypes_674994 != null) {
+			if (!tPackage.equals(__DEC_tInnerClass_allTypes_674994)) {
 				return new Object[] { tInnerClass, tPackage };
 			}
 		}
@@ -4146,7 +4146,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 				ruleResult };
 	}
 
-	public static final Object[] pattern_ClassInnerClassMember_29_6_perform_greenFFBFBBBFBB(TPackage tPackage,
+	public static final Object[] pattern_ClassInnerClassMember_29_6_perform_greenFFBBFBBFBB(TPackage tPackage,
 			TypeGraph typeGraph, MAbstractMethodDefinition mDefinition, TClass tOuterClass,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		ASTNodeToTAnnotatable astNodeToAnnotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
@@ -4184,7 +4184,7 @@ public class ClassInnerClassMemberImpl extends AbstractRuleImpl implements Class
 		tInnerClass.setTLib(Boolean.valueOf(tInnerClass_tLib_prime));
 		tInnerClass.setTName(tInnerClass_tName_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, mInnerClass, typeGraph,
+		return new Object[] { astNodeToAnnotatable, tInnerTypeToTInnerAbstractType, tPackage, typeGraph, mInnerClass,
 				mDefinition, tOuterClass, tInnerClass, ruleResult, csp };
 	}
 

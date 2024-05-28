@@ -196,9 +196,9 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		}
 		ClassDecWithModifier2ClassImpl.pattern_ClassDecWithModifier2Class_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
 				ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -501,9 +501,9 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		}
 		ClassDecWithModifier2ClassImpl.pattern_ClassDecWithModifier2Class_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
 				ruleresult, m2f, b2e, feature, bodyDeclaration, modifier);
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge m2f__modifier____source = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
@@ -709,7 +709,7 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Class_7(org.eclipse.uml2.uml.Class feature) {
+	public EObjectContainer isAppropriate_BWD_Class_13(org.eclipse.uml2.uml.Class feature) {
 
 		Object[] result1_bindingAndBlack = ClassDecWithModifier2ClassImpl
 				.pattern_ClassDecWithModifier2Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -766,7 +766,7 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_763(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1145(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = ClassDecWithModifier2ClassImpl
 				.pattern_ClassDecWithModifier2Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -843,13 +843,13 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -916,13 +916,13 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -1245,84 +1245,87 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD__MATCH_MCLASS_MODIFIER:
-			return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1), (Modifier) arguments.get(2));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS_MODIFIER:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
-					(Modifier) arguments.get(2));
-			return null;
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS_MODIFIER:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
-					(Modifier) arguments.get(2));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASS_MODIFIER:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MClass) arguments.get(1),
-					(Modifier) arguments.get(2));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5));
-			return null;
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD__MATCH_CLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-			return null;
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.uml2.uml.Class) arguments.get(1));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5));
-			return null;
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_7__CLASS:
-			return isAppropriate_BWD_Class_7((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_763__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_763((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_MCLASS_MODIFIER_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0), (MClass) arguments.get(1),
-					(Modifier) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_DEC_FWD__MCLASS_MODIFIER:
-			return checkDEC_FWD((MClass) arguments.get(0), (Modifier) arguments.get(1));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_DEC_BWD__CLASS:
-			return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD__MATCH_MCLASS_MODIFIER:
+				return isAppropriate_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+						(Modifier) arguments.get(2));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASS_MODIFIER:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+						(Modifier) arguments.get(2));
+				return null;
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASS_MODIFIER:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClass) arguments.get(1),
+						(Modifier) arguments.get(2));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCLASS_MODIFIER:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MClass) arguments.get(1),
+						(Modifier) arguments.get(2));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5));
+				return null;
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD__MATCH_CLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+				return null;
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASS:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5));
+				return null;
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_BWD_CLASS_13__CLASS:
+				return isAppropriate_BWD_Class_13((org.eclipse.uml2.uml.Class) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1145__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1145((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__CLASS_MCLASS_MODIFIER_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Class) arguments.get(0),
+						(MClass) arguments.get(1), (Modifier) arguments.get(2), (Match) arguments.get(3),
+						(Match) arguments.get(4));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_DEC_FWD__MCLASS_MODIFIER:
+				return checkDEC_FWD((MClass) arguments.get(0), (Modifier) arguments.get(1));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___CHECK_DEC_BWD__CLASS:
+				return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.CLASS_DEC_WITH_MODIFIER2_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1530,28 +1533,28 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	public static final Object[] pattern_ClassDecWithModifier2Class_1_3_bookkeepingforedges_greenBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassDecWithModifier2Class";
-		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
+		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1562,15 +1565,16 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
+				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_ClassDecWithModifier2Class_1_5_registerobjects_expressionBBBBBBB(
@@ -1934,28 +1938,28 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 	public static final Object[] pattern_ClassDecWithModifier2Class_11_3_bookkeepingforedges_greenBBBBBBFFFFFF(
 			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier) {
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2f__modifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ClassDecWithModifier2Class";
-		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
+		String m2f__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String m2f__modifier____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1966,15 +1970,16 @@ public class ClassDecWithModifier2ClassImpl extends AbstractRuleImpl implements 
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, m2f__feature____target,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
-				b2e__bodyDeclaration____source, m2f__modifier____source, b2e__feature____target };
+				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_ClassDecWithModifier2Class_11_5_registerobjects_expressionBBBBBBB(
