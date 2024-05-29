@@ -218,7 +218,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://rgse.uni-koblenz.de/carisma/updatesite/</url>
+      <url>https://carisma-tool.github.io/carisma-tool/</url>
     </repository>
     <repository>
       <id>SecPL</id>
