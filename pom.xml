@@ -211,7 +211,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://carisma-tool.github.io/carisma-tool/</url>
+      <url>https://gravity-tool.org/carisma/updatesite</url>
     </repository>
     <repository>
       <id>SecPL</id>
