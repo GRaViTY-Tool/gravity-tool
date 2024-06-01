@@ -207,11 +207,14 @@ public class GravityActivator extends Plugin {
 		if (this.factories.containsKey(project)) {
 			factory = this.factories.get(project);
 		} else {
-			final var compatibleFactories = this.getCompatibleConverterFactories(project);
-			if (compatibleFactories.isEmpty()) {
-				throw new NoConverterRegisteredException();
+			factory = this.getSelectedConverterFactory(project);
+			if (factory == null) {
+				final var compatibleFactories = this.getCompatibleConverterFactories(project);
+				if (compatibleFactories.isEmpty()) {
+					throw new NoConverterRegisteredException();
+				}
+				factory = compatibleFactories.iterator().next();
 			}
-			factory = compatibleFactories.iterator().next();
 		}
 		final var converter = factory.createConverter(project);
 		converter.setDebug(this.isVerbose());
@@ -312,14 +315,17 @@ public class GravityActivator extends Plugin {
 				try (var stream = new BufferedReader(new InputStreamReader(file.getContents()))) {
 					final var line = stream.readLine();
 					if (line != null && !line.isBlank()) {
-						final var factoryClass = Class.forName(line);
-						final var factory = (IPGConverterFactory) factoryClass.getDeclaredConstructor().newInstance();
-						this.factories.put(project, factory);
-						return factory;
+						for (final var element : Platform.getExtensionRegistry()
+								.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID)) {
+							if (line.equals(element.getAttribute("class"))) {
+								return ((IPGConverterFactory) element.createExecutableExtension("class")); //$NON-NLS-1$
+							}
+						}
+						LOGGER.error("Selected factory not found");
 					}
 				}
 			}
-		} catch (final IOException | CoreException | ReflectiveOperationException e) {
+		} catch (final IOException | CoreException e) {
 			LOGGER.error(e);
 		}
 		return null;
