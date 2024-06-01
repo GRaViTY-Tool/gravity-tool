@@ -11,6 +11,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.function.Predicate;
+import java.util.jar.JarInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -35,9 +36,21 @@ public final class ZipUtil {
 	/*
 	 * Thresholds for avoiding ZIP bombs
 	 */
-	private static final int THRESHOLD_ENTRIES = 10000;
-	private static final int THRESHOLD_SIZE = 1000000000;
-	private static final double THRESHOLD_RATIO = 10D;
+	/**
+	 * Limit by default to 10,000 entries in the zip file
+	 */
+	public static final int DEFAULT_THRESHOLD_ENTRIES = 10000;
+
+	/**
+	 * Limit by default to 500mb extracted size
+	 */
+	public static final double DEFAULT_THRESHOLD_SIZE = 500 * 1024 * 1024;
+
+	/**
+	 * Limit by default to a ration between compressed and extracted entry size of
+	 * factor 10
+	 */
+	public static final double DEFAULT_THRESHOLD_RATIO = 10D;
 
 	private ZipUtil() {
 		// This class shouldn't be instantiated
@@ -51,7 +64,23 @@ public final class ZipUtil {
 	 * @throws IOException If the ZIP cannot be extracted
 	 */
 	public static void unzip(final File zip, final File destination) throws IOException {
-		unzip(zip.toPath(), destination.toPath());
+		unzip(zip.toPath(), destination.toPath(), DEFAULT_THRESHOLD_ENTRIES, DEFAULT_THRESHOLD_SIZE,
+				DEFAULT_THRESHOLD_RATIO);
+	}
+
+	/**
+	 * Unzips a zip file to a given location
+	 *
+	 * @param zip         - The path of the ZIP file
+	 * @param destination - The location to which the ZIP file should be extracted
+	 * @param maxEntries
+	 * @param maxSize
+	 * @param maxRatio
+	 * @throws IOException If the ZIP cannot be extracted
+	 */
+	public static void unzip(final File zip, final File destination, final int maxEntries, final double maxSize,
+			final double maxRatio) throws IOException {
+		unzip(zip.toPath(), destination.toPath(), maxEntries, maxSize, maxRatio);
 	}
 
 	/**
@@ -63,7 +92,25 @@ public final class ZipUtil {
 	 */
 	public static void unzip(final Path zip, final Path destination) throws IOException {
 		try (var zipInputStream = new ZipInputStream(Files.newInputStream(zip))) {
-			unzip(zipInputStream, destination);
+			unzip(zipInputStream, destination, DEFAULT_THRESHOLD_ENTRIES, DEFAULT_THRESHOLD_SIZE,
+					DEFAULT_THRESHOLD_RATIO);
+		}
+	}
+
+	/**
+	 * Unzips a zip file to a given location
+	 *
+	 * @param zip         - The path of the ZIP file
+	 * @param destination - The location to which the ZIP file should be extracted
+	 * @param maxEntries
+	 * @param maxSize
+	 * @param maxRatio
+	 * @throws IOException If the ZIP cannot be extracted
+	 */
+	public static void unzip(final Path zip, final Path destination, final int maxEntries, final double maxSize,
+			final double maxRatio) throws IOException {
+		try (var zipInputStream = new ZipInputStream(Files.newInputStream(zip))) {
+			unzip(zipInputStream, destination, maxEntries, maxSize, maxRatio);
 		}
 	}
 
@@ -79,8 +126,23 @@ public final class ZipUtil {
 	 */
 	public static void unzip(final Path zip, final Path destination, final Predicate<String> include)
 			throws IOException {
+		unzip(zip, destination, include, DEFAULT_THRESHOLD_ENTRIES, DEFAULT_THRESHOLD_SIZE, DEFAULT_THRESHOLD_RATIO);
+	}
+
+	/**
+	 * Unzips a zip file to a given location
+	 *
+	 * @param zip         - The path of the ZIP file
+	 * @param destination - The location to which the ZIP file should be extracted
+	 * @param include     A function to decide based on an entries name if it should
+	 *                    be extracted or not. If <code>null</code> is passed, all
+	 *                    entries will be extracted.
+	 * @throws IOException If the ZIP cannot be extracted
+	 */
+	public static void unzip(final Path zip, final Path destination, final Predicate<String> include,
+			final int maxEntries, final double maxSize, final double maxRatio) throws IOException {
 		try (var zipInputStream = new ZipInputStream(Files.newInputStream(zip))) {
-			unzip(zipInputStream, destination, include);
+			unzip(zipInputStream, destination, include, maxEntries, maxSize, maxRatio);
 		}
 	}
 
@@ -91,8 +153,23 @@ public final class ZipUtil {
 	 * @param destination The location to which the ZIP file should be extracted
 	 * @throws IOException If the ZIP cannot be extracted
 	 */
-	public static void unzip(final ZipInputStream stream, final Path destination) throws IOException {
-		unzip(stream, destination, null);
+	public static void unzip(final JarInputStream stream, final Path path) throws IOException {
+		unzip(stream, path, DEFAULT_THRESHOLD_ENTRIES, DEFAULT_THRESHOLD_SIZE, DEFAULT_THRESHOLD_RATIO);
+	}
+
+	/**
+	 * Extracts the ZIP stream to the given destination
+	 *
+	 * @param stream      The ZIP input stream
+	 * @param destination The location to which the ZIP file should be extracted
+	 * @param maxEntries
+	 * @param maxSize
+	 * @param maxRatio
+	 * @throws IOException If the ZIP cannot be extracted
+	 */
+	private static void unzip(final ZipInputStream stream, final Path destination, final int maxEntries,
+			final double maxSize, final double maxRatio) throws IOException {
+		unzip(stream, destination, null, maxEntries, maxSize, maxRatio);
 	}
 
 	/**
@@ -103,10 +180,13 @@ public final class ZipUtil {
 	 * @param include     A function to decide based on an entries name if it should
 	 *                    be extracted or not. If <code>null</code> is passed, all
 	 *                    entries will be extracted.
+	 * @param maxEntries
+	 * @param maxSize
+	 * @param maxRatio
 	 * @throws IOException If the ZIP cannot be extracted
 	 */
-	public static void unzip(final ZipInputStream stream, final Path destination, final Predicate<String> include)
-			throws IOException {
+	private static void unzip(final ZipInputStream stream, final Path destination, final Predicate<String> include,
+			final int maxEntries, final double maxSize, final double maxRatio) throws IOException {
 		var totalSizeArchive = 0;
 		var totalEntryArchive = 0;
 
@@ -118,20 +198,20 @@ public final class ZipUtil {
 		while ((entry = stream.getNextEntry()) != null) {
 			try {
 				totalEntryArchive++;
-				if (totalEntryArchive > THRESHOLD_ENTRIES) {
+				if (totalEntryArchive > maxEntries) {
 					throw new SecurityException("Too much entries in this archive");
 				}
 
 				final var filePath = new File(destination.toFile(), entry.getName());
-				if (!filePath.getCanonicalPath().startsWith(destination.toString())) {
+				if (!filePath.getCanonicalPath().startsWith(destination.toFile().getCanonicalPath())) {
 					throw new SecurityException("Entry is trying to leave the target dir: " + entry.getName());
 				}
 
 				if (entry.isDirectory()) {
 					Files.createDirectories(filePath.toPath());
 				} else if ((include == null) || include.test(entry.getName())) {
-					totalSizeArchive += unzipFile(stream, filePath.toPath(), entry.getCompressedSize());
-					if (totalSizeArchive > THRESHOLD_SIZE) {
+					totalSizeArchive += unzipFile(stream, filePath.toPath(), entry.getCompressedSize(), maxRatio);
+					if (totalSizeArchive > maxSize) {
 						throw new SecurityException(
 								"Uncompressed data size is too much for the application resource capacity");
 					}
@@ -142,8 +222,20 @@ public final class ZipUtil {
 		}
 	}
 
+	/**
+	 * Extracts a zip file
+	 *
+	 * @param zipInputStream The zip input stream
+	 * @param unzipFilePath  The destination to which the zip stream should be
+	 *                       extracted
+	 * @param compressedSize The size of the compressed file from which the stream
+	 *                       has been created
+	 * @param maxRatio
+	 * @return size of the unziped entries in bytes
+	 * @throws IOException
+	 */
 	private static int unzipFile(final ZipInputStream zipInputStream, final Path unzipFilePath,
-			final long compressedSize) throws IOException {
+			final long compressedSize, final double maxRatio) throws IOException {
 		Files.createDirectories(unzipFilePath.getParent());
 		var totalSizeEntry = 0;
 		try (var bos = new BufferedOutputStream(Files.newOutputStream(unzipFilePath, StandardOpenOption.CREATE))) {
@@ -154,7 +246,7 @@ public final class ZipUtil {
 				totalSizeEntry += read;
 
 				final var compressionRatio = totalSizeEntry / (double) compressedSize;
-				if (compressionRatio > THRESHOLD_RATIO) {
+				if (compressionRatio > maxRatio) {
 					throw new SecurityException(
 							"Ratio between compressed and uncompressed data is highly suspicious, looks like a Zip Bomb Attack");
 				}
