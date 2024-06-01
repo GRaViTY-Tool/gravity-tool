@@ -8,14 +8,9 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.commands.IHandlerListener;
 import org.eclipse.ui.commands.IElementUpdater;
 import org.eclipse.ui.menus.UIElement;
+import org.gravity.security.annotations.SecurityAnnoationsCheckActivator;
 
 public class EnableSecurityCheckHandler implements IHandler, IElementUpdater {
-
-	private static boolean checksEnabled = true;
-
-	public static boolean checksEnabled() {
-		return checksEnabled;
-	}
 
 	@Override
 	public void addHandlerListener(final IHandlerListener handlerListener) {
@@ -29,7 +24,7 @@ public class EnableSecurityCheckHandler implements IHandler, IElementUpdater {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		checksEnabled = !checksEnabled;
+		SecurityAnnoationsCheckActivator.setChecksEnabled(!SecurityAnnoationsCheckActivator.checksEnabled());
 		return null;
 	}
 
@@ -50,7 +45,7 @@ public class EnableSecurityCheckHandler implements IHandler, IElementUpdater {
 
 	@Override
 	public void updateElement(final UIElement element, final Map parameters) {
-		if (checksEnabled) {
+		if (SecurityAnnoationsCheckActivator.checksEnabled()) {
 			element.setText("Disable Secure Dependency Check");
 		} else {
 			element.setText("Enable  Secure Dependency Check");

@@ -2,15 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.jdt.core.compilationParticipant">
-      <compilationParticipant
-            class="org.gravity.security.annotations.check.SecureDependencyCheck"
-            createsProblems="true"
-            id="org.gravity.security.annotations.check.SecureDependencyCheck"
-            modifiesEnvironment="false">
-      </compilationParticipant>
-   </extension>
-   <extension
          point="org.eclipse.ui.menus">
       	<menuContribution
             allPopups="false"
