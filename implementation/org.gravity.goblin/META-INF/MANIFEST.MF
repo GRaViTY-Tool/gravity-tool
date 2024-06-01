@@ -19,8 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.security.annotations.pm,
  org.eclipse.emf.henshin.interpreter,
  org.gravity.security.metrics,
- org.apache.log4j,
- org.gravity.typegraph.spl
+ org.apache.log4j
 Bundle-ActivationPolicy: lazy
 Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
  com.beust.jcommander.converters,
