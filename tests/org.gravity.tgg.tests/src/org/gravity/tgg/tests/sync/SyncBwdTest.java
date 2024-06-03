@@ -6,14 +6,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.apache.log4j.Logger;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -76,7 +75,7 @@ public class SyncBwdTest {
 	private static final String T_NAME = "Test";
 	private static final String T_JAVA_FILE = T_NAME + JAVA_EXTENSION;
 	private static final String T_QUALIFIED_NAME = PACKAGE_NAME + '.' + T_NAME;
-	
+
 	/**
 	 * The logger of this class
 	 */
@@ -97,7 +96,7 @@ public class SyncBwdTest {
 
 	private static IProject createProject(final String name, final IProgressMonitor monitor)
 			throws CoreException, DuplicateProjectNameException {
-		final var javaProject = JavaProjectUtil.createJavaProject(name, Arrays.asList(SRC, TEST), monitor);
+		final var javaProject = JavaProjectUtil.createJavaProject(name, true, Arrays.asList(SRC, TEST), monitor);
 		final var project = javaProject.getProject();
 
 		final var srcDummy = project.getFolder(SRC).getFolder(PACKAGE_NAME);
@@ -142,20 +141,20 @@ public class SyncBwdTest {
 		final var trg = transformation.projectToModel(true, this.monitor);
 		final var src = ((MGravityModel) transformation.getSrc());
 
-		assertCorrectTrafo(src);
+		this.assertCorrectTrafo(src);
 
 		final Consumer<EObject> changeTrg = a -> {
-			performChange(trg);
+			this.performChange(trg);
 		};
 
 		transformation.applyChangeAndGenerateCode(changeTrg, this.monitor);
 
-		assertOutcome(src);
+		this.assertOutcome(src);
 	}
 
 	@After
 	public void cleanup() throws CoreException {
-		if(this.project != null) {
+		if (this.project != null) {
 			this.project.delete(true, this.monitor);
 		}
 	}
@@ -170,8 +169,8 @@ public class SyncBwdTest {
 		final var typeA = MoDiscoUtil.getType(src, A_QUALIFIED_NAME);
 		assertTrue("Added method is not contained in MoDisco model.",
 				typeA.getBodyDeclarations().stream().filter(MethodDeclaration.class::isInstance)
-				.map(MethodDeclaration.class::cast)
-				.anyMatch(m -> CREATE_METHOD_NAME.equals(m.getName()) && m.getParameters().isEmpty()));
+						.map(MethodDeclaration.class::cast)
+						.anyMatch(m -> CREATE_METHOD_NAME.equals(m.getName()) && m.getParameters().isEmpty()));
 		assertNotNull("Added method is not contained in Eclipse's Java AST",
 				javaProject.findType(A_QUALIFIED_NAME).getMethod(CREATE_METHOD_NAME, new String[0]));
 
@@ -227,8 +226,8 @@ public class SyncBwdTest {
 
 		// Add method to class
 		((Class) pack.getOwnedMember(A_NAME))
-		.createOwnedOperation(CREATE_METHOD_NAME, new BasicEList<>(), new BasicEList<>())
-		.createOwnedParameter(null, type).setDirection(ParameterDirectionKind.RETURN_LITERAL);
+				.createOwnedOperation(CREATE_METHOD_NAME, new BasicEList<>(), new BasicEList<>())
+				.createOwnedParameter(null, type).setDirection(ParameterDirectionKind.RETURN_LITERAL);
 
 		// Add security annotation to class
 		final var c = UmlsecFactory.eINSTANCE.createcritical();
