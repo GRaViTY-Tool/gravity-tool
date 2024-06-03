@@ -44,7 +44,7 @@ public final class ZipUtil {
 	/**
 	 * Limit by default to 500mb extracted size
 	 */
-	public static final double DEFAULT_THRESHOLD_SIZE = 500 * 1024 * 1024;
+	public static final double DEFAULT_THRESHOLD_SIZE = 500d * 1024 * 1024;
 
 	/**
 	 * Limit by default to a ration between compressed and extracted entry size of
