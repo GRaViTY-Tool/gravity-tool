@@ -47,7 +47,6 @@ public class UmlSecProcessor {
 	private final Model model;
 
 	private Interface iCritical;
-	private Interface iHigh;
 	private Interface iIntegrity;
 	private Interface iSecrecy;
 
@@ -160,7 +159,7 @@ public class UmlSecProcessor {
 	 * @return
 	 */
 	private boolean loaded() {
-		return (this.iCritical != null) && (this.iHigh != null) && (this.iSecrecy != null) && (this.iIntegrity != null);
+		return (this.iCritical != null) && (this.iSecrecy != null) && (this.iIntegrity != null);
 	}
 
 	/**
