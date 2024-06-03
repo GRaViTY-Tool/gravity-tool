@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.security.annotations.SecurityAnnoationsCheckActivator;
 import org.gravity.security.annotations.marker.SecurityMarkerUtil;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -33,6 +34,7 @@ public class SecureDependencyEditingSupportTests {
 	@ParameterizedTest
 	@MethodSource("collectProjects")
 	void testSecureDependency(final IJavaProject project) throws CoreException {
+		SecurityAnnoationsCheckActivator.setChecksEnabled(true);
 		project.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		project.getProject().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		final var problems = new HashMap<String, List<IMarker>>();
