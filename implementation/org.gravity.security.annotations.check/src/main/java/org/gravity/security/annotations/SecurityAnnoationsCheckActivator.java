@@ -23,7 +23,7 @@ public class SecurityAnnoationsCheckActivator extends Plugin {
 	/**
 	 * The id of this plugin
 	 */
-	public static final String PLUGIN_ID = "org.gravity.security.annotations.ui";
+	public static final String PLUGIN_ID = "org.gravity.security.annotations.check";
 
 	/**
 	 * The name of the security annotations file
