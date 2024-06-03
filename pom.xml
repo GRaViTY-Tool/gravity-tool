@@ -216,7 +216,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://gravity-tool.org/carisma/updatesite</url>
+      <url>https://carisma-tool.github.io/carisma-tool/</url>
     </repository>
   </repositories>
 </project>

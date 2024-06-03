@@ -15,9 +15,9 @@ The GRaViTY tool is a research prototype for the analysis of software design and
 
 ## Installation
 
-The tool can be installed from the following updatesite into Eclipse: https://gravity-tool.github.io/updatesite
+The tool can be installed from the following updatesite into Eclipse 2023-12: https://gravity-tool.github.io/updatesite
 
-All dependencies should be installed automatically. Some times it is necessary to activate the updated sides added while installing manually.
+All dependencies should be installed automatically. Sometimes it is necessary to activate the updated sides added while installing manually.
 
 ## Repository description
 
@@ -31,14 +31,14 @@ This is the main repository under which everything is merged
 ## HowTo Build GRaViTY in Eclipse
 
 Requirements:
-1. Eclipse Modeling Tools (tested with 2022-06)  
+1. Eclipse (tested with 2023-12)  
 2. Eclipse plugins:   
- a) MoDisco Plugin (install from Eclipse 2022-06 update site)  
+ a) MoDisco Plugin
  b) eMoflon::TIE  (www.emoflon.org), now hosted at https://gravity-tool.org/emoflon-tie/updatesite/
 
 Get the source code:
-- The whole project is hosted in a git repository via github: https://github.com/GRaViTY-Tool/gravity-tool 
-- For student theses every student should get his/her own branch
+- The whole project is hosted in a git repository via Github: https://github.com/GRaViTY-Tool/gravity-tool 
+- For student theses, every student should get his/her own branch
 
 Structure of the git Repository:
 - evaluation
