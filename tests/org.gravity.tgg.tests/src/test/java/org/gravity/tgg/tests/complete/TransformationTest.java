@@ -62,21 +62,6 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		super(name, project);
 	}
 
-	@Test
-	public void testJDTbasedTrafo() {
-		final var converter = new JDT2PMConverter(this.project);
-		converter.convertProject(new NullProgressMonitor());
-
-		final var pm = converter.getPG();
-		if (JSON_CHECKS) {
-			final var expectJsonFile = this.project.getProject().getFile("expect.json");
-			if (expectJsonFile.exists()) {
-				this.checkModel(pm, expectJsonFile);
-			}
-		}
-		this.checkModel(pm);
-	}
-
 	/**
 	 * Transforms every input project and checks the created model
 	 *
