@@ -7,10 +7,12 @@ import static org.junit.Assert.assertTrue;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.gravity.eclipse.GravityActivator;
+import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.tgg.modisco.pm.MoDiscoTGGConverterFactory;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -48,6 +50,8 @@ public class LoadTests {
 	 */
 	@Test
 	public void trafoAndLoad() throws NoConverterRegisteredException, CoreException {
+		selectTGGConverterFactory(LoadTests.project);
+
 		final var first = GravityActivator.getDefault().getConverter(LoadTests.project);
 		assertTrue(first.convertProject(null));
 		assertNotNull(first.getPG());
@@ -57,6 +61,25 @@ public class LoadTests {
 		assertNotEquals(first, second);
 		assertTrue(second.convertProject(null));
 		assertNotNull(second.getPG());
+	}
+
+	/**
+	 * Sets the TGG-based MoDisco to PM converter as selected for the given project
+	 *
+	 * @param project A project
+	 * @return The selected converter factory
+	 * @throws CoreException
+	 */
+	public static IPGConverterFactory selectTGGConverterFactory(final IProject project) throws CoreException {
+		final var activator = GravityActivator.getDefault();
+		final var result = activator.getCompatibleConverterFactories(project).stream()
+				.filter(f -> (f instanceof MoDiscoTGGConverterFactory)).findAny();
+		if (result.isEmpty()) {
+			throw new IllegalStateException("TGG Converter not found");
+		}
+		final var factory = result.get();
+		activator.setSelectedConverterFactory(project, factory);
+		return factory;
 	}
 
 	/**

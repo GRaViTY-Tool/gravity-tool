@@ -41,6 +41,9 @@ public class GravityActivator extends Plugin {
 	/** The ID of the extensionpoint where converters are registered. */
 	public static final String GRAVITY_CONVERTER_EXTENSION_POINT_ID = "org.gravity.eclipse.converters"; //$NON-NLS-1$
 
+	/** The attribute ID at which the converter factory is registered */
+	private static final String GRAVITY_CONVERTER_EXTENSION_POINT_CLASS = "class"; // $NON-LNS-1$
+
 	/** The plug-in ID. */
 	public static final String PLUGIN_ID = "org.gravity.eclipse"; //$NON-NLS-1$
 
@@ -225,16 +228,22 @@ public class GravityActivator extends Plugin {
 		return converter;
 	}
 
-	public Collection<IPGConverterFactory> getCompatibleConverterFactories(final IProject project)
-			throws CoreException {
+	public Collection<IPGConverterFactory> getCompatibleConverterFactories(final IProject project) {
 		final var extensionRegistry = Platform.getExtensionRegistry();
 
 		final var compatibleFactories = new LinkedList<IPGConverterFactory>();
 		for (final var element : extensionRegistry.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID)) {
-			final var tmp = ((IPGConverterFactory) element.createExecutableExtension("class")); //$NON-NLS-1$
-			if (tmp.supported(project)) {
-				compatibleFactories.add(tmp);
+			try {
+				final var tmp = ((IPGConverterFactory) element
+						.createExecutableExtension(GRAVITY_CONVERTER_EXTENSION_POINT_CLASS));
+				if (tmp.supported(project)) {
+					compatibleFactories.add(tmp);
+				}
+			} catch (final CoreException e) {
+				LOGGER.error("Converter factory cannot be instantiated: "
+						+ element.getAttribute(GRAVITY_CONVERTER_EXTENSION_POINT_CLASS));
 			}
+
 		}
 		return compatibleFactories;
 	}
@@ -317,8 +326,9 @@ public class GravityActivator extends Plugin {
 					if (line != null && !line.isBlank()) {
 						for (final var element : Platform.getExtensionRegistry()
 								.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID)) {
-							if (line.equals(element.getAttribute("class"))) {
-								return ((IPGConverterFactory) element.createExecutableExtension("class")); //$NON-NLS-1$
+							if (line.equals(element.getAttribute(GRAVITY_CONVERTER_EXTENSION_POINT_CLASS))) {
+								return ((IPGConverterFactory) element
+										.createExecutableExtension(GRAVITY_CONVERTER_EXTENSION_POINT_CLASS));
 							}
 						}
 						LOGGER.error("Selected factory not found");
@@ -333,14 +343,10 @@ public class GravityActivator extends Plugin {
 
 	public IPGConverterFactory getSuitableConverterFactory(final IProject project,
 			final Predicate<IPGConverterFactory> constraint) {
-		try {
-			for (final var factory : this.getCompatibleConverterFactories(project)) {
-				if (constraint.test(factory)) {
-					return factory;
-				}
+		for (final var factory : this.getCompatibleConverterFactories(project)) {
+			if (constraint.test(factory)) {
+				return factory;
 			}
-		} catch (final CoreException e) {
-			LOGGER.error(e);
 		}
 		return null;
 	}

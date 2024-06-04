@@ -5,23 +5,40 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.internal.registry.ExtensionRegistry;
+import org.eclipse.core.runtime.ContributorFactoryOSGi;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.RegistryFactory;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.tgg.tests.configure.dummy.DummyConverterFactory;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ConverterSelectionTests {
 
 	private static final String PROJECT = "selectionTest";
 	private static final Logger LOGGER = Logger.getLogger(ConverterSelectionTests.class);
+
+	@BeforeClass
+	public static void init() throws IOException {
+		final var bundle = Platform.getBundle("org.gravity.tgg.tests");
+		try (var stream = new FileInputStream("src/test/resources/configure/plugin.xml")) {
+			final var contributor = ContributorFactoryOSGi.createContributor(bundle);
+			Platform.getExtensionRegistry().addContribution(stream, contributor,
+					false, "TestContribution", null,
+					((ExtensionRegistry) RegistryFactory.getRegistry()).getTemporaryUserToken());
+		}
+	}
 
 	@Test
 	public void testConverterSelection() {

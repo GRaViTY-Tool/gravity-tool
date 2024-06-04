@@ -27,17 +27,11 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
-      <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
       <import feature="org.gravity.features.eclipse" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
          id="org.gravity.security.annotations.ui"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.gravity.security.annotations.pm"
          version="0.0.0"/>
 
 </feature>

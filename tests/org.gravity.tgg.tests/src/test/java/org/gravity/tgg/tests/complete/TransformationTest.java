@@ -28,6 +28,7 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
+import org.gravity.parser.jdt.pm.JDT2PMConverter;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGConverter;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.BasicPackage;
@@ -61,6 +62,21 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		super(name, project);
 	}
 
+	@Test
+	public void testJDTbasedTrafo() {
+		final var converter = new JDT2PMConverter(this.project);
+		converter.convertProject(new NullProgressMonitor());
+
+		final var pm = converter.getPG();
+		if (JSON_CHECKS) {
+			final var expectJsonFile = this.project.getProject().getFile("expect.json");
+			if (expectJsonFile.exists()) {
+				this.checkModel(pm, expectJsonFile);
+			}
+		}
+		this.checkModel(pm);
+	}
+
 	/**
 	 * Transforms every input project and checks the created model
 	 *
@@ -77,7 +93,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 			// Check, if element counts (e. g. number of TFlows) are as expected
 			final var file = this.project.getProject().getFile("expectModisco.json");
 			if (file.exists()) {
-				checkModel(preprocessedModel, file);
+				this.checkModel(preprocessedModel, file);
 			}
 		}
 		// Store the model
@@ -113,7 +129,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		} catch (final IOException e) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		}
-		final var modiscoModel = getModiscoModel();
+		final var modiscoModel = this.getModiscoModel();
 		if (!conv.convertModel(modiscoModel, monitor)) {
 			throw new AssertionError("Trafo failed");
 		}
@@ -124,10 +140,10 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		if (JSON_CHECKS) {
 			final var expectJsonFile = this.project.getProject().getFile("expect.json");
 			if (expectJsonFile.exists()) {
-				checkModel(pg, expectJsonFile);
+				this.checkModel(pg, expectJsonFile);
 			}
 		}
-		checkModel(pg);
+		this.checkModel(pg);
 	}
 
 	/**
@@ -153,7 +169,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		for (final Path file : visitor.getFiles()) {
 			if (file.getParent().equals(projectLocation)) {
 				final var module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
-				if(module.getImports().contains(root.eClass().getEPackage())) {
+				if (module.getImports().contains(root.eClass().getEPackage())) {
 					for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
 						final var matches = engine.findMatches(rule, graph, null);
 						assertTrue(matches.iterator().hasNext());
@@ -188,7 +204,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 				if (ADD_UMLSEC) {
 					model = transformation.projectToModel(ADD_UMLSEC, monitor);
 				} else {
-					final var preprocessedModel = getModiscoModel();
+					final var preprocessedModel = this.getModiscoModel();
 					model = transformation.modiscoToModel(preprocessedModel, monitor);
 				}
 				assertNotNull(model);
@@ -196,11 +212,11 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 				throw new AssertionError(e.getMessage(), e);
 			}
-			checkModel(model);
+			this.checkModel(model);
 		} finally {
 			models.remove(this.name);
 			try {
-				cleanClassPath();
+				this.cleanClassPath();
 			} catch (IOException | CoreException e) {
 				LOGGER.error(e.getLocalizedMessage(), e);
 			}
