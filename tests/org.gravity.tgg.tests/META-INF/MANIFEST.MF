@@ -17,7 +17,8 @@ Require-Bundle: org.gravity.tgg.modisco.pm,
  org.gravity.eclipse.tests,
  org.eclipse.emf.henshin.interpreter,
  org.gravity.security.annotations.pm,
- org.apache.log4j
+ org.apache.log4j,
+ carisma.profile.umlsec
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
