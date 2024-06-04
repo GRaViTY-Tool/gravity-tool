@@ -54,7 +54,6 @@ public class UmlSecProcessor {
 	private static final String ANNOTATION_INTEGRITY = Integrity.class.getSimpleName();
 	private static final String ANNOTATION_SECRECY = Secrecy.class.getSimpleName();
 
-	private static final String TAG_HIGH = UmlsecPackage.eINSTANCE.getcritical_High().getName();
 	private static final String TAG_INTEGRITY = UmlsecPackage.eINSTANCE.getcritical_Integrity().getName();
 	private static final String TAG_SECRECY = UmlsecPackage.eINSTANCE.getcritical_Secrecy().getName();
 
@@ -171,11 +170,10 @@ public class UmlSecProcessor {
 	 */
 	private Stream<Comment> processBwd(final Classifier classifier) throws ProcessingException {
 		final var signatures = new HashMap<String, Element>();
-		final var highComments = new HashMap<String, Comment>();
 		final var secrecyComments = new HashMap<String, Comment>();
 		final var integrityComments = new HashMap<String, Comment>();
 
-		final var criticalComment = getComments(classifier, signatures, highComments, secrecyComments,
+		final var criticalComment = getComments(classifier, signatures, secrecyComments,
 				integrityComments);
 
 		for (final EObject stereotype : classifier.getStereotypeApplications()) {
@@ -194,8 +192,7 @@ public class UmlSecProcessor {
 		// All comments which haven't been removed from this tables have been deleted on
 		// the tags of the critical stereotype.
 
-		return Stream.concat(
-				Stream.concat(highComments.values().parallelStream(), secrecyComments.values().parallelStream()),
+		return Stream.concat(secrecyComments.values().parallelStream(),
 				integrityComments.values().parallelStream());
 	}
 
@@ -329,15 +326,15 @@ public class UmlSecProcessor {
 	}
 
 	private static Comment getComments(final Classifier classifier, final HashMap<String, Element> signatures,
-			final HashMap<String, Comment> highComments, final HashMap<String, Comment> secrecyComments,
+			final HashMap<String, Comment> secrecyComments,
 			final HashMap<String, Comment> integrityComments) {
 
 		for (final Operation operation : classifier.getOperations()) {
-			getComments(signatures, highComments, secrecyComments, integrityComments, operation);
+			getComments(signatures, secrecyComments, integrityComments, operation);
 		}
 
 		for (final Property property : classifier.getAttributes()) {
-			getComments(signatures, highComments, secrecyComments, integrityComments, property);
+			getComments(signatures, secrecyComments, integrityComments, property);
 		}
 
 		final var criticalComment = getComment(classifier, ANNOTATION_CRITICAL, false);
@@ -347,9 +344,7 @@ public class UmlSecProcessor {
 
 		for (final Comment tag : criticalComment.getOwnedComments()) {
 			HashMap<String, Comment> addto;
-			if (TAG_HIGH.equals(tag.getBody())) {
-				addto = highComments;
-			} else if (TAG_INTEGRITY.equals(tag.getBody())) {
+			if (TAG_INTEGRITY.equals(tag.getBody())) {
 				addto = integrityComments;
 			} else if (TAG_SECRECY.equals(tag.getBody())) {
 				addto = secrecyComments;
@@ -364,7 +359,7 @@ public class UmlSecProcessor {
 	}
 
 	private static void getComments(final HashMap<String, Element> signatures,
-			final HashMap<String, Comment> highComments, final HashMap<String, Comment> secrecyComments,
+			final HashMap<String, Comment> secrecyComments,
 			final HashMap<String, Comment> integrityComments, final Element operation) {
 		final var signature = getSignature(operation);
 		signatures.put(signature, operation);
