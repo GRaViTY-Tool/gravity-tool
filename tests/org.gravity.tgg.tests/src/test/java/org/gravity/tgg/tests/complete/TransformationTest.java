@@ -28,7 +28,6 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
-import org.gravity.parser.jdt.pm.JDT2PMConverter;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGConverter;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.BasicPackage;
