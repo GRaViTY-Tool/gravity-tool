@@ -24,8 +24,8 @@
   </scm>
 
   <properties>
-    <tycho-version>4.0.6</tycho-version>
-    <jacoco.version>0.8.11</jacoco.version>
+    <tycho-version>4.0.8</tycho-version>
+    <jacoco.version>0.8.12</jacoco.version>
     <dependency-plugin>3.6.1</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
