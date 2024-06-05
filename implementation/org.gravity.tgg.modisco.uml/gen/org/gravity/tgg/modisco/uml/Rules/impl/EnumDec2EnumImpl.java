@@ -152,36 +152,36 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = EnumDec2EnumImpl
-				.pattern_EnumDec2Enum_1_1_performtransformation_greenFBFB(bodyDeclaration, csp);
-		Enumeration feature = (Enumeration) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+				.pattern_EnumDec2Enum_1_1_performtransformation_greenFFBB(bodyDeclaration, csp);
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
+		Enumeration feature = (Enumeration) result1_green[1];
 
-		Object[] result2_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBB(feature,
-				bodyDeclaration, b2e);
+		Object[] result2_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBB(b2e,
+				feature, bodyDeclaration);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
+					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
-		Object[] result2_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBB(feature,
-				bodyDeclaration, b2e);
+		Object[] result2_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBB(b2e,
+				feature, bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_1_3_bookkeepingforedges_blackBBBB(ruleresult,
-				feature, bodyDeclaration, b2e);
+				b2e, feature, bodyDeclaration);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-					+ "[b2e] = " + b2e + ".");
+					+ ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ".");
 		}
-		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature, bodyDeclaration,
-				b2e);
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
+		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e, feature,
+				bodyDeclaration);
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_5_registerobjects_expressionBBBBB(this, ruleresult, feature,
-				bodyDeclaration, b2e);
+		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_5_registerobjects_expressionBBBBB(this, ruleresult, b2e, feature,
+				bodyDeclaration);
 		return EnumDec2EnumImpl.pattern_EnumDec2Enum_1_6_expressionFB(ruleresult);
 	}
 
@@ -335,11 +335,11 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration,
-			EObject b2e) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject feature,
+			EObject bodyDeclaration) {
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -415,37 +415,37 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		}
 		Enumeration feature = (Enumeration) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_1_performtransformation_greenBFFB(feature,
+		Object[] result1_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_1_performtransformation_greenFBFB(feature,
 				csp);
-		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_green[1];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
+		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_green[2];
 
-		Object[] result2_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBB(feature,
-				bodyDeclaration, b2e);
+		Object[] result2_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBB(b2e,
+				feature, bodyDeclaration);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
+					+ "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
-		Object[] result2_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBB(feature,
-				bodyDeclaration, b2e);
+		Object[] result2_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBB(b2e,
+				feature, bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_3_bookkeepingforedges_blackBBBB(ruleresult,
-				feature, bodyDeclaration, b2e);
+				b2e, feature, bodyDeclaration);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-					+ "[b2e] = " + b2e + ".");
+					+ ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ".");
 		}
-		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, feature, bodyDeclaration,
-				b2e);
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
+		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e, feature,
+				bodyDeclaration);
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_5_registerobjects_expressionBBBBB(this, ruleresult, feature,
-				bodyDeclaration, b2e);
+		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_5_registerobjects_expressionBBBBB(this, ruleresult, b2e, feature,
+				bodyDeclaration);
 		return EnumDec2EnumImpl.pattern_EnumDec2Enum_11_6_expressionFB(ruleresult);
 	}
 
@@ -595,11 +595,11 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration,
-			EObject b2e) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject feature,
+			EObject bodyDeclaration) {
+		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -618,7 +618,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature) {
+	public EObjectContainer isAppropriate_BWD_Enumeration_12(Enumeration feature) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -669,7 +669,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EnumDeclaration_0(EnumDeclaration bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EnumDeclaration_6(EnumDeclaration bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -731,13 +731,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -778,13 +778,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -856,9 +856,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
 							+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				EnumDec2EnumImpl.pattern_EnumDec2Enum_24_6_createcorrespondence_greenBBFB(feature, bodyDeclaration,
+				EnumDec2EnumImpl.pattern_EnumDec2Enum_24_6_createcorrespondence_greenFBBB(feature, bodyDeclaration,
 						ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
 
 				Object[] result7_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -983,9 +983,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				EnumDec2EnumImpl.pattern_EnumDec2Enum_29_6_perform_greenFFFBB(ruleResult, csp);
-				//nothing Enumeration feature = (Enumeration) result6_green[0];
-				//nothing EnumDeclaration bodyDeclaration = (EnumDeclaration) result6_green[1];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				//nothing Enumeration feature = (Enumeration) result6_green[1];
+				//nothing EnumDeclaration bodyDeclaration = (EnumDeclaration) result6_green[2];
 
 			} else {
 			}
@@ -1044,78 +1044,79 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD__MATCH_ENUMDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ENUMDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1));
-			return null;
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ENUMDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ENUMDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (EnumDeclaration) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD__MATCH_ENUMERATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_ENUMERATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1));
-			return null;
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_ENUMERATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ENUMERATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Enumeration) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_0__ENUMERATION:
-			return isAppropriate_BWD_Enumeration_0((Enumeration) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_0__ENUMDECLARATION:
-			return isAppropriate_FWD_EnumDeclaration_0((EnumDeclaration) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_CC__ENUMERATION_ENUMDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Enumeration) arguments.get(0), (EnumDeclaration) arguments.get(1),
-					(Match) arguments.get(2), (Match) arguments.get(3));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___CHECK_DEC_FWD__ENUMDECLARATION:
-			return checkDEC_FWD((EnumDeclaration) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___CHECK_DEC_BWD__ENUMERATION:
-			return checkDEC_BWD((Enumeration) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD__MATCH_ENUMDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ENUMDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1));
+				return null;
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ENUMDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (EnumDeclaration) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ENUMDECLARATION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(EnumDeclaration) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD__MATCH_ENUMERATION:
+				return isAppropriate_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_ENUMERATION:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1));
+				return null;
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_ENUMERATION:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Enumeration) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ENUMERATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Enumeration) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_12__ENUMERATION:
+				return isAppropriate_BWD_Enumeration_12((Enumeration) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_ENUM_DECLARATION_6__ENUMDECLARATION:
+				return isAppropriate_FWD_EnumDeclaration_6((EnumDeclaration) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_CC__ENUMERATION_ENUMDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Enumeration) arguments.get(0), (EnumDeclaration) arguments.get(1),
+						(Match) arguments.get(2), (Match) arguments.get(3));
+			case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___CHECK_DEC_FWD__ENUMDECLARATION:
+				return checkDEC_FWD((EnumDeclaration) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___CHECK_DEC_BWD__ENUMERATION:
+				return checkDEC_BWD((Enumeration) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1233,38 +1234,38 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_1_1_performtransformation_greenFBFB(
+	public static final Object[] pattern_EnumDec2Enum_1_1_performtransformation_greenFFBB(
 			EnumDeclaration bodyDeclaration, CSP csp) {
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { feature, bodyDeclaration, b2e, csp };
+		return new Object[] { b2e, feature, bodyDeclaration, csp };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBB(Enumeration feature,
-			EnumDeclaration bodyDeclaration, ASTNode2Element b2e) {
-		return new Object[] { feature, bodyDeclaration, b2e };
+	public static final Object[] pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBB(ASTNode2Element b2e,
+			Enumeration feature, EnumDeclaration bodyDeclaration) {
+		return new Object[] { b2e, feature, bodyDeclaration };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBB(Enumeration feature,
-			EnumDeclaration bodyDeclaration, ASTNode2Element b2e) {
+	public static final Object[] pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBB(ASTNode2Element b2e,
+			Enumeration feature, EnumDeclaration bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		ruleresult.getCreatedLinkElements().add(b2e);
-		return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
+		return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject feature, EObject bodyDeclaration, EObject b2e) {
-		if (!bodyDeclaration.equals(feature)) {
-			if (!b2e.equals(feature)) {
-				if (!b2e.equals(bodyDeclaration)) {
-					return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
+			EObject b2e, EObject feature, EObject bodyDeclaration) {
+		if (!b2e.equals(feature)) {
+			if (!b2e.equals(bodyDeclaration)) {
+				if (!bodyDeclaration.equals(feature)) {
+					return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
 				}
 			}
 		}
@@ -1272,28 +1273,28 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject feature, EObject bodyDeclaration, EObject b2e) {
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject b2e, EObject feature, EObject bodyDeclaration) {
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumDec2Enum";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, feature, bodyDeclaration, b2e, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, b2e, feature, bodyDeclaration, b2e__feature____target,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_EnumDec2Enum_1_5_registerobjects_expressionBBBBB(EnumDec2Enum _this,
-			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
-		_this.registerObjects_FWD(ruleresult, feature, bodyDeclaration, b2e);
+			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
+		_this.registerObjects_FWD(ruleresult, b2e, feature, bodyDeclaration);
 
 	}
 
@@ -1550,38 +1551,38 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return null;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_11_1_performtransformation_greenBFFB(Enumeration feature,
+	public static final Object[] pattern_EnumDec2Enum_11_1_performtransformation_greenFBFB(Enumeration feature,
 			CSP csp) {
-		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { feature, bodyDeclaration, b2e, csp };
+		return new Object[] { b2e, feature, bodyDeclaration, csp };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBB(Enumeration feature,
-			EnumDeclaration bodyDeclaration, ASTNode2Element b2e) {
-		return new Object[] { feature, bodyDeclaration, b2e };
+	public static final Object[] pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBB(ASTNode2Element b2e,
+			Enumeration feature, EnumDeclaration bodyDeclaration) {
+		return new Object[] { b2e, feature, bodyDeclaration };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBB(Enumeration feature,
-			EnumDeclaration bodyDeclaration, ASTNode2Element b2e) {
+	public static final Object[] pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBB(ASTNode2Element b2e,
+			Enumeration feature, EnumDeclaration bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		ruleresult.getCreatedLinkElements().add(b2e);
-		return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
+		return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject feature, EObject bodyDeclaration, EObject b2e) {
-		if (!bodyDeclaration.equals(feature)) {
-			if (!b2e.equals(feature)) {
-				if (!b2e.equals(bodyDeclaration)) {
-					return new Object[] { ruleresult, feature, bodyDeclaration, b2e };
+			EObject b2e, EObject feature, EObject bodyDeclaration) {
+		if (!b2e.equals(feature)) {
+			if (!b2e.equals(bodyDeclaration)) {
+				if (!bodyDeclaration.equals(feature)) {
+					return new Object[] { ruleresult, b2e, feature, bodyDeclaration };
 				}
 			}
 		}
@@ -1589,28 +1590,28 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject feature, EObject bodyDeclaration, EObject b2e) {
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject b2e, EObject feature, EObject bodyDeclaration) {
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumDec2Enum";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, feature, bodyDeclaration, b2e, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, b2e, feature, bodyDeclaration, b2e__feature____target,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_EnumDec2Enum_11_5_registerobjects_expressionBBBBB(EnumDec2Enum _this,
-			PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e) {
-		_this.registerObjects_BWD(ruleresult, feature, bodyDeclaration, b2e);
+			PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration) {
+		_this.registerObjects_BWD(ruleresult, b2e, feature, bodyDeclaration);
 
 	}
 
@@ -1909,8 +1910,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_820556 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_820556 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_690319 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_690319 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2081,13 +2082,13 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return new Object[] { feature, bodyDeclaration, ccMatch };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_24_6_createcorrespondence_greenBBFB(Enumeration feature,
+	public static final Object[] pattern_EnumDec2Enum_24_6_createcorrespondence_greenFBBB(Enumeration feature,
 			EnumDeclaration bodyDeclaration, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { feature, bodyDeclaration, b2e, ccMatch };
+		return new Object[] { b2e, feature, bodyDeclaration, ccMatch };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2112,8 +2113,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_901238 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_901238 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_297196 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_297196 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2209,18 +2210,18 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_29_6_perform_greenFFFBB(ModelgeneratorRuleResult ruleResult,
 			CSP csp) {
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getTargetObjects().add(feature);
-		ruleResult.getSourceObjects().add(bodyDeclaration);
-		b2e.setSource(bodyDeclaration);
-		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
+		b2e.setTarget(feature);
+		ruleResult.getTargetObjects().add(feature);
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getSourceObjects().add(bodyDeclaration);
 		String feature_name_prime = (String) _localVariable_0;
 		String bodyDeclaration_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2228,7 +2229,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { feature, bodyDeclaration, b2e, ruleResult, csp };
+		return new Object[] { b2e, feature, bodyDeclaration, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_EnumDec2Enum_29_7_expressionFB(

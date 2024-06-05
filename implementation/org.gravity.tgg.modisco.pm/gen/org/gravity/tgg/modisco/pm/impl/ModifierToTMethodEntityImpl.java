@@ -162,14 +162,14 @@ public class ModifierToTMethodEntityImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class ModifierToTMethodEntityImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
-			setSource((Modifier) newValue);
-			return;
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
-			setTarget((TMethodDefinition) newValue);
-			return;
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
+				setSource((Modifier) newValue);
+				return;
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
+				setTarget((TMethodDefinition) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class ModifierToTMethodEntityImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
-			setSource((Modifier) null);
-			return;
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
-			setTarget((TMethodDefinition) null);
-			return;
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
+				setSource((Modifier) null);
+				return;
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
+				setTarget((TMethodDefinition) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class ModifierToTMethodEntityImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
-			return source != null;
-		case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
-			return target != null;
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__SOURCE:
+				return source != null;
+			case PmPackage.MODIFIER_TO_TMETHOD_ENTITY__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -3,22 +3,16 @@
 package org.gravity.modisco.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.modisco.java.Type;
-
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoPackage;
@@ -34,7 +28,7 @@ import org.gravity.modisco.ModiscoPackage;
  *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getMNext <em>MNext</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getMPrevious <em>MPrevious</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getAllParameterInstances <em>All Parameter Instances</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,14 +65,14 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	protected Type type;
 
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getAllParameterInstances() <em>All Parameter Instances</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParameters()
+	 * @see #getAllParameterInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MSingleVariableDeclaration> parameters;
+	protected EList<MSingleVariableDeclaration> allParameterInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,11 +263,11 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	 * @generated
 	 */
 	@Override
-	public EList<MSingleVariableDeclaration> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectWithInverseResolvingEList<MSingleVariableDeclaration>(MSingleVariableDeclaration.class, this, ModiscoPackage.MENTRY__PARAMETERS, ModiscoPackage.MSINGLE_VARIABLE_DECLARATION__MENTRY);
+	public EList<MSingleVariableDeclaration> getAllParameterInstances() {
+		if (allParameterInstances == null) {
+			allParameterInstances = new EObjectWithInverseResolvingEList<MSingleVariableDeclaration>(MSingleVariableDeclaration.class, this, ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES, ModiscoPackage.MSINGLE_VARIABLE_DECLARATION__MENTRY);
 		}
-		return parameters;
+		return allParameterInstances;
 	}
 
 	/**
@@ -293,8 +287,8 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 				if (mPrevious != null)
 					msgs = ((InternalEObject)mPrevious).eInverseRemove(this, ModiscoPackage.MENTRY__MNEXT, MEntry.class, msgs);
 				return basicSetMPrevious((MEntry)otherEnd, msgs);
-			case ModiscoPackage.MENTRY__PARAMETERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
+			case ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAllParameterInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -311,8 +305,8 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 				return basicSetMNext(null, msgs);
 			case ModiscoPackage.MENTRY__MPREVIOUS:
 				return basicSetMPrevious(null, msgs);
-			case ModiscoPackage.MENTRY__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES:
+				return ((InternalEList<?>)getAllParameterInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -334,8 +328,8 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 			case ModiscoPackage.MENTRY__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case ModiscoPackage.MENTRY__PARAMETERS:
-				return getParameters();
+			case ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES:
+				return getAllParameterInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,9 +352,9 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 			case ModiscoPackage.MENTRY__TYPE:
 				setType((Type)newValue);
 				return;
-			case ModiscoPackage.MENTRY__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends MSingleVariableDeclaration>)newValue);
+			case ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES:
+				getAllParameterInstances().clear();
+				getAllParameterInstances().addAll((Collection<? extends MSingleVariableDeclaration>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,8 +377,8 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 			case ModiscoPackage.MENTRY__TYPE:
 				setType((Type)null);
 				return;
-			case ModiscoPackage.MENTRY__PARAMETERS:
-				getParameters().clear();
+			case ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES:
+				getAllParameterInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -404,8 +398,8 @@ public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 				return mPrevious != null;
 			case ModiscoPackage.MENTRY__TYPE:
 				return type != null;
-			case ModiscoPackage.MENTRY__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
+			case ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES:
+				return allParameterInstances != null && !allParameterInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

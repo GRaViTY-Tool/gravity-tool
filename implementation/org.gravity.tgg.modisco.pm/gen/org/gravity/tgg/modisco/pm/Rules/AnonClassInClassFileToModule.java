@@ -211,7 +211,7 @@ public interface AnonClassInClassFileToModule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_module);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_978(EMoflonEdge _edge_module);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface AnonClassInClassFileToModule extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_3(EMoflonEdge _edge_originalClassFile);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1073(EMoflonEdge _edge_originalClassFile);
 
 	/**
 	 * <!-- begin-user-doc -->

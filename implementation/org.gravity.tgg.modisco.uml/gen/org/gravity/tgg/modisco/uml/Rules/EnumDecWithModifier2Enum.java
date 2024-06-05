@@ -43,7 +43,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration);
+	boolean isAppropriate_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration);
+	void registerObjectsToMatch_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration);
+	CSP isAppropriate_solveCsp_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,8 +91,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			EnumDeclaration bodyDeclaration);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration,
+			Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,8 +108,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject modifier,
-			EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
+			EObject bodyDeclaration, EObject modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,8 +189,8 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject modifier,
-			EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
+			EObject bodyDeclaration, EObject modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,7 +206,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Enumeration_1(Enumeration feature);
+	EObjectContainer isAppropriate_BWD_Enumeration_13(Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1156(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,7 +246,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Enumeration feature, Modifier modifier, EnumDeclaration bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Enumeration feature, EnumDeclaration bodyDeclaration, Modifier modifier,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -263,7 +263,7 @@ public interface EnumDecWithModifier2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, EnumDeclaration bodyDeclaration);
+	boolean checkDEC_FWD(EnumDeclaration bodyDeclaration, Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

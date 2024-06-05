@@ -9,7 +9,7 @@
    <feature url="features/org.gravity.features.typegraph.basic_1.0.0.qualifier.jar" id="org.gravity.features.typegraph.basic" version="1.0.0.qualifier">
       <category name="org.gravity.basics"/>
    </feature>
-   <feature url="features/org.gravity.features.hulk_1.0.0.qualifier.jar" id="org.gravity.features.hulk" version="1.0.0.qualifier">
+   <feature url="features/org.gravity.features.hulk_1.0.0.qualifier.jar" id="org.gravity.features.hulk" version="1.0.0.qualifier">	
       <category name="org.gravity.hulk"/>
    </feature>
    <feature url="features/org.gravity.features.refactorings_1.0.0.qualifier.jar" id="org.gravity.features.refactorings" version="1.0.0.qualifier">
@@ -18,11 +18,11 @@
    <feature url="features/org.gravity.features.eclipse_1.0.0.qualifier.jar" id="org.gravity.features.eclipse" version="1.0.0.qualifier">
       <category name="org.gravity.basics"/>
    </feature>
-   <feature url="features/org.gravity.features.security_1.0.0.qualifier.jar" id="org.gravity.features.security" version="1.0.0.qualifier">
-      <category name="org.gravity.security"/>
-   </feature>
    <feature url="features/org.gravity.features.uml_1.0.0.qualifier.jar" id="org.gravity.features.uml" version="1.0.0.qualifier">
       <category name="org.gravity.uml"/>
+   </feature>
+   <feature url="features/org.gravity.features.security_1.0.3.qualifier.jar" id="org.gravity.features.security" version="1.0.3.qualifier">
+      <category name="org.gravity.security"/>
    </feature>
    <category-def name="org.gravity.basics" label="Parsing">
       <description>
@@ -49,6 +49,5 @@
          Synchronization of UML models and code
       </description>
    </category-def>
-   <category-def name="org.gravity.variability" label="Variability"/>
    <category-def name="org.gravity.secdfd" label="SecDFD"/>
 </site>

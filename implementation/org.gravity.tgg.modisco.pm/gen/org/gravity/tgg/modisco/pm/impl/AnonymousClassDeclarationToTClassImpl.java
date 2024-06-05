@@ -163,14 +163,14 @@ public class AnonymousClassDeclarationToTClassImpl extends AbstractCorrespondenc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class AnonymousClassDeclarationToTClassImpl extends AbstractCorrespondenc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
-			setSource((AnonymousClassDeclaration) newValue);
-			return;
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
-			setTarget((TClass) newValue);
-			return;
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
+				setSource((AnonymousClassDeclaration) newValue);
+				return;
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
+				setTarget((TClass) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class AnonymousClassDeclarationToTClassImpl extends AbstractCorrespondenc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
-			setSource((AnonymousClassDeclaration) null);
-			return;
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
-			setTarget((TClass) null);
-			return;
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
+				setSource((AnonymousClassDeclaration) null);
+				return;
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
+				setTarget((TClass) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class AnonymousClassDeclarationToTClassImpl extends AbstractCorrespondenc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
-			return source != null;
-		case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
-			return target != null;
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__SOURCE:
+				return source != null;
+			case PmPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

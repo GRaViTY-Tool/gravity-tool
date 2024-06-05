@@ -69,228 +69,13 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RulesSwitch<Adapter> modelSwitch = new RulesSwitch<Adapter>() {
 		@Override
-		public Adapter caseUnresolvedMethodDeclaration(UnresolvedMethodDeclaration object) {
-			return createUnresolvedMethodDeclarationAdapter();
+		public Adapter caseNestedEnumInType(NestedEnumInType object) {
+			return createNestedEnumInTypeAdapter();
 		}
 
 		@Override
-		public Adapter caseOrphanedEnum(OrphanedEnum object) {
-			return createOrphanedEnumAdapter();
-		}
-
-		@Override
-		public Adapter caseClassImplementsInterface_Abstract(ClassImplementsInterface_Abstract object) {
-			return createClassImplementsInterface_AbstractAdapter();
-		}
-
-		@Override
-		public Adapter caseClassFilePackageToNamespace(ClassFilePackageToNamespace object) {
-			return createClassFilePackageToNamespaceAdapter();
-		}
-
-		@Override
-		public Adapter caseTypesOrphaned(TypesOrphaned object) {
-			return createTypesOrphanedAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonClassInClassFileToModule(AnonClassInClassFileToModule object) {
-			return createAnonClassInClassFileToModuleAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationTypeNested(AnnotationTypeNested object) {
-			return createAnnotationTypeNestedAdapter();
-		}
-
-		@Override
-		public Adapter caseUnresolvedTypeDeclaration(UnresolvedTypeDeclaration object) {
-			return createUnresolvedTypeDeclarationAdapter();
-		}
-
-		@Override
-		public Adapter caseNestedInterfaceInType(NestedInterfaceInType object) {
-			return createNestedInterfaceInTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodOverriding(MethodOverriding object) {
-			return createMethodOverridingAdapter();
-		}
-
-		@Override
-		public Adapter caseContainerToModule_abstract(ContainerToModule_abstract object) {
-			return createContainerToModule_abstractAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberKey(AnnotationMemberKey object) {
-			return createAnnotationMemberKeyAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueArray(AnnotationMemberValueArray object) {
-			return createAnnotationMemberValueArrayAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueBoolean(AnnotationMemberValueBoolean object) {
-			return createAnnotationMemberValueBooleanAdapter();
-		}
-
-		@Override
-		public Adapter caseMemberInAnnotationVisibility(MemberInAnnotationVisibility object) {
-			return createMemberInAnnotationVisibilityAdapter();
-		}
-
-		@Override
-		public Adapter caseMemberInEnumVisibility(MemberInEnumVisibility object) {
-			return createMemberInEnumVisibilityAdapter();
-		}
-
-		@Override
-		public Adapter caseCompilationUnitPackageToNamespace(CompilationUnitPackageToNamespace object) {
-			return createCompilationUnitPackageToNamespaceAdapter();
-		}
-
-		@Override
-		public Adapter caseSuperMethodInvocation(SuperMethodInvocation object) {
-			return createSuperMethodInvocationAdapter();
-		}
-
-		@Override
-		public Adapter caseFieldAccessReadWrite(FieldAccessReadWrite object) {
-			return createFieldAccessReadWriteAdapter();
-		}
-
-		@Override
-		public Adapter casePrimitiveTypeIsDouble(PrimitiveTypeIsDouble object) {
-			return createPrimitiveTypeIsDoubleAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotation(Annotation object) {
-			return createAnnotationAdapter();
-		}
-
-		@Override
-		public Adapter casePrimitiveTypeIsChar(PrimitiveTypeIsChar object) {
-			return createPrimitiveTypeIsCharAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonymousClassType(AnonymousClassType object) {
-			return createAnonymousClassTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseEnumInPackage(EnumInPackage object) {
-			return createEnumInPackageAdapter();
-		}
-
-		@Override
-		public Adapter casePackageToPGPackage(PackageToPGPackage object) {
-			return createPackageToPGPackageAdapter();
-		}
-
-		@Override
-		public Adapter caseLinkDefinitionToType(LinkDefinitionToType object) {
-			return createLinkDefinitionToTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseClassInstanceCreation(ClassInstanceCreation object) {
-			return createClassInstanceCreationAdapter();
-		}
-
-		@Override
-		public Adapter caseArrayInitializerIgnoreExpressionsEdge(ArrayInitializerIgnoreExpressionsEdge object) {
-			return createArrayInitializerIgnoreExpressionsEdgeAdapter();
-		}
-
-		@Override
-		public Adapter caseInterfaceInPackage(InterfaceInPackage object) {
-			return createInterfaceInPackageAdapter();
-		}
-
-		@Override
-		public Adapter casePrimitiveTypeIsByte(PrimitiveTypeIsByte object) {
-			return createPrimitiveTypeIsByteAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueBooleanArray(AnnotationMemberValueBooleanArray object) {
-			return createAnnotationMemberValueBooleanArrayAdapter();
-		}
-
-		@Override
-		public Adapter caseEnumInAnonymous(EnumInAnonymous object) {
-			return createEnumInAnonymousAdapter();
-		}
-
-		@Override
-		public Adapter caseSyntethicMethod(SyntethicMethod object) {
-			return createSyntethicMethodAdapter();
-		}
-
-		@Override
-		public Adapter caseTypeToModule_abstract(TypeToModule_abstract object) {
-			return createTypeToModule_abstractAdapter();
-		}
-
-		@Override
-		public Adapter caseFlowNode(FlowNode object) {
-			return createFlowNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseClassImplementsInterface(ClassImplementsInterface object) {
-			return createClassImplementsInterfaceAdapter();
-		}
-
-		@Override
-		public Adapter caseDataFlowOut(DataFlowOut object) {
-			return createDataFlowOutAdapter();
-		}
-
-		@Override
-		public Adapter caseClassFileToModule(ClassFileToModule object) {
-			return createClassFileToModuleAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonClassInCompilationUnitToModule(AnonClassInCompilationUnitToModule object) {
-			return createAnonClassInCompilationUnitToModuleAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodInvocationStaticType(MethodInvocationStaticType object) {
-			return createMethodInvocationStaticTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueString(AnnotationMemberValueString object) {
-			return createAnnotationMemberValueStringAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonymousClassInAnonymous(AnonymousClassInAnonymous object) {
-			return createAnonymousClassInAnonymousAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationTypeInPackage(AnnotationTypeInPackage object) {
-			return createAnnotationTypeInPackageAdapter();
-		}
-
-		@Override
-		public Adapter caseInitializer(Initializer object) {
-			return createInitializerAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonymousClassInType(AnonymousClassInType object) {
-			return createAnonymousClassInTypeAdapter();
+		public Adapter caseMemberInClassVisibility(MemberInClassVisibility object) {
+			return createMemberInClassVisibilityAdapter();
 		}
 
 		@Override
@@ -299,63 +84,23 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseConstructorInvocation(ConstructorInvocation object) {
-			return createConstructorInvocationAdapter();
+		public Adapter caseMethodParameterVariable(MethodParameterVariable object) {
+			return createMethodParameterVariableAdapter();
 		}
 
 		@Override
-		public Adapter caseAnonymousClass(AnonymousClass object) {
-			return createAnonymousClassAdapter();
+		public Adapter caseTypesOrphaned(TypesOrphaned object) {
+			return createTypesOrphanedAdapter();
 		}
 
 		@Override
-		public Adapter caseMethodParameter(MethodParameter object) {
-			return createMethodParameterAdapter();
+		public Adapter caseDataFlowIn(DataFlowIn object) {
+			return createDataFlowInAdapter();
 		}
 
 		@Override
-		public Adapter caseClassInnerAnonClassMember(ClassInnerAnonClassMember object) {
-			return createClassInnerAnonClassMemberAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueNumber(AnnotationMemberValueNumber object) {
-			return createAnnotationMemberValueNumberAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueStringArray(AnnotationMemberValueStringArray object) {
-			return createAnnotationMemberValueStringArrayAdapter();
-		}
-
-		@Override
-		public Adapter caseInitializerInType(InitializerInType object) {
-			return createInitializerInTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseFieldName(FieldName object) {
-			return createFieldNameAdapter();
-		}
-
-		@Override
-		public Adapter caseParameterizedTypeToType(ParameterizedTypeToType object) {
-			return createParameterizedTypeToTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonymousClassTypeInterface(AnonymousClassTypeInterface object) {
-			return createAnonymousClassTypeInterfaceAdapter();
-		}
-
-		@Override
-		public Adapter caseAbstractMethodInvocation(AbstractMethodInvocation object) {
-			return createAbstractMethodInvocationAdapter();
-		}
-
-		@Override
-		public Adapter caseInterfaceExtendsInterface(InterfaceExtendsInterface object) {
-			return createInterfaceExtendsInterfaceAdapter();
+		public Adapter caseAnonClassInCompilationUnitToModule(AnonClassInCompilationUnitToModule object) {
+			return createAnonClassInCompilationUnitToModuleAdapter();
 		}
 
 		@Override
@@ -364,58 +109,8 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeInCompilationUnitToModule(TypeInCompilationUnitToModule object) {
-			return createTypeInCompilationUnitToModuleAdapter();
-		}
-
-		@Override
-		public Adapter caseFieldAccessWrite(FieldAccessWrite object) {
-			return createFieldAccessWriteAdapter();
-		}
-
-		@Override
-		public Adapter caseCompilationUnitToModule(CompilationUnitToModule object) {
-			return createCompilationUnitToModuleAdapter();
-		}
-
-		@Override
-		public Adapter caseArrayTypeToType(ArrayTypeToType object) {
-			return createArrayTypeToTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseElementPackageToNamespace_abstract(ElementPackageToNamespace_abstract object) {
-			return createElementPackageToNamespace_abstractAdapter();
-		}
-
-		@Override
-		public Adapter caseSubPackageToPGPackage(SubPackageToPGPackage object) {
-			return createSubPackageToPGPackageAdapter();
-		}
-
-		@Override
-		public Adapter caseTypeNestedInType_Abstract(TypeNestedInType_Abstract object) {
-			return createTypeNestedInType_AbstractAdapter();
-		}
-
-		@Override
-		public Adapter caseInterfaceInAnonymous(InterfaceInAnonymous object) {
-			return createInterfaceInAnonymousAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValue(AnnotationMemberValue object) {
-			return createAnnotationMemberValueAdapter();
-		}
-
-		@Override
 		public Adapter caseClassInPackage(ClassInPackage object) {
 			return createClassInPackageAdapter();
-		}
-
-		@Override
-		public Adapter caseClassImplementsPatrameterizedInterface(ClassImplementsPatrameterizedInterface object) {
-			return createClassImplementsPatrameterizedInterfaceAdapter();
 		}
 
 		@Override
@@ -429,23 +124,63 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSuperConstructorInvocation(SuperConstructorInvocation object) {
-			return createSuperConstructorInvocationAdapter();
+		public Adapter caseAnonymousClassInType(AnonymousClassInType object) {
+			return createAnonymousClassInTypeAdapter();
 		}
 
 		@Override
-		public Adapter caseClassInnerMember(ClassInnerMember object) {
-			return createClassInnerMemberAdapter();
+		public Adapter caseOrphanedEnum(OrphanedEnum object) {
+			return createOrphanedEnumAdapter();
 		}
 
 		@Override
-		public Adapter caseAnonymousClassTypeClass(AnonymousClassTypeClass object) {
-			return createAnonymousClassTypeClassAdapter();
+		public Adapter caseArrayTypeToType(ArrayTypeToType object) {
+			return createArrayTypeToTypeAdapter();
 		}
 
 		@Override
-		public Adapter caseModelToPg(ModelToPg object) {
-			return createModelToPgAdapter();
+		public Adapter caseAnnotationMemberValueNumber(AnnotationMemberValueNumber object) {
+			return createAnnotationMemberValueNumberAdapter();
+		}
+
+		@Override
+		public Adapter caseClassFilePackageToNamespace(ClassFilePackageToNamespace object) {
+			return createClassFilePackageToNamespaceAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveTypeIsByte(PrimitiveTypeIsByte object) {
+			return createPrimitiveTypeIsByteAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueString(AnnotationMemberValueString object) {
+			return createAnnotationMemberValueStringAdapter();
+		}
+
+		@Override
+		public Adapter caseSubPackageToPGPackage(SubPackageToPGPackage object) {
+			return createSubPackageToPGPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseClassImplementsInterface_Abstract(ClassImplementsInterface_Abstract object) {
+			return createClassImplementsInterface_AbstractAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousClassType(AnonymousClassType object) {
+			return createAnonymousClassTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousClass(AnonymousClass object) {
+			return createAnonymousClassAdapter();
+		}
+
+		@Override
+		public Adapter caseMemberInEnumVisibility(MemberInEnumVisibility object) {
+			return createMemberInEnumVisibilityAdapter();
 		}
 
 		@Override
@@ -454,168 +189,13 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePrimitiveTypeIsShort(PrimitiveTypeIsShort object) {
-			return createPrimitiveTypeIsShortAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueClass(AnnotationMemberValueClass object) {
-			return createAnnotationMemberValueClassAdapter();
-		}
-
-		@Override
-		public Adapter caseFieldAccessRead(FieldAccessRead object) {
-			return createFieldAccessReadAdapter();
-		}
-
-		@Override
-		public Adapter caseInterfaceMember(InterfaceMember object) {
-			return createInterfaceMemberAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueNumberArray(AnnotationMemberValueNumberArray object) {
-			return createAnnotationMemberValueNumberArrayAdapter();
-		}
-
-		@Override
-		public Adapter caseFieldAccess(FieldAccess object) {
-			return createFieldAccessAdapter();
-		}
-
-		@Override
-		public Adapter caseTypesVisibility(TypesVisibility object) {
-			return createTypesVisibilityAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodInvocationTarget(MethodInvocationTarget object) {
-			return createMethodInvocationTargetAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodName(MethodName object) {
-			return createMethodNameAdapter();
-		}
-
-		@Override
-		public Adapter casePrimitiveTypeIsFloat(PrimitiveTypeIsFloat object) {
-			return createPrimitiveTypeIsFloatAdapter();
-		}
-
-		@Override
-		public Adapter caseTypeParameter(TypeParameter object) {
-			return createTypeParameterAdapter();
-		}
-
-		@Override
-		public Adapter caseConstructorDefinition(ConstructorDefinition object) {
-			return createConstructorDefinitionAdapter();
-		}
-
-		@Override
-		public Adapter caseInitializerInAnonymous(InitializerInAnonymous object) {
-			return createInitializerInAnonymousAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueAnnotationArray(AnnotationMemberValueAnnotationArray object) {
-			return createAnnotationMemberValueAnnotationArrayAdapter();
-		}
-
-		@Override
-		public Adapter caseClassExtendsClass(ClassExtendsClass object) {
-			return createClassExtendsClassAdapter();
-		}
-
-		@Override
-		public Adapter caseOrphanedClass(OrphanedClass object) {
-			return createOrphanedClassAdapter();
-		}
-
-		@Override
-		public Adapter caseEnumConstant(EnumConstant object) {
-			return createEnumConstantAdapter();
-		}
-
-		@Override
-		public Adapter caseAnonymousEnumConstant(AnonymousEnumConstant object) {
-			return createAnonymousEnumConstantAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationTypeInAnonymous(AnnotationTypeInAnonymous object) {
-			return createAnnotationTypeInAnonymousAdapter();
-		}
-
-		@Override
-		public Adapter caseOrphanedInterface(OrphanedInterface object) {
-			return createOrphanedInterfaceAdapter();
-		}
-
-		@Override
-		public Adapter caseDataFlowIn(DataFlowIn object) {
-			return createDataFlowInAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodDefinition(MethodDefinition object) {
-			return createMethodDefinitionAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationMemberValueAnnotation(AnnotationMemberValueAnnotation object) {
-			return createAnnotationMemberValueAnnotationAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodSignature(MethodSignature object) {
-			return createMethodSignatureAdapter();
-		}
-
-		@Override
-		public Adapter caseNestedEnumInType(NestedEnumInType object) {
-			return createNestedEnumInTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseMethodParameterLinkFirst(MethodParameterLinkFirst object) {
-			return createMethodParameterLinkFirstAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationTypeAccessOnAnnotation(AnnotationTypeAccessOnAnnotation object) {
-			return createAnnotationTypeAccessOnAnnotationAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationTypeMember(AnnotationTypeMember object) {
-			return createAnnotationTypeMemberAdapter();
-		}
-
-		@Override
 		public Adapter caseClassInAnonymous(ClassInAnonymous object) {
 			return createClassInAnonymousAdapter();
 		}
 
 		@Override
-		public Adapter caseAbstractMethodDefinition(AbstractMethodDefinition object) {
-			return createAbstractMethodDefinitionAdapter();
-		}
-
-		@Override
-		public Adapter caseClassInnerClassMember(ClassInnerClassMember object) {
-			return createClassInnerClassMemberAdapter();
-		}
-
-		@Override
-		public Adapter caseTypeInClassFileToModule(TypeInClassFileToModule object) {
-			return createTypeInClassFileToModuleAdapter();
-		}
-
-		@Override
-		public Adapter caseAnnotationTypeAccessOnSelf(AnnotationTypeAccessOnSelf object) {
-			return createAnnotationTypeAccessOnSelfAdapter();
+		public Adapter caseMethodInvocationStaticType(MethodInvocationStaticType object) {
+			return createMethodInvocationStaticTypeAdapter();
 		}
 
 		@Override
@@ -624,28 +204,68 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMethodInvocation(MethodInvocation object) {
-			return createMethodInvocationAdapter();
+		public Adapter casePrimitiveTypeIsChar(PrimitiveTypeIsChar object) {
+			return createPrimitiveTypeIsCharAdapter();
 		}
 
 		@Override
-		public Adapter caseUnresolvedClassDeclaration(UnresolvedClassDeclaration object) {
-			return createUnresolvedClassDeclarationAdapter();
+		public Adapter caseOrphanedInterface(OrphanedInterface object) {
+			return createOrphanedInterfaceAdapter();
 		}
 
 		@Override
-		public Adapter casePrimitiveType_Abstract(PrimitiveType_Abstract object) {
-			return createPrimitiveType_AbstractAdapter();
+		public Adapter caseCompilationUnitPackageToNamespace(CompilationUnitPackageToNamespace object) {
+			return createCompilationUnitPackageToNamespaceAdapter();
 		}
 
 		@Override
-		public Adapter caseNestedClassInType(NestedClassInType object) {
-			return createNestedClassInTypeAdapter();
+		public Adapter caseInitializer(Initializer object) {
+			return createInitializerAdapter();
 		}
 
 		@Override
-		public Adapter caseAnnotationTypeAccessOnBodyDecl(AnnotationTypeAccessOnBodyDecl object) {
-			return createAnnotationTypeAccessOnBodyDeclAdapter();
+		public Adapter caseNestedInterfaceInType(NestedInterfaceInType object) {
+			return createNestedInterfaceInTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseClassInnerMember(ClassInnerMember object) {
+			return createClassInnerMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeNested(AnnotationTypeNested object) {
+			return createAnnotationTypeNestedAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueBooleanArray(AnnotationMemberValueBooleanArray object) {
+			return createAnnotationMemberValueBooleanArrayAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodInvocationTarget(MethodInvocationTarget object) {
+			return createMethodInvocationTargetAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeMember(AnnotationTypeMember object) {
+			return createAnnotationTypeMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldAccessWrite(FieldAccessWrite object) {
+			return createFieldAccessWriteAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeNestedInType_Abstract(TypeNestedInType_Abstract object) {
+			return createTypeNestedInType_AbstractAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodOverriding(MethodOverriding object) {
+			return createMethodOverridingAdapter();
 		}
 
 		@Override
@@ -654,8 +274,98 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePrimitiveTypesIsVoid(PrimitiveTypesIsVoid object) {
-			return createPrimitiveTypesIsVoidAdapter();
+		public Adapter caseConstructorInvocation(ConstructorInvocation object) {
+			return createConstructorInvocationAdapter();
+		}
+
+		@Override
+		public Adapter caseElementPackageToNamespace_abstract(ElementPackageToNamespace_abstract object) {
+			return createElementPackageToNamespace_abstractAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodParameter(MethodParameter object) {
+			return createMethodParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseInterfaceExtendsInterface(InterfaceExtendsInterface object) {
+			return createInterfaceExtendsInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodInvocation(MethodInvocation object) {
+			return createMethodInvocationAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousClassTypeInterface(AnonymousClassTypeInterface object) {
+			return createAnonymousClassTypeInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseClassFileToModule(ClassFileToModule object) {
+			return createClassFileToModuleAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueClass(AnnotationMemberValueClass object) {
+			return createAnnotationMemberValueClassAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractMethodInvocation(AbstractMethodInvocation object) {
+			return createAbstractMethodInvocationAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodParameterLinkFirst(MethodParameterLinkFirst object) {
+			return createMethodParameterLinkFirstAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveTypeIsShort(PrimitiveTypeIsShort object) {
+			return createPrimitiveTypeIsShortAdapter();
+		}
+
+		@Override
+		public Adapter caseSuperMethodInvocation(SuperMethodInvocation object) {
+			return createSuperMethodInvocationAdapter();
+		}
+
+		@Override
+		public Adapter caseUnresolvedMethodDeclaration(UnresolvedMethodDeclaration object) {
+			return createUnresolvedMethodDeclarationAdapter();
+		}
+
+		@Override
+		public Adapter caseInterfaceMember(InterfaceMember object) {
+			return createInterfaceMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldName(FieldName object) {
+			return createFieldNameAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeInClassFileToModule(TypeInClassFileToModule object) {
+			return createTypeInClassFileToModuleAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldAccessRead(FieldAccessRead object) {
+			return createFieldAccessReadAdapter();
+		}
+
+		@Override
+		public Adapter caseLinkDefinitionToType(LinkDefinitionToType object) {
+			return createLinkDefinitionToTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeInAnonymous(AnnotationTypeInAnonymous object) {
+			return createAnnotationTypeInAnonymousAdapter();
 		}
 
 		@Override
@@ -664,13 +374,58 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseLinkDefinitionToAnonymous(LinkDefinitionToAnonymous object) {
-			return createLinkDefinitionToAnonymousAdapter();
+		public Adapter caseAnnotationMemberKey(AnnotationMemberKey object) {
+			return createAnnotationMemberKeyAdapter();
 		}
 
 		@Override
-		public Adapter casePrimitiveTypeIsBoolean(PrimitiveTypeIsBoolean object) {
-			return createPrimitiveTypeIsBooleanAdapter();
+		public Adapter caseAnonClassInClassFileToModule(AnonClassInClassFileToModule object) {
+			return createAnonClassInClassFileToModuleAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveTypeIsDouble(PrimitiveTypeIsDouble object) {
+			return createPrimitiveTypeIsDoubleAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueStringArray(AnnotationMemberValueStringArray object) {
+			return createAnnotationMemberValueStringArrayAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodSignature(MethodSignature object) {
+			return createMethodSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseSyntethicMethod(SyntethicMethod object) {
+			return createSyntethicMethodAdapter();
+		}
+
+		@Override
+		public Adapter caseCompilationUnitToModule(CompilationUnitToModule object) {
+			return createCompilationUnitToModuleAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodName(MethodName object) {
+			return createMethodNameAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldSignature(FieldSignature object) {
+			return createFieldSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseClassImplementsInterface(ClassImplementsInterface object) {
+			return createClassImplementsInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueArray(AnnotationMemberValueArray object) {
+			return createAnnotationMemberValueArrayAdapter();
 		}
 
 		@Override
@@ -679,8 +434,18 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseUnresolvedInterfaceDeclaration(UnresolvedInterfaceDeclaration object) {
-			return createUnresolvedInterfaceDeclarationAdapter();
+		public Adapter caseClassInnerClassMember(ClassInnerClassMember object) {
+			return createClassInnerClassMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseMethodDefinition(MethodDefinition object) {
+			return createMethodDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseClassInstanceCreation(ClassInstanceCreation object) {
+			return createClassInstanceCreationAdapter();
 		}
 
 		@Override
@@ -689,13 +454,263 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMemberInClassVisibility(MemberInClassVisibility object) {
-			return createMemberInClassVisibilityAdapter();
+		public Adapter casePrimitiveTypeIsBoolean(PrimitiveTypeIsBoolean object) {
+			return createPrimitiveTypeIsBooleanAdapter();
 		}
 
 		@Override
-		public Adapter caseFieldSignature(FieldSignature object) {
-			return createFieldSignatureAdapter();
+		public Adapter caseInterfaceInPackage(InterfaceInPackage object) {
+			return createInterfaceInPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeToModule_abstract(TypeToModule_abstract object) {
+			return createTypeToModule_abstractAdapter();
+		}
+
+		@Override
+		public Adapter caseEnumInAnonymous(EnumInAnonymous object) {
+			return createEnumInAnonymousAdapter();
+		}
+
+		@Override
+		public Adapter casePackageToPGPackage(PackageToPGPackage object) {
+			return createPackageToPGPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseUnresolvedInterfaceDeclaration(UnresolvedInterfaceDeclaration object) {
+			return createUnresolvedInterfaceDeclarationAdapter();
+		}
+
+		@Override
+		public Adapter caseDataFlowOut(DataFlowOut object) {
+			return createDataFlowOutAdapter();
+		}
+
+		@Override
+		public Adapter caseClassExtendsClass(ClassExtendsClass object) {
+			return createClassExtendsClassAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueAnnotationArray(AnnotationMemberValueAnnotationArray object) {
+			return createAnnotationMemberValueAnnotationArrayAdapter();
+		}
+
+		@Override
+		public Adapter caseLinkDefinitionToAnonymous(LinkDefinitionToAnonymous object) {
+			return createLinkDefinitionToAnonymousAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeAccessOnSelf(AnnotationTypeAccessOnSelf object) {
+			return createAnnotationTypeAccessOnSelfAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeAccessOnBodyDecl(AnnotationTypeAccessOnBodyDecl object) {
+			return createAnnotationTypeAccessOnBodyDeclAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeAccessOnAnnotation(AnnotationTypeAccessOnAnnotation object) {
+			return createAnnotationTypeAccessOnAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseClassImplementsPatrameterizedInterface(ClassImplementsPatrameterizedInterface object) {
+			return createClassImplementsPatrameterizedInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseOrphanedClass(OrphanedClass object) {
+			return createOrphanedClassAdapter();
+		}
+
+		@Override
+		public Adapter caseParameterizedTypeToType(ParameterizedTypeToType object) {
+			return createParameterizedTypeToTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotation(Annotation object) {
+			return createAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeParameter(TypeParameter object) {
+			return createTypeParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousClassTypeClass(AnonymousClassTypeClass object) {
+			return createAnonymousClassTypeClassAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldAccessReadWrite(FieldAccessReadWrite object) {
+			return createFieldAccessReadWriteAdapter();
+		}
+
+		@Override
+		public Adapter caseArrayInitializerIgnoreExpressionsEdge(ArrayInitializerIgnoreExpressionsEdge object) {
+			return createArrayInitializerIgnoreExpressionsEdgeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousClassInAnonymous(AnonymousClassInAnonymous object) {
+			return createAnonymousClassInAnonymousAdapter();
+		}
+
+		@Override
+		public Adapter caseInitializerInType(InitializerInType object) {
+			return createInitializerInTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseSuperConstructorInvocation(SuperConstructorInvocation object) {
+			return createSuperConstructorInvocationAdapter();
+		}
+
+		@Override
+		public Adapter caseFlowNode(FlowNode object) {
+			return createFlowNodeAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveTypeIsFloat(PrimitiveTypeIsFloat object) {
+			return createPrimitiveTypeIsFloatAdapter();
+		}
+
+		@Override
+		public Adapter caseModelToPg(ModelToPg object) {
+			return createModelToPgAdapter();
+		}
+
+		@Override
+		public Adapter caseConstructorDefinition(ConstructorDefinition object) {
+			return createConstructorDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueBoolean(AnnotationMemberValueBoolean object) {
+			return createAnnotationMemberValueBooleanAdapter();
+		}
+
+		@Override
+		public Adapter caseEnumInPackage(EnumInPackage object) {
+			return createEnumInPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseMemberInAnnotationVisibility(MemberInAnnotationVisibility object) {
+			return createMemberInAnnotationVisibilityAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveTypesIsVoid(PrimitiveTypesIsVoid object) {
+			return createPrimitiveTypesIsVoidAdapter();
+		}
+
+		@Override
+		public Adapter caseNestedClassInType(NestedClassInType object) {
+			return createNestedClassInTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationTypeInPackage(AnnotationTypeInPackage object) {
+			return createAnnotationTypeInPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeInCompilationUnitToModule(TypeInCompilationUnitToModule object) {
+			return createTypeInCompilationUnitToModuleAdapter();
+		}
+
+		@Override
+		public Adapter caseInitializerInAnonymous(InitializerInAnonymous object) {
+			return createInitializerInAnonymousAdapter();
+		}
+
+		@Override
+		public Adapter caseClassInnerAnonClassMember(ClassInnerAnonClassMember object) {
+			return createClassInnerAnonClassMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueNumberArray(AnnotationMemberValueNumberArray object) {
+			return createAnnotationMemberValueNumberArrayAdapter();
+		}
+
+		@Override
+		public Adapter caseUnresolvedClassDeclaration(UnresolvedClassDeclaration object) {
+			return createUnresolvedClassDeclarationAdapter();
+		}
+
+		@Override
+		public Adapter caseParameterAnnotation(ParameterAnnotation object) {
+			return createParameterAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseUnresolvedTypeDeclaration(UnresolvedTypeDeclaration object) {
+			return createUnresolvedTypeDeclarationAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueAnnotation(AnnotationMemberValueAnnotation object) {
+			return createAnnotationMemberValueAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveType_Abstract(PrimitiveType_Abstract object) {
+			return createPrimitiveType_AbstractAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValue(AnnotationMemberValue object) {
+			return createAnnotationMemberValueAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldAccess(FieldAccess object) {
+			return createFieldAccessAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationMemberValueArrayValues(AnnotationMemberValueArrayValues object) {
+			return createAnnotationMemberValueArrayValuesAdapter();
+		}
+
+		@Override
+		public Adapter caseAnonymousEnumConstant(AnonymousEnumConstant object) {
+			return createAnonymousEnumConstantAdapter();
+		}
+
+		@Override
+		public Adapter caseEnumConstant(EnumConstant object) {
+			return createEnumConstantAdapter();
+		}
+
+		@Override
+		public Adapter caseTypesVisibility(TypesVisibility object) {
+			return createTypesVisibilityAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractMethodDefinition(AbstractMethodDefinition object) {
+			return createAbstractMethodDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseContainerToModule_abstract(ContainerToModule_abstract object) {
+			return createContainerToModule_abstractAdapter();
+		}
+
+		@Override
+		public Adapter caseInterfaceInAnonymous(InterfaceInAnonymous object) {
+			return createInterfaceInAnonymousAdapter();
 		}
 
 		@Override
@@ -723,632 +738,30 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedMethodDeclaration <em>Unresolved Method Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.NestedEnumInType <em>Nested Enum In Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedMethodDeclaration
+	 * @see org.gravity.tgg.modisco.pm.Rules.NestedEnumInType
 	 * @generated
 	 */
-	public Adapter createUnresolvedMethodDeclarationAdapter() {
+	public Adapter createNestedEnumInTypeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.OrphanedEnum <em>Orphaned Enum</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MemberInClassVisibility <em>Member In Class Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.OrphanedEnum
+	 * @see org.gravity.tgg.modisco.pm.Rules.MemberInClassVisibility
 	 * @generated
 	 */
-	public Adapter createOrphanedEnumAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface_Abstract <em>Class Implements Interface Abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface_Abstract
-	 * @generated
-	 */
-	public Adapter createClassImplementsInterface_AbstractAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassFilePackageToNamespace <em>Class File Package To Namespace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassFilePackageToNamespace
-	 * @generated
-	 */
-	public Adapter createClassFilePackageToNamespaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypesOrphaned <em>Types Orphaned</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypesOrphaned
-	 * @generated
-	 */
-	public Adapter createTypesOrphanedAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonClassInClassFileToModule <em>Anon Class In Class File To Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonClassInClassFileToModule
-	 * @generated
-	 */
-	public Adapter createAnonClassInClassFileToModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeNested <em>Annotation Type Nested</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeNested
-	 * @generated
-	 */
-	public Adapter createAnnotationTypeNestedAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedTypeDeclaration <em>Unresolved Type Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedTypeDeclaration
-	 * @generated
-	 */
-	public Adapter createUnresolvedTypeDeclarationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.NestedInterfaceInType <em>Nested Interface In Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.NestedInterfaceInType
-	 * @generated
-	 */
-	public Adapter createNestedInterfaceInTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodOverriding <em>Method Overriding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodOverriding
-	 * @generated
-	 */
-	public Adapter createMethodOverridingAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ContainerToModule_abstract <em>Container To Module abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ContainerToModule_abstract
-	 * @generated
-	 */
-	public Adapter createContainerToModule_abstractAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberKey <em>Annotation Member Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberKey
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberKeyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueArray <em>Annotation Member Value Array</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueArray
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueArrayAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBoolean <em>Annotation Member Value Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBoolean
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueBooleanAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MemberInAnnotationVisibility <em>Member In Annotation Visibility</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MemberInAnnotationVisibility
-	 * @generated
-	 */
-	public Adapter createMemberInAnnotationVisibilityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MemberInEnumVisibility <em>Member In Enum Visibility</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MemberInEnumVisibility
-	 * @generated
-	 */
-	public Adapter createMemberInEnumVisibilityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.CompilationUnitPackageToNamespace <em>Compilation Unit Package To Namespace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.CompilationUnitPackageToNamespace
-	 * @generated
-	 */
-	public Adapter createCompilationUnitPackageToNamespaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SuperMethodInvocation <em>Super Method Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.SuperMethodInvocation
-	 * @generated
-	 */
-	public Adapter createSuperMethodInvocationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccessReadWrite <em>Field Access Read Write</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccessReadWrite
-	 * @generated
-	 */
-	public Adapter createFieldAccessReadWriteAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsDouble <em>Primitive Type Is Double</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsDouble
-	 * @generated
-	 */
-	public Adapter createPrimitiveTypeIsDoubleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.Annotation <em>Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.Annotation
-	 * @generated
-	 */
-	public Adapter createAnnotationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsChar <em>Primitive Type Is Char</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsChar
-	 * @generated
-	 */
-	public Adapter createPrimitiveTypeIsCharAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassType <em>Anonymous Class Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassType
-	 * @generated
-	 */
-	public Adapter createAnonymousClassTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.EnumInPackage <em>Enum In Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.EnumInPackage
-	 * @generated
-	 */
-	public Adapter createEnumInPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PackageToPGPackage <em>Package To PG Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PackageToPGPackage
-	 * @generated
-	 */
-	public Adapter createPackageToPGPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToType <em>Link Definition To Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToType
-	 * @generated
-	 */
-	public Adapter createLinkDefinitionToTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInstanceCreation <em>Class Instance Creation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInstanceCreation
-	 * @generated
-	 */
-	public Adapter createClassInstanceCreationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ArrayInitializerIgnoreExpressionsEdge <em>Array Initializer Ignore Expressions Edge</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ArrayInitializerIgnoreExpressionsEdge
-	 * @generated
-	 */
-	public Adapter createArrayInitializerIgnoreExpressionsEdgeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceInPackage <em>Interface In Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceInPackage
-	 * @generated
-	 */
-	public Adapter createInterfaceInPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsByte <em>Primitive Type Is Byte</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsByte
-	 * @generated
-	 */
-	public Adapter createPrimitiveTypeIsByteAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBooleanArray <em>Annotation Member Value Boolean Array</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBooleanArray
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueBooleanArrayAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.EnumInAnonymous <em>Enum In Anonymous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.EnumInAnonymous
-	 * @generated
-	 */
-	public Adapter createEnumInAnonymousAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SyntethicMethod <em>Syntethic Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.SyntethicMethod
-	 * @generated
-	 */
-	public Adapter createSyntethicMethodAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeToModule_abstract <em>Type To Module abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypeToModule_abstract
-	 * @generated
-	 */
-	public Adapter createTypeToModule_abstractAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FlowNode <em>Flow Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FlowNode
-	 * @generated
-	 */
-	public Adapter createFlowNodeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface <em>Class Implements Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface
-	 * @generated
-	 */
-	public Adapter createClassImplementsInterfaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.DataFlowOut <em>Data Flow Out</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.DataFlowOut
-	 * @generated
-	 */
-	public Adapter createDataFlowOutAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassFileToModule <em>Class File To Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassFileToModule
-	 * @generated
-	 */
-	public Adapter createClassFileToModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonClassInCompilationUnitToModule <em>Anon Class In Compilation Unit To Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonClassInCompilationUnitToModule
-	 * @generated
-	 */
-	public Adapter createAnonClassInCompilationUnitToModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodInvocationStaticType <em>Method Invocation Static Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodInvocationStaticType
-	 * @generated
-	 */
-	public Adapter createMethodInvocationStaticTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueString <em>Annotation Member Value String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueString
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueStringAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassInAnonymous <em>Anonymous Class In Anonymous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassInAnonymous
-	 * @generated
-	 */
-	public Adapter createAnonymousClassInAnonymousAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInPackage <em>Annotation Type In Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInPackage
-	 * @generated
-	 */
-	public Adapter createAnnotationTypeInPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.Initializer <em>Initializer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.Initializer
-	 * @generated
-	 */
-	public Adapter createInitializerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassInType <em>Anonymous Class In Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassInType
-	 * @generated
-	 */
-	public Adapter createAnonymousClassInTypeAdapter() {
+	public Adapter createMemberInClassVisibilityAdapter() {
 		return null;
 	}
 
@@ -1367,170 +780,58 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ConstructorInvocation <em>Constructor Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodParameterVariable <em>Method Parameter Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ConstructorInvocation
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodParameterVariable
 	 * @generated
 	 */
-	public Adapter createConstructorInvocationAdapter() {
+	public Adapter createMethodParameterVariableAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClass <em>Anonymous Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypesOrphaned <em>Types Orphaned</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClass
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypesOrphaned
 	 * @generated
 	 */
-	public Adapter createAnonymousClassAdapter() {
+	public Adapter createTypesOrphanedAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodParameter <em>Method Parameter</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.DataFlowIn <em>Data Flow In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodParameter
+	 * @see org.gravity.tgg.modisco.pm.Rules.DataFlowIn
 	 * @generated
 	 */
-	public Adapter createMethodParameterAdapter() {
+	public Adapter createDataFlowInAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInnerAnonClassMember <em>Class Inner Anon Class Member</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonClassInCompilationUnitToModule <em>Anon Class In Compilation Unit To Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInnerAnonClassMember
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonClassInCompilationUnitToModule
 	 * @generated
 	 */
-	public Adapter createClassInnerAnonClassMemberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumber <em>Annotation Member Value Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumber
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueNumberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueStringArray <em>Annotation Member Value String Array</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueStringArray
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueStringArrayAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InitializerInType <em>Initializer In Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.InitializerInType
-	 * @generated
-	 */
-	public Adapter createInitializerInTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldName <em>Field Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FieldName
-	 * @generated
-	 */
-	public Adapter createFieldNameAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ParameterizedTypeToType <em>Parameterized Type To Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ParameterizedTypeToType
-	 * @generated
-	 */
-	public Adapter createParameterizedTypeToTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeInterface <em>Anonymous Class Type Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeInterface
-	 * @generated
-	 */
-	public Adapter createAnonymousClassTypeInterfaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AbstractMethodInvocation <em>Abstract Method Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AbstractMethodInvocation
-	 * @generated
-	 */
-	public Adapter createAbstractMethodInvocationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceExtendsInterface <em>Interface Extends Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceExtendsInterface
-	 * @generated
-	 */
-	public Adapter createInterfaceExtendsInterfaceAdapter() {
+	public Adapter createAnonClassInCompilationUnitToModuleAdapter() {
 		return null;
 	}
 
@@ -1549,132 +850,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeInCompilationUnitToModule <em>Type In Compilation Unit To Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypeInCompilationUnitToModule
-	 * @generated
-	 */
-	public Adapter createTypeInCompilationUnitToModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccessWrite <em>Field Access Write</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccessWrite
-	 * @generated
-	 */
-	public Adapter createFieldAccessWriteAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.CompilationUnitToModule <em>Compilation Unit To Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.CompilationUnitToModule
-	 * @generated
-	 */
-	public Adapter createCompilationUnitToModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ArrayTypeToType <em>Array Type To Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ArrayTypeToType
-	 * @generated
-	 */
-	public Adapter createArrayTypeToTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ElementPackageToNamespace_abstract <em>Element Package To Namespace abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ElementPackageToNamespace_abstract
-	 * @generated
-	 */
-	public Adapter createElementPackageToNamespace_abstractAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SubPackageToPGPackage <em>Sub Package To PG Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.SubPackageToPGPackage
-	 * @generated
-	 */
-	public Adapter createSubPackageToPGPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeNestedInType_Abstract <em>Type Nested In Type Abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypeNestedInType_Abstract
-	 * @generated
-	 */
-	public Adapter createTypeNestedInType_AbstractAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceInAnonymous <em>Interface In Anonymous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceInAnonymous
-	 * @generated
-	 */
-	public Adapter createInterfaceInAnonymousAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValue <em>Annotation Member Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValue
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInPackage <em>Class In Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1685,20 +860,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClassInPackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassImplementsPatrameterizedInterface <em>Class Implements Patrameterized Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassImplementsPatrameterizedInterface
-	 * @generated
-	 */
-	public Adapter createClassImplementsPatrameterizedInterfaceAdapter() {
 		return null;
 	}
 
@@ -1731,58 +892,170 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SuperConstructorInvocation <em>Super Constructor Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassInType <em>Anonymous Class In Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.SuperConstructorInvocation
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassInType
 	 * @generated
 	 */
-	public Adapter createSuperConstructorInvocationAdapter() {
+	public Adapter createAnonymousClassInTypeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInnerMember <em>Class Inner Member</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.OrphanedEnum <em>Orphaned Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInnerMember
+	 * @see org.gravity.tgg.modisco.pm.Rules.OrphanedEnum
 	 * @generated
 	 */
-	public Adapter createClassInnerMemberAdapter() {
+	public Adapter createOrphanedEnumAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeClass <em>Anonymous Class Type Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ArrayTypeToType <em>Array Type To Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeClass
+	 * @see org.gravity.tgg.modisco.pm.Rules.ArrayTypeToType
 	 * @generated
 	 */
-	public Adapter createAnonymousClassTypeClassAdapter() {
+	public Adapter createArrayTypeToTypeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ModelToPg <em>Model To Pg</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumber <em>Annotation Member Value Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ModelToPg
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumber
 	 * @generated
 	 */
-	public Adapter createModelToPgAdapter() {
+	public Adapter createAnnotationMemberValueNumberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassFilePackageToNamespace <em>Class File Package To Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassFilePackageToNamespace
+	 * @generated
+	 */
+	public Adapter createClassFilePackageToNamespaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsByte <em>Primitive Type Is Byte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsByte
+	 * @generated
+	 */
+	public Adapter createPrimitiveTypeIsByteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueString <em>Annotation Member Value String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueString
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SubPackageToPGPackage <em>Sub Package To PG Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.SubPackageToPGPackage
+	 * @generated
+	 */
+	public Adapter createSubPackageToPGPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface_Abstract <em>Class Implements Interface Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface_Abstract
+	 * @generated
+	 */
+	public Adapter createClassImplementsInterface_AbstractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassType <em>Anonymous Class Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassType
+	 * @generated
+	 */
+	public Adapter createAnonymousClassTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClass <em>Anonymous Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClass
+	 * @generated
+	 */
+	public Adapter createAnonymousClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MemberInEnumVisibility <em>Member In Enum Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MemberInEnumVisibility
+	 * @generated
+	 */
+	public Adapter createMemberInEnumVisibilityAdapter() {
 		return null;
 	}
 
@@ -1801,398 +1074,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsShort <em>Primitive Type Is Short</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsShort
-	 * @generated
-	 */
-	public Adapter createPrimitiveTypeIsShortAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueClass <em>Annotation Member Value Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueClass
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccessRead <em>Field Access Read</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccessRead
-	 * @generated
-	 */
-	public Adapter createFieldAccessReadAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceMember <em>Interface Member</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceMember
-	 * @generated
-	 */
-	public Adapter createInterfaceMemberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumberArray <em>Annotation Member Value Number Array</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumberArray
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueNumberArrayAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccess <em>Field Access</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccess
-	 * @generated
-	 */
-	public Adapter createFieldAccessAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypesVisibility <em>Types Visibility</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypesVisibility
-	 * @generated
-	 */
-	public Adapter createTypesVisibilityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodInvocationTarget <em>Method Invocation Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodInvocationTarget
-	 * @generated
-	 */
-	public Adapter createMethodInvocationTargetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodName <em>Method Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodName
-	 * @generated
-	 */
-	public Adapter createMethodNameAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsFloat <em>Primitive Type Is Float</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsFloat
-	 * @generated
-	 */
-	public Adapter createPrimitiveTypeIsFloatAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeParameter <em>Type Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypeParameter
-	 * @generated
-	 */
-	public Adapter createTypeParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ConstructorDefinition <em>Constructor Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ConstructorDefinition
-	 * @generated
-	 */
-	public Adapter createConstructorDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InitializerInAnonymous <em>Initializer In Anonymous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.InitializerInAnonymous
-	 * @generated
-	 */
-	public Adapter createInitializerInAnonymousAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotationArray <em>Annotation Member Value Annotation Array</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotationArray
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueAnnotationArrayAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassExtendsClass <em>Class Extends Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassExtendsClass
-	 * @generated
-	 */
-	public Adapter createClassExtendsClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.OrphanedClass <em>Orphaned Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.OrphanedClass
-	 * @generated
-	 */
-	public Adapter createOrphanedClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.EnumConstant <em>Enum Constant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.EnumConstant
-	 * @generated
-	 */
-	public Adapter createEnumConstantAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousEnumConstant <em>Anonymous Enum Constant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousEnumConstant
-	 * @generated
-	 */
-	public Adapter createAnonymousEnumConstantAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInAnonymous <em>Annotation Type In Anonymous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInAnonymous
-	 * @generated
-	 */
-	public Adapter createAnnotationTypeInAnonymousAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.OrphanedInterface <em>Orphaned Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.OrphanedInterface
-	 * @generated
-	 */
-	public Adapter createOrphanedInterfaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.DataFlowIn <em>Data Flow In</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.DataFlowIn
-	 * @generated
-	 */
-	public Adapter createDataFlowInAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodDefinition <em>Method Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodDefinition
-	 * @generated
-	 */
-	public Adapter createMethodDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotation <em>Annotation Member Value Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotation
-	 * @generated
-	 */
-	public Adapter createAnnotationMemberValueAnnotationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodSignature <em>Method Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodSignature
-	 * @generated
-	 */
-	public Adapter createMethodSignatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.NestedEnumInType <em>Nested Enum In Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.NestedEnumInType
-	 * @generated
-	 */
-	public Adapter createNestedEnumInTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodParameterLinkFirst <em>Method Parameter Link First</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodParameterLinkFirst
-	 * @generated
-	 */
-	public Adapter createMethodParameterLinkFirstAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnAnnotation <em>Annotation Type Access On Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnAnnotation
-	 * @generated
-	 */
-	public Adapter createAnnotationTypeAccessOnAnnotationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeMember <em>Annotation Type Member</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeMember
-	 * @generated
-	 */
-	public Adapter createAnnotationTypeMemberAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInAnonymous <em>Class In Anonymous</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -2207,58 +1088,16 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AbstractMethodDefinition <em>Abstract Method Definition</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodInvocationStaticType <em>Method Invocation Static Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AbstractMethodDefinition
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodInvocationStaticType
 	 * @generated
 	 */
-	public Adapter createAbstractMethodDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInnerClassMember <em>Class Inner Class Member</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInnerClassMember
-	 * @generated
-	 */
-	public Adapter createClassInnerClassMemberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeInClassFileToModule <em>Type In Class File To Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.TypeInClassFileToModule
-	 * @generated
-	 */
-	public Adapter createTypeInClassFileToModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnSelf <em>Annotation Type Access On Self</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnSelf
-	 * @generated
-	 */
-	public Adapter createAnnotationTypeAccessOnSelfAdapter() {
+	public Adapter createMethodInvocationStaticTypeAdapter() {
 		return null;
 	}
 
@@ -2277,72 +1116,184 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodInvocation <em>Method Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsChar <em>Primitive Type Is Char</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MethodInvocation
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsChar
 	 * @generated
 	 */
-	public Adapter createMethodInvocationAdapter() {
+	public Adapter createPrimitiveTypeIsCharAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedClassDeclaration <em>Unresolved Class Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.OrphanedInterface <em>Orphaned Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedClassDeclaration
+	 * @see org.gravity.tgg.modisco.pm.Rules.OrphanedInterface
 	 * @generated
 	 */
-	public Adapter createUnresolvedClassDeclarationAdapter() {
+	public Adapter createOrphanedInterfaceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveType_Abstract <em>Primitive Type Abstract</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.CompilationUnitPackageToNamespace <em>Compilation Unit Package To Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveType_Abstract
+	 * @see org.gravity.tgg.modisco.pm.Rules.CompilationUnitPackageToNamespace
 	 * @generated
 	 */
-	public Adapter createPrimitiveType_AbstractAdapter() {
+	public Adapter createCompilationUnitPackageToNamespaceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.NestedClassInType <em>Nested Class In Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.Initializer <em>Initializer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.NestedClassInType
+	 * @see org.gravity.tgg.modisco.pm.Rules.Initializer
 	 * @generated
 	 */
-	public Adapter createNestedClassInTypeAdapter() {
+	public Adapter createInitializerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnBodyDecl <em>Annotation Type Access On Body Decl</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.NestedInterfaceInType <em>Nested Interface In Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnBodyDecl
+	 * @see org.gravity.tgg.modisco.pm.Rules.NestedInterfaceInType
 	 * @generated
 	 */
-	public Adapter createAnnotationTypeAccessOnBodyDeclAdapter() {
+	public Adapter createNestedInterfaceInTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInnerMember <em>Class Inner Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInnerMember
+	 * @generated
+	 */
+	public Adapter createClassInnerMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeNested <em>Annotation Type Nested</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeNested
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeNestedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBooleanArray <em>Annotation Member Value Boolean Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBooleanArray
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueBooleanArrayAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodInvocationTarget <em>Method Invocation Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodInvocationTarget
+	 * @generated
+	 */
+	public Adapter createMethodInvocationTargetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeMember <em>Annotation Type Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeMember
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccessWrite <em>Field Access Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccessWrite
+	 * @generated
+	 */
+	public Adapter createFieldAccessWriteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeNestedInType_Abstract <em>Type Nested In Type Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypeNestedInType_Abstract
+	 * @generated
+	 */
+	public Adapter createTypeNestedInType_AbstractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodOverriding <em>Method Overriding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodOverriding
+	 * @generated
+	 */
+	public Adapter createMethodOverridingAdapter() {
 		return null;
 	}
 
@@ -2361,16 +1312,268 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypesIsVoid <em>Primitive Types Is Void</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ConstructorInvocation <em>Constructor Invocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypesIsVoid
+	 * @see org.gravity.tgg.modisco.pm.Rules.ConstructorInvocation
 	 * @generated
 	 */
-	public Adapter createPrimitiveTypesIsVoidAdapter() {
+	public Adapter createConstructorInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ElementPackageToNamespace_abstract <em>Element Package To Namespace abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ElementPackageToNamespace_abstract
+	 * @generated
+	 */
+	public Adapter createElementPackageToNamespace_abstractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodParameter <em>Method Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodParameter
+	 * @generated
+	 */
+	public Adapter createMethodParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceExtendsInterface <em>Interface Extends Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceExtendsInterface
+	 * @generated
+	 */
+	public Adapter createInterfaceExtendsInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodInvocation <em>Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodInvocation
+	 * @generated
+	 */
+	public Adapter createMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeInterface <em>Anonymous Class Type Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeInterface
+	 * @generated
+	 */
+	public Adapter createAnonymousClassTypeInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassFileToModule <em>Class File To Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassFileToModule
+	 * @generated
+	 */
+	public Adapter createClassFileToModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueClass <em>Annotation Member Value Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueClass
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AbstractMethodInvocation <em>Abstract Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AbstractMethodInvocation
+	 * @generated
+	 */
+	public Adapter createAbstractMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodParameterLinkFirst <em>Method Parameter Link First</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodParameterLinkFirst
+	 * @generated
+	 */
+	public Adapter createMethodParameterLinkFirstAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsShort <em>Primitive Type Is Short</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsShort
+	 * @generated
+	 */
+	public Adapter createPrimitiveTypeIsShortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SuperMethodInvocation <em>Super Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.SuperMethodInvocation
+	 * @generated
+	 */
+	public Adapter createSuperMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedMethodDeclaration <em>Unresolved Method Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedMethodDeclaration
+	 * @generated
+	 */
+	public Adapter createUnresolvedMethodDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceMember <em>Interface Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceMember
+	 * @generated
+	 */
+	public Adapter createInterfaceMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldName <em>Field Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FieldName
+	 * @generated
+	 */
+	public Adapter createFieldNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeInClassFileToModule <em>Type In Class File To Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypeInClassFileToModule
+	 * @generated
+	 */
+	public Adapter createTypeInClassFileToModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccessRead <em>Field Access Read</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccessRead
+	 * @generated
+	 */
+	public Adapter createFieldAccessReadAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToType <em>Link Definition To Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToType
+	 * @generated
+	 */
+	public Adapter createLinkDefinitionToTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInAnonymous <em>Annotation Type In Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInAnonymous
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeInAnonymousAdapter() {
 		return null;
 	}
 
@@ -2389,30 +1592,156 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToAnonymous <em>Link Definition To Anonymous</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberKey <em>Annotation Member Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToAnonymous
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberKey
 	 * @generated
 	 */
-	public Adapter createLinkDefinitionToAnonymousAdapter() {
+	public Adapter createAnnotationMemberKeyAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsBoolean <em>Primitive Type Is Boolean</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonClassInClassFileToModule <em>Anon Class In Class File To Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsBoolean
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonClassInClassFileToModule
 	 * @generated
 	 */
-	public Adapter createPrimitiveTypeIsBooleanAdapter() {
+	public Adapter createAnonClassInClassFileToModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsDouble <em>Primitive Type Is Double</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsDouble
+	 * @generated
+	 */
+	public Adapter createPrimitiveTypeIsDoubleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueStringArray <em>Annotation Member Value String Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueStringArray
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueStringArrayAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodSignature <em>Method Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodSignature
+	 * @generated
+	 */
+	public Adapter createMethodSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SyntethicMethod <em>Syntethic Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.SyntethicMethod
+	 * @generated
+	 */
+	public Adapter createSyntethicMethodAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.CompilationUnitToModule <em>Compilation Unit To Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.CompilationUnitToModule
+	 * @generated
+	 */
+	public Adapter createCompilationUnitToModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodName <em>Method Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodName
+	 * @generated
+	 */
+	public Adapter createMethodNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldSignature <em>Field Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FieldSignature
+	 * @generated
+	 */
+	public Adapter createFieldSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface <em>Class Implements Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassImplementsInterface
+	 * @generated
+	 */
+	public Adapter createClassImplementsInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueArray <em>Annotation Member Value Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueArray
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueArrayAdapter() {
 		return null;
 	}
 
@@ -2431,16 +1760,44 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedInterfaceDeclaration <em>Unresolved Interface Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInnerClassMember <em>Class Inner Class Member</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedInterfaceDeclaration
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInnerClassMember
 	 * @generated
 	 */
-	public Adapter createUnresolvedInterfaceDeclarationAdapter() {
+	public Adapter createClassInnerClassMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MethodDefinition <em>Method Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MethodDefinition
+	 * @generated
+	 */
+	public Adapter createMethodDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInstanceCreation <em>Class Instance Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInstanceCreation
+	 * @generated
+	 */
+	public Adapter createClassInstanceCreationAdapter() {
 		return null;
 	}
 
@@ -2459,30 +1816,730 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MemberInClassVisibility <em>Member In Class Visibility</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsBoolean <em>Primitive Type Is Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.MemberInClassVisibility
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsBoolean
 	 * @generated
 	 */
-	public Adapter createMemberInClassVisibilityAdapter() {
+	public Adapter createPrimitiveTypeIsBooleanAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldSignature <em>Field Signature</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceInPackage <em>Interface In Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.modisco.pm.Rules.FieldSignature
+	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceInPackage
 	 * @generated
 	 */
-	public Adapter createFieldSignatureAdapter() {
+	public Adapter createInterfaceInPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeToModule_abstract <em>Type To Module abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypeToModule_abstract
+	 * @generated
+	 */
+	public Adapter createTypeToModule_abstractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.EnumInAnonymous <em>Enum In Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.EnumInAnonymous
+	 * @generated
+	 */
+	public Adapter createEnumInAnonymousAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PackageToPGPackage <em>Package To PG Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PackageToPGPackage
+	 * @generated
+	 */
+	public Adapter createPackageToPGPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedInterfaceDeclaration <em>Unresolved Interface Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedInterfaceDeclaration
+	 * @generated
+	 */
+	public Adapter createUnresolvedInterfaceDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.DataFlowOut <em>Data Flow Out</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.DataFlowOut
+	 * @generated
+	 */
+	public Adapter createDataFlowOutAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassExtendsClass <em>Class Extends Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassExtendsClass
+	 * @generated
+	 */
+	public Adapter createClassExtendsClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotationArray <em>Annotation Member Value Annotation Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotationArray
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueAnnotationArrayAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToAnonymous <em>Link Definition To Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.LinkDefinitionToAnonymous
+	 * @generated
+	 */
+	public Adapter createLinkDefinitionToAnonymousAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnSelf <em>Annotation Type Access On Self</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnSelf
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeAccessOnSelfAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnBodyDecl <em>Annotation Type Access On Body Decl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnBodyDecl
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeAccessOnBodyDeclAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnAnnotation <em>Annotation Type Access On Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeAccessOnAnnotation
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeAccessOnAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassImplementsPatrameterizedInterface <em>Class Implements Patrameterized Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassImplementsPatrameterizedInterface
+	 * @generated
+	 */
+	public Adapter createClassImplementsPatrameterizedInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.OrphanedClass <em>Orphaned Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.OrphanedClass
+	 * @generated
+	 */
+	public Adapter createOrphanedClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ParameterizedTypeToType <em>Parameterized Type To Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ParameterizedTypeToType
+	 * @generated
+	 */
+	public Adapter createParameterizedTypeToTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.Annotation <em>Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.Annotation
+	 * @generated
+	 */
+	public Adapter createAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeParameter <em>Type Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypeParameter
+	 * @generated
+	 */
+	public Adapter createTypeParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeClass <em>Anonymous Class Type Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassTypeClass
+	 * @generated
+	 */
+	public Adapter createAnonymousClassTypeClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccessReadWrite <em>Field Access Read Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccessReadWrite
+	 * @generated
+	 */
+	public Adapter createFieldAccessReadWriteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ArrayInitializerIgnoreExpressionsEdge <em>Array Initializer Ignore Expressions Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ArrayInitializerIgnoreExpressionsEdge
+	 * @generated
+	 */
+	public Adapter createArrayInitializerIgnoreExpressionsEdgeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousClassInAnonymous <em>Anonymous Class In Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousClassInAnonymous
+	 * @generated
+	 */
+	public Adapter createAnonymousClassInAnonymousAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InitializerInType <em>Initializer In Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.InitializerInType
+	 * @generated
+	 */
+	public Adapter createInitializerInTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.SuperConstructorInvocation <em>Super Constructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.SuperConstructorInvocation
+	 * @generated
+	 */
+	public Adapter createSuperConstructorInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FlowNode <em>Flow Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FlowNode
+	 * @generated
+	 */
+	public Adapter createFlowNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsFloat <em>Primitive Type Is Float</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypeIsFloat
+	 * @generated
+	 */
+	public Adapter createPrimitiveTypeIsFloatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ModelToPg <em>Model To Pg</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ModelToPg
+	 * @generated
+	 */
+	public Adapter createModelToPgAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ConstructorDefinition <em>Constructor Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ConstructorDefinition
+	 * @generated
+	 */
+	public Adapter createConstructorDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBoolean <em>Annotation Member Value Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueBoolean
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueBooleanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.EnumInPackage <em>Enum In Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.EnumInPackage
+	 * @generated
+	 */
+	public Adapter createEnumInPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.MemberInAnnotationVisibility <em>Member In Annotation Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.MemberInAnnotationVisibility
+	 * @generated
+	 */
+	public Adapter createMemberInAnnotationVisibilityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveTypesIsVoid <em>Primitive Types Is Void</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveTypesIsVoid
+	 * @generated
+	 */
+	public Adapter createPrimitiveTypesIsVoidAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.NestedClassInType <em>Nested Class In Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.NestedClassInType
+	 * @generated
+	 */
+	public Adapter createNestedClassInTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInPackage <em>Annotation Type In Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationTypeInPackage
+	 * @generated
+	 */
+	public Adapter createAnnotationTypeInPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypeInCompilationUnitToModule <em>Type In Compilation Unit To Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypeInCompilationUnitToModule
+	 * @generated
+	 */
+	public Adapter createTypeInCompilationUnitToModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InitializerInAnonymous <em>Initializer In Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.InitializerInAnonymous
+	 * @generated
+	 */
+	public Adapter createInitializerInAnonymousAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ClassInnerAnonClassMember <em>Class Inner Anon Class Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ClassInnerAnonClassMember
+	 * @generated
+	 */
+	public Adapter createClassInnerAnonClassMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumberArray <em>Annotation Member Value Number Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueNumberArray
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueNumberArrayAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedClassDeclaration <em>Unresolved Class Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedClassDeclaration
+	 * @generated
+	 */
+	public Adapter createUnresolvedClassDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ParameterAnnotation <em>Parameter Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ParameterAnnotation
+	 * @generated
+	 */
+	public Adapter createParameterAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.UnresolvedTypeDeclaration <em>Unresolved Type Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.UnresolvedTypeDeclaration
+	 * @generated
+	 */
+	public Adapter createUnresolvedTypeDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotation <em>Annotation Member Value Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueAnnotation
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.PrimitiveType_Abstract <em>Primitive Type Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.PrimitiveType_Abstract
+	 * @generated
+	 */
+	public Adapter createPrimitiveType_AbstractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValue <em>Annotation Member Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValue
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.FieldAccess <em>Field Access</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.FieldAccess
+	 * @generated
+	 */
+	public Adapter createFieldAccessAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueArrayValues <em>Annotation Member Value Array Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnnotationMemberValueArrayValues
+	 * @generated
+	 */
+	public Adapter createAnnotationMemberValueArrayValuesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AnonymousEnumConstant <em>Anonymous Enum Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AnonymousEnumConstant
+	 * @generated
+	 */
+	public Adapter createAnonymousEnumConstantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.EnumConstant <em>Enum Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.EnumConstant
+	 * @generated
+	 */
+	public Adapter createEnumConstantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.TypesVisibility <em>Types Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.TypesVisibility
+	 * @generated
+	 */
+	public Adapter createTypesVisibilityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.AbstractMethodDefinition <em>Abstract Method Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.AbstractMethodDefinition
+	 * @generated
+	 */
+	public Adapter createAbstractMethodDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.ContainerToModule_abstract <em>Container To Module abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.ContainerToModule_abstract
+	 * @generated
+	 */
+	public Adapter createContainerToModule_abstractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.modisco.pm.Rules.InterfaceInAnonymous <em>Interface In Anonymous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.modisco.pm.Rules.InterfaceInAnonymous
+	 * @generated
+	 */
+	public Adapter createInterfaceInAnonymousAdapter() {
 		return null;
 	}
 

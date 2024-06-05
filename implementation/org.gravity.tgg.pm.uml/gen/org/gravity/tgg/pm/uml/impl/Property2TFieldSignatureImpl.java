@@ -162,14 +162,14 @@ public class Property2TFieldSignatureImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Property2TFieldSignatureImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
-			setSource((Property) newValue);
-			return;
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
-			setTarget((TFieldSignature) newValue);
-			return;
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
+				setSource((Property) newValue);
+				return;
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
+				setTarget((TFieldSignature) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Property2TFieldSignatureImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
-			setSource((Property) null);
-			return;
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
-			setTarget((TFieldSignature) null);
-			return;
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
+				setSource((Property) null);
+				return;
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
+				setTarget((TFieldSignature) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Property2TFieldSignatureImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
-			return source != null;
-		case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
-			return target != null;
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__SOURCE:
+				return source != null;
+			case UmlPackage.PROPERTY2_TFIELD_SIGNATURE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

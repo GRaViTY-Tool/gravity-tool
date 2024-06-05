@@ -210,7 +210,7 @@ public interface ClassFilePackageToNamespace extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_namespace);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_940(EMoflonEdge _edge_namespace);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface ClassFilePackageToNamespace extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1034(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->

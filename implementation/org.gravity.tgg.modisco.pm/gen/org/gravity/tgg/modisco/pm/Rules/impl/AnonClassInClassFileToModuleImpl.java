@@ -533,9 +533,9 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 				//nothing EMoflonEdge type__tType____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge cu2m__cu____source = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge type__mType____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tType__module____module = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge module__tType____contains = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge tType__module____module = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge module__tType____contains = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = AnonClassInClassFileToModuleImpl
 						.pattern_AnonClassInClassFileToModule_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
@@ -680,7 +680,7 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_module) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_978(EMoflonEdge _edge_module) {
 
 		Object[] result1_bindingAndBlack = AnonClassInClassFileToModuleImpl
 				.pattern_AnonClassInClassFileToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -739,7 +739,7 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_3(EMoflonEdge _edge_originalClassFile) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1073(EMoflonEdge _edge_originalClassFile) {
 
 		Object[] result1_bindingAndBlack = AnonClassInClassFileToModuleImpl
 				.pattern_AnonClassInClassFileToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1110,92 +1110,96 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD__MATCH_CLASSFILE_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSFILE_ANONYMOUSCLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2));
-			return null;
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSFILE_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
-					(ElementToModule) arguments.get(2), (TClass) arguments.get(3), (TModule) arguments.get(4),
-					(AnonymousClassDeclarationToTClass) arguments.get(5), (AnonymousClassDeclaration) arguments.get(6));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD__MATCH_TCLASS_TMODULE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TModule) arguments.get(2));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TMODULE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TModule) arguments.get(2));
-			return null;
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TMODULE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TModule) arguments.get(2));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
-					(ElementToModule) arguments.get(2), (TClass) arguments.get(3), (TModule) arguments.get(4),
-					(AnonymousClassDeclarationToTClass) arguments.get(5), (AnonymousClassDeclaration) arguments.get(6));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_3__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_3__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSFILE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((ClassFile) arguments.get(0), (TClass) arguments.get(1),
-					(TModule) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_FWD__CLASSFILE_ANONYMOUSCLASSDECLARATION:
-			return checkDEC_FWD((ClassFile) arguments.get(0), (AnonymousClassDeclaration) arguments.get(1));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_BWD__TCLASS_TMODULE:
-			return checkDEC_BWD((TClass) arguments.get(0), (TModule) arguments.get(1));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL__RULEENTRYCONTAINER_ELEMENTTOMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ElementToModule) arguments.get(1),
-					(AnonymousClassDeclarationToTClass) arguments.get(2));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
-					(ElementToModule) arguments.get(2), (TClass) arguments.get(3), (TModule) arguments.get(4),
-					(AnonymousClassDeclarationToTClass) arguments.get(5), (AnonymousClassDeclaration) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
-		case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD__MATCH_CLASSFILE_ANONYMOUSCLASSDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
+						(AnonymousClassDeclaration) arguments.get(2));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSFILE_ANONYMOUSCLASSDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
+						(AnonymousClassDeclaration) arguments.get(2));
+				return null;
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSFILE_ANONYMOUSCLASSDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassFile) arguments.get(1),
+						(AnonymousClassDeclaration) arguments.get(2));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
+						(ElementToModule) arguments.get(2), (TClass) arguments.get(3), (TModule) arguments.get(4),
+						(AnonymousClassDeclarationToTClass) arguments.get(5),
+						(AnonymousClassDeclaration) arguments.get(6));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD__MATCH_TCLASS_TMODULE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+						(TModule) arguments.get(2));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TMODULE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+						(TModule) arguments.get(2));
+				return null;
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TMODULE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+						(TModule) arguments.get(2));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
+						(ElementToModule) arguments.get(2), (TClass) arguments.get(3), (TModule) arguments.get(4),
+						(AnonymousClassDeclarationToTClass) arguments.get(5),
+						(AnonymousClassDeclaration) arguments.get(6));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_978__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_978((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1073__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1073((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSFILE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((ClassFile) arguments.get(0), (TClass) arguments.get(1),
+						(TModule) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3),
+						(Match) arguments.get(4), (Match) arguments.get(5));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_FWD__CLASSFILE_ANONYMOUSCLASSDECLARATION:
+				return checkDEC_FWD((ClassFile) arguments.get(0), (AnonymousClassDeclaration) arguments.get(1));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___CHECK_DEC_BWD__TCLASS_TMODULE:
+				return checkDEC_BWD((TClass) arguments.get(0), (TModule) arguments.get(1));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL__RULEENTRYCONTAINER_ELEMENTTOMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ElementToModule) arguments.get(1),
+						(AnonymousClassDeclarationToTClass) arguments.get(2));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSFILE_ELEMENTTOMODULE_TCLASS_TMODULE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassFile) arguments.get(1),
+						(ElementToModule) arguments.get(2), (TClass) arguments.get(3), (TModule) arguments.get(4),
+						(AnonymousClassDeclarationToTClass) arguments.get(5),
+						(AnonymousClassDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+			case RulesPackage.ANON_CLASS_IN_CLASS_FILE_TO_MODULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2003,8 +2007,8 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 		if (tType.equals(type.getTarget())) {
 			if (cu.equals(cu2m.getSource())) {
 				if (mType.equals(type.getSource())) {
-					if (module.equals(cu2m.getTarget())) {
-						if (module.equals(tType.getModule())) {
+					if (module.equals(tType.getModule())) {
+						if (module.equals(cu2m.getTarget())) {
 							_result.add(new Object[] { cu, cu2m, tType, module, type, mType });
 						}
 					}
@@ -2021,15 +2025,15 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 		EMoflonEdge type__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cu2m__cu____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__module____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge module__tType____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String type__tType____target_name_prime = "target";
 		String cu2m__cu____source_name_prime = "source";
 		String type__mType____source_name_prime = "source";
-		String cu2m__module____target_name_prime = "target";
 		String tType__module____module_name_prime = "module";
 		String module__tType____contains_name_prime = "contains";
+		String cu2m__module____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(cu);
 		isApplicableMatch.getAllContextElements().add(cu2m);
 		isApplicableMatch.getAllContextElements().add(tType);
@@ -2045,24 +2049,24 @@ public class AnonClassInClassFileToModuleImpl extends AbstractRuleImpl implement
 		type__mType____source.setSrc(type);
 		type__mType____source.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(type__mType____source);
-		cu2m__module____target.setSrc(cu2m);
-		cu2m__module____target.setTrg(module);
-		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		tType__module____module.setSrc(tType);
 		tType__module____module.setTrg(module);
 		isApplicableMatch.getAllContextElements().add(tType__module____module);
 		module__tType____contains.setSrc(module);
 		module__tType____contains.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(module__tType____contains);
+		cu2m__module____target.setSrc(cu2m);
+		cu2m__module____target.setTrg(module);
+		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		type__tType____target.setName(type__tType____target_name_prime);
 		cu2m__cu____source.setName(cu2m__cu____source_name_prime);
 		type__mType____source.setName(type__mType____source_name_prime);
-		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		tType__module____module.setName(tType__module____module_name_prime);
 		module__tType____contains.setName(module__tType____contains_name_prime);
+		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		return new Object[] { cu, cu2m, tType, module, type, mType, isApplicableMatch, type__tType____target,
-				cu2m__cu____source, type__mType____source, cu2m__module____target, tType__module____module,
-				module__tType____contains };
+				cu2m__cu____source, type__mType____source, tType__module____module, module__tType____contains,
+				cu2m__module____target };
 	}
 
 	public static final Object[] pattern_AnonClassInClassFileToModule_12_4_solveCSP_bindingFBBBBBBBB(

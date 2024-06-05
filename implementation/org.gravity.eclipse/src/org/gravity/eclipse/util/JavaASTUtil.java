@@ -364,7 +364,7 @@ public final class JavaASTUtil {
 	 * @param type A type
 	 * @return The name object
 	 */
-	private static String getName(final Type type) {
+	public static String getName(final Type type) {
 		if (type.isSimpleType()) {
 			return ((SimpleType) type).getName().getFullyQualifiedName();
 		}

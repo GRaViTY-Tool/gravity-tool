@@ -152,67 +152,65 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		MGravityModel javaModel = (MGravityModel) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_1_1_performtransformation_greenFFFFFFFBFFB(javaModel, csp);
-		Model sourceRefModel = (Model) result1_green[0];
-		Model externalModel = (Model) result1_green[1];
-		Model umlModel = (Model) result1_green[2];
-		JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result1_green[3];
-		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_green[4];
-		Model rootModel = (Model) result1_green[5];
-		JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result1_green[6];
-		JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result1_green[8];
-		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result1_green[9];
+				.pattern_JavaModel2UmlModelRule_1_1_performtransformation_greenFFFBFFFFFFB(javaModel, csp);
+		Model rootModel = (Model) result1_green[0];
+		Model umlModel = (Model) result1_green[1];
+		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result1_green[2];
+		JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result1_green[4];
+		JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result1_green[5];
+		JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result1_green[6];
+		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_green[7];
+		Model sourceRefModel = (Model) result1_green[8];
+		Model externalModel = (Model) result1_green[9];
 
 		Object[] result2_black = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_1_2_collecttranslatedelements_blackBBBBBBBBBB(sourceRefModel,
-						externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2, javaModel, jm2um3,
-						commonTypes);
+				.pattern_JavaModel2UmlModelRule_1_2_collecttranslatedelements_blackBBBBBBBBBB(rootModel, umlModel,
+						commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel, externalModel);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceRefModel] = "
-					+ sourceRefModel + ", " + "[externalModel] = " + externalModel + ", " + "[umlModel] = " + umlModel
-					+ ", " + "[jm2commonTypes] = " + jm2commonTypes + ", " + "[jm2um] = " + jm2um + ", "
-					+ "[rootModel] = " + rootModel + ", " + "[jm2um2] = " + jm2um2 + ", " + "[javaModel] = " + javaModel
-					+ ", " + "[jm2um3] = " + jm2um3 + ", " + "[commonTypes] = " + commonTypes + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[rootModel] = " + rootModel + ", "
+					+ "[umlModel] = " + umlModel + ", " + "[commonTypes] = " + commonTypes + ", " + "[javaModel] = "
+					+ javaModel + ", " + "[jm2um2] = " + jm2um2 + ", " + "[jm2um3] = " + jm2um3 + ", "
+					+ "[jm2commonTypes] = " + jm2commonTypes + ", " + "[jm2um] = " + jm2um + ", "
+					+ "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ".");
 		}
 		Object[] result2_green = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_1_2_collecttranslatedelements_greenFBBBBBBBBBB(sourceRefModel,
-						externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2, javaModel, jm2um3,
-						commonTypes);
+				.pattern_JavaModel2UmlModelRule_1_2_collecttranslatedelements_greenFBBBBBBBBBB(rootModel, umlModel,
+						commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel, externalModel);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, sourceRefModel,
-						externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2, javaModel, jm2um3,
-						commonTypes);
+				.pattern_JavaModel2UmlModelRule_1_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, rootModel,
+						umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel,
+						externalModel);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ", "
-					+ "[umlModel] = " + umlModel + ", " + "[jm2commonTypes] = " + jm2commonTypes + ", " + "[jm2um] = "
-					+ jm2um + ", " + "[rootModel] = " + rootModel + ", " + "[jm2um2] = " + jm2um2 + ", "
-					+ "[javaModel] = " + javaModel + ", " + "[jm2um3] = " + jm2um3 + ", " + "[commonTypes] = "
-					+ commonTypes + ".");
+					+ ", " + "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel + ", "
+					+ "[commonTypes] = " + commonTypes + ", " + "[javaModel] = " + javaModel + ", " + "[jm2um2] = "
+					+ jm2um2 + ", " + "[jm2um3] = " + jm2um3 + ", " + "[jm2commonTypes] = " + jm2commonTypes + ", "
+					+ "[jm2um] = " + jm2um + ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = "
+					+ externalModel + ".");
 		}
 		JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_1_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFF(
-				ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2,
-				javaModel, jm2um3, commonTypes);
-		//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge jm2um__umlModel____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge rootModel__sourceRefModel____packagedElement = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge rootModel__externalModel____packagedElement = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge jm2um2__externalModel____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge jm2um__javaModel____source = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge jm2um3__sourceRefModel____target = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge jm2um2__javaModel____source = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge jm2commonTypes__javaModel____source = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge jm2um3__javaModel____source = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge jm2commonTypes__commonTypes____target = (EMoflonEdge) result3_green[22];
+				ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um,
+				sourceRefModel, externalModel);
+		//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge jm2um2__javaModel____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge jm2um3__javaModel____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge rootModel__sourceRefModel____packagedElement = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge jm2commonTypes__javaModel____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge jm2commonTypes__commonTypes____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge jm2um__umlModel____target = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge jm2um__javaModel____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge jm2um3__sourceRefModel____target = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge rootModel__externalModel____packagedElement = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge jm2um2__externalModel____target = (EMoflonEdge) result3_green[22];
 
 		// 
 		// 
 		JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_1_5_registerobjects_expressionBBBBBBBBBBBB(this,
-				ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2,
-				javaModel, jm2um3, commonTypes);
+				ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um,
+				sourceRefModel, externalModel);
 		return JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_1_6_expressionFB(ruleresult);
 	}
 
@@ -368,19 +366,19 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel,
-			EObject umlModel, EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2,
-			EObject javaModel, EObject jm2um3, EObject commonTypes) {
-		ruleresult.registerObject("sourceRefModel", sourceRefModel);
-		ruleresult.registerObject("externalModel", externalModel);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject rootModel, EObject umlModel,
+			EObject commonTypes, EObject javaModel, EObject jm2um2, EObject jm2um3, EObject jm2commonTypes,
+			EObject jm2um, EObject sourceRefModel, EObject externalModel) {
+		ruleresult.registerObject("rootModel", rootModel);
 		ruleresult.registerObject("umlModel", umlModel);
+		ruleresult.registerObject("commonTypes", commonTypes);
+		ruleresult.registerObject("javaModel", javaModel);
+		ruleresult.registerObject("jm2um2", jm2um2);
+		ruleresult.registerObject("jm2um3", jm2um3);
 		ruleresult.registerObject("jm2commonTypes", jm2commonTypes);
 		ruleresult.registerObject("jm2um", jm2um);
-		ruleresult.registerObject("rootModel", rootModel);
-		ruleresult.registerObject("jm2um2", jm2um2);
-		ruleresult.registerObject("javaModel", javaModel);
-		ruleresult.registerObject("jm2um3", jm2um3);
-		ruleresult.registerObject("commonTypes", commonTypes);
+		ruleresult.registerObject("sourceRefModel", sourceRefModel);
+		ruleresult.registerObject("externalModel", externalModel);
 
 	}
 
@@ -399,61 +397,61 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
+	public boolean isAppropriate_BWD(Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
 
 		Object[] result1_black = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_10_1_initialbindings_blackBBBBBBB(this, match, sourceRefModel,
-						externalModel, umlModel, rootModel, commonTypes);
+				.pattern_JavaModel2UmlModelRule_10_1_initialbindings_blackBBBBBBB(this, match, rootModel, umlModel,
+						commonTypes, sourceRefModel, externalModel);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = "
-					+ externalModel + ", " + "[umlModel] = " + umlModel + ", " + "[rootModel] = " + rootModel + ", "
-					+ "[commonTypes] = " + commonTypes + ".");
+					+ "[match] = " + match + ", " + "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel
+					+ ", " + "[commonTypes] = " + commonTypes + ", " + "[sourceRefModel] = " + sourceRefModel + ", "
+					+ "[externalModel] = " + externalModel + ".");
 		}
 
 		Object[] result2_bindingAndBlack = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_10_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, sourceRefModel,
-						externalModel, umlModel, rootModel, commonTypes);
+				.pattern_JavaModel2UmlModelRule_10_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, rootModel, umlModel,
+						commonTypes, sourceRefModel, externalModel);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = "
-					+ externalModel + ", " + "[umlModel] = " + umlModel + ", " + "[rootModel] = " + rootModel + ", "
-					+ "[commonTypes] = " + commonTypes + ".");
+					+ "[match] = " + match + ", " + "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel
+					+ ", " + "[commonTypes] = " + commonTypes + ", " + "[sourceRefModel] = " + sourceRefModel + ", "
+					+ "[externalModel] = " + externalModel + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = JavaModel2UmlModelRuleImpl
-					.pattern_JavaModel2UmlModelRule_10_4_collectelementstobetranslated_blackBBBBBB(match,
-							sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
+					.pattern_JavaModel2UmlModelRule_10_4_collectelementstobetranslated_blackBBBBBB(match, rootModel,
+							umlModel, commonTypes, sourceRefModel, externalModel);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ", "
-						+ "[umlModel] = " + umlModel + ", " + "[rootModel] = " + rootModel + ", " + "[commonTypes] = "
-						+ commonTypes + ".");
+						+ "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel + ", " + "[commonTypes] = "
+						+ commonTypes + ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = "
+						+ externalModel + ".");
 			}
 			JavaModel2UmlModelRuleImpl
-					.pattern_JavaModel2UmlModelRule_10_4_collectelementstobetranslated_greenBBBBBBFFFF(match,
-							sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
-			//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result4_green[6];
+					.pattern_JavaModel2UmlModelRule_10_4_collectelementstobetranslated_greenBBBBBBFFFF(match, rootModel,
+							umlModel, commonTypes, sourceRefModel, externalModel);
+			//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result4_green[6];
 			//nothing EMoflonEdge rootModel__sourceRefModel____packagedElement = (EMoflonEdge) result4_green[7];
 			//nothing EMoflonEdge rootModel__externalModel____packagedElement = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result4_green[9];
 
 			Object[] result5_black = JavaModel2UmlModelRuleImpl
-					.pattern_JavaModel2UmlModelRule_10_5_collectcontextelements_blackBBBBBB(match, sourceRefModel,
-							externalModel, umlModel, rootModel, commonTypes);
+					.pattern_JavaModel2UmlModelRule_10_5_collectcontextelements_blackBBBBBB(match, rootModel, umlModel,
+							commonTypes, sourceRefModel, externalModel);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ", "
-						+ "[umlModel] = " + umlModel + ", " + "[rootModel] = " + rootModel + ", " + "[commonTypes] = "
-						+ commonTypes + ".");
+						+ "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel + ", " + "[commonTypes] = "
+						+ commonTypes + ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = "
+						+ externalModel + ".");
 			}
 			// 
 			JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_10_6_registerobjectstomatch_expressionBBBBBBB(
-					this, match, sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
+					this, match, rootModel, umlModel, commonTypes, sourceRefModel, externalModel);
 			return JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_10_7_expressionF();
 		} else {
 			return JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_10_8_expressionF();
@@ -475,71 +473,69 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Model sourceRefModel = (Model) result1_bindingAndBlack[0];
-		Model externalModel = (Model) result1_bindingAndBlack[1];
-		Model umlModel = (Model) result1_bindingAndBlack[2];
-		Model rootModel = (Model) result1_bindingAndBlack[3];
-		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[4];
+		Model rootModel = (Model) result1_bindingAndBlack[0];
+		Model umlModel = (Model) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[2];
+		Model sourceRefModel = (Model) result1_bindingAndBlack[3];
+		Model externalModel = (Model) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_11_1_performtransformation_greenBBBFFFFFBB(sourceRefModel,
-						externalModel, umlModel, commonTypes, csp);
-		JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result1_green[3];
-		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_green[4];
-		JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result1_green[5];
-		MGravityModel javaModel = (MGravityModel) result1_green[6];
-		JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result1_green[7];
+				.pattern_JavaModel2UmlModelRule_11_1_performtransformation_greenBBFFFFFBBB(umlModel, commonTypes,
+						sourceRefModel, externalModel, csp);
+		MGravityModel javaModel = (MGravityModel) result1_green[2];
+		JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result1_green[3];
+		JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result1_green[4];
+		JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result1_green[5];
+		JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result1_green[6];
 
 		Object[] result2_black = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_11_2_collecttranslatedelements_blackBBBBBBBBBB(sourceRefModel,
-						externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2, javaModel, jm2um3,
-						commonTypes);
+				.pattern_JavaModel2UmlModelRule_11_2_collecttranslatedelements_blackBBBBBBBBBB(rootModel, umlModel,
+						commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel, externalModel);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceRefModel] = "
-					+ sourceRefModel + ", " + "[externalModel] = " + externalModel + ", " + "[umlModel] = " + umlModel
-					+ ", " + "[jm2commonTypes] = " + jm2commonTypes + ", " + "[jm2um] = " + jm2um + ", "
-					+ "[rootModel] = " + rootModel + ", " + "[jm2um2] = " + jm2um2 + ", " + "[javaModel] = " + javaModel
-					+ ", " + "[jm2um3] = " + jm2um3 + ", " + "[commonTypes] = " + commonTypes + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[rootModel] = " + rootModel + ", "
+					+ "[umlModel] = " + umlModel + ", " + "[commonTypes] = " + commonTypes + ", " + "[javaModel] = "
+					+ javaModel + ", " + "[jm2um2] = " + jm2um2 + ", " + "[jm2um3] = " + jm2um3 + ", "
+					+ "[jm2commonTypes] = " + jm2commonTypes + ", " + "[jm2um] = " + jm2um + ", "
+					+ "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ".");
 		}
 		Object[] result2_green = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_11_2_collecttranslatedelements_greenFBBBBBBBBBB(sourceRefModel,
-						externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2, javaModel, jm2um3,
-						commonTypes);
+				.pattern_JavaModel2UmlModelRule_11_2_collecttranslatedelements_greenFBBBBBBBBBB(rootModel, umlModel,
+						commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel, externalModel);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, sourceRefModel,
-						externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2, javaModel, jm2um3,
-						commonTypes);
+				.pattern_JavaModel2UmlModelRule_11_3_bookkeepingforedges_blackBBBBBBBBBBB(ruleresult, rootModel,
+						umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel,
+						externalModel);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ", "
-					+ "[umlModel] = " + umlModel + ", " + "[jm2commonTypes] = " + jm2commonTypes + ", " + "[jm2um] = "
-					+ jm2um + ", " + "[rootModel] = " + rootModel + ", " + "[jm2um2] = " + jm2um2 + ", "
-					+ "[javaModel] = " + javaModel + ", " + "[jm2um3] = " + jm2um3 + ", " + "[commonTypes] = "
-					+ commonTypes + ".");
+					+ ", " + "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel + ", "
+					+ "[commonTypes] = " + commonTypes + ", " + "[javaModel] = " + javaModel + ", " + "[jm2um2] = "
+					+ jm2um2 + ", " + "[jm2um3] = " + jm2um3 + ", " + "[jm2commonTypes] = " + jm2commonTypes + ", "
+					+ "[jm2um] = " + jm2um + ", " + "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = "
+					+ externalModel + ".");
 		}
 		JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_11_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFF(
-				ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2,
-				javaModel, jm2um3, commonTypes);
-		//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge jm2um__umlModel____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge rootModel__sourceRefModel____packagedElement = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge rootModel__externalModel____packagedElement = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge jm2um2__externalModel____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge jm2um__javaModel____source = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge jm2um3__sourceRefModel____target = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge jm2um2__javaModel____source = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge jm2commonTypes__javaModel____source = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge jm2um3__javaModel____source = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge jm2commonTypes__commonTypes____target = (EMoflonEdge) result3_green[22];
+				ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um,
+				sourceRefModel, externalModel);
+		//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge jm2um2__javaModel____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge jm2um3__javaModel____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge rootModel__sourceRefModel____packagedElement = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge jm2commonTypes__javaModel____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge jm2commonTypes__commonTypes____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge jm2um__umlModel____target = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge jm2um__javaModel____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge jm2um3__sourceRefModel____target = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge rootModel__externalModel____packagedElement = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge jm2um2__externalModel____target = (EMoflonEdge) result3_green[22];
 
 		// 
 		// 
 		JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_11_5_registerobjects_expressionBBBBBBBBBBBB(this,
-				ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2,
-				javaModel, jm2um3, commonTypes);
+				ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um,
+				sourceRefModel, externalModel);
 		return JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_11_6_expressionFB(ruleresult);
 	}
 
@@ -568,35 +564,35 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Model sourceRefModel = (Model) result2_binding[0];
-		Model externalModel = (Model) result2_binding[1];
-		Model umlModel = (Model) result2_binding[2];
-		Model rootModel = (Model) result2_binding[3];
-		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result2_binding[4];
+		Model rootModel = (Model) result2_binding[0];
+		Model umlModel = (Model) result2_binding[1];
+		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result2_binding[2];
+		Model sourceRefModel = (Model) result2_binding[3];
+		Model externalModel = (Model) result2_binding[4];
 		for (Object[] result2_black : JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_12_2_corematch_blackBBBBBB(sourceRefModel, externalModel, umlModel,
-						rootModel, commonTypes, match)) {
+				.pattern_JavaModel2UmlModelRule_12_2_corematch_blackBBBBBB(rootModel, umlModel, commonTypes,
+						sourceRefModel, externalModel, match)) {
 			// ForEach 
 			for (Object[] result3_black : JavaModel2UmlModelRuleImpl
-					.pattern_JavaModel2UmlModelRule_12_3_findcontext_blackBBBBB(sourceRefModel, externalModel, umlModel,
-							rootModel, commonTypes)) {
+					.pattern_JavaModel2UmlModelRule_12_3_findcontext_blackBBBBB(rootModel, umlModel, commonTypes,
+							sourceRefModel, externalModel)) {
 				Object[] result3_green = JavaModel2UmlModelRuleImpl
-						.pattern_JavaModel2UmlModelRule_12_3_findcontext_greenBBBBBFFFFF(sourceRefModel, externalModel,
-								umlModel, rootModel, commonTypes);
+						.pattern_JavaModel2UmlModelRule_12_3_findcontext_greenBBBBBFFFFF(rootModel, umlModel,
+								commonTypes, sourceRefModel, externalModel);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge rootModel__sourceRefModel____packagedElement = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge rootModel__externalModel____packagedElement = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge rootModel__umlModel____packagedElement = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge umlModel__commonTypes____packagedElement = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = JavaModel2UmlModelRuleImpl
 						.pattern_JavaModel2UmlModelRule_12_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
-								sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
+								rootModel, umlModel, commonTypes, sourceRefModel, externalModel);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sourceRefModel] = "
-							+ sourceRefModel + ", " + "[externalModel] = " + externalModel + ", " + "[umlModel] = "
-							+ umlModel + ", " + "[rootModel] = " + rootModel + ", " + "[commonTypes] = " + commonTypes
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[rootModel] = " + rootModel + ", "
+							+ "[umlModel] = " + umlModel + ", " + "[commonTypes] = " + commonTypes + ", "
+							+ "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -627,13 +623,13 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
+	public void registerObjectsToMatch_BWD(Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		match.registerObject("rootModel", rootModel);
+		match.registerObject("umlModel", umlModel);
+		match.registerObject("commonTypes", commonTypes);
 		match.registerObject("sourceRefModel", sourceRefModel);
 		match.registerObject("externalModel", externalModel);
-		match.registerObject("umlModel", umlModel);
-		match.registerObject("rootModel", rootModel);
-		match.registerObject("commonTypes", commonTypes);
 
 	}
 
@@ -642,8 +638,8 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -672,8 +668,8 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model sourceRefModel, Model externalModel,
-			Model umlModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -698,11 +694,11 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		eq.solve(var_javaModel_name, var_umlModel_name);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("rootModel", rootModel);
+		isApplicableMatch.registerObject("umlModel", umlModel);
+		isApplicableMatch.registerObject("commonTypes", commonTypes);
 		isApplicableMatch.registerObject("sourceRefModel", sourceRefModel);
 		isApplicableMatch.registerObject("externalModel", externalModel);
-		isApplicableMatch.registerObject("umlModel", umlModel);
-		isApplicableMatch.registerObject("rootModel", rootModel);
-		isApplicableMatch.registerObject("commonTypes", commonTypes);
 		return csp;
 	}
 
@@ -720,19 +716,19 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel,
-			EObject umlModel, EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2,
-			EObject javaModel, EObject jm2um3, EObject commonTypes) {
-		ruleresult.registerObject("sourceRefModel", sourceRefModel);
-		ruleresult.registerObject("externalModel", externalModel);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject rootModel, EObject umlModel,
+			EObject commonTypes, EObject javaModel, EObject jm2um2, EObject jm2um3, EObject jm2commonTypes,
+			EObject jm2um, EObject sourceRefModel, EObject externalModel) {
+		ruleresult.registerObject("rootModel", rootModel);
 		ruleresult.registerObject("umlModel", umlModel);
+		ruleresult.registerObject("commonTypes", commonTypes);
+		ruleresult.registerObject("javaModel", javaModel);
+		ruleresult.registerObject("jm2um2", jm2um2);
+		ruleresult.registerObject("jm2um3", jm2um3);
 		ruleresult.registerObject("jm2commonTypes", jm2commonTypes);
 		ruleresult.registerObject("jm2um", jm2um);
-		ruleresult.registerObject("rootModel", rootModel);
-		ruleresult.registerObject("jm2um2", jm2um2);
-		ruleresult.registerObject("javaModel", javaModel);
-		ruleresult.registerObject("jm2um3", jm2um3);
-		ruleresult.registerObject("commonTypes", commonTypes);
+		ruleresult.registerObject("sourceRefModel", sourceRefModel);
+		ruleresult.registerObject("externalModel", externalModel);
 
 	}
 
@@ -742,14 +738,13 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * @generated
 	 */
 	public boolean checkTypes_BWD(Match match) {
-		return true
+		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("rootModel").eClass()).equals("uml.Model.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("umlModel").eClass()).equals("uml.Model.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("commonTypes").eClass()).equals("uml.Package.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("sourceRefModel").eClass())
 						.equals("uml.Model.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("externalModel").eClass()).equals("uml.Model.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("umlModel").eClass()).equals("uml.Model.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("rootModel").eClass()).equals("uml.Model.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("commonTypes").eClass())
-						.equals("uml.Package.");
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("externalModel").eClass())
+						.equals("uml.Model.");
 	}
 
 	/**
@@ -757,7 +752,7 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MGravityModel_0(MGravityModel javaModel) {
+	public EObjectContainer isAppropriate_FWD_MGravityModel_13(MGravityModel javaModel) {
 
 		Object[] result1_bindingAndBlack = JavaModel2UmlModelRuleImpl
 				.pattern_JavaModel2UmlModelRule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -813,7 +808,7 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_48(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1054(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = JavaModel2UmlModelRuleImpl
 				.pattern_JavaModel2UmlModelRule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -830,11 +825,11 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		// ForEach 
 		for (Object[] result2_black : JavaModel2UmlModelRuleImpl
 				.pattern_JavaModel2UmlModelRule_21_2_testcorematchandDECs_blackFFFFFB(_edge_packagedElement)) {
-			Model sourceRefModel = (Model) result2_black[0];
-			Model externalModel = (Model) result2_black[1];
-			Model umlModel = (Model) result2_black[2];
-			Model rootModel = (Model) result2_black[3];
-			org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result2_black[4];
+			Model rootModel = (Model) result2_black[0];
+			Model umlModel = (Model) result2_black[1];
+			org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result2_black[2];
+			Model sourceRefModel = (Model) result2_black[3];
+			Model externalModel = (Model) result2_black[4];
 			Object[] result2_green = JavaModel2UmlModelRuleImpl
 					.pattern_JavaModel2UmlModelRule_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -842,7 +837,7 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 			// 
 			if (JavaModel2UmlModelRuleImpl
 					.pattern_JavaModel2UmlModelRule_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-							this, match, sourceRefModel, externalModel, umlModel, rootModel, commonTypes)) {
+							this, match, rootModel, umlModel, commonTypes, sourceRefModel, externalModel)) {
 				// 
 				if (JavaModel2UmlModelRuleImpl
 						.pattern_JavaModel2UmlModelRule_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -884,16 +879,6 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("sourceRefModel", "name", "source references", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
-
-		if (!__helper.hasExpectedValue("externalModel", "name", "externals", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
-
 		if (!__helper.hasExpectedValue("rootModel", "name", "root model", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
@@ -904,13 +889,23 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 			return ruleResult;
 		}
 
-		Variable var_umlModel_name = CSPFactoryHelper.eINSTANCE.createVariable("umlModel", true, csp);
-		var_umlModel_name.setValue(__helper.getValue("umlModel", "name"));
-		var_umlModel_name.setType("String");
+		if (!__helper.hasExpectedValue("sourceRefModel", "name", "source references", ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
+		if (!__helper.hasExpectedValue("externalModel", "name", "externals", ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
 
 		Variable var_javaModel_name = CSPFactoryHelper.eINSTANCE.createVariable("javaModel", true, csp);
 		var_javaModel_name.setValue(__helper.getValue("javaModel", "name"));
 		var_javaModel_name.setType("String");
+
+		Variable var_umlModel_name = CSPFactoryHelper.eINSTANCE.createVariable("umlModel", true, csp);
+		var_umlModel_name.setValue(__helper.getValue("umlModel", "name"));
+		var_umlModel_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -951,16 +946,6 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("sourceRefModel", "name", "source references", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
-
-		if (!__helper.hasExpectedValue("externalModel", "name", "externals", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
-
 		if (!__helper.hasExpectedValue("rootModel", "name", "root model", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
@@ -971,13 +956,23 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 			return ruleResult;
 		}
 
-		Variable var_umlModel_name = CSPFactoryHelper.eINSTANCE.createVariable("umlModel", true, csp);
-		var_umlModel_name.setValue(__helper.getValue("umlModel", "name"));
-		var_umlModel_name.setType("String");
+		if (!__helper.hasExpectedValue("sourceRefModel", "name", "source references", ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
+		if (!__helper.hasExpectedValue("externalModel", "name", "externals", ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
 
 		Variable var_javaModel_name = CSPFactoryHelper.eINSTANCE.createVariable("javaModel", true, csp);
 		var_javaModel_name.setValue(__helper.getValue("javaModel", "name"));
 		var_javaModel_name.setType("String");
+
+		Variable var_umlModel_name = CSPFactoryHelper.eINSTANCE.createVariable("umlModel", true, csp);
+		var_umlModel_name.setValue(__helper.getValue("umlModel", "name"));
+		var_umlModel_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1024,22 +1019,22 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Model sourceRefModel = (Model) result2_bindingAndBlack[0];
-		Model externalModel = (Model) result2_bindingAndBlack[1];
-		Model umlModel = (Model) result2_bindingAndBlack[2];
-		Model rootModel = (Model) result2_bindingAndBlack[3];
-		MGravityModel javaModel = (MGravityModel) result2_bindingAndBlack[4];
-		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[5];
+		Model rootModel = (Model) result2_bindingAndBlack[0];
+		Model umlModel = (Model) result2_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[2];
+		MGravityModel javaModel = (MGravityModel) result2_bindingAndBlack[3];
+		Model sourceRefModel = (Model) result2_bindingAndBlack[4];
+		Model externalModel = (Model) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, sourceRefModel,
-						externalModel, umlModel, rootModel, javaModel, commonTypes, sourceMatch, targetMatch);
+				.pattern_JavaModel2UmlModelRule_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, rootModel, umlModel,
+						commonTypes, javaModel, sourceRefModel, externalModel, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[sourceRefModel] = " + sourceRefModel + ", " + "[externalModel] = " + externalModel + ", "
-					+ "[umlModel] = " + umlModel + ", " + "[rootModel] = " + rootModel + ", " + "[javaModel] = "
-					+ javaModel + ", " + "[commonTypes] = " + commonTypes + ", " + "[sourceMatch] = " + sourceMatch
-					+ ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[rootModel] = " + rootModel + ", " + "[umlModel] = " + umlModel + ", " + "[commonTypes] = "
+					+ commonTypes + ", " + "[javaModel] = " + javaModel + ", " + "[sourceRefModel] = " + sourceRefModel
+					+ ", " + "[externalModel] = " + externalModel + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
@@ -1052,20 +1047,20 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = JavaModel2UmlModelRuleImpl
-						.pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_blackBBBBBBB(sourceRefModel,
-								externalModel, umlModel, rootModel, javaModel, commonTypes, ccMatch);
+						.pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_blackBBBBBBB(rootModel, umlModel,
+								commonTypes, javaModel, sourceRefModel, externalModel, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceRefModel] = "
-							+ sourceRefModel + ", " + "[externalModel] = " + externalModel + ", " + "[umlModel] = "
-							+ umlModel + ", " + "[rootModel] = " + rootModel + ", " + "[javaModel] = " + javaModel
-							+ ", " + "[commonTypes] = " + commonTypes + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[rootModel] = "
+							+ rootModel + ", " + "[umlModel] = " + umlModel + ", " + "[commonTypes] = " + commonTypes
+							+ ", " + "[javaModel] = " + javaModel + ", " + "[sourceRefModel] = " + sourceRefModel + ", "
+							+ "[externalModel] = " + externalModel + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_greenBBBFFFBFBB(
-						sourceRefModel, externalModel, umlModel, javaModel, commonTypes, ccMatch);
-				//nothing JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result6_green[3];
-				//nothing JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result6_green[4];
-				//nothing JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result6_green[5];
-				//nothing JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result6_green[7];
+				JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_greenBBBFFFFBBB(
+						umlModel, commonTypes, javaModel, sourceRefModel, externalModel, ccMatch);
+				//nothing JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result6_green[3];
+				//nothing JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result6_green[4];
+				//nothing JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result6_green[5];
+				//nothing JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result6_green[6];
 
 				Object[] result7_black = JavaModel2UmlModelRuleImpl
 						.pattern_JavaModel2UmlModelRule_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1088,8 +1083,8 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			MGravityModel javaModel, org.eclipse.uml2.uml.Package commonTypes, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+			MGravityModel javaModel, Model sourceRefModel, Model externalModel, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1145,14 +1140,14 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes) {// 
+	public boolean checkDEC_BWD(Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+			Model sourceRefModel, Model externalModel) {// 
 		Object[] result1_black = JavaModel2UmlModelRuleImpl
-				.pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_blackBBBBB(sourceRefModel, externalModel, umlModel,
-						rootModel, commonTypes);
+				.pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_blackBBBBB(rootModel, umlModel, commonTypes,
+						sourceRefModel, externalModel);
 		if (result1_black != null) {
-			JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_greenBBBB(sourceRefModel,
-					externalModel, rootModel, commonTypes);
+			JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_greenBBBB(rootModel,
+					commonTypes, sourceRefModel, externalModel);
 
 			return JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_28_2_expressionF();
 		} else {
@@ -1202,16 +1197,16 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 				}
 				JavaModel2UmlModelRuleImpl.pattern_JavaModel2UmlModelRule_29_6_perform_greenFFFFFFFFFFBB(ruleResult,
 						csp);
-				//nothing Model sourceRefModel = (Model) result6_green[0];
-				//nothing Model externalModel = (Model) result6_green[1];
-				//nothing Model umlModel = (Model) result6_green[2];
-				//nothing JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result6_green[3];
-				//nothing JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result6_green[4];
-				//nothing Model rootModel = (Model) result6_green[5];
-				//nothing JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result6_green[6];
-				//nothing MGravityModel javaModel = (MGravityModel) result6_green[7];
-				//nothing JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result6_green[8];
-				//nothing org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result6_green[9];
+				//nothing Model rootModel = (Model) result6_green[0];
+				//nothing Model umlModel = (Model) result6_green[1];
+				//nothing org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result6_green[2];
+				//nothing MGravityModel javaModel = (MGravityModel) result6_green[3];
+				//nothing JavaModel2UMLPackage jm2um2 = (JavaModel2UMLPackage) result6_green[4];
+				//nothing JavaModel2UMLPackage jm2um3 = (JavaModel2UMLPackage) result6_green[5];
+				//nothing JavaModel2UMLPackage jm2commonTypes = (JavaModel2UMLPackage) result6_green[6];
+				//nothing JavaModel2UMLPackage jm2um = (JavaModel2UMLPackage) result6_green[7];
+				//nothing Model sourceRefModel = (Model) result6_green[8];
+				//nothing Model externalModel = (Model) result6_green[9];
 
 			} else {
 			}
@@ -1270,93 +1265,95 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_FWD__MATCH_MGRAVITYMODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (MGravityModel) arguments.get(1));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MGRAVITYMODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MGravityModel) arguments.get(1));
-			return null;
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MGRAVITYMODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MGravityModel) arguments.get(1));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MGRAVITYMODEL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MGravityModel) arguments.get(1));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-			return null;
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_BWD__MATCH_MODEL_MODEL_MODEL_MODEL_PACKAGE:
-			return isAppropriate_BWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2),
-					(Model) arguments.get(3), (Model) arguments.get(4),
-					(org.eclipse.uml2.uml.Package) arguments.get(5));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_MODEL_MODEL_MODEL_MODEL_PACKAGE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2),
-					(Model) arguments.get(3), (Model) arguments.get(4),
-					(org.eclipse.uml2.uml.Package) arguments.get(5));
-			return null;
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_MODEL_MODEL_MODEL_MODEL_PACKAGE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(Model) arguments.get(2), (Model) arguments.get(3), (Model) arguments.get(4),
-					(org.eclipse.uml2.uml.Package) arguments.get(5));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_MODEL_MODEL_PACKAGE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(Model) arguments.get(2), (Model) arguments.get(3), (Model) arguments.get(4),
-					(org.eclipse.uml2.uml.Package) arguments.get(5));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-			return null;
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_FWD_MGRAVITY_MODEL_0__MGRAVITYMODEL:
-			return isAppropriate_FWD_MGravityModel_0((MGravityModel) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_48__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_48((EMoflonEdge) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_MODEL_MODEL_MGRAVITYMODEL_PACKAGE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Model) arguments.get(0), (Model) arguments.get(1),
-					(Model) arguments.get(2), (Model) arguments.get(3), (MGravityModel) arguments.get(4),
-					(org.eclipse.uml2.uml.Package) arguments.get(5), (Match) arguments.get(6),
-					(Match) arguments.get(7));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_DEC_FWD__MGRAVITYMODEL:
-			return checkDEC_FWD((MGravityModel) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_DEC_BWD__MODEL_MODEL_MODEL_MODEL_PACKAGE:
-			return checkDEC_BWD((Model) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2),
-					(Model) arguments.get(3), (org.eclipse.uml2.uml.Package) arguments.get(4));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_FWD__MATCH_MGRAVITYMODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (MGravityModel) arguments.get(1));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MGRAVITYMODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MGravityModel) arguments.get(1));
+				return null;
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MGRAVITYMODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MGravityModel) arguments.get(1));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MGRAVITYMODEL:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MGravityModel) arguments.get(1));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+				return null;
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_BWD__MATCH_MODEL_MODEL_PACKAGE_MODEL_MODEL:
+				return isAppropriate_BWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2),
+						(org.eclipse.uml2.uml.Package) arguments.get(3), (Model) arguments.get(4),
+						(Model) arguments.get(5));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_MODEL_MODEL_PACKAGE_MODEL_MODEL:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2),
+						(org.eclipse.uml2.uml.Package) arguments.get(3), (Model) arguments.get(4),
+						(Model) arguments.get(5));
+				return null;
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_MODEL_MODEL_PACKAGE_MODEL_MODEL:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Model) arguments.get(1),
+						(Model) arguments.get(2), (org.eclipse.uml2.uml.Package) arguments.get(3),
+						(Model) arguments.get(4), (Model) arguments.get(5));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_PACKAGE_MODEL_MODEL:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+						(Model) arguments.get(2), (org.eclipse.uml2.uml.Package) arguments.get(3),
+						(Model) arguments.get(4), (Model) arguments.get(5));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+				return null;
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_FWD_MGRAVITY_MODEL_13__MGRAVITYMODEL:
+				return isAppropriate_FWD_MGravityModel_13((MGravityModel) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1054__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1054((EMoflonEdge) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_PACKAGE_MGRAVITYMODEL_MODEL_MODEL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Model) arguments.get(0), (Model) arguments.get(1),
+						(org.eclipse.uml2.uml.Package) arguments.get(2), (MGravityModel) arguments.get(3),
+						(Model) arguments.get(4), (Model) arguments.get(5), (Match) arguments.get(6),
+						(Match) arguments.get(7));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_DEC_FWD__MGRAVITYMODEL:
+				return checkDEC_FWD((MGravityModel) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___CHECK_DEC_BWD__MODEL_MODEL_PACKAGE_MODEL_MODEL:
+				return checkDEC_BWD((Model) arguments.get(0), (Model) arguments.get(1),
+						(org.eclipse.uml2.uml.Package) arguments.get(2), (Model) arguments.get(3),
+						(Model) arguments.get(4));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.JAVA_MODEL2_UML_MODEL_RULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1476,68 +1473,68 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return null;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_1_1_performtransformation_greenFFFFFFFBFFB(
+	public static final Object[] pattern_JavaModel2UmlModelRule_1_1_performtransformation_greenFFFBFFFFFFB(
 			MGravityModel javaModel, CSP csp) {
-		Model sourceRefModel = UMLFactory.eINSTANCE.createModel();
-		Model externalModel = UMLFactory.eINSTANCE.createModel();
-		Model umlModel = UMLFactory.eINSTANCE.createModel();
-		JavaModel2UMLPackage jm2commonTypes = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		JavaModel2UMLPackage jm2um = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		Model rootModel = UMLFactory.eINSTANCE.createModel();
+		Model umlModel = UMLFactory.eINSTANCE.createModel();
+		org.eclipse.uml2.uml.Package commonTypes = UMLFactory.eINSTANCE.createPackage();
 		JavaModel2UMLPackage jm2um2 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		JavaModel2UMLPackage jm2um3 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		org.eclipse.uml2.uml.Package commonTypes = UMLFactory.eINSTANCE.createPackage();
+		JavaModel2UMLPackage jm2commonTypes = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		JavaModel2UMLPackage jm2um = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		Model sourceRefModel = UMLFactory.eINSTANCE.createModel();
+		Model externalModel = UMLFactory.eINSTANCE.createModel();
+		String rootModel_name_prime = "root model";
+		Object _localVariable_0 = csp.getValue("umlModel", "name");
+		String commonTypes_name_prime = "Common Java datatypes";
 		String sourceRefModel_name_prime = "source references";
 		String externalModel_name_prime = "externals";
-		Object _localVariable_0 = csp.getValue("umlModel", "name");
-		String rootModel_name_prime = "root model";
-		String commonTypes_name_prime = "Common Java datatypes";
+		rootModel.getPackagedElements().add(umlModel);
+		umlModel.getPackagedElements().add(commonTypes);
+		jm2um2.setSource(javaModel);
+		jm2um3.setSource(javaModel);
 		jm2commonTypes.setSource(javaModel);
+		jm2commonTypes.setTarget(commonTypes);
 		jm2um.setTarget(umlModel);
 		jm2um.setSource(javaModel);
 		rootModel.getPackagedElements().add(sourceRefModel);
-		rootModel.getPackagedElements().add(externalModel);
-		rootModel.getPackagedElements().add(umlModel);
-		jm2um2.setTarget(externalModel);
-		jm2um2.setSource(javaModel);
 		jm2um3.setTarget(sourceRefModel);
-		jm2um3.setSource(javaModel);
-		umlModel.getPackagedElements().add(commonTypes);
-		jm2commonTypes.setTarget(commonTypes);
+		rootModel.getPackagedElements().add(externalModel);
+		jm2um2.setTarget(externalModel);
+		rootModel.setName(rootModel_name_prime);
+		String umlModel_name_prime = (String) _localVariable_0;
+		commonTypes.setName(commonTypes_name_prime);
 		sourceRefModel.setName(sourceRefModel_name_prime);
 		externalModel.setName(externalModel_name_prime);
-		String umlModel_name_prime = (String) _localVariable_0;
-		rootModel.setName(rootModel_name_prime);
-		commonTypes.setName(commonTypes_name_prime);
 		umlModel.setName(umlModel_name_prime);
-		return new Object[] { sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2,
-				javaModel, jm2um3, commonTypes, csp };
+		return new Object[] { rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um,
+				sourceRefModel, externalModel, csp };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_1_2_collecttranslatedelements_blackBBBBBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, JavaModel2UMLPackage jm2commonTypes,
-			JavaModel2UMLPackage jm2um, Model rootModel, JavaModel2UMLPackage jm2um2, MGravityModel javaModel,
-			JavaModel2UMLPackage jm2um3, org.eclipse.uml2.uml.Package commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!jm2commonTypes.equals(jm2um)) {
-							if (!jm2commonTypes.equals(jm2um2)) {
-								if (!jm2commonTypes.equals(jm2um3)) {
-									if (!jm2um.equals(jm2um2)) {
-										if (!jm2um.equals(jm2um3)) {
-											if (!rootModel.equals(sourceRefModel)) {
-												if (!rootModel.equals(umlModel)) {
-													if (!jm2um2.equals(jm2um3)) {
-														if (!commonTypes.equals(sourceRefModel)) {
-															if (!commonTypes.equals(externalModel)) {
-																if (!commonTypes.equals(umlModel)) {
-																	if (!commonTypes.equals(rootModel)) {
-																		return new Object[] { sourceRefModel,
-																				externalModel, umlModel, jm2commonTypes,
-																				jm2um, rootModel, jm2um2, javaModel,
-																				jm2um3, commonTypes };
+			Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel,
+			JavaModel2UMLPackage jm2um2, JavaModel2UMLPackage jm2um3, JavaModel2UMLPackage jm2commonTypes,
+			JavaModel2UMLPackage jm2um, Model sourceRefModel, Model externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!jm2um2.equals(jm2um3)) {
+									if (!jm2commonTypes.equals(jm2um2)) {
+										if (!jm2commonTypes.equals(jm2um3)) {
+											if (!jm2commonTypes.equals(jm2um)) {
+												if (!jm2um.equals(jm2um2)) {
+													if (!jm2um.equals(jm2um3)) {
+														if (!sourceRefModel.equals(umlModel)) {
+															if (!externalModel.equals(rootModel)) {
+																if (!externalModel.equals(umlModel)) {
+																	if (!externalModel.equals(sourceRefModel)) {
+																		return new Object[] { rootModel, umlModel,
+																				commonTypes, javaModel, jm2um2, jm2um3,
+																				jm2commonTypes, jm2um, sourceRefModel,
+																				externalModel };
 																	}
 																}
 															}
@@ -1558,110 +1555,109 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_1_2_collecttranslatedelements_greenFBBBBBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, JavaModel2UMLPackage jm2commonTypes,
-			JavaModel2UMLPackage jm2um, Model rootModel, JavaModel2UMLPackage jm2um2, MGravityModel javaModel,
-			JavaModel2UMLPackage jm2um3, org.eclipse.uml2.uml.Package commonTypes) {
+			Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel,
+			JavaModel2UMLPackage jm2um2, JavaModel2UMLPackage jm2um3, JavaModel2UMLPackage jm2commonTypes,
+			JavaModel2UMLPackage jm2um, Model sourceRefModel, Model externalModel) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(sourceRefModel);
-		ruleresult.getCreatedElements().add(externalModel);
+		ruleresult.getCreatedElements().add(rootModel);
 		ruleresult.getCreatedElements().add(umlModel);
+		ruleresult.getCreatedElements().add(commonTypes);
+		ruleresult.getTranslatedElements().add(javaModel);
+		ruleresult.getCreatedLinkElements().add(jm2um2);
+		ruleresult.getCreatedLinkElements().add(jm2um3);
 		ruleresult.getCreatedLinkElements().add(jm2commonTypes);
 		ruleresult.getCreatedLinkElements().add(jm2um);
-		ruleresult.getCreatedElements().add(rootModel);
-		ruleresult.getCreatedLinkElements().add(jm2um2);
-		ruleresult.getTranslatedElements().add(javaModel);
-		ruleresult.getCreatedLinkElements().add(jm2um3);
-		ruleresult.getCreatedElements().add(commonTypes);
-		return new Object[] { ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel,
-				jm2um2, javaModel, jm2um3, commonTypes };
+		ruleresult.getCreatedElements().add(sourceRefModel);
+		ruleresult.getCreatedElements().add(externalModel);
+		return new Object[] { ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes,
+				jm2um, sourceRefModel, externalModel };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_1_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel, EObject umlModel,
-			EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2, EObject javaModel, EObject jm2um3,
-			EObject commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(jm2commonTypes)) {
-						if (!externalModel.equals(jm2um)) {
-							if (!externalModel.equals(rootModel)) {
-								if (!externalModel.equals(jm2um2)) {
-									if (!externalModel.equals(javaModel)) {
-										if (!externalModel.equals(jm2um3)) {
-											if (!jm2commonTypes.equals(sourceRefModel)) {
-												if (!jm2commonTypes.equals(umlModel)) {
-													if (!jm2commonTypes.equals(jm2um)) {
-														if (!jm2commonTypes.equals(rootModel)) {
-															if (!jm2commonTypes.equals(jm2um2)) {
-																if (!jm2commonTypes.equals(jm2um3)) {
-																	if (!jm2um.equals(sourceRefModel)) {
-																		if (!jm2um.equals(umlModel)) {
-																			if (!jm2um.equals(rootModel)) {
-																				if (!jm2um.equals(jm2um2)) {
-																					if (!jm2um.equals(jm2um3)) {
-																						if (!rootModel.equals(
-																								sourceRefModel)) {
-																							if (!rootModel
-																									.equals(umlModel)) {
-																								if (!jm2um2.equals(
-																										sourceRefModel)) {
-																									if (!jm2um2.equals(
+			PerformRuleResult ruleresult, EObject rootModel, EObject umlModel, EObject commonTypes, EObject javaModel,
+			EObject jm2um2, EObject jm2um3, EObject jm2commonTypes, EObject jm2um, EObject sourceRefModel,
+			EObject externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(javaModel)) {
+							if (!commonTypes.equals(jm2um2)) {
+								if (!commonTypes.equals(jm2um3)) {
+									if (!commonTypes.equals(jm2commonTypes)) {
+										if (!commonTypes.equals(jm2um)) {
+											if (!commonTypes.equals(sourceRefModel)) {
+												if (!commonTypes.equals(externalModel)) {
+													if (!javaModel.equals(rootModel)) {
+														if (!javaModel.equals(umlModel)) {
+															if (!javaModel.equals(jm2um2)) {
+																if (!javaModel.equals(jm2um3)) {
+																	if (!javaModel.equals(jm2commonTypes)) {
+																		if (!javaModel.equals(jm2um)) {
+																			if (!javaModel.equals(sourceRefModel)) {
+																				if (!jm2um2.equals(rootModel)) {
+																					if (!jm2um2.equals(umlModel)) {
+																						if (!jm2um2.equals(jm2um3)) {
+																							if (!jm2um2.equals(
+																									sourceRefModel)) {
+																								if (!jm2um3.equals(
+																										rootModel)) {
+																									if (!jm2um3.equals(
 																											umlModel)) {
-																										if (!jm2um2
-																												.equals(rootModel)) {
-																											if (!jm2um2
-																													.equals(jm2um3)) {
-																												if (!javaModel
-																														.equals(sourceRefModel)) {
-																													if (!javaModel
-																															.equals(umlModel)) {
-																														if (!javaModel
-																																.equals(jm2commonTypes)) {
-																															if (!javaModel
+																										if (!jm2um3
+																												.equals(sourceRefModel)) {
+																											if (!jm2commonTypes
+																													.equals(rootModel)) {
+																												if (!jm2commonTypes
+																														.equals(umlModel)) {
+																													if (!jm2commonTypes
+																															.equals(jm2um2)) {
+																														if (!jm2commonTypes
+																																.equals(jm2um3)) {
+																															if (!jm2commonTypes
 																																	.equals(jm2um)) {
-																																if (!javaModel
-																																		.equals(rootModel)) {
-																																	if (!javaModel
-																																			.equals(jm2um2)) {
-																																		if (!javaModel
-																																				.equals(jm2um3)) {
-																																			if (!jm2um3
-																																					.equals(sourceRefModel)) {
-																																				if (!jm2um3
-																																						.equals(umlModel)) {
-																																					if (!jm2um3
-																																							.equals(rootModel)) {
-																																						if (!commonTypes
-																																								.equals(sourceRefModel)) {
-																																							if (!commonTypes
-																																									.equals(externalModel)) {
-																																								if (!commonTypes
+																																if (!jm2commonTypes
+																																		.equals(sourceRefModel)) {
+																																	if (!jm2um
+																																			.equals(rootModel)) {
+																																		if (!jm2um
+																																				.equals(umlModel)) {
+																																			if (!jm2um
+																																					.equals(jm2um2)) {
+																																				if (!jm2um
+																																						.equals(jm2um3)) {
+																																					if (!jm2um
+																																							.equals(sourceRefModel)) {
+																																						if (!sourceRefModel
+																																								.equals(umlModel)) {
+																																							if (!externalModel
+																																									.equals(rootModel)) {
+																																								if (!externalModel
 																																										.equals(umlModel)) {
-																																									if (!commonTypes
-																																											.equals(jm2commonTypes)) {
-																																										if (!commonTypes
-																																												.equals(jm2um)) {
-																																											if (!commonTypes
-																																													.equals(rootModel)) {
-																																												if (!commonTypes
-																																														.equals(jm2um2)) {
-																																													if (!commonTypes
-																																															.equals(javaModel)) {
-																																														if (!commonTypes
-																																																.equals(jm2um3)) {
+																																									if (!externalModel
+																																											.equals(javaModel)) {
+																																										if (!externalModel
+																																												.equals(jm2um2)) {
+																																											if (!externalModel
+																																													.equals(jm2um3)) {
+																																												if (!externalModel
+																																														.equals(jm2commonTypes)) {
+																																													if (!externalModel
+																																															.equals(jm2um)) {
+																																														if (!externalModel
+																																																.equals(sourceRefModel)) {
 																																															return new Object[] {
 																																																	ruleresult,
-																																																	sourceRefModel,
-																																																	externalModel,
+																																																	rootModel,
 																																																	umlModel,
+																																																	commonTypes,
+																																																	javaModel,
+																																																	jm2um2,
+																																																	jm2um3,
 																																																	jm2commonTypes,
 																																																	jm2um,
-																																																	rootModel,
-																																																	jm2um2,
-																																																	javaModel,
-																																																	jm2um3,
-																																																	commonTypes };
+																																																	sourceRefModel,
+																																																	externalModel };
 																																														}
 																																													}
 																																												}
@@ -1711,98 +1707,98 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_1_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel, EObject umlModel,
-			EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2, EObject javaModel, EObject jm2um3,
-			EObject commonTypes) {
-		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um__umlModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge rootModel__sourceRefModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge rootModel__externalModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um2__externalModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject rootModel, EObject umlModel, EObject commonTypes, EObject javaModel,
+			EObject jm2um2, EObject jm2um3, EObject jm2commonTypes, EObject jm2um, EObject sourceRefModel,
+			EObject externalModel) {
 		EMoflonEdge rootModel__umlModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um2__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um3__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge rootModel__sourceRefModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2commonTypes__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2commonTypes__commonTypes____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um__umlModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um3__sourceRefModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um2__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2commonTypes__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um3__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2commonTypes__commonTypes____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge rootModel__externalModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um2__externalModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "JavaModel2UmlModelRule";
-		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
-		String jm2um__umlModel____target_name_prime = "target";
-		String rootModel__sourceRefModel____packagedElement_name_prime = "packagedElement";
-		String rootModel__externalModel____packagedElement_name_prime = "packagedElement";
-		String jm2um2__externalModel____target_name_prime = "target";
 		String rootModel__umlModel____packagedElement_name_prime = "packagedElement";
+		String jm2um2__javaModel____source_name_prime = "source";
+		String jm2um3__javaModel____source_name_prime = "source";
+		String rootModel__sourceRefModel____packagedElement_name_prime = "packagedElement";
+		String jm2commonTypes__javaModel____source_name_prime = "source";
+		String jm2commonTypes__commonTypes____target_name_prime = "target";
+		String jm2um__umlModel____target_name_prime = "target";
 		String jm2um__javaModel____source_name_prime = "source";
 		String jm2um3__sourceRefModel____target_name_prime = "target";
-		String jm2um2__javaModel____source_name_prime = "source";
-		String jm2commonTypes__javaModel____source_name_prime = "source";
-		String jm2um3__javaModel____source_name_prime = "source";
-		String jm2commonTypes__commonTypes____target_name_prime = "target";
-		umlModel__commonTypes____packagedElement.setSrc(umlModel);
-		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
-		ruleresult.getCreatedEdges().add(umlModel__commonTypes____packagedElement);
-		jm2um__umlModel____target.setSrc(jm2um);
-		jm2um__umlModel____target.setTrg(umlModel);
-		ruleresult.getCreatedEdges().add(jm2um__umlModel____target);
-		rootModel__sourceRefModel____packagedElement.setSrc(rootModel);
-		rootModel__sourceRefModel____packagedElement.setTrg(sourceRefModel);
-		ruleresult.getCreatedEdges().add(rootModel__sourceRefModel____packagedElement);
-		rootModel__externalModel____packagedElement.setSrc(rootModel);
-		rootModel__externalModel____packagedElement.setTrg(externalModel);
-		ruleresult.getCreatedEdges().add(rootModel__externalModel____packagedElement);
-		jm2um2__externalModel____target.setSrc(jm2um2);
-		jm2um2__externalModel____target.setTrg(externalModel);
-		ruleresult.getCreatedEdges().add(jm2um2__externalModel____target);
+		String rootModel__externalModel____packagedElement_name_prime = "packagedElement";
+		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
+		String jm2um2__externalModel____target_name_prime = "target";
 		rootModel__umlModel____packagedElement.setSrc(rootModel);
 		rootModel__umlModel____packagedElement.setTrg(umlModel);
 		ruleresult.getCreatedEdges().add(rootModel__umlModel____packagedElement);
+		jm2um2__javaModel____source.setSrc(jm2um2);
+		jm2um2__javaModel____source.setTrg(javaModel);
+		ruleresult.getCreatedEdges().add(jm2um2__javaModel____source);
+		jm2um3__javaModel____source.setSrc(jm2um3);
+		jm2um3__javaModel____source.setTrg(javaModel);
+		ruleresult.getCreatedEdges().add(jm2um3__javaModel____source);
+		rootModel__sourceRefModel____packagedElement.setSrc(rootModel);
+		rootModel__sourceRefModel____packagedElement.setTrg(sourceRefModel);
+		ruleresult.getCreatedEdges().add(rootModel__sourceRefModel____packagedElement);
+		jm2commonTypes__javaModel____source.setSrc(jm2commonTypes);
+		jm2commonTypes__javaModel____source.setTrg(javaModel);
+		ruleresult.getCreatedEdges().add(jm2commonTypes__javaModel____source);
+		jm2commonTypes__commonTypes____target.setSrc(jm2commonTypes);
+		jm2commonTypes__commonTypes____target.setTrg(commonTypes);
+		ruleresult.getCreatedEdges().add(jm2commonTypes__commonTypes____target);
+		jm2um__umlModel____target.setSrc(jm2um);
+		jm2um__umlModel____target.setTrg(umlModel);
+		ruleresult.getCreatedEdges().add(jm2um__umlModel____target);
 		jm2um__javaModel____source.setSrc(jm2um);
 		jm2um__javaModel____source.setTrg(javaModel);
 		ruleresult.getCreatedEdges().add(jm2um__javaModel____source);
 		jm2um3__sourceRefModel____target.setSrc(jm2um3);
 		jm2um3__sourceRefModel____target.setTrg(sourceRefModel);
 		ruleresult.getCreatedEdges().add(jm2um3__sourceRefModel____target);
-		jm2um2__javaModel____source.setSrc(jm2um2);
-		jm2um2__javaModel____source.setTrg(javaModel);
-		ruleresult.getCreatedEdges().add(jm2um2__javaModel____source);
-		jm2commonTypes__javaModel____source.setSrc(jm2commonTypes);
-		jm2commonTypes__javaModel____source.setTrg(javaModel);
-		ruleresult.getCreatedEdges().add(jm2commonTypes__javaModel____source);
-		jm2um3__javaModel____source.setSrc(jm2um3);
-		jm2um3__javaModel____source.setTrg(javaModel);
-		ruleresult.getCreatedEdges().add(jm2um3__javaModel____source);
-		jm2commonTypes__commonTypes____target.setSrc(jm2commonTypes);
-		jm2commonTypes__commonTypes____target.setTrg(commonTypes);
-		ruleresult.getCreatedEdges().add(jm2commonTypes__commonTypes____target);
+		rootModel__externalModel____packagedElement.setSrc(rootModel);
+		rootModel__externalModel____packagedElement.setTrg(externalModel);
+		ruleresult.getCreatedEdges().add(rootModel__externalModel____packagedElement);
+		umlModel__commonTypes____packagedElement.setSrc(umlModel);
+		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
+		ruleresult.getCreatedEdges().add(umlModel__commonTypes____packagedElement);
+		jm2um2__externalModel____target.setSrc(jm2um2);
+		jm2um2__externalModel____target.setTrg(externalModel);
+		ruleresult.getCreatedEdges().add(jm2um2__externalModel____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
-		jm2um__umlModel____target.setName(jm2um__umlModel____target_name_prime);
-		rootModel__sourceRefModel____packagedElement.setName(rootModel__sourceRefModel____packagedElement_name_prime);
-		rootModel__externalModel____packagedElement.setName(rootModel__externalModel____packagedElement_name_prime);
-		jm2um2__externalModel____target.setName(jm2um2__externalModel____target_name_prime);
 		rootModel__umlModel____packagedElement.setName(rootModel__umlModel____packagedElement_name_prime);
+		jm2um2__javaModel____source.setName(jm2um2__javaModel____source_name_prime);
+		jm2um3__javaModel____source.setName(jm2um3__javaModel____source_name_prime);
+		rootModel__sourceRefModel____packagedElement.setName(rootModel__sourceRefModel____packagedElement_name_prime);
+		jm2commonTypes__javaModel____source.setName(jm2commonTypes__javaModel____source_name_prime);
+		jm2commonTypes__commonTypes____target.setName(jm2commonTypes__commonTypes____target_name_prime);
+		jm2um__umlModel____target.setName(jm2um__umlModel____target_name_prime);
 		jm2um__javaModel____source.setName(jm2um__javaModel____source_name_prime);
 		jm2um3__sourceRefModel____target.setName(jm2um3__sourceRefModel____target_name_prime);
-		jm2um2__javaModel____source.setName(jm2um2__javaModel____source_name_prime);
-		jm2commonTypes__javaModel____source.setName(jm2commonTypes__javaModel____source_name_prime);
-		jm2um3__javaModel____source.setName(jm2um3__javaModel____source_name_prime);
-		jm2commonTypes__commonTypes____target.setName(jm2commonTypes__commonTypes____target_name_prime);
-		return new Object[] { ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel,
-				jm2um2, javaModel, jm2um3, commonTypes, umlModel__commonTypes____packagedElement,
-				jm2um__umlModel____target, rootModel__sourceRefModel____packagedElement,
-				rootModel__externalModel____packagedElement, jm2um2__externalModel____target,
-				rootModel__umlModel____packagedElement, jm2um__javaModel____source, jm2um3__sourceRefModel____target,
-				jm2um2__javaModel____source, jm2commonTypes__javaModel____source, jm2um3__javaModel____source,
-				jm2commonTypes__commonTypes____target };
+		rootModel__externalModel____packagedElement.setName(rootModel__externalModel____packagedElement_name_prime);
+		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
+		jm2um2__externalModel____target.setName(jm2um2__externalModel____target_name_prime);
+		return new Object[] { ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes,
+				jm2um, sourceRefModel, externalModel, rootModel__umlModel____packagedElement,
+				jm2um2__javaModel____source, jm2um3__javaModel____source, rootModel__sourceRefModel____packagedElement,
+				jm2commonTypes__javaModel____source, jm2commonTypes__commonTypes____target, jm2um__umlModel____target,
+				jm2um__javaModel____source, jm2um3__sourceRefModel____target,
+				rootModel__externalModel____packagedElement, umlModel__commonTypes____packagedElement,
+				jm2um2__externalModel____target };
 	}
 
 	public static final void pattern_JavaModel2UmlModelRule_1_5_registerobjects_expressionBBBBBBBBBBBB(
-			JavaModel2UmlModelRule _this, PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel,
-			EObject umlModel, EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2,
-			EObject javaModel, EObject jm2um3, EObject commonTypes) {
-		_this.registerObjects_FWD(ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel,
-				jm2um2, javaModel, jm2um3, commonTypes);
+			JavaModel2UmlModelRule _this, PerformRuleResult ruleresult, EObject rootModel, EObject umlModel,
+			EObject commonTypes, EObject javaModel, EObject jm2um2, EObject jm2um3, EObject jm2commonTypes,
+			EObject jm2um, EObject sourceRefModel, EObject externalModel) {
+		_this.registerObjects_FWD(ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3,
+				jm2commonTypes, jm2um, sourceRefModel, externalModel);
 
 	}
 
@@ -1953,20 +1949,20 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_10_1_initialbindings_blackBBBBBBB(
-			JavaModel2UmlModelRule _this, Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												return new Object[] { _this, match, sourceRefModel, externalModel,
-														umlModel, rootModel, commonTypes };
+			JavaModel2UmlModelRule _this, Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												return new Object[] { _this, match, rootModel, umlModel, commonTypes,
+														sourceRefModel, externalModel };
 											}
 										}
 									}
@@ -1981,13 +1977,13 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_10_2_SolveCSP_bindingFBBBBBBB(
-			JavaModel2UmlModelRule _this, Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, sourceRefModel, externalModel, umlModel,
-				rootModel, commonTypes);
+			JavaModel2UmlModelRule _this, Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, rootModel, umlModel, commonTypes, sourceRefModel,
+				externalModel);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, sourceRefModel, externalModel, umlModel, rootModel, commonTypes };
+			return new Object[] { csp, _this, match, rootModel, umlModel, commonTypes, sourceRefModel, externalModel };
 		}
 		return null;
 	}
@@ -1997,10 +1993,10 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_10_2_SolveCSP_bindingAndBlackFBBBBBBB(
-			JavaModel2UmlModelRule _this, Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
+			JavaModel2UmlModelRule _this, Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
 		Object[] result_pattern_JavaModel2UmlModelRule_10_2_SolveCSP_binding = pattern_JavaModel2UmlModelRule_10_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
+				_this, match, rootModel, umlModel, commonTypes, sourceRefModel, externalModel);
 		if (result_pattern_JavaModel2UmlModelRule_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaModel2UmlModelRule_10_2_SolveCSP_binding[0];
 
@@ -2008,8 +2004,8 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 					csp);
 			if (result_pattern_JavaModel2UmlModelRule_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, sourceRefModel, externalModel, umlModel, rootModel,
-						commonTypes };
+				return new Object[] { csp, _this, match, rootModel, umlModel, commonTypes, sourceRefModel,
+						externalModel };
 			}
 		}
 		return null;
@@ -2023,20 +2019,20 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_10_4_collectelementstobetranslated_blackBBBBBB(
-			Match match, Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												return new Object[] { match, sourceRefModel, externalModel, umlModel,
-														rootModel, commonTypes };
+			Match match, Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+			Model sourceRefModel, Model externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												return new Object[] { match, rootModel, umlModel, commonTypes,
+														sourceRefModel, externalModel };
 											}
 										}
 									}
@@ -2051,57 +2047,57 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_10_4_collectelementstobetranslated_greenBBBBBBFFFF(
-			Match match, Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes) {
-		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+			Model sourceRefModel, Model externalModel) {
+		EMoflonEdge rootModel__umlModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge rootModel__sourceRefModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge rootModel__externalModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge rootModel__umlModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		match.getToBeTranslatedNodes().add(rootModel);
+		match.getToBeTranslatedNodes().add(umlModel);
+		match.getToBeTranslatedNodes().add(commonTypes);
 		match.getToBeTranslatedNodes().add(sourceRefModel);
 		match.getToBeTranslatedNodes().add(externalModel);
-		match.getToBeTranslatedNodes().add(umlModel);
-		match.getToBeTranslatedNodes().add(rootModel);
-		match.getToBeTranslatedNodes().add(commonTypes);
-		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
+		String rootModel__umlModel____packagedElement_name_prime = "packagedElement";
 		String rootModel__sourceRefModel____packagedElement_name_prime = "packagedElement";
 		String rootModel__externalModel____packagedElement_name_prime = "packagedElement";
-		String rootModel__umlModel____packagedElement_name_prime = "packagedElement";
-		umlModel__commonTypes____packagedElement.setSrc(umlModel);
-		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
-		match.getToBeTranslatedEdges().add(umlModel__commonTypes____packagedElement);
+		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
+		rootModel__umlModel____packagedElement.setSrc(rootModel);
+		rootModel__umlModel____packagedElement.setTrg(umlModel);
+		match.getToBeTranslatedEdges().add(rootModel__umlModel____packagedElement);
 		rootModel__sourceRefModel____packagedElement.setSrc(rootModel);
 		rootModel__sourceRefModel____packagedElement.setTrg(sourceRefModel);
 		match.getToBeTranslatedEdges().add(rootModel__sourceRefModel____packagedElement);
 		rootModel__externalModel____packagedElement.setSrc(rootModel);
 		rootModel__externalModel____packagedElement.setTrg(externalModel);
 		match.getToBeTranslatedEdges().add(rootModel__externalModel____packagedElement);
-		rootModel__umlModel____packagedElement.setSrc(rootModel);
-		rootModel__umlModel____packagedElement.setTrg(umlModel);
-		match.getToBeTranslatedEdges().add(rootModel__umlModel____packagedElement);
-		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
+		umlModel__commonTypes____packagedElement.setSrc(umlModel);
+		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
+		match.getToBeTranslatedEdges().add(umlModel__commonTypes____packagedElement);
+		rootModel__umlModel____packagedElement.setName(rootModel__umlModel____packagedElement_name_prime);
 		rootModel__sourceRefModel____packagedElement.setName(rootModel__sourceRefModel____packagedElement_name_prime);
 		rootModel__externalModel____packagedElement.setName(rootModel__externalModel____packagedElement_name_prime);
-		rootModel__umlModel____packagedElement.setName(rootModel__umlModel____packagedElement_name_prime);
-		return new Object[] { match, sourceRefModel, externalModel, umlModel, rootModel, commonTypes,
-				umlModel__commonTypes____packagedElement, rootModel__sourceRefModel____packagedElement,
-				rootModel__externalModel____packagedElement, rootModel__umlModel____packagedElement };
+		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
+		return new Object[] { match, rootModel, umlModel, commonTypes, sourceRefModel, externalModel,
+				rootModel__umlModel____packagedElement, rootModel__sourceRefModel____packagedElement,
+				rootModel__externalModel____packagedElement, umlModel__commonTypes____packagedElement };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_10_5_collectcontextelements_blackBBBBBB(Match match,
-			Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												return new Object[] { match, sourceRefModel, externalModel, umlModel,
-														rootModel, commonTypes };
+			Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel,
+			Model externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												return new Object[] { match, rootModel, umlModel, commonTypes,
+														sourceRefModel, externalModel };
 											}
 										}
 									}
@@ -2116,9 +2112,9 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final void pattern_JavaModel2UmlModelRule_10_6_registerobjectstomatch_expressionBBBBBBB(
-			JavaModel2UmlModelRule _this, Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		_this.registerObjectsToMatch_BWD(match, sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
+			JavaModel2UmlModelRule _this, Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		_this.registerObjectsToMatch_BWD(match, rootModel, umlModel, commonTypes, sourceRefModel, externalModel);
 
 	}
 
@@ -2134,27 +2130,27 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_11_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("sourceRefModel");
-		EObject _localVariable_1 = isApplicableMatch.getObject("externalModel");
-		EObject _localVariable_2 = isApplicableMatch.getObject("umlModel");
-		EObject _localVariable_3 = isApplicableMatch.getObject("rootModel");
-		EObject _localVariable_4 = isApplicableMatch.getObject("commonTypes");
-		EObject tmpSourceRefModel = _localVariable_0;
-		EObject tmpExternalModel = _localVariable_1;
-		EObject tmpUmlModel = _localVariable_2;
-		EObject tmpRootModel = _localVariable_3;
-		EObject tmpCommonTypes = _localVariable_4;
-		if (tmpSourceRefModel instanceof Model) {
-			Model sourceRefModel = (Model) tmpSourceRefModel;
-			if (tmpExternalModel instanceof Model) {
-				Model externalModel = (Model) tmpExternalModel;
-				if (tmpUmlModel instanceof Model) {
-					Model umlModel = (Model) tmpUmlModel;
-					if (tmpRootModel instanceof Model) {
-						Model rootModel = (Model) tmpRootModel;
-						if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
-							org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
-							return new Object[] { sourceRefModel, externalModel, umlModel, rootModel, commonTypes,
+		EObject _localVariable_0 = isApplicableMatch.getObject("rootModel");
+		EObject _localVariable_1 = isApplicableMatch.getObject("umlModel");
+		EObject _localVariable_2 = isApplicableMatch.getObject("commonTypes");
+		EObject _localVariable_3 = isApplicableMatch.getObject("sourceRefModel");
+		EObject _localVariable_4 = isApplicableMatch.getObject("externalModel");
+		EObject tmpRootModel = _localVariable_0;
+		EObject tmpUmlModel = _localVariable_1;
+		EObject tmpCommonTypes = _localVariable_2;
+		EObject tmpSourceRefModel = _localVariable_3;
+		EObject tmpExternalModel = _localVariable_4;
+		if (tmpRootModel instanceof Model) {
+			Model rootModel = (Model) tmpRootModel;
+			if (tmpUmlModel instanceof Model) {
+				Model umlModel = (Model) tmpUmlModel;
+				if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
+					org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
+					if (tmpSourceRefModel instanceof Model) {
+						Model sourceRefModel = (Model) tmpSourceRefModel;
+						if (tmpExternalModel instanceof Model) {
+							Model externalModel = (Model) tmpExternalModel;
+							return new Object[] { rootModel, umlModel, commonTypes, sourceRefModel, externalModel,
 									isApplicableMatch };
 						}
 					}
@@ -2165,24 +2161,24 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_11_1_performtransformation_blackBBBBBFBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes, JavaModel2UmlModelRule _this,
-			IsApplicableMatch isApplicableMatch) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
+			Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel,
+			Model externalModel, JavaModel2UmlModelRule _this, IsApplicableMatch isApplicableMatch) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
 												for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 													if (tmpCsp instanceof CSP) {
 														CSP csp = (CSP) tmpCsp;
-														return new Object[] { sourceRefModel, externalModel, umlModel,
-																rootModel, commonTypes, csp, _this, isApplicableMatch };
+														return new Object[] { rootModel, umlModel, commonTypes,
+																sourceRefModel, externalModel, csp, _this,
+																isApplicableMatch };
 													}
 												}
 											}
@@ -2203,71 +2199,71 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		Object[] result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding = pattern_JavaModel2UmlModelRule_11_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding != null) {
-			Model sourceRefModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[0];
-			Model externalModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[1];
-			Model umlModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[2];
-			Model rootModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[3];
-			org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[4];
+			Model rootModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[0];
+			Model umlModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[2];
+			Model sourceRefModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[3];
+			Model externalModel = (Model) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_binding[4];
 
 			Object[] result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_black = pattern_JavaModel2UmlModelRule_11_1_performtransformation_blackBBBBBFBB(
-					sourceRefModel, externalModel, umlModel, rootModel, commonTypes, _this, isApplicableMatch);
+					rootModel, umlModel, commonTypes, sourceRefModel, externalModel, _this, isApplicableMatch);
 			if (result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_JavaModel2UmlModelRule_11_1_performtransformation_black[5];
 
-				return new Object[] { sourceRefModel, externalModel, umlModel, rootModel, commonTypes, csp, _this,
+				return new Object[] { rootModel, umlModel, commonTypes, sourceRefModel, externalModel, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_11_1_performtransformation_greenBBBFFFFFBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+	public static final Object[] pattern_JavaModel2UmlModelRule_11_1_performtransformation_greenBBFFFFFBBB(
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel,
 			CSP csp) {
+		MGravityModel javaModel = ModiscoFactory.eINSTANCE.createMGravityModel();
+		JavaModel2UMLPackage jm2um2 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		JavaModel2UMLPackage jm2um3 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		JavaModel2UMLPackage jm2commonTypes = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		JavaModel2UMLPackage jm2um = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		JavaModel2UMLPackage jm2um2 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		MGravityModel javaModel = ModiscoFactory.eINSTANCE.createMGravityModel();
-		JavaModel2UMLPackage jm2um3 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		Object _localVariable_0 = csp.getValue("javaModel", "name");
+		jm2um2.setSource(javaModel);
+		jm2um2.setTarget(externalModel);
+		jm2um3.setSource(javaModel);
+		jm2um3.setTarget(sourceRefModel);
+		jm2commonTypes.setSource(javaModel);
 		jm2commonTypes.setTarget(commonTypes);
 		jm2um.setTarget(umlModel);
-		jm2um2.setTarget(externalModel);
 		jm2um.setSource(javaModel);
-		jm2um2.setSource(javaModel);
-		jm2commonTypes.setSource(javaModel);
-		jm2um3.setTarget(sourceRefModel);
-		jm2um3.setSource(javaModel);
 		String javaModel_name_prime = (String) _localVariable_0;
 		javaModel.setName(javaModel_name_prime);
-		return new Object[] { sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, jm2um2, javaModel, jm2um3,
-				commonTypes, csp };
+		return new Object[] { umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel,
+				externalModel, csp };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_11_2_collecttranslatedelements_blackBBBBBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, JavaModel2UMLPackage jm2commonTypes,
-			JavaModel2UMLPackage jm2um, Model rootModel, JavaModel2UMLPackage jm2um2, MGravityModel javaModel,
-			JavaModel2UMLPackage jm2um3, org.eclipse.uml2.uml.Package commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!jm2commonTypes.equals(jm2um)) {
-							if (!jm2commonTypes.equals(jm2um2)) {
-								if (!jm2commonTypes.equals(jm2um3)) {
-									if (!jm2um.equals(jm2um2)) {
-										if (!jm2um.equals(jm2um3)) {
-											if (!rootModel.equals(sourceRefModel)) {
-												if (!rootModel.equals(umlModel)) {
-													if (!jm2um2.equals(jm2um3)) {
-														if (!commonTypes.equals(sourceRefModel)) {
-															if (!commonTypes.equals(externalModel)) {
-																if (!commonTypes.equals(umlModel)) {
-																	if (!commonTypes.equals(rootModel)) {
-																		return new Object[] { sourceRefModel,
-																				externalModel, umlModel, jm2commonTypes,
-																				jm2um, rootModel, jm2um2, javaModel,
-																				jm2um3, commonTypes };
+			Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel,
+			JavaModel2UMLPackage jm2um2, JavaModel2UMLPackage jm2um3, JavaModel2UMLPackage jm2commonTypes,
+			JavaModel2UMLPackage jm2um, Model sourceRefModel, Model externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!jm2um2.equals(jm2um3)) {
+									if (!jm2commonTypes.equals(jm2um2)) {
+										if (!jm2commonTypes.equals(jm2um3)) {
+											if (!jm2commonTypes.equals(jm2um)) {
+												if (!jm2um.equals(jm2um2)) {
+													if (!jm2um.equals(jm2um3)) {
+														if (!sourceRefModel.equals(umlModel)) {
+															if (!externalModel.equals(rootModel)) {
+																if (!externalModel.equals(umlModel)) {
+																	if (!externalModel.equals(sourceRefModel)) {
+																		return new Object[] { rootModel, umlModel,
+																				commonTypes, javaModel, jm2um2, jm2um3,
+																				jm2commonTypes, jm2um, sourceRefModel,
+																				externalModel };
 																	}
 																}
 															}
@@ -2288,110 +2284,109 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_11_2_collecttranslatedelements_greenFBBBBBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, JavaModel2UMLPackage jm2commonTypes,
-			JavaModel2UMLPackage jm2um, Model rootModel, JavaModel2UMLPackage jm2um2, MGravityModel javaModel,
-			JavaModel2UMLPackage jm2um3, org.eclipse.uml2.uml.Package commonTypes) {
+			Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel,
+			JavaModel2UMLPackage jm2um2, JavaModel2UMLPackage jm2um3, JavaModel2UMLPackage jm2commonTypes,
+			JavaModel2UMLPackage jm2um, Model sourceRefModel, Model externalModel) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(sourceRefModel);
-		ruleresult.getTranslatedElements().add(externalModel);
+		ruleresult.getTranslatedElements().add(rootModel);
 		ruleresult.getTranslatedElements().add(umlModel);
+		ruleresult.getTranslatedElements().add(commonTypes);
+		ruleresult.getCreatedElements().add(javaModel);
+		ruleresult.getCreatedLinkElements().add(jm2um2);
+		ruleresult.getCreatedLinkElements().add(jm2um3);
 		ruleresult.getCreatedLinkElements().add(jm2commonTypes);
 		ruleresult.getCreatedLinkElements().add(jm2um);
-		ruleresult.getTranslatedElements().add(rootModel);
-		ruleresult.getCreatedLinkElements().add(jm2um2);
-		ruleresult.getCreatedElements().add(javaModel);
-		ruleresult.getCreatedLinkElements().add(jm2um3);
-		ruleresult.getTranslatedElements().add(commonTypes);
-		return new Object[] { ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel,
-				jm2um2, javaModel, jm2um3, commonTypes };
+		ruleresult.getTranslatedElements().add(sourceRefModel);
+		ruleresult.getTranslatedElements().add(externalModel);
+		return new Object[] { ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes,
+				jm2um, sourceRefModel, externalModel };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_11_3_bookkeepingforedges_blackBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel, EObject umlModel,
-			EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2, EObject javaModel, EObject jm2um3,
-			EObject commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(jm2commonTypes)) {
-						if (!externalModel.equals(jm2um)) {
-							if (!externalModel.equals(rootModel)) {
-								if (!externalModel.equals(jm2um2)) {
-									if (!externalModel.equals(javaModel)) {
-										if (!externalModel.equals(jm2um3)) {
-											if (!jm2commonTypes.equals(sourceRefModel)) {
-												if (!jm2commonTypes.equals(umlModel)) {
-													if (!jm2commonTypes.equals(jm2um)) {
-														if (!jm2commonTypes.equals(rootModel)) {
-															if (!jm2commonTypes.equals(jm2um2)) {
-																if (!jm2commonTypes.equals(jm2um3)) {
-																	if (!jm2um.equals(sourceRefModel)) {
-																		if (!jm2um.equals(umlModel)) {
-																			if (!jm2um.equals(rootModel)) {
-																				if (!jm2um.equals(jm2um2)) {
-																					if (!jm2um.equals(jm2um3)) {
-																						if (!rootModel.equals(
-																								sourceRefModel)) {
-																							if (!rootModel
-																									.equals(umlModel)) {
-																								if (!jm2um2.equals(
-																										sourceRefModel)) {
-																									if (!jm2um2.equals(
+			PerformRuleResult ruleresult, EObject rootModel, EObject umlModel, EObject commonTypes, EObject javaModel,
+			EObject jm2um2, EObject jm2um3, EObject jm2commonTypes, EObject jm2um, EObject sourceRefModel,
+			EObject externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(javaModel)) {
+							if (!commonTypes.equals(jm2um2)) {
+								if (!commonTypes.equals(jm2um3)) {
+									if (!commonTypes.equals(jm2commonTypes)) {
+										if (!commonTypes.equals(jm2um)) {
+											if (!commonTypes.equals(sourceRefModel)) {
+												if (!commonTypes.equals(externalModel)) {
+													if (!javaModel.equals(rootModel)) {
+														if (!javaModel.equals(umlModel)) {
+															if (!javaModel.equals(jm2um2)) {
+																if (!javaModel.equals(jm2um3)) {
+																	if (!javaModel.equals(jm2commonTypes)) {
+																		if (!javaModel.equals(jm2um)) {
+																			if (!javaModel.equals(sourceRefModel)) {
+																				if (!jm2um2.equals(rootModel)) {
+																					if (!jm2um2.equals(umlModel)) {
+																						if (!jm2um2.equals(jm2um3)) {
+																							if (!jm2um2.equals(
+																									sourceRefModel)) {
+																								if (!jm2um3.equals(
+																										rootModel)) {
+																									if (!jm2um3.equals(
 																											umlModel)) {
-																										if (!jm2um2
-																												.equals(rootModel)) {
-																											if (!jm2um2
-																													.equals(jm2um3)) {
-																												if (!javaModel
-																														.equals(sourceRefModel)) {
-																													if (!javaModel
-																															.equals(umlModel)) {
-																														if (!javaModel
-																																.equals(jm2commonTypes)) {
-																															if (!javaModel
+																										if (!jm2um3
+																												.equals(sourceRefModel)) {
+																											if (!jm2commonTypes
+																													.equals(rootModel)) {
+																												if (!jm2commonTypes
+																														.equals(umlModel)) {
+																													if (!jm2commonTypes
+																															.equals(jm2um2)) {
+																														if (!jm2commonTypes
+																																.equals(jm2um3)) {
+																															if (!jm2commonTypes
 																																	.equals(jm2um)) {
-																																if (!javaModel
-																																		.equals(rootModel)) {
-																																	if (!javaModel
-																																			.equals(jm2um2)) {
-																																		if (!javaModel
-																																				.equals(jm2um3)) {
-																																			if (!jm2um3
-																																					.equals(sourceRefModel)) {
-																																				if (!jm2um3
-																																						.equals(umlModel)) {
-																																					if (!jm2um3
-																																							.equals(rootModel)) {
-																																						if (!commonTypes
-																																								.equals(sourceRefModel)) {
-																																							if (!commonTypes
-																																									.equals(externalModel)) {
-																																								if (!commonTypes
+																																if (!jm2commonTypes
+																																		.equals(sourceRefModel)) {
+																																	if (!jm2um
+																																			.equals(rootModel)) {
+																																		if (!jm2um
+																																				.equals(umlModel)) {
+																																			if (!jm2um
+																																					.equals(jm2um2)) {
+																																				if (!jm2um
+																																						.equals(jm2um3)) {
+																																					if (!jm2um
+																																							.equals(sourceRefModel)) {
+																																						if (!sourceRefModel
+																																								.equals(umlModel)) {
+																																							if (!externalModel
+																																									.equals(rootModel)) {
+																																								if (!externalModel
 																																										.equals(umlModel)) {
-																																									if (!commonTypes
-																																											.equals(jm2commonTypes)) {
-																																										if (!commonTypes
-																																												.equals(jm2um)) {
-																																											if (!commonTypes
-																																													.equals(rootModel)) {
-																																												if (!commonTypes
-																																														.equals(jm2um2)) {
-																																													if (!commonTypes
-																																															.equals(javaModel)) {
-																																														if (!commonTypes
-																																																.equals(jm2um3)) {
+																																									if (!externalModel
+																																											.equals(javaModel)) {
+																																										if (!externalModel
+																																												.equals(jm2um2)) {
+																																											if (!externalModel
+																																													.equals(jm2um3)) {
+																																												if (!externalModel
+																																														.equals(jm2commonTypes)) {
+																																													if (!externalModel
+																																															.equals(jm2um)) {
+																																														if (!externalModel
+																																																.equals(sourceRefModel)) {
 																																															return new Object[] {
 																																																	ruleresult,
-																																																	sourceRefModel,
-																																																	externalModel,
+																																																	rootModel,
 																																																	umlModel,
+																																																	commonTypes,
+																																																	javaModel,
+																																																	jm2um2,
+																																																	jm2um3,
 																																																	jm2commonTypes,
 																																																	jm2um,
-																																																	rootModel,
-																																																	jm2um2,
-																																																	javaModel,
-																																																	jm2um3,
-																																																	commonTypes };
+																																																	sourceRefModel,
+																																																	externalModel };
 																																														}
 																																													}
 																																												}
@@ -2441,98 +2436,98 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_11_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel, EObject umlModel,
-			EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2, EObject javaModel, EObject jm2um3,
-			EObject commonTypes) {
-		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um__umlModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge rootModel__sourceRefModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge rootModel__externalModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um2__externalModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject rootModel, EObject umlModel, EObject commonTypes, EObject javaModel,
+			EObject jm2um2, EObject jm2um3, EObject jm2commonTypes, EObject jm2um, EObject sourceRefModel,
+			EObject externalModel) {
 		EMoflonEdge rootModel__umlModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um2__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um3__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge rootModel__sourceRefModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2commonTypes__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2commonTypes__commonTypes____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um__umlModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jm2um3__sourceRefModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um2__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2commonTypes__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2um3__javaModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jm2commonTypes__commonTypes____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge rootModel__externalModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jm2um2__externalModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "JavaModel2UmlModelRule";
-		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
-		String jm2um__umlModel____target_name_prime = "target";
-		String rootModel__sourceRefModel____packagedElement_name_prime = "packagedElement";
-		String rootModel__externalModel____packagedElement_name_prime = "packagedElement";
-		String jm2um2__externalModel____target_name_prime = "target";
 		String rootModel__umlModel____packagedElement_name_prime = "packagedElement";
+		String jm2um2__javaModel____source_name_prime = "source";
+		String jm2um3__javaModel____source_name_prime = "source";
+		String rootModel__sourceRefModel____packagedElement_name_prime = "packagedElement";
+		String jm2commonTypes__javaModel____source_name_prime = "source";
+		String jm2commonTypes__commonTypes____target_name_prime = "target";
+		String jm2um__umlModel____target_name_prime = "target";
 		String jm2um__javaModel____source_name_prime = "source";
 		String jm2um3__sourceRefModel____target_name_prime = "target";
-		String jm2um2__javaModel____source_name_prime = "source";
-		String jm2commonTypes__javaModel____source_name_prime = "source";
-		String jm2um3__javaModel____source_name_prime = "source";
-		String jm2commonTypes__commonTypes____target_name_prime = "target";
-		umlModel__commonTypes____packagedElement.setSrc(umlModel);
-		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
-		ruleresult.getTranslatedEdges().add(umlModel__commonTypes____packagedElement);
-		jm2um__umlModel____target.setSrc(jm2um);
-		jm2um__umlModel____target.setTrg(umlModel);
-		ruleresult.getCreatedEdges().add(jm2um__umlModel____target);
-		rootModel__sourceRefModel____packagedElement.setSrc(rootModel);
-		rootModel__sourceRefModel____packagedElement.setTrg(sourceRefModel);
-		ruleresult.getTranslatedEdges().add(rootModel__sourceRefModel____packagedElement);
-		rootModel__externalModel____packagedElement.setSrc(rootModel);
-		rootModel__externalModel____packagedElement.setTrg(externalModel);
-		ruleresult.getTranslatedEdges().add(rootModel__externalModel____packagedElement);
-		jm2um2__externalModel____target.setSrc(jm2um2);
-		jm2um2__externalModel____target.setTrg(externalModel);
-		ruleresult.getCreatedEdges().add(jm2um2__externalModel____target);
+		String rootModel__externalModel____packagedElement_name_prime = "packagedElement";
+		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
+		String jm2um2__externalModel____target_name_prime = "target";
 		rootModel__umlModel____packagedElement.setSrc(rootModel);
 		rootModel__umlModel____packagedElement.setTrg(umlModel);
 		ruleresult.getTranslatedEdges().add(rootModel__umlModel____packagedElement);
+		jm2um2__javaModel____source.setSrc(jm2um2);
+		jm2um2__javaModel____source.setTrg(javaModel);
+		ruleresult.getCreatedEdges().add(jm2um2__javaModel____source);
+		jm2um3__javaModel____source.setSrc(jm2um3);
+		jm2um3__javaModel____source.setTrg(javaModel);
+		ruleresult.getCreatedEdges().add(jm2um3__javaModel____source);
+		rootModel__sourceRefModel____packagedElement.setSrc(rootModel);
+		rootModel__sourceRefModel____packagedElement.setTrg(sourceRefModel);
+		ruleresult.getTranslatedEdges().add(rootModel__sourceRefModel____packagedElement);
+		jm2commonTypes__javaModel____source.setSrc(jm2commonTypes);
+		jm2commonTypes__javaModel____source.setTrg(javaModel);
+		ruleresult.getCreatedEdges().add(jm2commonTypes__javaModel____source);
+		jm2commonTypes__commonTypes____target.setSrc(jm2commonTypes);
+		jm2commonTypes__commonTypes____target.setTrg(commonTypes);
+		ruleresult.getCreatedEdges().add(jm2commonTypes__commonTypes____target);
+		jm2um__umlModel____target.setSrc(jm2um);
+		jm2um__umlModel____target.setTrg(umlModel);
+		ruleresult.getCreatedEdges().add(jm2um__umlModel____target);
 		jm2um__javaModel____source.setSrc(jm2um);
 		jm2um__javaModel____source.setTrg(javaModel);
 		ruleresult.getCreatedEdges().add(jm2um__javaModel____source);
 		jm2um3__sourceRefModel____target.setSrc(jm2um3);
 		jm2um3__sourceRefModel____target.setTrg(sourceRefModel);
 		ruleresult.getCreatedEdges().add(jm2um3__sourceRefModel____target);
-		jm2um2__javaModel____source.setSrc(jm2um2);
-		jm2um2__javaModel____source.setTrg(javaModel);
-		ruleresult.getCreatedEdges().add(jm2um2__javaModel____source);
-		jm2commonTypes__javaModel____source.setSrc(jm2commonTypes);
-		jm2commonTypes__javaModel____source.setTrg(javaModel);
-		ruleresult.getCreatedEdges().add(jm2commonTypes__javaModel____source);
-		jm2um3__javaModel____source.setSrc(jm2um3);
-		jm2um3__javaModel____source.setTrg(javaModel);
-		ruleresult.getCreatedEdges().add(jm2um3__javaModel____source);
-		jm2commonTypes__commonTypes____target.setSrc(jm2commonTypes);
-		jm2commonTypes__commonTypes____target.setTrg(commonTypes);
-		ruleresult.getCreatedEdges().add(jm2commonTypes__commonTypes____target);
+		rootModel__externalModel____packagedElement.setSrc(rootModel);
+		rootModel__externalModel____packagedElement.setTrg(externalModel);
+		ruleresult.getTranslatedEdges().add(rootModel__externalModel____packagedElement);
+		umlModel__commonTypes____packagedElement.setSrc(umlModel);
+		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
+		ruleresult.getTranslatedEdges().add(umlModel__commonTypes____packagedElement);
+		jm2um2__externalModel____target.setSrc(jm2um2);
+		jm2um2__externalModel____target.setTrg(externalModel);
+		ruleresult.getCreatedEdges().add(jm2um2__externalModel____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
-		jm2um__umlModel____target.setName(jm2um__umlModel____target_name_prime);
-		rootModel__sourceRefModel____packagedElement.setName(rootModel__sourceRefModel____packagedElement_name_prime);
-		rootModel__externalModel____packagedElement.setName(rootModel__externalModel____packagedElement_name_prime);
-		jm2um2__externalModel____target.setName(jm2um2__externalModel____target_name_prime);
 		rootModel__umlModel____packagedElement.setName(rootModel__umlModel____packagedElement_name_prime);
+		jm2um2__javaModel____source.setName(jm2um2__javaModel____source_name_prime);
+		jm2um3__javaModel____source.setName(jm2um3__javaModel____source_name_prime);
+		rootModel__sourceRefModel____packagedElement.setName(rootModel__sourceRefModel____packagedElement_name_prime);
+		jm2commonTypes__javaModel____source.setName(jm2commonTypes__javaModel____source_name_prime);
+		jm2commonTypes__commonTypes____target.setName(jm2commonTypes__commonTypes____target_name_prime);
+		jm2um__umlModel____target.setName(jm2um__umlModel____target_name_prime);
 		jm2um__javaModel____source.setName(jm2um__javaModel____source_name_prime);
 		jm2um3__sourceRefModel____target.setName(jm2um3__sourceRefModel____target_name_prime);
-		jm2um2__javaModel____source.setName(jm2um2__javaModel____source_name_prime);
-		jm2commonTypes__javaModel____source.setName(jm2commonTypes__javaModel____source_name_prime);
-		jm2um3__javaModel____source.setName(jm2um3__javaModel____source_name_prime);
-		jm2commonTypes__commonTypes____target.setName(jm2commonTypes__commonTypes____target_name_prime);
-		return new Object[] { ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel,
-				jm2um2, javaModel, jm2um3, commonTypes, umlModel__commonTypes____packagedElement,
-				jm2um__umlModel____target, rootModel__sourceRefModel____packagedElement,
-				rootModel__externalModel____packagedElement, jm2um2__externalModel____target,
-				rootModel__umlModel____packagedElement, jm2um__javaModel____source, jm2um3__sourceRefModel____target,
-				jm2um2__javaModel____source, jm2commonTypes__javaModel____source, jm2um3__javaModel____source,
-				jm2commonTypes__commonTypes____target };
+		rootModel__externalModel____packagedElement.setName(rootModel__externalModel____packagedElement_name_prime);
+		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
+		jm2um2__externalModel____target.setName(jm2um2__externalModel____target_name_prime);
+		return new Object[] { ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes,
+				jm2um, sourceRefModel, externalModel, rootModel__umlModel____packagedElement,
+				jm2um2__javaModel____source, jm2um3__javaModel____source, rootModel__sourceRefModel____packagedElement,
+				jm2commonTypes__javaModel____source, jm2commonTypes__commonTypes____target, jm2um__umlModel____target,
+				jm2um__javaModel____source, jm2um3__sourceRefModel____target,
+				rootModel__externalModel____packagedElement, umlModel__commonTypes____packagedElement,
+				jm2um2__externalModel____target };
 	}
 
 	public static final void pattern_JavaModel2UmlModelRule_11_5_registerobjects_expressionBBBBBBBBBBBB(
-			JavaModel2UmlModelRule _this, PerformRuleResult ruleresult, EObject sourceRefModel, EObject externalModel,
-			EObject umlModel, EObject jm2commonTypes, EObject jm2um, EObject rootModel, EObject jm2um2,
-			EObject javaModel, EObject jm2um3, EObject commonTypes) {
-		_this.registerObjects_BWD(ruleresult, sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel,
-				jm2um2, javaModel, jm2um3, commonTypes);
+			JavaModel2UmlModelRule _this, PerformRuleResult ruleresult, EObject rootModel, EObject umlModel,
+			EObject commonTypes, EObject javaModel, EObject jm2um2, EObject jm2um3, EObject jm2commonTypes,
+			EObject jm2um, EObject sourceRefModel, EObject externalModel) {
+		_this.registerObjects_BWD(ruleresult, rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3,
+				jm2commonTypes, jm2um, sourceRefModel, externalModel);
 
 	}
 
@@ -2594,27 +2589,27 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_12_2_corematch_bindingFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("sourceRefModel");
-		EObject _localVariable_1 = match.getObject("externalModel");
-		EObject _localVariable_2 = match.getObject("umlModel");
-		EObject _localVariable_3 = match.getObject("rootModel");
-		EObject _localVariable_4 = match.getObject("commonTypes");
-		EObject tmpSourceRefModel = _localVariable_0;
-		EObject tmpExternalModel = _localVariable_1;
-		EObject tmpUmlModel = _localVariable_2;
-		EObject tmpRootModel = _localVariable_3;
-		EObject tmpCommonTypes = _localVariable_4;
-		if (tmpSourceRefModel instanceof Model) {
-			Model sourceRefModel = (Model) tmpSourceRefModel;
-			if (tmpExternalModel instanceof Model) {
-				Model externalModel = (Model) tmpExternalModel;
-				if (tmpUmlModel instanceof Model) {
-					Model umlModel = (Model) tmpUmlModel;
-					if (tmpRootModel instanceof Model) {
-						Model rootModel = (Model) tmpRootModel;
-						if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
-							org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
-							return new Object[] { sourceRefModel, externalModel, umlModel, rootModel, commonTypes,
+		EObject _localVariable_0 = match.getObject("rootModel");
+		EObject _localVariable_1 = match.getObject("umlModel");
+		EObject _localVariable_2 = match.getObject("commonTypes");
+		EObject _localVariable_3 = match.getObject("sourceRefModel");
+		EObject _localVariable_4 = match.getObject("externalModel");
+		EObject tmpRootModel = _localVariable_0;
+		EObject tmpUmlModel = _localVariable_1;
+		EObject tmpCommonTypes = _localVariable_2;
+		EObject tmpSourceRefModel = _localVariable_3;
+		EObject tmpExternalModel = _localVariable_4;
+		if (tmpRootModel instanceof Model) {
+			Model rootModel = (Model) tmpRootModel;
+			if (tmpUmlModel instanceof Model) {
+				Model umlModel = (Model) tmpUmlModel;
+				if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
+					org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
+					if (tmpSourceRefModel instanceof Model) {
+						Model sourceRefModel = (Model) tmpSourceRefModel;
+						if (tmpExternalModel instanceof Model) {
+							Model externalModel = (Model) tmpExternalModel;
+							return new Object[] { rootModel, umlModel, commonTypes, sourceRefModel, externalModel,
 									match };
 						}
 					}
@@ -2624,31 +2619,31 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaModel2UmlModelRule_12_2_corematch_blackBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes, Match match) {
+	public static final Iterable<Object[]> pattern_JavaModel2UmlModelRule_12_2_corematch_blackBBBBBB(Model rootModel,
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel,
+			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												String sourceRefModel_name = sourceRefModel.getName();
-												if (sourceRefModel_name.equals("source references")) {
-													String externalModel_name = externalModel.getName();
-													if (externalModel_name.equals("externals")) {
-														String rootModel_name = rootModel.getName();
-														if (rootModel_name.equals("root model")) {
-															String commonTypes_name = commonTypes.getName();
-															if (commonTypes_name.equals("Common Java datatypes")) {
-																_result.add(new Object[] { sourceRefModel,
-																		externalModel, umlModel, rootModel, commonTypes,
-																		match });
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												String rootModel_name = rootModel.getName();
+												if (rootModel_name.equals("root model")) {
+													String commonTypes_name = commonTypes.getName();
+													if (commonTypes_name.equals("Common Java datatypes")) {
+														String sourceRefModel_name = sourceRefModel.getName();
+														if (sourceRefModel_name.equals("source references")) {
+															String externalModel_name = externalModel.getName();
+															if (externalModel_name.equals("externals")) {
+																_result.add(
+																		new Object[] { rootModel, umlModel, commonTypes,
+																				sourceRefModel, externalModel, match });
 															}
 
 														}
@@ -2670,38 +2665,40 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_JavaModel2UmlModelRule_12_3_findcontext_blackBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			org.eclipse.uml2.uml.Package commonTypes) {
+	public static final Iterable<Object[]> pattern_JavaModel2UmlModelRule_12_3_findcontext_blackBBBBB(Model rootModel,
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												if (umlModel.getPackagedElements().contains(commonTypes)) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												if (rootModel.getPackagedElements().contains(umlModel)) {
 													if (rootModel.getPackagedElements().contains(sourceRefModel)) {
 														if (rootModel.getPackagedElements().contains(externalModel)) {
-															if (rootModel.getPackagedElements().contains(umlModel)) {
-																String sourceRefModel_name = sourceRefModel.getName();
-																if (sourceRefModel_name.equals("source references")) {
-																	String externalModel_name = externalModel.getName();
-																	if (externalModel_name.equals("externals")) {
-																		String rootModel_name = rootModel.getName();
-																		if (rootModel_name.equals("root model")) {
-																			String commonTypes_name = commonTypes
+															if (umlModel.getPackagedElements().contains(commonTypes)) {
+																String rootModel_name = rootModel.getName();
+																if (rootModel_name.equals("root model")) {
+																	String commonTypes_name = commonTypes.getName();
+																	if (commonTypes_name
+																			.equals("Common Java datatypes")) {
+																		String sourceRefModel_name = sourceRefModel
+																				.getName();
+																		if (sourceRefModel_name
+																				.equals("source references")) {
+																			String externalModel_name = externalModel
 																					.getName();
-																			if (commonTypes_name
-																					.equals("Common Java datatypes")) {
-																				_result.add(new Object[] {
-																						sourceRefModel, externalModel,
-																						umlModel, rootModel,
-																						commonTypes });
+																			if (externalModel_name
+																					.equals("externals")) {
+																				_result.add(new Object[] { rootModel,
+																						umlModel, commonTypes,
+																						sourceRefModel,
+																						externalModel });
 																			}
 
 																		}
@@ -2727,52 +2724,52 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_12_3_findcontext_greenBBBBBFFFFF(Model sourceRefModel,
-			Model externalModel, Model umlModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
+	public static final Object[] pattern_JavaModel2UmlModelRule_12_3_findcontext_greenBBBBBFFFFF(Model rootModel,
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge rootModel__umlModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge rootModel__sourceRefModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge rootModel__externalModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge rootModel__umlModel____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
+		EMoflonEdge umlModel__commonTypes____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String rootModel__umlModel____packagedElement_name_prime = "packagedElement";
 		String rootModel__sourceRefModel____packagedElement_name_prime = "packagedElement";
 		String rootModel__externalModel____packagedElement_name_prime = "packagedElement";
-		String rootModel__umlModel____packagedElement_name_prime = "packagedElement";
+		String umlModel__commonTypes____packagedElement_name_prime = "packagedElement";
+		isApplicableMatch.getAllContextElements().add(rootModel);
+		isApplicableMatch.getAllContextElements().add(umlModel);
+		isApplicableMatch.getAllContextElements().add(commonTypes);
 		isApplicableMatch.getAllContextElements().add(sourceRefModel);
 		isApplicableMatch.getAllContextElements().add(externalModel);
-		isApplicableMatch.getAllContextElements().add(umlModel);
-		isApplicableMatch.getAllContextElements().add(rootModel);
-		isApplicableMatch.getAllContextElements().add(commonTypes);
-		umlModel__commonTypes____packagedElement.setSrc(umlModel);
-		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
-		isApplicableMatch.getAllContextElements().add(umlModel__commonTypes____packagedElement);
+		rootModel__umlModel____packagedElement.setSrc(rootModel);
+		rootModel__umlModel____packagedElement.setTrg(umlModel);
+		isApplicableMatch.getAllContextElements().add(rootModel__umlModel____packagedElement);
 		rootModel__sourceRefModel____packagedElement.setSrc(rootModel);
 		rootModel__sourceRefModel____packagedElement.setTrg(sourceRefModel);
 		isApplicableMatch.getAllContextElements().add(rootModel__sourceRefModel____packagedElement);
 		rootModel__externalModel____packagedElement.setSrc(rootModel);
 		rootModel__externalModel____packagedElement.setTrg(externalModel);
 		isApplicableMatch.getAllContextElements().add(rootModel__externalModel____packagedElement);
-		rootModel__umlModel____packagedElement.setSrc(rootModel);
-		rootModel__umlModel____packagedElement.setTrg(umlModel);
-		isApplicableMatch.getAllContextElements().add(rootModel__umlModel____packagedElement);
-		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
+		umlModel__commonTypes____packagedElement.setSrc(umlModel);
+		umlModel__commonTypes____packagedElement.setTrg(commonTypes);
+		isApplicableMatch.getAllContextElements().add(umlModel__commonTypes____packagedElement);
+		rootModel__umlModel____packagedElement.setName(rootModel__umlModel____packagedElement_name_prime);
 		rootModel__sourceRefModel____packagedElement.setName(rootModel__sourceRefModel____packagedElement_name_prime);
 		rootModel__externalModel____packagedElement.setName(rootModel__externalModel____packagedElement_name_prime);
-		rootModel__umlModel____packagedElement.setName(rootModel__umlModel____packagedElement_name_prime);
-		return new Object[] { sourceRefModel, externalModel, umlModel, rootModel, commonTypes, isApplicableMatch,
-				umlModel__commonTypes____packagedElement, rootModel__sourceRefModel____packagedElement,
-				rootModel__externalModel____packagedElement, rootModel__umlModel____packagedElement };
+		umlModel__commonTypes____packagedElement.setName(umlModel__commonTypes____packagedElement_name_prime);
+		return new Object[] { rootModel, umlModel, commonTypes, sourceRefModel, externalModel, isApplicableMatch,
+				rootModel__umlModel____packagedElement, rootModel__sourceRefModel____packagedElement,
+				rootModel__externalModel____packagedElement, umlModel__commonTypes____packagedElement };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_12_4_solveCSP_bindingFBBBBBBB(
-			JavaModel2UmlModelRule _this, IsApplicableMatch isApplicableMatch, Model sourceRefModel,
-			Model externalModel, Model umlModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, sourceRefModel, externalModel,
-				umlModel, rootModel, commonTypes);
+			JavaModel2UmlModelRule _this, IsApplicableMatch isApplicableMatch, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, rootModel, umlModel, commonTypes,
+				sourceRefModel, externalModel);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, sourceRefModel, externalModel, umlModel, rootModel,
-					commonTypes };
+			return new Object[] { csp, _this, isApplicableMatch, rootModel, umlModel, commonTypes, sourceRefModel,
+					externalModel };
 		}
 		return null;
 	}
@@ -2782,10 +2779,10 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_12_4_solveCSP_bindingAndBlackFBBBBBBB(
-			JavaModel2UmlModelRule _this, IsApplicableMatch isApplicableMatch, Model sourceRefModel,
-			Model externalModel, Model umlModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
+			JavaModel2UmlModelRule _this, IsApplicableMatch isApplicableMatch, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
 		Object[] result_pattern_JavaModel2UmlModelRule_12_4_solveCSP_binding = pattern_JavaModel2UmlModelRule_12_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, sourceRefModel, externalModel, umlModel, rootModel, commonTypes);
+				_this, isApplicableMatch, rootModel, umlModel, commonTypes, sourceRefModel, externalModel);
 		if (result_pattern_JavaModel2UmlModelRule_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaModel2UmlModelRule_12_4_solveCSP_binding[0];
 
@@ -2793,8 +2790,8 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 					csp);
 			if (result_pattern_JavaModel2UmlModelRule_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, sourceRefModel, externalModel, umlModel, rootModel,
-						commonTypes };
+				return new Object[] { csp, _this, isApplicableMatch, rootModel, umlModel, commonTypes, sourceRefModel,
+						externalModel };
 			}
 		}
 		return null;
@@ -2990,59 +2987,53 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	public static final Iterable<Object[]> pattern_JavaModel2UmlModelRule_21_2_testcorematchandDECs_blackFFFFFB(
 			EMoflonEdge _edge_packagedElement) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpUmlModel = _edge_packagedElement.getSrc();
-		if (tmpUmlModel instanceof Model) {
-			Model umlModel = (Model) tmpUmlModel;
-			EObject tmpCommonTypes = _edge_packagedElement.getTrg();
-			if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
-				if (!commonTypes.equals(umlModel)) {
-					if (umlModel.getPackagedElements().contains(commonTypes)) {
-						String commonTypes_name = commonTypes.getName();
-						if (commonTypes_name.equals("Common Java datatypes")) {
-							for (org.eclipse.uml2.uml.Package tmpRootModel : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(umlModel, org.eclipse.uml2.uml.Package.class,
-											"packagedElement")) {
-								if (tmpRootModel instanceof Model) {
-									Model rootModel = (Model) tmpRootModel;
-									if (!rootModel.equals(umlModel)) {
-										if (!commonTypes.equals(rootModel)) {
-											String rootModel_name = rootModel.getName();
-											if (rootModel_name.equals("root model")) {
-												for (PackageableElement tmpSourceRefModel : rootModel
+		EObject tmpRootModel = _edge_packagedElement.getSrc();
+		if (tmpRootModel instanceof Model) {
+			Model rootModel = (Model) tmpRootModel;
+			EObject tmpUmlModel = _edge_packagedElement.getTrg();
+			if (tmpUmlModel instanceof Model) {
+				Model umlModel = (Model) tmpUmlModel;
+				if (!rootModel.equals(umlModel)) {
+					if (rootModel.getPackagedElements().contains(umlModel)) {
+						String rootModel_name = rootModel.getName();
+						if (rootModel_name.equals("root model")) {
+							for (PackageableElement tmpSourceRefModel : rootModel.getPackagedElements()) {
+								if (tmpSourceRefModel instanceof Model) {
+									Model sourceRefModel = (Model) tmpSourceRefModel;
+									if (!rootModel.equals(sourceRefModel)) {
+										if (!sourceRefModel.equals(umlModel)) {
+											String sourceRefModel_name = sourceRefModel.getName();
+											if (sourceRefModel_name.equals("source references")) {
+												for (PackageableElement tmpExternalModel : rootModel
 														.getPackagedElements()) {
-													if (tmpSourceRefModel instanceof Model) {
-														Model sourceRefModel = (Model) tmpSourceRefModel;
-														if (!sourceRefModel.equals(umlModel)) {
-															if (!rootModel.equals(sourceRefModel)) {
-																if (!commonTypes.equals(sourceRefModel)) {
-																	String sourceRefModel_name = sourceRefModel
-																			.getName();
-																	if (sourceRefModel_name
-																			.equals("source references")) {
-																		for (PackageableElement tmpExternalModel : rootModel
+													if (tmpExternalModel instanceof Model) {
+														Model externalModel = (Model) tmpExternalModel;
+														if (!externalModel.equals(rootModel)) {
+															if (!externalModel.equals(umlModel)) {
+																if (!externalModel.equals(sourceRefModel)) {
+																	String externalModel_name = externalModel.getName();
+																	if (externalModel_name.equals("externals")) {
+																		for (PackageableElement tmpCommonTypes : umlModel
 																				.getPackagedElements()) {
-																			if (tmpExternalModel instanceof Model) {
-																				Model externalModel = (Model) tmpExternalModel;
-																				if (!externalModel
-																						.equals(sourceRefModel)) {
-																					if (!externalModel
-																							.equals(umlModel)) {
-																						if (!externalModel
-																								.equals(rootModel)) {
+																			if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
+																				org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
+																				if (!commonTypes.equals(rootModel)) {
+																					if (!commonTypes.equals(umlModel)) {
+																						if (!commonTypes.equals(
+																								sourceRefModel)) {
 																							if (!commonTypes.equals(
 																									externalModel)) {
-																								String externalModel_name = externalModel
+																								String commonTypes_name = commonTypes
 																										.getName();
-																								if (externalModel_name
-																										.equals("externals")) {
+																								if (commonTypes_name
+																										.equals("Common Java datatypes")) {
 																									_result.add(
 																											new Object[] {
+																													rootModel,
+																													umlModel,
+																													commonTypes,
 																													sourceRefModel,
 																													externalModel,
-																													umlModel,
-																													rootModel,
-																													commonTypes,
 																													_edge_packagedElement });
 																								}
 
@@ -3086,10 +3077,10 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final boolean pattern_JavaModel2UmlModelRule_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			JavaModel2UmlModelRule _this, Match match, Model sourceRefModel, Model externalModel, Model umlModel,
-			Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, sourceRefModel, externalModel, umlModel, rootModel,
-				commonTypes);
+			JavaModel2UmlModelRule _this, Match match, Model rootModel, Model umlModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, rootModel, umlModel, commonTypes, sourceRefModel,
+				externalModel);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3133,32 +3124,32 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("sourceRefModel");
-		EObject _localVariable_1 = targetMatch.getObject("externalModel");
-		EObject _localVariable_2 = targetMatch.getObject("umlModel");
-		EObject _localVariable_3 = targetMatch.getObject("rootModel");
-		EObject _localVariable_4 = sourceMatch.getObject("javaModel");
-		EObject _localVariable_5 = targetMatch.getObject("commonTypes");
-		EObject tmpSourceRefModel = _localVariable_0;
-		EObject tmpExternalModel = _localVariable_1;
-		EObject tmpUmlModel = _localVariable_2;
-		EObject tmpRootModel = _localVariable_3;
-		EObject tmpJavaModel = _localVariable_4;
-		EObject tmpCommonTypes = _localVariable_5;
-		if (tmpSourceRefModel instanceof Model) {
-			Model sourceRefModel = (Model) tmpSourceRefModel;
-			if (tmpExternalModel instanceof Model) {
-				Model externalModel = (Model) tmpExternalModel;
-				if (tmpUmlModel instanceof Model) {
-					Model umlModel = (Model) tmpUmlModel;
-					if (tmpRootModel instanceof Model) {
-						Model rootModel = (Model) tmpRootModel;
-						if (tmpJavaModel instanceof MGravityModel) {
-							MGravityModel javaModel = (MGravityModel) tmpJavaModel;
-							if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
-								org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
-								return new Object[] { sourceRefModel, externalModel, umlModel, rootModel, javaModel,
-										commonTypes, targetMatch, sourceMatch };
+		EObject _localVariable_0 = targetMatch.getObject("rootModel");
+		EObject _localVariable_1 = targetMatch.getObject("umlModel");
+		EObject _localVariable_2 = targetMatch.getObject("commonTypes");
+		EObject _localVariable_3 = sourceMatch.getObject("javaModel");
+		EObject _localVariable_4 = targetMatch.getObject("sourceRefModel");
+		EObject _localVariable_5 = targetMatch.getObject("externalModel");
+		EObject tmpRootModel = _localVariable_0;
+		EObject tmpUmlModel = _localVariable_1;
+		EObject tmpCommonTypes = _localVariable_2;
+		EObject tmpJavaModel = _localVariable_3;
+		EObject tmpSourceRefModel = _localVariable_4;
+		EObject tmpExternalModel = _localVariable_5;
+		if (tmpRootModel instanceof Model) {
+			Model rootModel = (Model) tmpRootModel;
+			if (tmpUmlModel instanceof Model) {
+				Model umlModel = (Model) tmpUmlModel;
+				if (tmpCommonTypes instanceof org.eclipse.uml2.uml.Package) {
+					org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) tmpCommonTypes;
+					if (tmpJavaModel instanceof MGravityModel) {
+						MGravityModel javaModel = (MGravityModel) tmpJavaModel;
+						if (tmpSourceRefModel instanceof Model) {
+							Model sourceRefModel = (Model) tmpSourceRefModel;
+							if (tmpExternalModel instanceof Model) {
+								Model externalModel = (Model) tmpExternalModel;
+								return new Object[] { rootModel, umlModel, commonTypes, javaModel, sourceRefModel,
+										externalModel, targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -3168,31 +3159,31 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return null;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel, MGravityModel javaModel,
-			org.eclipse.uml2.uml.Package commonTypes, Match sourceMatch, Match targetMatch) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
+	public static final Object[] pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_blackBBBBBBBB(Model rootModel,
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel, Model sourceRefModel,
+			Model externalModel, Match sourceMatch, Match targetMatch) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
 												if (!sourceMatch.equals(targetMatch)) {
-													String sourceRefModel_name = sourceRefModel.getName();
-													if (sourceRefModel_name.equals("source references")) {
-														String externalModel_name = externalModel.getName();
-														if (externalModel_name.equals("externals")) {
-															String rootModel_name = rootModel.getName();
-															if (rootModel_name.equals("root model")) {
-																String commonTypes_name = commonTypes.getName();
-																if (commonTypes_name.equals("Common Java datatypes")) {
-																	return new Object[] { sourceRefModel, externalModel,
-																			umlModel, rootModel, javaModel, commonTypes,
-																			sourceMatch, targetMatch };
+													String rootModel_name = rootModel.getName();
+													if (rootModel_name.equals("root model")) {
+														String commonTypes_name = commonTypes.getName();
+														if (commonTypes_name.equals("Common Java datatypes")) {
+															String sourceRefModel_name = sourceRefModel.getName();
+															if (sourceRefModel_name.equals("source references")) {
+																String externalModel_name = externalModel.getName();
+																if (externalModel_name.equals("externals")) {
+																	return new Object[] { rootModel, umlModel,
+																			commonTypes, javaModel, sourceRefModel,
+																			externalModel, sourceMatch, targetMatch };
 																}
 
 															}
@@ -3220,19 +3211,19 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		Object[] result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding = pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding != null) {
-			Model sourceRefModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[0];
-			Model externalModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[1];
-			Model umlModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[2];
-			Model rootModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[3];
-			MGravityModel javaModel = (MGravityModel) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[4];
-			org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[5];
+			Model rootModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[0];
+			Model umlModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[1];
+			org.eclipse.uml2.uml.Package commonTypes = (org.eclipse.uml2.uml.Package) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[2];
+			MGravityModel javaModel = (MGravityModel) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[3];
+			Model sourceRefModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[4];
+			Model externalModel = (Model) result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_black = pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					sourceRefModel, externalModel, umlModel, rootModel, javaModel, commonTypes, sourceMatch,
+					rootModel, umlModel, commonTypes, javaModel, sourceRefModel, externalModel, sourceMatch,
 					targetMatch);
 			if (result_pattern_JavaModel2UmlModelRule_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { sourceRefModel, externalModel, umlModel, rootModel, javaModel, commonTypes,
+				return new Object[] { rootModel, umlModel, commonTypes, javaModel, sourceRefModel, externalModel,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3240,14 +3231,14 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_24_3_solvecsp_bindingFBBBBBBBBB(
-			JavaModel2UmlModelRule _this, Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			MGravityModel javaModel, org.eclipse.uml2.uml.Package commonTypes, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(sourceRefModel, externalModel, umlModel, rootModel,
-				javaModel, commonTypes, sourceMatch, targetMatch);
+			JavaModel2UmlModelRule _this, Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+			MGravityModel javaModel, Model sourceRefModel, Model externalModel, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(rootModel, umlModel, commonTypes, javaModel,
+				sourceRefModel, externalModel, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, sourceRefModel, externalModel, umlModel, rootModel, javaModel,
-					commonTypes, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, rootModel, umlModel, commonTypes, javaModel, sourceRefModel,
+					externalModel, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3257,10 +3248,10 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			JavaModel2UmlModelRule _this, Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel,
-			MGravityModel javaModel, org.eclipse.uml2.uml.Package commonTypes, Match sourceMatch, Match targetMatch) {
+			JavaModel2UmlModelRule _this, Model rootModel, Model umlModel, org.eclipse.uml2.uml.Package commonTypes,
+			MGravityModel javaModel, Model sourceRefModel, Model externalModel, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_JavaModel2UmlModelRule_24_3_solvecsp_binding = pattern_JavaModel2UmlModelRule_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, sourceRefModel, externalModel, umlModel, rootModel, javaModel, commonTypes, sourceMatch,
+				_this, rootModel, umlModel, commonTypes, javaModel, sourceRefModel, externalModel, sourceMatch,
 				targetMatch);
 		if (result_pattern_JavaModel2UmlModelRule_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_JavaModel2UmlModelRule_24_3_solvecsp_binding[0];
@@ -3269,8 +3260,8 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 					csp);
 			if (result_pattern_JavaModel2UmlModelRule_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, sourceRefModel, externalModel, umlModel, rootModel, javaModel,
-						commonTypes, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, rootModel, umlModel, commonTypes, javaModel, sourceRefModel,
+						externalModel, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3301,21 +3292,21 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_blackBBBBBBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, Model rootModel, MGravityModel javaModel,
-			org.eclipse.uml2.uml.Package commonTypes, CCMatch ccMatch) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												return new Object[] { sourceRefModel, externalModel, umlModel,
-														rootModel, javaModel, commonTypes, ccMatch };
+	public static final Object[] pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_blackBBBBBBB(Model rootModel,
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel, Model sourceRefModel,
+			Model externalModel, CCMatch ccMatch) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												return new Object[] { rootModel, umlModel, commonTypes, javaModel,
+														sourceRefModel, externalModel, ccMatch };
 											}
 										}
 									}
@@ -3329,27 +3320,27 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return null;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_greenBBBFFFBFBB(
-			Model sourceRefModel, Model externalModel, Model umlModel, MGravityModel javaModel,
-			org.eclipse.uml2.uml.Package commonTypes, CCMatch ccMatch) {
-		JavaModel2UMLPackage jm2commonTypes = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		JavaModel2UMLPackage jm2um = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+	public static final Object[] pattern_JavaModel2UmlModelRule_24_6_createcorrespondence_greenBBBFFFFBBB(
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, MGravityModel javaModel, Model sourceRefModel,
+			Model externalModel, CCMatch ccMatch) {
 		JavaModel2UMLPackage jm2um2 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		JavaModel2UMLPackage jm2um3 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		JavaModel2UMLPackage jm2commonTypes = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		JavaModel2UMLPackage jm2um = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		jm2um2.setSource(javaModel);
+		jm2um2.setTarget(externalModel);
+		ccMatch.getCreateCorr().add(jm2um2);
+		jm2um3.setSource(javaModel);
+		jm2um3.setTarget(sourceRefModel);
+		ccMatch.getCreateCorr().add(jm2um3);
 		jm2commonTypes.setSource(javaModel);
 		jm2commonTypes.setTarget(commonTypes);
 		ccMatch.getCreateCorr().add(jm2commonTypes);
 		jm2um.setTarget(umlModel);
 		jm2um.setSource(javaModel);
 		ccMatch.getCreateCorr().add(jm2um);
-		jm2um2.setTarget(externalModel);
-		jm2um2.setSource(javaModel);
-		ccMatch.getCreateCorr().add(jm2um2);
-		jm2um3.setTarget(sourceRefModel);
-		jm2um3.setSource(javaModel);
-		ccMatch.getCreateCorr().add(jm2um3);
-		return new Object[] { sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, jm2um2, javaModel, jm2um3,
-				commonTypes, ccMatch };
+		return new Object[] { umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um, sourceRefModel,
+				externalModel, ccMatch };
 	}
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_24_7_addtoreturnedresult_blackBB(
@@ -3387,24 +3378,24 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return _result;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_blackBBBBB(Model sourceRefModel,
-			Model externalModel, Model umlModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		if (!sourceRefModel.equals(umlModel)) {
-			if (!externalModel.equals(sourceRefModel)) {
-				if (!externalModel.equals(umlModel)) {
-					if (!externalModel.equals(rootModel)) {
-						if (!rootModel.equals(sourceRefModel)) {
-							if (!rootModel.equals(umlModel)) {
-								if (!commonTypes.equals(sourceRefModel)) {
-									if (!commonTypes.equals(externalModel)) {
-										if (!commonTypes.equals(umlModel)) {
-											if (!commonTypes.equals(rootModel)) {
-												if (umlModel.getPackagedElements().contains(commonTypes)) {
+	public static final Object[] pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_blackBBBBB(Model rootModel,
+			Model umlModel, org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
+		if (!rootModel.equals(umlModel)) {
+			if (!rootModel.equals(sourceRefModel)) {
+				if (!commonTypes.equals(rootModel)) {
+					if (!commonTypes.equals(umlModel)) {
+						if (!commonTypes.equals(sourceRefModel)) {
+							if (!commonTypes.equals(externalModel)) {
+								if (!sourceRefModel.equals(umlModel)) {
+									if (!externalModel.equals(rootModel)) {
+										if (!externalModel.equals(umlModel)) {
+											if (!externalModel.equals(sourceRefModel)) {
+												if (rootModel.getPackagedElements().contains(umlModel)) {
 													if (rootModel.getPackagedElements().contains(sourceRefModel)) {
 														if (rootModel.getPackagedElements().contains(externalModel)) {
-															if (rootModel.getPackagedElements().contains(umlModel)) {
-																return new Object[] { sourceRefModel, externalModel,
-																		umlModel, rootModel, commonTypes };
+															if (umlModel.getPackagedElements().contains(commonTypes)) {
+																return new Object[] { rootModel, umlModel, commonTypes,
+																		sourceRefModel, externalModel };
 															}
 														}
 													}
@@ -3422,17 +3413,17 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 		return null;
 	}
 
-	public static final Object[] pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_greenBBBB(Model sourceRefModel,
-			Model externalModel, Model rootModel, org.eclipse.uml2.uml.Package commonTypes) {
-		String sourceRefModel_name_prime = "source references";
-		String externalModel_name_prime = "externals";
+	public static final Object[] pattern_JavaModel2UmlModelRule_28_1_matchtggpattern_greenBBBB(Model rootModel,
+			org.eclipse.uml2.uml.Package commonTypes, Model sourceRefModel, Model externalModel) {
 		String rootModel_name_prime = "root model";
 		String commonTypes_name_prime = "Common Java datatypes";
-		sourceRefModel.setName(sourceRefModel_name_prime);
-		externalModel.setName(externalModel_name_prime);
+		String sourceRefModel_name_prime = "source references";
+		String externalModel_name_prime = "externals";
 		rootModel.setName(rootModel_name_prime);
 		commonTypes.setName(commonTypes_name_prime);
-		return new Object[] { sourceRefModel, externalModel, rootModel, commonTypes };
+		sourceRefModel.setName(sourceRefModel_name_prime);
+		externalModel.setName(externalModel_name_prime);
+		return new Object[] { rootModel, commonTypes, sourceRefModel, externalModel };
 	}
 
 	public static final boolean pattern_JavaModel2UmlModelRule_28_2_expressionF() {
@@ -3507,59 +3498,59 @@ public class JavaModel2UmlModelRuleImpl extends AbstractRuleImpl implements Java
 
 	public static final Object[] pattern_JavaModel2UmlModelRule_29_6_perform_greenFFFFFFFFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		Model sourceRefModel = UMLFactory.eINSTANCE.createModel();
-		Model externalModel = UMLFactory.eINSTANCE.createModel();
+		Model rootModel = UMLFactory.eINSTANCE.createModel();
 		Model umlModel = UMLFactory.eINSTANCE.createModel();
+		org.eclipse.uml2.uml.Package commonTypes = UMLFactory.eINSTANCE.createPackage();
+		MGravityModel javaModel = ModiscoFactory.eINSTANCE.createMGravityModel();
+		JavaModel2UMLPackage jm2um2 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
+		JavaModel2UMLPackage jm2um3 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		JavaModel2UMLPackage jm2commonTypes = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
 		JavaModel2UMLPackage jm2um = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		Model rootModel = UMLFactory.eINSTANCE.createModel();
-		JavaModel2UMLPackage jm2um2 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		MGravityModel javaModel = ModiscoFactory.eINSTANCE.createMGravityModel();
-		JavaModel2UMLPackage jm2um3 = UmlFactory.eINSTANCE.createJavaModel2UMLPackage();
-		org.eclipse.uml2.uml.Package commonTypes = UMLFactory.eINSTANCE.createPackage();
+		Model sourceRefModel = UMLFactory.eINSTANCE.createModel();
+		Model externalModel = UMLFactory.eINSTANCE.createModel();
+		String rootModel_name_prime = "root model";
+		Object _localVariable_0 = csp.getValue("umlModel", "name");
+		String commonTypes_name_prime = "Common Java datatypes";
+		Object _localVariable_1 = csp.getValue("javaModel", "name");
 		String sourceRefModel_name_prime = "source references";
 		String externalModel_name_prime = "externals";
-		Object _localVariable_0 = csp.getValue("umlModel", "name");
-		String rootModel_name_prime = "root model";
-		Object _localVariable_1 = csp.getValue("javaModel", "name");
-		String commonTypes_name_prime = "Common Java datatypes";
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getTargetObjects().add(sourceRefModel);
-		ruleResult.getTargetObjects().add(externalModel);
-		ruleResult.getTargetObjects().add(umlModel);
-		ruleResult.getCorrObjects().add(jm2commonTypes);
-		jm2um.setTarget(umlModel);
-		ruleResult.getCorrObjects().add(jm2um);
-		rootModel.getPackagedElements().add(sourceRefModel);
-		rootModel.getPackagedElements().add(externalModel);
-		rootModel.getPackagedElements().add(umlModel);
 		ruleResult.getTargetObjects().add(rootModel);
-		jm2um2.setTarget(externalModel);
-		ruleResult.getCorrObjects().add(jm2um2);
-		jm2um.setSource(javaModel);
-		jm2um2.setSource(javaModel);
-		jm2commonTypes.setSource(javaModel);
+		rootModel.getPackagedElements().add(umlModel);
+		ruleResult.getTargetObjects().add(umlModel);
+		umlModel.getPackagedElements().add(commonTypes);
+		ruleResult.getTargetObjects().add(commonTypes);
 		ruleResult.getSourceObjects().add(javaModel);
-		jm2um3.setTarget(sourceRefModel);
+		jm2um2.setSource(javaModel);
+		ruleResult.getCorrObjects().add(jm2um2);
 		jm2um3.setSource(javaModel);
 		ruleResult.getCorrObjects().add(jm2um3);
-		umlModel.getPackagedElements().add(commonTypes);
+		jm2commonTypes.setSource(javaModel);
 		jm2commonTypes.setTarget(commonTypes);
-		ruleResult.getTargetObjects().add(commonTypes);
+		ruleResult.getCorrObjects().add(jm2commonTypes);
+		jm2um.setTarget(umlModel);
+		jm2um.setSource(javaModel);
+		ruleResult.getCorrObjects().add(jm2um);
+		rootModel.getPackagedElements().add(sourceRefModel);
+		jm2um3.setTarget(sourceRefModel);
+		ruleResult.getTargetObjects().add(sourceRefModel);
+		rootModel.getPackagedElements().add(externalModel);
+		jm2um2.setTarget(externalModel);
+		ruleResult.getTargetObjects().add(externalModel);
+		rootModel.setName(rootModel_name_prime);
+		String umlModel_name_prime = (String) _localVariable_0;
+		commonTypes.setName(commonTypes_name_prime);
+		String javaModel_name_prime = (String) _localVariable_1;
 		sourceRefModel.setName(sourceRefModel_name_prime);
 		externalModel.setName(externalModel_name_prime);
-		String umlModel_name_prime = (String) _localVariable_0;
-		rootModel.setName(rootModel_name_prime);
-		String javaModel_name_prime = (String) _localVariable_1;
-		commonTypes.setName(commonTypes_name_prime);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
 		umlModel.setName(umlModel_name_prime);
 		javaModel.setName(javaModel_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { sourceRefModel, externalModel, umlModel, jm2commonTypes, jm2um, rootModel, jm2um2,
-				javaModel, jm2um3, commonTypes, ruleResult, csp };
+		return new Object[] { rootModel, umlModel, commonTypes, javaModel, jm2um2, jm2um3, jm2commonTypes, jm2um,
+				sourceRefModel, externalModel, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_JavaModel2UmlModelRule_29_7_expressionFB(

@@ -162,14 +162,14 @@ public class LiteralToTNodeImpl extends AbstractCorrespondenceImpl implements Li
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.LITERAL_TO_TNODE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.LITERAL_TO_TNODE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.LITERAL_TO_TNODE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.LITERAL_TO_TNODE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class LiteralToTNodeImpl extends AbstractCorrespondenceImpl implements Li
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.LITERAL_TO_TNODE__SOURCE:
-			setSource((Expression) newValue);
-			return;
-		case PmPackage.LITERAL_TO_TNODE__TARGET:
-			setTarget((TAbstractNode) newValue);
-			return;
+			case PmPackage.LITERAL_TO_TNODE__SOURCE:
+				setSource((Expression) newValue);
+				return;
+			case PmPackage.LITERAL_TO_TNODE__TARGET:
+				setTarget((TAbstractNode) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class LiteralToTNodeImpl extends AbstractCorrespondenceImpl implements Li
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.LITERAL_TO_TNODE__SOURCE:
-			setSource((Expression) null);
-			return;
-		case PmPackage.LITERAL_TO_TNODE__TARGET:
-			setTarget((TAbstractNode) null);
-			return;
+			case PmPackage.LITERAL_TO_TNODE__SOURCE:
+				setSource((Expression) null);
+				return;
+			case PmPackage.LITERAL_TO_TNODE__TARGET:
+				setTarget((TAbstractNode) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class LiteralToTNodeImpl extends AbstractCorrespondenceImpl implements Li
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.LITERAL_TO_TNODE__SOURCE:
-			return source != null;
-		case PmPackage.LITERAL_TO_TNODE__TARGET:
-			return target != null;
+			case PmPackage.LITERAL_TO_TNODE__SOURCE:
+				return source != null;
+			case PmPackage.LITERAL_TO_TNODE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,12 +16,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
-import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 import org.gravity.typegraph.basic.BasicFactory;
-import org.gravity.typegraph.basic.TPackage;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * A handler for triggering the synchronization of changes on the pm into the
@@ -36,7 +34,7 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = GravityUiActivator.getSelection(event);
+		final List<?> selection = SelectionHelper.getSelection(event);
 
 		final Job job = new SyncPGJob(selection);
 		job.setUser(true);
@@ -47,22 +45,12 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public boolean isEnabled() {
-		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsBWDSync();
-		} catch (NoConverterRegisteredException | CoreException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			return false;
-		}
+		return this.isEnabled(IPGConverterFactory::supportsBWDSync);
 	}
 
 	@Override
 	public boolean isHandled() {
-		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsBWDSync();
-		} catch (NoConverterRegisteredException | CoreException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			return false;
-		}
+		return this.isEnabled();
 	}
 
 	/**
@@ -72,7 +60,7 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 	 * @author speldszus
 	 *
 	 */
-	private final class SyncPGJob extends Job {
+	private static final class SyncPGJob extends Job {
 		private final List<?> selection;
 
 		private SyncPGJob(final List<?> selection) {
@@ -83,29 +71,27 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 		@Override
 		protected IStatus run(final IProgressMonitor monitor) {
 			for (final Object entry : this.selection) {
-				if (entry instanceof IJavaProject) {
-					final IJavaProject iJavaProject = (IJavaProject) entry;
-					IPGConverter converter;
-					try {
-						converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
-					} catch (NoConverterRegisteredException | CoreException e) {
-						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
-								"Please install a converter and restart the task.");
-					}
-					final Consumer<EObject> consumer = IPGConverter -> {
-						final TypeGraph pg = converter.getPG();
-						final TPackage createTPackage = BasicFactory.eINSTANCE.createTPackage();
-						createTPackage.setTName("NEW");
-						createTPackage.setModel(pg);
-						pg.getPackages().add(createTPackage);
-					};
-					if (!converter.syncProjectBwd(consumer, monitor)) {
-						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
-					}
-				} else {
-					final UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+				if (!(entry instanceof final IJavaProject iJavaProject)) {
+					final var exception = new UnsupportedSelectionException(entry.getClass());
 					LOGGER.log(Level.ERROR, exception.getMessage(), exception);
 					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
+				}
+				IPGConverter converter;
+				try {
+					converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
+				} catch (NoConverterRegisteredException | CoreException e) {
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
+							"Please install a converter and restart the task.");
+				}
+				final Consumer<EObject> consumer = IPGConverter -> {
+					final var pg = converter.getPG();
+					final var createTPackage = BasicFactory.eINSTANCE.createTPackage();
+					createTPackage.setTName("NEW");
+					createTPackage.setModel(pg);
+					pg.getPackages().add(createTPackage);
+				};
+				if (!converter.syncProjectBwd(consumer, monitor)) {
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
 				}
 			}
 			return Status.OK_STATUS;

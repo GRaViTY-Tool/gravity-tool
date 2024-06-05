@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.AnnotationMemberValuePair;
 import org.eclipse.modisco.java.ArrayInitializer;
-import org.eclipse.modisco.java.BodyDeclaration;
 
 import org.gravity.tgg.modisco.pm.AnnotationMemberValuePairToTAnnotationValue;
 
@@ -48,8 +47,8 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, Annotation mValue);
+	boolean isAppropriate_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			Annotation mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,8 +72,8 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, Annotation mValue);
+	void registerObjectsToMatch_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			Annotation mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,8 +81,8 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, Annotation mValue);
+	CSP isAppropriate_solveCsp_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			Annotation mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,10 +98,10 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			Annotation mValue, TAnnotationValue tAnnotationValue);
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			Annotation mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +117,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject AnnotationMemberValuePairToTAnnotationValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue,
+			EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,9 +183,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TAnnotation tValue, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotation tValue,
 			TAnnotationValue tAnnotationValue);
 
 	/**
@@ -203,9 +202,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject mValue, EObject tAnnotationValue);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject AnnotationMemberValuePairToTAnnotationValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue,
+			EObject mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +220,7 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_70(EMoflonEdge _edge_tValue);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_997(EMoflonEdge _edge_tValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +228,7 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_73(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1093(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,9 +260,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, TAnnotation tValue, BodyDeclaration mOwner, Annotation mValue,
-			TAnnotationValue tAnnotationValue, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			TAnnotation tValue, TAnnotationValue tAnnotationValue, Annotation mValue, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,8 +278,7 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			BodyDeclaration mOwner, Annotation mValue);
+	boolean checkDEC_FWD(AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, Annotation mValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,9 +303,9 @@ public interface AnnotationMemberValueAnnotationArray extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

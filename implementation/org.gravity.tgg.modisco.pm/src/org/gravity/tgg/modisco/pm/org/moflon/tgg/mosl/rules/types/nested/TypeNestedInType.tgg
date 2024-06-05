@@ -50,6 +50,7 @@
 
 #attributeConditions {
 	concat("$", tOuterType.tName, eNestedType.name, tNestedType.tName)
+	eq(eNestedType.proxy,tNestedType.tLib)
 }
 
 

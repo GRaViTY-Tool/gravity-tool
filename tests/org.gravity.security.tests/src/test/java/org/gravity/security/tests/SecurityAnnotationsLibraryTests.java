@@ -11,7 +11,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.util.JavaProjectUtil;
-import org.gravity.security.annotations.AnnotationsActivator;
+import org.gravity.security.annotations.SecurityAnnoationsCheckActivator;
 import org.junit.Test;
 
 public class SecurityAnnotationsLibraryTests {
@@ -27,14 +27,14 @@ public class SecurityAnnotationsLibraryTests {
 			final var cpBefore = project.getRawClasspath().length;
 
 			// Add UMLsec lib
-			final var path1 = AnnotationsActivator.applyUMLsecLib(project, monitor);
+			final var path1 = SecurityAnnoationsCheckActivator.applyUMLsecLib(project, monitor);
 
 			// Check if lib has been added
 			assertTrue(project.getProject().getFile(path1).exists());
 			assertEquals(cpBefore + 1, project.getRawClasspath().length);
 
 			// Try to add lib again
-			final var path2 = AnnotationsActivator.applyUMLsecLib(project, monitor);
+			final var path2 = SecurityAnnoationsCheckActivator.applyUMLsecLib(project, monitor);
 
 			// Check that file has not been added again
 			assertEquals(path1, path2);

@@ -123,7 +123,7 @@ public interface MethodDefinition extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
 			EObject mDefinitionToTMember, EObject tMethodSignature, EObject mSignatureToTMethodSignature,
-			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mDefinition, EObject tDefinition, EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement,
 			EObject mTypeAccess, EObject mType, EObject mSignature);
 
 	/**
@@ -212,7 +212,7 @@ public interface MethodDefinition extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tType, EObject mTypeToTType,
 			EObject mDefinitionToTMember, EObject tMethodSignature, EObject mSignatureToTMethodSignature,
-			EObject tDefinition, EObject mDefinition, EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation,
+			EObject mDefinition, EObject tDefinition, EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement,
 			EObject mTypeAccess, EObject mType, EObject mSignature);
 
 	/**
@@ -229,7 +229,7 @@ public interface MethodDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_78(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_988(EMoflonEdge _edge_definitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -237,7 +237,7 @@ public interface MethodDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_81(EMoflonEdge _edge_returnType);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1084(EMoflonEdge _edge_returnType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,8 +269,8 @@ public interface MethodDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAbstractType tType, TMethodSignature tMethodSignature, TMethodDefinition tDefinition,
-			MMethodDefinition mDefinition, TypeAccess mTypeAccess, Type mType, MMethodSignature mSignature,
+	CSP isApplicable_solveCsp_CC(TAbstractType tType, TMethodSignature tMethodSignature, MMethodDefinition mDefinition,
+			TMethodDefinition tDefinition, TypeAccess mTypeAccess, Type mType, MMethodSignature mSignature,
 			Match sourceMatch, Match targetMatch);
 
 	/**

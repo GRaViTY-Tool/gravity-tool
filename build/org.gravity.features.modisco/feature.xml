@@ -36,36 +36,20 @@ Darmstadt.
          version="0.0.0"/>
 
    <requires>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.modisco.infra.discovery.core"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.modisco.java.discoverer"/>
-      <import plugin="org.gravity.eclipse"/>
-      <import plugin="org.eclipse.modisco.java.generation"/>
-      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.modisco.java" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.apache.xmlgraphics"/>
-      <import plugin="org.moflon.core.utilities"/>
-      <import plugin="SDMLanguage"/>
-      <import plugin="org.moflon.tgg.language"/>
-      <import plugin="org.moflon.tgg.runtime"/>
-      <import plugin="MocaTree"/>
+      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202405111921"/>
+      <import feature="org.eclipse.modisco.eclipse.feature" version="1.5.4.v20240304-1105"/>
    </requires>
 
    <plugin
          id="org.gravity.modisco"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.tgg.modisco.pm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.modisco.java.generation"
+         version="0.0.0"/>
 
 </feature>

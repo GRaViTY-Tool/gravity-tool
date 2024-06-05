@@ -683,7 +683,7 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_49(EMoflonEdge _edge_modules) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_983(EMoflonEdge _edge_modules) {
 
 		Object[] result1_bindingAndBlack = CompilationUnitToModuleImpl
 				.pattern_CompilationUnitToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -741,7 +741,7 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_compilationUnits) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1078(EMoflonEdge _edge_compilationUnits) {
 
 		Object[] result1_bindingAndBlack = CompilationUnitToModuleImpl
 				.pattern_CompilationUnitToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1154,90 +1154,92 @@ public class CompilationUnitToModuleImpl extends AbstractRuleImpl implements Com
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD__MATCH_COMPILATIONUNIT_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (CompilationUnit) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_COMPILATIONUNIT_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (CompilationUnit) arguments.get(1),
-					(Model) arguments.get(2));
-			return null;
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_COMPILATIONUNIT_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (CompilationUnit) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_COMPILATIONUNIT_MODEL_TYPEGRAPH:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(CompilationUnit) arguments.get(2), (Model) arguments.get(3), (TypeGraph) arguments.get(4));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH:
-			return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2));
-			return null;
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_MODEL_TYPEGRAPH:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TModule) arguments.get(2), (Model) arguments.get(3), (TypeGraph) arguments.get(4));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_49__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_49((EMoflonEdge) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_51__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_51((EMoflonEdge) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_CC__COMPILATIONUNIT_TMODULE_MODEL_TYPEGRAPH_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((CompilationUnit) arguments.get(0), (TModule) arguments.get(1),
-					(Model) arguments.get(2), (TypeGraph) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_DEC_FWD__COMPILATIONUNIT_MODEL:
-			return checkDEC_FWD((CompilationUnit) arguments.get(0), (Model) arguments.get(1));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_DEC_BWD__TMODULE_TYPEGRAPH:
-			return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_MODEL_TYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(Model) arguments.get(2), (TypeGraph) arguments.get(3),
-					(ModelgeneratorRuleResult) arguments.get(4));
-		case RulesPackage.COMPILATION_UNIT_TO_MODULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD__MATCH_COMPILATIONUNIT_MODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (CompilationUnit) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_COMPILATIONUNIT_MODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (CompilationUnit) arguments.get(1),
+						(Model) arguments.get(2));
+				return null;
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_COMPILATIONUNIT_MODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (CompilationUnit) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_COMPILATIONUNIT_MODEL_TYPEGRAPH:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (CompilationUnit) arguments.get(2),
+						(Model) arguments.get(3), (TypeGraph) arguments.get(4));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH:
+				return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2));
+				return null;
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_MODEL_TYPEGRAPH:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (Model) arguments.get(3),
+						(TypeGraph) arguments.get(4));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_983__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_983((EMoflonEdge) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1078__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1078((EMoflonEdge) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_SOLVE_CSP_CC__COMPILATIONUNIT_TMODULE_MODEL_TYPEGRAPH_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((CompilationUnit) arguments.get(0), (TModule) arguments.get(1),
+						(Model) arguments.get(2), (TypeGraph) arguments.get(3), (Match) arguments.get(4),
+						(Match) arguments.get(5));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_DEC_FWD__COMPILATIONUNIT_MODEL:
+				return checkDEC_FWD((CompilationUnit) arguments.get(0), (Model) arguments.get(1));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___CHECK_DEC_BWD__TMODULE_TYPEGRAPH:
+				return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_MODEL_TYPEGRAPH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (Model) arguments.get(2), (TypeGraph) arguments.get(3),
+						(ModelgeneratorRuleResult) arguments.get(4));
+			case RulesPackage.COMPILATION_UNIT_TO_MODULE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

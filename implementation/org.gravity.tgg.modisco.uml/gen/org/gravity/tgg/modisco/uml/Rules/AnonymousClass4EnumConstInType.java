@@ -5,11 +5,12 @@ package org.gravity.tgg.modisco.uml.Rules;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.EnumDeclaration;
 
 import org.eclipse.uml2.uml.Enumeration;
+
+import org.gravity.modisco.MAnonymousClass;
 
 import org.gravity.tgg.modisco.uml.ASTNode2Element;
 
@@ -47,7 +48,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jType,
+	boolean isAppropriate_FWD(Match match, MAnonymousClass mAnon, AbstractTypeDeclaration jType,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
@@ -72,7 +73,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jType,
+	void registerObjectsToMatch_FWD(Match match, MAnonymousClass mAnon, AbstractTypeDeclaration jType,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
@@ -81,7 +82,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jType,
+	CSP isAppropriate_solveCsp_FWD(Match match, MAnonymousClass mAnon, AbstractTypeDeclaration jType,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
@@ -98,7 +99,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MAnonymousClass mAnon,
 			org.eclipse.uml2.uml.Class uType, Enumeration uContainer, AbstractTypeDeclaration jType,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne, ASTNode2Element p2p);
 
@@ -219,7 +220,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1033(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +228,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1131(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,7 +260,7 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, AnonymousClassDeclaration mAnon,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, MAnonymousClass mAnon,
 			org.eclipse.uml2.uml.Class uType, Enumeration uContainer, AbstractTypeDeclaration jType,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
@@ -277,8 +278,8 @@ public interface AnonymousClass4EnumConstInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jType,
-			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
+	boolean checkDEC_FWD(MAnonymousClass mAnon, AbstractTypeDeclaration jType, EnumConstantDeclaration mMember,
+			EnumDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

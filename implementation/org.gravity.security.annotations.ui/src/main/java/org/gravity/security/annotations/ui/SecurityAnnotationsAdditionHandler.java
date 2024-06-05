@@ -17,7 +17,7 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.selection.SelectionHelper;
-import org.gravity.security.annotations.AnnotationsActivator;
+import org.gravity.security.annotations.SecurityAnnoationsCheckActivator;
 
 public class SecurityAnnotationsAdditionHandler implements IHandler {
 
@@ -43,7 +43,7 @@ public class SecurityAnnotationsAdditionHandler implements IHandler {
 
 		for (IJavaProject project : SelectionHelper.getJavaProjects(workspaceSelection)) {
 			try {
-				AnnotationsActivator.applyUMLsecLib(project, new NullProgressMonitor());
+				SecurityAnnoationsCheckActivator.applyUMLsecLib(project, new NullProgressMonitor());
 			} catch (CoreException | IOException e) {
 				LOGGER.error(e);
 			}

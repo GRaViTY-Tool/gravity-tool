@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
 
+import org.gravity.modisco.MAnonymousClass;
 import org.gravity.modisco.MClassInstanceCreation;
 import org.gravity.modisco.MDefinition;
 
@@ -45,7 +46,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon,
+	boolean isAppropriate_FWD(Match match, MClassInstanceCreation mConstructor, MAnonymousClass mAnon,
 			MDefinition mMember, AnonymousClassDeclaration jContainer);
 
 	/**
@@ -70,7 +71,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon,
+	void registerObjectsToMatch_FWD(Match match, MClassInstanceCreation mConstructor, MAnonymousClass mAnon,
 			MDefinition mMember, AnonymousClassDeclaration jContainer);
 
 	/**
@@ -79,7 +80,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon,
+	CSP isAppropriate_solveCsp_FWD(Match match, MClassInstanceCreation mConstructor, MAnonymousClass mAnon,
 			MDefinition mMember, AnonymousClassDeclaration jContainer);
 
 	/**
@@ -97,7 +98,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MClassInstanceCreation mConstructor,
-			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer, MDefinition mMember,
+			MAnonymousClass mAnon, org.eclipse.uml2.uml.Class uContainer, MDefinition mMember,
 			AnonymousClassDeclaration jContainer, ASTNode2Element ne2ne);
 
 	/**
@@ -216,7 +217,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1061(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +225,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_26(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1167(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +258,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class feature,
-			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uContainer, MDefinition mMember,
+			MAnonymousClass mAnon, org.eclipse.uml2.uml.Class uContainer, MDefinition mMember,
 			AnonymousClassDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -274,7 +275,7 @@ public interface AnonymousClass4Anonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon, MDefinition mMember,
+	boolean checkDEC_FWD(MClassInstanceCreation mConstructor, MAnonymousClass mAnon, MDefinition mMember,
 			AnonymousClassDeclaration jContainer);
 
 	/**

@@ -12,10 +12,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
-import org.eclipse.modisco.java.Annotation;
 import org.eclipse.modisco.java.AnnotationMemberValuePair;
 import org.eclipse.modisco.java.ArrayInitializer;
-import org.eclipse.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.Expression;
 import org.eclipse.modisco.java.StringLiteral;
 
 import org.eclipse.modisco.java.emf.JavaFactory;
@@ -98,27 +97,25 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, StringLiteral mValue) {
+	public boolean isAppropriate_FWD(Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			StringLiteral mValue) {
 
 		Object[] result1_black = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_0_1_initialbindings_blackBBBBBBB(this, match, annotation,
-						mAnnotationValue, mArray, mOwner, mValue);
+				.pattern_AnnotationMemberValueStringArray_0_1_initialbindings_blackBBBBB(this, match, mAnnotationValue,
+						mArray, mValue);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[annotation] = " + annotation + ", " + "[mAnnotationValue] = "
-					+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[mOwner] = " + mOwner + ", "
-					+ "[mValue] = " + mValue + ".");
+					+ "[match] = " + match + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mArray] = "
+					+ mArray + ", " + "[mValue] = " + mValue + ".");
 		}
 
 		Object[] result2_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, annotation,
-						mAnnotationValue, mArray, mOwner, mValue);
+				.pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match,
+						mAnnotationValue, mArray, mValue);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[annotation] = " + annotation + ", " + "[mAnnotationValue] = "
-					+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[mOwner] = " + mOwner + ", "
-					+ "[mValue] = " + mValue + ".");
+					+ "[match] = " + match + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mArray] = "
+					+ mArray + ", " + "[mValue] = " + mValue + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -126,37 +123,35 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 				.pattern_AnnotationMemberValueStringArray_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_blackBBBBBB(match,
-							annotation, mAnnotationValue, mArray, mOwner, mValue);
+					.pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_blackBBBB(match,
+							mAnnotationValue, mArray, mValue);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[annotation] = " + annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", "
-						+ "[mArray] = " + mArray + ", " + "[mOwner] = " + mOwner + ", " + "[mValue] = " + mValue + ".");
+						+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mArray] = " + mArray + ", "
+						+ "[mValue] = " + mValue + ".");
 			}
 			AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_greenBBBBFF(match,
-							mAnnotationValue, mArray, mValue);
-			//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result4_green[5];
+					.pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_greenBBBF(match, mArray,
+							mValue);
+			//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_blackBBBBBB(match, annotation,
-							mAnnotationValue, mArray, mOwner, mValue);
+					.pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_blackBBBB(match,
+							mAnnotationValue, mArray, mValue);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[annotation] = " + annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", "
-						+ "[mArray] = " + mArray + ", " + "[mOwner] = " + mOwner + ", " + "[mValue] = " + mValue + ".");
+						+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mArray] = " + mArray + ", "
+						+ "[mValue] = " + mValue + ".");
 			}
 			AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_greenBBBBFF(match, annotation,
-							mAnnotationValue, mOwner);
-			//nothing EMoflonEdge mOwner__annotation____annotations = (EMoflonEdge) result5_green[4];
-			//nothing EMoflonEdge annotation__mAnnotationValue____values = (EMoflonEdge) result5_green[5];
+					.pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_greenBBBF(match,
+							mAnnotationValue, mArray);
+			//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result5_green[3];
 
 			// 
 			AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_0_6_registerobjectstomatch_expressionBBBBBBB(this, match,
-							annotation, mAnnotationValue, mArray, mOwner, mValue);
+					.pattern_AnnotationMemberValueStringArray_0_6_registerobjectstomatch_expressionBBBBB(this, match,
+							mAnnotationValue, mArray, mValue);
 			return AnnotationMemberValueStringArrayImpl.pattern_AnnotationMemberValueStringArray_0_7_expressionF();
 		} else {
 			return AnnotationMemberValueStringArrayImpl.pattern_AnnotationMemberValueStringArray_0_8_expressionF();
@@ -172,20 +167,18 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	public PerformRuleResult perform_FWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingAndBlackFFFFFFFFBB(this,
+				.pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingAndBlackFFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Annotation annotation = (Annotation) result1_bindingAndBlack[0];
-		AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result1_bindingAndBlack[1];
-		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[2];
-		ArrayInitializer mArray = (ArrayInitializer) result1_bindingAndBlack[3];
-		BodyDeclaration mOwner = (BodyDeclaration) result1_bindingAndBlack[4];
-		TAnnotationValue tAnnotationValue = (TAnnotationValue) result1_bindingAndBlack[5];
-		StringLiteral mValue = (StringLiteral) result1_bindingAndBlack[6];
-		CSP csp = (CSP) result1_bindingAndBlack[7];
+		AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result1_bindingAndBlack[0];
+		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[1];
+		ArrayInitializer mArray = (ArrayInitializer) result1_bindingAndBlack[2];
+		TAnnotationValue tAnnotationValue = (TAnnotationValue) result1_bindingAndBlack[3];
+		StringLiteral mValue = (StringLiteral) result1_bindingAndBlack[4];
+		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_1_1_performtransformation_greenFFBBB(tAnnotationValue, mValue,
 						csp);
@@ -193,45 +186,42 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		TTextNode tValue = (TTextNode) result1_green[1];
 
 		Object[] result2_black = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_blackBBBB(mTypeToTType, mArray,
-						tValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_blackBBB(mTypeToTType, tValue,
+						mValue);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTypeToTType] = " + mTypeToTType
-					+ ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", " + "[mValue] = " + mValue
-					+ ".");
+					+ ", " + "[tValue] = " + tValue + ", " + "[mValue] = " + mValue + ".");
 		}
 		Object[] result2_green = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_greenFBBBB(mTypeToTType, mArray,
-						tValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_greenFBBB(mTypeToTType, tValue,
+						mValue);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-						annotation, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray,
-						tValue, mOwner, tAnnotationValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
+						AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray, tValue,
+						tAnnotationValue, mValue);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[annotation] = " + annotation + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
+					+ ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 					+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = " + mAnnotationValue
 					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mArray] = " + mArray + ", " + "[tValue] = "
-					+ tValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", "
-					+ "[mValue] = " + mValue + ".");
+					+ tValue + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
 		}
 		AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_greenBBBBBBBFFFFF(ruleresult,
-						mAnnotationValue, mTypeToTType, mArray, tValue, tAnnotationValue, mValue);
-		//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mTypeToTType__mValue____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mTypeToTType__tValue____target = (EMoflonEdge) result3_green[11];
+				.pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult,
+						mTypeToTType, mArray, tValue, tAnnotationValue, mValue);
+		//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mTypeToTType__mValue____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mTypeToTType__tValue____target = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
 		AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						annotation, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray,
-						tValue, mOwner, tAnnotationValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
+						AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray, tValue,
+						tAnnotationValue, mValue);
 		return AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_1_6_expressionFB(ruleresult);
 	}
@@ -256,49 +246,45 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		// ForEach 
 		Object[] result2_binding = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_2_2_corematch_bindingFFFFFB(match);
+				.pattern_AnnotationMemberValueStringArray_2_2_corematch_bindingFFFB(match);
 		if (result2_binding == null) {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Annotation annotation = (Annotation) result2_binding[0];
-		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_binding[1];
-		ArrayInitializer mArray = (ArrayInitializer) result2_binding[2];
-		BodyDeclaration mOwner = (BodyDeclaration) result2_binding[3];
-		StringLiteral mValue = (StringLiteral) result2_binding[4];
+		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_binding[0];
+		ArrayInitializer mArray = (ArrayInitializer) result2_binding[1];
+		StringLiteral mValue = (StringLiteral) result2_binding[2];
 		for (Object[] result2_black : AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_2_2_corematch_blackBFBBBFBB(annotation, mAnnotationValue,
-						mArray, mOwner, mValue, match)) {
-			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[1];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[5];
+				.pattern_AnnotationMemberValueStringArray_2_2_corematch_blackFBBFBB(mAnnotationValue, mArray, mValue,
+						match)) {
+			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[0];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_2_3_findcontext_blackBBBBBBB(annotation,
-							AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner,
-							tAnnotationValue, mValue)) {
+					.pattern_AnnotationMemberValueStringArray_2_3_findcontext_blackBBBBB(
+							AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue,
+							mValue)) {
 				Object[] result3_green = AnnotationMemberValueStringArrayImpl
-						.pattern_AnnotationMemberValueStringArray_2_3_findcontext_greenBBBBBBBFFFFFFF(annotation,
-								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner,
-								tAnnotationValue, mValue);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge mOwner__annotation____annotations = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge annotation__mAnnotationValue____values = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[13];
+						.pattern_AnnotationMemberValueStringArray_2_3_findcontext_greenBBBBBFFFFF(
+								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue,
+								mValue);
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
+				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-						.pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, annotation, AnnotationMemberValuePairToTAnnotationValue,
-								mAnnotationValue, mArray, mOwner, tAnnotationValue, mValue);
+						.pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingAndBlackFBBBBBBB(this,
+								isApplicableMatch, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+								mArray, tAnnotationValue, mValue);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation
-							+ ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", "
+							+ "[AnnotationMemberValuePairToTAnnotationValue] = "
 							+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = "
-							+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[mOwner] = " + mOwner + ", "
-							+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
+							+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[tAnnotationValue] = "
+							+ tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -331,13 +317,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {
-		match.registerObject("annotation", annotation);
+	public void registerObjectsToMatch_FWD(Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {
 		match.registerObject("mAnnotationValue", mAnnotationValue);
 		match.registerObject("mArray", mArray);
-		match.registerObject("mOwner", mOwner);
 		match.registerObject("mValue", mValue);
 
 	}
@@ -347,9 +330,8 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -378,10 +360,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, StringLiteral mValue) {// Create CSP
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -406,12 +388,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		eq.solve(var_mValue_escapedValue, var_tValue_tText);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
 		isApplicableMatch.registerObject("mArray", mArray);
-		isApplicableMatch.registerObject("mOwner", mOwner);
 		isApplicableMatch.registerObject("tAnnotationValue", tAnnotationValue);
 		isApplicableMatch.registerObject("mValue", mValue);
 		return csp;
@@ -431,17 +411,15 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
-		ruleresult.registerObject("annotation", annotation);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject AnnotationMemberValuePairToTAnnotationValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue,
+			EObject mValue) {
 		ruleresult.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
 		ruleresult.registerObject("mAnnotationValue", mAnnotationValue);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("mArray", mArray);
 		ruleresult.registerObject("tValue", tValue);
-		ruleresult.registerObject("mOwner", mOwner);
 		ruleresult.registerObject("tAnnotationValue", tAnnotationValue);
 		ruleresult.registerObject("mValue", mValue);
 
@@ -453,11 +431,8 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * @generated
 	 */
 	public boolean checkTypes_FWD(Match match) {
-		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mArray").eClass())
-						.equals("java.ArrayInitializer.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mValue").eClass())
-						.equals("java.StringLiteral.");
+		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mValue").eClass())
+				.equals("java.StringLiteral.");
 	}
 
 	/**
@@ -531,66 +506,60 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	public PerformRuleResult perform_BWD(IsApplicableMatch isApplicableMatch) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingAndBlackFFFFFFFBB(this,
+				.pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingAndBlackFFFFFFBB(this,
 						isApplicableMatch);
 		if (result1_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Annotation annotation = (Annotation) result1_bindingAndBlack[0];
-		AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result1_bindingAndBlack[1];
-		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[2];
+		AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result1_bindingAndBlack[0];
+		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result1_bindingAndBlack[1];
+		ArrayInitializer mArray = (ArrayInitializer) result1_bindingAndBlack[2];
 		TTextNode tValue = (TTextNode) result1_bindingAndBlack[3];
-		BodyDeclaration mOwner = (BodyDeclaration) result1_bindingAndBlack[4];
-		TAnnotationValue tAnnotationValue = (TAnnotationValue) result1_bindingAndBlack[5];
-		CSP csp = (CSP) result1_bindingAndBlack[6];
+		TAnnotationValue tAnnotationValue = (TAnnotationValue) result1_bindingAndBlack[4];
+		CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_1_performtransformation_greenBFFBFB(mAnnotationValue,
-						tValue, csp);
-		LiteralToTNode mTypeToTType = (LiteralToTNode) result1_green[1];
-		ArrayInitializer mArray = (ArrayInitializer) result1_green[2];
-		StringLiteral mValue = (StringLiteral) result1_green[4];
+				.pattern_AnnotationMemberValueStringArray_11_1_performtransformation_greenFBBFB(mArray, tValue, csp);
+		LiteralToTNode mTypeToTType = (LiteralToTNode) result1_green[0];
+		StringLiteral mValue = (StringLiteral) result1_green[3];
 
 		Object[] result2_black = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_blackBBBB(mTypeToTType, mArray,
-						tValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_blackBBB(mTypeToTType, tValue,
+						mValue);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mTypeToTType] = " + mTypeToTType
-					+ ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", " + "[mValue] = " + mValue
-					+ ".");
+					+ ", " + "[tValue] = " + tValue + ", " + "[mValue] = " + mValue + ".");
 		}
 		Object[] result2_green = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_greenFBBBB(mTypeToTType,
-						mArray, tValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_greenFBBB(mTypeToTType, tValue,
+						mValue);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult,
-						annotation, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray,
-						tValue, mOwner, tAnnotationValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
+						AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray, tValue,
+						tAnnotationValue, mValue);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[annotation] = " + annotation + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
+					+ ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
 					+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = " + mAnnotationValue
 					+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[mArray] = " + mArray + ", " + "[tValue] = "
-					+ tValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", "
-					+ "[mValue] = " + mValue + ".");
+					+ tValue + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ".");
 		}
 		AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_greenBBBBBBBFFFFF(ruleresult,
-						mAnnotationValue, mTypeToTType, mArray, tValue, tAnnotationValue, mValue);
-		//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mTypeToTType__mValue____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mTypeToTType__tValue____target = (EMoflonEdge) result3_green[11];
+				.pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult,
+						mTypeToTType, mArray, tValue, tAnnotationValue, mValue);
+		//nothing EMoflonEdge mArray__mValue____expressions = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mTypeToTType__mValue____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mTypeToTType__tValue____target = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
 		AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						annotation, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray,
-						tValue, mOwner, tAnnotationValue, mValue);
+				.pattern_AnnotationMemberValueStringArray_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
+						AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mTypeToTType, mArray, tValue,
+						tAnnotationValue, mValue);
 		return AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_11_6_expressionFB(ruleresult);
 	}
@@ -628,31 +597,29 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_black[1];
 			// ForEach 
 			for (Object[] result3_black : AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_12_3_findcontext_blackFBBBFB(
+					.pattern_AnnotationMemberValueStringArray_12_3_findcontext_blackBBFBB(
 							AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, tAnnotationValue)) {
-				Annotation annotation = (Annotation) result3_black[0];
-				BodyDeclaration mOwner = (BodyDeclaration) result3_black[4];
+				ArrayInitializer mArray = (ArrayInitializer) result3_black[2];
 				Object[] result3_green = AnnotationMemberValueStringArrayImpl
-						.pattern_AnnotationMemberValueStringArray_12_3_findcontext_greenBBBBBBFFFFFF(annotation,
-								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, mOwner,
+						.pattern_AnnotationMemberValueStringArray_12_3_findcontext_greenBBBBBFFFFF(
+								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue,
 								tAnnotationValue);
-				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge mOwner__annotation____annotations = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge annotation__mAnnotationValue____values = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[11];
+				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
+				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge AnnotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge tAnnotationValue__tValue____tValue = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge mAnnotationValue__mArray____value = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-						.pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, annotation, AnnotationMemberValuePairToTAnnotationValue,
-								mAnnotationValue, tValue, mOwner, tAnnotationValue);
+						.pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingAndBlackFBBBBBBB(this,
+								isApplicableMatch, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+								mArray, tValue, tAnnotationValue);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation
-							+ ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", "
+							+ "[AnnotationMemberValuePairToTAnnotationValue] = "
 							+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = "
-							+ mAnnotationValue + ", " + "[tValue] = " + tValue + ", " + "[mOwner] = " + mOwner + ", "
+							+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", "
 							+ "[tAnnotationValue] = " + tAnnotationValue + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -726,9 +693,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
 			TAnnotationValue tAnnotationValue) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -754,12 +721,11 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		eq.solve(var_mValue_escapedValue, var_tValue_tText);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
+		isApplicableMatch.registerObject("mArray", mArray);
 		isApplicableMatch.registerObject("tValue", tValue);
-		isApplicableMatch.registerObject("mOwner", mOwner);
 		isApplicableMatch.registerObject("tAnnotationValue", tAnnotationValue);
 		return csp;
 	}
@@ -778,17 +744,15 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotation,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
-		ruleresult.registerObject("annotation", annotation);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject AnnotationMemberValuePairToTAnnotationValue,
+			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue,
+			EObject mValue) {
 		ruleresult.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
 		ruleresult.registerObject("mAnnotationValue", mAnnotationValue);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("mArray", mArray);
 		ruleresult.registerObject("tValue", tValue);
-		ruleresult.registerObject("mOwner", mOwner);
 		ruleresult.registerObject("tAnnotationValue", tAnnotationValue);
 		ruleresult.registerObject("mValue", mValue);
 
@@ -809,7 +773,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_41(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_980(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -869,7 +833,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_42(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1075(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueStringArrayImpl
 				.pattern_AnnotationMemberValueStringArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -885,20 +849,18 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		// ForEach 
 		for (Object[] result2_black : AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_blackFFFFFB(_edge_expressions)) {
-			Annotation annotation = (Annotation) result2_black[0];
-			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_black[1];
-			ArrayInitializer mArray = (ArrayInitializer) result2_black[2];
-			BodyDeclaration mOwner = (BodyDeclaration) result2_black[3];
-			StringLiteral mValue = (StringLiteral) result2_black[4];
+				.pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_blackFFFB(_edge_expressions)) {
+			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_black[0];
+			ArrayInitializer mArray = (ArrayInitializer) result2_black[1];
+			StringLiteral mValue = (StringLiteral) result2_black[2];
 			Object[] result2_green = AnnotationMemberValueStringArrayImpl
 					.pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-							this, match, annotation, mAnnotationValue, mArray, mOwner, mValue)) {
+					.pattern_AnnotationMemberValueStringArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
+							this, match, mAnnotationValue, mArray, mValue)) {
 				// 
 				if (AnnotationMemberValueStringArrayImpl
 						.pattern_AnnotationMemberValueStringArray_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -942,13 +904,13 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
-		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
-		var_mValue_escapedValue.setType("String");
-
 		Variable var_tValue_tText = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
 		var_tValue_tText.setValue(__helper.getValue("tValue", "tText"));
 		var_tValue_tText.setType("String");
+
+		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
+		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
+		var_mValue_escapedValue.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -989,13 +951,13 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
-		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
-		var_mValue_escapedValue.setType("String");
-
 		Variable var_tValue_tText = CSPFactoryHelper.eINSTANCE.createVariable("tValue", true, csp);
 		var_tValue_tText.setValue(__helper.getValue("tValue", "tText"));
 		var_tValue_tText.setType("String");
+
+		Variable var_mValue_escapedValue = CSPFactoryHelper.eINSTANCE.createVariable("mValue", true, csp);
+		var_mValue_escapedValue.setValue(__helper.getValue("mValue", "escapedValue"));
+		var_mValue_escapedValue.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1038,28 +1000,25 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
 		Object[] result2_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(sourceMatch,
+				.pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(sourceMatch,
 						targetMatch);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Annotation annotation = (Annotation) result2_bindingAndBlack[0];
-		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_bindingAndBlack[1];
-		ArrayInitializer mArray = (ArrayInitializer) result2_bindingAndBlack[2];
-		TTextNode tValue = (TTextNode) result2_bindingAndBlack[3];
-		BodyDeclaration mOwner = (BodyDeclaration) result2_bindingAndBlack[4];
-		TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_bindingAndBlack[5];
-		StringLiteral mValue = (StringLiteral) result2_bindingAndBlack[6];
+		AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_bindingAndBlack[0];
+		ArrayInitializer mArray = (ArrayInitializer) result2_bindingAndBlack[1];
+		TTextNode tValue = (TTextNode) result2_bindingAndBlack[2];
+		TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_bindingAndBlack[3];
+		StringLiteral mValue = (StringLiteral) result2_bindingAndBlack[4];
 
 		Object[] result3_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, annotation,
-						mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue, sourceMatch, targetMatch);
+				.pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, mAnnotationValue,
+						mArray, tValue, tAnnotationValue, mValue, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[annotation] = " + annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", "
-					+ "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", " + "[mOwner] = " + mOwner + ", "
-					+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ", "
+					+ "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[tValue] = "
+					+ tValue + ", " + "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1077,12 +1036,11 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = AnnotationMemberValueStringArrayImpl
-						.pattern_AnnotationMemberValueStringArray_24_6_createcorrespondence_blackBBBBBBBB(annotation,
-								mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue, ccMatch);
+						.pattern_AnnotationMemberValueStringArray_24_6_createcorrespondence_blackBBBBBB(
+								mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[annotation] = "
-							+ annotation + ", " + "[mAnnotationValue] = " + mAnnotationValue + ", " + "[mArray] = "
-							+ mArray + ", " + "[tValue] = " + tValue + ", " + "[mOwner] = " + mOwner + ", "
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mAnnotationValue] = "
+							+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[tValue] = " + tValue + ", "
 							+ "[tAnnotationValue] = " + tAnnotationValue + ", " + "[mValue] = " + mValue + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
@@ -1112,9 +1070,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, TTextNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			StringLiteral mValue, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			TTextNode tValue, TAnnotationValue tAnnotationValue, StringLiteral mValue, Match sourceMatch,
+			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1154,11 +1112,11 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, BodyDeclaration mOwner, StringLiteral mValue) {// 
+	public boolean checkDEC_FWD(AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			StringLiteral mValue) {// 
 		Object[] result1_black = AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_blackBBBBB(annotation, mAnnotationValue,
-						mArray, mOwner, mValue);
+				.pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_blackBBB(mAnnotationValue, mArray,
+						mValue);
 		if (result1_black != null) {
 			return AnnotationMemberValueStringArrayImpl.pattern_AnnotationMemberValueStringArray_27_2_expressionF();
 		} else {
@@ -1203,25 +1161,24 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 		// ForEach 
 		for (Object[] result2_black : AnnotationMemberValueStringArrayImpl
-				.pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_blackFFFFFFBB(ruleEntryContainer,
+				.pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList AnnotationMemberValuePairToTAnnotationValueList = (RuleEntryList) result2_black[0];
-			Annotation annotation = (Annotation) result2_black[1];
+			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[1];
 			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result2_black[2];
-			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result2_black[3];
+			ArrayInitializer mArray = (ArrayInitializer) result2_black[3];
 			TAnnotationValue tAnnotationValue = (TAnnotationValue) result2_black[4];
-			BodyDeclaration mOwner = (BodyDeclaration) result2_black[5];
 
 			Object[] result3_bindingAndBlack = AnnotationMemberValueStringArrayImpl
-					.pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingAndBlackFBBBBBBBB(this,
-							isApplicableMatch, annotation, AnnotationMemberValuePairToTAnnotationValue,
-							mAnnotationValue, mOwner, tAnnotationValue, ruleResult);
+					.pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingAndBlackFBBBBBBB(this,
+							isApplicableMatch, AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+							tAnnotationValue, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[annotation] = " + annotation + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", "
 						+ "[AnnotationMemberValuePairToTAnnotationValue] = "
 						+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = "
-						+ mAnnotationValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = "
+						+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[tAnnotationValue] = "
 						+ tAnnotationValue + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1230,29 +1187,28 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					.pattern_AnnotationMemberValueStringArray_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = AnnotationMemberValueStringArrayImpl
-						.pattern_AnnotationMemberValueStringArray_29_5_checknacs_blackBBBBB(annotation,
-								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
+						.pattern_AnnotationMemberValueStringArray_29_5_checknacs_blackBBBB(
+								AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
 								tAnnotationValue);
 				if (result5_black != null) {
 
 					Object[] result6_black = AnnotationMemberValueStringArrayImpl
-							.pattern_AnnotationMemberValueStringArray_29_6_perform_blackBBBBBB(annotation,
-									AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
+							.pattern_AnnotationMemberValueStringArray_29_6_perform_blackBBBBB(
+									AnnotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
 									tAnnotationValue, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[annotation] = "
-								+ annotation + ", " + "[AnnotationMemberValuePairToTAnnotationValue] = "
+						throw new RuntimeException("Pattern matching failed." + " Variables: "
+								+ "[AnnotationMemberValuePairToTAnnotationValue] = "
 								+ AnnotationMemberValuePairToTAnnotationValue + ", " + "[mAnnotationValue] = "
-								+ mAnnotationValue + ", " + "[mOwner] = " + mOwner + ", " + "[tAnnotationValue] = "
+								+ mAnnotationValue + ", " + "[mArray] = " + mArray + ", " + "[tAnnotationValue] = "
 								+ tAnnotationValue + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					AnnotationMemberValueStringArrayImpl
-							.pattern_AnnotationMemberValueStringArray_29_6_perform_greenBFFFBFBB(mAnnotationValue,
+							.pattern_AnnotationMemberValueStringArray_29_6_perform_greenFBFBFBB(mArray,
 									tAnnotationValue, ruleResult, csp);
-					//nothing LiteralToTNode mTypeToTType = (LiteralToTNode) result6_green[1];
-					//nothing ArrayInitializer mArray = (ArrayInitializer) result6_green[2];
-					//nothing TTextNode tValue = (TTextNode) result6_green[3];
-					//nothing StringLiteral mValue = (StringLiteral) result6_green[5];
+					//nothing LiteralToTNode mTypeToTType = (LiteralToTNode) result6_green[0];
+					//nothing TTextNode tValue = (TTextNode) result6_green[2];
+					//nothing StringLiteral mValue = (StringLiteral) result6_green[4];
 
 				} else {
 				}
@@ -1270,9 +1226,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1297,11 +1253,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		eq.solve(var_mValue_escapedValue, var_tValue_tText);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("annotation", annotation);
 		isApplicableMatch.registerObject("AnnotationMemberValuePairToTAnnotationValue",
 				AnnotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.registerObject("mAnnotationValue", mAnnotationValue);
-		isApplicableMatch.registerObject("mOwner", mOwner);
+		isApplicableMatch.registerObject("mArray", mArray);
 		isApplicableMatch.registerObject("tAnnotationValue", tAnnotationValue);
 		return csp;
 	}
@@ -1323,125 +1278,116 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_FWD__MATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BODYDECLARATION_STRINGLITERAL:
-			return isAppropriate_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
-					(BodyDeclaration) arguments.get(4), (StringLiteral) arguments.get(5));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BODYDECLARATION_STRINGLITERAL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
-					(BodyDeclaration) arguments.get(4), (StringLiteral) arguments.get(5));
-			return null;
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BODYDECLARATION_STRINGLITERAL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
-					(BodyDeclaration) arguments.get(4), (StringLiteral) arguments.get(5));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BODYDECLARATION_TANNOTATIONVALUE_STRINGLITERAL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(2),
-					(AnnotationMemberValuePair) arguments.get(3), (ArrayInitializer) arguments.get(4),
-					(BodyDeclaration) arguments.get(5), (TAnnotationValue) arguments.get(6),
-					(StringLiteral) arguments.get(7));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
-			return null;
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_BWD__MATCH_TTEXTNODE_TANNOTATIONVALUE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TTextNode) arguments.get(1),
-					(TAnnotationValue) arguments.get(2));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TTEXTNODE_TANNOTATIONVALUE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TTextNode) arguments.get(1),
-					(TAnnotationValue) arguments.get(2));
-			return null;
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TTEXTNODE_TANNOTATIONVALUE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TTextNode) arguments.get(1),
-					(TAnnotationValue) arguments.get(2));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_TTEXTNODE_BODYDECLARATION_TANNOTATIONVALUE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(2),
-					(AnnotationMemberValuePair) arguments.get(3), (TTextNode) arguments.get(4),
-					(BodyDeclaration) arguments.get(5), (TAnnotationValue) arguments.get(6));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
-			return null;
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_41__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_41((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_42__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_42((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TTEXTNODE_BODYDECLARATION_TANNOTATIONVALUE_STRINGLITERAL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Annotation) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
-					(ArrayInitializer) arguments.get(2), (TTextNode) arguments.get(3),
-					(BodyDeclaration) arguments.get(4), (TAnnotationValue) arguments.get(5),
-					(StringLiteral) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_DEC_FWD__ANNOTATION_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BODYDECLARATION_STRINGLITERAL:
-			return checkDEC_FWD((Annotation) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
-					(ArrayInitializer) arguments.get(2), (BodyDeclaration) arguments.get(3),
-					(StringLiteral) arguments.get(4));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_DEC_BWD__TTEXTNODE_TANNOTATIONVALUE:
-			return checkDEC_BWD((TTextNode) arguments.get(0), (TAnnotationValue) arguments.get(1));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___GENERATE_MODEL__RULEENTRYCONTAINER_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE:
-			return generateModel((RuleEntryContainer) arguments.get(0),
-					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATION_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_BODYDECLARATION_TANNOTATIONVALUE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
-					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(2),
-					(AnnotationMemberValuePair) arguments.get(3), (BodyDeclaration) arguments.get(4),
-					(TAnnotationValue) arguments.get(5), (ModelgeneratorRuleResult) arguments.get(6));
-		case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_STRINGLITERAL:
+				return isAppropriate_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
+						(ArrayInitializer) arguments.get(2), (StringLiteral) arguments.get(3));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_STRINGLITERAL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
+						(ArrayInitializer) arguments.get(2), (StringLiteral) arguments.get(3));
+				return null;
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_STRINGLITERAL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(AnnotationMemberValuePair) arguments.get(1), (ArrayInitializer) arguments.get(2),
+						(StringLiteral) arguments.get(3));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TANNOTATIONVALUE_STRINGLITERAL:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
+						(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
+						(TAnnotationValue) arguments.get(4), (StringLiteral) arguments.get(5));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_BWD__MATCH_TTEXTNODE_TANNOTATIONVALUE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TTextNode) arguments.get(1),
+						(TAnnotationValue) arguments.get(2));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TTEXTNODE_TANNOTATIONVALUE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TTextNode) arguments.get(1),
+						(TAnnotationValue) arguments.get(2));
+				return null;
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TTEXTNODE_TANNOTATIONVALUE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TTextNode) arguments.get(1),
+						(TAnnotationValue) arguments.get(2));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TTEXTNODE_TANNOTATIONVALUE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
+						(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
+						(TTextNode) arguments.get(4), (TAnnotationValue) arguments.get(5));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_980__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_980((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1075__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1075((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TTEXTNODE_TANNOTATIONVALUE_STRINGLITERAL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((AnnotationMemberValuePair) arguments.get(0),
+						(ArrayInitializer) arguments.get(1), (TTextNode) arguments.get(2),
+						(TAnnotationValue) arguments.get(3), (StringLiteral) arguments.get(4), (Match) arguments.get(5),
+						(Match) arguments.get(6));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_DEC_FWD__ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_STRINGLITERAL:
+				return checkDEC_FWD((AnnotationMemberValuePair) arguments.get(0), (ArrayInitializer) arguments.get(1),
+						(StringLiteral) arguments.get(2));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___CHECK_DEC_BWD__TTEXTNODE_TANNOTATIONVALUE:
+				return checkDEC_BWD((TTextNode) arguments.get(0), (TAnnotationValue) arguments.get(1));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___GENERATE_MODEL__RULEENTRYCONTAINER_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE:
+				return generateModel((RuleEntryContainer) arguments.get(0),
+						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TANNOTATIONVALUE_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
+						(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
+						(TAnnotationValue) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_STRING_ARRAY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_1_initialbindings_blackBBBBBBB(
-			AnnotationMemberValueStringArray _this, Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {
-		return new Object[] { _this, match, annotation, mAnnotationValue, mArray, mOwner, mValue };
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_1_initialbindings_blackBBBBB(
+			AnnotationMemberValueStringArray _this, Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {
+		return new Object[] { _this, match, mAnnotationValue, mArray, mValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingFBBBBBBB(
-			AnnotationMemberValueStringArray _this, Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, annotation, mAnnotationValue, mArray, mOwner,
-				mValue);
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingFBBBBB(
+			AnnotationMemberValueStringArray _this, Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mAnnotationValue, mArray, mValue);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, annotation, mAnnotationValue, mArray, mOwner, mValue };
+			return new Object[] { csp, _this, match, mAnnotationValue, mArray, mValue };
 		}
 		return null;
 	}
@@ -1450,12 +1396,11 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingAndBlackFBBBBBBB(
-			AnnotationMemberValueStringArray _this, Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_binding = pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, annotation, mAnnotationValue, mArray, mOwner, mValue);
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingAndBlackFBBBBB(
+			AnnotationMemberValueStringArray _this, Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {
+		Object[] result_pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_binding = pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_bindingFBBBBB(
+				_this, match, mAnnotationValue, mArray, mValue);
 		if (result_pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_binding[0];
 
@@ -1463,7 +1408,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					csp);
 			if (result_pattern_AnnotationMemberValueStringArray_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, annotation, mAnnotationValue, mArray, mOwner, mValue };
+				return new Object[] { csp, _this, match, mAnnotationValue, mArray, mValue };
 			}
 		}
 		return null;
@@ -1476,64 +1421,45 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_blackBBBBBB(
-			Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			BodyDeclaration mOwner, StringLiteral mValue) {
-		return new Object[] { match, annotation, mAnnotationValue, mArray, mOwner, mValue };
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_blackBBBB(
+			Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, StringLiteral mValue) {
+		return new Object[] { match, mAnnotationValue, mArray, mValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_greenBBBBFF(
-			Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, StringLiteral mValue) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_4_collectelementstobetranslated_greenBBBF(
+			Match match, ArrayInitializer mArray, StringLiteral mValue) {
 		EMoflonEdge mArray__mValue____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(mArray);
 		match.getToBeTranslatedNodes().add(mValue);
 		String mArray__mValue____expressions_name_prime = "expressions";
-		String mAnnotationValue__mArray____value_name_prime = "value";
 		mArray__mValue____expressions.setSrc(mArray);
 		mArray__mValue____expressions.setTrg(mValue);
 		match.getToBeTranslatedEdges().add(mArray__mValue____expressions);
+		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
+		return new Object[] { match, mArray, mValue, mArray__mValue____expressions };
+	}
+
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_blackBBBB(
+			Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, StringLiteral mValue) {
+		return new Object[] { match, mAnnotationValue, mArray, mValue };
+	}
+
+	public static final Object[] pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_greenBBBF(
+			Match match, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray) {
+		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		match.getContextNodes().add(mAnnotationValue);
+		match.getContextNodes().add(mArray);
+		String mAnnotationValue__mArray____value_name_prime = "value";
 		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
 		mAnnotationValue__mArray____value.setTrg(mArray);
-		match.getToBeTranslatedEdges().add(mAnnotationValue__mArray____value);
-		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
+		match.getContextEdges().add(mAnnotationValue__mArray____value);
 		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
-		return new Object[] { match, mAnnotationValue, mArray, mValue, mArray__mValue____expressions,
-				mAnnotationValue__mArray____value };
+		return new Object[] { match, mAnnotationValue, mArray, mAnnotationValue__mArray____value };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_blackBBBBBB(
-			Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			BodyDeclaration mOwner, StringLiteral mValue) {
-		return new Object[] { match, annotation, mAnnotationValue, mArray, mOwner, mValue };
-	}
-
-	public static final Object[] pattern_AnnotationMemberValueStringArray_0_5_collectcontextelements_greenBBBBFF(
-			Match match, Annotation annotation, AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner) {
-		EMoflonEdge mOwner__annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__mAnnotationValue____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(annotation);
-		match.getContextNodes().add(mAnnotationValue);
-		match.getContextNodes().add(mOwner);
-		String mOwner__annotation____annotations_name_prime = "annotations";
-		String annotation__mAnnotationValue____values_name_prime = "values";
-		mOwner__annotation____annotations.setSrc(mOwner);
-		mOwner__annotation____annotations.setTrg(annotation);
-		match.getContextEdges().add(mOwner__annotation____annotations);
-		annotation__mAnnotationValue____values.setSrc(annotation);
-		annotation__mAnnotationValue____values.setTrg(mAnnotationValue);
-		match.getContextEdges().add(annotation__mAnnotationValue____values);
-		mOwner__annotation____annotations.setName(mOwner__annotation____annotations_name_prime);
-		annotation__mAnnotationValue____values.setName(annotation__mAnnotationValue____values_name_prime);
-		return new Object[] { match, annotation, mAnnotationValue, mOwner, mOwner__annotation____annotations,
-				annotation__mAnnotationValue____values };
-	}
-
-	public static final void pattern_AnnotationMemberValueStringArray_0_6_registerobjectstomatch_expressionBBBBBBB(
-			AnnotationMemberValueStringArray _this, Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {
-		_this.registerObjectsToMatch_FWD(match, annotation, mAnnotationValue, mArray, mOwner, mValue);
+	public static final void pattern_AnnotationMemberValueStringArray_0_6_registerobjectstomatch_expressionBBBBB(
+			AnnotationMemberValueStringArray _this, Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {
+		_this.registerObjectsToMatch_FWD(match, mAnnotationValue, mArray, mValue);
 
 	}
 
@@ -1547,41 +1473,30 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingFFFFFFFB(
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("annotation");
-		EObject _localVariable_1 = isApplicableMatch.getObject("AnnotationMemberValuePairToTAnnotationValue");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mAnnotationValue");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mArray");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mOwner");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAnnotationValue");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mValue");
-		EObject tmpAnnotation = _localVariable_0;
-		EObject tmpAnnotationMemberValuePairToTAnnotationValue = _localVariable_1;
-		EObject tmpMAnnotationValue = _localVariable_2;
-		EObject tmpMArray = _localVariable_3;
-		EObject tmpMOwner = _localVariable_4;
-		EObject tmpTAnnotationValue = _localVariable_5;
-		EObject tmpMValue = _localVariable_6;
-		if (tmpAnnotation instanceof Annotation) {
-			Annotation annotation = (Annotation) tmpAnnotation;
-			if (tmpAnnotationMemberValuePairToTAnnotationValue instanceof AnnotationMemberValuePairToTAnnotationValue) {
-				AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) tmpAnnotationMemberValuePairToTAnnotationValue;
-				if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
-					AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
-					if (tmpMArray instanceof ArrayInitializer) {
-						ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
-						if (tmpMOwner instanceof BodyDeclaration) {
-							BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
-							if (tmpTAnnotationValue instanceof TAnnotationValue) {
-								TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-								if (tmpMValue instanceof StringLiteral) {
-									StringLiteral mValue = (StringLiteral) tmpMValue;
-									return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue,
-											mAnnotationValue, mArray, mOwner, tAnnotationValue, mValue,
-											isApplicableMatch };
-								}
-							}
+		EObject _localVariable_0 = isApplicableMatch.getObject("AnnotationMemberValuePairToTAnnotationValue");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mAnnotationValue");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mArray");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tAnnotationValue");
+		EObject _localVariable_4 = isApplicableMatch.getObject("mValue");
+		EObject tmpAnnotationMemberValuePairToTAnnotationValue = _localVariable_0;
+		EObject tmpMAnnotationValue = _localVariable_1;
+		EObject tmpMArray = _localVariable_2;
+		EObject tmpTAnnotationValue = _localVariable_3;
+		EObject tmpMValue = _localVariable_4;
+		if (tmpAnnotationMemberValuePairToTAnnotationValue instanceof AnnotationMemberValuePairToTAnnotationValue) {
+			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) tmpAnnotationMemberValuePairToTAnnotationValue;
+			if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
+				AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
+				if (tmpMArray instanceof ArrayInitializer) {
+					ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
+					if (tmpTAnnotationValue instanceof TAnnotationValue) {
+						TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
+						if (tmpMValue instanceof StringLiteral) {
+							StringLiteral mValue = (StringLiteral) tmpMValue;
+							return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+									tAnnotationValue, mValue, isApplicableMatch };
 						}
 					}
 				}
@@ -1590,43 +1505,39 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_1_performtransformation_blackBBBBBBBFBB(
-			Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_1_performtransformation_blackBBBBBFBB(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, StringLiteral mValue, AnnotationMemberValueStringArray _this,
-			IsApplicableMatch isApplicableMatch) {
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue, AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
-						mOwner, tAnnotationValue, mValue, csp, _this, isApplicableMatch };
+				return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+						tAnnotationValue, mValue, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingAndBlackFFFFFFFFBB(
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingAndBlackFFFFFFBB(
 			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding = pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingFFFFFFFB(
+		Object[] result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding = pattern_AnnotationMemberValueStringArray_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding != null) {
-			Annotation annotation = (Annotation) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[0];
-			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[1];
-			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[2];
-			ArrayInitializer mArray = (ArrayInitializer) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[3];
-			BodyDeclaration mOwner = (BodyDeclaration) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[4];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[5];
-			StringLiteral mValue = (StringLiteral) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[6];
+			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[0];
+			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[1];
+			ArrayInitializer mArray = (ArrayInitializer) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[2];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[3];
+			StringLiteral mValue = (StringLiteral) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_binding[4];
 
-			Object[] result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_black = pattern_AnnotationMemberValueStringArray_1_1_performtransformation_blackBBBBBBBFBB(
-					annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner,
-					tAnnotationValue, mValue, _this, isApplicableMatch);
+			Object[] result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_black = pattern_AnnotationMemberValueStringArray_1_1_performtransformation_blackBBBBBFBB(
+					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue, mValue,
+					_this, isApplicableMatch);
 			if (result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_black[7];
+				CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_1_1_performtransformation_black[5];
 
-				return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
-						mOwner, tAnnotationValue, mValue, csp, _this, isApplicableMatch };
+				return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+						tAnnotationValue, mValue, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1645,107 +1556,53 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { mTypeToTType, tValue, tAnnotationValue, mValue, csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_blackBBBB(
-			LiteralToTNode mTypeToTType, ArrayInitializer mArray, TTextNode tValue, StringLiteral mValue) {
-		return new Object[] { mTypeToTType, mArray, tValue, mValue };
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_blackBBB(
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
+		return new Object[] { mTypeToTType, tValue, mValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_greenFBBBB(
-			LiteralToTNode mTypeToTType, ArrayInitializer mArray, TTextNode tValue, StringLiteral mValue) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_2_collecttranslatedelements_greenFBBB(
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
-		ruleresult.getTranslatedElements().add(mArray);
 		ruleresult.getCreatedElements().add(tValue);
 		ruleresult.getTranslatedElements().add(mValue);
-		return new Object[] { ruleresult, mTypeToTType, mArray, tValue, mValue };
+		return new Object[] { ruleresult, mTypeToTType, tValue, mValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject annotation, EObject annotationMemberValuePairToTAnnotationValue,
-			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject mOwner,
-			EObject tAnnotationValue, EObject mValue) {
-		if (!annotation.equals(mAnnotationValue)) {
-			if (!annotation.equals(mTypeToTType)) {
-				if (!annotation.equals(mArray)) {
-					if (!annotation.equals(tValue)) {
-						if (!annotation.equals(mOwner)) {
-							if (!annotation.equals(tAnnotationValue)) {
-								if (!annotation.equals(mValue)) {
-									if (!annotationMemberValuePairToTAnnotationValue.equals(annotation)) {
-										if (!annotationMemberValuePairToTAnnotationValue.equals(mAnnotationValue)) {
-											if (!annotationMemberValuePairToTAnnotationValue.equals(mTypeToTType)) {
-												if (!annotationMemberValuePairToTAnnotationValue.equals(mArray)) {
-													if (!annotationMemberValuePairToTAnnotationValue.equals(tValue)) {
-														if (!annotationMemberValuePairToTAnnotationValue
-																.equals(mOwner)) {
-															if (!annotationMemberValuePairToTAnnotationValue
-																	.equals(tAnnotationValue)) {
-																if (!annotationMemberValuePairToTAnnotationValue
-																		.equals(mValue)) {
-																	if (!mAnnotationValue.equals(mTypeToTType)) {
-																		if (!mAnnotationValue.equals(mArray)) {
-																			if (!mAnnotationValue.equals(tValue)) {
-																				if (!mAnnotationValue.equals(mOwner)) {
-																					if (!mAnnotationValue
-																							.equals(tAnnotationValue)) {
-																						if (!mAnnotationValue
-																								.equals(mValue)) {
-																							if (!mTypeToTType
-																									.equals(tValue)) {
-																								if (!mTypeToTType
-																										.equals(tAnnotationValue)) {
-																									if (!mTypeToTType
-																											.equals(mValue)) {
-																										if (!mArray
-																												.equals(mTypeToTType)) {
-																											if (!mArray
-																													.equals(tValue)) {
-																												if (!mArray
-																														.equals(mOwner)) {
-																													if (!mArray
-																															.equals(tAnnotationValue)) {
-																														if (!mArray
-																																.equals(mValue)) {
-																															if (!mOwner
-																																	.equals(mTypeToTType)) {
-																																if (!mOwner
-																																		.equals(tValue)) {
-																																	if (!mOwner
-																																			.equals(tAnnotationValue)) {
-																																		if (!mOwner
-																																				.equals(mValue)) {
-																																			if (!tAnnotationValue
-																																					.equals(tValue)) {
-																																				if (!mValue
-																																						.equals(tValue)) {
-																																					if (!mValue
-																																							.equals(tAnnotationValue)) {
-																																						return new Object[] {
-																																								ruleresult,
-																																								annotation,
-																																								annotationMemberValuePairToTAnnotationValue,
-																																								mAnnotationValue,
-																																								mTypeToTType,
-																																								mArray,
-																																								tValue,
-																																								mOwner,
-																																								tAnnotationValue,
-																																								mValue };
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
-																													}
-																												}
-																											}
-																										}
-																									}
-																								}
-																							}
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_blackBBBBBBBB(
+			PerformRuleResult ruleresult, EObject annotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue,
+			EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue, EObject mValue) {
+		if (!annotationMemberValuePairToTAnnotationValue.equals(mAnnotationValue)) {
+			if (!annotationMemberValuePairToTAnnotationValue.equals(mTypeToTType)) {
+				if (!annotationMemberValuePairToTAnnotationValue.equals(mArray)) {
+					if (!annotationMemberValuePairToTAnnotationValue.equals(tValue)) {
+						if (!annotationMemberValuePairToTAnnotationValue.equals(tAnnotationValue)) {
+							if (!annotationMemberValuePairToTAnnotationValue.equals(mValue)) {
+								if (!mAnnotationValue.equals(mTypeToTType)) {
+									if (!mAnnotationValue.equals(mArray)) {
+										if (!mAnnotationValue.equals(tValue)) {
+											if (!mAnnotationValue.equals(tAnnotationValue)) {
+												if (!mAnnotationValue.equals(mValue)) {
+													if (!mTypeToTType.equals(tValue)) {
+														if (!mTypeToTType.equals(tAnnotationValue)) {
+															if (!mTypeToTType.equals(mValue)) {
+																if (!mArray.equals(mTypeToTType)) {
+																	if (!mArray.equals(tValue)) {
+																		if (!mArray.equals(tAnnotationValue)) {
+																			if (!mArray.equals(mValue)) {
+																				if (!tAnnotationValue.equals(tValue)) {
+																					if (!mValue.equals(tValue)) {
+																						if (!mValue.equals(
+																								tAnnotationValue)) {
+																							return new Object[] {
+																									ruleresult,
+																									annotationMemberValuePairToTAnnotationValue,
+																									mAnnotationValue,
+																									mTypeToTType,
+																									mArray, tValue,
+																									tAnnotationValue,
+																									mValue };
 																						}
 																					}
 																				}
@@ -1770,19 +1627,17 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_greenBBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mAnnotationValue, EObject mTypeToTType, EObject mArray,
-			EObject tValue, EObject tAnnotationValue, EObject mValue) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_1_3_bookkeepingforedges_greenBBBBBBFFFF(
+			PerformRuleResult ruleresult, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject tAnnotationValue, EObject mValue) {
 		EMoflonEdge mArray__mValue____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationMemberValueStringArray";
 		String mArray__mValue____expressions_name_prime = "expressions";
 		String mTypeToTType__mValue____source_name_prime = "source";
 		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
-		String mAnnotationValue__mArray____value_name_prime = "value";
 		String mTypeToTType__tValue____target_name_prime = "target";
 		mArray__mValue____expressions.setSrc(mArray);
 		mArray__mValue____expressions.setTrg(mValue);
@@ -1793,9 +1648,6 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
 		tAnnotationValue__tValue____tValue.setTrg(tValue);
 		ruleresult.getCreatedEdges().add(tAnnotationValue__tValue____tValue);
-		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
-		mAnnotationValue__mArray____value.setTrg(mArray);
-		ruleresult.getTranslatedEdges().add(mAnnotationValue__mArray____value);
 		mTypeToTType__tValue____target.setSrc(mTypeToTType);
 		mTypeToTType__tValue____target.setTrg(tValue);
 		ruleresult.getCreatedEdges().add(mTypeToTType__tValue____target);
@@ -1803,19 +1655,18 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
 		mTypeToTType__mValue____source.setName(mTypeToTType__mValue____source_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
-		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
 		mTypeToTType__tValue____target.setName(mTypeToTType__tValue____target_name_prime);
-		return new Object[] { ruleresult, mAnnotationValue, mTypeToTType, mArray, tValue, tAnnotationValue, mValue,
+		return new Object[] { ruleresult, mTypeToTType, mArray, tValue, tAnnotationValue, mValue,
 				mArray__mValue____expressions, mTypeToTType__mValue____source, tAnnotationValue__tValue____tValue,
-				mAnnotationValue__mArray____value, mTypeToTType__tValue____target };
+				mTypeToTType__tValue____target };
 	}
 
-	public static final void pattern_AnnotationMemberValueStringArray_1_5_registerobjects_expressionBBBBBBBBBBB(
-			AnnotationMemberValueStringArray _this, PerformRuleResult ruleresult, EObject annotation,
+	public static final void pattern_AnnotationMemberValueStringArray_1_5_registerobjects_expressionBBBBBBBBB(
+			AnnotationMemberValueStringArray _this, PerformRuleResult ruleresult,
 			EObject annotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
-		_this.registerObjects_FWD(ruleresult, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mTypeToTType, mArray, tValue, mOwner, tAnnotationValue, mValue);
+			EObject mArray, EObject tValue, EObject tAnnotationValue, EObject mValue) {
+		_this.registerObjects_FWD(ruleresult, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+				mTypeToTType, mArray, tValue, tAnnotationValue, mValue);
 
 	}
 
@@ -1876,69 +1727,53 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { performOperation, ruleresult };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_2_2_corematch_bindingFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("annotation");
-		EObject _localVariable_1 = match.getObject("mAnnotationValue");
-		EObject _localVariable_2 = match.getObject("mArray");
-		EObject _localVariable_3 = match.getObject("mOwner");
-		EObject _localVariable_4 = match.getObject("mValue");
-		EObject tmpAnnotation = _localVariable_0;
-		EObject tmpMAnnotationValue = _localVariable_1;
-		EObject tmpMArray = _localVariable_2;
-		EObject tmpMOwner = _localVariable_3;
-		EObject tmpMValue = _localVariable_4;
-		if (tmpAnnotation instanceof Annotation) {
-			Annotation annotation = (Annotation) tmpAnnotation;
-			if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
-				AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
-				if (tmpMArray instanceof ArrayInitializer) {
-					ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
-					if (tmpMOwner instanceof BodyDeclaration) {
-						BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
-						if (tmpMValue instanceof StringLiteral) {
-							StringLiteral mValue = (StringLiteral) tmpMValue;
-							return new Object[] { annotation, mAnnotationValue, mArray, mOwner, mValue, match };
-						}
-					}
+	public static final Object[] pattern_AnnotationMemberValueStringArray_2_2_corematch_bindingFFFB(Match match) {
+		EObject _localVariable_0 = match.getObject("mAnnotationValue");
+		EObject _localVariable_1 = match.getObject("mArray");
+		EObject _localVariable_2 = match.getObject("mValue");
+		EObject tmpMAnnotationValue = _localVariable_0;
+		EObject tmpMArray = _localVariable_1;
+		EObject tmpMValue = _localVariable_2;
+		if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
+			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
+			if (tmpMArray instanceof ArrayInitializer) {
+				ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
+				if (tmpMValue instanceof StringLiteral) {
+					StringLiteral mValue = (StringLiteral) tmpMValue;
+					return new Object[] { mAnnotationValue, mArray, mValue, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_2_2_corematch_blackBFBBBFBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			BodyDeclaration mOwner, StringLiteral mValue, Match match) {
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_2_2_corematch_blackFBBFBB(
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, StringLiteral mValue, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnnotationValue, AnnotationMemberValuePairToTAnnotationValue.class,
 						"source")) {
 			TAnnotationValue tAnnotationValue = annotationMemberValuePairToTAnnotationValue.getTarget();
 			if (tAnnotationValue != null) {
-				_result.add(new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-						mArray, mOwner, tAnnotationValue, mValue, match });
+				_result.add(new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+						tAnnotationValue, mValue, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_2_3_findcontext_blackBBBBBBB(
-			Annotation annotation,
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_2_3_findcontext_blackBBBBB(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, StringLiteral mValue) {
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (mAnnotationValue.equals(annotationMemberValuePairToTAnnotationValue.getSource())) {
 			if (tAnnotationValue.equals(annotationMemberValuePairToTAnnotationValue.getTarget())) {
-				if (mOwner.getAnnotations().contains(annotation)) {
-					if (mArray.getExpressions().contains(mValue)) {
-						if (annotation.getValues().contains(mAnnotationValue)) {
-							if (mArray.equals(mAnnotationValue.getValue())) {
-								_result.add(new Object[] { annotation, annotationMemberValuePairToTAnnotationValue,
-										mAnnotationValue, mArray, mOwner, tAnnotationValue, mValue });
-							}
-						}
+				if (mArray.getExpressions().contains(mValue)) {
+					if (mArray.equals(mAnnotationValue.getValue())) {
+						_result.add(new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+								mArray, tAnnotationValue, mValue });
 					}
 				}
 			}
@@ -1946,31 +1781,24 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_2_3_findcontext_greenBBBBBBBFFFFFFF(
-			Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_2_3_findcontext_greenBBBBBFFFFF(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, StringLiteral mValue) {
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mOwner__annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mArray__mValue____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__mAnnotationValue____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source_name_prime = "source";
 		String annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target_name_prime = "target";
-		String mOwner__annotation____annotations_name_prime = "annotations";
 		String mArray__mValue____expressions_name_prime = "expressions";
-		String annotation__mAnnotationValue____values_name_prime = "values";
 		String mAnnotationValue__mArray____value_name_prime = "value";
-		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(annotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mArray);
-		isApplicableMatch.getAllContextElements().add(mOwner);
 		isApplicableMatch.getAllContextElements().add(tAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mValue);
 		annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source
@@ -1983,15 +1811,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target.setTrg(tAnnotationValue);
 		isApplicableMatch.getAllContextElements()
 				.add(annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target);
-		mOwner__annotation____annotations.setSrc(mOwner);
-		mOwner__annotation____annotations.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(mOwner__annotation____annotations);
 		mArray__mValue____expressions.setSrc(mArray);
 		mArray__mValue____expressions.setTrg(mValue);
 		isApplicableMatch.getAllContextElements().add(mArray__mValue____expressions);
-		annotation__mAnnotationValue____values.setSrc(annotation);
-		annotation__mAnnotationValue____values.setTrg(mAnnotationValue);
-		isApplicableMatch.getAllContextElements().add(annotation__mAnnotationValue____values);
 		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
 		mAnnotationValue__mArray____value.setTrg(mArray);
 		isApplicableMatch.getAllContextElements().add(mAnnotationValue__mArray____value);
@@ -1999,31 +1821,25 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 				.setName(annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source_name_prime);
 		annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target
 				.setName(annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target_name_prime);
-		mOwner__annotation____annotations.setName(mOwner__annotation____annotations_name_prime);
 		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
-		annotation__mAnnotationValue____values.setName(annotation__mAnnotationValue____values_name_prime);
 		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
-		return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner,
-				tAnnotationValue, mValue, isApplicableMatch,
-				annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source,
-				annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target,
-				mOwner__annotation____annotations, mArray__mValue____expressions,
-				annotation__mAnnotationValue____values, mAnnotationValue__mArray____value };
+		return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue,
+				mValue, isApplicableMatch, annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source,
+				annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target, mArray__mValue____expressions,
+				mAnnotationValue__mArray____value };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingFBBBBBBBBB(
-			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingFBBBBBBB(
+			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, StringLiteral mValue) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, annotation,
-				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner, tAnnotationValue,
-				mValue);
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch,
+				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue, mValue);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, annotation,
-					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner, tAnnotationValue,
-					mValue };
+			return new Object[] { csp, _this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue,
+					mAnnotationValue, mArray, tAnnotationValue, mValue };
 		}
 		return null;
 	}
@@ -2032,14 +1848,14 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingAndBlackFBBBBBBB(
+			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			TAnnotationValue tAnnotationValue, StringLiteral mValue) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_2_4_solveCSP_binding = pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mArray, mOwner, tAnnotationValue, mValue);
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
+			StringLiteral mValue) {
+		Object[] result_pattern_AnnotationMemberValueStringArray_2_4_solveCSP_binding = pattern_AnnotationMemberValueStringArray_2_4_solveCSP_bindingFBBBBBBB(
+				_this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+				tAnnotationValue, mValue);
 		if (result_pattern_AnnotationMemberValueStringArray_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_2_4_solveCSP_binding[0];
 
@@ -2047,9 +1863,8 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					csp);
 			if (result_pattern_AnnotationMemberValueStringArray_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, annotation,
-						annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, mOwner, tAnnotationValue,
-						mValue };
+				return new Object[] { csp, _this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue,
+						mAnnotationValue, mArray, tAnnotationValue, mValue };
 			}
 		}
 		return null;
@@ -2170,35 +1985,30 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingFFFFFFB(
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("annotation");
-		EObject _localVariable_1 = isApplicableMatch.getObject("AnnotationMemberValuePairToTAnnotationValue");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mAnnotationValue");
+		EObject _localVariable_0 = isApplicableMatch.getObject("AnnotationMemberValuePairToTAnnotationValue");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mAnnotationValue");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mArray");
 		EObject _localVariable_3 = isApplicableMatch.getObject("tValue");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mOwner");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAnnotationValue");
-		EObject tmpAnnotation = _localVariable_0;
-		EObject tmpAnnotationMemberValuePairToTAnnotationValue = _localVariable_1;
-		EObject tmpMAnnotationValue = _localVariable_2;
+		EObject _localVariable_4 = isApplicableMatch.getObject("tAnnotationValue");
+		EObject tmpAnnotationMemberValuePairToTAnnotationValue = _localVariable_0;
+		EObject tmpMAnnotationValue = _localVariable_1;
+		EObject tmpMArray = _localVariable_2;
 		EObject tmpTValue = _localVariable_3;
-		EObject tmpMOwner = _localVariable_4;
-		EObject tmpTAnnotationValue = _localVariable_5;
-		if (tmpAnnotation instanceof Annotation) {
-			Annotation annotation = (Annotation) tmpAnnotation;
-			if (tmpAnnotationMemberValuePairToTAnnotationValue instanceof AnnotationMemberValuePairToTAnnotationValue) {
-				AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) tmpAnnotationMemberValuePairToTAnnotationValue;
-				if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
-					AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
+		EObject tmpTAnnotationValue = _localVariable_4;
+		if (tmpAnnotationMemberValuePairToTAnnotationValue instanceof AnnotationMemberValuePairToTAnnotationValue) {
+			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) tmpAnnotationMemberValuePairToTAnnotationValue;
+			if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
+				AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
+				if (tmpMArray instanceof ArrayInitializer) {
+					ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
 					if (tmpTValue instanceof TTextNode) {
 						TTextNode tValue = (TTextNode) tmpTValue;
-						if (tmpMOwner instanceof BodyDeclaration) {
-							BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
-							if (tmpTAnnotationValue instanceof TAnnotationValue) {
-								TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-								return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue,
-										mAnnotationValue, tValue, mOwner, tAnnotationValue, isApplicableMatch };
-							}
+						if (tmpTAnnotationValue instanceof TAnnotationValue) {
+							TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
+							return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+									tValue, tAnnotationValue, isApplicableMatch };
 						}
 					}
 				}
@@ -2207,163 +2017,105 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_blackBBBBBBFBB(
-			Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_blackBBBBBFBB(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
 			TAnnotationValue tAnnotationValue, AnnotationMemberValueStringArray _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue,
-						mOwner, tAnnotationValue, csp, _this, isApplicableMatch };
+				return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue,
+						tAnnotationValue, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingAndBlackFFFFFFFBB(
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingAndBlackFFFFFFBB(
 			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding = pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingFFFFFFB(
+		Object[] result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding = pattern_AnnotationMemberValueStringArray_11_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding != null) {
-			Annotation annotation = (Annotation) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[0];
-			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[1];
-			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[2];
+			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue = (AnnotationMemberValuePairToTAnnotationValue) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[0];
+			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[1];
+			ArrayInitializer mArray = (ArrayInitializer) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[2];
 			TTextNode tValue = (TTextNode) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[3];
-			BodyDeclaration mOwner = (BodyDeclaration) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[4];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[5];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_binding[4];
 
-			Object[] result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_black = pattern_AnnotationMemberValueStringArray_11_1_performtransformation_blackBBBBBBFBB(
-					annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, mOwner,
-					tAnnotationValue, _this, isApplicableMatch);
+			Object[] result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_black = pattern_AnnotationMemberValueStringArray_11_1_performtransformation_blackBBBBBFBB(
+					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue, tAnnotationValue,
+					_this, isApplicableMatch);
 			if (result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_black != null) {
-				CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_black[6];
+				CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_11_1_performtransformation_black[5];
 
-				return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue,
-						mOwner, tAnnotationValue, csp, _this, isApplicableMatch };
+				return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue,
+						tAnnotationValue, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_greenBFFBFB(
-			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, CSP csp) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_1_performtransformation_greenFBBFB(
+			ArrayInitializer mArray, TTextNode tValue, CSP csp) {
 		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
-		ArrayInitializer mArray = JavaFactory.eINSTANCE.createArrayInitializer();
 		StringLiteral mValue = JavaFactory.eINSTANCE.createStringLiteral();
 		Object _localVariable_0 = csp.getValue("mValue", "escapedValue");
 		mTypeToTType.setTarget(tValue);
-		mAnnotationValue.setValue(mArray);
 		mArray.getExpressions().add(mValue);
 		mTypeToTType.setSource(mValue);
 		String mValue_escapedValue_prime = (String) _localVariable_0;
 		mValue.setEscapedValue(mValue_escapedValue_prime);
-		return new Object[] { mAnnotationValue, mTypeToTType, mArray, tValue, mValue, csp };
+		return new Object[] { mTypeToTType, mArray, tValue, mValue, csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_blackBBBB(
-			LiteralToTNode mTypeToTType, ArrayInitializer mArray, TTextNode tValue, StringLiteral mValue) {
-		return new Object[] { mTypeToTType, mArray, tValue, mValue };
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_blackBBB(
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
+		return new Object[] { mTypeToTType, tValue, mValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_greenFBBBB(
-			LiteralToTNode mTypeToTType, ArrayInitializer mArray, TTextNode tValue, StringLiteral mValue) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_2_collecttranslatedelements_greenFBBB(
+			LiteralToTNode mTypeToTType, TTextNode tValue, StringLiteral mValue) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(mTypeToTType);
-		ruleresult.getCreatedElements().add(mArray);
 		ruleresult.getTranslatedElements().add(tValue);
 		ruleresult.getCreatedElements().add(mValue);
-		return new Object[] { ruleresult, mTypeToTType, mArray, tValue, mValue };
+		return new Object[] { ruleresult, mTypeToTType, tValue, mValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject annotation, EObject annotationMemberValuePairToTAnnotationValue,
-			EObject mAnnotationValue, EObject mTypeToTType, EObject mArray, EObject tValue, EObject mOwner,
-			EObject tAnnotationValue, EObject mValue) {
-		if (!annotation.equals(mAnnotationValue)) {
-			if (!annotation.equals(mTypeToTType)) {
-				if (!annotation.equals(mArray)) {
-					if (!annotation.equals(tValue)) {
-						if (!annotation.equals(mOwner)) {
-							if (!annotation.equals(tAnnotationValue)) {
-								if (!annotation.equals(mValue)) {
-									if (!annotationMemberValuePairToTAnnotationValue.equals(annotation)) {
-										if (!annotationMemberValuePairToTAnnotationValue.equals(mAnnotationValue)) {
-											if (!annotationMemberValuePairToTAnnotationValue.equals(mTypeToTType)) {
-												if (!annotationMemberValuePairToTAnnotationValue.equals(mArray)) {
-													if (!annotationMemberValuePairToTAnnotationValue.equals(tValue)) {
-														if (!annotationMemberValuePairToTAnnotationValue
-																.equals(mOwner)) {
-															if (!annotationMemberValuePairToTAnnotationValue
-																	.equals(tAnnotationValue)) {
-																if (!annotationMemberValuePairToTAnnotationValue
-																		.equals(mValue)) {
-																	if (!mAnnotationValue.equals(mTypeToTType)) {
-																		if (!mAnnotationValue.equals(mArray)) {
-																			if (!mAnnotationValue.equals(tValue)) {
-																				if (!mAnnotationValue.equals(mOwner)) {
-																					if (!mAnnotationValue
-																							.equals(tAnnotationValue)) {
-																						if (!mAnnotationValue
-																								.equals(mValue)) {
-																							if (!mTypeToTType
-																									.equals(tValue)) {
-																								if (!mTypeToTType
-																										.equals(tAnnotationValue)) {
-																									if (!mTypeToTType
-																											.equals(mValue)) {
-																										if (!mArray
-																												.equals(mTypeToTType)) {
-																											if (!mArray
-																													.equals(tValue)) {
-																												if (!mArray
-																														.equals(mOwner)) {
-																													if (!mArray
-																															.equals(tAnnotationValue)) {
-																														if (!mArray
-																																.equals(mValue)) {
-																															if (!mOwner
-																																	.equals(mTypeToTType)) {
-																																if (!mOwner
-																																		.equals(tValue)) {
-																																	if (!mOwner
-																																			.equals(tAnnotationValue)) {
-																																		if (!mOwner
-																																				.equals(mValue)) {
-																																			if (!tAnnotationValue
-																																					.equals(tValue)) {
-																																				if (!mValue
-																																						.equals(tValue)) {
-																																					if (!mValue
-																																							.equals(tAnnotationValue)) {
-																																						return new Object[] {
-																																								ruleresult,
-																																								annotation,
-																																								annotationMemberValuePairToTAnnotationValue,
-																																								mAnnotationValue,
-																																								mTypeToTType,
-																																								mArray,
-																																								tValue,
-																																								mOwner,
-																																								tAnnotationValue,
-																																								mValue };
-																																					}
-																																				}
-																																			}
-																																		}
-																																	}
-																																}
-																															}
-																														}
-																													}
-																												}
-																											}
-																										}
-																									}
-																								}
-																							}
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_blackBBBBBBBB(
+			PerformRuleResult ruleresult, EObject annotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue,
+			EObject mTypeToTType, EObject mArray, EObject tValue, EObject tAnnotationValue, EObject mValue) {
+		if (!annotationMemberValuePairToTAnnotationValue.equals(mAnnotationValue)) {
+			if (!annotationMemberValuePairToTAnnotationValue.equals(mTypeToTType)) {
+				if (!annotationMemberValuePairToTAnnotationValue.equals(mArray)) {
+					if (!annotationMemberValuePairToTAnnotationValue.equals(tValue)) {
+						if (!annotationMemberValuePairToTAnnotationValue.equals(tAnnotationValue)) {
+							if (!annotationMemberValuePairToTAnnotationValue.equals(mValue)) {
+								if (!mAnnotationValue.equals(mTypeToTType)) {
+									if (!mAnnotationValue.equals(mArray)) {
+										if (!mAnnotationValue.equals(tValue)) {
+											if (!mAnnotationValue.equals(tAnnotationValue)) {
+												if (!mAnnotationValue.equals(mValue)) {
+													if (!mTypeToTType.equals(tValue)) {
+														if (!mTypeToTType.equals(tAnnotationValue)) {
+															if (!mTypeToTType.equals(mValue)) {
+																if (!mArray.equals(mTypeToTType)) {
+																	if (!mArray.equals(tValue)) {
+																		if (!mArray.equals(tAnnotationValue)) {
+																			if (!mArray.equals(mValue)) {
+																				if (!tAnnotationValue.equals(tValue)) {
+																					if (!mValue.equals(tValue)) {
+																						if (!mValue.equals(
+																								tAnnotationValue)) {
+																							return new Object[] {
+																									ruleresult,
+																									annotationMemberValuePairToTAnnotationValue,
+																									mAnnotationValue,
+																									mTypeToTType,
+																									mArray, tValue,
+																									tAnnotationValue,
+																									mValue };
 																						}
 																					}
 																				}
@@ -2388,19 +2140,17 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_greenBBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mAnnotationValue, EObject mTypeToTType, EObject mArray,
-			EObject tValue, EObject tAnnotationValue, EObject mValue) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_11_3_bookkeepingforedges_greenBBBBBBFFFF(
+			PerformRuleResult ruleresult, EObject mTypeToTType, EObject mArray, EObject tValue,
+			EObject tAnnotationValue, EObject mValue) {
 		EMoflonEdge mArray__mValue____expressions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mValue____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tValue____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationMemberValueStringArray";
 		String mArray__mValue____expressions_name_prime = "expressions";
 		String mTypeToTType__mValue____source_name_prime = "source";
 		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
-		String mAnnotationValue__mArray____value_name_prime = "value";
 		String mTypeToTType__tValue____target_name_prime = "target";
 		mArray__mValue____expressions.setSrc(mArray);
 		mArray__mValue____expressions.setTrg(mValue);
@@ -2411,9 +2161,6 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
 		tAnnotationValue__tValue____tValue.setTrg(tValue);
 		ruleresult.getTranslatedEdges().add(tAnnotationValue__tValue____tValue);
-		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
-		mAnnotationValue__mArray____value.setTrg(mArray);
-		ruleresult.getCreatedEdges().add(mAnnotationValue__mArray____value);
 		mTypeToTType__tValue____target.setSrc(mTypeToTType);
 		mTypeToTType__tValue____target.setTrg(tValue);
 		ruleresult.getCreatedEdges().add(mTypeToTType__tValue____target);
@@ -2421,19 +2168,18 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		mArray__mValue____expressions.setName(mArray__mValue____expressions_name_prime);
 		mTypeToTType__mValue____source.setName(mTypeToTType__mValue____source_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
-		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
 		mTypeToTType__tValue____target.setName(mTypeToTType__tValue____target_name_prime);
-		return new Object[] { ruleresult, mAnnotationValue, mTypeToTType, mArray, tValue, tAnnotationValue, mValue,
+		return new Object[] { ruleresult, mTypeToTType, mArray, tValue, tAnnotationValue, mValue,
 				mArray__mValue____expressions, mTypeToTType__mValue____source, tAnnotationValue__tValue____tValue,
-				mAnnotationValue__mArray____value, mTypeToTType__tValue____target };
+				mTypeToTType__tValue____target };
 	}
 
-	public static final void pattern_AnnotationMemberValueStringArray_11_5_registerobjects_expressionBBBBBBBBBBB(
-			AnnotationMemberValueStringArray _this, PerformRuleResult ruleresult, EObject annotation,
+	public static final void pattern_AnnotationMemberValueStringArray_11_5_registerobjects_expressionBBBBBBBBB(
+			AnnotationMemberValueStringArray _this, PerformRuleResult ruleresult,
 			EObject annotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
-			EObject mArray, EObject tValue, EObject mOwner, EObject tAnnotationValue, EObject mValue) {
-		_this.registerObjects_BWD(ruleresult, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mTypeToTType, mArray, tValue, mOwner, tAnnotationValue, mValue);
+			EObject mArray, EObject tValue, EObject tAnnotationValue, EObject mValue) {
+		_this.registerObjects_BWD(ruleresult, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+				mTypeToTType, mArray, tValue, tAnnotationValue, mValue);
 
 	}
 
@@ -2525,50 +2271,45 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_12_3_findcontext_blackFBBBFB(
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_12_3_findcontext_blackBBFBB(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
 			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, TAnnotationValue tAnnotationValue) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (mAnnotationValue.equals(annotationMemberValuePairToTAnnotationValue.getSource())) {
 			if (tAnnotationValue.equals(annotationMemberValuePairToTAnnotationValue.getTarget())) {
 				if (tAnnotationValue.getTValue().contains(tValue)) {
-					for (Annotation annotation : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mAnnotationValue, Annotation.class, "values")) {
-						for (BodyDeclaration mOwner : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(annotation, BodyDeclaration.class, "annotations")) {
-							_result.add(new Object[] { annotation, annotationMemberValuePairToTAnnotationValue,
-									mAnnotationValue, tValue, mOwner, tAnnotationValue });
-						}
+					Expression tmpMArray = mAnnotationValue.getValue();
+					if (tmpMArray instanceof ArrayInitializer) {
+						ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
+						_result.add(new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+								mArray, tValue, tAnnotationValue });
 					}
+
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_12_3_findcontext_greenBBBBBBFFFFFF(
-			Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_12_3_findcontext_greenBBBBBFFFFF(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
 			TAnnotationValue tAnnotationValue) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
 		EMoflonEdge annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge mOwner__annotation____annotations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__mAnnotationValue____values = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotationValue__tValue____tValue = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotationValue__mArray____value = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source_name_prime = "source";
 		String annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target_name_prime = "target";
-		String mOwner__annotation____annotations_name_prime = "annotations";
-		String annotation__mAnnotationValue____values_name_prime = "values";
 		String tAnnotationValue__tValue____tValue_name_prime = "tValue";
-		isApplicableMatch.getAllContextElements().add(annotation);
+		String mAnnotationValue__mArray____value_name_prime = "value";
 		isApplicableMatch.getAllContextElements().add(annotationMemberValuePairToTAnnotationValue);
 		isApplicableMatch.getAllContextElements().add(mAnnotationValue);
+		isApplicableMatch.getAllContextElements().add(mArray);
 		isApplicableMatch.getAllContextElements().add(tValue);
-		isApplicableMatch.getAllContextElements().add(mOwner);
 		isApplicableMatch.getAllContextElements().add(tAnnotationValue);
 		annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source
 				.setSrc(annotationMemberValuePairToTAnnotationValue);
@@ -2580,41 +2321,36 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target.setTrg(tAnnotationValue);
 		isApplicableMatch.getAllContextElements()
 				.add(annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target);
-		mOwner__annotation____annotations.setSrc(mOwner);
-		mOwner__annotation____annotations.setTrg(annotation);
-		isApplicableMatch.getAllContextElements().add(mOwner__annotation____annotations);
-		annotation__mAnnotationValue____values.setSrc(annotation);
-		annotation__mAnnotationValue____values.setTrg(mAnnotationValue);
-		isApplicableMatch.getAllContextElements().add(annotation__mAnnotationValue____values);
 		tAnnotationValue__tValue____tValue.setSrc(tAnnotationValue);
 		tAnnotationValue__tValue____tValue.setTrg(tValue);
 		isApplicableMatch.getAllContextElements().add(tAnnotationValue__tValue____tValue);
+		mAnnotationValue__mArray____value.setSrc(mAnnotationValue);
+		mAnnotationValue__mArray____value.setTrg(mArray);
+		isApplicableMatch.getAllContextElements().add(mAnnotationValue__mArray____value);
 		annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source
 				.setName(annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source_name_prime);
 		annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target
 				.setName(annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target_name_prime);
-		mOwner__annotation____annotations.setName(mOwner__annotation____annotations_name_prime);
-		annotation__mAnnotationValue____values.setName(annotation__mAnnotationValue____values_name_prime);
 		tAnnotationValue__tValue____tValue.setName(tAnnotationValue__tValue____tValue_name_prime);
-		return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, mOwner,
+		mAnnotationValue__mArray____value.setName(mAnnotationValue__mArray____value_name_prime);
+		return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue,
 				tAnnotationValue, isApplicableMatch,
 				annotationMemberValuePairToTAnnotationValue__mAnnotationValue____source,
 				annotationMemberValuePairToTAnnotationValue__tAnnotationValue____target,
-				mOwner__annotation____annotations, annotation__mAnnotationValue____values,
-				tAnnotationValue__tValue____tValue };
+				tAnnotationValue__tValue____tValue, mAnnotationValue__mArray____value };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingFBBBBBBBB(
-			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingFBBBBBBB(
+			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
 			TAnnotationValue tAnnotationValue) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, annotation,
-				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, mOwner, tAnnotationValue);
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch,
+				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue, tAnnotationValue);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, annotation,
-					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, mOwner, tAnnotationValue };
+			return new Object[] { csp, _this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue,
+					mAnnotationValue, mArray, tValue, tAnnotationValue };
 		}
 		return null;
 	}
@@ -2623,14 +2359,14 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingAndBlackFBBBBBBB(
+			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, TTextNode tValue, BodyDeclaration mOwner,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
 			TAnnotationValue tAnnotationValue) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_12_4_solveCSP_binding = pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				tValue, mOwner, tAnnotationValue);
+		Object[] result_pattern_AnnotationMemberValueStringArray_12_4_solveCSP_binding = pattern_AnnotationMemberValueStringArray_12_4_solveCSP_bindingFBBBBBBB(
+				_this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tValue,
+				tAnnotationValue);
 		if (result_pattern_AnnotationMemberValueStringArray_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_12_4_solveCSP_binding[0];
 
@@ -2638,9 +2374,8 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					csp);
 			if (result_pattern_AnnotationMemberValueStringArray_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, annotation,
-						annotationMemberValuePairToTAnnotationValue, mAnnotationValue, tValue, mOwner,
-						tAnnotationValue };
+				return new Object[] { csp, _this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue,
+						mAnnotationValue, mArray, tValue, tAnnotationValue };
 			}
 		}
 		return null;
@@ -2849,9 +2584,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_black_nac_0BB(
 			StringLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_14008 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_874892 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_14008)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_874892)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -2866,7 +2601,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_blackFFFFFB(
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_blackFFFB(
 			EMoflonEdge _edge_expressions) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		EObject tmpMArray = _edge_expressions.getSrc();
@@ -2882,15 +2617,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 								mAnnotationValue) == null) {
 							if (pattern_AnnotationMemberValueStringArray_21_2_testcorematchandDECs_black_nac_1BB(
 									mAnnotationValue, mValue) == null) {
-								for (Annotation annotation : org.moflon.core.utilities.eMoflonEMFUtil
-										.getOppositeReferenceTyped(mAnnotationValue, Annotation.class, "values")) {
-									for (BodyDeclaration mOwner : org.moflon.core.utilities.eMoflonEMFUtil
-											.getOppositeReferenceTyped(annotation, BodyDeclaration.class,
-													"annotations")) {
-										_result.add(new Object[] { annotation, mAnnotationValue, mArray, mOwner, mValue,
-												_edge_expressions });
-									}
-								}
+								_result.add(new Object[] { mAnnotationValue, mArray, mValue, _edge_expressions });
 							}
 						}
 					}
@@ -2912,11 +2639,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 	}
 
-	public static final boolean pattern_AnnotationMemberValueStringArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			AnnotationMemberValueStringArray _this, Match match, Annotation annotation,
-			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, BodyDeclaration mOwner,
-			StringLiteral mValue) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, annotation, mAnnotationValue, mArray, mOwner, mValue);
+	public static final boolean pattern_AnnotationMemberValueStringArray_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
+			AnnotationMemberValueStringArray _this, Match match, AnnotationMemberValuePair mAnnotationValue,
+			ArrayInitializer mArray, StringLiteral mValue) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mAnnotationValue, mArray, mValue);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2960,40 +2686,30 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
+	public static final Object[] pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("annotation");
-		EObject _localVariable_1 = sourceMatch.getObject("mAnnotationValue");
-		EObject _localVariable_2 = sourceMatch.getObject("mArray");
-		EObject _localVariable_3 = targetMatch.getObject("tValue");
-		EObject _localVariable_4 = sourceMatch.getObject("mOwner");
-		EObject _localVariable_5 = targetMatch.getObject("tAnnotationValue");
-		EObject _localVariable_6 = sourceMatch.getObject("mValue");
-		EObject tmpAnnotation = _localVariable_0;
-		EObject tmpMAnnotationValue = _localVariable_1;
-		EObject tmpMArray = _localVariable_2;
-		EObject tmpTValue = _localVariable_3;
-		EObject tmpMOwner = _localVariable_4;
-		EObject tmpTAnnotationValue = _localVariable_5;
-		EObject tmpMValue = _localVariable_6;
-		if (tmpAnnotation instanceof Annotation) {
-			Annotation annotation = (Annotation) tmpAnnotation;
-			if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
-				AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
-				if (tmpMArray instanceof ArrayInitializer) {
-					ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
-					if (tmpTValue instanceof TTextNode) {
-						TTextNode tValue = (TTextNode) tmpTValue;
-						if (tmpMOwner instanceof BodyDeclaration) {
-							BodyDeclaration mOwner = (BodyDeclaration) tmpMOwner;
-							if (tmpTAnnotationValue instanceof TAnnotationValue) {
-								TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
-								if (tmpMValue instanceof StringLiteral) {
-									StringLiteral mValue = (StringLiteral) tmpMValue;
-									return new Object[] { annotation, mAnnotationValue, mArray, tValue, mOwner,
-											tAnnotationValue, mValue, sourceMatch, targetMatch };
-								}
-							}
+		EObject _localVariable_0 = sourceMatch.getObject("mAnnotationValue");
+		EObject _localVariable_1 = sourceMatch.getObject("mArray");
+		EObject _localVariable_2 = targetMatch.getObject("tValue");
+		EObject _localVariable_3 = targetMatch.getObject("tAnnotationValue");
+		EObject _localVariable_4 = sourceMatch.getObject("mValue");
+		EObject tmpMAnnotationValue = _localVariable_0;
+		EObject tmpMArray = _localVariable_1;
+		EObject tmpTValue = _localVariable_2;
+		EObject tmpTAnnotationValue = _localVariable_3;
+		EObject tmpMValue = _localVariable_4;
+		if (tmpMAnnotationValue instanceof AnnotationMemberValuePair) {
+			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) tmpMAnnotationValue;
+			if (tmpMArray instanceof ArrayInitializer) {
+				ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
+				if (tmpTValue instanceof TTextNode) {
+					TTextNode tValue = (TTextNode) tmpTValue;
+					if (tmpTAnnotationValue instanceof TAnnotationValue) {
+						TAnnotationValue tAnnotationValue = (TAnnotationValue) tmpTAnnotationValue;
+						if (tmpMValue instanceof StringLiteral) {
+							StringLiteral mValue = (StringLiteral) tmpMValue;
+							return new Object[] { mAnnotationValue, mArray, tValue, tAnnotationValue, mValue,
+									sourceMatch, targetMatch };
 						}
 					}
 				}
@@ -3002,52 +2718,48 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			TTextNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, StringLiteral mValue,
-			Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_blackBBBBBBB(
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
+			TAnnotationValue tAnnotationValue, StringLiteral mValue, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { annotation, mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue,
-					sourceMatch, targetMatch };
+			return new Object[] { mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, sourceMatch,
+					targetMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(
+	public static final Object[] pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding = pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
+		Object[] result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding = pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_bindingFFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding != null) {
-			Annotation annotation = (Annotation) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[0];
-			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[1];
-			ArrayInitializer mArray = (ArrayInitializer) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[2];
-			TTextNode tValue = (TTextNode) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[3];
-			BodyDeclaration mOwner = (BodyDeclaration) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[4];
-			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[5];
-			StringLiteral mValue = (StringLiteral) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[6];
+			AnnotationMemberValuePair mAnnotationValue = (AnnotationMemberValuePair) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[0];
+			ArrayInitializer mArray = (ArrayInitializer) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[1];
+			TTextNode tValue = (TTextNode) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[2];
+			TAnnotationValue tAnnotationValue = (TAnnotationValue) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[3];
+			StringLiteral mValue = (StringLiteral) result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_binding[4];
 
-			Object[] result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_black = pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					annotation, mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue, sourceMatch,
-					targetMatch);
+			Object[] result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_black = pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_blackBBBBBBB(
+					mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, sourceMatch, targetMatch);
 			if (result_pattern_AnnotationMemberValueStringArray_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { annotation, mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue,
-						sourceMatch, targetMatch };
+				return new Object[] { mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, sourceMatch,
+						targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingFBBBBBBBBBB(
-			AnnotationMemberValueStringArray _this, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, TTextNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			StringLiteral mValue, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(annotation, mAnnotationValue, mArray, tValue, mOwner,
-				tAnnotationValue, mValue, sourceMatch, targetMatch);
-		CSP csp = _localVariable_7;
+	public static final Object[] pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingFBBBBBBBB(
+			AnnotationMemberValueStringArray _this, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			TTextNode tValue, TAnnotationValue tAnnotationValue, StringLiteral mValue, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(mAnnotationValue, mArray, tValue, tAnnotationValue,
+				mValue, sourceMatch, targetMatch);
+		CSP csp = _localVariable_5;
 		if (csp != null) {
-			return new Object[] { csp, _this, annotation, mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue,
-					mValue, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, sourceMatch,
+					targetMatch };
 		}
 		return null;
 	}
@@ -3056,13 +2768,12 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
-			AnnotationMemberValueStringArray _this, Annotation annotation, AnnotationMemberValuePair mAnnotationValue,
-			ArrayInitializer mArray, TTextNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
-			StringLiteral mValue, Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_24_3_solvecsp_binding = pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, annotation, mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue, sourceMatch,
-				targetMatch);
+	public static final Object[] pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
+			AnnotationMemberValueStringArray _this, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
+			TTextNode tValue, TAnnotationValue tAnnotationValue, StringLiteral mValue, Match sourceMatch,
+			Match targetMatch) {
+		Object[] result_pattern_AnnotationMemberValueStringArray_24_3_solvecsp_binding = pattern_AnnotationMemberValueStringArray_24_3_solvecsp_bindingFBBBBBBBB(
+				_this, mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, sourceMatch, targetMatch);
 		if (result_pattern_AnnotationMemberValueStringArray_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_24_3_solvecsp_binding[0];
 
@@ -3070,8 +2781,8 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					csp);
 			if (result_pattern_AnnotationMemberValueStringArray_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, annotation, mAnnotationValue, mArray, tValue, mOwner,
-						tAnnotationValue, mValue, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mAnnotationValue, mArray, tValue, tAnnotationValue, mValue,
+						sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3112,11 +2823,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { annotationMemberValuePairToTAnnotationValue, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_24_6_createcorrespondence_blackBBBBBBBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			TTextNode tValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue, StringLiteral mValue,
-			CCMatch ccMatch) {
-		return new Object[] { annotation, mAnnotationValue, mArray, tValue, mOwner, tAnnotationValue, mValue, ccMatch };
+	public static final Object[] pattern_AnnotationMemberValueStringArray_24_6_createcorrespondence_blackBBBBBB(
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TTextNode tValue,
+			TAnnotationValue tAnnotationValue, StringLiteral mValue, CCMatch ccMatch) {
+		return new Object[] { mAnnotationValue, mArray, tValue, tAnnotationValue, mValue, ccMatch };
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_24_6_createcorrespondence_greenFBBB(
@@ -3151,9 +2861,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_black_nac_0BB(
 			StringLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_393972 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_639084 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_393972)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_639084)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -3168,20 +2878,15 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_blackBBBBB(
-			Annotation annotation, AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray,
-			BodyDeclaration mOwner, StringLiteral mValue) {
-		if (mOwner.getAnnotations().contains(annotation)) {
-			if (mArray.getExpressions().contains(mValue)) {
-				if (annotation.getValues().contains(mAnnotationValue)) {
-					if (mArray.equals(mAnnotationValue.getValue())) {
-						if (pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_black_nac_0BB(mValue,
-								mAnnotationValue) == null) {
-							if (pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_black_nac_1BB(
-									mAnnotationValue, mValue) == null) {
-								return new Object[] { annotation, mAnnotationValue, mArray, mOwner, mValue };
-							}
-						}
+	public static final Object[] pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_blackBBB(
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, StringLiteral mValue) {
+		if (mArray.getExpressions().contains(mValue)) {
+			if (mArray.equals(mAnnotationValue.getValue())) {
+				if (pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_black_nac_0BB(mValue,
+						mAnnotationValue) == null) {
+					if (pattern_AnnotationMemberValueStringArray_27_1_matchtggpattern_black_nac_1BB(mAnnotationValue,
+							mValue) == null) {
+						return new Object[] { mAnnotationValue, mArray, mValue };
 					}
 				}
 			}
@@ -3231,9 +2936,10 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Annotation annotation) {
-		if (ruleResult.getSourceObjects().contains(annotation)) {
-			return new Object[] { ruleResult, annotation };
+			ModelgeneratorRuleResult ruleResult,
+			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue) {
+		if (ruleResult.getCorrObjects().contains(annotationMemberValuePairToTAnnotationValue)) {
+			return new Object[] { ruleResult, annotationMemberValuePairToTAnnotationValue };
 		}
 		return null;
 	}
@@ -3247,10 +2953,9 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 	}
 
 	public static final Object[] pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult,
-			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue) {
-		if (ruleResult.getCorrObjects().contains(annotationMemberValuePairToTAnnotationValue)) {
-			return new Object[] { ruleResult, annotationMemberValuePairToTAnnotationValue };
+			ModelgeneratorRuleResult ruleResult, ArrayInitializer mArray) {
+		if (ruleResult.getSourceObjects().contains(mArray)) {
+			return new Object[] { ruleResult, mArray };
 		}
 		return null;
 	}
@@ -3263,15 +2968,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, BodyDeclaration mOwner) {
-		if (ruleResult.getSourceObjects().contains(mOwner)) {
-			return new Object[] { ruleResult, mOwner };
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_blackFFFFFFBB(
+	public static final Iterable<Object[]> pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_blackFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList annotationMemberValuePairToTAnnotationValueList : ruleEntryContainer.getRuleEntryList()) {
@@ -3284,35 +2981,27 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					if (mAnnotationValue != null) {
 						TAnnotationValue tAnnotationValue = annotationMemberValuePairToTAnnotationValue.getTarget();
 						if (tAnnotationValue != null) {
-							if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-									annotationMemberValuePairToTAnnotationValue) == null) {
-								if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_1BB(
-										ruleResult, mAnnotationValue) == null) {
-									if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_3BB(
-											ruleResult, tAnnotationValue) == null) {
-										for (Annotation annotation : org.moflon.core.utilities.eMoflonEMFUtil
-												.getOppositeReferenceTyped(mAnnotationValue, Annotation.class,
-														"values")) {
-											if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_0BB(
-													ruleResult, annotation) == null) {
-												for (BodyDeclaration mOwner : org.moflon.core.utilities.eMoflonEMFUtil
-														.getOppositeReferenceTyped(annotation, BodyDeclaration.class,
-																"annotations")) {
-													if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_4BB(
-															ruleResult, mOwner) == null) {
-														_result.add(new Object[] {
-																annotationMemberValuePairToTAnnotationValueList,
-																annotation, mAnnotationValue,
-																annotationMemberValuePairToTAnnotationValue,
-																tAnnotationValue, mOwner, ruleEntryContainer,
-																ruleResult });
-													}
-												}
+							Expression tmpMArray = mAnnotationValue.getValue();
+							if (tmpMArray instanceof ArrayInitializer) {
+								ArrayInitializer mArray = (ArrayInitializer) tmpMArray;
+								if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_0BB(
+										ruleResult, annotationMemberValuePairToTAnnotationValue) == null) {
+									if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_1BB(
+											ruleResult, mAnnotationValue) == null) {
+										if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_3BB(
+												ruleResult, tAnnotationValue) == null) {
+											if (pattern_AnnotationMemberValueStringArray_29_2_isapplicablecore_black_nac_2BB(
+													ruleResult, mArray) == null) {
+												_result.add(new Object[] {
+														annotationMemberValuePairToTAnnotationValueList,
+														annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
+														mArray, tAnnotationValue, ruleEntryContainer, ruleResult });
 											}
 										}
 									}
 								}
 							}
+
 						}
 
 					}
@@ -3323,18 +3012,17 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingFBBBBBBBB(
-			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingFBBBBBBB(
+			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, annotation,
-				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch,
+				annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, annotation,
-					annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue,
-					ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue,
+					mAnnotationValue, mArray, tAnnotationValue, ruleResult };
 		}
 		return null;
 	}
@@ -3343,14 +3031,14 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingAndBlackFBBBBBBBB(
-			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch, Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingAndBlackFBBBBBBB(
+			AnnotationMemberValueStringArray _this, IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_AnnotationMemberValueStringArray_29_3_solveCSP_binding = pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue,
-				mOwner, tAnnotationValue, ruleResult);
+		Object[] result_pattern_AnnotationMemberValueStringArray_29_3_solveCSP_binding = pattern_AnnotationMemberValueStringArray_29_3_solveCSP_bindingFBBBBBBB(
+				_this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray,
+				tAnnotationValue, ruleResult);
 		if (result_pattern_AnnotationMemberValueStringArray_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationMemberValueStringArray_29_3_solveCSP_binding[0];
 
@@ -3358,9 +3046,8 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 					csp);
 			if (result_pattern_AnnotationMemberValueStringArray_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, annotation,
-						annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner, tAnnotationValue,
-						ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, annotationMemberValuePairToTAnnotationValue,
+						mAnnotationValue, mArray, tAnnotationValue, ruleResult };
 			}
 		}
 		return null;
@@ -3373,28 +3060,23 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_29_5_checknacs_blackBBBBB(
-			Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_29_5_checknacs_blackBBBB(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue) {
-		return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
-				tAnnotationValue };
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue) {
+		return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_29_6_perform_blackBBBBBB(
-			Annotation annotation,
+	public static final Object[] pattern_AnnotationMemberValueStringArray_29_6_perform_blackBBBBB(
 			AnnotationMemberValuePairToTAnnotationValue annotationMemberValuePairToTAnnotationValue,
-			AnnotationMemberValuePair mAnnotationValue, BodyDeclaration mOwner, TAnnotationValue tAnnotationValue,
+			AnnotationMemberValuePair mAnnotationValue, ArrayInitializer mArray, TAnnotationValue tAnnotationValue,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { annotation, annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mOwner,
-				tAnnotationValue, ruleResult };
+		return new Object[] { annotationMemberValuePairToTAnnotationValue, mAnnotationValue, mArray, tAnnotationValue,
+				ruleResult };
 	}
 
-	public static final Object[] pattern_AnnotationMemberValueStringArray_29_6_perform_greenBFFFBFBB(
-			AnnotationMemberValuePair mAnnotationValue, TAnnotationValue tAnnotationValue,
-			ModelgeneratorRuleResult ruleResult, CSP csp) {
+	public static final Object[] pattern_AnnotationMemberValueStringArray_29_6_perform_greenFBFBFBB(
+			ArrayInitializer mArray, TAnnotationValue tAnnotationValue, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		LiteralToTNode mTypeToTType = PmFactory.eINSTANCE.createLiteralToTNode();
-		ArrayInitializer mArray = JavaFactory.eINSTANCE.createArrayInitializer();
 		TTextNode tValue = AnnotationsFactory.eINSTANCE.createTTextNode();
 		StringLiteral mValue = JavaFactory.eINSTANCE.createStringLiteral();
 		Object _localVariable_0 = csp.getValue("tValue", "tText");
@@ -3402,8 +3084,6 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(mTypeToTType);
-		mAnnotationValue.setValue(mArray);
-		ruleResult.getSourceObjects().add(mArray);
 		tAnnotationValue.getTValue().add(tValue);
 		mTypeToTType.setTarget(tValue);
 		ruleResult.getTargetObjects().add(tValue);
@@ -3417,8 +3097,7 @@ public class AnnotationMemberValueStringArrayImpl extends AbstractRuleImpl imple
 		tValue.setTText(tValue_tText_prime);
 		mValue.setEscapedValue(mValue_escapedValue_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mAnnotationValue, mTypeToTType, mArray, tValue, tAnnotationValue, mValue, ruleResult,
-				csp };
+		return new Object[] { mTypeToTType, mArray, tValue, tAnnotationValue, mValue, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AnnotationMemberValueStringArray_29_7_expressionFB(

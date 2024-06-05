@@ -28,6 +28,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.io.FileUtils;
 
 /**
  * This class provides frequently used functionalities when working with eclipse
@@ -239,14 +240,14 @@ public final class EclipseProjectUtil {
 			throws DuplicateProjectNameException, CoreException {
 		final var project = getProjectByName(name);
 
-		if (project.exists()
-				|| new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
-			if (force) {
-				project.delete(true, monitor);
-			} else {
+		final var location = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name);
+		if (project.exists() || location.exists()) {
+			if (!force) {
 				throw new DuplicateProjectNameException(
 						"There is already a project with the name \"" + name + "\" in the workspace.");
 			}
+			project.delete(true, monitor);
+			FileUtils.recursiveDelete(location);
 		}
 
 		project.create(monitor);

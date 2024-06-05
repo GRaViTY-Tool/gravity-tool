@@ -5,8 +5,8 @@ package org.gravity.tgg.modisco.pm.Rules;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
+import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 
 import org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass;
@@ -48,7 +48,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ClassDeclaration mParent, ClassInstanceCreation mCreation,
+	boolean isAppropriate_FWD(Match match, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
 
 	/**
@@ -73,7 +73,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ClassDeclaration mParent, ClassInstanceCreation mCreation,
+	void registerObjectsToMatch_FWD(Match match, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
 
 	/**
@@ -82,7 +82,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration mParent, ClassInstanceCreation mCreation,
+	CSP isAppropriate_solveCsp_FWD(Match match, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
 
 	/**
@@ -99,7 +99,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mParent, TClass tClass,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass, Type mParent,
 			ClassInstanceCreation mCreation, TypeToTAbstractType parentToParent, AnonymousClassDeclaration mAnonymous,
 			TClass tParent, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass, TypeAccess mType);
 
@@ -117,7 +117,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mParent, EObject tClass, EObject mCreation,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tClass, EObject mParent, EObject mCreation,
 			EObject parentToParent, EObject mAnonymous, EObject tParent, EObject eAnonymousClassDeclarationToTClass,
 			EObject mType);
 
@@ -183,7 +183,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mParent, TClass tClass,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, Type mParent,
 			ClassInstanceCreation mCreation, TypeToTAbstractType parentToParent, AnonymousClassDeclaration mAnonymous,
 			TClass tParent, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass);
 
@@ -201,7 +201,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mParent, EObject tClass, EObject mCreation,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tClass, EObject mParent, EObject mCreation,
 			EObject parentToParent, EObject mAnonymous, EObject tParent, EObject eAnonymousClassDeclarationToTClass,
 			EObject mType);
 
@@ -219,7 +219,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_parentClasses);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_1005(EMoflonEdge _edge_parentClasses);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_59(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1103(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,7 +259,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(ClassDeclaration mParent, TClass tClass, ClassInstanceCreation mCreation,
+	CSP isApplicable_solveCsp_CC(TClass tClass, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TClass tParent, TypeAccess mType, Match sourceMatch,
 			Match targetMatch);
 
@@ -277,8 +277,8 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ClassDeclaration mParent, ClassInstanceCreation mCreation,
-			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
+	boolean checkDEC_FWD(Type mParent, ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous,
+			TypeAccess mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,8 +295,8 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType parentToParentParameter,
-			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClassParameter);
+			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClassParameter,
+			TypeToTAbstractType parentToParentParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,7 +304,7 @@ public interface AnonymousClassTypeClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration mParent, TClass tClass,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, Type mParent,
 			ClassInstanceCreation mCreation, TypeToTAbstractType parentToParent, AnonymousClassDeclaration mAnonymous,
 			TClass tParent, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			ModelgeneratorRuleResult ruleResult);

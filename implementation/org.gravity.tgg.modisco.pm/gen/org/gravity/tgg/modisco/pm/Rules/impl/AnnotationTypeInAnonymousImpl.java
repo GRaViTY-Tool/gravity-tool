@@ -837,7 +837,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_75(EMoflonEdge _edge_annotationTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_975(EMoflonEdge _edge_annotationTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInAnonymousImpl
 				.pattern_AnnotationTypeInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -897,7 +897,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_78(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1070(EMoflonEdge _edge_anonymousClassDeclarationOwner) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInAnonymousImpl
 				.pattern_AnnotationTypeInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -966,21 +966,21 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
-		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
-		var_tClass_tName.setType("String");
+		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
+		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
+		var_mNestedType_name.setType("String");
 
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
 		var_literal0.setType("");
 
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
+		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
+		var_tClass_tName.setType("String");
+
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
-
-		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
-		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
-		var_mNestedType_name.setType("String");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1021,21 +1021,21 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
-		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
-		var_tClass_tName.setType("String");
+		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
+		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
+		var_mNestedType_name.setType("String");
 
 		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
 		var_literal0.setValue("$");
 		var_literal0.setType("");
 
+		Variable var_tClass_tName = CSPFactoryHelper.eINSTANCE.createVariable("tClass", true, csp);
+		var_tClass_tName.setValue(__helper.getValue("tClass", "tName"));
+		var_tClass_tName.setType("String");
+
 		Variable var_tNestedType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tNestedType", true, csp);
 		var_tNestedType_tName.setValue(__helper.getValue("tNestedType", "tName"));
 		var_tNestedType_tName.setType("String");
-
-		Variable var_mNestedType_name = CSPFactoryHelper.eINSTANCE.createVariable("mNestedType", true, csp);
-		var_mNestedType_name.setValue(__helper.getValue("mNestedType", "name"));
-		var_mNestedType_name.setType("String");
 
 		Concat concat0 = new Concat();
 		csp.getConstraints().add(concat0);
@@ -1251,9 +1251,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 			//nothing RuleEntryList eAnonymousClassDeclarationToTClassList = (RuleEntryList) result2_black[0];
 			TClass tClass = (TClass) result2_black[1];
 			TPackage tPackage = (TPackage) result2_black[2];
-			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = (AnonymousClassDeclarationToTClass) result2_black[3];
-			AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result2_black[4];
-			TypeGraph pg = (TypeGraph) result2_black[5];
+			TypeGraph pg = (TypeGraph) result2_black[3];
+			AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = (AnonymousClassDeclarationToTClass) result2_black[4];
+			AnonymousClassDeclaration eAnonymousClassDeclaration = (AnonymousClassDeclaration) result2_black[5];
 
 			Object[] result3_bindingAndBlack = AnnotationTypeInAnonymousImpl
 					.pattern_AnnotationTypeInAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
@@ -1366,99 +1366,101 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(AnonymousClassDeclaration) arguments.get(2));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TCLASS_ANNOTATIONTYPEDECLARATION_TPACKAGE_TYPEGRAPH_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (TPackage) arguments.get(3),
-					(TypeGraph) arguments.get(4), (AnonymousClassDeclarationToTClass) arguments.get(5),
-					(AnonymousClassDeclaration) arguments.get(6));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TPackage) arguments.get(2),
-					(TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TPackage) arguments.get(2),
-					(TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
-					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4),
-					(AnonymousClassDeclarationToTClass) arguments.get(5), (AnonymousClassDeclaration) arguments.get(6));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_75__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_75((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_78__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_78((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__TCLASS_ANNOTATIONTYPEDECLARATION_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TClass) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4),
-					(AnonymousClassDeclaration) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_DEC_FWD__ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
-			return checkDEC_FWD((AnnotationTypeDeclaration) arguments.get(0),
-					(AnonymousClassDeclaration) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_DEC_BWD__TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
-			return checkDEC_BWD((TClass) arguments.get(0), (TPackage) arguments.get(1), (TypeGraph) arguments.get(2),
-					(TAnnotationType) arguments.get(3));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ANONYMOUSCLASSDECLARATIONTOTCLASS:
-			return generateModel((RuleEntryContainer) arguments.get(0),
-					(AnonymousClassDeclarationToTClass) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_TPACKAGE_TYPEGRAPH_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
-					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3),
-					(AnonymousClassDeclarationToTClass) arguments.get(4), (AnonymousClassDeclaration) arguments.get(5),
-					(ModelgeneratorRuleResult) arguments.get(6));
-		case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+						(AnonymousClassDeclaration) arguments.get(2));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+						(AnonymousClassDeclaration) arguments.get(2));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(AnnotationTypeDeclaration) arguments.get(1), (AnonymousClassDeclaration) arguments.get(2));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TCLASS_ANNOTATIONTYPEDECLARATION_TPACKAGE_TYPEGRAPH_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (TPackage) arguments.get(3),
+						(TypeGraph) arguments.get(4), (AnonymousClassDeclarationToTClass) arguments.get(5),
+						(AnonymousClassDeclaration) arguments.get(6));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4),
+						(AnonymousClassDeclarationToTClass) arguments.get(5),
+						(AnonymousClassDeclaration) arguments.get(6));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_975__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_975((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1070__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1070((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__TCLASS_ANNOTATIONTYPEDECLARATION_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((TClass) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3), (TAnnotationType) arguments.get(4),
+						(AnonymousClassDeclaration) arguments.get(5), (Match) arguments.get(6),
+						(Match) arguments.get(7));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_DEC_FWD__ANNOTATIONTYPEDECLARATION_ANONYMOUSCLASSDECLARATION:
+				return checkDEC_FWD((AnnotationTypeDeclaration) arguments.get(0),
+						(AnonymousClassDeclaration) arguments.get(1));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___CHECK_DEC_BWD__TCLASS_TPACKAGE_TYPEGRAPH_TANNOTATIONTYPE:
+				return checkDEC_BWD((TClass) arguments.get(0), (TPackage) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TAnnotationType) arguments.get(3));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_ANONYMOUSCLASSDECLARATIONTOTCLASS:
+				return generateModel((RuleEntryContainer) arguments.get(0),
+						(AnonymousClassDeclarationToTClass) arguments.get(1));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TCLASS_TPACKAGE_TYPEGRAPH_ANONYMOUSCLASSDECLARATIONTOTCLASS_ANONYMOUSCLASSDECLARATION_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TClass) arguments.get(1),
+						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3),
+						(AnonymousClassDeclarationToTClass) arguments.get(4),
+						(AnonymousClassDeclaration) arguments.get(5), (ModelgeneratorRuleResult) arguments.get(6));
+			case RulesPackage.ANNOTATION_TYPE_IN_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2962,9 +2964,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_annotationTypes_651036 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_annotationTypes_438744 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tNestedType_annotationTypes_651036)) {
+			if (!pg.equals(__DEC_tNestedType_annotationTypes_438744)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -2972,11 +2974,13 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
-			TAnnotationType tNestedType, TPackage tPackage) {
-		TPackage __DEC_tNestedType_allTypes_648051 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_648051 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_allTypes_648051)) {
-				return new Object[] { tNestedType, tPackage };
+			TAnnotationType tNestedType, TClass tClass) {
+		TAbstractType __DEC_tNestedType_innerTypes_28161 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_28161 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_28161)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_28161)) {
+					return new Object[] { tNestedType, tClass };
+				}
 			}
 		}
 
@@ -2984,13 +2988,11 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
-			TAnnotationType tNestedType, TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_956140 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_956140 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_956140)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_956140)) {
-					return new Object[] { tNestedType, tClass };
-				}
+			TAnnotationType tNestedType, TPackage tPackage) {
+		TPackage __DEC_tNestedType_allTypes_867473 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_867473 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_allTypes_867473)) {
+				return new Object[] { tNestedType, tPackage };
 			}
 		}
 
@@ -3025,9 +3027,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 									if (tPackage != null) {
 										if (pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 												tNestedType, pg) == null) {
-											if (pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
+											if (pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 													tNestedType, tClass) == null) {
-												if (pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
+												if (pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
 														tNestedType, tPackage) == null) {
 													if (pattern_AnnotationTypeInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(
 															tPackage, tNestedType) == null) {
@@ -3154,10 +3156,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_373792 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_549864 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_373792 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_373792)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_549864 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_549864)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3167,7 +3169,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_977887 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_480363 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3176,8 +3178,8 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_376085 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_376085 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_976597 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_976597 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3186,7 +3188,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_802915 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_830966 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3465,10 +3467,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration mNestedType) {
-		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_641642 = mNestedType
+		AbstractTypeDeclaration __DEC_mNestedType_abstractTypeDeclaration_903068 = mNestedType
 				.getAbstractTypeDeclaration();
-		if (__DEC_mNestedType_abstractTypeDeclaration_641642 != null) {
-			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_641642)) {
+		if (__DEC_mNestedType_abstractTypeDeclaration_903068 != null) {
+			if (!mNestedType.equals(__DEC_mNestedType_abstractTypeDeclaration_903068)) {
 				return new Object[] { mNestedType };
 			}
 		}
@@ -3478,7 +3480,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (Model __DEC_mNestedType_orphanTypes_470749 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mNestedType_orphanTypes_487077 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, Model.class, "orphanTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3487,8 +3489,8 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration mNestedType) {
-		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_858978 = mNestedType.getPackage();
-		if (__DEC_mNestedType_ownedElements_858978 != null) {
+		org.eclipse.modisco.java.Package __DEC_mNestedType_ownedElements_945780 = mNestedType.getPackage();
+		if (__DEC_mNestedType_ownedElements_945780 != null) {
 			return new Object[] { mNestedType };
 		}
 
@@ -3497,7 +3499,7 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration mNestedType) {
-		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_831986 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mNestedType_mInnerTypes_288580 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mNestedType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mNestedType };
 		}
@@ -3532,9 +3534,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tNestedType, TypeGraph pg) {
-		for (TypeGraph __DEC_tNestedType_annotationTypes_282833 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tNestedType_annotationTypes_793937 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tNestedType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tNestedType_annotationTypes_282833)) {
+			if (!pg.equals(__DEC_tNestedType_annotationTypes_793937)) {
 				return new Object[] { tNestedType, pg };
 			}
 		}
@@ -3542,11 +3544,13 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_1BB(
-			TAnnotationType tNestedType, TPackage tPackage) {
-		TPackage __DEC_tNestedType_allTypes_374446 = tNestedType.getPackage();
-		if (__DEC_tNestedType_allTypes_374446 != null) {
-			if (!tPackage.equals(__DEC_tNestedType_allTypes_374446)) {
-				return new Object[] { tNestedType, tPackage };
+			TAnnotationType tNestedType, TClass tClass) {
+		TAbstractType __DEC_tNestedType_innerTypes_436518 = tNestedType.getOuterType();
+		if (__DEC_tNestedType_innerTypes_436518 != null) {
+			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_436518)) {
+				if (!tClass.equals(__DEC_tNestedType_innerTypes_436518)) {
+					return new Object[] { tNestedType, tClass };
+				}
 			}
 		}
 
@@ -3554,13 +3558,11 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_2BB(
-			TAnnotationType tNestedType, TClass tClass) {
-		TAbstractType __DEC_tNestedType_innerTypes_417599 = tNestedType.getOuterType();
-		if (__DEC_tNestedType_innerTypes_417599 != null) {
-			if (!tNestedType.equals(__DEC_tNestedType_innerTypes_417599)) {
-				if (!tClass.equals(__DEC_tNestedType_innerTypes_417599)) {
-					return new Object[] { tNestedType, tClass };
-				}
+			TAnnotationType tNestedType, TPackage tPackage) {
+		TPackage __DEC_tNestedType_allTypes_939032 = tNestedType.getPackage();
+		if (__DEC_tNestedType_allTypes_939032 != null) {
+			if (!tPackage.equals(__DEC_tNestedType_allTypes_939032)) {
+				return new Object[] { tNestedType, tPackage };
 			}
 		}
 
@@ -3586,9 +3588,9 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 								if (pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_0BB(tNestedType,
 										pg) == null) {
 									if (pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_1BB(
-											tNestedType, tPackage) == null) {
+											tNestedType, tClass) == null) {
 										if (pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_2BB(
-												tNestedType, tClass) == null) {
+												tNestedType, tPackage) == null) {
 											if (pattern_AnnotationTypeInAnonymous_28_1_matchtggpattern_black_nac_3BB(
 													tPackage, tNestedType) == null) {
 												return new Object[] { tClass, tPackage, pg, tNestedType };
@@ -3645,6 +3647,14 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
+		if (ruleResult.getTargetObjects().contains(pg)) {
+			return new Object[] { ruleResult, pg };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass) {
 		if (ruleResult.getCorrObjects().contains(eAnonymousClassDeclarationToTClass)) {
 			return new Object[] { ruleResult, eAnonymousClassDeclarationToTClass };
@@ -3652,18 +3662,10 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_3BB(
+	public static final Object[] pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration eAnonymousClassDeclaration) {
 		if (ruleResult.getSourceObjects().contains(eAnonymousClassDeclaration)) {
 			return new Object[] { ruleResult, eAnonymousClassDeclaration };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
-		if (ruleResult.getTargetObjects().contains(pg)) {
-			return new Object[] { ruleResult, pg };
 		}
 		return null;
 	}
@@ -3686,20 +3688,20 @@ public class AnnotationTypeInAnonymousImpl extends AbstractRuleImpl implements A
 								TypeGraph pg = tClass.getModel();
 								if (pg != null) {
 									if (pg.getClasses().contains(tClass)) {
-										if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+										if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 												ruleResult, eAnonymousClassDeclarationToTClass) == null) {
 											if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_0BB(
 													ruleResult, tClass) == null) {
-												if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_3BB(
+												if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_4BB(
 														ruleResult, eAnonymousClassDeclaration) == null) {
 													if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_1BB(
 															ruleResult, tPackage) == null) {
-														if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+														if (pattern_AnnotationTypeInAnonymous_29_2_isapplicablecore_black_nac_2BB(
 																ruleResult, pg) == null) {
 															_result.add(new Object[] {
 																	eAnonymousClassDeclarationToTClassList, tClass,
-																	tPackage, eAnonymousClassDeclarationToTClass,
-																	eAnonymousClassDeclaration, pg, ruleEntryContainer,
+																	tPackage, pg, eAnonymousClassDeclarationToTClass,
+																	eAnonymousClassDeclaration, ruleEntryContainer,
 																	ruleResult });
 														}
 													}

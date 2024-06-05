@@ -3,7 +3,6 @@
 package org.gravity.modisco;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.modisco.java.Type;
 
 /**
@@ -18,7 +17,7 @@ import org.eclipse.modisco.java.Type;
  *   <li>{@link org.gravity.modisco.MEntry#getMNext <em>MNext</em>}</li>
  *   <li>{@link org.gravity.modisco.MEntry#getMPrevious <em>MPrevious</em>}</li>
  *   <li>{@link org.gravity.modisco.MEntry#getType <em>Type</em>}</li>
- *   <li>{@link org.gravity.modisco.MEntry#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.gravity.modisco.MEntry#getAllParameterInstances <em>All Parameter Instances</em>}</li>
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMEntry()
@@ -97,17 +96,17 @@ public interface MEntry extends MAbstractFlowElement {
 	void setType(Type value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>All Parameter Instances</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MSingleVariableDeclaration}.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MSingleVariableDeclaration#getMEntry <em>MEntry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' reference list.
-	 * @see org.gravity.modisco.ModiscoPackage#getMEntry_Parameters()
+	 * @return the value of the '<em>All Parameter Instances</em>' reference list.
+	 * @see org.gravity.modisco.ModiscoPackage#getMEntry_AllParameterInstances()
 	 * @see org.gravity.modisco.MSingleVariableDeclaration#getMEntry
 	 * @model opposite="mEntry"
 	 * @generated
 	 */
-	EList<MSingleVariableDeclaration> getParameters();
+	EList<MSingleVariableDeclaration> getAllParameterInstances();
 
 } // MEntry

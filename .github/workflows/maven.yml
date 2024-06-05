@@ -28,7 +28,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
 #    - name: Build with Maven
     - name: Setup Maven Action
-      uses: s4u/setup-maven-action@v1.9.0
+      uses: s4u/setup-maven-action@v1.10.0
     - name: Run headless test   
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

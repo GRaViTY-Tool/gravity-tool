@@ -50,8 +50,8 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MDefinition mDefinition, Modifier mModifier,
-			InterfaceDeclaration mInterface);
+	boolean isAppropriate_FWD(Match match, InterfaceDeclaration mInterface, Modifier mModifier,
+			MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,8 +75,8 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MDefinition mDefinition, Modifier mModifier,
-			InterfaceDeclaration mInterface);
+	void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration mInterface, Modifier mModifier,
+			MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,8 +84,8 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mDefinition, Modifier mModifier,
-			InterfaceDeclaration mInterface);
+	CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration mInterface, Modifier mModifier,
+			MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,9 +101,9 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			TMember tMember, MDefinition mDefinition, Modifier mModifier, TypeToTAbstractType mTypeToTType,
-			TInterface tInterface, InterfaceDeclaration mInterface);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tMember, TInterface tInterface,
+			MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, InterfaceDeclaration mInterface,
+			Modifier mModifier, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,9 +119,9 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tModifier, EObject defToMember, EObject tMember,
-			EObject mDefinition, EObject mModifier, EObject mTypeToTType, EObject tInterface,
-			EObject mModifierToTModifier, EObject mInterface);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMember, EObject tInterface, EObject tModifier,
+			EObject defToMember, EObject mModifierToTModifier, EObject mTypeToTType, EObject mInterface,
+			EObject mModifier, EObject mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,7 +137,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TModifier tModifier, TMember tMember, TInterface tInterface);
+	boolean isAppropriate_BWD(Match match, TMember tMember, TInterface tInterface, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TModifier tModifier, TMember tMember, TInterface tInterface);
+	void registerObjectsToMatch_BWD(Match match, TMember tMember, TInterface tInterface, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,7 +169,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TModifier tModifier, TMember tMember, TInterface tInterface);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TInterface tInterface, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,9 +185,9 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TModifier tModifier,
-			MDefinitionToTMember defToMember, TMember tMember, MDefinition mDefinition,
-			TypeToTAbstractType mTypeToTType, TInterface tInterface, InterfaceDeclaration mInterface);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember, TInterface tInterface,
+			TModifier tModifier, MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType,
+			InterfaceDeclaration mInterface, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,9 +203,9 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tModifier, EObject defToMember, EObject tMember,
-			EObject mDefinition, EObject mModifier, EObject mTypeToTType, EObject tInterface,
-			EObject mModifierToTModifier, EObject mInterface);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMember, EObject tInterface, EObject tModifier,
+			EObject defToMember, EObject mModifierToTModifier, EObject mTypeToTType, EObject mInterface,
+			EObject mModifier, EObject mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_62(EMoflonEdge _edge_tModifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_970(EMoflonEdge _edge_tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +229,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_64(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1065(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,8 +261,9 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TModifier tModifier, TMember tMember, MDefinition mDefinition, Modifier mModifier,
-			TInterface tInterface, InterfaceDeclaration mInterface, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TMember tMember, TInterface tInterface, TModifier tModifier,
+			InterfaceDeclaration mInterface, Modifier mModifier, MDefinition mDefinition, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +279,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MDefinition mDefinition, Modifier mModifier, InterfaceDeclaration mInterface);
+	boolean checkDEC_FWD(InterfaceDeclaration mInterface, Modifier mModifier, MDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,7 +287,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TModifier tModifier, TMember tMember, TInterface tInterface);
+	boolean checkDEC_BWD(TMember tMember, TInterface tInterface, TModifier tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,7 +296,7 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember defToMemberParameter);
+			TypeToTAbstractType mTypeToTTypeParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,9 +304,9 @@ public interface InterfaceMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
-			TMember tMember, MDefinition mDefinition, TypeToTAbstractType mTypeToTType, TInterface tInterface,
-			InterfaceDeclaration mInterface, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember, TInterface tInterface,
+			MDefinitionToTMember defToMember, TypeToTAbstractType mTypeToTType, InterfaceDeclaration mInterface,
+			MDefinition mDefinition, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

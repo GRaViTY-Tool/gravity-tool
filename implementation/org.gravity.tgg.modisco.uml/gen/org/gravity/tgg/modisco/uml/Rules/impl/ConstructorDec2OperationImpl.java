@@ -662,7 +662,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_MConstructorDefinition_0(MConstructorDefinition bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_MConstructorDefinition_6(MConstructorDefinition bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -718,7 +718,7 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_annotatedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1047(EMoflonEdge _edge_annotatedElement) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationImpl
 				.pattern_ConstructorDec2Operation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1127,83 +1127,83 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD__MATCH_MCONSTRUCTORDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MConstructorDefinition) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCONSTRUCTORDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MConstructorDefinition) arguments.get(1));
-			return null;
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCONSTRUCTORDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MConstructorDefinition) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCONSTRUCTORDEFINITION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MConstructorDefinition) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4));
-			return null;
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD__MATCH_COMMENT_OPERATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
-					(Operation) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMENT_OPERATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
-					(Operation) arguments.get(2));
-			return null;
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMENT_OPERATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
-					(Operation) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMENT_OPERATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Comment) arguments.get(1),
-					(Operation) arguments.get(2));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4));
-			return null;
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_0__MCONSTRUCTORDEFINITION:
-			return isAppropriate_FWD_MConstructorDefinition_0((MConstructorDefinition) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_46__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_46((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_CC__COMMENT_MCONSTRUCTORDEFINITION_OPERATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Comment) arguments.get(0), (MConstructorDefinition) arguments.get(1),
-					(Operation) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_FWD__MCONSTRUCTORDEFINITION:
-			return checkDEC_FWD((MConstructorDefinition) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_BWD__COMMENT_OPERATION:
-			return checkDEC_BWD((Comment) arguments.get(0), (Operation) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD__MATCH_MCONSTRUCTORDEFINITION:
+				return isAppropriate_FWD((Match) arguments.get(0), (MConstructorDefinition) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCONSTRUCTORDEFINITION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MConstructorDefinition) arguments.get(1));
+				return null;
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCONSTRUCTORDEFINITION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MConstructorDefinition) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MCONSTRUCTORDEFINITION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MConstructorDefinition) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4));
+				return null;
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD__MATCH_COMMENT_OPERATION:
+				return isAppropriate_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+						(Operation) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMENT_OPERATION:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+						(Operation) arguments.get(2));
+				return null;
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMENT_OPERATION:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+						(Operation) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMENT_OPERATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Comment) arguments.get(1),
+						(Operation) arguments.get(2));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4));
+				return null;
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_FWD_MCONSTRUCTOR_DEFINITION_6__MCONSTRUCTORDEFINITION:
+				return isAppropriate_FWD_MConstructorDefinition_6((MConstructorDefinition) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1047__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1047((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_SOLVE_CSP_CC__COMMENT_MCONSTRUCTORDEFINITION_OPERATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Comment) arguments.get(0), (MConstructorDefinition) arguments.get(1),
+						(Operation) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_FWD__MCONSTRUCTORDEFINITION:
+				return checkDEC_FWD((MConstructorDefinition) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___CHECK_DEC_BWD__COMMENT_OPERATION:
+				return checkDEC_BWD((Comment) arguments.get(0), (Operation) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2015,8 +2015,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_20_2_testcorematchandDECs_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_568380 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_568380 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_92936 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_92936 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2132,9 +2132,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_21_2_testcorematchandDECs_black_nac_0BB(
 			Comment comment, Operation feature) {
-		for (Element __DEC_comment_annotatedElement_234137 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_234137)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_234137)) {
+		for (Element __DEC_comment_annotatedElement_416956 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_416956)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_416956)) {
 					return new Object[] { comment, feature };
 				}
 			}
@@ -2371,8 +2371,8 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_27_1_matchtggpattern_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_795963 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_795963 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_399041 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_399041 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2399,9 +2399,9 @@ public class ConstructorDec2OperationImpl extends AbstractRuleImpl implements Co
 
 	public static final Object[] pattern_ConstructorDec2Operation_28_1_matchtggpattern_black_nac_0BB(Comment comment,
 			Operation feature) {
-		for (Element __DEC_comment_annotatedElement_4157 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_4157)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_4157)) {
+		for (Element __DEC_comment_annotatedElement_637719 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_637719)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_637719)) {
 					return new Object[] { comment, feature };
 				}
 			}

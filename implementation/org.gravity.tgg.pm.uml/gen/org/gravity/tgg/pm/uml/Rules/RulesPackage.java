@@ -140,7 +140,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_MODEL2TYPEGRAPH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_MODEL_MODEL = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 6;
 
 	/**
@@ -236,7 +236,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_TYPEGRAPH_MODEL2TYPEGRAPH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_TYPEGRAPH_MODEL = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 16;
 
 	/**
@@ -268,23 +268,23 @@ public interface RulesPackage extends EPackage {
 	int MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Type Graph 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Type Graph 24</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_0__TYPEGRAPH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_24__TYPEGRAPH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD EMoflon Edge 1190</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1190__EMOFLONEDGE = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 21;
 
 	/**
@@ -323,7 +323,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_TYPEGRAPH_MATCH_MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_TYPEGRAPH_MODEL_MATCH_MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 25;
 
 	/**
@@ -370,7 +370,7 @@ public interface RulesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL2TYPEGRAPH_MODELGENERATORRULERESULT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_MODEL_MODELGENERATORRULERESULT = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 30;
 
 	/**
@@ -600,23 +600,23 @@ public interface RulesPackage extends EPackage {
 	int MODEL2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate BWD Type Graph 1</em>' operation.
+	 * The operation id for the '<em>Is Appropriate BWD Type Graph 25</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_1__TYPEGRAPH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
+	int MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_25__TYPEGRAPH = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT
 			+ 20;
 
 	/**
-	 * The operation id for the '<em>Is Appropriate FWD Model 0</em>' operation.
+	 * The operation id for the '<em>Is Appropriate FWD Model 8</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_0__MODEL = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 21;
+	int MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_8__MODEL = RuntimePackage.ABSTRACT_RULE_OPERATION_COUNT + 21;
 
 	/**
 	 * The operation id for the '<em>Check Attributes FWD</em>' operation.
@@ -790,14 +790,14 @@ public interface RulesPackage extends EPackage {
 	EOperation getModelNested2TypeGraph__IsAppropriate_checkCsp_FWD__CSP();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_FWD(org.moflon.tgg.runtime.IsApplicableMatch, org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Model, org.gravity.tgg.pm.uml.Model2TypeGraph) <em>Is Applicable solve Csp FWD</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_FWD(org.moflon.tgg.runtime.IsApplicableMatch, org.gravity.tgg.pm.uml.Model2TypeGraph, org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Model) <em>Is Applicable solve Csp FWD</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Applicable solve Csp FWD</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_FWD(org.moflon.tgg.runtime.IsApplicableMatch, org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Model, org.gravity.tgg.pm.uml.Model2TypeGraph)
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_FWD(org.moflon.tgg.runtime.IsApplicableMatch, org.gravity.tgg.pm.uml.Model2TypeGraph, org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Model)
 	 * @generated
 	 */
-	EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_FWD__IsApplicableMatch_Model_Model_Model2TypeGraph();
+	EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_FWD__IsApplicableMatch_Model2TypeGraph_Model_Model();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_checkCsp_FWD(org.moflon.tgg.language.csp.CSP) <em>Is Applicable check Csp FWD</em>}' operation.
@@ -890,14 +890,14 @@ public interface RulesPackage extends EPackage {
 	EOperation getModelNested2TypeGraph__IsAppropriate_checkCsp_BWD__CSP();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.eclipse.uml2.uml.Model, org.gravity.typegraph.basic.TypeGraph, org.gravity.tgg.pm.uml.Model2TypeGraph) <em>Is Applicable solve Csp BWD</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.gravity.tgg.pm.uml.Model2TypeGraph, org.gravity.typegraph.basic.TypeGraph, org.eclipse.uml2.uml.Model) <em>Is Applicable solve Csp BWD</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Applicable solve Csp BWD</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.eclipse.uml2.uml.Model, org.gravity.typegraph.basic.TypeGraph, org.gravity.tgg.pm.uml.Model2TypeGraph)
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.gravity.tgg.pm.uml.Model2TypeGraph, org.gravity.typegraph.basic.TypeGraph, org.eclipse.uml2.uml.Model)
 	 * @generated
 	 */
-	EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model_TypeGraph_Model2TypeGraph();
+	EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_TypeGraph_Model();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_checkCsp_BWD(org.moflon.tgg.language.csp.CSP) <em>Is Applicable check Csp BWD</em>}' operation.
@@ -930,24 +930,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getModelNested2TypeGraph__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_BWD_TypeGraph_0(org.gravity.typegraph.basic.TypeGraph) <em>Is Appropriate BWD Type Graph 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_BWD_TypeGraph_24(org.gravity.typegraph.basic.TypeGraph) <em>Is Appropriate BWD Type Graph 24</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Type Graph 0</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_BWD_TypeGraph_0(org.gravity.typegraph.basic.TypeGraph)
+	 * @return the meta object for the '<em>Is Appropriate BWD Type Graph 24</em>' operation.
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_BWD_TypeGraph_24(org.gravity.typegraph.basic.TypeGraph)
 	 * @generated
 	 */
-	EOperation getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_0__TypeGraph();
+	EOperation getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_24__TypeGraph();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_FWD_EMoflonEdge_0(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_FWD_EMoflonEdge_1190(org.moflon.tgg.runtime.EMoflonEdge) <em>Is Appropriate FWD EMoflon Edge 1190</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 0</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_FWD_EMoflonEdge_0(org.moflon.tgg.runtime.EMoflonEdge)
+	 * @return the meta object for the '<em>Is Appropriate FWD EMoflon Edge 1190</em>' operation.
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isAppropriate_FWD_EMoflonEdge_1190(org.moflon.tgg.runtime.EMoflonEdge)
 	 * @generated
 	 */
-	EOperation getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_0__EMoflonEdge();
+	EOperation getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_1190__EMoflonEdge();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -980,14 +980,14 @@ public interface RulesPackage extends EPackage {
 	EOperation getModelNested2TypeGraph__IsApplicable_CC__Match_Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Model, org.gravity.typegraph.basic.TypeGraph, org.moflon.tgg.runtime.Match, org.moflon.tgg.runtime.Match) <em>Is Applicable solve Csp CC</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model, org.gravity.typegraph.basic.TypeGraph, org.eclipse.uml2.uml.Model, org.moflon.tgg.runtime.Match, org.moflon.tgg.runtime.Match) <em>Is Applicable solve Csp CC</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Applicable solve Csp CC</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Model, org.gravity.typegraph.basic.TypeGraph, org.moflon.tgg.runtime.Match, org.moflon.tgg.runtime.Match)
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model, org.gravity.typegraph.basic.TypeGraph, org.eclipse.uml2.uml.Model, org.moflon.tgg.runtime.Match, org.moflon.tgg.runtime.Match)
 	 * @generated
 	 */
-	EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_CC__Model_Model_TypeGraph_Match_Match();
+	EOperation getModelNested2TypeGraph__IsApplicable_solveCsp_CC__Model_TypeGraph_Model_Match_Match();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#isApplicable_checkCsp_CC(org.moflon.tgg.language.csp.CSP) <em>Is Applicable check Csp CC</em>}' operation.
@@ -1030,14 +1030,14 @@ public interface RulesPackage extends EPackage {
 	EOperation getModelNested2TypeGraph__GenerateModel__RuleEntryContainer_Model2TypeGraph();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#generateModel_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.eclipse.uml2.uml.Model, org.gravity.tgg.pm.uml.Model2TypeGraph, org.moflon.tgg.runtime.ModelgeneratorRuleResult) <em>Generate Model solve Csp BWD</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#generateModel_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.gravity.tgg.pm.uml.Model2TypeGraph, org.eclipse.uml2.uml.Model, org.moflon.tgg.runtime.ModelgeneratorRuleResult) <em>Generate Model solve Csp BWD</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Generate Model solve Csp BWD</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#generateModel_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.eclipse.uml2.uml.Model, org.gravity.tgg.pm.uml.Model2TypeGraph, org.moflon.tgg.runtime.ModelgeneratorRuleResult)
+	 * @see org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#generateModel_solveCsp_BWD(org.moflon.tgg.runtime.IsApplicableMatch, org.gravity.tgg.pm.uml.Model2TypeGraph, org.eclipse.uml2.uml.Model, org.moflon.tgg.runtime.ModelgeneratorRuleResult)
 	 * @generated
 	 */
-	EOperation getModelNested2TypeGraph__GenerateModel_solveCsp_BWD__IsApplicableMatch_Model_Model2TypeGraph_ModelgeneratorRuleResult();
+	EOperation getModelNested2TypeGraph__GenerateModel_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_Model_ModelgeneratorRuleResult();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.ModelNested2TypeGraph#generateModel_checkCsp_BWD(org.moflon.tgg.language.csp.CSP) <em>Generate Model check Csp BWD</em>}' operation.
@@ -1260,24 +1260,24 @@ public interface RulesPackage extends EPackage {
 	EOperation getModel2TypeGraph__CheckTypes_BWD__Match();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_BWD_TypeGraph_1(org.gravity.typegraph.basic.TypeGraph) <em>Is Appropriate BWD Type Graph 1</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_BWD_TypeGraph_25(org.gravity.typegraph.basic.TypeGraph) <em>Is Appropriate BWD Type Graph 25</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate BWD Type Graph 1</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_BWD_TypeGraph_1(org.gravity.typegraph.basic.TypeGraph)
+	 * @return the meta object for the '<em>Is Appropriate BWD Type Graph 25</em>' operation.
+	 * @see org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_BWD_TypeGraph_25(org.gravity.typegraph.basic.TypeGraph)
 	 * @generated
 	 */
-	EOperation getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_1__TypeGraph();
+	EOperation getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_25__TypeGraph();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_FWD_Model_0(org.eclipse.uml2.uml.Model) <em>Is Appropriate FWD Model 0</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_FWD_Model_8(org.eclipse.uml2.uml.Model) <em>Is Appropriate FWD Model 8</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Appropriate FWD Model 0</em>' operation.
-	 * @see org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_FWD_Model_0(org.eclipse.uml2.uml.Model)
+	 * @return the meta object for the '<em>Is Appropriate FWD Model 8</em>' operation.
+	 * @see org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#isAppropriate_FWD_Model_8(org.eclipse.uml2.uml.Model)
 	 * @generated
 	 */
-	EOperation getModel2TypeGraph__IsAppropriate_FWD_Model_0__Model();
+	EOperation getModel2TypeGraph__IsAppropriate_FWD_Model_8__Model();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.tgg.pm.uml.Rules.Model2TypeGraph#checkAttributes_FWD(org.moflon.tgg.runtime.TripleMatch) <em>Check Attributes FWD</em>}' operation.
@@ -1472,8 +1472,8 @@ public interface RulesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_MODEL2TYPEGRAPH = eINSTANCE
-				.getModelNested2TypeGraph__IsApplicable_solveCsp_FWD__IsApplicableMatch_Model_Model_Model2TypeGraph();
+		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_MODEL_MODEL = eINSTANCE
+				.getModelNested2TypeGraph__IsApplicable_solveCsp_FWD__IsApplicableMatch_Model2TypeGraph_Model_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Applicable check Csp FWD</b></em>' operation.
@@ -1562,8 +1562,8 @@ public interface RulesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_TYPEGRAPH_MODEL2TYPEGRAPH = eINSTANCE
-				.getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model_TypeGraph_Model2TypeGraph();
+		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_TYPEGRAPH_MODEL = eINSTANCE
+				.getModelNested2TypeGraph__IsApplicable_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_TypeGraph_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Applicable check Csp BWD</b></em>' operation.
@@ -1593,22 +1593,22 @@ public interface RulesPackage extends EPackage {
 				.getModelNested2TypeGraph__CheckTypes_BWD__Match();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Appropriate BWD Type Graph 0</b></em>' operation.
+		 * The meta object literal for the '<em><b>Is Appropriate BWD Type Graph 24</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_0__TYPEGRAPH = eINSTANCE
-				.getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_0__TypeGraph();
+		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_24__TYPEGRAPH = eINSTANCE
+				.getModelNested2TypeGraph__IsAppropriate_BWD_TypeGraph_24__TypeGraph();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Appropriate FWD EMoflon Edge 0</b></em>' operation.
+		 * The meta object literal for the '<em><b>Is Appropriate FWD EMoflon Edge 1190</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE = eINSTANCE
-				.getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_0__EMoflonEdge();
+		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1190__EMOFLONEDGE = eINSTANCE
+				.getModelNested2TypeGraph__IsAppropriate_FWD_EMoflonEdge_1190__EMoflonEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Attributes FWD</b></em>' operation.
@@ -1643,8 +1643,8 @@ public interface RulesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_TYPEGRAPH_MATCH_MATCH = eINSTANCE
-				.getModelNested2TypeGraph__IsApplicable_solveCsp_CC__Model_Model_TypeGraph_Match_Match();
+		EOperation MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_TYPEGRAPH_MODEL_MATCH_MATCH = eINSTANCE
+				.getModelNested2TypeGraph__IsApplicable_solveCsp_CC__Model_TypeGraph_Model_Match_Match();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Applicable check Csp CC</b></em>' operation.
@@ -1688,8 +1688,8 @@ public interface RulesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL2TYPEGRAPH_MODELGENERATORRULERESULT = eINSTANCE
-				.getModelNested2TypeGraph__GenerateModel_solveCsp_BWD__IsApplicableMatch_Model_Model2TypeGraph_ModelgeneratorRuleResult();
+		EOperation MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL2TYPEGRAPH_MODEL_MODELGENERATORRULERESULT = eINSTANCE
+				.getModelNested2TypeGraph__GenerateModel_solveCsp_BWD__IsApplicableMatch_Model2TypeGraph_Model_ModelgeneratorRuleResult();
 
 		/**
 		 * The meta object literal for the '<em><b>Generate Model check Csp BWD</b></em>' operation.
@@ -1889,22 +1889,22 @@ public interface RulesPackage extends EPackage {
 		EOperation MODEL2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH = eINSTANCE.getModel2TypeGraph__CheckTypes_BWD__Match();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Appropriate BWD Type Graph 1</b></em>' operation.
+		 * The meta object literal for the '<em><b>Is Appropriate BWD Type Graph 25</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_1__TYPEGRAPH = eINSTANCE
-				.getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_1__TypeGraph();
+		EOperation MODEL2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_25__TYPEGRAPH = eINSTANCE
+				.getModel2TypeGraph__IsAppropriate_BWD_TypeGraph_25__TypeGraph();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Appropriate FWD Model 0</b></em>' operation.
+		 * The meta object literal for the '<em><b>Is Appropriate FWD Model 8</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_0__MODEL = eINSTANCE
-				.getModel2TypeGraph__IsAppropriate_FWD_Model_0__Model();
+		EOperation MODEL2_TYPE_GRAPH___IS_APPROPRIATE_FWD_MODEL_8__MODEL = eINSTANCE
+				.getModel2TypeGraph__IsAppropriate_FWD_Model_8__Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Attributes FWD</b></em>' operation.

@@ -162,14 +162,14 @@ public class Modifier2NamedElementImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Modifier2NamedElementImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
-			setSource((Modifier) newValue);
-			return;
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
-			setTarget((NamedElement) newValue);
-			return;
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
+				setSource((Modifier) newValue);
+				return;
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
+				setTarget((NamedElement) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Modifier2NamedElementImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
-			setSource((Modifier) null);
-			return;
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
-			setTarget((NamedElement) null);
-			return;
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
+				setSource((Modifier) null);
+				return;
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
+				setTarget((NamedElement) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Modifier2NamedElementImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
-			return source != null;
-		case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
-			return target != null;
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__SOURCE:
+				return source != null;
+			case UmlPackage.MODIFIER2_NAMED_ELEMENT__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -526,9 +526,9 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 				//nothing EMoflonEdge cu2m__cu____source = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge p2p__tp____target = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge p2p__p____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge module__tp____namespace = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge tp__module____modules = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge module__tp____namespace = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tp__module____modules = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cu2m__module____target = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = ClassFilePackageToNamespaceImpl
 						.pattern_ClassFilePackageToNamespace_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
@@ -673,7 +673,7 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_namespace) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_940(EMoflonEdge _edge_namespace) {
 
 		Object[] result1_bindingAndBlack = ClassFilePackageToNamespaceImpl
 				.pattern_ClassFilePackageToNamespace_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -732,7 +732,7 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1034(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = ClassFilePackageToNamespaceImpl
 				.pattern_ClassFilePackageToNamespace_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1102,95 +1102,96 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_CLASSFILE:
-			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(ClassFile) arguments.get(2));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_CLASSFILE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(ClassFile) arguments.get(2));
-			return null;
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_CLASSFILE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_CLASSFILE_ELEMENTTOMODULE_TMODULE_TPACKAGE_PACKAGETOTPACKAGE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2),
-					(ElementToModule) arguments.get(3), (TModule) arguments.get(4), (TPackage) arguments.get(5),
-					(PackageToTPackage) arguments.get(6));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD__MATCH_TMODULE_TPACKAGE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1), (TPackage) arguments.get(2));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TPACKAGE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TPackage) arguments.get(2));
-			return null;
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TPACKAGE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TPackage) arguments.get(2));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_CLASSFILE_ELEMENTTOMODULE_TMODULE_TPACKAGE_PACKAGETOTPACKAGE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2),
-					(ElementToModule) arguments.get(3), (TModule) arguments.get(4), (TPackage) arguments.get(5),
-					(PackageToTPackage) arguments.get(6));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_2__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_2__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_CLASSFILE_TMODULE_TPACKAGE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.modisco.java.Package) arguments.get(0),
-					(ClassFile) arguments.get(1), (TModule) arguments.get(2), (TPackage) arguments.get(3),
-					(Match) arguments.get(4), (Match) arguments.get(5));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_DEC_FWD__PACKAGE_CLASSFILE:
-			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0), (ClassFile) arguments.get(1));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_DEC_BWD__TMODULE_TPACKAGE:
-			return checkDEC_BWD((TModule) arguments.get(0), (TPackage) arguments.get(1));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___GENERATE_MODEL__RULEENTRYCONTAINER_PACKAGETOTPACKAGE_ELEMENTTOMODULE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (PackageToTPackage) arguments.get(1),
-					(ElementToModule) arguments.get(2));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_CLASSFILE_ELEMENTTOMODULE_TMODULE_TPACKAGE_PACKAGETOTPACKAGE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2),
-					(ElementToModule) arguments.get(3), (TModule) arguments.get(4), (TPackage) arguments.get(5),
-					(PackageToTPackage) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
-		case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_CLASSFILE:
+				return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+						(ClassFile) arguments.get(2));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_CLASSFILE:
+				registerObjectsToMatch_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2));
+				return null;
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_CLASSFILE:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_CLASSFILE_ELEMENTTOMODULE_TMODULE_TPACKAGE_PACKAGETOTPACKAGE:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2),
+						(ElementToModule) arguments.get(3), (TModule) arguments.get(4), (TPackage) arguments.get(5),
+						(PackageToTPackage) arguments.get(6));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD__MATCH_TMODULE_TPACKAGE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TPackage) arguments.get(2));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TPACKAGE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TPackage) arguments.get(2));
+				return null;
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TPACKAGE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TPackage) arguments.get(2));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_CLASSFILE_ELEMENTTOMODULE_TMODULE_TPACKAGE_PACKAGETOTPACKAGE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2),
+						(ElementToModule) arguments.get(3), (TModule) arguments.get(4), (TPackage) arguments.get(5),
+						(PackageToTPackage) arguments.get(6));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_940__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_940((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1034__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1034((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_CLASSFILE_TMODULE_TPACKAGE_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((org.eclipse.modisco.java.Package) arguments.get(0),
+						(ClassFile) arguments.get(1), (TModule) arguments.get(2), (TPackage) arguments.get(3),
+						(Match) arguments.get(4), (Match) arguments.get(5));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_DEC_FWD__PACKAGE_CLASSFILE:
+				return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0), (ClassFile) arguments.get(1));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___CHECK_DEC_BWD__TMODULE_TPACKAGE:
+				return checkDEC_BWD((TModule) arguments.get(0), (TPackage) arguments.get(1));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___GENERATE_MODEL__RULEENTRYCONTAINER_PACKAGETOTPACKAGE_ELEMENTTOMODULE:
+				return generateModel((RuleEntryContainer) arguments.get(0), (PackageToTPackage) arguments.get(1),
+						(ElementToModule) arguments.get(2));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_CLASSFILE_ELEMENTTOMODULE_TMODULE_TPACKAGE_PACKAGETOTPACKAGE_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(org.eclipse.modisco.java.Package) arguments.get(1), (ClassFile) arguments.get(2),
+						(ElementToModule) arguments.get(3), (TModule) arguments.get(4), (TPackage) arguments.get(5),
+						(PackageToTPackage) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+			case RulesPackage.CLASS_FILE_PACKAGE_TO_NAMESPACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1998,8 +1999,8 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 		if (cu.equals(cu2m.getSource())) {
 			if (tp.equals(p2p.getTarget())) {
 				if (p.equals(p2p.getSource())) {
-					if (module.equals(cu2m.getTarget())) {
-						if (tp.equals(module.getNamespace())) {
+					if (tp.equals(module.getNamespace())) {
+						if (module.equals(cu2m.getTarget())) {
 							_result.add(new Object[] { p, cu, cu2m, module, tp, p2p });
 						}
 					}
@@ -2016,15 +2017,15 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 		EMoflonEdge cu2m__cu____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__tp____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2p__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge module__tp____namespace = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tp__module____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cu2m__module____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String cu2m__cu____source_name_prime = "source";
 		String p2p__tp____target_name_prime = "target";
 		String p2p__p____source_name_prime = "source";
-		String cu2m__module____target_name_prime = "target";
 		String module__tp____namespace_name_prime = "namespace";
 		String tp__module____modules_name_prime = "modules";
+		String cu2m__module____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(p);
 		isApplicableMatch.getAllContextElements().add(cu);
 		isApplicableMatch.getAllContextElements().add(cu2m);
@@ -2040,23 +2041,23 @@ public class ClassFilePackageToNamespaceImpl extends AbstractRuleImpl implements
 		p2p__p____source.setSrc(p2p);
 		p2p__p____source.setTrg(p);
 		isApplicableMatch.getAllContextElements().add(p2p__p____source);
-		cu2m__module____target.setSrc(cu2m);
-		cu2m__module____target.setTrg(module);
-		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		module__tp____namespace.setSrc(module);
 		module__tp____namespace.setTrg(tp);
 		isApplicableMatch.getAllContextElements().add(module__tp____namespace);
 		tp__module____modules.setSrc(tp);
 		tp__module____modules.setTrg(module);
 		isApplicableMatch.getAllContextElements().add(tp__module____modules);
+		cu2m__module____target.setSrc(cu2m);
+		cu2m__module____target.setTrg(module);
+		isApplicableMatch.getAllContextElements().add(cu2m__module____target);
 		cu2m__cu____source.setName(cu2m__cu____source_name_prime);
 		p2p__tp____target.setName(p2p__tp____target_name_prime);
 		p2p__p____source.setName(p2p__p____source_name_prime);
-		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		module__tp____namespace.setName(module__tp____namespace_name_prime);
 		tp__module____modules.setName(tp__module____modules_name_prime);
+		cu2m__module____target.setName(cu2m__module____target_name_prime);
 		return new Object[] { p, cu, cu2m, module, tp, p2p, isApplicableMatch, cu2m__cu____source, p2p__tp____target,
-				p2p__p____source, cu2m__module____target, module__tp____namespace, tp__module____modules };
+				p2p__p____source, module__tp____namespace, tp__module____modules, cu2m__module____target };
 	}
 
 	public static final Object[] pattern_ClassFilePackageToNamespace_12_4_solveCSP_bindingFBBBBBBBB(

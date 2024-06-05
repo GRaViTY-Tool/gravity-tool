@@ -16,8 +16,8 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
-import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 
 /**
@@ -33,7 +33,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = GravityUiActivator.getSelection(event);
+		final List<?> selection = SelectionHelper.getSelection(event);
 
 		final Job job = new PGSyncFwdJob(selection);
 		job.setUser(true);
@@ -45,22 +45,12 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public boolean isEnabled() {
-		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
-		} catch (NoConverterRegisteredException | CoreException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			return false;
-		}
+		return this.isEnabled(IPGConverterFactory::supportsFWDSync);
 	}
 
 	@Override
 	public boolean isHandled() {
-		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
-		} catch (NoConverterRegisteredException | CoreException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			return false;
-		}
+		return this.isEnabled();
 	}
 
 	/**
@@ -70,7 +60,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 	 * @author speldszus
 	 *
 	 */
-	private final class PGSyncFwdJob extends Job {
+	private static final class PGSyncFwdJob extends Job {
 		private final List<?> selection;
 
 		private PGSyncFwdJob(final List<?> selection) {
@@ -81,8 +71,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 		@Override
 		protected IStatus run(final IProgressMonitor monitor) {
 			for (final Object entry : this.selection) {
-				if (entry instanceof IJavaProject) {
-					final IJavaProject iJavaProject = (IJavaProject) entry;
+				if (entry instanceof final IJavaProject iJavaProject) {
 					IPGConverter converter;
 					try {
 						converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
@@ -95,9 +84,10 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 								"No program model has been created");
 					}
 				} else if (entry instanceof IPackageFragment) {
-					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.unhandledPackageFagment + entry);
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
+							Messages.unhandledPackageFagment + entry);
 				} else {
-					final UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+					final var exception = new UnsupportedSelectionException(entry.getClass());
 					LOGGER.log(Level.ERROR, exception.getMessage());
 					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
 				}

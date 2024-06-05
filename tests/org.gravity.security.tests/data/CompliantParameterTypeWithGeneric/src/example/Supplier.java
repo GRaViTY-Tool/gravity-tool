@@ -8,4 +8,9 @@ public class Supplier<T> {
 	public boolean method(T in) {
 		return in != null;
 	}
+	
+	@Secrecy
+	public <V extends Supplier<T>> boolean method(V in) {
+		return true;
+	}
 }

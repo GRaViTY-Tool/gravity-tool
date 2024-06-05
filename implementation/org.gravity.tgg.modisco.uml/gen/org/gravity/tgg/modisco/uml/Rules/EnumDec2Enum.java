@@ -105,7 +105,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature);
+	EObjectContainer isAppropriate_BWD_Enumeration_12(Enumeration feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface EnumDec2Enum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EnumDeclaration_0(EnumDeclaration bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_EnumDeclaration_6(EnumDeclaration bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->

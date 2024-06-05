@@ -780,7 +780,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_annotations) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1000(EMoflonEdge _edge_annotations) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeAccessOnBodyDeclImpl
 				.pattern_AnnotationTypeAccessOnBodyDecl_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -839,7 +839,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_96(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1096(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeAccessOnBodyDeclImpl
 				.pattern_AnnotationTypeAccessOnBodyDecl_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1234,105 +1234,105 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
-					(Annotation) arguments.get(4));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
-					(Annotation) arguments.get(4));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
-					(Annotation) arguments.get(4));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TANNOTATION_TYPEACCESS_ANNOTATIONTYPEDECLARATION_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TAnnotation) arguments.get(1),
-					(TypeAccess) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3),
-					(AnnotationToTAnnotation) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
-					(BodyDeclaration) arguments.get(6), (Annotation) arguments.get(7),
-					(TAnnotationType) arguments.get(8));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_BWD__MATCH_TANNOTATION_TANNOTATIONTYPE:
-			return isAppropriate_BWD((Match) arguments.get(0), (TAnnotation) arguments.get(1),
-					(TAnnotationType) arguments.get(2));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TANNOTATION_TANNOTATIONTYPE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TAnnotation) arguments.get(1),
-					(TAnnotationType) arguments.get(2));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TANNOTATION_TANNOTATIONTYPE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAnnotation) arguments.get(1),
-					(TAnnotationType) arguments.get(2));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TANNOTATION_ANNOTATIONTYPEDECLARATION_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAnnotation) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (AnnotationToTAnnotation) arguments.get(3),
-					(TypeToTAbstractType) arguments.get(4), (BodyDeclaration) arguments.get(5),
-					(Annotation) arguments.get(6), (TAnnotationType) arguments.get(7));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8));
-			return null;
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_93__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_93((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_96__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_96((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_SOLVE_CSP_CC__TANNOTATION_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((TAnnotation) arguments.get(0), (TypeAccess) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
-					(Annotation) arguments.get(4), (TAnnotationType) arguments.get(5), (Match) arguments.get(6),
-					(Match) arguments.get(7));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_DEC_FWD__TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
-			return checkDEC_FWD((TypeAccess) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
-					(BodyDeclaration) arguments.get(2), (Annotation) arguments.get(3));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_DEC_BWD__TANNOTATION_TANNOTATIONTYPE:
-			return checkDEC_BWD((TAnnotation) arguments.get(0), (TAnnotationType) arguments.get(1));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___GENERATE_MODEL__RULEENTRYCONTAINER_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE:
-			return generateModel((RuleEntryContainer) arguments.get(0), (AnnotationToTAnnotation) arguments.get(1),
-					(TypeToTAbstractType) arguments.get(2));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TANNOTATION_ANNOTATIONTYPEDECLARATION_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAnnotation) arguments.get(1),
-					(AnnotationTypeDeclaration) arguments.get(2), (AnnotationToTAnnotation) arguments.get(3),
-					(TypeToTAbstractType) arguments.get(4), (BodyDeclaration) arguments.get(5),
-					(Annotation) arguments.get(6), (TAnnotationType) arguments.get(7),
-					(ModelgeneratorRuleResult) arguments.get(8));
-		case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
+						(Annotation) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
+						(Annotation) arguments.get(4));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
+						(Annotation) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TANNOTATION_TYPEACCESS_ANNOTATIONTYPEDECLARATION_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TAnnotation) arguments.get(1),
+						(TypeAccess) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3),
+						(AnnotationToTAnnotation) arguments.get(4), (TypeToTAbstractType) arguments.get(5),
+						(BodyDeclaration) arguments.get(6), (Annotation) arguments.get(7),
+						(TAnnotationType) arguments.get(8));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_BWD__MATCH_TANNOTATION_TANNOTATIONTYPE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TAnnotation) arguments.get(1),
+						(TAnnotationType) arguments.get(2));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TANNOTATION_TANNOTATIONTYPE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TAnnotation) arguments.get(1),
+						(TAnnotationType) arguments.get(2));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TANNOTATION_TANNOTATIONTYPE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAnnotation) arguments.get(1),
+						(TAnnotationType) arguments.get(2));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TANNOTATION_ANNOTATIONTYPEDECLARATION_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAnnotation) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (AnnotationToTAnnotation) arguments.get(3),
+						(TypeToTAbstractType) arguments.get(4), (BodyDeclaration) arguments.get(5),
+						(Annotation) arguments.get(6), (TAnnotationType) arguments.get(7));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8));
+				return null;
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1000__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_1000((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1096__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_1096((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_SOLVE_CSP_CC__TANNOTATION_TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((TAnnotation) arguments.get(0), (TypeAccess) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (BodyDeclaration) arguments.get(3),
+						(Annotation) arguments.get(4), (TAnnotationType) arguments.get(5), (Match) arguments.get(6),
+						(Match) arguments.get(7));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_DEC_FWD__TYPEACCESS_ANNOTATIONTYPEDECLARATION_BODYDECLARATION_ANNOTATION:
+				return checkDEC_FWD((TypeAccess) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+						(BodyDeclaration) arguments.get(2), (Annotation) arguments.get(3));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___CHECK_DEC_BWD__TANNOTATION_TANNOTATIONTYPE:
+				return checkDEC_BWD((TAnnotation) arguments.get(0), (TAnnotationType) arguments.get(1));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___GENERATE_MODEL__RULEENTRYCONTAINER_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE:
+				return generateModel((RuleEntryContainer) arguments.get(0), (AnnotationToTAnnotation) arguments.get(1),
+						(TypeToTAbstractType) arguments.get(2));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TANNOTATION_ANNOTATIONTYPEDECLARATION_ANNOTATIONTOTANNOTATION_TYPETOTABSTRACTTYPE_BODYDECLARATION_ANNOTATION_TANNOTATIONTYPE_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TAnnotation) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (AnnotationToTAnnotation) arguments.get(3),
+						(TypeToTAbstractType) arguments.get(4), (BodyDeclaration) arguments.get(5),
+						(Annotation) arguments.get(6), (TAnnotationType) arguments.get(7),
+						(ModelgeneratorRuleResult) arguments.get(8));
+			case RulesPackage.ANNOTATION_TYPE_ACCESS_ON_BODY_DECL___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2771,10 +2771,10 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_0BBB(
 			TypeAccess mAccess, AnnotationTypeDeclaration mAnnotationType, BodyDeclaration mOwner) {
 		if (!mAnnotationType.equals(mOwner)) {
-			for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_739635 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_272034 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_739635)) {
-					if (!mOwner.equals(__DEC_mAccess_superInterfaces_739635)) {
+				if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_272034)) {
+					if (!mOwner.equals(__DEC_mAccess_superInterfaces_272034)) {
 						return new Object[] { mAccess, mAnnotationType, mOwner };
 					}
 				}
@@ -2785,9 +2785,9 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_1BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_302899 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_355821 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationTypeMemberDeclaration.class, "type")) {
-			if (!mOwner.equals(__DEC_mAccess_type_302899)) {
+			if (!mOwner.equals(__DEC_mAccess_type_355821)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -2796,7 +2796,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mAccess) {
-		for (ArrayType __DEC_mAccess_elementType_595790 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_424383 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
 			return new Object[] { mAccess };
 		}
@@ -2805,7 +2805,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_464133 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_677654 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2814,9 +2814,9 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (ClassDeclaration __DEC_mAccess_superClass_659575 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_124181 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
-			if (!mOwner.equals(__DEC_mAccess_superClass_659575)) {
+			if (!mOwner.equals(__DEC_mAccess_superClass_124181)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -2825,9 +2825,9 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_5BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (MethodDeclaration __DEC_mAccess_returnType_952152 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_793284 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
-			if (!mOwner.equals(__DEC_mAccess_returnType_952152)) {
+			if (!mOwner.equals(__DEC_mAccess_returnType_793284)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -2836,7 +2836,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess mAccess) {
-		for (ParameterizedType __DEC_mAccess_type_525877 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_604042 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2845,7 +2845,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mAccess) {
-		for (TypeLiteral __DEC_mAccess_type_791942 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mAccess_type_40191 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -2854,7 +2854,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_980665 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_561780 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}
@@ -3175,10 +3175,10 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_0BBB(
 			TypeAccess mAccess, AnnotationTypeDeclaration mAnnotationType, BodyDeclaration mOwner) {
 		if (!mAnnotationType.equals(mOwner)) {
-			for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_999351 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (AbstractTypeDeclaration __DEC_mAccess_superInterfaces_862565 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_999351)) {
-					if (!mOwner.equals(__DEC_mAccess_superInterfaces_999351)) {
+				if (!mAnnotationType.equals(__DEC_mAccess_superInterfaces_862565)) {
+					if (!mOwner.equals(__DEC_mAccess_superInterfaces_862565)) {
 						return new Object[] { mAccess, mAnnotationType, mOwner };
 					}
 				}
@@ -3189,9 +3189,9 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_1BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_369281 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mAccess_type_582881 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationTypeMemberDeclaration.class, "type")) {
-			if (!mOwner.equals(__DEC_mAccess_type_369281)) {
+			if (!mOwner.equals(__DEC_mAccess_type_582881)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3200,7 +3200,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_2B(
 			TypeAccess mAccess) {
-		for (ArrayType __DEC_mAccess_elementType_70506 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_mAccess_elementType_891605 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ArrayType.class, "elementType")) {
 			return new Object[] { mAccess };
 		}
@@ -3209,7 +3209,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess mAccess) {
-		for (ClassInstanceCreation __DEC_mAccess_type_599081 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mAccess_type_899364 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3218,9 +3218,9 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_4BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (ClassDeclaration __DEC_mAccess_superClass_480296 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mAccess_superClass_84944 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ClassDeclaration.class, "superClass")) {
-			if (!mOwner.equals(__DEC_mAccess_superClass_480296)) {
+			if (!mOwner.equals(__DEC_mAccess_superClass_84944)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3229,9 +3229,9 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_5BB(
 			TypeAccess mAccess, BodyDeclaration mOwner) {
-		for (MethodDeclaration __DEC_mAccess_returnType_113791 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mAccess_returnType_461513 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, MethodDeclaration.class, "returnType")) {
-			if (!mOwner.equals(__DEC_mAccess_returnType_113791)) {
+			if (!mOwner.equals(__DEC_mAccess_returnType_461513)) {
 				return new Object[] { mAccess, mOwner };
 			}
 		}
@@ -3240,7 +3240,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess mAccess) {
-		for (ParameterizedType __DEC_mAccess_type_650399 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mAccess_type_773388 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, ParameterizedType.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3249,7 +3249,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_7B(
 			TypeAccess mAccess) {
-		for (TypeLiteral __DEC_mAccess_type_964112 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mAccess_type_494065 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mAccess };
 		}
@@ -3258,7 +3258,7 @@ public class AnnotationTypeAccessOnBodyDeclImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AnnotationTypeAccessOnBodyDecl_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_396431 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_791337 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}

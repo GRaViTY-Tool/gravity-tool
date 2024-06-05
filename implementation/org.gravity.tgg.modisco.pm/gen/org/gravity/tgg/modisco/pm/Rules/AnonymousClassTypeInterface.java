@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
-import org.eclipse.modisco.java.InterfaceDeclaration;
+import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 
 import org.gravity.tgg.modisco.pm.AnonymousClassDeclarationToTClass;
@@ -49,7 +49,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, InterfaceDeclaration mParent, ClassInstanceCreation mCreation,
+	boolean isAppropriate_FWD(Match match, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
 
 	/**
@@ -74,7 +74,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration mParent, ClassInstanceCreation mCreation,
+	void registerObjectsToMatch_FWD(Match match, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
 
 	/**
@@ -83,7 +83,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration mParent, ClassInstanceCreation mCreation,
+	CSP isAppropriate_solveCsp_FWD(Match match, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
 
 	/**
@@ -100,7 +100,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass, InterfaceDeclaration mParent,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TClass tClass, Type mParent,
 			ClassInstanceCreation mCreation, TypeToTAbstractType parentToParent, AnonymousClassDeclaration mAnonymous,
 			TInterface tParent, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass, TypeAccess mType);
 
@@ -184,7 +184,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, InterfaceDeclaration mParent,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, Type mParent,
 			ClassInstanceCreation mCreation, TypeToTAbstractType parentToParent, AnonymousClassDeclaration mAnonymous,
 			TInterface tParent, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass);
 
@@ -220,7 +220,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_implements);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_963(EMoflonEdge _edge_implements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +228,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_46(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_1058(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,7 +260,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TClass tClass, InterfaceDeclaration mParent, ClassInstanceCreation mCreation,
+	CSP isApplicable_solveCsp_CC(TClass tClass, Type mParent, ClassInstanceCreation mCreation,
 			AnonymousClassDeclaration mAnonymous, TInterface tParent, TypeAccess mType, Match sourceMatch,
 			Match targetMatch);
 
@@ -278,8 +278,8 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(InterfaceDeclaration mParent, ClassInstanceCreation mCreation,
-			AnonymousClassDeclaration mAnonymous, TypeAccess mType);
+	boolean checkDEC_FWD(Type mParent, ClassInstanceCreation mCreation, AnonymousClassDeclaration mAnonymous,
+			TypeAccess mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,7 +305,7 @@ public interface AnonymousClassTypeInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, InterfaceDeclaration mParent,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tClass, Type mParent,
 			ClassInstanceCreation mCreation, TypeToTAbstractType parentToParent, AnonymousClassDeclaration mAnonymous,
 			TInterface tParent, AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass,
 			ModelgeneratorRuleResult ruleResult);

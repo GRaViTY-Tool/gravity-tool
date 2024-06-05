@@ -177,8 +177,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		}
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
 				bodyDeclaration, feature);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -452,8 +452,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		}
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
 				bodyDeclaration, feature);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
@@ -645,7 +645,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_0(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_24(Interface feature) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -701,7 +701,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_InterfaceDeclaration_0(InterfaceDeclaration bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_InterfaceDeclaration_6(InterfaceDeclaration bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,13 +767,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -823,13 +823,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -1114,79 +1114,79 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1));
-			return null;
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD__MATCH_INTERFACE:
-			return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1));
-			return null;
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3));
-			return null;
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_0__INTERFACE:
-			return isAppropriate_BWD_Interface_0((Interface) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_0__INTERFACEDECLARATION:
-			return isAppropriate_FWD_InterfaceDeclaration_0((InterfaceDeclaration) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_INTERFACE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (Interface) arguments.get(1),
-					(Match) arguments.get(2), (Match) arguments.get(3));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION:
-			return checkDEC_FWD((InterfaceDeclaration) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_BWD__INTERFACE:
-			return checkDEC_BWD((Interface) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION:
+				return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1));
+				return null;
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(InterfaceDeclaration) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD__MATCH_INTERFACE:
+				return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1));
+				return null;
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACE:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Interface) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3));
+				return null;
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_24__INTERFACE:
+				return isAppropriate_BWD_Interface_24((Interface) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_6__INTERFACEDECLARATION:
+				return isAppropriate_FWD_InterfaceDeclaration_6((InterfaceDeclaration) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_INTERFACE_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (Interface) arguments.get(1),
+						(Match) arguments.get(2), (Match) arguments.get(3));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION:
+				return checkDEC_FWD((InterfaceDeclaration) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_BWD__INTERFACE:
+				return checkDEC_BWD((Interface) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1346,22 +1346,22 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__feature____target,
-				b2e__bodyDeclaration____source };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__bodyDeclaration____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_1_5_registerobjects_expressionBBBBB(
@@ -1673,22 +1673,22 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(
 			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		String b2e__feature____target_name_prime = "target";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__feature____target,
-				b2e__bodyDeclaration____source };
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__bodyDeclaration____source,
+				b2e__feature____target };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_11_5_registerobjects_expressionBBBBB(
@@ -2004,8 +2004,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_820528 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_820528 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_989104 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_989104 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2182,8 +2182,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenFBBB(
 			InterfaceDeclaration bodyDeclaration, Interface feature, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
 		return new Object[] { b2e, bodyDeclaration, feature, ccMatch };
 	}
@@ -2211,8 +2211,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_598885 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_598885 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_452568 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_452568 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 

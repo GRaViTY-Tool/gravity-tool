@@ -24,11 +24,13 @@
   </scm>
 
   <properties>
-    <tycho-version>4.0.3</tycho-version>
+    <tycho-version>4.0.6</tycho-version>
     <jacoco.version>0.8.11</jacoco.version>
     <dependency-plugin>3.6.1</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -55,10 +57,8 @@
     <module>build/org.gravity.features.security</module>
     <module>build/org.gravity.features.typegraph.basic</module>
     <module>build/org.gravity.features.uml</module>
-    <module>build/org.gravity.features.variability</module>
     <module>build/org.gravity.license.epl</module>
     <module>implementation/org.gravity.eclipse</module>
-    <module>implementation/org.gravity.eclipse.java.spl</module>
     <module>implementation/org.gravity.eclipse.ui</module>
     <module>implementation/org.gravity.goblin</module>
     <module>implementation/org.gravity.headless</module>
@@ -76,6 +76,7 @@
     <module>implementation/org.gravity.secdfd</module>
     <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
+    <module>implementation/org.gravity.security.annotations.check</module>
     <module>implementation/org.gravity.security.annotations.ui</module>
     <module>implementation/org.gravity.security.annotations.pm</module>
     <module>implementation/org.gravity.security.violation.patterns</module>
@@ -85,7 +86,6 @@
     <module>implementation/org.gravity.tgg.pm.uml</module>
     <module>implementation/org.gravity.typegraph.basic</module>
     <module>implementation/org.gravity.typegraph.basic.ui</module>
-    <module>implementation/org.gravity.typegraph.spl</module>
     <module>implementation/org.gravity.umlsecrt</module>
     <module>tests/org.gravity.eclipse.tests</module>
     <module>tests/org.gravity.goblin.tests</module>
@@ -149,7 +149,7 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <executionEnvironment>JavaSE-17</executionEnvironment>
+          <executionEnvironment>JavaSE-21</executionEnvironment>
           <environments>
             <environment>
               <os>linux</os>
@@ -177,6 +177,11 @@
       <id>Eclipse 2024-03</id>
       <layout>p2</layout>
       <url>https://download.eclipse.org/releases/2024-03</url>
+    </repository>
+    <repository>
+      <id>Eclipse 2023-06</id>
+      <layout>p2</layout>
+      <url>https://download.eclipse.org/releases/2023-06</url>
     </repository>
     <repository>
       <id>Papyrus 2023-06</id>
@@ -211,17 +216,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://gravity-tool.org/carisma/updatesite</url>
-    </repository>
-    <repository>
-      <id>SecPL</id>
-      <layout>p2</layout>
-      <url>https://gravity-tool.org/secpl/updatesite/</url>
-    </repository>
-    <repository>
-      <id>FeatureIDE</id>
-      <layout>p2</layout>
-      <url>https://featureide.uni-ulm.de/update/v3/</url>
+      <url>https://carisma-tool.github.io/carisma-tool/</url>
     </repository>
   </repositories>
 </project>

@@ -43,12 +43,6 @@
     </dependency>
     <dependency>
         <groupId>org.gravity</groupId>
-        <artifactId>org.gravity.eclipse.java.spl</artifactId>
-       <version>1.0.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.gravity</groupId>
         <artifactId>org.gravity.eclipse.ui</artifactId>
        <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
@@ -139,6 +133,12 @@
     </dependency>
     <dependency>
         <groupId>org.gravity</groupId>
+        <artifactId>org.gravity.security.annotations.check</artifactId>
+       <version>1.0.3-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.gravity</groupId>
         <artifactId>org.gravity.security.annotations.pm</artifactId>
        <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
@@ -146,7 +146,7 @@
     <dependency>
         <groupId>org.gravity</groupId>
         <artifactId>org.gravity.security.annotations.ui</artifactId>
-       <version>1.0.1-SNAPSHOT</version>
+       <version>1.0.3-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -194,12 +194,6 @@
     <dependency>
         <groupId>org.gravity</groupId>
         <artifactId>org.gravity.typegraph.basic.ui</artifactId>
-       <version>1.0.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.gravity</groupId>
-        <artifactId>org.gravity.typegraph.spl</artifactId>
        <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>

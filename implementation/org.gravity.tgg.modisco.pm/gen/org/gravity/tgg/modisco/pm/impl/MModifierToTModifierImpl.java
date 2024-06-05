@@ -162,14 +162,14 @@ public class MModifierToTModifierImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class MModifierToTModifierImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
-			setSource((Modifier) newValue);
-			return;
-		case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
-			setTarget((TModifier) newValue);
-			return;
+			case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
+				setSource((Modifier) newValue);
+				return;
+			case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
+				setTarget((TModifier) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class MModifierToTModifierImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
-			setSource((Modifier) null);
-			return;
-		case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
-			setTarget((TModifier) null);
-			return;
+			case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
+				setSource((Modifier) null);
+				return;
+			case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
+				setTarget((TModifier) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class MModifierToTModifierImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
-			return source != null;
-		case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
-			return target != null;
+			case PmPackage.MMODIFIER_TO_TMODIFIER__SOURCE:
+				return source != null;
+			case PmPackage.MMODIFIER_TO_TMODIFIER__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -14,8 +14,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.eclipse.ui.GravityUiActivator;
-import org.moflon.tgg.runtime.CorrespondenceModel;
+import org.gravity.eclipse.ui.handler.SelectionHelper;
 
 public class CorrespondenceGraphGenHandler extends AbstractHandler {
 
@@ -23,25 +22,24 @@ public class CorrespondenceGraphGenHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = GravityUiActivator.getSelection(event);
+		final List<?> selection = SelectionHelper.getSelection(event);
 		for (final Object object : selection) {
 			IJavaProject javaProject = null;
-			if (object instanceof IProject) {
+			if (object instanceof final IProject project) {
 				try {
-					final IProject project = (IProject) object;
 					if (project.hasNature(JavaCore.NATURE_ID)) {
 						javaProject = JavaCore.create(project);
 					}
 				} catch (final CoreException e) {
 					LOGGER.error(e);
 				}
-			} else if (object instanceof IJavaProject) {
-				javaProject = (IJavaProject) object;
+			} else if (object instanceof final IJavaProject project) {
+				javaProject = project;
 			}
 			if (javaProject == null) {
 				continue;
 			}
-			launchJob(javaProject);
+			this.launchJob(javaProject);
 		}
 		return null;
 	}
@@ -51,7 +49,7 @@ public class CorrespondenceGraphGenHandler extends AbstractHandler {
 
 			@Override
 			protected IStatus run(final IProgressMonitor monitor) {
-				final CorrespondenceModel model = CorrespondenceGraphGenerator.createModel(javaProject, monitor);
+				final var model = CorrespondenceGraphGenerator.createModel(javaProject, monitor);
 				if (model != null) {
 					return Status.OK_STATUS;
 				}

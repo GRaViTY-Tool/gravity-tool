@@ -68,26 +68,26 @@ public class RulesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH: {
-			ModelNested2TypeGraph modelNested2TypeGraph = (ModelNested2TypeGraph) theEObject;
-			T result = caseModelNested2TypeGraph(modelNested2TypeGraph);
-			if (result == null)
-				result = caseAbstractRule(modelNested2TypeGraph);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RulesPackage.MODEL2_TYPE_GRAPH: {
-			Model2TypeGraph model2TypeGraph = (Model2TypeGraph) theEObject;
-			T result = caseModel2TypeGraph(model2TypeGraph);
-			if (result == null)
-				result = caseAbstractRule(model2TypeGraph);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH: {
+				ModelNested2TypeGraph modelNested2TypeGraph = (ModelNested2TypeGraph) theEObject;
+				T result = caseModelNested2TypeGraph(modelNested2TypeGraph);
+				if (result == null)
+					result = caseAbstractRule(modelNested2TypeGraph);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case RulesPackage.MODEL2_TYPE_GRAPH: {
+				Model2TypeGraph model2TypeGraph = (Model2TypeGraph) theEObject;
+				T result = caseModel2TypeGraph(model2TypeGraph);
+				if (result == null)
+					result = caseAbstractRule(model2TypeGraph);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			default:
+				return defaultCase(theEObject);
 		}
 	}
 
