@@ -100,15 +100,15 @@ public class ASTHelper {
 		}
 
 		final var result = switch (type) {
-		case Signature.SIG_BOOLEAN -> boolean.class.toString();
-		case Signature.SIG_BYTE -> byte.class.toString();
-		case Signature.SIG_CHAR -> char.class.toString();
-		case Signature.SIG_DOUBLE -> double.class.toString();
-		case Signature.SIG_FLOAT -> float.class.toString();
-		case Signature.SIG_INT -> int.class.toString();
-		case Signature.SIG_LONG -> long.class.toString();
-		case Signature.SIG_SHORT -> short.class.toString();
-		default -> fullyQualifiedNameForNonPrimitiveType(type, typeParameters, cu);
+			case Signature.SIG_BOOLEAN -> boolean.class.toString();
+			case Signature.SIG_BYTE -> byte.class.toString();
+			case Signature.SIG_CHAR -> char.class.toString();
+			case Signature.SIG_DOUBLE -> double.class.toString();
+			case Signature.SIG_FLOAT -> float.class.toString();
+			case Signature.SIG_INT -> int.class.toString();
+			case Signature.SIG_LONG -> long.class.toString();
+			case Signature.SIG_SHORT -> short.class.toString();
+			default -> fullyQualifiedNameForNonPrimitiveType(type, typeParameters, cu);
 		};
 		return buildArray(arrays, result);
 	}
@@ -122,27 +122,27 @@ public class ASTHelper {
 
 		final var prefix = type.charAt(0);
 		return switch (prefix) {
-		case Util.C_UNRESOLVED -> {
-			type = type.substring(1, end);
-			if (genericStart == -1) {
-				final var typeParam = findTypeParameter(typeParameters, type);
-				if (typeParam.isPresent()) {
-					yield getFullyQualifiedName4JDT(cu, resolveTypeParameter(typeParam.get()), typeParameters);
+			case Util.C_UNRESOLVED -> {
+				type = type.substring(1, end);
+				if (genericStart == -1) {
+					final var typeParam = findTypeParameter(typeParameters, type);
+					if (typeParam.isPresent()) {
+						yield getFullyQualifiedName4JDT(cu, resolveTypeParameter(typeParam.get()), typeParameters);
+					}
 				}
+				var resolvedType = findType(cu, type);
+				if (resolvedType == null) {
+					resolvedType = type;
+					LOGGER.warn("Could not resolve the type \"" + type + "\" used in the scope of \""
+							+ cu.getResource().getName() + "\", assuming \"" + resolvedType + "\".");
+				}
+				yield resolvedType;
 			}
-			var resolvedType = findType(cu, type);
-			if (resolvedType == null) {
-				resolvedType = type;
-				LOGGER.warn("Could not resolve the type \"" + type + "\" used in the scope of \""
-						+ cu.getResource().getName() + "\", assuming \"" + resolvedType + "\".");
+			case Util.C_RESOLVED -> type.substring(1, end);
+			default -> {
+				LOGGER.error("Unhandled JDT type prefix: " + prefix);
+				throw new IllegalStateException("Unhandled return type \"" + type + "\" in " + cu.getPath());
 			}
-			yield resolvedType;
-		}
-		case Util.C_RESOLVED -> type.substring(1, end);
-		default -> {
-			LOGGER.error("Unhandled JDT type prefix: " + prefix);
-			throw new IllegalStateException("Unhandled return type \"" + type + "\" in " + cu.getPath());
-		}
 		};
 	}
 
@@ -220,7 +220,7 @@ public class ASTHelper {
 				return type.getFullyQualifiedName();
 			}
 
-			final var qualifiedType = findQualifiedTypeUsage(cu, name);
+			final var qualifiedType = findQualifiedTypeName(cu, name);
 			if (qualifiedType != null) {
 				return qualifiedType;
 			}
@@ -231,7 +231,16 @@ public class ASTHelper {
 		return null;
 	}
 
-	private static String findQualifiedTypeUsage(final ICompilationUnit cu, final String name)
+	/**
+	 * Searches for the qualified name of a type based on its usages in a
+	 * compilation unit
+	 *
+	 * @param cu   The compilation unit
+	 * @param name The simple name of the type to be searched
+	 * @return The qualified name or <code>null</code> if it could not be resolved
+	 * @throws JavaModelException
+	 */
+	private static String findQualifiedTypeName(final ICompilationUnit cu, final String name)
 			throws JavaModelException {
 		for (final IType definedType : cu.getTypes()) {
 			for (final IField field : definedType.getFields()) {
@@ -241,15 +250,32 @@ public class ASTHelper {
 				}
 			}
 			for (final IMethod method : definedType.getMethods()) {
-				final var returnType = method.getReturnType();
-				if (isQualifiedVersion(name, returnType)) {
-					return getFullyQualifiedName4JDT(cu, returnType, method);
+				final var qualifiedName = findQualifiedTypeName(method, name);
+				if (qualifiedName != null) {
+					return qualifiedName;
 				}
-				for (final String parameterType : method.getParameterTypes()) {
-					if (isQualifiedVersion(name, parameterType)) {
-						return getFullyQualifiedName4JDT(cu, parameterType, method);
-					}
-				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Searches for the qualified name of a type based on its usages in a method
+	 *
+	 * @param method The method
+	 * @param name   The simple name of the type to be searched
+	 * @return The qualified name or <code>null</code> if it could not be resolved
+	 * @throws JavaModelException
+	 */
+	private static String findQualifiedTypeName(final IMethod method, final String name)
+			throws JavaModelException {
+		final var returnType = method.getReturnType();
+		if (isQualifiedVersion(name, returnType)) {
+			return getFullyQualifiedName4JDT(method.getCompilationUnit(), returnType, method);
+		}
+		for (final String parameterType : method.getParameterTypes()) {
+			if (isQualifiedVersion(name, parameterType)) {
+				return getFullyQualifiedName4JDT(method.getCompilationUnit(), parameterType, method);
 			}
 		}
 		return null;
@@ -272,56 +298,72 @@ public class ASTHelper {
 	/**
 	 * Searches the type in the imports of the compilation unit
 	 *
-	 * @param cu
-	 * @param name
+	 * @param cu   The compilation unit
+	 * @param name The name of the name of the imported type
 	 * @return
 	 * @throws JavaModelException
 	 */
 	private static String searchTypeInImports(final ICompilationUnit cu, final String name) throws JavaModelException {
 		if (cu != null) {
-			for (final IImportDeclaration imp : cu.getImports()) {
-				var importName = imp.getElementName();
+			for (final IImportDeclaration importDecl : cu.getImports()) {
 
-				if (imp.isOnDemand()) {
+				if (importDecl.isOnDemand()) {
 					// Resolve import all
+					final var importName = importDecl.getElementName();
 					final var packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
 					final var importedType = findType(cu, name, packageName);
 					if (importedType != null) {
 						return importedType.getFullyQualifiedName();
 					}
 				} else {
-					final var simpleName = getSimpleName(importName);
-					if (simpleName.equals(name)) {
-						return importName;
-					}
-
-					// Check imported types
-					String memberName = null;
-					if (Flags.isStatic(imp.getFlags())) {
-						final var index = importName.lastIndexOf(Util.C_DOT);
-						memberName = importName.substring(index + 1);
-						importName = importName.substring(0, index);
-					}
-
-					// Search using JDT
-					var importedType = cu.getJavaProject().findType(importName);
-					if (importedType == null) {
-						// Try manual search in packages
-						final var packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
-						importedType = findType(cu, simpleName, packageName);
-
-					}
+					final var importedType = searchImportedTypeForExplicitImport(cu, importDecl, name);
 					if (importedType != null) {
-						// Check if the member represents an inner type
-						importedType = optionallyReplaceWithInnerType(importedType, memberName);
-						if (importedType.getElementName().equals(name)) {
-							return importedType.getFullyQualifiedName();
-						}
+						return importedType;
 					}
 				}
 			}
 		}
 		return null;
+	}
+
+	private static String searchImportedTypeForExplicitImport(final ICompilationUnit cu,
+			final IImportDeclaration importDecl, final String type) throws JavaModelException {
+		var importName = importDecl.getElementName();
+		final var simpleName = getSimpleName(importName);
+		if (simpleName.equals(type)) {
+			return importName;
+		}
+
+		// Check imported types
+		String memberName = null;
+		if (Flags.isStatic(importDecl.getFlags())) {
+			final var index = importName.lastIndexOf(Util.C_DOT);
+			memberName = importName.substring(index + 1);
+			importName = importName.substring(0, index);
+		}
+
+		var importedType = searchImportedType(cu, importName, simpleName);
+		if (importedType != null) {
+			// Check if the member represents an inner type
+			importedType = optionallyReplaceWithInnerType(importedType, memberName);
+			if (importedType.getElementName().equals(type)) {
+				return importedType.getFullyQualifiedName();
+			}
+		}
+		return null;
+	}
+
+	private static IType searchImportedType(final ICompilationUnit cu, final String importName, final String simpleName)
+			throws JavaModelException {
+		// Search using JDT
+		var importedType = cu.getJavaProject().findType(importName);
+		if (importedType == null) {
+			// Try manual search in packages
+			final var packageName = importName.substring(0, importName.lastIndexOf(Util.C_DOT));
+			importedType = findType(cu, simpleName, packageName);
+
+		}
+		return importedType;
 	}
 
 	private static IType optionallyReplaceWithInnerType(final IType type, final String memberName)

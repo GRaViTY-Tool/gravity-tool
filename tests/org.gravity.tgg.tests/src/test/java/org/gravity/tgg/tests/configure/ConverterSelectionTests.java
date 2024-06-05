@@ -57,7 +57,11 @@ public class ConverterSelectionTests {
 			final var selectedViaFile = activator.getSelectedConverterFactory(project);
 			assertTrue(selectedViaFile instanceof DummyConverterFactory);
 
-			final var converter = compatible.stream().filter(f -> !(f instanceof DummyConverterFactory)).findAny()
+			final var result = compatible.stream().filter(f -> !(f instanceof DummyConverterFactory)).findAny();
+			if (result.isEmpty()) {
+				throw new IllegalStateException("No suitable converter registered!");
+			}
+			final var converter = result
 					.get();
 			activator.setSelectedConverterFactory(project, converter);
 			final var selectedViaAPI = activator.getSelectedConverterFactory(project);

@@ -70,10 +70,10 @@ public class LoadTests {
 	 * @return The selected converter factory
 	 * @throws CoreException
 	 */
-	public static IPGConverterFactory selectTGGConverterFactory(final IProject project) throws CoreException {
+	public static IPGConverterFactory selectTGGConverterFactory(final IProject project) {
 		final var activator = GravityActivator.getDefault();
 		final var result = activator.getCompatibleConverterFactories(project).stream()
-				.filter(f -> (f instanceof MoDiscoTGGConverterFactory)).findAny();
+				.filter(MoDiscoTGGConverterFactory.class::isInstance).findAny();
 		if (result.isEmpty()) {
 			throw new IllegalStateException("TGG Converter not found");
 		}

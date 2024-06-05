@@ -1,9 +1,7 @@
 package org.gravity.tgg.tests.complete;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -15,7 +13,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
@@ -65,7 +62,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @param name    The name of the project
 	 * @param project The project
 	 */
-	public AbstractParameterizedTransformationTest(final String name, final IJavaProject project) {
+	protected AbstractParameterizedTransformationTest(final String name, final IJavaProject project) {
 		this.project = project;
 		this.name = name;
 		// Add dependency to security annotations
@@ -73,7 +70,6 @@ public abstract class AbstractParameterizedTransformationTest {
 		RuntimePackage.eINSTANCE.getNsURI();
 		AnnotationsPackage.eINSTANCE.getNsURI();
 	}
-
 
 	@BeforeClass
 	public static void initLogging() {
@@ -153,15 +149,4 @@ public abstract class AbstractParameterizedTransformationTest {
 		}
 		file.delete(true, monitor);
 	}
-
-	protected void save(final EObject eObject, final String prefix, final String fileExtension) {
-		final var fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
-		final var file = this.project.getProject().getFile(fileName);
-		try (var stream = Files.newOutputStream(file.getLocation().toFile().toPath())) {
-			eObject.eResource().save(stream, Collections.emptyMap());
-		} catch (final IOException e) {
-			LOGGER.error(e.getMessage(), e);
-		}
-	}
-
 }
