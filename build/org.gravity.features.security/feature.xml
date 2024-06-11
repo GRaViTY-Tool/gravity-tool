@@ -6,21 +6,9 @@
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0.qualifier">
 
-   <description url="http://www.example.com/description">
+   <description url="http://www.gravity-tool.org/">
       This feature provides UMLsec (https://http://carisma.umlsec.de) like security annotations to the program model.
    </description>
-
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
-   </copyright>
-
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
-
-   <url>
-      <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
-   </url>
 
    <includes
          id="org.gravity.license.epl"
@@ -32,6 +20,10 @@
 
    <plugin
          id="org.gravity.security.annotations.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.gravity.security.annotations.check"
          version="0.0.0"/>
 
 </feature>
