@@ -3,6 +3,7 @@ package org.gravity.tgg.tests.api;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public class APITests {
 		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(pm);
 
-		addInterface(pm);
+		this.addInterface(pm);
 
 		final var newPm = GravityAPI.createProgramModel(APITests.project, true, null);
 		assertNotNull(newPm);
@@ -77,7 +78,10 @@ public class APITests {
 
 		// Change project src
 		final var file = APITests.project.getProject().getFile("src/dummy/Other.java");
-		final var content = "package dummy;\n" + "public class Other {\n" + "}";
+		final var content = """
+				package dummy;
+				public class Other {
+				}""";
 		try (var stream = new ByteArrayInputStream(content.getBytes())) {
 			file.create(stream, true, null);
 
@@ -116,17 +120,23 @@ public class APITests {
 		p.getInterfaces().add(iface);
 		pm.getInterfaces().add(iface);
 		pm.getAllTypes().add(iface);
-		
+
 		final var module = BasicFactory.eINSTANCE.createTModule();
 		iface.setModule(module);
 		pm.getModules().add(module);
-		
+
 		try {
-			EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm/pm.xmi").delete(true, null);
-		}
-		catch(IOException | CoreException e) {
+			pm.eResource().save(Collections.emptyMap());
+		} catch (final IOException e) {
 			LOGGER.warn(e);
+			LOGGER.warn("Manually deleting file and retrying");
+			try {
+				EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm/pm.xmi")
+						.delete(true, null);
+			} catch (CoreException | IOException e1) {
+				fail("Unable to delete pm.xmi: " + e.getLocalizedMessage());
+			}
+			pm.eResource().save(Collections.emptyMap());
 		}
-		pm.eResource().save(Collections.emptyMap());
 	}
 }
