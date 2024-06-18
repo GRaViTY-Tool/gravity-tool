@@ -58,7 +58,7 @@ final class IncomingAccessCheck {
 		final var callerAnnotations = this.secureDependencyCheck.getSecurityRequirements(type);
 
 		final var callerSecrecyRequirement = SecureDependencyCheck.getCorrespondingEntry(this.calledMember,
-				callerAnnotations.getSecrecySignatures(), this.cu);
+				callerAnnotations.getAllSecrecySignatures(), this.cu);
 		final var callerSecrecy = callerSecrecyRequirement != null;
 		if (callerSecrecy != this.secrecy) {
 			if (callerSecrecy) {
@@ -71,7 +71,7 @@ final class IncomingAccessCheck {
 		}
 
 		final var callerIntegrityRequirement = SecureDependencyCheck.getCorrespondingEntry(this.calledMember,
-				callerAnnotations.getIntegritySignatures(), this.cu);
+				callerAnnotations.getAllIntegritySignatures(), this.cu);
 		final var callerIntegrity = callerIntegrityRequirement != null;
 		if (callerIntegrity != this.integrity) {
 			if (callerIntegrity) {

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Security Check
+Bundle-Name: Security Annotations UI
 Bundle-SymbolicName: org.gravity.security.annotations.ui;singleton:=true
 Bundle-Version: 1.0.3.qualifier
 Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator

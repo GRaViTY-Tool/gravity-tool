@@ -25,7 +25,7 @@
 
   <properties>
     <tycho-version>4.0.8</tycho-version>
-    <jacoco.version>0.8.12</jacoco.version>
+    <jacoco.version>0.8.11</jacoco.version>
     <dependency-plugin>3.6.1</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
@@ -186,7 +186,7 @@
     <repository>
       <id>Papyrus</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12/</url>
+      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
@@ -206,7 +206,7 @@
     <repository>
       <id>MoMOT</id>
       <layout>p2</layout>
-      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
+      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop</url>
     </repository>
     <repository>
       <id>plantuml</id>
@@ -216,7 +216,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://carisma-tool.github.io/carisma-tool/</url>
+      <url>https://carisma-tool.github.io/carisma-tool</url>
     </repository>
   </repositories>
 </project>

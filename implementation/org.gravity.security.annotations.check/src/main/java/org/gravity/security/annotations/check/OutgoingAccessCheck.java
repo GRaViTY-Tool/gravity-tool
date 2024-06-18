@@ -33,8 +33,8 @@ final class OutgoingAccessCheck {
 		this.root = root;
 		this.callingMember = caller;
 		this.cu = caller.getCompilationUnit();
-		this.secrecySignatures = requirements.getSecrecySignatures();
-		this.integritySignatures = requirements.getIntegritySignatures();
+		this.secrecySignatures = requirements.getAllSecrecySignatures();
+		this.integritySignatures = requirements.getAllIntegritySignatures();
 
 		this.violations = new HashSet<>();
 	}
@@ -64,7 +64,7 @@ final class OutgoingAccessCheck {
 			this.accessedMembers.add(calledMember);
 		}
 		if (callerSecrey != (calleeRequirements.isSecrecyMember(calledMember) || SecureDependencyCheck
-				.getCorrespondingEntry(calledMember, calleeRequirements.getSecrecySignatures(), this.cu) != null)) {
+				.getCorrespondingEntry(calledMember, calleeRequirements.getAllSecrecySignatures(), this.cu) != null)) {
 			if (callerSecrey) {
 				this.violations.add(new SecurityViolation(this.callingMember, calledMember, calledMember,
 						SecurityProperty.SECRECY));
@@ -81,7 +81,7 @@ final class OutgoingAccessCheck {
 			this.accessedMembers.add(calledMember);
 		}
 		if (callerIntegrity != (calleeRequirements.isIntegrityMember(calledMember) || SecureDependencyCheck
-				.getCorrespondingEntry(calledMember, calleeRequirements.getIntegritySignatures(), this.cu) != null)) {
+				.getCorrespondingEntry(calledMember, calleeRequirements.getAllIntegritySignatures(), this.cu) != null)) {
 			if (callerIntegrity) {
 				this.violations.add(new SecurityViolation(this.callingMember, calledMember, calledMember,
 						SecurityProperty.INTEGRITY));

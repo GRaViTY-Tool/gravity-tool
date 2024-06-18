@@ -224,12 +224,12 @@ public class SecureDependencyCheck extends CompilationParticipant {
 				memberAnnotations = Collections.emptyList();
 			}
 
-			if (getCorrespondingEntry(method, requirement.getSecrecySignatures(), cu) != null
+			if (getCorrespondingEntry(method, requirement.getAllSecrecySignatures(), cu) != null
 					|| memberAnnotations.contains("Secrecy")) {
 				requirement.addSecrecyMember(method);
 			}
 
-			if (getCorrespondingEntry(method, requirement.getIntegritySignatures(), cu) != null
+			if (getCorrespondingEntry(method, requirement.getAllIntegritySignatures(), cu) != null
 					|| memberAnnotations.contains("Integrity")) {
 				requirement.addIntegrityMember(method);
 			}
