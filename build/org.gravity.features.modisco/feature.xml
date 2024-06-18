@@ -7,22 +7,18 @@
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0.qualifier">
 
-   <description>
-      The plugins necessary for building a program model from source code.
+   <description url="https://www.gravity-tool.org">
+      The plugins necessary for building a program model from source
+code.
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University
-of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
-Darmstadt.
+      (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
-
    <url>
-      <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
+      <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
+ 	  <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
    </url>
