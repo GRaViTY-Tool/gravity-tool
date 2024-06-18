@@ -7,6 +7,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,7 +56,7 @@ public final class TestHelper {
 				LOGGER.error(e);
 				return false;
 			}
-		}).sorted((arg0, arg1) -> arg0.getName().compareTo(arg1.getName())).map(project -> {
+		}).sorted(Comparator.comparing(IProject::getName)).map(project -> {
 			final var javaProject = JavaCore.create(project);
 			return new Object[] { project.getName(), javaProject };
 		}).collect(Collectors.toList());
@@ -82,13 +83,16 @@ public final class TestHelper {
 				existing.delete(true, null);
 			}
 		}
-		final var project = JavaProjectUtil.createJavaProject(name, Collections.singleton("src"), null);
+		final var project = JavaProjectUtil.createJavaProject(name, true, Collections.singleton("src"), null);
 
 		final var srcDummy = project.getProject().getFolder("src").getFolder("dummy");
 		srcDummy.create(true, true, null);
 
 		final var clazzFile = srcDummy.getFile("Clazz.java");
-		final var content = "package dummy;\n" + "public class Clazz {\n" + "}";
+		final var content = """
+				package dummy;
+				public class Clazz {
+				}""";
 		try (var stream = new ByteArrayInputStream(content.getBytes())) {
 			clazzFile.create(stream, true, null);
 		} catch (final IOException e) {
