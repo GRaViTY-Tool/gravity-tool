@@ -11,6 +11,29 @@
       </compilationParticipant>
    </extension>
    <extension
+         id="org.gravity.security.marker"
+         name="GRaViTY Security Violation"
+         point="org.eclipse.core.resources.markers">
+      <persistent
+            value="true">
+      </persistent>
+      <super
+            type="org.eclipse.jdt.core.problem">
+      </super>
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <super
+            type="org.eclipse.core.resources.textmarker">
+      </super>
+      <attribute
+            name="org.gravity.security.marker.analyzedMember">
+      </attribute>
+      <attribute
+            name="org.gravity.security.marker.secureDependencyRequirement">
+      </attribute>
+   </extension>
+   <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
@@ -33,4 +56,15 @@
          </defaultHandler>
       </command>
     </extension>
+    
+     <extension point="org.eclipse.jdt.ui.quickFixProcessors">
+	  <quickFixProcessor
+	   id="org.eclipse.jdt.ui.text.correction.QuickFixProcessor"
+	   name="GRaViTY Security Annotations Quick Fix Processor"
+	   class="org.gravity.security.annotations.ui.SecurityAnnotationsQuickFixProcessor">
+	   <handledMarkerTypes>
+	      <markerType id="org.gravity.security.marker"/>
+	   </handledMarkerTypes>
+	  </quickFixProcessor>
+	 </extension>
 </plugin>

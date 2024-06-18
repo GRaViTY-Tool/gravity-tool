@@ -58,18 +58,18 @@ final class IncomingAccessCheck {
 		if (callerSecrecy != this.secrecy) {
 			if (callerSecrecy) {
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"Secrecy is required but not provided by the accessed member!", this.analyzedMemberSignature,
-						callingMemberSignature);
+						"Secrecy is required but not provided by the accessed member!", 
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(this.member,
 						"Secrecy is required for this member by \"" + callingMemberSignature + "\"",
-						this.analyzedMemberSignature, callingMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, callingMemberSignature);
 			} else {
 				SecurityMarkerUtil.createErrorMarker(this.member,
 						callingMemberSignature + " accesses this member without the required secrecy!",
-						this.analyzedMemberSignature, callingMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
 						"This class must specify secrecy for accessing \"" + this.analyzedMemberSignature + "\"!",
-						this.analyzedMemberSignature, callingMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, callingMemberSignature);
 
 			}
 		}
@@ -81,17 +81,17 @@ final class IncomingAccessCheck {
 			if (callerIntegrity) {
 				SecurityMarkerUtil.createErrorMarker(this.member,
 						"Integrity is required for this member by \"" + callingMemberSignature + "\"",
-						this.analyzedMemberSignature, callingMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"Integrity is required but not provided by the accessed member!", this.analyzedMemberSignature,
-						callingMemberSignature);
+						"Integrity is required but not provided by the accessed member!", 
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, callingMemberSignature);
 			} else {
 				SecurityMarkerUtil.createErrorMarker(this.member,
 						callingMemberSignature + " accesses this member without the required integrity!",
-						this.analyzedMemberSignature, callingMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, callingMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
 						"This class must specify integrity for accessing \"" + this.analyzedMemberSignature + "\"!",
-						this.analyzedMemberSignature, callingMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, callingMemberSignature);
 
 			}
 		}

@@ -41,6 +41,7 @@ public class GravityActivator extends Plugin {
 	 * The name of the gravity folder
 	 */
 	public static final String GRAVITY_FOLDER_NAME = ".gravity"; //$NON-NLS-1$
+	public static final String GRAVITY_QUICKFIX_FOLDER_NAME = "quickfixcache";
 
 	/*
 	 * File extensions

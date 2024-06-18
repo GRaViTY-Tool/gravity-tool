@@ -29,6 +29,7 @@ public class SecurityRequirements {
 	private final Set<IMember> definedMembers = new HashSet<>();
 	private final Set<IMember> secrecyMembers = new HashSet<>();
 	private final Set<IMember> integrityMembers = new HashSet<>();
+	
 
 	public SecurityRequirements(final IType type) {
 		this.type = type;

@@ -59,20 +59,23 @@ final class OutgoingAccessCheck {
 			final var calledMemberSignature = SecureDependencyCheck.getSignature(calledMember);
 			if (callerSecrey) {
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"Secrecy is required but not provided by the accessed member!", this.analyzedMemberSignature,
+						"Secrecy is required but not provided by the accessed member!", 
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature,
 						calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
 						"Secrecy is required for this member by \"" + this.analyzedMemberSignature + "\"",
-						this.analyzedMemberSignature, calledMemberSignature);
-
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, 
+						calledMemberSignature);
 			} else {
 				SecurityMarkerUtil.createErrorMarker(
 						methodWrapper.getMethodCall(), "The class \"" + this.type.getElementName()
 								+ "\" must specify secrecy for accessing \"" + calledMemberSignature + "\"!",
-						this.analyzedMemberSignature, calledMemberSignature);
+								SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, 
+								calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
 						this.analyzedMemberSignature + " accesses this member without the required secrecy!",
-						this.analyzedMemberSignature, calledMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_SECRECY, this.analyzedMemberSignature, 
+						calledMemberSignature);
 			}
 		}
 
@@ -86,19 +89,23 @@ final class OutgoingAccessCheck {
 			final var calledMemberSignature = SecureDependencyCheck.getSignature(calledMember);
 			if (callerIntegrity) {
 				SecurityMarkerUtil.createErrorMarker(methodWrapper.getMethodCall(),
-						"Integrity is required but not provided by the accessed member!", this.analyzedMemberSignature,
+						"Integrity is required but not provided by the accessed member!", 
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature,
 						calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
 						"Integrity is required for this member by \"" + this.analyzedMemberSignature + "\"",
-						this.analyzedMemberSignature, calledMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, 
+						calledMemberSignature);
 			} else {
 				SecurityMarkerUtil.createErrorMarker(
 						methodWrapper.getMethodCall(), "The class \"" + this.type.getElementName()
 								+ "\" must specify integrity for accessing \"" + calledMemberSignature + "\"!",
-						this.analyzedMemberSignature, calledMemberSignature);
+								SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, 
+								calledMemberSignature);
 				SecurityMarkerUtil.createErrorMarker(calledMember,
 						this.analyzedMemberSignature + " accesses this member without the required integrity!",
-						this.analyzedMemberSignature, calledMemberSignature);
+						SecurityMarkerUtil.REQUIREMENT_INTEGRITY, this.analyzedMemberSignature, 
+						calledMemberSignature);
 
 			}
 		}

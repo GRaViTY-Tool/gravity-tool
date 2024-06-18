@@ -240,7 +240,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 		return false;
 	}
 
-	static String getSignature(final IMember member) {
+	public static String getSignature(final IMember member) {
 		var context = member;
 		if (member instanceof final LambdaMethod lambda) {
 			context = lambda.getOuterMostLocalContext();
