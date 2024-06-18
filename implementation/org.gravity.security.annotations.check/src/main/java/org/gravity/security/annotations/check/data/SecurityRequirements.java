@@ -22,8 +22,10 @@ public class SecurityRequirements {
 
 	private final IType type;
 
-	private final Map<String, List<IAnnotation>> secrecySignatures = new HashMap<>();
-	private final Map<String, List<IAnnotation>> integritySignatures = new HashMap<>();
+	private Set<String> secrecySignatures;
+	private final Map<String, List<IAnnotation>> allSecrecySignatures = new HashMap<>();
+	private Set<String> integritySignatures;
+	private final Map<String, List<IAnnotation>> allIntegritySignatures = new HashMap<>();
 
 	private final Set<IMember> definedMembers = new HashSet<>();
 	private final Set<IMember> secrecyMembers = new HashSet<>();
@@ -34,11 +36,17 @@ public class SecurityRequirements {
 		IJavaElement parent = type;
 		while (parent != null) {
 			if (parent instanceof final IType tmp) {
+
 				final var annotation = this.getSecurityAnnotation(tmp);
-				annotation.secrecy().forEach(s -> this.secrecySignatures.computeIfAbsent(s, k -> new LinkedList<>())
+				annotation.secrecy().forEach(s -> this.allSecrecySignatures.computeIfAbsent(s, k -> new LinkedList<>())
 						.add(annotation.getAnnotation()));
-				annotation.integrity().forEach(s -> this.integritySignatures.computeIfAbsent(s, k -> new LinkedList<>())
-						.add(annotation.getAnnotation()));
+				annotation.integrity()
+						.forEach(s -> this.allIntegritySignatures.computeIfAbsent(s, k -> new LinkedList<>())
+								.add(annotation.getAnnotation()));
+				if (type == tmp) {
+					this.secrecySignatures = annotation.secrecy();
+					this.integritySignatures = annotation.integrity();
+				}
 
 			}
 			parent = parent.getParent();
@@ -69,18 +77,26 @@ public class SecurityRequirements {
 		return this.integrityMembers.add(method);
 	}
 
+	public Set<String> getAllSecrecySignatures() {
+		return this.allSecrecySignatures.keySet();
+	}
+
 	public Set<String> getSecrecySignatures() {
-		return this.secrecySignatures.keySet();
+		return this.secrecySignatures;
+	}
+
+	public Set<String> getAllIntegritySignatures() {
+		return this.allIntegritySignatures.keySet();
 	}
 
 	public Set<String> getIntegritySignatures() {
-		return this.integritySignatures.keySet();
+		return this.integritySignatures;
 	}
 
 	public List<IAnnotation> getCriticals(final String signature, final SecurityProperty property) {
 		return switch (property) {
-			case INTEGRITY -> this.integritySignatures.get(signature);
-			case SECRECY -> this.secrecySignatures.get(signature);
+			case INTEGRITY -> this.allIntegritySignatures.get(signature);
+			case SECRECY -> this.allSecrecySignatures.get(signature);
 		};
 	}
 
