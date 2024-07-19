@@ -14,7 +14,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.eclipse.ui.handler.SelectionHelper;
+import org.gravity.eclipse.ui.handler.UISelectionHelper;
 
 public class CorrespondenceGraphGenHandler extends AbstractHandler {
 
@@ -22,7 +22,7 @@ public class CorrespondenceGraphGenHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = SelectionHelper.getSelection(event);
+		final List<?> selection = UISelectionHelper.getSelection(event);
 		for (final Object object : selection) {
 			IJavaProject javaProject = null;
 			if (object instanceof final IProject project) {
