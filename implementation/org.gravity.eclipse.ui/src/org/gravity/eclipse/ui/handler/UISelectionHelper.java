@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-public class SelectionHelper {
+public class UISelectionHelper {
 
-	private SelectionHelper() {
+	private UISelectionHelper() {
 		// This class only defines static helpers
 	}
 
@@ -50,5 +52,20 @@ public class SelectionHelper {
 
 		}
 		return projects;
+	}
+
+	/**
+	 * Returns all Java projects in the current selection
+	 *
+	 * @param event An execution event
+	 * @return the selected project
+	 * @throws ExecutionException
+	 */
+	public static Set<IJavaProject> getJavaProjects(final ExecutionEvent event) throws ExecutionException {
+		final var window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+		final var service = window.getSelectionService();
+		final var structured = (IStructuredSelection) service.getSelection();
+		final List<Object> workspaceSelection = Arrays.asList(structured.toArray());
+		return org.gravity.eclipse.selection.SelectionHelper.getJavaProjects(workspaceSelection);
 	}
 }

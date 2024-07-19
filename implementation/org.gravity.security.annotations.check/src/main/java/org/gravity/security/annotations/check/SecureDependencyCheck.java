@@ -58,7 +58,7 @@ public class SecureDependencyCheck extends CompilationParticipant {
 
 	@Override
 	public boolean isActive(final IJavaProject project) {
-		return SecurityAnnoationsCheckActivator.checksEnabled();
+		return SecurityAnnoationsCheckActivator.checksEnabled(project.getProject());
 	}
 
 	@Override

@@ -11,11 +11,20 @@ public record SecurityViolation(IMember source, IMember target, IMember violatin
 
 	public String getSourceMessage() {
 		if (this.violating == this.source) {
+			if (this.source.isBinary()) {
+				return MessageFormat.format(
+						"There is an access from the binary member {0} defined in {1} to {2} that violates the {3} requriement of the accessed member.",
+						SecureDependencyCheck.getSimpleSignature(this.source),
+						this.source.getClassFile().getElementName(),
+						SecureDependencyCheck.getSimpleSignature(this.target), this.property);
+			}
 			return MessageFormat.format("This member is required to guarantee {0} for accessing \"{1}\".",
 					this.property, SecureDependencyCheck.getSimpleSignature(this.target));
 		}
 		if (this.violating == this.target) {
-			return MessageFormat.format("{0} is required but not provided by the accessed member!", this.property);
+			return MessageFormat.format(
+					"This class requires {0} for \"{1}\" but it is not provided by the accessed member!", this.property,
+					SecureDependencyCheck.getSimpleSignature(this.target));
 		}
 		return null;
 	}
