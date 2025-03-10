@@ -13,7 +13,7 @@
 	<packaging>eclipse-plugin</packaging>
 	<description>This is the GRaViTY Headless Application and Web-API of GRaViTY.</description>
 	<properties>
-		<cxf-version>4.1.0</cxf-version>
+		<cxf-version>4.1.1</cxf-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
