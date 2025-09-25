@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: GRaViTY Headless Application and Webserve
+Bundle-Name: GRaViTY Headless Application and Webserver
 Bundle-SymbolicName: org.gravity.headless;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: University of Koblenz-Landau and Ruhr University Bochum
