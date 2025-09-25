@@ -119,7 +119,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
 			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType);
+			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,7 +206,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
 			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType);
+			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1021(EMoflonEdge _edge_model);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +230,7 @@ public interface InitializerInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1119(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->

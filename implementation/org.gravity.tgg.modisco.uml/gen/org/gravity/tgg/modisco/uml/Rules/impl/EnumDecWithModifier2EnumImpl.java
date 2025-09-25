@@ -329,32 +329,32 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		// Create literals
 
 		// Create attribute variables
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
 		var_bodyDeclaration_name.setType("String");
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
 
 		// Create unbound variables
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
@@ -624,31 +624,31 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		// Create literals
 
 		// Create attribute variables
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
-		var_feature_name.setValue(feature.getName());
-		var_feature_name.setType("String");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
 		var_feature_visibility.setValue(feature.getVisibility());
 		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
+		var_feature_name.setValue(feature.getName());
+		var_feature_name.setType("String");
 
 		// Create unbound variables
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("feature", feature);
@@ -694,7 +694,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Enumeration_13(Enumeration feature) {
+	public EObjectContainer isAppropriate_BWD_Enumeration_0(Enumeration feature) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -750,7 +750,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1156(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_131(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -818,46 +818,46 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
+		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility0);
 
-		eq0.setRuleName("EnumDecWithModifier2Enum");
-		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		jVisibility2umlVisibility1.setRuleName("EnumDecWithModifier2Enum");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		jVisibility2umlVisibility0.setRuleName("EnumDecWithModifier2Enum");
+		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+
+		eq1.setRuleName("EnumDecWithModifier2Enum");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_feature_name.setBound(false);
 			var_feature_visibility.setBound(false);
-			eq0.solve(var_bodyDeclaration_name, var_feature_name);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+			var_feature_name.setBound(false);
+			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("feature", "name", var_feature_name.getValue());
 				__helper.setValue("feature", "visibility", var_feature_visibility.getValue());
+				__helper.setValue("feature", "name", var_feature_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -882,46 +882,46 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
-		Eq eq0 = new Eq();
-		csp.getConstraints().add(eq0);
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
-		JVisibility2umlVisibility jVisibility2umlVisibility1 = new JVisibility2umlVisibility();
-		csp.getConstraints().add(jVisibility2umlVisibility1);
+		JVisibility2umlVisibility jVisibility2umlVisibility0 = new JVisibility2umlVisibility();
+		csp.getConstraints().add(jVisibility2umlVisibility0);
 
-		eq0.setRuleName("EnumDecWithModifier2Enum");
-		eq0.solve(var_bodyDeclaration_name, var_feature_name);
+		Eq eq1 = new Eq();
+		csp.getConstraints().add(eq1);
 
-		jVisibility2umlVisibility1.setRuleName("EnumDecWithModifier2Enum");
-		jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+		jVisibility2umlVisibility0.setRuleName("EnumDecWithModifier2Enum");
+		jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+
+		eq1.setRuleName("EnumDecWithModifier2Enum");
+		eq1.solve(var_bodyDeclaration_name, var_feature_name);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_bodyDeclaration_name.setBound(false);
 			var_modifier_visibility.setBound(false);
-			eq0.solve(var_bodyDeclaration_name, var_feature_name);
-			jVisibility2umlVisibility1.solve(var_modifier_visibility, var_feature_visibility);
+			var_bodyDeclaration_name.setBound(false);
+			jVisibility2umlVisibility0.solve(var_modifier_visibility, var_feature_visibility);
+			eq1.solve(var_bodyDeclaration_name, var_feature_name);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
 				__helper.setValue("modifier", "visibility", var_modifier_visibility.getValue());
+				__helper.setValue("bodyDeclaration", "name", var_bodyDeclaration_name.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1017,6 +1017,12 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		// Create literals
 
 		// Create attribute variables
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
+		var_modifier_visibility.setValue(modifier.getVisibility());
+		var_modifier_visibility.setType("java.VisibilityKind");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
+		var_feature_visibility.setValue(feature.getVisibility());
+		var_feature_visibility.setType("uml.VisibilityKind");
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", true,
 				csp);
 		var_bodyDeclaration_name.setValue(bodyDeclaration.getName());
@@ -1024,27 +1030,21 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", true, csp);
 		var_feature_name.setValue(feature.getName());
 		var_feature_name.setType("String");
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", true, csp);
-		var_modifier_visibility.setValue(modifier.getVisibility());
-		var_modifier_visibility.setType("java.VisibilityKind");
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", true, csp);
-		var_feature_visibility.setValue(feature.getVisibility());
-		var_feature_visibility.setType("uml.VisibilityKind");
 
 		// Create unbound variables
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		return csp;
 	}
 
@@ -1159,27 +1159,27 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		// Create attribute variables
 
 		// Create unbound variables
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
-		var_bodyDeclaration_name.setType("String");
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
-		var_feature_name.setType("String");
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier.visibility", csp);
 		var_modifier_visibility.setType("java.VisibilityKind");
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature.visibility", csp);
 		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration.name", csp);
+		var_bodyDeclaration_name.setType("String");
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature.name", csp);
+		var_feature_name.setType("String");
 
 		// Create constraints
-		Eq eq = new Eq();
 		JVisibility2umlVisibility jVisibility2umlVisibility = new JVisibility2umlVisibility();
+		Eq eq = new Eq();
 
-		csp.getConstraints().add(eq);
 		csp.getConstraints().add(jVisibility2umlVisibility);
+		csp.getConstraints().add(eq);
 
 		// Solve CSP
-		eq.setRuleName("NoRuleName");
-		eq.solve(var_bodyDeclaration_name, var_feature_name);
 		jVisibility2umlVisibility.setRuleName("NoRuleName");
 		jVisibility2umlVisibility.solve(var_modifier_visibility, var_feature_visibility);
+		eq.setRuleName("NoRuleName");
+		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
 		return csp;
@@ -1254,10 +1254,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 				return null;
 			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_13__ENUMERATION:
-				return isAppropriate_BWD_Enumeration_13((Enumeration) arguments.get(0));
-			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1156__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1156((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_0__ENUMERATION:
+				return isAppropriate_BWD_Enumeration_0((Enumeration) arguments.get(0));
+			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_131__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1425,16 +1425,16 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
-		Object _localVariable_0 = csp.getValue("feature", "name");
-		Object _localVariable_1 = csp.getValue("feature", "visibility");
+		Object _localVariable_0 = csp.getValue("feature", "visibility");
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		m2f.setSource(modifier);
 		b2e.setSource(bodyDeclaration);
 		m2f.setTarget(feature);
 		b2e.setTarget(feature);
-		String feature_name_prime = (String) _localVariable_0;
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
-		feature.setName(feature_name_prime);
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
+		String feature_name_prime = (String) _localVariable_1;
 		feature.setVisibility(feature_visibility_prime);
+		feature.setName(feature_name_prime);
 		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
 	}
 
@@ -2567,8 +2567,8 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
-		Object _localVariable_0 = csp.getValue("feature", "name");
-		Object _localVariable_1 = csp.getValue("feature", "visibility");
+		Object _localVariable_0 = csp.getValue("feature", "visibility");
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		Object _localVariable_2 = csp.getValue("bodyDeclaration", "name");
 		Object _localVariable_3 = csp.getValue("modifier", "visibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
@@ -2583,14 +2583,14 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 		bodyDeclaration.setModifier(modifier);
 		m2f.setSource(modifier);
 		ruleResult.getSourceObjects().add(modifier);
-		String feature_name_prime = (String) _localVariable_0;
-		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_1;
+		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
+		String feature_name_prime = (String) _localVariable_1;
 		String bodyDeclaration_name_prime = (String) _localVariable_2;
 		org.eclipse.modisco.java.VisibilityKind modifier_visibility_prime = (org.eclipse.modisco.java.VisibilityKind) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		feature.setName(feature_name_prime);
 		feature.setVisibility(feature_visibility_prime);
+		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		modifier.setVisibility(modifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));

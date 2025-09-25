@@ -206,7 +206,7 @@ public interface InterfaceDecWithModifier2Interface extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Interface_27(Interface feature);
+	EObjectContainer isAppropriate_BWD_Interface_1(Interface feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface InterfaceDecWithModifier2Interface extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1155(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

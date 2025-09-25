@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.gravity.hulk.HDetector;
+import org.gravity.hulk.detection.HDetector;
 
 public class DetectionTreeContentProvider implements ITreeContentProvider {
 

@@ -4,7 +4,7 @@ package org.gravity.hulk.resolve.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.gravity.hulk.impl.HDetectorImpl;
+import org.gravity.hulk.impl.HDetector;
 
 import org.gravity.hulk.resolve.HResolver;
 import org.gravity.hulk.resolve.ResolvePackage;
@@ -20,7 +20,7 @@ import org.gravity.hulk.resolve.ResolvePackage;
  *
  * @generated
  */
-public abstract class HResolverImpl extends HDetectorImpl implements HResolver {
+public abstract class HResolverImpl extends HDetector implements HResolver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

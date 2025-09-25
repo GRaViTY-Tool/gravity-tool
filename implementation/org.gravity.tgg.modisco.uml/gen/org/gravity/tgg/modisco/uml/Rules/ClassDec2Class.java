@@ -103,7 +103,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject feature);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,7 +183,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject feature);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject feature, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Class_12(org.eclipse.uml2.uml.Class feature);
+	EObjectContainer isAppropriate_BWD_Class_0(org.eclipse.uml2.uml.Class feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +207,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MClass_6(MClass bodyDeclaration);
+	EObjectContainer isAppropriate_FWD_MClass_0(MClass bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,7 +239,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MClass bodyDeclaration, org.eclipse.uml2.uml.Class feature, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, MClass bodyDeclaration, Match sourceMatch,
 			Match targetMatch);
 
 	/**

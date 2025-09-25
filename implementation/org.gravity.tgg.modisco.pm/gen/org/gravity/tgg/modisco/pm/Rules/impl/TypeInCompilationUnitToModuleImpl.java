@@ -683,7 +683,7 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1020(EMoflonEdge _edge_module) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_21(EMoflonEdge _edge_module) {
 
 		Object[] result1_bindingAndBlack = TypeInCompilationUnitToModuleImpl
 				.pattern_TypeInCompilationUnitToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -742,7 +742,7 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1118(EMoflonEdge _edge_originalCompilationUnit) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_originalCompilationUnit) {
 
 		Object[] result1_bindingAndBlack = TypeInCompilationUnitToModuleImpl
 				.pattern_TypeInCompilationUnitToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1174,10 +1174,10 @@ public class TypeInCompilationUnitToModuleImpl extends AbstractRuleImpl implemen
 				return null;
 			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1020__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_1020((EMoflonEdge) arguments.get(0));
-			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1118__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1118((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_21__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_22__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
 			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.TYPE_IN_COMPILATION_UNIT_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

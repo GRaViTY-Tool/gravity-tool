@@ -47,7 +47,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Type superClassDec, TypeAccess typeAcc, ClassDeclaration classDec);
+	boolean isAppropriate_FWD(Match match, ClassDeclaration classDec, Type superClassDec, TypeAccess typeAcc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Type superClassDec, TypeAccess typeAcc, ClassDeclaration classDec);
+	void registerObjectsToMatch_FWD(Match match, ClassDeclaration classDec, Type superClassDec, TypeAccess typeAcc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Type superClassDec, TypeAccess typeAcc, ClassDeclaration classDec);
+	CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration classDec, Type superClassDec, TypeAccess typeAcc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +95,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Type superClassDec, ASTNode2Element cd2c,
-			TypeAccess typeAcc, Classifier umlClassifier, ASTNode2Element cd2c2, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class superClass);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
+			ClassDeclaration classDec, ASTNode2Element cd2c2, Type superClassDec, TypeAccess typeAcc,
+			Classifier umlClassifier, ASTNode2Element cd2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,9 +113,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject superClassDec, EObject cd2c, EObject typeAcc,
-			EObject ta2g, EObject umlClassifier, EObject cd2c2, EObject classDec, EObject generalization,
-			EObject superClass);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject superClass, EObject classDec, EObject cd2c2,
+			EObject generalization, EObject superClassDec, EObject typeAcc, EObject ta2g, EObject umlClassifier,
+			EObject cd2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,8 +131,8 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Classifier umlClassifier, Generalization generalization,
-			org.eclipse.uml2.uml.Class superClass);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class superClass, Generalization generalization,
+			Classifier umlClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,8 +156,8 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Classifier umlClassifier, Generalization generalization,
-			org.eclipse.uml2.uml.Class superClass);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class superClass, Generalization generalization,
+			Classifier umlClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,8 +165,8 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Classifier umlClassifier, Generalization generalization,
-			org.eclipse.uml2.uml.Class superClass);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class superClass, Generalization generalization,
+			Classifier umlClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,9 +182,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type superClassDec, ASTNode2Element cd2c,
-			Classifier umlClassifier, ASTNode2Element cd2c2, ClassDeclaration classDec, Generalization generalization,
-			org.eclipse.uml2.uml.Class superClass);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
+			ClassDeclaration classDec, ASTNode2Element cd2c2, Generalization generalization, Type superClassDec,
+			Classifier umlClassifier, ASTNode2Element cd2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,9 +200,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject superClassDec, EObject cd2c, EObject typeAcc,
-			EObject ta2g, EObject umlClassifier, EObject cd2c2, EObject classDec, EObject generalization,
-			EObject superClass);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject superClass, EObject classDec, EObject cd2c2,
+			EObject generalization, EObject superClassDec, EObject typeAcc, EObject ta2g, EObject umlClassifier,
+			EObject cd2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1048(EMoflonEdge _edge_general);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_106(EMoflonEdge _edge_general);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1149(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_114(EMoflonEdge _edge_superClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,8 +258,8 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Type superClassDec, TypeAccess typeAcc, Classifier umlClassifier,
-			ClassDeclaration classDec, Generalization generalization, org.eclipse.uml2.uml.Class superClass,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class superClass, ClassDeclaration classDec,
+			Generalization generalization, Type superClassDec, TypeAccess typeAcc, Classifier umlClassifier,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -276,7 +276,7 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Type superClassDec, TypeAccess typeAcc, ClassDeclaration classDec);
+	boolean checkDEC_FWD(ClassDeclaration classDec, Type superClassDec, TypeAccess typeAcc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,8 +284,8 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Classifier umlClassifier, Generalization generalization,
-			org.eclipse.uml2.uml.Class superClass);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Class superClass, Generalization generalization,
+			Classifier umlClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,9 +302,9 @@ public interface TypeAccess2Generalization extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type superClassDec, ASTNode2Element cd2c,
-			Classifier umlClassifier, ASTNode2Element cd2c2, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class superClass, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class superClass,
+			ClassDeclaration classDec, ASTNode2Element cd2c2, Type superClassDec, Classifier umlClassifier,
+			ASTNode2Element cd2c, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

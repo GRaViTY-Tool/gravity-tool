@@ -44,7 +44,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, TypeAccess typeAccess, ArrayType arrayType, Type jType);
+	boolean isAppropriate_FWD(Match match, ArrayType arrayType, TypeAccess typeAccess, Type jType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, TypeAccess typeAccess, ArrayType arrayType, Type jType);
+	void registerObjectsToMatch_FWD(Match match, ArrayType arrayType, TypeAccess typeAccess, Type jType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess typeAccess, ArrayType arrayType, Type jType);
+	CSP isAppropriate_solveCsp_FWD(Match match, ArrayType arrayType, TypeAccess typeAccess, Type jType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +92,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess typeAccess, ASTNode2Element ne2ne1,
-			ArrayType arrayType, Type jType, org.eclipse.uml2.uml.Type uType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayType arrayType, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeAccess, EObject ne2ne2, EObject ne2ne1,
-			EObject arrayType, EObject jType, EObject uType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject arrayType, EObject ne2ne1, EObject uType,
+			EObject typeAccess, EObject jType, EObject ne2ne2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +182,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Type_6(org.eclipse.uml2.uml.Type uType);
+	EObjectContainer isAppropriate_BWD_Type_0(org.eclipse.uml2.uml.Type uType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,7 +190,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1166(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_157(EMoflonEdge _edge_elementType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,8 +222,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeAccess typeAccess, ArrayType arrayType, Type jType,
-			org.eclipse.uml2.uml.Type uType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(ArrayType arrayType, org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess,
+			Type jType, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,7 +239,7 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(TypeAccess typeAccess, ArrayType arrayType, Type jType);
+	boolean checkDEC_FWD(ArrayType arrayType, TypeAccess typeAccess, Type jType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,8 +263,8 @@ public interface ArrayType2NonArrayType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1, Type jType,
-			org.eclipse.uml2.uml.Type uType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element ne2ne1,
+			org.eclipse.uml2.uml.Type uType, Type jType, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

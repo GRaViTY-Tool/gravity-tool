@@ -738,7 +738,7 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1058(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_128(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InMethod_InInterfaceImpl
 				.pattern_TypeParameter2Object_InMethod_InInterface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,7 +799,7 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1162(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameter2Object_InMethod_InInterfaceImpl
 				.pattern_TypeParameter2Object_InMethod_InInterface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1261,10 +1261,10 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 				return null;
 			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1058__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_1058((EMoflonEdge) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1162__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1162((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_128__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_140__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
 			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.TYPE_PARAMETER2_OBJECT_IN_METHOD_IN_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2502,9 +2502,9 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InInterface_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeParameter mparam, InterfaceDeclaration mowner) {
-		for (TypeDeclaration __DEC_mparam_typeParameters_386555 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeDeclaration __DEC_mparam_typeParameters_658204 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, TypeDeclaration.class, "typeParameters")) {
-			if (!mowner.equals(__DEC_mparam_typeParameters_386555)) {
+			if (!mowner.equals(__DEC_mparam_typeParameters_658204)) {
 				return new Object[] { mparam, mowner };
 			}
 		}
@@ -2776,9 +2776,9 @@ public class TypeParameter2Object_InMethod_InInterfaceImpl extends AbstractRuleI
 
 	public static final Object[] pattern_TypeParameter2Object_InMethod_InInterface_27_1_matchtggpattern_black_nac_0BB(
 			TypeParameter mparam, InterfaceDeclaration mowner) {
-		for (TypeDeclaration __DEC_mparam_typeParameters_968931 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeDeclaration __DEC_mparam_typeParameters_226016 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mparam, TypeDeclaration.class, "typeParameters")) {
-			if (!mowner.equals(__DEC_mparam_typeParameters_968931)) {
+			if (!mowner.equals(__DEC_mparam_typeParameters_226016)) {
 				return new Object[] { mparam, mowner };
 			}
 		}

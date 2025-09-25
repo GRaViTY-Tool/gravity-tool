@@ -170,8 +170,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		TypeGraph tPM = (TypeGraph) result1_bindingAndBlack[0];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[1];
-		TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result1_bindingAndBlack[1];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[2];
 		MInitializer mDefinition = (MInitializer) result1_bindingAndBlack[3];
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[4];
 		CSP csp = (CSP) result1_bindingAndBlack[5];
@@ -181,44 +181,44 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[3];
 		TModifier tModifier = (TModifier) result1_green[4];
 		TMethod tName = (TMethod) result1_green[5];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[7];
-		TMethodDefinition tDefinition = (TMethodDefinition) result1_green[8];
+		TMethodDefinition tDefinition = (TMethodDefinition) result1_green[7];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[8];
 
 		Object[] result2_black = InitializerInTypeImpl
 				.pattern_InitializerInType_1_2_collecttranslatedelements_blackBBBBBBB(tSignature, mDefinitionToTMember,
-						tModifier, tName, mDefinition, mBodyToTAnnotation, tDefinition);
+						tModifier, tName, mDefinition, tDefinition, mBodyToTAnnotation);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
 					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tModifier] = " + tModifier
-					+ ", " + "[tName] = " + tName + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[tDefinition] = " + tDefinition + ".");
+					+ ", " + "[tName] = " + tName + ", " + "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = "
+					+ tDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ".");
 		}
 		Object[] result2_green = InitializerInTypeImpl
 				.pattern_InitializerInType_1_2_collecttranslatedelements_greenFBBBBBBB(tSignature, mDefinitionToTMember,
-						tModifier, tName, mDefinition, mBodyToTAnnotation, tDefinition);
+						tModifier, tName, mDefinition, tDefinition, mBodyToTAnnotation);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InitializerInTypeImpl
-				.pattern_InitializerInType_1_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, tPM, tSignature, tType,
-						mTypeToTTYpe, mDefinitionToTMember, tModifier, tName, mDefinition, mBodyToTAnnotation,
-						tDefinition, mType);
+				.pattern_InitializerInType_1_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, tPM, tSignature,
+						mTypeToTTYpe, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+						mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tPM] = " + tPM + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType
-					+ ", " + "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[mDefinitionToTMember] = "
+					+ ", " + "[tPM] = " + tPM + ", " + "[tSignature] = " + tSignature + ", " + "[mTypeToTTYpe] = "
+					+ mTypeToTTYpe + ", " + "[tType] = " + tType + ", " + "[mDefinitionToTMember] = "
 					+ mDefinitionToTMember + ", " + "[tModifier] = " + tModifier + ", " + "[tName] = " + tName + ", "
-					+ "[mDefinition] = " + mDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[mType] = " + mType + ".");
+					+ "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = " + tDefinition + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mType] = " + mType + ".");
 		}
 		InitializerInTypeImpl.pattern_InitializerInType_1_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFFFF(
-				ruleresult, tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType);
+				ruleresult, tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation, mType);
 		//nothing EMoflonEdge tName__tPM____model = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tPM__tName____methods = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge tDefinition__tModifier____tModifier = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[19];
@@ -233,8 +233,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		// 
 		// 
 		InitializerInTypeImpl.pattern_InitializerInType_1_5_registerobjects_expressionBBBBBBBBBBBBB(this, ruleresult,
-				tPM, tSignature, tType, mTypeToTTYpe, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType);
+				tPM, tSignature, mTypeToTTYpe, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation, mType);
 		return InitializerInTypeImpl.pattern_InitializerInType_1_6_expressionFB(ruleresult);
 	}
 
@@ -266,14 +266,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_binding[1];
 		for (Object[] result2_black : InitializerInTypeImpl
 				.pattern_InitializerInType_2_2_corematch_blackFFBBB(mDefinition, mType, match)) {
-			TAbstractType tType = (TAbstractType) result2_black[0];
-			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result2_black[1];
+			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result2_black[0];
+			TAbstractType tType = (TAbstractType) result2_black[1];
 			// ForEach 
 			for (Object[] result3_black : InitializerInTypeImpl
-					.pattern_InitializerInType_2_3_findcontext_blackFBBBB(tType, mTypeToTTYpe, mDefinition, mType)) {
+					.pattern_InitializerInType_2_3_findcontext_blackFBBBB(mTypeToTTYpe, tType, mDefinition, mType)) {
 				TypeGraph tPM = (TypeGraph) result3_black[0];
 				Object[] result3_green = InitializerInTypeImpl
-						.pattern_InitializerInType_2_3_findcontext_greenBBBBBFFFFFFF(tPM, tType, mTypeToTTYpe,
+						.pattern_InitializerInType_2_3_findcontext_greenBBBBBFFFFFFF(tPM, mTypeToTTYpe, tType,
 								mDefinition, mType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge mTypeToTTYpe__tType____target = (EMoflonEdge) result3_green[6];
@@ -285,11 +285,11 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 				Object[] result4_bindingAndBlack = InitializerInTypeImpl
 						.pattern_InitializerInType_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, tPM,
-								tType, mTypeToTTYpe, mDefinition, mType);
+								mTypeToTTYpe, tType, mDefinition, mType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPM] = " + tPM + ", "
-							+ "[tType] = " + tType + ", " + "[mTypeToTTYpe] = " + mTypeToTTYpe + ", "
+							+ "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[tType] = " + tType + ", "
 							+ "[mDefinition] = " + mDefinition + ", " + "[mType] = " + mType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -359,8 +359,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM, TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, MInitializer mDefinition, AbstractTypeDeclaration mType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, MInitializer mDefinition,
+			AbstractTypeDeclaration mType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -389,8 +390,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPM", tPM);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mTypeToTTYpe", mTypeToTTYpe);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mDefinition", mDefinition);
 		isApplicableMatch.registerObject("mType", mType);
 		return csp;
@@ -410,19 +411,19 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType,
-			EObject mTypeToTTYpe, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
+			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
+			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType) {
 		ruleresult.registerObject("tPM", tPM);
 		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mTypeToTTYpe", mTypeToTTYpe);
+		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 		ruleresult.registerObject("tModifier", tModifier);
 		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mDefinition", mDefinition);
-		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("tDefinition", tDefinition);
+		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mType", mType);
 
 	}
@@ -528,54 +529,54 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		}
 		TypeGraph tPM = (TypeGraph) result1_bindingAndBlack[0];
 		TMethodSignature tSignature = (TMethodSignature) result1_bindingAndBlack[1];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[2];
-		TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[3];
 		TModifier tModifier = (TModifier) result1_bindingAndBlack[4];
 		TMethod tName = (TMethod) result1_bindingAndBlack[5];
 		TMethodDefinition tDefinition = (TMethodDefinition) result1_bindingAndBlack[6];
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[7];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[8];
 		Object[] result1_green = InitializerInTypeImpl
-				.pattern_InitializerInType_11_1_performtransformation_greenFFFBB(tDefinition, mType);
+				.pattern_InitializerInType_11_1_performtransformation_greenFFBFB(tDefinition, mType);
 		MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result1_green[0];
 		MInitializer mDefinition = (MInitializer) result1_green[1];
-		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[2];
+		ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result1_green[3];
 
 		Object[] result2_black = InitializerInTypeImpl
 				.pattern_InitializerInType_11_2_collecttranslatedelements_blackBBBBBBB(tSignature, mDefinitionToTMember,
-						tModifier, tName, mDefinition, mBodyToTAnnotation, tDefinition);
+						tModifier, tName, mDefinition, tDefinition, mBodyToTAnnotation);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
 					+ ", " + "[mDefinitionToTMember] = " + mDefinitionToTMember + ", " + "[tModifier] = " + tModifier
-					+ ", " + "[tName] = " + tName + ", " + "[mDefinition] = " + mDefinition + ", "
-					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[tDefinition] = " + tDefinition + ".");
+					+ ", " + "[tName] = " + tName + ", " + "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = "
+					+ tDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ".");
 		}
 		Object[] result2_green = InitializerInTypeImpl
 				.pattern_InitializerInType_11_2_collecttranslatedelements_greenFBBBBBBB(tSignature,
-						mDefinitionToTMember, tModifier, tName, mDefinition, mBodyToTAnnotation, tDefinition);
+						mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition, mBodyToTAnnotation);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InitializerInTypeImpl
 				.pattern_InitializerInType_11_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, tPM, tSignature,
-						tType, mTypeToTTYpe, mDefinitionToTMember, tModifier, tName, mDefinition, mBodyToTAnnotation,
-						tDefinition, mType);
+						mTypeToTTYpe, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+						mBodyToTAnnotation, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[tPM] = " + tPM + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType
-					+ ", " + "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[mDefinitionToTMember] = "
+					+ ", " + "[tPM] = " + tPM + ", " + "[tSignature] = " + tSignature + ", " + "[mTypeToTTYpe] = "
+					+ mTypeToTTYpe + ", " + "[tType] = " + tType + ", " + "[mDefinitionToTMember] = "
 					+ mDefinitionToTMember + ", " + "[tModifier] = " + tModifier + ", " + "[tName] = " + tName + ", "
-					+ "[mDefinition] = " + mDefinition + ", " + "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", "
-					+ "[tDefinition] = " + tDefinition + ", " + "[mType] = " + mType + ".");
+					+ "[mDefinition] = " + mDefinition + ", " + "[tDefinition] = " + tDefinition + ", "
+					+ "[mBodyToTAnnotation] = " + mBodyToTAnnotation + ", " + "[mType] = " + mType + ".");
 		}
 		InitializerInTypeImpl.pattern_InitializerInType_11_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFFFF(
-				ruleresult, tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType);
+				ruleresult, tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation, mType);
 		//nothing EMoflonEdge tName__tPM____model = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tPM__tName____methods = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tType__tSignature____signature = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge tDefinition__tModifier____tModifier = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mDefinitionToTMember__tDefinition____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mBodyToTAnnotation__mDefinition____source = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge tType__tDefinition____defines = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge tDefinition__tType____definedBy = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge mDefinitionToTMember__mDefinition____source = (EMoflonEdge) result3_green[19];
@@ -590,8 +591,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		// 
 		// 
 		InitializerInTypeImpl.pattern_InitializerInType_11_5_registerobjects_expressionBBBBBBBBBBBBB(this, ruleresult,
-				tPM, tSignature, tType, mTypeToTTYpe, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType);
+				tPM, tSignature, mTypeToTTYpe, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation, mType);
 		return InitializerInTypeImpl.pattern_InitializerInType_11_6_expressionFB(ruleresult);
 	}
 
@@ -625,17 +626,17 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		TModifier tModifier = (TModifier) result2_binding[3];
 		TMethod tName = (TMethod) result2_binding[4];
 		TMethodDefinition tDefinition = (TMethodDefinition) result2_binding[5];
-		for (Object[] result2_black : InitializerInTypeImpl.pattern_InitializerInType_12_2_corematch_blackBBBFBBBFB(tPM,
+		for (Object[] result2_black : InitializerInTypeImpl.pattern_InitializerInType_12_2_corematch_blackBBFBBBBFB(tPM,
 				tSignature, tType, tModifier, tName, tDefinition, match)) {
-			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result2_black[3];
+			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result2_black[2];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_black[7];
 			// ForEach 
 			for (Object[] result3_black : InitializerInTypeImpl
-					.pattern_InitializerInType_12_3_findcontext_blackBBBBBBBB(tPM, tSignature, tType, mTypeToTTYpe,
+					.pattern_InitializerInType_12_3_findcontext_blackBBBBBBBB(tPM, tSignature, mTypeToTTYpe, tType,
 							tModifier, tName, tDefinition, mType)) {
 				Object[] result3_green = InitializerInTypeImpl
-						.pattern_InitializerInType_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFFFFF(tPM, tSignature, tType,
-								mTypeToTTYpe, tModifier, tName, tDefinition, mType);
+						.pattern_InitializerInType_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFFFFF(tPM, tSignature,
+								mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
 				//nothing EMoflonEdge mTypeToTTYpe__tType____target = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge tName__tPM____model = (EMoflonEdge) result3_green[10];
@@ -654,13 +655,13 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 				Object[] result4_bindingAndBlack = InitializerInTypeImpl
 						.pattern_InitializerInType_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch,
-								tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition, mType);
+								tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPM] = " + tPM + ", "
-							+ "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", " + "[mTypeToTTYpe] = "
-							+ mTypeToTTYpe + ", " + "[tModifier] = " + tModifier + ", " + "[tName] = " + tName + ", "
-							+ "[tDefinition] = " + tDefinition + ", " + "[mType] = " + mType + ".");
+							+ "[tSignature] = " + tSignature + ", " + "[mTypeToTTYpe] = " + mTypeToTTYpe + ", "
+							+ "[tType] = " + tType + ", " + "[tModifier] = " + tModifier + ", " + "[tName] = " + tName
+							+ ", " + "[tDefinition] = " + tDefinition + ", " + "[mType] = " + mType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -750,7 +751,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM,
-			TMethodSignature tSignature, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, TModifier tModifier,
+			TMethodSignature tSignature, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, TModifier tModifier,
 			TMethod tName, TMethodDefinition tDefinition, AbstractTypeDeclaration mType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -768,8 +769,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPM", tPM);
 		isApplicableMatch.registerObject("tSignature", tSignature);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mTypeToTTYpe", mTypeToTTYpe);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("tModifier", tModifier);
 		isApplicableMatch.registerObject("tName", tName);
 		isApplicableMatch.registerObject("tDefinition", tDefinition);
@@ -791,19 +792,19 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType,
-			EObject mTypeToTTYpe, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe,
+			EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
+			EObject tDefinition, EObject mBodyToTAnnotation, EObject mType) {
 		ruleresult.registerObject("tPM", tPM);
 		ruleresult.registerObject("tSignature", tSignature);
-		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mTypeToTTYpe", mTypeToTTYpe);
+		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("mDefinitionToTMember", mDefinitionToTMember);
 		ruleresult.registerObject("tModifier", tModifier);
 		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mDefinition", mDefinition);
-		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("tDefinition", tDefinition);
+		ruleresult.registerObject("mBodyToTAnnotation", mBodyToTAnnotation);
 		ruleresult.registerObject("mType", mType);
 
 	}
@@ -829,7 +830,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1008(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_model) {
 
 		Object[] result1_bindingAndBlack = InitializerInTypeImpl
 				.pattern_InitializerInType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -890,7 +891,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1107(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InitializerInTypeImpl
 				.pattern_InitializerInType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1096,9 +1097,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		if (InitializerInTypeImpl.pattern_InitializerInType_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : InitializerInTypeImpl
-					.pattern_InitializerInType_24_5_matchcorrcontext_blackBFBBB(tType, mType, sourceMatch,
+					.pattern_InitializerInType_24_5_matchcorrcontext_blackFBBBB(tType, mType, sourceMatch,
 							targetMatch)) {
-				TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result5_black[1];
+				TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result5_black[0];
 				Object[] result5_green = InitializerInTypeImpl
 						.pattern_InitializerInType_24_5_matchcorrcontext_greenBBBF(mTypeToTTYpe, sourceMatch,
 								targetMatch);
@@ -1114,10 +1115,10 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 							+ "[tDefinition] = " + tDefinition + ", " + "[mType] = " + mType + ", " + "[ccMatch] = "
 							+ ccMatch + ".");
 				}
-				InitializerInTypeImpl.pattern_InitializerInType_24_6_createcorrespondence_greenFBFBB(mDefinition,
+				InitializerInTypeImpl.pattern_InitializerInType_24_6_createcorrespondence_greenFBBFB(mDefinition,
 						tDefinition, ccMatch);
 				//nothing MDefinitionToTMember mDefinitionToTMember = (MDefinitionToTMember) result6_green[0];
-				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[2];
+				//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[3];
 
 				Object[] result7_black = InitializerInTypeImpl
 						.pattern_InitializerInType_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1241,26 +1242,26 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 			Object[] result3_bindingAndBlack = InitializerInTypeImpl
 					.pattern_InitializerInType_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, tPM,
-							tType, mTypeToTTYpe, mType, ruleResult);
+							mTypeToTTYpe, tType, mType, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPM] = " + tPM + ", " + "[tType] = "
-						+ tType + ", " + "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[mType] = " + mType + ", "
-						+ "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tPM] = " + tPM + ", "
+						+ "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[tType] = " + tType + ", " + "[mType] = " + mType
+						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (InitializerInTypeImpl.pattern_InitializerInType_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = InitializerInTypeImpl.pattern_InitializerInType_29_5_checknacs_blackBBBB(tPM,
-						tType, mTypeToTTYpe, mType);
+						mTypeToTTYpe, tType, mType);
 				if (result5_black != null) {
 
 					Object[] result6_black = InitializerInTypeImpl.pattern_InitializerInType_29_6_perform_blackBBBBB(
-							tPM, tType, mTypeToTTYpe, mType, ruleResult);
+							tPM, mTypeToTTYpe, tType, mType, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPM] = " + tPM + ", "
-								+ "[tType] = " + tType + ", " + "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[mType] = "
+								+ "[mTypeToTTYpe] = " + mTypeToTTYpe + ", " + "[tType] = " + tType + ", " + "[mType] = "
 								+ mType + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					InitializerInTypeImpl.pattern_InitializerInType_29_6_perform_greenBFBFFFFFFBBB(tPM, tType, mType,
@@ -1270,8 +1271,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 					//nothing TModifier tModifier = (TModifier) result6_green[4];
 					//nothing TMethod tName = (TMethod) result6_green[5];
 					//nothing MInitializer mDefinition = (MInitializer) result6_green[6];
-					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[7];
-					//nothing TMethodDefinition tDefinition = (TMethodDefinition) result6_green[8];
+					//nothing TMethodDefinition tDefinition = (TMethodDefinition) result6_green[7];
+					//nothing ASTNodeToTAnnotatable mBodyToTAnnotation = (ASTNodeToTAnnotatable) result6_green[8];
 
 				} else {
 				}
@@ -1288,8 +1289,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM, TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, AbstractTypeDeclaration mType, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPM,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, AbstractTypeDeclaration mType,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1318,8 +1320,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("tPM", tPM);
-		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mTypeToTTYpe", mTypeToTTYpe);
+		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("mType", mType);
 		return csp;
 	}
@@ -1357,9 +1359,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 						(AbstractTypeDeclaration) arguments.get(2));
 			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEGRAPH_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_MINITIALIZER_ABSTRACTTYPEDECLARATION:
+			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEGRAPH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MINITIALIZER_ABSTRACTTYPEDECLARATION:
 				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TAbstractType) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+						(TypeToTAbstractType) arguments.get(2), (TAbstractType) arguments.get(3),
 						(MInitializer) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5));
 			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1391,12 +1393,11 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 						(TModifier) arguments.get(4), (TMethod) arguments.get(5), (TMethodDefinition) arguments.get(6));
 			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_TMETHODSIGNATURE_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_TMODIFIER_TMETHOD_TMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
+			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_TMETHODSIGNATURE_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_TMODIFIER_TMETHOD_TMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
 				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TMethodSignature) arguments.get(2), (TAbstractType) arguments.get(3),
-						(TypeToTAbstractType) arguments.get(4), (TModifier) arguments.get(5),
-						(TMethod) arguments.get(6), (TMethodDefinition) arguments.get(7),
-						(AbstractTypeDeclaration) arguments.get(8));
+						(TMethodSignature) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+						(TAbstractType) arguments.get(4), (TModifier) arguments.get(5), (TMethod) arguments.get(6),
+						(TMethodDefinition) arguments.get(7), (AbstractTypeDeclaration) arguments.get(8));
 			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 			case RulesPackage.INITIALIZER_IN_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1408,10 +1409,10 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 				return null;
 			case RulesPackage.INITIALIZER_IN_TYPE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1008__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_1008((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1107__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1107((EMoflonEdge) arguments.get(0));
+			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_59__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_59((EMoflonEdge) arguments.get(0));
+			case RulesPackage.INITIALIZER_IN_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_63__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
 			case RulesPackage.INITIALIZER_IN_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.INITIALIZER_IN_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1433,9 +1434,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 						(TMethodDefinition) arguments.get(5));
 			case RulesPackage.INITIALIZER_IN_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
 				return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-			case RulesPackage.INITIALIZER_IN_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
+			case RulesPackage.INITIALIZER_IN_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_ABSTRACTTYPEDECLARATION_MODELGENERATORRULERESULT:
 				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TAbstractType) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+						(TypeToTAbstractType) arguments.get(2), (TAbstractType) arguments.get(3),
 						(AbstractTypeDeclaration) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
 			case RulesPackage.INITIALIZER_IN_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1539,26 +1540,26 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	public static final Object[] pattern_InitializerInType_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tPM");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToTTYpe");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mTypeToTTYpe");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tType");
 		EObject _localVariable_3 = isApplicableMatch.getObject("mDefinition");
 		EObject _localVariable_4 = isApplicableMatch.getObject("mType");
 		EObject tmpTPM = _localVariable_0;
-		EObject tmpTType = _localVariable_1;
-		EObject tmpMTypeToTTYpe = _localVariable_2;
+		EObject tmpMTypeToTTYpe = _localVariable_1;
+		EObject tmpTType = _localVariable_2;
 		EObject tmpMDefinition = _localVariable_3;
 		EObject tmpMType = _localVariable_4;
 		if (tmpTPM instanceof TypeGraph) {
 			TypeGraph tPM = (TypeGraph) tmpTPM;
-			if (tmpTType instanceof TAbstractType) {
-				TAbstractType tType = (TAbstractType) tmpTType;
-				if (tmpMTypeToTTYpe instanceof TypeToTAbstractType) {
-					TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) tmpMTypeToTTYpe;
+			if (tmpMTypeToTTYpe instanceof TypeToTAbstractType) {
+				TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) tmpMTypeToTTYpe;
+				if (tmpTType instanceof TAbstractType) {
+					TAbstractType tType = (TAbstractType) tmpTType;
 					if (tmpMDefinition instanceof MInitializer) {
 						MInitializer mDefinition = (MInitializer) tmpMDefinition;
 						if (tmpMType instanceof AbstractTypeDeclaration) {
 							AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-							return new Object[] { tPM, tType, mTypeToTTYpe, mDefinition, mType, isApplicableMatch };
+							return new Object[] { tPM, mTypeToTTYpe, tType, mDefinition, mType, isApplicableMatch };
 						}
 					}
 				}
@@ -1568,12 +1569,12 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_1_1_performtransformation_blackBBBBBFBB(TypeGraph tPM,
-			TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, MInitializer mDefinition,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, MInitializer mDefinition,
 			AbstractTypeDeclaration mType, InitializerInType _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tPM, tType, mTypeToTTYpe, mDefinition, mType, csp, _this, isApplicableMatch };
+				return new Object[] { tPM, mTypeToTTYpe, tType, mDefinition, mType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1585,17 +1586,17 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 				isApplicableMatch);
 		if (result_pattern_InitializerInType_1_1_performtransformation_binding != null) {
 			TypeGraph tPM = (TypeGraph) result_pattern_InitializerInType_1_1_performtransformation_binding[0];
-			TAbstractType tType = (TAbstractType) result_pattern_InitializerInType_1_1_performtransformation_binding[1];
-			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result_pattern_InitializerInType_1_1_performtransformation_binding[2];
+			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result_pattern_InitializerInType_1_1_performtransformation_binding[1];
+			TAbstractType tType = (TAbstractType) result_pattern_InitializerInType_1_1_performtransformation_binding[2];
 			MInitializer mDefinition = (MInitializer) result_pattern_InitializerInType_1_1_performtransformation_binding[3];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_InitializerInType_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_InitializerInType_1_1_performtransformation_black = pattern_InitializerInType_1_1_performtransformation_blackBBBBBFBB(
-					tPM, tType, mTypeToTTYpe, mDefinition, mType, _this, isApplicableMatch);
+					tPM, mTypeToTTYpe, tType, mDefinition, mType, _this, isApplicableMatch);
 			if (result_pattern_InitializerInType_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InitializerInType_1_1_performtransformation_black[5];
 
-				return new Object[] { tPM, tType, mTypeToTTYpe, mDefinition, mType, csp, _this, isApplicableMatch };
+				return new Object[] { tPM, mTypeToTTYpe, tType, mDefinition, mType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1607,53 +1608,53 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
 		TMethod tName = BasicFactory.eINSTANCE.createTMethod();
-		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TMethodDefinition tDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
+		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		boolean tModifier_isStatic_prime = Boolean.valueOf(true);
 		Object _localVariable_0 = csp.getValue("tName", "tName");
 		tType.getSignature().add(tSignature);
 		mDefinitionToTMember.setSource(mDefinition);
 		tName.setModel(tPM);
 		tSignature.setMethod(tName);
-		mBodyToTAnnotation.setSource(mDefinition);
 		tDefinition.setTModifier(tModifier);
 		mDefinitionToTMember.setTarget(tDefinition);
 		tType.getDefines().add(tDefinition);
-		mBodyToTAnnotation.setTarget(tDefinition);
 		tDefinition.setSignature(tSignature);
+		mBodyToTAnnotation.setSource(mDefinition);
+		mBodyToTAnnotation.setTarget(tDefinition);
 		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		String tName_tName_prime = (String) _localVariable_0;
 		tName.setTName(tName_tName_prime);
-		return new Object[] { tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, csp };
+		return new Object[] { tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation, csp };
 	}
 
 	public static final Object[] pattern_InitializerInType_1_2_collecttranslatedelements_blackBBBBBBB(
 			TMethodSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TModifier tModifier, TMethod tName,
-			MInitializer mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TMethodDefinition tDefinition) {
-		return new Object[] { tSignature, mDefinitionToTMember, tModifier, tName, mDefinition, mBodyToTAnnotation,
-				tDefinition };
+			MInitializer mDefinition, TMethodDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation) {
+		return new Object[] { tSignature, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation };
 	}
 
 	public static final Object[] pattern_InitializerInType_1_2_collecttranslatedelements_greenFBBBBBBB(
 			TMethodSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TModifier tModifier, TMethod tName,
-			MInitializer mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TMethodDefinition tDefinition) {
+			MInitializer mDefinition, TMethodDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(tSignature);
 		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
 		ruleresult.getCreatedElements().add(tModifier);
 		ruleresult.getCreatedElements().add(tName);
 		ruleresult.getTranslatedElements().add(mDefinition);
-		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
 		ruleresult.getCreatedElements().add(tDefinition);
-		return new Object[] { ruleresult, tSignature, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition };
+		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
+		return new Object[] { ruleresult, tSignature, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation };
 	}
 
 	public static final Object[] pattern_InitializerInType_1_3_bookkeepingforedges_blackBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType, EObject mTypeToTTYpe,
-			EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType) {
+			PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe, EObject tType,
+			EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition, EObject tDefinition,
+			EObject mBodyToTAnnotation, EObject mType) {
 		if (!tPM.equals(tSignature)) {
 			if (!tPM.equals(tType)) {
 				if (!tSignature.equals(tType)) {
@@ -1665,8 +1666,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 										if (!mTypeToTTYpe.equals(tDefinition)) {
 											if (!mDefinitionToTMember.equals(tPM)) {
 												if (!mDefinitionToTMember.equals(tSignature)) {
-													if (!mDefinitionToTMember.equals(tType)) {
-														if (!mDefinitionToTMember.equals(mTypeToTTYpe)) {
+													if (!mDefinitionToTMember.equals(mTypeToTTYpe)) {
+														if (!mDefinitionToTMember.equals(tType)) {
 															if (!mDefinitionToTMember.equals(tModifier)) {
 																if (!mDefinitionToTMember.equals(tName)) {
 																	if (!mDefinitionToTMember.equals(tDefinition)) {
@@ -1685,9 +1686,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 																											if (!mDefinition
 																													.equals(tSignature)) {
 																												if (!mDefinition
-																														.equals(tType)) {
+																														.equals(mTypeToTTYpe)) {
 																													if (!mDefinition
-																															.equals(mTypeToTTYpe)) {
+																															.equals(tType)) {
 																														if (!mDefinition
 																																.equals(mDefinitionToTMember)) {
 																															if (!mDefinition
@@ -1698,44 +1699,44 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 																																			.equals(tDefinition)) {
 																																		if (!mDefinition
 																																				.equals(mType)) {
-																																			if (!mBodyToTAnnotation
+																																			if (!tDefinition
 																																					.equals(tPM)) {
-																																				if (!mBodyToTAnnotation
+																																				if (!tDefinition
 																																						.equals(tSignature)) {
-																																					if (!mBodyToTAnnotation
+																																					if (!tDefinition
 																																							.equals(tType)) {
-																																						if (!mBodyToTAnnotation
-																																								.equals(mTypeToTTYpe)) {
-																																							if (!mBodyToTAnnotation
-																																									.equals(mDefinitionToTMember)) {
+																																						if (!tDefinition
+																																								.equals(tModifier)) {
+																																							if (!tDefinition
+																																									.equals(tName)) {
 																																								if (!mBodyToTAnnotation
-																																										.equals(tModifier)) {
+																																										.equals(tPM)) {
 																																									if (!mBodyToTAnnotation
-																																											.equals(tName)) {
+																																											.equals(tSignature)) {
 																																										if (!mBodyToTAnnotation
-																																												.equals(mDefinition)) {
+																																												.equals(mTypeToTTYpe)) {
 																																											if (!mBodyToTAnnotation
-																																													.equals(tDefinition)) {
+																																													.equals(tType)) {
 																																												if (!mBodyToTAnnotation
-																																														.equals(mType)) {
-																																													if (!tDefinition
-																																															.equals(tPM)) {
-																																														if (!tDefinition
-																																																.equals(tSignature)) {
-																																															if (!tDefinition
-																																																	.equals(tType)) {
-																																																if (!tDefinition
-																																																		.equals(tModifier)) {
-																																																	if (!tDefinition
-																																																			.equals(tName)) {
+																																														.equals(mDefinitionToTMember)) {
+																																													if (!mBodyToTAnnotation
+																																															.equals(tModifier)) {
+																																														if (!mBodyToTAnnotation
+																																																.equals(tName)) {
+																																															if (!mBodyToTAnnotation
+																																																	.equals(mDefinition)) {
+																																																if (!mBodyToTAnnotation
+																																																		.equals(tDefinition)) {
+																																																	if (!mBodyToTAnnotation
+																																																			.equals(mType)) {
 																																																		if (!mType
 																																																				.equals(tPM)) {
 																																																			if (!mType
 																																																					.equals(tSignature)) {
 																																																				if (!mType
-																																																						.equals(tType)) {
+																																																						.equals(mTypeToTTYpe)) {
 																																																					if (!mType
-																																																							.equals(mTypeToTTYpe)) {
+																																																							.equals(tType)) {
 																																																						if (!mType
 																																																								.equals(tModifier)) {
 																																																							if (!mType
@@ -1746,14 +1747,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 																																																											ruleresult,
 																																																											tPM,
 																																																											tSignature,
-																																																											tType,
 																																																											mTypeToTTYpe,
+																																																											tType,
 																																																											mDefinitionToTMember,
 																																																											tModifier,
 																																																											tName,
 																																																											mDefinition,
-																																																											mBodyToTAnnotation,
 																																																											tDefinition,
+																																																											mBodyToTAnnotation,
 																																																											mType };
 																																																								}
 																																																							}
@@ -1815,14 +1816,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_1_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType, EObject mDefinitionToTMember,
-			EObject tModifier, EObject tName, EObject mDefinition, EObject mBodyToTAnnotation, EObject tDefinition,
+			EObject tModifier, EObject tName, EObject mDefinition, EObject tDefinition, EObject mBodyToTAnnotation,
 			EObject mType) {
 		EMoflonEdge tName__tPM____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPM__tName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1838,8 +1839,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		String tPM__tName____methods_name_prime = "methods";
 		String tType__tSignature____signature_name_prime = "signature";
 		String tDefinition__tModifier____tModifier_name_prime = "tModifier";
-		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String tType__tDefinition____defines_name_prime = "defines";
 		String tDefinition__tType____definedBy_name_prime = "definedBy";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
@@ -1862,12 +1863,12 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tDefinition__tModifier____tModifier.setSrc(tDefinition);
 		tDefinition__tModifier____tModifier.setTrg(tModifier);
 		ruleresult.getCreatedEdges().add(tDefinition__tModifier____tModifier);
-		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
+		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		tType__tDefinition____defines.setSrc(tType);
 		tType__tDefinition____defines.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(tType__tDefinition____defines);
@@ -1903,8 +1904,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tPM__tName____methods.setName(tPM__tName____methods_name_prime);
 		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
 		tDefinition__tModifier____tModifier.setName(tDefinition__tModifier____tModifier_name_prime);
-		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
 		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
@@ -1916,9 +1917,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
 		return new Object[] { ruleresult, tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType, tName__tPM____model, tPM__tName____methods,
+				tDefinition, mBodyToTAnnotation, mType, tName__tPM____model, tPM__tName____methods,
 				tType__tSignature____signature, tDefinition__tModifier____tModifier,
-				mBodyToTAnnotation__mDefinition____source, mDefinitionToTMember__tDefinition____target,
+				mDefinitionToTMember__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
 				tType__tDefinition____defines, tDefinition__tType____definedBy,
 				mDefinitionToTMember__mDefinition____source, mBodyToTAnnotation__tDefinition____target,
 				mType__mDefinition____bodyDeclarations, mDefinition__mType____abstractTypeDeclaration,
@@ -1927,11 +1928,11 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final void pattern_InitializerInType_1_5_registerobjects_expressionBBBBBBBBBBBBB(
-			InitializerInType _this, PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType,
-			EObject mTypeToTTYpe, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, tPM, tSignature, tType, mTypeToTTYpe, mDefinitionToTMember, tModifier,
-				tName, mDefinition, mBodyToTAnnotation, tDefinition, mType);
+			InitializerInType _this, PerformRuleResult ruleresult, EObject tPM, EObject tSignature,
+			EObject mTypeToTTYpe, EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName,
+			EObject mDefinition, EObject tDefinition, EObject mBodyToTAnnotation, EObject mType) {
+		_this.registerObjects_FWD(ruleresult, tPM, tSignature, mTypeToTTYpe, tType, mDefinitionToTMember, tModifier,
+				tName, mDefinition, tDefinition, mBodyToTAnnotation, mType);
 
 	}
 
@@ -2011,22 +2012,23 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 				.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
 			TAbstractType tType = mTypeToTTYpe.getTarget();
 			if (tType != null) {
-				_result.add(new Object[] { tType, mTypeToTTYpe, mDefinition, mType, match });
+				_result.add(new Object[] { mTypeToTTYpe, tType, mDefinition, mType, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InitializerInType_2_3_findcontext_blackFBBBB(TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, MInitializer mDefinition, AbstractTypeDeclaration mType) {
+	public static final Iterable<Object[]> pattern_InitializerInType_2_3_findcontext_blackFBBBB(
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, MInitializer mDefinition,
+			AbstractTypeDeclaration mType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tType.equals(mTypeToTTYpe.getTarget())) {
 			if (mType.equals(mTypeToTTYpe.getSource())) {
 				if (mType.getBodyDeclarations().contains(mDefinition)) {
 					TypeGraph tPM = tType.getModel();
 					if (tPM != null) {
-						_result.add(new Object[] { tPM, tType, mTypeToTTYpe, mDefinition, mType });
+						_result.add(new Object[] { tPM, mTypeToTTYpe, tType, mDefinition, mType });
 					}
 
 				}
@@ -2036,7 +2038,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_2_3_findcontext_greenBBBBBFFFFFFF(TypeGraph tPM,
-			TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, MInitializer mDefinition,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, MInitializer mDefinition,
 			AbstractTypeDeclaration mType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge mTypeToTTYpe__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2052,8 +2054,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		String mType__mDefinition____bodyDeclarations_name_prime = "bodyDeclarations";
 		String mDefinition__mType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		isApplicableMatch.getAllContextElements().add(tPM);
-		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTTYpe);
+		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mDefinition);
 		isApplicableMatch.getAllContextElements().add(mType);
 		mTypeToTTYpe__tType____target.setSrc(mTypeToTTYpe);
@@ -2080,20 +2082,20 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tPM__tType____allTypes.setName(tPM__tType____allTypes_name_prime);
 		mType__mDefinition____bodyDeclarations.setName(mType__mDefinition____bodyDeclarations_name_prime);
 		mDefinition__mType____abstractTypeDeclaration.setName(mDefinition__mType____abstractTypeDeclaration_name_prime);
-		return new Object[] { tPM, tType, mTypeToTTYpe, mDefinition, mType, isApplicableMatch,
+		return new Object[] { tPM, mTypeToTTYpe, tType, mDefinition, mType, isApplicableMatch,
 				mTypeToTTYpe__tType____target, mTypeToTTYpe__mType____source, tType__tPM____model,
 				tPM__tType____allTypes, mType__mDefinition____bodyDeclarations,
 				mDefinition__mType____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_InitializerInType_2_4_solveCSP_bindingFBBBBBBB(InitializerInType _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe,
+			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType,
 			MInitializer mDefinition, AbstractTypeDeclaration mType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tPM, tType, mTypeToTTYpe, mDefinition,
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tPM, mTypeToTTYpe, tType, mDefinition,
 				mType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPM, tType, mTypeToTTYpe, mDefinition, mType };
+			return new Object[] { csp, _this, isApplicableMatch, tPM, mTypeToTTYpe, tType, mDefinition, mType };
 		}
 		return null;
 	}
@@ -2103,10 +2105,10 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_2_4_solveCSP_bindingAndBlackFBBBBBBB(InitializerInType _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe,
+			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType,
 			MInitializer mDefinition, AbstractTypeDeclaration mType) {
 		Object[] result_pattern_InitializerInType_2_4_solveCSP_binding = pattern_InitializerInType_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, tPM, tType, mTypeToTTYpe, mDefinition, mType);
+				_this, isApplicableMatch, tPM, mTypeToTTYpe, tType, mDefinition, mType);
 		if (result_pattern_InitializerInType_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InitializerInType_2_4_solveCSP_binding[0];
 
@@ -2114,7 +2116,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 					csp);
 			if (result_pattern_InitializerInType_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPM, tType, mTypeToTTYpe, mDefinition, mType };
+				return new Object[] { csp, _this, isApplicableMatch, tPM, mTypeToTTYpe, tType, mDefinition, mType };
 			}
 		}
 		return null;
@@ -2320,16 +2322,16 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("tPM");
 		EObject _localVariable_1 = isApplicableMatch.getObject("tSignature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTTYpe");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToTTYpe");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tType");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tModifier");
 		EObject _localVariable_5 = isApplicableMatch.getObject("tName");
 		EObject _localVariable_6 = isApplicableMatch.getObject("tDefinition");
 		EObject _localVariable_7 = isApplicableMatch.getObject("mType");
 		EObject tmpTPM = _localVariable_0;
 		EObject tmpTSignature = _localVariable_1;
-		EObject tmpTType = _localVariable_2;
-		EObject tmpMTypeToTTYpe = _localVariable_3;
+		EObject tmpMTypeToTTYpe = _localVariable_2;
+		EObject tmpTType = _localVariable_3;
 		EObject tmpTModifier = _localVariable_4;
 		EObject tmpTName = _localVariable_5;
 		EObject tmpTDefinition = _localVariable_6;
@@ -2338,10 +2340,10 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 			TypeGraph tPM = (TypeGraph) tmpTPM;
 			if (tmpTSignature instanceof TMethodSignature) {
 				TMethodSignature tSignature = (TMethodSignature) tmpTSignature;
-				if (tmpTType instanceof TAbstractType) {
-					TAbstractType tType = (TAbstractType) tmpTType;
-					if (tmpMTypeToTTYpe instanceof TypeToTAbstractType) {
-						TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) tmpMTypeToTTYpe;
+				if (tmpMTypeToTTYpe instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) tmpMTypeToTTYpe;
+					if (tmpTType instanceof TAbstractType) {
+						TAbstractType tType = (TAbstractType) tmpTType;
 						if (tmpTModifier instanceof TModifier) {
 							TModifier tModifier = (TModifier) tmpTModifier;
 							if (tmpTName instanceof TMethod) {
@@ -2350,7 +2352,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 									TMethodDefinition tDefinition = (TMethodDefinition) tmpTDefinition;
 									if (tmpMType instanceof AbstractTypeDeclaration) {
 										AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-										return new Object[] { tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName,
+										return new Object[] { tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName,
 												tDefinition, mType, isApplicableMatch };
 									}
 								}
@@ -2364,13 +2366,13 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_11_1_performtransformation_blackBBBBBBBBFBB(TypeGraph tPM,
-			TMethodSignature tSignature, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, TModifier tModifier,
+			TMethodSignature tSignature, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, TModifier tModifier,
 			TMethod tName, TMethodDefinition tDefinition, AbstractTypeDeclaration mType, InitializerInType _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition, mType, csp,
+				return new Object[] { tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType, csp,
 						_this, isApplicableMatch };
 			}
 		}
@@ -2384,27 +2386,27 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		if (result_pattern_InitializerInType_11_1_performtransformation_binding != null) {
 			TypeGraph tPM = (TypeGraph) result_pattern_InitializerInType_11_1_performtransformation_binding[0];
 			TMethodSignature tSignature = (TMethodSignature) result_pattern_InitializerInType_11_1_performtransformation_binding[1];
-			TAbstractType tType = (TAbstractType) result_pattern_InitializerInType_11_1_performtransformation_binding[2];
-			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result_pattern_InitializerInType_11_1_performtransformation_binding[3];
+			TypeToTAbstractType mTypeToTTYpe = (TypeToTAbstractType) result_pattern_InitializerInType_11_1_performtransformation_binding[2];
+			TAbstractType tType = (TAbstractType) result_pattern_InitializerInType_11_1_performtransformation_binding[3];
 			TModifier tModifier = (TModifier) result_pattern_InitializerInType_11_1_performtransformation_binding[4];
 			TMethod tName = (TMethod) result_pattern_InitializerInType_11_1_performtransformation_binding[5];
 			TMethodDefinition tDefinition = (TMethodDefinition) result_pattern_InitializerInType_11_1_performtransformation_binding[6];
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_InitializerInType_11_1_performtransformation_binding[7];
 
 			Object[] result_pattern_InitializerInType_11_1_performtransformation_black = pattern_InitializerInType_11_1_performtransformation_blackBBBBBBBBFBB(
-					tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition, mType, _this,
+					tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType, _this,
 					isApplicableMatch);
 			if (result_pattern_InitializerInType_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InitializerInType_11_1_performtransformation_black[8];
 
-				return new Object[] { tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition, mType, csp,
+				return new Object[] { tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType, csp,
 						_this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InitializerInType_11_1_performtransformation_greenFFFBB(
+	public static final Object[] pattern_InitializerInType_11_1_performtransformation_greenFFBFB(
 			TMethodDefinition tDefinition, AbstractTypeDeclaration mType) {
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		MInitializer mDefinition = ModiscoFactory.eINSTANCE.createMInitializer();
@@ -2414,35 +2416,35 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		mType.getBodyDeclarations().add(mDefinition);
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
-		return new Object[] { mDefinitionToTMember, mDefinition, mBodyToTAnnotation, tDefinition, mType };
+		return new Object[] { mDefinitionToTMember, mDefinition, tDefinition, mBodyToTAnnotation, mType };
 	}
 
 	public static final Object[] pattern_InitializerInType_11_2_collecttranslatedelements_blackBBBBBBB(
 			TMethodSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TModifier tModifier, TMethod tName,
-			MInitializer mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TMethodDefinition tDefinition) {
-		return new Object[] { tSignature, mDefinitionToTMember, tModifier, tName, mDefinition, mBodyToTAnnotation,
-				tDefinition };
+			MInitializer mDefinition, TMethodDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation) {
+		return new Object[] { tSignature, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation };
 	}
 
 	public static final Object[] pattern_InitializerInType_11_2_collecttranslatedelements_greenFBBBBBBB(
 			TMethodSignature tSignature, MDefinitionToTMember mDefinitionToTMember, TModifier tModifier, TMethod tName,
-			MInitializer mDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation, TMethodDefinition tDefinition) {
+			MInitializer mDefinition, TMethodDefinition tDefinition, ASTNodeToTAnnotatable mBodyToTAnnotation) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(tSignature);
 		ruleresult.getCreatedLinkElements().add(mDefinitionToTMember);
 		ruleresult.getTranslatedElements().add(tModifier);
 		ruleresult.getTranslatedElements().add(tName);
 		ruleresult.getCreatedElements().add(mDefinition);
-		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
 		ruleresult.getTranslatedElements().add(tDefinition);
-		return new Object[] { ruleresult, tSignature, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition };
+		ruleresult.getCreatedLinkElements().add(mBodyToTAnnotation);
+		return new Object[] { ruleresult, tSignature, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation };
 	}
 
 	public static final Object[] pattern_InitializerInType_11_3_bookkeepingforedges_blackBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType, EObject mTypeToTTYpe,
-			EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType) {
+			PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject mTypeToTTYpe, EObject tType,
+			EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition, EObject tDefinition,
+			EObject mBodyToTAnnotation, EObject mType) {
 		if (!tPM.equals(tSignature)) {
 			if (!tPM.equals(tType)) {
 				if (!tSignature.equals(tType)) {
@@ -2454,8 +2456,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 										if (!mTypeToTTYpe.equals(tDefinition)) {
 											if (!mDefinitionToTMember.equals(tPM)) {
 												if (!mDefinitionToTMember.equals(tSignature)) {
-													if (!mDefinitionToTMember.equals(tType)) {
-														if (!mDefinitionToTMember.equals(mTypeToTTYpe)) {
+													if (!mDefinitionToTMember.equals(mTypeToTTYpe)) {
+														if (!mDefinitionToTMember.equals(tType)) {
 															if (!mDefinitionToTMember.equals(tModifier)) {
 																if (!mDefinitionToTMember.equals(tName)) {
 																	if (!mDefinitionToTMember.equals(tDefinition)) {
@@ -2474,9 +2476,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 																											if (!mDefinition
 																													.equals(tSignature)) {
 																												if (!mDefinition
-																														.equals(tType)) {
+																														.equals(mTypeToTTYpe)) {
 																													if (!mDefinition
-																															.equals(mTypeToTTYpe)) {
+																															.equals(tType)) {
 																														if (!mDefinition
 																																.equals(mDefinitionToTMember)) {
 																															if (!mDefinition
@@ -2487,44 +2489,44 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 																																			.equals(tDefinition)) {
 																																		if (!mDefinition
 																																				.equals(mType)) {
-																																			if (!mBodyToTAnnotation
+																																			if (!tDefinition
 																																					.equals(tPM)) {
-																																				if (!mBodyToTAnnotation
+																																				if (!tDefinition
 																																						.equals(tSignature)) {
-																																					if (!mBodyToTAnnotation
+																																					if (!tDefinition
 																																							.equals(tType)) {
-																																						if (!mBodyToTAnnotation
-																																								.equals(mTypeToTTYpe)) {
-																																							if (!mBodyToTAnnotation
-																																									.equals(mDefinitionToTMember)) {
+																																						if (!tDefinition
+																																								.equals(tModifier)) {
+																																							if (!tDefinition
+																																									.equals(tName)) {
 																																								if (!mBodyToTAnnotation
-																																										.equals(tModifier)) {
+																																										.equals(tPM)) {
 																																									if (!mBodyToTAnnotation
-																																											.equals(tName)) {
+																																											.equals(tSignature)) {
 																																										if (!mBodyToTAnnotation
-																																												.equals(mDefinition)) {
+																																												.equals(mTypeToTTYpe)) {
 																																											if (!mBodyToTAnnotation
-																																													.equals(tDefinition)) {
+																																													.equals(tType)) {
 																																												if (!mBodyToTAnnotation
-																																														.equals(mType)) {
-																																													if (!tDefinition
-																																															.equals(tPM)) {
-																																														if (!tDefinition
-																																																.equals(tSignature)) {
-																																															if (!tDefinition
-																																																	.equals(tType)) {
-																																																if (!tDefinition
-																																																		.equals(tModifier)) {
-																																																	if (!tDefinition
-																																																			.equals(tName)) {
+																																														.equals(mDefinitionToTMember)) {
+																																													if (!mBodyToTAnnotation
+																																															.equals(tModifier)) {
+																																														if (!mBodyToTAnnotation
+																																																.equals(tName)) {
+																																															if (!mBodyToTAnnotation
+																																																	.equals(mDefinition)) {
+																																																if (!mBodyToTAnnotation
+																																																		.equals(tDefinition)) {
+																																																	if (!mBodyToTAnnotation
+																																																			.equals(mType)) {
 																																																		if (!mType
 																																																				.equals(tPM)) {
 																																																			if (!mType
 																																																					.equals(tSignature)) {
 																																																				if (!mType
-																																																						.equals(tType)) {
+																																																						.equals(mTypeToTTYpe)) {
 																																																					if (!mType
-																																																							.equals(mTypeToTTYpe)) {
+																																																							.equals(tType)) {
 																																																						if (!mType
 																																																								.equals(tModifier)) {
 																																																							if (!mType
@@ -2535,14 +2537,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 																																																											ruleresult,
 																																																											tPM,
 																																																											tSignature,
-																																																											tType,
 																																																											mTypeToTTYpe,
+																																																											tType,
 																																																											mDefinitionToTMember,
 																																																											tModifier,
 																																																											tName,
 																																																											mDefinition,
-																																																											mBodyToTAnnotation,
 																																																											tDefinition,
+																																																											mBodyToTAnnotation,
 																																																											mType };
 																																																								}
 																																																							}
@@ -2604,14 +2606,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_11_3_bookkeepingforedges_greenBBBBBBBBBBBFFFFFFFFFFFFFFFF(
 			PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType, EObject mDefinitionToTMember,
-			EObject tModifier, EObject tName, EObject mDefinition, EObject mBodyToTAnnotation, EObject tDefinition,
+			EObject tModifier, EObject tName, EObject mDefinition, EObject tDefinition, EObject mBodyToTAnnotation,
 			EObject mType) {
 		EMoflonEdge tName__tPM____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPM__tName____methods = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__tDefinition____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mBodyToTAnnotation__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tDefinition____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tDefinition__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mDefinitionToTMember__mDefinition____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2627,8 +2629,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		String tPM__tName____methods_name_prime = "methods";
 		String tType__tSignature____signature_name_prime = "signature";
 		String tDefinition__tModifier____tModifier_name_prime = "tModifier";
-		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String mDefinitionToTMember__tDefinition____target_name_prime = "target";
+		String mBodyToTAnnotation__mDefinition____source_name_prime = "source";
 		String tType__tDefinition____defines_name_prime = "defines";
 		String tDefinition__tType____definedBy_name_prime = "definedBy";
 		String mDefinitionToTMember__mDefinition____source_name_prime = "source";
@@ -2651,12 +2653,12 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tDefinition__tModifier____tModifier.setSrc(tDefinition);
 		tDefinition__tModifier____tModifier.setTrg(tModifier);
 		ruleresult.getTranslatedEdges().add(tDefinition__tModifier____tModifier);
-		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
-		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
-		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		mDefinitionToTMember__tDefinition____target.setSrc(mDefinitionToTMember);
 		mDefinitionToTMember__tDefinition____target.setTrg(tDefinition);
 		ruleresult.getCreatedEdges().add(mDefinitionToTMember__tDefinition____target);
+		mBodyToTAnnotation__mDefinition____source.setSrc(mBodyToTAnnotation);
+		mBodyToTAnnotation__mDefinition____source.setTrg(mDefinition);
+		ruleresult.getCreatedEdges().add(mBodyToTAnnotation__mDefinition____source);
 		tType__tDefinition____defines.setSrc(tType);
 		tType__tDefinition____defines.setTrg(tDefinition);
 		ruleresult.getTranslatedEdges().add(tType__tDefinition____defines);
@@ -2692,8 +2694,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tPM__tName____methods.setName(tPM__tName____methods_name_prime);
 		tType__tSignature____signature.setName(tType__tSignature____signature_name_prime);
 		tDefinition__tModifier____tModifier.setName(tDefinition__tModifier____tModifier_name_prime);
-		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		mDefinitionToTMember__tDefinition____target.setName(mDefinitionToTMember__tDefinition____target_name_prime);
+		mBodyToTAnnotation__mDefinition____source.setName(mBodyToTAnnotation__mDefinition____source_name_prime);
 		tType__tDefinition____defines.setName(tType__tDefinition____defines_name_prime);
 		tDefinition__tType____definedBy.setName(tDefinition__tType____definedBy_name_prime);
 		mDefinitionToTMember__mDefinition____source.setName(mDefinitionToTMember__mDefinition____source_name_prime);
@@ -2705,9 +2707,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
 		return new Object[] { ruleresult, tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType, tName__tPM____model, tPM__tName____methods,
+				tDefinition, mBodyToTAnnotation, mType, tName__tPM____model, tPM__tName____methods,
 				tType__tSignature____signature, tDefinition__tModifier____tModifier,
-				mBodyToTAnnotation__mDefinition____source, mDefinitionToTMember__tDefinition____target,
+				mDefinitionToTMember__tDefinition____target, mBodyToTAnnotation__mDefinition____source,
 				tType__tDefinition____defines, tDefinition__tType____definedBy,
 				mDefinitionToTMember__mDefinition____source, mBodyToTAnnotation__tDefinition____target,
 				mType__mDefinition____bodyDeclarations, mDefinition__mType____abstractTypeDeclaration,
@@ -2716,11 +2718,11 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final void pattern_InitializerInType_11_5_registerobjects_expressionBBBBBBBBBBBBB(
-			InitializerInType _this, PerformRuleResult ruleresult, EObject tPM, EObject tSignature, EObject tType,
-			EObject mTypeToTTYpe, EObject mDefinitionToTMember, EObject tModifier, EObject tName, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject tDefinition, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, tPM, tSignature, tType, mTypeToTTYpe, mDefinitionToTMember, tModifier,
-				tName, mDefinition, mBodyToTAnnotation, tDefinition, mType);
+			InitializerInType _this, PerformRuleResult ruleresult, EObject tPM, EObject tSignature,
+			EObject mTypeToTTYpe, EObject tType, EObject mDefinitionToTMember, EObject tModifier, EObject tName,
+			EObject mDefinition, EObject tDefinition, EObject mBodyToTAnnotation, EObject mType) {
+		_this.registerObjects_BWD(ruleresult, tPM, tSignature, mTypeToTTYpe, tType, mDefinitionToTMember, tModifier,
+				tName, mDefinition, tDefinition, mBodyToTAnnotation, mType);
 
 	}
 
@@ -2814,7 +2816,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InitializerInType_12_2_corematch_blackBBBFBBBFB(TypeGraph tPM,
+	public static final Iterable<Object[]> pattern_InitializerInType_12_2_corematch_blackBBFBBBBFB(TypeGraph tPM,
 			TMethodSignature tSignature, TAbstractType tType, TModifier tModifier, TMethod tName,
 			TMethodDefinition tDefinition, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2825,7 +2827,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 				Type tmpMType = mTypeToTTYpe.getSource();
 				if (tmpMType instanceof AbstractTypeDeclaration) {
 					AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-					_result.add(new Object[] { tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition,
+					_result.add(new Object[] { tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition,
 							mType, match });
 				}
 
@@ -2836,7 +2838,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Iterable<Object[]> pattern_InitializerInType_12_3_findcontext_blackBBBBBBBB(TypeGraph tPM,
-			TMethodSignature tSignature, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, TModifier tModifier,
+			TMethodSignature tSignature, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, TModifier tModifier,
 			TMethod tName, TMethodDefinition tDefinition, AbstractTypeDeclaration mType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (tType.equals(mTypeToTTYpe.getTarget())) {
@@ -2850,7 +2852,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 										if (tSignature.equals(tDefinition.getSignature())) {
 											boolean tModifier_isStatic = tModifier.isIsStatic();
 											if (Boolean.valueOf(tModifier_isStatic).equals(Boolean.valueOf(true))) {
-												_result.add(new Object[] { tPM, tSignature, tType, mTypeToTTYpe,
+												_result.add(new Object[] { tPM, tSignature, mTypeToTTYpe, tType,
 														tModifier, tName, tDefinition, mType });
 											}
 
@@ -2867,7 +2869,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_12_3_findcontext_greenBBBBBBBBFFFFFFFFFFFFFFF(TypeGraph tPM,
-			TMethodSignature tSignature, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, TModifier tModifier,
+			TMethodSignature tSignature, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, TModifier tModifier,
 			TMethod tName, TMethodDefinition tDefinition, AbstractTypeDeclaration mType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge mTypeToTTYpe__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2900,8 +2902,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		String tSignature__tDefinition____definitions_name_prime = "definitions";
 		isApplicableMatch.getAllContextElements().add(tPM);
 		isApplicableMatch.getAllContextElements().add(tSignature);
-		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTTYpe);
+		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(tModifier);
 		isApplicableMatch.getAllContextElements().add(tName);
 		isApplicableMatch.getAllContextElements().add(tDefinition);
@@ -2962,7 +2964,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
 		tDefinition__tSignature____signature.setName(tDefinition__tSignature____signature_name_prime);
 		tSignature__tDefinition____definitions.setName(tSignature__tDefinition____definitions_name_prime);
-		return new Object[] { tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition, mType,
+		return new Object[] { tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType,
 				isApplicableMatch, mTypeToTTYpe__tType____target, tName__tPM____model, tPM__tName____methods,
 				mTypeToTTYpe__mType____source, tType__tSignature____signature, tDefinition__tModifier____tModifier,
 				tType__tPM____model, tPM__tType____allTypes, tType__tDefinition____defines,
@@ -2971,14 +2973,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_12_4_solveCSP_bindingFBBBBBBBBBB(InitializerInType _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TMethodSignature tSignature, TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, TModifier tModifier, TMethod tName, TMethodDefinition tDefinition,
-			AbstractTypeDeclaration mType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tPM, tSignature, tType, mTypeToTTYpe,
+			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TMethodSignature tSignature,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, TModifier tModifier, TMethod tName,
+			TMethodDefinition tDefinition, AbstractTypeDeclaration mType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tPM, tSignature, mTypeToTTYpe, tType,
 				tModifier, tName, tDefinition, mType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName,
+			return new Object[] { csp, _this, isApplicableMatch, tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName,
 					tDefinition, mType };
 		}
 		return null;
@@ -2990,10 +2992,10 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_12_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
 			InitializerInType _this, IsApplicableMatch isApplicableMatch, TypeGraph tPM, TMethodSignature tSignature,
-			TAbstractType tType, TypeToTAbstractType mTypeToTTYpe, TModifier tModifier, TMethod tName,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, TModifier tModifier, TMethod tName,
 			TMethodDefinition tDefinition, AbstractTypeDeclaration mType) {
 		Object[] result_pattern_InitializerInType_12_4_solveCSP_binding = pattern_InitializerInType_12_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, tPM, tSignature, tType, mTypeToTTYpe, tModifier, tName, tDefinition, mType);
+				_this, isApplicableMatch, tPM, tSignature, mTypeToTTYpe, tType, tModifier, tName, tDefinition, mType);
 		if (result_pattern_InitializerInType_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InitializerInType_12_4_solveCSP_binding[0];
 
@@ -3001,7 +3003,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 					csp);
 			if (result_pattern_InitializerInType_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPM, tSignature, tType, mTypeToTTYpe, tModifier,
+				return new Object[] { csp, _this, isApplicableMatch, tPM, tSignature, mTypeToTTYpe, tType, tModifier,
 						tName, tDefinition, mType };
 			}
 		}
@@ -3091,9 +3093,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodSignature tSignature, TAbstractType tType) {
-		TAbstractType __DEC_tSignature_returnType_122104 = tSignature.getReturnType();
-		if (__DEC_tSignature_returnType_122104 != null) {
-			if (!tType.equals(__DEC_tSignature_returnType_122104)) {
+		TAbstractType __DEC_tSignature_returnType_649549 = tSignature.getReturnType();
+		if (__DEC_tSignature_returnType_649549 != null) {
+			if (!tType.equals(__DEC_tSignature_returnType_649549)) {
 				return new Object[] { tSignature, tType };
 			}
 		}
@@ -3103,9 +3105,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_1BB(
 			TMethodSignature tSignature, TMethod tName) {
-		TMethod __DEC_tSignature_signatures_7062 = tSignature.getMethod();
-		if (__DEC_tSignature_signatures_7062 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_7062)) {
+		TMethod __DEC_tSignature_signatures_631135 = tSignature.getMethod();
+		if (__DEC_tSignature_signatures_631135 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_631135)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3115,9 +3117,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_2BB(TModifier tModifier,
 			TAbstractType tType) {
-		for (TAbstractType __DEC_tModifier_tModifier_86741 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_105845 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tType.equals(__DEC_tModifier_tModifier_86741)) {
+			if (!tType.equals(__DEC_tModifier_tModifier_105845)) {
 				return new Object[] { tModifier, tType };
 			}
 		}
@@ -3126,9 +3128,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_3BB(TMethod tName,
 			TypeGraph tPM) {
-		TypeGraph __DEC_tName_methods_969169 = tName.getModel();
-		if (__DEC_tName_methods_969169 != null) {
-			if (!tPM.equals(__DEC_tName_methods_969169)) {
+		TypeGraph __DEC_tName_methods_886202 = tName.getModel();
+		if (__DEC_tName_methods_886202 != null) {
+			if (!tPM.equals(__DEC_tName_methods_886202)) {
 				return new Object[] { tName, tPM };
 			}
 		}
@@ -3138,9 +3140,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_4BB(
 			TMethodDefinition tDefinition, TAbstractType tType) {
-		TAbstractType __DEC_tDefinition_returnType_676570 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_676570 != null) {
-			if (!tType.equals(__DEC_tDefinition_returnType_676570)) {
+		TAbstractType __DEC_tDefinition_returnType_611804 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_611804 != null) {
+			if (!tType.equals(__DEC_tDefinition_returnType_611804)) {
 				return new Object[] { tDefinition, tType };
 			}
 		}
@@ -3150,8 +3152,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_5B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_351562 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_351562 != null) {
+		TModule __DEC_tDefinition_contains_763621 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_763621 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3160,9 +3162,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_20_2_testcorematchandDECs_black_nac_6BB(
 			TMethodDefinition tDefinition, TMethodSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_69870 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_69870 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_69870)) {
+		TSignature __DEC_tDefinition_definitions_170380 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_170380 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_170380)) {
 				return new Object[] { tDefinition, tSignature };
 			}
 		}
@@ -3370,8 +3372,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_21_2_testcorematchandDECs_black_nac_0B(
 			MInitializer mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_209837 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_209837 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_751219 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_751219 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3585,14 +3587,14 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InitializerInType_24_5_matchcorrcontext_blackBFBBB(
+	public static final Iterable<Object[]> pattern_InitializerInType_24_5_matchcorrcontext_blackFBBBB(
 			TAbstractType tType, AbstractTypeDeclaration mType, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (TypeToTAbstractType mTypeToTTYpe : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
 				if (mType.equals(mTypeToTTYpe.getSource())) {
-					_result.add(new Object[] { tType, mTypeToTTYpe, mType, sourceMatch, targetMatch });
+					_result.add(new Object[] { mTypeToTTYpe, tType, mType, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -3616,7 +3618,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		return new Object[] { tPM, tSignature, tType, tModifier, tName, mDefinition, tDefinition, mType, ccMatch };
 	}
 
-	public static final Object[] pattern_InitializerInType_24_6_createcorrespondence_greenFBFBB(
+	public static final Object[] pattern_InitializerInType_24_6_createcorrespondence_greenFBBFB(
 			MInitializer mDefinition, TMethodDefinition tDefinition, CCMatch ccMatch) {
 		MDefinitionToTMember mDefinitionToTMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
@@ -3626,7 +3628,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		mBodyToTAnnotation.setSource(mDefinition);
 		mBodyToTAnnotation.setTarget(tDefinition);
 		ccMatch.getCreateCorr().add(mBodyToTAnnotation);
-		return new Object[] { mDefinitionToTMember, mDefinition, mBodyToTAnnotation, tDefinition, ccMatch };
+		return new Object[] { mDefinitionToTMember, mDefinition, tDefinition, mBodyToTAnnotation, ccMatch };
 	}
 
 	public static final Object[] pattern_InitializerInType_24_7_addtoreturnedresult_blackBB(
@@ -3651,8 +3653,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_27_1_matchtggpattern_black_nac_0B(MInitializer mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_101873 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_101873 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_919702 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_919702 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3681,9 +3683,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_0BB(
 			TMethodSignature tSignature, TAbstractType tType) {
-		TAbstractType __DEC_tSignature_returnType_631044 = tSignature.getReturnType();
-		if (__DEC_tSignature_returnType_631044 != null) {
-			if (!tType.equals(__DEC_tSignature_returnType_631044)) {
+		TAbstractType __DEC_tSignature_returnType_108356 = tSignature.getReturnType();
+		if (__DEC_tSignature_returnType_108356 != null) {
+			if (!tType.equals(__DEC_tSignature_returnType_108356)) {
 				return new Object[] { tSignature, tType };
 			}
 		}
@@ -3693,9 +3695,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_1BB(
 			TMethodSignature tSignature, TMethod tName) {
-		TMethod __DEC_tSignature_signatures_102345 = tSignature.getMethod();
-		if (__DEC_tSignature_signatures_102345 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_102345)) {
+		TMethod __DEC_tSignature_signatures_424753 = tSignature.getMethod();
+		if (__DEC_tSignature_signatures_424753 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_424753)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3705,9 +3707,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_2BB(TModifier tModifier,
 			TAbstractType tType) {
-		for (TAbstractType __DEC_tModifier_tModifier_792275 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_564740 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tType.equals(__DEC_tModifier_tModifier_792275)) {
+			if (!tType.equals(__DEC_tModifier_tModifier_564740)) {
 				return new Object[] { tModifier, tType };
 			}
 		}
@@ -3716,9 +3718,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_3BB(TMethod tName,
 			TypeGraph tPM) {
-		TypeGraph __DEC_tName_methods_268885 = tName.getModel();
-		if (__DEC_tName_methods_268885 != null) {
-			if (!tPM.equals(__DEC_tName_methods_268885)) {
+		TypeGraph __DEC_tName_methods_205282 = tName.getModel();
+		if (__DEC_tName_methods_205282 != null) {
+			if (!tPM.equals(__DEC_tName_methods_205282)) {
 				return new Object[] { tName, tPM };
 			}
 		}
@@ -3728,9 +3730,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_4BB(
 			TMethodDefinition tDefinition, TAbstractType tType) {
-		TAbstractType __DEC_tDefinition_returnType_612454 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_612454 != null) {
-			if (!tType.equals(__DEC_tDefinition_returnType_612454)) {
+		TAbstractType __DEC_tDefinition_returnType_104845 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_104845 != null) {
+			if (!tType.equals(__DEC_tDefinition_returnType_104845)) {
 				return new Object[] { tDefinition, tType };
 			}
 		}
@@ -3740,8 +3742,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_5B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_246649 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_246649 != null) {
+		TModule __DEC_tDefinition_contains_674816 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_674816 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3750,9 +3752,9 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 
 	public static final Object[] pattern_InitializerInType_28_1_matchtggpattern_black_nac_6BB(
 			TMethodDefinition tDefinition, TMethodSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_19821 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_19821 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_19821)) {
+		TSignature __DEC_tDefinition_definitions_504115 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_504115 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_504115)) {
 				return new Object[] { tDefinition, tSignature };
 			}
 		}
@@ -3938,13 +3940,13 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_29_3_solveCSP_bindingFBBBBBBB(InitializerInType _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TAbstractType tType, TypeToTAbstractType mTypeToTTYpe,
+			IsApplicableMatch isApplicableMatch, TypeGraph tPM, TypeToTAbstractType mTypeToTTYpe, TAbstractType tType,
 			AbstractTypeDeclaration mType, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tPM, tType, mTypeToTTYpe, mType,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tPM, mTypeToTTYpe, tType, mType,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tPM, tType, mTypeToTTYpe, mType, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tPM, mTypeToTTYpe, tType, mType, ruleResult };
 		}
 		return null;
 	}
@@ -3954,10 +3956,11 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 	}
 
 	public static final Object[] pattern_InitializerInType_29_3_solveCSP_bindingAndBlackFBBBBBBB(
-			InitializerInType _this, IsApplicableMatch isApplicableMatch, TypeGraph tPM, TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, AbstractTypeDeclaration mType, ModelgeneratorRuleResult ruleResult) {
+			InitializerInType _this, IsApplicableMatch isApplicableMatch, TypeGraph tPM,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, AbstractTypeDeclaration mType,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_InitializerInType_29_3_solveCSP_binding = pattern_InitializerInType_29_3_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, tPM, tType, mTypeToTTYpe, mType, ruleResult);
+				_this, isApplicableMatch, tPM, mTypeToTTYpe, tType, mType, ruleResult);
 		if (result_pattern_InitializerInType_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InitializerInType_29_3_solveCSP_binding[0];
 
@@ -3965,7 +3968,7 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 					csp);
 			if (result_pattern_InitializerInType_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tPM, tType, mTypeToTTYpe, mType, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tPM, mTypeToTTYpe, tType, mType, ruleResult };
 			}
 		}
 		return null;
@@ -3978,14 +3981,15 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		return _result;
 	}
 
-	public static final Object[] pattern_InitializerInType_29_5_checknacs_blackBBBB(TypeGraph tPM, TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, AbstractTypeDeclaration mType) {
-		return new Object[] { tPM, tType, mTypeToTTYpe, mType };
+	public static final Object[] pattern_InitializerInType_29_5_checknacs_blackBBBB(TypeGraph tPM,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, AbstractTypeDeclaration mType) {
+		return new Object[] { tPM, mTypeToTTYpe, tType, mType };
 	}
 
-	public static final Object[] pattern_InitializerInType_29_6_perform_blackBBBBB(TypeGraph tPM, TAbstractType tType,
-			TypeToTAbstractType mTypeToTTYpe, AbstractTypeDeclaration mType, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tPM, tType, mTypeToTTYpe, mType, ruleResult };
+	public static final Object[] pattern_InitializerInType_29_6_perform_blackBBBBB(TypeGraph tPM,
+			TypeToTAbstractType mTypeToTTYpe, TAbstractType tType, AbstractTypeDeclaration mType,
+			ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { tPM, mTypeToTTYpe, tType, mType, ruleResult };
 	}
 
 	public static final Object[] pattern_InitializerInType_29_6_perform_greenBFBFFFFFFBBB(TypeGraph tPM,
@@ -3995,8 +3999,8 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
 		TMethod tName = BasicFactory.eINSTANCE.createTMethod();
 		MInitializer mDefinition = ModiscoFactory.eINSTANCE.createMInitializer();
-		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		TMethodDefinition tDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
+		ASTNodeToTAnnotatable mBodyToTAnnotation = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		boolean tModifier_isStatic_prime = Boolean.valueOf(true);
 		Object _localVariable_0 = csp.getValue("tName", "tName");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
@@ -4011,22 +4015,22 @@ public class InitializerInTypeImpl extends AbstractRuleImpl implements Initializ
 		mDefinitionToTMember.setSource(mDefinition);
 		mType.getBodyDeclarations().add(mDefinition);
 		ruleResult.getSourceObjects().add(mDefinition);
-		mBodyToTAnnotation.setSource(mDefinition);
-		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
 		tDefinition.setTModifier(tModifier);
 		mDefinitionToTMember.setTarget(tDefinition);
 		tType.getDefines().add(tDefinition);
-		mBodyToTAnnotation.setTarget(tDefinition);
 		tDefinition.setSignature(tSignature);
 		ruleResult.getTargetObjects().add(tDefinition);
+		mBodyToTAnnotation.setSource(mDefinition);
+		mBodyToTAnnotation.setTarget(tDefinition);
+		ruleResult.getCorrObjects().add(mBodyToTAnnotation);
 		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		String tName_tName_prime = (String) _localVariable_0;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_1);
 		tName.setTName(tName_tName_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition,
-				mBodyToTAnnotation, tDefinition, mType, ruleResult, csp };
+		return new Object[] { tPM, tSignature, tType, mDefinitionToTMember, tModifier, tName, mDefinition, tDefinition,
+				mBodyToTAnnotation, mType, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InitializerInType_29_7_expressionFB(

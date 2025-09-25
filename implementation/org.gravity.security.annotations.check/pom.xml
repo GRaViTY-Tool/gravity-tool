@@ -11,7 +11,8 @@
   <groupId>org.gravity</groupId>
   <artifactId>org.gravity.security.annotations.check</artifactId>
   <version>1.0.3-SNAPSHOT</version>
-  <packaging>eclipse-plugin</packaging>	<build>
+  <packaging>eclipse-plugin</packaging>
+  <!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -33,7 +34,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build>-->
 	<dependencies>
 		<dependency>
 			<groupId>org.gravity</groupId>

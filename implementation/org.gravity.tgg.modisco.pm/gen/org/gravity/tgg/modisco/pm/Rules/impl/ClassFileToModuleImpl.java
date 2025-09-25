@@ -672,7 +672,7 @@ public class ClassFileToModuleImpl extends AbstractRuleImpl implements ClassFile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_964(EMoflonEdge _edge_modules) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_modules) {
 
 		Object[] result1_bindingAndBlack = ClassFileToModuleImpl
 				.pattern_ClassFileToModule_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class ClassFileToModuleImpl extends AbstractRuleImpl implements ClassFile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1059(EMoflonEdge _edge_classFiles) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_54(EMoflonEdge _edge_classFiles) {
 
 		Object[] result1_bindingAndBlack = ClassFileToModuleImpl
 				.pattern_ClassFileToModule_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1192,10 +1192,10 @@ public class ClassFileToModuleImpl extends AbstractRuleImpl implements ClassFile
 				return null;
 			case RulesPackage.CLASS_FILE_TO_MODULE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_964__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_964((EMoflonEdge) arguments.get(0));
-			case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1059__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1059((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_52__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_52((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_FILE_TO_MODULE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_54__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_54((EMoflonEdge) arguments.get(0));
 			case RulesPackage.CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.CLASS_FILE_TO_MODULE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

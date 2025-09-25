@@ -107,8 +107,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject primitives, EObject mModelToTPG,
-			EObject proxies, EObject tPG);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject primitives, EObject proxies, EObject mModelToTPG,
+			EObject mModel, EObject tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,8 +189,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModel, EObject primitives, EObject mModelToTPG,
-			EObject proxies, EObject tPG);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject primitives, EObject proxies, EObject mModelToTPG,
+			EObject mModel, EObject tPG);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,7 +206,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_MGravityModel_12(MGravityModel mModel);
+	EObjectContainer isAppropriate_FWD_MGravityModel_0(MGravityModel mModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1012(EMoflonEdge _edge_modules);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_22(EMoflonEdge _edge_modules);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,7 +246,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MGravityModel mModel, TModule primitives, TModule proxies, TypeGraph tPG,
+	CSP isApplicable_solveCsp_CC(TModule primitives, TModule proxies, MGravityModel mModel, TypeGraph tPG,
 			Match sourceMatch, Match targetMatch);
 
 	/**

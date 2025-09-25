@@ -28,6 +28,7 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
+import org.gravity.parser.jdt.pm.JDT2PMConverter;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGConverter;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.BasicPackage;
@@ -61,6 +62,21 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 		super(name, project);
 	}
 
+	@Test
+	public void testJDTbasedTrafo() {
+		final var converter = new JDT2PMConverter(this.project);
+		converter.convertProject(new NullProgressMonitor());
+
+		final var pm = converter.getPG();
+		if (JSON_CHECKS) {
+			final var expectJsonFile = this.project.getProject().getFile("expect.json");
+			if (expectJsonFile.exists()) {
+				this.checkModel(pm, expectJsonFile);
+			}
+		}
+		this.checkModel(pm);
+	}
+	
 	/**
 	 * Transforms every input project and checks the created model
 	 *

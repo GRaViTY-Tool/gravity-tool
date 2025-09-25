@@ -764,7 +764,7 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1041(EMoflonEdge _edge_ownedComment) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_132(EMoflonEdge _edge_ownedComment) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationWithModifierImpl
 				.pattern_ConstructorDec2OperationWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -824,7 +824,7 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1140(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_144(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationWithModifierImpl
 				.pattern_ConstructorDec2OperationWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -899,29 +899,29 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 			return ruleResult;
 		}
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -985,29 +985,29 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 			return ruleResult;
 		}
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1413,10 +1413,10 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 				return null;
 			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1041__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_1041((EMoflonEdge) arguments.get(0));
-			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1140__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1140((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_132__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_132((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_144__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_144((EMoflonEdge) arguments.get(0));
 			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2421,9 +2421,9 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationWithModifier_20_2_testcorematchandDECs_black_nac_0BB(
 			Comment comment, Operation feature) {
-		for (Element __DEC_comment_annotatedElement_237700 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_237700)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_237700)) {
+		for (Element __DEC_comment_annotatedElement_597261 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_597261)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_597261)) {
 					return new Object[] { comment, feature };
 				}
 			}
@@ -2814,9 +2814,9 @@ public class ConstructorDec2OperationWithModifierImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationWithModifier_28_1_matchtggpattern_black_nac_0BB(
 			Comment comment, Operation feature) {
-		for (Element __DEC_comment_annotatedElement_447681 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_447681)) {
-				if (!feature.equals(__DEC_comment_annotatedElement_447681)) {
+		for (Element __DEC_comment_annotatedElement_34549 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_34549)) {
+				if (!feature.equals(__DEC_comment_annotatedElement_34549)) {
 					return new Object[] { comment, feature };
 				}
 			}

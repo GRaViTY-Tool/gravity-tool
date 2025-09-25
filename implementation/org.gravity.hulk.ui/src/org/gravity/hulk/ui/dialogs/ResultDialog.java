@@ -24,8 +24,8 @@ import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
-import org.gravity.hulk.HDetector;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.detection.HDetector;
 
 public class ResultDialog extends Dialog {
 

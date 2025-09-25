@@ -777,7 +777,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_973(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_98(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = FieldAccessReadImpl
 				.pattern_FieldAccessRead_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -835,7 +835,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1068(EMoflonEdge _edge_mAbstractFieldAccess) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_mAbstractFieldAccess) {
 
 		Object[] result1_bindingAndBlack = FieldAccessReadImpl
 				.pattern_FieldAccessRead_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1126,8 +1126,8 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 				.pattern_FieldAccessRead_29_2_isapplicablecore_blackFFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mMemberToTMemberList = (RuleEntryList) result2_black[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
-			MDefinition mMember = (MDefinition) result2_black[2];
-			TMember tMember = (TMember) result2_black[3];
+			TMember tMember = (TMember) result2_black[2];
+			MDefinition mMember = (MDefinition) result2_black[3];
 			//nothing RuleEntryList mMethodToTMethodList = (RuleEntryList) result2_black[4];
 			VariableDeclarationFragment varDeclFrag = (VariableDeclarationFragment) result2_black[5];
 			MFieldDefinition mField = (MFieldDefinition) result2_black[6];
@@ -1300,10 +1300,10 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 				return null;
 			case RulesPackage.FIELD_ACCESS_READ___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_BWD_EMOFLON_EDGE_973__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_973((EMoflonEdge) arguments.get(0));
-			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1068__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1068((EMoflonEdge) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_BWD_EMOFLON_EDGE_98__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_98((EMoflonEdge) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_FWD_EMOFLON_EDGE_104__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_104((EMoflonEdge) arguments.get(0));
 			case RulesPackage.FIELD_ACCESS_READ___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.FIELD_ACCESS_READ___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3094,10 +3094,10 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	public static final Object[] pattern_FieldAccessRead_21_2_testcorematchandDECs_black_nac_0BBB(
 			MSingleVariableAccess mAccess, MFieldDefinition mField, MDefinition mMember) {
 		if (!mField.equals(mMember)) {
-			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_219355 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_743417 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, MDefinition.class, "mAbstractFieldAccess")) {
-				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_219355)) {
-					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_219355)) {
+				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_743417)) {
+					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_743417)) {
 						return new Object[] { mAccess, mField, mMember };
 					}
 				}
@@ -3108,7 +3108,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 
 	public static final Object[] pattern_FieldAccessRead_21_2_testcorematchandDECs_black_nac_1B(
 			MSingleVariableAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_741181 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_451176 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}
@@ -3440,10 +3440,10 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	public static final Object[] pattern_FieldAccessRead_27_1_matchtggpattern_black_nac_0BBB(
 			MSingleVariableAccess mAccess, MFieldDefinition mField, MDefinition mMember) {
 		if (!mField.equals(mMember)) {
-			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_658801 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_219946 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, MDefinition.class, "mAbstractFieldAccess")) {
-				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_658801)) {
-					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_658801)) {
+				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_219946)) {
+					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_219946)) {
 						return new Object[] { mAccess, mField, mMember };
 					}
 				}
@@ -3454,7 +3454,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 
 	public static final Object[] pattern_FieldAccessRead_27_1_matchtggpattern_black_nac_1B(
 			MSingleVariableAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_962768 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_370329 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}
@@ -3550,17 +3550,17 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	}
 
 	public static final Object[] pattern_FieldAccessRead_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
+			ModelgeneratorRuleResult ruleResult, TMember tMember) {
+		if (ruleResult.getTargetObjects().contains(tMember)) {
+			return new Object[] { ruleResult, tMember };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_FieldAccessRead_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TMember tMember) {
-		if (ruleResult.getTargetObjects().contains(tMember)) {
-			return new Object[] { ruleResult, tMember };
+			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
 		}
 		return null;
 	}
@@ -3606,17 +3606,17 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 					for (EObject tmpMMemberToTMember : mMemberToTMemberList.getEntryObjects()) {
 						if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 							MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-							BodyDeclaration tmpMMember = mMemberToTMember.getSource();
-							if (tmpMMember instanceof MDefinition) {
-								MDefinition mMember = (MDefinition) tmpMMember;
-								TMember tMember = mMemberToTMember.getTarget();
-								if (tMember != null) {
+							TMember tMember = mMemberToTMember.getTarget();
+							if (tMember != null) {
+								BodyDeclaration tmpMMember = mMemberToTMember.getSource();
+								if (tmpMMember instanceof MDefinition) {
+									MDefinition mMember = (MDefinition) tmpMMember;
 									if (pattern_FieldAccessRead_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 											mMemberToTMember) == null) {
 										if (pattern_FieldAccessRead_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-												mMember) == null) {
+												tMember) == null) {
 											if (pattern_FieldAccessRead_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-													tMember) == null) {
+													mMember) == null) {
 												for (EObject tmpMMethodToTMethod : mMethodToTMethodList
 														.getEntryObjects()) {
 													if (tmpMMethodToTMethod instanceof MDefinitionToTMember) {
@@ -3647,8 +3647,8 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 																										new Object[] {
 																												mMemberToTMemberList,
 																												mMemberToTMember,
-																												mMember,
 																												tMember,
+																												mMember,
 																												mMethodToTMethodList,
 																												varDeclFrag,
 																												mField,

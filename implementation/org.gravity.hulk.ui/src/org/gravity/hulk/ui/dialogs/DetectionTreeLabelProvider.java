@@ -3,8 +3,8 @@ package org.gravity.hulk.ui.dialogs;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
+import org.gravity.hulk.detection.HDetector;
 import org.gravity.hulk.ui.Messages;
 
 /**

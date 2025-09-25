@@ -754,7 +754,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Property_12(Property feature) {
+	public EObjectContainer isAppropriate_BWD_Property_0(Property feature) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -811,7 +811,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1159(EMoflonEdge _edge_variablesContainer) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_155(EMoflonEdge _edge_variablesContainer) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -881,21 +881,21 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
 		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
@@ -962,21 +962,21 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
 
-		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
-		var_feature_visibility.setType("uml.VisibilityKind");
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
 		var_modifier_visibility.setType("java.VisibilityKind");
+
+		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
+		var_feature_visibility.setType("uml.VisibilityKind");
 
 		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
 		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
@@ -1374,10 +1374,10 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 				return null;
 			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_12__PROPERTY:
-				return isAppropriate_BWD_Property_12((Property) arguments.get(0));
-			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1159__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1159((EMoflonEdge) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_0__PROPERTY:
+				return isAppropriate_BWD_Property_0((Property) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_155__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_155((EMoflonEdge) arguments.get(0));
 			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2368,8 +2368,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Property feature) {
-		Type __DEC_feature_type_999836 = feature.getType();
-		if (__DEC_feature_type_999836 != null) {
+		Type __DEC_feature_type_712296 = feature.getType();
+		if (__DEC_feature_type_712296 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2487,9 +2487,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_21_2_testcorematchandDECs_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_20756 : bodyDeclaration
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_197136 : bodyDeclaration
 				.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_20756)) {
+			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_197136)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2735,9 +2735,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_27_1_matchtggpattern_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_513778 : bodyDeclaration
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_3192 : bodyDeclaration
 				.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_513778)) {
+			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_3192)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2769,8 +2769,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			Property feature) {
-		Type __DEC_feature_type_605925 = feature.getType();
-		if (__DEC_feature_type_605925 != null) {
+		Type __DEC_feature_type_625587 = feature.getType();
+		if (__DEC_feature_type_625587 != null) {
 			return new Object[] { feature };
 		}
 

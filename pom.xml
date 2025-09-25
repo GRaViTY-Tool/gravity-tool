@@ -24,8 +24,8 @@
   </scm>
 
   <properties>
-    <tycho-version>4.0.8</tycho-version>
-    <jacoco.version>0.8.11</jacoco.version>
+    <tycho-version>4.0.13</tycho-version>
+    <jacoco.version>0.8.13</jacoco.version>
     <dependency-plugin>3.6.1</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
@@ -60,7 +60,7 @@
     <module>build/org.gravity.license.epl</module>
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.ui</module>
-    <module>implementation/org.gravity.goblin</module>
+    <!--<module>implementation/org.gravity.goblin</module>--><!--deprecate-->
     <module>implementation/org.gravity.headless</module>
     <module>implementation/org.gravity.hulk</module>
     <module>implementation/org.gravity.hulk.annotations</module>
@@ -106,9 +106,9 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-        <!--<configuration>
+        <configuration>
           <pomDependencies>consider</pomDependencies>
-        </configuration>-->
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -174,9 +174,9 @@
 
   <repositories>
     <repository>
-      <id>Eclipse 2024-03</id>
+      <id>Eclipse 2025-09</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2024-03</url>
+      <url>https://download.eclipse.org/releases/2025-09</url>
     </repository>
     <repository>
       <id>Eclipse 2023-06</id>

@@ -96,7 +96,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNodeToTAnnotatable aSTNodeToTAnnotable,
-			BodyDeclaration astNode, TAnnotatable tAnnotable, org.eclipse.modisco.java.Annotation Annotation);
+			BodyDeclaration astNode, org.eclipse.modisco.java.Annotation Annotation, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,7 +113,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject aSTNodeToTAnnotable, EObject astNode,
-			EObject AnnotationToTAnnotation, EObject tAnnotable, EObject tAnnotation, EObject Annotation);
+			EObject AnnotationToTAnnotation, EObject tAnnotation, EObject Annotation, EObject tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAnnotatable tAnnotable, TAnnotation tAnnotation);
+	boolean isAppropriate_BWD(Match match, TAnnotation tAnnotation, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAnnotatable tAnnotable, TAnnotation tAnnotation);
+	void registerObjectsToMatch_BWD(Match match, TAnnotation tAnnotation, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotatable tAnnotable, TAnnotation tAnnotation);
+	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotation tAnnotation, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +178,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNodeToTAnnotatable aSTNodeToTAnnotable,
-			BodyDeclaration astNode, TAnnotatable tAnnotable, TAnnotation tAnnotation);
+			BodyDeclaration astNode, TAnnotation tAnnotation, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,7 +195,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject aSTNodeToTAnnotable, EObject astNode,
-			EObject AnnotationToTAnnotation, EObject tAnnotable, EObject tAnnotation, EObject Annotation);
+			EObject AnnotationToTAnnotation, EObject tAnnotation, EObject Annotation, EObject tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +211,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1004(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1101(EMoflonEdge _edge_annotations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_annotations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +251,9 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(BodyDeclaration astNode, TAnnotatable tAnnotable, TAnnotation tAnnotation,
-			org.eclipse.modisco.java.Annotation Annotation, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(BodyDeclaration astNode, TAnnotation tAnnotation,
+			org.eclipse.modisco.java.Annotation Annotation, TAnnotatable tAnnotable, Match sourceMatch,
+			Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +277,7 @@ public interface Annotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAnnotatable tAnnotable, TAnnotation tAnnotation);
+	boolean checkDEC_BWD(TAnnotation tAnnotation, TAnnotatable tAnnotable);
 
 	/**
 	 * <!-- begin-user-doc -->

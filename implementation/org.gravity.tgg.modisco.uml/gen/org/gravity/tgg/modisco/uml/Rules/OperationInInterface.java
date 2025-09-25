@@ -97,9 +97,9 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element c2c, InterfaceDeclaration classDec,
-			ASTNode2Element bd2ne, Interface umlClass);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation feature, ASTNode2Element bd2ne,
+			ASTNode2Element c2c, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			InterfaceDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject c2c,
-			EObject classDec, EObject bd2ne, EObject umlClass);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject c2c,
+			EObject umlClass, EObject bodyDeclaration, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +180,9 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element c2c, InterfaceDeclaration classDec,
-			ASTNode2Element bd2ne, Interface umlClass);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, ASTNode2Element bd2ne,
+			ASTNode2Element c2c, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			InterfaceDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bodyDeclaration, EObject c2c,
-			EObject classDec, EObject bd2ne, EObject umlClass);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject c2c,
+			EObject umlClass, EObject bodyDeclaration, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1040(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_102(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1139(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_109(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, MAbstractMethodDefinition bodyDeclaration,
-			InterfaceDeclaration classDec, Interface umlClass, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Operation feature, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			InterfaceDeclaration classDec, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,9 +297,9 @@ public interface OperationInInterface extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element c2c, InterfaceDeclaration classDec,
-			ASTNode2Element bd2ne, Interface umlClass, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, ASTNode2Element bd2ne,
+			ASTNode2Element c2c, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			InterfaceDeclaration classDec, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

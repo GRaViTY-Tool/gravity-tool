@@ -163,45 +163,44 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		}
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result1_bindingAndBlack[0];
 		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[1];
-		Modifier mModifier = (Modifier) result1_bindingAndBlack[2];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[3];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[2];
+		Modifier mModifier = (Modifier) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = TypesVisibilityImpl
-				.pattern_TypesVisibility_1_1_performtransformation_greenFBFBB(mModifier, tType, csp);
-		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[0];
-		TModifier tModifier = (TModifier) result1_green[2];
+		Object[] result1_green = TypesVisibilityImpl.pattern_TypesVisibility_1_1_performtransformation_greenFBFBB(tType,
+				mModifier, csp);
+		TModifier tModifier = (TModifier) result1_green[0];
+		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[2];
 
 		Object[] result2_black = TypesVisibilityImpl.pattern_TypesVisibility_1_2_collecttranslatedelements_blackBBB(
-				mModifierToTModifier, mModifier, tModifier);
+				tModifier, mModifierToTModifier, mModifier);
 		if (result2_black == null) {
-			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[mModifierToTModifier] = " + mModifierToTModifier
-							+ ", " + "[mModifier] = " + mModifier + ", " + "[tModifier] = " + tModifier + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModifier] = " + tModifier + ", "
+					+ "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		Object[] result2_green = TypesVisibilityImpl.pattern_TypesVisibility_1_2_collecttranslatedelements_greenFBBB(
-				mModifierToTModifier, mModifier, tModifier);
+				tModifier, mModifierToTModifier, mModifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypesVisibilityImpl.pattern_TypesVisibility_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mType, mTypeToTType, mModifierToTModifier, mModifier, tModifier, tType);
+				ruleresult, mType, mTypeToTType, tModifier, tType, mModifierToTModifier, mModifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-					+ "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[mModifier] = " + mModifier + ", "
-					+ "[tModifier] = " + tModifier + ", " + "[tType] = " + tType + ".");
+					+ ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tModifier] = "
+					+ tModifier + ", " + "[tType] = " + tType + ", " + "[mModifierToTModifier] = "
+					+ mModifierToTModifier + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		TypesVisibilityImpl.pattern_TypesVisibility_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mType,
-				mModifierToTModifier, mModifier, tModifier, tType);
+				tModifier, tType, mModifierToTModifier, mModifier);
 		//nothing EMoflonEdge mType__mModifier____modifier = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge mModifier__mType____bodyDeclaration = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tType__tModifier____tModifier = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tType__tModifier____tModifier = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		TypesVisibilityImpl.pattern_TypesVisibility_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mType,
-				mTypeToTType, mModifierToTModifier, mModifier, tModifier, tType);
+				mTypeToTType, tModifier, tType, mModifierToTModifier, mModifier);
 		return TypesVisibilityImpl.pattern_TypesVisibility_1_6_expressionFB(ruleresult);
 	}
 
@@ -231,29 +230,29 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		}
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_binding[0];
 		Modifier mModifier = (Modifier) result2_binding[1];
-		for (Object[] result2_black : TypesVisibilityImpl.pattern_TypesVisibility_2_2_corematch_blackBFBFB(mType,
+		for (Object[] result2_black : TypesVisibilityImpl.pattern_TypesVisibility_2_2_corematch_blackBFFBB(mType,
 				mModifier, match)) {
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[1];
-			TAbstractType tType = (TAbstractType) result2_black[3];
+			TAbstractType tType = (TAbstractType) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : TypesVisibilityImpl.pattern_TypesVisibility_2_3_findcontext_blackBBBB(mType,
-					mTypeToTType, mModifier, tType)) {
+					mTypeToTType, tType, mModifier)) {
 				Object[] result3_green = TypesVisibilityImpl
-						.pattern_TypesVisibility_2_3_findcontext_greenBBBBFFFFF(mType, mTypeToTType, mModifier, tType);
+						.pattern_TypesVisibility_2_3_findcontext_greenBBBBFFFFF(mType, mTypeToTType, tType, mModifier);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mType__mModifier____modifier = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mModifier__mType____bodyDeclaration = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mType__mModifier____modifier = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mModifier__mType____bodyDeclaration = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = TypesVisibilityImpl
 						.pattern_TypesVisibility_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, mType,
-								mTypeToTType, mModifier, tType);
+								mTypeToTType, tType, mModifier);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mType] = " + mType + ", "
-							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[mModifier] = " + mModifier + ", "
-							+ "[tType] = " + tType + ".");
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", " + "[mModifier] = "
+							+ mModifier + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -323,7 +322,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType,
-			TypeToTAbstractType mTypeToTType, Modifier mModifier, TAbstractType tType) {// Create CSP
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, Modifier mModifier) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -360,8 +359,8 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
-		isApplicableMatch.registerObject("mModifier", mModifier);
 		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mModifier", mModifier);
 		return csp;
 	}
 
@@ -380,13 +379,13 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType,
-			EObject mModifierToTModifier, EObject mModifier, EObject tModifier, EObject tType) {
+			EObject tModifier, EObject tType, EObject mModifierToTModifier, EObject mModifier) {
 		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
-		ruleresult.registerObject("mModifier", mModifier);
 		ruleresult.registerObject("tModifier", tModifier);
 		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
+		ruleresult.registerObject("mModifier", mModifier);
 
 	}
 
@@ -471,41 +470,40 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = TypesVisibilityImpl
-				.pattern_TypesVisibility_11_1_performtransformation_greenBFFBB(mType, tModifier, csp);
-		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[1];
-		Modifier mModifier = (Modifier) result1_green[2];
+				.pattern_TypesVisibility_11_1_performtransformation_greenBBFFB(mType, tModifier, csp);
+		MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result1_green[2];
+		Modifier mModifier = (Modifier) result1_green[3];
 
 		Object[] result2_black = TypesVisibilityImpl.pattern_TypesVisibility_11_2_collecttranslatedelements_blackBBB(
-				mModifierToTModifier, mModifier, tModifier);
+				tModifier, mModifierToTModifier, mModifier);
 		if (result2_black == null) {
-			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[mModifierToTModifier] = " + mModifierToTModifier
-							+ ", " + "[mModifier] = " + mModifier + ", " + "[tModifier] = " + tModifier + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModifier] = " + tModifier + ", "
+					+ "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		Object[] result2_green = TypesVisibilityImpl.pattern_TypesVisibility_11_2_collecttranslatedelements_greenFBBB(
-				mModifierToTModifier, mModifier, tModifier);
+				tModifier, mModifierToTModifier, mModifier);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypesVisibilityImpl.pattern_TypesVisibility_11_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, mType, mTypeToTType, mModifierToTModifier, mModifier, tModifier, tType);
+				ruleresult, mType, mTypeToTType, tModifier, tType, mModifierToTModifier, mModifier);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-					+ "[mModifierToTModifier] = " + mModifierToTModifier + ", " + "[mModifier] = " + mModifier + ", "
-					+ "[tModifier] = " + tModifier + ", " + "[tType] = " + tType + ".");
+					+ ", " + "[mType] = " + mType + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tModifier] = "
+					+ tModifier + ", " + "[tType] = " + tType + ", " + "[mModifierToTModifier] = "
+					+ mModifierToTModifier + ", " + "[mModifier] = " + mModifier + ".");
 		}
 		TypesVisibilityImpl.pattern_TypesVisibility_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mType,
-				mModifierToTModifier, mModifier, tModifier, tType);
+				tModifier, tType, mModifierToTModifier, mModifier);
 		//nothing EMoflonEdge mType__mModifier____modifier = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge mModifier__mType____bodyDeclaration = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge tType__tModifier____tModifier = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge mModifierToTModifier__tModifier____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge tType__tModifier____tModifier = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mModifierToTModifier__mModifier____source = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		TypesVisibilityImpl.pattern_TypesVisibility_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, mType,
-				mTypeToTType, mModifierToTModifier, mModifier, tModifier, tType);
+				mTypeToTType, tModifier, tType, mModifierToTModifier, mModifier);
 		return TypesVisibilityImpl.pattern_TypesVisibility_11_6_expressionFB(ruleresult);
 	}
 
@@ -683,13 +681,13 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType,
-			EObject mModifierToTModifier, EObject mModifier, EObject tModifier, EObject tType) {
+			EObject tModifier, EObject tType, EObject mModifierToTModifier, EObject mModifier) {
 		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
-		ruleresult.registerObject("mModifier", mModifier);
 		ruleresult.registerObject("tModifier", tModifier);
 		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mModifierToTModifier", mModifierToTModifier);
+		ruleresult.registerObject("mModifier", mModifier);
 
 	}
 
@@ -708,7 +706,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1029(EMoflonEdge _edge_tModifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_tModifier) {
 
 		Object[] result1_bindingAndBlack = TypesVisibilityImpl
 				.pattern_TypesVisibility_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -765,7 +763,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1127(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = TypesVisibilityImpl
 				.pattern_TypesVisibility_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -966,17 +964,17 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result2_bindingAndBlack[0];
-		Modifier mModifier = (Modifier) result2_bindingAndBlack[1];
-		TModifier tModifier = (TModifier) result2_bindingAndBlack[2];
-		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[3];
+		TModifier tModifier = (TModifier) result2_bindingAndBlack[1];
+		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[2];
+		Modifier mModifier = (Modifier) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = TypesVisibilityImpl
-				.pattern_TypesVisibility_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mType, mModifier, tModifier, tType,
+				.pattern_TypesVisibility_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mType, tModifier, tType, mModifier,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mType] = " + mType + ", " + "[mModifier] = " + mModifier + ", " + "[tModifier] = " + tModifier
-					+ ", " + "[tType] = " + tType + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[mType] = " + mType + ", " + "[tModifier] = " + tModifier + ", " + "[tType] = " + tType + ", "
+					+ "[mModifier] = " + mModifier + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -991,16 +989,16 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = TypesVisibilityImpl
-						.pattern_TypesVisibility_24_6_createcorrespondence_blackBBBBB(mType, mModifier, tModifier,
-								tType, ccMatch);
+						.pattern_TypesVisibility_24_6_createcorrespondence_blackBBBBB(mType, tModifier, tType,
+								mModifier, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType + ", "
-							+ "[mModifier] = " + mModifier + ", " + "[tModifier] = " + tModifier + ", " + "[tType] = "
-							+ tType + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ "[tModifier] = " + tModifier + ", " + "[tType] = " + tType + ", " + "[mModifier] = "
+							+ mModifier + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				TypesVisibilityImpl.pattern_TypesVisibility_24_6_createcorrespondence_greenFBBB(mModifier, tModifier,
+				TypesVisibilityImpl.pattern_TypesVisibility_24_6_createcorrespondence_greenBFBB(tModifier, mModifier,
 						ccMatch);
-				//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[0];
+				//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[1];
 
 				Object[] result7_black = TypesVisibilityImpl
 						.pattern_TypesVisibility_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1022,8 +1020,8 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(AbstractTypeDeclaration mType, Modifier mModifier, TModifier tModifier,
-			TAbstractType tType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(AbstractTypeDeclaration mType, TModifier tModifier, TAbstractType tType,
+			Modifier mModifier, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1150,11 +1148,11 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 								+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					TypesVisibilityImpl.pattern_TypesVisibility_29_6_perform_greenBFFFBBB(mType, tType, ruleResult,
+					TypesVisibilityImpl.pattern_TypesVisibility_29_6_perform_greenBFBFFBB(mType, tType, ruleResult,
 							csp);
-					//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[1];
-					//nothing Modifier mModifier = (Modifier) result6_green[2];
-					//nothing TModifier tModifier = (TModifier) result6_green[3];
+					//nothing TModifier tModifier = (TModifier) result6_green[1];
+					//nothing MModifierToTModifier mModifierToTModifier = (MModifierToTModifier) result6_green[3];
+					//nothing Modifier mModifier = (Modifier) result6_green[4];
 
 				} else {
 				}
@@ -1243,10 +1241,10 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 						(Modifier) arguments.get(2));
 			case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_TYPETOTABSTRACTTYPE_MODIFIER_TABSTRACTTYPE:
+			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ABSTRACTTYPEDECLARATION_TYPETOTABSTRACTTYPE_TABSTRACTTYPE_MODIFIER:
 				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
 						(AbstractTypeDeclaration) arguments.get(1), (TypeToTAbstractType) arguments.get(2),
-						(Modifier) arguments.get(3), (TAbstractType) arguments.get(4));
+						(TAbstractType) arguments.get(3), (Modifier) arguments.get(4));
 			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 			case RulesPackage.TYPES_VISIBILITY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1285,20 +1283,20 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 				return null;
 			case RulesPackage.TYPES_VISIBILITY___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1029__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_1029((EMoflonEdge) arguments.get(0));
-			case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1127__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1127((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_3__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
+			case RulesPackage.TYPES_VISIBILITY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_4__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_4((EMoflonEdge) arguments.get(0));
 			case RulesPackage.TYPES_VISIBILITY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.TYPES_VISIBILITY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 				return checkAttributes_BWD((TripleMatch) arguments.get(0));
 			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_CC__MATCH_MATCH:
 				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_CC__ABSTRACTTYPEDECLARATION_MODIFIER_TMODIFIER_TABSTRACTTYPE_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((AbstractTypeDeclaration) arguments.get(0), (Modifier) arguments.get(1),
-						(TModifier) arguments.get(2), (TAbstractType) arguments.get(3), (Match) arguments.get(4),
-						(Match) arguments.get(5));
+			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_SOLVE_CSP_CC__ABSTRACTTYPEDECLARATION_TMODIFIER_TABSTRACTTYPE_MODIFIER_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((AbstractTypeDeclaration) arguments.get(0),
+						(TModifier) arguments.get(1), (TAbstractType) arguments.get(2), (Modifier) arguments.get(3),
+						(Match) arguments.get(4), (Match) arguments.get(5));
 			case RulesPackage.TYPES_VISIBILITY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 			case RulesPackage.TYPES_VISIBILITY___CHECK_DEC_FWD__ABSTRACTTYPEDECLARATION_MODIFIER:
@@ -1414,21 +1412,21 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mType");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mModifier");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mModifier");
 		EObject tmpMType = _localVariable_0;
 		EObject tmpMTypeToTType = _localVariable_1;
-		EObject tmpMModifier = _localVariable_2;
-		EObject tmpTType = _localVariable_3;
+		EObject tmpTType = _localVariable_2;
+		EObject tmpMModifier = _localVariable_3;
 		if (tmpMType instanceof AbstractTypeDeclaration) {
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
 			if (tmpMTypeToTType instanceof TypeToTAbstractType) {
 				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-				if (tmpMModifier instanceof Modifier) {
-					Modifier mModifier = (Modifier) tmpMModifier;
-					if (tmpTType instanceof TAbstractType) {
-						TAbstractType tType = (TAbstractType) tmpTType;
-						return new Object[] { mType, mTypeToTType, mModifier, tType, isApplicableMatch };
+				if (tmpTType instanceof TAbstractType) {
+					TAbstractType tType = (TAbstractType) tmpTType;
+					if (tmpMModifier instanceof Modifier) {
+						Modifier mModifier = (Modifier) tmpMModifier;
+						return new Object[] { mType, mTypeToTType, tType, mModifier, isApplicableMatch };
 					}
 				}
 			}
@@ -1437,12 +1435,12 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_1_1_performtransformation_blackBBBBFBB(
-			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, Modifier mModifier, TAbstractType tType,
+			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, TAbstractType tType, Modifier mModifier,
 			TypesVisibility _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mType, mTypeToTType, mModifier, tType, csp, _this, isApplicableMatch };
+				return new Object[] { mType, mTypeToTType, tType, mModifier, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1455,71 +1453,71 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		if (result_pattern_TypesVisibility_1_1_performtransformation_binding != null) {
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_TypesVisibility_1_1_performtransformation_binding[0];
 			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_TypesVisibility_1_1_performtransformation_binding[1];
-			Modifier mModifier = (Modifier) result_pattern_TypesVisibility_1_1_performtransformation_binding[2];
-			TAbstractType tType = (TAbstractType) result_pattern_TypesVisibility_1_1_performtransformation_binding[3];
+			TAbstractType tType = (TAbstractType) result_pattern_TypesVisibility_1_1_performtransformation_binding[2];
+			Modifier mModifier = (Modifier) result_pattern_TypesVisibility_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_TypesVisibility_1_1_performtransformation_black = pattern_TypesVisibility_1_1_performtransformation_blackBBBBFBB(
-					mType, mTypeToTType, mModifier, tType, _this, isApplicableMatch);
+					mType, mTypeToTType, tType, mModifier, _this, isApplicableMatch);
 			if (result_pattern_TypesVisibility_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypesVisibility_1_1_performtransformation_black[4];
 
-				return new Object[] { mType, mTypeToTType, mModifier, tType, csp, _this, isApplicableMatch };
+				return new Object[] { mType, mTypeToTType, tType, mModifier, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypesVisibility_1_1_performtransformation_greenFBFBB(Modifier mModifier,
-			TAbstractType tType, CSP csp) {
-		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
+	public static final Object[] pattern_TypesVisibility_1_1_performtransformation_greenFBFBB(TAbstractType tType,
+			Modifier mModifier, CSP csp) {
 		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
+		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
 		Object _localVariable_0 = csp.getValue("tModifier", "isStatic");
 		Object _localVariable_1 = csp.getValue("tModifier", "tVisibility");
-		mModifierToTModifier.setSource(mModifier);
-		mModifierToTModifier.setTarget(tModifier);
 		tType.setTModifier(tModifier);
+		mModifierToTModifier.setTarget(tModifier);
+		mModifierToTModifier.setSource(mModifier);
 		boolean tModifier_isStatic_prime = (boolean) _localVariable_0;
 		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_1;
 		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		tModifier.setTVisibility(tModifier_tVisibility_prime);
-		return new Object[] { mModifierToTModifier, mModifier, tModifier, tType, csp };
+		return new Object[] { tModifier, tType, mModifierToTModifier, mModifier, csp };
 	}
 
-	public static final Object[] pattern_TypesVisibility_1_2_collecttranslatedelements_blackBBB(
-			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
-		return new Object[] { mModifierToTModifier, mModifier, tModifier };
+	public static final Object[] pattern_TypesVisibility_1_2_collecttranslatedelements_blackBBB(TModifier tModifier,
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier) {
+		return new Object[] { tModifier, mModifierToTModifier, mModifier };
 	}
 
-	public static final Object[] pattern_TypesVisibility_1_2_collecttranslatedelements_greenFBBB(
-			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
+	public static final Object[] pattern_TypesVisibility_1_2_collecttranslatedelements_greenFBBB(TModifier tModifier,
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(tModifier);
 		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
 		ruleresult.getTranslatedElements().add(mModifier);
-		ruleresult.getCreatedElements().add(tModifier);
-		return new Object[] { ruleresult, mModifierToTModifier, mModifier, tModifier };
+		return new Object[] { ruleresult, tModifier, mModifierToTModifier, mModifier };
 	}
 
 	public static final Object[] pattern_TypesVisibility_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject mModifierToTModifier,
-			EObject mModifier, EObject tModifier, EObject tType) {
+			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject tModifier, EObject tType,
+			EObject mModifierToTModifier, EObject mModifier) {
 		if (!mType.equals(mTypeToTType)) {
 			if (!mType.equals(tModifier)) {
 				if (!mType.equals(tType)) {
 					if (!mTypeToTType.equals(tModifier)) {
 						if (!mTypeToTType.equals(tType)) {
-							if (!mModifierToTModifier.equals(mType)) {
-								if (!mModifierToTModifier.equals(mTypeToTType)) {
-									if (!mModifierToTModifier.equals(tModifier)) {
-										if (!mModifierToTModifier.equals(tType)) {
-											if (!mModifier.equals(mType)) {
-												if (!mModifier.equals(mTypeToTType)) {
-													if (!mModifier.equals(mModifierToTModifier)) {
+							if (!tModifier.equals(tType)) {
+								if (!mModifierToTModifier.equals(mType)) {
+									if (!mModifierToTModifier.equals(mTypeToTType)) {
+										if (!mModifierToTModifier.equals(tModifier)) {
+											if (!mModifierToTModifier.equals(tType)) {
+												if (!mModifier.equals(mType)) {
+													if (!mModifier.equals(mTypeToTType)) {
 														if (!mModifier.equals(tModifier)) {
 															if (!mModifier.equals(tType)) {
-																if (!tModifier.equals(tType)) {
+																if (!mModifier.equals(mModifierToTModifier)) {
 																	return new Object[] { ruleresult, mType,
-																			mTypeToTType, mModifierToTModifier,
-																			mModifier, tModifier, tType };
+																			mTypeToTType, tModifier, tType,
+																			mModifierToTModifier, mModifier };
 																}
 															}
 														}
@@ -1539,50 +1537,49 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mType, EObject mModifierToTModifier, EObject mModifier,
-			EObject tModifier, EObject tType) {
+			PerformRuleResult ruleresult, EObject mType, EObject tModifier, EObject tType, EObject mModifierToTModifier,
+			EObject mModifier) {
 		EMoflonEdge mType__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mType____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypesVisibility";
 		String mType__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mType____bodyDeclaration_name_prime = "bodyDeclaration";
-		String mModifierToTModifier__mModifier____source_name_prime = "source";
-		String mModifierToTModifier__tModifier____target_name_prime = "target";
 		String tType__tModifier____tModifier_name_prime = "tModifier";
+		String mModifierToTModifier__tModifier____target_name_prime = "target";
+		String mModifierToTModifier__mModifier____source_name_prime = "source";
 		mType__mModifier____modifier.setSrc(mType);
 		mType__mModifier____modifier.setTrg(mModifier);
 		ruleresult.getTranslatedEdges().add(mType__mModifier____modifier);
 		mModifier__mType____bodyDeclaration.setSrc(mModifier);
 		mModifier__mType____bodyDeclaration.setTrg(mType);
 		ruleresult.getTranslatedEdges().add(mModifier__mType____bodyDeclaration);
-		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
-		mModifierToTModifier__mModifier____source.setTrg(mModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
-		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
-		mModifierToTModifier__tModifier____target.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
 		tType__tModifier____tModifier.setSrc(tType);
 		tType__tModifier____tModifier.setTrg(tModifier);
 		ruleresult.getCreatedEdges().add(tType__tModifier____tModifier);
+		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
+		mModifierToTModifier__tModifier____target.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
+		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
+		mModifierToTModifier__mModifier____source.setTrg(mModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mType__mModifier____modifier.setName(mType__mModifier____modifier_name_prime);
 		mModifier__mType____bodyDeclaration.setName(mModifier__mType____bodyDeclaration_name_prime);
-		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
-		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
 		tType__tModifier____tModifier.setName(tType__tModifier____tModifier_name_prime);
-		return new Object[] { ruleresult, mType, mModifierToTModifier, mModifier, tModifier, tType,
-				mType__mModifier____modifier, mModifier__mType____bodyDeclaration,
-				mModifierToTModifier__mModifier____source, mModifierToTModifier__tModifier____target,
-				tType__tModifier____tModifier };
+		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
+		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
+		return new Object[] { ruleresult, mType, tModifier, tType, mModifierToTModifier, mModifier,
+				mType__mModifier____modifier, mModifier__mType____bodyDeclaration, tType__tModifier____tModifier,
+				mModifierToTModifier__tModifier____target, mModifierToTModifier__mModifier____source };
 	}
 
 	public static final void pattern_TypesVisibility_1_5_registerobjects_expressionBBBBBBBB(TypesVisibility _this,
-			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject mModifierToTModifier,
-			EObject mModifier, EObject tModifier, EObject tType) {
-		_this.registerObjects_FWD(ruleresult, mType, mTypeToTType, mModifierToTModifier, mModifier, tModifier, tType);
+			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject tModifier, EObject tType,
+			EObject mModifierToTModifier, EObject mModifier) {
+		_this.registerObjects_FWD(ruleresult, mType, mTypeToTType, tModifier, tType, mModifierToTModifier, mModifier);
 
 	}
 
@@ -1655,14 +1652,14 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypesVisibility_2_2_corematch_blackBFBFB(
+	public static final Iterable<Object[]> pattern_TypesVisibility_2_2_corematch_blackBFFBB(
 			AbstractTypeDeclaration mType, Modifier mModifier, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
 			TAbstractType tType = mTypeToTType.getTarget();
 			if (tType != null) {
-				_result.add(new Object[] { mType, mTypeToTType, mModifier, tType, match });
+				_result.add(new Object[] { mType, mTypeToTType, tType, mModifier, match });
 			}
 
 		}
@@ -1670,12 +1667,12 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Iterable<Object[]> pattern_TypesVisibility_2_3_findcontext_blackBBBB(
-			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, Modifier mModifier, TAbstractType tType) {
+			AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType, TAbstractType tType, Modifier mModifier) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mModifier.equals(mType.getModifier())) {
-			if (mType.equals(mTypeToTType.getSource())) {
+		if (mType.equals(mTypeToTType.getSource())) {
+			if (mModifier.equals(mType.getModifier())) {
 				if (tType.equals(mTypeToTType.getTarget())) {
-					_result.add(new Object[] { mType, mTypeToTType, mModifier, tType });
+					_result.add(new Object[] { mType, mTypeToTType, tType, mModifier });
 				}
 			}
 		}
@@ -1683,48 +1680,48 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_2_3_findcontext_greenBBBBFFFFF(AbstractTypeDeclaration mType,
-			TypeToTAbstractType mTypeToTType, Modifier mModifier, TAbstractType tType) {
+			TypeToTAbstractType mTypeToTType, TAbstractType tType, Modifier mModifier) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mType____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String mTypeToTType__mType____source_name_prime = "source";
 		String mType__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mType____bodyDeclaration_name_prime = "bodyDeclaration";
-		String mTypeToTType__mType____source_name_prime = "source";
 		String mTypeToTType__tType____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType);
-		isApplicableMatch.getAllContextElements().add(mModifier);
 		isApplicableMatch.getAllContextElements().add(tType);
+		isApplicableMatch.getAllContextElements().add(mModifier);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mType__mModifier____modifier.setSrc(mType);
 		mType__mModifier____modifier.setTrg(mModifier);
 		isApplicableMatch.getAllContextElements().add(mType__mModifier____modifier);
 		mModifier__mType____bodyDeclaration.setSrc(mModifier);
 		mModifier__mType____bodyDeclaration.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(mModifier__mType____bodyDeclaration);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tType____target);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mType__mModifier____modifier.setName(mType__mModifier____modifier_name_prime);
 		mModifier__mType____bodyDeclaration.setName(mModifier__mType____bodyDeclaration_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		return new Object[] { mType, mTypeToTType, mModifier, tType, isApplicableMatch, mType__mModifier____modifier,
-				mModifier__mType____bodyDeclaration, mTypeToTType__mType____source, mTypeToTType__tType____target };
+		return new Object[] { mType, mTypeToTType, tType, mModifier, isApplicableMatch, mTypeToTType__mType____source,
+				mType__mModifier____modifier, mModifier__mType____bodyDeclaration, mTypeToTType__tType____target };
 	}
 
 	public static final Object[] pattern_TypesVisibility_2_4_solveCSP_bindingFBBBBBB(TypesVisibility _this,
 			IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType,
-			Modifier mModifier, TAbstractType tType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mType, mTypeToTType, mModifier,
-				tType);
+			TAbstractType tType, Modifier mModifier) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mType, mTypeToTType, tType,
+				mModifier);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mType, mTypeToTType, mModifier, tType };
+			return new Object[] { csp, _this, isApplicableMatch, mType, mTypeToTType, tType, mModifier };
 		}
 		return null;
 	}
@@ -1735,9 +1732,9 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 
 	public static final Object[] pattern_TypesVisibility_2_4_solveCSP_bindingAndBlackFBBBBBB(TypesVisibility _this,
 			IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration mType, TypeToTAbstractType mTypeToTType,
-			Modifier mModifier, TAbstractType tType) {
+			TAbstractType tType, Modifier mModifier) {
 		Object[] result_pattern_TypesVisibility_2_4_solveCSP_binding = pattern_TypesVisibility_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mType, mTypeToTType, mModifier, tType);
+				_this, isApplicableMatch, mType, mTypeToTType, tType, mModifier);
 		if (result_pattern_TypesVisibility_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesVisibility_2_4_solveCSP_binding[0];
 
@@ -1745,7 +1742,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 					csp);
 			if (result_pattern_TypesVisibility_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mType, mTypeToTType, mModifier, tType };
+				return new Object[] { csp, _this, isApplicableMatch, mType, mTypeToTType, tType, mModifier };
 			}
 		}
 		return null;
@@ -1923,7 +1920,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		return null;
 	}
 
-	public static final Object[] pattern_TypesVisibility_11_1_performtransformation_greenBFFBB(
+	public static final Object[] pattern_TypesVisibility_11_1_performtransformation_greenBBFFB(
 			AbstractTypeDeclaration mType, TModifier tModifier, CSP csp) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
 		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
@@ -1936,44 +1933,44 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_1;
 		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
 		mModifier.setVisibility(mModifier_visibility_prime);
-		return new Object[] { mType, mModifierToTModifier, mModifier, tModifier, csp };
+		return new Object[] { mType, tModifier, mModifierToTModifier, mModifier, csp };
 	}
 
-	public static final Object[] pattern_TypesVisibility_11_2_collecttranslatedelements_blackBBB(
-			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
-		return new Object[] { mModifierToTModifier, mModifier, tModifier };
+	public static final Object[] pattern_TypesVisibility_11_2_collecttranslatedelements_blackBBB(TModifier tModifier,
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier) {
+		return new Object[] { tModifier, mModifierToTModifier, mModifier };
 	}
 
-	public static final Object[] pattern_TypesVisibility_11_2_collecttranslatedelements_greenFBBB(
-			MModifierToTModifier mModifierToTModifier, Modifier mModifier, TModifier tModifier) {
+	public static final Object[] pattern_TypesVisibility_11_2_collecttranslatedelements_greenFBBB(TModifier tModifier,
+			MModifierToTModifier mModifierToTModifier, Modifier mModifier) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(tModifier);
 		ruleresult.getCreatedLinkElements().add(mModifierToTModifier);
 		ruleresult.getCreatedElements().add(mModifier);
-		ruleresult.getTranslatedElements().add(tModifier);
-		return new Object[] { ruleresult, mModifierToTModifier, mModifier, tModifier };
+		return new Object[] { ruleresult, tModifier, mModifierToTModifier, mModifier };
 	}
 
 	public static final Object[] pattern_TypesVisibility_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject mModifierToTModifier,
-			EObject mModifier, EObject tModifier, EObject tType) {
+			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject tModifier, EObject tType,
+			EObject mModifierToTModifier, EObject mModifier) {
 		if (!mType.equals(mTypeToTType)) {
 			if (!mType.equals(tModifier)) {
 				if (!mType.equals(tType)) {
 					if (!mTypeToTType.equals(tModifier)) {
 						if (!mTypeToTType.equals(tType)) {
-							if (!mModifierToTModifier.equals(mType)) {
-								if (!mModifierToTModifier.equals(mTypeToTType)) {
-									if (!mModifierToTModifier.equals(tModifier)) {
-										if (!mModifierToTModifier.equals(tType)) {
-											if (!mModifier.equals(mType)) {
-												if (!mModifier.equals(mTypeToTType)) {
-													if (!mModifier.equals(mModifierToTModifier)) {
+							if (!tModifier.equals(tType)) {
+								if (!mModifierToTModifier.equals(mType)) {
+									if (!mModifierToTModifier.equals(mTypeToTType)) {
+										if (!mModifierToTModifier.equals(tModifier)) {
+											if (!mModifierToTModifier.equals(tType)) {
+												if (!mModifier.equals(mType)) {
+													if (!mModifier.equals(mTypeToTType)) {
 														if (!mModifier.equals(tModifier)) {
 															if (!mModifier.equals(tType)) {
-																if (!tModifier.equals(tType)) {
+																if (!mModifier.equals(mModifierToTModifier)) {
 																	return new Object[] { ruleresult, mType,
-																			mTypeToTType, mModifierToTModifier,
-																			mModifier, tModifier, tType };
+																			mTypeToTType, tModifier, tType,
+																			mModifierToTModifier, mModifier };
 																}
 															}
 														}
@@ -1993,50 +1990,49 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject mType, EObject mModifierToTModifier, EObject mModifier,
-			EObject tModifier, EObject tType) {
+			PerformRuleResult ruleresult, EObject mType, EObject tModifier, EObject tType, EObject mModifierToTModifier,
+			EObject mModifier) {
 		EMoflonEdge mType__mModifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModifier__mType____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tModifier____tModifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__tModifier____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModifierToTModifier__mModifier____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypesVisibility";
 		String mType__mModifier____modifier_name_prime = "modifier";
 		String mModifier__mType____bodyDeclaration_name_prime = "bodyDeclaration";
-		String mModifierToTModifier__mModifier____source_name_prime = "source";
-		String mModifierToTModifier__tModifier____target_name_prime = "target";
 		String tType__tModifier____tModifier_name_prime = "tModifier";
+		String mModifierToTModifier__tModifier____target_name_prime = "target";
+		String mModifierToTModifier__mModifier____source_name_prime = "source";
 		mType__mModifier____modifier.setSrc(mType);
 		mType__mModifier____modifier.setTrg(mModifier);
 		ruleresult.getCreatedEdges().add(mType__mModifier____modifier);
 		mModifier__mType____bodyDeclaration.setSrc(mModifier);
 		mModifier__mType____bodyDeclaration.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mModifier__mType____bodyDeclaration);
-		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
-		mModifierToTModifier__mModifier____source.setTrg(mModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
-		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
-		mModifierToTModifier__tModifier____target.setTrg(tModifier);
-		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
 		tType__tModifier____tModifier.setSrc(tType);
 		tType__tModifier____tModifier.setTrg(tModifier);
 		ruleresult.getTranslatedEdges().add(tType__tModifier____tModifier);
+		mModifierToTModifier__tModifier____target.setSrc(mModifierToTModifier);
+		mModifierToTModifier__tModifier____target.setTrg(tModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__tModifier____target);
+		mModifierToTModifier__mModifier____source.setSrc(mModifierToTModifier);
+		mModifierToTModifier__mModifier____source.setTrg(mModifier);
+		ruleresult.getCreatedEdges().add(mModifierToTModifier__mModifier____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		mType__mModifier____modifier.setName(mType__mModifier____modifier_name_prime);
 		mModifier__mType____bodyDeclaration.setName(mModifier__mType____bodyDeclaration_name_prime);
-		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
-		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
 		tType__tModifier____tModifier.setName(tType__tModifier____tModifier_name_prime);
-		return new Object[] { ruleresult, mType, mModifierToTModifier, mModifier, tModifier, tType,
-				mType__mModifier____modifier, mModifier__mType____bodyDeclaration,
-				mModifierToTModifier__mModifier____source, mModifierToTModifier__tModifier____target,
-				tType__tModifier____tModifier };
+		mModifierToTModifier__tModifier____target.setName(mModifierToTModifier__tModifier____target_name_prime);
+		mModifierToTModifier__mModifier____source.setName(mModifierToTModifier__mModifier____source_name_prime);
+		return new Object[] { ruleresult, mType, tModifier, tType, mModifierToTModifier, mModifier,
+				mType__mModifier____modifier, mModifier__mType____bodyDeclaration, tType__tModifier____tModifier,
+				mModifierToTModifier__tModifier____target, mModifierToTModifier__mModifier____source };
 	}
 
 	public static final void pattern_TypesVisibility_11_5_registerobjects_expressionBBBBBBBB(TypesVisibility _this,
-			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject mModifierToTModifier,
-			EObject mModifier, EObject tModifier, EObject tType) {
-		_this.registerObjects_BWD(ruleresult, mType, mTypeToTType, mModifierToTModifier, mModifier, tModifier, tType);
+			PerformRuleResult ruleresult, EObject mType, EObject mTypeToTType, EObject tModifier, EObject tType,
+			EObject mModifierToTModifier, EObject mModifier) {
+		_this.registerObjects_BWD(ruleresult, mType, mTypeToTType, tModifier, tType, mModifierToTModifier, mModifier);
 
 	}
 
@@ -2281,7 +2277,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_20_2_testcorematchandDECs_black_nac_0B(TModifier tModifier) {
-		for (TMember __DEC_tModifier_tModifier_461493 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TMember __DEC_tModifier_tModifier_443151 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TMember.class, "tModifier")) {
 			return new Object[] { tModifier };
 		}
@@ -2481,22 +2477,22 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	public static final Object[] pattern_TypesVisibility_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("mType");
-		EObject _localVariable_1 = sourceMatch.getObject("mModifier");
-		EObject _localVariable_2 = targetMatch.getObject("tModifier");
-		EObject _localVariable_3 = targetMatch.getObject("tType");
+		EObject _localVariable_1 = targetMatch.getObject("tModifier");
+		EObject _localVariable_2 = targetMatch.getObject("tType");
+		EObject _localVariable_3 = sourceMatch.getObject("mModifier");
 		EObject tmpMType = _localVariable_0;
-		EObject tmpMModifier = _localVariable_1;
-		EObject tmpTModifier = _localVariable_2;
-		EObject tmpTType = _localVariable_3;
+		EObject tmpTModifier = _localVariable_1;
+		EObject tmpTType = _localVariable_2;
+		EObject tmpMModifier = _localVariable_3;
 		if (tmpMType instanceof AbstractTypeDeclaration) {
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) tmpMType;
-			if (tmpMModifier instanceof Modifier) {
-				Modifier mModifier = (Modifier) tmpMModifier;
-				if (tmpTModifier instanceof TModifier) {
-					TModifier tModifier = (TModifier) tmpTModifier;
-					if (tmpTType instanceof TAbstractType) {
-						TAbstractType tType = (TAbstractType) tmpTType;
-						return new Object[] { mType, mModifier, tModifier, tType, sourceMatch, targetMatch };
+			if (tmpTModifier instanceof TModifier) {
+				TModifier tModifier = (TModifier) tmpTModifier;
+				if (tmpTType instanceof TAbstractType) {
+					TAbstractType tType = (TAbstractType) tmpTType;
+					if (tmpMModifier instanceof Modifier) {
+						Modifier mModifier = (Modifier) tmpMModifier;
+						return new Object[] { mType, tModifier, tType, mModifier, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2505,10 +2501,10 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_24_2_matchsrctrgcontext_blackBBBBBB(
-			AbstractTypeDeclaration mType, Modifier mModifier, TModifier tModifier, TAbstractType tType,
+			AbstractTypeDeclaration mType, TModifier tModifier, TAbstractType tType, Modifier mModifier,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { mType, mModifier, tModifier, tType, sourceMatch, targetMatch };
+			return new Object[] { mType, tModifier, tType, mModifier, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2519,28 +2515,28 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 				sourceMatch, targetMatch);
 		if (result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding != null) {
 			AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[0];
-			Modifier mModifier = (Modifier) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[1];
-			TModifier tModifier = (TModifier) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[2];
-			TAbstractType tType = (TAbstractType) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[3];
+			TModifier tModifier = (TModifier) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[1];
+			TAbstractType tType = (TAbstractType) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[2];
+			Modifier mModifier = (Modifier) result_pattern_TypesVisibility_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_TypesVisibility_24_2_matchsrctrgcontext_black = pattern_TypesVisibility_24_2_matchsrctrgcontext_blackBBBBBB(
-					mType, mModifier, tModifier, tType, sourceMatch, targetMatch);
+					mType, tModifier, tType, mModifier, sourceMatch, targetMatch);
 			if (result_pattern_TypesVisibility_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mType, mModifier, tModifier, tType, sourceMatch, targetMatch };
+				return new Object[] { mType, tModifier, tType, mModifier, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypesVisibility_24_3_solvecsp_bindingFBBBBBBB(TypesVisibility _this,
-			AbstractTypeDeclaration mType, Modifier mModifier, TModifier tModifier, TAbstractType tType,
+			AbstractTypeDeclaration mType, TModifier tModifier, TAbstractType tType, Modifier mModifier,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mType, mModifier, tModifier, tType, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mType, tModifier, tType, mModifier, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, mType, mModifier, tModifier, tType, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mType, tModifier, tType, mModifier, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2550,10 +2546,10 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_24_3_solvecsp_bindingAndBlackFBBBBBBB(TypesVisibility _this,
-			AbstractTypeDeclaration mType, Modifier mModifier, TModifier tModifier, TAbstractType tType,
+			AbstractTypeDeclaration mType, TModifier tModifier, TAbstractType tType, Modifier mModifier,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_TypesVisibility_24_3_solvecsp_binding = pattern_TypesVisibility_24_3_solvecsp_bindingFBBBBBBB(
-				_this, mType, mModifier, tModifier, tType, sourceMatch, targetMatch);
+				_this, mType, tModifier, tType, mModifier, sourceMatch, targetMatch);
 		if (result_pattern_TypesVisibility_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypesVisibility_24_3_solvecsp_binding[0];
 
@@ -2561,7 +2557,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 					csp);
 			if (result_pattern_TypesVisibility_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mType, mModifier, tModifier, tType, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mType, tModifier, tType, mModifier, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2599,18 +2595,18 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_24_6_createcorrespondence_blackBBBBB(
-			AbstractTypeDeclaration mType, Modifier mModifier, TModifier tModifier, TAbstractType tType,
+			AbstractTypeDeclaration mType, TModifier tModifier, TAbstractType tType, Modifier mModifier,
 			CCMatch ccMatch) {
-		return new Object[] { mType, mModifier, tModifier, tType, ccMatch };
+		return new Object[] { mType, tModifier, tType, mModifier, ccMatch };
 	}
 
-	public static final Object[] pattern_TypesVisibility_24_6_createcorrespondence_greenFBBB(Modifier mModifier,
-			TModifier tModifier, CCMatch ccMatch) {
+	public static final Object[] pattern_TypesVisibility_24_6_createcorrespondence_greenBFBB(TModifier tModifier,
+			Modifier mModifier, CCMatch ccMatch) {
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
-		mModifierToTModifier.setSource(mModifier);
 		mModifierToTModifier.setTarget(tModifier);
+		mModifierToTModifier.setSource(mModifier);
 		ccMatch.getCreateCorr().add(mModifierToTModifier);
-		return new Object[] { mModifierToTModifier, mModifier, tModifier, ccMatch };
+		return new Object[] { tModifier, mModifierToTModifier, mModifier, ccMatch };
 	}
 
 	public static final Object[] pattern_TypesVisibility_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2653,7 +2649,7 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 	}
 
 	public static final Object[] pattern_TypesVisibility_28_1_matchtggpattern_black_nac_0B(TModifier tModifier) {
-		for (TMember __DEC_tModifier_tModifier_574837 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TMember __DEC_tModifier_tModifier_533386 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TMember.class, "tModifier")) {
 			return new Object[] { tModifier };
 		}
@@ -2799,36 +2795,36 @@ public class TypesVisibilityImpl extends AbstractRuleImpl implements TypesVisibi
 		return new Object[] { mType, mTypeToTType, tType, ruleResult };
 	}
 
-	public static final Object[] pattern_TypesVisibility_29_6_perform_greenBFFFBBB(AbstractTypeDeclaration mType,
+	public static final Object[] pattern_TypesVisibility_29_6_perform_greenBFBFFBB(AbstractTypeDeclaration mType,
 			TAbstractType tType, ModelgeneratorRuleResult ruleResult, CSP csp) {
+		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
 		MModifierToTModifier mModifierToTModifier = PmFactory.eINSTANCE.createMModifierToTModifier();
 		Modifier mModifier = JavaFactory.eINSTANCE.createModifier();
-		TModifier tModifier = BasicFactory.eINSTANCE.createTModifier();
-		Object _localVariable_0 = csp.getValue("mModifier", "static");
-		Object _localVariable_1 = csp.getValue("mModifier", "visibility");
-		Object _localVariable_2 = csp.getValue("tModifier", "isStatic");
-		Object _localVariable_3 = csp.getValue("tModifier", "tVisibility");
+		Object _localVariable_0 = csp.getValue("tModifier", "isStatic");
+		Object _localVariable_1 = csp.getValue("tModifier", "tVisibility");
+		Object _localVariable_2 = csp.getValue("mModifier", "static");
+		Object _localVariable_3 = csp.getValue("mModifier", "visibility");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
+		tType.setTModifier(tModifier);
+		ruleResult.getTargetObjects().add(tModifier);
+		mModifierToTModifier.setTarget(tModifier);
 		ruleResult.getCorrObjects().add(mModifierToTModifier);
 		mType.setModifier(mModifier);
 		mModifierToTModifier.setSource(mModifier);
 		ruleResult.getSourceObjects().add(mModifier);
-		mModifierToTModifier.setTarget(tModifier);
-		tType.setTModifier(tModifier);
-		ruleResult.getTargetObjects().add(tModifier);
-		boolean mModifier_static_prime = (boolean) _localVariable_0;
-		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_1;
-		boolean tModifier_isStatic_prime = (boolean) _localVariable_2;
-		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_3;
+		boolean tModifier_isStatic_prime = (boolean) _localVariable_0;
+		TVisibility tModifier_tVisibility_prime = (TVisibility) _localVariable_1;
+		boolean mModifier_static_prime = (boolean) _localVariable_2;
+		VisibilityKind mModifier_visibility_prime = (VisibilityKind) _localVariable_3;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_4);
-		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
-		mModifier.setVisibility(mModifier_visibility_prime);
 		tModifier.setIsStatic(Boolean.valueOf(tModifier_isStatic_prime));
 		tModifier.setTVisibility(tModifier_tVisibility_prime);
+		mModifier.setStatic(Boolean.valueOf(mModifier_static_prime));
+		mModifier.setVisibility(mModifier_visibility_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mType, mModifierToTModifier, mModifier, tModifier, tType, ruleResult, csp };
+		return new Object[] { mType, tModifier, tType, mModifierToTModifier, mModifier, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TypesVisibility_29_7_expressionFB(
