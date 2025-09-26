@@ -60,7 +60,7 @@
     <module>build/org.gravity.license.epl</module>
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.ui</module>
-    <!--<module>implementation/org.gravity.goblin</module>--><!--deprecate-->
+    <!--<module>implementation/org.gravity.goblin</module>--><!--deprecated-->
     <module>implementation/org.gravity.headless</module>
     <module>implementation/org.gravity.hulk</module>
     <module>implementation/org.gravity.hulk.annotations</module>
@@ -88,7 +88,7 @@
     <module>implementation/org.gravity.typegraph.basic.ui</module>
     <module>implementation/org.gravity.umlsecrt</module>
     <module>tests/org.gravity.eclipse.tests</module>
-    <module>tests/org.gravity.goblin.tests</module>
+    <!--<module>tests/org.gravity.goblin.tests</module>--><!--deprecated-->
     <module>tests/org.gravity.headless.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
