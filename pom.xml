@@ -179,14 +179,9 @@
       <url>https://download.eclipse.org/releases/2025-09</url>
     </repository>
     <repository>
-      <id>Eclipse 2023-06</id>
+      <id>Eclipse 2025-06 for Papyrus</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2023-06</url>
-    </repository>
-    <repository>
-      <id>Papyrus</id>
-      <layout>p2</layout>
-      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12</url>
+      <url>https://download.eclipse.org/releases/2025-06</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
@@ -202,11 +197,6 @@
       <id>Henshin MultiVar</id>
       <layout>p2</layout>
       <url>https://gravity-tool.org/henshin-multivar/updatesite</url>
-    </repository>
-    <repository>
-      <id>MoMOT</id>
-      <layout>p2</layout>
-      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop</url>
     </repository>
     <repository>
       <id>plantuml</id>
