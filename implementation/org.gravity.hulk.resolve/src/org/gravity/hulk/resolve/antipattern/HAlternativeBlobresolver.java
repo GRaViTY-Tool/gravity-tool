@@ -20,7 +20,7 @@ import org.gravity.typegraph.basic.TClass;
  * @model
  * @generated
  */
-public abstract class HAlternativeBlobresolver extends HBlobResolver {
+public interface HAlternativeBlobresolver extends HBlobResolver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -28,6 +28,7 @@ public abstract class HAlternativeBlobresolver extends HBlobResolver {
 	 * @model
 	 * @generated
 	 */
+	@Override
 	boolean detect(HAntiPatternGraph apg);
 
 	/**
