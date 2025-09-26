@@ -1,14 +1,8 @@
 package org.gravity.eclipse.importer.maven;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -250,7 +244,7 @@ public class PomParser {
 		if (this.searchInCache(dependency, cache)) {
 			return true;
 		}
-		final var jar = this.readLibFromMavenCentral(cache, dependency);
+		final var jar = MavenRepositories.getDependencyJar(dependency).toFile();
 		if (jar.exists()) {
 			this.libraries.put(dependency, jar.toPath());
 			return true;
@@ -261,30 +255,6 @@ public class PomParser {
 			this.libraries.put(dependency, other.toPath());
 		}
 		return success;
-	}
-
-	public File readLibFromMavenCentral(final File cache, final String dependency) throws MalformedURLException {
-		final var folder = getFolderInCacheLocation(dependency.split(":"), cache);
-		folder.mkdirs();
-		final var path = cache.toPath().relativize(folder.toPath()).toString();
-		final var fileName = folder.getParentFile().getName() + '-' + folder.getName() + ".jar";
-		final var url = new URL("https://repo1.maven.org/maven2/" + path + '/' + fileName);
-		final var jar = new File(folder, fileName);
-		try (OutputStream out = new FileOutputStream(jar); InputStream in = new BufferedInputStream(url.openStream())) {
-			final var buffer = new byte[1024];
-			var count = 0;
-			while ((count = in.read(buffer, 0, 1024)) != -1) {
-				out.write(buffer, 0, count);
-			}
-		} catch (final IOException e) {
-			LOGGER.error(e);
-			try {
-				Files.delete(jar.toPath());
-			} catch (final IOException e1) {
-				LOGGER.error("Cleanup failed!", e1);
-			}
-		}
-		return jar;
 	}
 
 	/**
