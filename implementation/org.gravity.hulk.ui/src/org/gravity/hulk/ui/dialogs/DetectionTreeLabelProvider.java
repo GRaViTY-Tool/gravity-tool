@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.gravity.hulk.HulkPackage;
-import org.gravity.hulk.detection.HDetector;
+import org.gravity.hulk.detection.HDetectorImpl;
 import org.gravity.hulk.ui.Messages;
 
 /**
@@ -24,7 +24,7 @@ public class DetectionTreeLabelProvider extends LabelProvider {
 			}
 			if (HulkPackage.eINSTANCE.getHDetector().isSuperTypeOf(eClass)) {
 				EPackage ePackage = eClass.getEPackage();
-				return ((HDetector) ePackage.getEFactoryInstance().create(eClass)).getGuiName();
+				return ((HDetectorImpl) ePackage.getEFactoryInstance().create(eClass)).getGuiName();
 			}
 			return eClass.getName();
 		} else if (element instanceof EPackage) {

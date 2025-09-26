@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gravity.hulk.HAntiPatternHandling;
+import org.gravity.hulk.HDetector;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.HMetric;
@@ -26,23 +27,24 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.org.gravity.hulk.detection.HDetector#getHAnnotation
+ * <li>{@link org.HDetectorImpl.gravity.hulk.detection.HDetector#getHAnnotation
  * <em>HAnnotation</em>}</li>
- * <li>{@link org.org.gravity.hulk.detection.HDetector#getHAntiPatternHandling
+ * <li>{@link org.HDetectorImpl.gravity.hulk.detection.HDetector#getHAntiPatternHandling
  * <em>HAnti Pattern Handling</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class HDetector extends Node {
+public abstract class HDetectorImpl extends Node implements HDetector {
 
-	private static final Logger LOGGER = Logger.getLogger(HDetector.class);
+	private static final Logger LOGGER = Logger.getLogger(HDetectorImpl.class);
 
 	protected List<HAnnotation> hAnnotation;
 
 	protected HAntiPatternHandling hAntiPatternHandling;
 
+	@Override
 	public List<HAnnotation> getHAnnotation() {
 		if (this.hAnnotation == null) {
 			this.hAnnotation = new LinkedList<>();
@@ -50,6 +52,7 @@ public abstract class HDetector extends Node {
 		return this.hAnnotation;
 	}
 
+	@Override
 	public final boolean hasAlreadyBeenAnnotated(final TClass tClass) {
 		for (final TAnnotation tmpExisting : tClass.getTAnnotation()) {
 			if (tmpExisting instanceof final HAnnotation existing) {
@@ -61,10 +64,12 @@ public abstract class HDetector extends Node {
 		return false;
 	}
 
+	@Override
 	public HAntiPatternHandling getHAntiPatternHandling() {
 		return this.hAntiPatternHandling;
 	}
 
+	@Override
 	public void setHAntiPatternHandling(final HAntiPatternHandling newHAntiPatternHandling) {
 		this.hAntiPatternHandling = newHAntiPatternHandling;
 	}
@@ -112,10 +117,13 @@ public abstract class HDetector extends Node {
 		EcoreUtil.deleteAll(delete, true);
 	}
 
-	protected abstract EClass getHAnnotationType();
+	@Override
+	public abstract EClass getHAnnotationType();
 
+	@Override
 	public abstract boolean detect(HAntiPatternGraph apg);
 
+	@Override
 	public abstract String getGuiName();
 
 } // HDetectorImpl

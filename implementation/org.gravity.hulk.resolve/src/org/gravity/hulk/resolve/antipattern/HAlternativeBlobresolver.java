@@ -3,17 +3,16 @@
 package org.gravity.hulk.resolve.antipattern;
 
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
 import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
-
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 // [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>HAlternative Blobresolver</b></em>'.
+ * A representation of the model object '<em><b>HAlternative
+ * Blobresolver</b></em>'.
  * <!-- end-user-doc -->
  *
  *
@@ -21,10 +20,11 @@ import org.gravity.typegraph.basic.TClass;
  * @model
  * @generated
  */
-public interface HAlternativeBlobresolver extends HBlobResolver {
+public abstract class HAlternativeBlobresolver extends HBlobResolver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -33,6 +33,7 @@ public interface HAlternativeBlobresolver extends HBlobResolver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */

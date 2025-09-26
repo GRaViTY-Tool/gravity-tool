@@ -7,8 +7,8 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.HAntiPatternResolving;
+import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
-import org.gravity.hulk.detection.HDetector;
 import org.gravity.hulk.detection.antipattern.HBlobDetector;
 import org.gravity.hulk.detection.metrics.HAfferentCouplingCalculator;
 import org.gravity.hulk.detection.metrics.HEfferentCouplingCalculator;
@@ -23,7 +23,6 @@ import org.gravity.hulk.resolve.calculators.HInBlobAccessCalculator;
 import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.moflon.core.dfs.DFSGraph;
 import org.moflon.core.dfs.DfsFactory;
-import org.moflon.core.dfs.Edge;
 import org.moflon.core.dfs.Node;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -43,7 +42,6 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 	 * @generated
 	 */
 	protected HAntiPatternResolvingImpl() {
-		super();
 	}
 
 	/**
@@ -74,13 +72,14 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 		if (blobDetector == null) {
 			throw new IllegalStateException("Couldn't find blob detector.");
 		}
-		final HMethodToDataClassAccessCalculator m2dc = createMethodToDataClassAccessCalculator(graph, blobDetector);
+		final var m2dc = this.createMethodToDataClassAccessCalculator(graph,
+				blobDetector);
 
-		createHInBlobAccessCalculator(graph, m2dc);
+		this.createHInBlobAccessCalculator(graph, m2dc);
 
-		final HClusterCalculator hCluster = createClusterCalculator(graph, blobDetector, m2dc);
+		final var hCluster = this.createClusterCalculator(graph, blobDetector, m2dc);
 
-		createClusterAccessCalculator(graph, hCluster);
+		this.createClusterAccessCalculator(graph, hCluster);
 	}
 
 	/**
@@ -91,13 +90,13 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 	@Override
 	public DFSGraph getDependencyGraph() {
 
-		final DFSGraph graph = getSuperDependencyGraph();
+		final var graph = this.getSuperDependencyGraph();
 		if (graph == null) {
 			throw new IllegalStateException("Couldn't initialize resolver dependencies.");
 		}
 		//
-		createResolveCalculatorDependency(graph);
-		createResolveAntiPatternDependency(graph);
+		this.createResolveCalculatorDependency(graph);
+		this.createResolveAntiPatternDependency(graph);
 		return graph;
 	}
 
@@ -114,7 +113,7 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 		HAfferentCouplingCalculator haff = null;
 		HEfferentCouplingCalculator heff = null;
 		HClusterAccessCalculator hCluster = null;
-		for (final HDetector detector : getHDetector()) {
+		for (final HDetector detector : this.getHDetector()) {
 			if (detector instanceof HClusterAccessCalculator) {
 				hCluster = (HClusterAccessCalculator) detector;
 			} else if (detector instanceof HInBlobAccessCalculator) {
@@ -131,8 +130,8 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 			throw new IllegalStateException("Couldn't find all required calculators.");
 		}
 
-		createBlobResolver(graph, m2dc, iba, haff, heff);
-		createAlternativeBlobResolver(graph, hCluster, m2dc);
+		this.createBlobResolver(graph, m2dc, iba, haff, heff);
+		this.createAlternativeBlobResolver(graph, hCluster, m2dc);
 	}
 
 	/**
@@ -156,26 +155,25 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 	@Override
 	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case HulkPackage.HANTI_PATTERN_RESOLVING___CREATE_RESOLVE_CALCULATOR_DEPENDENCY__DFSGRAPH:
-			createResolveCalculatorDependency((DFSGraph) arguments.get(0));
-			return null;
-		case HulkPackage.HANTI_PATTERN_RESOLVING___GET_DEPENDENCY_GRAPH:
-			return getDependencyGraph();
-		case HulkPackage.HANTI_PATTERN_RESOLVING___CREATE_RESOLVE_ANTI_PATTERN_DEPENDENCY__DFSGRAPH:
-			createResolveAntiPatternDependency((DFSGraph) arguments.get(0));
-			return null;
-		case HulkPackage.HANTI_PATTERN_RESOLVING___GET_SUPER_DEPENDENCY_GRAPH:
-			return getSuperDependencyGraph();
+			case HulkPackage.HANTI_PATTERN_RESOLVING___CREATE_RESOLVE_CALCULATOR_DEPENDENCY__DFSGRAPH:
+				this.createResolveCalculatorDependency((DFSGraph) arguments.get(0));
+				return null;
+			case HulkPackage.HANTI_PATTERN_RESOLVING___GET_DEPENDENCY_GRAPH:
+				return this.getDependencyGraph();
+			case HulkPackage.HANTI_PATTERN_RESOLVING___CREATE_RESOLVE_ANTI_PATTERN_DEPENDENCY__DFSGRAPH:
+				this.createResolveAntiPatternDependency((DFSGraph) arguments.get(0));
+				return null;
+			case HulkPackage.HANTI_PATTERN_RESOLVING___GET_SUPER_DEPENDENCY_GRAPH:
+				return this.getSuperDependencyGraph();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-
 	public final HMethodToDataClassAccessCalculator createMethodToDataClassAccessCalculator(final DFSGraph graph,
 			final HBlobDetector blobDetector) {
-		final HMethodToDataClassAccessCalculator m2dc = CalculatorsFactory.eINSTANCE
+		final var m2dc = CalculatorsFactory.eINSTANCE
 				.createHMethodToDataClassAccessCalculator();
-		final Edge edge2 = DfsFactory.eINSTANCE.createEdge();
+		final var edge2 = DfsFactory.eINSTANCE.createEdge();
 		m2dc.setGraph(graph);
 		m2dc.setHAntiPatternHandling(this);
 		edge2.setGraph(graph);
@@ -186,8 +184,8 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 
 	public final HInBlobAccessCalculator createHInBlobAccessCalculator(final DFSGraph graph,
 			final HMethodToDataClassAccessCalculator m2dc) {
-		final HInBlobAccessCalculator iba = CalculatorsFactory.eINSTANCE.createHInBlobAccessCalculator();
-		final Edge edge1 = DfsFactory.eINSTANCE.createEdge();
+		final var iba = CalculatorsFactory.eINSTANCE.createHInBlobAccessCalculator();
+		final var edge1 = DfsFactory.eINSTANCE.createEdge();
 		iba.setGraph(graph);
 		iba.setHAntiPatternHandling(this);
 		edge1.setGraph(graph);
@@ -198,9 +196,9 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 
 	public final HClusterCalculator createClusterCalculator(final DFSGraph graph, final HBlobDetector blobDetector,
 			final HMethodToDataClassAccessCalculator m2dc) {
-		final HClusterCalculator hCluster = CalculatorsFactory.eINSTANCE.createHClusterCalculator();
-		final Edge blobEdge = DfsFactory.eINSTANCE.createEdge();
-		final Edge m2dcEdge = DfsFactory.eINSTANCE.createEdge();
+		final var hCluster = CalculatorsFactory.eINSTANCE.createHClusterCalculator();
+		final var blobEdge = DfsFactory.eINSTANCE.createEdge();
+		final var m2dcEdge = DfsFactory.eINSTANCE.createEdge();
 		hCluster.setGraph(graph);
 		hCluster.setHAntiPatternHandling(this);
 		blobEdge.setGraph(graph);
@@ -214,8 +212,8 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 
 	public final HClusterAccessCalculator createClusterAccessCalculator(final DFSGraph graph,
 			final HClusterCalculator hCluster) {
-		final HClusterAccessCalculator hAccess = CalculatorsFactory.eINSTANCE.createHClusterAccessCalculator();
-		final Edge accessEdge = DfsFactory.eINSTANCE.createEdge();
+		final var hAccess = CalculatorsFactory.eINSTANCE.createHClusterAccessCalculator();
+		final var accessEdge = DfsFactory.eINSTANCE.createEdge();
 		hAccess.setGraph(graph);
 		hAccess.setHAntiPatternHandling(this);
 		accessEdge.setGraph(graph);
@@ -227,11 +225,11 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 	public final HBlobResolver createBlobResolver(final DFSGraph graph, final HMethodToDataClassAccessCalculator m2dc,
 			final HInBlobAccessCalculator iba, final HAfferentCouplingCalculator haff,
 			final HEfferentCouplingCalculator heff) {
-		final HBlobResolver blobResolver = AntipatternFactory.eINSTANCE.createHBlobResolver();
-		final Edge edgeBm2dc = DfsFactory.eINSTANCE.createEdge();
-		final Edge edgeIBA = DfsFactory.eINSTANCE.createEdge();
-		final Edge haffEdge = DfsFactory.eINSTANCE.createEdge();
-		final Edge heffEdge = DfsFactory.eINSTANCE.createEdge();
+		final var blobResolver = AntipatternFactory.eINSTANCE.createHBlobResolver();
+		final var edgeBm2dc = DfsFactory.eINSTANCE.createEdge();
+		final var edgeIBA = DfsFactory.eINSTANCE.createEdge();
+		final var haffEdge = DfsFactory.eINSTANCE.createEdge();
+		final var heffEdge = DfsFactory.eINSTANCE.createEdge();
 		blobResolver.setHAntiPatternHandling(this);
 		blobResolver.setGraph(graph);
 		edgeBm2dc.setGraph(graph);
@@ -251,9 +249,9 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 
 	public final HAlternativeBlobresolver createAlternativeBlobResolver(final DFSGraph graph,
 			final HClusterAccessCalculator hCluster, final HMethodToDataClassAccessCalculator m2dc) {
-		final Edge clusterEdge = DfsFactory.eINSTANCE.createEdge();
-		final HAlternativeBlobresolver altBlobResolver = AntipatternFactory.eINSTANCE.createHAlternativeBlobresolver();
-		final Edge m2dcEdge = DfsFactory.eINSTANCE.createEdge();
+		final var clusterEdge = DfsFactory.eINSTANCE.createEdge();
+		final var altBlobResolver = AntipatternFactory.eINSTANCE.createHAlternativeBlobresolver();
+		final var m2dcEdge = DfsFactory.eINSTANCE.createEdge();
 		clusterEdge.setGraph(graph);
 		hCluster.getIncoming().add(clusterEdge);
 		altBlobResolver.getOutgoing().add(clusterEdge);

@@ -7,7 +7,8 @@ package org.gravity.hulk.resolve;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>HAnti Pattern Resolver</b></em>'.
+ * A representation of the model object '<em><b>HAnti Pattern
+ * Resolver</b></em>'.
  * <!-- end-user-doc -->
  *
  *

@@ -5,6 +5,7 @@ package org.gravity.hulk.detection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.gravity.hulk.HDetector;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.typegraph.basic.TClass;
@@ -17,7 +18,7 @@ import org.gravity.typegraph.basic.TClass;
  *
  * @generated
  */
-public abstract class HClassBasedCalculatorImpl extends HDetector {
+public abstract class HClassBasedCalculatorImpl extends HDetectorImpl {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

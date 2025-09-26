@@ -2,22 +2,19 @@
  */
 package org.gravity.hulk.resolve.calculators.impl;
 
-import java.lang.reflect.InvocationTargetException;
 // <-- [user defined imports]
 import java.util.HashSet;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
+import org.gravity.hulk.impl.HDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HCluster;
 import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
 import org.gravity.hulk.resolve.calculators.HClusterAccessCalculator;
-import org.gravity.hulk.resolve.impl.HResolverImpl;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
@@ -26,17 +23,19 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HCluster Access Calculator</b></em>'.
+ * An implementation of the model object '<em><b>HCluster Access
+ * Calculator</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class HClusterAccessCalculatorImpl extends HResolverImpl implements HClusterAccessCalculator {
+public class HClusterAccessCalculatorImpl extends HDetectorImpl implements HClusterAccessCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HClusterAccessCalculatorImpl() {
@@ -45,16 +44,7 @@ public class HClusterAccessCalculatorImpl extends HResolverImpl implements HClus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return CalculatorsPackage.Literals.HCLUSTER_ACCESS_CALCULATOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,13 +53,11 @@ public class HClusterAccessCalculatorImpl extends HResolverImpl implements HClus
 
 		final var allCreatedAnnotations = new HashSet<HInBlobClusterAccess>();
 		for (final HAnnotation hAnnotation : apg.getHAnnotations()) {
-			if (hAnnotation instanceof HBlobAntiPattern) {
-				final var hBlob = (HBlobAntiPattern) hAnnotation;
+			if (hAnnotation instanceof final HBlobAntiPattern hBlob) {
 				final var tClass = (TClass) hBlob.getTAnnotated();
 				final var createdAnnotations = new HashSet<HInBlobClusterAccess>();
 				for (final TAnnotation tAnnotation : tClass.getTAnnotation()) {
-					if (tAnnotation instanceof HCluster) {
-						final var hCluster = (HCluster) tAnnotation;
+					if (tAnnotation instanceof final HCluster hCluster) {
 						final var tMembers = hCluster.getTMembers();
 						final var seenOut = new HashSet<TMember>();
 						final var seenIn = new HashSet<TMember>();
@@ -109,19 +97,6 @@ public class HClusterAccessCalculatorImpl extends HResolverImpl implements HClus
 
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case CalculatorsPackage.HCLUSTER_ACCESS_CALCULATOR___DETECT__HANTIPATTERNGRAPH:
-			return detect((HAntiPatternGraph) arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -135,4 +110,4 @@ public class HClusterAccessCalculatorImpl extends HResolverImpl implements HClus
 	}
 
 	// [user code injected with eMoflon] -->
-} //HClusterAccessCalculatorImpl
+} // HClusterAccessCalculatorImpl

@@ -22,9 +22,12 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getExecutedMoves <em>Executed Moves</em>}</li>
- *   <li>{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getOriginal_apg <em>Original apg</em>}</li>
- *   <li>{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getCopy_apg <em>Copy apg</em>}</li>
+ * <li>{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getExecutedMoves
+ * <em>Executed Moves</em>}</li>
+ * <li>{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getOriginal_apg
+ * <em>Original apg</em>}</li>
+ * <li>{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getCopy_apg
+ * <em>Copy apg</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,15 +36,18 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * @generated
  */
 public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolver {
+
 	/**
 	 * Returns the value of the '<em><b>Executed Moves</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMethod}.
+	 * The list contents are of type
+	 * {@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMethod}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Executed Moves</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Executed Moves</em>' reference list.
 	 * @see org.gravity.hulk.resolve.antipattern.AntipatternPackage#getHBlobResolver_ExecutedMoves()
 	 * @model
@@ -57,6 +63,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Original apg</em>' reference.
 	 * @see #setOriginal_apg(HAntiPatternGraph)
 	 * @see org.gravity.hulk.resolve.antipattern.AntipatternPackage#getHBlobResolver_Original_apg()
@@ -66,9 +73,12 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	HAntiPatternGraph getOriginal_apg();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getOriginal_apg <em>Original apg</em>}' reference.
+	 * Sets the value of the
+	 * '{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getOriginal_apg
+	 * <em>Original apg</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @param value the new value of the '<em>Original apg</em>' reference.
 	 * @see #getOriginal_apg()
 	 * @generated
@@ -83,6 +93,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Copy apg</em>' containment reference.
 	 * @see #setCopy_apg(HAntiPatternGraph)
 	 * @see org.gravity.hulk.resolve.antipattern.AntipatternPackage#getHBlobResolver_Copy_apg()
@@ -92,9 +103,12 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	HAntiPatternGraph getCopy_apg();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getCopy_apg <em>Copy apg</em>}' containment reference.
+	 * Sets the value of the
+	 * '{@link org.gravity.hulk.resolve.antipattern.HBlobResolver#getCopy_apg
+	 * <em>Copy apg</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @param value the new value of the '<em>Copy apg</em>' containment reference.
 	 * @see #getCopy_apg()
 	 * @generated
@@ -104,6 +118,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -113,6 +128,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -121,6 +137,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -129,6 +146,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -137,6 +155,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @model
 	 * @generated
 	 */

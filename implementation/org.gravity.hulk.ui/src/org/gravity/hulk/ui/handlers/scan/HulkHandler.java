@@ -52,7 +52,7 @@ import org.gravity.hulk.HulkActivator;
 import org.gravity.hulk.annotations.activator.AnnotationsActivator;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.detection.HDetector;
+import org.gravity.hulk.HDetector;
 import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.ui.HulkUiActivator;
 import org.gravity.hulk.ui.Messages;

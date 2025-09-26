@@ -13,6 +13,7 @@ Require-Bundle: org.gravity.hulk,
  org.apache.log4j,
  org.gravity.hulk.annotations,
  org.gravity.refactorings,
- org.gravity.hulk.refactoringgraph
+ org.gravity.hulk.refactoringgraph,
+ org.eclipse.emf.common
 Bundle-ClassPath: .,
  lib/hierarchical-clustering.jar

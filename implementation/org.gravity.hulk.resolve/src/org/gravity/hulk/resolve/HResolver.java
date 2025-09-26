@@ -2,7 +2,7 @@
  */
 package org.gravity.hulk.resolve;
 
-import org.gravity.hulk.detection.HDetector;
+import org.gravity.hulk.HDetector;
 
 /**
  * <!-- begin-user-doc -->

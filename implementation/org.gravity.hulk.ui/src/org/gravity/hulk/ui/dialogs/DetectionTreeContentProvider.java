@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.gravity.hulk.detection.HDetector;
+import org.gravity.hulk.detection.HDetectorImpl;
 
 public class DetectionTreeContentProvider implements ITreeContentProvider {
 
@@ -60,7 +60,7 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 				}
 			}
 			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (HDetector.class.isAssignableFrom(eclassifier.getInstanceClass())&&!((EClass) eclassifier).isAbstract()) {
+				if (HDetectorImpl.class.isAssignableFrom(eclassifier.getInstanceClass())&&!((EClass) eclassifier).isAbstract()) {
 					elements.add(eclassifier);
 
 				}
