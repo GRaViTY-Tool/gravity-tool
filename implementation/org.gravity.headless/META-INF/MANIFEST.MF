@@ -56,6 +56,7 @@ Bundle-ClassPath: .,
  target/dependency/jetty-jakarta-servlet-api.jar,
  target/dependency/jetty-security.jar,
  target/dependency/jetty-server.jar,
+ target/dependency/jetty-session.jar,
  target/dependency/jetty-ee10-servlet.jar,
  target/dependency/jetty-util.jar,
  target/dependency/commons-cli.jar
