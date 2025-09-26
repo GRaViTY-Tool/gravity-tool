@@ -22,10 +22,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.henshin.interpreter.EGraph;
+import org.eclipse.emf.henshin.interpreter.Match;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
+import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
-import org.eclipse.jdt.internal.codeassist.impl.Engine;
 import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -36,9 +37,7 @@ import org.gravity.security.violation.patterns.violations.ViolationsPackage;
 import org.gravity.tgg.pm.uml.CorrespondenceGraphGenerator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.moflon.tgg.language.analysis.Rule;
 import org.moflon.tgg.runtime.CorrespondenceModel;
-import org.moflon.tgg.runtime.Match;
 import org.xml.sax.SAXException;
 
 import carisma.core.analysis.AnalysisHost;
@@ -75,7 +74,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		if (target.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		if (!(target instanceof TypeGraph graph)) {
+		if (!(target instanceof final TypeGraph graph)) {
 			throw new IllegalStateException("Source type is not a program model: class=" + target.eClass().getName()
 					+ ", object=" + target.toString());
 		}
@@ -84,7 +83,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		if (source.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		if (!(source instanceof Model model)) {
+		if (!(source instanceof final Model model)) {
 			throw new IllegalStateException("Source type is not a UML model: class=" + source.eClass().getName()
 					+ ", object=" + source.toString());
 		}
@@ -105,7 +104,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		roots.addAll(umlContents);
 		final EGraph graph = new EGraphImpl(roots);
 
-		final Engine engine = new EngineImpl();
+		final var engine = new EngineImpl();
 		engine.getScriptEngine().put(SignatureHelper.class.getName(), SignatureHelper.class);
 		final List<Match> matches = new LinkedList<>();
 		for (final Match m : engine.findMatches(this.rule, graph, null)) {
@@ -118,7 +117,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 	private Map<critical, Map<Integer, List<String>>> replaceAllWithNames(final List<EObject> uml) {
 		final Map<critical, Map<Integer, List<String>>> signatures = new HashMap<>();
 		for (final EObject object : uml) {
-			if (object instanceof critical crit) {
+			if (object instanceof final critical crit) {
 				signatures.computeIfAbsent(crit, key -> {
 					final Map<Integer, List<String>> map = new HashMap<>();
 					final var secrecy = key.getSecrecy();
