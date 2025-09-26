@@ -18,17 +18,10 @@ jobs:
 #        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
         submodules: 'recursive'
         fetch-depth: 0
-#    - name: Set up JDK
-#      uses: actions/setup-java@v2
-#      with:
-#        distribution: 'temurin'
-#        java-version: '17'
-#        cache: 'maven'  
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-#    - name: Build with Maven
     - name: Setup Maven Action
       uses: s4u/setup-maven-action@v1.10.0
+      with:
+          java-version: 21
     - name: Run headless test   
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,7 +38,7 @@ jobs:
         files: |
           build/org.gravity.updatesite/target/site.zip
           build/org.gravity.headless.product/target/products/*.zip
-    - name: Publisch Release
+    - name: Publish Release
       if: ${{ github.ref_type == 'tag' }}
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
@@ -54,3 +47,4 @@ jobs:
         files: |
           build/org.gravity.updatesite/target/site.zip
           build/org.gravity.headless.product/target/products/*.zip
+
