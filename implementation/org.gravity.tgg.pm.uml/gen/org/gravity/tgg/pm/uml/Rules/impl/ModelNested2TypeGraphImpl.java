@@ -664,7 +664,7 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TypeGraph_5(TypeGraph pm) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_1(TypeGraph pm) {
 
 		Object[] result1_bindingAndBlack = ModelNested2TypeGraphImpl
 				.pattern_ModelNested2TypeGraph_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -720,7 +720,7 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_170(EMoflonEdge _edge_nestedPackage) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_nestedPackage) {
 
 		Object[] result1_bindingAndBlack = ModelNested2TypeGraphImpl
 				.pattern_ModelNested2TypeGraph_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1179,10 +1179,10 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 				return null;
 			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_5__TYPEGRAPH:
-				return isAppropriate_BWD_TypeGraph_5((TypeGraph) arguments.get(0));
-			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_170__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_170((EMoflonEdge) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_1__TYPEGRAPH:
+				return isAppropriate_BWD_TypeGraph_1((TypeGraph) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
 			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

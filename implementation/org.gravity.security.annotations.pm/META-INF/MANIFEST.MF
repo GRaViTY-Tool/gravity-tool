@@ -13,12 +13,11 @@ Export-Package: org.gravity.security.annotations,
  org.gravity.security.annotations.requirements.impl,
  org.gravity.security.annotations.requirements.util,
  org.gravity.security.annotations.util
-Import-Package: org.gravity.security.annotations.access,
- org.gravity.security.annotations.requirements
 Bundle-Name: Security Annotations for the Program Model
 Bundle-Version: 1.0.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Require-Bundle: org.gravity.tgg.modisco.pm
+Require-Bundle: org.gravity.tgg.modisco.pm,
+ org.gravity.security.annotations.check;bundle-version="1.0.3"

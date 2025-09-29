@@ -208,7 +208,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_5(TypeGraph pm);
+	EObjectContainer isAppropriate_BWD_TypeGraph_1(TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_170(EMoflonEdge _edge_nestedPackage);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_nestedPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
