@@ -699,7 +699,7 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_93(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_34(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = ClassInstanceCreationImpl
 				.pattern_ClassInstanceCreation_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -757,7 +757,7 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_99(EMoflonEdge _edge_mMethodInvocations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_37(EMoflonEdge _edge_mMethodInvocations) {
 
 		Object[] result1_bindingAndBlack = ClassInstanceCreationImpl
 				.pattern_ClassInstanceCreation_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1176,10 +1176,10 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 				return null;
 			case RulesPackage.CLASS_INSTANCE_CREATION___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.CLASS_INSTANCE_CREATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_93__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_93((EMoflonEdge) arguments.get(0));
-			case RulesPackage.CLASS_INSTANCE_CREATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_99__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_99((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_INSTANCE_CREATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_34__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_34((EMoflonEdge) arguments.get(0));
+			case RulesPackage.CLASS_INSTANCE_CREATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_37__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
 			case RulesPackage.CLASS_INSTANCE_CREATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.CLASS_INSTANCE_CREATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2385,7 +2385,7 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInstanceCreation_21_2_testcorematchandDECs_black_nac_0B(
 			MClassInstanceCreation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_412239 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_260490 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2394,9 +2394,9 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInstanceCreation_21_2_testcorematchandDECs_black_nac_1BB(
 			MClassInstanceCreation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_942576 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_790349 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_942576)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_790349)) {
 				return new Object[] { invocation, mMember };
 			}
 		}
@@ -2643,7 +2643,7 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInstanceCreation_27_1_matchtggpattern_black_nac_0B(
 			MClassInstanceCreation invocation) {
-		for (AnnotationMemberValuePair __DEC_invocation_value_549708 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_invocation_value_148911 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { invocation };
 		}
@@ -2652,9 +2652,9 @@ public class ClassInstanceCreationImpl extends AbstractRuleImpl implements Class
 
 	public static final Object[] pattern_ClassInstanceCreation_27_1_matchtggpattern_black_nac_1BB(
 			MClassInstanceCreation invocation, MDefinition mMember) {
-		for (MDefinition __DEC_invocation_mMethodInvocations_408753 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MDefinition __DEC_invocation_mMethodInvocations_557044 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(invocation, MDefinition.class, "mMethodInvocations")) {
-			if (!mMember.equals(__DEC_invocation_mMethodInvocations_408753)) {
+			if (!mMember.equals(__DEC_invocation_mMethodInvocations_557044)) {
 				return new Object[] { invocation, mMember };
 			}
 		}

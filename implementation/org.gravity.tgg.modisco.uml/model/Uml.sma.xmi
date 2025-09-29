@@ -1,621 +1,621 @@
 <?xml version="1.0" encoding="ASCII"?>
 <analysis:StaticAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:analysis="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//analysis">
   <sourceRules>
-    <rules ruleName="OperationInInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/isAppropriate_FWD_EMoflonEdge_109"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/checkDEC_FWD"/>
+    <rules ruleName="JavaAnnotationValueEntry2Comment">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/isAppropriate_FWD_EMoflonEdge_108"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="TypeParameter2Object_InMethod_InClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/isAppropriate_FWD_EMoflonEdge_110"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ParameterizedType2Class_InnerTypeInInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/isAppropriate_FWD_EMoflonEdge_111"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="CompilationUnit2Artifact">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/isAppropriate_FWD_EMoflonEdge_112"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeDeclaration2Interface_WithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/isAppropriate_FWD_EMoflonEdge_113"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="TypeAccess2Generalization">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/isAppropriate_FWD_EMoflonEdge_114"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4EnumConstInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/isAppropriate_FWD_EMoflonEdge_115"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="JavaAnnotation2Comment4BodyDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/isAppropriate_FWD_EMoflonEdge_116"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="VariableDec2Parameter4">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/isAppropriate_FWD_EMoflonEdge_117"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AbstractTypeAccess2ReturnParam">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/isAppropriate_FWD_EMoflonEdge_118"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/checkDEC_FWD"/>
+    <rules ruleName="IgnoreOrphanTypesEdge">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreOrphanTypesEdge/isAppropriate_FWD_EMoflonEdge_109"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreOrphanTypesEdge/checkDEC_FWD"/>
     </rules>
     <rules ruleName="OperationInEnum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInEnum/isAppropriate_FWD_EMoflonEdge_119"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInEnum/isAppropriate_FWD_EMoflonEdge_110"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInEnum/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InEnum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/isAppropriate_FWD_EMoflonEdge_111"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AbstractTypeAccess2ReturnParam">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/isAppropriate_FWD_EMoflonEdge_112"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="Manifestation4CompilationUnit2Artifact">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/isAppropriate_FWD_EMoflonEdge_113"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/isAppropriate_FWD_EMoflonEdge_114"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OperationInClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/isAppropriate_FWD_EMoflonEdge_115"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="LinkTypeToPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/isAppropriate_FWD_EMoflonEdge_116"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/checkDEC_FWD"/>
     </rules>
     <rules ruleName="PrimitiveTypeShort">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeShort/isAppropriate_FWD_PrimitiveTypeShort_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeShort/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InEnum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/isAppropriate_FWD_EMoflonEdge_120"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/checkDEC_FWD"/>
+    <rules ruleName="OperationInInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/isAppropriate_FWD_EMoflonEdge_117"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeBoolean">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/isAppropriate_FWD_PrimitiveTypeBoolean_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/checkDEC_FWD"/>
+    <rules ruleName="UnresolvedTypeDeclaration2Type">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/isAppropriate_FWD_EMoflonEdge_118"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/isAppropriate_FWD_EMoflonEdge_119"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="JavaPackageToUMLPackage_underPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/isAppropriate_FWD_EMoflonEdge_120"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/isAppropriate_FWD_EMoflonEdge_121"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/checkDEC_FWD"/>
     </rules>
     <rules ruleName="ClassDec2Class">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDec2Class/isAppropriate_FWD_MClass_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDec2Class/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="FieldDec2Property4_Anonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/isAppropriate_FWD_EMoflonEdge_121"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OperationInAnnotationType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/isAppropriate_FWD_EMoflonEdge_122"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InterfaceDecWithModifier2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDecWithModifier2Interface/isAppropriate_FWD_EMoflonEdge_123"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDecWithModifier2Interface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="TypeAccess2InterfaceGeneralization">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/isAppropriate_FWD_EMoflonEdge_124"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="Manifestation4CompilationUnit2Artifact">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/isAppropriate_FWD_EMoflonEdge_125"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4EnumConstInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/isAppropriate_FWD_EMoflonEdge_126"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InterfaceDec2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/isAppropriate_FWD_InterfaceDeclaration_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeFloat">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/isAppropriate_FWD_PrimitiveTypeFloat_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/isAppropriate_FWD_EMoflonEdge_127"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeChar">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/isAppropriate_FWD_PrimitiveTypeChar_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property4Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/isAppropriate_FWD_EMoflonEdge_128"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ClassDecWithModifier2Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/isAppropriate_FWD_EMoflonEdge_129"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodDec2OperationWithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/isAppropriate_FWD_EMoflonEdge_130"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="EnumDecWithModifier2Enum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/isAppropriate_FWD_EMoflonEdge_131"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="JavaAnnotationValue2Comment">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/isAppropriate_FWD_EMoflonEdge_132"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OperationInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/isAppropriate_FWD_EMoflonEdge_133"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="TypeAccess2InterfaceRealization">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/isAppropriate_FWD_EMoflonEdge_134"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property4Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/isAppropriate_FWD_EMoflonEdge_135"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="UnresolvedTypeDeclaration2Type">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/isAppropriate_FWD_EMoflonEdge_136"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ParameterizedType2Interface_InnerTypeInClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/isAppropriate_FWD_EMoflonEdge_137"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/isAppropriate_FWD_EMoflonEdge_138"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="MethodDec2Operation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/isAppropriate_FWD_MMethodDefinition_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeDeclaration2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/isAppropriate_FWD_AnnotationTypeDeclaration_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/isAppropriate_FWD_EMoflonEdge_139"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="TypeParameter2Object_InMethod_InInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/isAppropriate_FWD_EMoflonEdge_140"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/isAppropriate_FWD_EMoflonEdge_122"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="TypeParameter2Object_InInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/isAppropriate_FWD_EMoflonEdge_141"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4IAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/isAppropriate_FWD_EMoflonEdge_142"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="JavaAnnotationValueEntry2Comment">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/isAppropriate_FWD_EMoflonEdge_143"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="ConstructorDec2OperationWithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/isAppropriate_FWD_EMoflonEdge_144"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="IgnoreClassInstanceCreation4ArrayInitializer">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreClassInstanceCreation4ArrayInitializer/isAppropriate_FWD_EMoflonEdge_145"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreClassInstanceCreation4ArrayInitializer/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeInt">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/isAppropriate_FWD_PrimitiveTypeInt_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="IgnoreOrphanTypesEdge">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreOrphanTypesEdge/isAppropriate_FWD_EMoflonEdge_146"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreOrphanTypesEdge/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="TypeDependency2UsageDependency">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/isAppropriate_FWD_EMoflonEdge_147"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/isAppropriate_FWD_EMoflonEdge_123"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="AnonymousClass4Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/isAppropriate_FWD_EMoflonEdge_148"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/isAppropriate_FWD_EMoflonEdge_149"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/isAppropriate_FWD_EMoflonEdge_124"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/checkDEC_FWD"/>
     </rules>
+    <rules ruleName="FieldDec2Property4Enum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/isAppropriate_FWD_EMoflonEdge_125"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypeParameter2Object_InMethod_InClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/isAppropriate_FWD_EMoflonEdge_126"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/checkDEC_FWD"/>
+    </rules>
     <rules ruleName="ParameterizedType2Interface_InnerTypeInInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/isAppropriate_FWD_EMoflonEdge_150"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/isAppropriate_FWD_EMoflonEdge_127"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="LinkTypeToPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/isAppropriate_FWD_EMoflonEdge_151"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/checkDEC_FWD"/>
+    <rules ruleName="AnnotationTypeDeclaration2Interface_WithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/isAppropriate_FWD_EMoflonEdge_128"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="ParameterizedType2Class_InnerTypeInClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/isAppropriate_FWD_EMoflonEdge_152"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/checkDEC_FWD"/>
+    <rules ruleName="InterfaceDecWithModifier2Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDecWithModifier2Interface/isAppropriate_FWD_EMoflonEdge_129"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDecWithModifier2Interface/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="JavaPackageToUMLPackage_underPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/isAppropriate_FWD_EMoflonEdge_153"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/checkDEC_FWD"/>
+    <rules ruleName="EnumDec2Enum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/isAppropriate_FWD_EnumDeclaration_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeByte">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/isAppropriate_FWD_PrimitiveTypeByte_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/checkDEC_FWD"/>
+    <rules ruleName="EnumDecWithModifier2Enum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/isAppropriate_FWD_EMoflonEdge_130"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="JavaPackageToUMLPackage_underModel">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/isAppropriate_FWD_EMoflonEdge_154"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/checkDEC_FWD"/>
+    <rules ruleName="OrphandedPrimitive2PrimitiveType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/isAppropriate_FWD_EMoflonEdge_131"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Class_InnerTypeInInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/isAppropriate_FWD_EMoflonEdge_132"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/checkDEC_FWD"/>
     </rules>
     <rules ruleName="FieldDec2Property_WithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/isAppropriate_FWD_EMoflonEdge_155"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/isAppropriate_FWD_EMoflonEdge_133"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/checkDEC_FWD"/>
     </rules>
     <rules ruleName="ConstructorDec2Operation">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2Operation/isAppropriate_FWD_MConstructorDefinition_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2Operation/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="JavaModel2UmlModelRule">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/isAppropriate_FWD_MGravityModel_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/checkDEC_FWD"/>
+    <rules ruleName="TypeAccess2InterfaceRealization">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/isAppropriate_FWD_EMoflonEdge_134"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="JavaAnnotationValue2Comment">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/isAppropriate_FWD_EMoflonEdge_135"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypeParameter2Object_InInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/isAppropriate_FWD_EMoflonEdge_136"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypeAccess2InterfaceGeneralization">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/isAppropriate_FWD_EMoflonEdge_137"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OperationInAnnotationType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/isAppropriate_FWD_EMoflonEdge_138"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/checkDEC_FWD"/>
     </rules>
     <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/isAppropriate_FWD_EMoflonEdge_156"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/isAppropriate_FWD_EMoflonEdge_139"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeLong">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/isAppropriate_FWD_PrimitiveTypeLong_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/checkDEC_FWD"/>
+    <rules ruleName="IgnoreClassInstanceCreation4ArrayInitializer">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreClassInstanceCreation4ArrayInitializer/isAppropriate_FWD_EMoflonEdge_140"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreClassInstanceCreation4ArrayInitializer/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/isAppropriate_FWD_EMoflonEdge_141"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4EnumConstInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/isAppropriate_FWD_EMoflonEdge_142"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeFloat">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/isAppropriate_FWD_PrimitiveTypeFloat_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeChar">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/isAppropriate_FWD_PrimitiveTypeChar_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ArrayType2NonArrayType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ArrayType2NonArrayType/isAppropriate_FWD_EMoflonEdge_143"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ArrayType2NonArrayType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/isAppropriate_FWD_EMoflonEdge_144"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/isAppropriate_FWD_EMoflonEdge_145"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodDec2Operation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/isAppropriate_FWD_MMethodDefinition_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InterfaceDec2Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/isAppropriate_FWD_InterfaceDeclaration_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="VariableDec2Parameter4">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/isAppropriate_FWD_EMoflonEdge_146"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypeAccess2Generalization">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/isAppropriate_FWD_EMoflonEdge_147"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InAnnotationType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/isAppropriate_FWD_EMoflonEdge_148"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OrphanedClassDec2OrphanedClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/isAppropriate_FWD_EMoflonEdge_149"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/isAppropriate_FWD_EMoflonEdge_150"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="JavaPackageToUMLPackage_underModel">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/isAppropriate_FWD_EMoflonEdge_151"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/isAppropriate_FWD_EMoflonEdge_152"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="JavaAnnotation2Comment4BodyDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/isAppropriate_FWD_EMoflonEdge_153"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/isAppropriate_FWD_EMoflonEdge_154"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/checkDEC_FWD"/>
     </rules>
     <rules ruleName="PrimitiveTypeVoid">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeVoid/isAppropriate_FWD_PrimitiveTypeVoid_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeVoid/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="ArrayType2NonArrayType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ArrayType2NonArrayType/isAppropriate_FWD_EMoflonEdge_157"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ArrayType2NonArrayType/checkDEC_FWD"/>
+    <rules ruleName="CompilationUnit2Artifact">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/isAppropriate_FWD_EMoflonEdge_155"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="ParameterizedType2Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/isAppropriate_FWD_EMoflonEdge_158"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4Anonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/isAppropriate_FWD_EMoflonEdge_159"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InAnnotationType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/isAppropriate_FWD_EMoflonEdge_160"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property4Enum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/isAppropriate_FWD_EMoflonEdge_161"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OperationInClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/isAppropriate_FWD_EMoflonEdge_162"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OrphanedClassDec2OrphanedClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/isAppropriate_FWD_EMoflonEdge_163"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="OrphandedPrimitive2PrimitiveType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/isAppropriate_FWD_EMoflonEdge_164"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/isAppropriate_FWD_EMoflonEdge_165"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="TypeParameter2Object_InClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/isAppropriate_FWD_EMoflonEdge_166"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/isAppropriate_FWD_EMoflonEdge_167"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="JavaAnnotation2Comment4SingleVariableDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/isAppropriate_FWD_EMoflonEdge_168"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/checkDEC_FWD"/>
+    <rules ruleName="ConstructorDec2OperationWithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/isAppropriate_FWD_EMoflonEdge_156"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/checkDEC_FWD"/>
     </rules>
     <rules ruleName="PrimitiveTypeDouble">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeDouble/isAppropriate_FWD_PrimitiveTypeDouble_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeDouble/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="ParameterizedType2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/isAppropriate_FWD_EMoflonEdge_169"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/checkDEC_FWD"/>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4IAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/isAppropriate_FWD_EMoflonEdge_157"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="EnumDec2Enum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/isAppropriate_FWD_EnumDeclaration_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/checkDEC_FWD"/>
+    <rules ruleName="AnonymousClass4EnumConstInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/isAppropriate_FWD_EMoflonEdge_158"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="TypeParameter2Object_InClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/isAppropriate_FWD_EMoflonEdge_159"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Interface_InnerTypeInClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/isAppropriate_FWD_EMoflonEdge_160"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4_Anonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/isAppropriate_FWD_EMoflonEdge_161"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ClassDecWithModifier2Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/isAppropriate_FWD_EMoflonEdge_162"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeLong">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/isAppropriate_FWD_PrimitiveTypeLong_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeInt">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/isAppropriate_FWD_PrimitiveTypeInt_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="JavaAnnotation2Comment4SingleVariableDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/isAppropriate_FWD_EMoflonEdge_163"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Class_InnerTypeInClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/isAppropriate_FWD_EMoflonEdge_164"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/isAppropriate_FWD_EMoflonEdge_165"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeBoolean">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/isAppropriate_FWD_PrimitiveTypeBoolean_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4Anonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/isAppropriate_FWD_EMoflonEdge_166"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeByte">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/isAppropriate_FWD_PrimitiveTypeByte_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="MethodDec2OperationWithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/isAppropriate_FWD_EMoflonEdge_167"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="OperationInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/isAppropriate_FWD_EMoflonEdge_168"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeDeclaration2Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/isAppropriate_FWD_AnnotationTypeDeclaration_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="JavaModel2UmlModelRule">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/isAppropriate_FWD_MGravityModel_1"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/checkDEC_FWD"/>
     </rules>
   </sourceRules>
   <targetRules>
-    <rules ruleName="OperationInInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/isAppropriate_BWD_EMoflonEdge_102"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/checkDEC_BWD"/>
+    <rules ruleName="JavaAnnotationValueEntry2Comment">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/isAppropriate_BWD_EMoflonEdge_102"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="TypeParameter2Object_InMethod_InClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/isAppropriate_BWD_EMoflonEdge_103"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ParameterizedType2Class_InnerTypeInInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/isAppropriate_BWD_EMoflonEdge_104"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="CompilationUnit2Artifact">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/isAppropriate_BWD_EMoflonEdge_105"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeDeclaration2Interface_WithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/isAppropriate_BWD_Interface_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="TypeAccess2Generalization">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/isAppropriate_BWD_EMoflonEdge_106"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4EnumConstInPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/isAppropriate_BWD_EMoflonEdge_107"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="JavaAnnotation2Comment4BodyDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/isAppropriate_BWD_EMoflonEdge_108"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="VariableDec2Parameter4">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/isAppropriate_BWD_EMoflonEdge_109"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AbstractTypeAccess2ReturnParam">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/isAppropriate_BWD_EMoflonEdge_110"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/checkDEC_BWD"/>
+    <rules ruleName="IgnoreOrphanTypesEdge" ignore="true">
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreOrphanTypesEdge/checkDEC_BWD"/>
     </rules>
     <rules ruleName="OperationInEnum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInEnum/isAppropriate_BWD_EMoflonEdge_111"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInEnum/isAppropriate_BWD_EMoflonEdge_103"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInEnum/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InEnum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/isAppropriate_BWD_EMoflonEdge_104"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AbstractTypeAccess2ReturnParam">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/isAppropriate_BWD_EMoflonEdge_105"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AbstractTypeAccess2ReturnParam/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="Manifestation4CompilationUnit2Artifact">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/isAppropriate_BWD_EMoflonEdge_106"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/isAppropriate_BWD_EMoflonEdge_107"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="OperationInClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/isAppropriate_BWD_EMoflonEdge_108"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="LinkTypeToPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/isAppropriate_BWD_EMoflonEdge_109"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/checkDEC_BWD"/>
     </rules>
     <rules ruleName="PrimitiveTypeShort">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeShort/isAppropriate_BWD_PrimitiveType_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeShort/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InEnum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/isAppropriate_BWD_EMoflonEdge_112"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InEnum/checkDEC_BWD"/>
+    <rules ruleName="OperationInInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/isAppropriate_BWD_EMoflonEdge_110"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInInterface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeBoolean">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/isAppropriate_BWD_PrimitiveType_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/checkDEC_BWD"/>
+    <rules ruleName="UnresolvedTypeDeclaration2Type">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/isAppropriate_BWD_EMoflonEdge_111"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/isAppropriate_BWD_EMoflonEdge_112"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="JavaPackageToUMLPackage_underPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/isAppropriate_BWD_EMoflonEdge_113"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/isAppropriate_BWD_Property_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ClassDec2Class">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDec2Class/isAppropriate_BWD_Class_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDec2Class/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="FieldDec2Property4_Anonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/isAppropriate_BWD_EMoflonEdge_113"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/checkDEC_BWD"/>
+    <rules ruleName="TypeParameter2Object_InMethod_InInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/isAppropriate_BWD_EMoflonEdge_114"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="OperationInAnnotationType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/isAppropriate_BWD_EMoflonEdge_114"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/checkDEC_BWD"/>
+    <rules ruleName="TypeDependency2UsageDependency">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/isAppropriate_BWD_EMoflonEdge_115"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/isAppropriate_BWD_EMoflonEdge_116"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4Enum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/isAppropriate_BWD_EMoflonEdge_117"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="TypeParameter2Object_InMethod_InClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/isAppropriate_BWD_EMoflonEdge_118"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Interface_InnerTypeInInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/isAppropriate_BWD_EMoflonEdge_119"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeDeclaration2Interface_WithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/isAppropriate_BWD_Interface_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface_WithModifier/checkDEC_BWD"/>
     </rules>
     <rules ruleName="InterfaceDecWithModifier2Interface">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDecWithModifier2Interface/isAppropriate_BWD_Interface_1"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDecWithModifier2Interface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="TypeAccess2InterfaceGeneralization">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/isAppropriate_BWD_EMoflonEdge_115"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="Manifestation4CompilationUnit2Artifact">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/isAppropriate_BWD_EMoflonEdge_116"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/Manifestation4CompilationUnit2Artifact/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4EnumConstInType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/isAppropriate_BWD_EMoflonEdge_117"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InterfaceDec2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/isAppropriate_BWD_Interface_2"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeFloat">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/isAppropriate_BWD_PrimitiveType_2"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/isAppropriate_BWD_EMoflonEdge_118"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeChar">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/isAppropriate_BWD_PrimitiveType_3"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property4Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/isAppropriate_BWD_EMoflonEdge_119"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ClassDecWithModifier2Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/isAppropriate_BWD_Class_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodDec2OperationWithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/isAppropriate_BWD_Operation_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/checkDEC_BWD"/>
+    <rules ruleName="EnumDec2Enum">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/isAppropriate_BWD_Enumeration_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/checkDEC_BWD"/>
     </rules>
     <rules ruleName="EnumDecWithModifier2Enum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/isAppropriate_BWD_Enumeration_0"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/isAppropriate_BWD_Enumeration_1"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDecWithModifier2Enum/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="JavaAnnotationValue2Comment">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/isAppropriate_BWD_EMoflonEdge_120"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/checkDEC_BWD"/>
+    <rules ruleName="OrphandedPrimitive2PrimitiveType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/isAppropriate_BWD_EMoflonEdge_120"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="OperationInAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/isAppropriate_BWD_EMoflonEdge_121"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/checkDEC_BWD"/>
+    <rules ruleName="ParameterizedType2Class_InnerTypeInInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/isAppropriate_BWD_EMoflonEdge_121"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInInterface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property_WithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/isAppropriate_BWD_Property_1"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ConstructorDec2Operation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2Operation/isAppropriate_BWD_EMoflonEdge_122"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2Operation/checkDEC_BWD"/>
     </rules>
     <rules ruleName="TypeAccess2InterfaceRealization">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/isAppropriate_BWD_EMoflonEdge_122"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/isAppropriate_BWD_EMoflonEdge_123"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceRealization/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="FieldDec2Property4Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/isAppropriate_BWD_EMoflonEdge_123"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="UnresolvedTypeDeclaration2Type">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/isAppropriate_BWD_EMoflonEdge_124"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/UnresolvedTypeDeclaration2Type/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ParameterizedType2Interface_InnerTypeInClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/isAppropriate_BWD_EMoflonEdge_125"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/isAppropriate_BWD_EMoflonEdge_126"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="MethodDec2Operation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/isAppropriate_BWD_Operation_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnnotationTypeDeclaration2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/isAppropriate_BWD_Interface_3"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/isAppropriate_BWD_EMoflonEdge_127"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="TypeParameter2Object_InMethod_InInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/isAppropriate_BWD_EMoflonEdge_128"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InMethod_InInterface/checkDEC_BWD"/>
+    <rules ruleName="JavaAnnotationValue2Comment">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/isAppropriate_BWD_EMoflonEdge_124"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValue2Comment/checkDEC_BWD"/>
     </rules>
     <rules ruleName="TypeParameter2Object_InInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/isAppropriate_BWD_EMoflonEdge_129"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/isAppropriate_BWD_EMoflonEdge_125"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InInterface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4IAnonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/isAppropriate_BWD_EMoflonEdge_130"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/checkDEC_BWD"/>
+    <rules ruleName="TypeAccess2InterfaceGeneralization">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/isAppropriate_BWD_EMoflonEdge_126"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2InterfaceGeneralization/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="JavaAnnotationValueEntry2Comment">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/isAppropriate_BWD_EMoflonEdge_131"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotationValueEntry2Comment/checkDEC_BWD"/>
+    <rules ruleName="OperationInAnnotationType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/isAppropriate_BWD_EMoflonEdge_127"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnnotationType/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="ConstructorDec2OperationWithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/isAppropriate_BWD_EMoflonEdge_132"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/checkDEC_BWD"/>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/isAppropriate_BWD_EMoflonEdge_128"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/checkDEC_BWD"/>
     </rules>
     <rules ruleName="IgnoreClassInstanceCreation4ArrayInitializer" ignore="true">
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreClassInstanceCreation4ArrayInitializer/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeInt">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/isAppropriate_BWD_PrimitiveType_4"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/checkDEC_BWD"/>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/isAppropriate_BWD_EMoflonEdge_129"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InClass/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="IgnoreOrphanTypesEdge" ignore="true">
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/IgnoreOrphanTypesEdge/checkDEC_BWD"/>
+    <rules ruleName="AnonymousClass4EnumConstInPackage">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/isAppropriate_BWD_EMoflonEdge_130"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInPackage/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="TypeDependency2UsageDependency">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/isAppropriate_BWD_EMoflonEdge_133"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeDependency2UsageDependency/checkDEC_BWD"/>
+    <rules ruleName="PrimitiveTypeFloat">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/isAppropriate_BWD_PrimitiveType_1"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeFloat/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="AnonymousClass4Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/isAppropriate_BWD_EMoflonEdge_134"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Interface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/isAppropriate_BWD_EMoflonEdge_135"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Interface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ParameterizedType2Interface_InnerTypeInInterface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/isAppropriate_BWD_EMoflonEdge_136"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInInterface/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="LinkTypeToPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/isAppropriate_BWD_EMoflonEdge_137"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/LinkTypeToPackage/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ParameterizedType2Class_InnerTypeInClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/isAppropriate_BWD_EMoflonEdge_138"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="JavaPackageToUMLPackage_underPackage">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/isAppropriate_BWD_EMoflonEdge_139"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underPackage/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeByte">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/isAppropriate_BWD_PrimitiveType_5"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="JavaPackageToUMLPackage_underModel">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/isAppropriate_BWD_EMoflonEdge_140"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property_WithModifier">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/isAppropriate_BWD_Property_0"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property_WithModifier/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="ConstructorDec2Operation">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2Operation/isAppropriate_BWD_EMoflonEdge_141"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2Operation/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="JavaModel2UmlModelRule">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/isAppropriate_BWD_EMoflonEdge_142"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/isAppropriate_BWD_EMoflonEdge_143"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4Class/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeLong">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/isAppropriate_BWD_PrimitiveType_6"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="PrimitiveTypeVoid">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeVoid/isAppropriate_BWD_PrimitiveType_7"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeVoid/checkDEC_BWD"/>
+    <rules ruleName="PrimitiveTypeChar">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/isAppropriate_BWD_PrimitiveType_2"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeChar/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ArrayType2NonArrayType" ignore="true">
       <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ArrayType2NonArrayType/isAppropriate_BWD_Type_0"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ArrayType2NonArrayType/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="ParameterizedType2Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/isAppropriate_BWD_EMoflonEdge_144"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="AnonymousClass4Anonymous">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/isAppropriate_BWD_EMoflonEdge_145"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="InnerDeclaration2InnerClassifier_InAnnotationType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/isAppropriate_BWD_EMoflonEdge_146"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FieldDec2Property4Enum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/isAppropriate_BWD_EMoflonEdge_147"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Enum/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="OperationInClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/isAppropriate_BWD_EMoflonEdge_148"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="OrphanedClassDec2OrphanedClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/isAppropriate_BWD_EMoflonEdge_149"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="OrphandedPrimitive2PrimitiveType">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/isAppropriate_BWD_EMoflonEdge_150"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphandedPrimitive2PrimitiveType/checkDEC_BWD"/>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/isAppropriate_BWD_EMoflonEdge_131"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnonymous/checkDEC_BWD"/>
     </rules>
     <rules ruleName="AnonymousClass4Class">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/isAppropriate_BWD_EMoflonEdge_151"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/isAppropriate_BWD_EMoflonEdge_132"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Class/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="TypeParameter2Object_InClass">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/isAppropriate_BWD_EMoflonEdge_152"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/checkDEC_BWD"/>
+    <rules ruleName="MethodDec2Operation">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/isAppropriate_BWD_Operation_0"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2Operation/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="FieldDec2Property">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/isAppropriate_BWD_Property_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property/checkDEC_BWD"/>
+    <rules ruleName="InterfaceDec2Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/isAppropriate_BWD_Interface_2"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InterfaceDec2Interface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="JavaAnnotation2Comment4SingleVariableDeclaration">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/isAppropriate_BWD_EMoflonEdge_153"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/checkDEC_BWD"/>
+    <rules ruleName="VariableDec2Parameter4">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/isAppropriate_BWD_EMoflonEdge_133"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/VariableDec2Parameter4/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="PrimitiveTypeDouble">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeDouble/isAppropriate_BWD_PrimitiveType_8"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeDouble/checkDEC_BWD"/>
+    <rules ruleName="TypeAccess2Generalization">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/isAppropriate_BWD_EMoflonEdge_134"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeAccess2Generalization/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InAnnotationType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/isAppropriate_BWD_EMoflonEdge_135"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InAnnotationType/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="OrphanedClassDec2OrphanedClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/isAppropriate_BWD_EMoflonEdge_136"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OrphanedClassDec2OrphanedClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InInterface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/isAppropriate_BWD_EMoflonEdge_137"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InInterface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="JavaPackageToUMLPackage_underModel">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/isAppropriate_BWD_EMoflonEdge_138"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaPackageToUMLPackage_underModel/checkDEC_BWD"/>
     </rules>
     <rules ruleName="ParameterizedType2Interface">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/isAppropriate_BWD_EMoflonEdge_154"/>
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/isAppropriate_BWD_EMoflonEdge_139"/>
       <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="EnumDec2Enum">
-      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/isAppropriate_BWD_Enumeration_1"/>
-      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/EnumDec2Enum/checkDEC_BWD"/>
+    <rules ruleName="JavaAnnotation2Comment4BodyDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/isAppropriate_BWD_EMoflonEdge_140"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4BodyDeclaration/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/isAppropriate_BWD_EMoflonEdge_141"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Interface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeVoid">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeVoid/isAppropriate_BWD_PrimitiveType_3"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeVoid/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="CompilationUnit2Artifact">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/isAppropriate_BWD_EMoflonEdge_142"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/CompilationUnit2Artifact/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ConstructorDec2OperationWithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/isAppropriate_BWD_EMoflonEdge_143"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ConstructorDec2OperationWithModifier/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeDouble">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeDouble/isAppropriate_BWD_PrimitiveType_4"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeDouble/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="InnerDeclaration2InnerClassifier_InMethod4IAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/isAppropriate_BWD_EMoflonEdge_144"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/InnerDeclaration2InnerClassifier_InMethod4IAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4EnumConstInType">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/isAppropriate_BWD_EMoflonEdge_145"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4EnumConstInType/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="TypeParameter2Object_InClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/isAppropriate_BWD_EMoflonEdge_146"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/TypeParameter2Object_InClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Interface_InnerTypeInClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/isAppropriate_BWD_EMoflonEdge_147"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Interface_InnerTypeInClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4_Anonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/isAppropriate_BWD_EMoflonEdge_148"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4_Anonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ClassDecWithModifier2Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/isAppropriate_BWD_Class_1"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ClassDecWithModifier2Class/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeLong">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/isAppropriate_BWD_PrimitiveType_5"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeLong/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeInt">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/isAppropriate_BWD_PrimitiveType_6"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeInt/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="JavaAnnotation2Comment4SingleVariableDeclaration">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/isAppropriate_BWD_EMoflonEdge_149"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaAnnotation2Comment4SingleVariableDeclaration/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="ParameterizedType2Class_InnerTypeInClass">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/isAppropriate_BWD_EMoflonEdge_150"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/ParameterizedType2Class_InnerTypeInClass/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FieldDec2Property4Class">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/isAppropriate_BWD_EMoflonEdge_151"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/FieldDec2Property4Class/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeBoolean">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/isAppropriate_BWD_PrimitiveType_7"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeBoolean/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnonymousClass4Anonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/isAppropriate_BWD_EMoflonEdge_152"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnonymousClass4Anonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="PrimitiveTypeByte">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/isAppropriate_BWD_PrimitiveType_8"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/PrimitiveTypeByte/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="MethodDec2OperationWithModifier">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/isAppropriate_BWD_Operation_1"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/MethodDec2OperationWithModifier/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="OperationInAnonymous">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/isAppropriate_BWD_EMoflonEdge_153"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/OperationInAnonymous/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="AnnotationTypeDeclaration2Interface">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/isAppropriate_BWD_Interface_3"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/AnnotationTypeDeclaration2Interface/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="JavaModel2UmlModelRule">
+      <isAppropriateMethods href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/isAppropriate_BWD_EMoflonEdge_154"/>
+      <checkDECMethod href="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules/JavaModel2UmlModelRule/checkDEC_BWD"/>
     </rules>
   </targetRules>
 </analysis:StaticAnalysis>

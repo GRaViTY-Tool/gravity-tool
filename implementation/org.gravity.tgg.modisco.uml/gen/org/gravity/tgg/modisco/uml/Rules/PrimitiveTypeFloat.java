@@ -199,7 +199,7 @@ public interface PrimitiveTypeFloat extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_2(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_1(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->

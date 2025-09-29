@@ -123,7 +123,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tPackage, EObject tMember, EObject pg,
+			EObject mTypeToTType, EObject tType, EObject tAnonymous, EObject tPackage, EObject tMember, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType);
 
 	/**
@@ -140,7 +140,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TClass tAnonymous, TClass tType, TPackage tPackage, TMember tMember,
+	boolean isAppropriate_BWD(Match match, TClass tType, TClass tAnonymous, TPackage tPackage, TMember tMember,
 			TypeGraph pg);
 
 	/**
@@ -165,7 +165,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TClass tAnonymous, TClass tType, TPackage tPackage, TMember tMember,
+	void registerObjectsToMatch_BWD(Match match, TClass tType, TClass tAnonymous, TPackage tPackage, TMember tMember,
 			TypeGraph pg);
 
 	/**
@@ -174,7 +174,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TClass tAnonymous, TClass tType, TPackage tPackage, TMember tMember,
+	CSP isAppropriate_solveCsp_BWD(Match match, TClass tType, TClass tAnonymous, TPackage tPackage, TMember tMember,
 			TypeGraph pg);
 
 	/**
@@ -192,8 +192,8 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MClassInstanceCreation mCreation, TClass tAnonymous, AnonymousClassDeclarationToTClass mTypeToTType,
-			TClass tType, TPackage tPackage, TMember tMember, TypeGraph pg, MDefinition mMember,
+			MClassInstanceCreation mCreation, AnonymousClassDeclarationToTClass mTypeToTType, TClass tType,
+			TClass tAnonymous, TPackage tPackage, TMember tMember, TypeGraph pg, MDefinition mMember,
 			AnonymousClassDeclaration mType);
 
 	/**
@@ -211,7 +211,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tPackage, EObject tMember, EObject pg,
+			EObject mTypeToTType, EObject tType, EObject tAnonymous, EObject tPackage, EObject tMember, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType);
 
 	/**
@@ -228,7 +228,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_79(EMoflonEdge _edge_allTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,7 +236,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_84(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +268,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MClassInstanceCreation mCreation, TClass tAnonymous, TClass tType, TPackage tPackage,
+	CSP isApplicable_solveCsp_CC(MClassInstanceCreation mCreation, TClass tType, TClass tAnonymous, TPackage tPackage,
 			TMember tMember, TypeGraph pg, MDefinition mMember, MAnonymousClass mAnonymous,
 			AnonymousClassDeclaration mType, Match sourceMatch, Match targetMatch);
 
@@ -295,7 +295,7 @@ public interface AnonymousClassInAnonymous extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TClass tAnonymous, TClass tType, TPackage tPackage, TMember tMember, TypeGraph pg);
+	boolean checkDEC_BWD(TClass tType, TClass tAnonymous, TPackage tPackage, TMember tMember, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->

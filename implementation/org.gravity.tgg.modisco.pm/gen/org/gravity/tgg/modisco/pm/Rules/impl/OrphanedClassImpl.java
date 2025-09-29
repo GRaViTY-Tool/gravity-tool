@@ -204,8 +204,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		//nothing EMoflonEdge tType__tModule____module = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mAnnotatableToTAnnotatable__tType____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
@@ -517,8 +517,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		//nothing EMoflonEdge tType__tModule____module = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge mAnnotatableToTAnnotatable__tType____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
@@ -566,9 +566,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge pg__tType____allTypes = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge tType__pg____model = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge tModule__tType____contains = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tType__tModule____module = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tModule__tType____contains = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge tType__tModule____module = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mModelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge pg__tModule____modules = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge mModelToTypeGraph__pg____target = (EMoflonEdge) result3_green[12];
 
@@ -725,7 +725,7 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_31(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_24(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedClassImpl
 				.pattern_OrphanedClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -782,7 +782,7 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_32(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_26(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedClassImpl
 				.pattern_OrphanedClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1261,10 +1261,10 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 				return null;
 			case RulesPackage.ORPHANED_CLASS___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ORPHANED_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_31__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ORPHANED_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_32__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_32((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANED_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_24__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_24((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANED_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_26__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_26((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ORPHANED_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ORPHANED_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1563,8 +1563,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		EMoflonEdge tType__tModule____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotatableToTAnnotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotatableToTAnnotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OrphanedClass";
 		String pg__tType____allTypes_name_prime = "allTypes";
 		String tType__pg____model_name_prime = "model";
@@ -1573,8 +1573,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		String tType__tModule____module_name_prime = "module";
 		String mAnnotatableToTAnnotatable__tType____target_name_prime = "target";
 		String mTypeToTType__tType____target_name_prime = "target";
-		String mTypeToTType__mType____source_name_prime = "source";
 		String mAnnotatableToTAnnotatable__mType____source_name_prime = "source";
+		String mTypeToTType__mType____source_name_prime = "source";
 		pg__tType____allTypes.setSrc(pg);
 		pg__tType____allTypes.setTrg(tType);
 		ruleresult.getCreatedEdges().add(pg__tType____allTypes);
@@ -1596,12 +1596,12 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		mAnnotatableToTAnnotatable__mType____source.setSrc(mAnnotatableToTAnnotatable);
 		mAnnotatableToTAnnotatable__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__mType____source);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
@@ -1610,12 +1610,12 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		tType__tModule____module.setName(tType__tModule____module_name_prime);
 		mAnnotatableToTAnnotatable__tType____target.setName(mAnnotatableToTAnnotatable__tType____target_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mAnnotatableToTAnnotatable__mType____source.setName(mAnnotatableToTAnnotatable__mType____source_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		return new Object[] { ruleresult, tModule, tType, mAnnotatableToTAnnotatable, mTypeToTType, pg, mModel, mType,
 				pg__tType____allTypes, tType__pg____model, mModel__mType____orphanTypes, tModule__tType____contains,
 				tType__tModule____module, mAnnotatableToTAnnotatable__tType____target, mTypeToTType__tType____target,
-				mTypeToTType__mType____source, mAnnotatableToTAnnotatable__mType____source };
+				mAnnotatableToTAnnotatable__mType____source, mTypeToTType__mType____source };
 	}
 
 	public static final void pattern_OrphanedClass_1_5_registerobjects_expressionBBBBBBBBBB(OrphanedClass _this,
@@ -2009,8 +2009,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		mAnnotatableToTAnnotatable.setTarget(tType);
 		mTypeToTType.setTarget(tType);
 		mModel.getOrphanTypes().add(mType);
-		mTypeToTType.setSource(mType);
 		mAnnotatableToTAnnotatable.setSource(mType);
+		mTypeToTType.setSource(mType);
 		String mType_name_prime = (String) _localVariable_0;
 		mType.setName(mType_name_prime);
 		return new Object[] { tType, mAnnotatableToTAnnotatable, mTypeToTType, mModel, mType, csp };
@@ -2119,8 +2119,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		EMoflonEdge tType__tModule____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotatableToTAnnotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotatableToTAnnotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OrphanedClass";
 		String pg__tType____allTypes_name_prime = "allTypes";
 		String tType__pg____model_name_prime = "model";
@@ -2129,8 +2129,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		String tType__tModule____module_name_prime = "module";
 		String mAnnotatableToTAnnotatable__tType____target_name_prime = "target";
 		String mTypeToTType__tType____target_name_prime = "target";
-		String mTypeToTType__mType____source_name_prime = "source";
 		String mAnnotatableToTAnnotatable__mType____source_name_prime = "source";
+		String mTypeToTType__mType____source_name_prime = "source";
 		pg__tType____allTypes.setSrc(pg);
 		pg__tType____allTypes.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(pg__tType____allTypes);
@@ -2152,12 +2152,12 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		mAnnotatableToTAnnotatable__mType____source.setSrc(mAnnotatableToTAnnotatable);
 		mAnnotatableToTAnnotatable__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__mType____source);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
@@ -2166,12 +2166,12 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		tType__tModule____module.setName(tType__tModule____module_name_prime);
 		mAnnotatableToTAnnotatable__tType____target.setName(mAnnotatableToTAnnotatable__tType____target_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mAnnotatableToTAnnotatable__mType____source.setName(mAnnotatableToTAnnotatable__mType____source_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		return new Object[] { ruleresult, tModule, tType, mAnnotatableToTAnnotatable, mTypeToTType, pg, mModel, mType,
 				pg__tType____allTypes, tType__pg____model, mModel__mType____orphanTypes, tModule__tType____contains,
 				tType__tModule____module, mAnnotatableToTAnnotatable__tType____target, mTypeToTType__tType____target,
-				mTypeToTType__mType____source, mAnnotatableToTAnnotatable__mType____source };
+				mAnnotatableToTAnnotatable__mType____source, mTypeToTType__mType____source };
 	}
 
 	public static final void pattern_OrphanedClass_11_5_registerobjects_expressionBBBBBBBBBB(OrphanedClass _this,
@@ -2277,8 +2277,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 			TClass tType, TypeGraph pg, Model mModel, ModelToTypeGraph mModelToTypeGraph) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (pg.getAllTypes().contains(tType)) {
-			if (mModel.equals(mModelToTypeGraph.getSource())) {
-				if (tModule.getContains().contains(tType)) {
+			if (tModule.getContains().contains(tType)) {
+				if (mModel.equals(mModelToTypeGraph.getSource())) {
 					if (pg.getModules().contains(tModule)) {
 						if (pg.equals(mModelToTypeGraph.getTarget())) {
 							String tModule_location = tModule.getLocation();
@@ -2299,16 +2299,16 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge pg__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tModule__tType____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tModule____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mModelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tModule____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModelToTypeGraph__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String pg__tType____allTypes_name_prime = "allTypes";
 		String tType__pg____model_name_prime = "model";
-		String mModelToTypeGraph__mModel____source_name_prime = "source";
 		String tModule__tType____contains_name_prime = "contains";
 		String tType__tModule____module_name_prime = "module";
+		String mModelToTypeGraph__mModel____source_name_prime = "source";
 		String pg__tModule____modules_name_prime = "modules";
 		String mModelToTypeGraph__pg____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(tModule);
@@ -2322,15 +2322,15 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		tType__pg____model.setSrc(tType);
 		tType__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tType__pg____model);
-		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
-		mModelToTypeGraph__mModel____source.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
 		tModule__tType____contains.setSrc(tModule);
 		tModule__tType____contains.setTrg(tType);
 		isApplicableMatch.getAllContextElements().add(tModule__tType____contains);
 		tType__tModule____module.setSrc(tType);
 		tType__tModule____module.setTrg(tModule);
 		isApplicableMatch.getAllContextElements().add(tType__tModule____module);
+		mModelToTypeGraph__mModel____source.setSrc(mModelToTypeGraph);
+		mModelToTypeGraph__mModel____source.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__mModel____source);
 		pg__tModule____modules.setSrc(pg);
 		pg__tModule____modules.setTrg(tModule);
 		isApplicableMatch.getAllContextElements().add(pg__tModule____modules);
@@ -2339,14 +2339,14 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		isApplicableMatch.getAllContextElements().add(mModelToTypeGraph__pg____target);
 		pg__tType____allTypes.setName(pg__tType____allTypes_name_prime);
 		tType__pg____model.setName(tType__pg____model_name_prime);
-		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
 		tModule__tType____contains.setName(tModule__tType____contains_name_prime);
 		tType__tModule____module.setName(tType__tModule____module_name_prime);
+		mModelToTypeGraph__mModel____source.setName(mModelToTypeGraph__mModel____source_name_prime);
 		pg__tModule____modules.setName(pg__tModule____modules_name_prime);
 		mModelToTypeGraph__pg____target.setName(mModelToTypeGraph__pg____target_name_prime);
 		return new Object[] { tModule, tType, pg, mModel, mModelToTypeGraph, isApplicableMatch, pg__tType____allTypes,
-				tType__pg____model, mModelToTypeGraph__mModel____source, tModule__tType____contains,
-				tType__tModule____module, pg__tModule____modules, mModelToTypeGraph__pg____target };
+				tType__pg____model, tModule__tType____contains, tType__tModule____module,
+				mModelToTypeGraph__mModel____source, pg__tModule____modules, mModelToTypeGraph__pg____target };
 	}
 
 	public static final Object[] pattern_OrphanedClass_12_4_solveCSP_bindingFBBBBBBB(OrphanedClass _this,
@@ -2463,7 +2463,7 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_20_2_testcorematchandDECs_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_44448 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_983904 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -2472,9 +2472,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 
 	public static final Object[] pattern_OrphanedClass_20_2_testcorematchandDECs_black_nac_1BB(TClass tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_955623 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_109943 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_955623)) {
+			if (!pg.equals(__DEC_tType_classes_109943)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2482,9 +2482,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_20_2_testcorematchandDECs_black_nac_2B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_863436 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_863436 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_863436)) {
+		TAbstractType __DEC_tType_innerTypes_502908 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_502908 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_502908)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2493,8 +2493,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TPackage __DEC_tType_allTypes_239199 = tType.getPackage();
-		if (__DEC_tType_allTypes_239199 != null) {
+		TPackage __DEC_tType_allTypes_485494 = tType.getPackage();
+		if (__DEC_tType_allTypes_485494 != null) {
 			return new Object[] { tType };
 		}
 
@@ -2650,9 +2650,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_21_2_testcorematchandDECs_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_731691 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_731691 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_731691)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_438602 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_438602 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_438602)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2661,9 +2661,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_21_2_testcorematchandDECs_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_645820 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_92527 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_645820 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_92527 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2671,8 +2671,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_21_2_testcorematchandDECs_black_nac_2B(MClass mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_533326 = mType.getPackage();
-		if (__DEC_mType_ownedElements_533326 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_853047 = mType.getPackage();
+		if (__DEC_mType_ownedElements_853047 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2680,7 +2680,7 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_21_2_testcorematchandDECs_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_191160 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_813481 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -2934,9 +2934,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_27_1_matchtggpattern_black_nac_0B(MClass mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_291757 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_291757 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_291757)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_405302 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_405302 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_405302)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2945,9 +2945,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_27_1_matchtggpattern_black_nac_1B(MClass mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_630107 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_616533 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_630107 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_616533 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2955,8 +2955,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_27_1_matchtggpattern_black_nac_2B(MClass mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_794460 = mType.getPackage();
-		if (__DEC_mType_ownedElements_794460 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_171625 = mType.getPackage();
+		if (__DEC_mType_ownedElements_171625 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2964,7 +2964,7 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_27_1_matchtggpattern_black_nac_3B(MClass mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_954233 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_132857 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -2997,7 +2997,7 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_28_1_matchtggpattern_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_755512 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_384842 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -3005,9 +3005,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_28_1_matchtggpattern_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_28053 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_266229 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_28053)) {
+			if (!pg.equals(__DEC_tType_classes_266229)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3015,9 +3015,9 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_28_1_matchtggpattern_black_nac_2B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_784763 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_784763 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_784763)) {
+		TAbstractType __DEC_tType_innerTypes_195108 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_195108 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_195108)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3026,8 +3026,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 	}
 
 	public static final Object[] pattern_OrphanedClass_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TPackage __DEC_tType_allTypes_18278 = tType.getPackage();
-		if (__DEC_tType_allTypes_18278 != null) {
+		TPackage __DEC_tType_allTypes_853565 = tType.getPackage();
+		if (__DEC_tType_allTypes_853565 != null) {
 			return new Object[] { tType };
 		}
 
@@ -3241,8 +3241,8 @@ public class OrphanedClassImpl extends AbstractRuleImpl implements OrphanedClass
 		mTypeToTType.setTarget(tType);
 		ruleResult.getCorrObjects().add(mTypeToTType);
 		mModel.getOrphanTypes().add(mType);
-		mTypeToTType.setSource(mType);
 		mAnnotatableToTAnnotatable.setSource(mType);
+		mTypeToTType.setSource(mType);
 		ruleResult.getSourceObjects().add(mType);
 		String tType_tName_prime = (String) _localVariable_0;
 		String mType_name_prime = (String) _localVariable_1;

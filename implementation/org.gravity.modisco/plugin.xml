@@ -25,6 +25,11 @@
     <processor priority="8" processor="org.gravity.modisco.processing.fwd.ReturnTypePreprocessing"/>
     <processor priority="9" processor="org.gravity.modisco.processing.fwd.UnresolvedTypePreprocessing"/>
     <processor priority="9" processor="org.gravity.modisco.processing.fwd.TypePreprocessing"/>
+    <processor
+          optional="false"
+          priority="10"
+          processor="org.gravity.modisco.processing.fwd.TryWithPreprocessing">
+    </processor>
   </extension>
   <extension point="org.eclipse.modisco.infra.discovery.core.discoverer">
     <discoverer class="org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer" id="org.gravity.modisco.Discoverer"/>

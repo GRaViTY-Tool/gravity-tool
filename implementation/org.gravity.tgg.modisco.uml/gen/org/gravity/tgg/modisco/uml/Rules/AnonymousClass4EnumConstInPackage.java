@@ -99,8 +99,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon, Enumeration uContainer,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, MAnonymousClass mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p);
 
@@ -118,8 +118,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject uPackage,
-			EObject jPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject jPackage,
+			EObject uPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
 			EObject p2p);
 
 	/**
@@ -188,7 +188,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class feature,
-			org.eclipse.uml2.uml.Package uPackage, org.eclipse.modisco.java.Package jPackage, Enumeration uContainer,
+			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p);
 
@@ -206,8 +206,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject uPackage,
-			EObject jPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2a, EObject feature, EObject jPackage,
+			EObject uPackage, EObject mAnon, EObject uContainer, EObject mMember, EObject jContainer, EObject ne2ne,
 			EObject p2p);
 
 	/**
@@ -224,7 +224,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_130(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +232,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_115(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_142(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,8 +264,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon, Enumeration uContainer,
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, MAnonymousClass mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -308,8 +308,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			org.eclipse.uml2.uml.Package uPackage, Enumeration uContainer, EnumConstantDeclaration mMember,
 			EnumDeclaration jContainer, ASTNode2Element ne2ne, JavaPackage2UmlPackage p2p,
 			ModelgeneratorRuleResult ruleResult);
 

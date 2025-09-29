@@ -104,10 +104,9 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess mAccess,
-			AnnotationMemberValuePair mAnnotationValue,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, ArrayInitializer mArray,
-			TAnnotationValue tAnnotationValue, TypeLiteral mValue, Type mType);
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
+			ArrayInitializer mArray, TypeLiteral mValue, TAnnotationValue tAnnotationValue, Type mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,9 +122,10 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAccess, EObject mAnnotationValue,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject tType, EObject mArray,
-			EObject tValue, EObject mValueToTValue, EObject tAnnotationValue, EObject mValue, EObject mType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAccess,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
+			EObject tType, EObject mArray, EObject tValue, EObject mValueToTValue, EObject mValue,
+			EObject tAnnotationValue, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,10 +191,10 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationMemberValuePair mAnnotationValue,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, ArrayInitializer mArray, TClassNode tValue,
-			TAnnotationValue tAnnotationValue, Type mType);
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
+			ArrayInitializer mArray, TClassNode tValue, TAnnotationValue tAnnotationValue, Type mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,9 +210,10 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAccess, EObject mAnnotationValue,
-			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mTypeToTType, EObject tType, EObject mArray,
-			EObject tValue, EObject mValueToTValue, EObject tAnnotationValue, EObject mValue, EObject mType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAccess,
+			EObject AnnotationMemberValuePairToTAnnotationValue, EObject mAnnotationValue, EObject mTypeToTType,
+			EObject tType, EObject mArray, EObject tValue, EObject mValueToTValue, EObject mValue,
+			EObject tAnnotationValue, EObject mType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +229,7 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_71(EMoflonEdge _edge_tClass);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_47(EMoflonEdge _edge_tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,7 +237,7 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_50(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,7 +270,7 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(TypeAccess mAccess, AnnotationMemberValuePair mAnnotationValue, TAbstractType tType,
-			ArrayInitializer mArray, TClassNode tValue, TAnnotationValue tAnnotationValue, TypeLiteral mValue,
+			ArrayInitializer mArray, TClassNode tValue, TypeLiteral mValue, TAnnotationValue tAnnotationValue,
 			Type mType, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -313,10 +314,11 @@ public interface AnnotationMemberValueClassArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationMemberValuePair mAnnotationValue,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
 			AnnotationMemberValuePairToTAnnotationValue AnnotationMemberValuePairToTAnnotationValue,
-			TypeToTAbstractType mTypeToTType, TAbstractType tType, ArrayInitializer mArray,
-			TAnnotationValue tAnnotationValue, Type mType, ModelgeneratorRuleResult ruleResult);
+			AnnotationMemberValuePair mAnnotationValue, TypeToTAbstractType mTypeToTType, TAbstractType tType,
+			ArrayInitializer mArray, TAnnotationValue tAnnotationValue, Type mType,
+			ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

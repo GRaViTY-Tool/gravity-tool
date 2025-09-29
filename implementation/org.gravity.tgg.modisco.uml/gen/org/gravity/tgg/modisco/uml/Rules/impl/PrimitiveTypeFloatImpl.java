@@ -615,7 +615,7 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PrimitiveType_2(PrimitiveType umpt) {
+	public EObjectContainer isAppropriate_BWD_PrimitiveType_1(PrimitiveType umpt) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeFloatImpl
 				.pattern_PrimitiveTypeFloat_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1100,8 +1100,8 @@ public class PrimitiveTypeFloatImpl extends AbstractRuleImpl implements Primitiv
 				return null;
 			case RulesPackage.PRIMITIVE_TYPE_FLOAT___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_2__PRIMITIVETYPE:
-				return isAppropriate_BWD_PrimitiveType_2((PrimitiveType) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_BWD_PRIMITIVE_TYPE_1__PRIMITIVETYPE:
+				return isAppropriate_BWD_PrimitiveType_1((PrimitiveType) arguments.get(0));
 			case RulesPackage.PRIMITIVE_TYPE_FLOAT___IS_APPROPRIATE_FWD_PRIMITIVE_TYPE_FLOAT_0__PRIMITIVETYPEFLOAT:
 				return isAppropriate_FWD_PrimitiveTypeFloat_0(
 						(org.eclipse.modisco.java.PrimitiveTypeFloat) arguments.get(0));

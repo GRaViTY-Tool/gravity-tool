@@ -707,7 +707,7 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_150(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_120(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
 				.pattern_OrphandedPrimitive2PrimitiveType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,7 +767,7 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_164(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_131(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphandedPrimitive2PrimitiveTypeImpl
 				.pattern_OrphandedPrimitive2PrimitiveType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1218,10 +1218,10 @@ public class OrphandedPrimitive2PrimitiveTypeImpl extends AbstractRuleImpl imple
 				return null;
 			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_150__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_150((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_164__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_164((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_120__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_131__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ORPHANDED_PRIMITIVE2_PRIMITIVE_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

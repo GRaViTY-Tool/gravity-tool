@@ -92,9 +92,9 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tMethod,
-			MMethodDefinition mOverriding, MMethodDefinition mMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mOverriding,
+			TMethodDefinition tMethod, MDefinitionToTMember mOverridingToTOverriding,
+			MDefinitionToTMember mMethodToTMethod, TMethodDefinition tOverriding, MMethodDefinition mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMethod, EObject mOverriding, EObject mMethod,
-			EObject tOverriding, EObject mMethodToTMethod, EObject mOverridingToTOverriding);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mOverriding, EObject tMethod,
+			EObject mOverridingToTOverriding, EObject mMethodToTMethod, EObject tOverriding, EObject mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,9 +175,9 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tMethod,
-			MMethodDefinition mOverriding, MMethodDefinition mMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mOverriding,
+			TMethodDefinition tMethod, MDefinitionToTMember mOverridingToTOverriding,
+			MDefinitionToTMember mMethodToTMethod, TMethodDefinition tOverriding, MMethodDefinition mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMethod, EObject mOverriding, EObject mMethod,
-			EObject tOverriding, EObject mMethodToTMethod, EObject mOverridingToTOverriding);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mOverriding, EObject tMethod,
+			EObject mOverridingToTOverriding, EObject mMethodToTMethod, EObject tOverriding, EObject mMethod);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_75(EMoflonEdge _edge_overriddenBy);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_26(EMoflonEdge _edge_overriddenBy);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_80(EMoflonEdge _edge_redefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_29(EMoflonEdge _edge_redefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,8 +250,8 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TMethodDefinition tMethod, MMethodDefinition mOverriding, MMethodDefinition mMethod,
-			TMethodDefinition tOverriding, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(MMethodDefinition mOverriding, TMethodDefinition tMethod,
+			TMethodDefinition tOverriding, MMethodDefinition mMethod, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,7 +284,7 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			MDefinitionToTMember mMethodToTMethodParameter, MDefinitionToTMember mOverridingToTOverridingParameter);
+			MDefinitionToTMember mOverridingToTOverridingParameter, MDefinitionToTMember mMethodToTMethodParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,9 +292,9 @@ public interface MethodOverriding extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMethodDefinition tMethod,
-			MMethodDefinition mOverriding, MMethodDefinition mMethod, TMethodDefinition tOverriding,
-			MDefinitionToTMember mMethodToTMethod, MDefinitionToTMember mOverridingToTOverriding,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition mOverriding,
+			TMethodDefinition tMethod, MDefinitionToTMember mOverridingToTOverriding,
+			MDefinitionToTMember mMethodToTMethod, TMethodDefinition tOverriding, MMethodDefinition mMethod,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

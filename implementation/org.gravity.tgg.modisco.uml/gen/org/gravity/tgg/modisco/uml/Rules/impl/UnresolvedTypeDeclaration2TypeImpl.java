@@ -95,20 +95,20 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Model model, UnresolvedTypeDeclaration mType) {
+	public boolean isAppropriate_FWD(Match match, UnresolvedTypeDeclaration mType, Model model) {
 
 		Object[] result1_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_0_1_initialbindings_blackBBBB(this, match, model, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_0_1_initialbindings_blackBBBB(this, match, mType, model);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[model] = " + model + ", " + "[mType] = " + mType + ".");
+					+ "[match] = " + match + ", " + "[mType] = " + mType + ", " + "[model] = " + model + ".");
 		}
 
 		Object[] result2_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, model, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, mType, model);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[model] = " + model + ", " + "[mType] = " + mType + ".");
+					+ "[match] = " + match + ", " + "[mType] = " + mType + ", " + "[model] = " + model + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -116,22 +116,22 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				csp)) {
 
 			Object[] result4_black = UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_0_4_collectelementstobetranslated_blackBBB(match, model,
-							mType);
+					.pattern_UnresolvedTypeDeclaration2Type_0_4_collectelementstobetranslated_blackBBB(match, mType,
+							model);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[model] = " + model + ", " + "[mType] = " + mType + ".");
+						+ "[mType] = " + mType + ", " + "[model] = " + model + ".");
 			}
 			UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_0_4_collectelementstobetranslated_greenBBBF(match, model,
-							mType);
+					.pattern_UnresolvedTypeDeclaration2Type_0_4_collectelementstobetranslated_greenBBBF(match, mType,
+							model);
 			//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_0_5_collectcontextelements_blackBBB(match, model, mType);
+					.pattern_UnresolvedTypeDeclaration2Type_0_5_collectcontextelements_blackBBB(match, mType, model);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[model] = " + model + ", " + "[mType] = " + mType + ".");
+						+ "[mType] = " + mType + ", " + "[model] = " + model + ".");
 			}
 			UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_0_5_collectcontextelements_greenBB(match, model);
@@ -139,7 +139,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			// 
 			UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_0_6_registerobjectstomatch_expressionBBBB(this, match,
-							model, mType);
+							mType, model);
 			return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_0_7_expressionF();
 		} else {
 			return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_0_8_expressionF();
@@ -161,48 +161,48 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[0];
-		Model model = (Model) result1_bindingAndBlack[1];
-		JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result1_bindingAndBlack[2];
-		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result1_bindingAndBlack[3];
+		JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result1_bindingAndBlack[0];
+		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result1_bindingAndBlack[1];
+		Model model = (Model) result1_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_greenBFFBB(externals, mType, csp);
+				.pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_greenBFFBB(mType, externals, csp);
 		ASTNode2Element u2c = (ASTNode2Element) result1_green[1];
 		org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result1_green[2];
 
 		Object[] result2_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_1_2_collecttranslatedelements_blackBBB(u2c, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_1_2_collecttranslatedelements_blackBBB(mType, u2c, uClass);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[u2c] = " + u2c + ", "
-					+ "[uClass] = " + uClass + ", " + "[mType] = " + mType + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType + ", "
+					+ "[u2c] = " + u2c + ", " + "[uClass] = " + uClass + ".");
 		}
 		Object[] result2_green = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_1_2_collecttranslatedelements_greenFBBB(u2c, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_1_2_collecttranslatedelements_greenFBBB(mType, u2c, uClass);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, externals, u2c,
-						model, m2m, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, m2m, mType,
+						u2c, model, uClass, externals);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[externals] = " + externals + ", " + "[u2c] = " + u2c + ", " + "[model] = " + model + ", "
-					+ "[m2m] = " + m2m + ", " + "[uClass] = " + uClass + ", " + "[mType] = " + mType + ".");
+					+ ", " + "[m2m] = " + m2m + ", " + "[mType] = " + mType + ", " + "[u2c] = " + u2c + ", "
+					+ "[model] = " + model + ", " + "[uClass] = " + uClass + ", " + "[externals] = " + externals + ".");
 		}
 		UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, externals,
-						u2c, model, uClass, mType);
-		//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result3_green[6];
+				.pattern_UnresolvedTypeDeclaration2Type_1_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mType, u2c,
+						model, uClass, externals);
+		//nothing EMoflonEdge u2c__mType____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge u2c__uClass____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge u2c__mType____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-						externals, u2c, model, m2m, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, m2m,
+						mType, u2c, model, uClass, externals);
 		return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_1_6_expressionFB(ruleresult);
 	}
 
@@ -231,30 +231,31 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Model model = (Model) result2_binding[0];
-		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result2_binding[1];
+		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result2_binding[0];
+		Model model = (Model) result2_binding[1];
 		for (Object[] result2_black : UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_2_2_corematch_blackFBFBB(model, mType, match)) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_black[0];
-			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result2_black[2];
+				.pattern_UnresolvedTypeDeclaration2Type_2_2_corematch_blackFBBFB(mType, model, match)) {
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result2_black[0];
+			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_2_3_findcontext_blackBBBB(externals, model, m2m, mType)) {
+					.pattern_UnresolvedTypeDeclaration2Type_2_3_findcontext_blackBBBB(m2m, mType, model, externals)) {
 				Object[] result3_green = UnresolvedTypeDeclaration2TypeImpl
-						.pattern_UnresolvedTypeDeclaration2Type_2_3_findcontext_greenBBBBFFFF(externals, model, m2m,
-								mType);
+						.pattern_UnresolvedTypeDeclaration2Type_2_3_findcontext_greenBBBBFFFF(m2m, mType, model,
+								externals);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge m2m__externals____target = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge m2m__model____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge m2m__externals____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge m2m__model____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 						.pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, externals, model, m2m, mType);
+								isApplicableMatch, m2m, mType, model, externals);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[externals] = " + externals + ", "
-							+ "[model] = " + model + ", " + "[m2m] = " + m2m + ", " + "[mType] = " + mType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[m2m] = " + m2m + ", "
+							+ "[mType] = " + mType + ", " + "[model] = " + model + ", " + "[externals] = " + externals
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -286,9 +287,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Model model, UnresolvedTypeDeclaration mType) {
-		match.registerObject("model", model);
+	public void registerObjectsToMatch_FWD(Match match, UnresolvedTypeDeclaration mType, Model model) {
 		match.registerObject("mType", mType);
+		match.registerObject("model", model);
 
 	}
 
@@ -297,7 +298,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Model model, UnresolvedTypeDeclaration mType) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, UnresolvedTypeDeclaration mType, Model model) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -326,8 +327,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Model externals,
-			Model model, JavaModel2UMLPackage m2m, UnresolvedTypeDeclaration mType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			UnresolvedTypeDeclaration mType, Model model, org.eclipse.uml2.uml.Model externals) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -352,10 +353,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		eq.solve(var_mType_name, var_uClass_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("externals", externals);
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("m2m", m2m);
 		isApplicableMatch.registerObject("mType", mType);
+		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("externals", externals);
 		return csp;
 	}
 
@@ -373,14 +374,14 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject externals, EObject u2c, EObject model,
-			EObject m2m, EObject uClass, EObject mType) {
-		ruleresult.registerObject("externals", externals);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2m, EObject mType, EObject u2c,
+			EObject model, EObject uClass, EObject externals) {
+		ruleresult.registerObject("m2m", m2m);
+		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("u2c", u2c);
 		ruleresult.registerObject("model", model);
-		ruleresult.registerObject("m2m", m2m);
 		ruleresult.registerObject("uClass", uClass);
-		ruleresult.registerObject("mType", mType);
+		ruleresult.registerObject("externals", externals);
 
 	}
 
@@ -399,22 +400,22 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
+	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
 
 		Object[] result1_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_10_1_initialbindings_blackBBBB(this, match, externals, uClass);
+				.pattern_UnresolvedTypeDeclaration2Type_10_1_initialbindings_blackBBBB(this, match, uClass, externals);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[externals] = " + externals + ", " + "[uClass] = " + uClass + ".");
+					+ "[match] = " + match + ", " + "[uClass] = " + uClass + ", " + "[externals] = " + externals + ".");
 		}
 
 		Object[] result2_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, externals,
-						uClass);
+				.pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, uClass,
+						externals);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[externals] = " + externals + ", " + "[uClass] = " + uClass + ".");
+					+ "[match] = " + match + ", " + "[uClass] = " + uClass + ", " + "[externals] = " + externals + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -422,24 +423,24 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				csp)) {
 
 			Object[] result4_black = UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_10_4_collectelementstobetranslated_blackBBB(match,
-							externals, uClass);
+					.pattern_UnresolvedTypeDeclaration2Type_10_4_collectelementstobetranslated_blackBBB(match, uClass,
+							externals);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[externals] = " + externals + ", " + "[uClass] = " + uClass + ".");
+						+ "[uClass] = " + uClass + ", " + "[externals] = " + externals + ".");
 			}
 			UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_10_4_collectelementstobetranslated_greenBBBFF(match,
-							externals, uClass);
+					.pattern_UnresolvedTypeDeclaration2Type_10_4_collectelementstobetranslated_greenBBBFF(match, uClass,
+							externals);
 			//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_10_5_collectcontextelements_blackBBB(match, externals,
-							uClass);
+					.pattern_UnresolvedTypeDeclaration2Type_10_5_collectcontextelements_blackBBB(match, uClass,
+							externals);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[externals] = " + externals + ", " + "[uClass] = " + uClass + ".");
+						+ "[uClass] = " + uClass + ", " + "[externals] = " + externals + ".");
 			}
 			UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_10_5_collectcontextelements_greenBB(match, externals);
@@ -447,7 +448,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			// 
 			UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_10_6_registerobjectstomatch_expressionBBBB(this, match,
-							externals, uClass);
+							uClass, externals);
 			return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_10_7_expressionF();
 		} else {
 			return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_10_8_expressionF();
@@ -469,48 +470,48 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[0];
+		JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result1_bindingAndBlack[0];
 		Model model = (Model) result1_bindingAndBlack[1];
-		JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result1_bindingAndBlack[2];
-		org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_greenFBBFB(model, uClass, csp);
-		ASTNode2Element u2c = (ASTNode2Element) result1_green[0];
-		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result1_green[3];
+				.pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_greenFFBBB(model, uClass, csp);
+		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result1_green[0];
+		ASTNode2Element u2c = (ASTNode2Element) result1_green[1];
 
 		Object[] result2_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_11_2_collecttranslatedelements_blackBBB(u2c, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_11_2_collecttranslatedelements_blackBBB(mType, u2c, uClass);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[u2c] = " + u2c + ", "
-					+ "[uClass] = " + uClass + ", " + "[mType] = " + mType + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType + ", "
+					+ "[u2c] = " + u2c + ", " + "[uClass] = " + uClass + ".");
 		}
 		Object[] result2_green = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_11_2_collecttranslatedelements_greenFBBB(u2c, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_11_2_collecttranslatedelements_greenFBBB(mType, u2c, uClass);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, externals,
-						u2c, model, m2m, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, m2m, mType,
+						u2c, model, uClass, externals);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[externals] = " + externals + ", " + "[u2c] = " + u2c + ", " + "[model] = " + model + ", "
-					+ "[m2m] = " + m2m + ", " + "[uClass] = " + uClass + ", " + "[mType] = " + mType + ".");
+					+ ", " + "[m2m] = " + m2m + ", " + "[mType] = " + mType + ", " + "[u2c] = " + u2c + ", "
+					+ "[model] = " + model + ", " + "[uClass] = " + uClass + ", " + "[externals] = " + externals + ".");
 		}
 		UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, externals,
-						u2c, model, uClass, mType);
-		//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result3_green[6];
+				.pattern_UnresolvedTypeDeclaration2Type_11_3_bookkeepingforedges_greenBBBBBBFFFFF(ruleresult, mType,
+						u2c, model, uClass, externals);
+		//nothing EMoflonEdge u2c__mType____source = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge u2c__uClass____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge u2c__mType____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge model__mType____unresolvedItems = (EMoflonEdge) result3_green[10];
 
 		// 
 		// 
 		UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult,
-						externals, u2c, model, m2m, uClass, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, m2m,
+						mType, u2c, model, uClass, externals);
 		return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_11_6_expressionFB(ruleresult);
 	}
 
@@ -539,31 +540,32 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_binding[0];
-		org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result2_binding[1];
+		org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result2_binding[0];
+		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_binding[1];
 		for (Object[] result2_black : UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_12_2_corematch_blackBFFBB(externals, uClass, match)) {
+				.pattern_UnresolvedTypeDeclaration2Type_12_2_corematch_blackFFBBB(uClass, externals, match)) {
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result2_black[0];
 			Model model = (Model) result2_black[1];
-			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_12_3_findcontext_blackBBBB(externals, model, m2m, uClass)) {
+					.pattern_UnresolvedTypeDeclaration2Type_12_3_findcontext_blackBBBB(m2m, model, uClass, externals)) {
 				Object[] result3_green = UnresolvedTypeDeclaration2TypeImpl
-						.pattern_UnresolvedTypeDeclaration2Type_12_3_findcontext_greenBBBBFFFFF(externals, model, m2m,
-								uClass);
+						.pattern_UnresolvedTypeDeclaration2Type_12_3_findcontext_greenBBBBFFFFF(m2m, model, uClass,
+								externals);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge m2m__externals____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge m2m__model____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge uClass__externals____package = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge externals__uClass____ownedType = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge m2m__externals____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge m2m__model____source = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 						.pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_bindingAndBlackFBBBBBB(this,
-								isApplicableMatch, externals, model, m2m, uClass);
+								isApplicableMatch, m2m, model, uClass, externals);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[externals] = " + externals + ", "
-							+ "[model] = " + model + ", " + "[m2m] = " + m2m + ", " + "[uClass] = " + uClass + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[m2m] = " + m2m + ", "
+							+ "[model] = " + model + ", " + "[uClass] = " + uClass + ", " + "[externals] = " + externals
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -595,10 +597,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
-		match.registerObject("externals", externals);
+	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
 		match.registerObject("uClass", uClass);
+		match.registerObject("externals", externals);
 
 	}
 
@@ -607,8 +609,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -637,8 +639,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Model externals,
-			Model model, JavaModel2UMLPackage m2m, org.eclipse.uml2.uml.Class uClass) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m, Model model,
+			org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -663,10 +665,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		eq.solve(var_mType_name, var_uClass_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("externals", externals);
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("m2m", m2m);
+		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("uClass", uClass);
+		isApplicableMatch.registerObject("externals", externals);
 		return csp;
 	}
 
@@ -684,14 +686,14 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject externals, EObject u2c, EObject model,
-			EObject m2m, EObject uClass, EObject mType) {
-		ruleresult.registerObject("externals", externals);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2m, EObject mType, EObject u2c,
+			EObject model, EObject uClass, EObject externals) {
+		ruleresult.registerObject("m2m", m2m);
+		ruleresult.registerObject("mType", mType);
 		ruleresult.registerObject("u2c", u2c);
 		ruleresult.registerObject("model", model);
-		ruleresult.registerObject("m2m", m2m);
 		ruleresult.registerObject("uClass", uClass);
-		ruleresult.registerObject("mType", mType);
+		ruleresult.registerObject("externals", externals);
 
 	}
 
@@ -709,7 +711,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_124(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_111(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 				.pattern_UnresolvedTypeDeclaration2Type_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -726,8 +728,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		// ForEach 
 		for (Object[] result2_black : UnresolvedTypeDeclaration2TypeImpl
 				.pattern_UnresolvedTypeDeclaration2Type_20_2_testcorematchandDECs_blackFFB(_edge_package)) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_black[0];
-			org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result2_black[1];
+			org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result2_black[0];
+			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_black[1];
 			Object[] result2_green = UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -735,7 +737,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			// 
 			if (UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, externals, uClass)) {
+							this, match, uClass, externals)) {
 				// 
 				if (UnresolvedTypeDeclaration2TypeImpl
 						.pattern_UnresolvedTypeDeclaration2Type_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -768,7 +770,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_136(EMoflonEdge _edge_unresolvedItems) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_118(EMoflonEdge _edge_unresolvedItems) {
 
 		Object[] result1_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 				.pattern_UnresolvedTypeDeclaration2Type_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -785,8 +787,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		// ForEach 
 		for (Object[] result2_black : UnresolvedTypeDeclaration2TypeImpl
 				.pattern_UnresolvedTypeDeclaration2Type_21_2_testcorematchandDECs_blackFFB(_edge_unresolvedItems)) {
-			Model model = (Model) result2_black[0];
-			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result2_black[1];
+			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result2_black[0];
+			Model model = (Model) result2_black[1];
 			Object[] result2_green = UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -794,7 +796,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			// 
 			if (UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, model, mType)) {
+							this, match, mType, model)) {
 				// 
 				if (UnresolvedTypeDeclaration2TypeImpl
 						.pattern_UnresolvedTypeDeclaration2Type_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -949,18 +951,18 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[0];
+		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result2_bindingAndBlack[0];
 		Model model = (Model) result2_bindingAndBlack[1];
 		org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[2];
-		UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result2_bindingAndBlack[3];
+		org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, externals, model,
-						uClass, mType, sourceMatch, targetMatch);
+				.pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, mType, model,
+						uClass, externals, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[externals] = " + externals + ", " + "[model] = " + model + ", " + "[uClass] = " + uClass + ", "
-					+ "[mType] = " + mType + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[mType] = " + mType + ", " + "[model] = " + model + ", " + "[uClass] = " + uClass + ", "
+					+ "[externals] = " + externals + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -968,26 +970,26 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		if (UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : UnresolvedTypeDeclaration2TypeImpl
-					.pattern_UnresolvedTypeDeclaration2Type_24_5_matchcorrcontext_blackBBFBB(externals, model,
+					.pattern_UnresolvedTypeDeclaration2Type_24_5_matchcorrcontext_blackFBBBB(model, externals,
 							sourceMatch, targetMatch)) {
-				JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result5_black[2];
+				JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result5_black[0];
 				Object[] result5_green = UnresolvedTypeDeclaration2TypeImpl
 						.pattern_UnresolvedTypeDeclaration2Type_24_5_matchcorrcontext_greenBBBF(m2m, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = UnresolvedTypeDeclaration2TypeImpl
-						.pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_blackBBBBB(externals, model,
-								uClass, mType, ccMatch);
+						.pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_blackBBBBB(mType, model,
+								uClass, externals, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[externals] = "
-							+ externals + ", " + "[model] = " + model + ", " + "[uClass] = " + uClass + ", "
-							+ "[mType] = " + mType + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mType] = " + mType + ", "
+							+ "[model] = " + model + ", " + "[uClass] = " + uClass + ", " + "[externals] = " + externals
+							+ ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				UnresolvedTypeDeclaration2TypeImpl
-						.pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_greenFBBB(uClass, mType,
+						.pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_greenBFBB(mType, uClass,
 								ccMatch);
-				//nothing ASTNode2Element u2c = (ASTNode2Element) result6_green[0];
+				//nothing ASTNode2Element u2c = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = UnresolvedTypeDeclaration2TypeImpl
 						.pattern_UnresolvedTypeDeclaration2Type_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1010,8 +1012,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Model externals, Model model,
-			org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(UnresolvedTypeDeclaration mType, Model model, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1051,9 +1053,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Model model, UnresolvedTypeDeclaration mType) {// 
+	public boolean checkDEC_FWD(UnresolvedTypeDeclaration mType, Model model) {// 
 		Object[] result1_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_blackBB(model, mType);
+				.pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_blackBB(mType, model);
 		if (result1_black != null) {
 			return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_27_2_expressionF();
 		} else {
@@ -1067,9 +1069,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Model externals, org.eclipse.uml2.uml.Class uClass) {// 
+	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {// 
 		Object[] result1_black = UnresolvedTypeDeclaration2TypeImpl
-				.pattern_UnresolvedTypeDeclaration2Type_28_1_matchtggpattern_blackBB(externals, uClass);
+				.pattern_UnresolvedTypeDeclaration2Type_28_1_matchtggpattern_blackBB(uClass, externals);
 		if (result1_black != null) {
 			return UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_28_2_expressionF();
 		} else {
@@ -1101,17 +1103,17 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				.pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList m2mList = (RuleEntryList) result2_black[0];
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_black[1];
-			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result2_black[2];
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result2_black[1];
+			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result2_black[2];
 			Model model = (Model) result2_black[3];
 
 			Object[] result3_bindingAndBlack = UnresolvedTypeDeclaration2TypeImpl
 					.pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_bindingAndBlackFBBBBBB(this,
-							isApplicableMatch, externals, model, m2m, ruleResult);
+							isApplicableMatch, m2m, model, externals, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[externals] = " + externals + ", "
-						+ "[model] = " + model + ", " + "[m2m] = " + m2m + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[m2m] = " + m2m + ", " + "[model] = "
+						+ model + ", " + "[externals] = " + externals + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1119,22 +1121,22 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					.pattern_UnresolvedTypeDeclaration2Type_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = UnresolvedTypeDeclaration2TypeImpl
-						.pattern_UnresolvedTypeDeclaration2Type_29_5_checknacs_blackBBB(externals, model, m2m);
+						.pattern_UnresolvedTypeDeclaration2Type_29_5_checknacs_blackBBB(m2m, model, externals);
 				if (result5_black != null) {
 
 					Object[] result6_black = UnresolvedTypeDeclaration2TypeImpl
-							.pattern_UnresolvedTypeDeclaration2Type_29_6_perform_blackBBBB(externals, model, m2m,
+							.pattern_UnresolvedTypeDeclaration2Type_29_6_perform_blackBBBB(m2m, model, externals,
 									ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[externals] = "
-								+ externals + ", " + "[model] = " + model + ", " + "[m2m] = " + m2m + ", "
-								+ "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2m] = " + m2m + ", "
+								+ "[model] = " + model + ", " + "[externals] = " + externals + ", " + "[ruleResult] = "
+								+ ruleResult + ".");
 					}
-					UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_29_6_perform_greenBFBFFBB(
-							externals, model, ruleResult, csp);
+					UnresolvedTypeDeclaration2TypeImpl.pattern_UnresolvedTypeDeclaration2Type_29_6_perform_greenFFBFBBB(
+							model, externals, ruleResult, csp);
+					//nothing UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result6_green[0];
 					//nothing ASTNode2Element u2c = (ASTNode2Element) result6_green[1];
 					//nothing org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result6_green[3];
-					//nothing UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result6_green[4];
 
 				} else {
 				}
@@ -1151,8 +1153,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Model externals,
-			Model model, JavaModel2UMLPackage m2m, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m, Model model,
+			org.eclipse.uml2.uml.Model externals, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1176,9 +1178,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		eq.solve(var_mType_name, var_uClass_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("externals", externals);
-		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("m2m", m2m);
+		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("externals", externals);
 		return csp;
 	}
 
@@ -1199,26 +1201,26 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD__MATCH_MODEL_UNRESOLVEDTYPEDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-						(UnresolvedTypeDeclaration) arguments.get(2));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD__MATCH_UNRESOLVEDTYPEDECLARATION_MODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (UnresolvedTypeDeclaration) arguments.get(1),
+						(Model) arguments.get(2));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
 				return perform_FWD((IsApplicableMatch) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_FWD__MATCH:
 				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_UNRESOLVEDTYPEDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-						(UnresolvedTypeDeclaration) arguments.get(2));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_UNRESOLVEDTYPEDECLARATION_MODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (UnresolvedTypeDeclaration) arguments.get(1),
+						(Model) arguments.get(2));
 				return null;
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_UNRESOLVEDTYPEDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-						(UnresolvedTypeDeclaration) arguments.get(2));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_UNRESOLVEDTYPEDECLARATION_MODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(UnresolvedTypeDeclaration) arguments.get(1), (Model) arguments.get(2));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_JAVAMODEL2UMLPACKAGE_UNRESOLVEDTYPEDECLARATION:
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_UNRESOLVEDTYPEDECLARATION_MODEL_MODEL:
 				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(org.eclipse.uml2.uml.Model) arguments.get(1), (Model) arguments.get(2),
-						(JavaModel2UMLPackage) arguments.get(3), (UnresolvedTypeDeclaration) arguments.get(4));
+						(JavaModel2UMLPackage) arguments.get(1), (UnresolvedTypeDeclaration) arguments.get(2),
+						(Model) arguments.get(3), (org.eclipse.uml2.uml.Model) arguments.get(4));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1228,26 +1230,26 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				return null;
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_TYPES_FWD__MATCH:
 				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD__MATCH_MODEL_CLASS:
-				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Model) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD__MATCH_CLASS_MODEL:
+				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+						(org.eclipse.uml2.uml.Model) arguments.get(2));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
 				return perform_BWD((IsApplicableMatch) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_BWD__MATCH:
 				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_MODEL_CLASS:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Model) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASS_MODEL:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+						(org.eclipse.uml2.uml.Model) arguments.get(2));
 				return null;
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_MODEL_CLASS:
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASS_MODEL:
 				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
-						(org.eclipse.uml2.uml.Model) arguments.get(1), (org.eclipse.uml2.uml.Class) arguments.get(2));
+						(org.eclipse.uml2.uml.Class) arguments.get(1), (org.eclipse.uml2.uml.Model) arguments.get(2));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_JAVAMODEL2UMLPACKAGE_CLASS:
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_CLASS_MODEL:
 				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(org.eclipse.uml2.uml.Model) arguments.get(1), (Model) arguments.get(2),
-						(JavaModel2UMLPackage) arguments.get(3), (org.eclipse.uml2.uml.Class) arguments.get(4));
+						(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2),
+						(org.eclipse.uml2.uml.Class) arguments.get(3), (org.eclipse.uml2.uml.Model) arguments.get(4));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1257,33 +1259,33 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				return null;
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_124__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_124((EMoflonEdge) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_136__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_136((EMoflonEdge) arguments.get(0));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_111__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_111((EMoflonEdge) arguments.get(0));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_118__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 				return checkAttributes_BWD((TripleMatch) arguments.get(0));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
 				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_CLASS_UNRESOLVEDTYPEDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Model) arguments.get(0), (Model) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2), (UnresolvedTypeDeclaration) arguments.get(3),
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__UNRESOLVEDTYPEDECLARATION_MODEL_CLASS_MODEL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((UnresolvedTypeDeclaration) arguments.get(0), (Model) arguments.get(1),
+						(org.eclipse.uml2.uml.Class) arguments.get(2), (org.eclipse.uml2.uml.Model) arguments.get(3),
 						(Match) arguments.get(4), (Match) arguments.get(5));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_DEC_FWD__MODEL_UNRESOLVEDTYPEDECLARATION:
-				return checkDEC_FWD((Model) arguments.get(0), (UnresolvedTypeDeclaration) arguments.get(1));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_DEC_BWD__MODEL_CLASS:
-				return checkDEC_BWD((org.eclipse.uml2.uml.Model) arguments.get(0),
-						(org.eclipse.uml2.uml.Class) arguments.get(1));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_DEC_FWD__UNRESOLVEDTYPEDECLARATION_MODEL:
+				return checkDEC_FWD((UnresolvedTypeDeclaration) arguments.get(0), (Model) arguments.get(1));
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___CHECK_DEC_BWD__CLASS_MODEL:
+				return checkDEC_BWD((org.eclipse.uml2.uml.Class) arguments.get(0),
+						(org.eclipse.uml2.uml.Model) arguments.get(1));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAMODEL2UMLPACKAGE:
 				return generateModel((RuleEntryContainer) arguments.get(0), (JavaModel2UMLPackage) arguments.get(1));
-			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL_JAVAMODEL2UMLPACKAGE_MODELGENERATORRULERESULT:
+			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAMODEL2UMLPACKAGE_MODEL_MODEL_MODELGENERATORRULERESULT:
 				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(org.eclipse.uml2.uml.Model) arguments.get(1), (Model) arguments.get(2),
-						(JavaModel2UMLPackage) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+						(JavaModel2UMLPackage) arguments.get(1), (Model) arguments.get(2),
+						(org.eclipse.uml2.uml.Model) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 			case RulesPackage.UNRESOLVED_TYPE_DECLARATION2_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1291,16 +1293,16 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_1_initialbindings_blackBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, Model model, UnresolvedTypeDeclaration mType) {
-		return new Object[] { _this, match, model, mType };
+			UnresolvedTypeDeclaration2Type _this, Match match, UnresolvedTypeDeclaration mType, Model model) {
+		return new Object[] { _this, match, mType, model };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_bindingFBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, Model model, UnresolvedTypeDeclaration mType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, model, mType);
+			UnresolvedTypeDeclaration2Type _this, Match match, UnresolvedTypeDeclaration mType, Model model) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mType, model);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, model, mType };
+			return new Object[] { csp, _this, match, mType, model };
 		}
 		return null;
 	}
@@ -1310,9 +1312,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_bindingAndBlackFBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, Model model, UnresolvedTypeDeclaration mType) {
+			UnresolvedTypeDeclaration2Type _this, Match match, UnresolvedTypeDeclaration mType, Model model) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_binding = pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_bindingFBBBB(
-				_this, match, model, mType);
+				_this, match, mType, model);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_binding[0];
 
@@ -1320,7 +1322,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, model, mType };
+				return new Object[] { csp, _this, match, mType, model };
 			}
 		}
 		return null;
@@ -1334,12 +1336,12 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_4_collectelementstobetranslated_blackBBB(
-			Match match, Model model, UnresolvedTypeDeclaration mType) {
-		return new Object[] { match, model, mType };
+			Match match, UnresolvedTypeDeclaration mType, Model model) {
+		return new Object[] { match, mType, model };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_4_collectelementstobetranslated_greenBBBF(
-			Match match, Model model, UnresolvedTypeDeclaration mType) {
+			Match match, UnresolvedTypeDeclaration mType, Model model) {
 		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mType);
 		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
@@ -1347,12 +1349,12 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		model__mType____unresolvedItems.setTrg(mType);
 		match.getToBeTranslatedEdges().add(model__mType____unresolvedItems);
 		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
-		return new Object[] { match, model, mType, model__mType____unresolvedItems };
+		return new Object[] { match, mType, model, model__mType____unresolvedItems };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_5_collectcontextelements_blackBBB(Match match,
-			Model model, UnresolvedTypeDeclaration mType) {
-		return new Object[] { match, model, mType };
+			UnresolvedTypeDeclaration mType, Model model) {
+		return new Object[] { match, mType, model };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_0_5_collectcontextelements_greenBB(Match match,
@@ -1362,8 +1364,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final void pattern_UnresolvedTypeDeclaration2Type_0_6_registerobjectstomatch_expressionBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, Model model, UnresolvedTypeDeclaration mType) {
-		_this.registerObjectsToMatch_FWD(match, model, mType);
+			UnresolvedTypeDeclaration2Type _this, Match match, UnresolvedTypeDeclaration mType, Model model) {
+		_this.registerObjectsToMatch_FWD(match, mType, model);
 
 	}
 
@@ -1379,23 +1381,23 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("externals");
-		EObject _localVariable_1 = isApplicableMatch.getObject("model");
-		EObject _localVariable_2 = isApplicableMatch.getObject("m2m");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mType");
-		EObject tmpExternals = _localVariable_0;
-		EObject tmpModel = _localVariable_1;
-		EObject tmpM2m = _localVariable_2;
-		EObject tmpMType = _localVariable_3;
-		if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
-			if (tmpModel instanceof Model) {
-				Model model = (Model) tmpModel;
-				if (tmpM2m instanceof JavaModel2UMLPackage) {
-					JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) tmpM2m;
-					if (tmpMType instanceof UnresolvedTypeDeclaration) {
-						UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
-						return new Object[] { externals, model, m2m, mType, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("m2m");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("model");
+		EObject _localVariable_3 = isApplicableMatch.getObject("externals");
+		EObject tmpM2m = _localVariable_0;
+		EObject tmpMType = _localVariable_1;
+		EObject tmpModel = _localVariable_2;
+		EObject tmpExternals = _localVariable_3;
+		if (tmpM2m instanceof JavaModel2UMLPackage) {
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) tmpM2m;
+			if (tmpMType instanceof UnresolvedTypeDeclaration) {
+				UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
+				if (tmpModel instanceof Model) {
+					Model model = (Model) tmpModel;
+					if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
+						org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
+						return new Object[] { m2m, mType, model, externals, isApplicableMatch };
 					}
 				}
 			}
@@ -1404,13 +1406,13 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_blackBBBBFBB(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			UnresolvedTypeDeclaration mType, UnresolvedTypeDeclaration2Type _this,
+			JavaModel2UMLPackage m2m, UnresolvedTypeDeclaration mType, Model model,
+			org.eclipse.uml2.uml.Model externals, UnresolvedTypeDeclaration2Type _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { externals, model, m2m, mType, csp, _this, isApplicableMatch };
+				return new Object[] { m2m, mType, model, externals, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1421,24 +1423,24 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding = pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding != null) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[0];
-			Model model = (Model) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[1];
-			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[2];
-			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[3];
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[0];
+			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[1];
+			Model model = (Model) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[2];
+			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_black = pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_blackBBBBFBB(
-					externals, model, m2m, mType, _this, isApplicableMatch);
+					m2m, mType, model, externals, _this, isApplicableMatch);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_black[4];
 
-				return new Object[] { externals, model, m2m, mType, csp, _this, isApplicableMatch };
+				return new Object[] { m2m, mType, model, externals, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_1_performtransformation_greenBFFBB(
-			org.eclipse.uml2.uml.Model externals, UnresolvedTypeDeclaration mType, CSP csp) {
+			UnresolvedTypeDeclaration mType, org.eclipse.uml2.uml.Model externals, CSP csp) {
 		ASTNode2Element u2c = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.uml2.uml.Class uClass = UMLFactory.eINSTANCE.createClass();
 		Object _localVariable_0 = csp.getValue("uClass", "name");
@@ -1447,43 +1449,43 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		uClass.setPackage(externals);
 		String uClass_name_prime = (String) _localVariable_0;
 		uClass.setName(uClass_name_prime);
-		return new Object[] { externals, u2c, uClass, mType, csp };
+		return new Object[] { mType, u2c, uClass, externals, csp };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_2_collecttranslatedelements_blackBBB(
-			ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType) {
-		return new Object[] { u2c, uClass, mType };
+			UnresolvedTypeDeclaration mType, ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass) {
+		return new Object[] { mType, u2c, uClass };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType) {
+			UnresolvedTypeDeclaration mType, ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(mType);
 		ruleresult.getCreatedLinkElements().add(u2c);
 		ruleresult.getCreatedElements().add(uClass);
-		ruleresult.getTranslatedElements().add(mType);
-		return new Object[] { ruleresult, u2c, uClass, mType };
+		return new Object[] { ruleresult, mType, u2c, uClass };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject externals, EObject u2c, EObject model, EObject m2m, EObject uClass,
-			EObject mType) {
-		if (!externals.equals(u2c)) {
-			if (!externals.equals(model)) {
-				if (!externals.equals(m2m)) {
-					if (!externals.equals(uClass)) {
-						if (!externals.equals(mType)) {
-							if (!u2c.equals(uClass)) {
-								if (!model.equals(u2c)) {
-									if (!model.equals(uClass)) {
-										if (!m2m.equals(u2c)) {
-											if (!m2m.equals(model)) {
-												if (!m2m.equals(uClass)) {
-													if (!m2m.equals(mType)) {
-														if (!mType.equals(u2c)) {
-															if (!mType.equals(model)) {
-																if (!mType.equals(uClass)) {
-																	return new Object[] { ruleresult, externals, u2c,
-																			model, m2m, uClass, mType };
+			PerformRuleResult ruleresult, EObject m2m, EObject mType, EObject u2c, EObject model, EObject uClass,
+			EObject externals) {
+		if (!m2m.equals(mType)) {
+			if (!m2m.equals(u2c)) {
+				if (!m2m.equals(model)) {
+					if (!m2m.equals(uClass)) {
+						if (!mType.equals(u2c)) {
+							if (!mType.equals(model)) {
+								if (!mType.equals(uClass)) {
+									if (!u2c.equals(uClass)) {
+										if (!model.equals(u2c)) {
+											if (!model.equals(uClass)) {
+												if (!externals.equals(m2m)) {
+													if (!externals.equals(mType)) {
+														if (!externals.equals(u2c)) {
+															if (!externals.equals(model)) {
+																if (!externals.equals(uClass)) {
+																	return new Object[] { ruleresult, m2m, mType, u2c,
+																			model, uClass, externals };
 																}
 															}
 														}
@@ -1503,49 +1505,49 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_1_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject externals, EObject u2c, EObject model, EObject uClass,
-			EObject mType) {
-		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge u2c__uClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mType, EObject u2c, EObject model, EObject uClass,
+			EObject externals) {
 		EMoflonEdge u2c__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge u2c__uClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uClass__externals____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge externals__uClass____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "UnresolvedTypeDeclaration2Type";
-		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
-		String u2c__uClass____target_name_prime = "target";
 		String u2c__mType____source_name_prime = "source";
+		String u2c__uClass____target_name_prime = "target";
 		String uClass__externals____package_name_prime = "package";
 		String externals__uClass____ownedType_name_prime = "ownedType";
-		model__mType____unresolvedItems.setSrc(model);
-		model__mType____unresolvedItems.setTrg(mType);
-		ruleresult.getTranslatedEdges().add(model__mType____unresolvedItems);
-		u2c__uClass____target.setSrc(u2c);
-		u2c__uClass____target.setTrg(uClass);
-		ruleresult.getCreatedEdges().add(u2c__uClass____target);
+		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
 		u2c__mType____source.setSrc(u2c);
 		u2c__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(u2c__mType____source);
+		u2c__uClass____target.setSrc(u2c);
+		u2c__uClass____target.setTrg(uClass);
+		ruleresult.getCreatedEdges().add(u2c__uClass____target);
 		uClass__externals____package.setSrc(uClass);
 		uClass__externals____package.setTrg(externals);
 		ruleresult.getCreatedEdges().add(uClass__externals____package);
 		externals__uClass____ownedType.setSrc(externals);
 		externals__uClass____ownedType.setTrg(uClass);
 		ruleresult.getCreatedEdges().add(externals__uClass____ownedType);
+		model__mType____unresolvedItems.setSrc(model);
+		model__mType____unresolvedItems.setTrg(mType);
+		ruleresult.getTranslatedEdges().add(model__mType____unresolvedItems);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
-		u2c__uClass____target.setName(u2c__uClass____target_name_prime);
 		u2c__mType____source.setName(u2c__mType____source_name_prime);
+		u2c__uClass____target.setName(u2c__uClass____target_name_prime);
 		uClass__externals____package.setName(uClass__externals____package_name_prime);
 		externals__uClass____ownedType.setName(externals__uClass____ownedType_name_prime);
-		return new Object[] { ruleresult, externals, u2c, model, uClass, mType, model__mType____unresolvedItems,
-				u2c__uClass____target, u2c__mType____source, uClass__externals____package,
-				externals__uClass____ownedType };
+		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
+		return new Object[] { ruleresult, mType, u2c, model, uClass, externals, u2c__mType____source,
+				u2c__uClass____target, uClass__externals____package, externals__uClass____ownedType,
+				model__mType____unresolvedItems };
 	}
 
 	public static final void pattern_UnresolvedTypeDeclaration2Type_1_5_registerobjects_expressionBBBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, PerformRuleResult ruleresult, EObject externals, EObject u2c,
-			EObject model, EObject m2m, EObject uClass, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, externals, u2c, model, m2m, uClass, mType);
+			UnresolvedTypeDeclaration2Type _this, PerformRuleResult ruleresult, EObject m2m, EObject mType, EObject u2c,
+			EObject model, EObject uClass, EObject externals) {
+		_this.registerObjects_FWD(ruleresult, m2m, mType, u2c, model, uClass, externals);
 
 	}
 
@@ -1607,22 +1609,22 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("model");
-		EObject _localVariable_1 = match.getObject("mType");
-		EObject tmpModel = _localVariable_0;
-		EObject tmpMType = _localVariable_1;
-		if (tmpModel instanceof Model) {
-			Model model = (Model) tmpModel;
-			if (tmpMType instanceof UnresolvedTypeDeclaration) {
-				UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
-				return new Object[] { model, mType, match };
+		EObject _localVariable_0 = match.getObject("mType");
+		EObject _localVariable_1 = match.getObject("model");
+		EObject tmpMType = _localVariable_0;
+		EObject tmpModel = _localVariable_1;
+		if (tmpMType instanceof UnresolvedTypeDeclaration) {
+			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
+			if (tmpModel instanceof Model) {
+				Model model = (Model) tmpModel;
+				return new Object[] { mType, model, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_2_2_corematch_blackFBFBB(Model model,
-			UnresolvedTypeDeclaration mType, Match match) {
+	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_2_2_corematch_blackFBBFB(
+			UnresolvedTypeDeclaration mType, Model model, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaModel2UMLPackage m2m : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(model,
 				JavaModel2UMLPackage.class, "source")) {
@@ -1631,7 +1633,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
 				String externals_name = externals.getName();
 				if (externals_name.equals("externals")) {
-					_result.add(new Object[] { externals, model, m2m, mType, match });
+					_result.add(new Object[] { m2m, mType, model, externals, match });
 				}
 
 			}
@@ -1641,15 +1643,15 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_2_3_findcontext_blackBBBB(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			UnresolvedTypeDeclaration mType) {
+			JavaModel2UMLPackage m2m, UnresolvedTypeDeclaration mType, Model model,
+			org.eclipse.uml2.uml.Model externals) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (model.getUnresolvedItems().contains(mType)) {
-			if (externals.equals(m2m.getTarget())) {
-				if (model.equals(m2m.getSource())) {
+		if (externals.equals(m2m.getTarget())) {
+			if (model.equals(m2m.getSource())) {
+				if (model.getUnresolvedItems().contains(mType)) {
 					String externals_name = externals.getName();
 					if (externals_name.equals("externals")) {
-						_result.add(new Object[] { externals, model, m2m, mType });
+						_result.add(new Object[] { m2m, mType, model, externals });
 					}
 
 				}
@@ -1659,43 +1661,42 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_2_3_findcontext_greenBBBBFFFF(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			UnresolvedTypeDeclaration mType) {
+			JavaModel2UMLPackage m2m, UnresolvedTypeDeclaration mType, Model model,
+			org.eclipse.uml2.uml.Model externals) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2m__externals____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2m__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
+		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String m2m__externals____target_name_prime = "target";
 		String m2m__model____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(externals);
-		isApplicableMatch.getAllContextElements().add(model);
+		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
 		isApplicableMatch.getAllContextElements().add(m2m);
 		isApplicableMatch.getAllContextElements().add(mType);
-		model__mType____unresolvedItems.setSrc(model);
-		model__mType____unresolvedItems.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(model__mType____unresolvedItems);
+		isApplicableMatch.getAllContextElements().add(model);
+		isApplicableMatch.getAllContextElements().add(externals);
 		m2m__externals____target.setSrc(m2m);
 		m2m__externals____target.setTrg(externals);
 		isApplicableMatch.getAllContextElements().add(m2m__externals____target);
 		m2m__model____source.setSrc(m2m);
 		m2m__model____source.setTrg(model);
 		isApplicableMatch.getAllContextElements().add(m2m__model____source);
-		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
+		model__mType____unresolvedItems.setSrc(model);
+		model__mType____unresolvedItems.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(model__mType____unresolvedItems);
 		m2m__externals____target.setName(m2m__externals____target_name_prime);
 		m2m__model____source.setName(m2m__model____source_name_prime);
-		return new Object[] { externals, model, m2m, mType, isApplicableMatch, model__mType____unresolvedItems,
-				m2m__externals____target, m2m__model____source };
+		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
+		return new Object[] { m2m, mType, model, externals, isApplicableMatch, m2m__externals____target,
+				m2m__model____source, model__mType____unresolvedItems };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_bindingFBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			UnresolvedTypeDeclaration mType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, externals, model, m2m, mType);
+			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			UnresolvedTypeDeclaration mType, Model model, org.eclipse.uml2.uml.Model externals) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, m2m, mType, model, externals);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, externals, model, m2m, mType };
+			return new Object[] { csp, _this, isApplicableMatch, m2m, mType, model, externals };
 		}
 		return null;
 	}
@@ -1705,11 +1706,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_bindingAndBlackFBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			UnresolvedTypeDeclaration mType) {
+			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			UnresolvedTypeDeclaration mType, Model model, org.eclipse.uml2.uml.Model externals) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_binding = pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, externals, model, m2m, mType);
+				_this, isApplicableMatch, m2m, mType, model, externals);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_binding[0];
 
@@ -1717,7 +1717,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, externals, model, m2m, mType };
+				return new Object[] { csp, _this, isApplicableMatch, m2m, mType, model, externals };
 			}
 		}
 		return null;
@@ -1752,18 +1752,18 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_1_initialbindings_blackBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
-		return new Object[] { _this, match, externals, uClass };
+			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
+		return new Object[] { _this, match, uClass, externals };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_bindingFBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, externals, uClass);
+			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uClass, externals);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, externals, uClass };
+			return new Object[] { csp, _this, match, uClass, externals };
 		}
 		return null;
 	}
@@ -1773,10 +1773,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_bindingAndBlackFBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
+			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_binding = pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_bindingFBBBB(
-				_this, match, externals, uClass);
+				_this, match, uClass, externals);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_binding[0];
 
@@ -1784,7 +1784,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, externals, uClass };
+				return new Object[] { csp, _this, match, uClass, externals };
 			}
 		}
 		return null;
@@ -1798,12 +1798,12 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_4_collectelementstobetranslated_blackBBB(
-			Match match, org.eclipse.uml2.uml.Model externals, org.eclipse.uml2.uml.Class uClass) {
-		return new Object[] { match, externals, uClass };
+			Match match, org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {
+		return new Object[] { match, uClass, externals };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_4_collectelementstobetranslated_greenBBBFF(
-			Match match, org.eclipse.uml2.uml.Model externals, org.eclipse.uml2.uml.Class uClass) {
+			Match match, org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {
 		EMoflonEdge uClass__externals____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge externals__uClass____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(uClass);
@@ -1817,12 +1817,12 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		match.getToBeTranslatedEdges().add(externals__uClass____ownedType);
 		uClass__externals____package.setName(uClass__externals____package_name_prime);
 		externals__uClass____ownedType.setName(externals__uClass____ownedType_name_prime);
-		return new Object[] { match, externals, uClass, uClass__externals____package, externals__uClass____ownedType };
+		return new Object[] { match, uClass, externals, uClass__externals____package, externals__uClass____ownedType };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_5_collectcontextelements_blackBBB(
-			Match match, org.eclipse.uml2.uml.Model externals, org.eclipse.uml2.uml.Class uClass) {
-		return new Object[] { match, externals, uClass };
+			Match match, org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {
+		return new Object[] { match, uClass, externals };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_10_5_collectcontextelements_greenBB(Match match,
@@ -1832,9 +1832,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final void pattern_UnresolvedTypeDeclaration2Type_10_6_registerobjectstomatch_expressionBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
-		_this.registerObjectsToMatch_BWD(match, externals, uClass);
+			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
+		_this.registerObjectsToMatch_BWD(match, uClass, externals);
 
 	}
 
@@ -1850,23 +1850,23 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("externals");
+		EObject _localVariable_0 = isApplicableMatch.getObject("m2m");
 		EObject _localVariable_1 = isApplicableMatch.getObject("model");
-		EObject _localVariable_2 = isApplicableMatch.getObject("m2m");
-		EObject _localVariable_3 = isApplicableMatch.getObject("uClass");
-		EObject tmpExternals = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("uClass");
+		EObject _localVariable_3 = isApplicableMatch.getObject("externals");
+		EObject tmpM2m = _localVariable_0;
 		EObject tmpModel = _localVariable_1;
-		EObject tmpM2m = _localVariable_2;
-		EObject tmpUClass = _localVariable_3;
-		if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
+		EObject tmpUClass = _localVariable_2;
+		EObject tmpExternals = _localVariable_3;
+		if (tmpM2m instanceof JavaModel2UMLPackage) {
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) tmpM2m;
 			if (tmpModel instanceof Model) {
 				Model model = (Model) tmpModel;
-				if (tmpM2m instanceof JavaModel2UMLPackage) {
-					JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) tmpM2m;
-					if (tmpUClass instanceof org.eclipse.uml2.uml.Class) {
-						org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) tmpUClass;
-						return new Object[] { externals, model, m2m, uClass, isApplicableMatch };
+				if (tmpUClass instanceof org.eclipse.uml2.uml.Class) {
+					org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) tmpUClass;
+					if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
+						org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
+						return new Object[] { m2m, model, uClass, externals, isApplicableMatch };
 					}
 				}
 			}
@@ -1875,13 +1875,13 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_blackBBBBFBB(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration2Type _this,
+			JavaModel2UMLPackage m2m, Model model, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals, UnresolvedTypeDeclaration2Type _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { externals, model, m2m, uClass, csp, _this, isApplicableMatch };
+				return new Object[] { m2m, model, uClass, externals, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1892,69 +1892,69 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding = pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding != null) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[0];
+			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[0];
 			Model model = (Model) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[1];
-			JavaModel2UMLPackage m2m = (JavaModel2UMLPackage) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[2];
-			org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[3];
+			org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[2];
+			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_black = pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_blackBBBBFBB(
-					externals, model, m2m, uClass, _this, isApplicableMatch);
+					m2m, model, uClass, externals, _this, isApplicableMatch);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_black[4];
 
-				return new Object[] { externals, model, m2m, uClass, csp, _this, isApplicableMatch };
+				return new Object[] { m2m, model, uClass, externals, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_greenFBBFB(
+	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_1_performtransformation_greenFFBBB(
 			Model model, org.eclipse.uml2.uml.Class uClass, CSP csp) {
-		ASTNode2Element u2c = UmlFactory.eINSTANCE.createASTNode2Element();
 		UnresolvedTypeDeclaration mType = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
+		ASTNode2Element u2c = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("mType", "name");
-		u2c.setTarget(uClass);
 		model.getUnresolvedItems().add(mType);
 		u2c.setSource(mType);
+		u2c.setTarget(uClass);
 		String mType_name_prime = (String) _localVariable_0;
 		mType.setName(mType_name_prime);
-		return new Object[] { u2c, model, uClass, mType, csp };
+		return new Object[] { mType, u2c, model, uClass, csp };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_2_collecttranslatedelements_blackBBB(
-			ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType) {
-		return new Object[] { u2c, uClass, mType };
+			UnresolvedTypeDeclaration mType, ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass) {
+		return new Object[] { mType, u2c, uClass };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType) {
+			UnresolvedTypeDeclaration mType, ASTNode2Element u2c, org.eclipse.uml2.uml.Class uClass) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(mType);
 		ruleresult.getCreatedLinkElements().add(u2c);
 		ruleresult.getTranslatedElements().add(uClass);
-		ruleresult.getCreatedElements().add(mType);
-		return new Object[] { ruleresult, u2c, uClass, mType };
+		return new Object[] { ruleresult, mType, u2c, uClass };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject externals, EObject u2c, EObject model, EObject m2m, EObject uClass,
-			EObject mType) {
-		if (!externals.equals(u2c)) {
-			if (!externals.equals(model)) {
-				if (!externals.equals(m2m)) {
-					if (!externals.equals(uClass)) {
-						if (!externals.equals(mType)) {
-							if (!u2c.equals(uClass)) {
-								if (!model.equals(u2c)) {
-									if (!model.equals(uClass)) {
-										if (!m2m.equals(u2c)) {
-											if (!m2m.equals(model)) {
-												if (!m2m.equals(uClass)) {
-													if (!m2m.equals(mType)) {
-														if (!mType.equals(u2c)) {
-															if (!mType.equals(model)) {
-																if (!mType.equals(uClass)) {
-																	return new Object[] { ruleresult, externals, u2c,
-																			model, m2m, uClass, mType };
+			PerformRuleResult ruleresult, EObject m2m, EObject mType, EObject u2c, EObject model, EObject uClass,
+			EObject externals) {
+		if (!m2m.equals(mType)) {
+			if (!m2m.equals(u2c)) {
+				if (!m2m.equals(model)) {
+					if (!m2m.equals(uClass)) {
+						if (!mType.equals(u2c)) {
+							if (!mType.equals(model)) {
+								if (!mType.equals(uClass)) {
+									if (!u2c.equals(uClass)) {
+										if (!model.equals(u2c)) {
+											if (!model.equals(uClass)) {
+												if (!externals.equals(m2m)) {
+													if (!externals.equals(mType)) {
+														if (!externals.equals(u2c)) {
+															if (!externals.equals(model)) {
+																if (!externals.equals(uClass)) {
+																	return new Object[] { ruleresult, m2m, mType, u2c,
+																			model, uClass, externals };
 																}
 															}
 														}
@@ -1974,49 +1974,49 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_11_3_bookkeepingforedges_greenBBBBBBFFFFF(
-			PerformRuleResult ruleresult, EObject externals, EObject u2c, EObject model, EObject uClass,
-			EObject mType) {
-		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge u2c__uClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mType, EObject u2c, EObject model, EObject uClass,
+			EObject externals) {
 		EMoflonEdge u2c__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge u2c__uClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uClass__externals____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge externals__uClass____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__mType____unresolvedItems = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "UnresolvedTypeDeclaration2Type";
-		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
-		String u2c__uClass____target_name_prime = "target";
 		String u2c__mType____source_name_prime = "source";
+		String u2c__uClass____target_name_prime = "target";
 		String uClass__externals____package_name_prime = "package";
 		String externals__uClass____ownedType_name_prime = "ownedType";
-		model__mType____unresolvedItems.setSrc(model);
-		model__mType____unresolvedItems.setTrg(mType);
-		ruleresult.getCreatedEdges().add(model__mType____unresolvedItems);
-		u2c__uClass____target.setSrc(u2c);
-		u2c__uClass____target.setTrg(uClass);
-		ruleresult.getCreatedEdges().add(u2c__uClass____target);
+		String model__mType____unresolvedItems_name_prime = "unresolvedItems";
 		u2c__mType____source.setSrc(u2c);
 		u2c__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(u2c__mType____source);
+		u2c__uClass____target.setSrc(u2c);
+		u2c__uClass____target.setTrg(uClass);
+		ruleresult.getCreatedEdges().add(u2c__uClass____target);
 		uClass__externals____package.setSrc(uClass);
 		uClass__externals____package.setTrg(externals);
 		ruleresult.getTranslatedEdges().add(uClass__externals____package);
 		externals__uClass____ownedType.setSrc(externals);
 		externals__uClass____ownedType.setTrg(uClass);
 		ruleresult.getTranslatedEdges().add(externals__uClass____ownedType);
+		model__mType____unresolvedItems.setSrc(model);
+		model__mType____unresolvedItems.setTrg(mType);
+		ruleresult.getCreatedEdges().add(model__mType____unresolvedItems);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
-		u2c__uClass____target.setName(u2c__uClass____target_name_prime);
 		u2c__mType____source.setName(u2c__mType____source_name_prime);
+		u2c__uClass____target.setName(u2c__uClass____target_name_prime);
 		uClass__externals____package.setName(uClass__externals____package_name_prime);
 		externals__uClass____ownedType.setName(externals__uClass____ownedType_name_prime);
-		return new Object[] { ruleresult, externals, u2c, model, uClass, mType, model__mType____unresolvedItems,
-				u2c__uClass____target, u2c__mType____source, uClass__externals____package,
-				externals__uClass____ownedType };
+		model__mType____unresolvedItems.setName(model__mType____unresolvedItems_name_prime);
+		return new Object[] { ruleresult, mType, u2c, model, uClass, externals, u2c__mType____source,
+				u2c__uClass____target, uClass__externals____package, externals__uClass____ownedType,
+				model__mType____unresolvedItems };
 	}
 
 	public static final void pattern_UnresolvedTypeDeclaration2Type_11_5_registerobjects_expressionBBBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, PerformRuleResult ruleresult, EObject externals, EObject u2c,
-			EObject model, EObject m2m, EObject uClass, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, externals, u2c, model, m2m, uClass, mType);
+			UnresolvedTypeDeclaration2Type _this, PerformRuleResult ruleresult, EObject m2m, EObject mType, EObject u2c,
+			EObject model, EObject uClass, EObject externals) {
+		_this.registerObjects_BWD(ruleresult, m2m, mType, u2c, model, uClass, externals);
 
 	}
 
@@ -2078,22 +2078,22 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("externals");
-		EObject _localVariable_1 = match.getObject("uClass");
-		EObject tmpExternals = _localVariable_0;
-		EObject tmpUClass = _localVariable_1;
-		if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
-			if (tmpUClass instanceof org.eclipse.uml2.uml.Class) {
-				org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) tmpUClass;
-				return new Object[] { externals, uClass, match };
+		EObject _localVariable_0 = match.getObject("uClass");
+		EObject _localVariable_1 = match.getObject("externals");
+		EObject tmpUClass = _localVariable_0;
+		EObject tmpExternals = _localVariable_1;
+		if (tmpUClass instanceof org.eclipse.uml2.uml.Class) {
+			org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) tmpUClass;
+			if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
+				org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
+				return new Object[] { uClass, externals, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_12_2_corematch_blackBFFBB(
-			org.eclipse.uml2.uml.Model externals, org.eclipse.uml2.uml.Class uClass, Match match) {
+	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_12_2_corematch_blackFFBBB(
+			org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		String externals_name = externals.getName();
 		if (externals_name.equals("externals")) {
@@ -2101,7 +2101,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					.getOppositeReferenceTyped(externals, JavaModel2UMLPackage.class, "target")) {
 				Model model = m2m.getSource();
 				if (model != null) {
-					_result.add(new Object[] { externals, model, m2m, uClass, match });
+					_result.add(new Object[] { m2m, model, uClass, externals, match });
 				}
 
 			}
@@ -2111,15 +2111,15 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_12_3_findcontext_blackBBBB(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			org.eclipse.uml2.uml.Class uClass) {
+			JavaModel2UMLPackage m2m, Model model, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (externals.equals(m2m.getTarget())) {
-			if (model.equals(m2m.getSource())) {
-				if (externals.equals(uClass.getPackage())) {
+		if (externals.equals(uClass.getPackage())) {
+			if (externals.equals(m2m.getTarget())) {
+				if (model.equals(m2m.getSource())) {
 					String externals_name = externals.getName();
 					if (externals_name.equals("externals")) {
-						_result.add(new Object[] { externals, model, m2m, uClass });
+						_result.add(new Object[] { m2m, model, uClass, externals });
 					}
 
 				}
@@ -2129,49 +2129,48 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_12_3_findcontext_greenBBBBFFFFF(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			org.eclipse.uml2.uml.Class uClass) {
+			JavaModel2UMLPackage m2m, Model model, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge m2m__externals____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2m__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uClass__externals____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge externals__uClass____ownedType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String m2m__externals____target_name_prime = "target";
-		String m2m__model____source_name_prime = "source";
+		EMoflonEdge m2m__externals____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2m__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String uClass__externals____package_name_prime = "package";
 		String externals__uClass____ownedType_name_prime = "ownedType";
-		isApplicableMatch.getAllContextElements().add(externals);
-		isApplicableMatch.getAllContextElements().add(model);
+		String m2m__externals____target_name_prime = "target";
+		String m2m__model____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(m2m);
+		isApplicableMatch.getAllContextElements().add(model);
 		isApplicableMatch.getAllContextElements().add(uClass);
-		m2m__externals____target.setSrc(m2m);
-		m2m__externals____target.setTrg(externals);
-		isApplicableMatch.getAllContextElements().add(m2m__externals____target);
-		m2m__model____source.setSrc(m2m);
-		m2m__model____source.setTrg(model);
-		isApplicableMatch.getAllContextElements().add(m2m__model____source);
+		isApplicableMatch.getAllContextElements().add(externals);
 		uClass__externals____package.setSrc(uClass);
 		uClass__externals____package.setTrg(externals);
 		isApplicableMatch.getAllContextElements().add(uClass__externals____package);
 		externals__uClass____ownedType.setSrc(externals);
 		externals__uClass____ownedType.setTrg(uClass);
 		isApplicableMatch.getAllContextElements().add(externals__uClass____ownedType);
-		m2m__externals____target.setName(m2m__externals____target_name_prime);
-		m2m__model____source.setName(m2m__model____source_name_prime);
+		m2m__externals____target.setSrc(m2m);
+		m2m__externals____target.setTrg(externals);
+		isApplicableMatch.getAllContextElements().add(m2m__externals____target);
+		m2m__model____source.setSrc(m2m);
+		m2m__model____source.setTrg(model);
+		isApplicableMatch.getAllContextElements().add(m2m__model____source);
 		uClass__externals____package.setName(uClass__externals____package_name_prime);
 		externals__uClass____ownedType.setName(externals__uClass____ownedType_name_prime);
-		return new Object[] { externals, model, m2m, uClass, isApplicableMatch, m2m__externals____target,
-				m2m__model____source, uClass__externals____package, externals__uClass____ownedType };
+		m2m__externals____target.setName(m2m__externals____target_name_prime);
+		m2m__model____source.setName(m2m__model____source_name_prime);
+		return new Object[] { m2m, model, uClass, externals, isApplicableMatch, uClass__externals____package,
+				externals__uClass____ownedType, m2m__externals____target, m2m__model____source };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_bindingFBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			org.eclipse.uml2.uml.Class uClass) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, externals, model, m2m, uClass);
+			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			Model model, org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, m2m, model, uClass, externals);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, externals, model, m2m, uClass };
+			return new Object[] { csp, _this, isApplicableMatch, m2m, model, uClass, externals };
 		}
 		return null;
 	}
@@ -2181,11 +2180,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			org.eclipse.uml2.uml.Class uClass) {
+			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			Model model, org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_binding = pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, externals, model, m2m, uClass);
+				_this, isApplicableMatch, m2m, model, uClass, externals);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_binding[0];
 
@@ -2193,7 +2191,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, externals, model, m2m, uClass };
+				return new Object[] { csp, _this, isApplicableMatch, m2m, model, uClass, externals };
 			}
 		}
 		return null;
@@ -2293,7 +2291,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				if (externals.equals(uClass.getPackage())) {
 					String externals_name = externals.getName();
 					if (externals_name.equals("externals")) {
-						_result.add(new Object[] { externals, uClass, _edge_package });
+						_result.add(new Object[] { uClass, externals, _edge_package });
 					}
 
 				}
@@ -2315,9 +2313,9 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final boolean pattern_UnresolvedTypeDeclaration2Type_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Model externals,
-			org.eclipse.uml2.uml.Class uClass) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, externals, uClass);
+			UnresolvedTypeDeclaration2Type _this, Match match, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uClass, externals);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2407,8 +2405,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_21_2_testcorematchandDECs_black_nac_0B(
 			UnresolvedTypeDeclaration mType) {
-		Modifier __DEC_mType_modifier_199933 = mType.getModifier();
-		if (__DEC_mType_modifier_199933 != null) {
+		Modifier __DEC_mType_modifier_36288 = mType.getModifier();
+		if (__DEC_mType_modifier_36288 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2426,7 +2424,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
 				if (model.getUnresolvedItems().contains(mType)) {
 					if (pattern_UnresolvedTypeDeclaration2Type_21_2_testcorematchandDECs_black_nac_0B(mType) == null) {
-						_result.add(new Object[] { model, mType, _edge_unresolvedItems });
+						_result.add(new Object[] { mType, model, _edge_unresolvedItems });
 					}
 				}
 			}
@@ -2447,8 +2445,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final boolean pattern_UnresolvedTypeDeclaration2Type_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			UnresolvedTypeDeclaration2Type _this, Match match, Model model, UnresolvedTypeDeclaration mType) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, model, mType);
+			UnresolvedTypeDeclaration2Type _this, Match match, UnresolvedTypeDeclaration mType, Model model) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mType, model);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2493,24 +2491,24 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_bindingFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("externals");
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("mType");
 		EObject _localVariable_1 = sourceMatch.getObject("model");
 		EObject _localVariable_2 = targetMatch.getObject("uClass");
-		EObject _localVariable_3 = sourceMatch.getObject("mType");
-		EObject tmpExternals = _localVariable_0;
+		EObject _localVariable_3 = targetMatch.getObject("externals");
+		EObject tmpMType = _localVariable_0;
 		EObject tmpModel = _localVariable_1;
 		EObject tmpUClass = _localVariable_2;
-		EObject tmpMType = _localVariable_3;
-		if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
+		EObject tmpExternals = _localVariable_3;
+		if (tmpMType instanceof UnresolvedTypeDeclaration) {
+			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
 			if (tmpModel instanceof Model) {
 				Model model = (Model) tmpModel;
 				if (tmpUClass instanceof org.eclipse.uml2.uml.Class) {
 					org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) tmpUClass;
-					if (tmpMType instanceof UnresolvedTypeDeclaration) {
-						UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) tmpMType;
-						return new Object[] { externals, model, uClass, mType, targetMatch, sourceMatch };
+					if (tmpExternals instanceof org.eclipse.uml2.uml.Model) {
+						org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) tmpExternals;
+						return new Object[] { mType, model, uClass, externals, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2519,12 +2517,12 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_blackBBBBBB(
-			org.eclipse.uml2.uml.Model externals, Model model, org.eclipse.uml2.uml.Class uClass,
-			UnresolvedTypeDeclaration mType, Match sourceMatch, Match targetMatch) {
+			UnresolvedTypeDeclaration mType, Model model, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
 			String externals_name = externals.getName();
 			if (externals_name.equals("externals")) {
-				return new Object[] { externals, model, uClass, mType, sourceMatch, targetMatch };
+				return new Object[] { mType, model, uClass, externals, sourceMatch, targetMatch };
 			}
 
 		}
@@ -2534,31 +2532,32 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding = pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding != null) {
-			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding[0];
+			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding[0];
 			Model model = (Model) result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding[1];
 			org.eclipse.uml2.uml.Class uClass = (org.eclipse.uml2.uml.Class) result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding[2];
-			UnresolvedTypeDeclaration mType = (UnresolvedTypeDeclaration) result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding[3];
+			org.eclipse.uml2.uml.Model externals = (org.eclipse.uml2.uml.Model) result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_black = pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_blackBBBBBB(
-					externals, model, uClass, mType, sourceMatch, targetMatch);
+					mType, model, uClass, externals, sourceMatch, targetMatch);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { externals, model, uClass, mType, sourceMatch, targetMatch };
+				return new Object[] { mType, model, uClass, externals, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_bindingFBBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, org.eclipse.uml2.uml.Model externals, Model model,
-			org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(externals, model, uClass, mType, sourceMatch,
+			UnresolvedTypeDeclaration2Type _this, UnresolvedTypeDeclaration mType, Model model,
+			org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(mType, model, uClass, externals, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, externals, model, uClass, mType, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mType, model, uClass, externals, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2568,10 +2567,11 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, org.eclipse.uml2.uml.Model externals, Model model,
-			org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType, Match sourceMatch, Match targetMatch) {
+			UnresolvedTypeDeclaration2Type _this, UnresolvedTypeDeclaration mType, Model model,
+			org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals, Match sourceMatch,
+			Match targetMatch) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_binding = pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_bindingFBBBBBBB(
-				_this, externals, model, uClass, mType, sourceMatch, targetMatch);
+				_this, mType, model, uClass, externals, sourceMatch, targetMatch);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_binding[0];
 
@@ -2579,7 +2579,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, externals, model, uClass, mType, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mType, model, uClass, externals, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2591,8 +2591,8 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_24_5_matchcorrcontext_blackBBFBB(
-			org.eclipse.uml2.uml.Model externals, Model model, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_UnresolvedTypeDeclaration2Type_24_5_matchcorrcontext_blackFBBBB(
+			Model model, org.eclipse.uml2.uml.Model externals, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			String externals_name = externals.getName();
@@ -2600,7 +2600,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 				for (JavaModel2UMLPackage m2m : org.moflon.core.utilities.eMoflonEMFUtil
 						.getOppositeReferenceTyped(externals, JavaModel2UMLPackage.class, "target")) {
 					if (model.equals(m2m.getSource())) {
-						_result.add(new Object[] { externals, model, m2m, sourceMatch, targetMatch });
+						_result.add(new Object[] { m2m, model, externals, sourceMatch, targetMatch });
 					}
 				}
 			}
@@ -2621,18 +2621,18 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_blackBBBBB(
-			org.eclipse.uml2.uml.Model externals, Model model, org.eclipse.uml2.uml.Class uClass,
-			UnresolvedTypeDeclaration mType, CCMatch ccMatch) {
-		return new Object[] { externals, model, uClass, mType, ccMatch };
+			UnresolvedTypeDeclaration mType, Model model, org.eclipse.uml2.uml.Class uClass,
+			org.eclipse.uml2.uml.Model externals, CCMatch ccMatch) {
+		return new Object[] { mType, model, uClass, externals, ccMatch };
 	}
 
-	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_greenFBBB(
-			org.eclipse.uml2.uml.Class uClass, UnresolvedTypeDeclaration mType, CCMatch ccMatch) {
+	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_6_createcorrespondence_greenBFBB(
+			UnresolvedTypeDeclaration mType, org.eclipse.uml2.uml.Class uClass, CCMatch ccMatch) {
 		ASTNode2Element u2c = UmlFactory.eINSTANCE.createASTNode2Element();
-		u2c.setTarget(uClass);
 		u2c.setSource(mType);
+		u2c.setTarget(uClass);
 		ccMatch.getCreateCorr().add(u2c);
-		return new Object[] { u2c, uClass, mType, ccMatch };
+		return new Object[] { mType, u2c, uClass, ccMatch };
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_24_7_addtoreturnedresult_blackBB(
@@ -2658,19 +2658,19 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_black_nac_0B(
 			UnresolvedTypeDeclaration mType) {
-		Modifier __DEC_mType_modifier_591416 = mType.getModifier();
-		if (__DEC_mType_modifier_591416 != null) {
+		Modifier __DEC_mType_modifier_936980 = mType.getModifier();
+		if (__DEC_mType_modifier_936980 != null) {
 			return new Object[] { mType };
 		}
 
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_blackBB(Model model,
-			UnresolvedTypeDeclaration mType) {
+	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_blackBB(
+			UnresolvedTypeDeclaration mType, Model model) {
 		if (model.getUnresolvedItems().contains(mType)) {
 			if (pattern_UnresolvedTypeDeclaration2Type_27_1_matchtggpattern_black_nac_0B(mType) == null) {
-				return new Object[] { model, mType };
+				return new Object[] { mType, model };
 			}
 		}
 		return null;
@@ -2687,11 +2687,11 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_28_1_matchtggpattern_blackBB(
-			org.eclipse.uml2.uml.Model externals, org.eclipse.uml2.uml.Class uClass) {
+			org.eclipse.uml2.uml.Class uClass, org.eclipse.uml2.uml.Model externals) {
 		if (externals.equals(uClass.getPackage())) {
 			String externals_name = externals.getName();
 			if (externals_name.equals("externals")) {
-				return new Object[] { externals, uClass };
+				return new Object[] { uClass, externals };
 			}
 
 		}
@@ -2722,17 +2722,17 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Model externals) {
-		if (ruleResult.getTargetObjects().contains(externals)) {
-			return new Object[] { ruleResult, externals };
+			ModelgeneratorRuleResult ruleResult, JavaModel2UMLPackage m2m) {
+		if (ruleResult.getCorrObjects().contains(m2m)) {
+			return new Object[] { ruleResult, m2m };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, JavaModel2UMLPackage m2m) {
-		if (ruleResult.getCorrObjects().contains(m2m)) {
-			return new Object[] { ruleResult, m2m };
+			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Model externals) {
+		if (ruleResult.getTargetObjects().contains(externals)) {
+			return new Object[] { ruleResult, externals };
 		}
 		return null;
 	}
@@ -2759,13 +2759,13 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 						if (model != null) {
 							String externals_name = externals.getName();
 							if (externals_name.equals("externals")) {
-								if (pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_1BB(
+								if (pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_0BB(
 										ruleResult, m2m) == null) {
-									if (pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_0BB(
+									if (pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, externals) == null) {
 										if (pattern_UnresolvedTypeDeclaration2Type_29_2_isapplicablecore_black_nac_2BB(
 												ruleResult, model) == null) {
-											_result.add(new Object[] { m2mList, externals, m2m, model,
+											_result.add(new Object[] { m2mList, m2m, externals, model,
 													ruleEntryContainer, ruleResult });
 										}
 									}
@@ -2783,13 +2783,12 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_bindingFBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, externals, model, m2m, ruleResult);
+			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			Model model, org.eclipse.uml2.uml.Model externals, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, m2m, model, externals, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, externals, model, m2m, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, m2m, model, externals, ruleResult };
 		}
 		return null;
 	}
@@ -2799,11 +2798,10 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			ModelgeneratorRuleResult ruleResult) {
+			UnresolvedTypeDeclaration2Type _this, IsApplicableMatch isApplicableMatch, JavaModel2UMLPackage m2m,
+			Model model, org.eclipse.uml2.uml.Model externals, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_binding = pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, externals, model, m2m, ruleResult);
+				_this, isApplicableMatch, m2m, model, externals, ruleResult);
 		if (result_pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_binding[0];
 
@@ -2811,7 +2809,7 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_UnresolvedTypeDeclaration2Type_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, externals, model, m2m, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, m2m, model, externals, ruleResult };
 			}
 		}
 		return null;
@@ -2825,50 +2823,49 @@ public class UnresolvedTypeDeclaration2TypeImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_5_checknacs_blackBBB(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m) {
+			JavaModel2UMLPackage m2m, Model model, org.eclipse.uml2.uml.Model externals) {
 		String externals_name = externals.getName();
 		if (externals_name.equals("externals")) {
-			return new Object[] { externals, model, m2m };
+			return new Object[] { m2m, model, externals };
 		}
 
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_6_perform_blackBBBB(
-			org.eclipse.uml2.uml.Model externals, Model model, JavaModel2UMLPackage m2m,
-			ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_6_perform_blackBBBB(JavaModel2UMLPackage m2m,
+			Model model, org.eclipse.uml2.uml.Model externals, ModelgeneratorRuleResult ruleResult) {
 		String externals_name = externals.getName();
 		if (externals_name.equals("externals")) {
-			return new Object[] { externals, model, m2m, ruleResult };
+			return new Object[] { m2m, model, externals, ruleResult };
 		}
 
 		return null;
 	}
 
-	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_6_perform_greenBFBFFBB(
-			org.eclipse.uml2.uml.Model externals, Model model, ModelgeneratorRuleResult ruleResult, CSP csp) {
+	public static final Object[] pattern_UnresolvedTypeDeclaration2Type_29_6_perform_greenFFBFBBB(Model model,
+			org.eclipse.uml2.uml.Model externals, ModelgeneratorRuleResult ruleResult, CSP csp) {
+		UnresolvedTypeDeclaration mType = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
 		ASTNode2Element u2c = UmlFactory.eINSTANCE.createASTNode2Element();
 		org.eclipse.uml2.uml.Class uClass = UMLFactory.eINSTANCE.createClass();
-		UnresolvedTypeDeclaration mType = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
-		Object _localVariable_0 = csp.getValue("uClass", "name");
-		Object _localVariable_1 = csp.getValue("mType", "name");
+		Object _localVariable_0 = csp.getValue("mType", "name");
+		Object _localVariable_1 = csp.getValue("uClass", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		model.getUnresolvedItems().add(mType);
+		ruleResult.getSourceObjects().add(mType);
+		u2c.setSource(mType);
 		ruleResult.getCorrObjects().add(u2c);
 		u2c.setTarget(uClass);
 		uClass.setPackage(externals);
 		ruleResult.getTargetObjects().add(uClass);
-		model.getUnresolvedItems().add(mType);
-		u2c.setSource(mType);
-		ruleResult.getSourceObjects().add(mType);
-		String uClass_name_prime = (String) _localVariable_0;
-		String mType_name_prime = (String) _localVariable_1;
+		String mType_name_prime = (String) _localVariable_0;
+		String uClass_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		uClass.setName(uClass_name_prime);
 		mType.setName(mType_name_prime);
+		uClass.setName(uClass_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { externals, u2c, model, uClass, mType, ruleResult, csp };
+		return new Object[] { mType, u2c, model, uClass, externals, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_UnresolvedTypeDeclaration2Type_29_7_expressionFB(
