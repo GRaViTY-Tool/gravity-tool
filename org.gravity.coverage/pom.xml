@@ -49,12 +49,6 @@
     </dependency>
     <dependency>
         <groupId>org.gravity</groupId>
-        <artifactId>org.gravity.goblin</artifactId>
-       <version>1.0.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.gravity</groupId>
         <artifactId>org.gravity.headless</artifactId>
        <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
@@ -278,12 +272,6 @@
     </dependency>
     <dependency>
         <groupId>org.gravity</groupId>
-        <artifactId>org.gravity.goblin.tests</artifactId>
-       <version>1.0.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.gravity</groupId>
         <artifactId>org.gravity.headless.tests</artifactId>
        <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
@@ -326,3 +314,4 @@
     </dependency> 
  </dependencies>
 </project>
+
