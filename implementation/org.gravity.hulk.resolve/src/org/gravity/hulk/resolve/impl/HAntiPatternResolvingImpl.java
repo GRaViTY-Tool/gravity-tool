@@ -2,12 +2,12 @@
  */
 package org.gravity.hulk.resolve.impl;
 
-import org.gravity.hulk.HAntiPatternResolving;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
 import org.gravity.hulk.detection.metrics.impl.HAfferentCouplingCalculator;
 import org.gravity.hulk.detection.metrics.impl.HEfferentCouplingCalculator;
 import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
+import org.gravity.hulk.resolve.HAntiPatternResolving;
 import org.gravity.hulk.resolve.antipattern.HAlternativeBlobresolver;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
 import org.gravity.hulk.resolve.antipattern.impl.HAlternativeBlobresolverImpl;
@@ -34,14 +34,6 @@ import org.moflon.core.dfs.Node;
  * @generated
  */
 public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl implements HAntiPatternResolving {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public HAntiPatternResolvingImpl() {
-	}
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -129,10 +121,7 @@ public class HAntiPatternResolvingImpl extends HAntiPatternDetectionImpl impleme
 	 */
 	@Override
 	public DFSGraph getSuperDependencyGraph() {
-		// [user code injected with eMoflon]
-
 		return super.getDependencyGraph();
-
 	}
 
 	public final HMethodToDataClassAccessCalculator createMethodToDataClassAccessCalculator(final DFSGraph graph,

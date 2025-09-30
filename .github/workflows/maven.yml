@@ -54,7 +54,7 @@ jobs:
       # Pre-release on master branch
       - name: Publish Pre-Release
         if: github.ref == 'refs/heads/master'
-        uses: marvinpinto/action-automatic-releases@latest
+        uses: crowbarmaster/GHactions@v1.6.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: latest
@@ -67,7 +67,7 @@ jobs:
       # Release on tag push
       - name: Publish Release
         if: github.ref_type == 'tag'
-        uses: marvinpinto/action-automatic-releases@latest
+        uses: crowbarmaster/GHactions@v1.6.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false

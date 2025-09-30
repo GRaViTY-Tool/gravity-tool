@@ -22,56 +22,16 @@ import org.moflon.core.dfs.DfsFactory;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.gravity.hulk.detection.codesmells.impl.HContollerClassDetector#isRelative
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HControllerClassDetector#isRelative
  * <em>Relative</em>}</li>
- * <li>{@link org.gravity.hulk.detection.codesmells.impl.HContollerClassDetector#getThreshold
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HControllerClassDetector#getThreshold
  * <em>Threshold</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class HContollerClassDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
-	/**
-	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RELATIVE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean relative = RELATIVE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double THRESHOLD_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected double threshold = THRESHOLD_EDEFAULT;
-
+public class HControllerClassDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -80,52 +40,12 @@ public class HContollerClassDetector extends HRelativeDetectorImpl implements HC
 	 *
 	 * @generated
 	 */
-	public HContollerClassDetector(final DFSGraph graph, final HInvocationRelationCalculator inc) {
+	public HControllerClassDetector(final DFSGraph graph, final HInvocationRelationCalculator inc) {
 		final var edge9 = DfsFactory.eINSTANCE.createEdge();
 		this.setGraph(graph);
 		this.getOutgoing().add(edge9);
 		edge9.setGraph(graph);
 		inc.getIncoming().add(edge9);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isRelative() {
-		return this.relative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setRelative(final boolean newRelative) {
-		this.relative = newRelative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public double getThreshold() {
-		return this.threshold;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setThreshold(final double newThreshold) {
-		this.threshold = newThreshold;
 	}
 
 	/**

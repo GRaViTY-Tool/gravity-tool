@@ -27,6 +27,7 @@ import org.moflon.core.dfs.DFSGraph;
  * @generated
  */
 public class HAfferentCouplingCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+
 	private static final Logger LOGGER = Logger.getLogger(HAfferentCouplingCalculator.class);
 
 	/**
@@ -99,5 +100,4 @@ public class HAfferentCouplingCalculator extends HClassBasedCalculatorImpl imple
 
 	}
 
-	// [user code injected with eMoflon] -->
 } // HAfferentCouplingCalculatorImpl

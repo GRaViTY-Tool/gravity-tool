@@ -12,7 +12,7 @@ import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
 import org.gravity.hulk.detection.AnnotationHelper;
 import org.gravity.hulk.detection.HAntiPatternDetector;
-import org.gravity.hulk.detection.codesmells.impl.HContollerClassDetector;
+import org.gravity.hulk.detection.codesmells.impl.HControllerClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLargeClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetector;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
@@ -36,7 +36,7 @@ public class HGodClassDetector extends HClassBasedCalculatorImpl implements HAnt
 	 *
 	 * @generated
 	 */
-	public HGodClassDetector(final DFSGraph graph, final HContollerClassDetector controller,
+	public HGodClassDetector(final DFSGraph graph, final HControllerClassDetector controller,
 			final HLargeClassDetector largeClass, final HLowCohesionDetector lowCohesion) {
 		final var edge6 = DfsFactory.eINSTANCE.createEdge();
 		final var edge7 = DfsFactory.eINSTANCE.createEdge();

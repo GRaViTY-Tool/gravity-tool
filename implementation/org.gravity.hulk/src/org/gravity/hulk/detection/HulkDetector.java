@@ -18,7 +18,7 @@ import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.Messages;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.codesmells.impl.HContollerClassDetector;
+import org.gravity.hulk.detection.codesmells.impl.HControllerClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HDataClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HIntenseFieldUsageDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLargeClassDetector;
@@ -212,7 +212,7 @@ public class HulkDetector {
 		thresholds.put(HDataClassDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
 		thresholds.put(HLargeClassDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());
 		thresholds.put(HLowCohesionDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
-		thresholds.put(HContollerClassDetector.class.getName(), HRelativeValueConstants.MEDIUM.getName());
+		thresholds.put(HControllerClassDetector.class.getName(), HRelativeValueConstants.MEDIUM.getName());
 		thresholds.put(HIntenseFieldUsageDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());
 		thresholds.put(HMuchOverloadingDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
 		thresholds.put(HManyParametersDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());

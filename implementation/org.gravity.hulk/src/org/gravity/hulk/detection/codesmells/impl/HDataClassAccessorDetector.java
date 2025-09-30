@@ -108,12 +108,10 @@ public class HDataClassAccessorDetector extends HClassBasedCalculatorImpl implem
 				final var tAnyAccessed = anyAccess.getTarget();
 				if ((tAnyAccessed != null) && !tAnyAccessed.equals(tAnyAccessing)) {
 					final var tmpTAnyDataClass = tAnyAccessed.getDefinedBy();
-					if (tmpTAnyDataClass instanceof final TClass tAnyDataClass) {
-						if (!tAnyDataClass.equals(tClass)) {
-							for (final TAnnotation tmpTData : tAnyDataClass.getTAnnotation()) {
-								if (tmpTData instanceof HDataClassSmell) {
-									return true;
-								}
+					if (tmpTAnyDataClass instanceof final TClass tAnyDataClass && !tAnyDataClass.equals(tClass)) {
+						for (final TAnnotation tmpTData : tAnyDataClass.getTAnnotation()) {
+							if (tmpTData instanceof HDataClassSmell) {
+								return true;
 							}
 						}
 					}
@@ -125,8 +123,6 @@ public class HDataClassAccessorDetector extends HClassBasedCalculatorImpl implem
 		return false;
 	}
 
-	// <-- [user code injected with eMoflon]
-
 	@Override
 	public String getGuiName() {
 		return "Data Class Accessor Smell";
@@ -137,5 +133,4 @@ public class HDataClassAccessorDetector extends HClassBasedCalculatorImpl implem
 		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHDataClassAccessor();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HDataClassAccessorDetectorImpl

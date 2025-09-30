@@ -8,7 +8,7 @@ import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
 import org.gravity.hulk.detection.antipattern.impl.HGodClassDetector;
 import org.gravity.hulk.detection.antipattern.impl.HSpaghettiCodeDetector;
 import org.gravity.hulk.detection.antipattern.impl.HSwissArmyKnifeDetector;
-import org.gravity.hulk.detection.codesmells.impl.HContollerClassDetector;
+import org.gravity.hulk.detection.codesmells.impl.HControllerClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HDataClassAccessorDetector;
 import org.gravity.hulk.detection.codesmells.impl.HDataClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HEmptyClassDetector;
@@ -57,13 +57,6 @@ import org.moflon.core.dfs.DfsFactory;
  * @generated
  */
 public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implements HAntiPatternDetection {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public HAntiPatternDetectionImpl() {
-	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -318,14 +311,14 @@ public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implemen
 		return largeClassDetector;
 	}
 
-	private final HContollerClassDetector createControllerClassDetector(final HInvocationRelationCalculator inc,
+	private final HControllerClassDetector createControllerClassDetector(final HInvocationRelationCalculator inc,
 			final DFSGraph graph) {
-		final var controller = new HContollerClassDetector(graph, inc);
+		final var controller = new HControllerClassDetector(graph, inc);
 		controller.setHAntiPatternHandling(this);
 		return controller;
 	}
 
-	private final HGodClassDetector createGodClassDetector(final HContollerClassDetector controller,
+	private final HGodClassDetector createGodClassDetector(final HControllerClassDetector controller,
 			final DFSGraph graph, final HLargeClassDetector largeClass, final HLowCohesionDetector lowCohesion) {
 		final var god = new HGodClassDetector(graph, controller, largeClass, lowCohesion);
 		god.setHAntiPatternHandling(this);

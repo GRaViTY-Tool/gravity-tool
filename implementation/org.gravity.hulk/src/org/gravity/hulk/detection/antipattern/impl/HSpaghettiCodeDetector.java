@@ -2,10 +2,8 @@
  */
 package org.gravity.hulk.detection.antipattern.impl;
 
-// <-- [user defined imports]
 import java.util.ArrayList;
 import java.util.List;
-// [user defined imports] -->
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
@@ -125,13 +123,14 @@ public class HSpaghettiCodeDetector extends HClassBasedCalculatorImpl implements
 				averageOverloading = (HAverageOverloadingInClassMetric) annotation;
 			}
 		}
-		if ((intenseFieldUsage == null) || (averageParams == null) || (depthOfInheritance == null)
+		if ((intenseFieldUsage == null) || (averageParams == null)
+				|| (depthOfInheritance == null)
 				|| (numberOfChild == null)
 				|| (averageOverloading == null)) {
 			return null;
 		}
 
-		this.collect(intenseFieldUsage);
+		this.annotations.add(intenseFieldUsage);
 
 		return this.calculate(tClass, averageParams, depthOfInheritance, numberOfChild, averageOverloading);
 	}
@@ -145,27 +144,27 @@ public class HSpaghettiCodeDetector extends HClassBasedCalculatorImpl implements
 
 		final var iRelative = depthOfInheritance.getRelativeAmount();
 		if ((iRelative != null) && HRelativeValueConstants.VERY_LOW.equals(iRelative.getValue())) {
-			this.collect(depthOfInheritance);
+			this.annotations.add(depthOfInheritance);
 			//
 			final var cRelative = numberOfChild.getRelativeAmount();
 			if ((cRelative != null) && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
-				this.collect(numberOfChild);
+				this.annotations.add(numberOfChild);
 
 			}
 			//
 			final var oRelative = averageOverloading.getRelativeAmount();
 			if ((oRelative != null) && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
-				this.collect(averageOverloading);
+				this.annotations.add(averageOverloading);
 			}
 
 		} else {
 			final var cRelative = numberOfChild.getRelativeAmount();
 			if ((cRelative != null) && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
-				this.collect(numberOfChild);
+				this.annotations.add(numberOfChild);
 				//
 				final var oRelative = averageOverloading.getRelativeAmount();
 				if ((oRelative != null) && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
-					this.collect(averageOverloading);
+					this.annotations.add(averageOverloading);
 				}
 
 			} else {
@@ -173,7 +172,7 @@ public class HSpaghettiCodeDetector extends HClassBasedCalculatorImpl implements
 				if ((oRelative == null) || !HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 					return null;
 				}
-				this.collect(averageOverloading);
+				this.annotations.add(averageOverloading);
 
 			}
 
@@ -201,10 +200,6 @@ public class HSpaghettiCodeDetector extends HClassBasedCalculatorImpl implements
 			tType.getAnnotations().add(tAnnotation);
 		}
 		return anti;
-	}
-
-	private boolean collect(final HAnnotation hAnnotation) {
-		return this.annotations.add(hAnnotation);
 	}
 
 	private boolean connect(final HSpaghettiCodeAntiPattern hAntiPattern) {

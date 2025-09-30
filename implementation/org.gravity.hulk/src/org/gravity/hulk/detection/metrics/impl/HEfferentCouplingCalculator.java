@@ -5,6 +5,7 @@ package org.gravity.hulk.detection.metrics.impl;
 // <-- [user defined imports]
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
@@ -27,6 +28,9 @@ import org.moflon.core.dfs.DFSGraph;
  * @generated
  */
 public class HEfferentCouplingCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+
+	private static final Logger LOGGER = Logger.getLogger(HEfferentCouplingCalculator.class);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,13 +65,13 @@ public class HEfferentCouplingCalculator extends HClassBasedCalculatorImpl imple
 			for (final TAccess t : m.getAccessing()) {
 				final var tTarget = t.getTarget();
 				if (tTarget == null) {
-					System.out.println(
+					LOGGER.warn(
 							"Member within Class " + tClass.getTName() + " accesses an TAccess without Target");
 					continue;
 				}
 				final var definingClass = tTarget.getDefinedBy();
 				if (definingClass == null) {
-					System.out.println(
+					LOGGER.warn(
 							"Member within Class " + tClass.getTName() + " accesses a Target without defining Class");
 					continue;
 				}
@@ -80,8 +84,6 @@ public class HEfferentCouplingCalculator extends HClassBasedCalculatorImpl imple
 
 	}
 
-	// <-- [user code injected with eMoflon]
-
 	@Override
 	public String getGuiName() {
 		return "Efferent Coupling";
@@ -92,5 +94,4 @@ public class HEfferentCouplingCalculator extends HClassBasedCalculatorImpl imple
 		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHEfferentCouplingMetric();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HEfferentCouplingCalculatorImpl

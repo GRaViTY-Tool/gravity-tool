@@ -18,6 +18,7 @@ import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
@@ -135,8 +136,8 @@ public class HIGAMCalculator extends HDetectorImpl implements HMetricCalculator 
 			if (this.isMainMethod(tMember) || (tMember.getDefinedBy() instanceof TInterface)) {
 				tMinVis = TVisibility.TPUBLIC_VALUE;
 			} else {
-				if (tMember instanceof TMethodDefinition) {
-					final var sub1sub2 = this.sub1sub2((TMethodDefinition) tMember);
+				if (tMember instanceof final TMethodDefinition definition) {
+					final var sub1sub2 = this.sub1sub2(definition);
 					tMinVis = sub1sub2.ordinal() > tMinVis ? sub1sub2.ordinal() : tMinVis;
 				}
 
@@ -260,19 +261,22 @@ public class HIGAMCalculator extends HDetectorImpl implements HMetricCalculator 
 	}
 
 	private TVisibility sub1sub2(final TMethodDefinition member) {
-		for (final TMethodDefinition tOverriddenDef : member.getOverriding()) {
+		final var overriding = member.getOverriding();
+		if (overriding.isEmpty()) {
+			return TVisibility.TPRIVATE;
+		}
 
-			final TVisibility tOverriddenVis;
-			final var tOverriddenMod = tOverriddenDef.getTModifier();
-			if (tOverriddenMod != null) {
-				return tOverriddenMod.getTVisibility();
-			}
+		// If there are multiple overridden methods, we consider the most permissive
+		final var minVisibility = overriding.stream().map(TMethodDefinition::getTModifier)
+				.map(TModifier::getTVisibility).min(TVisibility::compareTo);
+		if (minVisibility.isPresent()) {
+			return minVisibility.get();
+		}
+		for (final var tOverriddenDef : overriding) {
 			LOGGER.error("TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName() + "->"
 					+ tOverriddenDef.getSignatureString() + "\" is null.");
-			return TVisibility.TPUBLIC;
-
 		}
-		return TVisibility.TPRIVATE;
+		return TVisibility.TPUBLIC;
 	}
 
 	private TVisibility access(final TAbstractType tSource, final TAbstractType tTarget) {

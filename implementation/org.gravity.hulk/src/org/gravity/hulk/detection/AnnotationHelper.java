@@ -16,7 +16,11 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
  * @generated
  */
 public class AnnotationHelper {
-	
+
+	private AnnotationHelper() {
+		// This class shouldn't be instantiated
+	}
+
 	public static final TAnnotationType getAnnotationType(final TypeGraph pm, final String name) {
 		return pm.getAnnotationTypes().parallelStream().filter(t -> name.equals(t.getTName())).findAny()
 				.orElse(null);

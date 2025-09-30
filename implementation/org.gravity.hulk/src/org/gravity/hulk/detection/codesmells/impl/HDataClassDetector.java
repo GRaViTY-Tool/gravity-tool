@@ -15,8 +15,6 @@ import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-// <-- [user defined imports]
-// [user defined imports] -->
 import org.moflon.core.dfs.DFSGraph;
 import org.moflon.core.dfs.DfsFactory;
 
@@ -37,46 +35,6 @@ import org.moflon.core.dfs.DfsFactory;
  */
 public class HDataClassDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
 	/**
-	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RELATIVE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean relative = RELATIVE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double THRESHOLD_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected double threshold = THRESHOLD_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param getterSetterDetector
@@ -90,46 +48,6 @@ public class HDataClassDetector extends HRelativeDetectorImpl implements HCodeSm
 		edge.setGraph(graph);
 		this.getOutgoing().add(edge);
 		getterSetterDetector.getIncoming().add(edge);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isRelative() {
-		return this.relative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setRelative(final boolean newRelative) {
-		this.relative = newRelative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public double getThreshold() {
-		return this.threshold;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setThreshold(final double newThreshold) {
-		this.threshold = newThreshold;
 	}
 
 	/**
@@ -156,28 +74,32 @@ public class HDataClassDetector extends HRelativeDetectorImpl implements HCodeSm
 			//
 			if (this.getThreshold() <= nm.getValue()) {
 
-				final var dataClassSmell = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
-				dataClassSmell.setTAnnotated(tClass);
-				dataClassSmell.setHNACCMetric(nm);
-				this.getHAnnotation().add(dataClassSmell);
-				nm.getPartOf().add(dataClassSmell);
-
-				// ForEach
-				for (final HGetterSetterSmell getterSetter : nm.getHGetterSetterSmells()) {
-					getterSetter.getPartOf().add(dataClassSmell);
-					dataClassSmell.getGetterSetterSmells().add(getterSetter);
-				}
-				// ForEach
-				for (final TClass tChild : tClass.getChildClasses()) {
-					if (!tChild.equals(tClass)) {
-						this.makeChildDC(tChild, dataClassSmell);
-					}
-				}
-				return dataClassSmell;
+				return create(tClass, nm);
 			}
 
 		}
 		return null;
+	}
+
+	private HAnnotation create(final TClass tClass, HNACCMetric nm) {
+		final var dataClassSmell = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
+		dataClassSmell.setTAnnotated(tClass);
+		dataClassSmell.setHNACCMetric(nm);
+		this.getHAnnotation().add(dataClassSmell);
+		nm.getPartOf().add(dataClassSmell);
+
+		// ForEach
+		for (final HGetterSetterSmell getterSetter : nm.getHGetterSetterSmells()) {
+			getterSetter.getPartOf().add(dataClassSmell);
+			dataClassSmell.getGetterSetterSmells().add(getterSetter);
+		}
+		// ForEach
+		for (final TClass tChild : tClass.getChildClasses()) {
+			if (!tChild.equals(tClass)) {
+				this.makeChildDC(tChild, dataClassSmell);
+			}
+		}
+		return dataClassSmell;
 	}
 
 	private void makeChildDC(final TClass tChild, final HDataClassSmell tSmell) {//
