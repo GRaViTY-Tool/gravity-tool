@@ -13,20 +13,19 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.Messages;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.codesmells.HContollerClassDetector;
-import org.gravity.hulk.detection.codesmells.HDataClassDetector;
-import org.gravity.hulk.detection.codesmells.HIntenseFieldUsageDetector;
-import org.gravity.hulk.detection.codesmells.HLargeClassDetector;
-import org.gravity.hulk.detection.codesmells.HLowCohesionDetector;
-import org.gravity.hulk.detection.codesmells.HManyParametersDetector;
-import org.gravity.hulk.detection.codesmells.HMuchOverloadingDetector;
+import org.gravity.hulk.detection.codesmells.impl.HContollerClassDetector;
+import org.gravity.hulk.detection.codesmells.impl.HDataClassDetector;
+import org.gravity.hulk.detection.codesmells.impl.HIntenseFieldUsageDetector;
+import org.gravity.hulk.detection.codesmells.impl.HLargeClassDetector;
+import org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetector;
+import org.gravity.hulk.detection.codesmells.impl.HManyParametersDetector;
+import org.gravity.hulk.detection.codesmells.impl.HMuchOverloadingDetector;
+import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.moflon.core.dfs.DepthFirstSearch;
 import org.moflon.core.dfs.DfsFactory;
@@ -54,7 +53,7 @@ public class HulkDetector {
 	 * @param hulk       The detection configuration
 	 * @param thresholds The thresholds for the detection
 	 */
-	public HulkDetector(HAntiPatternHandling hulk, Map<String, String> thresholds) {
+	public HulkDetector(final HAntiPatternHandling hulk, final Map<String, String> thresholds) {
 		this(hulk, thresholds, false);
 	}
 
@@ -65,12 +64,12 @@ public class HulkDetector {
 	 * @param thresholds The thresholds for the detection
 	 * @param verbose    The verbose state
 	 */
-	public HulkDetector(HAntiPatternHandling hulk, Map<String, String> thresholds, boolean verbose) {
+	public HulkDetector(final HAntiPatternHandling hulk, final Map<String, String> thresholds, final boolean verbose) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
 		this.verbose = verbose;
 		this.initialized = new HashSet<>();
-		Resource eResource = hulk.eResource();
+		var eResource = hulk.eResource();
 		if (eResource == null) {
 			eResource = new ResourceSetImpl().createResource(URI.createURI("Hulk"));
 			eResource.getContents().add(hulk);
@@ -78,7 +77,7 @@ public class HulkDetector {
 		eResource.getContents().add(hulk.getDependencyGraph());
 	}
 
-	private List<HDetector> getSorted(HDetector detector) {
+	private List<HDetector> getSorted(final HDetector detector) {
 		initDFS().processNode(detector);
 
 		final Comparator<Node> comp = (arg0, arg1) -> arg0.getPostTraversal() - arg1.getPostTraversal();
@@ -93,8 +92,9 @@ public class HulkDetector {
 		return sorted;
 	}
 
-	private void handleDetector(HDetector detector, Deque<HDetector> worklist, Set<HDetector> processedDetectors) throws DetectionFailedException {
-		final List<HDetector> sorted = getSorted(detector);
+	private void handleDetector(final HDetector detector, final Deque<HDetector> worklist,
+			final Set<HDetector> processedDetectors) throws DetectionFailedException {
+		final var sorted = this.getSorted(detector);
 		for (final HDetector nextDetector : sorted) {
 			if (processedDetectors.contains(nextDetector)) {
 				continue;
@@ -102,8 +102,8 @@ public class HulkDetector {
 			if (worklist.contains(nextDetector)) {
 				worklist.remove(nextDetector);
 			}
-			if (nextDetector instanceof HRelativeDetector) {
-				initializeRelativeDetector((HRelativeDetector) nextDetector);
+			if (nextDetector instanceof HRelativeDetectorImpl) {
+				this.initializeRelativeDetector((HRelativeDetectorImpl) nextDetector);
 			}
 			if (nextDetector.detect(this.hulk.getApg())) {
 				nextDetector.setPostTraversal(0);
@@ -122,43 +122,43 @@ public class HulkDetector {
 	 * @param relativeDetector The detector
 	 * @throws DetectionFailedException If the stored threshold is not valid
 	 */
-	private void initializeRelativeDetector(HRelativeDetector relativeDetector) throws DetectionFailedException {
+	private void initializeRelativeDetector(final HRelativeDetectorImpl relativeDetector)
+			throws DetectionFailedException {
 		if (!this.initialized.contains(relativeDetector)) {
-			final String key = relativeDetector.getClass().getName().replace("Impl", "").replace(".impl", "");
+			final var key = relativeDetector.getClass().getName().replace("Impl", "").replace(".impl", "");
 			if (this.thresholds.containsKey(key)) {
 				relativeDetector.setRelative(false);
-				final String value = this.thresholds.get(key);
-				final HRelativeValueConstants constant = HRelativeValueConstants.getByName(value);
+				final var value = this.thresholds.get(key);
+				final var constant = HRelativeValueConstants.getByName(value);
 				if (constant != null) {
 					relativeDetector.setThreshold(relativeDetector.calculateRelativeThreshold(constant));
 				} else {
-					final Double number = Double.valueOf(value);
-					if (number != null) {
-						relativeDetector.setThreshold(number.doubleValue());
-					} else {
+					final var number = Double.valueOf(value);
+					if (number == null) {
 						throw new DetectionFailedException(
 								"The stored threshold of the metric \"" + key + "\" is not a double!");
 					}
+					relativeDetector.setThreshold(number);
 				}
 				this.initialized.add(relativeDetector);
 			}
 		}
 	}
 
-	private boolean detectSelectedAntiPattern(Deque<HDetector> worklist, Set<HDetector> processedDetectors,
-			boolean verbose) throws DetectionFailedException {
-		long h0 = 0;
+	private boolean detectSelectedAntiPattern(final Deque<HDetector> worklist, final Set<HDetector> processedDetectors,
+			final boolean verbose) throws DetectionFailedException {
+		var h0 = 0L;
 		if (verbose) {
 			h0 = System.currentTimeMillis();
 			LOGGER.info(h0 + " Hulk Anti-Pattern Detection");
 		}
 		while (!worklist.isEmpty()) {
-			final HDetector detector = worklist.pop();
+			final var detector = worklist.pop();
 
-			handleDetector(detector, worklist, processedDetectors);
+			this.handleDetector(detector, worklist, processedDetectors);
 		}
 		if (verbose) {
-			final long h1 = System.currentTimeMillis();
+			final var h1 = System.currentTimeMillis();
 			LOGGER.info(h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
 		}
 
@@ -176,13 +176,14 @@ public class HulkDetector {
 	 *                           detectors after detection.
 	 * @return true, iff the detection has been performed successfully
 	 */
-	public boolean detectSelectedAntiPattern(Set<EClass> selection, Set<HDetector> selectedDetectors,
-			Set<HDetector> processedDetectors) {
+	public boolean detectSelectedAntiPattern(final Set<Class<? extends HDetector>> selection,
+			final Set<HDetector> selectedDetectors,
+			final Set<HDetector> processedDetectors) {
 		final Deque<HDetector> worklist = new LinkedList<>();
 
 		// Fill worklist
 		for (final HDetector detector : this.hulk.getHDetector()) {
-			if (selection.contains(detector.eClass())) {
+			if (selection.contains(detector.getClass())) {
 				selectedDetectors.add(detector);
 				worklist.add(detector);
 			}
@@ -194,7 +195,7 @@ public class HulkDetector {
 		}
 
 		try {
-			return detectSelectedAntiPattern(worklist, processedDetectors, this.verbose);
+			return this.detectSelectedAntiPattern(worklist, processedDetectors, this.verbose);
 		} catch (final DetectionFailedException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
@@ -219,8 +220,8 @@ public class HulkDetector {
 	}
 
 	private static DepthFirstSearch initDFS() {
-		final DepthFirstSearch dfs = DfsFactory.eINSTANCE.createDepthFirstSearch();
-		final DepthFirstSearch delegate = DfsFactory.eINSTANCE.createDepthFirstSearch();
+		final var dfs = DfsFactory.eINSTANCE.createDepthFirstSearch();
+		final var delegate = DfsFactory.eINSTANCE.createDepthFirstSearch();
 		dfs.setDelegate(delegate);
 		delegate.setDelegate(dfs);
 		return dfs;

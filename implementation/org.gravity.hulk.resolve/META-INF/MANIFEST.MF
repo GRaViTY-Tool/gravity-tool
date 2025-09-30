@@ -8,7 +8,8 @@ Automatic-Module-Name: org.gravity.hulk.resolve
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.gravity.hulk.resolve,
  org.gravity.hulk.resolve.antipattern,
- org.gravity.hulk.resolve.calculators
+ org.gravity.hulk.resolve.calculators,
+ org.gravity.hulk.resolve.impl
 Require-Bundle: org.gravity.hulk,
  org.apache.log4j,
  org.gravity.hulk.annotations,

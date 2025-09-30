@@ -16,9 +16,5 @@ import org.gravity.hulk.HDetector;
  * @model abstract="true"
  * @generated
  */
-public interface HMetricCalculator extends HDetector { // <-- [user code injected with eMoflon]
-
-	String getGuiName();
-
-	// [user code injected with eMoflon] -->
+public interface HMetricCalculator extends HDetector {
 } // HMetricCalculator

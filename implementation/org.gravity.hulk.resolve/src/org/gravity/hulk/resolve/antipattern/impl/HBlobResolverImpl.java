@@ -2,21 +2,14 @@
  */
 package org.gravity.hulk.resolve.antipattern.impl;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 // [user defined imports] -->
 // <-- [user defined imports]
@@ -25,7 +18,9 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.detection.metrics.impl.HAfferentCouplingCalculator;
+import org.gravity.hulk.detection.metrics.impl.HEfferentCouplingCalculator;
 import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
 import org.gravity.hulk.refactoringgraph.HInBlobAccess;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
@@ -37,8 +32,9 @@ import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMethod;
 import org.gravity.hulk.refactoringgraph.refactorings.HRefactoring;
 import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsFactory;
-import org.gravity.hulk.resolve.antipattern.AntipatternPackage;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
+import org.gravity.hulk.resolve.calculators.HInBlobAccessCalculator;
+import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
 import org.gravity.refactorings.impl.ExtractClass;
 import org.gravity.refactorings.impl.MoveMember;
@@ -49,6 +45,8 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.moflon.core.dfs.DFSGraph;
+import org.moflon.core.dfs.DfsFactory;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HBlob
@@ -67,7 +65,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  *
  * @generated
  */
-public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlobResolver {
+public class HBlobResolverImpl extends HDetectorImpl implements HBlobResolver {
 
 	/**
 	 * The logger of this class
@@ -104,12 +102,8 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	protected HAntiPatternGraph copyApg;
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
 	protected HBlobResolverImpl() {
+		this.executedMoves = new BasicEList<>();
 	}
 
 	/**
@@ -117,9 +111,27 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 *
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return AntipatternPackage.Literals.HBLOB_RESOLVER;
+	public HBlobResolverImpl(final DFSGraph graph, final HMethodToDataClassAccessCalculator m2dc,
+			final HInBlobAccessCalculator iba, final HAfferentCouplingCalculator haff,
+			final HEfferentCouplingCalculator heff) {
+		this();
+		final var edgeBm2dc = DfsFactory.eINSTANCE.createEdge();
+		final var edgeIBA = DfsFactory.eINSTANCE.createEdge();
+		final var haffEdge = DfsFactory.eINSTANCE.createEdge();
+		final var heffEdge = DfsFactory.eINSTANCE.createEdge();
+		this.setGraph(graph);
+		edgeBm2dc.setGraph(graph);
+		this.getOutgoing().add(edgeBm2dc);
+		m2dc.getIncoming().add(edgeBm2dc);
+		edgeIBA.setGraph(graph);
+		iba.getIncoming().add(edgeIBA);
+		this.getOutgoing().add(edgeIBA);
+		haff.getIncoming().add(haffEdge);
+		this.getOutgoing().add(haffEdge);
+		haffEdge.setGraph(graph);
+		heff.getIncoming().add(heffEdge);
+		this.getOutgoing().add(heffEdge);
+		heffEdge.setGraph(graph);
 	}
 
 	/**
@@ -129,10 +141,6 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public EList<HMoveMethod> getExecutedMoves() {
-		if (this.executedMoves == null) {
-			this.executedMoves = new EObjectResolvingEList<>(HMoveMethod.class, this,
-					AntipatternPackage.HBLOB_RESOLVER__EXECUTED_MOVES);
-		}
 		return this.executedMoves;
 	}
 
@@ -143,23 +151,6 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public HAntiPatternGraph getOriginal_apg() {
-		if ((this.original_apg != null) && this.original_apg.eIsProxy()) {
-			final var oldOriginal_apg = (InternalEObject) this.original_apg;
-			this.original_apg = (HAntiPatternGraph) eResolveProxy(oldOriginal_apg);
-			if ((this.original_apg != oldOriginal_apg) && eNotificationRequired()) {
-				eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-						AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG, oldOriginal_apg, this.original_apg));
-			}
-		}
-		return this.original_apg;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public HAntiPatternGraph basicGetOriginal_apg() {
 		return this.original_apg;
 	}
 
@@ -170,12 +161,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public void setOriginal_apg(final HAntiPatternGraph newOriginal_apg) {
-		final var oldOriginal_apg = this.original_apg;
 		this.original_apg = newOriginal_apg;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG,
-					oldOriginal_apg, this.original_apg));
-		}
 	}
 
 	/**
@@ -193,46 +179,9 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetCopy_apg(final HAntiPatternGraph newCopy_apg, NotificationChain msgs) {
-		final var oldCopy_apg = this.copyApg;
-		this.copyApg = newCopy_apg;
-		if (eNotificationRequired()) {
-			final var notification = new ENotificationImpl(this, Notification.SET,
-					AntipatternPackage.HBLOB_RESOLVER__COPY_APG, oldCopy_apg, newCopy_apg);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
 	@Override
 	public void setCopy_apg(final HAntiPatternGraph newCopy_apg) {
-		if (newCopy_apg != this.copyApg) {
-			NotificationChain msgs = null;
-			if (this.copyApg != null) {
-				msgs = ((InternalEObject) this.copyApg).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - AntipatternPackage.HBLOB_RESOLVER__COPY_APG, null, msgs);
-			}
-			if (newCopy_apg != null) {
-				msgs = ((InternalEObject) newCopy_apg).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - AntipatternPackage.HBLOB_RESOLVER__COPY_APG, null, msgs);
-			}
-			msgs = basicSetCopy_apg(newCopy_apg, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, AntipatternPackage.HBLOB_RESOLVER__COPY_APG,
-					newCopy_apg, newCopy_apg));
-		}
+		this.copyApg = newCopy_apg;
 	}
 
 	/**
@@ -242,18 +191,18 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	@Override
 	public boolean detect(final HAntiPatternGraph apg) {
-		final var newApg = init(apg);
+		final var newApg = this.init(apg);
 		if (newApg == null) {
 			throw new IllegalStateException("Couldn't initialize APG.");
 		}
 		// ForEach
-		for (final HBlobAntiPattern blob : pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(newApg)) {
+		for (final HBlobAntiPattern blob : this.pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(newApg)) {
 			final var tClass = (TClass) blob.getTAnnotated();
-			final var annotation = getResolveBlobAnnotation(newApg, blob, tClass);
+			final var annotation = this.getResolveBlobAnnotation(newApg, blob, tClass);
 
 			//
-			if (allowedToTouch(tClass)) {
-				resolve(apg, tClass, annotation);
+			if (this.allowedToTouch(tClass)) {
+				this.resolve(apg, tClass, annotation);
 			} else {
 				EcoreUtil.delete(annotation);
 			}
@@ -271,7 +220,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 */
 	private void resolve(final HAntiPatternGraph apg, final TClass tClass, final HBlobResolveAnnotation annotation) {
 		for (final TMember tDefinition : tClass.getDefines()) {
-			if (allowedToTouch(tDefinition)) {
+			if (this.allowedToTouch(tDefinition)) {
 				//
 				final var iba = HBlobResolverImpl.searchInBlobAccess(tDefinition);
 				if (iba != null) {
@@ -284,8 +233,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 					}
 					// ForEach
 					for (final TAnnotation tmpM2dc : tDefinition.getTAnnotation()) {
-						if (tmpM2dc instanceof HMethodToDataClassAccess) {
-							final var m2dc = (HMethodToDataClassAccess) tmpM2dc;
+						if (tmpM2dc instanceof final HMethodToDataClassAccess m2dc) {
 							//
 							final var m2dcRelative = m2dc.getRelativeAmount();
 							if ((m2dcRelative != null)
@@ -296,18 +244,18 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 								tContainer.add(tDefinition);
 
 								//
-								final var hMoves = createMove(tContainer, tClass, tTargetClass, annotation);
+								final var hMoves = this.createMove(tContainer, tClass, tTargetClass, annotation);
 								if (hMoves != null) {
 									continue;
 								}
 
 							}
 
-							final var extract = createExtractClassAnnotation(tDefinition, annotation, apg,
+							final var extract = this.createExtractClassAnnotation(tDefinition, annotation, apg,
 									iba);
 
 							//
-							if (!isRefactoringPossible(extract)) {
+							if (!this.isRefactoringPossible(extract)) {
 								EcoreUtil.delete(extract);
 							}
 
@@ -332,29 +280,25 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	@Override
 	public boolean isRefactoringPossible(final HRefactoring refactoring) {
 		// [user code injected with eMoflon]
-		if (refactoring instanceof HMoveMethod) {
-			final var r = (HMoveMethod) refactoring;
+		if (refactoring instanceof final HMoveMethod r) {
 			final var tTargetClass = r.getTargetClass();
 			final var tSourceClass = r.getSourceClass();
 
 			for (final TSignature s : r.getTSignature()) {
-				if (s.getSignatureString().startsWith("get") || s.getSignatureString().startsWith("set")) {
-					return false;
-				}
-				if (!this.move.isApplicable(s, tTargetClass, tSourceClass)) {
+				if (s.getSignatureString().startsWith("get") || s.getSignatureString().startsWith("set")
+						|| !this.move.isApplicable(s, tTargetClass, tSourceClass)) {
 					return false;
 				}
 			}
 			return true;
-		} else if (refactoring instanceof HExtractClass) {
-			final var extractClass = (HExtractClass) refactoring;
+		}
+		if (refactoring instanceof final HExtractClass extractClass) {
 			final var config = new ExtractClassConfiguration(extractClass.getTMembers(),
 					"ExtractedClass" + System.currentTimeMillis());
 			final var r = new ExtractClass();
 			return r.isApplicable(config);
-		} else {
-			LOGGER.error("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
 		}
+		LOGGER.error("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
 		return false;
 	}
 
@@ -371,39 +315,37 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		for (final TMember definition : members) {
 			if (!definition.getSignatureString().startsWith("get")
 					&& !definition.getSignatureString().startsWith("set")) {
-				if (this.move.isApplicable(definition.getSignature(), target, source)) {
-					HMoveMember hMove;
-					if (definition instanceof TMethodDefinition) {
-						hMove = RefactoringsFactory.eINSTANCE.createHMoveMethod();
-					} else if (definition instanceof TFieldDefinition) {
-						hMove = RefactoringsFactory.eINSTANCE.createHMoveField();
-					} else {
-						LOGGER.error("HBlobResolver: Unknown Member Tye: " + definition);
-						return null;
-					}
-					hMove.setApg(this.copyApg);
-					this.copyApg.getHAnnotations().add(hMove);
-
-					hMove.setTAnnotated(definition);
-					definition.getTAnnotation().add(hMove);
-
-					hMove.setSourceClass(source);
-					hMove.setTargetClass(target);
-					hMove.getTSignature().add(definition.getSignature());
-					hMove.setChanged(false);
-
-					for (final TAnnotation tAnnotation : definition.getTAnnotation()) {
-						if (tAnnotation instanceof HInBlobAccess) {
-							hMove.setIba((HInBlobAccess) tAnnotation);
-						} else if (tAnnotation instanceof HMethodToDataClassAccess) {
-							hMove.setM2dc((HMethodToDataClassAccess) tAnnotation);
-						}
-					}
-					allMoves.add(hMove);
-
-				} else {
+				if (!this.move.isApplicable(definition.getSignature(), target, source)) {
 					return null;
 				}
+				HMoveMember hMove;
+				if (definition instanceof TMethodDefinition) {
+					hMove = RefactoringsFactory.eINSTANCE.createHMoveMethod();
+				} else if (definition instanceof TFieldDefinition) {
+					hMove = RefactoringsFactory.eINSTANCE.createHMoveField();
+				} else {
+					LOGGER.error("HBlobResolver: Unknown Member Tye: " + definition);
+					return null;
+				}
+				hMove.setApg(this.copyApg);
+				this.copyApg.getHAnnotations().add(hMove);
+
+				hMove.setTAnnotated(definition);
+				definition.getTAnnotation().add(hMove);
+
+				hMove.setSourceClass(source);
+				hMove.setTargetClass(target);
+				hMove.getTSignature().add(definition.getSignature());
+				hMove.setChanged(false);
+
+				for (final TAnnotation tAnnotation : definition.getTAnnotation()) {
+					if (tAnnotation instanceof HInBlobAccess) {
+						hMove.setIba((HInBlobAccess) tAnnotation);
+					} else if (tAnnotation instanceof HMethodToDataClassAccess) {
+						hMove.setM2dc((HMethodToDataClassAccess) tAnnotation);
+					}
+				}
+				allMoves.add(hMove);
 			}
 		}
 		final var refactoringFactory = RefactoringsFactory.eINSTANCE;
@@ -428,8 +370,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	public boolean allowedToTouch(final TAnnotatable element) {
 		// [user code injected with eMoflon]
 		final Set<TAnnotation> annotations = new HashSet<>(element.getTAnnotation());
-		if (element instanceof TMember) {
-			final var member = (TMember) element;
+		if (element instanceof final TMember member) {
 			annotations.addAll(member.getDefinedBy().getTAnnotation());
 		}
 		for (final TAnnotation annotation : annotations) {
@@ -457,133 +398,11 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		return this.copyApg;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-			final NotificationChain msgs) {
-		switch (featureID) {
-		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
-			return basicSetCopy_apg(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-		switch (featureID) {
-		case AntipatternPackage.HBLOB_RESOLVER__EXECUTED_MOVES:
-			return getExecutedMoves();
-		case AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG:
-			if (resolve) {
-				return getOriginal_apg();
-			}
-			return basicGetOriginal_apg();
-		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
-			return getCopy_apg();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(final int featureID, final Object newValue) {
-		switch (featureID) {
-		case AntipatternPackage.HBLOB_RESOLVER__EXECUTED_MOVES:
-			getExecutedMoves().clear();
-			getExecutedMoves().addAll((Collection<? extends HMoveMethod>) newValue);
-			return;
-		case AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG:
-			setOriginal_apg((HAntiPatternGraph) newValue);
-			return;
-		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
-			setCopy_apg((HAntiPatternGraph) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void eUnset(final int featureID) {
-		switch (featureID) {
-		case AntipatternPackage.HBLOB_RESOLVER__EXECUTED_MOVES:
-			getExecutedMoves().clear();
-			return;
-		case AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG:
-			setOriginal_apg((HAntiPatternGraph) null);
-			return;
-		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
-			setCopy_apg((HAntiPatternGraph) null);
-			return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(final int featureID) {
-		switch (featureID) {
-		case AntipatternPackage.HBLOB_RESOLVER__EXECUTED_MOVES:
-			return (this.executedMoves != null) && !this.executedMoves.isEmpty();
-		case AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG:
-			return this.original_apg != null;
-		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
-			return this.copyApg != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case AntipatternPackage.HBLOB_RESOLVER___DETECT__HANTIPATTERNGRAPH:
-			return detect((HAntiPatternGraph) arguments.get(0));
-		case AntipatternPackage.HBLOB_RESOLVER___IS_REFACTORING_POSSIBLE__HREFACTORING:
-			return isRefactoringPossible((HRefactoring) arguments.get(0));
-		case AntipatternPackage.HBLOB_RESOLVER___CREATE_MOVE__TMEMBERCONTAINER_TCLASS_TCLASS_HBLOBRESOLVEANNOTATION:
-			return createMove((EList<TMember>) arguments.get(0), (TClass) arguments.get(1), (TClass) arguments.get(2),
-					(HBlobResolveAnnotation) arguments.get(3));
-		case AntipatternPackage.HBLOB_RESOLVER___ALLOWED_TO_TOUCH__TANNOTATABLE:
-			return allowedToTouch((TAnnotatable) arguments.get(0));
-		case AntipatternPackage.HBLOB_RESOLVER___INIT__HANTIPATTERNGRAPH:
-			return init((HAntiPatternGraph) arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
 	public final Iterable<HBlobAntiPattern> pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(
 			final HAntiPatternGraph newApg) {
 		final var result = new LinkedList<HBlobAntiPattern>();
 		for (final HAnnotation tmpBlob : newApg.getHAnnotations()) {
-			if (tmpBlob instanceof HBlobAntiPattern) {
-				final var blob = (HBlobAntiPattern) tmpBlob;
+			if (tmpBlob instanceof final HBlobAntiPattern blob) {
 				final var tmpTClass = blob.getTAnnotated();
 				if (tmpTClass instanceof TClass) {
 					result.add(blob);
@@ -598,7 +417,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			final HBlobAntiPattern blob, final TClass tClass) {
 		final var annotation = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
 		blob.getPartOf().add(annotation);
-		getHAnnotation().add(annotation);
+		this.getHAnnotation().add(annotation);
 		newApg.getHAnnotations().add(annotation);
 		annotation.setHBlobAntiPattern(blob);
 		annotation.setTAnnotated(tClass);

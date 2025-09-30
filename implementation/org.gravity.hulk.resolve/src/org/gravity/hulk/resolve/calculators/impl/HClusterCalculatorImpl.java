@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-import org.gravity.hulk.impl.HDetectorImpl;
+import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HCluster;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 // [user defined imports] -->
@@ -22,11 +23,14 @@ import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
 import org.gravity.hulk.resolve.calculators.HClusterCalculator;
+import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.moflon.core.dfs.DFSGraph;
+import org.moflon.core.dfs.DfsFactory;
 
 import com.apporiented.algorithm.clustering.Cluster;
 import com.apporiented.algorithm.clustering.ClusteringAlgorithm;
@@ -50,7 +54,17 @@ public class HClusterCalculatorImpl extends HDetectorImpl implements HClusterCal
 	 *
 	 * @generated
 	 */
-	protected HClusterCalculatorImpl() {
+	public HClusterCalculatorImpl(final DFSGraph graph, final HBlobDetector blobDetector,
+			final HMethodToDataClassAccessCalculator m2dc) {
+		final var blobEdge = DfsFactory.eINSTANCE.createEdge();
+		final var m2dcEdge = DfsFactory.eINSTANCE.createEdge();
+		this.setGraph(graph);
+		blobEdge.setGraph(graph);
+		this.getOutgoing().add(blobEdge);
+		blobDetector.getIncoming().add(blobEdge);
+		m2dcEdge.setGraph(graph);
+		this.getOutgoing().add(m2dcEdge);
+		m2dc.getIncoming().add(m2dcEdge);
 	}
 
 	/**

@@ -96,11 +96,8 @@ public interface HDetector extends Node {
 	 * @generated
 	 */
 	boolean detect(HAntiPatternGraph apg);
-	// <-- [user code injected with eMoflon]
 
 	String getGuiName();
 
 	boolean hasAlreadyBeenAnnotated(TClass tClass);
-
-	// [user code injected with eMoflon] -->
 } // HDetector

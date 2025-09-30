@@ -2,12 +2,9 @@ Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.hulk;singleton:=true
 Export-Package: org.gravity.hulk,
  org.gravity.hulk.detection,
- org.gravity.hulk.detection.antipattern,
  org.gravity.hulk.detection.antipattern.impl,
- org.gravity.hulk.detection.codesmells,
  org.gravity.hulk.detection.codesmells.impl,
  org.gravity.hulk.detection.impl,
- org.gravity.hulk.detection.metrics,
  org.gravity.hulk.detection.metrics.impl,
  org.gravity.hulk.exceptions,
  org.gravity.hulk.impl

@@ -2,7 +2,6 @@
  */
 package org.gravity.hulk.resolve.antipattern.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
@@ -13,7 +12,6 @@ import java.util.TreeSet;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
@@ -24,13 +22,16 @@ import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMember;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
-import org.gravity.hulk.resolve.antipattern.AntipatternPackage;
 import org.gravity.hulk.resolve.antipattern.HAlternativeBlobresolver;
+import org.gravity.hulk.resolve.calculators.HClusterAccessCalculator;
+import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.moflon.core.dfs.DFSGraph;
+import org.moflon.core.dfs.DfsFactory;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -46,18 +47,18 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	 *
 	 * @generated
 	 */
-	protected HAlternativeBlobresolverImpl() {
-		super();
-	}
+	public HAlternativeBlobresolverImpl(final DFSGraph graph,
+			final HClusterAccessCalculator hCluster, final HMethodToDataClassAccessCalculator m2dc) {
+		final var m2dcEdge = DfsFactory.eINSTANCE.createEdge();
+		final var clusterEdge = DfsFactory.eINSTANCE.createEdge();
+		clusterEdge.setGraph(graph);
+		hCluster.getIncoming().add(clusterEdge);
+		this.getOutgoing().add(clusterEdge);
+		this.setGraph(graph);
+		m2dc.getIncoming().add(m2dcEdge);
+		this.getOutgoing().add(m2dcEdge);
+		m2dcEdge.setGraph(graph);
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return AntipatternPackage.Literals.HALTERNATIVE_BLOBRESOLVER;
 	}
 
 	/**
@@ -68,7 +69,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	@Override
 	public boolean detect(final HAntiPatternGraph apg) {
 
-		final HAntiPatternGraph newApg = init(apg);
+		final var newApg = this.init(apg);
 		if (newApg == null) {
 			throw new IllegalStateException("Couldn't initialize anti-pattern graph!");
 		}
@@ -76,7 +77,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 		// ForEach
 		for (final HAnnotation annotation : newApg.getHAnnotations()) {
 			if (annotation instanceof HBlobAntiPattern) {
-				resolve(newApg, (HBlobAntiPattern) annotation);
+				this.resolve(newApg, (HBlobAntiPattern) annotation);
 			}
 		}
 		return true;
@@ -89,16 +90,15 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	 * @param blob The blob anti-pattern
 	 */
 	private void resolve(final HAntiPatternGraph apg, final HBlobAntiPattern blob) {
-		final TClass tClass = (TClass) blob.getTAnnotated();
-		final HBlobResolveAnnotation hResolve = createBlobResolveAnnotation(apg, blob, tClass);
+		final var tClass = (TClass) blob.getTAnnotated();
+		final var hResolve = this.createBlobResolveAnnotation(apg, blob, tClass);
 
 		//
-		if (allowedToTouch(tClass)) {
+		if (this.allowedToTouch(tClass)) {
 			// ForEach
 			for (final TAnnotation tmpHCluster : tClass.getTAnnotation()) {
-				if (tmpHCluster instanceof HInBlobClusterAccess) {
-					final HInBlobClusterAccess hCluster = (HInBlobClusterAccess) tmpHCluster;
-					process(hCluster, tClass, hResolve);
+				if (tmpHCluster instanceof final HInBlobClusterAccess hCluster) {
+					this.process(hCluster, tClass, hResolve);
 				}
 			}
 
@@ -113,30 +113,19 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	@Override
 	public boolean process(final HInBlobClusterAccess hCluster, final TClass tClass,
 			final HBlobResolveAnnotation hParent) {
-		// [user code injected with eMoflon]
-
-		// HRelativeValue relativeAmount = hCluster.getRelativeAmount();
-		// HRelativeValueConstants hRelativeValue = relativeAmount.getValue();
-		// boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
-		// || hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue ==
-		// HRelativeValueConstants.MEDIUM;
-
-		final EList<TMember> tMembers = hCluster.getHCluster().getTMembers();
+		final var tMembers = hCluster.getHCluster().getTMembers();
 		for (final TMember member : tMembers) {
-			if (!allowedToTouch(member)) {
-				return false;
-			}
-			if (member instanceof TMethodDefinition && TConstructor.isConstructor((TMethodDefinition) member)) {
+			if (!this.allowedToTouch(member) || (member instanceof final TMethodDefinition definition
+					&& TConstructor.isConstructor(definition))) {
 				return false;
 			}
 		}
 
 		// Keep the biggest cluster in the class
-		final int size = hCluster.getHCluster().getTMembers().size();
+		final var size = hCluster.getHCluster().getTMembers().size();
 		final SortedSet<Integer> sizes = new TreeSet<>();
 		for (final TAnnotation tAnnotation : tClass.getTAnnotation()) {
-			if (tAnnotation instanceof HCluster) {
-				final HCluster otherCluster = (HCluster) tAnnotation;
+			if (tAnnotation instanceof final HCluster otherCluster) {
 				sizes.add(otherCluster.getTMembers().size());
 			}
 		}
@@ -144,18 +133,17 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			return false;
 		}
 
-		final int dataClassCoupling = 0;
-		final int internalCoupling = (int) hCluster.getValue();
+		final var dataClassCoupling = 0;
+		final var internalCoupling = (int) hCluster.getValue();
 
-		final HashMap<TClass, Integer> coupling = new HashMap<>();
+		final var coupling = new HashMap<TClass, Integer>();
 		for (final TMember member : tMembers) {
 
 			// Search DataClass with max coupling
 			for (final TAnnotation tAnnotations : member.getTAnnotation()) {
-				if (tAnnotations instanceof HMethodToDataClassAccess) {
-					final HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tAnnotations;
-					int value = (int) m2dc.getValue();
-					final TClass key = m2dc.getHDataClass();
+				if (tAnnotations instanceof final HMethodToDataClassAccess m2dc) {
+					var value = (int) m2dc.getValue();
+					final var key = m2dc.getHDataClass();
 					if (coupling.containsKey(key)) {
 						value += coupling.get(key);
 					}
@@ -185,11 +173,11 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 
 		final Set<HMoveMembers> possibleMoves = new HashSet<>();
 		for (final Entry<TClass, Integer> entry : coupling.entrySet()) {
-			final TClass tDataClass = entry.getKey();
-			final HMoveMembers hMoveMembers = createMove(tContainer, tClass, tDataClass, hParent);
+			final var tDataClass = entry.getKey();
+			final var hMoveMembers = this.createMove(tContainer, tClass, tDataClass, hParent);
 			if (hMoveMembers != null) {
 				for (final HMoveMember hMove : hMoveMembers.getHMoveMembers()) {
-					final TMember member = (TMember) hMove.getTAnnotated();
+					final var member = (TMember) hMove.getTAnnotated();
 
 				}
 				hMoveMembers.setValue(internalCoupling - (double) entry.getValue());
@@ -212,28 +200,11 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 		return true;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case AntipatternPackage.HALTERNATIVE_BLOBRESOLVER___DETECT__HANTIPATTERNGRAPH:
-			return detect((HAntiPatternGraph) arguments.get(0));
-		case AntipatternPackage.HALTERNATIVE_BLOBRESOLVER___PROCESS__HINBLOBCLUSTERACCESS_TCLASS_HBLOBRESOLVEANNOTATION:
-			return process((HInBlobClusterAccess) arguments.get(0), (TClass) arguments.get(1),
-					(HBlobResolveAnnotation) arguments.get(2));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
 	public final HBlobResolveAnnotation createBlobResolveAnnotation(final HAntiPatternGraph newApg,
 			final HBlobAntiPattern hBlob, final TClass tClass) {
-		final HBlobResolveAnnotation hResolve = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
+		final var hResolve = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
 		hBlob.getPartOf().add(hResolve);
-		getHAnnotation().add(hResolve);
+		this.getHAnnotation().add(hResolve);
 		hResolve.setHBlobAntiPattern(hBlob);
 		hResolve.setTAnnotated(tClass);
 		newApg.getHAnnotations().add(hResolve);

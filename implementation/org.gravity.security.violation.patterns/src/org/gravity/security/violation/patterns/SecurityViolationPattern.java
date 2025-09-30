@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.impl.HDetectorImpl;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.security.violation.patterns.violations.ViolationsFactory;
 import org.gravity.security.violation.patterns.violations.ViolationsPackage;
 import org.gravity.tgg.pm.uml.CorrespondenceGraphGenerator;

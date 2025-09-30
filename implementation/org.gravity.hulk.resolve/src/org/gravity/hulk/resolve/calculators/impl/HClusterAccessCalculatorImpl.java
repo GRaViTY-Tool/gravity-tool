@@ -9,17 +9,20 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-import org.gravity.hulk.impl.HDetectorImpl;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HCluster;
 import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
 import org.gravity.hulk.resolve.calculators.HClusterAccessCalculator;
+import org.gravity.hulk.resolve.calculators.HClusterCalculator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 // [user defined imports] -->
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.moflon.core.dfs.DFSGraph;
+import org.moflon.core.dfs.DfsFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,9 +39,17 @@ public class HClusterAccessCalculatorImpl extends HDetectorImpl implements HClus
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
+	 * @param hCluster
+	 * @param graph
+	 *
 	 * @generated
 	 */
-	protected HClusterAccessCalculatorImpl() {
+	public HClusterAccessCalculatorImpl(final DFSGraph graph, final HClusterCalculator hCluster) {
+		final var accessEdge = DfsFactory.eINSTANCE.createEdge();
+		this.setGraph(graph);
+		accessEdge.setGraph(graph);
+		this.getOutgoing().add(accessEdge);
+		hCluster.getIncoming().add(accessEdge);
 	}
 
 	/**
