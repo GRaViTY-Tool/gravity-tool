@@ -14,6 +14,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceStatus;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -145,10 +146,18 @@ public final class EclipseProjectUtil {
 	 */
 	public static IFolder getGravityFolder(final IProject project, final IProgressMonitor monitor) throws IOException {
 		final var gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
+		try {
+			project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		} catch (final CoreException e) {
+			LOGGER.error(e);
+		}
 		if (!gravityFolder.exists()) {
 			try {
 				gravityFolder.create(true, true, monitor);
 			} catch (final CoreException e) {
+				if (e.getStatus().getCode() == IResourceStatus.RESOURCE_EXISTS) {
+					return gravityFolder;
+				}
 				throw new IOException(e);
 			}
 		}
