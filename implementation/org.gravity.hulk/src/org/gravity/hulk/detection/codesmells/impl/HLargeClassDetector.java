@@ -31,46 +31,6 @@ import org.moflon.core.dfs.DfsFactory;
  */
 public class HLargeClassDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
 	/**
-	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RELATIVE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean relative = RELATIVE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double THRESHOLD_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected double threshold = THRESHOLD_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param nmd
@@ -83,46 +43,6 @@ public class HLargeClassDetector extends HRelativeDetectorImpl implements HCodeS
 		nmd.getIncoming().add(edge1);
 		this.setGraph(graph);
 		this.getOutgoing().add(edge1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isRelative() {
-		return this.relative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setRelative(final boolean newRelative) {
-		this.relative = newRelative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public double getThreshold() {
-		return this.threshold;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setThreshold(final double newThreshold) {
-		this.threshold = newThreshold;
 	}
 
 	/**
@@ -165,30 +85,8 @@ public class HLargeClassDetector extends HRelativeDetectorImpl implements HCodeS
 	 */
 	@Override
 	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
-		// [user code injected with eMoflon]
-
 		return this.calculateRelativeThreshold(HRelativeValueConstants.HIGH, HNumberOfMembersMetric.class);
 
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (this.eIsProxy()) {
-			return super.toString();
-		}
-
-		final var result = new StringBuilder(super.toString());
-		result.append(" (relative: ");
-		result.append(this.relative);
-		result.append(", threshold: ");
-		result.append(this.threshold);
-		result.append(')');
-		return result.toString();
 	}
 
 	@Override

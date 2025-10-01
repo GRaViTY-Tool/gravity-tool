@@ -4,12 +4,10 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.hulk.detection.metrics.impl.HAverageParametersCalculator;
 import org.gravity.typegraph.basic.TClass;
@@ -33,46 +31,6 @@ import org.moflon.core.dfs.DfsFactory;
  */
 public class HManyParametersDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
 	/**
-	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RELATIVE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #isRelative()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean relative = RELATIVE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double THRESHOLD_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getThreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected double threshold = THRESHOLD_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param paramMetric
@@ -86,46 +44,6 @@ public class HManyParametersDetector extends HRelativeDetectorImpl implements HC
 		this.getOutgoing().add(edge10);
 		paramMetric.getIncoming().add(edge10);
 		edge10.setGraph(graph);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isRelative() {
-		return this.relative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setRelative(final boolean newRelative) {
-		this.relative = newRelative;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public double getThreshold() {
-		return this.threshold;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setThreshold(final double newThreshold) {
-		this.threshold = newThreshold;
 	}
 
 	/**
@@ -165,52 +83,9 @@ public class HManyParametersDetector extends HRelativeDetectorImpl implements HC
 	 */
 	@Override
 	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
-		// [user code injected with eMoflon]
-
 		return this.calculateRelativeThreshold(level, HAverageParametersMetric.class);
 
 	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (this.eIsProxy()) {
-			return super.toString();
-		}
-
-		final var result = new StringBuilder(super.toString());
-		result.append(" (relative: ");
-		result.append(this.relative);
-		result.append(", threshold: ");
-		result.append(this.threshold);
-		result.append(')');
-		return result.toString();
-	}
-
-	// <-- [user code injected with eMoflon]
 
 	@Override
 	public String getGuiName() {
@@ -222,5 +97,4 @@ public class HManyParametersDetector extends HRelativeDetectorImpl implements HC
 		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHManyParametersCodeSmell();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HManyParametersDetectorImpl

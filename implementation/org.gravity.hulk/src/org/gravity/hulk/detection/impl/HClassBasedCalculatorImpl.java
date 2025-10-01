@@ -47,7 +47,7 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl {
 
 	protected abstract HAnnotation calculate(TClass tClass);
 
-	public static final Iterable<TClass> getClassesToVisit(final HAntiPatternGraph apg, final HDetector detector) {
+	private static final Iterable<TClass> getClassesToVisit(final HAntiPatternGraph apg, final HDetector detector) {
 		final List<TClass> result = new LinkedList<>();
 		final var pm = apg.getModel();
 		if (pm != null) {
@@ -62,7 +62,4 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl {
 		return result;
 	}
 
-	// <-- [user code injected with eMoflon]
-
-	// [user code injected with eMoflon] -->
 } // HClassBasedCalculatorImpl

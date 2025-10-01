@@ -175,28 +175,6 @@ public class HLowCohesionDetector extends HRelativeDetectorImpl implements HCode
 
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (this.eIsProxy()) {
-			return super.toString();
-		}
-
-		final var result = new StringBuilder(super.toString());
-		result.append(" (relative: ");
-		result.append(this.relative);
-		result.append(", threshold: ");
-		result.append(this.threshold);
-		result.append(')');
-		return result.toString();
-	}
-
-	// <-- [user code injected with eMoflon]
-
 	@Override
 	public String getGuiName() {
 		return "Low Cohesion Smell";

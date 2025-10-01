@@ -4,7 +4,6 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
@@ -14,8 +13,6 @@ import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-// <-- [user defined imports]
-// [user defined imports] -->
 import org.moflon.core.dfs.DFSGraph;
 import org.moflon.core.dfs.DfsFactory;
 
@@ -81,25 +78,6 @@ public class HDataClassAccessorDetector extends HClassBasedCalculatorImpl implem
 		tClass.getTAnnotation().removeIf(HDataClassAccessor.class::isInstance);
 		return null;
 
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				metric.setApg(pg);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
 	}
 
 	public static final boolean accessesDataClass(final TClass tClass) {

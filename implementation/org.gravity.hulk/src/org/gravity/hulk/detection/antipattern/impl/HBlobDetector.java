@@ -87,25 +87,6 @@ public class HBlobDetector extends HClassBasedCalculatorImpl implements HAntiPat
 		return null;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
 	public final HBlobAntiPattern createAntiPattern(final TClass tClass, final HGodClassAntiPattern mainClassS,
 			final HDataClassAccessor nad) {
 		final var blob = AntipatternFactory.eINSTANCE.createHBlobAntiPattern();

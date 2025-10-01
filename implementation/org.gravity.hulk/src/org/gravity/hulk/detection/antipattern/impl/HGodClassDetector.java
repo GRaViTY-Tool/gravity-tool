@@ -91,25 +91,6 @@ public class HGodClassDetector extends HClassBasedCalculatorImpl implements HAnt
 
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
 	public final HGodClassAntiPattern createAntiPattern(final HControllerClassSmell controller,
 			final HLargeClassSmell largeClass, final HLowCohesionSmell lowCohesion, final TClass tClass) {
 		final var mc = AntipatternFactory.eINSTANCE.createHGodClassAntiPattern();

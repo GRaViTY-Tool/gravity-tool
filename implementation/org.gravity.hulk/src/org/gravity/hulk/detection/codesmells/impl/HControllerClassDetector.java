@@ -4,12 +4,10 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HInvocationRelation;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.hulk.detection.metrics.impl.HInvocationRelationCalculator;
 import org.gravity.typegraph.basic.TClass;
@@ -84,48 +82,7 @@ public class HControllerClassDetector extends HRelativeDetectorImpl implements H
 	 */
 	@Override
 	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
-		// [user code injected with eMoflon]
-
 		return this.calculateRelativeThreshold(level, HInvocationRelation.class);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (this.eIsProxy()) {
-			return super.toString();
-		}
-
-		final var result = new StringBuilder(super.toString());
-		result.append(" (relative: ");
-		result.append(this.relative);
-		result.append(", threshold: ");
-		result.append(this.threshold);
-		result.append(')');
-		return result.toString();
 	}
 
 	@Override
@@ -138,5 +95,4 @@ public class HControllerClassDetector extends HRelativeDetectorImpl implements H
 		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHControllerClassSmell();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HContollerClassDetectorImpl

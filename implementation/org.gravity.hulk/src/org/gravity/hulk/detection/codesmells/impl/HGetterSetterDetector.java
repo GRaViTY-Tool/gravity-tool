@@ -4,7 +4,6 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
 import org.gravity.hulk.detection.HCodeSmellDetector;
@@ -76,27 +75,6 @@ public class HGetterSetterDetector extends HClassBasedCalculatorImpl implements 
 		return nacc;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
-	// <-- [user code injected with eMoflon]
-
 	@Override
 	public String getGuiName() {
 		return "Getter/Setter Smell";
@@ -107,5 +85,4 @@ public class HGetterSetterDetector extends HClassBasedCalculatorImpl implements 
 		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHGetterSetterSmell();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HGetterSetterDetectorImpl

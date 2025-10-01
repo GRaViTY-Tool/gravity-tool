@@ -93,25 +93,6 @@ public class HSwissArmyKnifeDetector extends HClassBasedCalculatorImpl implement
 		return pattern;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
 	public final HSwissArmyKnifeAntiPattern createAntiPattern(final TClass tClass, final HLargeClassSmell large,
 			final HIncommingInvocationMetric invoc, final HMuchOverloadingCodeSmell over) {
 		final var pattern = AntipatternFactory.eINSTANCE.createHSwissArmyKnifeAntiPattern();

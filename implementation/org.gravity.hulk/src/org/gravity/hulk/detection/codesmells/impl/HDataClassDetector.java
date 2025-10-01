@@ -4,14 +4,12 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell;
 import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -74,14 +72,14 @@ public class HDataClassDetector extends HRelativeDetectorImpl implements HCodeSm
 			//
 			if (this.getThreshold() <= nm.getValue()) {
 
-				return create(tClass, nm);
+				return this.create(tClass, nm);
 			}
 
 		}
 		return null;
 	}
 
-	private HAnnotation create(final TClass tClass, HNACCMetric nm) {
+	private HAnnotation create(final TClass tClass, final HNACCMetric nm) {
 		final var dataClassSmell = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
 		dataClassSmell.setTAnnotated(tClass);
 		dataClassSmell.setHNACCMetric(nm);
@@ -127,52 +125,8 @@ public class HDataClassDetector extends HRelativeDetectorImpl implements HCodeSm
 	 */
 	@Override
 	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
-		// [user code injected with eMoflon]
-
 		return this.calculateRelativeThreshold(level, HNACCMetric.class);
-
 	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public boolean detect(final HAntiPatternGraph pg) {// ForEach
-		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			final var metric = this.calculate(tClass);
-			if (metric != null) {
-				metric.setTAnnotated(tClass);
-				pg.getHAnnotations().add(metric);
-				this.getHAnnotation().add(metric);
-
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (this.eIsProxy()) {
-			return super.toString();
-		}
-
-		final var result = new StringBuilder(super.toString());
-		result.append(" (relative: ");
-		result.append(this.relative);
-		result.append(", threshold: ");
-		result.append(this.threshold);
-		result.append(')');
-		return result.toString();
-	}
-
-	// <-- [user code injected with eMoflon]
 
 	@Override
 	public String getGuiName() {
@@ -184,5 +138,4 @@ public class HDataClassDetector extends HRelativeDetectorImpl implements HCodeSm
 		return org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage.eINSTANCE.getHDataClassSmell();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HDataClassDetectorImpl
