@@ -13,8 +13,8 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
-import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
+import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
 import org.gravity.security.violation.patterns.SecurityViolationPattern;
 
 /**
@@ -41,7 +41,7 @@ public class HulkIntegrationTest extends AbstractExisitingModelsTest {
 		assertNotNull(pm);
 		apg.setPg(pm);
 
-		final var hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
+		final var hulk = new HAntiPatternDetectionImpl();
 		hulk.setApg(apg);
 		hulk.setProgramlocation(project.getLocation().toString());
 

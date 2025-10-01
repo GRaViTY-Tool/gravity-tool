@@ -1,16 +1,24 @@
 package org.gravity.security.annotations;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.LinkedList;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.security.annotations.check.SecureDependencyCheck;
 
 /**
  * The Activator of the org.gravity.security.annotations plugin
@@ -19,6 +27,10 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
  *
  */
 public class SecurityAnnoationsCheckActivator extends Plugin {
+
+	private static final String CHECK_NAME = SecureDependencyCheck.class.getName();
+
+	private static final String DISABLED_CHECKS = ".disabledchecks";
 
 	/**
 	 * The id of this plugin
@@ -30,7 +42,9 @@ public class SecurityAnnoationsCheckActivator extends Plugin {
 	 */
 	private static final String ANNOTATIONS_JAR = "org.gravity.security.annotations.jar";
 
-	private static boolean enabled;
+	private static final Logger LOGGER = Logger.getLogger(SecurityAnnoationsCheckActivator.class);
+
+	private static State enabled;
 
 	/**
 	 * Stores the GRaViTY UMLsec security annotations to a file
@@ -89,11 +103,113 @@ public class SecurityAnnoationsCheckActivator extends Plugin {
 		return EclipseProjectUtil.addLibToClasspath(project, annotationsFile).getPath();
 	}
 
-	public static boolean checksEnabled() {
-		return enabled;
+	/**
+	 * Returns whether the secure dependency check is enabled or disabled for the
+	 * given project
+	 *
+	 * @param project The project for which the status should be retrieved
+	 * @return true if the check is enabled
+	 */
+	public static boolean checksEnabled(final IProject project) {
+		if (enabled == null) {
+			try {
+				enabled = readCheckEnabled(project);
+			} catch (final IOException | CoreException e) {
+				LOGGER.error(e);
+				enabled = State.ENABLED;
+			}
+		}
+		return enabled.value;
 	}
 
-	public static void setChecksEnabled(final boolean status) {
-		enabled = status;
+	private static State readCheckEnabled(final IProject project) throws IOException, CoreException {
+		final var file = getChecksDisabledFile(project);
+		if (file.exists()) {
+			try (var reader = new BufferedReader(new InputStreamReader(file.getContents()))) {
+				String line;
+				while ((line = reader.readLine()) != null) {
+					if (line.equals(CHECK_NAME)) {
+						return State.DISABLED;
+					}
+				}
+			}
+		}
+		return State.ENABLED;
+	}
+
+	private static IFile getChecksDisabledFile(final IProject project) throws IOException {
+		return EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor())
+				.getFile(DISABLED_CHECKS);
+	}
+
+	/**
+	 * Enables or disables the secure dependency check
+	 *
+	 * @param status Whether the check should be enabled or disabled
+	 */
+	public static void setChecksEnabled(final IProject project, final boolean status) {
+		try {
+			final var file = getChecksDisabledFile(project);
+			if (status) {
+				// Enable check
+				enabled = State.ENABLED;
+				enable(file, CHECK_NAME);
+			} else {
+				// Disable check
+				enabled = State.DISABLED;
+				disable(file, CHECK_NAME);
+			}
+		} catch (CoreException | IOException e) {
+			LOGGER.error(e);
+		}
+	}
+
+	private static void enable(final IFile file, final String id) {
+		try {
+			if (file.exists()) {
+				try (var reader = new BufferedReader(new InputStreamReader(file.getContents()))) {
+					final var lines = new LinkedList<String>();
+					String line;
+					while ((line = reader.readLine()) != null) {
+						if (!line.equals(id)) {
+							lines.add(line);
+						}
+					}
+					file.setContents(new ByteArrayInputStream(String.join("\n", lines).getBytes()), 0, null);
+				}
+			}
+		} catch (CoreException | IOException e) {
+			LOGGER.error(e);
+		}
+	}
+
+	private static void disable(final IFile file, final String id) throws IOException, CoreException {
+		if (file.exists()) {
+			try (var reader = new BufferedReader(new InputStreamReader(file.getContents()))) {
+				final var lines = new LinkedList<String>();
+				String line;
+				while ((line = reader.readLine()) != null) {
+					if (line.equals(id)) {
+						return;
+					}
+				}
+				file.setContents(new ByteArrayInputStream(String.join("\n", lines).getBytes()), 0, null);
+			}
+		} else {
+			file.create(new ByteArrayInputStream(id.getBytes()), true,
+					new NullProgressMonitor());
+		}
+	}
+
+	private enum State {
+		ENABLED(true),
+		DISABLED(false);
+
+		boolean value;
+
+		private State(final boolean value) {
+			this.value = value;
+		}
+
 	}
 }

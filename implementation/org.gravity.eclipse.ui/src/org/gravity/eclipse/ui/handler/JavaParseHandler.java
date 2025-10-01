@@ -22,7 +22,7 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = SelectionHelper.getSelection(event);
+		final List<?> selection = UISelectionHelper.getSelection(event);
 
 		final Job job = new PMCreatorJob(selection);
 		job.setUser(true);

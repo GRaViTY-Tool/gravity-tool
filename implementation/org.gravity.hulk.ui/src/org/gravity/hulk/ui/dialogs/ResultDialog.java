@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -20,7 +21,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
@@ -48,8 +48,8 @@ public class ResultDialog extends Dialog {
 	 * @param executedDetectors All executed detectors
 	 * @param name
 	 */
-	public ResultDialog(Shell parentShell, Iterable<HDetector> selectedDetectors,
-			Iterable<HDetector> executedDetectors, String name) {
+	public ResultDialog(final Shell parentShell, final Iterable<HDetector> selectedDetectors,
+			final Iterable<HDetector> executedDetectors, final String name) {
 		super(parentShell);
 		this.pShell = parentShell;
 		this.selection = selectedDetectors;
@@ -68,28 +68,28 @@ public class ResultDialog extends Dialog {
 	}
 
 	@Override
-	protected Control createDialogArea(Composite parent) {
-		final Composite container = (Composite) super.createDialogArea(parent);
+	protected Control createDialogArea(final Composite parent) {
+		final var container = (Composite) super.createDialogArea(parent);
 
-		final CTabFolder folder = new CTabFolder(container, SWT.TOP);
+		final var folder = new CTabFolder(container, SWT.TOP);
 		folder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-		addContents(folder, this.selection);
+		this.addContents(folder, this.selection);
 
-		final Button button = new Button(container, SWT.CHECK);
+		final var button = new Button(container, SWT.CHECK);
 		button.setText("Show all executed detectors.");
 		button.addSelectionListener(new SelectionListener() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
-				final CTabItem selectedItem = folder.getSelection();
-				final String selected = selectedItem.getText();
+			public void widgetSelected(final SelectionEvent e) {
+				final var selectedItem = folder.getSelection();
+				final var selected = selectedItem.getText();
 				for (final CTabItem item : folder.getItems()) {
 					item.dispose();
 				}
 				if (button.getSelection()) {
-					addContents(folder, ResultDialog.this.executed);
+					ResultDialog.this.addContents(folder, ResultDialog.this.executed);
 				} else {
-					addContents(folder, ResultDialog.this.selection);
+					ResultDialog.this.addContents(folder, ResultDialog.this.selection);
 				}
 				for (final CTabItem item : folder.getItems()) {
 					if (item.getText().equals(selected)) {
@@ -103,32 +103,32 @@ public class ResultDialog extends Dialog {
 			}
 
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				if(LOGGER.isInfoEnabled()) {
-					LOGGER.info("Default selected: "+e.getSource());
+			public void widgetDefaultSelected(final SelectionEvent e) {
+				if (LOGGER.isInfoEnabled()) {
+					LOGGER.info("Default selected: " + e.getSource());
 				}
-				widgetSelected(e);
+				this.widgetSelected(e);
 			}
 		});
 
-		final Button saveButton = new Button(container, SWT.PUSH);
+		final var saveButton = new Button(container, SWT.PUSH);
 		saveButton.setText("save");
 		saveButton.addSelectionListener(new SelectionListener() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
-				final FileDialog fdialog = new FileDialog(ResultDialog.this.pShell, SWT.SAVE);
+			public void widgetSelected(final SelectionEvent e) {
+				final var fdialog = new FileDialog(ResultDialog.this.pShell, SWT.SAVE);
 				fdialog.setFilterExtensions(new String[] { "*.txt", "*" });
-				final String saveFile = fdialog.open();
+				final var saveFile = fdialog.open();
 				if (!saveFile.isEmpty()) {
-					save(folder, saveFile);
+					ResultDialog.this.save(folder, saveFile);
 				}
 
 			}
 
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				widgetSelected(e);
+			public void widgetDefaultSelected(final SelectionEvent e) {
+				this.widgetSelected(e);
 
 			}
 		});
@@ -136,21 +136,21 @@ public class ResultDialog extends Dialog {
 		return container;
 	}
 
-	void addContents(CTabFolder folder, Iterable<HDetector> items) {
-		for (final HDetector eClass : items) {
-			final CTabItem tab = new CTabItem(folder, getShellStyle());
-			tab.setText(eClass.eClass().getName());
+	void addContents(final CTabFolder folder, final Iterable<HDetector> items) {
+		for (final HDetector detector : items) {
+			final var tab = new CTabItem(folder, this.getShellStyle());
+			tab.setText(detector.getGuiName());
 
-			final Tree tree = new Tree(folder, SWT.V_SCROLL | SWT.H_SCROLL);
-			final ScrollBar vBar = tree.getVerticalBar();
+			final var tree = new Tree(folder, SWT.V_SCROLL | SWT.H_SCROLL);
+			final var vBar = tree.getVerticalBar();
 			vBar.setEnabled(true);
 
-			if (!eClass.getHAnnotation().isEmpty()) {
-				for (final HAnnotation annotation : eClass.getHAnnotation()) {
+			if (!detector.getHAnnotation().isEmpty()) {
+				for (final HAnnotation annotation : detector.getHAnnotation()) {
 					annotation.getTreeItem(tree, SWT.NONE);
 				}
 			} else {
-				new TreeItem(tree, SWT.NONE).setText("No " + eClass.getGuiName() + " has been found.");
+				new TreeItem(tree, SWT.NONE).setText("No " + detector.getGuiName() + " has been found.");
 			}
 
 			folder.showItem(folder.getItems()[0]);
@@ -159,12 +159,12 @@ public class ResultDialog extends Dialog {
 		}
 	}
 
-	private void save(CTabFolder folder, String filePath) {
+	private void save(final CTabFolder folder, final String filePath) {
 		final List<DetectionContent> contents = new ArrayList<>();
 		for (final CTabItem tabItem : folder.getItems()) {
-			final DetectionContent content = new DetectionContent(tabItem.getText());
+			final var content = new DetectionContent(tabItem.getText());
 			contents.add(content);
-			final Tree tree = (Tree) tabItem.getControl();
+			final var tree = (Tree) tabItem.getControl();
 			if (tree == null) {
 				continue;
 			}
@@ -174,9 +174,9 @@ public class ResultDialog extends Dialog {
 			}
 		}
 
-		contents.sort((o1, o2) -> o1.getDetector().compareTo(o2.getDetector()));
+		contents.sort(Comparator.comparing(DetectionContent::getDetector));
 
-		final StringBuilder builder = new StringBuilder(100);
+		final var builder = new StringBuilder(100);
 		for (final DetectionContent content : contents) {
 			builder.append(content.getDetector());
 			for (final String result : content.getSortedResult()) {
@@ -188,7 +188,7 @@ public class ResultDialog extends Dialog {
 			builder.append(System.lineSeparator());
 		}
 
-		try (PrintWriter out = new PrintWriter(filePath)){
+		try (var out = new PrintWriter(filePath)) {
 			out.print(builder);
 		} catch (final FileNotFoundException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
@@ -196,14 +196,14 @@ public class ResultDialog extends Dialog {
 
 	}
 
-	private class DetectionContent {
+	private static class DetectionContent {
 		private final String detector;
 		private List<String> results;
 
-
-		public DetectionContent(String detector) {
+		public DetectionContent(final String detector) {
 			this.detector = detector;
 		}
+
 		public String getDetector() {
 			return this.detector;
 		}
@@ -216,7 +216,7 @@ public class ResultDialog extends Dialog {
 			return this.results;
 		}
 
-		public void addResult(String result) {
+		public void addResult(final String result) {
 			if (this.results == null) {
 				this.results = new ArrayList<>();
 			}
@@ -225,7 +225,7 @@ public class ResultDialog extends Dialog {
 	}
 
 	@Override
-	protected void configureShell(Shell newShell) {
+	protected void configureShell(final Shell newShell) {
 		super.configureShell(newShell);
 		newShell.setText(this.name);
 	}

@@ -843,7 +843,7 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1021(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_4(EMoflonEdge _edge_model) {
 
 		Object[] result1_bindingAndBlack = InitializerInAnonymousImpl
 				.pattern_InitializerInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -905,7 +905,7 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1119(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_5(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InitializerInAnonymousImpl
 				.pattern_InitializerInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1429,10 +1429,10 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 				return null;
 			case RulesPackage.INITIALIZER_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.INITIALIZER_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1021__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_1021((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INITIALIZER_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1119__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1119((EMoflonEdge) arguments.get(0));
+			case RulesPackage.INITIALIZER_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_4__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_4((EMoflonEdge) arguments.get(0));
+			case RulesPackage.INITIALIZER_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_5__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_5((EMoflonEdge) arguments.get(0));
 			case RulesPackage.INITIALIZER_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.INITIALIZER_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -3128,9 +3128,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 			TMethodSignature tSignature, TClass tType) {
-		TAbstractType __DEC_tSignature_returnType_486938 = tSignature.getReturnType();
-		if (__DEC_tSignature_returnType_486938 != null) {
-			if (!tType.equals(__DEC_tSignature_returnType_486938)) {
+		TAbstractType __DEC_tSignature_returnType_505820 = tSignature.getReturnType();
+		if (__DEC_tSignature_returnType_505820 != null) {
+			if (!tType.equals(__DEC_tSignature_returnType_505820)) {
 				return new Object[] { tSignature, tType };
 			}
 		}
@@ -3140,9 +3140,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 			TMethodSignature tSignature, TMethod tName) {
-		TMethod __DEC_tSignature_signatures_18499 = tSignature.getMethod();
-		if (__DEC_tSignature_signatures_18499 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_18499)) {
+		TMethod __DEC_tSignature_signatures_262168 = tSignature.getMethod();
+		if (__DEC_tSignature_signatures_262168 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_262168)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3152,9 +3152,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
 			TModifier tModifier, TClass tType) {
-		for (TAbstractType __DEC_tModifier_tModifier_378421 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_661832 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tType.equals(__DEC_tModifier_tModifier_378421)) {
+			if (!tType.equals(__DEC_tModifier_tModifier_661832)) {
 				return new Object[] { tModifier, tType };
 			}
 		}
@@ -3163,9 +3163,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(TMethod tName,
 			TypeGraph tPM) {
-		TypeGraph __DEC_tName_methods_896179 = tName.getModel();
-		if (__DEC_tName_methods_896179 != null) {
-			if (!tPM.equals(__DEC_tName_methods_896179)) {
+		TypeGraph __DEC_tName_methods_254118 = tName.getModel();
+		if (__DEC_tName_methods_254118 != null) {
+			if (!tPM.equals(__DEC_tName_methods_254118)) {
 				return new Object[] { tName, tPM };
 			}
 		}
@@ -3175,9 +3175,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_4BB(
 			TMethodDefinition tDefinition, TClass tType) {
-		TAbstractType __DEC_tDefinition_returnType_994644 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_994644 != null) {
-			if (!tType.equals(__DEC_tDefinition_returnType_994644)) {
+		TAbstractType __DEC_tDefinition_returnType_651707 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_651707 != null) {
+			if (!tType.equals(__DEC_tDefinition_returnType_651707)) {
 				return new Object[] { tDefinition, tType };
 			}
 		}
@@ -3187,8 +3187,8 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_5B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_741503 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_741503 != null) {
+		TModule __DEC_tDefinition_contains_82465 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_82465 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3197,9 +3197,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_20_2_testcorematchandDECs_black_nac_6BB(
 			TMethodDefinition tDefinition, TMethodSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_451478 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_451478 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_451478)) {
+		TSignature __DEC_tDefinition_definitions_717976 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_717976 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_717976)) {
 				return new Object[] { tDefinition, tSignature };
 			}
 		}
@@ -3418,8 +3418,8 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			MInitializer mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_687948 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_687948 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_950960 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_950960 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3699,8 +3699,8 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			MInitializer mDefinition) {
-		MSignature __DEC_mDefinition_mDefinitions_18763 = mDefinition.getMSignature();
-		if (__DEC_mDefinition_mDefinitions_18763 != null) {
+		MSignature __DEC_mDefinition_mDefinitions_392584 = mDefinition.getMSignature();
+		if (__DEC_mDefinition_mDefinitions_392584 != null) {
 			return new Object[] { mDefinition };
 		}
 
@@ -3729,9 +3729,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_0BB(
 			TMethodSignature tSignature, TClass tType) {
-		TAbstractType __DEC_tSignature_returnType_9918 = tSignature.getReturnType();
-		if (__DEC_tSignature_returnType_9918 != null) {
-			if (!tType.equals(__DEC_tSignature_returnType_9918)) {
+		TAbstractType __DEC_tSignature_returnType_769814 = tSignature.getReturnType();
+		if (__DEC_tSignature_returnType_769814 != null) {
+			if (!tType.equals(__DEC_tSignature_returnType_769814)) {
 				return new Object[] { tSignature, tType };
 			}
 		}
@@ -3741,9 +3741,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_1BB(
 			TMethodSignature tSignature, TMethod tName) {
-		TMethod __DEC_tSignature_signatures_906637 = tSignature.getMethod();
-		if (__DEC_tSignature_signatures_906637 != null) {
-			if (!tName.equals(__DEC_tSignature_signatures_906637)) {
+		TMethod __DEC_tSignature_signatures_907712 = tSignature.getMethod();
+		if (__DEC_tSignature_signatures_907712 != null) {
+			if (!tName.equals(__DEC_tSignature_signatures_907712)) {
 				return new Object[] { tSignature, tName };
 			}
 		}
@@ -3753,9 +3753,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_2BB(TModifier tModifier,
 			TClass tType) {
-		for (TAbstractType __DEC_tModifier_tModifier_807334 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TAbstractType __DEC_tModifier_tModifier_438155 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tModifier, TAbstractType.class, "tModifier")) {
-			if (!tType.equals(__DEC_tModifier_tModifier_807334)) {
+			if (!tType.equals(__DEC_tModifier_tModifier_438155)) {
 				return new Object[] { tModifier, tType };
 			}
 		}
@@ -3764,9 +3764,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_3BB(TMethod tName,
 			TypeGraph tPM) {
-		TypeGraph __DEC_tName_methods_659895 = tName.getModel();
-		if (__DEC_tName_methods_659895 != null) {
-			if (!tPM.equals(__DEC_tName_methods_659895)) {
+		TypeGraph __DEC_tName_methods_42756 = tName.getModel();
+		if (__DEC_tName_methods_42756 != null) {
+			if (!tPM.equals(__DEC_tName_methods_42756)) {
 				return new Object[] { tName, tPM };
 			}
 		}
@@ -3776,9 +3776,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_4BB(
 			TMethodDefinition tDefinition, TClass tType) {
-		TAbstractType __DEC_tDefinition_returnType_670482 = tDefinition.getReturnType();
-		if (__DEC_tDefinition_returnType_670482 != null) {
-			if (!tType.equals(__DEC_tDefinition_returnType_670482)) {
+		TAbstractType __DEC_tDefinition_returnType_240892 = tDefinition.getReturnType();
+		if (__DEC_tDefinition_returnType_240892 != null) {
+			if (!tType.equals(__DEC_tDefinition_returnType_240892)) {
 				return new Object[] { tDefinition, tType };
 			}
 		}
@@ -3788,8 +3788,8 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_5B(
 			TMethodDefinition tDefinition) {
-		TModule __DEC_tDefinition_contains_311055 = tDefinition.getModule();
-		if (__DEC_tDefinition_contains_311055 != null) {
+		TModule __DEC_tDefinition_contains_629319 = tDefinition.getModule();
+		if (__DEC_tDefinition_contains_629319 != null) {
 			return new Object[] { tDefinition };
 		}
 
@@ -3798,9 +3798,9 @@ public class InitializerInAnonymousImpl extends AbstractRuleImpl implements Init
 
 	public static final Object[] pattern_InitializerInAnonymous_28_1_matchtggpattern_black_nac_6BB(
 			TMethodDefinition tDefinition, TMethodSignature tSignature) {
-		TSignature __DEC_tDefinition_definitions_545252 = tDefinition.getSignature();
-		if (__DEC_tDefinition_definitions_545252 != null) {
-			if (!tSignature.equals(__DEC_tDefinition_definitions_545252)) {
+		TSignature __DEC_tDefinition_definitions_673829 = tDefinition.getSignature();
+		if (__DEC_tDefinition_definitions_673829 != null) {
+			if (!tSignature.equals(__DEC_tDefinition_definitions_673829)) {
 				return new Object[] { tDefinition, tSignature };
 			}
 		}

@@ -41,7 +41,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ClassInstanceCreation create, ArrayInitializer array);
+	boolean isAppropriate_FWD(Match match, ArrayInitializer array, ClassInstanceCreation create);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ClassInstanceCreation create, ArrayInitializer array);
+	void registerObjectsToMatch_FWD(Match match, ArrayInitializer array, ClassInstanceCreation create);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ClassInstanceCreation create, ArrayInitializer array);
+	CSP isAppropriate_solveCsp_FWD(Match match, ArrayInitializer array, ClassInstanceCreation create);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,8 +89,8 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassInstanceCreation create,
-			ArrayInitializer array);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array,
+			ClassInstanceCreation create);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,7 +106,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject create, EObject array);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject array, EObject create);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +178,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1135(EMoflonEdge _edge_expressions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_140(EMoflonEdge _edge_expressions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(ClassInstanceCreation create, ArrayInitializer array, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(ArrayInitializer array, ClassInstanceCreation create, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -227,7 +227,7 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ClassInstanceCreation create, ArrayInitializer array);
+	boolean checkDEC_FWD(ArrayInitializer array, ClassInstanceCreation create);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -243,8 +243,8 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ClassInstanceCreation createParameter,
-			ArrayInitializer arrayParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ArrayInitializer arrayParameter,
+			ClassInstanceCreation createParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +252,8 @@ public interface IgnoreClassInstanceCreation4ArrayInitializer extends EObject, A
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassInstanceCreation create,
-			ArrayInitializer array, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ArrayInitializer array,
+			ClassInstanceCreation create, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

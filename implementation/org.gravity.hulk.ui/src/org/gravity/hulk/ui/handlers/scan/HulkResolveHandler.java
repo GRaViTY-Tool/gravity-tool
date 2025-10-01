@@ -2,9 +2,8 @@ package org.gravity.hulk.ui.handlers.scan;
 
 import org.eclipse.swt.widgets.Display;
 import org.gravity.hulk.HDetector;
-import org.gravity.hulk.resolve.ResolveFactory;
-import org.gravity.hulk.resolve.ResolvePackage;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
+import org.gravity.hulk.resolve.impl.HAntiPatternResolvingImpl;
 import org.gravity.hulk.ui.dialogs.ResultDialog;
 
 public class HulkResolveHandler extends HulkHandler {
@@ -16,12 +15,12 @@ public class HulkResolveHandler extends HulkHandler {
 
 	@Override
 	protected void setSelectionDialogInput() {
-		this.selectionDialogInput = ResolvePackage.eINSTANCE;
+		this.selectionDialogInput = this.hulk.getHDetector();
 	}
 
 	@Override
 	protected void setHulk() {
-		this.hulk = ResolveFactory.eINSTANCE.createHAntiPatternResolving();
+		this.hulk = new HAntiPatternResolvingImpl();
 	}
 
 	@Override
@@ -33,7 +32,8 @@ public class HulkResolveHandler extends HulkHandler {
 		for (final HDetector reslv : this.executedDetectors) {
 			if (reslv instanceof HBlobResolver) {
 
-				final Runnable runnable = () ->  new ResultDialog(this.window.getShell(), this.selectedDetectors, this.executedDetectors,
+				final Runnable runnable = () -> new ResultDialog(this.window.getShell(), this.selectedDetectors,
+						this.executedDetectors,
 						"Hulk Anti-pattern Elemination Results").open();
 				Display.getDefault().asyncExec(runnable);
 			}

@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
@@ -20,9 +19,18 @@ import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.detection.HulkDetector;
-import org.gravity.hulk.detection.antipattern.AntipatternPackage;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
+import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
+import org.gravity.hulk.detection.antipattern.impl.HGodClassDetector;
+import org.gravity.hulk.detection.antipattern.impl.HSpaghettiCodeDetector;
+import org.gravity.hulk.detection.antipattern.impl.HSwissArmyKnifeDetector;
+import org.gravity.hulk.detection.metrics.impl.HDepthOfInheritanceCalculator;
+import org.gravity.hulk.detection.metrics.impl.HIGAMCalculator;
+import org.gravity.hulk.detection.metrics.impl.HIGATCalculator;
+import org.gravity.hulk.detection.metrics.impl.HLcom5Calculator;
+import org.gravity.hulk.detection.metrics.impl.HTotalCouplingCalculator;
+import org.gravity.hulk.detection.metrics.impl.HTotalVisibilityCalculator;
 import org.gravity.hulk.exceptions.DetectionFailedException;
+import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -51,7 +59,8 @@ public final class HulkAPI {
 	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
-	public static List<HAnnotation> detect(final IJavaProject project, final IProgressMonitor monitor, final AntiPatternNames... aps)
+	public static List<HAnnotation> detect(final IJavaProject project, final IProgressMonitor monitor,
+			final AntiPatternNames... aps)
 			throws DetectionFailedException {
 		final var iproject = project.getProject();
 		IPGConverter converter;
@@ -84,7 +93,8 @@ public final class HulkAPI {
 	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
-	public static List<HAnnotation> detect(final TypeGraph pm, final String programLocation, final AntiPatternNames... aps)
+	public static List<HAnnotation> detect(final TypeGraph pm, final String programLocation,
+			final AntiPatternNames... aps)
 			throws DetectionFailedException {
 		ResourceSet rs;
 		var pgResource = pm.eResource();
@@ -96,9 +106,9 @@ public final class HulkAPI {
 			rs = pgResource.getResourceSet();
 		}
 
-		final var hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
-		final var apgResource = rs.createResource(URI.createURI("Hulk.xmi"));
-		apgResource.getContents().add(hulk); // $NON-NLS-1$
+		final var hulk = new HAntiPatternDetectionImpl();
+		final var apgResource = rs.createResource(URI.createURI("Hulk.xmi")); // $NON-NLS-1$
+		apgResource.getContents().add(hulk);
 		hulk.setProgramlocation(programLocation);
 
 		final var apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
@@ -126,8 +136,8 @@ public final class HulkAPI {
 	 * @param aps The anti-patterns
 	 * @return The list of detectors
 	 */
-	private static Set<EClass> getDetecors(final AntiPatternNames... aps) {
-		final Set<EClass> detectors = new HashSet<>();
+	private static Set<Class<? extends HDetector>> getDetecors(final AntiPatternNames... aps) {
+		final Set<Class<? extends HDetector>> detectors = new HashSet<>();
 		for (final AntiPatternNames name : aps) {
 			detectors.add(name.getEClass());
 		}
@@ -142,19 +152,20 @@ public final class HulkAPI {
 	 */
 	public enum AntiPatternNames {
 
-		BLOB(AntipatternPackage.eINSTANCE.getHBlobDetector()),
-		GOD_CLASS(AntipatternPackage.eINSTANCE.getHGodClassDetector()),
-		SPAGHETTI_CODE(AntipatternPackage.eINSTANCE.getHSpaghettiCodeDetector()),
-		SWISS_ARMY_KNIFE(AntipatternPackage.eINSTANCE.getHSwissArmyKnifeDetector()),
-		IGAM(MetricsPackage.eINSTANCE.getHIGAMCalculator()), IGAT(MetricsPackage.eINSTANCE.getHIGATCalculator()),
-		LCOM5(MetricsPackage.eINSTANCE.getHLcom5Calculator()),
-		TOTAL_COUPLING(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator()),
-		TOTAL_METHOD_VISIBILITY(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator()),
-		DIT(MetricsPackage.eINSTANCE.getHDepthOfInheritanceCalculator());
+		BLOB(HBlobDetector.class),
+		GOD_CLASS(HGodClassDetector.class),
+		SPAGHETTI_CODE(HSpaghettiCodeDetector.class),
+		SWISS_ARMY_KNIFE(HSwissArmyKnifeDetector.class),
+		IGAM(HIGAMCalculator.class),
+		IGAT(HIGATCalculator.class),
+		LCOM5(HLcom5Calculator.class),
+		TOTAL_COUPLING(HTotalCouplingCalculator.class),
+		TOTAL_METHOD_VISIBILITY(HTotalVisibilityCalculator.class),
+		DIT(HDepthOfInheritanceCalculator.class);
 
-		private final EClass eClass;
+		private final Class<? extends HDetector> eClass;
 
-		AntiPatternNames(final EClass eClass) {
+		AntiPatternNames(final Class<? extends HDetector> eClass) {
 			this.eClass = eClass;
 		}
 
@@ -165,9 +176,9 @@ public final class HulkAPI {
 		 * @param metricClass The EClass of the anti-pattern annotation
 		 * @return The corresponding enum constant
 		 */
-		public static AntiPatternNames get(final EClass metricClass) {
+		public static AntiPatternNames get(final Class<? extends HAntiPatternDetection> metricClass) {
 			for (final AntiPatternNames name : AntiPatternNames.values()) {
-				if (name.getEClass().isSuperTypeOf(metricClass)) {
+				if (name.getEClass().equals(metricClass)) {
 					return name;
 				}
 			}
@@ -179,7 +190,7 @@ public final class HulkAPI {
 		 *
 		 * @return the eClass
 		 */
-		public EClass getEClass() {
+		public Class<? extends HDetector> getEClass() {
 			return this.eClass;
 		}
 	}

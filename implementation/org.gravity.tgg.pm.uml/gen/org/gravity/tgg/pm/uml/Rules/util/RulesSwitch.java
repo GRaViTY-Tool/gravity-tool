@@ -68,15 +68,6 @@ public class RulesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH: {
-				ModelNested2TypeGraph modelNested2TypeGraph = (ModelNested2TypeGraph) theEObject;
-				T result = caseModelNested2TypeGraph(modelNested2TypeGraph);
-				if (result == null)
-					result = caseAbstractRule(modelNested2TypeGraph);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
 			case RulesPackage.MODEL2_TYPE_GRAPH: {
 				Model2TypeGraph model2TypeGraph = (Model2TypeGraph) theEObject;
 				T result = caseModel2TypeGraph(model2TypeGraph);
@@ -86,24 +77,18 @@ public class RulesSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH: {
+				ModelNested2TypeGraph modelNested2TypeGraph = (ModelNested2TypeGraph) theEObject;
+				T result = caseModelNested2TypeGraph(modelNested2TypeGraph);
+				if (result == null)
+					result = caseAbstractRule(modelNested2TypeGraph);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
 			default:
 				return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Nested2 Type Graph</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Nested2 Type Graph</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelNested2TypeGraph(ModelNested2TypeGraph object) {
-		return null;
 	}
 
 	/**
@@ -118,6 +103,21 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModel2TypeGraph(Model2TypeGraph object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Nested2 Type Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Nested2 Type Graph</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelNested2TypeGraph(ModelNested2TypeGraph object) {
 		return null;
 	}
 

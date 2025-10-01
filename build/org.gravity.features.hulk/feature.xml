@@ -12,16 +12,11 @@
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University
-of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
-Darmstadt.
+      (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
-
    <url>
+      <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
       <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
    </url>
 
@@ -52,51 +47,30 @@ Darmstadt.
 
    <plugin
          id="org.gravity.hulk"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.antipatterngraph"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.annotations"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.refactoringgraph"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.resolve"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.ui.visualization"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>

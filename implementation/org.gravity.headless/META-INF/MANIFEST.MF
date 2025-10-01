@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: GRaViTY Headless Application and Webserve
+Bundle-Name: GRaViTY Headless Application and Webserver
 Bundle-SymbolicName: org.gravity.headless;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: University of Koblenz-Landau and Ruhr University Bochum
@@ -52,11 +52,12 @@ Bundle-ClassPath: .,
  target/dependency/jakarta.xml.ws-api.jar,
  target/dependency/cxf-rt-transports-http-jetty.jar,
  target/dependency/jetty-http.jar,
- target/dependency/jetty-ee10-servlet.jar,
  target/dependency/jetty-io.jar,
+ target/dependency/jetty-jakarta-servlet-api.jar,
  target/dependency/jetty-security.jar,
  target/dependency/jetty-server.jar,
  target/dependency/jetty-session.jar,
+ target/dependency/jetty-ee10-servlet.jar,
  target/dependency/jetty-util.jar,
  target/dependency/commons-cli.jar
 Export-Package: jakarta.ws.rs,

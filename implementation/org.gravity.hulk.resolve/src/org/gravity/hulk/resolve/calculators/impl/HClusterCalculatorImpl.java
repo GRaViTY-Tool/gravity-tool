@@ -2,7 +2,6 @@
  */
 package org.gravity.hulk.resolve.calculators.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
@@ -11,25 +10,27 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
+import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HCluster;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 // [user defined imports] -->
 // <-- [user defined imports]
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
 import org.gravity.hulk.resolve.calculators.HClusterCalculator;
-import org.gravity.hulk.resolve.impl.HResolverImpl;
+import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.moflon.core.dfs.DFSGraph;
+import org.moflon.core.dfs.DfsFactory;
 
 import com.apporiented.algorithm.clustering.Cluster;
 import com.apporiented.algorithm.clustering.ClusteringAlgorithm;
@@ -44,7 +45,7 @@ import com.apporiented.algorithm.clustering.DefaultClusteringAlgorithm;
  *
  * @generated
  */
-public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCalculator {
+public class HClusterCalculatorImpl extends HDetectorImpl implements HClusterCalculator {
 
 	private static final Logger LOGGER = Logger.getLogger(HClusterCalculatorImpl.class);
 
@@ -53,17 +54,17 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 	 *
 	 * @generated
 	 */
-	protected HClusterCalculatorImpl() {
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return CalculatorsPackage.Literals.HCLUSTER_CALCULATOR;
+	public HClusterCalculatorImpl(final DFSGraph graph, final HBlobDetector blobDetector,
+			final HMethodToDataClassAccessCalculator m2dc) {
+		final var blobEdge = DfsFactory.eINSTANCE.createEdge();
+		final var m2dcEdge = DfsFactory.eINSTANCE.createEdge();
+		this.setGraph(graph);
+		blobEdge.setGraph(graph);
+		this.getOutgoing().add(blobEdge);
+		blobDetector.getIncoming().add(blobEdge);
+		m2dcEdge.setGraph(graph);
+		this.getOutgoing().add(m2dcEdge);
+		m2dc.getIncoming().add(m2dcEdge);
 	}
 
 	/**
@@ -91,9 +92,9 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		}
 
 		if (CLUSTER == CLUSTERING.BRUTFORCE) {
-			bruteforceAlgo(tClass, tMethods);
+			this.bruteforceAlgo(tClass, tMethods);
 		} else if (CLUSTER == CLUSTERING.CLUSTER) {
-			clusterAlgo(tClass, tMethods, size);
+			this.clusterAlgo(tClass, tMethods, size);
 		} else {
 			final var factory = RefactoringgraphFactory.eINSTANCE;
 			final List<HCluster> clusters = new ArrayList<>();
@@ -121,27 +122,11 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 			if (annotation instanceof HBlobAntiPattern) {
 				final var tClass = annotation.getTAnnotated();
 				if (tClass instanceof TClass) {
-					detect((TClass) tClass);
+					this.detect((TClass) tClass);
 				}
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case CalculatorsPackage.HCLUSTER_CALCULATOR___DETECT__TCLASS:
-			return detect((TClass) arguments.get(0));
-		case CalculatorsPackage.HCLUSTER_CALCULATOR___DETECT__HANTIPATTERNGRAPH:
-			return detect((HAntiPatternGraph) arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	// <-- [user code injected with eMoflon]
@@ -161,8 +146,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		final var dataclasses = new HashMap<TMethodDefinition, List<TClass>>();
 		for (final TMethodDefinition tMethod : tMethods) {
 			for (final TAnnotation tAnnotation : tMethod.getTAnnotation()) {
-				if (tAnnotation instanceof HMethodToDataClassAccess) {
-					final var dca = (HMethodToDataClassAccess) tAnnotation;
+				if (tAnnotation instanceof final HMethodToDataClassAccess dca) {
 					List<TClass> dc;
 					if (dataclasses.containsKey(tMethod)) {
 						dc = dataclasses.get(tMethod);
@@ -177,7 +161,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 			}
 		}
 
-		fill(dataclasses, new HashMap<TMethodDefinition, TClass>(), tClass);
+		this.fill(dataclasses, new HashMap<>(), tClass);
 	}
 
 	private void fill(final HashMap<TMethodDefinition, List<TClass>> input,
@@ -190,7 +174,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 
 			for (final TClass value : values) {
 				output.put(key, value);
-				fill(input, output, tClass);
+				this.fill(input, output, tClass);
 				output.remove(key);
 			}
 		} else {

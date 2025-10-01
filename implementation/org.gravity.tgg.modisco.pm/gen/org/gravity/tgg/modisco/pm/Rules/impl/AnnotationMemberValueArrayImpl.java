@@ -535,7 +535,7 @@ public class AnnotationMemberValueArrayImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TAnnotationValue_6(TAnnotationValue tAnnotationValue) {
+	public EObjectContainer isAppropriate_BWD_TAnnotationValue_0(TAnnotationValue tAnnotationValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueArrayImpl
 				.pattern_AnnotationMemberValueArray_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -592,7 +592,7 @@ public class AnnotationMemberValueArrayImpl extends AbstractRuleImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1082(EMoflonEdge _edge_value) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_value) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueArrayImpl
 				.pattern_AnnotationMemberValueArray_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1025,10 +1025,10 @@ public class AnnotationMemberValueArrayImpl extends AbstractRuleImpl implements 
 				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___IS_APPROPRIATE_BWD_TANNOTATION_VALUE_6__TANNOTATIONVALUE:
-				return isAppropriate_BWD_TAnnotationValue_6((TAnnotationValue) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1082__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1082((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___IS_APPROPRIATE_BWD_TANNOTATION_VALUE_0__TANNOTATIONVALUE:
+				return isAppropriate_BWD_TAnnotationValue_0((TAnnotationValue) arguments.get(0));
+			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_82__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_82((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ANNOTATION_MEMBER_VALUE_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

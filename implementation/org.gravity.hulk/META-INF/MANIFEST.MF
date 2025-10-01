@@ -2,12 +2,9 @@ Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.hulk;singleton:=true
 Export-Package: org.gravity.hulk,
  org.gravity.hulk.detection,
- org.gravity.hulk.detection.antipattern,
  org.gravity.hulk.detection.antipattern.impl,
- org.gravity.hulk.detection.codesmells,
  org.gravity.hulk.detection.codesmells.impl,
  org.gravity.hulk.detection.impl,
- org.gravity.hulk.detection.metrics,
  org.gravity.hulk.detection.metrics.impl,
  org.gravity.hulk.exceptions,
  org.gravity.hulk.impl
@@ -16,7 +13,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.eclipse,
- org.eclipse.emf.henshin.interpreter,
  org.gravity.security.annotations.pm,
  org.gravity.hulk.antipatterngraph;visibility:=reexport,
  org.moflon.core.dfs;visibility:=reexport,

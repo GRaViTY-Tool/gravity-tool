@@ -191,7 +191,7 @@ public interface AnnotationMemberValueArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TAnnotationValue_6(TAnnotationValue tAnnotationValue);
+	EObjectContainer isAppropriate_BWD_TAnnotationValue_0(TAnnotationValue tAnnotationValue);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public interface AnnotationMemberValueArray extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1082(EMoflonEdge _edge_value);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_value);
 
 	/**
 	 * <!-- begin-user-doc -->

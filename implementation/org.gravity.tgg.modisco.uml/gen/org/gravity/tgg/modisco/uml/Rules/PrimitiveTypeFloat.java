@@ -199,7 +199,7 @@ public interface PrimitiveTypeFloat extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_62(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_1(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +207,7 @@ public interface PrimitiveTypeFloat extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_PrimitiveTypeFloat_6(org.eclipse.modisco.java.PrimitiveTypeFloat jpt);
+	EObjectContainer isAppropriate_FWD_PrimitiveTypeFloat_0(org.eclipse.modisco.java.PrimitiveTypeFloat jpt);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -25,15 +25,14 @@ public final class SelectionHelper {
 	 * @param selection the selection
 	 * @return the java projects
 	 */
-	public static Set<IJavaProject> getJavaProjects(Iterable<Object> selection) {
+	public static Set<IJavaProject> getJavaProjects(final Iterable<Object> selection) {
 		final Set<IJavaProject> projects = new HashSet<>();
 		for (final Object entry : selection) {
 			if (entry instanceof IJavaProject) {
 				projects.add((IJavaProject) entry);
-			} else if (entry instanceof IProject) {
-				final IProject project = (IProject) entry;
-				final IJavaProject java = JavaProjectUtil.getJavaProject(project);
-				if(java == null) {
+			} else if (entry instanceof final IProject project) {
+				final var java = JavaProjectUtil.getJavaProject(project);
+				if (java == null) {
 					throw new IllegalStateException("Project " + project.getName() + " has no Java nature");
 				}
 				projects.add(java);

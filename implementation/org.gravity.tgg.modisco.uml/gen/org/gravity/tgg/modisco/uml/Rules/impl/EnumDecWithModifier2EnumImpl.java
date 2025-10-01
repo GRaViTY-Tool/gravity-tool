@@ -694,7 +694,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Enumeration_13(Enumeration feature) {
+	public EObjectContainer isAppropriate_BWD_Enumeration_1(Enumeration feature) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -750,7 +750,7 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1156(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_130(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = EnumDecWithModifier2EnumImpl
 				.pattern_EnumDecWithModifier2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1254,10 +1254,10 @@ public class EnumDecWithModifier2EnumImpl extends AbstractRuleImpl implements En
 				return null;
 			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_13__ENUMERATION:
-				return isAppropriate_BWD_Enumeration_13((Enumeration) arguments.get(0));
-			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1156__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1156((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_BWD_ENUMERATION_1__ENUMERATION:
+				return isAppropriate_BWD_Enumeration_1((Enumeration) arguments.get(0));
+			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_130__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_130((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ENUM_DEC_WITH_MODIFIER2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:

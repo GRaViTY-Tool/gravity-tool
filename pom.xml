@@ -24,8 +24,8 @@
   </scm>
 
   <properties>
-    <tycho-version>4.0.8</tycho-version>
-    <jacoco.version>0.8.12</jacoco.version>
+    <tycho-version>4.0.13</tycho-version>
+    <jacoco.version>0.8.13</jacoco.version>
     <dependency-plugin>3.6.1</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
@@ -60,7 +60,7 @@
     <module>build/org.gravity.license.epl</module>
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.ui</module>
-    <module>implementation/org.gravity.goblin</module>
+    <!--<module>implementation/org.gravity.goblin</module>--><!--deprecated-->
     <module>implementation/org.gravity.headless</module>
     <module>implementation/org.gravity.hulk</module>
     <module>implementation/org.gravity.hulk.annotations</module>
@@ -88,7 +88,7 @@
     <module>implementation/org.gravity.typegraph.basic.ui</module>
     <module>implementation/org.gravity.umlsecrt</module>
     <module>tests/org.gravity.eclipse.tests</module>
-    <module>tests/org.gravity.goblin.tests</module>
+    <!--<module>tests/org.gravity.goblin.tests</module>--><!--deprecated-->
     <module>tests/org.gravity.headless.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
@@ -106,9 +106,9 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-        <!--<configuration>
+        <configuration>
           <pomDependencies>consider</pomDependencies>
-        </configuration>-->
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -174,19 +174,14 @@
 
   <repositories>
     <repository>
-      <id>Eclipse 2024-03</id>
+      <id>Eclipse 2025-09</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2024-03</url>
+      <url>https://download.eclipse.org/releases/2025-09</url>
     </repository>
     <repository>
-      <id>Eclipse 2023-06</id>
+      <id>Eclipse 2025-06 for Papyrus</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2023-06</url>
-    </repository>
-    <repository>
-      <id>Papyrus</id>
-      <layout>p2</layout>
-      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12</url>
+      <url>https://download.eclipse.org/releases/2025-06</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
@@ -202,11 +197,6 @@
       <id>Henshin MultiVar</id>
       <layout>p2</layout>
       <url>https://gravity-tool.org/henshin-multivar/updatesite</url>
-    </repository>
-    <repository>
-      <id>MoMOT</id>
-      <layout>p2</layout>
-      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop</url>
     </repository>
     <repository>
       <id>plantuml</id>

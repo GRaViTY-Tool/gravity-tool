@@ -8,49 +8,72 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone repository with submodules
-      uses: actions/checkout@v4
-      with: 
-#        ssh-key: ${{ secrets.SECPL_PULL_KEY }}
-        submodules: 'recursive'
-        fetch-depth: 0
-#    - name: Set up JDK
-#      uses: actions/setup-java@v2
-#      with:
-#        distribution: 'temurin'
-#        java-version: '17'
-#        cache: 'maven'  
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-#    - name: Build with Maven
-    - name: Setup Maven Action
-      uses: s4u/setup-maven-action@v1.10.0
-    - name: Run headless test   
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: xvfb-run mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Declipse.p2.mirrors=false
-    - name: Publisch Pre-Release
-      if: ${{ github.ref == 'refs/heads/master' }}
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        prerelease: true
-        title: "Development Build"
-        files: |
-          build/org.gravity.updatesite/target/site.zip
-          build/org.gravity.headless.product/target/products/*.zip
-    - name: Publisch Release
-      if: ${{ github.ref_type == 'tag' }}
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        prerelease: false
-        files: |
-          build/org.gravity.updatesite/target/site.zip
-          build/org.gravity.headless.product/target/products/*.zip
+      # Checkout full repo + submodules with history
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0   # disable shallow clone for main repo
+          fetch-tags: true # include tags for Sonar + versioning
+
+      # Ensure submodules are not shallow
+      - name: Unshallow submodules
+        run: git submodule foreach 'git fetch --unshallow || true'
+
+      # Setup Java + Maven cache
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      # Build + Test + Sonar (only for trusted contexts)
+      - name: Build & Test with SonarCloud
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          xvfb-run mvn \
+            -Declipse.p2.mirrors=false \
+            verify \
+            org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+
+      # Build + Test (no Sonar for forks)
+      - name: Build & Test (no Sonar for forks)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          xvfb-run mvn \
+            -Declipse.p2.mirrors=false \
+            verify
+
+      # Pre-release on master branch
+      - name: Publish Pre-Release
+        if: github.ref == 'refs/heads/master'
+        uses: crowbarmaster/GH-Automatic-Releases@v1.6.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: latest
+          prerelease: true
+          title: Development Build
+          files: |
+            build/org.gravity.updatesite/target/site.zip
+            build/org.gravity.headless.product/target/products/*.zip
+
+      # Release on tag push
+      - name: Publish Release
+        if: github.ref_type == 'tag'
+        uses: crowbarmaster/GH-Automatic-Releases@v1.6.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
+          files: |
+            build/org.gravity.updatesite/target/site.zip
+            build/org.gravity.headless.product/target/products/*.zip
+
+
+

@@ -2,7 +2,6 @@
  */
 package org.gravity.hulk.resolve.calculators.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
@@ -19,11 +18,11 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
-import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
+import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
 import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
@@ -31,6 +30,8 @@ import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSyntethicMethod;
+import org.moflon.core.dfs.DFSGraph;
+import org.moflon.core.dfs.DfsFactory;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HMethod
@@ -40,24 +41,22 @@ import org.gravity.typegraph.basic.TSyntethicMethod;
  *
  * @generated
  */
-public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImpl
-implements HMethodToDataClassAccessCalculator {
+public class HMethodToDataClassAccessCalculatorImpl extends HDetectorImpl
+		implements HMethodToDataClassAccessCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @generated
-	 */
-	protected HMethodToDataClassAccessCalculatorImpl() {
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param blobDetector
+	 * @param graph
 	 *
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return CalculatorsPackage.Literals.HMETHOD_TO_DATA_CLASS_ACCESS_CALCULATOR;
+	public HMethodToDataClassAccessCalculatorImpl(final DFSGraph graph, final HBlobDetector blobDetector) {
+		final var edge2 = DfsFactory.eINSTANCE.createEdge();
+		this.setGraph(graph);
+		edge2.setGraph(graph);
+		this.getOutgoing().add(edge2);
+		blobDetector.getIncoming().add(edge2);
 	}
 
 	/**
@@ -130,8 +129,8 @@ implements HMethodToDataClassAccessCalculator {
 								// nothing TAccess calling = (TAccess) result9_black[0];
 								//
 								HMethodToDataClassAccessCalculatorImpl
-								.pattern_HMethodToDataClassAccessCalculator_0_10_ActivityNode20_expressionFB(
-										metric);
+										.pattern_HMethodToDataClassAccessCalculator_0_10_ActivityNode20_expressionFB(
+												metric);
 
 							} else {
 							}
@@ -150,8 +149,8 @@ implements HMethodToDataClassAccessCalculator {
 								// nothing TAccess access = (TAccess) result12_black[1];
 								//
 								HMethodToDataClassAccessCalculatorImpl
-								.pattern_HMethodToDataClassAccessCalculator_0_13_ActivityNode6_expressionFB(
-										metric);
+										.pattern_HMethodToDataClassAccessCalculator_0_13_ActivityNode6_expressionFB(
+												metric);
 
 							} else {
 							}
@@ -166,7 +165,7 @@ implements HMethodToDataClassAccessCalculator {
 			}
 
 		}
-		return HMethodToDataClassAccessCalculatorImpl.pattern_HMethodToDataClassAccessCalculator_0_14_expressionF();
+		return true;
 	}
 
 	/**
@@ -185,11 +184,9 @@ implements HMethodToDataClassAccessCalculator {
 			final var tNextClass = stack.pop();
 			for (final TMember member : tNextClass.getDefines()) {
 				List<TMember> redefined;
-				if (member instanceof TMethodDefinition) {
-					final var method = (TMethodDefinition) member;
+				if (member instanceof final TMethodDefinition method) {
 					redefined = new ArrayList<>(method.getOverriding());
-				} else if (member instanceof TFieldDefinition) {
-					final var field = (TFieldDefinition) member;
+				} else if (member instanceof final TFieldDefinition field) {
 					redefined = Arrays.asList(field.getHiding());
 				} else if (member instanceof TSyntethicMethod) {
 					// Ignore synthetic methods
@@ -212,22 +209,6 @@ implements HMethodToDataClassAccessCalculator {
 
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case CalculatorsPackage.HMETHOD_TO_DATA_CLASS_ACCESS_CALCULATOR___DETECT__HANTIPATTERNGRAPH:
-			return detect((HAntiPatternGraph) arguments.get(0));
-		case CalculatorsPackage.HMETHOD_TO_DATA_CLASS_ACCESS_CALCULATOR___GET_ALL_AFFECTED_MEMBERS__TCLASS:
-			return getAllAffectedMembers((TClass) arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_1_ActivityNode1_blackB(
 			final HMethodToDataClassAccessCalculator _this) {
 		return new Object[] { _this };
@@ -237,11 +218,9 @@ implements HMethodToDataClassAccessCalculator {
 			final HAntiPatternGraph apg) {
 		final var _result = new LinkedList<Object[]>();
 		for (final HAnnotation tmpBlob : apg.getHAnnotations()) {
-			if (tmpBlob instanceof HBlobAntiPattern) {
-				final var blob = (HBlobAntiPattern) tmpBlob;
+			if (tmpBlob instanceof final HBlobAntiPattern blob) {
 				final var tmpTClass = blob.getTAnnotated();
-				if (tmpTClass instanceof TClass) {
-					final var tClass = (TClass) tmpTClass;
+				if (tmpTClass instanceof final TClass tClass) {
 					_result.add(new Object[] { apg, blob, tClass });
 				}
 
@@ -264,8 +243,7 @@ implements HMethodToDataClassAccessCalculator {
 		final var _result = new LinkedList<Object[]>();
 		for (final HDataClassSmell dataclass : blob.getHDataClassSmells()) {
 			final var tmpTdataClass = dataclass.getTAnnotated();
-			if (tmpTdataClass instanceof TClass) {
-				final var tdataClass = (TClass) tmpTdataClass;
+			if (tmpTdataClass instanceof final TClass tdataClass) {
 				_result.add(new Object[] { blob, dataclass, tdataClass });
 			}
 
@@ -356,9 +334,7 @@ implements HMethodToDataClassAccessCalculator {
 
 	public static final double pattern_HMethodToDataClassAccessCalculator_0_10_ActivityNode20_expressionFB(
 			final HMethodToDataClassAccess metric) {
-		final var _localVariable_0 = metric.increment();
-		final var _result = _localVariable_0;
-		return _result;
+		return metric.increment();
 	}
 
 	public static final Iterable<Object[]> pattern_HMethodToDataClassAccessCalculator_0_11_ActivityNode21_blackFB(
@@ -384,14 +360,7 @@ implements HMethodToDataClassAccessCalculator {
 
 	public static final double pattern_HMethodToDataClassAccessCalculator_0_13_ActivityNode6_expressionFB(
 			final HMethodToDataClassAccess metric) {
-		final var _localVariable_0 = metric.increment();
-		final var _result = _localVariable_0;
-		return _result;
-	}
-
-	public static final boolean pattern_HMethodToDataClassAccessCalculator_0_14_expressionF() {
-		final var _result = true;
-		return _result;
+		return metric.increment();
 	}
 
 	// <-- [user code injected with eMoflon]

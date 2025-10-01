@@ -34,7 +34,7 @@ public class SecureDependencyEditingSupportTests {
 	@ParameterizedTest
 	@MethodSource("collectProjects")
 	void testSecureDependency(final IJavaProject project) throws CoreException {
-		SecurityAnnoationsCheckActivator.setChecksEnabled(true);
+		SecurityAnnoationsCheckActivator.setChecksEnabled(project.getProject(), true);
 		project.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		project.getProject().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		final var problems = new HashMap<String, List<IMarker>>();

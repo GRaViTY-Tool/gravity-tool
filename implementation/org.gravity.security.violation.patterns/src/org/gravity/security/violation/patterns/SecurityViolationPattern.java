@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.impl.HDetectorImpl;
+import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.security.violation.patterns.violations.ViolationsFactory;
 import org.gravity.security.violation.patterns.violations.ViolationsPackage;
 import org.gravity.tgg.pm.uml.CorrespondenceGraphGenerator;
@@ -74,22 +74,20 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		if (target.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		if(target instanceof TypeGraph graph) {
-			this.pm = graph;
-		} else {
+		if (!(target instanceof final TypeGraph graph)) {
 			throw new IllegalStateException("Source type is not a program model: class=" + target.eClass().getName()
 					+ ", object=" + target.toString());
 		}
+		this.pm = graph;
 		final var source = corr.getSource();
 		if (source.eIsProxy()) {
 			EcoreUtil.resolveAll(corr);
 		}
-		if (source instanceof Model model) {
-			this.uml = model;
-		} else {
+		if (!(source instanceof final Model model)) {
 			throw new IllegalStateException("Source type is not a UML model: class=" + source.eClass().getName()
 					+ ", object=" + source.toString());
 		}
+		this.uml = model;
 		this.set.getResources().add(this.pm.eResource());
 		this.set.getResources().add(this.uml.eResource());
 		this.set.getResources().add(this.corr.eResource());
@@ -97,40 +95,40 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	public List<Match> detect(final CorrespondenceModel corr) {
 		final var oldSet = corr.eResource().getResourceSet();
-		init(corr);
+		this.init(corr);
 		final List<EObject> umlContents = this.uml.eResource().getContents();
-		final var signatures = replaceAllWithNames(umlContents);
+		final var signatures = this.replaceAllWithNames(umlContents);
 		final List<EObject> roots = new ArrayList<>(umlContents.size() + 2);
 		roots.add(this.pm);
 		roots.add(this.corr);
 		roots.addAll(umlContents);
 		final EGraph graph = new EGraphImpl(roots);
 
-		final Engine engine = new EngineImpl();
+		final var engine = new EngineImpl();
 		engine.getScriptEngine().put(SignatureHelper.class.getName(), SignatureHelper.class);
 		final List<Match> matches = new LinkedList<>();
 		for (final Match m : engine.findMatches(this.rule, graph, null)) {
 			matches.add(m);
 		}
-		restore(oldSet, umlContents, signatures);
+		this.restore(oldSet, umlContents, signatures);
 		return matches;
 	}
 
 	private Map<critical, Map<Integer, List<String>>> replaceAllWithNames(final List<EObject> uml) {
 		final Map<critical, Map<Integer, List<String>>> signatures = new HashMap<>();
 		for (final EObject object : uml) {
-			if (object instanceof critical crit) {
+			if (object instanceof final critical crit) {
 				signatures.computeIfAbsent(crit, key -> {
 					final Map<Integer, List<String>> map = new HashMap<>();
 					final var secrecy = key.getSecrecy();
 					map.put(UmlsecPackage.CRITICAL__SECRECY, new ArrayList<>(secrecy));
-					replaceWithNames(secrecy);
+					this.replaceWithNames(secrecy);
 					final var integrity = key.getIntegrity();
 					map.put(UmlsecPackage.CRITICAL__INTEGRITY, new ArrayList<>(integrity));
-					replaceWithNames(integrity);
+					this.replaceWithNames(integrity);
 					final var high = key.getHigh();
 					map.put(UmlsecPackage.CRITICAL__HIGH, new ArrayList<>(high));
-					replaceWithNames(high);
+					this.replaceWithNames(high);
 					return map;
 				});
 			}
@@ -158,7 +156,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 	}
 
 	private void replaceWithNames(final List<String> critical) {
-		final List<String> names = critical.stream().map(signature -> {
+		final var names = critical.stream().map(signature -> {
 			final var paramSep = signature.indexOf('(');
 			if (paramSep > 0) {
 				return signature.substring(0, paramSep);
@@ -188,7 +186,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 		final var project = JavaProjectUtil.getJavaProject(EclipseProjectUtil.getProjectByName(originalPM.getTName()));
 		this.corr = CorrespondenceGraphGenerator.createModel(project, new NullProgressMonitor());
 
-		for (final Match m : detect(this.corr)) {
+		for (final Match m : this.detect(this.corr)) {
 			final var requirement = (critical) m.getNodeTarget(this.rule.getLhs().getNode("required"));
 			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
 			final var source = access.getSource();
@@ -237,10 +235,10 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 	@Override
 	public boolean perform(final Map<String, CheckParameter> parameters, final AnalysisHost host) {
-		final var project = getProject(host);
+		final var project = this.getProject(host);
 		this.corr = CorrespondenceGraphGenerator.createModel(JavaProjectUtil.getJavaProject(project),
 				new NullProgressMonitor());
-		for (final Match m : detect(this.corr)) {
+		for (final Match m : this.detect(this.corr)) {
 			final var access = (TAccess) m.getNodeTarget(this.rule.getLhs().getNode("access"));
 
 			final var source = access.getSource();
@@ -253,8 +251,8 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 
 			host.addResultMessage(new AnalysisResultMessage(StatusType.ERROR,
 					"Secure dependency is violated in the implementation for the member " + sourceSignature
-					+ " of the class " + sourceClass + " for the security-level of " + "secrecy"
-					+ "by an access to the member " + targetSignature + " of the class " + targetClass));
+							+ " of the class " + sourceClass + " for the security-level of " + "secrecy"
+							+ "by an access to the member " + targetSignature + " of the class " + targetClass));
 		}
 		return true;
 	}
@@ -276,7 +274,7 @@ public class SecurityViolationPattern extends HDetectorImpl implements CarismaCh
 			}
 			if (projectFile.exists()) {
 				// Read the project name from the project file
-				final var name = readProjectName(projectFile);
+				final var name = this.readProjectName(projectFile);
 				if (name != null) {
 					return workspace.getProject(name);
 				}

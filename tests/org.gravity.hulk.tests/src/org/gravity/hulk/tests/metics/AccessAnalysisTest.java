@@ -17,33 +17,27 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.GitCloneException;
 import org.gravity.hulk.HAntiPatternDetection;
-import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.detection.metrics.HIGAMCalculator;
-import org.gravity.hulk.detection.metrics.HIGATCalculator;
-import org.gravity.hulk.detection.metrics.MetricsFactory;
+import org.gravity.hulk.detection.metrics.impl.HIGAMCalculator;
+import org.gravity.hulk.detection.metrics.impl.HIGATCalculator;
+import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.osgi.framework.Bundle;
 
 /**
  * A test if our implementation of the IGAM and IGAT metrics return the results
@@ -60,7 +54,7 @@ public class AccessAnalysisTest {
 	private final TypeGraph pmExpect;
 	private final TypeGraph pmInput;
 
-	private static final String[] projects = new String[] {"SecureMailApp"};
+	private static final String[] projects = { "SecureMailApp" };
 
 	/**
 	 * Creates a new test instance for the given project
@@ -70,10 +64,10 @@ public class AccessAnalysisTest {
 	 * @param The     program model containing the expected annotations
 	 * @throws IOException If the expected program model cannot be loaded
 	 */
-	public AccessAnalysisTest(String name, URL pmInput, URL pmExpect) throws IOException {
-		final ResourceSetImpl resourceSet = new ResourceSetImpl();
-		this.pmInput = (TypeGraph) loadModel(resourceSet, pmInput).get(0);
-		this.pmExpect = (TypeGraph) loadModel(resourceSet, pmExpect).get(0);
+	public AccessAnalysisTest(final String name, final URL pmInput, final URL pmExpect) throws IOException {
+		final var resourceSet = new ResourceSetImpl();
+		this.pmInput = (TypeGraph) this.loadModel(resourceSet, pmInput).get(0);
+		this.pmExpect = (TypeGraph) this.loadModel(resourceSet, pmExpect).get(0);
 		LOGGER.log(Level.INFO, "Perform test on project: " + name);
 	}
 
@@ -85,8 +79,8 @@ public class AccessAnalysisTest {
 	 * @return The contents of the model
 	 * @throws IOException If reading the model failed
 	 */
-	private EList<EObject> loadModel(ResourceSetImpl set, URL url) throws IOException {
-		final Resource resource = set.createResource(URI.createFileURI(url.getFile()));
+	private EList<EObject> loadModel(final ResourceSetImpl set, final URL url) throws IOException {
+		final var resource = set.createResource(URI.createFileURI(url.getFile()));
 		resource.load(url.openStream(), Collections.emptyMap());
 		return resource.getContents();
 	}
@@ -98,12 +92,12 @@ public class AccessAnalysisTest {
 	 */
 	@Parameters(name = "{index}: Test HulkAPI on \"{0}\"")
 	public static Collection<Object[]> collectProjects() throws CoreException, GitCloneException, IOException {
-		final Bundle bundle = Platform.getBundle("org.gravity.hulk.tests");
+		final var bundle = Platform.getBundle("org.gravity.hulk.tests");
 		final Collection<Object[]> results = new ArrayList<>(projects.length);
-		for(final String name : projects) {
-			final URL input = bundle.getEntry("input/"+name+".xmi");
-			final URL expect = bundle.getEntry("expect/"+name+".xmi");
-			results.add(new Object[] {name, input, expect});
+		for (final String name : projects) {
+			final var input = bundle.getEntry("input/" + name + ".xmi");
+			final var expect = bundle.getEntry("expect/" + name + ".xmi");
+			results.add(new Object[] { name, input, expect });
 		}
 		return results;
 	}
@@ -118,23 +112,23 @@ public class AccessAnalysisTest {
 	 */
 	@Test
 	public void testAccessAnalysis() throws TransformationFailedException {
-		final String location = this.pmInput.eResource().getURI().toString();
-		final HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
+		final var location = this.pmInput.eResource().getURI().toString();
+		final var apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		apg.setPg(this.pmInput);
 
-		final HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
+		final HAntiPatternDetection hulk = new HAntiPatternDetectionImpl();
 		hulk.setApg(apg);
 		hulk.setProgramlocation(location);
 
-		final HIGAMCalculator igam = MetricsFactory.eINSTANCE.createHIGAMCalculator();
-		igam.setHAntiPatternHandling(hulk);
-		assertTrue(igam.detect(apg));
-		compareResults(igam.getHAnnotation());
-
-		final HIGATCalculator igat = MetricsFactory.eINSTANCE.createHIGATCalculator();
+		final var igat = new HIGATCalculator(hulk.getDependencyGraph());
 		igat.setHAntiPatternHandling(hulk);
 		assertTrue(igat.detect(apg));
-		compareResults(igat.getHAnnotation());
+		this.compareResults(igat.getHAnnotation());
+
+		final var igam = new HIGAMCalculator(hulk.getDependencyGraph(), igat);
+		igam.setHAntiPatternHandling(hulk);
+		assertTrue(igam.detect(apg));
+		this.compareResults(igam.getHAnnotation());
 	}
 
 	/**
@@ -142,31 +136,32 @@ public class AccessAnalysisTest {
 	 *
 	 * @param detector The igat calculator
 	 */
-	private void compareResults(Collection<HAnnotation> annotations) {
+	private void compareResults(final Collection<HAnnotation> annotations) {
 		for (final HAnnotation annotation : annotations) {
 			TAnnotatable expectedAnnotatedElement;
-			final TAnnotatable annotated = annotation.getTAnnotated();
+			final var annotated = annotation.getTAnnotated();
 			if (annotated instanceof TAbstractType) {
-				final String name = ((TAbstractType) annotated).getFullyQualifiedName();
+				final var name = ((TAbstractType) annotated).getFullyQualifiedName();
 				expectedAnnotatedElement = this.pmExpect.getType(name);
 			} else if (annotated instanceof TPackage) {
-				final String name = ((TPackage) annotated).getFullyQualifiedName();
+				final var name = ((TPackage) annotated).getFullyQualifiedName();
 				expectedAnnotatedElement = this.pmExpect.getPackage(name);
 			} else if (annotated instanceof TMember) {
-				final TAbstractType type = this.pmExpect.getType(((TMember) annotated).getDefinedBy().getFullyQualifiedName());
+				final var type = this.pmExpect
+						.getType(((TMember) annotated).getDefinedBy().getFullyQualifiedName());
 				assertNotNull(type);
 				expectedAnnotatedElement = type.getTDefinition(((TMember) annotated).getSignatureString());
 			} else if (annotated instanceof TypeGraph) {
 				expectedAnnotatedElement = this.pmExpect;
 			} else {
-				final String message = "Unhandeled element: " + annotated;
+				final var message = "Unhandeled element: " + annotated;
 				LOGGER.error(message);
 				fail(message);
 				continue;
 			}
 			assertNotNull(expectedAnnotatedElement);
-			final EClass eClass = annotation.eClass();
-			final EList<TAnnotation> expectedAnnotations = expectedAnnotatedElement.getTAnnotation(eClass);
+			final var eClass = annotation.eClass();
+			final var expectedAnnotations = expectedAnnotatedElement.getTAnnotation(eClass);
 			assertEquals(1, expectedAnnotations.size());
 			if (AntipatterngraphPackage.eINSTANCE.getHMetric().isSuperTypeOf(eClass)) {
 				assertEquals(((HMetric) expectedAnnotations.get(0)).getValue(), ((HMetric) annotation).getValue(),

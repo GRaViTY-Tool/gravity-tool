@@ -16,11 +16,6 @@ import org.gravity.eclipse.io.FileUtils;
 public abstract class ProjectImport {
 
 	/**
-	 * If the project should be imported even if build errors occur
-	 */
-	private final boolean ignoreBuildErrors;
-
-	/**
 	 * The root directory from which the project should be imported
 	 */
 	private final File rootDir;
@@ -33,17 +28,14 @@ public abstract class ProjectImport {
 	/**
 	 * Creates a new importer for the given project
 	 *
-	 * @param rootDir           The root directory from which the project should be
-	 *                          imported
-	 * @param ignoreBuildErrors If the project should be imported even if build
-	 *                          errors occur
-	 * @param rootFiles         Potential configuration files of the build system
+	 * @param rootDir   The root directory from which the project should be
+	 *                  imported
+	 * @param rootFiles Potential configuration files of the build system
 	 * @return The importer
 	 * @throws ImportException
 	 */
-	protected ProjectImport(final File rootDir, final boolean ignoreBuildErrors, final String... rootFiles)
+	protected ProjectImport(final File rootDir, final String... rootFiles)
 			throws ImportException {
-		this.ignoreBuildErrors = ignoreBuildErrors;
 		this.rootFile = this.getRootConfigurationFile(rootDir, rootFiles);
 		this.rootDir = this.rootFile.getParentFile();
 	}
@@ -56,13 +48,6 @@ public abstract class ProjectImport {
 	 * @throws ImportException if the import failed
 	 */
 	public abstract IJavaProject importProject(IProgressMonitor monitor) throws ImportException;
-
-	/**
-	 * @return the ignoreBuildErrors
-	 */
-	protected boolean ignoreBuildErrors() {
-		return this.ignoreBuildErrors;
-	}
 
 	/**
 	 * A getter for the root directory of the project

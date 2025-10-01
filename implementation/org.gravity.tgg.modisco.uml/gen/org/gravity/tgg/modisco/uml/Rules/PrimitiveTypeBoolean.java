@@ -200,7 +200,7 @@ public interface PrimitiveTypeBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PrimitiveType_57(PrimitiveType umpt);
+	EObjectContainer isAppropriate_BWD_PrimitiveType_7(PrimitiveType umpt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface PrimitiveTypeBoolean extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_PrimitiveTypeBoolean_6(org.eclipse.modisco.java.PrimitiveTypeBoolean jpt);
+	EObjectContainer isAppropriate_FWD_PrimitiveTypeBoolean_0(org.eclipse.modisco.java.PrimitiveTypeBoolean jpt);
 
 	/**
 	 * <!-- begin-user-doc -->

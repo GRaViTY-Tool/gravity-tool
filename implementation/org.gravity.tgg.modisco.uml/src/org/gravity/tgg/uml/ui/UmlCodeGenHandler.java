@@ -7,7 +7,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.jobs.Job;
 import org.gravity.eclipse.ui.handler.AbstractTransformationHandler;
-import org.gravity.eclipse.ui.handler.SelectionHelper;
+import org.gravity.eclipse.ui.handler.UISelectionHelper;
 
 /**
  * A handler for triggering the initial creation of a new UML models for the
@@ -22,7 +22,7 @@ public class UmlCodeGenHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = SelectionHelper.getSelection(event);
+		final List<?> selection = UISelectionHelper.getSelection(event);
 
 		final Job job = new UmlCodeGenJob(selection);
 		job.setUser(true);

@@ -153,37 +153,37 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_1_performtransformation_greenFBFB(bodyDeclaration, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		Interface feature = (Interface) result1_green[2];
+				.pattern_InterfaceDec2Interface_1_1_performtransformation_greenBFFB(bodyDeclaration, csp);
+		Interface feature = (Interface) result1_green[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_blackBBB(b2e, bodyDeclaration, feature);
+				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_blackBBB(bodyDeclaration, feature, b2e);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ".");
 		}
 		Object[] result2_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_greenFBBB(b2e, bodyDeclaration, feature);
+				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_greenFBBB(bodyDeclaration, feature, b2e);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_blackBBBB(ruleresult, b2e, bodyDeclaration,
-						feature);
+				.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_blackBBBB(ruleresult, bodyDeclaration, feature,
+						b2e);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = "
-					+ feature + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ", "
+					+ "[b2e] = " + b2e + ".");
 		}
-		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
-				bodyDeclaration, feature);
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
+		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(ruleresult,
+				bodyDeclaration, feature, b2e);
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_5_registerobjects_expressionBBBBB(this, ruleresult,
-				b2e, bodyDeclaration, feature);
+				bodyDeclaration, feature, b2e);
 		return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_6_expressionFB(ruleresult);
 	}
 
@@ -345,11 +345,11 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration,
-			EObject feature) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature,
+			EObject b2e) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -428,37 +428,37 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		Interface feature = (Interface) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_1_performtransformation_greenFFBB(feature, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[1];
+				.pattern_InterfaceDec2Interface_11_1_performtransformation_greenFBFB(feature, csp);
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_blackBBB(b2e, bodyDeclaration, feature);
+				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_blackBBB(bodyDeclaration, feature, b2e);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ".");
 		}
 		Object[] result2_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_greenFBBB(b2e, bodyDeclaration, feature);
+				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_greenFBBB(bodyDeclaration, feature, b2e);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_blackBBBB(ruleresult, b2e, bodyDeclaration,
-						feature);
+				.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_blackBBBB(ruleresult, bodyDeclaration, feature,
+						b2e);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = "
-					+ feature + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[feature] = " + feature + ", "
+					+ "[b2e] = " + b2e + ".");
 		}
-		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, b2e,
-				bodyDeclaration, feature);
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[5];
+		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(ruleresult,
+				bodyDeclaration, feature, b2e);
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_5_registerobjects_expressionBBBBB(this, ruleresult,
-				b2e, bodyDeclaration, feature);
+				bodyDeclaration, feature, b2e);
 		return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_6_expressionFB(ruleresult);
 	}
 
@@ -622,11 +622,11 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration,
-			EObject feature) {
-		ruleresult.registerObject("b2e", b2e);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature,
+			EObject b2e) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -645,7 +645,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Interface_24(Interface feature) {
+	public EObjectContainer isAppropriate_BWD_Interface_2(Interface feature) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -701,7 +701,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_InterfaceDeclaration_6(InterfaceDeclaration bodyDeclaration) {
+	public EObjectContainer isAppropriate_FWD_InterfaceDeclaration_0(InterfaceDeclaration bodyDeclaration) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,13 +767,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -823,13 +823,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -911,9 +911,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 							"Pattern matching failed." + " Variables: " + "[bodyDeclaration] = " + bodyDeclaration
 									+ ", " + "[feature] = " + feature + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenFBBB(
+				InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenBBFB(
 						bodyDeclaration, feature, ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 				Object[] result7_black = InterfaceDec2InterfaceImpl
 						.pattern_InterfaceDec2Interface_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1049,9 +1049,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_29_6_perform_greenFFFBB(ruleResult, csp);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-				//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[1];
-				//nothing Interface feature = (Interface) result6_green[2];
+				//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[0];
+				//nothing Interface feature = (Interface) result6_green[1];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 			} else {
 			}
@@ -1161,10 +1161,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 				return null;
 			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_24__INTERFACE:
-				return isAppropriate_BWD_Interface_24((Interface) arguments.get(0));
-			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_6__INTERFACEDECLARATION:
-				return isAppropriate_FWD_InterfaceDeclaration_6((InterfaceDeclaration) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_INTERFACE_2__INTERFACE:
+				return isAppropriate_BWD_Interface_2((Interface) arguments.get(0));
+			case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_INTERFACE_DECLARATION_0__INTERFACEDECLARATION:
+				return isAppropriate_FWD_InterfaceDeclaration_0((InterfaceDeclaration) arguments.get(0));
 			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1306,38 +1306,38 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_1_1_performtransformation_greenFBFB(
+	public static final Object[] pattern_InterfaceDec2Interface_1_1_performtransformation_greenBFFB(
 			InterfaceDeclaration bodyDeclaration, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "name");
-		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { b2e, bodyDeclaration, feature, csp };
+		return new Object[] { bodyDeclaration, feature, b2e, csp };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_blackBBB(
-			ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration, Interface feature) {
-		return new Object[] { b2e, bodyDeclaration, feature };
+			InterfaceDeclaration bodyDeclaration, Interface feature, ASTNode2Element b2e) {
+		return new Object[] { bodyDeclaration, feature, b2e };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration, Interface feature) {
+			InterfaceDeclaration bodyDeclaration, Interface feature, ASTNode2Element b2e) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
 		ruleresult.getCreatedElements().add(feature);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		return new Object[] { ruleresult, bodyDeclaration, feature, b2e };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		if (!b2e.equals(bodyDeclaration)) {
-			if (!b2e.equals(feature)) {
-				if (!bodyDeclaration.equals(feature)) {
-					return new Object[] { ruleresult, b2e, bodyDeclaration, feature };
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e) {
+		if (!bodyDeclaration.equals(feature)) {
+			if (!b2e.equals(bodyDeclaration)) {
+				if (!b2e.equals(feature)) {
+					return new Object[] { ruleresult, bodyDeclaration, feature, b2e };
 				}
 			}
 		}
@@ -1345,29 +1345,29 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e) {
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, bodyDeclaration, feature, b2e, b2e__feature____target,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_1_5_registerobjects_expressionBBBBB(
-			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration,
-			EObject feature) {
-		_this.registerObjects_FWD(ruleresult, b2e, bodyDeclaration, feature);
+			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature,
+			EObject b2e) {
+		_this.registerObjects_FWD(ruleresult, bodyDeclaration, feature, b2e);
 
 	}
 
@@ -1633,38 +1633,38 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_11_1_performtransformation_greenFFBB(Interface feature,
+	public static final Object[] pattern_InterfaceDec2Interface_11_1_performtransformation_greenFBFB(Interface feature,
 			CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
 		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { b2e, bodyDeclaration, feature, csp };
+		return new Object[] { bodyDeclaration, feature, b2e, csp };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_blackBBB(
-			ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration, Interface feature) {
-		return new Object[] { b2e, bodyDeclaration, feature };
+			InterfaceDeclaration bodyDeclaration, Interface feature, ASTNode2Element b2e) {
+		return new Object[] { bodyDeclaration, feature, b2e };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_greenFBBB(
-			ASTNode2Element b2e, InterfaceDeclaration bodyDeclaration, Interface feature) {
+			InterfaceDeclaration bodyDeclaration, Interface feature, ASTNode2Element b2e) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
 		ruleresult.getTranslatedElements().add(feature);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		return new Object[] { ruleresult, bodyDeclaration, feature, b2e };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		if (!b2e.equals(bodyDeclaration)) {
-			if (!b2e.equals(feature)) {
-				if (!bodyDeclaration.equals(feature)) {
-					return new Object[] { ruleresult, b2e, bodyDeclaration, feature };
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e) {
+		if (!bodyDeclaration.equals(feature)) {
+			if (!b2e.equals(bodyDeclaration)) {
+				if (!b2e.equals(feature)) {
+					return new Object[] { ruleresult, bodyDeclaration, feature, b2e };
 				}
 			}
 		}
@@ -1672,29 +1672,29 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature) {
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e) {
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, b2e, bodyDeclaration, feature, b2e__bodyDeclaration____source,
-				b2e__feature____target };
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
+		return new Object[] { ruleresult, bodyDeclaration, feature, b2e, b2e__feature____target,
+				b2e__bodyDeclaration____source };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_11_5_registerobjects_expressionBBBBB(
-			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration,
-			EObject feature) {
-		_this.registerObjects_BWD(ruleresult, b2e, bodyDeclaration, feature);
+			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature,
+			EObject b2e) {
+		_this.registerObjects_BWD(ruleresult, bodyDeclaration, feature, b2e);
 
 	}
 
@@ -2004,8 +2004,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_989104 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_989104 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_852401 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_852401 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2179,13 +2179,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		return new Object[] { bodyDeclaration, feature, ccMatch };
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenFBBB(
+	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenBBFB(
 			InterfaceDeclaration bodyDeclaration, Interface feature, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { b2e, bodyDeclaration, feature, ccMatch };
+		return new Object[] { bodyDeclaration, feature, b2e, ccMatch };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_7_addtoreturnedresult_blackBB(
@@ -2211,8 +2211,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_452568 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_452568 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_939146 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_939146 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2313,18 +2313,18 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_29_6_perform_greenFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
 		Object _localVariable_1 = csp.getValue("feature", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2e);
-		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
-		b2e.setTarget(feature);
 		ruleResult.getTargetObjects().add(feature);
+		b2e.setTarget(feature);
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(b2e);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		String feature_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2332,7 +2332,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		feature.setName(feature_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2e, bodyDeclaration, feature, ruleResult, csp };
+		return new Object[] { bodyDeclaration, feature, b2e, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InterfaceDec2Interface_29_7_expressionFB(
