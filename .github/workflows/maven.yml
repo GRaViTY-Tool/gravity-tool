@@ -54,7 +54,7 @@ jobs:
       # Pre-release on master branch
       - name: Publish Pre-Release
         if: github.ref == 'refs/heads/master'
-        uses: crowbarmaster/GHactions@v1.6.0
+        uses: crowbarmaster/GH-Automatic-Releases@latest@v1.6.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: latest
@@ -67,11 +67,12 @@ jobs:
       # Release on tag push
       - name: Publish Release
         if: github.ref_type == 'tag'
-        uses: crowbarmaster/GHactions@v1.6.0
+        uses: crowbarmaster/GH-Automatic-Releases@latest@v1.6.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
           files: |
             build/org.gravity.updatesite/target/site.zip
             build/org.gravity.headless.product/target/products/*.zip
+
 
