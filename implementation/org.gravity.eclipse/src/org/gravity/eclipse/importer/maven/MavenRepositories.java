@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.apache.log4j.Logger;
+import org.gravity.eclipse.io.FileUtils;
 
 public class MavenRepositories {
 
@@ -75,7 +76,7 @@ public class MavenRepositories {
 	private Path cache(final String groupId, final String artifactId, final String version,
 			final Function<? super String, ? extends Path> future) throws IOException {
 		if (this.tmp == null) {
-			this.tmp = Files.createTempDirectory("maven-repo-cache");
+			this.tmp = FileUtils.createTempDirectory("maven-repo-cache");
 			this.tmp.toFile().deleteOnExit();
 		}
 		return this.cache.computeIfAbsent(groupId + ":" + artifactId + ":" + version, future);
