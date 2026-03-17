@@ -5,12 +5,10 @@ package org.gravity.hulk.detection.metrics.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.helpers.GetterSetterHelper;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TClass;
-// <-- [user defined imports]
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 // [user defined imports] -->
 import org.moflon.core.dfs.DFSGraph;
 
@@ -23,7 +21,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HGetterCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HGetterCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,53 +44,14 @@ public class HGetterCalculator extends HClassBasedCalculatorImpl implements HMet
 
 		final var metric = MetricsFactory.eINSTANCE.createHGetterMetric();
 		metric.setTAnnotated(tClass);
-		metric.setValue(this.calculateValue(tClass));
+		metric.setValue(GetterSetterHelper.countMethodsStartingWithName(tClass, "get"));
 		this.getHAnnotation().add(metric);
 		return metric;
 	}
 
-	public double calculateValue(final TClass tClass) {
-
-		if ((tClass == null) || tClass.isTLib()) {
-			return 0;
-		}
-
-		var i = 0;
-		for (final TMember m : tClass.getDefines()) {
-			if (m instanceof final TMethodDefinitionImpl definition) {
-				final var sig = definition.getSignature();
-				if (sig == null) {
-					// System.out.println("Method within Class " + tClass.getTName() + " does not
-					// have a signature");
-					continue;
-				}
-				final var method = sig.getMethod();
-				if (method == null) {
-					// System.out.println(
-					// "MethodSignature of a Method in Class " + tClass.getTName() + " does not have
-					// a TMethod");
-					continue;
-				}
-				final var name = method.getTName();
-				if (name.toLowerCase().startsWith("get")) {
-					i++;
-				}
-			}
-		}
-
-		for (final TClass parent : tClass.getParentClasses()) {
-			i += this.calculateValue(parent);
-		}
-
-		return i;
-
-	}
-
-	// <-- [user code injected with eMoflon]
-
 	@Override
 	public String getGuiName() {
-		return "Number of Getters";
+		return "Number of Getter Methods";
 	}
 
 	@Override
@@ -100,5 +59,4 @@ public class HGetterCalculator extends HClassBasedCalculatorImpl implements HMet
 		return org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE.getHGetterMetric();
 	}
 
-	// [user code injected with eMoflon] -->
 } // HGetterCalculatorImpl

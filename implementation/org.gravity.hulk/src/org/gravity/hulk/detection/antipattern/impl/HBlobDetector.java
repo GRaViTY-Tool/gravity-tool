@@ -4,16 +4,15 @@ package org.gravity.hulk.detection.antipattern.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.AnnotationHelper;
-import org.gravity.hulk.detection.HAntiPatternDetector;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.antipattern.HAntiPatternDetector;
 import org.gravity.hulk.detection.codesmells.impl.HDataClassAccessorDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.helpers.AnnotationHelper;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -28,7 +27,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HBlobDetector extends HClassBasedCalculatorImpl implements HAntiPatternDetector {
+public class HBlobDetector extends AbstractClassBasedCalculator implements HAntiPatternDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

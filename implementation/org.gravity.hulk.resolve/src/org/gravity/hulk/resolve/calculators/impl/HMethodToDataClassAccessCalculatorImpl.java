@@ -18,8 +18,8 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
+import org.gravity.hulk.detection.AbstractHDetector;
 import org.gravity.hulk.detection.antipattern.impl.HBlobDetector;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
@@ -41,7 +41,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HMethodToDataClassAccessCalculatorImpl extends HDetectorImpl
+public class HMethodToDataClassAccessCalculatorImpl extends AbstractHDetector
 		implements HMethodToDataClassAccessCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

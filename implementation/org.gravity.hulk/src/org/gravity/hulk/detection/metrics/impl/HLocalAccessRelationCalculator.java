@@ -7,8 +7,8 @@ import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalMethodAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.moflon.core.dfs.DFSGraph;
@@ -24,7 +24,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HLocalAccessRelationCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HLocalAccessRelationCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

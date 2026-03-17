@@ -12,9 +12,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.Messages;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
@@ -25,8 +22,8 @@ import org.gravity.hulk.detection.codesmells.impl.HLargeClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetector;
 import org.gravity.hulk.detection.codesmells.impl.HManyParametersDetector;
 import org.gravity.hulk.detection.codesmells.impl.HMuchOverloadingDetector;
-import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
 import org.gravity.hulk.exceptions.DetectionFailedException;
+import org.gravity.hulk.impl.HAntiPatternHandling;
 import org.moflon.core.dfs.DepthFirstSearch;
 import org.moflon.core.dfs.DfsFactory;
 import org.moflon.core.dfs.Node;
@@ -69,12 +66,6 @@ public class HulkDetector {
 		this.thresholds = thresholds;
 		this.verbose = verbose;
 		this.initialized = new HashSet<>();
-		var eResource = hulk.eResource();
-		if (eResource == null) {
-			eResource = new ResourceSetImpl().createResource(URI.createURI("Hulk"));
-			eResource.getContents().add(hulk);
-		}
-		eResource.getContents().add(hulk.getDependencyGraph());
 	}
 
 	private List<HDetector> getSorted(final HDetector detector) {
@@ -102,8 +93,8 @@ public class HulkDetector {
 			if (worklist.contains(nextDetector)) {
 				worklist.remove(nextDetector);
 			}
-			if (nextDetector instanceof HRelativeDetectorImpl) {
-				this.initializeRelativeDetector((HRelativeDetectorImpl) nextDetector);
+			if (nextDetector instanceof final AbstractRelativeDetector relativeDetector) {
+				this.initializeRelativeDetector(relativeDetector);
 			}
 			if (nextDetector.detect(this.hulk.getApg())) {
 				nextDetector.setPostTraversal(0);
@@ -122,7 +113,7 @@ public class HulkDetector {
 	 * @param relativeDetector The detector
 	 * @throws DetectionFailedException If the stored threshold is not valid
 	 */
-	private void initializeRelativeDetector(final HRelativeDetectorImpl relativeDetector)
+	private void initializeRelativeDetector(final AbstractRelativeDetector relativeDetector)
 			throws DetectionFailedException {
 		if (!this.initialized.contains(relativeDetector)) {
 			final var key = relativeDetector.getClass().getName().replace("Impl", "").replace(".impl", "");

@@ -117,59 +117,59 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
+	public boolean isAppropriate_FWD(Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {
 
 		Object[] result1_black = AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_1_initialbindings_blackBBBBBB(
-				this, match, access, mMember, mAnnotation, mType);
+				this, match, mAnnotation, mMember, mType, access);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[access] = " + access + ", " + "[mMember] = " + mMember + ", "
-					+ "[mAnnotation] = " + mAnnotation + ", " + "[mType] = " + mType + ".");
+					+ "[match] = " + match + ", " + "[mAnnotation] = " + mAnnotation + ", " + "[mMember] = " + mMember
+					+ ", " + "[mType] = " + mType + ", " + "[access] = " + access + ".");
 		}
 
 		Object[] result2_bindingAndBlack = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, access, mMember,
-						mAnnotation, mType);
+				.pattern_AnnotationTypeMember_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mAnnotation, mMember,
+						mType, access);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[access] = " + access + ", " + "[mMember] = " + mMember + ", "
-					+ "[mAnnotation] = " + mAnnotation + ", " + "[mType] = " + mType + ".");
+					+ "[match] = " + match + ", " + "[mAnnotation] = " + mAnnotation + ", " + "[mMember] = " + mMember
+					+ ", " + "[mType] = " + mType + ", " + "[access] = " + access + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_0_4_collectelementstobetranslated_blackBBBBB(match, access, mMember,
-							mAnnotation, mType);
+					.pattern_AnnotationTypeMember_0_4_collectelementstobetranslated_blackBBBBB(match, mAnnotation,
+							mMember, mType, access);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[access] = " + access + ", " + "[mMember] = " + mMember + ", " + "[mAnnotation] = "
-						+ mAnnotation + ", " + "[mType] = " + mType + ".");
+						+ "[mAnnotation] = " + mAnnotation + ", " + "[mMember] = " + mMember + ", " + "[mType] = "
+						+ mType + ", " + "[access] = " + access + ".");
 			}
 			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_4_collectelementstobetranslated_greenBBBBBFFFFF(
-					match, access, mMember, mAnnotation, mType);
-			//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result4_green[9];
+					match, mAnnotation, mMember, mType, access);
+			//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result4_green[9];
 
 			Object[] result5_black = AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_0_5_collectcontextelements_blackBBBBB(match, access, mMember,
-							mAnnotation, mType);
+					.pattern_AnnotationTypeMember_0_5_collectcontextelements_blackBBBBB(match, mAnnotation, mMember,
+							mType, access);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[access] = " + access + ", " + "[mMember] = " + mMember + ", " + "[mAnnotation] = "
-						+ mAnnotation + ", " + "[mType] = " + mType + ".");
+						+ "[mAnnotation] = " + mAnnotation + ", " + "[mMember] = " + mMember + ", " + "[mType] = "
+						+ mType + ", " + "[access] = " + access + ".");
 			}
 			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_5_collectcontextelements_greenBBB(match,
 					mAnnotation, mType);
 
 			// 
 			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_6_registerobjectstomatch_expressionBBBBBB(this,
-					match, access, mMember, mAnnotation, mType);
+					match, mAnnotation, mMember, mType, access);
 			return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_7_expressionF();
 		} else {
 			return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_0_8_expressionF();
@@ -191,82 +191,82 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeAccess access = (TypeAccess) result1_bindingAndBlack[0];
-		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result1_bindingAndBlack[1];
-		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[2];
-		TypeGraph pm = (TypeGraph) result1_bindingAndBlack[3];
-		TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result1_bindingAndBlack[4];
-		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[5];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[6];
-		TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result1_bindingAndBlack[7];
-		Type mType = (Type) result1_bindingAndBlack[8];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[0];
+		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[1];
+		TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result1_bindingAndBlack[2];
+		TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TypeGraph pm = (TypeGraph) result1_bindingAndBlack[4];
+		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result1_bindingAndBlack[5];
+		Type mType = (Type) result1_bindingAndBlack[6];
+		TypeAccess access = (TypeAccess) result1_bindingAndBlack[7];
+		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[8];
 		CSP csp = (CSP) result1_bindingAndBlack[9];
 		Object[] result1_green = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_1_1_performtransformation_greenBFFBFBFFBB(mMember, pm, tAnnotation, tType,
+				.pattern_AnnotationTypeMember_1_1_performtransformation_greenFBFFFBBFBB(tType, pm, mMember, tAnnotation,
 						csp);
-		TField tName = (TField) result1_green[1];
-		MDefinitionToTMember memberToMember = (MDefinitionToTMember) result1_green[2];
-		TFieldDefinition tMember = (TFieldDefinition) result1_green[4];
-		ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result1_green[6];
-		TFieldSignature tSignature = (TFieldSignature) result1_green[7];
+		TFieldSignature tSignature = (TFieldSignature) result1_green[0];
+		TFieldDefinition tMember = (TFieldDefinition) result1_green[2];
+		ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result1_green[3];
+		MDefinitionToTMember memberToMember = (MDefinitionToTMember) result1_green[4];
+		TField tName = (TField) result1_green[7];
 
 		Object[] result2_black = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_1_2_collecttranslatedelements_blackBBBBBBB(access, mMember, tName,
-						memberToMember, tMember, anntotatableToTannotatable, tSignature);
+				.pattern_AnnotationTypeMember_1_2_collecttranslatedelements_blackBBBBBBB(tSignature, tMember,
+						anntotatableToTannotatable, memberToMember, mMember, tName, access);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[access] = " + access + ", "
-					+ "[mMember] = " + mMember + ", " + "[tName] = " + tName + ", " + "[memberToMember] = "
-					+ memberToMember + ", " + "[tMember] = " + tMember + ", " + "[anntotatableToTannotatable] = "
-					+ anntotatableToTannotatable + ", " + "[tSignature] = " + tSignature + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
+					+ ", " + "[tMember] = " + tMember + ", " + "[anntotatableToTannotatable] = "
+					+ anntotatableToTannotatable + ", " + "[memberToMember] = " + memberToMember + ", " + "[mMember] = "
+					+ mMember + ", " + "[tName] = " + tName + ", " + "[access] = " + access + ".");
 		}
 		Object[] result2_green = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_1_2_collecttranslatedelements_greenFBBBBBBB(access, mMember, tName,
-						memberToMember, tMember, anntotatableToTannotatable, tSignature);
+				.pattern_AnnotationTypeMember_1_2_collecttranslatedelements_greenFBBBBBBB(tSignature, tMember,
+						anntotatableToTannotatable, memberToMember, mMember, tName, access);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(ruleresult, access, mMember,
-						mAnnotation, tName, memberToMember, pm, tMember, mTypeToType, tAnnotation,
-						anntotatableToTannotatable, tSignature, tType, mAnnotationToAnnotation, mType);
+				.pattern_AnnotationTypeMember_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(ruleresult, tSignature,
+						tType, mAnnotation, mTypeToType, tMember, anntotatableToTannotatable, mAnnotationToAnnotation,
+						memberToMember, pm, mMember, tName, mType, access, tAnnotation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[access] = " + access + ", " + "[mMember] = " + mMember + ", " + "[mAnnotation] = "
-					+ mAnnotation + ", " + "[tName] = " + tName + ", " + "[memberToMember] = " + memberToMember + ", "
-					+ "[pm] = " + pm + ", " + "[tMember] = " + tMember + ", " + "[mTypeToType] = " + mTypeToType + ", "
-					+ "[tAnnotation] = " + tAnnotation + ", " + "[anntotatableToTannotatable] = "
-					+ anntotatableToTannotatable + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType
-					+ ", " + "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[mType] = " + mType
-					+ ".");
+					+ ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", " + "[mAnnotation] = "
+					+ mAnnotation + ", " + "[mTypeToType] = " + mTypeToType + ", " + "[tMember] = " + tMember + ", "
+					+ "[anntotatableToTannotatable] = " + anntotatableToTannotatable + ", "
+					+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[memberToMember] = "
+					+ memberToMember + ", " + "[pm] = " + pm + ", " + "[mMember] = " + mMember + ", " + "[tName] = "
+					+ tName + ", " + "[mType] = " + mType + ", " + "[access] = " + access + ", " + "[tAnnotation] = "
+					+ tAnnotation + ".");
 		}
 		AnnotationTypeMemberImpl
 				.pattern_AnnotationTypeMember_1_3_bookkeepingforedges_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFF(ruleresult,
-						access, mMember, mAnnotation, tName, memberToMember, pm, tMember, tAnnotation,
-						anntotatableToTannotatable, tSignature, tType, mType);
-		//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result3_green[17];
+						tSignature, tType, mAnnotation, tMember, anntotatableToTannotatable, memberToMember, pm,
+						mMember, tName, mType, access, tAnnotation);
+		//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge anntotatableToTannotatable__tMember____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge memberToMember__tMember____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge anntotatableToTannotatable__mMember____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge memberToMember__mMember____source = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge memberToMember__tMember____target = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[22];
-		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[23];
-		//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result3_green[24];
-		//nothing EMoflonEdge anntotatableToTannotatable__tMember____target = (EMoflonEdge) result3_green[25];
-		//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result3_green[26];
-		//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result3_green[27];
-		//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result3_green[28];
-		//nothing EMoflonEdge anntotatableToTannotatable__mMember____source = (EMoflonEdge) result3_green[29];
-		//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[30];
-		//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[31];
+		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result3_green[22];
+		//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result3_green[23];
+		//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result3_green[24];
+		//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result3_green[25];
+		//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result3_green[26];
+		//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[27];
+		//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[28];
+		//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result3_green[29];
+		//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[30];
+		//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result3_green[31];
 
 		// 
 		// 
 		AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(this,
-				ruleresult, access, mMember, mAnnotation, tName, memberToMember, pm, tMember, mTypeToType, tAnnotation,
-				anntotatableToTannotatable, tSignature, tType, mAnnotationToAnnotation, mType);
+				ruleresult, tSignature, tType, mAnnotation, mTypeToType, tMember, anntotatableToTannotatable,
+				mAnnotationToAnnotation, memberToMember, pm, mMember, tName, mType, access, tAnnotation);
 		return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_1_6_expressionFB(ruleresult);
 	}
 
@@ -295,49 +295,49 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TypeAccess access = (TypeAccess) result2_binding[0];
+		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_binding[0];
 		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result2_binding[1];
-		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_binding[2];
-		Type mType = (Type) result2_binding[3];
+		Type mType = (Type) result2_binding[2];
+		TypeAccess access = (TypeAccess) result2_binding[3];
 		for (Object[] result2_black : AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_2_2_corematch_blackBBBFFFFBB(access, mMember, mAnnotation, mType,
+				.pattern_AnnotationTypeMember_2_2_corematch_blackFBFFBBBFB(mAnnotation, mMember, mType, access,
 						match)) {
-			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result2_black[3];
-			TAnnotationType tAnnotation = (TAnnotationType) result2_black[4];
-			TAbstractType tType = (TAbstractType) result2_black[5];
-			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result2_black[6];
+			TAbstractType tType = (TAbstractType) result2_black[0];
+			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result2_black[2];
+			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result2_black[3];
+			TAnnotationType tAnnotation = (TAnnotationType) result2_black[7];
 			// ForEach 
 			for (Object[] result3_black : AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_2_3_findcontext_blackBBBFBBBBB(access, mMember, mAnnotation,
-							mTypeToType, tAnnotation, tType, mAnnotationToAnnotation, mType)) {
-				TypeGraph pm = (TypeGraph) result3_black[3];
+					.pattern_AnnotationTypeMember_2_3_findcontext_blackBBBBFBBBB(tType, mAnnotation, mTypeToType,
+							mAnnotationToAnnotation, mMember, mType, access, tAnnotation)) {
+				TypeGraph pm = (TypeGraph) result3_black[4];
 				Object[] result3_green = AnnotationTypeMemberImpl
-						.pattern_AnnotationTypeMember_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(access, mMember,
-								mAnnotation, pm, mTypeToType, tAnnotation, tType, mAnnotationToAnnotation, mType);
+						.pattern_AnnotationTypeMember_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(tType, mAnnotation,
+								mTypeToType, mAnnotationToAnnotation, pm, mMember, mType, access, tAnnotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
-				//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tAnnotation__pm____model = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge pm__tAnnotation____allTypes = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge mTypeToType__tType____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge mTypeToType__mType____source = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mTypeToType__tType____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mTypeToType__mType____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge tAnnotation__pm____model = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge pm__tAnnotation____allTypes = (EMoflonEdge) result3_green[20];
 
 				Object[] result4_bindingAndBlack = AnnotationTypeMemberImpl
 						.pattern_AnnotationTypeMember_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this, isApplicableMatch,
-								access, mMember, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-								mAnnotationToAnnotation, mType);
+								tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mMember, mType, access,
+								tAnnotation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[access] = " + access + ", "
-							+ "[mMember] = " + mMember + ", " + "[mAnnotation] = " + mAnnotation + ", " + "[pm] = " + pm
-							+ ", " + "[mTypeToType] = " + mTypeToType + ", " + "[tAnnotation] = " + tAnnotation + ", "
-							+ "[tType] = " + tType + ", " + "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation
-							+ ", " + "[mType] = " + mType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tType] = " + tType + ", "
+							+ "[mAnnotation] = " + mAnnotation + ", " + "[mTypeToType] = " + mTypeToType + ", "
+							+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[pm] = " + pm + ", "
+							+ "[mMember] = " + mMember + ", " + "[mType] = " + mType + ", " + "[access] = " + access
+							+ ", " + "[tAnnotation] = " + tAnnotation + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -367,12 +367,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
-		match.registerObject("access", access);
-		match.registerObject("mMember", mMember);
+	public void registerObjectsToMatch_FWD(Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {
 		match.registerObject("mAnnotation", mAnnotation);
+		match.registerObject("mMember", mMember);
 		match.registerObject("mType", mType);
+		match.registerObject("access", access);
 
 	}
 
@@ -381,8 +381,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -411,10 +411,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess access,
-			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, TypeGraph pm,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, AnnotationTypeMemberDeclaration mMember,
+			Type mType, TypeAccess access, TAnnotationType tAnnotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -445,15 +445,15 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		upperBound.solve(var_mMember_name, var_tSignature_upperBound);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("access", access);
-		isApplicableMatch.registerObject("mMember", mMember);
-		isApplicableMatch.registerObject("mAnnotation", mAnnotation);
-		isApplicableMatch.registerObject("pm", pm);
-		isApplicableMatch.registerObject("mTypeToType", mTypeToType);
-		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mAnnotation", mAnnotation);
+		isApplicableMatch.registerObject("mTypeToType", mTypeToType);
 		isApplicableMatch.registerObject("mAnnotationToAnnotation", mAnnotationToAnnotation);
+		isApplicableMatch.registerObject("pm", pm);
+		isApplicableMatch.registerObject("mMember", mMember);
 		isApplicableMatch.registerObject("mType", mType);
+		isApplicableMatch.registerObject("access", access);
+		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		return csp;
 	}
 
@@ -471,24 +471,24 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject access, EObject mMember, EObject mAnnotation,
-			EObject tName, EObject memberToMember, EObject pm, EObject tMember, EObject mTypeToType,
-			EObject tAnnotation, EObject anntotatableToTannotatable, EObject tSignature, EObject tType,
-			EObject mAnnotationToAnnotation, EObject mType) {
-		ruleresult.registerObject("access", access);
-		ruleresult.registerObject("mMember", mMember);
-		ruleresult.registerObject("mAnnotation", mAnnotation);
-		ruleresult.registerObject("tName", tName);
-		ruleresult.registerObject("memberToMember", memberToMember);
-		ruleresult.registerObject("pm", pm);
-		ruleresult.registerObject("tMember", tMember);
-		ruleresult.registerObject("mTypeToType", mTypeToType);
-		ruleresult.registerObject("tAnnotation", tAnnotation);
-		ruleresult.registerObject("anntotatableToTannotatable", anntotatableToTannotatable);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject tSignature, EObject tType,
+			EObject mAnnotation, EObject mTypeToType, EObject tMember, EObject anntotatableToTannotatable,
+			EObject mAnnotationToAnnotation, EObject memberToMember, EObject pm, EObject mMember, EObject tName,
+			EObject mType, EObject access, EObject tAnnotation) {
 		ruleresult.registerObject("tSignature", tSignature);
 		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mAnnotation", mAnnotation);
+		ruleresult.registerObject("mTypeToType", mTypeToType);
+		ruleresult.registerObject("tMember", tMember);
+		ruleresult.registerObject("anntotatableToTannotatable", anntotatableToTannotatable);
 		ruleresult.registerObject("mAnnotationToAnnotation", mAnnotationToAnnotation);
+		ruleresult.registerObject("memberToMember", memberToMember);
+		ruleresult.registerObject("pm", pm);
+		ruleresult.registerObject("mMember", mMember);
+		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mType", mType);
+		ruleresult.registerObject("access", access);
+		ruleresult.registerObject("tAnnotation", tAnnotation);
 
 	}
 
@@ -499,9 +499,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 */
 	public boolean checkTypes_FWD(Match match) {
 		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("access").eClass()).equals("java.TypeAccess.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("mMember").eClass())
-						.equals("java.AnnotationTypeMemberDeclaration.");
+						.equals("java.AnnotationTypeMemberDeclaration.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("access").eClass()).equals("java.TypeAccess.");
 	}
 
 	/**
@@ -509,72 +509,72 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {
+	public boolean isAppropriate_BWD(Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {
 
 		Object[] result1_black = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_10_1_initialbindings_blackBBBBBBBB(this, match, tName, pm, tMember,
-						tAnnotation, tSignature, tType);
+				.pattern_AnnotationTypeMember_10_1_initialbindings_blackBBBBBBBB(this, match, tSignature, tType,
+						tMember, pm, tName, tAnnotation);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = "
-					+ tMember + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tType] = " + tType + ".");
+					+ "[match] = " + match + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", "
+					+ "[tMember] = " + tMember + ", " + "[pm] = " + pm + ", " + "[tName] = " + tName + ", "
+					+ "[tAnnotation] = " + tAnnotation + ".");
 		}
 
 		Object[] result2_bindingAndBlack = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_10_2_SolveCSP_bindingAndBlackFBBBBBBBB(this, match, tName, pm, tMember,
-						tAnnotation, tSignature, tType);
+				.pattern_AnnotationTypeMember_10_2_SolveCSP_bindingAndBlackFBBBBBBBB(this, match, tSignature, tType,
+						tMember, pm, tName, tAnnotation);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = "
-					+ tMember + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[tSignature] = " + tSignature + ", "
-					+ "[tType] = " + tType + ".");
+					+ "[match] = " + match + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", "
+					+ "[tMember] = " + tMember + ", " + "[pm] = " + pm + ", " + "[tName] = " + tName + ", "
+					+ "[tAnnotation] = " + tAnnotation + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_10_4_collectelementstobetranslated_blackBBBBBBB(match, tName, pm,
-							tMember, tAnnotation, tSignature, tType);
+					.pattern_AnnotationTypeMember_10_4_collectelementstobetranslated_blackBBBBBBB(match, tSignature,
+							tType, tMember, pm, tName, tAnnotation);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = " + tMember + ", "
-						+ "[tAnnotation] = " + tAnnotation + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = "
-						+ tType + ".");
+						+ "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", " + "[tMember] = " + tMember
+						+ ", " + "[pm] = " + pm + ", " + "[tName] = " + tName + ", " + "[tAnnotation] = " + tAnnotation
+						+ ".");
 			}
 			AnnotationTypeMemberImpl
 					.pattern_AnnotationTypeMember_10_4_collectelementstobetranslated_greenBBBBBBBFFFFFFFFFF(match,
-							tName, pm, tMember, tAnnotation, tSignature, tType);
-			//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result4_green[10];
-			//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result4_green[11];
-			//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result4_green[12];
-			//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result4_green[13];
-			//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result4_green[14];
-			//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result4_green[15];
-			//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result4_green[16];
+							tSignature, tType, tMember, pm, tName, tAnnotation);
+			//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result4_green[11];
+			//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result4_green[12];
+			//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result4_green[13];
+			//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result4_green[14];
+			//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result4_green[15];
+			//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result4_green[16];
 
 			Object[] result5_black = AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_10_5_collectcontextelements_blackBBBBBBB(match, tName, pm, tMember,
-							tAnnotation, tSignature, tType);
+					.pattern_AnnotationTypeMember_10_5_collectcontextelements_blackBBBBBBB(match, tSignature, tType,
+							tMember, pm, tName, tAnnotation);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = " + tMember + ", "
-						+ "[tAnnotation] = " + tAnnotation + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = "
-						+ tType + ".");
+						+ "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", " + "[tMember] = " + tMember
+						+ ", " + "[pm] = " + pm + ", " + "[tName] = " + tName + ", " + "[tAnnotation] = " + tAnnotation
+						+ ".");
 			}
-			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_10_5_collectcontextelements_greenBBBBFF(match, pm,
-					tAnnotation, tType);
+			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_10_5_collectcontextelements_greenBBBBFF(match, tType,
+					pm, tAnnotation);
 			//nothing EMoflonEdge tAnnotation__pm____model = (EMoflonEdge) result5_green[4];
 			//nothing EMoflonEdge pm__tAnnotation____allTypes = (EMoflonEdge) result5_green[5];
 
 			// 
 			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_10_6_registerobjectstomatch_expressionBBBBBBBB(this,
-					match, tName, pm, tMember, tAnnotation, tSignature, tType);
+					match, tSignature, tType, tMember, pm, tName, tAnnotation);
 			return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_10_7_expressionF();
 		} else {
 			return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_10_8_expressionF();
@@ -596,82 +596,82 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[0];
-		TField tName = (TField) result1_bindingAndBlack[1];
-		TypeGraph pm = (TypeGraph) result1_bindingAndBlack[2];
-		TFieldDefinition tMember = (TFieldDefinition) result1_bindingAndBlack[3];
-		TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result1_bindingAndBlack[4];
-		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[5];
-		TFieldSignature tSignature = (TFieldSignature) result1_bindingAndBlack[6];
-		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[7];
-		TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result1_bindingAndBlack[8];
-		Type mType = (Type) result1_bindingAndBlack[9];
+		TFieldSignature tSignature = (TFieldSignature) result1_bindingAndBlack[0];
+		TAbstractType tType = (TAbstractType) result1_bindingAndBlack[1];
+		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result1_bindingAndBlack[2];
+		TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result1_bindingAndBlack[3];
+		TFieldDefinition tMember = (TFieldDefinition) result1_bindingAndBlack[4];
+		TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result1_bindingAndBlack[5];
+		TypeGraph pm = (TypeGraph) result1_bindingAndBlack[6];
+		TField tName = (TField) result1_bindingAndBlack[7];
+		Type mType = (Type) result1_bindingAndBlack[8];
+		TAnnotationType tAnnotation = (TAnnotationType) result1_bindingAndBlack[9];
 		CSP csp = (CSP) result1_bindingAndBlack[10];
 		Object[] result1_green = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_11_1_performtransformation_greenFFBFBFBB(mAnnotation, tMember, mType,
+				.pattern_AnnotationTypeMember_11_1_performtransformation_greenBBFFFBFB(mAnnotation, tMember, mType,
 						csp);
-		TypeAccess access = (TypeAccess) result1_green[0];
-		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result1_green[1];
+		ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result1_green[2];
 		MDefinitionToTMember memberToMember = (MDefinitionToTMember) result1_green[3];
-		ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result1_green[5];
+		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result1_green[4];
+		TypeAccess access = (TypeAccess) result1_green[6];
 
 		Object[] result2_black = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_11_2_collecttranslatedelements_blackBBBBBBB(access, mMember, tName,
-						memberToMember, tMember, anntotatableToTannotatable, tSignature);
+				.pattern_AnnotationTypeMember_11_2_collecttranslatedelements_blackBBBBBBB(tSignature, tMember,
+						anntotatableToTannotatable, memberToMember, mMember, tName, access);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[access] = " + access + ", "
-					+ "[mMember] = " + mMember + ", " + "[tName] = " + tName + ", " + "[memberToMember] = "
-					+ memberToMember + ", " + "[tMember] = " + tMember + ", " + "[anntotatableToTannotatable] = "
-					+ anntotatableToTannotatable + ", " + "[tSignature] = " + tSignature + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = " + tSignature
+					+ ", " + "[tMember] = " + tMember + ", " + "[anntotatableToTannotatable] = "
+					+ anntotatableToTannotatable + ", " + "[memberToMember] = " + memberToMember + ", " + "[mMember] = "
+					+ mMember + ", " + "[tName] = " + tName + ", " + "[access] = " + access + ".");
 		}
 		Object[] result2_green = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_11_2_collecttranslatedelements_greenFBBBBBBB(access, mMember, tName,
-						memberToMember, tMember, anntotatableToTannotatable, tSignature);
+				.pattern_AnnotationTypeMember_11_2_collecttranslatedelements_greenFBBBBBBB(tSignature, tMember,
+						anntotatableToTannotatable, memberToMember, mMember, tName, access);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(ruleresult, access, mMember,
-						mAnnotation, tName, memberToMember, pm, tMember, mTypeToType, tAnnotation,
-						anntotatableToTannotatable, tSignature, tType, mAnnotationToAnnotation, mType);
+				.pattern_AnnotationTypeMember_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(ruleresult, tSignature,
+						tType, mAnnotation, mTypeToType, tMember, anntotatableToTannotatable, mAnnotationToAnnotation,
+						memberToMember, pm, mMember, tName, mType, access, tAnnotation);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[access] = " + access + ", " + "[mMember] = " + mMember + ", " + "[mAnnotation] = "
-					+ mAnnotation + ", " + "[tName] = " + tName + ", " + "[memberToMember] = " + memberToMember + ", "
-					+ "[pm] = " + pm + ", " + "[tMember] = " + tMember + ", " + "[mTypeToType] = " + mTypeToType + ", "
-					+ "[tAnnotation] = " + tAnnotation + ", " + "[anntotatableToTannotatable] = "
-					+ anntotatableToTannotatable + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType
-					+ ", " + "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[mType] = " + mType
-					+ ".");
+					+ ", " + "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", " + "[mAnnotation] = "
+					+ mAnnotation + ", " + "[mTypeToType] = " + mTypeToType + ", " + "[tMember] = " + tMember + ", "
+					+ "[anntotatableToTannotatable] = " + anntotatableToTannotatable + ", "
+					+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[memberToMember] = "
+					+ memberToMember + ", " + "[pm] = " + pm + ", " + "[mMember] = " + mMember + ", " + "[tName] = "
+					+ tName + ", " + "[mType] = " + mType + ", " + "[access] = " + access + ", " + "[tAnnotation] = "
+					+ tAnnotation + ".");
 		}
 		AnnotationTypeMemberImpl
 				.pattern_AnnotationTypeMember_11_3_bookkeepingforedges_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFF(ruleresult,
-						access, mMember, mAnnotation, tName, memberToMember, pm, tMember, tAnnotation,
-						anntotatableToTannotatable, tSignature, tType, mType);
-		//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result3_green[17];
+						tSignature, tType, mAnnotation, tMember, anntotatableToTannotatable, memberToMember, pm,
+						mMember, tName, mType, access, tAnnotation);
+		//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge anntotatableToTannotatable__tMember____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge memberToMember__tMember____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge anntotatableToTannotatable__mMember____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mMember__access____type = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge memberToMember__mMember____source = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge memberToMember__tMember____target = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[22];
-		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[23];
-		//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result3_green[24];
-		//nothing EMoflonEdge anntotatableToTannotatable__tMember____target = (EMoflonEdge) result3_green[25];
-		//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result3_green[26];
-		//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result3_green[27];
-		//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result3_green[28];
-		//nothing EMoflonEdge anntotatableToTannotatable__mMember____source = (EMoflonEdge) result3_green[29];
-		//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[30];
-		//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[31];
+		//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result3_green[22];
+		//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result3_green[23];
+		//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result3_green[24];
+		//nothing EMoflonEdge access__mType____type = (EMoflonEdge) result3_green[25];
+		//nothing EMoflonEdge mType__access____usagesInTypeAccess = (EMoflonEdge) result3_green[26];
+		//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[27];
+		//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[28];
+		//nothing EMoflonEdge mAnnotation__mMember____bodyDeclarations = (EMoflonEdge) result3_green[29];
+		//nothing EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = (EMoflonEdge) result3_green[30];
+		//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result3_green[31];
 
 		// 
 		// 
 		AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_11_5_registerobjects_expressionBBBBBBBBBBBBBBBB(this,
-				ruleresult, access, mMember, mAnnotation, tName, memberToMember, pm, tMember, mTypeToType, tAnnotation,
-				anntotatableToTannotatable, tSignature, tType, mAnnotationToAnnotation, mType);
+				ruleresult, tSignature, tType, mAnnotation, mTypeToType, tMember, anntotatableToTannotatable,
+				mAnnotationToAnnotation, memberToMember, pm, mMember, tName, mType, access, tAnnotation);
 		return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_11_6_expressionFB(ruleresult);
 	}
 
@@ -700,57 +700,57 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		TField tName = (TField) result2_binding[0];
-		TypeGraph pm = (TypeGraph) result2_binding[1];
+		TFieldSignature tSignature = (TFieldSignature) result2_binding[0];
+		TAbstractType tType = (TAbstractType) result2_binding[1];
 		TFieldDefinition tMember = (TFieldDefinition) result2_binding[2];
-		TAnnotationType tAnnotation = (TAnnotationType) result2_binding[3];
-		TFieldSignature tSignature = (TFieldSignature) result2_binding[4];
-		TAbstractType tType = (TAbstractType) result2_binding[5];
+		TypeGraph pm = (TypeGraph) result2_binding[3];
+		TField tName = (TField) result2_binding[4];
+		TAnnotationType tAnnotation = (TAnnotationType) result2_binding[5];
 		for (Object[] result2_black : AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_12_2_corematch_blackFBBBFBBBFFB(tName, pm, tMember, tAnnotation,
-						tSignature, tType, match)) {
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_black[0];
-			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result2_black[4];
-			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result2_black[8];
-			Type mType = (Type) result2_black[9];
+				.pattern_AnnotationTypeMember_12_2_corematch_blackBBFFBFBBFBB(tSignature, tType, tMember, pm, tName,
+						tAnnotation, match)) {
+			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_black[2];
+			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result2_black[3];
+			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result2_black[5];
+			Type mType = (Type) result2_black[8];
 			// ForEach 
 			for (Object[] result3_black : AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_12_3_findcontext_blackBBBBBBBBBB(mAnnotation, tName, pm, tMember,
-							mTypeToType, tAnnotation, tSignature, tType, mAnnotationToAnnotation, mType)) {
+					.pattern_AnnotationTypeMember_12_3_findcontext_blackBBBBBBBBBB(tSignature, tType, mAnnotation,
+							mTypeToType, tMember, mAnnotationToAnnotation, pm, tName, mType, tAnnotation)) {
 				Object[] result3_green = AnnotationTypeMemberImpl
-						.pattern_AnnotationTypeMember_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFFF(mAnnotation,
-								tName, pm, tMember, mTypeToType, tAnnotation, tSignature, tType,
-								mAnnotationToAnnotation, mType);
+						.pattern_AnnotationTypeMember_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFFF(tSignature,
+								tType, mAnnotation, mTypeToType, tMember, mAnnotationToAnnotation, pm, tName, mType,
+								tAnnotation);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[10];
-				//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge tAnnotation__pm____model = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge pm__tAnnotation____allTypes = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge mTypeToType__tType____target = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = (EMoflonEdge) result3_green[22];
-				//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[23];
-				//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[24];
-				//nothing EMoflonEdge mTypeToType__mType____source = (EMoflonEdge) result3_green[25];
-				//nothing EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = (EMoflonEdge) result3_green[26];
+				//nothing EMoflonEdge tSignature__tType____type = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mTypeToType__tType____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge tName__tSignature____signatures = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tSignature__tName____field = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge tSignature__tMember____definitions = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge tMember__tSignature____signature = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge mTypeToType__mType____source = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge tName__pm____model = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge pm__tName____fields = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge tAnnotation__tMember____defines = (EMoflonEdge) result3_green[22];
+				//nothing EMoflonEdge tMember__tAnnotation____definedBy = (EMoflonEdge) result3_green[23];
+				//nothing EMoflonEdge tAnnotation__tSignature____signature = (EMoflonEdge) result3_green[24];
+				//nothing EMoflonEdge tAnnotation__pm____model = (EMoflonEdge) result3_green[25];
+				//nothing EMoflonEdge pm__tAnnotation____allTypes = (EMoflonEdge) result3_green[26];
 
 				Object[] result4_bindingAndBlack = AnnotationTypeMemberImpl
 						.pattern_AnnotationTypeMember_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-								isApplicableMatch, mAnnotation, tName, pm, tMember, mTypeToType, tAnnotation,
-								tSignature, tType, mAnnotationToAnnotation, mType);
+								isApplicableMatch, tSignature, tType, mAnnotation, mTypeToType, tMember,
+								mAnnotationToAnnotation, pm, tName, mType, tAnnotation);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mAnnotation] = " + mAnnotation
-							+ ", " + "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = " + tMember
-							+ ", " + "[mTypeToType] = " + mTypeToType + ", " + "[tAnnotation] = " + tAnnotation + ", "
-							+ "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", "
-							+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[mType] = " + mType
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tSignature] = " + tSignature
+							+ ", " + "[tType] = " + tType + ", " + "[mAnnotation] = " + mAnnotation + ", "
+							+ "[mTypeToType] = " + mTypeToType + ", " + "[tMember] = " + tMember + ", "
+							+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[pm] = " + pm + ", "
+							+ "[tName] = " + tName + ", " + "[mType] = " + mType + ", " + "[tAnnotation] = "
+							+ tAnnotation + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -780,14 +780,14 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {
-		match.registerObject("tName", tName);
-		match.registerObject("pm", pm);
-		match.registerObject("tMember", tMember);
-		match.registerObject("tAnnotation", tAnnotation);
+	public void registerObjectsToMatch_BWD(Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {
 		match.registerObject("tSignature", tSignature);
 		match.registerObject("tType", tType);
+		match.registerObject("tMember", tMember);
+		match.registerObject("pm", pm);
+		match.registerObject("tName", tName);
+		match.registerObject("tAnnotation", tAnnotation);
 
 	}
 
@@ -796,8 +796,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -826,10 +826,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
-			TField tName, TypeGraph pm, TFieldDefinition tMember, TypeToTAbstractType mTypeToType,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TFieldSignature tSignature,
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TFieldDefinition tMember, TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, TField tName,
+			Type mType, TAnnotationType tAnnotation) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -862,16 +862,16 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		upperBound.solve(var_mMember_name, var_tSignature_upperBound);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mAnnotation", mAnnotation);
-		isApplicableMatch.registerObject("tName", tName);
-		isApplicableMatch.registerObject("pm", pm);
-		isApplicableMatch.registerObject("tMember", tMember);
-		isApplicableMatch.registerObject("mTypeToType", mTypeToType);
-		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		isApplicableMatch.registerObject("tSignature", tSignature);
 		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mAnnotation", mAnnotation);
+		isApplicableMatch.registerObject("mTypeToType", mTypeToType);
+		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("mAnnotationToAnnotation", mAnnotationToAnnotation);
+		isApplicableMatch.registerObject("pm", pm);
+		isApplicableMatch.registerObject("tName", tName);
 		isApplicableMatch.registerObject("mType", mType);
+		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		return csp;
 	}
 
@@ -889,24 +889,24 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject access, EObject mMember, EObject mAnnotation,
-			EObject tName, EObject memberToMember, EObject pm, EObject tMember, EObject mTypeToType,
-			EObject tAnnotation, EObject anntotatableToTannotatable, EObject tSignature, EObject tType,
-			EObject mAnnotationToAnnotation, EObject mType) {
-		ruleresult.registerObject("access", access);
-		ruleresult.registerObject("mMember", mMember);
-		ruleresult.registerObject("mAnnotation", mAnnotation);
-		ruleresult.registerObject("tName", tName);
-		ruleresult.registerObject("memberToMember", memberToMember);
-		ruleresult.registerObject("pm", pm);
-		ruleresult.registerObject("tMember", tMember);
-		ruleresult.registerObject("mTypeToType", mTypeToType);
-		ruleresult.registerObject("tAnnotation", tAnnotation);
-		ruleresult.registerObject("anntotatableToTannotatable", anntotatableToTannotatable);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject tSignature, EObject tType,
+			EObject mAnnotation, EObject mTypeToType, EObject tMember, EObject anntotatableToTannotatable,
+			EObject mAnnotationToAnnotation, EObject memberToMember, EObject pm, EObject mMember, EObject tName,
+			EObject mType, EObject access, EObject tAnnotation) {
 		ruleresult.registerObject("tSignature", tSignature);
 		ruleresult.registerObject("tType", tType);
+		ruleresult.registerObject("mAnnotation", mAnnotation);
+		ruleresult.registerObject("mTypeToType", mTypeToType);
+		ruleresult.registerObject("tMember", tMember);
+		ruleresult.registerObject("anntotatableToTannotatable", anntotatableToTannotatable);
 		ruleresult.registerObject("mAnnotationToAnnotation", mAnnotationToAnnotation);
+		ruleresult.registerObject("memberToMember", memberToMember);
+		ruleresult.registerObject("pm", pm);
+		ruleresult.registerObject("mMember", mMember);
+		ruleresult.registerObject("tName", tName);
 		ruleresult.registerObject("mType", mType);
+		ruleresult.registerObject("access", access);
+		ruleresult.registerObject("tAnnotation", tAnnotation);
 
 	}
 
@@ -916,11 +916,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * @generated
 	 */
 	public boolean checkTypes_BWD(Match match) {
-		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tName").eClass()).equals("basic.TField.")
+		return true
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tSignature").eClass())
+						.equals("basic.TFieldSignature.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tMember").eClass())
 						.equals("basic.TFieldDefinition.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tSignature").eClass())
-						.equals("basic.TFieldSignature.");
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("tName").eClass()).equals("basic.TField.");
 	}
 
 	/**
@@ -928,7 +929,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_57(EMoflonEdge _edge_model) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_64(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeMemberImpl
 				.pattern_AnnotationTypeMember_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -943,13 +944,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 		// ForEach 
 		for (Object[] result2_black : AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_20_2_testcorematchandDECs_blackFFFFFFB(_edge_model)) {
-			TField tName = (TField) result2_black[0];
-			TypeGraph pm = (TypeGraph) result2_black[1];
+				.pattern_AnnotationTypeMember_20_2_testcorematchandDECs_blackFFFFFFB(_edge_type)) {
+			TFieldSignature tSignature = (TFieldSignature) result2_black[0];
+			TAbstractType tType = (TAbstractType) result2_black[1];
 			TFieldDefinition tMember = (TFieldDefinition) result2_black[2];
-			TAnnotationType tAnnotation = (TAnnotationType) result2_black[3];
-			TFieldSignature tSignature = (TFieldSignature) result2_black[4];
-			TAbstractType tType = (TAbstractType) result2_black[5];
+			TypeGraph pm = (TypeGraph) result2_black[3];
+			TField tName = (TField) result2_black[4];
+			TAnnotationType tAnnotation = (TAnnotationType) result2_black[5];
 			Object[] result2_green = AnnotationTypeMemberImpl
 					.pattern_AnnotationTypeMember_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -957,7 +958,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			// 
 			if (AnnotationTypeMemberImpl
 					.pattern_AnnotationTypeMember_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBBB(
-							this, match, tName, pm, tMember, tAnnotation, tSignature, tType)) {
+							this, match, tSignature, tType, tMember, pm, tName, tAnnotation)) {
 				// 
 				if (AnnotationTypeMemberImpl
 						.pattern_AnnotationTypeMember_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -989,7 +990,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_61(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeMemberImpl
 				.pattern_AnnotationTypeMember_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1004,11 +1005,11 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 		// ForEach 
 		for (Object[] result2_black : AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_21_2_testcorematchandDECs_blackFFFFB(_edge_bodyDeclarations)) {
-			TypeAccess access = (TypeAccess) result2_black[0];
+				.pattern_AnnotationTypeMember_21_2_testcorematchandDECs_blackFFFFB(_edge_type)) {
+			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_black[0];
 			AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result2_black[1];
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_black[2];
-			Type mType = (Type) result2_black[3];
+			Type mType = (Type) result2_black[2];
+			TypeAccess access = (TypeAccess) result2_black[3];
 			Object[] result2_green = AnnotationTypeMemberImpl
 					.pattern_AnnotationTypeMember_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -1016,7 +1017,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			// 
 			if (AnnotationTypeMemberImpl
 					.pattern_AnnotationTypeMember_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(this,
-							match, access, mMember, mAnnotation, mType)) {
+							match, mAnnotation, mMember, mType, access)) {
 				// 
 				if (AnnotationTypeMemberImpl
 						.pattern_AnnotationTypeMember_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -1063,13 +1064,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			return ruleResult;
 		}
 
-		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
-		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
-		var_tName_tName.setType("String");
-
 		Variable var_mMember_name = CSPFactoryHelper.eINSTANCE.createVariable("mMember", true, csp);
 		var_mMember_name.setValue(__helper.getValue("mMember", "name"));
 		var_mMember_name.setType("String");
+
+		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
+		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
+		var_tName_tName.setType("String");
 
 		Variable var_tSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tSignature", true, csp);
 		var_tSignature_upperBound.setValue(__helper.getValue("tSignature", "upperBound"));
@@ -1128,13 +1129,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			return ruleResult;
 		}
 
-		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
-		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
-		var_tName_tName.setType("String");
-
 		Variable var_mMember_name = CSPFactoryHelper.eINSTANCE.createVariable("mMember", true, csp);
 		var_mMember_name.setValue(__helper.getValue("mMember", "name"));
 		var_mMember_name.setType("String");
+
+		Variable var_tName_tName = CSPFactoryHelper.eINSTANCE.createVariable("tName", true, csp);
+		var_tName_tName.setValue(__helper.getValue("tName", "tName"));
+		var_tName_tName.setType("String");
 
 		Variable var_tSignature_upperBound = CSPFactoryHelper.eINSTANCE.createVariable("tSignature", true, csp);
 		var_tSignature_upperBound.setValue(__helper.getValue("tSignature", "upperBound"));
@@ -1194,27 +1195,26 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TypeAccess access = (TypeAccess) result2_bindingAndBlack[0];
-		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result2_bindingAndBlack[1];
+		TFieldSignature tSignature = (TFieldSignature) result2_bindingAndBlack[0];
+		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[1];
 		AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_bindingAndBlack[2];
-		TField tName = (TField) result2_bindingAndBlack[3];
+		TFieldDefinition tMember = (TFieldDefinition) result2_bindingAndBlack[3];
 		TypeGraph pm = (TypeGraph) result2_bindingAndBlack[4];
-		TFieldDefinition tMember = (TFieldDefinition) result2_bindingAndBlack[5];
-		TAnnotationType tAnnotation = (TAnnotationType) result2_bindingAndBlack[6];
-		TFieldSignature tSignature = (TFieldSignature) result2_bindingAndBlack[7];
-		TAbstractType tType = (TAbstractType) result2_bindingAndBlack[8];
-		Type mType = (Type) result2_bindingAndBlack[9];
+		AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result2_bindingAndBlack[5];
+		TField tName = (TField) result2_bindingAndBlack[6];
+		Type mType = (Type) result2_bindingAndBlack[7];
+		TypeAccess access = (TypeAccess) result2_bindingAndBlack[8];
+		TAnnotationType tAnnotation = (TAnnotationType) result2_bindingAndBlack[9];
 
 		Object[] result3_bindingAndBlack = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBBB(this, access, mMember,
-						mAnnotation, tName, pm, tMember, tAnnotation, tSignature, tType, mType, sourceMatch,
-						targetMatch);
+				.pattern_AnnotationTypeMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBBB(this, tSignature, tType,
+						mAnnotation, tMember, pm, mMember, tName, mType, access, tAnnotation, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[access] = " + access + ", " + "[mMember] = " + mMember + ", " + "[mAnnotation] = " + mAnnotation
-					+ ", " + "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = " + tMember + ", "
-					+ "[tAnnotation] = " + tAnnotation + ", " + "[tSignature] = " + tSignature + ", " + "[tType] = "
-					+ tType + ", " + "[mType] = " + mType + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[tSignature] = " + tSignature + ", " + "[tType] = " + tType + ", " + "[mAnnotation] = "
+					+ mAnnotation + ", " + "[tMember] = " + tMember + ", " + "[pm] = " + pm + ", " + "[mMember] = "
+					+ mMember + ", " + "[tName] = " + tName + ", " + "[mType] = " + mType + ", " + "[access] = "
+					+ access + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1222,30 +1222,29 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		if (AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : AnnotationTypeMemberImpl
-					.pattern_AnnotationTypeMember_24_5_matchcorrcontext_blackBFBBFBBB(mAnnotation, tAnnotation, tType,
-							mType, sourceMatch, targetMatch)) {
-				TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result5_black[1];
-				TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result5_black[4];
+					.pattern_AnnotationTypeMember_24_5_matchcorrcontext_blackBBFFBBBB(tType, mAnnotation, mType,
+							tAnnotation, sourceMatch, targetMatch)) {
+				TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result5_black[2];
+				TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result5_black[3];
 				Object[] result5_green = AnnotationTypeMemberImpl
 						.pattern_AnnotationTypeMember_24_5_matchcorrcontext_greenBBBBF(mTypeToType,
 								mAnnotationToAnnotation, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = AnnotationTypeMemberImpl
-						.pattern_AnnotationTypeMember_24_6_createcorrespondence_blackBBBBBBBBBBB(access, mMember,
-								mAnnotation, tName, pm, tMember, tAnnotation, tSignature, tType, mType, ccMatch);
+						.pattern_AnnotationTypeMember_24_6_createcorrespondence_blackBBBBBBBBBBB(tSignature, tType,
+								mAnnotation, tMember, pm, mMember, tName, mType, access, tAnnotation, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[access] = " + access
-							+ ", " + "[mMember] = " + mMember + ", " + "[mAnnotation] = " + mAnnotation + ", "
-							+ "[tName] = " + tName + ", " + "[pm] = " + pm + ", " + "[tMember] = " + tMember + ", "
-							+ "[tAnnotation] = " + tAnnotation + ", " + "[tSignature] = " + tSignature + ", "
-							+ "[tType] = " + tType + ", " + "[mType] = " + mType + ", " + "[ccMatch] = " + ccMatch
-							+ ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tSignature] = "
+							+ tSignature + ", " + "[tType] = " + tType + ", " + "[mAnnotation] = " + mAnnotation + ", "
+							+ "[tMember] = " + tMember + ", " + "[pm] = " + pm + ", " + "[mMember] = " + mMember + ", "
+							+ "[tName] = " + tName + ", " + "[mType] = " + mType + ", " + "[access] = " + access + ", "
+							+ "[tAnnotation] = " + tAnnotation + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_24_6_createcorrespondence_greenBFBFB(mMember,
-						tMember, ccMatch);
-				//nothing MDefinitionToTMember memberToMember = (MDefinitionToTMember) result6_green[1];
-				//nothing ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result6_green[3];
+				AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_24_6_createcorrespondence_greenBFFBB(tMember,
+						mMember, ccMatch);
+				//nothing ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result6_green[1];
+				//nothing MDefinitionToTMember memberToMember = (MDefinitionToTMember) result6_green[2];
 
 				Object[] result7_black = AnnotationTypeMemberImpl
 						.pattern_AnnotationTypeMember_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1267,10 +1266,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType, Type mType, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(TFieldSignature tSignature, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TFieldDefinition tMember, TypeGraph pm,
+			AnnotationTypeMemberDeclaration mMember, TField tName, Type mType, TypeAccess access,
+			TAnnotationType tAnnotation, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1318,10 +1317,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {// 
+	public boolean checkDEC_FWD(AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember,
+			Type mType, TypeAccess access) {// 
 		Object[] result1_black = AnnotationTypeMemberImpl
-				.pattern_AnnotationTypeMember_27_1_matchtggpattern_blackBBBB(access, mMember, mAnnotation, mType);
+				.pattern_AnnotationTypeMember_27_1_matchtggpattern_blackBBBB(mAnnotation, mMember, mType, access);
 		if (result1_black != null) {
 			return AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_27_2_expressionF();
 		} else {
@@ -1335,10 +1334,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType) {// 
+	public boolean checkDEC_BWD(TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm,
+			TField tName, TAnnotationType tAnnotation) {// 
 		Object[] result1_black = AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_28_1_matchtggpattern_blackBBBBBB(
-				tName, pm, tMember, tAnnotation, tSignature, tType);
+				tSignature, tType, tMember, pm, tName, tAnnotation);
 		if (result1_black != null) {
 			AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_28_1_matchtggpattern_greenB(tSignature);
 
@@ -1355,7 +1354,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType mAnnotationToAnnotationParameter, TypeToTAbstractType mTypeToTypeParameter) {
+			TypeToTAbstractType mTypeToTypeParameter, TypeToTAbstractType mAnnotationToAnnotationParameter) {
 
 		Object[] result1_black = AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_29_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -1368,56 +1367,56 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		// ForEach 
 		for (Object[] result2_black : AnnotationTypeMemberImpl
 				.pattern_AnnotationTypeMember_29_2_isapplicablecore_blackFFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList mAnnotationToAnnotationList = (RuleEntryList) result2_black[0];
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_black[1];
-			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result2_black[2];
-			TAnnotationType tAnnotation = (TAnnotationType) result2_black[3];
-			TypeGraph pm = (TypeGraph) result2_black[4];
-			//nothing RuleEntryList mTypeToTypeList = (RuleEntryList) result2_black[5];
-			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result2_black[6];
-			TAbstractType tType = (TAbstractType) result2_black[7];
-			Type mType = (Type) result2_black[8];
+			//nothing RuleEntryList mTypeToTypeList = (RuleEntryList) result2_black[0];
+			TAbstractType tType = (TAbstractType) result2_black[1];
+			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result2_black[2];
+			Type mType = (Type) result2_black[3];
+			//nothing RuleEntryList mAnnotationToAnnotationList = (RuleEntryList) result2_black[4];
+			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result2_black[5];
+			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result2_black[6];
+			TAnnotationType tAnnotation = (TAnnotationType) result2_black[7];
+			TypeGraph pm = (TypeGraph) result2_black[8];
 
 			Object[] result3_bindingAndBlack = AnnotationTypeMemberImpl
 					.pattern_AnnotationTypeMember_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch,
-							mAnnotation, pm, mTypeToType, tAnnotation, tType, mAnnotationToAnnotation, mType,
+							tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mType, tAnnotation,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mAnnotation] = " + mAnnotation + ", "
-						+ "[pm] = " + pm + ", " + "[mTypeToType] = " + mTypeToType + ", " + "[tAnnotation] = "
-						+ tAnnotation + ", " + "[tType] = " + tType + ", " + "[mAnnotationToAnnotation] = "
-						+ mAnnotationToAnnotation + ", " + "[mType] = " + mType + ", " + "[ruleResult] = " + ruleResult
-						+ ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tType] = " + tType + ", "
+						+ "[mAnnotation] = " + mAnnotation + ", " + "[mTypeToType] = " + mTypeToType + ", "
+						+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[pm] = " + pm + ", "
+						+ "[mType] = " + mType + ", " + "[tAnnotation] = " + tAnnotation + ", " + "[ruleResult] = "
+						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = AnnotationTypeMemberImpl
-						.pattern_AnnotationTypeMember_29_5_checknacs_blackBBBBBBB(mAnnotation, pm, mTypeToType,
-								tAnnotation, tType, mAnnotationToAnnotation, mType);
+						.pattern_AnnotationTypeMember_29_5_checknacs_blackBBBBBBB(tType, mAnnotation, mTypeToType,
+								mAnnotationToAnnotation, pm, mType, tAnnotation);
 				if (result5_black != null) {
 
 					Object[] result6_black = AnnotationTypeMemberImpl
-							.pattern_AnnotationTypeMember_29_6_perform_blackBBBBBBBB(mAnnotation, pm, mTypeToType,
-									tAnnotation, tType, mAnnotationToAnnotation, mType, ruleResult);
+							.pattern_AnnotationTypeMember_29_6_perform_blackBBBBBBBB(tType, mAnnotation, mTypeToType,
+									mAnnotationToAnnotation, pm, mType, tAnnotation, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mAnnotation] = "
-								+ mAnnotation + ", " + "[pm] = " + pm + ", " + "[mTypeToType] = " + mTypeToType + ", "
-								+ "[tAnnotation] = " + tAnnotation + ", " + "[tType] = " + tType + ", "
-								+ "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[mType] = " + mType
-								+ ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tType] = " + tType
+								+ ", " + "[mAnnotation] = " + mAnnotation + ", " + "[mTypeToType] = " + mTypeToType
+								+ ", " + "[mAnnotationToAnnotation] = " + mAnnotationToAnnotation + ", " + "[pm] = "
+								+ pm + ", " + "[mType] = " + mType + ", " + "[tAnnotation] = " + tAnnotation + ", "
+								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_29_6_perform_greenFFBFFBFBFFBBBB(mAnnotation,
-							pm, tAnnotation, tType, mType, ruleResult, csp);
-					//nothing TypeAccess access = (TypeAccess) result6_green[0];
-					//nothing AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result6_green[1];
-					//nothing TField tName = (TField) result6_green[3];
-					//nothing MDefinitionToTMember memberToMember = (MDefinitionToTMember) result6_green[4];
-					//nothing TFieldDefinition tMember = (TFieldDefinition) result6_green[6];
-					//nothing ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result6_green[8];
-					//nothing TFieldSignature tSignature = (TFieldSignature) result6_green[9];
+					AnnotationTypeMemberImpl.pattern_AnnotationTypeMember_29_6_perform_greenFBBFFFBFFBFBBB(tType,
+							mAnnotation, pm, mType, tAnnotation, ruleResult, csp);
+					//nothing TFieldSignature tSignature = (TFieldSignature) result6_green[0];
+					//nothing TFieldDefinition tMember = (TFieldDefinition) result6_green[3];
+					//nothing ASTNodeToTAnnotatable anntotatableToTannotatable = (ASTNodeToTAnnotatable) result6_green[4];
+					//nothing MDefinitionToTMember memberToMember = (MDefinitionToTMember) result6_green[5];
+					//nothing AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result6_green[7];
+					//nothing TField tName = (TField) result6_green[8];
+					//nothing TypeAccess access = (TypeAccess) result6_green[10];
 
 				} else {
 				}
@@ -1434,9 +1433,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
-			TypeGraph pm, TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, Type mType, TAnnotationType tAnnotation,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1466,13 +1466,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		upperBound.solve(var_mMember_name, var_tSignature_upperBound);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mAnnotation", mAnnotation);
-		isApplicableMatch.registerObject("pm", pm);
-		isApplicableMatch.registerObject("mTypeToType", mTypeToType);
-		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		isApplicableMatch.registerObject("tType", tType);
+		isApplicableMatch.registerObject("mAnnotation", mAnnotation);
+		isApplicableMatch.registerObject("mTypeToType", mTypeToType);
 		isApplicableMatch.registerObject("mAnnotationToAnnotation", mAnnotationToAnnotation);
+		isApplicableMatch.registerObject("pm", pm);
 		isApplicableMatch.registerObject("mType", mType);
+		isApplicableMatch.registerObject("tAnnotation", tAnnotation);
 		return csp;
 	}
 
@@ -1493,32 +1493,32 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEMEMBERDECLARATION_ANNOTATIONTYPEDECLARATION_TYPE:
-				return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-						(AnnotationTypeMemberDeclaration) arguments.get(2),
-						(AnnotationTypeDeclaration) arguments.get(3), (Type) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANNOTATIONTYPEMEMBERDECLARATION_TYPE_TYPEACCESS:
+				return isAppropriate_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+						(AnnotationTypeMemberDeclaration) arguments.get(2), (Type) arguments.get(3),
+						(TypeAccess) arguments.get(4));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___PERFORM_FWD__ISAPPLICABLEMATCH:
 				return perform_FWD((IsApplicableMatch) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_FWD__MATCH:
 				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEMEMBERDECLARATION_ANNOTATIONTYPEDECLARATION_TYPE:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-						(AnnotationTypeMemberDeclaration) arguments.get(2),
-						(AnnotationTypeDeclaration) arguments.get(3), (Type) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANNOTATIONTYPEMEMBERDECLARATION_TYPE_TYPEACCESS:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationTypeDeclaration) arguments.get(1),
+						(AnnotationTypeMemberDeclaration) arguments.get(2), (Type) arguments.get(3),
+						(TypeAccess) arguments.get(4));
 				return null;
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_ANNOTATIONTYPEMEMBERDECLARATION_ANNOTATIONTYPEDECLARATION_TYPE:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-						(AnnotationTypeMemberDeclaration) arguments.get(2),
-						(AnnotationTypeDeclaration) arguments.get(3), (Type) arguments.get(4));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONTYPEDECLARATION_ANNOTATIONTYPEMEMBERDECLARATION_TYPE_TYPEACCESS:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+						(AnnotationTypeDeclaration) arguments.get(1),
+						(AnnotationTypeMemberDeclaration) arguments.get(2), (Type) arguments.get(3),
+						(TypeAccess) arguments.get(4));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEACCESS_ANNOTATIONTYPEMEMBERDECLARATION_ANNOTATIONTYPEDECLARATION_TYPEGRAPH_TYPETOTABSTRACTTYPE_TANNOTATIONTYPE_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_TYPE:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeAccess) arguments.get(1),
-						(AnnotationTypeMemberDeclaration) arguments.get(2),
-						(AnnotationTypeDeclaration) arguments.get(3), (TypeGraph) arguments.get(4),
-						(TypeToTAbstractType) arguments.get(5), (TAnnotationType) arguments.get(6),
-						(TAbstractType) arguments.get(7), (TypeToTAbstractType) arguments.get(8),
-						(Type) arguments.get(9));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE_TYPEGRAPH_ANNOTATIONTYPEMEMBERDECLARATION_TYPE_TYPEACCESS_TANNOTATIONTYPE:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TAbstractType) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
+						(TypeToTAbstractType) arguments.get(4), (TypeGraph) arguments.get(5),
+						(AnnotationTypeMemberDeclaration) arguments.get(6), (Type) arguments.get(7),
+						(TypeAccess) arguments.get(8), (TAnnotationType) arguments.get(9));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1531,35 +1531,32 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 				return null;
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_TYPES_FWD__MATCH:
 				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_BWD__MATCH_TFIELD_TYPEGRAPH_TFIELDDEFINITION_TANNOTATIONTYPE_TFIELDSIGNATURE_TABSTRACTTYPE:
-				return isAppropriate_BWD((Match) arguments.get(0), (TField) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TFieldDefinition) arguments.get(3),
-						(TAnnotationType) arguments.get(4), (TFieldSignature) arguments.get(5),
-						(TAbstractType) arguments.get(6));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_BWD__MATCH_TFIELDSIGNATURE_TABSTRACTTYPE_TFIELDDEFINITION_TYPEGRAPH_TFIELD_TANNOTATIONTYPE:
+				return isAppropriate_BWD((Match) arguments.get(0), (TFieldSignature) arguments.get(1),
+						(TAbstractType) arguments.get(2), (TFieldDefinition) arguments.get(3),
+						(TypeGraph) arguments.get(4), (TField) arguments.get(5), (TAnnotationType) arguments.get(6));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___PERFORM_BWD__ISAPPLICABLEMATCH:
 				return perform_BWD((IsApplicableMatch) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_BWD__MATCH:
 				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TFIELD_TYPEGRAPH_TFIELDDEFINITION_TANNOTATIONTYPE_TFIELDSIGNATURE_TABSTRACTTYPE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TField) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TFieldDefinition) arguments.get(3),
-						(TAnnotationType) arguments.get(4), (TFieldSignature) arguments.get(5),
-						(TAbstractType) arguments.get(6));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TFIELDSIGNATURE_TABSTRACTTYPE_TFIELDDEFINITION_TYPEGRAPH_TFIELD_TANNOTATIONTYPE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TFieldSignature) arguments.get(1),
+						(TAbstractType) arguments.get(2), (TFieldDefinition) arguments.get(3),
+						(TypeGraph) arguments.get(4), (TField) arguments.get(5), (TAnnotationType) arguments.get(6));
 				return null;
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TFIELD_TYPEGRAPH_TFIELDDEFINITION_TANNOTATIONTYPE_TFIELDSIGNATURE_TABSTRACTTYPE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TField) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TFieldDefinition) arguments.get(3),
-						(TAnnotationType) arguments.get(4), (TFieldSignature) arguments.get(5),
-						(TAbstractType) arguments.get(6));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TFIELDSIGNATURE_TABSTRACTTYPE_TFIELDDEFINITION_TYPEGRAPH_TFIELD_TANNOTATIONTYPE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TFieldSignature) arguments.get(1),
+						(TAbstractType) arguments.get(2), (TFieldDefinition) arguments.get(3),
+						(TypeGraph) arguments.get(4), (TField) arguments.get(5), (TAnnotationType) arguments.get(6));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONTYPEDECLARATION_TFIELD_TYPEGRAPH_TFIELDDEFINITION_TYPETOTABSTRACTTYPE_TANNOTATIONTYPE_TFIELDSIGNATURE_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_TYPE:
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TFIELDSIGNATURE_TABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_TYPETOTABSTRACTTYPE_TFIELDDEFINITION_TYPETOTABSTRACTTYPE_TYPEGRAPH_TFIELD_TYPE_TANNOTATIONTYPE:
 				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(AnnotationTypeDeclaration) arguments.get(1), (TField) arguments.get(2),
-						(TypeGraph) arguments.get(3), (TFieldDefinition) arguments.get(4),
-						(TypeToTAbstractType) arguments.get(5), (TAnnotationType) arguments.get(6),
-						(TFieldSignature) arguments.get(7), (TAbstractType) arguments.get(8),
-						(TypeToTAbstractType) arguments.get(9), (Type) arguments.get(10));
+						(TFieldSignature) arguments.get(1), (TAbstractType) arguments.get(2),
+						(AnnotationTypeDeclaration) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
+						(TFieldDefinition) arguments.get(5), (TypeToTAbstractType) arguments.get(6),
+						(TypeGraph) arguments.get(7), (TField) arguments.get(8), (Type) arguments.get(9),
+						(TAnnotationType) arguments.get(10));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1572,42 +1569,41 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 				return null;
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_57__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_57((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_61__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_64__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_64((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_67__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_67((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 				return checkAttributes_BWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_CC__MATCH_MATCH:
 				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_SOLVE_CSP_CC__TYPEACCESS_ANNOTATIONTYPEMEMBERDECLARATION_ANNOTATIONTYPEDECLARATION_TFIELD_TYPEGRAPH_TFIELDDEFINITION_TANNOTATIONTYPE_TFIELDSIGNATURE_TABSTRACTTYPE_TYPE_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((TypeAccess) arguments.get(0),
-						(AnnotationTypeMemberDeclaration) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2), (TField) arguments.get(3),
-						(TypeGraph) arguments.get(4), (TFieldDefinition) arguments.get(5),
-						(TAnnotationType) arguments.get(6), (TFieldSignature) arguments.get(7),
-						(TAbstractType) arguments.get(8), (Type) arguments.get(9), (Match) arguments.get(10),
-						(Match) arguments.get(11));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_SOLVE_CSP_CC__TFIELDSIGNATURE_TABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_TFIELDDEFINITION_TYPEGRAPH_ANNOTATIONTYPEMEMBERDECLARATION_TFIELD_TYPE_TYPEACCESS_TANNOTATIONTYPE_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((TFieldSignature) arguments.get(0), (TAbstractType) arguments.get(1),
+						(AnnotationTypeDeclaration) arguments.get(2), (TFieldDefinition) arguments.get(3),
+						(TypeGraph) arguments.get(4), (AnnotationTypeMemberDeclaration) arguments.get(5),
+						(TField) arguments.get(6), (Type) arguments.get(7), (TypeAccess) arguments.get(8),
+						(TAnnotationType) arguments.get(9), (Match) arguments.get(10), (Match) arguments.get(11));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_DEC_FWD__TYPEACCESS_ANNOTATIONTYPEMEMBERDECLARATION_ANNOTATIONTYPEDECLARATION_TYPE:
-				return checkDEC_FWD((TypeAccess) arguments.get(0), (AnnotationTypeMemberDeclaration) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2), (Type) arguments.get(3));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_DEC_BWD__TFIELD_TYPEGRAPH_TFIELDDEFINITION_TANNOTATIONTYPE_TFIELDSIGNATURE_TABSTRACTTYPE:
-				return checkDEC_BWD((TField) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TFieldDefinition) arguments.get(2), (TAnnotationType) arguments.get(3),
-						(TFieldSignature) arguments.get(4), (TAbstractType) arguments.get(5));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_DEC_FWD__ANNOTATIONTYPEDECLARATION_ANNOTATIONTYPEMEMBERDECLARATION_TYPE_TYPEACCESS:
+				return checkDEC_FWD((AnnotationTypeDeclaration) arguments.get(0),
+						(AnnotationTypeMemberDeclaration) arguments.get(1), (Type) arguments.get(2),
+						(TypeAccess) arguments.get(3));
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___CHECK_DEC_BWD__TFIELDSIGNATURE_TABSTRACTTYPE_TFIELDDEFINITION_TYPEGRAPH_TFIELD_TANNOTATIONTYPE:
+				return checkDEC_BWD((TFieldSignature) arguments.get(0), (TAbstractType) arguments.get(1),
+						(TFieldDefinition) arguments.get(2), (TypeGraph) arguments.get(3), (TField) arguments.get(4),
+						(TAnnotationType) arguments.get(5));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE:
 				return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1),
 						(TypeToTAbstractType) arguments.get(2));
-			case RulesPackage.ANNOTATION_TYPE_MEMBER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONTYPEDECLARATION_TYPEGRAPH_TYPETOTABSTRACTTYPE_TANNOTATIONTYPE_TABSTRACTTYPE_TYPETOTABSTRACTTYPE_TYPE_MODELGENERATORRULERESULT:
+			case RulesPackage.ANNOTATION_TYPE_MEMBER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABSTRACTTYPE_ANNOTATIONTYPEDECLARATION_TYPETOTABSTRACTTYPE_TYPETOTABSTRACTTYPE_TYPEGRAPH_TYPE_TANNOTATIONTYPE_MODELGENERATORRULERESULT:
 				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(AnnotationTypeDeclaration) arguments.get(1), (TypeGraph) arguments.get(2),
-						(TypeToTAbstractType) arguments.get(3), (TAnnotationType) arguments.get(4),
-						(TAbstractType) arguments.get(5), (TypeToTAbstractType) arguments.get(6),
-						(Type) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
+						(TAbstractType) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2),
+						(TypeToTAbstractType) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
+						(TypeGraph) arguments.get(5), (Type) arguments.get(6), (TAnnotationType) arguments.get(7),
+						(ModelgeneratorRuleResult) arguments.get(8));
 			case RulesPackage.ANNOTATION_TYPE_MEMBER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1615,21 +1611,21 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_0_1_initialbindings_blackBBBBBB(
-			AnnotationTypeMember _this, Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
+			AnnotationTypeMember _this, Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {
 		if (!mAnnotation.equals(mType)) {
-			return new Object[] { _this, match, access, mMember, mAnnotation, mType };
+			return new Object[] { _this, match, mAnnotation, mMember, mType, access };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_0_2_SolveCSP_bindingFBBBBBB(AnnotationTypeMember _this,
-			Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, access, mMember, mAnnotation, mType);
+			Match match, AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mAnnotation, mMember, mType, access);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, access, mMember, mAnnotation, mType };
+			return new Object[] { csp, _this, match, mAnnotation, mMember, mType, access };
 		}
 		return null;
 	}
@@ -1639,10 +1635,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_0_2_SolveCSP_bindingAndBlackFBBBBBB(
-			AnnotationTypeMember _this, Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
+			AnnotationTypeMember _this, Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {
 		Object[] result_pattern_AnnotationTypeMember_0_2_SolveCSP_binding = pattern_AnnotationTypeMember_0_2_SolveCSP_bindingFBBBBBB(
-				_this, match, access, mMember, mAnnotation, mType);
+				_this, match, mAnnotation, mMember, mType, access);
 		if (result_pattern_AnnotationTypeMember_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeMember_0_2_SolveCSP_binding[0];
 
@@ -1650,7 +1646,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 					csp);
 			if (result_pattern_AnnotationTypeMember_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, access, mMember, mAnnotation, mType };
+				return new Object[] { csp, _this, match, mAnnotation, mMember, mType, access };
 			}
 		}
 		return null;
@@ -1664,35 +1660,29 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_0_4_collectelementstobetranslated_blackBBBBB(Match match,
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			Type mType) {
+			AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access) {
 		if (!mAnnotation.equals(mType)) {
-			return new Object[] { match, access, mMember, mAnnotation, mType };
+			return new Object[] { match, mAnnotation, mMember, mType, access };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_0_4_collectelementstobetranslated_greenBBBBBFFFFF(
-			Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
-		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access) {
 		EMoflonEdge mMember__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge access__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__access____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(access);
+		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mMember);
-		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		match.getToBeTranslatedNodes().add(access);
 		String mMember__access____type_name_prime = "type";
 		String access__mType____type_name_prime = "type";
 		String mType__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
-		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
-		match.getToBeTranslatedEdges().add(mAnnotation__mMember____bodyDeclarations);
-		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
-		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
-		match.getToBeTranslatedEdges().add(mMember__mAnnotation____abstractTypeDeclaration);
+		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		mMember__access____type.setSrc(mMember);
 		mMember__access____type.setTrg(access);
 		match.getToBeTranslatedEdges().add(mMember__access____type);
@@ -1702,22 +1692,28 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		mType__access____usagesInTypeAccess.setSrc(mType);
 		mType__access____usagesInTypeAccess.setTrg(access);
 		match.getToBeTranslatedEdges().add(mType__access____usagesInTypeAccess);
-		mAnnotation__mMember____bodyDeclarations.setName(mAnnotation__mMember____bodyDeclarations_name_prime);
-		mMember__mAnnotation____abstractTypeDeclaration
-				.setName(mMember__mAnnotation____abstractTypeDeclaration_name_prime);
+		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
+		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
+		match.getToBeTranslatedEdges().add(mAnnotation__mMember____bodyDeclarations);
+		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
+		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
+		match.getToBeTranslatedEdges().add(mMember__mAnnotation____abstractTypeDeclaration);
 		mMember__access____type.setName(mMember__access____type_name_prime);
 		access__mType____type.setName(access__mType____type_name_prime);
 		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
-		return new Object[] { match, access, mMember, mAnnotation, mType, mAnnotation__mMember____bodyDeclarations,
-				mMember__mAnnotation____abstractTypeDeclaration, mMember__access____type, access__mType____type,
-				mType__access____usagesInTypeAccess };
+		mAnnotation__mMember____bodyDeclarations.setName(mAnnotation__mMember____bodyDeclarations_name_prime);
+		mMember__mAnnotation____abstractTypeDeclaration
+				.setName(mMember__mAnnotation____abstractTypeDeclaration_name_prime);
+		return new Object[] { match, mAnnotation, mMember, mType, access, mMember__access____type,
+				access__mType____type, mType__access____usagesInTypeAccess, mAnnotation__mMember____bodyDeclarations,
+				mMember__mAnnotation____abstractTypeDeclaration };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_0_5_collectcontextelements_blackBBBBB(Match match,
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			Type mType) {
+			AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access) {
 		if (!mAnnotation.equals(mType)) {
-			return new Object[] { match, access, mMember, mAnnotation, mType };
+			return new Object[] { match, mAnnotation, mMember, mType, access };
 		}
 		return null;
 	}
@@ -1730,9 +1726,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final void pattern_AnnotationTypeMember_0_6_registerobjectstomatch_expressionBBBBBB(
-			AnnotationTypeMember _this, Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
-		_this.registerObjectsToMatch_FWD(match, access, mMember, mAnnotation, mType);
+			AnnotationTypeMember _this, Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {
+		_this.registerObjectsToMatch_FWD(match, mAnnotation, mMember, mType, access);
 
 	}
 
@@ -1748,44 +1744,44 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_1_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("access");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mMember");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mAnnotation");
-		EObject _localVariable_3 = isApplicableMatch.getObject("pm");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mTypeToType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAnnotation");
-		EObject _localVariable_6 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mAnnotationToAnnotation");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mType");
-		EObject tmpAccess = _localVariable_0;
-		EObject tmpMMember = _localVariable_1;
-		EObject tmpMAnnotation = _localVariable_2;
-		EObject tmpPm = _localVariable_3;
-		EObject tmpMTypeToType = _localVariable_4;
-		EObject tmpTAnnotation = _localVariable_5;
-		EObject tmpTType = _localVariable_6;
-		EObject tmpMAnnotationToAnnotation = _localVariable_7;
-		EObject tmpMType = _localVariable_8;
-		if (tmpAccess instanceof TypeAccess) {
-			TypeAccess access = (TypeAccess) tmpAccess;
-			if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
-				AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
-				if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
-					AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
-					if (tmpPm instanceof TypeGraph) {
-						TypeGraph pm = (TypeGraph) tmpPm;
-						if (tmpMTypeToType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mTypeToType = (TypeToTAbstractType) tmpMTypeToType;
-							if (tmpTAnnotation instanceof TAnnotationType) {
-								TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-								if (tmpTType instanceof TAbstractType) {
-									TAbstractType tType = (TAbstractType) tmpTType;
-									if (tmpMAnnotationToAnnotation instanceof TypeToTAbstractType) {
-										TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) tmpMAnnotationToAnnotation;
-										if (tmpMType instanceof Type) {
-											Type mType = (Type) tmpMType;
-											return new Object[] { access, mMember, mAnnotation, pm, mTypeToType,
-													tAnnotation, tType, mAnnotationToAnnotation, mType,
+		EObject _localVariable_0 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mAnnotation");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mAnnotationToAnnotation");
+		EObject _localVariable_4 = isApplicableMatch.getObject("pm");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mMember");
+		EObject _localVariable_6 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_7 = isApplicableMatch.getObject("access");
+		EObject _localVariable_8 = isApplicableMatch.getObject("tAnnotation");
+		EObject tmpTType = _localVariable_0;
+		EObject tmpMAnnotation = _localVariable_1;
+		EObject tmpMTypeToType = _localVariable_2;
+		EObject tmpMAnnotationToAnnotation = _localVariable_3;
+		EObject tmpPm = _localVariable_4;
+		EObject tmpMMember = _localVariable_5;
+		EObject tmpMType = _localVariable_6;
+		EObject tmpAccess = _localVariable_7;
+		EObject tmpTAnnotation = _localVariable_8;
+		if (tmpTType instanceof TAbstractType) {
+			TAbstractType tType = (TAbstractType) tmpTType;
+			if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
+				AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
+				if (tmpMTypeToType instanceof TypeToTAbstractType) {
+					TypeToTAbstractType mTypeToType = (TypeToTAbstractType) tmpMTypeToType;
+					if (tmpMAnnotationToAnnotation instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) tmpMAnnotationToAnnotation;
+						if (tmpPm instanceof TypeGraph) {
+							TypeGraph pm = (TypeGraph) tmpPm;
+							if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
+								AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
+								if (tmpMType instanceof Type) {
+									Type mType = (Type) tmpMType;
+									if (tmpAccess instanceof TypeAccess) {
+										TypeAccess access = (TypeAccess) tmpAccess;
+										if (tmpTAnnotation instanceof TAnnotationType) {
+											TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+											return new Object[] { tType, mAnnotation, mTypeToType,
+													mAnnotationToAnnotation, pm, mMember, mType, access, tAnnotation,
 													isApplicableMatch };
 										}
 									}
@@ -1800,18 +1796,18 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_1_1_performtransformation_blackBBBBBBBBBFBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			TypeGraph pm, TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType, AnnotationTypeMember _this,
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, AnnotationTypeMemberDeclaration mMember,
+			Type mType, TypeAccess access, TAnnotationType tAnnotation, AnnotationTypeMember _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!mAnnotation.equals(mType)) {
-			if (!tAnnotation.equals(tType)) {
-				if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+			if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+				if (!tAnnotation.equals(tType)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { access, mMember, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-									mAnnotationToAnnotation, mType, csp, _this, isApplicableMatch };
+							return new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mMember,
+									mType, access, tAnnotation, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1825,264 +1821,264 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		Object[] result_pattern_AnnotationTypeMember_1_1_performtransformation_binding = pattern_AnnotationTypeMember_1_1_performtransformation_bindingFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnnotationTypeMember_1_1_performtransformation_binding != null) {
-			TypeAccess access = (TypeAccess) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[0];
-			AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[1];
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[2];
-			TypeGraph pm = (TypeGraph) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[3];
-			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[4];
-			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[5];
-			TAbstractType tType = (TAbstractType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[6];
-			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[7];
-			Type mType = (Type) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[8];
+			TAbstractType tType = (TAbstractType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[0];
+			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[1];
+			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[2];
+			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[3];
+			TypeGraph pm = (TypeGraph) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[4];
+			AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[5];
+			Type mType = (Type) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[6];
+			TypeAccess access = (TypeAccess) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[7];
+			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_AnnotationTypeMember_1_1_performtransformation_binding[8];
 
 			Object[] result_pattern_AnnotationTypeMember_1_1_performtransformation_black = pattern_AnnotationTypeMember_1_1_performtransformation_blackBBBBBBBBBFBB(
-					access, mMember, mAnnotation, pm, mTypeToType, tAnnotation, tType, mAnnotationToAnnotation, mType,
+					tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mMember, mType, access, tAnnotation,
 					_this, isApplicableMatch);
 			if (result_pattern_AnnotationTypeMember_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationTypeMember_1_1_performtransformation_black[9];
 
-				return new Object[] { access, mMember, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-						mAnnotationToAnnotation, mType, csp, _this, isApplicableMatch };
+				return new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mMember, mType,
+						access, tAnnotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_1_1_performtransformation_greenBFFBFBFFBB(
-			AnnotationTypeMemberDeclaration mMember, TypeGraph pm, TAnnotationType tAnnotation, TAbstractType tType,
+	public static final Object[] pattern_AnnotationTypeMember_1_1_performtransformation_greenFBFFFBBFBB(
+			TAbstractType tType, TypeGraph pm, AnnotationTypeMemberDeclaration mMember, TAnnotationType tAnnotation,
 			CSP csp) {
-		TField tName = BasicFactory.eINSTANCE.createTField();
-		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
 		TFieldDefinition tMember = BasicFactory.eINSTANCE.createTFieldDefinition();
 		ASTNodeToTAnnotatable anntotatableToTannotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
-		Object _localVariable_0 = csp.getValue("tName", "tName");
+		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		TField tName = BasicFactory.eINSTANCE.createTField();
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
-		Object _localVariable_1 = csp.getValue("tSignature", "upperBound");
-		tName.setModel(pm);
-		memberToMember.setSource(mMember);
-		memberToMember.setTarget(tMember);
+		Object _localVariable_0 = csp.getValue("tSignature", "upperBound");
+		Object _localVariable_1 = csp.getValue("tName", "tName");
+		tSignature.setType(tType);
+		tAnnotation.getSignature().add(tSignature);
+		tSignature.getDefinitions().add(tMember);
 		tAnnotation.getDefines().add(tMember);
 		anntotatableToTannotatable.setTarget(tMember);
 		anntotatableToTannotatable.setSource(mMember);
+		memberToMember.setTarget(tMember);
+		memberToMember.setSource(mMember);
 		tName.getSignatures().add(tSignature);
-		tAnnotation.getSignature().add(tSignature);
-		tSignature.setType(tType);
-		tSignature.getDefinitions().add(tMember);
-		String tName_tName_prime = (String) _localVariable_0;
+		tName.setModel(pm);
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
-		int tSignature_upperBound_prime = (int) _localVariable_1;
-		tName.setTName(tName_tName_prime);
+		int tSignature_upperBound_prime = (int) _localVariable_0;
+		String tName_tName_prime = (String) _localVariable_1;
 		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
-		return new Object[] { mMember, tName, memberToMember, pm, tMember, tAnnotation, anntotatableToTannotatable,
-				tSignature, tType, csp };
+		tName.setTName(tName_tName_prime);
+		return new Object[] { tSignature, tType, tMember, anntotatableToTannotatable, memberToMember, pm, mMember,
+				tName, tAnnotation, csp };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_1_2_collecttranslatedelements_blackBBBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, TField tName,
-			MDefinitionToTMember memberToMember, TFieldDefinition tMember,
-			ASTNodeToTAnnotatable anntotatableToTannotatable, TFieldSignature tSignature) {
-		return new Object[] { access, mMember, tName, memberToMember, tMember, anntotatableToTannotatable, tSignature };
+			TFieldSignature tSignature, TFieldDefinition tMember, ASTNodeToTAnnotatable anntotatableToTannotatable,
+			MDefinitionToTMember memberToMember, AnnotationTypeMemberDeclaration mMember, TField tName,
+			TypeAccess access) {
+		return new Object[] { tSignature, tMember, anntotatableToTannotatable, memberToMember, mMember, tName, access };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_1_2_collecttranslatedelements_greenFBBBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, TField tName,
-			MDefinitionToTMember memberToMember, TFieldDefinition tMember,
-			ASTNodeToTAnnotatable anntotatableToTannotatable, TFieldSignature tSignature) {
+			TFieldSignature tSignature, TFieldDefinition tMember, ASTNodeToTAnnotatable anntotatableToTannotatable,
+			MDefinitionToTMember memberToMember, AnnotationTypeMemberDeclaration mMember, TField tName,
+			TypeAccess access) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(access);
-		ruleresult.getTranslatedElements().add(mMember);
-		ruleresult.getCreatedElements().add(tName);
-		ruleresult.getCreatedLinkElements().add(memberToMember);
+		ruleresult.getCreatedElements().add(tSignature);
 		ruleresult.getCreatedElements().add(tMember);
 		ruleresult.getCreatedLinkElements().add(anntotatableToTannotatable);
-		ruleresult.getCreatedElements().add(tSignature);
-		return new Object[] { ruleresult, access, mMember, tName, memberToMember, tMember, anntotatableToTannotatable,
-				tSignature };
+		ruleresult.getCreatedLinkElements().add(memberToMember);
+		ruleresult.getTranslatedElements().add(mMember);
+		ruleresult.getCreatedElements().add(tName);
+		ruleresult.getTranslatedElements().add(access);
+		return new Object[] { ruleresult, tSignature, tMember, anntotatableToTannotatable, memberToMember, mMember,
+				tName, access };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject access, EObject mMember, EObject mAnnotation, EObject tName,
-			EObject memberToMember, EObject pm, EObject tMember, EObject mTypeToType, EObject tAnnotation,
-			EObject anntotatableToTannotatable, EObject tSignature, EObject tType, EObject mAnnotationToAnnotation,
-			EObject mType) {
-		if (!access.equals(mMember)) {
-			if (!access.equals(mAnnotation)) {
-				if (!access.equals(tName)) {
-					if (!access.equals(memberToMember)) {
-						if (!access.equals(pm)) {
-							if (!access.equals(tMember)) {
-								if (!access.equals(mTypeToType)) {
-									if (!access.equals(tAnnotation)) {
-										if (!access.equals(anntotatableToTannotatable)) {
-											if (!access.equals(tSignature)) {
-												if (!access.equals(tType)) {
-													if (!access.equals(mAnnotationToAnnotation)) {
-														if (!access.equals(mType)) {
-															if (!mMember.equals(tName)) {
-																if (!mMember.equals(memberToMember)) {
-																	if (!mMember.equals(pm)) {
-																		if (!mMember.equals(tMember)) {
-																			if (!mMember.equals(mTypeToType)) {
-																				if (!mMember.equals(tAnnotation)) {
-																					if (!mMember.equals(tSignature)) {
-																						if (!mMember.equals(tType)) {
-																							if (!mMember
-																									.equals(mType)) {
-																								if (!mAnnotation.equals(
-																										mMember)) {
-																									if (!mAnnotation
-																											.equals(tName)) {
-																										if (!mAnnotation
-																												.equals(memberToMember)) {
-																											if (!mAnnotation
-																													.equals(pm)) {
-																												if (!mAnnotation
+			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mAnnotation, EObject mTypeToType,
+			EObject tMember, EObject anntotatableToTannotatable, EObject mAnnotationToAnnotation,
+			EObject memberToMember, EObject pm, EObject mMember, EObject tName, EObject mType, EObject access,
+			EObject tAnnotation) {
+		if (!tSignature.equals(tType)) {
+			if (!mAnnotation.equals(tSignature)) {
+				if (!mAnnotation.equals(tType)) {
+					if (!mAnnotation.equals(mTypeToType)) {
+						if (!mAnnotation.equals(tMember)) {
+							if (!mAnnotation.equals(mAnnotationToAnnotation)) {
+								if (!mAnnotation.equals(memberToMember)) {
+									if (!mAnnotation.equals(pm)) {
+										if (!mAnnotation.equals(mMember)) {
+											if (!mAnnotation.equals(tName)) {
+												if (!mAnnotation.equals(mType)) {
+													if (!mAnnotation.equals(tAnnotation)) {
+														if (!mTypeToType.equals(tSignature)) {
+															if (!mTypeToType.equals(tType)) {
+																if (!mTypeToType.equals(tMember)) {
+																	if (!mTypeToType.equals(memberToMember)) {
+																		if (!mTypeToType.equals(pm)) {
+																			if (!mTypeToType.equals(tName)) {
+																				if (!mTypeToType.equals(tAnnotation)) {
+																					if (!tMember.equals(tSignature)) {
+																						if (!tMember.equals(tType)) {
+																							if (!tMember
+																									.equals(tName)) {
+																								if (!anntotatableToTannotatable
+																										.equals(tSignature)) {
+																									if (!anntotatableToTannotatable
+																											.equals(tType)) {
+																										if (!anntotatableToTannotatable
+																												.equals(mAnnotation)) {
+																											if (!anntotatableToTannotatable
+																													.equals(mTypeToType)) {
+																												if (!anntotatableToTannotatable
 																														.equals(tMember)) {
-																													if (!mAnnotation
-																															.equals(mTypeToType)) {
-																														if (!mAnnotation
-																																.equals(tAnnotation)) {
-																															if (!mAnnotation
-																																	.equals(tSignature)) {
-																																if (!mAnnotation
-																																		.equals(tType)) {
-																																	if (!mAnnotation
-																																			.equals(mAnnotationToAnnotation)) {
-																																		if (!mAnnotation
+																													if (!anntotatableToTannotatable
+																															.equals(mAnnotationToAnnotation)) {
+																														if (!anntotatableToTannotatable
+																																.equals(memberToMember)) {
+																															if (!anntotatableToTannotatable
+																																	.equals(pm)) {
+																																if (!anntotatableToTannotatable
+																																		.equals(mMember)) {
+																																	if (!anntotatableToTannotatable
+																																			.equals(tName)) {
+																																		if (!anntotatableToTannotatable
 																																				.equals(mType)) {
-																																			if (!tName
-																																					.equals(tSignature)) {
-																																				if (!tName
-																																						.equals(tType)) {
-																																					if (!memberToMember
-																																							.equals(tName)) {
-																																						if (!memberToMember
-																																								.equals(pm)) {
-																																							if (!memberToMember
+																																			if (!anntotatableToTannotatable
+																																					.equals(tAnnotation)) {
+																																				if (!mAnnotationToAnnotation
+																																						.equals(tSignature)) {
+																																					if (!mAnnotationToAnnotation
+																																							.equals(tType)) {
+																																						if (!mAnnotationToAnnotation
+																																								.equals(mTypeToType)) {
+																																							if (!mAnnotationToAnnotation
 																																									.equals(tMember)) {
-																																								if (!memberToMember
-																																										.equals(tAnnotation)) {
-																																									if (!memberToMember
-																																											.equals(tSignature)) {
-																																										if (!memberToMember
-																																												.equals(tType)) {
-																																											if (!pm.equals(
-																																													tName)) {
-																																												if (!pm.equals(
-																																														tMember)) {
-																																													if (!pm.equals(
-																																															tAnnotation)) {
-																																														if (!pm.equals(
-																																																tSignature)) {
-																																															if (!pm.equals(
-																																																	tType)) {
-																																																if (!tMember
-																																																		.equals(tName)) {
-																																																	if (!tMember
-																																																			.equals(tSignature)) {
-																																																		if (!tMember
-																																																				.equals(tType)) {
-																																																			if (!mTypeToType
-																																																					.equals(tName)) {
-																																																				if (!mTypeToType
-																																																						.equals(memberToMember)) {
-																																																					if (!mTypeToType
-																																																							.equals(pm)) {
-																																																						if (!mTypeToType
-																																																								.equals(tMember)) {
-																																																							if (!mTypeToType
-																																																									.equals(tAnnotation)) {
-																																																								if (!mTypeToType
-																																																										.equals(tSignature)) {
-																																																									if (!mTypeToType
-																																																											.equals(tType)) {
-																																																										if (!tAnnotation
-																																																												.equals(tName)) {
-																																																											if (!tAnnotation
-																																																													.equals(tMember)) {
-																																																												if (!tAnnotation
-																																																														.equals(tSignature)) {
-																																																													if (!tAnnotation
-																																																															.equals(tType)) {
-																																																														if (!anntotatableToTannotatable
-																																																																.equals(mMember)) {
-																																																															if (!anntotatableToTannotatable
-																																																																	.equals(mAnnotation)) {
-																																																																if (!anntotatableToTannotatable
-																																																																		.equals(tName)) {
-																																																																	if (!anntotatableToTannotatable
-																																																																			.equals(memberToMember)) {
-																																																																		if (!anntotatableToTannotatable
-																																																																				.equals(pm)) {
-																																																																			if (!anntotatableToTannotatable
-																																																																					.equals(tMember)) {
-																																																																				if (!anntotatableToTannotatable
-																																																																						.equals(mTypeToType)) {
-																																																																					if (!anntotatableToTannotatable
-																																																																							.equals(tAnnotation)) {
-																																																																						if (!anntotatableToTannotatable
-																																																																								.equals(tSignature)) {
-																																																																							if (!anntotatableToTannotatable
-																																																																									.equals(tType)) {
-																																																																								if (!anntotatableToTannotatable
-																																																																										.equals(mAnnotationToAnnotation)) {
-																																																																									if (!anntotatableToTannotatable
-																																																																											.equals(mType)) {
-																																																																										if (!tSignature
-																																																																												.equals(tType)) {
-																																																																											if (!mAnnotationToAnnotation
-																																																																													.equals(mMember)) {
-																																																																												if (!mAnnotationToAnnotation
-																																																																														.equals(tName)) {
-																																																																													if (!mAnnotationToAnnotation
-																																																																															.equals(memberToMember)) {
-																																																																														if (!mAnnotationToAnnotation
-																																																																																.equals(pm)) {
-																																																																															if (!mAnnotationToAnnotation
-																																																																																	.equals(tMember)) {
-																																																																																if (!mAnnotationToAnnotation
-																																																																																		.equals(mTypeToType)) {
-																																																																																	if (!mAnnotationToAnnotation
-																																																																																			.equals(tAnnotation)) {
-																																																																																		if (!mAnnotationToAnnotation
-																																																																																				.equals(tSignature)) {
-																																																																																			if (!mAnnotationToAnnotation
-																																																																																					.equals(tType)) {
-																																																																																				if (!mAnnotationToAnnotation
-																																																																																						.equals(mType)) {
-																																																																																					if (!mType
-																																																																																							.equals(tName)) {
-																																																																																						if (!mType
-																																																																																								.equals(memberToMember)) {
-																																																																																							if (!mType
-																																																																																									.equals(pm)) {
-																																																																																								if (!mType
-																																																																																										.equals(tMember)) {
-																																																																																									if (!mType
-																																																																																											.equals(mTypeToType)) {
-																																																																																										if (!mType
-																																																																																												.equals(tAnnotation)) {
-																																																																																											if (!mType
-																																																																																													.equals(tSignature)) {
-																																																																																												if (!mType
-																																																																																														.equals(tType)) {
+																																								if (!mAnnotationToAnnotation
+																																										.equals(memberToMember)) {
+																																									if (!mAnnotationToAnnotation
+																																											.equals(pm)) {
+																																										if (!mAnnotationToAnnotation
+																																												.equals(mMember)) {
+																																											if (!mAnnotationToAnnotation
+																																													.equals(tName)) {
+																																												if (!mAnnotationToAnnotation
+																																														.equals(mType)) {
+																																													if (!mAnnotationToAnnotation
+																																															.equals(tAnnotation)) {
+																																														if (!memberToMember
+																																																.equals(tSignature)) {
+																																															if (!memberToMember
+																																																	.equals(tType)) {
+																																																if (!memberToMember
+																																																		.equals(tMember)) {
+																																																	if (!memberToMember
+																																																			.equals(pm)) {
+																																																		if (!memberToMember
+																																																				.equals(tName)) {
+																																																			if (!memberToMember
+																																																					.equals(tAnnotation)) {
+																																																				if (!pm.equals(
+																																																						tSignature)) {
+																																																					if (!pm.equals(
+																																																							tType)) {
+																																																						if (!pm.equals(
+																																																								tMember)) {
+																																																							if (!pm.equals(
+																																																									tName)) {
+																																																								if (!pm.equals(
+																																																										tAnnotation)) {
+																																																									if (!mMember
+																																																											.equals(tSignature)) {
+																																																										if (!mMember
+																																																												.equals(tType)) {
+																																																											if (!mMember
+																																																													.equals(mTypeToType)) {
+																																																												if (!mMember
+																																																														.equals(tMember)) {
+																																																													if (!mMember
+																																																															.equals(memberToMember)) {
+																																																														if (!mMember
+																																																																.equals(pm)) {
+																																																															if (!mMember
+																																																																	.equals(tName)) {
+																																																																if (!mMember
+																																																																		.equals(mType)) {
+																																																																	if (!mMember
+																																																																			.equals(tAnnotation)) {
+																																																																		if (!tName
+																																																																				.equals(tSignature)) {
+																																																																			if (!tName
+																																																																					.equals(tType)) {
+																																																																				if (!mType
+																																																																						.equals(tSignature)) {
+																																																																					if (!mType
+																																																																							.equals(tType)) {
+																																																																						if (!mType
+																																																																								.equals(mTypeToType)) {
+																																																																							if (!mType
+																																																																									.equals(tMember)) {
+																																																																								if (!mType
+																																																																										.equals(memberToMember)) {
+																																																																									if (!mType
+																																																																											.equals(pm)) {
+																																																																										if (!mType
+																																																																												.equals(tName)) {
+																																																																											if (!mType
+																																																																													.equals(tAnnotation)) {
+																																																																												if (!access
+																																																																														.equals(tSignature)) {
+																																																																													if (!access
+																																																																															.equals(tType)) {
+																																																																														if (!access
+																																																																																.equals(mAnnotation)) {
+																																																																															if (!access
+																																																																																	.equals(mTypeToType)) {
+																																																																																if (!access
+																																																																																		.equals(tMember)) {
+																																																																																	if (!access
+																																																																																			.equals(anntotatableToTannotatable)) {
+																																																																																		if (!access
+																																																																																				.equals(mAnnotationToAnnotation)) {
+																																																																																			if (!access
+																																																																																					.equals(memberToMember)) {
+																																																																																				if (!access
+																																																																																						.equals(pm)) {
+																																																																																					if (!access
+																																																																																							.equals(mMember)) {
+																																																																																						if (!access
+																																																																																								.equals(tName)) {
+																																																																																							if (!access
+																																																																																									.equals(mType)) {
+																																																																																								if (!access
+																																																																																										.equals(tAnnotation)) {
+																																																																																									if (!tAnnotation
+																																																																																											.equals(tSignature)) {
+																																																																																										if (!tAnnotation
+																																																																																												.equals(tType)) {
+																																																																																											if (!tAnnotation
+																																																																																													.equals(tMember)) {
+																																																																																												if (!tAnnotation
+																																																																																														.equals(tName)) {
 																																																																																													return new Object[] {
 																																																																																															ruleresult,
-																																																																																															access,
-																																																																																															mMember,
-																																																																																															mAnnotation,
-																																																																																															tName,
-																																																																																															memberToMember,
-																																																																																															pm,
-																																																																																															tMember,
-																																																																																															mTypeToType,
-																																																																																															tAnnotation,
-																																																																																															anntotatableToTannotatable,
 																																																																																															tSignature,
 																																																																																															tType,
+																																																																																															mAnnotation,
+																																																																																															mTypeToType,
+																																																																																															tMember,
+																																																																																															anntotatableToTannotatable,
 																																																																																															mAnnotationToAnnotation,
-																																																																																															mType };
+																																																																																															memberToMember,
+																																																																																															pm,
+																																																																																															mMember,
+																																																																																															tName,
+																																																																																															mType,
+																																																																																															access,
+																																																																																															tAnnotation };
 																																																																																												}
 																																																																																											}
 																																																																																										}
@@ -2178,146 +2174,146 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_1_3_bookkeepingforedges_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject access, EObject mMember, EObject mAnnotation, EObject tName,
-			EObject memberToMember, EObject pm, EObject tMember, EObject tAnnotation,
-			EObject anntotatableToTannotatable, EObject tSignature, EObject tType, EObject mType) {
-		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge memberToMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge access__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mType__access____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mAnnotation, EObject tMember,
+			EObject anntotatableToTannotatable, EObject memberToMember, EObject pm, EObject mMember, EObject tName,
+			EObject mType, EObject access, EObject tAnnotation) {
+		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge anntotatableToTannotatable__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge memberToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge anntotatableToTannotatable__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge memberToMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge anntotatableToTannotatable__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tMember____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge anntotatableToTannotatable__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge access__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mType__access____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeMember";
-		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String mMember__access____type_name_prime = "type";
-		String tName__pm____model_name_prime = "model";
-		String pm__tName____fields_name_prime = "fields";
-		String memberToMember__mMember____source_name_prime = "source";
-		String access__mType____type_name_prime = "type";
-		String mType__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String tSignature__tType____type_name_prime = "type";
+		String anntotatableToTannotatable__tMember____target_name_prime = "target";
 		String memberToMember__tMember____target_name_prime = "target";
+		String anntotatableToTannotatable__mMember____source_name_prime = "source";
+		String mMember__access____type_name_prime = "type";
+		String memberToMember__mMember____source_name_prime = "source";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____field_name_prime = "field";
-		String tAnnotation__tSignature____signature_name_prime = "signature";
-		String anntotatableToTannotatable__tMember____target_name_prime = "target";
-		String tSignature__tType____type_name_prime = "type";
 		String tSignature__tMember____definitions_name_prime = "definitions";
 		String tMember__tSignature____signature_name_prime = "signature";
-		String anntotatableToTannotatable__mMember____source_name_prime = "source";
+		String tName__pm____model_name_prime = "model";
+		String pm__tName____fields_name_prime = "fields";
+		String access__mType____type_name_prime = "type";
+		String mType__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String tAnnotation__tMember____defines_name_prime = "defines";
 		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
-		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
-		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
-		ruleresult.getTranslatedEdges().add(mAnnotation__mMember____bodyDeclarations);
-		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
-		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
-		ruleresult.getTranslatedEdges().add(mMember__mAnnotation____abstractTypeDeclaration);
-		mMember__access____type.setSrc(mMember);
-		mMember__access____type.setTrg(access);
-		ruleresult.getTranslatedEdges().add(mMember__access____type);
-		tName__pm____model.setSrc(tName);
-		tName__pm____model.setTrg(pm);
-		ruleresult.getCreatedEdges().add(tName__pm____model);
-		pm__tName____fields.setSrc(pm);
-		pm__tName____fields.setTrg(tName);
-		ruleresult.getCreatedEdges().add(pm__tName____fields);
-		memberToMember__mMember____source.setSrc(memberToMember);
-		memberToMember__mMember____source.setTrg(mMember);
-		ruleresult.getCreatedEdges().add(memberToMember__mMember____source);
-		access__mType____type.setSrc(access);
-		access__mType____type.setTrg(mType);
-		ruleresult.getTranslatedEdges().add(access__mType____type);
-		mType__access____usagesInTypeAccess.setSrc(mType);
-		mType__access____usagesInTypeAccess.setTrg(access);
-		ruleresult.getTranslatedEdges().add(mType__access____usagesInTypeAccess);
+		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String tAnnotation__tSignature____signature_name_prime = "signature";
+		tSignature__tType____type.setSrc(tSignature);
+		tSignature__tType____type.setTrg(tType);
+		ruleresult.getCreatedEdges().add(tSignature__tType____type);
+		anntotatableToTannotatable__tMember____target.setSrc(anntotatableToTannotatable);
+		anntotatableToTannotatable__tMember____target.setTrg(tMember);
+		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__tMember____target);
 		memberToMember__tMember____target.setSrc(memberToMember);
 		memberToMember__tMember____target.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(memberToMember__tMember____target);
+		anntotatableToTannotatable__mMember____source.setSrc(anntotatableToTannotatable);
+		anntotatableToTannotatable__mMember____source.setTrg(mMember);
+		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__mMember____source);
+		mMember__access____type.setSrc(mMember);
+		mMember__access____type.setTrg(access);
+		ruleresult.getTranslatedEdges().add(mMember__access____type);
+		memberToMember__mMember____source.setSrc(memberToMember);
+		memberToMember__mMember____source.setTrg(mMember);
+		ruleresult.getCreatedEdges().add(memberToMember__mMember____source);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tName__tSignature____signatures);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		ruleresult.getCreatedEdges().add(tSignature__tName____field);
-		tAnnotation__tSignature____signature.setSrc(tAnnotation);
-		tAnnotation__tSignature____signature.setTrg(tSignature);
-		ruleresult.getCreatedEdges().add(tAnnotation__tSignature____signature);
-		anntotatableToTannotatable__tMember____target.setSrc(anntotatableToTannotatable);
-		anntotatableToTannotatable__tMember____target.setTrg(tMember);
-		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__tMember____target);
-		tSignature__tType____type.setSrc(tSignature);
-		tSignature__tType____type.setTrg(tType);
-		ruleresult.getCreatedEdges().add(tSignature__tType____type);
 		tSignature__tMember____definitions.setSrc(tSignature);
 		tSignature__tMember____definitions.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(tSignature__tMember____definitions);
 		tMember__tSignature____signature.setSrc(tMember);
 		tMember__tSignature____signature.setTrg(tSignature);
 		ruleresult.getCreatedEdges().add(tMember__tSignature____signature);
-		anntotatableToTannotatable__mMember____source.setSrc(anntotatableToTannotatable);
-		anntotatableToTannotatable__mMember____source.setTrg(mMember);
-		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__mMember____source);
+		tName__pm____model.setSrc(tName);
+		tName__pm____model.setTrg(pm);
+		ruleresult.getCreatedEdges().add(tName__pm____model);
+		pm__tName____fields.setSrc(pm);
+		pm__tName____fields.setTrg(tName);
+		ruleresult.getCreatedEdges().add(pm__tName____fields);
+		access__mType____type.setSrc(access);
+		access__mType____type.setTrg(mType);
+		ruleresult.getTranslatedEdges().add(access__mType____type);
+		mType__access____usagesInTypeAccess.setSrc(mType);
+		mType__access____usagesInTypeAccess.setTrg(access);
+		ruleresult.getTranslatedEdges().add(mType__access____usagesInTypeAccess);
 		tAnnotation__tMember____defines.setSrc(tAnnotation);
 		tAnnotation__tMember____defines.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(tAnnotation__tMember____defines);
 		tMember__tAnnotation____definedBy.setSrc(tMember);
 		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
 		ruleresult.getCreatedEdges().add(tMember__tAnnotation____definedBy);
+		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
+		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
+		ruleresult.getTranslatedEdges().add(mAnnotation__mMember____bodyDeclarations);
+		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
+		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
+		ruleresult.getTranslatedEdges().add(mMember__mAnnotation____abstractTypeDeclaration);
+		tAnnotation__tSignature____signature.setSrc(tAnnotation);
+		tAnnotation__tSignature____signature.setTrg(tSignature);
+		ruleresult.getCreatedEdges().add(tAnnotation__tSignature____signature);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
+		anntotatableToTannotatable__tMember____target.setName(anntotatableToTannotatable__tMember____target_name_prime);
+		memberToMember__tMember____target.setName(memberToMember__tMember____target_name_prime);
+		anntotatableToTannotatable__mMember____source.setName(anntotatableToTannotatable__mMember____source_name_prime);
+		mMember__access____type.setName(mMember__access____type_name_prime);
+		memberToMember__mMember____source.setName(memberToMember__mMember____source_name_prime);
+		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
+		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
+		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
+		tName__pm____model.setName(tName__pm____model_name_prime);
+		pm__tName____fields.setName(pm__tName____fields_name_prime);
+		access__mType____type.setName(access__mType____type_name_prime);
+		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
+		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
+		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
 		mAnnotation__mMember____bodyDeclarations.setName(mAnnotation__mMember____bodyDeclarations_name_prime);
 		mMember__mAnnotation____abstractTypeDeclaration
 				.setName(mMember__mAnnotation____abstractTypeDeclaration_name_prime);
-		mMember__access____type.setName(mMember__access____type_name_prime);
-		tName__pm____model.setName(tName__pm____model_name_prime);
-		pm__tName____fields.setName(pm__tName____fields_name_prime);
-		memberToMember__mMember____source.setName(memberToMember__mMember____source_name_prime);
-		access__mType____type.setName(access__mType____type_name_prime);
-		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
-		memberToMember__tMember____target.setName(memberToMember__tMember____target_name_prime);
-		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
 		tAnnotation__tSignature____signature.setName(tAnnotation__tSignature____signature_name_prime);
-		anntotatableToTannotatable__tMember____target.setName(anntotatableToTannotatable__tMember____target_name_prime);
-		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
-		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
-		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
-		anntotatableToTannotatable__mMember____source.setName(anntotatableToTannotatable__mMember____source_name_prime);
-		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
-		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
-		return new Object[] { ruleresult, access, mMember, mAnnotation, tName, memberToMember, pm, tMember, tAnnotation,
-				anntotatableToTannotatable, tSignature, tType, mType, mAnnotation__mMember____bodyDeclarations,
-				mMember__mAnnotation____abstractTypeDeclaration, mMember__access____type, tName__pm____model,
-				pm__tName____fields, memberToMember__mMember____source, access__mType____type,
-				mType__access____usagesInTypeAccess, memberToMember__tMember____target, tName__tSignature____signatures,
-				tSignature__tName____field, tAnnotation__tSignature____signature,
-				anntotatableToTannotatable__tMember____target, tSignature__tType____type,
-				tSignature__tMember____definitions, tMember__tSignature____signature,
-				anntotatableToTannotatable__mMember____source, tAnnotation__tMember____defines,
-				tMember__tAnnotation____definedBy };
+		return new Object[] { ruleresult, tSignature, tType, mAnnotation, tMember, anntotatableToTannotatable,
+				memberToMember, pm, mMember, tName, mType, access, tAnnotation, tSignature__tType____type,
+				anntotatableToTannotatable__tMember____target, memberToMember__tMember____target,
+				anntotatableToTannotatable__mMember____source, mMember__access____type,
+				memberToMember__mMember____source, tName__tSignature____signatures, tSignature__tName____field,
+				tSignature__tMember____definitions, tMember__tSignature____signature, tName__pm____model,
+				pm__tName____fields, access__mType____type, mType__access____usagesInTypeAccess,
+				tAnnotation__tMember____defines, tMember__tAnnotation____definedBy,
+				mAnnotation__mMember____bodyDeclarations, mMember__mAnnotation____abstractTypeDeclaration,
+				tAnnotation__tSignature____signature };
 	}
 
 	public static final void pattern_AnnotationTypeMember_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(
-			AnnotationTypeMember _this, PerformRuleResult ruleresult, EObject access, EObject mMember,
-			EObject mAnnotation, EObject tName, EObject memberToMember, EObject pm, EObject tMember,
-			EObject mTypeToType, EObject tAnnotation, EObject anntotatableToTannotatable, EObject tSignature,
-			EObject tType, EObject mAnnotationToAnnotation, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, access, mMember, mAnnotation, tName, memberToMember, pm, tMember,
-				mTypeToType, tAnnotation, anntotatableToTannotatable, tSignature, tType, mAnnotationToAnnotation,
-				mType);
+			AnnotationTypeMember _this, PerformRuleResult ruleresult, EObject tSignature, EObject tType,
+			EObject mAnnotation, EObject mTypeToType, EObject tMember, EObject anntotatableToTannotatable,
+			EObject mAnnotationToAnnotation, EObject memberToMember, EObject pm, EObject mMember, EObject tName,
+			EObject mType, EObject access, EObject tAnnotation) {
+		_this.registerObjects_FWD(ruleresult, tSignature, tType, mAnnotation, mTypeToType, tMember,
+				anntotatableToTannotatable, mAnnotationToAnnotation, memberToMember, pm, mMember, tName, mType, access,
+				tAnnotation);
 
 	}
 
@@ -2378,23 +2374,23 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_2_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("access");
+		EObject _localVariable_0 = match.getObject("mAnnotation");
 		EObject _localVariable_1 = match.getObject("mMember");
-		EObject _localVariable_2 = match.getObject("mAnnotation");
-		EObject _localVariable_3 = match.getObject("mType");
-		EObject tmpAccess = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("mType");
+		EObject _localVariable_3 = match.getObject("access");
+		EObject tmpMAnnotation = _localVariable_0;
 		EObject tmpMMember = _localVariable_1;
-		EObject tmpMAnnotation = _localVariable_2;
-		EObject tmpMType = _localVariable_3;
-		if (tmpAccess instanceof TypeAccess) {
-			TypeAccess access = (TypeAccess) tmpAccess;
+		EObject tmpMType = _localVariable_2;
+		EObject tmpAccess = _localVariable_3;
+		if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
+			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
 			if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
 				AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
-				if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
-					AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
-					if (tmpMType instanceof Type) {
-						Type mType = (Type) tmpMType;
-						return new Object[] { access, mMember, mAnnotation, mType, match };
+				if (tmpMType instanceof Type) {
+					Type mType = (Type) tmpMType;
+					if (tmpAccess instanceof TypeAccess) {
+						TypeAccess access = (TypeAccess) tmpAccess;
+						return new Object[] { mAnnotation, mMember, mType, access, match };
 					}
 				}
 			}
@@ -2402,8 +2398,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeMember_2_2_corematch_blackBBBFFFFBB(TypeAccess access,
-			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, Type mType, Match match) {
+	public static final Iterable<Object[]> pattern_AnnotationTypeMember_2_2_corematch_blackFBFFBBBFB(
+			AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mAnnotation.equals(mType)) {
 			for (TypeToTAbstractType mAnnotationToAnnotation : org.moflon.core.utilities.eMoflonEMFUtil
@@ -2417,8 +2414,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 							TAbstractType tType = mTypeToType.getTarget();
 							if (tType != null) {
 								if (!tAnnotation.equals(tType)) {
-									_result.add(new Object[] { access, mMember, mAnnotation, mTypeToType, tAnnotation,
-											tType, mAnnotationToAnnotation, mType, match });
+									_result.add(new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation,
+											mMember, mType, access, tAnnotation, match });
 								}
 							}
 
@@ -2431,26 +2428,26 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeMember_2_3_findcontext_blackBBBFBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+	public static final Iterable<Object[]> pattern_AnnotationTypeMember_2_3_findcontext_blackBBBBFBBBB(
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access, TAnnotationType tAnnotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mAnnotation.equals(mType)) {
-			if (!tAnnotation.equals(tType)) {
-				if (!mAnnotationToAnnotation.equals(mTypeToType)) {
-					if (mAnnotation.getBodyDeclarations().contains(mMember)) {
+			if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+				if (!tAnnotation.equals(tType)) {
+					if (mAnnotation.equals(mAnnotationToAnnotation.getSource())) {
 						if (access.equals(mMember.getType())) {
-							if (mType.equals(access.getType())) {
-								if (tType.equals(mTypeToType.getTarget())) {
-									if (mAnnotation.equals(mAnnotationToAnnotation.getSource())) {
-										if (mType.equals(mTypeToType.getSource())) {
-											if (tAnnotation.equals(mAnnotationToAnnotation.getTarget())) {
+							if (tType.equals(mTypeToType.getTarget())) {
+								if (mType.equals(mTypeToType.getSource())) {
+									if (mType.equals(access.getType())) {
+										if (tAnnotation.equals(mAnnotationToAnnotation.getTarget())) {
+											if (mAnnotation.getBodyDeclarations().contains(mMember)) {
 												TypeGraph pm = tAnnotation.getModel();
 												if (pm != null) {
-													_result.add(new Object[] { access, mMember, mAnnotation, pm,
-															mTypeToType, tAnnotation, tType, mAnnotationToAnnotation,
-															mType });
+													_result.add(new Object[] { tType, mAnnotation, mTypeToType,
+															mAnnotationToAnnotation, pm, mMember, mType, access,
+															tAnnotation });
 												}
 
 											}
@@ -2467,107 +2464,107 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_2_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			TypeGraph pm, TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, AnnotationTypeMemberDeclaration mMember,
+			Type mType, TypeAccess access, TAnnotationType tAnnotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mMember__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge access__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__access____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pm__tAnnotation____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String mAnnotationToAnnotation__mAnnotation____source_name_prime = "source";
 		String mMember__access____type_name_prime = "type";
+		String mTypeToType__tType____target_name_prime = "target";
+		String mTypeToType__mType____source_name_prime = "source";
 		String access__mType____type_name_prime = "type";
 		String mType__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String mAnnotationToAnnotation__tAnnotation____target_name_prime = "target";
+		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String tAnnotation__pm____model_name_prime = "model";
 		String pm__tAnnotation____allTypes_name_prime = "allTypes";
-		String mTypeToType__tType____target_name_prime = "target";
-		String mAnnotationToAnnotation__mAnnotation____source_name_prime = "source";
-		String mTypeToType__mType____source_name_prime = "source";
-		String mAnnotationToAnnotation__tAnnotation____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(access);
-		isApplicableMatch.getAllContextElements().add(mMember);
-		isApplicableMatch.getAllContextElements().add(mAnnotation);
-		isApplicableMatch.getAllContextElements().add(pm);
-		isApplicableMatch.getAllContextElements().add(mTypeToType);
-		isApplicableMatch.getAllContextElements().add(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(tType);
+		isApplicableMatch.getAllContextElements().add(mAnnotation);
+		isApplicableMatch.getAllContextElements().add(mTypeToType);
 		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation);
+		isApplicableMatch.getAllContextElements().add(pm);
+		isApplicableMatch.getAllContextElements().add(mMember);
 		isApplicableMatch.getAllContextElements().add(mType);
-		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
-		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
-		isApplicableMatch.getAllContextElements().add(mAnnotation__mMember____bodyDeclarations);
-		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
-		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
-		isApplicableMatch.getAllContextElements().add(mMember__mAnnotation____abstractTypeDeclaration);
+		isApplicableMatch.getAllContextElements().add(access);
+		isApplicableMatch.getAllContextElements().add(tAnnotation);
+		mAnnotationToAnnotation__mAnnotation____source.setSrc(mAnnotationToAnnotation);
+		mAnnotationToAnnotation__mAnnotation____source.setTrg(mAnnotation);
+		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__mAnnotation____source);
 		mMember__access____type.setSrc(mMember);
 		mMember__access____type.setTrg(access);
 		isApplicableMatch.getAllContextElements().add(mMember__access____type);
+		mTypeToType__tType____target.setSrc(mTypeToType);
+		mTypeToType__tType____target.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(mTypeToType__tType____target);
+		mTypeToType__mType____source.setSrc(mTypeToType);
+		mTypeToType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToType__mType____source);
 		access__mType____type.setSrc(access);
 		access__mType____type.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(access__mType____type);
 		mType__access____usagesInTypeAccess.setSrc(mType);
 		mType__access____usagesInTypeAccess.setTrg(access);
 		isApplicableMatch.getAllContextElements().add(mType__access____usagesInTypeAccess);
+		mAnnotationToAnnotation__tAnnotation____target.setSrc(mAnnotationToAnnotation);
+		mAnnotationToAnnotation__tAnnotation____target.setTrg(tAnnotation);
+		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__tAnnotation____target);
+		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
+		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
+		isApplicableMatch.getAllContextElements().add(mAnnotation__mMember____bodyDeclarations);
+		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
+		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
+		isApplicableMatch.getAllContextElements().add(mMember__mAnnotation____abstractTypeDeclaration);
 		tAnnotation__pm____model.setSrc(tAnnotation);
 		tAnnotation__pm____model.setTrg(pm);
 		isApplicableMatch.getAllContextElements().add(tAnnotation__pm____model);
 		pm__tAnnotation____allTypes.setSrc(pm);
 		pm__tAnnotation____allTypes.setTrg(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(pm__tAnnotation____allTypes);
-		mTypeToType__tType____target.setSrc(mTypeToType);
-		mTypeToType__tType____target.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(mTypeToType__tType____target);
-		mAnnotationToAnnotation__mAnnotation____source.setSrc(mAnnotationToAnnotation);
-		mAnnotationToAnnotation__mAnnotation____source.setTrg(mAnnotation);
-		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__mAnnotation____source);
-		mTypeToType__mType____source.setSrc(mTypeToType);
-		mTypeToType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToType__mType____source);
-		mAnnotationToAnnotation__tAnnotation____target.setSrc(mAnnotationToAnnotation);
-		mAnnotationToAnnotation__tAnnotation____target.setTrg(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__tAnnotation____target);
+		mAnnotationToAnnotation__mAnnotation____source
+				.setName(mAnnotationToAnnotation__mAnnotation____source_name_prime);
+		mMember__access____type.setName(mMember__access____type_name_prime);
+		mTypeToType__tType____target.setName(mTypeToType__tType____target_name_prime);
+		mTypeToType__mType____source.setName(mTypeToType__mType____source_name_prime);
+		access__mType____type.setName(access__mType____type_name_prime);
+		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
+		mAnnotationToAnnotation__tAnnotation____target
+				.setName(mAnnotationToAnnotation__tAnnotation____target_name_prime);
 		mAnnotation__mMember____bodyDeclarations.setName(mAnnotation__mMember____bodyDeclarations_name_prime);
 		mMember__mAnnotation____abstractTypeDeclaration
 				.setName(mMember__mAnnotation____abstractTypeDeclaration_name_prime);
-		mMember__access____type.setName(mMember__access____type_name_prime);
-		access__mType____type.setName(access__mType____type_name_prime);
-		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
 		tAnnotation__pm____model.setName(tAnnotation__pm____model_name_prime);
 		pm__tAnnotation____allTypes.setName(pm__tAnnotation____allTypes_name_prime);
-		mTypeToType__tType____target.setName(mTypeToType__tType____target_name_prime);
-		mAnnotationToAnnotation__mAnnotation____source
-				.setName(mAnnotationToAnnotation__mAnnotation____source_name_prime);
-		mTypeToType__mType____source.setName(mTypeToType__mType____source_name_prime);
-		mAnnotationToAnnotation__tAnnotation____target
-				.setName(mAnnotationToAnnotation__tAnnotation____target_name_prime);
-		return new Object[] { access, mMember, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-				mAnnotationToAnnotation, mType, isApplicableMatch, mAnnotation__mMember____bodyDeclarations,
-				mMember__mAnnotation____abstractTypeDeclaration, mMember__access____type, access__mType____type,
-				mType__access____usagesInTypeAccess, tAnnotation__pm____model, pm__tAnnotation____allTypes,
-				mTypeToType__tType____target, mAnnotationToAnnotation__mAnnotation____source,
-				mTypeToType__mType____source, mAnnotationToAnnotation__tAnnotation____target };
+		return new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mMember, mType, access,
+				tAnnotation, isApplicableMatch, mAnnotationToAnnotation__mAnnotation____source, mMember__access____type,
+				mTypeToType__tType____target, mTypeToType__mType____source, access__mType____type,
+				mType__access____usagesInTypeAccess, mAnnotationToAnnotation__tAnnotation____target,
+				mAnnotation__mMember____bodyDeclarations, mMember__mAnnotation____abstractTypeDeclaration,
+				tAnnotation__pm____model, pm__tAnnotation____allTypes };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_2_4_solveCSP_bindingFBBBBBBBBBBB(
-			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TypeAccess access,
-			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, TypeGraph pm,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, access, mMember, mAnnotation, pm,
-				mTypeToType, tAnnotation, tType, mAnnotationToAnnotation, mType);
+			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, AnnotationTypeMemberDeclaration mMember,
+			Type mType, TypeAccess access, TAnnotationType tAnnotation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, tType, mAnnotation, mTypeToType,
+				mAnnotationToAnnotation, pm, mMember, mType, access, tAnnotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, access, mMember, mAnnotation, pm, mTypeToType,
-					tAnnotation, tType, mAnnotationToAnnotation, mType };
+			return new Object[] { csp, _this, isApplicableMatch, tType, mAnnotation, mTypeToType,
+					mAnnotationToAnnotation, pm, mMember, mType, access, tAnnotation };
 		}
 		return null;
 	}
@@ -2577,13 +2574,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
-			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TypeAccess access,
-			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, TypeGraph pm,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, AnnotationTypeMemberDeclaration mMember,
+			Type mType, TypeAccess access, TAnnotationType tAnnotation) {
 		Object[] result_pattern_AnnotationTypeMember_2_4_solveCSP_binding = pattern_AnnotationTypeMember_2_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, access, mMember, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-				mAnnotationToAnnotation, mType);
+				_this, isApplicableMatch, tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mMember, mType,
+				access, tAnnotation);
 		if (result_pattern_AnnotationTypeMember_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeMember_2_4_solveCSP_binding[0];
 
@@ -2591,8 +2588,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 					csp);
 			if (result_pattern_AnnotationTypeMember_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, access, mMember, mAnnotation, pm, mTypeToType,
-						tAnnotation, tType, mAnnotationToAnnotation, mType };
+				return new Object[] { csp, _this, isApplicableMatch, tType, mAnnotation, mTypeToType,
+						mAnnotationToAnnotation, pm, mMember, mType, access, tAnnotation };
 			}
 		}
 		return null;
@@ -2627,22 +2624,22 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_1_initialbindings_blackBBBBBBBB(
-			AnnotationTypeMember _this, Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {
+			AnnotationTypeMember _this, Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {
 		if (!tAnnotation.equals(tType)) {
-			return new Object[] { _this, match, tName, pm, tMember, tAnnotation, tSignature, tType };
+			return new Object[] { _this, match, tSignature, tType, tMember, pm, tName, tAnnotation };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_2_SolveCSP_bindingFBBBBBBBB(AnnotationTypeMember _this,
-			Match match, TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tName, pm, tMember, tAnnotation, tSignature,
-				tType);
+			Match match, TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm,
+			TField tName, TAnnotationType tAnnotation) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, tSignature, tType, tMember, pm, tName,
+				tAnnotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, tName, pm, tMember, tAnnotation, tSignature, tType };
+			return new Object[] { csp, _this, match, tSignature, tType, tMember, pm, tName, tAnnotation };
 		}
 		return null;
 	}
@@ -2652,10 +2649,10 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_2_SolveCSP_bindingAndBlackFBBBBBBBB(
-			AnnotationTypeMember _this, Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {
+			AnnotationTypeMember _this, Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {
 		Object[] result_pattern_AnnotationTypeMember_10_2_SolveCSP_binding = pattern_AnnotationTypeMember_10_2_SolveCSP_bindingFBBBBBBBB(
-				_this, match, tName, pm, tMember, tAnnotation, tSignature, tType);
+				_this, match, tSignature, tType, tMember, pm, tName, tAnnotation);
 		if (result_pattern_AnnotationTypeMember_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeMember_10_2_SolveCSP_binding[0];
 
@@ -2663,7 +2660,7 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 					csp);
 			if (result_pattern_AnnotationTypeMember_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, tName, pm, tMember, tAnnotation, tSignature, tType };
+				return new Object[] { csp, _this, match, tSignature, tType, tMember, pm, tName, tAnnotation };
 			}
 		}
 		return null;
@@ -2677,102 +2674,103 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_4_collectelementstobetranslated_blackBBBBBBB(
-			Match match, TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType) {
+			Match match, TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm,
+			TField tName, TAnnotationType tAnnotation) {
 		if (!tAnnotation.equals(tType)) {
-			return new Object[] { match, tName, pm, tMember, tAnnotation, tSignature, tType };
+			return new Object[] { match, tSignature, tType, tMember, pm, tName, tAnnotation };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_4_collectelementstobetranslated_greenBBBBBBBFFFFFFFFFF(
-			Match match, TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType) {
-		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm,
+			TField tName, TAnnotationType tAnnotation) {
+		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tMember____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(tName);
-		match.getToBeTranslatedNodes().add(tMember);
+		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(tSignature);
-		String tName__pm____model_name_prime = "model";
-		String pm__tName____fields_name_prime = "fields";
+		match.getToBeTranslatedNodes().add(tMember);
+		match.getToBeTranslatedNodes().add(tName);
+		String tSignature__tType____type_name_prime = "type";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____field_name_prime = "field";
-		String tAnnotation__tSignature____signature_name_prime = "signature";
-		String tSignature__tType____type_name_prime = "type";
 		String tSignature__tMember____definitions_name_prime = "definitions";
 		String tMember__tSignature____signature_name_prime = "signature";
+		String tName__pm____model_name_prime = "model";
+		String pm__tName____fields_name_prime = "fields";
 		String tAnnotation__tMember____defines_name_prime = "defines";
 		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
-		tName__pm____model.setSrc(tName);
-		tName__pm____model.setTrg(pm);
-		match.getToBeTranslatedEdges().add(tName__pm____model);
-		pm__tName____fields.setSrc(pm);
-		pm__tName____fields.setTrg(tName);
-		match.getToBeTranslatedEdges().add(pm__tName____fields);
+		String tAnnotation__tSignature____signature_name_prime = "signature";
+		tSignature__tType____type.setSrc(tSignature);
+		tSignature__tType____type.setTrg(tType);
+		match.getToBeTranslatedEdges().add(tSignature__tType____type);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		match.getToBeTranslatedEdges().add(tName__tSignature____signatures);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		match.getToBeTranslatedEdges().add(tSignature__tName____field);
-		tAnnotation__tSignature____signature.setSrc(tAnnotation);
-		tAnnotation__tSignature____signature.setTrg(tSignature);
-		match.getToBeTranslatedEdges().add(tAnnotation__tSignature____signature);
-		tSignature__tType____type.setSrc(tSignature);
-		tSignature__tType____type.setTrg(tType);
-		match.getToBeTranslatedEdges().add(tSignature__tType____type);
 		tSignature__tMember____definitions.setSrc(tSignature);
 		tSignature__tMember____definitions.setTrg(tMember);
 		match.getToBeTranslatedEdges().add(tSignature__tMember____definitions);
 		tMember__tSignature____signature.setSrc(tMember);
 		tMember__tSignature____signature.setTrg(tSignature);
 		match.getToBeTranslatedEdges().add(tMember__tSignature____signature);
+		tName__pm____model.setSrc(tName);
+		tName__pm____model.setTrg(pm);
+		match.getToBeTranslatedEdges().add(tName__pm____model);
+		pm__tName____fields.setSrc(pm);
+		pm__tName____fields.setTrg(tName);
+		match.getToBeTranslatedEdges().add(pm__tName____fields);
 		tAnnotation__tMember____defines.setSrc(tAnnotation);
 		tAnnotation__tMember____defines.setTrg(tMember);
 		match.getToBeTranslatedEdges().add(tAnnotation__tMember____defines);
 		tMember__tAnnotation____definedBy.setSrc(tMember);
 		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
 		match.getToBeTranslatedEdges().add(tMember__tAnnotation____definedBy);
-		tName__pm____model.setName(tName__pm____model_name_prime);
-		pm__tName____fields.setName(pm__tName____fields_name_prime);
+		tAnnotation__tSignature____signature.setSrc(tAnnotation);
+		tAnnotation__tSignature____signature.setTrg(tSignature);
+		match.getToBeTranslatedEdges().add(tAnnotation__tSignature____signature);
+		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
 		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
 		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
-		tAnnotation__tSignature____signature.setName(tAnnotation__tSignature____signature_name_prime);
-		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
 		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
 		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
+		tName__pm____model.setName(tName__pm____model_name_prime);
+		pm__tName____fields.setName(pm__tName____fields_name_prime);
 		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
 		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
-		return new Object[] { match, tName, pm, tMember, tAnnotation, tSignature, tType, tName__pm____model,
-				pm__tName____fields, tName__tSignature____signatures, tSignature__tName____field,
-				tAnnotation__tSignature____signature, tSignature__tType____type, tSignature__tMember____definitions,
-				tMember__tSignature____signature, tAnnotation__tMember____defines, tMember__tAnnotation____definedBy };
+		tAnnotation__tSignature____signature.setName(tAnnotation__tSignature____signature_name_prime);
+		return new Object[] { match, tSignature, tType, tMember, pm, tName, tAnnotation, tSignature__tType____type,
+				tName__tSignature____signatures, tSignature__tName____field, tSignature__tMember____definitions,
+				tMember__tSignature____signature, tName__pm____model, pm__tName____fields,
+				tAnnotation__tMember____defines, tMember__tAnnotation____definedBy,
+				tAnnotation__tSignature____signature };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_5_collectcontextelements_blackBBBBBBB(Match match,
-			TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType) {
+			TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm, TField tName,
+			TAnnotationType tAnnotation) {
 		if (!tAnnotation.equals(tType)) {
-			return new Object[] { match, tName, pm, tMember, tAnnotation, tSignature, tType };
+			return new Object[] { match, tSignature, tType, tMember, pm, tName, tAnnotation };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_10_5_collectcontextelements_greenBBBBFF(Match match,
-			TypeGraph pm, TAnnotationType tAnnotation, TAbstractType tType) {
+			TAbstractType tType, TypeGraph pm, TAnnotationType tAnnotation) {
 		EMoflonEdge tAnnotation__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pm__tAnnotation____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		match.getContextNodes().add(tType);
 		match.getContextNodes().add(pm);
 		match.getContextNodes().add(tAnnotation);
-		match.getContextNodes().add(tType);
 		String tAnnotation__pm____model_name_prime = "model";
 		String pm__tAnnotation____allTypes_name_prime = "allTypes";
 		tAnnotation__pm____model.setSrc(tAnnotation);
@@ -2783,13 +2781,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		match.getContextEdges().add(pm__tAnnotation____allTypes);
 		tAnnotation__pm____model.setName(tAnnotation__pm____model_name_prime);
 		pm__tAnnotation____allTypes.setName(pm__tAnnotation____allTypes_name_prime);
-		return new Object[] { match, pm, tAnnotation, tType, tAnnotation__pm____model, pm__tAnnotation____allTypes };
+		return new Object[] { match, tType, pm, tAnnotation, tAnnotation__pm____model, pm__tAnnotation____allTypes };
 	}
 
 	public static final void pattern_AnnotationTypeMember_10_6_registerobjectstomatch_expressionBBBBBBBB(
-			AnnotationTypeMember _this, Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {
-		_this.registerObjectsToMatch_BWD(match, tName, pm, tMember, tAnnotation, tSignature, tType);
+			AnnotationTypeMember _this, Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {
+		_this.registerObjectsToMatch_BWD(match, tSignature, tType, tMember, pm, tName, tAnnotation);
 
 	}
 
@@ -2805,48 +2803,48 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_11_1_performtransformation_bindingFFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mAnnotation");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tName");
-		EObject _localVariable_2 = isApplicableMatch.getObject("pm");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tMember");
-		EObject _localVariable_4 = isApplicableMatch.getObject("mTypeToType");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAnnotation");
-		EObject _localVariable_6 = isApplicableMatch.getObject("tSignature");
-		EObject _localVariable_7 = isApplicableMatch.getObject("tType");
-		EObject _localVariable_8 = isApplicableMatch.getObject("mAnnotationToAnnotation");
-		EObject _localVariable_9 = isApplicableMatch.getObject("mType");
-		EObject tmpMAnnotation = _localVariable_0;
-		EObject tmpTName = _localVariable_1;
-		EObject tmpPm = _localVariable_2;
-		EObject tmpTMember = _localVariable_3;
-		EObject tmpMTypeToType = _localVariable_4;
-		EObject tmpTAnnotation = _localVariable_5;
-		EObject tmpTSignature = _localVariable_6;
-		EObject tmpTType = _localVariable_7;
-		EObject tmpMAnnotationToAnnotation = _localVariable_8;
-		EObject tmpMType = _localVariable_9;
-		if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
-			if (tmpTName instanceof TField) {
-				TField tName = (TField) tmpTName;
-				if (tmpPm instanceof TypeGraph) {
-					TypeGraph pm = (TypeGraph) tmpPm;
-					if (tmpTMember instanceof TFieldDefinition) {
-						TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
-						if (tmpMTypeToType instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mTypeToType = (TypeToTAbstractType) tmpMTypeToType;
-							if (tmpTAnnotation instanceof TAnnotationType) {
-								TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-								if (tmpTSignature instanceof TFieldSignature) {
-									TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-									if (tmpTType instanceof TAbstractType) {
-										TAbstractType tType = (TAbstractType) tmpTType;
-										if (tmpMAnnotationToAnnotation instanceof TypeToTAbstractType) {
-											TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) tmpMAnnotationToAnnotation;
-											if (tmpMType instanceof Type) {
-												Type mType = (Type) tmpMType;
-												return new Object[] { mAnnotation, tName, pm, tMember, mTypeToType,
-														tAnnotation, tSignature, tType, mAnnotationToAnnotation, mType,
+		EObject _localVariable_0 = isApplicableMatch.getObject("tSignature");
+		EObject _localVariable_1 = isApplicableMatch.getObject("tType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("mAnnotation");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tMember");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mAnnotationToAnnotation");
+		EObject _localVariable_6 = isApplicableMatch.getObject("pm");
+		EObject _localVariable_7 = isApplicableMatch.getObject("tName");
+		EObject _localVariable_8 = isApplicableMatch.getObject("mType");
+		EObject _localVariable_9 = isApplicableMatch.getObject("tAnnotation");
+		EObject tmpTSignature = _localVariable_0;
+		EObject tmpTType = _localVariable_1;
+		EObject tmpMAnnotation = _localVariable_2;
+		EObject tmpMTypeToType = _localVariable_3;
+		EObject tmpTMember = _localVariable_4;
+		EObject tmpMAnnotationToAnnotation = _localVariable_5;
+		EObject tmpPm = _localVariable_6;
+		EObject tmpTName = _localVariable_7;
+		EObject tmpMType = _localVariable_8;
+		EObject tmpTAnnotation = _localVariable_9;
+		if (tmpTSignature instanceof TFieldSignature) {
+			TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
+			if (tmpTType instanceof TAbstractType) {
+				TAbstractType tType = (TAbstractType) tmpTType;
+				if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
+					AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
+					if (tmpMTypeToType instanceof TypeToTAbstractType) {
+						TypeToTAbstractType mTypeToType = (TypeToTAbstractType) tmpMTypeToType;
+						if (tmpTMember instanceof TFieldDefinition) {
+							TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
+							if (tmpMAnnotationToAnnotation instanceof TypeToTAbstractType) {
+								TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) tmpMAnnotationToAnnotation;
+								if (tmpPm instanceof TypeGraph) {
+									TypeGraph pm = (TypeGraph) tmpPm;
+									if (tmpTName instanceof TField) {
+										TField tName = (TField) tmpTName;
+										if (tmpMType instanceof Type) {
+											Type mType = (Type) tmpMType;
+											if (tmpTAnnotation instanceof TAnnotationType) {
+												TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+												return new Object[] { tSignature, tType, mAnnotation, mTypeToType,
+														tMember, mAnnotationToAnnotation, pm, tName, mType, tAnnotation,
 														isApplicableMatch };
 											}
 										}
@@ -2862,18 +2860,19 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_11_1_performtransformation_blackBBBBBBBBBBFBB(
-			AnnotationTypeDeclaration mAnnotation, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TFieldSignature tSignature,
-			TAbstractType tType, TypeToTAbstractType mAnnotationToAnnotation, Type mType, AnnotationTypeMember _this,
+			TFieldSignature tSignature, TAbstractType tType, AnnotationTypeDeclaration mAnnotation,
+			TypeToTAbstractType mTypeToType, TFieldDefinition tMember, TypeToTAbstractType mAnnotationToAnnotation,
+			TypeGraph pm, TField tName, Type mType, TAnnotationType tAnnotation, AnnotationTypeMember _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!mAnnotation.equals(mType)) {
-			if (!tAnnotation.equals(tType)) {
-				if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+			if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+				if (!tAnnotation.equals(tType)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { mAnnotation, tName, pm, tMember, mTypeToType, tAnnotation, tSignature,
-									tType, mAnnotationToAnnotation, mType, csp, _this, isApplicableMatch };
+							return new Object[] { tSignature, tType, mAnnotation, mTypeToType, tMember,
+									mAnnotationToAnnotation, pm, tName, mType, tAnnotation, csp, _this,
+									isApplicableMatch };
 						}
 					}
 				}
@@ -2887,255 +2886,255 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		Object[] result_pattern_AnnotationTypeMember_11_1_performtransformation_binding = pattern_AnnotationTypeMember_11_1_performtransformation_bindingFFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AnnotationTypeMember_11_1_performtransformation_binding != null) {
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[0];
-			TField tName = (TField) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[1];
-			TypeGraph pm = (TypeGraph) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[2];
-			TFieldDefinition tMember = (TFieldDefinition) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[3];
-			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[4];
-			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[5];
-			TFieldSignature tSignature = (TFieldSignature) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[6];
-			TAbstractType tType = (TAbstractType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[7];
-			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[8];
-			Type mType = (Type) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[9];
+			TFieldSignature tSignature = (TFieldSignature) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[0];
+			TAbstractType tType = (TAbstractType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[1];
+			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[2];
+			TypeToTAbstractType mTypeToType = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[3];
+			TFieldDefinition tMember = (TFieldDefinition) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[4];
+			TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[5];
+			TypeGraph pm = (TypeGraph) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[6];
+			TField tName = (TField) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[7];
+			Type mType = (Type) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[8];
+			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_AnnotationTypeMember_11_1_performtransformation_binding[9];
 
 			Object[] result_pattern_AnnotationTypeMember_11_1_performtransformation_black = pattern_AnnotationTypeMember_11_1_performtransformation_blackBBBBBBBBBBFBB(
-					mAnnotation, tName, pm, tMember, mTypeToType, tAnnotation, tSignature, tType,
-					mAnnotationToAnnotation, mType, _this, isApplicableMatch);
+					tSignature, tType, mAnnotation, mTypeToType, tMember, mAnnotationToAnnotation, pm, tName, mType,
+					tAnnotation, _this, isApplicableMatch);
 			if (result_pattern_AnnotationTypeMember_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnnotationTypeMember_11_1_performtransformation_black[10];
 
-				return new Object[] { mAnnotation, tName, pm, tMember, mTypeToType, tAnnotation, tSignature, tType,
-						mAnnotationToAnnotation, mType, csp, _this, isApplicableMatch };
+				return new Object[] { tSignature, tType, mAnnotation, mTypeToType, tMember, mAnnotationToAnnotation, pm,
+						tName, mType, tAnnotation, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_11_1_performtransformation_greenFFBFBFBB(
+	public static final Object[] pattern_AnnotationTypeMember_11_1_performtransformation_greenBBFFFBFB(
 			AnnotationTypeDeclaration mAnnotation, TFieldDefinition tMember, Type mType, CSP csp) {
-		TypeAccess access = JavaFactory.eINSTANCE.createTypeAccess();
-		AnnotationTypeMemberDeclaration mMember = JavaFactory.eINSTANCE.createAnnotationTypeMemberDeclaration();
-		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		ASTNodeToTAnnotatable anntotatableToTannotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
+		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		AnnotationTypeMemberDeclaration mMember = JavaFactory.eINSTANCE.createAnnotationTypeMemberDeclaration();
+		TypeAccess access = JavaFactory.eINSTANCE.createTypeAccess();
 		Object _localVariable_0 = csp.getValue("mMember", "name");
-		access.setType(mType);
+		anntotatableToTannotatable.setTarget(tMember);
+		memberToMember.setTarget(tMember);
+		anntotatableToTannotatable.setSource(mMember);
+		memberToMember.setSource(mMember);
 		mAnnotation.getBodyDeclarations().add(mMember);
 		mMember.setType(access);
-		memberToMember.setSource(mMember);
-		memberToMember.setTarget(tMember);
-		anntotatableToTannotatable.setTarget(tMember);
-		anntotatableToTannotatable.setSource(mMember);
+		access.setType(mType);
 		String mMember_name_prime = (String) _localVariable_0;
 		mMember.setName(mMember_name_prime);
-		return new Object[] { access, mMember, mAnnotation, memberToMember, tMember, anntotatableToTannotatable, mType,
+		return new Object[] { mAnnotation, tMember, anntotatableToTannotatable, memberToMember, mMember, mType, access,
 				csp };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_11_2_collecttranslatedelements_blackBBBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, TField tName,
-			MDefinitionToTMember memberToMember, TFieldDefinition tMember,
-			ASTNodeToTAnnotatable anntotatableToTannotatable, TFieldSignature tSignature) {
-		return new Object[] { access, mMember, tName, memberToMember, tMember, anntotatableToTannotatable, tSignature };
+			TFieldSignature tSignature, TFieldDefinition tMember, ASTNodeToTAnnotatable anntotatableToTannotatable,
+			MDefinitionToTMember memberToMember, AnnotationTypeMemberDeclaration mMember, TField tName,
+			TypeAccess access) {
+		return new Object[] { tSignature, tMember, anntotatableToTannotatable, memberToMember, mMember, tName, access };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_11_2_collecttranslatedelements_greenFBBBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, TField tName,
-			MDefinitionToTMember memberToMember, TFieldDefinition tMember,
-			ASTNodeToTAnnotatable anntotatableToTannotatable, TFieldSignature tSignature) {
+			TFieldSignature tSignature, TFieldDefinition tMember, ASTNodeToTAnnotatable anntotatableToTannotatable,
+			MDefinitionToTMember memberToMember, AnnotationTypeMemberDeclaration mMember, TField tName,
+			TypeAccess access) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(access);
-		ruleresult.getCreatedElements().add(mMember);
-		ruleresult.getTranslatedElements().add(tName);
-		ruleresult.getCreatedLinkElements().add(memberToMember);
+		ruleresult.getTranslatedElements().add(tSignature);
 		ruleresult.getTranslatedElements().add(tMember);
 		ruleresult.getCreatedLinkElements().add(anntotatableToTannotatable);
-		ruleresult.getTranslatedElements().add(tSignature);
-		return new Object[] { ruleresult, access, mMember, tName, memberToMember, tMember, anntotatableToTannotatable,
-				tSignature };
+		ruleresult.getCreatedLinkElements().add(memberToMember);
+		ruleresult.getCreatedElements().add(mMember);
+		ruleresult.getTranslatedElements().add(tName);
+		ruleresult.getCreatedElements().add(access);
+		return new Object[] { ruleresult, tSignature, tMember, anntotatableToTannotatable, memberToMember, mMember,
+				tName, access };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject access, EObject mMember, EObject mAnnotation, EObject tName,
-			EObject memberToMember, EObject pm, EObject tMember, EObject mTypeToType, EObject tAnnotation,
-			EObject anntotatableToTannotatable, EObject tSignature, EObject tType, EObject mAnnotationToAnnotation,
-			EObject mType) {
-		if (!access.equals(mMember)) {
-			if (!access.equals(mAnnotation)) {
-				if (!access.equals(tName)) {
-					if (!access.equals(memberToMember)) {
-						if (!access.equals(pm)) {
-							if (!access.equals(tMember)) {
-								if (!access.equals(mTypeToType)) {
-									if (!access.equals(tAnnotation)) {
-										if (!access.equals(anntotatableToTannotatable)) {
-											if (!access.equals(tSignature)) {
-												if (!access.equals(tType)) {
-													if (!access.equals(mAnnotationToAnnotation)) {
-														if (!access.equals(mType)) {
-															if (!mMember.equals(tName)) {
-																if (!mMember.equals(memberToMember)) {
-																	if (!mMember.equals(pm)) {
-																		if (!mMember.equals(tMember)) {
-																			if (!mMember.equals(mTypeToType)) {
-																				if (!mMember.equals(tAnnotation)) {
-																					if (!mMember.equals(tSignature)) {
-																						if (!mMember.equals(tType)) {
-																							if (!mMember
-																									.equals(mType)) {
-																								if (!mAnnotation.equals(
-																										mMember)) {
-																									if (!mAnnotation
-																											.equals(tName)) {
-																										if (!mAnnotation
-																												.equals(memberToMember)) {
-																											if (!mAnnotation
-																													.equals(pm)) {
-																												if (!mAnnotation
+			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mAnnotation, EObject mTypeToType,
+			EObject tMember, EObject anntotatableToTannotatable, EObject mAnnotationToAnnotation,
+			EObject memberToMember, EObject pm, EObject mMember, EObject tName, EObject mType, EObject access,
+			EObject tAnnotation) {
+		if (!tSignature.equals(tType)) {
+			if (!mAnnotation.equals(tSignature)) {
+				if (!mAnnotation.equals(tType)) {
+					if (!mAnnotation.equals(mTypeToType)) {
+						if (!mAnnotation.equals(tMember)) {
+							if (!mAnnotation.equals(mAnnotationToAnnotation)) {
+								if (!mAnnotation.equals(memberToMember)) {
+									if (!mAnnotation.equals(pm)) {
+										if (!mAnnotation.equals(mMember)) {
+											if (!mAnnotation.equals(tName)) {
+												if (!mAnnotation.equals(mType)) {
+													if (!mAnnotation.equals(tAnnotation)) {
+														if (!mTypeToType.equals(tSignature)) {
+															if (!mTypeToType.equals(tType)) {
+																if (!mTypeToType.equals(tMember)) {
+																	if (!mTypeToType.equals(memberToMember)) {
+																		if (!mTypeToType.equals(pm)) {
+																			if (!mTypeToType.equals(tName)) {
+																				if (!mTypeToType.equals(tAnnotation)) {
+																					if (!tMember.equals(tSignature)) {
+																						if (!tMember.equals(tType)) {
+																							if (!tMember
+																									.equals(tName)) {
+																								if (!anntotatableToTannotatable
+																										.equals(tSignature)) {
+																									if (!anntotatableToTannotatable
+																											.equals(tType)) {
+																										if (!anntotatableToTannotatable
+																												.equals(mAnnotation)) {
+																											if (!anntotatableToTannotatable
+																													.equals(mTypeToType)) {
+																												if (!anntotatableToTannotatable
 																														.equals(tMember)) {
-																													if (!mAnnotation
-																															.equals(mTypeToType)) {
-																														if (!mAnnotation
-																																.equals(tAnnotation)) {
-																															if (!mAnnotation
-																																	.equals(tSignature)) {
-																																if (!mAnnotation
-																																		.equals(tType)) {
-																																	if (!mAnnotation
-																																			.equals(mAnnotationToAnnotation)) {
-																																		if (!mAnnotation
+																													if (!anntotatableToTannotatable
+																															.equals(mAnnotationToAnnotation)) {
+																														if (!anntotatableToTannotatable
+																																.equals(memberToMember)) {
+																															if (!anntotatableToTannotatable
+																																	.equals(pm)) {
+																																if (!anntotatableToTannotatable
+																																		.equals(mMember)) {
+																																	if (!anntotatableToTannotatable
+																																			.equals(tName)) {
+																																		if (!anntotatableToTannotatable
 																																				.equals(mType)) {
-																																			if (!tName
-																																					.equals(tSignature)) {
-																																				if (!tName
-																																						.equals(tType)) {
-																																					if (!memberToMember
-																																							.equals(tName)) {
-																																						if (!memberToMember
-																																								.equals(pm)) {
-																																							if (!memberToMember
+																																			if (!anntotatableToTannotatable
+																																					.equals(tAnnotation)) {
+																																				if (!mAnnotationToAnnotation
+																																						.equals(tSignature)) {
+																																					if (!mAnnotationToAnnotation
+																																							.equals(tType)) {
+																																						if (!mAnnotationToAnnotation
+																																								.equals(mTypeToType)) {
+																																							if (!mAnnotationToAnnotation
 																																									.equals(tMember)) {
-																																								if (!memberToMember
-																																										.equals(tAnnotation)) {
-																																									if (!memberToMember
-																																											.equals(tSignature)) {
-																																										if (!memberToMember
-																																												.equals(tType)) {
-																																											if (!pm.equals(
-																																													tName)) {
-																																												if (!pm.equals(
-																																														tMember)) {
-																																													if (!pm.equals(
-																																															tAnnotation)) {
-																																														if (!pm.equals(
-																																																tSignature)) {
-																																															if (!pm.equals(
-																																																	tType)) {
-																																																if (!tMember
-																																																		.equals(tName)) {
-																																																	if (!tMember
-																																																			.equals(tSignature)) {
-																																																		if (!tMember
-																																																				.equals(tType)) {
-																																																			if (!mTypeToType
-																																																					.equals(tName)) {
-																																																				if (!mTypeToType
-																																																						.equals(memberToMember)) {
-																																																					if (!mTypeToType
-																																																							.equals(pm)) {
-																																																						if (!mTypeToType
-																																																								.equals(tMember)) {
-																																																							if (!mTypeToType
-																																																									.equals(tAnnotation)) {
-																																																								if (!mTypeToType
-																																																										.equals(tSignature)) {
-																																																									if (!mTypeToType
-																																																											.equals(tType)) {
-																																																										if (!tAnnotation
-																																																												.equals(tName)) {
-																																																											if (!tAnnotation
-																																																													.equals(tMember)) {
-																																																												if (!tAnnotation
-																																																														.equals(tSignature)) {
-																																																													if (!tAnnotation
-																																																															.equals(tType)) {
-																																																														if (!anntotatableToTannotatable
-																																																																.equals(mMember)) {
-																																																															if (!anntotatableToTannotatable
-																																																																	.equals(mAnnotation)) {
-																																																																if (!anntotatableToTannotatable
-																																																																		.equals(tName)) {
-																																																																	if (!anntotatableToTannotatable
-																																																																			.equals(memberToMember)) {
-																																																																		if (!anntotatableToTannotatable
-																																																																				.equals(pm)) {
-																																																																			if (!anntotatableToTannotatable
-																																																																					.equals(tMember)) {
-																																																																				if (!anntotatableToTannotatable
-																																																																						.equals(mTypeToType)) {
-																																																																					if (!anntotatableToTannotatable
-																																																																							.equals(tAnnotation)) {
-																																																																						if (!anntotatableToTannotatable
-																																																																								.equals(tSignature)) {
-																																																																							if (!anntotatableToTannotatable
-																																																																									.equals(tType)) {
-																																																																								if (!anntotatableToTannotatable
-																																																																										.equals(mAnnotationToAnnotation)) {
-																																																																									if (!anntotatableToTannotatable
-																																																																											.equals(mType)) {
-																																																																										if (!tSignature
-																																																																												.equals(tType)) {
-																																																																											if (!mAnnotationToAnnotation
-																																																																													.equals(mMember)) {
-																																																																												if (!mAnnotationToAnnotation
-																																																																														.equals(tName)) {
-																																																																													if (!mAnnotationToAnnotation
-																																																																															.equals(memberToMember)) {
-																																																																														if (!mAnnotationToAnnotation
-																																																																																.equals(pm)) {
-																																																																															if (!mAnnotationToAnnotation
-																																																																																	.equals(tMember)) {
-																																																																																if (!mAnnotationToAnnotation
-																																																																																		.equals(mTypeToType)) {
-																																																																																	if (!mAnnotationToAnnotation
-																																																																																			.equals(tAnnotation)) {
-																																																																																		if (!mAnnotationToAnnotation
-																																																																																				.equals(tSignature)) {
-																																																																																			if (!mAnnotationToAnnotation
-																																																																																					.equals(tType)) {
-																																																																																				if (!mAnnotationToAnnotation
-																																																																																						.equals(mType)) {
-																																																																																					if (!mType
-																																																																																							.equals(tName)) {
-																																																																																						if (!mType
-																																																																																								.equals(memberToMember)) {
-																																																																																							if (!mType
-																																																																																									.equals(pm)) {
-																																																																																								if (!mType
-																																																																																										.equals(tMember)) {
-																																																																																									if (!mType
-																																																																																											.equals(mTypeToType)) {
-																																																																																										if (!mType
-																																																																																												.equals(tAnnotation)) {
-																																																																																											if (!mType
-																																																																																													.equals(tSignature)) {
-																																																																																												if (!mType
-																																																																																														.equals(tType)) {
+																																								if (!mAnnotationToAnnotation
+																																										.equals(memberToMember)) {
+																																									if (!mAnnotationToAnnotation
+																																											.equals(pm)) {
+																																										if (!mAnnotationToAnnotation
+																																												.equals(mMember)) {
+																																											if (!mAnnotationToAnnotation
+																																													.equals(tName)) {
+																																												if (!mAnnotationToAnnotation
+																																														.equals(mType)) {
+																																													if (!mAnnotationToAnnotation
+																																															.equals(tAnnotation)) {
+																																														if (!memberToMember
+																																																.equals(tSignature)) {
+																																															if (!memberToMember
+																																																	.equals(tType)) {
+																																																if (!memberToMember
+																																																		.equals(tMember)) {
+																																																	if (!memberToMember
+																																																			.equals(pm)) {
+																																																		if (!memberToMember
+																																																				.equals(tName)) {
+																																																			if (!memberToMember
+																																																					.equals(tAnnotation)) {
+																																																				if (!pm.equals(
+																																																						tSignature)) {
+																																																					if (!pm.equals(
+																																																							tType)) {
+																																																						if (!pm.equals(
+																																																								tMember)) {
+																																																							if (!pm.equals(
+																																																									tName)) {
+																																																								if (!pm.equals(
+																																																										tAnnotation)) {
+																																																									if (!mMember
+																																																											.equals(tSignature)) {
+																																																										if (!mMember
+																																																												.equals(tType)) {
+																																																											if (!mMember
+																																																													.equals(mTypeToType)) {
+																																																												if (!mMember
+																																																														.equals(tMember)) {
+																																																													if (!mMember
+																																																															.equals(memberToMember)) {
+																																																														if (!mMember
+																																																																.equals(pm)) {
+																																																															if (!mMember
+																																																																	.equals(tName)) {
+																																																																if (!mMember
+																																																																		.equals(mType)) {
+																																																																	if (!mMember
+																																																																			.equals(tAnnotation)) {
+																																																																		if (!tName
+																																																																				.equals(tSignature)) {
+																																																																			if (!tName
+																																																																					.equals(tType)) {
+																																																																				if (!mType
+																																																																						.equals(tSignature)) {
+																																																																					if (!mType
+																																																																							.equals(tType)) {
+																																																																						if (!mType
+																																																																								.equals(mTypeToType)) {
+																																																																							if (!mType
+																																																																									.equals(tMember)) {
+																																																																								if (!mType
+																																																																										.equals(memberToMember)) {
+																																																																									if (!mType
+																																																																											.equals(pm)) {
+																																																																										if (!mType
+																																																																												.equals(tName)) {
+																																																																											if (!mType
+																																																																													.equals(tAnnotation)) {
+																																																																												if (!access
+																																																																														.equals(tSignature)) {
+																																																																													if (!access
+																																																																															.equals(tType)) {
+																																																																														if (!access
+																																																																																.equals(mAnnotation)) {
+																																																																															if (!access
+																																																																																	.equals(mTypeToType)) {
+																																																																																if (!access
+																																																																																		.equals(tMember)) {
+																																																																																	if (!access
+																																																																																			.equals(anntotatableToTannotatable)) {
+																																																																																		if (!access
+																																																																																				.equals(mAnnotationToAnnotation)) {
+																																																																																			if (!access
+																																																																																					.equals(memberToMember)) {
+																																																																																				if (!access
+																																																																																						.equals(pm)) {
+																																																																																					if (!access
+																																																																																							.equals(mMember)) {
+																																																																																						if (!access
+																																																																																								.equals(tName)) {
+																																																																																							if (!access
+																																																																																									.equals(mType)) {
+																																																																																								if (!access
+																																																																																										.equals(tAnnotation)) {
+																																																																																									if (!tAnnotation
+																																																																																											.equals(tSignature)) {
+																																																																																										if (!tAnnotation
+																																																																																												.equals(tType)) {
+																																																																																											if (!tAnnotation
+																																																																																													.equals(tMember)) {
+																																																																																												if (!tAnnotation
+																																																																																														.equals(tName)) {
 																																																																																													return new Object[] {
 																																																																																															ruleresult,
-																																																																																															access,
-																																																																																															mMember,
-																																																																																															mAnnotation,
-																																																																																															tName,
-																																																																																															memberToMember,
-																																																																																															pm,
-																																																																																															tMember,
-																																																																																															mTypeToType,
-																																																																																															tAnnotation,
-																																																																																															anntotatableToTannotatable,
 																																																																																															tSignature,
 																																																																																															tType,
+																																																																																															mAnnotation,
+																																																																																															mTypeToType,
+																																																																																															tMember,
+																																																																																															anntotatableToTannotatable,
 																																																																																															mAnnotationToAnnotation,
-																																																																																															mType };
+																																																																																															memberToMember,
+																																																																																															pm,
+																																																																																															mMember,
+																																																																																															tName,
+																																																																																															mType,
+																																																																																															access,
+																																																																																															tAnnotation };
 																																																																																												}
 																																																																																											}
 																																																																																										}
@@ -3231,146 +3230,146 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_11_3_bookkeepingforedges_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject access, EObject mMember, EObject mAnnotation, EObject tName,
-			EObject memberToMember, EObject pm, EObject tMember, EObject tAnnotation,
-			EObject anntotatableToTannotatable, EObject tSignature, EObject tType, EObject mType) {
-		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mMember__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge memberToMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge access__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mType__access____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject tSignature, EObject tType, EObject mAnnotation, EObject tMember,
+			EObject anntotatableToTannotatable, EObject memberToMember, EObject pm, EObject mMember, EObject tName,
+			EObject mType, EObject access, EObject tAnnotation) {
+		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge anntotatableToTannotatable__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge memberToMember__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge anntotatableToTannotatable__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge memberToMember__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge anntotatableToTannotatable__tMember____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tMember____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge anntotatableToTannotatable__mMember____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge access__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mType__access____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotation__mMember____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mMember__mAnnotation____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AnnotationTypeMember";
-		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
-		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String mMember__access____type_name_prime = "type";
-		String tName__pm____model_name_prime = "model";
-		String pm__tName____fields_name_prime = "fields";
-		String memberToMember__mMember____source_name_prime = "source";
-		String access__mType____type_name_prime = "type";
-		String mType__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
+		String tSignature__tType____type_name_prime = "type";
+		String anntotatableToTannotatable__tMember____target_name_prime = "target";
 		String memberToMember__tMember____target_name_prime = "target";
+		String anntotatableToTannotatable__mMember____source_name_prime = "source";
+		String mMember__access____type_name_prime = "type";
+		String memberToMember__mMember____source_name_prime = "source";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____field_name_prime = "field";
-		String tAnnotation__tSignature____signature_name_prime = "signature";
-		String anntotatableToTannotatable__tMember____target_name_prime = "target";
-		String tSignature__tType____type_name_prime = "type";
 		String tSignature__tMember____definitions_name_prime = "definitions";
 		String tMember__tSignature____signature_name_prime = "signature";
-		String anntotatableToTannotatable__mMember____source_name_prime = "source";
+		String tName__pm____model_name_prime = "model";
+		String pm__tName____fields_name_prime = "fields";
+		String access__mType____type_name_prime = "type";
+		String mType__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String tAnnotation__tMember____defines_name_prime = "defines";
 		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
-		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
-		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
-		ruleresult.getCreatedEdges().add(mAnnotation__mMember____bodyDeclarations);
-		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
-		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
-		ruleresult.getCreatedEdges().add(mMember__mAnnotation____abstractTypeDeclaration);
-		mMember__access____type.setSrc(mMember);
-		mMember__access____type.setTrg(access);
-		ruleresult.getCreatedEdges().add(mMember__access____type);
-		tName__pm____model.setSrc(tName);
-		tName__pm____model.setTrg(pm);
-		ruleresult.getTranslatedEdges().add(tName__pm____model);
-		pm__tName____fields.setSrc(pm);
-		pm__tName____fields.setTrg(tName);
-		ruleresult.getTranslatedEdges().add(pm__tName____fields);
-		memberToMember__mMember____source.setSrc(memberToMember);
-		memberToMember__mMember____source.setTrg(mMember);
-		ruleresult.getCreatedEdges().add(memberToMember__mMember____source);
-		access__mType____type.setSrc(access);
-		access__mType____type.setTrg(mType);
-		ruleresult.getCreatedEdges().add(access__mType____type);
-		mType__access____usagesInTypeAccess.setSrc(mType);
-		mType__access____usagesInTypeAccess.setTrg(access);
-		ruleresult.getCreatedEdges().add(mType__access____usagesInTypeAccess);
+		String mAnnotation__mMember____bodyDeclarations_name_prime = "bodyDeclarations";
+		String mMember__mAnnotation____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
+		String tAnnotation__tSignature____signature_name_prime = "signature";
+		tSignature__tType____type.setSrc(tSignature);
+		tSignature__tType____type.setTrg(tType);
+		ruleresult.getTranslatedEdges().add(tSignature__tType____type);
+		anntotatableToTannotatable__tMember____target.setSrc(anntotatableToTannotatable);
+		anntotatableToTannotatable__tMember____target.setTrg(tMember);
+		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__tMember____target);
 		memberToMember__tMember____target.setSrc(memberToMember);
 		memberToMember__tMember____target.setTrg(tMember);
 		ruleresult.getCreatedEdges().add(memberToMember__tMember____target);
+		anntotatableToTannotatable__mMember____source.setSrc(anntotatableToTannotatable);
+		anntotatableToTannotatable__mMember____source.setTrg(mMember);
+		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__mMember____source);
+		mMember__access____type.setSrc(mMember);
+		mMember__access____type.setTrg(access);
+		ruleresult.getCreatedEdges().add(mMember__access____type);
+		memberToMember__mMember____source.setSrc(memberToMember);
+		memberToMember__mMember____source.setTrg(mMember);
+		ruleresult.getCreatedEdges().add(memberToMember__mMember____source);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tName__tSignature____signatures);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		ruleresult.getTranslatedEdges().add(tSignature__tName____field);
-		tAnnotation__tSignature____signature.setSrc(tAnnotation);
-		tAnnotation__tSignature____signature.setTrg(tSignature);
-		ruleresult.getTranslatedEdges().add(tAnnotation__tSignature____signature);
-		anntotatableToTannotatable__tMember____target.setSrc(anntotatableToTannotatable);
-		anntotatableToTannotatable__tMember____target.setTrg(tMember);
-		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__tMember____target);
-		tSignature__tType____type.setSrc(tSignature);
-		tSignature__tType____type.setTrg(tType);
-		ruleresult.getTranslatedEdges().add(tSignature__tType____type);
 		tSignature__tMember____definitions.setSrc(tSignature);
 		tSignature__tMember____definitions.setTrg(tMember);
 		ruleresult.getTranslatedEdges().add(tSignature__tMember____definitions);
 		tMember__tSignature____signature.setSrc(tMember);
 		tMember__tSignature____signature.setTrg(tSignature);
 		ruleresult.getTranslatedEdges().add(tMember__tSignature____signature);
-		anntotatableToTannotatable__mMember____source.setSrc(anntotatableToTannotatable);
-		anntotatableToTannotatable__mMember____source.setTrg(mMember);
-		ruleresult.getCreatedEdges().add(anntotatableToTannotatable__mMember____source);
+		tName__pm____model.setSrc(tName);
+		tName__pm____model.setTrg(pm);
+		ruleresult.getTranslatedEdges().add(tName__pm____model);
+		pm__tName____fields.setSrc(pm);
+		pm__tName____fields.setTrg(tName);
+		ruleresult.getTranslatedEdges().add(pm__tName____fields);
+		access__mType____type.setSrc(access);
+		access__mType____type.setTrg(mType);
+		ruleresult.getCreatedEdges().add(access__mType____type);
+		mType__access____usagesInTypeAccess.setSrc(mType);
+		mType__access____usagesInTypeAccess.setTrg(access);
+		ruleresult.getCreatedEdges().add(mType__access____usagesInTypeAccess);
 		tAnnotation__tMember____defines.setSrc(tAnnotation);
 		tAnnotation__tMember____defines.setTrg(tMember);
 		ruleresult.getTranslatedEdges().add(tAnnotation__tMember____defines);
 		tMember__tAnnotation____definedBy.setSrc(tMember);
 		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
 		ruleresult.getTranslatedEdges().add(tMember__tAnnotation____definedBy);
+		mAnnotation__mMember____bodyDeclarations.setSrc(mAnnotation);
+		mAnnotation__mMember____bodyDeclarations.setTrg(mMember);
+		ruleresult.getCreatedEdges().add(mAnnotation__mMember____bodyDeclarations);
+		mMember__mAnnotation____abstractTypeDeclaration.setSrc(mMember);
+		mMember__mAnnotation____abstractTypeDeclaration.setTrg(mAnnotation);
+		ruleresult.getCreatedEdges().add(mMember__mAnnotation____abstractTypeDeclaration);
+		tAnnotation__tSignature____signature.setSrc(tAnnotation);
+		tAnnotation__tSignature____signature.setTrg(tSignature);
+		ruleresult.getTranslatedEdges().add(tAnnotation__tSignature____signature);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
+		anntotatableToTannotatable__tMember____target.setName(anntotatableToTannotatable__tMember____target_name_prime);
+		memberToMember__tMember____target.setName(memberToMember__tMember____target_name_prime);
+		anntotatableToTannotatable__mMember____source.setName(anntotatableToTannotatable__mMember____source_name_prime);
+		mMember__access____type.setName(mMember__access____type_name_prime);
+		memberToMember__mMember____source.setName(memberToMember__mMember____source_name_prime);
+		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
+		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
+		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
+		tName__pm____model.setName(tName__pm____model_name_prime);
+		pm__tName____fields.setName(pm__tName____fields_name_prime);
+		access__mType____type.setName(access__mType____type_name_prime);
+		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
+		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
+		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
 		mAnnotation__mMember____bodyDeclarations.setName(mAnnotation__mMember____bodyDeclarations_name_prime);
 		mMember__mAnnotation____abstractTypeDeclaration
 				.setName(mMember__mAnnotation____abstractTypeDeclaration_name_prime);
-		mMember__access____type.setName(mMember__access____type_name_prime);
-		tName__pm____model.setName(tName__pm____model_name_prime);
-		pm__tName____fields.setName(pm__tName____fields_name_prime);
-		memberToMember__mMember____source.setName(memberToMember__mMember____source_name_prime);
-		access__mType____type.setName(access__mType____type_name_prime);
-		mType__access____usagesInTypeAccess.setName(mType__access____usagesInTypeAccess_name_prime);
-		memberToMember__tMember____target.setName(memberToMember__tMember____target_name_prime);
-		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
 		tAnnotation__tSignature____signature.setName(tAnnotation__tSignature____signature_name_prime);
-		anntotatableToTannotatable__tMember____target.setName(anntotatableToTannotatable__tMember____target_name_prime);
-		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
-		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
-		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
-		anntotatableToTannotatable__mMember____source.setName(anntotatableToTannotatable__mMember____source_name_prime);
-		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
-		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
-		return new Object[] { ruleresult, access, mMember, mAnnotation, tName, memberToMember, pm, tMember, tAnnotation,
-				anntotatableToTannotatable, tSignature, tType, mType, mAnnotation__mMember____bodyDeclarations,
-				mMember__mAnnotation____abstractTypeDeclaration, mMember__access____type, tName__pm____model,
-				pm__tName____fields, memberToMember__mMember____source, access__mType____type,
-				mType__access____usagesInTypeAccess, memberToMember__tMember____target, tName__tSignature____signatures,
-				tSignature__tName____field, tAnnotation__tSignature____signature,
-				anntotatableToTannotatable__tMember____target, tSignature__tType____type,
-				tSignature__tMember____definitions, tMember__tSignature____signature,
-				anntotatableToTannotatable__mMember____source, tAnnotation__tMember____defines,
-				tMember__tAnnotation____definedBy };
+		return new Object[] { ruleresult, tSignature, tType, mAnnotation, tMember, anntotatableToTannotatable,
+				memberToMember, pm, mMember, tName, mType, access, tAnnotation, tSignature__tType____type,
+				anntotatableToTannotatable__tMember____target, memberToMember__tMember____target,
+				anntotatableToTannotatable__mMember____source, mMember__access____type,
+				memberToMember__mMember____source, tName__tSignature____signatures, tSignature__tName____field,
+				tSignature__tMember____definitions, tMember__tSignature____signature, tName__pm____model,
+				pm__tName____fields, access__mType____type, mType__access____usagesInTypeAccess,
+				tAnnotation__tMember____defines, tMember__tAnnotation____definedBy,
+				mAnnotation__mMember____bodyDeclarations, mMember__mAnnotation____abstractTypeDeclaration,
+				tAnnotation__tSignature____signature };
 	}
 
 	public static final void pattern_AnnotationTypeMember_11_5_registerobjects_expressionBBBBBBBBBBBBBBBB(
-			AnnotationTypeMember _this, PerformRuleResult ruleresult, EObject access, EObject mMember,
-			EObject mAnnotation, EObject tName, EObject memberToMember, EObject pm, EObject tMember,
-			EObject mTypeToType, EObject tAnnotation, EObject anntotatableToTannotatable, EObject tSignature,
-			EObject tType, EObject mAnnotationToAnnotation, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, access, mMember, mAnnotation, tName, memberToMember, pm, tMember,
-				mTypeToType, tAnnotation, anntotatableToTannotatable, tSignature, tType, mAnnotationToAnnotation,
-				mType);
+			AnnotationTypeMember _this, PerformRuleResult ruleresult, EObject tSignature, EObject tType,
+			EObject mAnnotation, EObject mTypeToType, EObject tMember, EObject anntotatableToTannotatable,
+			EObject mAnnotationToAnnotation, EObject memberToMember, EObject pm, EObject mMember, EObject tName,
+			EObject mType, EObject access, EObject tAnnotation) {
+		_this.registerObjects_BWD(ruleresult, tSignature, tType, mAnnotation, mTypeToType, tMember,
+				anntotatableToTannotatable, mAnnotationToAnnotation, memberToMember, pm, mMember, tName, mType, access,
+				tAnnotation);
 
 	}
 
@@ -3431,31 +3430,31 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_12_2_corematch_bindingFFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("tName");
-		EObject _localVariable_1 = match.getObject("pm");
+		EObject _localVariable_0 = match.getObject("tSignature");
+		EObject _localVariable_1 = match.getObject("tType");
 		EObject _localVariable_2 = match.getObject("tMember");
-		EObject _localVariable_3 = match.getObject("tAnnotation");
-		EObject _localVariable_4 = match.getObject("tSignature");
-		EObject _localVariable_5 = match.getObject("tType");
-		EObject tmpTName = _localVariable_0;
-		EObject tmpPm = _localVariable_1;
+		EObject _localVariable_3 = match.getObject("pm");
+		EObject _localVariable_4 = match.getObject("tName");
+		EObject _localVariable_5 = match.getObject("tAnnotation");
+		EObject tmpTSignature = _localVariable_0;
+		EObject tmpTType = _localVariable_1;
 		EObject tmpTMember = _localVariable_2;
-		EObject tmpTAnnotation = _localVariable_3;
-		EObject tmpTSignature = _localVariable_4;
-		EObject tmpTType = _localVariable_5;
-		if (tmpTName instanceof TField) {
-			TField tName = (TField) tmpTName;
-			if (tmpPm instanceof TypeGraph) {
-				TypeGraph pm = (TypeGraph) tmpPm;
+		EObject tmpPm = _localVariable_3;
+		EObject tmpTName = _localVariable_4;
+		EObject tmpTAnnotation = _localVariable_5;
+		if (tmpTSignature instanceof TFieldSignature) {
+			TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
+			if (tmpTType instanceof TAbstractType) {
+				TAbstractType tType = (TAbstractType) tmpTType;
 				if (tmpTMember instanceof TFieldDefinition) {
 					TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
-					if (tmpTAnnotation instanceof TAnnotationType) {
-						TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-						if (tmpTSignature instanceof TFieldSignature) {
-							TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-							if (tmpTType instanceof TAbstractType) {
-								TAbstractType tType = (TAbstractType) tmpTType;
-								return new Object[] { tName, pm, tMember, tAnnotation, tSignature, tType, match };
+					if (tmpPm instanceof TypeGraph) {
+						TypeGraph pm = (TypeGraph) tmpPm;
+						if (tmpTName instanceof TField) {
+							TField tName = (TField) tmpTName;
+							if (tmpTAnnotation instanceof TAnnotationType) {
+								TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+								return new Object[] { tSignature, tType, tMember, pm, tName, tAnnotation, match };
 							}
 						}
 					}
@@ -3465,9 +3464,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeMember_12_2_corematch_blackFBBBFBBBFFB(TField tName,
-			TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation, TFieldSignature tSignature,
-			TAbstractType tType, Match match) {
+	public static final Iterable<Object[]> pattern_AnnotationTypeMember_12_2_corematch_blackBBFFBFBBFBB(
+			TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm, TField tName,
+			TAnnotationType tAnnotation, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tAnnotation.equals(tType)) {
 			int tSignature_lowerBound = tSignature.getLowerBound();
@@ -3483,9 +3482,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 								if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
 									AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
 									if (!mAnnotation.equals(mType)) {
-										_result.add(new Object[] { mAnnotation, tName, pm, tMember, mTypeToType,
-												tAnnotation, tSignature, tType, mAnnotationToAnnotation, mType,
-												match });
+										_result.add(new Object[] { tSignature, tType, mAnnotation, mTypeToType, tMember,
+												mAnnotationToAnnotation, pm, tName, mType, tAnnotation, match });
 									}
 								}
 
@@ -3501,32 +3499,31 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationTypeMember_12_3_findcontext_blackBBBBBBBBBB(
-			AnnotationTypeDeclaration mAnnotation, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TFieldSignature tSignature,
-			TAbstractType tType, TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+			TFieldSignature tSignature, TAbstractType tType, AnnotationTypeDeclaration mAnnotation,
+			TypeToTAbstractType mTypeToType, TFieldDefinition tMember, TypeToTAbstractType mAnnotationToAnnotation,
+			TypeGraph pm, TField tName, Type mType, TAnnotationType tAnnotation) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mAnnotation.equals(mType)) {
-			if (!tAnnotation.equals(tType)) {
-				if (!mAnnotationToAnnotation.equals(mTypeToType)) {
-					if (pm.equals(tName.getModel())) {
-						if (pm.equals(tAnnotation.getModel())) {
-							if (tName.getSignatures().contains(tSignature)) {
-								if (tAnnotation.getSignature().contains(tSignature)) {
-									if (tType.equals(tSignature.getType())) {
-										if (tSignature.getDefinitions().contains(tMember)) {
-											if (tType.equals(mTypeToType.getTarget())) {
-												if (mAnnotation.equals(mAnnotationToAnnotation.getSource())) {
+			if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+				if (!tAnnotation.equals(tType)) {
+					if (tType.equals(tSignature.getType())) {
+						if (mAnnotation.equals(mAnnotationToAnnotation.getSource())) {
+							if (tType.equals(mTypeToType.getTarget())) {
+								if (tName.getSignatures().contains(tSignature)) {
+									if (tSignature.getDefinitions().contains(tMember)) {
+										if (mType.equals(mTypeToType.getSource())) {
+											if (pm.equals(tName.getModel())) {
+												if (tAnnotation.equals(mAnnotationToAnnotation.getTarget())) {
 													if (tAnnotation.getDefines().contains(tMember)) {
-														if (mType.equals(mTypeToType.getSource())) {
-															if (tAnnotation
-																	.equals(mAnnotationToAnnotation.getTarget())) {
+														if (tAnnotation.getSignature().contains(tSignature)) {
+															if (pm.equals(tAnnotation.getModel())) {
 																int tSignature_lowerBound = tSignature.getLowerBound();
 																if (Integer.valueOf(tSignature_lowerBound)
 																		.equals(Integer.valueOf(0))) {
-																	_result.add(new Object[] { mAnnotation, tName, pm,
-																			tMember, mTypeToType, tAnnotation,
-																			tSignature, tType, mAnnotationToAnnotation,
-																			mType });
+																	_result.add(new Object[] { tSignature, tType,
+																			mAnnotation, mTypeToType, tMember,
+																			mAnnotationToAnnotation, pm, tName, mType,
+																			tAnnotation });
 																}
 
 															}
@@ -3547,139 +3544,139 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFFF(
-			AnnotationTypeDeclaration mAnnotation, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TFieldSignature tSignature,
-			TAbstractType tType, TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+			TFieldSignature tSignature, TAbstractType tType, AnnotationTypeDeclaration mAnnotation,
+			TypeToTAbstractType mTypeToType, TFieldDefinition tMember, TypeToTAbstractType mAnnotationToAnnotation,
+			TypeGraph pm, TField tName, Type mType, TAnnotationType tAnnotation) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge pm__tAnnotation____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tName__tSignature____signatures = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tName____field = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tSignature__tType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tSignature__tMember____definitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationToAnnotation__mAnnotation____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tName__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pm__tName____fields = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnnotation__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tMember__tAnnotation____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotationToAnnotation__tAnnotation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String tName__pm____model_name_prime = "model";
-		String pm__tName____fields_name_prime = "fields";
-		String tAnnotation__pm____model_name_prime = "model";
-		String pm__tAnnotation____allTypes_name_prime = "allTypes";
+		EMoflonEdge tAnnotation__tSignature____signature = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAnnotation__pm____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pm__tAnnotation____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String tSignature__tType____type_name_prime = "type";
+		String mAnnotationToAnnotation__mAnnotation____source_name_prime = "source";
+		String mTypeToType__tType____target_name_prime = "target";
 		String tName__tSignature____signatures_name_prime = "signatures";
 		String tSignature__tName____field_name_prime = "field";
-		String tAnnotation__tSignature____signature_name_prime = "signature";
-		String tSignature__tType____type_name_prime = "type";
 		String tSignature__tMember____definitions_name_prime = "definitions";
 		String tMember__tSignature____signature_name_prime = "signature";
-		String mTypeToType__tType____target_name_prime = "target";
-		String mAnnotationToAnnotation__mAnnotation____source_name_prime = "source";
+		String mTypeToType__mType____source_name_prime = "source";
+		String tName__pm____model_name_prime = "model";
+		String pm__tName____fields_name_prime = "fields";
+		String mAnnotationToAnnotation__tAnnotation____target_name_prime = "target";
 		String tAnnotation__tMember____defines_name_prime = "defines";
 		String tMember__tAnnotation____definedBy_name_prime = "definedBy";
-		String mTypeToType__mType____source_name_prime = "source";
-		String mAnnotationToAnnotation__tAnnotation____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(mAnnotation);
-		isApplicableMatch.getAllContextElements().add(tName);
-		isApplicableMatch.getAllContextElements().add(pm);
-		isApplicableMatch.getAllContextElements().add(tMember);
-		isApplicableMatch.getAllContextElements().add(mTypeToType);
-		isApplicableMatch.getAllContextElements().add(tAnnotation);
+		String tAnnotation__tSignature____signature_name_prime = "signature";
+		String tAnnotation__pm____model_name_prime = "model";
+		String pm__tAnnotation____allTypes_name_prime = "allTypes";
 		isApplicableMatch.getAllContextElements().add(tSignature);
 		isApplicableMatch.getAllContextElements().add(tType);
+		isApplicableMatch.getAllContextElements().add(mAnnotation);
+		isApplicableMatch.getAllContextElements().add(mTypeToType);
+		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation);
+		isApplicableMatch.getAllContextElements().add(pm);
+		isApplicableMatch.getAllContextElements().add(tName);
 		isApplicableMatch.getAllContextElements().add(mType);
-		tName__pm____model.setSrc(tName);
-		tName__pm____model.setTrg(pm);
-		isApplicableMatch.getAllContextElements().add(tName__pm____model);
-		pm__tName____fields.setSrc(pm);
-		pm__tName____fields.setTrg(tName);
-		isApplicableMatch.getAllContextElements().add(pm__tName____fields);
-		tAnnotation__pm____model.setSrc(tAnnotation);
-		tAnnotation__pm____model.setTrg(pm);
-		isApplicableMatch.getAllContextElements().add(tAnnotation__pm____model);
-		pm__tAnnotation____allTypes.setSrc(pm);
-		pm__tAnnotation____allTypes.setTrg(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(pm__tAnnotation____allTypes);
+		isApplicableMatch.getAllContextElements().add(tAnnotation);
+		tSignature__tType____type.setSrc(tSignature);
+		tSignature__tType____type.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(tSignature__tType____type);
+		mAnnotationToAnnotation__mAnnotation____source.setSrc(mAnnotationToAnnotation);
+		mAnnotationToAnnotation__mAnnotation____source.setTrg(mAnnotation);
+		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__mAnnotation____source);
+		mTypeToType__tType____target.setSrc(mTypeToType);
+		mTypeToType__tType____target.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(mTypeToType__tType____target);
 		tName__tSignature____signatures.setSrc(tName);
 		tName__tSignature____signatures.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(tName__tSignature____signatures);
 		tSignature__tName____field.setSrc(tSignature);
 		tSignature__tName____field.setTrg(tName);
 		isApplicableMatch.getAllContextElements().add(tSignature__tName____field);
-		tAnnotation__tSignature____signature.setSrc(tAnnotation);
-		tAnnotation__tSignature____signature.setTrg(tSignature);
-		isApplicableMatch.getAllContextElements().add(tAnnotation__tSignature____signature);
-		tSignature__tType____type.setSrc(tSignature);
-		tSignature__tType____type.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(tSignature__tType____type);
 		tSignature__tMember____definitions.setSrc(tSignature);
 		tSignature__tMember____definitions.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(tSignature__tMember____definitions);
 		tMember__tSignature____signature.setSrc(tMember);
 		tMember__tSignature____signature.setTrg(tSignature);
 		isApplicableMatch.getAllContextElements().add(tMember__tSignature____signature);
-		mTypeToType__tType____target.setSrc(mTypeToType);
-		mTypeToType__tType____target.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(mTypeToType__tType____target);
-		mAnnotationToAnnotation__mAnnotation____source.setSrc(mAnnotationToAnnotation);
-		mAnnotationToAnnotation__mAnnotation____source.setTrg(mAnnotation);
-		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__mAnnotation____source);
+		mTypeToType__mType____source.setSrc(mTypeToType);
+		mTypeToType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToType__mType____source);
+		tName__pm____model.setSrc(tName);
+		tName__pm____model.setTrg(pm);
+		isApplicableMatch.getAllContextElements().add(tName__pm____model);
+		pm__tName____fields.setSrc(pm);
+		pm__tName____fields.setTrg(tName);
+		isApplicableMatch.getAllContextElements().add(pm__tName____fields);
+		mAnnotationToAnnotation__tAnnotation____target.setSrc(mAnnotationToAnnotation);
+		mAnnotationToAnnotation__tAnnotation____target.setTrg(tAnnotation);
+		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__tAnnotation____target);
 		tAnnotation__tMember____defines.setSrc(tAnnotation);
 		tAnnotation__tMember____defines.setTrg(tMember);
 		isApplicableMatch.getAllContextElements().add(tAnnotation__tMember____defines);
 		tMember__tAnnotation____definedBy.setSrc(tMember);
 		tMember__tAnnotation____definedBy.setTrg(tAnnotation);
 		isApplicableMatch.getAllContextElements().add(tMember__tAnnotation____definedBy);
-		mTypeToType__mType____source.setSrc(mTypeToType);
-		mTypeToType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToType__mType____source);
-		mAnnotationToAnnotation__tAnnotation____target.setSrc(mAnnotationToAnnotation);
-		mAnnotationToAnnotation__tAnnotation____target.setTrg(tAnnotation);
-		isApplicableMatch.getAllContextElements().add(mAnnotationToAnnotation__tAnnotation____target);
-		tName__pm____model.setName(tName__pm____model_name_prime);
-		pm__tName____fields.setName(pm__tName____fields_name_prime);
-		tAnnotation__pm____model.setName(tAnnotation__pm____model_name_prime);
-		pm__tAnnotation____allTypes.setName(pm__tAnnotation____allTypes_name_prime);
-		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
-		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
-		tAnnotation__tSignature____signature.setName(tAnnotation__tSignature____signature_name_prime);
+		tAnnotation__tSignature____signature.setSrc(tAnnotation);
+		tAnnotation__tSignature____signature.setTrg(tSignature);
+		isApplicableMatch.getAllContextElements().add(tAnnotation__tSignature____signature);
+		tAnnotation__pm____model.setSrc(tAnnotation);
+		tAnnotation__pm____model.setTrg(pm);
+		isApplicableMatch.getAllContextElements().add(tAnnotation__pm____model);
+		pm__tAnnotation____allTypes.setSrc(pm);
+		pm__tAnnotation____allTypes.setTrg(tAnnotation);
+		isApplicableMatch.getAllContextElements().add(pm__tAnnotation____allTypes);
 		tSignature__tType____type.setName(tSignature__tType____type_name_prime);
-		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
-		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
-		mTypeToType__tType____target.setName(mTypeToType__tType____target_name_prime);
 		mAnnotationToAnnotation__mAnnotation____source
 				.setName(mAnnotationToAnnotation__mAnnotation____source_name_prime);
-		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
-		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
+		mTypeToType__tType____target.setName(mTypeToType__tType____target_name_prime);
+		tName__tSignature____signatures.setName(tName__tSignature____signatures_name_prime);
+		tSignature__tName____field.setName(tSignature__tName____field_name_prime);
+		tSignature__tMember____definitions.setName(tSignature__tMember____definitions_name_prime);
+		tMember__tSignature____signature.setName(tMember__tSignature____signature_name_prime);
 		mTypeToType__mType____source.setName(mTypeToType__mType____source_name_prime);
+		tName__pm____model.setName(tName__pm____model_name_prime);
+		pm__tName____fields.setName(pm__tName____fields_name_prime);
 		mAnnotationToAnnotation__tAnnotation____target
 				.setName(mAnnotationToAnnotation__tAnnotation____target_name_prime);
-		return new Object[] { mAnnotation, tName, pm, tMember, mTypeToType, tAnnotation, tSignature, tType,
-				mAnnotationToAnnotation, mType, isApplicableMatch, tName__pm____model, pm__tName____fields,
-				tAnnotation__pm____model, pm__tAnnotation____allTypes, tName__tSignature____signatures,
-				tSignature__tName____field, tAnnotation__tSignature____signature, tSignature__tType____type,
-				tSignature__tMember____definitions, tMember__tSignature____signature, mTypeToType__tType____target,
-				mAnnotationToAnnotation__mAnnotation____source, tAnnotation__tMember____defines,
-				tMember__tAnnotation____definedBy, mTypeToType__mType____source,
-				mAnnotationToAnnotation__tAnnotation____target };
+		tAnnotation__tMember____defines.setName(tAnnotation__tMember____defines_name_prime);
+		tMember__tAnnotation____definedBy.setName(tMember__tAnnotation____definedBy_name_prime);
+		tAnnotation__tSignature____signature.setName(tAnnotation__tSignature____signature_name_prime);
+		tAnnotation__pm____model.setName(tAnnotation__pm____model_name_prime);
+		pm__tAnnotation____allTypes.setName(pm__tAnnotation____allTypes_name_prime);
+		return new Object[] { tSignature, tType, mAnnotation, mTypeToType, tMember, mAnnotationToAnnotation, pm, tName,
+				mType, tAnnotation, isApplicableMatch, tSignature__tType____type,
+				mAnnotationToAnnotation__mAnnotation____source, mTypeToType__tType____target,
+				tName__tSignature____signatures, tSignature__tName____field, tSignature__tMember____definitions,
+				tMember__tSignature____signature, mTypeToType__mType____source, tName__pm____model, pm__tName____fields,
+				mAnnotationToAnnotation__tAnnotation____target, tAnnotation__tMember____defines,
+				tMember__tAnnotation____definedBy, tAnnotation__tSignature____signature, tAnnotation__pm____model,
+				pm__tAnnotation____allTypes };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
-			TField tName, TypeGraph pm, TFieldDefinition tMember, TypeToTAbstractType mTypeToType,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mAnnotation, tName, pm, tMember,
-				mTypeToType, tAnnotation, tSignature, tType, mAnnotationToAnnotation, mType);
+			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TFieldSignature tSignature,
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TFieldDefinition tMember, TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, TField tName,
+			Type mType, TAnnotationType tAnnotation) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, tSignature, tType, mAnnotation,
+				mTypeToType, tMember, mAnnotationToAnnotation, pm, tName, mType, tAnnotation);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mAnnotation, tName, pm, tMember, mTypeToType,
-					tAnnotation, tSignature, tType, mAnnotationToAnnotation, mType };
+			return new Object[] { csp, _this, isApplicableMatch, tSignature, tType, mAnnotation, mTypeToType, tMember,
+					mAnnotationToAnnotation, pm, tName, mType, tAnnotation };
 		}
 		return null;
 	}
@@ -3689,13 +3686,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
-			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
-			TField tName, TypeGraph pm, TFieldDefinition tMember, TypeToTAbstractType mTypeToType,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TFieldSignature tSignature,
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TFieldDefinition tMember, TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, TField tName,
+			Type mType, TAnnotationType tAnnotation) {
 		Object[] result_pattern_AnnotationTypeMember_12_4_solveCSP_binding = pattern_AnnotationTypeMember_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, mAnnotation, tName, pm, tMember, mTypeToType, tAnnotation, tSignature, tType,
-				mAnnotationToAnnotation, mType);
+				_this, isApplicableMatch, tSignature, tType, mAnnotation, mTypeToType, tMember, mAnnotationToAnnotation,
+				pm, tName, mType, tAnnotation);
 		if (result_pattern_AnnotationTypeMember_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeMember_12_4_solveCSP_binding[0];
 
@@ -3703,8 +3700,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 					csp);
 			if (result_pattern_AnnotationTypeMember_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mAnnotation, tName, pm, tMember, mTypeToType,
-						tAnnotation, tSignature, tType, mAnnotationToAnnotation, mType };
+				return new Object[] { csp, _this, isApplicableMatch, tSignature, tType, mAnnotation, mTypeToType,
+						tMember, mAnnotationToAnnotation, pm, tName, mType, tAnnotation };
 			}
 		}
 		return null;
@@ -3792,12 +3789,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_0BB(TField tName,
-			TypeGraph pm) {
-		TypeGraph __DEC_tName_fields_877611 = tName.getModel();
-		if (__DEC_tName_fields_877611 != null) {
-			if (!pm.equals(__DEC_tName_fields_877611)) {
-				return new Object[] { tName, pm };
+	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_0BB(
+			TFieldSignature tSignature, TField tName) {
+		TField __DEC_tSignature_field_237557 = tSignature.getField();
+		if (__DEC_tSignature_field_237557 != null) {
+			if (!tName.equals(__DEC_tSignature_field_237557)) {
+				return new Object[] { tSignature, tName };
 			}
 		}
 
@@ -3806,9 +3803,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_1BB(
 			TFieldDefinition tMember, TFieldSignature tSignature) {
-		TSignature __DEC_tMember_signature_617540 = tMember.getSignature();
-		if (__DEC_tMember_signature_617540 != null) {
-			if (!tSignature.equals(__DEC_tMember_signature_617540)) {
+		TSignature __DEC_tMember_signature_641870 = tMember.getSignature();
+		if (__DEC_tMember_signature_641870 != null) {
+			if (!tSignature.equals(__DEC_tMember_signature_641870)) {
 				return new Object[] { tMember, tSignature };
 			}
 		}
@@ -3818,8 +3815,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_2B(
 			TFieldDefinition tMember) {
-		TModule __DEC_tMember_contains_364250 = tMember.getModule();
-		if (__DEC_tMember_contains_364250 != null) {
+		TModule __DEC_tMember_contains_891575 = tMember.getModule();
+		if (__DEC_tMember_contains_891575 != null) {
 			return new Object[] { tMember };
 		}
 
@@ -3828,9 +3825,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_3BB(
 			TFieldDefinition tMember, TFieldSignature tSignature) {
-		TSignature __DEC_tMember_definitions_714247 = tMember.getSignature();
-		if (__DEC_tMember_definitions_714247 != null) {
-			if (!tSignature.equals(__DEC_tMember_definitions_714247)) {
+		TSignature __DEC_tMember_definitions_224567 = tMember.getSignature();
+		if (__DEC_tMember_definitions_224567 != null) {
+			if (!tSignature.equals(__DEC_tMember_definitions_224567)) {
 				return new Object[] { tMember, tSignature };
 			}
 		}
@@ -3838,12 +3835,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_4BB(
-			TFieldSignature tSignature, TField tName) {
-		TField __DEC_tSignature_field_644405 = tSignature.getField();
-		if (__DEC_tSignature_field_644405 != null) {
-			if (!tName.equals(__DEC_tSignature_field_644405)) {
-				return new Object[] { tSignature, tName };
+	public static final Object[] pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_4BB(TField tName,
+			TypeGraph pm) {
+		TypeGraph __DEC_tName_fields_526817 = tName.getModel();
+		if (__DEC_tName_fields_526817 != null) {
+			if (!pm.equals(__DEC_tName_fields_526817)) {
+				return new Object[] { tName, pm };
 			}
 		}
 
@@ -3851,43 +3848,43 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationTypeMember_20_2_testcorematchandDECs_blackFFFFFFB(
-			EMoflonEdge _edge_model) {
+			EMoflonEdge _edge_type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTName = _edge_model.getSrc();
-		if (tmpTName instanceof TField) {
-			TField tName = (TField) tmpTName;
-			EObject tmpPm = _edge_model.getTrg();
-			if (tmpPm instanceof TypeGraph) {
-				TypeGraph pm = (TypeGraph) tmpPm;
-				if (pm.equals(tName.getModel())) {
-					if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_0BB(tName, pm) == null) {
-						for (TFieldSignature tSignature : tName.getSignatures()) {
-							TAbstractType tType = tSignature.getType();
-							if (tType != null) {
-								int tSignature_lowerBound = tSignature.getLowerBound();
-								if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
-									if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_4BB(tSignature,
-											tName) == null) {
-										for (TAbstractType tmpTAnnotation : pm.getAllTypes()) {
-											if (tmpTAnnotation instanceof TAnnotationType) {
-												TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-												if (!tAnnotation.equals(tType)) {
-													if (tAnnotation.getSignature().contains(tSignature)) {
-														for (TMember tmpTMember : tSignature.getDefinitions()) {
-															if (tmpTMember instanceof TFieldDefinition) {
-																TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
-																if (tAnnotation.getDefines().contains(tMember)) {
-																	if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_1BB(
-																			tMember, tSignature) == null) {
-																		if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_2B(
-																				tMember) == null) {
-																			if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_3BB(
-																					tMember, tSignature) == null) {
-																				_result.add(new Object[] { tName, pm,
-																						tMember, tAnnotation,
-																						tSignature, tType,
-																						_edge_model });
-																			}
+		EObject tmpTSignature = _edge_type.getSrc();
+		if (tmpTSignature instanceof TFieldSignature) {
+			TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
+			EObject tmpTType = _edge_type.getTrg();
+			if (tmpTType instanceof TAbstractType) {
+				TAbstractType tType = (TAbstractType) tmpTType;
+				if (tType.equals(tSignature.getType())) {
+					TField tName = tSignature.getField();
+					if (tName != null) {
+						int tSignature_lowerBound = tSignature.getLowerBound();
+						if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
+							TypeGraph pm = tName.getModel();
+							if (pm != null) {
+								if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_0BB(tSignature,
+										tName) == null) {
+									if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_4BB(tName,
+											pm) == null) {
+										for (TMember tmpTMember : tSignature.getDefinitions()) {
+											if (tmpTMember instanceof TFieldDefinition) {
+												TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
+												TAbstractType tmpTAnnotation = tMember.getDefinedBy();
+												if (tmpTAnnotation instanceof TAnnotationType) {
+													TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+													if (!tAnnotation.equals(tType)) {
+														if (tAnnotation.getSignature().contains(tSignature)) {
+															if (pm.equals(tAnnotation.getModel())) {
+																if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_1BB(
+																		tMember, tSignature) == null) {
+																	if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_2B(
+																			tMember) == null) {
+																		if (pattern_AnnotationTypeMember_20_2_testcorematchandDECs_black_nac_3BB(
+																				tMember, tSignature) == null) {
+																			_result.add(new Object[] { tSignature,
+																					tType, tMember, pm, tName,
+																					tAnnotation, _edge_type });
 																		}
 																	}
 																}
@@ -3895,15 +3892,17 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 														}
 													}
 												}
+
 											}
 										}
 									}
 								}
-
 							}
 
 						}
+
 					}
+
 				}
 			}
 
@@ -3922,9 +3921,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final boolean pattern_AnnotationTypeMember_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBBB(
-			AnnotationTypeMember _this, Match match, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tName, pm, tMember, tAnnotation, tSignature, tType);
+			AnnotationTypeMember _this, Match match, TFieldSignature tSignature, TAbstractType tType,
+			TFieldDefinition tMember, TypeGraph pm, TField tName, TAnnotationType tAnnotation) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, tSignature, tType, tMember, pm, tName, tAnnotation);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -4012,105 +4011,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_0BBB(
-			TypeAccess access, AnnotationTypeDeclaration mAnnotation, Type mType) {
-		if (!mAnnotation.equals(mType)) {
-			for (AbstractTypeDeclaration __DEC_access_superInterfaces_353099 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!mAnnotation.equals(__DEC_access_superInterfaces_353099)) {
-					if (!mType.equals(__DEC_access_superInterfaces_353099)) {
-						return new Object[] { access, mAnnotation, mType };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_1B(
-			TypeAccess access) {
-		for (Annotation __DEC_access_type_690037 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, Annotation.class, "type")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_2BB(TypeAccess access,
-			Type mType) {
-		for (ArrayType __DEC_access_elementType_373310 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_access_elementType_373310)) {
-				return new Object[] { access, mType };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_3B(
-			TypeAccess access) {
-		for (ClassInstanceCreation __DEC_access_type_793034 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ClassInstanceCreation.class, "type")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_4BB(TypeAccess access,
-			Type mType) {
-		for (ClassDeclaration __DEC_access_superClass_219127 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_access_superClass_219127)) {
-				return new Object[] { access, mType };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_5B(
-			TypeAccess access) {
-		for (MethodDeclaration __DEC_access_returnType_204348 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_6BB(TypeAccess access,
-			Type mType) {
-		for (ParameterizedType __DEC_access_type_469834 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_access_type_469834)) {
-				return new Object[] { access, mType };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_7B(
-			TypeAccess access) {
-		for (TypeLiteral __DEC_access_type_928570 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, TypeLiteral.class, "type")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_8B(
-			TypeAccess access) {
-		for (AnnotationMemberValuePair __DEC_access_value_36605 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_9BBB(
 			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, Type mType) {
 		if (!mAnnotation.equals(mType)) {
-			AbstractTypeDeclaration __DEC_mMember_abstractTypeDeclaration_114283 = mMember.getAbstractTypeDeclaration();
-			if (__DEC_mMember_abstractTypeDeclaration_114283 != null) {
-				if (!mAnnotation.equals(__DEC_mMember_abstractTypeDeclaration_114283)) {
-					if (!mType.equals(__DEC_mMember_abstractTypeDeclaration_114283)) {
+			AbstractTypeDeclaration __DEC_mMember_abstractTypeDeclaration_618803 = mMember.getAbstractTypeDeclaration();
+			if (__DEC_mMember_abstractTypeDeclaration_618803 != null) {
+				if (!mAnnotation.equals(__DEC_mMember_abstractTypeDeclaration_618803)) {
+					if (!mType.equals(__DEC_mMember_abstractTypeDeclaration_618803)) {
 						return new Object[] { mMember, mAnnotation, mType };
 					}
 				}
@@ -4120,14 +4026,107 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_10B(
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeMemberDeclaration mMember) {
-		AnonymousClassDeclaration __DEC_mMember_anonymousClassDeclarationOwner_932707 = mMember
+		AnonymousClassDeclaration __DEC_mMember_anonymousClassDeclarationOwner_347570 = mMember
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mMember_anonymousClassDeclarationOwner_932707 != null) {
+		if (__DEC_mMember_anonymousClassDeclarationOwner_347570 != null) {
 			return new Object[] { mMember };
 		}
 
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_2BBB(
+			TypeAccess access, AnnotationTypeDeclaration mAnnotation, Type mType) {
+		if (!mAnnotation.equals(mType)) {
+			for (AbstractTypeDeclaration __DEC_access_superInterfaces_417334 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
+				if (!mAnnotation.equals(__DEC_access_superInterfaces_417334)) {
+					if (!mType.equals(__DEC_access_superInterfaces_417334)) {
+						return new Object[] { access, mAnnotation, mType };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_3B(
+			TypeAccess access) {
+		for (Annotation __DEC_access_type_423012 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, Annotation.class, "type")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_4BB(TypeAccess access,
+			Type mType) {
+		for (ArrayType __DEC_access_elementType_98563 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
+			if (!mType.equals(__DEC_access_elementType_98563)) {
+				return new Object[] { access, mType };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_5B(
+			TypeAccess access) {
+		for (ClassInstanceCreation __DEC_access_type_174528 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ClassInstanceCreation.class, "type")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_6BB(TypeAccess access,
+			Type mType) {
+		for (ClassDeclaration __DEC_access_superClass_892933 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
+			if (!mType.equals(__DEC_access_superClass_892933)) {
+				return new Object[] { access, mType };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_7B(
+			TypeAccess access) {
+		for (MethodDeclaration __DEC_access_returnType_676587 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_8BB(TypeAccess access,
+			Type mType) {
+		for (ParameterizedType __DEC_access_type_670690 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
+			if (!mType.equals(__DEC_access_type_670690)) {
+				return new Object[] { access, mType };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_9B(
+			TypeAccess access) {
+		for (TypeLiteral __DEC_access_type_753190 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, TypeLiteral.class, "type")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_10B(
+			TypeAccess access) {
+		for (AnnotationMemberValuePair __DEC_access_value_858632 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
+			return new Object[] { access };
+		}
 		return null;
 	}
 
@@ -4140,48 +4139,48 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Iterable<Object[]> pattern_AnnotationTypeMember_21_2_testcorematchandDECs_blackFFFFB(
-			EMoflonEdge _edge_bodyDeclarations) {
+			EMoflonEdge _edge_type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpMAnnotation = _edge_bodyDeclarations.getSrc();
-		if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
-			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
-			EObject tmpMMember = _edge_bodyDeclarations.getTrg();
-			if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
-				AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
-				if (mAnnotation.getBodyDeclarations().contains(mMember)) {
-					TypeAccess access = mMember.getType();
-					if (access != null) {
+		EObject tmpMMember = _edge_type.getSrc();
+		if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
+			AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
+			EObject tmpAccess = _edge_type.getTrg();
+			if (tmpAccess instanceof TypeAccess) {
+				TypeAccess access = (TypeAccess) tmpAccess;
+				if (access.equals(mMember.getType())) {
+					AbstractTypeDeclaration tmpMAnnotation = mMember.getAbstractTypeDeclaration();
+					if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
+						AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
 						Type mType = access.getType();
 						if (mType != null) {
 							if (!mAnnotation.equals(mType)) {
-								if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_10B(
+								if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_1B(
 										mMember) == null) {
-									if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_1B(
+									if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_3B(
 											access) == null) {
-										if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_3B(
+										if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_5B(
 												access) == null) {
-											if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_5B(
+											if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_7B(
 													access) == null) {
-												if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_7B(
+												if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_9B(
 														access) == null) {
-													if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_8B(
+													if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_10B(
 															access) == null) {
 														if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_11BB(
 																mAnnotation, access) == null) {
 															if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_0BBB(
-																	access, mAnnotation, mType) == null) {
-																if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_2BB(
-																		access, mType) == null) {
+																	mMember, mAnnotation, mType) == null) {
+																if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_2BBB(
+																		access, mAnnotation, mType) == null) {
 																	if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_4BB(
 																			access, mType) == null) {
 																		if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_6BB(
 																				access, mType) == null) {
-																			if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_9BBB(
-																					mMember, mAnnotation,
-																					mType) == null) {
-																				_result.add(new Object[] { access,
-																						mMember, mAnnotation, mType,
-																						_edge_bodyDeclarations });
+																			if (pattern_AnnotationTypeMember_21_2_testcorematchandDECs_black_nac_8BB(
+																					access, mType) == null) {
+																				_result.add(new Object[] { mAnnotation,
+																						mMember, mType, access,
+																						_edge_type });
 																			}
 																		}
 																	}
@@ -4217,9 +4216,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final boolean pattern_AnnotationTypeMember_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			AnnotationTypeMember _this, Match match, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, access, mMember, mAnnotation, mType);
+			AnnotationTypeMember _this, Match match, AnnotationTypeDeclaration mAnnotation,
+			AnnotationTypeMemberDeclaration mMember, Type mType, TypeAccess access) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mAnnotation, mMember, mType, access);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -4262,50 +4261,50 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_bindingFFFFFFFFFFBB(
-			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("access");
-		EObject _localVariable_1 = sourceMatch.getObject("mMember");
+			Match targetMatch, Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("tSignature");
+		EObject _localVariable_1 = targetMatch.getObject("tType");
 		EObject _localVariable_2 = sourceMatch.getObject("mAnnotation");
-		EObject _localVariable_3 = targetMatch.getObject("tName");
+		EObject _localVariable_3 = targetMatch.getObject("tMember");
 		EObject _localVariable_4 = targetMatch.getObject("pm");
-		EObject _localVariable_5 = targetMatch.getObject("tMember");
-		EObject _localVariable_6 = targetMatch.getObject("tAnnotation");
-		EObject _localVariable_7 = targetMatch.getObject("tSignature");
-		EObject _localVariable_8 = targetMatch.getObject("tType");
-		EObject _localVariable_9 = sourceMatch.getObject("mType");
-		EObject tmpAccess = _localVariable_0;
-		EObject tmpMMember = _localVariable_1;
+		EObject _localVariable_5 = sourceMatch.getObject("mMember");
+		EObject _localVariable_6 = targetMatch.getObject("tName");
+		EObject _localVariable_7 = sourceMatch.getObject("mType");
+		EObject _localVariable_8 = sourceMatch.getObject("access");
+		EObject _localVariable_9 = targetMatch.getObject("tAnnotation");
+		EObject tmpTSignature = _localVariable_0;
+		EObject tmpTType = _localVariable_1;
 		EObject tmpMAnnotation = _localVariable_2;
-		EObject tmpTName = _localVariable_3;
+		EObject tmpTMember = _localVariable_3;
 		EObject tmpPm = _localVariable_4;
-		EObject tmpTMember = _localVariable_5;
-		EObject tmpTAnnotation = _localVariable_6;
-		EObject tmpTSignature = _localVariable_7;
-		EObject tmpTType = _localVariable_8;
-		EObject tmpMType = _localVariable_9;
-		if (tmpAccess instanceof TypeAccess) {
-			TypeAccess access = (TypeAccess) tmpAccess;
-			if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
-				AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
+		EObject tmpMMember = _localVariable_5;
+		EObject tmpTName = _localVariable_6;
+		EObject tmpMType = _localVariable_7;
+		EObject tmpAccess = _localVariable_8;
+		EObject tmpTAnnotation = _localVariable_9;
+		if (tmpTSignature instanceof TFieldSignature) {
+			TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
+			if (tmpTType instanceof TAbstractType) {
+				TAbstractType tType = (TAbstractType) tmpTType;
 				if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
 					AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
-					if (tmpTName instanceof TField) {
-						TField tName = (TField) tmpTName;
+					if (tmpTMember instanceof TFieldDefinition) {
+						TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
 						if (tmpPm instanceof TypeGraph) {
 							TypeGraph pm = (TypeGraph) tmpPm;
-							if (tmpTMember instanceof TFieldDefinition) {
-								TFieldDefinition tMember = (TFieldDefinition) tmpTMember;
-								if (tmpTAnnotation instanceof TAnnotationType) {
-									TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-									if (tmpTSignature instanceof TFieldSignature) {
-										TFieldSignature tSignature = (TFieldSignature) tmpTSignature;
-										if (tmpTType instanceof TAbstractType) {
-											TAbstractType tType = (TAbstractType) tmpTType;
-											if (tmpMType instanceof Type) {
-												Type mType = (Type) tmpMType;
-												return new Object[] { access, mMember, mAnnotation, tName, pm, tMember,
-														tAnnotation, tSignature, tType, mType, sourceMatch,
-														targetMatch };
+							if (tmpMMember instanceof AnnotationTypeMemberDeclaration) {
+								AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) tmpMMember;
+								if (tmpTName instanceof TField) {
+									TField tName = (TField) tmpTName;
+									if (tmpMType instanceof Type) {
+										Type mType = (Type) tmpMType;
+										if (tmpAccess instanceof TypeAccess) {
+											TypeAccess access = (TypeAccess) tmpAccess;
+											if (tmpTAnnotation instanceof TAnnotationType) {
+												TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
+												return new Object[] { tSignature, tType, mAnnotation, tMember, pm,
+														mMember, tName, mType, access, tAnnotation, targetMatch,
+														sourceMatch };
 											}
 										}
 									}
@@ -4320,16 +4319,16 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_blackBBBBBBBBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType, Type mType, Match sourceMatch, Match targetMatch) {
+			TFieldSignature tSignature, TAbstractType tType, AnnotationTypeDeclaration mAnnotation,
+			TFieldDefinition tMember, TypeGraph pm, AnnotationTypeMemberDeclaration mMember, TField tName, Type mType,
+			TypeAccess access, TAnnotationType tAnnotation, Match sourceMatch, Match targetMatch) {
 		if (!mAnnotation.equals(mType)) {
 			if (!tAnnotation.equals(tType)) {
 				if (!sourceMatch.equals(targetMatch)) {
 					int tSignature_lowerBound = tSignature.getLowerBound();
 					if (Integer.valueOf(tSignature_lowerBound).equals(Integer.valueOf(0))) {
-						return new Object[] { access, mMember, mAnnotation, tName, pm, tMember, tAnnotation, tSignature,
-								tType, mType, sourceMatch, targetMatch };
+						return new Object[] { tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType,
+								access, tAnnotation, sourceMatch, targetMatch };
 					}
 
 				}
@@ -4341,42 +4340,42 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	public static final Object[] pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding = pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_bindingFFFFFFFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding != null) {
-			TypeAccess access = (TypeAccess) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[0];
-			AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[1];
+			TFieldSignature tSignature = (TFieldSignature) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[0];
+			TAbstractType tType = (TAbstractType) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[1];
 			AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[2];
-			TField tName = (TField) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[3];
+			TFieldDefinition tMember = (TFieldDefinition) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[3];
 			TypeGraph pm = (TypeGraph) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[4];
-			TFieldDefinition tMember = (TFieldDefinition) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[5];
-			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[6];
-			TFieldSignature tSignature = (TFieldSignature) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[7];
-			TAbstractType tType = (TAbstractType) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[8];
-			Type mType = (Type) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[9];
+			AnnotationTypeMemberDeclaration mMember = (AnnotationTypeMemberDeclaration) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[5];
+			TField tName = (TField) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[6];
+			Type mType = (Type) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[7];
+			TypeAccess access = (TypeAccess) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[8];
+			TAnnotationType tAnnotation = (TAnnotationType) result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_binding[9];
 
 			Object[] result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_black = pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_blackBBBBBBBBBBBB(
-					access, mMember, mAnnotation, tName, pm, tMember, tAnnotation, tSignature, tType, mType,
+					tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType, access, tAnnotation,
 					sourceMatch, targetMatch);
 			if (result_pattern_AnnotationTypeMember_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { access, mMember, mAnnotation, tName, pm, tMember, tAnnotation, tSignature, tType,
-						mType, sourceMatch, targetMatch };
+				return new Object[] { tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType, access,
+						tAnnotation, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_24_3_solvecsp_bindingFBBBBBBBBBBBBB(
-			AnnotationTypeMember _this, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType, Type mType, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_10 = _this.isApplicable_solveCsp_CC(access, mMember, mAnnotation, tName, pm, tMember,
-				tAnnotation, tSignature, tType, mType, sourceMatch, targetMatch);
+			AnnotationTypeMember _this, TFieldSignature tSignature, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TFieldDefinition tMember, TypeGraph pm,
+			AnnotationTypeMemberDeclaration mMember, TField tName, Type mType, TypeAccess access,
+			TAnnotationType tAnnotation, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_10 = _this.isApplicable_solveCsp_CC(tSignature, tType, mAnnotation, tMember, pm, mMember,
+				tName, mType, access, tAnnotation, sourceMatch, targetMatch);
 		CSP csp = _localVariable_10;
 		if (csp != null) {
-			return new Object[] { csp, _this, access, mMember, mAnnotation, tName, pm, tMember, tAnnotation, tSignature,
-					tType, mType, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType,
+					access, tAnnotation, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -4386,12 +4385,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBBB(
-			AnnotationTypeMember _this, TypeAccess access, AnnotationTypeMemberDeclaration mMember,
-			AnnotationTypeDeclaration mAnnotation, TField tName, TypeGraph pm, TFieldDefinition tMember,
-			TAnnotationType tAnnotation, TFieldSignature tSignature, TAbstractType tType, Type mType, Match sourceMatch,
-			Match targetMatch) {
+			AnnotationTypeMember _this, TFieldSignature tSignature, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TFieldDefinition tMember, TypeGraph pm,
+			AnnotationTypeMemberDeclaration mMember, TField tName, Type mType, TypeAccess access,
+			TAnnotationType tAnnotation, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AnnotationTypeMember_24_3_solvecsp_binding = pattern_AnnotationTypeMember_24_3_solvecsp_bindingFBBBBBBBBBBBBB(
-				_this, access, mMember, mAnnotation, tName, pm, tMember, tAnnotation, tSignature, tType, mType,
+				_this, tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType, access, tAnnotation,
 				sourceMatch, targetMatch);
 		if (result_pattern_AnnotationTypeMember_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeMember_24_3_solvecsp_binding[0];
@@ -4400,8 +4399,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 					csp);
 			if (result_pattern_AnnotationTypeMember_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, access, mMember, mAnnotation, tName, pm, tMember, tAnnotation,
-						tSignature, tType, mType, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType,
+						access, tAnnotation, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -4413,22 +4412,23 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AnnotationTypeMember_24_5_matchcorrcontext_blackBFBBFBBB(
-			AnnotationTypeDeclaration mAnnotation, TAnnotationType tAnnotation, TAbstractType tType, Type mType,
+	public static final Iterable<Object[]> pattern_AnnotationTypeMember_24_5_matchcorrcontext_blackBBFFBBBB(
+			TAbstractType tType, AnnotationTypeDeclaration mAnnotation, Type mType, TAnnotationType tAnnotation,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mAnnotation.equals(mType)) {
 			if (!tAnnotation.equals(tType)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (TypeToTAbstractType mTypeToType : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
-						if (mType.equals(mTypeToType.getSource())) {
-							for (TypeToTAbstractType mAnnotationToAnnotation : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(mAnnotation, TypeToTAbstractType.class, "source")) {
+					for (TypeToTAbstractType mAnnotationToAnnotation : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mAnnotation, TypeToTAbstractType.class, "source")) {
+						if (tAnnotation.equals(mAnnotationToAnnotation.getTarget())) {
+							for (TypeToTAbstractType mTypeToType : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(tType, TypeToTAbstractType.class, "target")) {
 								if (!mAnnotationToAnnotation.equals(mTypeToType)) {
-									if (tAnnotation.equals(mAnnotationToAnnotation.getTarget())) {
-										_result.add(new Object[] { mAnnotation, mTypeToType, tAnnotation, tType,
-												mAnnotationToAnnotation, mType, sourceMatch, targetMatch });
+									if (mType.equals(mTypeToType.getSource())) {
+										_result.add(
+												new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation,
+														mType, tAnnotation, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -4454,29 +4454,29 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_24_6_createcorrespondence_blackBBBBBBBBBBB(
-			TypeAccess access, AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation,
-			TField tName, TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation,
-			TFieldSignature tSignature, TAbstractType tType, Type mType, CCMatch ccMatch) {
+			TFieldSignature tSignature, TAbstractType tType, AnnotationTypeDeclaration mAnnotation,
+			TFieldDefinition tMember, TypeGraph pm, AnnotationTypeMemberDeclaration mMember, TField tName, Type mType,
+			TypeAccess access, TAnnotationType tAnnotation, CCMatch ccMatch) {
 		if (!mAnnotation.equals(mType)) {
 			if (!tAnnotation.equals(tType)) {
-				return new Object[] { access, mMember, mAnnotation, tName, pm, tMember, tAnnotation, tSignature, tType,
-						mType, ccMatch };
+				return new Object[] { tSignature, tType, mAnnotation, tMember, pm, mMember, tName, mType, access,
+						tAnnotation, ccMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_24_6_createcorrespondence_greenBFBFB(
-			AnnotationTypeMemberDeclaration mMember, TFieldDefinition tMember, CCMatch ccMatch) {
-		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+	public static final Object[] pattern_AnnotationTypeMember_24_6_createcorrespondence_greenBFFBB(
+			TFieldDefinition tMember, AnnotationTypeMemberDeclaration mMember, CCMatch ccMatch) {
 		ASTNodeToTAnnotatable anntotatableToTannotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		memberToMember.setSource(mMember);
-		memberToMember.setTarget(tMember);
-		ccMatch.getCreateCorr().add(memberToMember);
+		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
 		anntotatableToTannotatable.setTarget(tMember);
 		anntotatableToTannotatable.setSource(mMember);
 		ccMatch.getCreateCorr().add(anntotatableToTannotatable);
-		return new Object[] { mMember, memberToMember, tMember, anntotatableToTannotatable, ccMatch };
+		memberToMember.setTarget(tMember);
+		memberToMember.setSource(mMember);
+		ccMatch.getCreateCorr().add(memberToMember);
+		return new Object[] { tMember, anntotatableToTannotatable, memberToMember, mMember, ccMatch };
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_24_7_addtoreturnedresult_blackBB(
@@ -4500,101 +4500,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_0BBB(TypeAccess access,
-			AnnotationTypeDeclaration mAnnotation, Type mType) {
-		if (!mAnnotation.equals(mType)) {
-			for (AbstractTypeDeclaration __DEC_access_superInterfaces_139975 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
-				if (!mAnnotation.equals(__DEC_access_superInterfaces_139975)) {
-					if (!mType.equals(__DEC_access_superInterfaces_139975)) {
-						return new Object[] { access, mAnnotation, mType };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_1B(TypeAccess access) {
-		for (Annotation __DEC_access_type_732306 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, Annotation.class, "type")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_2BB(TypeAccess access,
-			Type mType) {
-		for (ArrayType __DEC_access_elementType_801410 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
-			if (!mType.equals(__DEC_access_elementType_801410)) {
-				return new Object[] { access, mType };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_3B(TypeAccess access) {
-		for (ClassInstanceCreation __DEC_access_type_532492 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ClassInstanceCreation.class, "type")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_4BB(TypeAccess access,
-			Type mType) {
-		for (ClassDeclaration __DEC_access_superClass_456404 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_access_superClass_456404)) {
-				return new Object[] { access, mType };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_5B(TypeAccess access) {
-		for (MethodDeclaration __DEC_access_returnType_648525 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_6BB(TypeAccess access,
-			Type mType) {
-		for (ParameterizedType __DEC_access_type_413800 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_access_type_413800)) {
-				return new Object[] { access, mType };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_7B(TypeAccess access) {
-		for (TypeLiteral __DEC_access_type_886014 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, TypeLiteral.class, "type")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_8B(TypeAccess access) {
-		for (AnnotationMemberValuePair __DEC_access_value_646542 : org.moflon.core.utilities.eMoflonEMFUtil
-				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
-			return new Object[] { access };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_9BBB(
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_0BBB(
 			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, Type mType) {
 		if (!mAnnotation.equals(mType)) {
-			AbstractTypeDeclaration __DEC_mMember_abstractTypeDeclaration_4687 = mMember.getAbstractTypeDeclaration();
-			if (__DEC_mMember_abstractTypeDeclaration_4687 != null) {
-				if (!mAnnotation.equals(__DEC_mMember_abstractTypeDeclaration_4687)) {
-					if (!mType.equals(__DEC_mMember_abstractTypeDeclaration_4687)) {
+			AbstractTypeDeclaration __DEC_mMember_abstractTypeDeclaration_421649 = mMember.getAbstractTypeDeclaration();
+			if (__DEC_mMember_abstractTypeDeclaration_421649 != null) {
+				if (!mAnnotation.equals(__DEC_mMember_abstractTypeDeclaration_421649)) {
+					if (!mType.equals(__DEC_mMember_abstractTypeDeclaration_421649)) {
 						return new Object[] { mMember, mAnnotation, mType };
 					}
 				}
@@ -4604,14 +4516,102 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_10B(
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeMemberDeclaration mMember) {
-		AnonymousClassDeclaration __DEC_mMember_anonymousClassDeclarationOwner_74140 = mMember
+		AnonymousClassDeclaration __DEC_mMember_anonymousClassDeclarationOwner_557249 = mMember
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mMember_anonymousClassDeclarationOwner_74140 != null) {
+		if (__DEC_mMember_anonymousClassDeclarationOwner_557249 != null) {
 			return new Object[] { mMember };
 		}
 
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_2BBB(TypeAccess access,
+			AnnotationTypeDeclaration mAnnotation, Type mType) {
+		if (!mAnnotation.equals(mType)) {
+			for (AbstractTypeDeclaration __DEC_access_superInterfaces_971961 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
+				if (!mAnnotation.equals(__DEC_access_superInterfaces_971961)) {
+					if (!mType.equals(__DEC_access_superInterfaces_971961)) {
+						return new Object[] { access, mAnnotation, mType };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_3B(TypeAccess access) {
+		for (Annotation __DEC_access_type_420046 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, Annotation.class, "type")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_4BB(TypeAccess access,
+			Type mType) {
+		for (ArrayType __DEC_access_elementType_842793 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
+			if (!mType.equals(__DEC_access_elementType_842793)) {
+				return new Object[] { access, mType };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_5B(TypeAccess access) {
+		for (ClassInstanceCreation __DEC_access_type_701192 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ClassInstanceCreation.class, "type")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_6BB(TypeAccess access,
+			Type mType) {
+		for (ClassDeclaration __DEC_access_superClass_42053 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
+			if (!mType.equals(__DEC_access_superClass_42053)) {
+				return new Object[] { access, mType };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_7B(TypeAccess access) {
+		for (MethodDeclaration __DEC_access_returnType_72527 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_8BB(TypeAccess access,
+			Type mType) {
+		for (ParameterizedType __DEC_access_type_624848 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
+			if (!mType.equals(__DEC_access_type_624848)) {
+				return new Object[] { access, mType };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_9B(TypeAccess access) {
+		for (TypeLiteral __DEC_access_type_99256 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, TypeLiteral.class, "type")) {
+			return new Object[] { access };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_10B(TypeAccess access) {
+		for (AnnotationMemberValuePair __DEC_access_value_620993 : org.moflon.core.utilities.eMoflonEMFUtil
+				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
+			return new Object[] { access };
+		}
 		return null;
 	}
 
@@ -4623,17 +4623,18 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_blackBBBB(TypeAccess access,
-			AnnotationTypeMemberDeclaration mMember, AnnotationTypeDeclaration mAnnotation, Type mType) {
+	public static final Object[] pattern_AnnotationTypeMember_27_1_matchtggpattern_blackBBBB(
+			AnnotationTypeDeclaration mAnnotation, AnnotationTypeMemberDeclaration mMember, Type mType,
+			TypeAccess access) {
 		if (!mAnnotation.equals(mType)) {
-			if (mAnnotation.getBodyDeclarations().contains(mMember)) {
-				if (access.equals(mMember.getType())) {
-					if (mType.equals(access.getType())) {
-						if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_0BBB(access, mAnnotation,
+			if (access.equals(mMember.getType())) {
+				if (mType.equals(access.getType())) {
+					if (mAnnotation.getBodyDeclarations().contains(mMember)) {
+						if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_0BBB(mMember, mAnnotation,
 								mType) == null) {
-							if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_1B(access) == null) {
-								if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_2BB(access,
-										mType) == null) {
+							if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_1B(mMember) == null) {
+								if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_2BBB(access,
+										mAnnotation, mType) == null) {
 									if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_3B(
 											access) == null) {
 										if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_4BB(access,
@@ -4644,16 +4645,16 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 														access, mType) == null) {
 													if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_7B(
 															access) == null) {
-														if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_8B(
-																access) == null) {
-															if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_9BBB(
-																	mMember, mAnnotation, mType) == null) {
+														if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_8BB(
+																access, mType) == null) {
+															if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_9B(
+																	access) == null) {
 																if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_10B(
-																		mMember) == null) {
+																		access) == null) {
 																	if (pattern_AnnotationTypeMember_27_1_matchtggpattern_black_nac_11BB(
 																			mAnnotation, access) == null) {
-																		return new Object[] { access, mMember,
-																				mAnnotation, mType };
+																		return new Object[] { mAnnotation, mMember,
+																				mType, access };
 																	}
 																}
 															}
@@ -4683,12 +4684,12 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_0BB(TField tName,
-			TypeGraph pm) {
-		TypeGraph __DEC_tName_fields_594631 = tName.getModel();
-		if (__DEC_tName_fields_594631 != null) {
-			if (!pm.equals(__DEC_tName_fields_594631)) {
-				return new Object[] { tName, pm };
+	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_0BB(
+			TFieldSignature tSignature, TField tName) {
+		TField __DEC_tSignature_field_825923 = tSignature.getField();
+		if (__DEC_tSignature_field_825923 != null) {
+			if (!tName.equals(__DEC_tSignature_field_825923)) {
+				return new Object[] { tSignature, tName };
 			}
 		}
 
@@ -4697,9 +4698,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_1BB(
 			TFieldDefinition tMember, TFieldSignature tSignature) {
-		TSignature __DEC_tMember_signature_362595 = tMember.getSignature();
-		if (__DEC_tMember_signature_362595 != null) {
-			if (!tSignature.equals(__DEC_tMember_signature_362595)) {
+		TSignature __DEC_tMember_signature_486389 = tMember.getSignature();
+		if (__DEC_tMember_signature_486389 != null) {
+			if (!tSignature.equals(__DEC_tMember_signature_486389)) {
 				return new Object[] { tMember, tSignature };
 			}
 		}
@@ -4709,8 +4710,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_2B(
 			TFieldDefinition tMember) {
-		TModule __DEC_tMember_contains_918344 = tMember.getModule();
-		if (__DEC_tMember_contains_918344 != null) {
+		TModule __DEC_tMember_contains_459477 = tMember.getModule();
+		if (__DEC_tMember_contains_459477 != null) {
 			return new Object[] { tMember };
 		}
 
@@ -4719,9 +4720,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_3BB(
 			TFieldDefinition tMember, TFieldSignature tSignature) {
-		TSignature __DEC_tMember_definitions_366786 = tMember.getSignature();
-		if (__DEC_tMember_definitions_366786 != null) {
-			if (!tSignature.equals(__DEC_tMember_definitions_366786)) {
+		TSignature __DEC_tMember_definitions_15998 = tMember.getSignature();
+		if (__DEC_tMember_definitions_15998 != null) {
+			if (!tSignature.equals(__DEC_tMember_definitions_15998)) {
 				return new Object[] { tMember, tSignature };
 			}
 		}
@@ -4729,31 +4730,31 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_4BB(
-			TFieldSignature tSignature, TField tName) {
-		TField __DEC_tSignature_field_407798 = tSignature.getField();
-		if (__DEC_tSignature_field_407798 != null) {
-			if (!tName.equals(__DEC_tSignature_field_407798)) {
-				return new Object[] { tSignature, tName };
+	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_4BB(TField tName,
+			TypeGraph pm) {
+		TypeGraph __DEC_tName_fields_659410 = tName.getModel();
+		if (__DEC_tName_fields_659410 != null) {
+			if (!pm.equals(__DEC_tName_fields_659410)) {
+				return new Object[] { tName, pm };
 			}
 		}
 
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_blackBBBBBB(TField tName,
-			TypeGraph pm, TFieldDefinition tMember, TAnnotationType tAnnotation, TFieldSignature tSignature,
-			TAbstractType tType) {
+	public static final Object[] pattern_AnnotationTypeMember_28_1_matchtggpattern_blackBBBBBB(
+			TFieldSignature tSignature, TAbstractType tType, TFieldDefinition tMember, TypeGraph pm, TField tName,
+			TAnnotationType tAnnotation) {
 		if (!tAnnotation.equals(tType)) {
-			if (pm.equals(tName.getModel())) {
-				if (pm.equals(tAnnotation.getModel())) {
-					if (tName.getSignatures().contains(tSignature)) {
-						if (tAnnotation.getSignature().contains(tSignature)) {
-							if (tType.equals(tSignature.getType())) {
-								if (tSignature.getDefinitions().contains(tMember)) {
-									if (tAnnotation.getDefines().contains(tMember)) {
-										if (pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_0BB(tName,
-												pm) == null) {
+			if (tType.equals(tSignature.getType())) {
+				if (tName.getSignatures().contains(tSignature)) {
+					if (tSignature.getDefinitions().contains(tMember)) {
+						if (pm.equals(tName.getModel())) {
+							if (tAnnotation.getDefines().contains(tMember)) {
+								if (tAnnotation.getSignature().contains(tSignature)) {
+									if (pm.equals(tAnnotation.getModel())) {
+										if (pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_0BB(tSignature,
+												tName) == null) {
 											if (pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_1BB(tMember,
 													tSignature) == null) {
 												if (pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_2B(
@@ -4761,9 +4762,9 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 													if (pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_3BB(
 															tMember, tSignature) == null) {
 														if (pattern_AnnotationTypeMember_28_1_matchtggpattern_black_nac_4BB(
-																tSignature, tName) == null) {
-															return new Object[] { tName, pm, tMember, tAnnotation,
-																	tSignature, tType };
+																tName, pm) == null) {
+															return new Object[] { tSignature, tType, tMember, pm, tName,
+																	tAnnotation };
 														}
 													}
 												}
@@ -4809,46 +4810,6 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, AnnotationTypeDeclaration mAnnotation) {
-		if (ruleResult.getSourceObjects().contains(mAnnotation)) {
-			return new Object[] { ruleResult, mAnnotation };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mAnnotationToAnnotation) {
-		if (ruleResult.getCorrObjects().contains(mAnnotationToAnnotation)) {
-			return new Object[] { ruleResult, mAnnotationToAnnotation };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TAnnotationType tAnnotation) {
-		if (ruleResult.getTargetObjects().contains(tAnnotation)) {
-			return new Object[] { ruleResult, tAnnotation };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pm) {
-		if (ruleResult.getTargetObjects().contains(pm)) {
-			return new Object[] { ruleResult, pm };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToType) {
-		if (ruleResult.getCorrObjects().contains(mTypeToType)) {
-			return new Object[] { ruleResult, mTypeToType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_5BB(
 			ModelgeneratorRuleResult ruleResult, TAbstractType tType) {
 		if (ruleResult.getTargetObjects().contains(tType)) {
 			return new Object[] { ruleResult, tType };
@@ -4856,7 +4817,15 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_6BB(
+	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToType) {
+		if (ruleResult.getCorrObjects().contains(mTypeToType)) {
+			return new Object[] { ruleResult, mTypeToType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, Type mType) {
 		if (ruleResult.getSourceObjects().contains(mType)) {
 			return new Object[] { ruleResult, mType };
@@ -4864,62 +4833,96 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return null;
 	}
 
+	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, AnnotationTypeDeclaration mAnnotation) {
+		if (ruleResult.getSourceObjects().contains(mAnnotation)) {
+			return new Object[] { ruleResult, mAnnotation };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mAnnotationToAnnotation) {
+		if (ruleResult.getCorrObjects().contains(mAnnotationToAnnotation)) {
+			return new Object[] { ruleResult, mAnnotationToAnnotation };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, TAnnotationType tAnnotation) {
+		if (ruleResult.getTargetObjects().contains(tAnnotation)) {
+			return new Object[] { ruleResult, tAnnotation };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_6BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph pm) {
+		if (ruleResult.getTargetObjects().contains(pm)) {
+			return new Object[] { ruleResult, pm };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_AnnotationTypeMember_29_2_isapplicablecore_blackFFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList mAnnotationToAnnotationList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList mTypeToTypeList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList mTypeToTypeList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList mAnnotationToAnnotationList : ruleEntryContainer.getRuleEntryList()) {
 				if (!mAnnotationToAnnotationList.equals(mTypeToTypeList)) {
-					for (EObject tmpMAnnotationToAnnotation : mAnnotationToAnnotationList.getEntryObjects()) {
-						if (tmpMAnnotationToAnnotation instanceof TypeToTAbstractType) {
-							TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) tmpMAnnotationToAnnotation;
-							Type tmpMAnnotation = mAnnotationToAnnotation.getSource();
-							if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
-								AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
-								TAbstractType tmpTAnnotation = mAnnotationToAnnotation.getTarget();
-								if (tmpTAnnotation instanceof TAnnotationType) {
-									TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
-									TypeGraph pm = tAnnotation.getModel();
-									if (pm != null) {
-										if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-												mAnnotationToAnnotation) == null) {
-											if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_0BB(
-													ruleResult, mAnnotation) == null) {
-												if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_2BB(
-														ruleResult, tAnnotation) == null) {
-													if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_3BB(
-															ruleResult, pm) == null) {
-														for (EObject tmpMTypeToType : mTypeToTypeList
-																.getEntryObjects()) {
-															if (tmpMTypeToType instanceof TypeToTAbstractType) {
-																TypeToTAbstractType mTypeToType = (TypeToTAbstractType) tmpMTypeToType;
-																if (!mAnnotationToAnnotation.equals(mTypeToType)) {
-																	TAbstractType tType = mTypeToType.getTarget();
-																	if (tType != null) {
+					for (EObject tmpMTypeToType : mTypeToTypeList.getEntryObjects()) {
+						if (tmpMTypeToType instanceof TypeToTAbstractType) {
+							TypeToTAbstractType mTypeToType = (TypeToTAbstractType) tmpMTypeToType;
+							TAbstractType tType = mTypeToType.getTarget();
+							if (tType != null) {
+								Type mType = mTypeToType.getSource();
+								if (mType != null) {
+									if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+											mTypeToType) == null) {
+										if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+												tType) == null) {
+											if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_2BB(
+													ruleResult, mType) == null) {
+												for (EObject tmpMAnnotationToAnnotation : mAnnotationToAnnotationList
+														.getEntryObjects()) {
+													if (tmpMAnnotationToAnnotation instanceof TypeToTAbstractType) {
+														TypeToTAbstractType mAnnotationToAnnotation = (TypeToTAbstractType) tmpMAnnotationToAnnotation;
+														if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+															Type tmpMAnnotation = mAnnotationToAnnotation.getSource();
+															if (tmpMAnnotation instanceof AnnotationTypeDeclaration) {
+																AnnotationTypeDeclaration mAnnotation = (AnnotationTypeDeclaration) tmpMAnnotation;
+																if (!mAnnotation.equals(mType)) {
+																	TAbstractType tmpTAnnotation = mAnnotationToAnnotation
+																			.getTarget();
+																	if (tmpTAnnotation instanceof TAnnotationType) {
+																		TAnnotationType tAnnotation = (TAnnotationType) tmpTAnnotation;
 																		if (!tAnnotation.equals(tType)) {
-																			Type mType = mTypeToType.getSource();
-																			if (mType != null) {
-																				if (!mAnnotation.equals(mType)) {
-																					if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_4BB(
+																			TypeGraph pm = tAnnotation.getModel();
+																			if (pm != null) {
+																				if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_4BB(
+																						ruleResult,
+																						mAnnotationToAnnotation) == null) {
+																					if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_3BB(
 																							ruleResult,
-																							mTypeToType) == null) {
+																							mAnnotation) == null) {
 																						if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_5BB(
 																								ruleResult,
-																								tType) == null) {
+																								tAnnotation) == null) {
 																							if (pattern_AnnotationTypeMember_29_2_isapplicablecore_black_nac_6BB(
 																									ruleResult,
-																									mType) == null) {
+																									pm) == null) {
 																								_result.add(
 																										new Object[] {
+																												mTypeToTypeList,
+																												tType,
+																												mTypeToType,
+																												mType,
 																												mAnnotationToAnnotationList,
 																												mAnnotation,
 																												mAnnotationToAnnotation,
 																												tAnnotation,
 																												pm,
-																												mTypeToTypeList,
-																												mTypeToType,
-																												tType,
-																												mType,
 																												ruleEntryContainer,
 																												ruleResult });
 																							}
@@ -4933,13 +4936,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 
 																}
 															}
+
 														}
 													}
 												}
 											}
 										}
 									}
-
 								}
 
 							}
@@ -4953,15 +4956,16 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_29_3_solveCSP_bindingFBBBBBBBBBB(
-			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
-			TypeGraph pm, TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mAnnotation, pm, mTypeToType,
-				tAnnotation, tType, mAnnotationToAnnotation, mType, ruleResult);
+			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, Type mType, TAnnotationType tAnnotation,
+			ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tType, mAnnotation, mTypeToType,
+				mAnnotationToAnnotation, pm, mType, tAnnotation, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-					mAnnotationToAnnotation, mType, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, tType, mAnnotation, mTypeToType,
+					mAnnotationToAnnotation, pm, mType, tAnnotation, ruleResult };
 		}
 		return null;
 	}
@@ -4971,12 +4975,13 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 	}
 
 	public static final Object[] pattern_AnnotationTypeMember_29_3_solveCSP_bindingAndBlackFBBBBBBBBBB(
-			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, AnnotationTypeDeclaration mAnnotation,
-			TypeGraph pm, TypeToTAbstractType mTypeToType, TAnnotationType tAnnotation, TAbstractType tType,
-			TypeToTAbstractType mAnnotationToAnnotation, Type mType, ModelgeneratorRuleResult ruleResult) {
+			AnnotationTypeMember _this, IsApplicableMatch isApplicableMatch, TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, Type mType, TAnnotationType tAnnotation,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_AnnotationTypeMember_29_3_solveCSP_binding = pattern_AnnotationTypeMember_29_3_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, mAnnotation, pm, mTypeToType, tAnnotation, tType, mAnnotationToAnnotation,
-				mType, ruleResult);
+				_this, isApplicableMatch, tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mType,
+				tAnnotation, ruleResult);
 		if (result_pattern_AnnotationTypeMember_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnnotationTypeMember_29_3_solveCSP_binding[0];
 
@@ -4984,8 +4989,8 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 					csp);
 			if (result_pattern_AnnotationTypeMember_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mAnnotation, pm, mTypeToType, tAnnotation, tType,
-						mAnnotationToAnnotation, mType, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, tType, mAnnotation, mTypeToType,
+						mAnnotationToAnnotation, pm, mType, tAnnotation, ruleResult };
 			}
 		}
 		return null;
@@ -4998,83 +5003,83 @@ public class AnnotationTypeMemberImpl extends AbstractRuleImpl implements Annota
 		return _result;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_29_5_checknacs_blackBBBBBBB(
-			AnnotationTypeDeclaration mAnnotation, TypeGraph pm, TypeToTAbstractType mTypeToType,
-			TAnnotationType tAnnotation, TAbstractType tType, TypeToTAbstractType mAnnotationToAnnotation, Type mType) {
+	public static final Object[] pattern_AnnotationTypeMember_29_5_checknacs_blackBBBBBBB(TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, Type mType, TAnnotationType tAnnotation) {
 		if (!mAnnotation.equals(mType)) {
-			if (!tAnnotation.equals(tType)) {
-				if (!mAnnotationToAnnotation.equals(mTypeToType)) {
-					return new Object[] { mAnnotation, pm, mTypeToType, tAnnotation, tType, mAnnotationToAnnotation,
-							mType };
+			if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+				if (!tAnnotation.equals(tType)) {
+					return new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mType,
+							tAnnotation };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_29_6_perform_blackBBBBBBBB(
-			AnnotationTypeDeclaration mAnnotation, TypeGraph pm, TypeToTAbstractType mTypeToType,
-			TAnnotationType tAnnotation, TAbstractType tType, TypeToTAbstractType mAnnotationToAnnotation, Type mType,
+	public static final Object[] pattern_AnnotationTypeMember_29_6_perform_blackBBBBBBBB(TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeToTAbstractType mTypeToType,
+			TypeToTAbstractType mAnnotationToAnnotation, TypeGraph pm, Type mType, TAnnotationType tAnnotation,
 			ModelgeneratorRuleResult ruleResult) {
 		if (!mAnnotation.equals(mType)) {
-			if (!tAnnotation.equals(tType)) {
-				if (!mAnnotationToAnnotation.equals(mTypeToType)) {
-					return new Object[] { mAnnotation, pm, mTypeToType, tAnnotation, tType, mAnnotationToAnnotation,
-							mType, ruleResult };
+			if (!mAnnotationToAnnotation.equals(mTypeToType)) {
+				if (!tAnnotation.equals(tType)) {
+					return new Object[] { tType, mAnnotation, mTypeToType, mAnnotationToAnnotation, pm, mType,
+							tAnnotation, ruleResult };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeMember_29_6_perform_greenFFBFFBFBFFBBBB(
-			AnnotationTypeDeclaration mAnnotation, TypeGraph pm, TAnnotationType tAnnotation, TAbstractType tType,
-			Type mType, ModelgeneratorRuleResult ruleResult, CSP csp) {
-		TypeAccess access = JavaFactory.eINSTANCE.createTypeAccess();
-		AnnotationTypeMemberDeclaration mMember = JavaFactory.eINSTANCE.createAnnotationTypeMemberDeclaration();
-		TField tName = BasicFactory.eINSTANCE.createTField();
-		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+	public static final Object[] pattern_AnnotationTypeMember_29_6_perform_greenFBBFFFBFFBFBBB(TAbstractType tType,
+			AnnotationTypeDeclaration mAnnotation, TypeGraph pm, Type mType, TAnnotationType tAnnotation,
+			ModelgeneratorRuleResult ruleResult, CSP csp) {
+		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
 		TFieldDefinition tMember = BasicFactory.eINSTANCE.createTFieldDefinition();
 		ASTNodeToTAnnotatable anntotatableToTannotatable = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
-		TFieldSignature tSignature = BasicFactory.eINSTANCE.createTFieldSignature();
-		Object _localVariable_0 = csp.getValue("mMember", "name");
-		Object _localVariable_1 = csp.getValue("tName", "tName");
+		MDefinitionToTMember memberToMember = PmFactory.eINSTANCE.createMDefinitionToTMember();
+		AnnotationTypeMemberDeclaration mMember = JavaFactory.eINSTANCE.createAnnotationTypeMemberDeclaration();
+		TField tName = BasicFactory.eINSTANCE.createTField();
+		TypeAccess access = JavaFactory.eINSTANCE.createTypeAccess();
 		int tSignature_lowerBound_prime = Integer.valueOf(0);
-		Object _localVariable_2 = csp.getValue("tSignature", "upperBound");
+		Object _localVariable_0 = csp.getValue("tSignature", "upperBound");
+		Object _localVariable_1 = csp.getValue("mMember", "name");
+		Object _localVariable_2 = csp.getValue("tName", "tName");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_3 = ruleResult.getIncrementedPerformCount();
-		access.setType(mType);
-		ruleResult.getSourceObjects().add(access);
-		mAnnotation.getBodyDeclarations().add(mMember);
-		mMember.setType(access);
-		ruleResult.getSourceObjects().add(mMember);
-		tName.setModel(pm);
-		ruleResult.getTargetObjects().add(tName);
-		memberToMember.setSource(mMember);
-		ruleResult.getCorrObjects().add(memberToMember);
-		memberToMember.setTarget(tMember);
+		tSignature.setType(tType);
+		tAnnotation.getSignature().add(tSignature);
+		ruleResult.getTargetObjects().add(tSignature);
+		tSignature.getDefinitions().add(tMember);
 		tAnnotation.getDefines().add(tMember);
 		ruleResult.getTargetObjects().add(tMember);
 		anntotatableToTannotatable.setTarget(tMember);
-		anntotatableToTannotatable.setSource(mMember);
 		ruleResult.getCorrObjects().add(anntotatableToTannotatable);
+		memberToMember.setTarget(tMember);
+		ruleResult.getCorrObjects().add(memberToMember);
+		anntotatableToTannotatable.setSource(mMember);
+		memberToMember.setSource(mMember);
+		mAnnotation.getBodyDeclarations().add(mMember);
+		ruleResult.getSourceObjects().add(mMember);
 		tName.getSignatures().add(tSignature);
-		tAnnotation.getSignature().add(tSignature);
-		tSignature.setType(tType);
-		tSignature.getDefinitions().add(tMember);
-		ruleResult.getTargetObjects().add(tSignature);
-		String mMember_name_prime = (String) _localVariable_0;
-		String tName_tName_prime = (String) _localVariable_1;
+		tName.setModel(pm);
+		ruleResult.getTargetObjects().add(tName);
+		mMember.setType(access);
+		access.setType(mType);
+		ruleResult.getSourceObjects().add(access);
 		tSignature.setLowerBound(Integer.valueOf(tSignature_lowerBound_prime));
-		int tSignature_upperBound_prime = (int) _localVariable_2;
+		int tSignature_upperBound_prime = (int) _localVariable_0;
+		String mMember_name_prime = (String) _localVariable_1;
+		String tName_tName_prime = (String) _localVariable_2;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_3);
+		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		mMember.setName(mMember_name_prime);
 		tName.setTName(tName_tName_prime);
-		tSignature.setUpperBound(Integer.valueOf(tSignature_upperBound_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { access, mMember, mAnnotation, tName, memberToMember, pm, tMember, tAnnotation,
-				anntotatableToTannotatable, tSignature, tType, mType, ruleResult, csp };
+		return new Object[] { tSignature, tType, mAnnotation, tMember, anntotatableToTannotatable, memberToMember, pm,
+				mMember, tName, mType, access, tAnnotation, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AnnotationTypeMember_29_7_expressionFB(

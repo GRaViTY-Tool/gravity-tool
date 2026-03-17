@@ -11,11 +11,11 @@ import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HMuchOverloadingCodeSmell;
 import org.gravity.hulk.antipatterngraph.metrics.HIncommingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.AnnotationHelper;
-import org.gravity.hulk.detection.HAntiPatternDetector;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.antipattern.HAntiPatternDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLargeClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HMuchOverloadingDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.helpers.AnnotationHelper;
 import org.gravity.hulk.detection.metrics.impl.HIncommingInvocationCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
@@ -30,7 +30,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HSwissArmyKnifeDetector extends HClassBasedCalculatorImpl implements HAntiPatternDetector {
+public class HSwissArmyKnifeDetector extends AbstractClassBasedCalculator implements HAntiPatternDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

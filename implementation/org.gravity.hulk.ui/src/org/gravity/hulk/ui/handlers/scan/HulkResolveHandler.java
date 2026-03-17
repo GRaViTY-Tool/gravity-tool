@@ -2,8 +2,9 @@ package org.gravity.hulk.ui.handlers.scan;
 
 import org.eclipse.swt.widgets.Display;
 import org.gravity.hulk.HDetector;
-import org.gravity.hulk.resolve.antipattern.HBlobResolver;
-import org.gravity.hulk.resolve.impl.HAntiPatternResolvingImpl;
+import org.gravity.hulk.resolve.antipattern.AntiPatternResolvePackage;
+import org.gravity.hulk.resolve.antipattern.impl.HBlobResolver;
+import org.gravity.hulk.resolve.impl.HAntiPatternResolving;
 import org.gravity.hulk.ui.dialogs.ResultDialog;
 
 public class HulkResolveHandler extends HulkHandler {
@@ -15,16 +16,16 @@ public class HulkResolveHandler extends HulkHandler {
 
 	@Override
 	protected void setSelectionDialogInput() {
-		this.selectionDialogInput = this.hulk.getHDetector();
+		this.selectionDialogInput = AntiPatternResolvePackage.INSTANCE;
 	}
 
 	@Override
 	protected void setHulk() {
-		this.hulk = new HAntiPatternResolvingImpl();
+		this.hulk = new HAntiPatternResolving();
 	}
 
 	@Override
-	public void displayResults() {
+	protected void displayResults() {
 
 		// Have to leave it as instanceof right now. For further antipatterns,
 		// consider implementing a more abstract HAntiPatternResolver class

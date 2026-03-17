@@ -12,8 +12,8 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.detection.AbstractHDetector;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TInterface;
@@ -33,7 +33,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HIGATCalculator extends HDetectorImpl implements HMetricCalculator {
+public class HIGATCalculator extends AbstractHDetector implements HMetricCalculator {
 
 	private static final Logger LOGGER = Logger.getLogger(HIGATCalculator.class);
 

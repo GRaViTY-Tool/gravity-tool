@@ -2,15 +2,14 @@
  */
 package org.gravity.hulk;
 
-import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.impl.HAntiPatternHandling;
 import org.gravity.typegraph.basic.TClass;
 import org.moflon.core.dfs.Node;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +47,7 @@ public interface HDetector extends Node {
 	 * @model
 	 * @generated
 	 */
-	List<HAnnotation> getHAnnotation();
+	Set<HAnnotation> getHAnnotation();
 
 	EClass getHAnnotationType();
 

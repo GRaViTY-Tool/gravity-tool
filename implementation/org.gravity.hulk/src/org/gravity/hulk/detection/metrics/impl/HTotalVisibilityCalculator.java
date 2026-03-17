@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HTotalVisibilityMetric;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.detection.AbstractHDetector;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
@@ -24,7 +24,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HTotalVisibilityCalculator extends HDetectorImpl
+public class HTotalVisibilityCalculator extends AbstractHDetector
 		implements HMetricCalculator {
 	private static final EClass METRIC_TYPE = org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE
 			.getHTotalVisibilityMetric();

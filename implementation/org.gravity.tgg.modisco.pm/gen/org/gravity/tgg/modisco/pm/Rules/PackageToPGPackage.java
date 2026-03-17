@@ -110,7 +110,7 @@ public interface PackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackage, EObject mPackageToTPackage, EObject mModel,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject mPackage, EObject mModel,
 			EObject tPackage, EObject mModelToTypeGraph, EObject typeGraph);
 
 	/**
@@ -192,7 +192,7 @@ public interface PackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackage, EObject mPackageToTPackage, EObject mModel,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject mPackage, EObject mModel,
 			EObject tPackage, EObject mModelToTypeGraph, EObject typeGraph);
 
 	/**
@@ -209,7 +209,7 @@ public interface PackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_97(EMoflonEdge _edge_model);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_15(EMoflonEdge _edge_model);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface PackageToPGPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_103(EMoflonEdge _edge_model);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_16(EMoflonEdge _edge_model);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.detection.AbstractHDetector;
 import org.gravity.hulk.refactoringgraph.HCluster;
 import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
@@ -34,7 +34,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HClusterAccessCalculatorImpl extends HDetectorImpl implements HClusterAccessCalculator {
+public class HClusterAccessCalculatorImpl extends AbstractHDetector implements HClusterAccessCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

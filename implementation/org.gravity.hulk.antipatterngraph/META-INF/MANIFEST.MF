@@ -14,8 +14,7 @@ Export-Package: org.gravity.hulk.antipatterngraph,
  org.gravity.hulk.antipatterngraph.util,
  org.gravity.hulk.antipatterngraph.values,
  org.gravity.hulk.antipatterngraph.values.impl,
- org.gravity.hulk.antipatterngraph.values.util,
- org.gravity.hulk.help
+ org.gravity.hulk.antipatterngraph.values.util
 Bundle-Name: org.gravity.hulk.antipatterngraph
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore.xmi,

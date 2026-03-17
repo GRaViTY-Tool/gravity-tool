@@ -1,13 +1,13 @@
 
 public class DataClass2 {
 
-	private int field;
+	private DataClass1 data = new DataClass1();
 
 	public int getField() {
-		return this.field;
+		return data.getField();
 	}
 
-	public void setField(final int field) {
-		this.field = field;
+	public void setField(final Integer field) {
+		data.setField(field);
 	}
 }

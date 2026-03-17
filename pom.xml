@@ -96,6 +96,7 @@
     <module>tests/org.gravity.security.violation.patterns.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.typegraph.basic.tests</module>
+    <module>tests/org.gravity.ui.tests</module>
     <module>org.gravity.coverage</module>
   </modules>
 

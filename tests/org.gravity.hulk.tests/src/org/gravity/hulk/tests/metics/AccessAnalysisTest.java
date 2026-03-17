@@ -21,14 +21,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.io.GitCloneException;
-import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.detection.metrics.impl.HIGAMCalculator;
 import org.gravity.hulk.detection.metrics.impl.HIGATCalculator;
-import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
+import org.gravity.hulk.impl.HAntiPatternDetection;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TPackage;
@@ -116,9 +115,9 @@ public class AccessAnalysisTest {
 		final var apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		apg.setPg(this.pmInput);
 
-		final HAntiPatternDetection hulk = new HAntiPatternDetectionImpl();
+		final var hulk = new HAntiPatternDetection();
 		hulk.setApg(apg);
-		hulk.setProgramlocation(location);
+		hulk.setProgramLocation(location);
 
 		final var igat = new HIGATCalculator(hulk.getDependencyGraph());
 		igat.setHAntiPatternHandling(hulk);

@@ -1,6 +1,7 @@
 package org.gravity.hulk.ui.handlers.scan;
 
-import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
+import org.gravity.hulk.detection.HulkDetectionPackage;
+import org.gravity.hulk.impl.HAntiPatternDetection;
 
 public class HulkScanHandler extends HulkHandler {
 
@@ -12,12 +13,12 @@ public class HulkScanHandler extends HulkHandler {
 
 	@Override
 	protected void setSelectionDialogInput() {
-		this.selectionDialogInput = this.hulk.getHDetector();
+		this.selectionDialogInput = HulkDetectionPackage.INSTANCE;
 	}
 
 	@Override
 	protected void setHulk() {
-		this.hulk = new HAntiPatternDetectionImpl();
+		this.hulk = new HAntiPatternDetection();
 	}
 
 }

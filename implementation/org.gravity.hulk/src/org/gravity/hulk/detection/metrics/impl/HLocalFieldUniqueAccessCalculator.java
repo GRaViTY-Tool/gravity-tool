@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
@@ -27,7 +27,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HLocalFieldUniqueAccessCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HLocalFieldUniqueAccessCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

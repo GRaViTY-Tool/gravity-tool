@@ -7,8 +7,8 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HInvocationRelation;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
+import org.gravity.hulk.detection.AbstractRelativeDetector;
+import org.gravity.hulk.detection.codesmells.HCodeSmellDetector;
 import org.gravity.hulk.detection.metrics.impl.HInvocationRelationCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.moflon.core.dfs.DFSGraph;
@@ -29,7 +29,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HControllerClassDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
+public class HControllerClassDetector extends AbstractRelativeDetector implements HCodeSmellDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

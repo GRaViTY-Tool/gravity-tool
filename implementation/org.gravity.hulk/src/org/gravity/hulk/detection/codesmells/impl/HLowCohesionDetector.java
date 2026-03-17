@@ -7,8 +7,8 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
+import org.gravity.hulk.detection.AbstractRelativeDetector;
+import org.gravity.hulk.detection.codesmells.HCodeSmellDetector;
 import org.gravity.hulk.detection.metrics.impl.HLcom5Calculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -32,7 +32,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HLowCohesionDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
+public class HLowCohesionDetector extends AbstractRelativeDetector implements HCodeSmellDetector {
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -146,7 +146,7 @@ public class HLowCohesionDetector extends HRelativeDetectorImpl implements HCode
 				this.setRelative(true);
 				this.setThreshold(this.calculateRelativeThreshold(HRelativeValueConstants.HIGH));
 				//
-				if (HRelativeDetectorImpl.thresholdReached(lcom, this.threshold)) {
+				if (AbstractRelativeDetector.thresholdReached(lcom, this.threshold)) {
 					//
 					final var smell = CodesmellsFactory.eINSTANCE.createHLowCohesionSmell();
 					smell.setTAnnotated(tClass);

@@ -207,10 +207,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tModule__tType____contains = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tType__tModule____module = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mAnnotatableToTAnnotatable__tType____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mAnnotatableToTAnnotatable__tType____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge tEnum__tType____tAnnotated = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge tType__tEnum____tAnnotation = (EMoflonEdge) result3_green[19];
 
@@ -528,10 +528,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		//nothing EMoflonEdge mModel__mType____orphanTypes = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tModule__tType____contains = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge tType__tModule____module = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge mAnnotatableToTAnnotatable__tType____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge mTypeToTType__tType____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge mAnnotatableToTAnnotatable__tType____target = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge mAnnotatableToTAnnotatable__mType____source = (EMoflonEdge) result3_green[17];
 		//nothing EMoflonEdge tEnum__tType____tAnnotated = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge tType__tEnum____tAnnotation = (EMoflonEdge) result3_green[19];
 
@@ -747,7 +747,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_11(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_28(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedEnumImpl
 				.pattern_OrphanedEnum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -803,7 +803,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_12(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_30(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = OrphanedEnumImpl
 				.pattern_OrphanedEnum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -872,13 +872,13 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 			return ruleResult;
 		}
 
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_name.setValue(__helper.getValue("mType", "name"));
 		var_mType_name.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -924,13 +924,13 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 			return ruleResult;
 		}
 
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
 		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
 		var_mType_name.setValue(__helper.getValue("mType", "name"));
 		var_mType_name.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1284,10 +1284,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 				return null;
 			case RulesPackage.ORPHANED_ENUM___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_11__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_12__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_12((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_28__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
+			case RulesPackage.ORPHANED_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_30__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_30((EMoflonEdge) arguments.get(0));
 			case RulesPackage.ORPHANED_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.ORPHANED_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1615,10 +1615,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tModule__tType____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tModule____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotatableToTAnnotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotatableToTAnnotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotatableToTAnnotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotatableToTAnnotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tEnum__tType____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tEnum____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OrphanedEnum";
@@ -1627,10 +1627,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
 		String tModule__tType____contains_name_prime = "contains";
 		String tType__tModule____module_name_prime = "module";
-		String mAnnotatableToTAnnotatable__tType____target_name_prime = "target";
 		String mTypeToTType__tType____target_name_prime = "target";
-		String mAnnotatableToTAnnotatable__mType____source_name_prime = "source";
+		String mAnnotatableToTAnnotatable__tType____target_name_prime = "target";
 		String mTypeToTType__mType____source_name_prime = "source";
+		String mAnnotatableToTAnnotatable__mType____source_name_prime = "source";
 		String tEnum__tType____tAnnotated_name_prime = "tAnnotated";
 		String tType__tEnum____tAnnotation_name_prime = "tAnnotation";
 		pg__tType____allTypes.setSrc(pg);
@@ -1648,18 +1648,18 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		tType__tModule____module.setSrc(tType);
 		tType__tModule____module.setTrg(tModule);
 		ruleresult.getCreatedEdges().add(tType__tModule____module);
-		mAnnotatableToTAnnotatable__tType____target.setSrc(mAnnotatableToTAnnotatable);
-		mAnnotatableToTAnnotatable__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__tType____target);
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
-		mAnnotatableToTAnnotatable__mType____source.setSrc(mAnnotatableToTAnnotatable);
-		mAnnotatableToTAnnotatable__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__mType____source);
+		mAnnotatableToTAnnotatable__tType____target.setSrc(mAnnotatableToTAnnotatable);
+		mAnnotatableToTAnnotatable__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__tType____target);
 		mTypeToTType__mType____source.setSrc(mTypeToTType);
 		mTypeToTType__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
+		mAnnotatableToTAnnotatable__mType____source.setSrc(mAnnotatableToTAnnotatable);
+		mAnnotatableToTAnnotatable__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__mType____source);
 		tEnum__tType____tAnnotated.setSrc(tEnum);
 		tEnum__tType____tAnnotated.setTrg(tType);
 		ruleresult.getCreatedEdges().add(tEnum__tType____tAnnotated);
@@ -1672,17 +1672,17 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
 		tModule__tType____contains.setName(tModule__tType____contains_name_prime);
 		tType__tModule____module.setName(tType__tModule____module_name_prime);
-		mAnnotatableToTAnnotatable__tType____target.setName(mAnnotatableToTAnnotatable__tType____target_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		mAnnotatableToTAnnotatable__mType____source.setName(mAnnotatableToTAnnotatable__mType____source_name_prime);
+		mAnnotatableToTAnnotatable__tType____target.setName(mAnnotatableToTAnnotatable__tType____target_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mAnnotatableToTAnnotatable__mType____source.setName(mAnnotatableToTAnnotatable__mType____source_name_prime);
 		tEnum__tType____tAnnotated.setName(tEnum__tType____tAnnotated_name_prime);
 		tType__tEnum____tAnnotation.setName(tType__tEnum____tAnnotation_name_prime);
 		return new Object[] { ruleresult, tModule, tType, mAnnotatableToTAnnotatable, mTypeToTType, tEnum, pg, mModel,
 				mType, pg__tType____allTypes, tType__pg____model, mModel__mType____orphanTypes,
-				tModule__tType____contains, tType__tModule____module, mAnnotatableToTAnnotatable__tType____target,
-				mTypeToTType__tType____target, mAnnotatableToTAnnotatable__mType____source,
-				mTypeToTType__mType____source, tEnum__tType____tAnnotated, tType__tEnum____tAnnotation };
+				tModule__tType____contains, tType__tModule____module, mTypeToTType__tType____target,
+				mAnnotatableToTAnnotatable__tType____target, mTypeToTType__mType____source,
+				mAnnotatableToTAnnotatable__mType____source, tEnum__tType____tAnnotated, tType__tEnum____tAnnotation };
 	}
 
 	public static final void pattern_OrphanedEnum_1_5_registerobjects_expressionBBBBBBBBBBB(OrphanedEnum _this,
@@ -2099,8 +2099,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		mAnnotatableToTAnnotatable.setTarget(tType);
 		mTypeToTType.setTarget(tType);
 		mModel.getOrphanTypes().add(mType);
-		mAnnotatableToTAnnotatable.setSource(mType);
 		mTypeToTType.setSource(mType);
+		mAnnotatableToTAnnotatable.setSource(mType);
 		String mType_name_prime = (String) _localVariable_0;
 		mType.setName(mType_name_prime);
 		return new Object[] { tType, mAnnotatableToTAnnotatable, mTypeToTType, mModel, mType, csp };
@@ -2236,10 +2236,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		EMoflonEdge mModel__mType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tModule__tType____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tModule____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotatableToTAnnotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mAnnotatableToTAnnotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotatableToTAnnotatable__tType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mAnnotatableToTAnnotatable__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tEnum__tType____tAnnotated = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tEnum____tAnnotation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OrphanedEnum";
@@ -2248,10 +2248,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		String mModel__mType____orphanTypes_name_prime = "orphanTypes";
 		String tModule__tType____contains_name_prime = "contains";
 		String tType__tModule____module_name_prime = "module";
-		String mAnnotatableToTAnnotatable__tType____target_name_prime = "target";
 		String mTypeToTType__tType____target_name_prime = "target";
-		String mAnnotatableToTAnnotatable__mType____source_name_prime = "source";
+		String mAnnotatableToTAnnotatable__tType____target_name_prime = "target";
 		String mTypeToTType__mType____source_name_prime = "source";
+		String mAnnotatableToTAnnotatable__mType____source_name_prime = "source";
 		String tEnum__tType____tAnnotated_name_prime = "tAnnotated";
 		String tType__tEnum____tAnnotation_name_prime = "tAnnotation";
 		pg__tType____allTypes.setSrc(pg);
@@ -2269,18 +2269,18 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		tType__tModule____module.setSrc(tType);
 		tType__tModule____module.setTrg(tModule);
 		ruleresult.getTranslatedEdges().add(tType__tModule____module);
-		mAnnotatableToTAnnotatable__tType____target.setSrc(mAnnotatableToTAnnotatable);
-		mAnnotatableToTAnnotatable__tType____target.setTrg(tType);
-		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__tType____target);
 		mTypeToTType__tType____target.setSrc(mTypeToTType);
 		mTypeToTType__tType____target.setTrg(tType);
 		ruleresult.getCreatedEdges().add(mTypeToTType__tType____target);
-		mAnnotatableToTAnnotatable__mType____source.setSrc(mAnnotatableToTAnnotatable);
-		mAnnotatableToTAnnotatable__mType____source.setTrg(mType);
-		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__mType____source);
+		mAnnotatableToTAnnotatable__tType____target.setSrc(mAnnotatableToTAnnotatable);
+		mAnnotatableToTAnnotatable__tType____target.setTrg(tType);
+		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__tType____target);
 		mTypeToTType__mType____source.setSrc(mTypeToTType);
 		mTypeToTType__mType____source.setTrg(mType);
 		ruleresult.getCreatedEdges().add(mTypeToTType__mType____source);
+		mAnnotatableToTAnnotatable__mType____source.setSrc(mAnnotatableToTAnnotatable);
+		mAnnotatableToTAnnotatable__mType____source.setTrg(mType);
+		ruleresult.getCreatedEdges().add(mAnnotatableToTAnnotatable__mType____source);
 		tEnum__tType____tAnnotated.setSrc(tEnum);
 		tEnum__tType____tAnnotated.setTrg(tType);
 		ruleresult.getTranslatedEdges().add(tEnum__tType____tAnnotated);
@@ -2293,17 +2293,17 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		mModel__mType____orphanTypes.setName(mModel__mType____orphanTypes_name_prime);
 		tModule__tType____contains.setName(tModule__tType____contains_name_prime);
 		tType__tModule____module.setName(tType__tModule____module_name_prime);
-		mAnnotatableToTAnnotatable__tType____target.setName(mAnnotatableToTAnnotatable__tType____target_name_prime);
 		mTypeToTType__tType____target.setName(mTypeToTType__tType____target_name_prime);
-		mAnnotatableToTAnnotatable__mType____source.setName(mAnnotatableToTAnnotatable__mType____source_name_prime);
+		mAnnotatableToTAnnotatable__tType____target.setName(mAnnotatableToTAnnotatable__tType____target_name_prime);
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mAnnotatableToTAnnotatable__mType____source.setName(mAnnotatableToTAnnotatable__mType____source_name_prime);
 		tEnum__tType____tAnnotated.setName(tEnum__tType____tAnnotated_name_prime);
 		tType__tEnum____tAnnotation.setName(tType__tEnum____tAnnotation_name_prime);
 		return new Object[] { ruleresult, tModule, tType, mAnnotatableToTAnnotatable, mTypeToTType, tEnum, pg, mModel,
 				mType, pg__tType____allTypes, tType__pg____model, mModel__mType____orphanTypes,
-				tModule__tType____contains, tType__tModule____module, mAnnotatableToTAnnotatable__tType____target,
-				mTypeToTType__tType____target, mAnnotatableToTAnnotatable__mType____source,
-				mTypeToTType__mType____source, tEnum__tType____tAnnotated, tType__tEnum____tAnnotation };
+				tModule__tType____contains, tType__tModule____module, mTypeToTType__tType____target,
+				mAnnotatableToTAnnotatable__tType____target, mTypeToTType__mType____source,
+				mAnnotatableToTAnnotatable__mType____source, tEnum__tType____tAnnotated, tType__tEnum____tAnnotation };
 	}
 
 	public static final void pattern_OrphanedEnum_11_5_registerobjects_expressionBBBBBBBBBBB(OrphanedEnum _this,
@@ -2616,7 +2616,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_880992 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_772251 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -2625,9 +2625,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_1BB(TClass tType,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_935821 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_613778 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_935821)) {
+			if (!pg.equals(__DEC_tType_classes_613778)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2635,9 +2635,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_2B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_155538 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_155538 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_155538)) {
+		TAbstractType __DEC_tType_innerTypes_198814 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_198814 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_198814)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2646,8 +2646,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_3B(TClass tType) {
-		TPackage __DEC_tType_allTypes_614596 = tType.getPackage();
-		if (__DEC_tType_allTypes_614596 != null) {
+		TPackage __DEC_tType_allTypes_686631 = tType.getPackage();
+		if (__DEC_tType_allTypes_686631 != null) {
 			return new Object[] { tType };
 		}
 
@@ -2656,10 +2656,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 
 	public static final Object[] pattern_OrphanedEnum_20_2_testcorematchandDECs_black_nac_4BBB(TEnum tEnum,
 			TClass tType, TypeGraph pg) {
-		TAnnotatable __DEC_tEnum_tAnnotation_670770 = tEnum.getTAnnotated();
-		if (__DEC_tEnum_tAnnotation_670770 != null) {
-			if (!tType.equals(__DEC_tEnum_tAnnotation_670770)) {
-				if (!pg.equals(__DEC_tEnum_tAnnotation_670770)) {
+		TAnnotatable __DEC_tEnum_tAnnotation_893224 = tEnum.getTAnnotated();
+		if (__DEC_tEnum_tAnnotation_893224 != null) {
+			if (!tType.equals(__DEC_tEnum_tAnnotation_893224)) {
+				if (!pg.equals(__DEC_tEnum_tAnnotation_893224)) {
 					return new Object[] { tEnum, tType, pg };
 				}
 			}
@@ -2836,9 +2836,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_496457 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_496457 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_496457)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_730220 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_730220 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_730220)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2847,9 +2847,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_7348 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_739340 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_7348 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_739340 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2857,8 +2857,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_2B(EnumDeclaration mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_394705 = mType.getPackage();
-		if (__DEC_mType_ownedElements_394705 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_495690 = mType.getPackage();
+		if (__DEC_mType_ownedElements_495690 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2866,7 +2866,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_21_2_testcorematchandDECs_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_590145 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_982227 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3128,9 +3128,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_0B(EnumDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_14121 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_14121 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_14121)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_477900 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_477900 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_477900)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3139,9 +3139,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_1B(EnumDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_985595 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_591062 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_985595 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_591062 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3149,8 +3149,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_2B(EnumDeclaration mType) {
-		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_110143 = mType.getPackage();
-		if (__DEC_mType_ownedElements_110143 != null) {
+		org.eclipse.modisco.java.Package __DEC_mType_ownedElements_737576 = mType.getPackage();
+		if (__DEC_mType_ownedElements_737576 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3158,7 +3158,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_27_1_matchtggpattern_black_nac_3B(EnumDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_829322 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_228279 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3192,7 +3192,7 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_0B(TClass tType) {
-		for (TPackage __DEC_tType_classes_64880 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tType_classes_417061 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TPackage.class, "classes")) {
 			return new Object[] { tType };
 		}
@@ -3200,9 +3200,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_1BB(TClass tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_classes_936926 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_classes_429951 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tType_classes_936926)) {
+			if (!pg.equals(__DEC_tType_classes_429951)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3210,9 +3210,9 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_2B(TClass tType) {
-		TAbstractType __DEC_tType_innerTypes_898550 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_898550 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_898550)) {
+		TAbstractType __DEC_tType_innerTypes_296170 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_296170 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_296170)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3221,8 +3221,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 	}
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_3B(TClass tType) {
-		TPackage __DEC_tType_allTypes_895353 = tType.getPackage();
-		if (__DEC_tType_allTypes_895353 != null) {
+		TPackage __DEC_tType_allTypes_792831 = tType.getPackage();
+		if (__DEC_tType_allTypes_792831 != null) {
 			return new Object[] { tType };
 		}
 
@@ -3231,10 +3231,10 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 
 	public static final Object[] pattern_OrphanedEnum_28_1_matchtggpattern_black_nac_4BBB(TEnum tEnum, TClass tType,
 			TypeGraph pg) {
-		TAnnotatable __DEC_tEnum_tAnnotation_363665 = tEnum.getTAnnotated();
-		if (__DEC_tEnum_tAnnotation_363665 != null) {
-			if (!tType.equals(__DEC_tEnum_tAnnotation_363665)) {
-				if (!pg.equals(__DEC_tEnum_tAnnotation_363665)) {
+		TAnnotatable __DEC_tEnum_tAnnotation_483503 = tEnum.getTAnnotated();
+		if (__DEC_tEnum_tAnnotation_483503 != null) {
+			if (!tType.equals(__DEC_tEnum_tAnnotation_483503)) {
+				if (!pg.equals(__DEC_tEnum_tAnnotation_483503)) {
 					return new Object[] { tEnum, tType, pg };
 				}
 			}
@@ -3468,8 +3468,8 @@ public class OrphanedEnumImpl extends AbstractRuleImpl implements OrphanedEnum {
 		tEnum.setTAnnotated(tType);
 		ruleResult.getTargetObjects().add(tEnum);
 		mModel.getOrphanTypes().add(mType);
-		mAnnotatableToTAnnotatable.setSource(mType);
 		mTypeToTType.setSource(mType);
+		mAnnotatableToTAnnotatable.setSource(mType);
 		ruleResult.getSourceObjects().add(mType);
 		String tType_tName_prime = (String) _localVariable_0;
 		String mType_name_prime = (String) _localVariable_1;

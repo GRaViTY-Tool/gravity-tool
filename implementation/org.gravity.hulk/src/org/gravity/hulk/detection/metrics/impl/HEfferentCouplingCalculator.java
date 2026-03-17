@@ -9,8 +9,8 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
@@ -27,7 +27,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HEfferentCouplingCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HEfferentCouplingCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 
 	private static final Logger LOGGER = Logger.getLogger(HEfferentCouplingCalculator.class);
 

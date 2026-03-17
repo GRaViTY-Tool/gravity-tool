@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.HDetector;
+import org.gravity.hulk.HulkPackage;
 
 public class DetectionTreeContentProvider implements ITreeContentProvider {
 
@@ -33,17 +31,11 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getElements(final Object inputElement) {
 		final List<Object> elements = new ArrayList<>();
-		if (inputElement instanceof final EPackage epackage) {
-			for (final EPackage esubpackage : epackage.getESubpackages()) {
-				if (epackage.equals(esubpackage.getESuperPackage())) {
-					elements.add(esubpackage);
-				}
-			}
-			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (epackage.equals(eclassifier.getEPackage()) && !eclassifier.getInstanceClass().isInterface()) {
-					elements.add(eclassifier);
-				}
-			}
+		if (inputElement instanceof final HulkPackage epackage) {
+			elements.addAll(epackage.getSubPackages());
+			elements.addAll(epackage.getDetectors());
+		} else {
+			LOGGER.warn("Input element is not of type HulkPackage: " + inputElement);
 		}
 		return elements.toArray();
 	}
@@ -51,38 +43,24 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(final Object parentElement) {
 		final List<Object> elements = new ArrayList<>();
-		if (parentElement instanceof final EPackage epackage) {
-			for (final EPackage esubpackage : epackage.getESubpackages()) {
-				if (epackage.equals(esubpackage.getESuperPackage())) {
-					elements.add(esubpackage);
-				}
-			}
-			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (HDetectorImpl.class.isAssignableFrom(eclassifier.getInstanceClass())
-						&& !((EClass) eclassifier).isAbstract()) {
-					elements.add(eclassifier);
-
-				}
-			}
+		if (parentElement instanceof final HulkPackage epackage) {
+			elements.addAll(epackage.getSubPackages());
+			elements.addAll(epackage.getDetectors());
 		}
 		return elements.toArray();
 	}
 
 	@Override
 	public Object getParent(final Object element) {
-		if (element instanceof EPackage) {
-			return ((EPackage) element).getESuperPackage();
-		}
-		if (element instanceof EClassifier) {
-			return ((EClassifier) element).getEPackage();
+		if ((element instanceof final HulkPackage ePackage) || (element instanceof final HDetector detector)) {
 		}
 		return null;
 	}
 
 	@Override
 	public boolean hasChildren(final Object element) {
-		if (element instanceof final EPackage ePackage) {
-			return !ePackage.getESubpackages().isEmpty() || !ePackage.getEClassifiers().isEmpty();
+		if (element instanceof final HulkPackage ePackage) {
+			return !ePackage.getSubPackages().isEmpty() || !ePackage.getDetectors().isEmpty();
 		}
 		return false;
 	}

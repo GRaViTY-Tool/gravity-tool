@@ -10,12 +10,12 @@ import org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern;
 import org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
-import org.gravity.hulk.detection.AnnotationHelper;
-import org.gravity.hulk.detection.HAntiPatternDetector;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.antipattern.HAntiPatternDetector;
 import org.gravity.hulk.detection.codesmells.impl.HControllerClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLargeClassDetector;
 import org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.helpers.AnnotationHelper;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -30,7 +30,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HGodClassDetector extends HClassBasedCalculatorImpl implements HAntiPatternDetector {
+public class HGodClassDetector extends AbstractClassBasedCalculator implements HAntiPatternDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

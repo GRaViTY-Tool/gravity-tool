@@ -164,15 +164,15 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[0];
-		Interface umlClass = (Interface) result1_bindingAndBlack[1];
+		Operation feature = (Operation) result1_bindingAndBlack[0];
+		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[1];
 		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[2];
-		Operation feature = (Operation) result1_bindingAndBlack[3];
-		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[4];
+		Interface umlClass = (Interface) result1_bindingAndBlack[3];
+		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[4];
 		AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
-		OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_1_1_performtransformation_greenBB(umlClass,
-				feature);
+		OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_1_1_performtransformation_greenBB(feature,
+				umlClass);
 
 		Object[] result2_green = OperationInAnnotationTypeImpl
 				.pattern_OperationInAnnotationType_1_2_collecttranslatedelements_greenF();
@@ -182,16 +182,16 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration,
-						umlClass, bd2ne, feature, c2c, classDec);
+				.pattern_OperationInAnnotationType_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, feature, c2c, bd2ne,
+						umlClass, bodyDeclaration, classDec);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", "
-					+ "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", "
+					+ ", " + "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ "[umlClass] = " + umlClass + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
 					+ "[classDec] = " + classDec + ".");
 		}
 		OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_1_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, bodyDeclaration, umlClass, feature, classDec);
+				ruleresult, feature, umlClass, bodyDeclaration, classDec);
 		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge feature__umlClass____interface = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
@@ -200,7 +200,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		// 
 		// 
 		OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_1_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+				ruleresult, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 		return OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_1_6_expressionFB(ruleresult);
 	}
 
@@ -232,35 +232,34 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_binding[0];
 		AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result2_binding[1];
 		for (Object[] result2_black : OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_2_2_corematch_blackBFFFFBB(bodyDeclaration, classDec, match)) {
-			Interface umlClass = (Interface) result2_black[1];
+				.pattern_OperationInAnnotationType_2_2_corematch_blackFFFFBBB(bodyDeclaration, classDec, match)) {
+			Operation feature = (Operation) result2_black[0];
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[1];
 			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[2];
-			Operation feature = (Operation) result2_black[3];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[4];
+			Interface umlClass = (Interface) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : OperationInAnnotationTypeImpl
-					.pattern_OperationInAnnotationType_2_3_findcontext_blackBBBBBB(bodyDeclaration, umlClass, bd2ne,
-							feature, c2c, classDec)) {
+					.pattern_OperationInAnnotationType_2_3_findcontext_blackBBBBBB(feature, c2c, bd2ne, umlClass,
+							bodyDeclaration, classDec)) {
 				Object[] result3_green = OperationInAnnotationTypeImpl
-						.pattern_OperationInAnnotationType_2_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration, umlClass,
-								bd2ne, feature, c2c, classDec);
+						.pattern_OperationInAnnotationType_2_3_findcontext_greenBBBBBBFFFFFFF(feature, c2c, bd2ne,
+								umlClass, bodyDeclaration, classDec);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = OperationInAnnotationTypeImpl
 						.pattern_OperationInAnnotationType_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+								isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[bd2ne] = " + bd2ne + ", "
-							+ "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", " + "[classDec] = " + classDec
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
+							+ "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass + ", "
+							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[classDec] = " + classDec + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -333,8 +332,8 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			Interface umlClass, ASTNode2Element bd2ne, Operation feature, ASTNode2Element c2c,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation feature, ASTNode2Element c2c,
+			ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
 			AnnotationTypeDeclaration classDec) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -350,11 +349,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
-		isApplicableMatch.registerObject("umlClass", umlClass);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("c2c", c2c);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
+		isApplicableMatch.registerObject("umlClass", umlClass);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("classDec", classDec);
 		return csp;
 	}
@@ -373,13 +372,13 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject bd2ne, EObject feature, EObject c2c, EObject classDec) {
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("umlClass", umlClass);
-		ruleresult.registerObject("bd2ne", bd2ne);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject c2c, EObject bd2ne,
+			EObject umlClass, EObject bodyDeclaration, EObject classDec) {
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("c2c", c2c);
+		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("umlClass", umlClass);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("classDec", classDec);
 
 	}
@@ -398,50 +397,50 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Interface umlClass, Operation feature) {
+	public boolean isAppropriate_BWD(Match match, Operation feature, Interface umlClass) {
 
 		Object[] result1_black = OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_10_1_initialbindings_blackBBBB(this, match, umlClass, feature);
+				.pattern_OperationInAnnotationType_10_1_initialbindings_blackBBBB(this, match, feature, umlClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[umlClass] = " + umlClass + ", " + "[feature] = " + feature + ".");
+					+ "[match] = " + match + ", " + "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ".");
 		}
 
 		Object[] result2_bindingAndBlack = OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, umlClass, feature);
+				.pattern_OperationInAnnotationType_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, feature, umlClass);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[umlClass] = " + umlClass + ", " + "[feature] = " + feature + ".");
+					+ "[match] = " + match + ", " + "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = OperationInAnnotationTypeImpl
-					.pattern_OperationInAnnotationType_10_4_collectelementstobetranslated_blackBBB(match, umlClass,
-							feature);
+					.pattern_OperationInAnnotationType_10_4_collectelementstobetranslated_blackBBB(match, feature,
+							umlClass);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[umlClass] = " + umlClass + ", " + "[feature] = " + feature + ".");
+						+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ".");
 			}
 			OperationInAnnotationTypeImpl
-					.pattern_OperationInAnnotationType_10_4_collectelementstobetranslated_greenBBBFF(match, umlClass,
-							feature);
+					.pattern_OperationInAnnotationType_10_4_collectelementstobetranslated_greenBBBFF(match, feature,
+							umlClass);
 			//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge feature__umlClass____interface = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = OperationInAnnotationTypeImpl
-					.pattern_OperationInAnnotationType_10_5_collectcontextelements_blackBBB(match, umlClass, feature);
+					.pattern_OperationInAnnotationType_10_5_collectcontextelements_blackBBB(match, feature, umlClass);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[umlClass] = " + umlClass + ", " + "[feature] = " + feature + ".");
+						+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ".");
 			}
 			OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_10_5_collectcontextelements_greenBBB(match,
-					umlClass, feature);
+					feature, umlClass);
 
 			// 
 			OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_10_6_registerobjectstomatch_expressionBBBB(
-					this, match, umlClass, feature);
+					this, match, feature, umlClass);
 			return OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_10_7_expressionF();
 		} else {
 			return OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_10_8_expressionF();
@@ -463,11 +462,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[0];
-		Interface umlClass = (Interface) result1_bindingAndBlack[1];
+		Operation feature = (Operation) result1_bindingAndBlack[0];
+		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[1];
 		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[2];
-		Operation feature = (Operation) result1_bindingAndBlack[3];
-		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[4];
+		Interface umlClass = (Interface) result1_bindingAndBlack[3];
+		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[4];
 		AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		OperationInAnnotationTypeImpl
@@ -481,16 +480,16 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, bodyDeclaration,
-						umlClass, bd2ne, feature, c2c, classDec);
+				.pattern_OperationInAnnotationType_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, feature, c2c,
+						bd2ne, umlClass, bodyDeclaration, classDec);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", "
-					+ "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", "
+					+ ", " + "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ "[umlClass] = " + umlClass + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
 					+ "[classDec] = " + classDec + ".");
 		}
 		OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_11_3_bookkeepingforedges_greenBBBBBFFFF(
-				ruleresult, bodyDeclaration, umlClass, feature, classDec);
+				ruleresult, feature, umlClass, bodyDeclaration, classDec);
 		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge feature__umlClass____interface = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
@@ -499,7 +498,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		// 
 		// 
 		OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_11_5_registerobjects_expressionBBBBBBBB(this,
-				ruleresult, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+				ruleresult, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 		return OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_11_6_expressionFB(ruleresult);
 	}
 
@@ -528,38 +527,37 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Interface umlClass = (Interface) result2_binding[0];
-		Operation feature = (Operation) result2_binding[1];
+		Operation feature = (Operation) result2_binding[0];
+		Interface umlClass = (Interface) result2_binding[1];
 		for (Object[] result2_black : OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_12_2_corematch_blackFBFBFFB(umlClass, feature, match)) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[0];
+				.pattern_OperationInAnnotationType_12_2_corematch_blackBFFBFFB(feature, umlClass, match)) {
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[1];
 			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[2];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[4];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[4];
 			AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : OperationInAnnotationTypeImpl
-					.pattern_OperationInAnnotationType_12_3_findcontext_blackBBBBBB(bodyDeclaration, umlClass, bd2ne,
-							feature, c2c, classDec)) {
+					.pattern_OperationInAnnotationType_12_3_findcontext_blackBBBBBB(feature, c2c, bd2ne, umlClass,
+							bodyDeclaration, classDec)) {
 				Object[] result3_green = OperationInAnnotationTypeImpl
-						.pattern_OperationInAnnotationType_12_3_findcontext_greenBBBBBBFFFFFFF(bodyDeclaration,
-								umlClass, bd2ne, feature, c2c, classDec);
+						.pattern_OperationInAnnotationType_12_3_findcontext_greenBBBBBBFFFFFFF(feature, c2c, bd2ne,
+								umlClass, bodyDeclaration, classDec);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge feature__umlClass____interface = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = OperationInAnnotationTypeImpl
 						.pattern_OperationInAnnotationType_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this,
-								isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+								isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[bd2ne] = " + bd2ne + ", "
-							+ "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", " + "[classDec] = " + classDec
-							+ ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
+							+ "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass + ", "
+							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[classDec] = " + classDec + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -590,9 +588,9 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Interface umlClass, Operation feature) {
-		match.registerObject("umlClass", umlClass);
+	public void registerObjectsToMatch_BWD(Match match, Operation feature, Interface umlClass) {
 		match.registerObject("feature", feature);
+		match.registerObject("umlClass", umlClass);
 
 	}
 
@@ -601,7 +599,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Interface umlClass, Operation feature) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Interface umlClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -630,8 +628,8 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MAbstractMethodDefinition bodyDeclaration,
-			Interface umlClass, ASTNode2Element bd2ne, Operation feature, ASTNode2Element c2c,
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, ASTNode2Element c2c,
+			ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
 			AnnotationTypeDeclaration classDec) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -647,11 +645,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
-		isApplicableMatch.registerObject("umlClass", umlClass);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("c2c", c2c);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
+		isApplicableMatch.registerObject("umlClass", umlClass);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("classDec", classDec);
 		return csp;
 	}
@@ -670,13 +668,13 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject bd2ne, EObject feature, EObject c2c, EObject classDec) {
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
-		ruleresult.registerObject("umlClass", umlClass);
-		ruleresult.registerObject("bd2ne", bd2ne);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject c2c, EObject bd2ne,
+			EObject umlClass, EObject bodyDeclaration, EObject classDec) {
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("c2c", c2c);
+		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("umlClass", umlClass);
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("classDec", classDec);
 
 	}
@@ -695,7 +693,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_127(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_150(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = OperationInAnnotationTypeImpl
 				.pattern_OperationInAnnotationType_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -712,8 +710,8 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		// ForEach 
 		for (Object[] result2_black : OperationInAnnotationTypeImpl
 				.pattern_OperationInAnnotationType_20_2_testcorematchandDECs_blackFFB(_edge_ownedOperation)) {
-			Interface umlClass = (Interface) result2_black[0];
-			Operation feature = (Operation) result2_black[1];
+			Operation feature = (Operation) result2_black[0];
+			Interface umlClass = (Interface) result2_black[1];
 			Object[] result2_green = OperationInAnnotationTypeImpl
 					.pattern_OperationInAnnotationType_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -721,7 +719,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 			// 
 			if (OperationInAnnotationTypeImpl
 					.pattern_OperationInAnnotationType_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-							this, match, umlClass, feature)) {
+							this, match, feature, umlClass)) {
 				// 
 				if (OperationInAnnotationTypeImpl
 						.pattern_OperationInAnnotationType_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -753,7 +751,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_138(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_165(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = OperationInAnnotationTypeImpl
 				.pattern_OperationInAnnotationType_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -888,41 +886,41 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_bindingAndBlack[0];
+		Operation feature = (Operation) result2_bindingAndBlack[0];
 		Interface umlClass = (Interface) result2_bindingAndBlack[1];
-		Operation feature = (Operation) result2_bindingAndBlack[2];
+		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_bindingAndBlack[2];
 		AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, bodyDeclaration,
-						umlClass, feature, classDec, sourceMatch, targetMatch);
+				.pattern_OperationInAnnotationType_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, feature, umlClass,
+						bodyDeclaration, classDec, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", "
-					+ "[feature] = " + feature + ", " + "[classDec] = " + classDec + ", " + "[sourceMatch] = "
-					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+					+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ", " + "[bodyDeclaration] = "
+					+ bodyDeclaration + ", " + "[classDec] = " + classDec + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : OperationInAnnotationTypeImpl
-					.pattern_OperationInAnnotationType_24_5_matchcorrcontext_blackBBFBFBBB(bodyDeclaration, umlClass,
-							feature, classDec, sourceMatch, targetMatch)) {
+					.pattern_OperationInAnnotationType_24_5_matchcorrcontext_blackBFFBBBBB(feature, umlClass,
+							bodyDeclaration, classDec, sourceMatch, targetMatch)) {
+				ASTNode2Element c2c = (ASTNode2Element) result5_black[1];
 				ASTNode2Element bd2ne = (ASTNode2Element) result5_black[2];
-				ASTNode2Element c2c = (ASTNode2Element) result5_black[4];
 				Object[] result5_green = OperationInAnnotationTypeImpl
-						.pattern_OperationInAnnotationType_24_5_matchcorrcontext_greenBBBBF(bd2ne, c2c, sourceMatch,
+						.pattern_OperationInAnnotationType_24_5_matchcorrcontext_greenBBBBF(c2c, bd2ne, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = OperationInAnnotationTypeImpl
-						.pattern_OperationInAnnotationType_24_6_createcorrespondence_blackBBBBB(bodyDeclaration,
-								umlClass, feature, classDec, ccMatch);
+						.pattern_OperationInAnnotationType_24_6_createcorrespondence_blackBBBBB(feature, umlClass,
+								bodyDeclaration, classDec, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
-							+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[feature] = " + feature
-							+ ", " + "[classDec] = " + classDec + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
+							+ ", " + "[umlClass] = " + umlClass + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ "[classDec] = " + classDec + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = OperationInAnnotationTypeImpl
@@ -946,8 +944,9 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MAbstractMethodDefinition bodyDeclaration, Interface umlClass,
-			Operation feature, AnnotationTypeDeclaration classDec, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Operation feature, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec, Match sourceMatch,
+			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -992,9 +991,9 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Interface umlClass, Operation feature) {// 
+	public boolean checkDEC_BWD(Operation feature, Interface umlClass) {// 
 		Object[] result1_black = OperationInAnnotationTypeImpl
-				.pattern_OperationInAnnotationType_28_1_matchtggpattern_blackBB(umlClass, feature);
+				.pattern_OperationInAnnotationType_28_1_matchtggpattern_blackBB(feature, umlClass);
 		if (result1_black != null) {
 			return OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_28_2_expressionF();
 		} else {
@@ -1026,22 +1025,22 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 				.pattern_OperationInAnnotationType_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList bd2neList = (RuleEntryList) result2_black[0];
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[1];
+			Operation feature = (Operation) result2_black[1];
 			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[2];
-			Operation feature = (Operation) result2_black[3];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[3];
 			//nothing RuleEntryList c2cList = (RuleEntryList) result2_black[4];
-			Interface umlClass = (Interface) result2_black[5];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[6];
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[5];
+			Interface umlClass = (Interface) result2_black[6];
 			AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result2_black[7];
 
 			Object[] result3_bindingAndBlack = OperationInAnnotationTypeImpl
 					.pattern_OperationInAnnotationType_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, ruleResult);
+							feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = " + bodyDeclaration
-						+ ", " + "[umlClass] = " + umlClass + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = "
-						+ feature + ", " + "[c2c] = " + c2c + ", " + "[classDec] = " + classDec + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
+						+ "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[umlClass] = " + umlClass + ", "
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[classDec] = " + classDec + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1050,21 +1049,21 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					csp)) {
 				// 
 				Object[] result5_black = OperationInAnnotationTypeImpl
-						.pattern_OperationInAnnotationType_29_5_checknacs_blackBBBBBB(bodyDeclaration, umlClass, bd2ne,
-								feature, c2c, classDec);
+						.pattern_OperationInAnnotationType_29_5_checknacs_blackBBBBBB(feature, c2c, bd2ne, umlClass,
+								bodyDeclaration, classDec);
 				if (result5_black != null) {
 
 					Object[] result6_black = OperationInAnnotationTypeImpl
-							.pattern_OperationInAnnotationType_29_6_perform_blackBBBBBBB(bodyDeclaration, umlClass,
-									bd2ne, feature, c2c, classDec, ruleResult);
+							.pattern_OperationInAnnotationType_29_6_perform_blackBBBBBBB(feature, c2c, bd2ne, umlClass,
+									bodyDeclaration, classDec, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
-								+ bodyDeclaration + ", " + "[umlClass] = " + umlClass + ", " + "[bd2ne] = " + bd2ne
-								+ ", " + "[feature] = " + feature + ", " + "[c2c] = " + c2c + ", " + "[classDec] = "
-								+ classDec + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = "
+								+ feature + ", " + "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", "
+								+ "[umlClass] = " + umlClass + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+								+ "[classDec] = " + classDec + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_29_6_perform_greenBBBBB(
-							bodyDeclaration, umlClass, feature, classDec, ruleResult);
+					OperationInAnnotationTypeImpl.pattern_OperationInAnnotationType_29_6_perform_greenBBBBB(feature,
+							umlClass, bodyDeclaration, classDec, ruleResult);
 
 				} else {
 				}
@@ -1081,9 +1080,9 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature, ASTNode2Element c2c,
+			ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1098,11 +1097,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
-		isApplicableMatch.registerObject("umlClass", umlClass);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("c2c", c2c);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
+		isApplicableMatch.registerObject("umlClass", umlClass);
+		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("classDec", classDec);
 		return csp;
 	}
@@ -1140,11 +1139,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 						(MAbstractMethodDefinition) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_INTERFACE_ASTNODE2ELEMENT_OPERATION_ASTNODE2ELEMENT_ANNOTATIONTYPEDECLARATION:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(MAbstractMethodDefinition) arguments.get(1), (Interface) arguments.get(2),
-						(ASTNode2Element) arguments.get(3), (Operation) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (AnnotationTypeDeclaration) arguments.get(6));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_OPERATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_INTERFACE_MABSTRACTMETHODDEFINITION_ANNOTATIONTYPEDECLARATION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
+						(ASTNode2Element) arguments.get(2), (ASTNode2Element) arguments.get(3),
+						(Interface) arguments.get(4), (MAbstractMethodDefinition) arguments.get(5),
+						(AnnotationTypeDeclaration) arguments.get(6));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1154,27 +1153,27 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 				return null;
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_TYPES_FWD__MATCH:
 				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD__MATCH_INTERFACE_OPERATION:
-				return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-						(Operation) arguments.get(2));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD__MATCH_OPERATION_INTERFACE:
+				return isAppropriate_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
+						(Interface) arguments.get(2));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
 				return perform_BWD((IsApplicableMatch) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_BWD__MATCH:
 				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE_OPERATION:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-						(Operation) arguments.get(2));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_OPERATION_INTERFACE:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
+						(Interface) arguments.get(2));
 				return null;
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE_OPERATION:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-						(Operation) arguments.get(2));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_OPERATION_INTERFACE:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
+						(Interface) arguments.get(2));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_INTERFACE_ASTNODE2ELEMENT_OPERATION_ASTNODE2ELEMENT_ANNOTATIONTYPEDECLARATION:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(MAbstractMethodDefinition) arguments.get(1), (Interface) arguments.get(2),
-						(ASTNode2Element) arguments.get(3), (Operation) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (AnnotationTypeDeclaration) arguments.get(6));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_INTERFACE_MABSTRACTMETHODDEFINITION_ANNOTATIONTYPEDECLARATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
+						(ASTNode2Element) arguments.get(2), (ASTNode2Element) arguments.get(3),
+						(Interface) arguments.get(4), (MAbstractMethodDefinition) arguments.get(5),
+						(AnnotationTypeDeclaration) arguments.get(6));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1184,37 +1183,35 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 				return null;
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_127__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_127((EMoflonEdge) arguments.get(0));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_138__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_150__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_150((EMoflonEdge) arguments.get(0));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_165__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_165((EMoflonEdge) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 				return checkAttributes_BWD((TripleMatch) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
 				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__MABSTRACTMETHODDEFINITION_INTERFACE_OPERATION_ANNOTATIONTYPEDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((MAbstractMethodDefinition) arguments.get(0),
-						(Interface) arguments.get(1), (Operation) arguments.get(2),
-						(AnnotationTypeDeclaration) arguments.get(3), (Match) arguments.get(4),
-						(Match) arguments.get(5));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_INTERFACE_MABSTRACTMETHODDEFINITION_ANNOTATIONTYPEDECLARATION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Operation) arguments.get(0), (Interface) arguments.get(1),
+						(MAbstractMethodDefinition) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3),
+						(Match) arguments.get(4), (Match) arguments.get(5));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_DEC_FWD__MABSTRACTMETHODDEFINITION_ANNOTATIONTYPEDECLARATION:
 				return checkDEC_FWD((MAbstractMethodDefinition) arguments.get(0),
 						(AnnotationTypeDeclaration) arguments.get(1));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_DEC_BWD__INTERFACE_OPERATION:
-				return checkDEC_BWD((Interface) arguments.get(0), (Operation) arguments.get(1));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___CHECK_DEC_BWD__OPERATION_INTERFACE:
+				return checkDEC_BWD((Operation) arguments.get(0), (Interface) arguments.get(1));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
 				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
 						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MABSTRACTMETHODDEFINITION_INTERFACE_ASTNODE2ELEMENT_OPERATION_ASTNODE2ELEMENT_ANNOTATIONTYPEDECLARATION_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(MAbstractMethodDefinition) arguments.get(1), (Interface) arguments.get(2),
-						(ASTNode2Element) arguments.get(3), (Operation) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (AnnotationTypeDeclaration) arguments.get(6),
-						(ModelgeneratorRuleResult) arguments.get(7));
+			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION_ASTNODE2ELEMENT_ASTNODE2ELEMENT_INTERFACE_MABSTRACTMETHODDEFINITION_ANNOTATIONTYPEDECLARATION_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
+						(ASTNode2Element) arguments.get(2), (ASTNode2Element) arguments.get(3),
+						(Interface) arguments.get(4), (MAbstractMethodDefinition) arguments.get(5),
+						(AnnotationTypeDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 			case RulesPackage.OPERATION_IN_ANNOTATION_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1322,31 +1319,31 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 
 	public static final Object[] pattern_OperationInAnnotationType_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_1 = isApplicableMatch.getObject("umlClass");
+		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_1 = isApplicableMatch.getObject("c2c");
 		EObject _localVariable_2 = isApplicableMatch.getObject("bd2ne");
-		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("c2c");
+		EObject _localVariable_3 = isApplicableMatch.getObject("umlClass");
+		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
 		EObject _localVariable_5 = isApplicableMatch.getObject("classDec");
-		EObject tmpBodyDeclaration = _localVariable_0;
-		EObject tmpUmlClass = _localVariable_1;
+		EObject tmpFeature = _localVariable_0;
+		EObject tmpC2c = _localVariable_1;
 		EObject tmpBd2ne = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
-		EObject tmpC2c = _localVariable_4;
+		EObject tmpUmlClass = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_4;
 		EObject tmpClassDec = _localVariable_5;
-		if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-			if (tmpUmlClass instanceof Interface) {
-				Interface umlClass = (Interface) tmpUmlClass;
+		if (tmpFeature instanceof Operation) {
+			Operation feature = (Operation) tmpFeature;
+			if (tmpC2c instanceof ASTNode2Element) {
+				ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
 				if (tmpBd2ne instanceof ASTNode2Element) {
 					ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-					if (tmpFeature instanceof Operation) {
-						Operation feature = (Operation) tmpFeature;
-						if (tmpC2c instanceof ASTNode2Element) {
-							ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
+					if (tmpUmlClass instanceof Interface) {
+						Interface umlClass = (Interface) tmpUmlClass;
+						if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+							MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 							if (tmpClassDec instanceof AnnotationTypeDeclaration) {
 								AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) tmpClassDec;
-								return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec,
+								return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec,
 										isApplicableMatch };
 							}
 						}
@@ -1358,14 +1355,14 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_1_1_performtransformation_blackBBBBBBFBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, OperationInAnnotationType _this,
-			IsApplicableMatch isApplicableMatch) {
+			Operation feature, ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec,
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch) {
 		if (!bd2ne.equals(c2c)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, csp, _this,
+					return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1378,29 +1375,29 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		Object[] result_pattern_OperationInAnnotationType_1_1_performtransformation_binding = pattern_OperationInAnnotationType_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_OperationInAnnotationType_1_1_performtransformation_binding != null) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[0];
-			Interface umlClass = (Interface) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[1];
+			Operation feature = (Operation) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[0];
+			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[1];
 			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[2];
-			Operation feature = (Operation) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[3];
-			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[4];
+			Interface umlClass = (Interface) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[3];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[4];
 			AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result_pattern_OperationInAnnotationType_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_OperationInAnnotationType_1_1_performtransformation_black = pattern_OperationInAnnotationType_1_1_performtransformation_blackBBBBBBFBB(
-					bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, _this, isApplicableMatch);
+					feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, _this, isApplicableMatch);
 			if (result_pattern_OperationInAnnotationType_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OperationInAnnotationType_1_1_performtransformation_black[6];
 
-				return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, csp, _this,
+				return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_OperationInAnnotationType_1_1_performtransformation_greenBB(Interface umlClass,
-			Operation feature) {
+	public static final Object[] pattern_OperationInAnnotationType_1_1_performtransformation_greenBB(Operation feature,
+			Interface umlClass) {
 		umlClass.getOwnedOperations().add(feature);
-		return new Object[] { umlClass, feature };
+		return new Object[] { feature, umlClass };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_1_2_collecttranslatedelements_greenF() {
@@ -1409,25 +1406,26 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass, EObject bd2ne, EObject feature,
-			EObject c2c, EObject classDec) {
-		if (!bodyDeclaration.equals(umlClass)) {
-			if (!bodyDeclaration.equals(feature)) {
-				if (!bodyDeclaration.equals(c2c)) {
-					if (!bodyDeclaration.equals(classDec)) {
-						if (!bd2ne.equals(bodyDeclaration)) {
-							if (!bd2ne.equals(umlClass)) {
-								if (!bd2ne.equals(feature)) {
-									if (!bd2ne.equals(c2c)) {
+			PerformRuleResult ruleresult, EObject feature, EObject c2c, EObject bd2ne, EObject umlClass,
+			EObject bodyDeclaration, EObject classDec) {
+		if (!feature.equals(umlClass)) {
+			if (!c2c.equals(feature)) {
+				if (!c2c.equals(umlClass)) {
+					if (!c2c.equals(classDec)) {
+						if (!bd2ne.equals(feature)) {
+							if (!bd2ne.equals(c2c)) {
+								if (!bd2ne.equals(umlClass)) {
+									if (!bd2ne.equals(bodyDeclaration)) {
 										if (!bd2ne.equals(classDec)) {
-											if (!feature.equals(umlClass)) {
-												if (!c2c.equals(umlClass)) {
-													if (!c2c.equals(feature)) {
-														if (!c2c.equals(classDec)) {
-															if (!classDec.equals(umlClass)) {
-																if (!classDec.equals(feature)) {
-																	return new Object[] { ruleresult, bodyDeclaration,
-																			umlClass, bd2ne, feature, c2c, classDec };
+											if (!bodyDeclaration.equals(feature)) {
+												if (!bodyDeclaration.equals(c2c)) {
+													if (!bodyDeclaration.equals(umlClass)) {
+														if (!bodyDeclaration.equals(classDec)) {
+															if (!classDec.equals(feature)) {
+																if (!classDec.equals(umlClass)) {
+																	return new Object[] { ruleresult, feature, c2c,
+																			bd2ne, umlClass, bodyDeclaration,
+																			classDec };
 																}
 															}
 														}
@@ -1447,7 +1445,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass, EObject feature,
+			PerformRuleResult ruleresult, EObject feature, EObject umlClass, EObject bodyDeclaration,
 			EObject classDec) {
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1476,15 +1474,15 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
-		return new Object[] { ruleresult, bodyDeclaration, umlClass, feature, classDec,
+		return new Object[] { ruleresult, feature, umlClass, bodyDeclaration, classDec,
 				umlClass__feature____ownedOperation, feature__umlClass____interface,
 				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_OperationInAnnotationType_1_5_registerobjects_expressionBBBBBBBB(
-			OperationInAnnotationType _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject bd2ne, EObject feature, EObject c2c, EObject classDec) {
-		_this.registerObjects_FWD(ruleresult, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+			OperationInAnnotationType _this, PerformRuleResult ruleresult, EObject feature, EObject c2c, EObject bd2ne,
+			EObject umlClass, EObject bodyDeclaration, EObject classDec) {
+		_this.registerObjects_FWD(ruleresult, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 
 	}
 
@@ -1560,7 +1558,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInAnnotationType_2_2_corematch_blackBFFFFBB(
+	public static final Iterable<Object[]> pattern_OperationInAnnotationType_2_2_corematch_blackFFFFBBB(
 			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element bd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(bodyDeclaration,
@@ -1575,7 +1573,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 						if (tmpUmlClass instanceof Interface) {
 							Interface umlClass = (Interface) tmpUmlClass;
 							_result.add(
-									new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, match });
+									new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, match });
 						}
 
 					}
@@ -1587,16 +1585,16 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Iterable<Object[]> pattern_OperationInAnnotationType_2_3_findcontext_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+			Operation feature, ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!bd2ne.equals(c2c)) {
-			if (bodyDeclaration.equals(bd2ne.getSource())) {
-				if (feature.equals(bd2ne.getTarget())) {
-					if (classDec.getBodyDeclarations().contains(bodyDeclaration)) {
-						if (classDec.equals(c2c.getSource())) {
-							if (umlClass.equals(c2c.getTarget())) {
-								_result.add(new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec });
+			if (feature.equals(bd2ne.getTarget())) {
+				if (umlClass.equals(c2c.getTarget())) {
+					if (bodyDeclaration.equals(bd2ne.getSource())) {
+						if (classDec.getBodyDeclarations().contains(bodyDeclaration)) {
+							if (classDec.equals(c2c.getSource())) {
+								_result.add(new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec });
 							}
 						}
 					}
@@ -1606,34 +1604,37 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInAnnotationType_2_3_findcontext_greenBBBBBBFFFFFFF(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+	public static final Object[] pattern_OperationInAnnotationType_2_3_findcontext_greenBBBBBBFFFFFFF(Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__feature____target_name_prime = "target";
+		String c2c__umlClass____target_name_prime = "target";
+		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String c2c__classDec____source_name_prime = "source";
-		String c2c__umlClass____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(umlClass);
-		isApplicableMatch.getAllContextElements().add(bd2ne);
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(c2c);
+		isApplicableMatch.getAllContextElements().add(bd2ne);
+		isApplicableMatch.getAllContextElements().add(umlClass);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(classDec);
-		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
-		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
+		c2c__umlClass____target.setSrc(c2c);
+		c2c__umlClass____target.setTrg(umlClass);
+		isApplicableMatch.getAllContextElements().add(c2c__umlClass____target);
+		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
+		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
 		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
 		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(classDec__bodyDeclaration____bodyDeclarations);
@@ -1643,31 +1644,28 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		c2c__classDec____source.setSrc(c2c);
 		c2c__classDec____source.setTrg(classDec);
 		isApplicableMatch.getAllContextElements().add(c2c__classDec____source);
-		c2c__umlClass____target.setSrc(c2c);
-		c2c__umlClass____target.setTrg(umlClass);
-		isApplicableMatch.getAllContextElements().add(c2c__umlClass____target);
-		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		c2c__umlClass____target.setName(c2c__umlClass____target_name_prime);
+		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
 		c2c__classDec____source.setName(c2c__classDec____source_name_prime);
-		c2c__umlClass____target.setName(c2c__umlClass____target_name_prime);
-		return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, isApplicableMatch,
-				bd2ne__bodyDeclaration____source, bd2ne__feature____target,
+		return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, isApplicableMatch,
+				bd2ne__feature____target, c2c__umlClass____target, bd2ne__bodyDeclaration____source,
 				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration,
-				c2c__classDec____source, c2c__umlClass____target };
+				c2c__classDec____source };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_2_4_solveCSP_bindingFBBBBBBBB(
-			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, umlClass, bd2ne,
-				feature, c2c, classDec);
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch, Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, feature, c2c, bd2ne, umlClass,
+				bodyDeclaration, classDec);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c,
+			return new Object[] { csp, _this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration,
 					classDec };
 		}
 		return null;
@@ -1678,11 +1676,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_2_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch, Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec) {
 		Object[] result_pattern_OperationInAnnotationType_2_4_solveCSP_binding = pattern_OperationInAnnotationType_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+				_this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 		if (result_pattern_OperationInAnnotationType_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnnotationType_2_4_solveCSP_binding[0];
 
@@ -1690,7 +1688,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					csp);
 			if (result_pattern_OperationInAnnotationType_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c,
+				return new Object[] { csp, _this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration,
 						classDec };
 			}
 		}
@@ -1726,16 +1724,16 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_1_initialbindings_blackBBBB(
-			OperationInAnnotationType _this, Match match, Interface umlClass, Operation feature) {
-		return new Object[] { _this, match, umlClass, feature };
+			OperationInAnnotationType _this, Match match, Operation feature, Interface umlClass) {
+		return new Object[] { _this, match, feature, umlClass };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_2_SolveCSP_bindingFBBBB(
-			OperationInAnnotationType _this, Match match, Interface umlClass, Operation feature) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, umlClass, feature);
+			OperationInAnnotationType _this, Match match, Operation feature, Interface umlClass) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, feature, umlClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, umlClass, feature };
+			return new Object[] { csp, _this, match, feature, umlClass };
 		}
 		return null;
 	}
@@ -1745,9 +1743,9 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_2_SolveCSP_bindingAndBlackFBBBB(
-			OperationInAnnotationType _this, Match match, Interface umlClass, Operation feature) {
+			OperationInAnnotationType _this, Match match, Operation feature, Interface umlClass) {
 		Object[] result_pattern_OperationInAnnotationType_10_2_SolveCSP_binding = pattern_OperationInAnnotationType_10_2_SolveCSP_bindingFBBBB(
-				_this, match, umlClass, feature);
+				_this, match, feature, umlClass);
 		if (result_pattern_OperationInAnnotationType_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnnotationType_10_2_SolveCSP_binding[0];
 
@@ -1755,7 +1753,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					csp);
 			if (result_pattern_OperationInAnnotationType_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, umlClass, feature };
+				return new Object[] { csp, _this, match, feature, umlClass };
 			}
 		}
 		return null;
@@ -1769,12 +1767,12 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_4_collectelementstobetranslated_blackBBB(
-			Match match, Interface umlClass, Operation feature) {
-		return new Object[] { match, umlClass, feature };
+			Match match, Operation feature, Interface umlClass) {
+		return new Object[] { match, feature, umlClass };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_4_collectelementstobetranslated_greenBBBFF(
-			Match match, Interface umlClass, Operation feature) {
+			Match match, Operation feature, Interface umlClass) {
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
@@ -1787,25 +1785,25 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		match.getToBeTranslatedEdges().add(feature__umlClass____interface);
 		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
 		feature__umlClass____interface.setName(feature__umlClass____interface_name_prime);
-		return new Object[] { match, umlClass, feature, umlClass__feature____ownedOperation,
+		return new Object[] { match, feature, umlClass, umlClass__feature____ownedOperation,
 				feature__umlClass____interface };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_5_collectcontextelements_blackBBB(Match match,
-			Interface umlClass, Operation feature) {
-		return new Object[] { match, umlClass, feature };
+			Operation feature, Interface umlClass) {
+		return new Object[] { match, feature, umlClass };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_10_5_collectcontextelements_greenBBB(Match match,
-			Interface umlClass, Operation feature) {
-		match.getContextNodes().add(umlClass);
+			Operation feature, Interface umlClass) {
 		match.getContextNodes().add(feature);
-		return new Object[] { match, umlClass, feature };
+		match.getContextNodes().add(umlClass);
+		return new Object[] { match, feature, umlClass };
 	}
 
 	public static final void pattern_OperationInAnnotationType_10_6_registerobjectstomatch_expressionBBBB(
-			OperationInAnnotationType _this, Match match, Interface umlClass, Operation feature) {
-		_this.registerObjectsToMatch_BWD(match, umlClass, feature);
+			OperationInAnnotationType _this, Match match, Operation feature, Interface umlClass) {
+		_this.registerObjectsToMatch_BWD(match, feature, umlClass);
 
 	}
 
@@ -1821,31 +1819,31 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 
 	public static final Object[] pattern_OperationInAnnotationType_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_1 = isApplicableMatch.getObject("umlClass");
+		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
+		EObject _localVariable_1 = isApplicableMatch.getObject("c2c");
 		EObject _localVariable_2 = isApplicableMatch.getObject("bd2ne");
-		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_4 = isApplicableMatch.getObject("c2c");
+		EObject _localVariable_3 = isApplicableMatch.getObject("umlClass");
+		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
 		EObject _localVariable_5 = isApplicableMatch.getObject("classDec");
-		EObject tmpBodyDeclaration = _localVariable_0;
-		EObject tmpUmlClass = _localVariable_1;
+		EObject tmpFeature = _localVariable_0;
+		EObject tmpC2c = _localVariable_1;
 		EObject tmpBd2ne = _localVariable_2;
-		EObject tmpFeature = _localVariable_3;
-		EObject tmpC2c = _localVariable_4;
+		EObject tmpUmlClass = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_4;
 		EObject tmpClassDec = _localVariable_5;
-		if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-			if (tmpUmlClass instanceof Interface) {
-				Interface umlClass = (Interface) tmpUmlClass;
+		if (tmpFeature instanceof Operation) {
+			Operation feature = (Operation) tmpFeature;
+			if (tmpC2c instanceof ASTNode2Element) {
+				ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
 				if (tmpBd2ne instanceof ASTNode2Element) {
 					ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-					if (tmpFeature instanceof Operation) {
-						Operation feature = (Operation) tmpFeature;
-						if (tmpC2c instanceof ASTNode2Element) {
-							ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
+					if (tmpUmlClass instanceof Interface) {
+						Interface umlClass = (Interface) tmpUmlClass;
+						if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+							MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 							if (tmpClassDec instanceof AnnotationTypeDeclaration) {
 								AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) tmpClassDec;
-								return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec,
+								return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec,
 										isApplicableMatch };
 							}
 						}
@@ -1857,14 +1855,14 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_11_1_performtransformation_blackBBBBBBFBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, OperationInAnnotationType _this,
-			IsApplicableMatch isApplicableMatch) {
+			Operation feature, ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec,
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch) {
 		if (!bd2ne.equals(c2c)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, csp, _this,
+					return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1877,19 +1875,19 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		Object[] result_pattern_OperationInAnnotationType_11_1_performtransformation_binding = pattern_OperationInAnnotationType_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_OperationInAnnotationType_11_1_performtransformation_binding != null) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[0];
-			Interface umlClass = (Interface) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[1];
+			Operation feature = (Operation) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[0];
+			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[1];
 			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[2];
-			Operation feature = (Operation) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[3];
-			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[4];
+			Interface umlClass = (Interface) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[3];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[4];
 			AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result_pattern_OperationInAnnotationType_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_OperationInAnnotationType_11_1_performtransformation_black = pattern_OperationInAnnotationType_11_1_performtransformation_blackBBBBBBFBB(
-					bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, _this, isApplicableMatch);
+					feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, _this, isApplicableMatch);
 			if (result_pattern_OperationInAnnotationType_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OperationInAnnotationType_11_1_performtransformation_black[6];
 
-				return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, csp, _this,
+				return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1908,25 +1906,26 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass, EObject bd2ne, EObject feature,
-			EObject c2c, EObject classDec) {
-		if (!bodyDeclaration.equals(umlClass)) {
-			if (!bodyDeclaration.equals(feature)) {
-				if (!bodyDeclaration.equals(c2c)) {
-					if (!bodyDeclaration.equals(classDec)) {
-						if (!bd2ne.equals(bodyDeclaration)) {
-							if (!bd2ne.equals(umlClass)) {
-								if (!bd2ne.equals(feature)) {
-									if (!bd2ne.equals(c2c)) {
+			PerformRuleResult ruleresult, EObject feature, EObject c2c, EObject bd2ne, EObject umlClass,
+			EObject bodyDeclaration, EObject classDec) {
+		if (!feature.equals(umlClass)) {
+			if (!c2c.equals(feature)) {
+				if (!c2c.equals(umlClass)) {
+					if (!c2c.equals(classDec)) {
+						if (!bd2ne.equals(feature)) {
+							if (!bd2ne.equals(c2c)) {
+								if (!bd2ne.equals(umlClass)) {
+									if (!bd2ne.equals(bodyDeclaration)) {
 										if (!bd2ne.equals(classDec)) {
-											if (!feature.equals(umlClass)) {
-												if (!c2c.equals(umlClass)) {
-													if (!c2c.equals(feature)) {
-														if (!c2c.equals(classDec)) {
-															if (!classDec.equals(umlClass)) {
-																if (!classDec.equals(feature)) {
-																	return new Object[] { ruleresult, bodyDeclaration,
-																			umlClass, bd2ne, feature, c2c, classDec };
+											if (!bodyDeclaration.equals(feature)) {
+												if (!bodyDeclaration.equals(c2c)) {
+													if (!bodyDeclaration.equals(umlClass)) {
+														if (!bodyDeclaration.equals(classDec)) {
+															if (!classDec.equals(feature)) {
+																if (!classDec.equals(umlClass)) {
+																	return new Object[] { ruleresult, feature, c2c,
+																			bd2ne, umlClass, bodyDeclaration,
+																			classDec };
 																}
 															}
 														}
@@ -1946,7 +1945,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass, EObject feature,
+			PerformRuleResult ruleresult, EObject feature, EObject umlClass, EObject bodyDeclaration,
 			EObject classDec) {
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1975,15 +1974,15 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
-		return new Object[] { ruleresult, bodyDeclaration, umlClass, feature, classDec,
+		return new Object[] { ruleresult, feature, umlClass, bodyDeclaration, classDec,
 				umlClass__feature____ownedOperation, feature__umlClass____interface,
 				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_OperationInAnnotationType_11_5_registerobjects_expressionBBBBBBBB(
-			OperationInAnnotationType _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject umlClass,
-			EObject bd2ne, EObject feature, EObject c2c, EObject classDec) {
-		_this.registerObjects_BWD(ruleresult, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+			OperationInAnnotationType _this, PerformRuleResult ruleresult, EObject feature, EObject c2c, EObject bd2ne,
+			EObject umlClass, EObject bodyDeclaration, EObject classDec) {
+		_this.registerObjects_BWD(ruleresult, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 
 	}
 
@@ -2045,22 +2044,22 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("umlClass");
-		EObject _localVariable_1 = match.getObject("feature");
-		EObject tmpUmlClass = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		if (tmpUmlClass instanceof Interface) {
-			Interface umlClass = (Interface) tmpUmlClass;
-			if (tmpFeature instanceof Operation) {
-				Operation feature = (Operation) tmpFeature;
-				return new Object[] { umlClass, feature, match };
+		EObject _localVariable_0 = match.getObject("feature");
+		EObject _localVariable_1 = match.getObject("umlClass");
+		EObject tmpFeature = _localVariable_0;
+		EObject tmpUmlClass = _localVariable_1;
+		if (tmpFeature instanceof Operation) {
+			Operation feature = (Operation) tmpFeature;
+			if (tmpUmlClass instanceof Interface) {
+				Interface umlClass = (Interface) tmpUmlClass;
+				return new Object[] { feature, umlClass, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInAnnotationType_12_2_corematch_blackFBFBFFB(
-			Interface umlClass, Operation feature, Match match) {
+	public static final Iterable<Object[]> pattern_OperationInAnnotationType_12_2_corematch_blackBFFBFFB(
+			Operation feature, Interface umlClass, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element bd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
 				ASTNode2Element.class, "target")) {
@@ -2074,7 +2073,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 						if (tmpClassDec instanceof AnnotationTypeDeclaration) {
 							AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) tmpClassDec;
 							_result.add(
-									new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, match });
+									new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, match });
 						}
 
 					}
@@ -2086,16 +2085,16 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Iterable<Object[]> pattern_OperationInAnnotationType_12_3_findcontext_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+			Operation feature, ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!bd2ne.equals(c2c)) {
-			if (bodyDeclaration.equals(bd2ne.getSource())) {
+			if (feature.equals(bd2ne.getTarget())) {
 				if (umlClass.getOwnedOperations().contains(feature)) {
-					if (feature.equals(bd2ne.getTarget())) {
-						if (classDec.equals(c2c.getSource())) {
-							if (umlClass.equals(c2c.getTarget())) {
-								_result.add(new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec });
+					if (umlClass.equals(c2c.getTarget())) {
+						if (bodyDeclaration.equals(bd2ne.getSource())) {
+							if (classDec.equals(c2c.getSource())) {
+								_result.add(new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec });
 							}
 						}
 					}
@@ -2106,65 +2105,65 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_12_3_findcontext_greenBBBBBBFFFFFFF(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+			Operation feature, ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____interface = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String bd2ne__bodyDeclaration____source_name_prime = "source";
+		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String bd2ne__feature____target_name_prime = "target";
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__umlClass____interface_name_prime = "interface";
-		String bd2ne__feature____target_name_prime = "target";
-		String c2c__classDec____source_name_prime = "source";
 		String c2c__umlClass____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(umlClass);
-		isApplicableMatch.getAllContextElements().add(bd2ne);
+		String bd2ne__bodyDeclaration____source_name_prime = "source";
+		String c2c__classDec____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(c2c);
+		isApplicableMatch.getAllContextElements().add(bd2ne);
+		isApplicableMatch.getAllContextElements().add(umlClass);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(classDec);
-		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
-		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
 		umlClass__feature____ownedOperation.setSrc(umlClass);
 		umlClass__feature____ownedOperation.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(umlClass__feature____ownedOperation);
 		feature__umlClass____interface.setSrc(feature);
 		feature__umlClass____interface.setTrg(umlClass);
 		isApplicableMatch.getAllContextElements().add(feature__umlClass____interface);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
-		c2c__classDec____source.setSrc(c2c);
-		c2c__classDec____source.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(c2c__classDec____source);
 		c2c__umlClass____target.setSrc(c2c);
 		c2c__umlClass____target.setTrg(umlClass);
 		isApplicableMatch.getAllContextElements().add(c2c__umlClass____target);
-		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
+		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
+		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
+		c2c__classDec____source.setSrc(c2c);
+		c2c__classDec____source.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(c2c__classDec____source);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
 		feature__umlClass____interface.setName(feature__umlClass____interface_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		c2c__classDec____source.setName(c2c__classDec____source_name_prime);
 		c2c__umlClass____target.setName(c2c__umlClass____target_name_prime);
-		return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, isApplicableMatch,
-				bd2ne__bodyDeclaration____source, umlClass__feature____ownedOperation, feature__umlClass____interface,
-				bd2ne__feature____target, c2c__classDec____source, c2c__umlClass____target };
+		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
+		c2c__classDec____source.setName(c2c__classDec____source_name_prime);
+		return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, isApplicableMatch,
+				bd2ne__feature____target, umlClass__feature____ownedOperation, feature__umlClass____interface,
+				c2c__umlClass____target, bd2ne__bodyDeclaration____source, c2c__classDec____source };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_12_4_solveCSP_bindingFBBBBBBBB(
-			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, bodyDeclaration, umlClass, bd2ne,
-				feature, c2c, classDec);
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch, Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, c2c, bd2ne, umlClass,
+				bodyDeclaration, classDec);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c,
+			return new Object[] { csp, _this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration,
 					classDec };
 		}
 		return null;
@@ -2175,11 +2174,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_12_4_solveCSP_bindingAndBlackFBBBBBBBB(
-			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch, Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec) {
 		Object[] result_pattern_OperationInAnnotationType_12_4_solveCSP_binding = pattern_OperationInAnnotationType_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec);
+				_this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec);
 		if (result_pattern_OperationInAnnotationType_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnnotationType_12_4_solveCSP_binding[0];
 
@@ -2187,7 +2186,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					csp);
 			if (result_pattern_OperationInAnnotationType_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c,
+				return new Object[] { csp, _this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration,
 						classDec };
 			}
 		}
@@ -2286,7 +2285,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 			if (tmpFeature instanceof Operation) {
 				Operation feature = (Operation) tmpFeature;
 				if (umlClass.getOwnedOperations().contains(feature)) {
-					_result.add(new Object[] { umlClass, feature, _edge_ownedOperation });
+					_result.add(new Object[] { feature, umlClass, _edge_ownedOperation });
 				}
 			}
 
@@ -2305,8 +2304,8 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final boolean pattern_OperationInAnnotationType_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			OperationInAnnotationType _this, Match match, Interface umlClass, Operation feature) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, umlClass, feature);
+			OperationInAnnotationType _this, Match match, Operation feature, Interface umlClass) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, feature, umlClass);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2470,24 +2469,24 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_bindingFFFFBB(
-			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("bodyDeclaration");
+			Match targetMatch, Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("feature");
 		EObject _localVariable_1 = targetMatch.getObject("umlClass");
-		EObject _localVariable_2 = targetMatch.getObject("feature");
+		EObject _localVariable_2 = sourceMatch.getObject("bodyDeclaration");
 		EObject _localVariable_3 = sourceMatch.getObject("classDec");
-		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpFeature = _localVariable_0;
 		EObject tmpUmlClass = _localVariable_1;
-		EObject tmpFeature = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_2;
 		EObject tmpClassDec = _localVariable_3;
-		if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
+		if (tmpFeature instanceof Operation) {
+			Operation feature = (Operation) tmpFeature;
 			if (tmpUmlClass instanceof Interface) {
 				Interface umlClass = (Interface) tmpUmlClass;
-				if (tmpFeature instanceof Operation) {
-					Operation feature = (Operation) tmpFeature;
+				if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+					MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 					if (tmpClassDec instanceof AnnotationTypeDeclaration) {
 						AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) tmpClassDec;
-						return new Object[] { bodyDeclaration, umlClass, feature, classDec, sourceMatch, targetMatch };
+						return new Object[] { feature, umlClass, bodyDeclaration, classDec, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2496,10 +2495,10 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, Operation feature,
+			Operation feature, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
 			AnnotationTypeDeclaration classDec, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { bodyDeclaration, umlClass, feature, classDec, sourceMatch, targetMatch };
+			return new Object[] { feature, umlClass, bodyDeclaration, classDec, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2507,31 +2506,32 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	public static final Object[] pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding = pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding != null) {
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding[0];
+			Operation feature = (Operation) result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding[0];
 			Interface umlClass = (Interface) result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding[1];
-			Operation feature = (Operation) result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding[2];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding[2];
 			AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_black = pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_blackBBBBBB(
-					bodyDeclaration, umlClass, feature, classDec, sourceMatch, targetMatch);
+					feature, umlClass, bodyDeclaration, classDec, sourceMatch, targetMatch);
 			if (result_pattern_OperationInAnnotationType_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { bodyDeclaration, umlClass, feature, classDec, sourceMatch, targetMatch };
+				return new Object[] { feature, umlClass, bodyDeclaration, classDec, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_24_3_solvecsp_bindingFBBBBBBB(
-			OperationInAnnotationType _this, MAbstractMethodDefinition bodyDeclaration, Interface umlClass,
-			Operation feature, AnnotationTypeDeclaration classDec, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(bodyDeclaration, umlClass, feature, classDec, sourceMatch,
+			OperationInAnnotationType _this, Operation feature, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec, Match sourceMatch,
+			Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(feature, umlClass, bodyDeclaration, classDec, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, bodyDeclaration, umlClass, feature, classDec, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, feature, umlClass, bodyDeclaration, classDec, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2541,10 +2541,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			OperationInAnnotationType _this, MAbstractMethodDefinition bodyDeclaration, Interface umlClass,
-			Operation feature, AnnotationTypeDeclaration classDec, Match sourceMatch, Match targetMatch) {
+			OperationInAnnotationType _this, Operation feature, Interface umlClass,
+			MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec, Match sourceMatch,
+			Match targetMatch) {
 		Object[] result_pattern_OperationInAnnotationType_24_3_solvecsp_binding = pattern_OperationInAnnotationType_24_3_solvecsp_bindingFBBBBBBB(
-				_this, bodyDeclaration, umlClass, feature, classDec, sourceMatch, targetMatch);
+				_this, feature, umlClass, bodyDeclaration, classDec, sourceMatch, targetMatch);
 		if (result_pattern_OperationInAnnotationType_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnnotationType_24_3_solvecsp_binding[0];
 
@@ -2552,7 +2553,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					csp);
 			if (result_pattern_OperationInAnnotationType_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, bodyDeclaration, umlClass, feature, classDec, sourceMatch,
+				return new Object[] { csp, _this, feature, umlClass, bodyDeclaration, classDec, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2565,19 +2566,19 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInAnnotationType_24_5_matchcorrcontext_blackBBFBFBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, Operation feature,
+	public static final Iterable<Object[]> pattern_OperationInAnnotationType_24_5_matchcorrcontext_blackBFFBBBBB(
+			Operation feature, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
 			AnnotationTypeDeclaration classDec, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element bd2ne : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(bodyDeclaration, ASTNode2Element.class, "source")) {
-				if (feature.equals(bd2ne.getTarget())) {
+			for (ASTNode2Element bd2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(feature,
+					ASTNode2Element.class, "target")) {
+				if (bodyDeclaration.equals(bd2ne.getSource())) {
 					for (ASTNode2Element c2c : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(classDec, ASTNode2Element.class, "source")) {
+							.getOppositeReferenceTyped(umlClass, ASTNode2Element.class, "target")) {
 						if (!bd2ne.equals(c2c)) {
-							if (umlClass.equals(c2c.getTarget())) {
-								_result.add(new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec,
+							if (classDec.equals(c2c.getSource())) {
+								_result.add(new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec,
 										sourceMatch, targetMatch });
 							}
 						}
@@ -2588,22 +2589,22 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInAnnotationType_24_5_matchcorrcontext_greenBBBBF(
-			ASTNode2Element bd2ne, ASTNode2Element c2c, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_OperationInAnnotationType_24_5_matchcorrcontext_greenBBBBF(ASTNode2Element c2c,
+			ASTNode2Element bd2ne, Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "OperationInAnnotationType";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(bd2ne);
 		ccMatch.getAllContextElements().add(c2c);
+		ccMatch.getAllContextElements().add(bd2ne);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { bd2ne, c2c, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { c2c, bd2ne, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_24_6_createcorrespondence_blackBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, Operation feature,
+			Operation feature, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
 			AnnotationTypeDeclaration classDec, CCMatch ccMatch) {
-		return new Object[] { bodyDeclaration, umlClass, feature, classDec, ccMatch };
+		return new Object[] { feature, umlClass, bodyDeclaration, classDec, ccMatch };
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_24_7_addtoreturnedresult_blackBB(
@@ -2645,10 +2646,10 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInAnnotationType_28_1_matchtggpattern_blackBB(Interface umlClass,
-			Operation feature) {
+	public static final Object[] pattern_OperationInAnnotationType_28_1_matchtggpattern_blackBB(Operation feature,
+			Interface umlClass) {
 		if (umlClass.getOwnedOperations().contains(feature)) {
-			return new Object[] { umlClass, feature };
+			return new Object[] { feature, umlClass };
 		}
 		return null;
 	}
@@ -2677,9 +2678,9 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, MAbstractMethodDefinition bodyDeclaration) {
-		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
-			return new Object[] { ruleResult, bodyDeclaration };
+			ModelgeneratorRuleResult ruleResult, Operation feature) {
+		if (ruleResult.getTargetObjects().contains(feature)) {
+			return new Object[] { ruleResult, feature };
 		}
 		return null;
 	}
@@ -2693,25 +2694,25 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Operation feature) {
-		if (ruleResult.getTargetObjects().contains(feature)) {
-			return new Object[] { ruleResult, feature };
+			ModelgeneratorRuleResult ruleResult, MAbstractMethodDefinition bodyDeclaration) {
+		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
+			return new Object[] { ruleResult, bodyDeclaration };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, Interface umlClass) {
-		if (ruleResult.getTargetObjects().contains(umlClass)) {
-			return new Object[] { ruleResult, umlClass };
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element c2c) {
+		if (ruleResult.getCorrObjects().contains(c2c)) {
+			return new Object[] { ruleResult, c2c };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element c2c) {
-		if (ruleResult.getCorrObjects().contains(c2c)) {
-			return new Object[] { ruleResult, c2c };
+			ModelgeneratorRuleResult ruleResult, Interface umlClass) {
+		if (ruleResult.getTargetObjects().contains(umlClass)) {
+			return new Object[] { ruleResult, umlClass };
 		}
 		return null;
 	}
@@ -2733,18 +2734,18 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					for (EObject tmpBd2ne : bd2neList.getEntryObjects()) {
 						if (tmpBd2ne instanceof ASTNode2Element) {
 							ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-							ASTNode tmpBodyDeclaration = bd2ne.getSource();
-							if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-								MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-								Element tmpFeature = bd2ne.getTarget();
-								if (tmpFeature instanceof Operation) {
-									Operation feature = (Operation) tmpFeature;
+							Element tmpFeature = bd2ne.getTarget();
+							if (tmpFeature instanceof Operation) {
+								Operation feature = (Operation) tmpFeature;
+								ASTNode tmpBodyDeclaration = bd2ne.getSource();
+								if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+									MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 									if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, bd2ne) == null) {
 										if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, bodyDeclaration) == null) {
+												ruleResult, feature) == null) {
 											if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, feature) == null) {
+													ruleResult, bodyDeclaration) == null) {
 												for (EObject tmpC2c : c2cList.getEntryObjects()) {
 													if (tmpC2c instanceof ASTNode2Element) {
 														ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
@@ -2755,15 +2756,15 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 																ASTNode tmpClassDec = c2c.getSource();
 																if (tmpClassDec instanceof AnnotationTypeDeclaration) {
 																	AnnotationTypeDeclaration classDec = (AnnotationTypeDeclaration) tmpClassDec;
-																	if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_4BB(
+																	if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_3BB(
 																			ruleResult, c2c) == null) {
-																		if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_3BB(
+																		if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_4BB(
 																				ruleResult, umlClass) == null) {
 																			if (pattern_OperationInAnnotationType_29_2_isapplicablecore_black_nac_5BB(
 																					ruleResult, classDec) == null) {
 																				_result.add(new Object[] { bd2neList,
-																						bodyDeclaration, bd2ne, feature,
-																						c2cList, umlClass, c2c,
+																						feature, bd2ne, bodyDeclaration,
+																						c2cList, c2c, umlClass,
 																						classDec, ruleEntryContainer,
 																						ruleResult });
 																			}
@@ -2792,14 +2793,14 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_29_3_solveCSP_bindingFBBBBBBBBB(
-			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, bodyDeclaration, umlClass, bd2ne,
-				feature, c2c, classDec, ruleResult);
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch, Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, feature, c2c, bd2ne, umlClass,
+				bodyDeclaration, classDec, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c,
+			return new Object[] { csp, _this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration,
 					classDec, ruleResult };
 		}
 		return null;
@@ -2810,11 +2811,11 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 	}
 
 	public static final Object[] pattern_OperationInAnnotationType_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch,
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+			OperationInAnnotationType _this, IsApplicableMatch isApplicableMatch, Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_OperationInAnnotationType_29_3_solveCSP_binding = pattern_OperationInAnnotationType_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, ruleResult);
+				_this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, ruleResult);
 		if (result_pattern_OperationInAnnotationType_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInAnnotationType_29_3_solveCSP_binding[0];
 
@@ -2822,7 +2823,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 					csp);
 			if (result_pattern_OperationInAnnotationType_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, umlClass, bd2ne, feature, c2c,
+				return new Object[] { csp, _this, isApplicableMatch, feature, c2c, bd2ne, umlClass, bodyDeclaration,
 						classDec, ruleResult };
 			}
 		}
@@ -2836,27 +2837,27 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInAnnotationType_29_5_checknacs_blackBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec) {
+	public static final Object[] pattern_OperationInAnnotationType_29_5_checknacs_blackBBBBBB(Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
+			AnnotationTypeDeclaration classDec) {
 		if (!bd2ne.equals(c2c)) {
-			return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec };
+			return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_OperationInAnnotationType_29_6_perform_blackBBBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, ASTNode2Element bd2ne, Operation feature,
-			ASTNode2Element c2c, AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
-		if (!bd2ne.equals(c2c)) {
-			return new Object[] { bodyDeclaration, umlClass, bd2ne, feature, c2c, classDec, ruleResult };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_OperationInAnnotationType_29_6_perform_greenBBBBB(
-			MAbstractMethodDefinition bodyDeclaration, Interface umlClass, Operation feature,
+	public static final Object[] pattern_OperationInAnnotationType_29_6_perform_blackBBBBBBB(Operation feature,
+			ASTNode2Element c2c, ASTNode2Element bd2ne, Interface umlClass, MAbstractMethodDefinition bodyDeclaration,
 			AnnotationTypeDeclaration classDec, ModelgeneratorRuleResult ruleResult) {
+		if (!bd2ne.equals(c2c)) {
+			return new Object[] { feature, c2c, bd2ne, umlClass, bodyDeclaration, classDec, ruleResult };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_OperationInAnnotationType_29_6_perform_greenBBBBB(Operation feature,
+			Interface umlClass, MAbstractMethodDefinition bodyDeclaration, AnnotationTypeDeclaration classDec,
+			ModelgeneratorRuleResult ruleResult) {
 		umlClass.getOwnedOperations().add(feature);
 		classDec.getBodyDeclarations().add(bodyDeclaration);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
@@ -2864,7 +2865,7 @@ public class OperationInAnnotationTypeImpl extends AbstractRuleImpl implements O
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { bodyDeclaration, umlClass, feature, classDec, ruleResult };
+		return new Object[] { feature, umlClass, bodyDeclaration, classDec, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_OperationInAnnotationType_29_7_expressionFB(

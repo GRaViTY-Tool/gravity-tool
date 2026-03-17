@@ -30,7 +30,7 @@ import org.gravity.hulk.detection.metrics.impl.HLcom5Calculator;
 import org.gravity.hulk.detection.metrics.impl.HTotalCouplingCalculator;
 import org.gravity.hulk.detection.metrics.impl.HTotalVisibilityCalculator;
 import org.gravity.hulk.exceptions.DetectionFailedException;
-import org.gravity.hulk.impl.HAntiPatternDetectionImpl;
+import org.gravity.hulk.impl.HAntiPatternDetection;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -102,14 +102,9 @@ public final class HulkAPI {
 			rs = new ResourceSetImpl();
 			pgResource = rs.createResource(URI.createURI(pm.getTName() + ".xmi"));
 			pgResource.getContents().add(pm);
-		} else {
-			rs = pgResource.getResourceSet();
 		}
 
-		final var hulk = new HAntiPatternDetectionImpl();
-		final var apgResource = rs.createResource(URI.createURI("Hulk.xmi")); // $NON-NLS-1$
-		apgResource.getContents().add(hulk);
-		hulk.setProgramlocation(programLocation);
+		final var hulk = new HAntiPatternDetection(programLocation);
 
 		final var apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		hulk.setApg(apg);

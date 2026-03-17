@@ -107,8 +107,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel,
-			EObject primitives, EObject proxies);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModelToTPG, EObject mModel, EObject tPG,
+			EObject proxies, EObject primitives);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +124,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TypeGraph tPG, TModule primitives, TModule proxies);
+	boolean isAppropriate_BWD(Match match, TypeGraph tPG, TModule proxies, TModule primitives);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +148,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TypeGraph tPG, TModule primitives, TModule proxies);
+	void registerObjectsToMatch_BWD(Match match, TypeGraph tPG, TModule proxies, TModule primitives);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph tPG, TModule primitives, TModule proxies);
+	CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph tPG, TModule proxies, TModule primitives);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,8 +172,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPG, TModule primitives,
-			TModule proxies);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tPG, TModule proxies,
+			TModule primitives);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,8 +189,8 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tPG, EObject mModelToTPG, EObject mModel,
-			EObject primitives, EObject proxies);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModelToTPG, EObject mModel, EObject tPG,
+			EObject proxies, EObject primitives);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_13(EMoflonEdge _edge_modules);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_modules);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,7 +246,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeGraph tPG, MGravityModel mModel, TModule primitives, TModule proxies,
+	CSP isApplicable_solveCsp_CC(MGravityModel mModel, TypeGraph tPG, TModule proxies, TModule primitives,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -271,7 +271,7 @@ public interface ModelToPg extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TypeGraph tPG, TModule primitives, TModule proxies);
+	boolean checkDEC_BWD(TypeGraph tPG, TModule proxies, TModule primitives);
 
 	/**
 	 * <!-- begin-user-doc -->

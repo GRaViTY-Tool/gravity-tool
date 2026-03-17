@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
-import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.codesmells.HCodeSmellDetector;
 import org.gravity.hulk.detection.metrics.impl.HGetterSetterMethodRelationCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
@@ -23,7 +23,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HGetterSetterDetector extends HClassBasedCalculatorImpl implements HCodeSmellDetector {
+public class HGetterSetterDetector extends AbstractClassBasedCalculator implements HCodeSmellDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

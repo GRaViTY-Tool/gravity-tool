@@ -2,12 +2,12 @@
  */
 package org.gravity.hulk.detection.metrics.impl;
 
+import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
-// <-- [user defined imports]
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
@@ -23,7 +23,10 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HTotalCouplingCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HTotalCouplingCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
+
+	private final Logger LOGGER = Logger.getLogger(HTotalCouplingCalculator.class);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -54,8 +57,6 @@ public class HTotalCouplingCalculator extends HClassBasedCalculatorImpl implemen
 	}
 
 	public double calculateValue(final TClass tClass) {
-		// [user code injected with eMoflon]
-
 		var coupling = 0D;
 
 		for (final TMember m : tClass.getDefines()) {
@@ -67,7 +68,9 @@ public class HTotalCouplingCalculator extends HClassBasedCalculatorImpl implemen
 
 			for (final TAccess access : m.getAccessing()) {
 				final var target = access.getTarget().getDefinedBy();
-				if (!target.isTLib() && (target != tClass) && !target.getTName().equals("T")) {
+				if (target == null) {
+					this.LOGGER.warn("Access has a null target. source: " + access.getSource() + ", access:" + access);
+				} else if (!target.isTLib() && (target != tClass) && !target.getTName().equals("T")) {
 					coupling++;
 				}
 			}

@@ -95,9 +95,9 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			JavaPackage2UmlPackage p2p, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element t2t, Classifier uType);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element t2t,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, AbstractTypeDeclaration mType,
+			Classifier uType, org.eclipse.modisco.java.Package mPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject uPackage, EObject p2p, EObject mType,
-			EObject mPackage, EObject t2t, EObject uType);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject t2t, EObject uPackage, EObject p2p, EObject mType,
+			EObject uType, EObject mPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,9 +178,9 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			JavaPackage2UmlPackage p2p, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element t2t, Classifier uType);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element t2t,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, AbstractTypeDeclaration mType,
+			Classifier uType, org.eclipse.modisco.java.Package mPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject uPackage, EObject p2p, EObject mType,
-			EObject mPackage, EObject t2t, EObject uType);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject t2t, EObject uPackage, EObject p2p, EObject mType,
+			EObject uType, EObject mPackage);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_134(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_116(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_147(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +253,8 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package uPackage, AbstractTypeDeclaration mType,
-			org.eclipse.modisco.java.Package mPackage, Classifier uType, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package uPackage, AbstractTypeDeclaration mType, Classifier uType,
+			org.eclipse.modisco.java.Package mPackage, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,8 +286,8 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, JavaPackage2UmlPackage p2pParameter,
-			ASTNode2Element t2tParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element t2tParameter,
+			JavaPackage2UmlPackage p2pParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +295,9 @@ public interface LinkTypeToPackage extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			JavaPackage2UmlPackage p2p, AbstractTypeDeclaration mType, org.eclipse.modisco.java.Package mPackage,
-			ASTNode2Element t2t, Classifier uType, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element t2t,
+			org.eclipse.uml2.uml.Package uPackage, JavaPackage2UmlPackage p2p, AbstractTypeDeclaration mType,
+			Classifier uType, org.eclipse.modisco.java.Package mPackage, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

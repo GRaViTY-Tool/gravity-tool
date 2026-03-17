@@ -7,8 +7,8 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalAccessRelationMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HRelativeDetectorImpl;
+import org.gravity.hulk.detection.AbstractRelativeDetector;
+import org.gravity.hulk.detection.codesmells.HCodeSmellDetector;
 import org.gravity.hulk.detection.metrics.impl.HLocalAccessRelationCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.moflon.core.dfs.DFSGraph;
@@ -29,7 +29,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HIntenseFieldUsageDetector extends HRelativeDetectorImpl implements HCodeSmellDetector {
+public class HIntenseFieldUsageDetector extends AbstractRelativeDetector implements HCodeSmellDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -64,7 +64,7 @@ public class HIntenseFieldUsageDetector extends HRelativeDetectorImpl implements
 			this.setThreshold(this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
 		}
 		//
-		if (Double.compare(this.getThreshold(), hMetric.getValue()) < 0) {
+		if (Double.compare(this.getThreshold(), hMetric.getValue()) <= 0) {
 
 			final var smell = CodesmellsFactory.eINSTANCE.createHIntenseFieldUsageCodeSmell();
 			smell.setTAnnotated(tClass);

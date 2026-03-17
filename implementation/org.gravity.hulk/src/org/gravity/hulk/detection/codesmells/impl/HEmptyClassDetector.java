@@ -5,8 +5,8 @@ package org.gravity.hulk.detection.codesmells.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
-import org.gravity.hulk.detection.HCodeSmellDetector;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.codesmells.HCodeSmellDetector;
 import org.gravity.typegraph.basic.TClass;
 import org.moflon.core.dfs.DFSGraph;
 
@@ -20,7 +20,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HEmptyClassDetector extends HClassBasedCalculatorImpl implements HCodeSmellDetector {
+public class HEmptyClassDetector extends AbstractClassBasedCalculator implements HCodeSmellDetector {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

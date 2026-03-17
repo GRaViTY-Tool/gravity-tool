@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.detection.AbstractHDetector;
 import org.gravity.security.violation.patterns.violations.ViolationsFactory;
 import org.gravity.security.violation.patterns.violations.ViolationsPackage;
 import org.gravity.tgg.pm.uml.CorrespondenceGraphGenerator;
@@ -48,7 +48,7 @@ import carisma.core.checks.CheckParameter;
 import carisma.profile.umlsec.UmlsecPackage;
 import carisma.profile.umlsec.critical;
 
-public class SecurityViolationPattern extends HDetectorImpl implements CarismaCheckWithID {
+public class SecurityViolationPattern extends AbstractHDetector implements CarismaCheckWithID {
 
 	public static final String CHECK_NAME = "Security Violation Pattern";
 	public static final String CARISMA_ID = "org.gravity.security.violation.patterns.securedependency";

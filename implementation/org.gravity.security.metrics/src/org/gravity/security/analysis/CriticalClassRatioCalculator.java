@@ -4,15 +4,15 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.metrics.security.SecurityFactory;
 import org.gravity.hulk.antipatterngraph.metrics.security.SecurityPackage;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HDetectorImpl;
+import org.gravity.hulk.detection.AbstractHDetector;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TypeGraph;
 
-public class CriticalClassRatioCalculator extends HDetectorImpl implements HMetricCalculator {
+public class CriticalClassRatioCalculator extends AbstractHDetector implements HMetricCalculator {
 
 	@Override
 	public String getGuiName() {

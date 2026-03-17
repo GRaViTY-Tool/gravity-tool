@@ -5,8 +5,8 @@ package org.gravity.hulk.detection.metrics.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -24,14 +24,14 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HAverageParametersCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HAverageParametersCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	public HAverageParametersCalculator(DFSGraph graph) {
+	public HAverageParametersCalculator(final DFSGraph graph) {
 		this.setGraph(graph);
 	}
 
@@ -56,7 +56,7 @@ public class HAverageParametersCalculator extends HClassBasedCalculatorImpl impl
 		var sum = 0D;
 		var amount = 0;
 		for (final TSignature sig : tClass.getSignature()) {
-			if (sig instanceof TMethodSignature methodSig) {
+			if (sig instanceof final TMethodSignature methodSig) {
 				sum += methodSig.getParameters().size();
 				amount++;
 			}
@@ -73,7 +73,7 @@ public class HAverageParametersCalculator extends HClassBasedCalculatorImpl impl
 
 	@Override
 	public String getGuiName() {
-		return "Average amount of parameters in classes";
+		return "Average number of parameters in classes";
 	}
 
 	@Override

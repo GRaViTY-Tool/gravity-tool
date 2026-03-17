@@ -8,8 +8,8 @@ import org.gravity.hulk.antipatterngraph.metrics.HIncommingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HInvocationRelation;
 import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.moflon.core.dfs.DFSGraph;
@@ -25,7 +25,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HInvocationRelationCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HInvocationRelationCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *

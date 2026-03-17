@@ -4,7 +4,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
-	
+
 	public static final String PLUGIN_ID = "org.gravity.security.analysis";
 	public static final String EXTENSIONPOINT_REGISTER_PROJECT = "org.gravity.security.analysis";
 
@@ -16,17 +16,24 @@ public class Activator implements BundleActivator {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
+	 *
+	 * @see
+	 * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
-	public void start(BundleContext bundleContext) throws Exception {
+	@Override
+	public void start(final BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
+		SecurityPackage.INSTANCE.getClass();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 *
+	 * @see
+	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
 	 */
-	public void stop(BundleContext bundleContext) throws Exception {
+	@Override
+	public void stop(final BundleContext bundleContext) throws Exception {
 		Activator.context = null;
 	}
 

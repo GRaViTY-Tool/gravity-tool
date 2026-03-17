@@ -8,8 +8,8 @@ import org.gravity.hulk.antipatterngraph.metrics.HGetterMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HSetterMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-import org.gravity.hulk.detection.HMetricCalculator;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.hulk.detection.AbstractClassBasedCalculator;
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.moflon.core.dfs.DFSGraph;
@@ -23,7 +23,7 @@ import org.moflon.core.dfs.DfsFactory;
  *
  * @generated
  */
-public class HGetterSetterMethodRelationCalculator extends HClassBasedCalculatorImpl implements HMetricCalculator {
+public class HGetterSetterMethodRelationCalculator extends AbstractClassBasedCalculator implements HMetricCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
