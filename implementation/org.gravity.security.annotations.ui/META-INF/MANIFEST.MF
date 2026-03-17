@@ -9,7 +9,8 @@ Bundle-Vendor: Ruhr University Bochum
 Require-Bundle: org.eclipse.ui,
  org.apache.log4j,
  org.gravity.eclipse,
- org.gravity.security.annotations.check
+ org.gravity.security.annotations.check,
+ org.gravity.eclipse.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.gravity.security.annotations.check
 Bundle-ActivationPolicy: lazy

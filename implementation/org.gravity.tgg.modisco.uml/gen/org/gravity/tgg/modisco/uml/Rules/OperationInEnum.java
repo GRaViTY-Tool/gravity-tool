@@ -95,8 +95,8 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Enumeration umlClass,
-			Operation feature, ASTNode2Element c2c, EnumDeclaration classDec,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			ASTNode2Element bd2ne, Enumeration umlClass, EnumDeclaration classDec,
 			MAbstractMethodDefinition bodyDeclaration);
 
 	/**
@@ -113,8 +113,8 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject umlClass, EObject feature,
-			EObject c2c, EObject classDec, EObject bodyDeclaration);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject bd2ne,
+			EObject umlClass, EObject classDec, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Enumeration umlClass, Operation feature);
+	boolean isAppropriate_BWD(Match match, Operation feature, Enumeration umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Enumeration umlClass, Operation feature);
+	void registerObjectsToMatch_BWD(Match match, Operation feature, Enumeration umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Enumeration umlClass, Operation feature);
+	CSP isAppropriate_solveCsp_BWD(Match match, Operation feature, Enumeration umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Enumeration umlClass,
-			Operation feature, ASTNode2Element c2c, EnumDeclaration classDec,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			ASTNode2Element bd2ne, Enumeration umlClass, EnumDeclaration classDec,
 			MAbstractMethodDefinition bodyDeclaration);
 
 	/**
@@ -196,8 +196,8 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject umlClass, EObject feature,
-			EObject c2c, EObject classDec, EObject bodyDeclaration);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject bd2ne,
+			EObject umlClass, EObject classDec, EObject bodyDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1080(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1186(EMoflonEdge _edge_bodyDeclarations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_137(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +253,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Enumeration umlClass, Operation feature, EnumDeclaration classDec,
+	CSP isApplicable_solveCsp_CC(Operation feature, Enumeration umlClass, EnumDeclaration classDec,
 			MAbstractMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -278,7 +278,7 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Enumeration umlClass, Operation feature);
+	boolean checkDEC_BWD(Operation feature, Enumeration umlClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,8 +286,8 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element bd2neParameter,
-			ASTNode2Element c2cParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element c2cParameter,
+			ASTNode2Element bd2neParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +295,9 @@ public interface OperationInEnum extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element bd2ne, Enumeration umlClass,
-			Operation feature, ASTNode2Element c2c, EnumDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			ASTNode2Element bd2ne, Enumeration umlClass, EnumDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

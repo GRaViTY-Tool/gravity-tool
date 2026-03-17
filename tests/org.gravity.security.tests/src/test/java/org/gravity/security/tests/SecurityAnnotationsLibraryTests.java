@@ -1,7 +1,7 @@
 package org.gravity.security.tests;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -12,12 +12,12 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.security.annotations.SecurityAnnoationsCheckActivator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class SecurityAnnotationsLibraryTests {
+class SecurityAnnotationsLibraryTests {
 
 	@Test
-	public void testAddAnnotations() throws DuplicateProjectNameException, CoreException, IOException {
+	void testAddAnnotations() throws DuplicateProjectNameException, CoreException, IOException {
 		final var monitor = new NullProgressMonitor();
 		IJavaProject project = null;
 		try {

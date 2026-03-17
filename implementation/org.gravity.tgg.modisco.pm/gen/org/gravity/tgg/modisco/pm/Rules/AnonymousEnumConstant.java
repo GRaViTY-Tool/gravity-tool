@@ -48,7 +48,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MEnumConstantDeclaration mMember, MAnonymousClass mAnonymous);
+	boolean isAppropriate_FWD(Match match, MAnonymousClass mAnonymous, MEnumConstantDeclaration mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MEnumConstantDeclaration mMember, MAnonymousClass mAnonymous);
+	void registerObjectsToMatch_FWD(Match match, MAnonymousClass mAnonymous, MEnumConstantDeclaration mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MEnumConstantDeclaration mMember, MAnonymousClass mAnonymous);
+	CSP isAppropriate_solveCsp_FWD(Match match, MAnonymousClass mAnonymous, MEnumConstantDeclaration mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,9 +96,9 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TPackage tPackage, MEnumConstantDeclaration mMember, TMember tMember, TypeGraph pg, TClass tType,
-			MAnonymousClass mAnonymous);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TMember tMember, TPackage tPackage,
+			MDefinitionToTMember mMemberToTMember, TypeGraph pg, MAnonymousClass mAnonymous, TClass tType,
+			MEnumConstantDeclaration mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject tPackage,
-			EObject eAnonymousClassDeclarationToTClass, EObject mMember, EObject tAnonymous, EObject tMember,
-			EObject pg, EObject tType, EObject mAnonymous);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tMember, EObject tPackage, EObject mMemberToTMember,
+			EObject pg, EObject tAnonymous, EObject mAnonymous, EObject tType,
+			EObject eAnonymousClassDeclarationToTClass, EObject mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TPackage tPackage, TClass tAnonymous, TMember tMember, TypeGraph pg,
+	boolean isAppropriate_BWD(Match match, TMember tMember, TPackage tPackage, TypeGraph pg, TClass tAnonymous,
 			TClass tType);
 
 	/**
@@ -157,7 +157,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TPackage tPackage, TClass tAnonymous, TMember tMember, TypeGraph pg,
+	void registerObjectsToMatch_BWD(Match match, TMember tMember, TPackage tPackage, TypeGraph pg, TClass tAnonymous,
 			TClass tType);
 
 	/**
@@ -166,7 +166,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TPackage tPackage, TClass tAnonymous, TMember tMember, TypeGraph pg,
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TPackage tPackage, TypeGraph pg, TClass tAnonymous,
 			TClass tType);
 
 	/**
@@ -183,9 +183,9 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TPackage tPackage, MEnumConstantDeclaration mMember, TClass tAnonymous, TMember tMember, TypeGraph pg,
-			TClass tType);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember, TPackage tPackage,
+			MDefinitionToTMember mMemberToTMember, TypeGraph pg, TClass tAnonymous, TClass tType,
+			MEnumConstantDeclaration mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,9 +201,9 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject tPackage,
-			EObject eAnonymousClassDeclarationToTClass, EObject mMember, EObject tAnonymous, EObject tMember,
-			EObject pg, EObject tType, EObject mAnonymous);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tMember, EObject tPackage, EObject mMemberToTMember,
+			EObject pg, EObject tAnonymous, EObject mAnonymous, EObject tType,
+			EObject eAnonymousClassDeclarationToTClass, EObject mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1027(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_78(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1125(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,8 +259,8 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TPackage tPackage, MEnumConstantDeclaration mMember, TClass tAnonymous,
-			TMember tMember, TypeGraph pg, TClass tType, MAnonymousClass mAnonymous, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(TMember tMember, TPackage tPackage, TypeGraph pg, TClass tAnonymous,
+			MAnonymousClass mAnonymous, TClass tType, MEnumConstantDeclaration mMember, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -277,7 +277,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MEnumConstantDeclaration mMember, MAnonymousClass mAnonymous);
+	boolean checkDEC_FWD(MAnonymousClass mAnonymous, MEnumConstantDeclaration mMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,7 +285,7 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TPackage tPackage, TClass tAnonymous, TMember tMember, TypeGraph pg, TClass tType);
+	boolean checkDEC_BWD(TMember tMember, TPackage tPackage, TypeGraph pg, TClass tAnonymous, TClass tType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,8 +302,8 @@ public interface AnonymousEnumConstant extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			TPackage tPackage, MEnumConstantDeclaration mMember, TMember tMember, TypeGraph pg, TClass tType,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TMember tMember, TPackage tPackage,
+			MDefinitionToTMember mMemberToTMember, TypeGraph pg, TClass tType, MEnumConstantDeclaration mMember,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

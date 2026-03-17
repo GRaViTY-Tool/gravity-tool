@@ -124,7 +124,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tType, EObject tAnonymous, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType);
 
 	/**
@@ -141,7 +141,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAbstractType tType, TClass tAnonymous, TMember tMember, TPackage tPackage,
+	boolean isAppropriate_BWD(Match match, TClass tAnonymous, TAbstractType tType, TMember tMember, TPackage tPackage,
 			TypeGraph pg);
 
 	/**
@@ -166,7 +166,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAbstractType tType, TClass tAnonymous, TMember tMember,
+	void registerObjectsToMatch_BWD(Match match, TClass tAnonymous, TAbstractType tType, TMember tMember,
 			TPackage tPackage, TypeGraph pg);
 
 	/**
@@ -175,7 +175,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAbstractType tType, TClass tAnonymous, TMember tMember,
+	CSP isAppropriate_solveCsp_BWD(Match match, TClass tAnonymous, TAbstractType tType, TMember tMember,
 			TPackage tPackage, TypeGraph pg);
 
 	/**
@@ -193,7 +193,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MClassInstanceCreation mCreation, TypeToTAbstractType mTypeToTType, TAbstractType tType, TClass tAnonymous,
+			MClassInstanceCreation mCreation, TClass tAnonymous, TypeToTAbstractType mTypeToTType, TAbstractType tType,
 			TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember, AbstractTypeDeclaration mType);
 
 	/**
@@ -211,7 +211,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tType, EObject tAnonymous, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType);
 
 	/**
@@ -228,7 +228,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_937(EMoflonEdge _edge_allTypes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_19(EMoflonEdge _edge_allTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,7 +236,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1030(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_20(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +268,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MClassInstanceCreation mCreation, TAbstractType tType, TClass tAnonymous,
+	CSP isApplicable_solveCsp_CC(MClassInstanceCreation mCreation, TClass tAnonymous, TAbstractType tType,
 			TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember, MAnonymousClass mAnonymous,
 			AbstractTypeDeclaration mType, Match sourceMatch, Match targetMatch);
 
@@ -295,7 +295,7 @@ public interface AnonymousClassInType extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAbstractType tType, TClass tAnonymous, TMember tMember, TPackage tPackage, TypeGraph pg);
+	boolean checkDEC_BWD(TClass tAnonymous, TAbstractType tType, TMember tMember, TPackage tPackage, TypeGraph pg);
 
 	/**
 	 * <!-- begin-user-doc -->

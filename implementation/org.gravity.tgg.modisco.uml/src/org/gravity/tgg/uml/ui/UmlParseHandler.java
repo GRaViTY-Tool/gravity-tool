@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.handler.AbstractTransformationHandler;
-import org.gravity.eclipse.ui.handler.SelectionHelper;
+import org.gravity.eclipse.ui.handler.UISelectionHelper;
 
 /**
  * A handler for triggering the initial creation of a new UML models for the
@@ -24,7 +24,7 @@ public class UmlParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final List<?> selection = SelectionHelper.getSelection(event);
+		final List<?> selection = UISelectionHelper.getSelection(event);
 
 		final var addUmlSec = MessageDialog.openQuestion(GravityUiActivator.getShell(), "UMLsec",
 				"Should the UMLsec profile be added to the project?");

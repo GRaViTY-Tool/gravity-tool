@@ -93,8 +93,8 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration mVar, MEntry mEntry,
-			TParameter tParameter, MEntryToTParameter mEntryToTParameter);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration mVar,
+			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mVar, EObject mEntry, EObject mAnnotToTAnnot,
-			EObject tParameter, EObject mEntryToTParameter);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnnotToTAnnot, EObject mVar,
+			EObject mEntryToTParameter, EObject tParameter, EObject mEntry);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,7 +183,7 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TParameter_6(TParameter tParameter);
+	EObjectContainer isAppropriate_BWD_TParameter_0(TParameter tParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,7 +191,7 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1024(EMoflonEdge _edge_allParameterInstances);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_allParameterInstances);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
+	CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -265,8 +265,8 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntryToTParameter mEntryToTParameter,
+			TParameter tParameter, MEntry mEntry, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

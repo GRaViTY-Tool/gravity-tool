@@ -107,8 +107,8 @@ public interface JavaPackageToUMLPackage_underModel extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp, EObject jm, EObject jm2um, EObject up,
-			EObject um, EObject jp2up);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp, EObject jm, EObject up, EObject jp2up,
+			EObject jm2um, EObject um);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,8 +172,8 @@ public interface JavaPackageToUMLPackage_underModel extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, JavaModel2UMLPackage jm2um,
-			org.eclipse.uml2.uml.Package up, org.eclipse.uml2.uml.Model um);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model jm, org.eclipse.uml2.uml.Package up,
+			JavaModel2UMLPackage jm2um, org.eclipse.uml2.uml.Model um);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,8 +189,8 @@ public interface JavaPackageToUMLPackage_underModel extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp, EObject jm, EObject jm2um, EObject up,
-			EObject um, EObject jp2up);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp, EObject jm, EObject up, EObject jp2up,
+			EObject jm2um, EObject um);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,7 +206,7 @@ public interface JavaPackageToUMLPackage_underModel extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1056(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_122(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface JavaPackageToUMLPackage_underModel extends EObject, AbstractRul
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1160(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_133(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->

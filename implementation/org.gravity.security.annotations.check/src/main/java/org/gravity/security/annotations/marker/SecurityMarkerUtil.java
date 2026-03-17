@@ -33,6 +33,9 @@ public class SecurityMarkerUtil {
 	private static IMarker createErrorMarker(final IMember member, final String message,
 			final Collection<String> relevantMember) {
 		try {
+			if(member.isBinary()) {
+				return createErrorMarker(member.getJavaProject().getResource(), 1, message, relevantMember);
+			}
 			final var resource = member.getResource();
 			final var line = JavaASTUtil.getLine(member);
 

@@ -50,7 +50,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MDefinition mDefinition, Modifier mModifier, EnumDeclaration mClass);
+	boolean isAppropriate_FWD(Match match, Modifier mModifier, MDefinition mDefinition, EnumDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MDefinition mDefinition, Modifier mModifier, EnumDeclaration mClass);
+	void registerObjectsToMatch_FWD(Match match, Modifier mModifier, MDefinition mDefinition, EnumDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mDefinition, Modifier mModifier, EnumDeclaration mClass);
+	CSP isAppropriate_solveCsp_FWD(Match match, Modifier mModifier, MDefinition mDefinition, EnumDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,9 +98,9 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
-			MDefinitionToTMember defToMember, Modifier mModifier, TMember tMember, TClass tClass,
-			TypeToTAbstractType mTypeToTType, EnumDeclaration mClass);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier mModifier,
+			MDefinitionToTMember defToMember, TMember tMember, MDefinition mDefinition,
+			TypeToTAbstractType mTypeToTType, TClass tClass, EnumDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,8 +116,8 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mDefinition, EObject tModifier, EObject defToMember,
-			EObject mModifier, EObject mModifierToTModifier, EObject tMember, EObject tClass, EObject mTypeToTType,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModifier, EObject defToMember, EObject tMember,
+			EObject mDefinition, EObject mTypeToTType, EObject mModifierToTModifier, EObject tModifier, EObject tClass,
 			EObject mClass);
 
 	/**
@@ -134,7 +134,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TModifier tModifier, TMember tMember, TClass tClass);
+	boolean isAppropriate_BWD(Match match, TMember tMember, TModifier tModifier, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +158,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TModifier tModifier, TMember tMember, TClass tClass);
+	void registerObjectsToMatch_BWD(Match match, TMember tMember, TModifier tModifier, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +166,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TModifier tModifier, TMember tMember, TClass tClass);
+	CSP isAppropriate_solveCsp_BWD(Match match, TMember tMember, TModifier tModifier, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,9 +182,9 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition, TModifier tModifier,
-			MDefinitionToTMember defToMember, TMember tMember, TClass tClass, TypeToTAbstractType mTypeToTType,
-			EnumDeclaration mClass);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
+			TMember tMember, MDefinition mDefinition, TypeToTAbstractType mTypeToTType, TModifier tModifier,
+			TClass tClass, EnumDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,8 +200,8 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mDefinition, EObject tModifier, EObject defToMember,
-			EObject mModifier, EObject mModifierToTModifier, EObject tMember, EObject tClass, EObject mTypeToTType,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mModifier, EObject defToMember, EObject tMember,
+			EObject mDefinition, EObject mTypeToTType, EObject mModifierToTModifier, EObject tModifier, EObject tClass,
 			EObject mClass);
 
 	/**
@@ -218,7 +218,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_944(EMoflonEdge _edge_tModifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_10(EMoflonEdge _edge_tModifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1038(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_11(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +258,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MDefinition mDefinition, TModifier tModifier, Modifier mModifier, TMember tMember,
+	CSP isApplicable_solveCsp_CC(Modifier mModifier, TMember tMember, MDefinition mDefinition, TModifier tModifier,
 			TClass tClass, EnumDeclaration mClass, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -275,7 +275,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MDefinition mDefinition, Modifier mModifier, EnumDeclaration mClass);
+	boolean checkDEC_FWD(Modifier mModifier, MDefinition mDefinition, EnumDeclaration mClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,7 +283,7 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TModifier tModifier, TMember tMember, TClass tClass);
+	boolean checkDEC_BWD(TMember tMember, TModifier tModifier, TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -300,8 +300,8 @@ public interface MemberInEnumVisibility extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mDefinition,
-			MDefinitionToTMember defToMember, TMember tMember, TClass tClass, TypeToTAbstractType mTypeToTType,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember defToMember,
+			TMember tMember, MDefinition mDefinition, TypeToTAbstractType mTypeToTType, TClass tClass,
 			EnumDeclaration mClass, ModelgeneratorRuleResult ruleResult);
 
 	/**

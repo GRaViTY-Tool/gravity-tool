@@ -1,6 +1,6 @@
 package org.gravity.security.tests;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -34,7 +34,7 @@ public class SecureDependencyEditingSupportTests {
 	@ParameterizedTest
 	@MethodSource("collectProjects")
 	void testSecureDependency(final IJavaProject project) throws CoreException {
-		SecurityAnnoationsCheckActivator.setChecksEnabled(true);
+		SecurityAnnoationsCheckActivator.setChecksEnabled(project.getProject(), true);
 		project.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		project.getProject().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		final var problems = new HashMap<String, List<IMarker>>();
@@ -60,13 +60,13 @@ public class SecureDependencyEditingSupportTests {
 			final var observations = problems.remove(resource);
 			final var expectations = getExpectedMarkers(entry.getValue());
 			assertTrue(
+					observations.removeIf(m -> SecureDependencyEditingSupportTests.isExpectedMarker(expectations, m)),
 					"Expected marker not found on resource \"" + entry.getKey() + "\" concerning the sigantures "
-							+ entry.getValue(),
-					observations.removeIf(m -> SecureDependencyEditingSupportTests.isExpectedMarker(expectations, m)));
-			assertTrue("Unexpected markers have been found on \"" + resource + "\": " + observations,
-					observations.isEmpty());
+							+ entry.getValue());
+			assertTrue(observations.isEmpty(),
+					"Unexpected markers have been found on \"" + resource + "\": " + observations);
 		}
-		assertTrue("Unexpected markers have been found: " + problems, problems.isEmpty());
+		assertTrue(problems.isEmpty(), "Unexpected markers have been found: " + problems);
 
 	}
 

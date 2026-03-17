@@ -115,7 +115,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mDefinitionToTMember,
 			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement, EObject mSignature);
+			EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation, EObject mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +202,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject mDefinitionToTMember,
 			EObject mSignatureToTMethodSignature, EObject tMethodSignature, EObject tDefinition, EObject mDefinition,
-			EObject mBodyToTAnnotation, EObject mFlowElementToTFlowElement, EObject mSignature);
+			EObject mFlowElementToTFlowElement, EObject mBodyToTAnnotation, EObject mSignature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1013(EMoflonEdge _edge_definitions);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_83(EMoflonEdge _edge_definitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface ConstructorDefinition extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_1111(EMoflonEdge _edge_mDefinitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_87(EMoflonEdge _edge_mDefinitions);
 
 	/**
 	 * <!-- begin-user-doc -->

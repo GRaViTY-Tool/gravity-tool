@@ -60,7 +60,7 @@ public class TransformationTest extends AbstractParameterizedTransformationTest 
 	public TransformationTest(final String name, final IJavaProject project) {
 		super(name, project);
 	}
-
+	
 	/**
 	 * Transforms every input project and checks the created model
 	 *

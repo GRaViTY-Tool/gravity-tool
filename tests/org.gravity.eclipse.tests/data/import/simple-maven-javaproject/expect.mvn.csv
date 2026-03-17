@@ -3,4 +3,3 @@ class,org.gravity.EmptyClass
 class,org.gravity.module.ModuleClass
 jar,log4j-core-2.25.3.jar
 jar,log4j-api-2.25.3.jar
-

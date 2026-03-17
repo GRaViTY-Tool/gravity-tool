@@ -50,6 +50,6 @@
 	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-security.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-server.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-util.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar" sourcepath="/home/sven/Downloads/commons-cli-1.9.0-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

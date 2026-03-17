@@ -156,44 +156,44 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result1_bindingAndBlack[0];
-		MEntry mEntry = (MEntry) result1_bindingAndBlack[1];
+		MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result1_bindingAndBlack[1];
 		TParameter tParameter = (TParameter) result1_bindingAndBlack[2];
-		MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result1_bindingAndBlack[3];
+		MEntry mEntry = (MEntry) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = MethodParameterVariableImpl
-				.pattern_MethodParameterVariable_1_1_performtransformation_greenBFB(mVar, tParameter);
-		ASTNodeToTAnnotatable mAnnotToTAnnot = (ASTNodeToTAnnotatable) result1_green[1];
+				.pattern_MethodParameterVariable_1_1_performtransformation_greenFBB(mVar, tParameter);
+		ASTNodeToTAnnotatable mAnnotToTAnnot = (ASTNodeToTAnnotatable) result1_green[0];
 
 		Object[] result2_black = MethodParameterVariableImpl
-				.pattern_MethodParameterVariable_1_2_collecttranslatedelements_blackBB(mVar, mAnnotToTAnnot);
+				.pattern_MethodParameterVariable_1_2_collecttranslatedelements_blackBB(mAnnotToTAnnot, mVar);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mVar] = " + mVar + ", "
-					+ "[mAnnotToTAnnot] = " + mAnnotToTAnnot + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mAnnotToTAnnot] = "
+					+ mAnnotToTAnnot + ", " + "[mVar] = " + mVar + ".");
 		}
 		Object[] result2_green = MethodParameterVariableImpl
-				.pattern_MethodParameterVariable_1_2_collecttranslatedelements_greenFBB(mVar, mAnnotToTAnnot);
+				.pattern_MethodParameterVariable_1_2_collecttranslatedelements_greenFBB(mAnnotToTAnnot, mVar);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = MethodParameterVariableImpl
-				.pattern_MethodParameterVariable_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, mVar, mEntry,
-						mAnnotToTAnnot, tParameter, mEntryToTParameter);
+				.pattern_MethodParameterVariable_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, mAnnotToTAnnot, mVar,
+						mEntryToTParameter, tParameter, mEntry);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mVar] = " + mVar + ", " + "[mEntry] = " + mEntry + ", " + "[mAnnotToTAnnot] = "
-					+ mAnnotToTAnnot + ", " + "[tParameter] = " + tParameter + ", " + "[mEntryToTParameter] = "
-					+ mEntryToTParameter + ".");
+					+ ", " + "[mAnnotToTAnnot] = " + mAnnotToTAnnot + ", " + "[mVar] = " + mVar + ", "
+					+ "[mEntryToTParameter] = " + mEntryToTParameter + ", " + "[tParameter] = " + tParameter + ", "
+					+ "[mEntry] = " + mEntry + ".");
 		}
 		MethodParameterVariableImpl.pattern_MethodParameterVariable_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				mVar, mEntry, mAnnotToTAnnot, tParameter);
-		//nothing EMoflonEdge mEntry__mVar____allParameterInstances = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge mVar__mEntry____mEntry = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge mAnnotToTAnnot__mVar____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mAnnotToTAnnot__tParameter____target = (EMoflonEdge) result3_green[8];
+				mAnnotToTAnnot, mVar, tParameter, mEntry);
+		//nothing EMoflonEdge mAnnotToTAnnot__mVar____source = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge mAnnotToTAnnot__tParameter____target = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge mEntry__mVar____allParameterInstances = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge mVar__mEntry____mEntry = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		MethodParameterVariableImpl.pattern_MethodParameterVariable_1_5_registerobjects_expressionBBBBBBB(this,
-				ruleresult, mVar, mEntry, mAnnotToTAnnot, tParameter, mEntryToTParameter);
+				ruleresult, mAnnotToTAnnot, mVar, mEntryToTParameter, tParameter, mEntry);
 		return MethodParameterVariableImpl.pattern_MethodParameterVariable_1_6_expressionFB(ruleresult);
 	}
 
@@ -225,30 +225,30 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result2_binding[0];
 		MEntry mEntry = (MEntry) result2_binding[1];
 		for (Object[] result2_black : MethodParameterVariableImpl
-				.pattern_MethodParameterVariable_2_2_corematch_blackBBFFB(mVar, mEntry, match)) {
+				.pattern_MethodParameterVariable_2_2_corematch_blackBFFBB(mVar, mEntry, match)) {
+			MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result2_black[1];
 			TParameter tParameter = (TParameter) result2_black[2];
-			MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : MethodParameterVariableImpl
-					.pattern_MethodParameterVariable_2_3_findcontext_blackBBBB(mVar, mEntry, tParameter,
-							mEntryToTParameter)) {
+					.pattern_MethodParameterVariable_2_3_findcontext_blackBBBB(mVar, mEntryToTParameter, tParameter,
+							mEntry)) {
 				Object[] result3_green = MethodParameterVariableImpl
-						.pattern_MethodParameterVariable_2_3_findcontext_greenBBBBFFFFF(mVar, mEntry, tParameter,
-								mEntryToTParameter);
+						.pattern_MethodParameterVariable_2_3_findcontext_greenBBBBFFFFF(mVar, mEntryToTParameter,
+								tParameter, mEntry);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge mEntry__mVar____allParameterInstances = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge mVar__mEntry____mEntry = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge mEntryToTParameter__mEntry____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge mEntryToTParameter__mEntry____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge mEntry__mVar____allParameterInstances = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge mVar__mEntry____mEntry = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge mEntryToTParameter__tParameter____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = MethodParameterVariableImpl
 						.pattern_MethodParameterVariable_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								mVar, mEntry, tParameter, mEntryToTParameter);
+								mVar, mEntryToTParameter, tParameter, mEntry);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mVar] = " + mVar + ", "
-							+ "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", "
-							+ "[mEntryToTParameter] = " + mEntryToTParameter + ".");
+							+ "[mEntryToTParameter] = " + mEntryToTParameter + ", " + "[tParameter] = " + tParameter
+							+ ", " + "[mEntry] = " + mEntry + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -319,7 +319,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration mVar,
-			MEntry mEntry, TParameter tParameter, MEntryToTParameter mEntryToTParameter) {// Create CSP
+			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -335,9 +335,9 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mVar", mVar);
-		isApplicableMatch.registerObject("mEntry", mEntry);
-		isApplicableMatch.registerObject("tParameter", tParameter);
 		isApplicableMatch.registerObject("mEntryToTParameter", mEntryToTParameter);
+		isApplicableMatch.registerObject("tParameter", tParameter);
+		isApplicableMatch.registerObject("mEntry", mEntry);
 		return csp;
 	}
 
@@ -355,13 +355,13 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mVar, EObject mEntry, EObject mAnnotToTAnnot,
-			EObject tParameter, EObject mEntryToTParameter) {
-		ruleresult.registerObject("mVar", mVar);
-		ruleresult.registerObject("mEntry", mEntry);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnnotToTAnnot, EObject mVar,
+			EObject mEntryToTParameter, EObject tParameter, EObject mEntry) {
 		ruleresult.registerObject("mAnnotToTAnnot", mAnnotToTAnnot);
-		ruleresult.registerObject("tParameter", tParameter);
+		ruleresult.registerObject("mVar", mVar);
 		ruleresult.registerObject("mEntryToTParameter", mEntryToTParameter);
+		ruleresult.registerObject("tParameter", tParameter);
+		ruleresult.registerObject("mEntry", mEntry);
 
 	}
 
@@ -502,7 +502,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TParameter_6(TParameter tParameter) {
+	public EObjectContainer isAppropriate_BWD_TParameter_0(TParameter tParameter) {
 
 		Object[] result1_bindingAndBlack = MethodParameterVariableImpl
 				.pattern_MethodParameterVariable_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -558,7 +558,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1024(EMoflonEdge _edge_allParameterInstances) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_allParameterInstances) {
 
 		Object[] result1_bindingAndBlack = MethodParameterVariableImpl
 				.pattern_MethodParameterVariable_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -692,15 +692,15 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result2_bindingAndBlack[0];
-		MEntry mEntry = (MEntry) result2_bindingAndBlack[1];
-		TParameter tParameter = (TParameter) result2_bindingAndBlack[2];
+		TParameter tParameter = (TParameter) result2_bindingAndBlack[1];
+		MEntry mEntry = (MEntry) result2_bindingAndBlack[2];
 
 		Object[] result3_bindingAndBlack = MethodParameterVariableImpl
-				.pattern_MethodParameterVariable_21_3_solvecsp_bindingAndBlackFBBBBBB(this, mVar, mEntry, tParameter,
+				.pattern_MethodParameterVariable_21_3_solvecsp_bindingAndBlackFBBBBBB(this, mVar, tParameter, mEntry,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mVar] = " + mVar + ", " + "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", "
+					+ "[mVar] = " + mVar + ", " + "[tParameter] = " + tParameter + ", " + "[mEntry] = " + mEntry + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -708,25 +708,25 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		if (MethodParameterVariableImpl.pattern_MethodParameterVariable_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : MethodParameterVariableImpl
-					.pattern_MethodParameterVariable_21_5_matchcorrcontext_blackBBFBB(mEntry, tParameter, sourceMatch,
+					.pattern_MethodParameterVariable_21_5_matchcorrcontext_blackFBBBB(tParameter, mEntry, sourceMatch,
 							targetMatch)) {
-				MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result5_black[2];
+				MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result5_black[0];
 				Object[] result5_green = MethodParameterVariableImpl
 						.pattern_MethodParameterVariable_21_5_matchcorrcontext_greenBBBF(mEntryToTParameter,
 								sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = MethodParameterVariableImpl
-						.pattern_MethodParameterVariable_21_6_createcorrespondence_blackBBBB(mVar, mEntry, tParameter,
+						.pattern_MethodParameterVariable_21_6_createcorrespondence_blackBBBB(mVar, tParameter, mEntry,
 								ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mVar] = " + mVar + ", "
-							+ "[mEntry] = " + mEntry + ", " + "[tParameter] = " + tParameter + ", " + "[ccMatch] = "
+							+ "[tParameter] = " + tParameter + ", " + "[mEntry] = " + mEntry + ", " + "[ccMatch] = "
 							+ ccMatch + ".");
 				}
-				MethodParameterVariableImpl.pattern_MethodParameterVariable_21_6_createcorrespondence_greenBFBB(mVar,
+				MethodParameterVariableImpl.pattern_MethodParameterVariable_21_6_createcorrespondence_greenFBBB(mVar,
 						tParameter, ccMatch);
-				//nothing ASTNodeToTAnnotatable mAnnotToTAnnot = (ASTNodeToTAnnotatable) result6_green[1];
+				//nothing ASTNodeToTAnnotatable mAnnotToTAnnot = (ASTNodeToTAnnotatable) result6_green[0];
 
 				Object[] result7_black = MethodParameterVariableImpl
 						.pattern_MethodParameterVariable_21_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -749,7 +749,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
+	public CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -828,40 +828,40 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		for (Object[] result2_black : MethodParameterVariableImpl
 				.pattern_MethodParameterVariable_26_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mEntryToTParameterList = (RuleEntryList) result2_black[0];
-			MEntry mEntry = (MEntry) result2_black[1];
-			MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result2_black[2];
+			MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result2_black[1];
+			MEntry mEntry = (MEntry) result2_black[2];
 			TParameter tParameter = (TParameter) result2_black[3];
 
 			Object[] result3_bindingAndBlack = MethodParameterVariableImpl
 					.pattern_MethodParameterVariable_26_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							mEntry, tParameter, mEntryToTParameter, ruleResult);
+							mEntryToTParameter, tParameter, mEntry, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEntry] = " + mEntry + ", "
-						+ "[tParameter] = " + tParameter + ", " + "[mEntryToTParameter] = " + mEntryToTParameter + ", "
-						+ "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mEntryToTParameter] = "
+						+ mEntryToTParameter + ", " + "[tParameter] = " + tParameter + ", " + "[mEntry] = " + mEntry
+						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (MethodParameterVariableImpl.pattern_MethodParameterVariable_26_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = MethodParameterVariableImpl
-						.pattern_MethodParameterVariable_26_5_checknacs_blackBBB(mEntry, tParameter,
-								mEntryToTParameter);
+						.pattern_MethodParameterVariable_26_5_checknacs_blackBBB(mEntryToTParameter, tParameter,
+								mEntry);
 				if (result5_black != null) {
 
 					Object[] result6_black = MethodParameterVariableImpl
-							.pattern_MethodParameterVariable_26_6_perform_blackBBBB(mEntry, tParameter,
-									mEntryToTParameter, ruleResult);
+							.pattern_MethodParameterVariable_26_6_perform_blackBBBB(mEntryToTParameter, tParameter,
+									mEntry, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mEntry] = " + mEntry
-								+ ", " + "[tParameter] = " + tParameter + ", " + "[mEntryToTParameter] = "
-								+ mEntryToTParameter + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: "
+								+ "[mEntryToTParameter] = " + mEntryToTParameter + ", " + "[tParameter] = " + tParameter
+								+ ", " + "[mEntry] = " + mEntry + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					MethodParameterVariableImpl.pattern_MethodParameterVariable_26_6_perform_greenFBFBB(mEntry,
-							tParameter, ruleResult);
-					//nothing MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result6_green[0];
-					//nothing ASTNodeToTAnnotatable mAnnotToTAnnot = (ASTNodeToTAnnotatable) result6_green[2];
+					MethodParameterVariableImpl.pattern_MethodParameterVariable_26_6_perform_greenFFBBB(tParameter,
+							mEntry, ruleResult);
+					//nothing ASTNodeToTAnnotatable mAnnotToTAnnot = (ASTNodeToTAnnotatable) result6_green[0];
+					//nothing MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result6_green[1];
 
 				} else {
 				}
@@ -878,8 +878,8 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntryToTParameter mEntryToTParameter,
+			TParameter tParameter, MEntry mEntry, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -894,9 +894,9 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mEntry", mEntry);
-		isApplicableMatch.registerObject("tParameter", tParameter);
 		isApplicableMatch.registerObject("mEntryToTParameter", mEntryToTParameter);
+		isApplicableMatch.registerObject("tParameter", tParameter);
+		isApplicableMatch.registerObject("mEntry", mEntry);
 		return csp;
 	}
 
@@ -933,10 +933,10 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 						(MSingleVariableDeclaration) arguments.get(1), (MEntry) arguments.get(2));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSINGLEVARIABLEDECLARATION_MENTRY_TPARAMETER_MENTRYTOTPARAMETER:
+			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSINGLEVARIABLEDECLARATION_MENTRYTOTPARAMETER_TPARAMETER_MENTRY:
 				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(MSingleVariableDeclaration) arguments.get(1), (MEntry) arguments.get(2),
-						(TParameter) arguments.get(3), (MEntryToTParameter) arguments.get(4));
+						(MSingleVariableDeclaration) arguments.get(1), (MEntryToTParameter) arguments.get(2),
+						(TParameter) arguments.get(3), (MEntry) arguments.get(4));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -961,19 +961,19 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___CHECK_TYPES_BWD__MATCH:
 				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPROPRIATE_BWD_TPARAMETER_6__TPARAMETER:
-				return isAppropriate_BWD_TParameter_6((TParameter) arguments.get(0));
-			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1024__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_1024((EMoflonEdge) arguments.get(0));
+			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPROPRIATE_BWD_TPARAMETER_0__TPARAMETER:
+				return isAppropriate_BWD_TParameter_0((TParameter) arguments.get(0));
+			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_51__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_51((EMoflonEdge) arguments.get(0));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 				return checkAttributes_FWD((TripleMatch) arguments.get(0));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 				return checkAttributes_BWD((TripleMatch) arguments.get(0));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_CC__MATCH_MATCH:
 				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_SOLVE_CSP_CC__MSINGLEVARIABLEDECLARATION_MENTRY_TPARAMETER_MATCH_MATCH:
+			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_SOLVE_CSP_CC__MSINGLEVARIABLEDECLARATION_TPARAMETER_MENTRY_MATCH_MATCH:
 				return isApplicable_solveCsp_CC((MSingleVariableDeclaration) arguments.get(0),
-						(MEntry) arguments.get(1), (TParameter) arguments.get(2), (Match) arguments.get(3),
+						(TParameter) arguments.get(1), (MEntry) arguments.get(2), (Match) arguments.get(3),
 						(Match) arguments.get(4));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -983,9 +983,9 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 				return checkDEC_BWD((TParameter) arguments.get(0));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___GENERATE_MODEL__RULEENTRYCONTAINER_MENTRYTOTPARAMETER:
 				return generateModel((RuleEntryContainer) arguments.get(0), (MEntryToTParameter) arguments.get(1));
-			case RulesPackage.METHOD_PARAMETER_VARIABLE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MENTRY_TPARAMETER_MENTRYTOTPARAMETER_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (MEntry) arguments.get(1),
-						(TParameter) arguments.get(2), (MEntryToTParameter) arguments.get(3),
+			case RulesPackage.METHOD_PARAMETER_VARIABLE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MENTRYTOTPARAMETER_TPARAMETER_MENTRY_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(MEntryToTParameter) arguments.get(1), (TParameter) arguments.get(2), (MEntry) arguments.get(3),
 						(ModelgeneratorRuleResult) arguments.get(4));
 			case RulesPackage.METHOD_PARAMETER_VARIABLE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1089,22 +1089,22 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	public static final Object[] pattern_MethodParameterVariable_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mVar");
-		EObject _localVariable_1 = isApplicableMatch.getObject("mEntry");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mEntryToTParameter");
 		EObject _localVariable_2 = isApplicableMatch.getObject("tParameter");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mEntryToTParameter");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mEntry");
 		EObject tmpMVar = _localVariable_0;
-		EObject tmpMEntry = _localVariable_1;
+		EObject tmpMEntryToTParameter = _localVariable_1;
 		EObject tmpTParameter = _localVariable_2;
-		EObject tmpMEntryToTParameter = _localVariable_3;
+		EObject tmpMEntry = _localVariable_3;
 		if (tmpMVar instanceof MSingleVariableDeclaration) {
 			MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) tmpMVar;
-			if (tmpMEntry instanceof MEntry) {
-				MEntry mEntry = (MEntry) tmpMEntry;
+			if (tmpMEntryToTParameter instanceof MEntryToTParameter) {
+				MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) tmpMEntryToTParameter;
 				if (tmpTParameter instanceof TParameter) {
 					TParameter tParameter = (TParameter) tmpTParameter;
-					if (tmpMEntryToTParameter instanceof MEntryToTParameter) {
-						MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) tmpMEntryToTParameter;
-						return new Object[] { mVar, mEntry, tParameter, mEntryToTParameter, isApplicableMatch };
+					if (tmpMEntry instanceof MEntry) {
+						MEntry mEntry = (MEntry) tmpMEntry;
+						return new Object[] { mVar, mEntryToTParameter, tParameter, mEntry, isApplicableMatch };
 					}
 				}
 			}
@@ -1113,12 +1113,12 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_1_1_performtransformation_blackBBBBFBB(
-			MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter, MethodParameterVariable _this, IsApplicableMatch isApplicableMatch) {
+			MSingleVariableDeclaration mVar, MEntryToTParameter mEntryToTParameter, TParameter tParameter,
+			MEntry mEntry, MethodParameterVariable _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { mVar, mEntry, tParameter, mEntryToTParameter, csp, _this, isApplicableMatch };
+				return new Object[] { mVar, mEntryToTParameter, tParameter, mEntry, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1130,57 +1130,57 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 				isApplicableMatch);
 		if (result_pattern_MethodParameterVariable_1_1_performtransformation_binding != null) {
 			MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result_pattern_MethodParameterVariable_1_1_performtransformation_binding[0];
-			MEntry mEntry = (MEntry) result_pattern_MethodParameterVariable_1_1_performtransformation_binding[1];
+			MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result_pattern_MethodParameterVariable_1_1_performtransformation_binding[1];
 			TParameter tParameter = (TParameter) result_pattern_MethodParameterVariable_1_1_performtransformation_binding[2];
-			MEntryToTParameter mEntryToTParameter = (MEntryToTParameter) result_pattern_MethodParameterVariable_1_1_performtransformation_binding[3];
+			MEntry mEntry = (MEntry) result_pattern_MethodParameterVariable_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_MethodParameterVariable_1_1_performtransformation_black = pattern_MethodParameterVariable_1_1_performtransformation_blackBBBBFBB(
-					mVar, mEntry, tParameter, mEntryToTParameter, _this, isApplicableMatch);
+					mVar, mEntryToTParameter, tParameter, mEntry, _this, isApplicableMatch);
 			if (result_pattern_MethodParameterVariable_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_MethodParameterVariable_1_1_performtransformation_black[4];
 
-				return new Object[] { mVar, mEntry, tParameter, mEntryToTParameter, csp, _this, isApplicableMatch };
+				return new Object[] { mVar, mEntryToTParameter, tParameter, mEntry, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MethodParameterVariable_1_1_performtransformation_greenBFB(
+	public static final Object[] pattern_MethodParameterVariable_1_1_performtransformation_greenFBB(
 			MSingleVariableDeclaration mVar, TParameter tParameter) {
 		ASTNodeToTAnnotatable mAnnotToTAnnot = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		mAnnotToTAnnot.setSource(mVar);
 		mAnnotToTAnnot.setTarget(tParameter);
-		return new Object[] { mVar, mAnnotToTAnnot, tParameter };
+		return new Object[] { mAnnotToTAnnot, mVar, tParameter };
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_1_2_collecttranslatedelements_blackBB(
-			MSingleVariableDeclaration mVar, ASTNodeToTAnnotatable mAnnotToTAnnot) {
-		return new Object[] { mVar, mAnnotToTAnnot };
+			ASTNodeToTAnnotatable mAnnotToTAnnot, MSingleVariableDeclaration mVar) {
+		return new Object[] { mAnnotToTAnnot, mVar };
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_1_2_collecttranslatedelements_greenFBB(
-			MSingleVariableDeclaration mVar, ASTNodeToTAnnotatable mAnnotToTAnnot) {
+			ASTNodeToTAnnotatable mAnnotToTAnnot, MSingleVariableDeclaration mVar) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(mVar);
 		ruleresult.getCreatedLinkElements().add(mAnnotToTAnnot);
-		return new Object[] { ruleresult, mVar, mAnnotToTAnnot };
+		ruleresult.getTranslatedElements().add(mVar);
+		return new Object[] { ruleresult, mAnnotToTAnnot, mVar };
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject mVar, EObject mEntry, EObject mAnnotToTAnnot, EObject tParameter,
-			EObject mEntryToTParameter) {
-		if (!mVar.equals(tParameter)) {
-			if (!mEntry.equals(mVar)) {
-				if (!mEntry.equals(tParameter)) {
-					if (!mEntry.equals(mEntryToTParameter)) {
-						if (!mAnnotToTAnnot.equals(mVar)) {
-							if (!mAnnotToTAnnot.equals(mEntry)) {
-								if (!mAnnotToTAnnot.equals(tParameter)) {
-									if (!mAnnotToTAnnot.equals(mEntryToTParameter)) {
-										if (!mEntryToTParameter.equals(mVar)) {
-											if (!mEntryToTParameter.equals(tParameter)) {
-												return new Object[] { ruleresult, mVar, mEntry, mAnnotToTAnnot,
-														tParameter, mEntryToTParameter };
+			PerformRuleResult ruleresult, EObject mAnnotToTAnnot, EObject mVar, EObject mEntryToTParameter,
+			EObject tParameter, EObject mEntry) {
+		if (!mAnnotToTAnnot.equals(mVar)) {
+			if (!mAnnotToTAnnot.equals(mEntryToTParameter)) {
+				if (!mAnnotToTAnnot.equals(tParameter)) {
+					if (!mAnnotToTAnnot.equals(mEntry)) {
+						if (!mVar.equals(tParameter)) {
+							if (!mEntryToTParameter.equals(mVar)) {
+								if (!mEntryToTParameter.equals(tParameter)) {
+									if (!mEntry.equals(mVar)) {
+										if (!mEntry.equals(mEntryToTParameter)) {
+											if (!mEntry.equals(tParameter)) {
+												return new Object[] { ruleresult, mAnnotToTAnnot, mVar,
+														mEntryToTParameter, tParameter, mEntry };
 											}
 										}
 									}
@@ -1195,42 +1195,41 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject mVar, EObject mEntry, EObject mAnnotToTAnnot, EObject tParameter) {
-		EMoflonEdge mEntry__mVar____allParameterInstances = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mVar__mEntry____mEntry = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mAnnotToTAnnot, EObject mVar, EObject tParameter, EObject mEntry) {
 		EMoflonEdge mAnnotToTAnnot__mVar____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnnotToTAnnot__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mEntry__mVar____allParameterInstances = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mVar__mEntry____mEntry = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "MethodParameterVariable";
-		String mEntry__mVar____allParameterInstances_name_prime = "allParameterInstances";
-		String mVar__mEntry____mEntry_name_prime = "mEntry";
 		String mAnnotToTAnnot__mVar____source_name_prime = "source";
 		String mAnnotToTAnnot__tParameter____target_name_prime = "target";
-		mEntry__mVar____allParameterInstances.setSrc(mEntry);
-		mEntry__mVar____allParameterInstances.setTrg(mVar);
-		ruleresult.getTranslatedEdges().add(mEntry__mVar____allParameterInstances);
-		mVar__mEntry____mEntry.setSrc(mVar);
-		mVar__mEntry____mEntry.setTrg(mEntry);
-		ruleresult.getTranslatedEdges().add(mVar__mEntry____mEntry);
+		String mEntry__mVar____allParameterInstances_name_prime = "allParameterInstances";
+		String mVar__mEntry____mEntry_name_prime = "mEntry";
 		mAnnotToTAnnot__mVar____source.setSrc(mAnnotToTAnnot);
 		mAnnotToTAnnot__mVar____source.setTrg(mVar);
 		ruleresult.getCreatedEdges().add(mAnnotToTAnnot__mVar____source);
 		mAnnotToTAnnot__tParameter____target.setSrc(mAnnotToTAnnot);
 		mAnnotToTAnnot__tParameter____target.setTrg(tParameter);
 		ruleresult.getCreatedEdges().add(mAnnotToTAnnot__tParameter____target);
+		mEntry__mVar____allParameterInstances.setSrc(mEntry);
+		mEntry__mVar____allParameterInstances.setTrg(mVar);
+		ruleresult.getTranslatedEdges().add(mEntry__mVar____allParameterInstances);
+		mVar__mEntry____mEntry.setSrc(mVar);
+		mVar__mEntry____mEntry.setTrg(mEntry);
+		ruleresult.getTranslatedEdges().add(mVar__mEntry____mEntry);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		mEntry__mVar____allParameterInstances.setName(mEntry__mVar____allParameterInstances_name_prime);
-		mVar__mEntry____mEntry.setName(mVar__mEntry____mEntry_name_prime);
 		mAnnotToTAnnot__mVar____source.setName(mAnnotToTAnnot__mVar____source_name_prime);
 		mAnnotToTAnnot__tParameter____target.setName(mAnnotToTAnnot__tParameter____target_name_prime);
-		return new Object[] { ruleresult, mVar, mEntry, mAnnotToTAnnot, tParameter,
-				mEntry__mVar____allParameterInstances, mVar__mEntry____mEntry, mAnnotToTAnnot__mVar____source,
-				mAnnotToTAnnot__tParameter____target };
+		mEntry__mVar____allParameterInstances.setName(mEntry__mVar____allParameterInstances_name_prime);
+		mVar__mEntry____mEntry.setName(mVar__mEntry____mEntry_name_prime);
+		return new Object[] { ruleresult, mAnnotToTAnnot, mVar, tParameter, mEntry, mAnnotToTAnnot__mVar____source,
+				mAnnotToTAnnot__tParameter____target, mEntry__mVar____allParameterInstances, mVar__mEntry____mEntry };
 	}
 
 	public static final void pattern_MethodParameterVariable_1_5_registerobjects_expressionBBBBBBB(
-			MethodParameterVariable _this, PerformRuleResult ruleresult, EObject mVar, EObject mEntry,
-			EObject mAnnotToTAnnot, EObject tParameter, EObject mEntryToTParameter) {
-		_this.registerObjects_FWD(ruleresult, mVar, mEntry, mAnnotToTAnnot, tParameter, mEntryToTParameter);
+			MethodParameterVariable _this, PerformRuleResult ruleresult, EObject mAnnotToTAnnot, EObject mVar,
+			EObject mEntryToTParameter, EObject tParameter, EObject mEntry) {
+		_this.registerObjects_FWD(ruleresult, mAnnotToTAnnot, mVar, mEntryToTParameter, tParameter, mEntry);
 
 	}
 
@@ -1306,14 +1305,14 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodParameterVariable_2_2_corematch_blackBBFFB(
+	public static final Iterable<Object[]> pattern_MethodParameterVariable_2_2_corematch_blackBFFBB(
 			MSingleVariableDeclaration mVar, MEntry mEntry, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MEntryToTParameter mEntryToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mEntry, MEntryToTParameter.class, "source")) {
 			TParameter tParameter = mEntryToTParameter.getTarget();
 			if (tParameter != null) {
-				_result.add(new Object[] { mVar, mEntry, tParameter, mEntryToTParameter, match });
+				_result.add(new Object[] { mVar, mEntryToTParameter, tParameter, mEntry, match });
 			}
 
 		}
@@ -1321,13 +1320,13 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Iterable<Object[]> pattern_MethodParameterVariable_2_3_findcontext_blackBBBB(
-			MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter) {
+			MSingleVariableDeclaration mVar, MEntryToTParameter mEntryToTParameter, TParameter tParameter,
+			MEntry mEntry) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (mEntry.getAllParameterInstances().contains(mVar)) {
-			if (mEntry.equals(mEntryToTParameter.getSource())) {
+		if (mEntry.equals(mEntryToTParameter.getSource())) {
+			if (mEntry.getAllParameterInstances().contains(mVar)) {
 				if (tParameter.equals(mEntryToTParameter.getTarget())) {
-					_result.add(new Object[] { mVar, mEntry, tParameter, mEntryToTParameter });
+					_result.add(new Object[] { mVar, mEntryToTParameter, tParameter, mEntry });
 				}
 			}
 		}
@@ -1335,50 +1334,50 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_2_3_findcontext_greenBBBBFFFFF(
-			MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter) {
+			MSingleVariableDeclaration mVar, MEntryToTParameter mEntryToTParameter, TParameter tParameter,
+			MEntry mEntry) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge mEntryToTParameter__mEntry____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEntry__mVar____allParameterInstances = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mVar__mEntry____mEntry = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mEntryToTParameter__mEntry____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mEntryToTParameter__tParameter____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String mEntryToTParameter__mEntry____source_name_prime = "source";
 		String mEntry__mVar____allParameterInstances_name_prime = "allParameterInstances";
 		String mVar__mEntry____mEntry_name_prime = "mEntry";
-		String mEntryToTParameter__mEntry____source_name_prime = "source";
 		String mEntryToTParameter__tParameter____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(mVar);
-		isApplicableMatch.getAllContextElements().add(mEntry);
-		isApplicableMatch.getAllContextElements().add(tParameter);
 		isApplicableMatch.getAllContextElements().add(mEntryToTParameter);
+		isApplicableMatch.getAllContextElements().add(tParameter);
+		isApplicableMatch.getAllContextElements().add(mEntry);
+		mEntryToTParameter__mEntry____source.setSrc(mEntryToTParameter);
+		mEntryToTParameter__mEntry____source.setTrg(mEntry);
+		isApplicableMatch.getAllContextElements().add(mEntryToTParameter__mEntry____source);
 		mEntry__mVar____allParameterInstances.setSrc(mEntry);
 		mEntry__mVar____allParameterInstances.setTrg(mVar);
 		isApplicableMatch.getAllContextElements().add(mEntry__mVar____allParameterInstances);
 		mVar__mEntry____mEntry.setSrc(mVar);
 		mVar__mEntry____mEntry.setTrg(mEntry);
 		isApplicableMatch.getAllContextElements().add(mVar__mEntry____mEntry);
-		mEntryToTParameter__mEntry____source.setSrc(mEntryToTParameter);
-		mEntryToTParameter__mEntry____source.setTrg(mEntry);
-		isApplicableMatch.getAllContextElements().add(mEntryToTParameter__mEntry____source);
 		mEntryToTParameter__tParameter____target.setSrc(mEntryToTParameter);
 		mEntryToTParameter__tParameter____target.setTrg(tParameter);
 		isApplicableMatch.getAllContextElements().add(mEntryToTParameter__tParameter____target);
+		mEntryToTParameter__mEntry____source.setName(mEntryToTParameter__mEntry____source_name_prime);
 		mEntry__mVar____allParameterInstances.setName(mEntry__mVar____allParameterInstances_name_prime);
 		mVar__mEntry____mEntry.setName(mVar__mEntry____mEntry_name_prime);
-		mEntryToTParameter__mEntry____source.setName(mEntryToTParameter__mEntry____source_name_prime);
 		mEntryToTParameter__tParameter____target.setName(mEntryToTParameter__tParameter____target_name_prime);
-		return new Object[] { mVar, mEntry, tParameter, mEntryToTParameter, isApplicableMatch,
-				mEntry__mVar____allParameterInstances, mVar__mEntry____mEntry, mEntryToTParameter__mEntry____source,
+		return new Object[] { mVar, mEntryToTParameter, tParameter, mEntry, isApplicableMatch,
+				mEntryToTParameter__mEntry____source, mEntry__mVar____allParameterInstances, mVar__mEntry____mEntry,
 				mEntryToTParameter__tParameter____target };
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_2_4_solveCSP_bindingFBBBBBB(
 			MethodParameterVariable _this, IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration mVar,
-			MEntry mEntry, TParameter tParameter, MEntryToTParameter mEntryToTParameter) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mVar, mEntry, tParameter,
-				mEntryToTParameter);
+			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mVar, mEntryToTParameter, tParameter,
+				mEntry);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mVar, mEntry, tParameter, mEntryToTParameter };
+			return new Object[] { csp, _this, isApplicableMatch, mVar, mEntryToTParameter, tParameter, mEntry };
 		}
 		return null;
 	}
@@ -1389,9 +1388,9 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 
 	public static final Object[] pattern_MethodParameterVariable_2_4_solveCSP_bindingAndBlackFBBBBBB(
 			MethodParameterVariable _this, IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration mVar,
-			MEntry mEntry, TParameter tParameter, MEntryToTParameter mEntryToTParameter) {
+			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry) {
 		Object[] result_pattern_MethodParameterVariable_2_4_solveCSP_binding = pattern_MethodParameterVariable_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mVar, mEntry, tParameter, mEntryToTParameter);
+				_this, isApplicableMatch, mVar, mEntryToTParameter, tParameter, mEntry);
 		if (result_pattern_MethodParameterVariable_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterVariable_2_4_solveCSP_binding[0];
 
@@ -1399,7 +1398,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 					csp);
 			if (result_pattern_MethodParameterVariable_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mVar, mEntry, tParameter, mEntryToTParameter };
+				return new Object[] { csp, _this, isApplicableMatch, mVar, mEntryToTParameter, tParameter, mEntry };
 			}
 		}
 		return null;
@@ -1669,9 +1668,9 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 
 	public static final Object[] pattern_MethodParameterVariable_18_2_testcorematchandDECs_black_nac_0BB(
 			MSingleVariableDeclaration mVar, MEntry mEntry) {
-		MEntry __DEC_mVar_allParameterInstances_394790 = mVar.getMEntry();
-		if (__DEC_mVar_allParameterInstances_394790 != null) {
-			if (!mEntry.equals(__DEC_mVar_allParameterInstances_394790)) {
+		MEntry __DEC_mVar_allParameterInstances_928629 = mVar.getMEntry();
+		if (__DEC_mVar_allParameterInstances_928629 != null) {
+			if (!mEntry.equals(__DEC_mVar_allParameterInstances_928629)) {
 				return new Object[] { mVar, mEntry };
 			}
 		}
@@ -1756,18 +1755,18 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	public static final Object[] pattern_MethodParameterVariable_21_2_matchsrctrgcontext_bindingFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		EObject _localVariable_0 = sourceMatch.getObject("mVar");
-		EObject _localVariable_1 = sourceMatch.getObject("mEntry");
-		EObject _localVariable_2 = targetMatch.getObject("tParameter");
+		EObject _localVariable_1 = targetMatch.getObject("tParameter");
+		EObject _localVariable_2 = sourceMatch.getObject("mEntry");
 		EObject tmpMVar = _localVariable_0;
-		EObject tmpMEntry = _localVariable_1;
-		EObject tmpTParameter = _localVariable_2;
+		EObject tmpTParameter = _localVariable_1;
+		EObject tmpMEntry = _localVariable_2;
 		if (tmpMVar instanceof MSingleVariableDeclaration) {
 			MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) tmpMVar;
-			if (tmpMEntry instanceof MEntry) {
-				MEntry mEntry = (MEntry) tmpMEntry;
-				if (tmpTParameter instanceof TParameter) {
-					TParameter tParameter = (TParameter) tmpTParameter;
-					return new Object[] { mVar, mEntry, tParameter, sourceMatch, targetMatch };
+			if (tmpTParameter instanceof TParameter) {
+				TParameter tParameter = (TParameter) tmpTParameter;
+				if (tmpMEntry instanceof MEntry) {
+					MEntry mEntry = (MEntry) tmpMEntry;
+					return new Object[] { mVar, tParameter, mEntry, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -1775,10 +1774,10 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_21_2_matchsrctrgcontext_blackBBBBB(
-			MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter, Match sourceMatch,
+			MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry, Match sourceMatch,
 			Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { mVar, mEntry, tParameter, sourceMatch, targetMatch };
+			return new Object[] { mVar, tParameter, mEntry, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1789,26 +1788,26 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 				sourceMatch, targetMatch);
 		if (result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_binding != null) {
 			MSingleVariableDeclaration mVar = (MSingleVariableDeclaration) result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_binding[0];
-			MEntry mEntry = (MEntry) result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_binding[1];
-			TParameter tParameter = (TParameter) result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_binding[2];
+			TParameter tParameter = (TParameter) result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_binding[1];
+			MEntry mEntry = (MEntry) result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_binding[2];
 
 			Object[] result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_black = pattern_MethodParameterVariable_21_2_matchsrctrgcontext_blackBBBBB(
-					mVar, mEntry, tParameter, sourceMatch, targetMatch);
+					mVar, tParameter, mEntry, sourceMatch, targetMatch);
 			if (result_pattern_MethodParameterVariable_21_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mVar, mEntry, tParameter, sourceMatch, targetMatch };
+				return new Object[] { mVar, tParameter, mEntry, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_21_3_solvecsp_bindingFBBBBBB(
-			MethodParameterVariable _this, MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
+			MethodParameterVariable _this, MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(mVar, mEntry, tParameter, sourceMatch, targetMatch);
+		CSP _localVariable_3 = _this.isApplicable_solveCsp_CC(mVar, tParameter, mEntry, sourceMatch, targetMatch);
 		CSP csp = _localVariable_3;
 		if (csp != null) {
-			return new Object[] { csp, _this, mVar, mEntry, tParameter, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, mVar, tParameter, mEntry, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1818,10 +1817,10 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_21_3_solvecsp_bindingAndBlackFBBBBBB(
-			MethodParameterVariable _this, MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
+			MethodParameterVariable _this, MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_MethodParameterVariable_21_3_solvecsp_binding = pattern_MethodParameterVariable_21_3_solvecsp_bindingFBBBBBB(
-				_this, mVar, mEntry, tParameter, sourceMatch, targetMatch);
+				_this, mVar, tParameter, mEntry, sourceMatch, targetMatch);
 		if (result_pattern_MethodParameterVariable_21_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterVariable_21_3_solvecsp_binding[0];
 
@@ -1829,7 +1828,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 					csp);
 			if (result_pattern_MethodParameterVariable_21_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mVar, mEntry, tParameter, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, mVar, tParameter, mEntry, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -1841,14 +1840,14 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MethodParameterVariable_21_5_matchcorrcontext_blackBBFBB(
-			MEntry mEntry, TParameter tParameter, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_MethodParameterVariable_21_5_matchcorrcontext_blackFBBBB(
+			TParameter tParameter, MEntry mEntry, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (MEntryToTParameter mEntryToTParameter : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mEntry, MEntryToTParameter.class, "source")) {
 				if (tParameter.equals(mEntryToTParameter.getTarget())) {
-					_result.add(new Object[] { mEntry, tParameter, mEntryToTParameter, sourceMatch, targetMatch });
+					_result.add(new Object[] { mEntryToTParameter, tParameter, mEntry, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -1867,17 +1866,17 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_21_6_createcorrespondence_blackBBBB(
-			MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter, CCMatch ccMatch) {
-		return new Object[] { mVar, mEntry, tParameter, ccMatch };
+			MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry, CCMatch ccMatch) {
+		return new Object[] { mVar, tParameter, mEntry, ccMatch };
 	}
 
-	public static final Object[] pattern_MethodParameterVariable_21_6_createcorrespondence_greenBFBB(
+	public static final Object[] pattern_MethodParameterVariable_21_6_createcorrespondence_greenFBBB(
 			MSingleVariableDeclaration mVar, TParameter tParameter, CCMatch ccMatch) {
 		ASTNodeToTAnnotatable mAnnotToTAnnot = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
 		mAnnotToTAnnot.setSource(mVar);
 		mAnnotToTAnnot.setTarget(tParameter);
 		ccMatch.getCreateCorr().add(mAnnotToTAnnot);
-		return new Object[] { mVar, mAnnotToTAnnot, tParameter, ccMatch };
+		return new Object[] { mAnnotToTAnnot, mVar, tParameter, ccMatch };
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_21_7_addtoreturnedresult_blackBB(
@@ -1903,9 +1902,9 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 
 	public static final Object[] pattern_MethodParameterVariable_24_1_matchtggpattern_black_nac_0BB(
 			MSingleVariableDeclaration mVar, MEntry mEntry) {
-		MEntry __DEC_mVar_allParameterInstances_989085 = mVar.getMEntry();
-		if (__DEC_mVar_allParameterInstances_989085 != null) {
-			if (!mEntry.equals(__DEC_mVar_allParameterInstances_989085)) {
+		MEntry __DEC_mVar_allParameterInstances_310070 = mVar.getMEntry();
+		if (__DEC_mVar_allParameterInstances_310070 != null) {
+			if (!mEntry.equals(__DEC_mVar_allParameterInstances_310070)) {
 				return new Object[] { mVar, mEntry };
 			}
 		}
@@ -1961,17 +1960,17 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, MEntry mEntry) {
-		if (ruleResult.getSourceObjects().contains(mEntry)) {
-			return new Object[] { ruleResult, mEntry };
+			ModelgeneratorRuleResult ruleResult, MEntryToTParameter mEntryToTParameter) {
+		if (ruleResult.getCorrObjects().contains(mEntryToTParameter)) {
+			return new Object[] { ruleResult, mEntryToTParameter };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, MEntryToTParameter mEntryToTParameter) {
-		if (ruleResult.getCorrObjects().contains(mEntryToTParameter)) {
-			return new Object[] { ruleResult, mEntryToTParameter };
+			ModelgeneratorRuleResult ruleResult, MEntry mEntry) {
+		if (ruleResult.getSourceObjects().contains(mEntry)) {
+			return new Object[] { ruleResult, mEntry };
 		}
 		return null;
 	}
@@ -1995,13 +1994,13 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 					if (mEntry != null) {
 						TParameter tParameter = mEntryToTParameter.getTarget();
 						if (tParameter != null) {
-							if (pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_1BB(ruleResult,
+							if (pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_0BB(ruleResult,
 									mEntryToTParameter) == null) {
-								if (pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_0BB(ruleResult,
+								if (pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_1BB(ruleResult,
 										mEntry) == null) {
 									if (pattern_MethodParameterVariable_26_2_isapplicablecore_black_nac_2BB(ruleResult,
 											tParameter) == null) {
-										_result.add(new Object[] { mEntryToTParameterList, mEntry, mEntryToTParameter,
+										_result.add(new Object[] { mEntryToTParameterList, mEntryToTParameter, mEntry,
 												tParameter, ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2017,13 +2016,13 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_26_3_solveCSP_bindingFBBBBBB(
-			MethodParameterVariable _this, IsApplicableMatch isApplicableMatch, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mEntry, tParameter,
-				mEntryToTParameter, ruleResult);
+			MethodParameterVariable _this, IsApplicableMatch isApplicableMatch, MEntryToTParameter mEntryToTParameter,
+			TParameter tParameter, MEntry mEntry, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mEntryToTParameter, tParameter,
+				mEntry, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mEntry, tParameter, mEntryToTParameter, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mEntryToTParameter, tParameter, mEntry, ruleResult };
 		}
 		return null;
 	}
@@ -2033,10 +2032,10 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 	}
 
 	public static final Object[] pattern_MethodParameterVariable_26_3_solveCSP_bindingAndBlackFBBBBBB(
-			MethodParameterVariable _this, IsApplicableMatch isApplicableMatch, MEntry mEntry, TParameter tParameter,
-			MEntryToTParameter mEntryToTParameter, ModelgeneratorRuleResult ruleResult) {
+			MethodParameterVariable _this, IsApplicableMatch isApplicableMatch, MEntryToTParameter mEntryToTParameter,
+			TParameter tParameter, MEntry mEntry, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_MethodParameterVariable_26_3_solveCSP_binding = pattern_MethodParameterVariable_26_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, mEntry, tParameter, mEntryToTParameter, ruleResult);
+				_this, isApplicableMatch, mEntryToTParameter, tParameter, mEntry, ruleResult);
 		if (result_pattern_MethodParameterVariable_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_MethodParameterVariable_26_3_solveCSP_binding[0];
 
@@ -2044,7 +2043,7 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 					csp);
 			if (result_pattern_MethodParameterVariable_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mEntry, tParameter, mEntryToTParameter,
+				return new Object[] { csp, _this, isApplicableMatch, mEntryToTParameter, tParameter, mEntry,
 						ruleResult };
 			}
 		}
@@ -2058,31 +2057,32 @@ public class MethodParameterVariableImpl extends AbstractRuleImpl implements Met
 		return _result;
 	}
 
-	public static final Object[] pattern_MethodParameterVariable_26_5_checknacs_blackBBB(MEntry mEntry,
-			TParameter tParameter, MEntryToTParameter mEntryToTParameter) {
-		return new Object[] { mEntry, tParameter, mEntryToTParameter };
+	public static final Object[] pattern_MethodParameterVariable_26_5_checknacs_blackBBB(
+			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry) {
+		return new Object[] { mEntryToTParameter, tParameter, mEntry };
 	}
 
-	public static final Object[] pattern_MethodParameterVariable_26_6_perform_blackBBBB(MEntry mEntry,
-			TParameter tParameter, MEntryToTParameter mEntryToTParameter, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { mEntry, tParameter, mEntryToTParameter, ruleResult };
+	public static final Object[] pattern_MethodParameterVariable_26_6_perform_blackBBBB(
+			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry,
+			ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mEntryToTParameter, tParameter, mEntry, ruleResult };
 	}
 
-	public static final Object[] pattern_MethodParameterVariable_26_6_perform_greenFBFBB(MEntry mEntry,
-			TParameter tParameter, ModelgeneratorRuleResult ruleResult) {
-		MSingleVariableDeclaration mVar = ModiscoFactory.eINSTANCE.createMSingleVariableDeclaration();
+	public static final Object[] pattern_MethodParameterVariable_26_6_perform_greenFFBBB(TParameter tParameter,
+			MEntry mEntry, ModelgeneratorRuleResult ruleResult) {
 		ASTNodeToTAnnotatable mAnnotToTAnnot = PmFactory.eINSTANCE.createASTNodeToTAnnotatable();
+		MSingleVariableDeclaration mVar = ModiscoFactory.eINSTANCE.createMSingleVariableDeclaration();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		mEntry.getAllParameterInstances().add(mVar);
-		ruleResult.getSourceObjects().add(mVar);
-		mAnnotToTAnnot.setSource(mVar);
 		mAnnotToTAnnot.setTarget(tParameter);
 		ruleResult.getCorrObjects().add(mAnnotToTAnnot);
+		mAnnotToTAnnot.setSource(mVar);
+		mEntry.getAllParameterInstances().add(mVar);
+		ruleResult.getSourceObjects().add(mVar);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mVar, mEntry, mAnnotToTAnnot, tParameter, ruleResult };
+		return new Object[] { mAnnotToTAnnot, mVar, tParameter, mEntry, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_MethodParameterVariable_26_7_expressionFB(

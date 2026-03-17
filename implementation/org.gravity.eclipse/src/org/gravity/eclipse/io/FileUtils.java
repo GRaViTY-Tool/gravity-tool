@@ -14,7 +14,6 @@ import java.util.LinkedList;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
-import org.gravity.eclipse.os.OperationSystem;
 
 /**
  *
@@ -161,11 +160,10 @@ public final class FileUtils {
 			if (tmpSubProject.exists()) {
 				nextRoot = tmpSubProject;
 				break;
-			} else {
-				for (final File f : tmp.listFiles()) {
-					if (f.isDirectory()) {
-						queue.add(f);
-					}
+			}
+			for (final File f : tmp.listFiles()) {
+				if (f.isDirectory()) {
+					queue.add(f);
 				}
 			}
 		}
@@ -181,10 +179,7 @@ public final class FileUtils {
 	public static File createDirectory(final String directoryPath) {
 		try {
 			final var dir = new File(directoryPath);
-			if (dir.exists()) {
-				return dir;
-			}
-			if (dir.mkdirs()) {
+			if (dir.exists() || dir.mkdirs()) {
 				return dir;
 			}
 		} catch (final Exception e) {
@@ -207,10 +202,8 @@ public final class FileUtils {
 				for (final File f : file.listFiles()) {
 					if (f.isDirectory()) {
 						success &= recursiveDelete(f);
-						success &= f.delete();
-					} else {
-						success &= f.delete();
 					}
+					success &= f.delete();
 				}
 			}
 			success = file.delete();
@@ -239,7 +232,7 @@ public final class FileUtils {
 	 */
 	public static Path createTempDirectory(final String name) throws IOException {
 		Path tmp;
-		if (OperationSystem.os == OperationSystem.WINDOWS) {
+		if (Platform.getOS().equals(Platform.OS_WIN32)) {
 			tmp = Files.createTempDirectory(name);
 			final var file = tmp.toFile();
 			if (!file.setReadable(true, true) && !file.setWritable(true, true) && !file.setExecutable(true, true)) {
@@ -254,17 +247,36 @@ public final class FileUtils {
 	}
 
 	/**
+	 * Creates a temporary directory with secure file permissions
+	 *
+	 * @param name         The name of the temporary directory
+	 * @param deleteOnExit Whether the directory should be deleted on exit
+	 * @return The directory
+	 * @throws IOException If creating the directory failed or the file permissions
+	 *                     cannot be set
+	 */
+	public static Path createTempDirectory(final String name, final boolean deleteOnExit) throws IOException {
+		final var path = createTempDirectory(name);
+		if (deleteOnExit) {
+			path.toFile().deleteOnExit();
+		}
+		return path;
+	}
+
+	/**
 	 * Creates a temporary file with secure file permissions
 	 *
-	 * @param prefix the prefix string to be used in generating the file's name; may be null
-	 * @param suffix the suffix string to be used in generating the file's name; may be null, in which case ".tmp" is used
+	 * @param prefix the prefix string to be used in generating the file's name; may
+	 *               be null
+	 * @param suffix the suffix string to be used in generating the file's name; may
+	 *               be null, in which case ".tmp" is used
 	 * @return The directory
 	 * @throws IOException If creating the file failed or the file permissions
 	 *                     cannot be set
 	 */
 	public static Path createTempFile(final String prefix, final String suffix) throws IOException {
 		Path tmp;
-		if (OperationSystem.os == OperationSystem.WINDOWS) {
+		if (Platform.getOS().equals(Platform.OS_WIN32)) {
 			tmp = Files.createTempFile(prefix, suffix);
 			final var file = tmp.toFile();
 			if (!file.setReadable(true, true) && !file.setWritable(true, true) && !file.setExecutable(true, true)) {
@@ -277,4 +289,5 @@ public final class FileUtils {
 		}
 		return tmp;
 	}
+
 }

@@ -20,4 +20,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Require-Bundle: org.gravity.tgg.modisco.pm,
- org.gravity.security.annotations.check
+ org.gravity.security.annotations.check;bundle-version="1.0.3"

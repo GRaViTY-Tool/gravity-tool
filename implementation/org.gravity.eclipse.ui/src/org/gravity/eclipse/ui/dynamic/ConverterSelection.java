@@ -15,7 +15,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverterFactory;
-import org.gravity.eclipse.ui.handler.SelectionHelper;
+import org.gravity.eclipse.ui.handler.UISelectionHelper;
 
 /**
  * This class fills an menu with all available modisco to pm converters and
@@ -31,7 +31,7 @@ public class ConverterSelection extends ContributionItem {
 	@Override
 	public void fill(final Menu menu, final int index) {
 
-		final var projects = SelectionHelper.getSelectedProjects();
+		final var projects = UISelectionHelper.getSelectedProjects();
 		final var extensionRegistry = Platform.getExtensionRegistry();
 
 		final var configurationElements = extensionRegistry

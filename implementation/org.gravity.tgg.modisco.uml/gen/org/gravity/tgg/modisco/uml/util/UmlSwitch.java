@@ -68,38 +68,11 @@ public class UmlSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case UmlPackage.COMPILATION_UNIT2_ARTIFACT: {
-				CompilationUnit2Artifact compilationUnit2Artifact = (CompilationUnit2Artifact) theEObject;
-				T result = caseCompilationUnit2Artifact(compilationUnit2Artifact);
-				if (result == null)
-					result = caseAbstractCorrespondence(compilationUnit2Artifact);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
-			case UmlPackage.TYPE_ACCESS2_PROPERTY: {
-				TypeAccess2Property typeAccess2Property = (TypeAccess2Property) theEObject;
-				T result = caseTypeAccess2Property(typeAccess2Property);
-				if (result == null)
-					result = caseAbstractCorrespondence(typeAccess2Property);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
 			case UmlPackage.TYPE_ACCESS2_PARAMETER: {
 				TypeAccess2Parameter typeAccess2Parameter = (TypeAccess2Parameter) theEObject;
 				T result = caseTypeAccess2Parameter(typeAccess2Parameter);
 				if (result == null)
 					result = caseAbstractCorrespondence(typeAccess2Parameter);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
-			case UmlPackage.JAVA_MODEL2_UML_PACKAGE: {
-				JavaModel2UMLPackage javaModel2UMLPackage = (JavaModel2UMLPackage) theEObject;
-				T result = caseJavaModel2UMLPackage(javaModel2UMLPackage);
-				if (result == null)
-					result = caseAbstractCorrespondence(javaModel2UMLPackage);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -113,11 +86,47 @@ public class UmlSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
+			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING: {
+				TypeAccess2TemplateBinding typeAccess2TemplateBinding = (TypeAccess2TemplateBinding) theEObject;
+				T result = caseTypeAccess2TemplateBinding(typeAccess2TemplateBinding);
+				if (result == null)
+					result = caseAbstractCorrespondence(typeAccess2TemplateBinding);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT: {
+				CompilationUnit2Artifact compilationUnit2Artifact = (CompilationUnit2Artifact) theEObject;
+				T result = caseCompilationUnit2Artifact(compilationUnit2Artifact);
+				if (result == null)
+					result = caseAbstractCorrespondence(compilationUnit2Artifact);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
 			case UmlPackage.MODIFIER2_NAMED_ELEMENT: {
 				Modifier2NamedElement modifier2NamedElement = (Modifier2NamedElement) theEObject;
 				T result = caseModifier2NamedElement(modifier2NamedElement);
 				if (result == null)
 					result = caseAbstractCorrespondence(modifier2NamedElement);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case UmlPackage.TYPE_ACCESS2_INTERFACE_REALIZATION: {
+				TypeAccess2InterfaceRealization typeAccess2InterfaceRealization = (TypeAccess2InterfaceRealization) theEObject;
+				T result = caseTypeAccess2InterfaceRealization(typeAccess2InterfaceRealization);
+				if (result == null)
+					result = caseAbstractCorrespondence(typeAccess2InterfaceRealization);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION: {
+				TypeAccess2Generalization typeAccess2Generalization = (TypeAccess2Generalization) theEObject;
+				T result = caseTypeAccess2Generalization(typeAccess2Generalization);
+				if (result == null)
+					result = caseAbstractCorrespondence(typeAccess2Generalization);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -132,20 +141,11 @@ public class UmlSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
-			case UmlPackage.TYPE_ACCESS2_INTERFACE_REALIZATION: {
-				TypeAccess2InterfaceRealization typeAccess2InterfaceRealization = (TypeAccess2InterfaceRealization) theEObject;
-				T result = caseTypeAccess2InterfaceRealization(typeAccess2InterfaceRealization);
+			case UmlPackage.JAVA_MODEL2_UML_PACKAGE: {
+				JavaModel2UMLPackage javaModel2UMLPackage = (JavaModel2UMLPackage) theEObject;
+				T result = caseJavaModel2UMLPackage(javaModel2UMLPackage);
 				if (result == null)
-					result = caseAbstractCorrespondence(typeAccess2InterfaceRealization);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
-			case UmlPackage.AST_NODE2_ELEMENT: {
-				ASTNode2Element astNode2Element = (ASTNode2Element) theEObject;
-				T result = caseASTNode2Element(astNode2Element);
-				if (result == null)
-					result = caseAbstractCorrespondence(astNode2Element);
+					result = caseAbstractCorrespondence(javaModel2UMLPackage);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -159,20 +159,20 @@ public class UmlSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
-			case UmlPackage.TYPE_ACCESS2_TEMPLATE_BINDING: {
-				TypeAccess2TemplateBinding typeAccess2TemplateBinding = (TypeAccess2TemplateBinding) theEObject;
-				T result = caseTypeAccess2TemplateBinding(typeAccess2TemplateBinding);
+			case UmlPackage.TYPE_ACCESS2_PROPERTY: {
+				TypeAccess2Property typeAccess2Property = (TypeAccess2Property) theEObject;
+				T result = caseTypeAccess2Property(typeAccess2Property);
 				if (result == null)
-					result = caseAbstractCorrespondence(typeAccess2TemplateBinding);
+					result = caseAbstractCorrespondence(typeAccess2Property);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
 			}
-			case UmlPackage.TYPE_ACCESS2_GENERALIZATION: {
-				TypeAccess2Generalization typeAccess2Generalization = (TypeAccess2Generalization) theEObject;
-				T result = caseTypeAccess2Generalization(typeAccess2Generalization);
+			case UmlPackage.AST_NODE2_ELEMENT: {
+				ASTNode2Element astNode2Element = (ASTNode2Element) theEObject;
+				T result = caseASTNode2Element(astNode2Element);
 				if (result == null)
-					result = caseAbstractCorrespondence(typeAccess2Generalization);
+					result = caseAbstractCorrespondence(astNode2Element);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -180,36 +180,6 @@ public class UmlSwitch<T> extends Switch<T> {
 			default:
 				return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Compilation Unit2 Artifact</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Compilation Unit2 Artifact</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompilationUnit2Artifact(CompilationUnit2Artifact object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Access2 Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Access2 Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypeAccess2Property(TypeAccess2Property object) {
-		return null;
 	}
 
 	/**
@@ -224,21 +194,6 @@ public class UmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTypeAccess2Parameter(TypeAccess2Parameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Java Model2 UML Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Java Model2 UML Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseJavaModel2UMLPackage(JavaModel2UMLPackage object) {
 		return null;
 	}
 
@@ -258,6 +213,36 @@ public class UmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Type Access2 Template Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Type Access2 Template Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypeAccess2TemplateBinding(TypeAccess2TemplateBinding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Compilation Unit2 Artifact</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Compilation Unit2 Artifact</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompilationUnit2Artifact(CompilationUnit2Artifact object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Modifier2 Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -269,21 +254,6 @@ public class UmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModifier2NamedElement(Modifier2NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameterized Type2 Redefinable Template Signature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameterized Type2 Redefinable Template Signature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParameterizedType2RedefinableTemplateSignature(ParameterizedType2RedefinableTemplateSignature object) {
 		return null;
 	}
 
@@ -303,17 +273,47 @@ public class UmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>AST Node2 Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Type Access2 Generalization</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>AST Node2 Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Type Access2 Generalization</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseASTNode2Element(ASTNode2Element object) {
+	public T caseTypeAccess2Generalization(TypeAccess2Generalization object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameterized Type2 Redefinable Template Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameterized Type2 Redefinable Template Signature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterizedType2RedefinableTemplateSignature(ParameterizedType2RedefinableTemplateSignature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Java Model2 UML Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Java Model2 UML Package</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJavaModel2UMLPackage(JavaModel2UMLPackage object) {
 		return null;
 	}
 
@@ -333,32 +333,32 @@ public class UmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Access2 Template Binding</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Type Access2 Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Access2 Template Binding</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Type Access2 Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTypeAccess2TemplateBinding(TypeAccess2TemplateBinding object) {
+	public T caseTypeAccess2Property(TypeAccess2Property object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Access2 Generalization</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>AST Node2 Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Access2 Generalization</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>AST Node2 Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTypeAccess2Generalization(TypeAccess2Generalization object) {
+	public T caseASTNode2Element(ASTNode2Element object) {
 		return null;
 	}
 

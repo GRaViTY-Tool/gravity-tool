@@ -17,7 +17,7 @@ public abstract class AbstractTransformationHandler extends AbstractHandler {
 
 	protected boolean isEnabled(final Predicate<IPGConverterFactory> constraint) {
 		final var activator = GravityActivator.getDefault();
-		for (final var project : SelectionHelper.getSelectedProjects()) {
+		for (final var project : UISelectionHelper.getSelectedProjects()) {
 			final var selection = activator.getSelectedConverterFactory(project);
 			if (selection == null) {
 				final var factory = activator.getSuitableConverterFactory(project, constraint);
