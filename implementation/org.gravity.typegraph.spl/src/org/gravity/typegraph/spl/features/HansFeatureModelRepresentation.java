@@ -7,10 +7,12 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import org.gravity.typegraph.spl.features.FeatureModelLoadingOptions.HansNameStrategy;
 
@@ -26,6 +28,11 @@ import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
  * <p>HAnS represents a hierarchy only. When normalized to FeatureIDE, every
  * parent is therefore represented as an AND group and children are mandatory
  * by default. This behavior can be changed with {@link FeatureModelLoadingOptions}.</p>
+ *
+ * <p>For colliding simple feature names, the default naming strategy uses the
+ * shortest unique HAnS location/path-qualified name (LPQ). This mirrors HAnS
+ * annotations such as {@code Authentication::Logging} instead of forcing a
+ * complete root-qualified path.</p>
  */
 public final class HansFeatureModelRepresentation implements FeatureModelRepresentation {
 
@@ -58,21 +65,29 @@ public final class HansFeatureModelRepresentation implements FeatureModelReprese
             throw new IllegalArgumentException("HAnS feature model must contain exactly one root feature, found " + roots.size());
         }
 
+        final List<List<String>> paths = new ArrayList<>();
+        collectPaths(roots.get(0), new ArrayDeque<>(), paths);
+        final Map<String, Integer> simpleNameCounts = new HashMap<>();
+        paths.forEach(featurePath -> simpleNameCounts.merge(featurePath.get(featurePath.size() - 1), 1, Integer::sum));
+        final Map<String, String> normalizedNames = normalizedNames(paths, simpleNameCounts);
+
         FMCoreLibrary.getInstance().install();
         final IFeatureModelFactory factory = FMFactoryManager.getFactory();
         final IFeatureModel model = factory.createFeatureModel();
-        final Map<String, Integer> simpleNameCounts = new HashMap<>();
-        countNames(roots.get(0), simpleNameCounts);
         final Map<String, String> sourceNames = new LinkedHashMap<>();
-        addNode(model, factory, null, roots.get(0), new ArrayDeque<>(), simpleNameCounts, sourceNames, true);
+        addNode(model, factory, null, roots.get(0), new ArrayDeque<>(), normalizedNames, sourceNames, true);
         return new ParsedProjectFeatureModel(model, Map.of(), sourceNames, id());
     }
 
     private IFeature addNode(final IFeatureModel model, final IFeatureModelFactory factory, final IFeature parent,
-            final Node node, final Deque<String> path, final Map<String, Integer> nameCounts,
+            final Node node, final Deque<String> path, final Map<String, String> normalizedNames,
             final Map<String, String> sourceNames, final boolean root) {
         path.addLast(node.name());
-        final String modelName = featureIdeName(node.name(), path, nameCounts);
+        final String fullPath = String.join("::", path);
+        final String modelName = normalizedNames.get(fullPath);
+        if (modelName == null) {
+            throw new IllegalStateException("No normalized HAnS name for '" + fullPath + "'");
+        }
         if (model.getFeature(modelName) != null) {
             throw new IllegalArgumentException("Duplicate normalized feature name '" + modelName + "'");
         }
@@ -88,30 +103,72 @@ public final class HansFeatureModelRepresentation implements FeatureModelReprese
             feature.getStructure().setMandatory(parent.getStructure().isAnd() && options.hansMandatory());
         }
         for (final Node child : node.children()) {
-            addNode(model, factory, feature, child, path, nameCounts, sourceNames, false);
+            addNode(model, factory, feature, child, path, normalizedNames, sourceNames, false);
         }
         path.removeLast();
         return feature;
     }
 
-    private String featureIdeName(final String simpleName, final Deque<String> path, final Map<String, Integer> counts) {
-        final HansNameStrategy strategy = options.hansNameStrategy();
-        return switch (strategy) {
-        case SIMPLE_STRICT -> {
-            if (counts.getOrDefault(simpleName, 0) > 1) {
-                throw new IllegalArgumentException("HAnS feature name '" + simpleName
-                        + "' occurs more than once; choose QUALIFY_ON_COLLISION or ALWAYS_QUALIFIED");
+    private Map<String, String> normalizedNames(final List<List<String>> paths,
+            final Map<String, Integer> simpleNameCounts) {
+        final Map<String, String> result = new LinkedHashMap<>();
+        final Set<String> used = new HashSet<>();
+        for (final List<String> path : paths) {
+            final String fullPath = String.join("::", path);
+            final String simpleName = path.get(path.size() - 1);
+            final HansNameStrategy strategy = options.hansNameStrategy();
+            final String modelName = switch (strategy) {
+            case SIMPLE_STRICT -> {
+                if (simpleNameCounts.getOrDefault(simpleName, 0) > 1) {
+                    throw new IllegalArgumentException("HAnS feature name '" + simpleName
+                            + "' occurs more than once; choose QUALIFY_ON_COLLISION or ALWAYS_QUALIFIED");
+                }
+                yield simpleName;
             }
-            yield simpleName;
+            case QUALIFY_ON_COLLISION -> simpleNameCounts.getOrDefault(simpleName, 0) > 1
+                    ? shortestUniqueLpq(path, paths) : simpleName;
+            case ALWAYS_QUALIFIED -> fullPath;
+            };
+            if (!used.add(modelName)) {
+                throw new IllegalArgumentException("HAnS hierarchy does not provide a unique LPQ for '" + fullPath + "'");
+            }
+            result.put(fullPath, modelName);
         }
-        case QUALIFY_ON_COLLISION -> counts.getOrDefault(simpleName, 0) > 1 ? String.join("::", path) : simpleName;
-        case ALWAYS_QUALIFIED -> String.join("::", path);
-        };
+        return result;
     }
 
-    private static void countNames(final Node node, final Map<String, Integer> counts) {
-        counts.merge(node.name(), 1, Integer::sum);
-        node.children().forEach(child -> countNames(child, counts));
+    private static String shortestUniqueLpq(final List<String> target, final List<List<String>> paths) {
+        for (int length = 2; length <= target.size(); length++) {
+            int matches = 0;
+            for (final List<String> candidate : paths) {
+                if (hasSameSuffix(target, candidate, length)) {
+                    matches++;
+                }
+            }
+            if (matches == 1) {
+                return String.join("::", target.subList(target.size() - length, target.size()));
+            }
+        }
+        return String.join("::", target);
+    }
+
+    private static boolean hasSameSuffix(final List<String> left, final List<String> right, final int length) {
+        if (left.size() < length || right.size() < length) {
+            return false;
+        }
+        for (int offset = 1; offset <= length; offset++) {
+            if (!left.get(left.size() - offset).equals(right.get(right.size() - offset))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static void collectPaths(final Node node, final Deque<String> current, final List<List<String>> paths) {
+        current.addLast(node.name());
+        paths.add(List.copyOf(current));
+        node.children().forEach(child -> collectPaths(child, current, paths));
+        current.removeLast();
     }
 
     static List<Node> parseTree(final List<String> lines) {
