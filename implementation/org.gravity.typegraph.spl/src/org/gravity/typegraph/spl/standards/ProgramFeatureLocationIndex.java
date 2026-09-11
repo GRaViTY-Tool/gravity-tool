@@ -26,8 +26,7 @@ public final class ProgramFeatureLocationIndex {
     public record Location(EObject programElement, TPresenceCondition presenceCondition) {
     }
 
-    private static final Pattern FEATURE_REFERENCE = Pattern
-            .compile("[A-Za-z0-9_']+(?:::[A-Za-z0-9_']+)*");
+    private static final Pattern FEATURE_REFERENCE = Pattern.compile("[A-Za-z0-9_']+(?:::[A-Za-z0-9_']+)*");
     private static final Set<String> RESERVED = Set.of("and", "or", "not", "true", "false", "defined", "ifdef",
             "ifndef");
 
@@ -37,12 +36,11 @@ public final class ProgramFeatureLocationIndex {
         if (programModel == null) {
             throw new IllegalArgumentException("programModel must not be null");
         }
-        if (programModel instanceof EObject root) {
-            index(root);
-            final var iterator = root.eAllContents();
-            while (iterator.hasNext()) {
-                index(iterator.next());
-            }
+        final EObject root = programModel;
+        index(root);
+        final var iterator = root.eAllContents();
+        while (iterator.hasNext()) {
+            index(iterator.next());
         }
     }
 
@@ -77,10 +75,11 @@ public final class ProgramFeatureLocationIndex {
             if (RESERVED.contains(reference.toLowerCase(Locale.ROOT))) {
                 continue;
             }
-            register(reference, new Location(programElement, presenceCondition));
+            final Location location = new Location(programElement, presenceCondition);
+            register(reference, location);
             final int separator = reference.lastIndexOf("::");
             if (separator >= 0 && separator + 2 < reference.length()) {
-                register(reference.substring(separator + 2), new Location(programElement, presenceCondition));
+                register(reference.substring(separator + 2), location);
             }
         }
     }

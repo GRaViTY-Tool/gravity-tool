@@ -9,7 +9,11 @@ Export-Package: org.gravity.typegraph.spl.util,
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .,
- target/dependency/snakeyaml.jar
+ target/dependency/snakeyaml.jar,
+ target/dependency/pdfbox.jar,
+ target/dependency/pdfbox-io.jar,
+ target/dependency/fontbox.jar,
+ target/dependency/commons-logging.jar
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17

@@ -15,6 +15,7 @@
 
   <properties>
     <snakeyaml.version>2.2</snakeyaml.version>
+    <pdfbox.version>3.0.8</pdfbox.version>
   </properties>
 
   <build>
@@ -47,6 +48,11 @@
       <groupId>org.yaml</groupId>
       <artifactId>snakeyaml</artifactId>
       <version>${snakeyaml.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.pdfbox</groupId>
+      <artifactId>pdfbox</artifactId>
+      <version>${pdfbox.version}</version>
     </dependency>
   </dependencies>
 </project>
