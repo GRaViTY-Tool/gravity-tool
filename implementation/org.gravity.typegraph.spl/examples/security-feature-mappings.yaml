@@ -1,0 +1,15 @@
+features:
+  authentication:
+    aliases: [Login, Sign In]
+    controls:
+      - standard: ISO/IEC 27002:2022
+        control: "5.17"
+        relation: REALIZES
+        source: curated
+  encryption:
+    aliases: [Data Encryption]
+    controls:
+      - standard: ISO/IEC 27002:2022
+        control: "8.24"
+        relation: REALIZES
+        source: curated

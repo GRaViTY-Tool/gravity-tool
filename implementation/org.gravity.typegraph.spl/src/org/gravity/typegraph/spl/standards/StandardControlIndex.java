@@ -1,0 +1,148 @@
+package org.gravity.typegraph.spl.standards;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
+
+/**
+ * Indexes actual {@code Control} EObjects from the standards model without a
+ * compile-time dependency on generated standards classes.
+ */
+public final class StandardControlIndex {
+
+    private record Key(String standard, String control) {
+    }
+
+    private final Map<Key, List<EObject>> byStandardAndControl = new LinkedHashMap<>();
+    private final Map<String, List<EObject>> byControl = new HashMap<>();
+    private final Set<EObject> indexedControls = new LinkedHashSet<>();
+
+    public StandardControlIndex(final Collection<? extends Resource> resources) {
+        if (resources != null) {
+            resources.forEach(this::index);
+        }
+    }
+
+    /**
+     * Resolves a textual control reference. A standard-qualified lookup must be
+     * unique. If no standard is supplied (or the supplied standard has no match),
+     * the control identifier is accepted only when unique across all indexed
+     * standards.
+     */
+    public Optional<EObject> resolve(final StandardControlReference reference) {
+        final String control = normalizeControl(reference.control());
+        if (!reference.standard().isBlank()) {
+            final List<EObject> exact = byStandardAndControl
+                    .getOrDefault(new Key(normalizeStandard(reference.standard()), control), List.of());
+            if (exact.size() == 1) {
+                return Optional.of(exact.get(0));
+            }
+            if (exact.size() > 1) {
+                return Optional.empty();
+            }
+        }
+        final List<EObject> candidates = byControl.getOrDefault(control, List.of());
+        return candidates.size() == 1 ? Optional.of(candidates.get(0)) : Optional.empty();
+    }
+
+    public int size() {
+        return indexedControls.size();
+    }
+
+    private void index(final Resource resource) {
+        if (resource == null) {
+            return;
+        }
+        for (final EObject root : resource.getContents()) {
+            indexObject(root);
+        }
+        final TreeIterator<EObject> iterator = resource.getAllContents();
+        while (iterator.hasNext()) {
+            indexObject(iterator.next());
+        }
+    }
+
+    private void indexObject(final EObject object) {
+        if ((object == null) || !"Control".equals(object.eClass().getName()) || !indexedControls.add(object)) {
+            return;
+        }
+        final String control = firstAttribute(object, "identifier", "id", "controlId", "number");
+        if ((control == null) || control.isBlank()) {
+            indexedControls.remove(object);
+            return;
+        }
+        final String normalizedControl = normalizeControl(control);
+        byControl.computeIfAbsent(normalizedControl, ignored -> new ArrayList<>()).add(object);
+
+        final Set<String> aliases = findStandardAliases(object);
+        if (aliases.isEmpty()) {
+            aliases.add("");
+        }
+        for (final String alias : aliases) {
+            final Key key = new Key(normalizeStandard(alias), normalizedControl);
+            byStandardAndControl.computeIfAbsent(key, ignored -> new ArrayList<>()).add(object);
+        }
+    }
+
+    private Set<String> findStandardAliases(final EObject control) {
+        EObject current = control.eContainer();
+        while (current != null) {
+            if ("Standard".equals(current.eClass().getName())) {
+                final Set<String> aliases = new LinkedHashSet<>();
+                addAttribute(aliases, current, "identifier");
+                addAttribute(aliases, current, "shortName");
+                addAttribute(aliases, current, "name");
+                addAttribute(aliases, current, "title");
+                return aliases;
+            }
+            current = current.eContainer();
+        }
+        return new LinkedHashSet<>();
+    }
+
+    private void addAttribute(final Set<String> values, final EObject object, final String name) {
+        final String value = attribute(object, name);
+        if ((value != null) && !value.isBlank()) {
+            values.add(value);
+        }
+    }
+
+    private String firstAttribute(final EObject object, final String... names) {
+        for (final String name : names) {
+            final String value = attribute(object, name);
+            if ((value != null) && !value.isBlank()) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private String attribute(final EObject object, final String name) {
+        final EStructuralFeature feature = object.eClass().getEStructuralFeature(name);
+        if ((feature == null) || feature.isMany()) {
+            return null;
+        }
+        final Object value = object.eGet(feature, false);
+        return value == null ? null : value.toString().trim();
+    }
+
+    private static String normalizeControl(final String value) {
+        return value == null ? "" : value.trim().toUpperCase(Locale.ROOT).replaceAll("\\s+", "");
+    }
+
+    private static String normalizeStandard(final String value) {
+        return value == null ? "" : value.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+", "");
+    }
+}

@@ -1,0 +1,12 @@
+project: Shop
+root:
+  name: Shop
+  group: and
+  children:
+    - name: Sign In
+      securityFeature: authentication
+    - name: Encryption
+      securityFeature: encryption
+      optional: true
+    - name: Audit Log
+      securityFeature: logging
