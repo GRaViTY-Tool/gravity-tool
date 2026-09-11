@@ -1,7 +1,7 @@
 package org.gravity.typegraph.spl.tests;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.nio.file.Files;
 
@@ -24,11 +24,10 @@ public class HansFeatureModelRepresentationTest {
                 """);
 
         final var parsed = new HansFeatureModelRepresentation(FeatureModelLoadingOptions.defaults()).parse(file);
-        final var model = parsed.featureModel();
 
-        assertNotNull(model.getFeature("Authentication::Logging"));
-        assertNotNull(model.getFeature("Diagnostics::Logging"));
-        assertNull(model.getFeature("Root::Authentication::Logging"));
-        assertNotNull(model.getFeature("Encryption"));
+        assertTrue(parsed.hasFeature("Authentication::Logging"));
+        assertTrue(parsed.hasFeature("Diagnostics::Logging"));
+        assertFalse(parsed.hasFeature("Root::Authentication::Logging"));
+        assertTrue(parsed.hasFeature("Encryption"));
     }
 }

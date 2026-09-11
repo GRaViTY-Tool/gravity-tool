@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.gravity.typegraph.spl.features.YamlFeatureModelRepresentation;
 import org.gravity.typegraph.spl.standards.FeatureMappingCatalog;
 import org.gravity.typegraph.spl.standards.ProjectFeatureStandardsMapper;
 import org.gravity.typegraph.spl.standards.StandardControlReference;
-import org.gravity.typegraph.spl.yaml.YamlFeatureModelParser;
 import org.junit.Test;
 
 public class YamlFeatureModelParserTest {
@@ -42,14 +42,13 @@ public class YamlFeatureModelParserTest {
                       optional: true
                 """);
 
-        final var parsed = new YamlFeatureModelParser().parse(yaml);
-        final var model = parsed.featureModel();
+        final var parsed = new YamlFeatureModelRepresentation().parse(yaml);
 
-        assertEquals("Shop", model.getStructure().getRoot().getFeature().getName());
-        assertTrue(model.getFeature("Authentication").getStructure().isMandatory());
-        assertFalse(model.getFeature("Audit").getStructure().isMandatory());
-        assertEquals("authentication", parsed.metadata(model.getFeature("Authentication")).semanticFeature());
-        assertEquals("5.17", parsed.metadata(model.getFeature("Authentication")).directMappings().get(0).control());
+        assertEquals("Shop", parsed.rootFeatureName());
+        assertTrue(parsed.isMandatory("Authentication"));
+        assertFalse(parsed.isMandatory("Audit"));
+        assertEquals("authentication", parsed.metadata("Authentication").semanticFeature());
+        assertEquals("5.17", parsed.metadata("Authentication").directMappings().get(0).control());
     }
 
     @Test
@@ -60,7 +59,7 @@ public class YamlFeatureModelParserTest {
                 features:
                   Sign In: {}
                 """);
-        final var parsed = new YamlFeatureModelParser().parse(yaml);
+        final var parsed = new YamlFeatureModelRepresentation().parse(yaml);
 
         final Resource standards = createStandardsResource();
         final EObject standard = standards.getContents().get(0);

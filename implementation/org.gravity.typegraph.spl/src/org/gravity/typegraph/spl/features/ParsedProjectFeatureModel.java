@@ -30,6 +30,32 @@ public record ParsedProjectFeatureModel(IFeatureModel featureModel,
                 : metadataByFeature.getOrDefault(feature.getName(), FeatureMetadata.empty());
     }
 
+    /** Returns metadata without exposing FeatureIDE's internal API to clients. */
+    public FeatureMetadata metadata(final String featureName) {
+        return featureName == null ? FeatureMetadata.empty()
+                : metadataByFeature.getOrDefault(featureName, FeatureMetadata.empty());
+    }
+
+    /** Returns the name of the root feature. */
+    public String rootFeatureName() {
+        final var root = featureModel.getStructure().getRoot();
+        return root == null || root.getFeature() == null ? "" : root.getFeature().getName();
+    }
+
+    /** Checks whether the normalized FeatureIDE model contains the given feature. */
+    public boolean hasFeature(final String featureName) {
+        return featureName != null && featureModel.getFeature(featureName) != null;
+    }
+
+    /** Returns whether the given feature is mandatory; unknown features return false. */
+    public boolean isMandatory(final String featureName) {
+        if (featureName == null) {
+            return false;
+        }
+        final var feature = featureModel.getFeature(featureName);
+        return feature != null && feature.getStructure().isMandatory();
+    }
+
     /** Returns the feature name as it appeared in the source representation. */
     public String sourceName(final IFeature feature) {
         if (feature == null) {
