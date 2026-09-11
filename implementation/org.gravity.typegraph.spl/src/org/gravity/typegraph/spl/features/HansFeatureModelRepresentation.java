@@ -19,7 +19,7 @@ import org.gravity.typegraph.spl.features.FeatureModelLoadingOptions.HansNameStr
 import de.ovgu.featureide.fm.core.base.IFeature;
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
 import de.ovgu.featureide.fm.core.base.IFeatureModelFactory;
-import de.ovgu.featureide.fm.core.base.impl.FMFactoryManager;
+import de.ovgu.featureide.fm.core.base.impl.DefaultFeatureModelFactory;
 import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
 
 /**
@@ -72,8 +72,8 @@ public final class HansFeatureModelRepresentation implements FeatureModelReprese
         final Map<String, String> normalizedNames = normalizedNames(paths, simpleNameCounts);
 
         FMCoreLibrary.getInstance().install();
-        final IFeatureModelFactory factory = FMFactoryManager.getFactory();
-        final IFeatureModel model = factory.createFeatureModel();
+        final IFeatureModelFactory factory = DefaultFeatureModelFactory.getInstance();
+        final IFeatureModel model = factory.create();
         final Map<String, String> sourceNames = new LinkedHashMap<>();
         addNode(model, factory, null, roots.get(0), new ArrayDeque<>(), normalizedNames, sourceNames, true);
         return new ParsedProjectFeatureModel(model, Map.of(), sourceNames, id());

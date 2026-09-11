@@ -20,7 +20,7 @@ import org.yaml.snakeyaml.constructor.SafeConstructor;
 import de.ovgu.featureide.fm.core.base.IFeature;
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
 import de.ovgu.featureide.fm.core.base.IFeatureModelFactory;
-import de.ovgu.featureide.fm.core.base.impl.FMFactoryManager;
+import de.ovgu.featureide.fm.core.base.impl.DefaultFeatureModelFactory;
 import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
 
 /**
@@ -55,8 +55,8 @@ public final class YamlFeatureModelParser {
 
     ParsedYamlFeatureModel parseRoot(final Map<?, ?> rootMap) {
         FMCoreLibrary.getInstance().install();
-        final IFeatureModelFactory factory = FMFactoryManager.getFactory();
-        final IFeatureModel model = factory.createFeatureModel();
+        final IFeatureModelFactory factory = DefaultFeatureModelFactory.getInstance();
+        final IFeatureModel model = factory.create();
         final Map<String, FeatureMetadata> metadata = new LinkedHashMap<>();
         final boolean defaultMandatory = booleanValue(rootMap.get("defaultMandatory"), true);
 
