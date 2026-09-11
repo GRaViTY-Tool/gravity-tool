@@ -1,23 +1,15 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule AnnotationMemberValueArray
+#abstract #rule AnnotationMemberValueArrayValues
 #with org.gravity.tgg.modisco.pm
 
 #source {
-	mOwner : BodyDeclaration {
-		-annotations->annotation
-	}
-	
-	annotation : Annotation {
-		 -values-> mAnnotationValue
-	}
-	
 	mAnnotationValue:AnnotationMemberValuePair {
-		++ -value -> mArray
+		-value -> mArray
 	}
 
-	++mArray:ArrayInitializer {
+	mArray:ArrayInitializer {
 		++ -expressions -> mValue
 	}
 
@@ -37,7 +29,7 @@
 
 #using org.gravity.tgg.modisco.pm.*
 
-#rule AnnotationMemberValueAnnotationArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+#rule AnnotationMemberValueAnnotationArray #extends AnnotationMemberValueArrayValues #with org.gravity.tgg.modisco.pm
 
 #source {
 	++mValue:Annotation
@@ -62,7 +54,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule AnnotationMemberValueBooleanArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+#rule AnnotationMemberValueBooleanArray #extends AnnotationMemberValueArrayValues #with org.gravity.tgg.modisco.pm
 
 #source {
 	++mValue:BooleanLiteral
@@ -89,7 +81,7 @@
 
 #using org.gravity.tgg.modisco.pm.*
 
-#rule AnnotationMemberValueClassArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+#rule AnnotationMemberValueClassArray #extends AnnotationMemberValueArrayValues #with org.gravity.tgg.modisco.pm
 
 #source {
 	++mValue:TypeLiteral {
@@ -131,7 +123,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule AnnotationMemberValueNumberArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+#rule AnnotationMemberValueNumberArray #extends AnnotationMemberValueArrayValues #with org.gravity.tgg.modisco.pm
 
 #source {
 	++mValue:NumberLiteral
@@ -160,7 +152,7 @@
 #using org.gravity.tgg.modisco.pm.*
 #using AttrCondDefLibrary.*
 
-#rule AnnotationMemberValueStringArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco.pm
+#rule AnnotationMemberValueStringArray #extends AnnotationMemberValueArrayValues #with org.gravity.tgg.modisco.pm
 
 #source {
 	++mValue:StringLiteral
@@ -184,5 +176,3 @@
 #attributeConditions {
 	eq(mValue.escapedValue, tValue.tText)
 }
-
-

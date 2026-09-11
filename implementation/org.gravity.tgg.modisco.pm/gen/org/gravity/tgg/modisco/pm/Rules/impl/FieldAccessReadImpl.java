@@ -777,7 +777,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_accessing) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_8(EMoflonEdge _edge_accessing) {
 
 		Object[] result1_bindingAndBlack = FieldAccessReadImpl
 				.pattern_FieldAccessRead_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -835,7 +835,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_mAbstractFieldAccess) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_9(EMoflonEdge _edge_mAbstractFieldAccess) {
 
 		Object[] result1_bindingAndBlack = FieldAccessReadImpl
 				.pattern_FieldAccessRead_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1231,110 +1231,110 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_FWD__MATCH_MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (MSingleVariableAccess) arguments.get(1),
-					(VariableDeclarationFragment) arguments.get(2), (MFieldDefinition) arguments.get(3),
-					(MDefinition) arguments.get(4));
-		case RulesPackage.FIELD_ACCESS_READ___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MSingleVariableAccess) arguments.get(1),
-					(VariableDeclarationFragment) arguments.get(2), (MFieldDefinition) arguments.get(3),
-					(MDefinition) arguments.get(4));
-			return null;
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MSingleVariableAccess) arguments.get(1),
-					(VariableDeclarationFragment) arguments.get(2), (MFieldDefinition) arguments.get(3),
-					(MDefinition) arguments.get(4));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSINGLEVARIABLEACCESS_MDEFINITIONTOTMEMBER_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITION_TFIELDDEFINITION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(MSingleVariableAccess) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
-					(VariableDeclarationFragment) arguments.get(3), (TMember) arguments.get(4),
-					(MFieldDefinition) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
-					(MDefinition) arguments.get(7), (TFieldDefinition) arguments.get(8));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-					(EObject) arguments.get(11));
-			return null;
-		case RulesPackage.FIELD_ACCESS_READ___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TREAD_TFIELDDEFINITION:
-			return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TRead) arguments.get(2),
-					(TFieldDefinition) arguments.get(3));
-		case RulesPackage.FIELD_ACCESS_READ___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TREAD_TFIELDDEFINITION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TRead) arguments.get(2),
-					(TFieldDefinition) arguments.get(3));
-			return null;
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TREAD_TFIELDDEFINITION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
-					(TRead) arguments.get(2), (TFieldDefinition) arguments.get(3));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_TREAD_MDEFINITIONTOTMEMBER_MDEFINITION_TFIELDDEFINITION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (VariableDeclarationFragment) arguments.get(2),
-					(TMember) arguments.get(3), (MFieldDefinition) arguments.get(4), (TRead) arguments.get(5),
-					(MDefinitionToTMember) arguments.get(6), (MDefinition) arguments.get(7),
-					(TFieldDefinition) arguments.get(8));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-					(EObject) arguments.get(11));
-			return null;
-		case RulesPackage.FIELD_ACCESS_READ___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_BWD_EMOFLON_EDGE_61__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_FWD_EMOFLON_EDGE_63__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_SOLVE_CSP_CC__MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_TREAD_MDEFINITION_TFIELDDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((MSingleVariableAccess) arguments.get(0),
-					(VariableDeclarationFragment) arguments.get(1), (TMember) arguments.get(2),
-					(MFieldDefinition) arguments.get(3), (TRead) arguments.get(4), (MDefinition) arguments.get(5),
-					(TFieldDefinition) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
-		case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FIELD_ACCESS_READ___CHECK_DEC_FWD__MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
-			return checkDEC_FWD((MSingleVariableAccess) arguments.get(0),
-					(VariableDeclarationFragment) arguments.get(1), (MFieldDefinition) arguments.get(2),
-					(MDefinition) arguments.get(3));
-		case RulesPackage.FIELD_ACCESS_READ___CHECK_DEC_BWD__TMEMBER_TREAD_TFIELDDEFINITION:
-			return checkDEC_BWD((TMember) arguments.get(0), (TRead) arguments.get(1),
-					(TFieldDefinition) arguments.get(2));
-		case RulesPackage.FIELD_ACCESS_READ___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER:
-			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
-					(MDefinitionToTMember) arguments.get(2));
-		case RulesPackage.FIELD_ACCESS_READ___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITION_TFIELDDEFINITION_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(MDefinitionToTMember) arguments.get(1), (VariableDeclarationFragment) arguments.get(2),
-					(TMember) arguments.get(3), (MFieldDefinition) arguments.get(4),
-					(MDefinitionToTMember) arguments.get(5), (MDefinition) arguments.get(6),
-					(TFieldDefinition) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
-		case RulesPackage.FIELD_ACCESS_READ___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_FWD__MATCH_MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
+				return isAppropriate_FWD((Match) arguments.get(0), (MSingleVariableAccess) arguments.get(1),
+						(VariableDeclarationFragment) arguments.get(2), (MFieldDefinition) arguments.get(3),
+						(MDefinition) arguments.get(4));
+			case RulesPackage.FIELD_ACCESS_READ___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MSingleVariableAccess) arguments.get(1),
+						(VariableDeclarationFragment) arguments.get(2), (MFieldDefinition) arguments.get(3),
+						(MDefinition) arguments.get(4));
+				return null;
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MSingleVariableAccess) arguments.get(1),
+						(VariableDeclarationFragment) arguments.get(2), (MFieldDefinition) arguments.get(3),
+						(MDefinition) arguments.get(4));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSINGLEVARIABLEACCESS_MDEFINITIONTOTMEMBER_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITION_TFIELDDEFINITION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MSingleVariableAccess) arguments.get(1), (MDefinitionToTMember) arguments.get(2),
+						(VariableDeclarationFragment) arguments.get(3), (TMember) arguments.get(4),
+						(MFieldDefinition) arguments.get(5), (MDefinitionToTMember) arguments.get(6),
+						(MDefinition) arguments.get(7), (TFieldDefinition) arguments.get(8));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+						(EObject) arguments.get(11));
+				return null;
+			case RulesPackage.FIELD_ACCESS_READ___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_BWD__MATCH_TMEMBER_TREAD_TFIELDDEFINITION:
+				return isAppropriate_BWD((Match) arguments.get(0), (TMember) arguments.get(1), (TRead) arguments.get(2),
+						(TFieldDefinition) arguments.get(3));
+			case RulesPackage.FIELD_ACCESS_READ___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMEMBER_TREAD_TFIELDDEFINITION:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+						(TRead) arguments.get(2), (TFieldDefinition) arguments.get(3));
+				return null;
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMEMBER_TREAD_TFIELDDEFINITION:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TMember) arguments.get(1),
+						(TRead) arguments.get(2), (TFieldDefinition) arguments.get(3));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_TREAD_MDEFINITIONTOTMEMBER_MDEFINITION_TFIELDDEFINITION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(MDefinitionToTMember) arguments.get(1), (VariableDeclarationFragment) arguments.get(2),
+						(TMember) arguments.get(3), (MFieldDefinition) arguments.get(4), (TRead) arguments.get(5),
+						(MDefinitionToTMember) arguments.get(6), (MDefinition) arguments.get(7),
+						(TFieldDefinition) arguments.get(8));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+						(EObject) arguments.get(11));
+				return null;
+			case RulesPackage.FIELD_ACCESS_READ___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_BWD_EMOFLON_EDGE_8__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_8((EMoflonEdge) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPROPRIATE_FWD_EMOFLON_EDGE_9__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_SOLVE_CSP_CC__MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_TREAD_MDEFINITION_TFIELDDEFINITION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((MSingleVariableAccess) arguments.get(0),
+						(VariableDeclarationFragment) arguments.get(1), (TMember) arguments.get(2),
+						(MFieldDefinition) arguments.get(3), (TRead) arguments.get(4), (MDefinition) arguments.get(5),
+						(TFieldDefinition) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
+			case RulesPackage.FIELD_ACCESS_READ___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.FIELD_ACCESS_READ___CHECK_DEC_FWD__MSINGLEVARIABLEACCESS_VARIABLEDECLARATIONFRAGMENT_MFIELDDEFINITION_MDEFINITION:
+				return checkDEC_FWD((MSingleVariableAccess) arguments.get(0),
+						(VariableDeclarationFragment) arguments.get(1), (MFieldDefinition) arguments.get(2),
+						(MDefinition) arguments.get(3));
+			case RulesPackage.FIELD_ACCESS_READ___CHECK_DEC_BWD__TMEMBER_TREAD_TFIELDDEFINITION:
+				return checkDEC_BWD((TMember) arguments.get(0), (TRead) arguments.get(1),
+						(TFieldDefinition) arguments.get(2));
+			case RulesPackage.FIELD_ACCESS_READ___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER_MDEFINITIONTOTMEMBER:
+				return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1),
+						(MDefinitionToTMember) arguments.get(2));
+			case RulesPackage.FIELD_ACCESS_READ___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_VARIABLEDECLARATIONFRAGMENT_TMEMBER_MFIELDDEFINITION_MDEFINITIONTOTMEMBER_MDEFINITION_TFIELDDEFINITION_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(MDefinitionToTMember) arguments.get(1), (VariableDeclarationFragment) arguments.get(2),
+						(TMember) arguments.get(3), (MFieldDefinition) arguments.get(4),
+						(MDefinitionToTMember) arguments.get(5), (MDefinition) arguments.get(6),
+						(TFieldDefinition) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
+			case RulesPackage.FIELD_ACCESS_READ___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -3094,10 +3094,10 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	public static final Object[] pattern_FieldAccessRead_21_2_testcorematchandDECs_black_nac_0BBB(
 			MSingleVariableAccess mAccess, MFieldDefinition mField, MDefinition mMember) {
 		if (!mField.equals(mMember)) {
-			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_662459 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_736403 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, MDefinition.class, "mAbstractFieldAccess")) {
-				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_662459)) {
-					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_662459)) {
+				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_736403)) {
+					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_736403)) {
 						return new Object[] { mAccess, mField, mMember };
 					}
 				}
@@ -3108,7 +3108,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 
 	public static final Object[] pattern_FieldAccessRead_21_2_testcorematchandDECs_black_nac_1B(
 			MSingleVariableAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_468054 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_479348 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}
@@ -3440,10 +3440,10 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 	public static final Object[] pattern_FieldAccessRead_27_1_matchtggpattern_black_nac_0BBB(
 			MSingleVariableAccess mAccess, MFieldDefinition mField, MDefinition mMember) {
 		if (!mField.equals(mMember)) {
-			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_405756 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (MDefinition __DEC_mAccess_mAbstractFieldAccess_923426 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(mAccess, MDefinition.class, "mAbstractFieldAccess")) {
-				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_405756)) {
-					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_405756)) {
+				if (!mField.equals(__DEC_mAccess_mAbstractFieldAccess_923426)) {
+					if (!mMember.equals(__DEC_mAccess_mAbstractFieldAccess_923426)) {
 						return new Object[] { mAccess, mField, mMember };
 					}
 				}
@@ -3454,7 +3454,7 @@ public class FieldAccessReadImpl extends AbstractRuleImpl implements FieldAccess
 
 	public static final Object[] pattern_FieldAccessRead_27_1_matchtggpattern_black_nac_1B(
 			MSingleVariableAccess mAccess) {
-		for (AnnotationMemberValuePair __DEC_mAccess_value_692020 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mAccess_value_384608 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mAccess };
 		}

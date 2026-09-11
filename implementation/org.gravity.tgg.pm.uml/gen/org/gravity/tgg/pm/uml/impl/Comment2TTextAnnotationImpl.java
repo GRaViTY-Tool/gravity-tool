@@ -162,14 +162,14 @@ public class Comment2TTextAnnotationImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Comment2TTextAnnotationImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
-			setSource((Comment) newValue);
-			return;
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
-			setTarget((TTextAnnotation) newValue);
-			return;
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
+				setSource((Comment) newValue);
+				return;
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
+				setTarget((TTextAnnotation) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Comment2TTextAnnotationImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
-			setSource((Comment) null);
-			return;
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
-			setTarget((TTextAnnotation) null);
-			return;
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
+				setSource((Comment) null);
+				return;
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
+				setTarget((TTextAnnotation) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Comment2TTextAnnotationImpl extends AbstractCorrespondenceImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
-			return source != null;
-		case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
-			return target != null;
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__SOURCE:
+				return source != null;
+			case UmlPackage.COMMENT2_TTEXT_ANNOTATION__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

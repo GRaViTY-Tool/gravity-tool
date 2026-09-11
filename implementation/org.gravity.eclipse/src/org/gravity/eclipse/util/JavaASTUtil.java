@@ -364,7 +364,7 @@ public final class JavaASTUtil {
 	 * @param type A type
 	 * @return The name object
 	 */
-	private static String getName(final Type type) {
+	public static String getName(final Type type) {
 		if (type.isSimpleType()) {
 			return ((SimpleType) type).getName().getFullyQualifiedName();
 		}
@@ -499,8 +499,8 @@ public final class JavaASTUtil {
 	 */
 	public static int getLine(final IJavaElement javaElement) throws CoreException {
 		final var underlyingResource = javaElement.getUnderlyingResource();
-		var line = 1;
-		if ("java".equals(underlyingResource.getFileExtension())) {
+		if (underlyingResource != null && "java".equals(underlyingResource.getFileExtension())) {
+			var line = 1;
 			try (var stream = ((IFile) underlyingResource).getContents()) {
 				int ch;
 				var count = ((ISourceReference) javaElement).getSourceRange().getOffset();
@@ -513,8 +513,10 @@ public final class JavaASTUtil {
 				LOGGER.log(Level.ERROR, e);
 				return -1;
 			}
+			return line;
 		}
-		return line;
+		LOGGER.warn("Java element has no underlying resource, cannot retrieve source line: " + javaElement);
+		return -1;
 	}
 
 	/**

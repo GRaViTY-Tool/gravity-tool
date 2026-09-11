@@ -48,7 +48,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, LineComment mComment, MDefinition mMember);
+	boolean isAppropriate_FWD(Match match, MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, LineComment mComment, MDefinition mMember);
+	void registerObjectsToMatch_FWD(Match match, MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, LineComment mComment, MDefinition mMember);
+	CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, LineComment mComment, MDefinition mMember,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MDefinition mMember, LineComment mComment,
 			TMember tMember, MDefinitionToTMember mMemberToTMember);
 
 	/**
@@ -113,8 +113,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mComment, EObject tText, EObject mCommentToTText,
-			EObject mMember, EObject tMember, EObject mMemberToTMember);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMember, EObject mComment, EObject mCommentToTText,
+			EObject tText, EObject tMember, EObject mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,7 +178,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TTextAnnotation tText, MDefinition mMember,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinition mMember, TTextAnnotation tText,
 			TMember tMember, MDefinitionToTMember mMemberToTMember);
 
 	/**
@@ -195,8 +195,8 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mComment, EObject tText, EObject mCommentToTText,
-			EObject mMember, EObject tMember, EObject mMemberToTMember);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMember, EObject mComment, EObject mCommentToTText,
+			EObject tText, EObject tMember, EObject mMemberToTMember);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_46(EMoflonEdge _edge_tAnnotated);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_47(EMoflonEdge _edge_tAnnotated);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_comments);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_49(EMoflonEdge _edge_comments);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(LineComment mComment, TTextAnnotation tText, MDefinition mMember, TMember tMember,
+	CSP isApplicable_solveCsp_CC(MDefinition mMember, LineComment mComment, TTextAnnotation tText, TMember tMember,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -269,7 +269,7 @@ public interface TextAnnotations extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(LineComment mComment, MDefinition mMember);
+	boolean checkDEC_FWD(MDefinition mMember, LineComment mComment);
 
 	/**
 	 * <!-- begin-user-doc -->

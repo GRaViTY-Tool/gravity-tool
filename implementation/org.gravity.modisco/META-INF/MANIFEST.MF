@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.modisco;singleton:=true
 Require-Bundle: org.eclipse.emf.ecore.xmi,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.modisco.java;visibility:=reexport,
  org.eclipse.modisco.infra.discovery.core;visibility:=reexport,
  org.eclipse.modisco.java.discoverer,

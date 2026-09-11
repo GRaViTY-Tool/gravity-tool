@@ -2,7 +2,15 @@ package p;
 
 public enum Enumeration {
 
-	CONSTANT {
+	CONSTANT1 {
+		@Override
+		<T> Type<? extends T> method() {
+			return new Type<T>() {
+
+			};
+		}
+	},
+	CONSTANT2 {
 		@Override
 		<T> Type<? extends T> method() {
 			return new Type<T>() {
@@ -10,7 +18,6 @@ public enum Enumeration {
 			};
 		}
 	};
-
 
 	abstract <T> Type<? extends T> method();
 }

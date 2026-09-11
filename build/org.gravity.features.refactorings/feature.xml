@@ -7,19 +7,18 @@
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0.qualifier">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description url="https://www.gravity-tool.org">
+      Allows to check and execute refactorings on the program model and synchronize the changes with source code.
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University
-of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
-Darmstadt.
+      (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
+   <url>
+      <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
+      <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
+   </url>
 
    <includes
          id="org.gravity.license.epl"

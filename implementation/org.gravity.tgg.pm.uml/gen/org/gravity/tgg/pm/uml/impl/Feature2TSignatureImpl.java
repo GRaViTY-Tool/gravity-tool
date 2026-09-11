@@ -162,14 +162,14 @@ public class Feature2TSignatureImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Feature2TSignatureImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
-			setSource((Feature) newValue);
-			return;
-		case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
-			setTarget((TSignature) newValue);
-			return;
+			case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
+				setSource((Feature) newValue);
+				return;
+			case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
+				setTarget((TSignature) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Feature2TSignatureImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
-			setSource((Feature) null);
-			return;
-		case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
-			setTarget((TSignature) null);
-			return;
+			case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
+				setSource((Feature) null);
+				return;
+			case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
+				setTarget((TSignature) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Feature2TSignatureImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
-			return source != null;
-		case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
-			return target != null;
+			case UmlPackage.FEATURE2_TSIGNATURE__SOURCE:
+				return source != null;
+			case UmlPackage.FEATURE2_TSIGNATURE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

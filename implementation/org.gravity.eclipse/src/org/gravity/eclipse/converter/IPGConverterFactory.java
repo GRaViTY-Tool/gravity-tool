@@ -11,6 +11,14 @@ import org.eclipse.core.resources.IProject;
 public interface IPGConverterFactory {
 
 	/**
+	 * Returns whether the project is supported by the converter factory
+	 *
+	 * @param project the project
+	 * @return true, if a converter can be grated for this project
+	 */
+	boolean supported(IProject project);
+
+	/**
 	 * Creates a new IPGConverter instance for an eclipse project.
 	 *
 	 * @param project the project
@@ -21,12 +29,10 @@ public interface IPGConverterFactory {
 	/**
 	 * Checks whether the given converter can be created by this factory
 	 *
-	 * @param converter
-	 *            the converter
+	 * @param converter the converter
 	 * @return true, if the converter can be created by this factory
 	 */
 	boolean belongsToFactory(IPGConverter converter);
-
 
 	/**
 	 * Returns a name for usage in the UI

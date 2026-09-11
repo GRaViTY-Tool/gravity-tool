@@ -727,7 +727,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_67(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_20(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsFloatImpl
 				.pattern_PrimitiveTypeIsFloat_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -785,7 +785,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_69(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsFloatImpl
 				.pattern_PrimitiveTypeIsFloat_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1180,92 +1180,93 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPEFLOAT_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (PrimitiveTypeFloat) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPEFLOAT_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (PrimitiveTypeFloat) arguments.get(1),
-					(Model) arguments.get(2));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPEFLOAT_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (PrimitiveTypeFloat) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPEFLOAT_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(PrimitiveTypeFloat) arguments.get(1), (ModelToTypeGraph) arguments.get(2),
-					(TModule) arguments.get(3), (TypeGraph) arguments.get(4), (Model) arguments.get(5));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1), (TypeGraph) arguments.get(2),
-					(TClass) arguments.get(3));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_TCLASS_MODEL:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (TClass) arguments.get(4),
-					(Model) arguments.get(5));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_67__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_67((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_69__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_69((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPEFLOAT_TMODULE_TYPEGRAPH_TCLASS_MODEL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((PrimitiveTypeFloat) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Model) arguments.get(4),
-					(Match) arguments.get(5), (Match) arguments.get(6));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_DEC_FWD__PRIMITIVETYPEFLOAT_MODEL:
-			return checkDEC_FWD((PrimitiveTypeFloat) arguments.get(0), (Model) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_DEC_BWD__TMODULE_TYPEGRAPH_TCLASS:
-			return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1), (TClass) arguments.get(2));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (Model) arguments.get(4),
-					(ModelgeneratorRuleResult) arguments.get(5));
-		case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPEFLOAT_MODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (PrimitiveTypeFloat) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPEFLOAT_MODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (PrimitiveTypeFloat) arguments.get(1),
+						(Model) arguments.get(2));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPEFLOAT_MODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (PrimitiveTypeFloat) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPEFLOAT_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(PrimitiveTypeFloat) arguments.get(1), (ModelToTypeGraph) arguments.get(2),
+						(TModule) arguments.get(3), (TypeGraph) arguments.get(4), (Model) arguments.get(5));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_TCLASS_MODEL:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (TypeGraph) arguments.get(3),
+						(TClass) arguments.get(4), (Model) arguments.get(5));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_20__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_20((EMoflonEdge) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_22__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_22((EMoflonEdge) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPEFLOAT_TMODULE_TYPEGRAPH_TCLASS_MODEL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((PrimitiveTypeFloat) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Model) arguments.get(4),
+						(Match) arguments.get(5), (Match) arguments.get(6));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_DEC_FWD__PRIMITIVETYPEFLOAT_MODEL:
+				return checkDEC_FWD((PrimitiveTypeFloat) arguments.get(0), (Model) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___CHECK_DEC_BWD__TMODULE_TYPEGRAPH_TCLASS:
+				return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1),
+						(TClass) arguments.get(2));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (TypeGraph) arguments.get(3),
+						(Model) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+			case RulesPackage.PRIMITIVE_TYPE_IS_FLOAT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2452,7 +2453,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_199984 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_395415 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2461,9 +2462,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_22761 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_118336 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_22761)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_118336)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2472,9 +2473,11 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_771551 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_771551 != null) {
-			return new Object[] { tPrimitiveClass };
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_429966 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_429966 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_429966)) {
+				return new Object[] { tPrimitiveClass };
+			}
 		}
 
 		return null;
@@ -2482,11 +2485,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_20_2_testcorematchandDECs_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_299517 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_299517 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_299517)) {
-				return new Object[] { tPrimitiveClass };
-			}
+		TPackage __DEC_tPrimitiveClass_allTypes_399716 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_399716 != null) {
+			return new Object[] { tPrimitiveClass };
 		}
 
 		return null;
@@ -2913,7 +2914,7 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_25648 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_452833 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2922,9 +2923,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_1BB(TClass tPrimitiveClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_372796 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_527815 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_372796)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_527815)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2933,9 +2934,11 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_277000 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_277000 != null) {
-			return new Object[] { tPrimitiveClass };
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_231477 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_231477 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_231477)) {
+				return new Object[] { tPrimitiveClass };
+			}
 		}
 
 		return null;
@@ -2943,11 +2946,9 @@ public class PrimitiveTypeIsFloatImpl extends AbstractRuleImpl implements Primit
 
 	public static final Object[] pattern_PrimitiveTypeIsFloat_28_1_matchtggpattern_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_46542 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_46542 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_46542)) {
-				return new Object[] { tPrimitiveClass };
-			}
+		TPackage __DEC_tPrimitiveClass_allTypes_91798 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_91798 != null) {
+			return new Object[] { tPrimitiveClass };
 		}
 
 		return null;

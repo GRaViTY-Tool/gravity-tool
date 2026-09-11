@@ -162,14 +162,14 @@ public class TypeParameterToTClassImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class TypeParameterToTClassImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
-			setSource((TypeParameter) newValue);
-			return;
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
-			setTarget((TClass) newValue);
-			return;
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
+				setSource((TypeParameter) newValue);
+				return;
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
+				setTarget((TClass) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class TypeParameterToTClassImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
-			setSource((TypeParameter) null);
-			return;
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
-			setTarget((TClass) null);
-			return;
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
+				setSource((TypeParameter) null);
+				return;
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
+				setTarget((TClass) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class TypeParameterToTClassImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
-			return source != null;
-		case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
-			return target != null;
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__SOURCE:
+				return source != null;
+			case PmPackage.TYPE_PARAMETER_TO_TCLASS__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

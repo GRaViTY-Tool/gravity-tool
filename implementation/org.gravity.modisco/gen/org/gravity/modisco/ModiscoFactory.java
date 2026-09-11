@@ -193,6 +193,15 @@ public interface ModiscoFactory extends EFactory {
 	MClassInstanceCreation createMClassInstanceCreation();
 
 	/**
+	 * Returns a new object of class '<em>MAnonymous Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MAnonymous Class</em>'.
+	 * @generated
+	 */
+	MAnonymousClass createMAnonymousClass();
+
+	/**
 	 * Returns a new object of class '<em>MSuper Constructor Invocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -162,14 +162,14 @@ public class Operation2TMethodSignatureImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Operation2TMethodSignatureImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
-			setSource((Operation) newValue);
-			return;
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
-			setTarget((TMethodSignature) newValue);
-			return;
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
+				setSource((Operation) newValue);
+				return;
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
+				setTarget((TMethodSignature) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Operation2TMethodSignatureImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
-			setSource((Operation) null);
-			return;
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
-			setTarget((TMethodSignature) null);
-			return;
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
+				setSource((Operation) null);
+				return;
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
+				setTarget((TMethodSignature) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Operation2TMethodSignatureImpl extends AbstractCorrespondenceImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
-			return source != null;
-		case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
-			return target != null;
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__SOURCE:
+				return source != null;
+			case UmlPackage.OPERATION2_TMETHOD_SIGNATURE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

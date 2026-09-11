@@ -162,14 +162,14 @@ public class MDefinitionToTMemberImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class MDefinitionToTMemberImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
-			setSource((BodyDeclaration) newValue);
-			return;
-		case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
-			setTarget((TMember) newValue);
-			return;
+			case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
+				setSource((BodyDeclaration) newValue);
+				return;
+			case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
+				setTarget((TMember) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class MDefinitionToTMemberImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
-			setSource((BodyDeclaration) null);
-			return;
-		case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
-			setTarget((TMember) null);
-			return;
+			case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
+				setSource((BodyDeclaration) null);
+				return;
+			case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
+				setTarget((TMember) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class MDefinitionToTMemberImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
-			return source != null;
-		case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
-			return target != null;
+			case PmPackage.MDEFINITION_TO_TMEMBER__SOURCE:
+				return source != null;
+			case PmPackage.MDEFINITION_TO_TMEMBER__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

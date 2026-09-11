@@ -47,7 +47,7 @@ import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
 import org.gravity.modisco.util.MoDiscoUtil;
-import org.gravity.security.annotations.AnnotationsActivator;
+import org.gravity.security.annotations.SecurityAnnoationsCheckActivator;
 import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.delta.Delta;
 import org.moflon.tgg.algorithm.delta.OnlineChangeDetector;
@@ -168,7 +168,7 @@ public final class Transformation extends AbstractModiscoTGGConverter {
 		final Collection<IPath> libs = new ArrayList<>();
 		if (addUMLsec) {
 			try {
-				libs.add(AnnotationsActivator.applyUMLsecLib(this.project, monitor));
+				libs.add(SecurityAnnoationsCheckActivator.applyUMLsecLib(this.project, monitor));
 			} catch (CoreException | IOException e) {
 				throw new TransformationFailedException(e);
 			}

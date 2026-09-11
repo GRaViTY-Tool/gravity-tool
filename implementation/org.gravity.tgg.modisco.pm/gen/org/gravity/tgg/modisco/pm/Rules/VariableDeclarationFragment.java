@@ -96,8 +96,8 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition);
+			MDefinitionToTMember eFieldDeclarationToTFieldDefinition, TFieldDefinition tDefinition,
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,9 +113,9 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject varDeclFragment, EObject tDefinition,
-			EObject mDefinition, EObject varDeclFragmentToTFieldDefinition,
-			EObject eFieldDeclarationToTFieldDefinition);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eFieldDeclarationToTFieldDefinition,
+			EObject tDefinition, EObject varDeclFragment, EObject mDefinition,
+			EObject varDeclFragmentToTFieldDefinition);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,7 +195,7 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_97(EMoflonEdge _edge_variablesContainer);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_78(EMoflonEdge _edge_variablesContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,8 +227,9 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment,
-			TFieldDefinition tDefinition, MFieldDefinition mDefinition, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TFieldDefinition tDefinition,
+			org.eclipse.modisco.java.VariableDeclarationFragment varDeclFragment, MFieldDefinition mDefinition,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,9 +271,9 @@ public interface VariableDeclarationFragment extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TFieldDefinition tDefinition,
-			MFieldDefinition mDefinition, MDefinitionToTMember eFieldDeclarationToTFieldDefinition,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			MDefinitionToTMember eFieldDeclarationToTFieldDefinition, TFieldDefinition tDefinition,
+			MFieldDefinition mDefinition, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

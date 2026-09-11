@@ -95,7 +95,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getPackages() <em>Packages</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPackages()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMethods()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClasses()
 	 * @generated
 	 * @ordered
@@ -135,7 +135,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}'
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterfaces()
 	 * @generated
 	 * @ordered
@@ -145,7 +145,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getAnnotationTypes() <em>Annotation
 	 * Types</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAnnotationTypes()
 	 * @generated
 	 * @ordered
@@ -155,7 +155,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getAllTypes() <em>All Types</em>}' reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllTypes()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * The cached value of the '{@link #getModules() <em>Modules</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModules()
 	 * @generated
 	 * @ordered
@@ -174,16 +174,15 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TypeGraphImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,134 +192,137 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TPackage> getPackages() {
-		if (packages == null) {
-			packages = new EObjectContainmentEList<TPackage>(TPackage.class, this, BasicPackage.TYPE_GRAPH__PACKAGES);
+		if (this.packages == null) {
+			this.packages = new EObjectContainmentEList<>(TPackage.class, this,
+					BasicPackage.TYPE_GRAPH__PACKAGES);
 		}
-		return packages;
+		return this.packages;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TMethod> getMethods() {
-		if (methods == null) {
-			methods = new EObjectContainmentWithInverseEList<TMethod>(TMethod.class, this,
+		if (this.methods == null) {
+			this.methods = new EObjectContainmentWithInverseEList<>(TMethod.class, this,
 					BasicPackage.TYPE_GRAPH__METHODS, BasicPackage.TMETHOD__MODEL);
 		}
-		return methods;
+		return this.methods;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TField> getFields() {
-		if (fields == null) {
-			fields = new EObjectContainmentWithInverseEList<TField>(TField.class, this, BasicPackage.TYPE_GRAPH__FIELDS,
-					BasicPackage.TFIELD__MODEL);
+		if (this.fields == null) {
+			this.fields = new EObjectContainmentWithInverseEList<>(TField.class, this,
+					BasicPackage.TYPE_GRAPH__FIELDS, BasicPackage.TFIELD__MODEL);
 		}
-		return fields;
+		return this.fields;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TClass> getClasses() {
-		if (classes == null) {
-			classes = new EObjectResolvingEList<TClass>(TClass.class, this, BasicPackage.TYPE_GRAPH__CLASSES);
+		if (this.classes == null) {
+			this.classes = new EObjectResolvingEList<>(TClass.class, this, BasicPackage.TYPE_GRAPH__CLASSES);
 		}
-		return classes;
+		return this.classes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TInterface> getInterfaces() {
-		if (interfaces == null) {
-			interfaces = new EObjectResolvingEList<TInterface>(TInterface.class, this,
+		if (this.interfaces == null) {
+			this.interfaces = new EObjectResolvingEList<>(TInterface.class, this,
 					BasicPackage.TYPE_GRAPH__INTERFACES);
 		}
-		return interfaces;
+		return this.interfaces;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAnnotationType> getAnnotationTypes() {
-		if (annotationTypes == null) {
-			annotationTypes = new EObjectResolvingEList<TAnnotationType>(TAnnotationType.class, this,
+		if (this.annotationTypes == null) {
+			this.annotationTypes = new EObjectResolvingEList<>(TAnnotationType.class, this,
 					BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES);
 		}
-		return annotationTypes;
+		return this.annotationTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAbstractType> getAllTypes() {
-		if (allTypes == null) {
-			allTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this,
+		if (this.allTypes == null) {
+			this.allTypes = new EObjectWithInverseResolvingEList<>(TAbstractType.class, this,
 					BasicPackage.TYPE_GRAPH__ALL_TYPES, BasicPackage.TABSTRACT_TYPE__MODEL);
 		}
-		return allTypes;
+		return this.allTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getTName() {
-		return tName;
+		return this.tName;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void setTName(String newTName) {
-		String oldTName = tName;
-		tName = newTName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TYPE_GRAPH__TNAME, oldTName, tName));
+	public void setTName(final String newTName) {
+		final var oldTName = this.tName;
+		this.tName = newTName;
+		if (this.eNotificationRequired()) {
+			this.eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TYPE_GRAPH__TNAME, oldTName,
+					this.tName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TModule> getModules() {
-		if (modules == null) {
-			modules = new EObjectContainmentEList<TModule>(TModule.class, this, BasicPackage.TYPE_GRAPH__MODULES);
+		if (this.modules == null) {
+			this.modules = new EObjectContainmentEList<>(TModule.class, this, BasicPackage.TYPE_GRAPH__MODULES);
 		}
-		return modules;
+		return this.modules;
 	}
 
 	/**
@@ -332,7 +334,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	public EList<TClass> getDeclaredTClasses() {
 		// [user code injected with eMoflon]
 		final EList<TClass> declaredClasses = new BasicEList<>();
-		for (final TClass tClass : getClasses()) {
+		for (final TClass tClass : this.getClasses()) {
 			if (tClass.isDeclared()) {
 				declaredClasses.add(tClass);
 			}
@@ -353,234 +355,238 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
+			final NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMethods()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFields()).basicAdd(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__ALL_TYPES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAllTypes()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getMethods()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getFields()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__ALL_TYPES:
+				return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getAllTypes()).basicAdd(otherEnd,
+						msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+			final NotificationChain msgs) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return ((InternalEList<?>) getPackages()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return ((InternalEList<?>) getMethods()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__ALL_TYPES:
-			return ((InternalEList<?>) getAllTypes()).basicRemove(otherEnd, msgs);
-		case BasicPackage.TYPE_GRAPH__MODULES:
-			return ((InternalEList<?>) getModules()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				return ((InternalEList<?>) this.getPackages()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return ((InternalEList<?>) this.getMethods()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return ((InternalEList<?>) this.getFields()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__ALL_TYPES:
+				return ((InternalEList<?>) this.getAllTypes()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TYPE_GRAPH__MODULES:
+				return ((InternalEList<?>) this.getModules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			return getTName();
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return getPackages();
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return getMethods();
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return getFields();
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			return getClasses();
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			return getInterfaces();
-		case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
-			return getAnnotationTypes();
-		case BasicPackage.TYPE_GRAPH__ALL_TYPES:
-			return getAllTypes();
-		case BasicPackage.TYPE_GRAPH__MODULES:
-			return getModules();
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				return this.getTName();
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				return this.getPackages();
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return this.getMethods();
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return this.getFields();
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				return this.getClasses();
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				return this.getInterfaces();
+			case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
+				return this.getAnnotationTypes();
+			case BasicPackage.TYPE_GRAPH__ALL_TYPES:
+				return this.getAllTypes();
+			case BasicPackage.TYPE_GRAPH__MODULES:
+				return this.getModules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			setTName((String) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			getPackages().clear();
-			getPackages().addAll((Collection<? extends TPackage>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			getMethods().clear();
-			getMethods().addAll((Collection<? extends TMethod>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			getFields().clear();
-			getFields().addAll((Collection<? extends TField>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			getClasses().clear();
-			getClasses().addAll((Collection<? extends TClass>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			getInterfaces().clear();
-			getInterfaces().addAll((Collection<? extends TInterface>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
-			getAnnotationTypes().clear();
-			getAnnotationTypes().addAll((Collection<? extends TAnnotationType>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__ALL_TYPES:
-			getAllTypes().clear();
-			getAllTypes().addAll((Collection<? extends TAbstractType>) newValue);
-			return;
-		case BasicPackage.TYPE_GRAPH__MODULES:
-			getModules().clear();
-			getModules().addAll((Collection<? extends TModule>) newValue);
-			return;
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				this.setTName((String) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				this.getPackages().clear();
+				this.getPackages().addAll((Collection<? extends TPackage>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				this.getMethods().clear();
+				this.getMethods().addAll((Collection<? extends TMethod>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				this.getFields().clear();
+				this.getFields().addAll((Collection<? extends TField>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				this.getClasses().clear();
+				this.getClasses().addAll((Collection<? extends TClass>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				this.getInterfaces().clear();
+				this.getInterfaces().addAll((Collection<? extends TInterface>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
+				this.getAnnotationTypes().clear();
+				this.getAnnotationTypes().addAll((Collection<? extends TAnnotationType>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__ALL_TYPES:
+				this.getAllTypes().clear();
+				this.getAllTypes().addAll((Collection<? extends TAbstractType>) newValue);
+				return;
+			case BasicPackage.TYPE_GRAPH__MODULES:
+				this.getModules().clear();
+				this.getModules().addAll((Collection<? extends TModule>) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			setTName(TNAME_EDEFAULT);
-			return;
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			getPackages().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			getMethods().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			getFields().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			getClasses().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			getInterfaces().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
-			getAnnotationTypes().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__ALL_TYPES:
-			getAllTypes().clear();
-			return;
-		case BasicPackage.TYPE_GRAPH__MODULES:
-			getModules().clear();
-			return;
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				this.setTName(TNAME_EDEFAULT);
+				return;
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				this.getPackages().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				this.getMethods().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				this.getFields().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				this.getClasses().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				this.getInterfaces().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
+				this.getAnnotationTypes().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__ALL_TYPES:
+				this.getAllTypes().clear();
+				return;
+			case BasicPackage.TYPE_GRAPH__MODULES:
+				this.getModules().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-		case BasicPackage.TYPE_GRAPH__TNAME:
-			return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
-		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return packages != null && !packages.isEmpty();
-		case BasicPackage.TYPE_GRAPH__METHODS:
-			return methods != null && !methods.isEmpty();
-		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return fields != null && !fields.isEmpty();
-		case BasicPackage.TYPE_GRAPH__CLASSES:
-			return classes != null && !classes.isEmpty();
-		case BasicPackage.TYPE_GRAPH__INTERFACES:
-			return interfaces != null && !interfaces.isEmpty();
-		case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
-			return annotationTypes != null && !annotationTypes.isEmpty();
-		case BasicPackage.TYPE_GRAPH__ALL_TYPES:
-			return allTypes != null && !allTypes.isEmpty();
-		case BasicPackage.TYPE_GRAPH__MODULES:
-			return modules != null && !modules.isEmpty();
+			case BasicPackage.TYPE_GRAPH__TNAME:
+				return TNAME_EDEFAULT == null ? this.tName != null : !TNAME_EDEFAULT.equals(this.tName);
+			case BasicPackage.TYPE_GRAPH__PACKAGES:
+				return this.packages != null && !this.packages.isEmpty();
+			case BasicPackage.TYPE_GRAPH__METHODS:
+				return this.methods != null && !this.methods.isEmpty();
+			case BasicPackage.TYPE_GRAPH__FIELDS:
+				return this.fields != null && !this.fields.isEmpty();
+			case BasicPackage.TYPE_GRAPH__CLASSES:
+				return this.classes != null && !this.classes.isEmpty();
+			case BasicPackage.TYPE_GRAPH__INTERFACES:
+				return this.interfaces != null && !this.interfaces.isEmpty();
+			case BasicPackage.TYPE_GRAPH__ANNOTATION_TYPES:
+				return this.annotationTypes != null && !this.annotationTypes.isEmpty();
+			case BasicPackage.TYPE_GRAPH__ALL_TYPES:
+				return this.allTypes != null && !this.allTypes.isEmpty();
+			case BasicPackage.TYPE_GRAPH__MODULES:
+				return this.modules != null && !this.modules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case BasicPackage.TYPE_GRAPH___GET_DECLARED_TCLASSES:
-			return getDeclaredTClasses();
-		case BasicPackage.TYPE_GRAPH___TO_STRING:
-			return toString();
-		case BasicPackage.TYPE_GRAPH___GET_PACKAGE__STRING:
-			return getPackage((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_PACKAGE__ELIST:
-			return getPackage((EList<String>) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_CLASS__STRING:
-			return getClass((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_INTERFACE__STRING:
-			return getInterface((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_METHOD__STRING:
-			return getMethod((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_FIELD__STRING:
-			return getField((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_SIGNATURE__STRING:
-			return getSignature((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING:
-			return getFieldSignature((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING:
-			return getMethodSignature((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_DEFINITION__STRING:
-			return getDefinition((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_FIELD_DEFINITION__STRING:
-			return getFieldDefinition((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___GET_METHOD_DEFINITION__STRING:
-			return getMethodDefinition((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___CREATE_PACKAGE__STRING:
-			return createPackage((String) arguments.get(0));
-		case BasicPackage.TYPE_GRAPH___CREATE_TCLASS__STRING_STRING_BOOLEAN_TVISIBILITY:
-			return createTClass((String) arguments.get(0), (String) arguments.get(1), (Boolean) arguments.get(2),
-					(TVisibility) arguments.get(3));
+			case BasicPackage.TYPE_GRAPH___GET_DECLARED_TCLASSES:
+				return this.getDeclaredTClasses();
+			case BasicPackage.TYPE_GRAPH___TO_STRING:
+				return this.toString();
+			case BasicPackage.TYPE_GRAPH___GET_PACKAGE__STRING:
+				return this.getPackage((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_PACKAGE__ELIST:
+				return this.getPackage((EList<String>) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_CLASS__STRING:
+				return this.getClass((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_INTERFACE__STRING:
+				return this.getInterface((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_METHOD__STRING:
+				return this.getMethod((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_FIELD__STRING:
+				return this.getField((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_SIGNATURE__STRING:
+				return this.getSignature((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING:
+				return this.getFieldSignature((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING:
+				return this.getMethodSignature((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_DEFINITION__STRING:
+				return this.getDefinition((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_FIELD_DEFINITION__STRING:
+				return this.getFieldDefinition((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___GET_METHOD_DEFINITION__STRING:
+				return this.getMethodDefinition((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___CREATE_PACKAGE__STRING:
+				return this.createPackage((String) arguments.get(0));
+			case BasicPackage.TYPE_GRAPH___CREATE_TCLASS__STRING_STRING_BOOLEAN_TVISIBILITY:
+				return this.createTClass((String) arguments.get(0), (String) arguments.get(1),
+						(Boolean) arguments.get(2),
+						(TVisibility) arguments.get(3));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -588,7 +594,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	@Override
 	public TPackage getPackage(final String namespace) {
-		return getPackage(namespace.split("\\."));
+		return this.getPackage(namespace.split("\\."));
 	}
 
 	/**
@@ -598,11 +604,11 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 */
 	@Override
 	public TPackage getPackage(final EList<String> namespace) {
-		return getPackage((List<String>) namespace);
+		return this.getPackage((List<String>) namespace);
 	}
 
 	public TPackage getPackage(final List<String> namespace) {
-		var next = getPackages();
+		var next = this.getPackages();
 		for (var i = 0; i < namespace.size(); i++) {
 			final var name = namespace.get(i);
 			var contains = false;
@@ -625,7 +631,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	@Override
 	public TPackage getPackage(final String[] namespace) {
-		var next = getPackages();
+		var next = this.getPackages();
 		for (var i = 0; i < namespace.length; i++) {
 			final var name = namespace[i];
 			var contains = false;
@@ -653,7 +659,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		if (index > 0) {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
-		final var tPackage = getPackage(defaultPackage);
+		final var tPackage = this.getPackage(defaultPackage);
 		if (tPackage != null) {
 			final var name = fullyQualifiedName.substring(index + 1);
 			for (final TClass tType : tPackage.getClasses()) {
@@ -663,7 +669,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			}
 		} else {
 			final var name = fullyQualifiedName.substring(index + 1);
-			for (final TClass tType : getClasses()) {
+			for (final TClass tType : this.getClasses()) {
 				if (tType.getTName().equals(name) || tType.getTName().contentEquals(fullyQualifiedName)) {
 					return tType;
 				}
@@ -679,7 +685,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		if (index > 0) {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
-		final var tPackage = getPackage(defaultPackage);
+		final var tPackage = this.getPackage(defaultPackage);
 		if (tPackage != null) {
 			final var name = fullyQualifiedName.substring(index + 1);
 			for (final TInterface tType : tPackage.getInterfaces()) {
@@ -699,7 +705,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
 		final var name = fullyQualifiedName.substring(index + 1);
-		final var tPackage = getPackage(defaultPackage);
+		final var tPackage = this.getPackage(defaultPackage);
 		if (tPackage != null) {
 			TAbstractType type = null;
 			for (final TAbstractType tType : tPackage.getAllTypes()) {
@@ -712,8 +718,12 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 				return type;
 			}
 		}
-		return getAllTypes().parallelStream()
-				.filter(type -> (type.getPackage() == null) && type.getTName().equals(name)).findAny().orElse(null);
+		if (index == -1) {
+			return this.getAllTypes().parallelStream()
+					.filter(t -> t.getPackage() == null && t.getTName().equals(fullyQualifiedName)).findAny()
+					.orElse(null);
+		}
+		return null;
 	}
 
 	/**
@@ -724,7 +734,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 */
 	@Override
 	public TMethod getMethod(final String name) {
-		return (TMethod) getElementByName(name, getMethods().parallelStream());
+		return (TMethod) this.getElementByName(name, this.getMethods().parallelStream());
 	}
 
 	/**
@@ -734,7 +744,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 */
 	@Override
 	public TField getField(final String name) {
-		return (TField) getElementByName(name, getFields().parallelStream());
+		return (TField) this.getElementByName(name, this.getFields().parallelStream());
 	}
 
 	/**
@@ -760,22 +770,22 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		}
 		TAbstractType type;
 		if (typeName.contains(".")) {
-			type = getType(typeName);
+			type = this.getType(typeName);
 		} else {
-			type = getAllTypes().parallelStream().filter(element -> finalTypeName.equals(element.getTName())).findAny()
-					.orElse(null);
+			type = this.getAllTypes().parallelStream().filter(element -> finalTypeName.equals(element.getTName()))
+					.findAny().orElse(null);
 		}
 		final var openBraceIndex = signature.lastIndexOf('(');
 		if (openBraceIndex < 0) {
 			final var name = signature.substring(0, colonIndex);
-			return getFieldSignature(name, type, isArray);
+			return this.getFieldSignature(name, type, isArray);
 		}
 		var name = signature.substring(0, openBraceIndex).trim();
 		final var dotIndex = name.lastIndexOf('.');
 		if (dotIndex >= 0) {
 			name = name.substring(dotIndex + 1);
 		}
-		final var method = getMethod(name);
+		final var method = this.getMethod(name);
 		if (method == null) {
 			return null;
 		}
@@ -787,7 +797,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		} else {
 			params = new String[0];
 		}
-		return getMethodSignature(method, type, isArray, params);
+		return this.getMethodSignature(method, type, isArray, params);
 	}
 
 	/**
@@ -809,7 +819,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			var equal = true;
 			var tParameter = methodSignature.getFirstParameter();
 			for (final String parameterTypeName : parameterSignatures) {
-				equal &= equals(parameterTypeName, tParameter);
+				equal &= this.equals(parameterTypeName, tParameter);
 				if (!equal) {
 					break;
 				}
@@ -858,7 +868,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * @return the signature of the field
 	 */
 	private TSignature getFieldSignature(final String name, final TAbstractType type, final boolean array) {
-		return getField(name).getSignatures().parallelStream()
+		return this.getField(name).getSignatures().parallelStream()
 				.filter(element -> type.equals(element.getType()) && (array == element.isArray())).findAny()
 				.orElse(null);
 	}
@@ -870,7 +880,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 */
 	@Override
 	public TFieldSignature getFieldSignature(final String signature) {
-		final var sig = getSignature(signature);
+		final var sig = this.getSignature(signature);
 		return sig instanceof TFieldDefinition ? (TFieldSignature) sig : null;
 	}
 
@@ -881,7 +891,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 */
 	@Override
 	public TMethodSignature getMethodSignature(final String signature) {
-		final var sig = getSignature(signature);
+		final var sig = this.getSignature(signature);
 		return sig instanceof TMethodSignature ? (TMethodSignature) sig : null;
 	}
 
@@ -894,10 +904,9 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	public TMember getDefinition(final String signature) {
 		final var index = signature.indexOf('(');
 		if (index < 0) {
-			return getFieldDefinition(signature);
-		} else {
-			return getMethodDefinition(signature);
+			return this.getFieldDefinition(signature);
 		}
+		return this.getMethodDefinition(signature);
 	}
 
 	/**
@@ -908,8 +917,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	@Override
 	public TFieldDefinition getFieldDefinition(final String signature) {
 		final var index = signature.lastIndexOf('.', signature.indexOf(':'));
-		final var fieldSig = getFieldSignature(signature.substring(index + 1));
-		final var type = getType(signature.substring(0, index));
+		final var fieldSig = this.getFieldSignature(signature.substring(index + 1));
+		final var type = this.getType(signature.substring(0, index));
 		return type.getDefines().parallelStream().filter(member -> member.getSignature().equals(fieldSig))
 				.map(TFieldDefinition.class::cast).findAny().orElse(null);
 	}
@@ -925,8 +934,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		if (index < 0) {
 			return null;
 		}
-		final var methodSig = getMethodSignature(signature.substring(index + 1));
-		final var type = getType(signature.substring(0, index));
+		final var methodSig = this.getMethodSignature(signature.substring(index + 1));
+		final var type = this.getType(signature.substring(0, index));
 		if (type == null) {
 			return null;
 		}
@@ -944,22 +953,21 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		final var names = namespace.split("\\.");
 		var i = 0;
 		TPackage currentPackage = null;
-		List<TPackage> subPackages = getPackages();
+		List<TPackage> subPackages = this.getPackages();
 		for (; i < names.length; i++) {
 			final var packageName = names[i];
 			final var match = subPackages.parallelStream().filter(n -> packageName.equals(n.getTName())).findAny();
-			if (match.isPresent()) {
-				currentPackage = match.get();
-				subPackages = currentPackage.getSubpackages();
-			} else {
+			if (!match.isPresent()) {
 				break;
 			}
+			currentPackage = match.get();
+			subPackages = currentPackage.getSubpackages();
 		}
 		for (; i < names.length; i++) {
 			final var nextPackage = BasicFactory.eINSTANCE.createTPackage();
 			nextPackage.setTName(names[i]);
 			if (i == 0) {
-				getPackages().add(nextPackage);
+				this.getPackages().add(nextPackage);
 			} else {
 				nextPackage.setParent(currentPackage);
 			}
@@ -985,9 +993,9 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		if (namespace == null) {
 			namespace = "(default package)";
 		}
-		p = getPackage(namespace);
+		p = this.getPackage(namespace);
 		if (p == null) {
-			p = createPackage(namespace);
+			p = this.createPackage(namespace);
 		}
 		return p.createTClass(name, lib, visibility);
 	}

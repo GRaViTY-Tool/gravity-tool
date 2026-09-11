@@ -37,23 +37,21 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	public boolean process(final MGravityModel model, final Collection<MAbstractMethodDefinition> elements,
 			final IFolder debug, final IProgressMonitor monitor) {
 		final var types = MoDiscoUtil.getAllTypes(model);
-		for(final MAbstractMethodDefinition def : elements) {
-			if(def.eContainer() == null) {
+		for (final MAbstractMethodDefinition def : elements) {
+			if (def.eContainer() == null) {
 				final var name = def.getName();
 				if (def instanceof ConstructorDeclaration) {
 					final var result = types.parallelStream().filter(t -> t.getName().equals(name)).findAny();
-					if(result.isPresent()) {
+					if (result.isPresent()) {
 						result.get().getBodyDeclarations().add(def);
-					}
-					else {
+					} else {
 						final var type = ModiscoFactory.eINSTANCE.createMClass();
 						type.setName(name);
 						type.getBodyDeclarations().add(def);
 						types.add(type);
 						model.getOrphanTypes().add(type);
 					}
-				}
-				else {
+				} else {
 					final var type = JavaFactory.eINSTANCE.createUnresolvedTypeDeclaration();
 					type.getBodyDeclarations().add(def);
 					model.getUnresolvedItems().add(type);
@@ -65,7 +63,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 		model.getMAbstractMethodDefinitions().addAll(elements);
 
 		// Create MMethodNames for MMethodDefinitions
-		model.getMMethodNames().addAll(createMethodNames(elements));
+		model.getMMethodNames().addAll(this.createMethodNames(elements));
 
 		// Create MMethodSignatures for MMethodNames
 		return model.getMMethodNames().stream().allMatch(this::createMethodSignatures);
@@ -101,7 +99,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	/**
 	 * Creates the method signature for the given method name
 	 *
-	 * @param name  A method name
+	 * @param name A method name
 	 * @return true, iff the signatures have been created successfully
 	 */
 	private boolean createMethodSignatures(final MMethodName name) {
@@ -122,8 +120,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * @param definition The method definition
 	 * @return true, if the creation was successful
 	 */
-	static boolean createMethodSignature(final MMethodName name,
-			final MAbstractMethodDefinition definition) {
+	static boolean createMethodSignature(final MMethodName name, final MAbstractMethodDefinition definition) {
 		final var mSigReturnType = MoDiscoUtil.getMostGenericReturnType(definition);
 		if (mSigReturnType == null) {
 			LOGGER.error("Couldn't find most geric return type for method definition:" + definition + ".");
@@ -137,12 +134,15 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 			MoDiscoUtil.fillParamList(definition, signature);
 		} else {
 			final var defParams = definition.getParameters();
-			final var mFirstEntry = signature.getMFirstEntry();
-			if (mFirstEntry != null) {
-				mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
-				for (var i = 1; i < signature.getMEntrys().size(); i++) {
-					mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
-				}
+			final var sigParams = signature.getMEntrys();
+			if (defParams.size() != sigParams.size()) {
+				LOGGER.error("Signature's parameter number do not match definitions paramter number.");
+				return false;
+			}
+			var entry = signature.getMFirstEntry();
+			for (final var param : defParams) {
+				entry.getAllParameterInstances().add((MSingleVariableDeclaration) param);
+				entry = entry.getMNext();
 			}
 		}
 		definition.setMSignature(signature);
@@ -158,8 +158,8 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * @param returnType The most generic return type
 	 * @return The signature or null
 	 */
-	private static MMethodSignature getExistingSignature(final MMethodName name, final MAbstractMethodDefinition definition,
-			final Type returnType) {
+	private static MMethodSignature getExistingSignature(final MMethodName name,
+			final MAbstractMethodDefinition definition, final Type returnType) {
 		for (final MSignature signature : name.getMSignatures()) {
 			final var methodSignature = (MMethodSignature) signature;
 			if (returnType.equals(methodSignature.getReturnType()) && isParamListEqual(definition, methodSignature)) {

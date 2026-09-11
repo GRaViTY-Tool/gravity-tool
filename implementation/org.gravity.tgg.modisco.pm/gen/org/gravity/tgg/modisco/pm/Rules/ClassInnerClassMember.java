@@ -225,7 +225,7 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_39(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +233,7 @@ public interface ClassInnerClassMember extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_89(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_41(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
