@@ -4,8 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Removes ordinary Java comments before the legacy source-position parser runs,
- * while preserving Antenna directives and HAnS embedded annotations.
+ * Removes ordinary Java comments before source-position matching while
+ * preserving the supported feature annotation syntaxes.
  */
 final class FeatureAnnotationCommentSanitizer {
 
@@ -29,12 +29,9 @@ final class FeatureAnnotationCommentSanitizer {
             final String comment = matcher.group();
             final String replacement;
             if (lineComment && ANTENNA_LINE.matcher(comment).lookingAt()) {
-                // AntennaExpressionHandler needs the complete directive text.
                 replacement = comment;
-            } else if (HansExpressionHandler.containsMarker(comment)) {
-                // Keep only HAnS markers/newlines so braces or Java-like text in
-                // comments cannot interfere with element-position matching.
-                replacement = HansExpressionHandler.retainMarkersAndLineBreaks(comment);
+            } else if (HansFeatureAnnotationParser.containsMarker(comment)) {
+                replacement = HansFeatureAnnotationParser.retainMarkersAndLineBreaks(comment);
             } else {
                 replacement = preserveLineBreaks(comment);
             }

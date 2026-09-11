@@ -1,6 +1,7 @@
 package org.gravity.eclipse.java.spl;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -10,7 +11,34 @@ import java.util.Set;
 
 import org.junit.Test;
 
-public class HansExpressionHandlerTest {
+public class FeatureAnnotationParserTest {
+
+    @Test
+    public void antennaAndHansAreIndependentParserSubclasses() {
+        final String source = """
+                //#if ProductA
+                // &begin[Security::Authentication]
+                void login() {}
+                // &end[Security::Authentication]
+                //#endif
+                """;
+
+        final FeatureAnnotationParser<Object> antenna = new AntennaFeatureAnnotationParser<>(source);
+        final FeatureAnnotationParser<Object> hans = new HansFeatureAnnotationParser<>(source);
+
+        assertTrue(antenna instanceof AbstractFeatureAnnotationParser<?>);
+        assertTrue(hans instanceof AbstractFeatureAnnotationParser<?>);
+        assertEquals("antenna", antenna.id());
+        assertEquals("hans", hans.id());
+        assertTrue(antenna.containsAnnotations());
+        assertTrue(hans.containsAnnotations());
+
+        final int start = source.indexOf("void login");
+        final int end = source.indexOf('}', start) + 1;
+        final var position = new ElementPosition<>(new Object(), "login", start, end);
+        assertEquals(Set.of("ProductA"), antenna.getSurroundingAnnotations(position));
+        assertEquals(Set.of("Security::Authentication"), hans.getSurroundingAnnotations(position));
+    }
 
     @Test
     public void discoversHansBlockAroundOperation() throws Exception {
@@ -24,18 +52,14 @@ public class HansExpressionHandlerTest {
                 """;
 
         final var discoverer = discoverer(source);
-        final Object operation = new Object();
         final var positions = discoverer.getOperationPosition("login", List.of(), List.of(), List.of(), "void",
-                operation);
+                new Object());
 
         assertEquals(1, positions.size());
         final var position = positions.iterator().next();
         assertEquals(Set.of("Security::Authentication"), discoverer.getSurroundingHansAnnotations(position));
-        // Existing clients use this legacy method; it intentionally exposes the
-        // combined annotation view so no converter change is required.
-        assertEquals(Set.of("Security::Authentication"), discoverer.getSurroundingAntennaAnnotations(position));
-        assertTrue(discoverer.hasFeatureAnnotations());
         assertTrue(discoverer.hasHansAnnotations());
+        assertFalse(discoverer.containsAntennaAnnotations());
     }
 
     @Test
@@ -47,12 +71,12 @@ public class HansExpressionHandlerTest {
                 // &end[Logging]
                 // &end[Authentication]
                 """;
-        final var handler = new HansExpressionHandler<Object>(source);
+        final FeatureAnnotationParser<Object> parser = new HansFeatureAnnotationParser<>(source);
         final int start = source.indexOf("void login");
         final int end = source.indexOf('}', start) + 1;
         final var position = new ElementPosition<>(new Object(), "login", start, end);
 
-        assertEquals(Set.of("Authentication", "Logging"), handler.getSurroundingHansAnnotations(position));
+        assertEquals(Set.of("Authentication", "Logging"), parser.getSurroundingAnnotations(position));
     }
 
     @Test
@@ -62,16 +86,16 @@ public class HansExpressionHandlerTest {
                     int level; // &line[Logging]
                 }
                 """;
-        final var handler = new HansExpressionHandler<Object>(source);
+        final FeatureAnnotationParser<Object> parser = new HansFeatureAnnotationParser<>(source);
         final int start = source.indexOf("int level");
         final int end = source.indexOf(';', start) + 1;
         final var position = new ElementPosition<>(new Object(), "level", start, end);
 
-        assertEquals(Set.of("Logging"), handler.getSurroundingHansAnnotations(position));
+        assertEquals(Set.of("Logging"), parser.getSurroundingAnnotations(position));
     }
 
     @Test
-    public void combinesAntennaAndHansWithoutChangingExistingEntryPoint() throws Exception {
+    public void discovererCombinesParsersButKeepsSyntaxSpecificAccess() throws Exception {
         final String source = """
                 class LoginService {
                     //#if ProductA
@@ -88,19 +112,21 @@ public class HansExpressionHandlerTest {
                 new Object());
         final var position = positions.iterator().next();
 
+        assertEquals(2, discoverer.getAnnotationParsers().size());
+        assertTrue(discoverer.getAnnotationParsers().get(0) instanceof AntennaFeatureAnnotationParser<?>);
+        assertTrue(discoverer.getAnnotationParsers().get(1) instanceof HansFeatureAnnotationParser<?>);
+        assertEquals(Set.of("ProductA"), discoverer.getSurroundingOnlyAntennaAnnotations(position));
+        assertEquals(Set.of("Authentication"), discoverer.getSurroundingHansAnnotations(position));
         assertEquals(Set.of("ProductA", "Authentication"), discoverer.getSurroundingFeatureAnnotations(position));
-        assertEquals(Set.of("ProductA", "Authentication"), discoverer.getSurroundingAntennaAnnotations(position));
-        assertTrue(discoverer.containsAntennaAnnotations());
-        assertTrue(discoverer.hasHansAnnotations());
     }
 
     @Test(expected = IllegalStateException.class)
-    public void rejectsMismatchedHansBlocks() {
-        new HansExpressionHandler<>("// &begin[A]\nint x;\n// &end[B]\n");
+    public void hansParserRejectsMismatchedBlocks() {
+        new HansFeatureAnnotationParser<>("// &begin[A]\nint x;\n// &end[B]\n");
     }
 
     private static JavaProjectSplDiscoverer<Object> discoverer(final String source) throws Exception {
         return new JavaProjectSplDiscoverer<>(
-                new ByteArrayInputStream(source.getBytes(StandardCharsets.UTF_8)), "HansExpressionHandlerTest.java");
+                new ByteArrayInputStream(source.getBytes(StandardCharsets.UTF_8)), "FeatureAnnotationParserTest.java");
     }
 }
