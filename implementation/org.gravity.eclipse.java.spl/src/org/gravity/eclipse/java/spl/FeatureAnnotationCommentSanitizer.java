@@ -11,6 +11,7 @@ final class FeatureAnnotationCommentSanitizer {
 
     private static final Pattern LINE_COMMENT = Pattern.compile("//[^\\r\\n]*(?:\\r\\n|\\r|\\n|$)");
     private static final Pattern BLOCK_COMMENT = Pattern.compile("/\\*(?s:.*?)\\*/");
+    private static final Pattern ANTENNA_LINE = Pattern.compile("//\\s*#");
 
     private FeatureAnnotationCommentSanitizer() {
     }
@@ -27,7 +28,7 @@ final class FeatureAnnotationCommentSanitizer {
         while (matcher.find()) {
             final String comment = matcher.group();
             final String replacement;
-            if (lineComment && comment.matches("//\\s*#.*")) {
+            if (lineComment && ANTENNA_LINE.matcher(comment).lookingAt()) {
                 // AntennaExpressionHandler needs the complete directive text.
                 replacement = comment;
             } else if (HansExpressionHandler.containsMarker(comment)) {
