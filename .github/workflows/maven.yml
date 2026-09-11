@@ -31,9 +31,10 @@ jobs:
           java-version: 21
           cache: maven
 
-      # Build + Test + Sonar (only for trusted contexts)
+      # SonarQube Cloud Free supports main-branch analysis and PR analysis targeting main.
+      # Keep Sonar enabled for master pushes and trusted same-repository PRs to master.
       - name: Build & Test with SonarCloud
-        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -43,9 +44,9 @@ jobs:
             verify \
             org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
-      # Build + Test (no Sonar for forks)
-      - name: Build & Test (no Sonar for forks)
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+      # Feature-branch pushes, tag pushes, and fork PRs still execute the full build and test suite.
+      - name: Build & Test (without SonarCloud)
+        if: (github.event_name == 'push' && github.ref != 'refs/heads/master') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository)
         run: |
           xvfb-run mvn \
             -Declipse.p2.mirrors=false \
@@ -74,6 +75,3 @@ jobs:
           files: |
             build/org.gravity.updatesite/target/site.zip
             build/org.gravity.headless.product/target/products/*.zip
-
-
-
