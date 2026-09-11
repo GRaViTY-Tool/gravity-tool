@@ -24,8 +24,6 @@ import org.prop4j.NodeWriter;
 import de.ovgu.featureide.fm.core.analysis.cnf.CNFCreator;
 import de.ovgu.featureide.fm.core.analysis.cnf.Nodes;
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
-import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
-import de.ovgu.featureide.fm.core.io.manager.FeatureModelManager;
 
 public class VariabilityAwareProgramModel implements MultiVarProcessor<SplPackage, IFeatureModel> {
 
@@ -56,8 +54,7 @@ public class VariabilityAwareProgramModel implements MultiVarProcessor<SplPackag
 
 	@Override
 	public MultiVarEGraph createEGraphAndCollectPCs(final Resource resource, final String fm) {
-		FMCoreLibrary.getInstance().install();
-		final IFeatureModel featureModel = FeatureModelManager.load(Path.of(fm));
+		final IFeatureModel featureModel = FeatureModelLoader.load(Path.of(fm));
 		return createEGraphAndCollectPCs(resource.getContents(), featureModel);
 	}
 
@@ -67,8 +64,7 @@ public class VariabilityAwareProgramModel implements MultiVarProcessor<SplPackag
 	}
 
 	private String getFeatureModelCNF(final Path path) {
-		FMCoreLibrary.getInstance().install();
-		final IFeatureModel featureModel = FeatureModelManager.load(path);
+		final IFeatureModel featureModel = FeatureModelLoader.load(path);
 		return getCNF(featureModel);
 	}
 
