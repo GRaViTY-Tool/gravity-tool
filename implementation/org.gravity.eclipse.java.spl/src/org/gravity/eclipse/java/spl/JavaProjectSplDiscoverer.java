@@ -27,8 +27,6 @@ public class JavaProjectSplDiscoverer<T> {
 
 	private static final Logger LOGGER = Logger.getLogger(JavaProjectSplDiscoverer.class);
 
-	private static final Pattern REGEX_LINE_COMMENT_NON_ANTENNA = Pattern.compile("(\\/\\/(?!\\s*#).*?(\\n|\\r))");
-	private static final Pattern REGEX_COMMENT_NON_ANTENNA = Pattern.compile("(\\/\\*(.|\\n)*?\\*\\/)");
 	private static final Pattern REGEX_STRING_CONTENT = Pattern.compile("(?!\\\\)\".*?(?!\\\\)\"");
 
 	private static final String REGEX_CLASSIFIER = "(interface|enum|class)\\s*?" + NAME
@@ -42,17 +40,14 @@ public class JavaProjectSplDiscoverer<T> {
 	private static final String REGEX_PARAMETER_ARRAY = REGEX_JAVA_ANNOTATION + "\\s*(final)?\\s*"
 			+ "(\\s*\\w*\\s*\\.)*\\s*" + "(" + "(" + "(" + REGEX_COLLECTION_TYPE + "|" + "(" + TYPE
 			+ "\\s*(<(\\S|\\s)*?>)?\\s*(\\[\\s*\\])+?)" + ")" + "\\s*?" + NAME + ")" + "|" + "(" + TYPE
-			+ "\\s*(<(\\S|\\s)*?>)?\\s*" + NAME + "\\s*?(\\[\\s*?\\])+?" + ")" + ")";// + "\\s*?,\\s*?" + PARAM;
+			+ "\\s*(<(\\S|\\s)*?>)?\\s*" + NAME + "\\s*?(\\[\\s*?\\])+?" + ")" + ")";
 	private static final String REGEX_PARAMETER_SINGLE = REGEX_JAVA_ANNOTATION + "\\s*(final)?\\s*"
-			+ "(\\s*\\w*\\s*\\.)*\\s*" + "(" + TYPE + "\\s*(\\.\\.\\.)?(\\s*<(\\S|\\s)*?>)?)\\s*?" + NAME;// +
-	// "\\s*?,\\s*?"
-	// +
-	// PARAM;
+			+ "(\\s*\\w*\\s*\\.)*\\s*" + "(" + TYPE + "\\s*(\\.\\.\\.)?(\\s*<(\\S|\\s)*?>)?)\\s*?" + NAME;
 
 	private final List<Integer> open = new ArrayList<>();
 	private final List<Integer> close = new ArrayList<>();
 
-	private final AntennaExpressionHandler<T> expressionHandler;
+	private final FeatureAnnotationSupport<T> annotationSupport;
 	private final String contents;
 
 	public JavaProjectSplDiscoverer(final InputStream contents, final String id) throws IOException {
@@ -63,23 +58,15 @@ public class JavaProjectSplDiscoverer<T> {
 		System.out.println("-> replaced #ifndef");
 		contentString = REGEX_STRING_CONTENT.matcher(contentString).replaceAll("\"\"");
 		System.out.println("-> Replaced strings");
-		contentString = REGEX_LINE_COMMENT_NON_ANTENNA.matcher(contentString).replaceAll("");
-		System.out.println("-> Replaced line comments");
 
-		final StringBuilder result = new StringBuilder();
-		int start = contentString.indexOf("/*");
-		int end = 0;
-		while ((start = contentString.indexOf("/*", end)) != -1) {
-			result.append(contentString.substring(end, start));
-			end = contentString.indexOf("*/", start) + 2;
-		}
-		result.append(contentString.substring(end, contentString.length()));
+		// Keep Antenna directives and HAnS markers while masking ordinary comments.
+		// The masking is length preserving, so source positions remain stable.
+		contentString = FeatureAnnotationCommentSanitizer.sanitize(contentString);
+		System.out.println("-> Replaced non-feature comments");
 
-		this.contents = result.toString();
-		System.out.println("-> Replaced * comments");
-
-		this.expressionHandler = new AntennaExpressionHandler<>(this.contents);
-		if (this.expressionHandler.containsAntennaAnnotations()) {
+		this.contents = contentString;
+		this.annotationSupport = new FeatureAnnotationSupport<>(this.contents);
+		if (this.annotationSupport.containsFeatureAnnotations()) {
 			createListsOfOpeningAndClosingBraces(id);
 		}
 	}
@@ -146,7 +133,7 @@ public class JavaProjectSplDiscoverer<T> {
 			pattern = Pattern.compile(returnType + "\\s*?(<.*?>)?\\s*" + expression + "(\\{|;)");
 		}
 		final String param = buildParamRegex(paramNames, paramTypes, paramsAreArrays);
-		final Pattern paramPattern =  Pattern.compile("\\(\\s*"+param+"\\s*?\\)");
+		final Pattern paramPattern = Pattern.compile("\\(\\s*" + param + "\\s*?\\)");
 		final Matcher methodMatcher = pattern.matcher(this.contents);
 		while (methodMatcher.find()) {
 			final String paramGroup = methodMatcher.group();
@@ -193,8 +180,8 @@ public class JavaProjectSplDiscoverer<T> {
 				} else {
 					regex = REGEX_PARAMETER_SINGLE;
 				}
-				paramRegex.append(regex.replace(TYPE, "((\\w|\\d|,|\\_|\\$|)*(\\s|\\n)*\\.)*"+paramType).replace(NAME, paramName));
-
+				paramRegex.append(regex.replace(TYPE, "((\\w|\\d|,|\\_|\\$|)*(\\s|\\n)*\\.)*" + paramType)
+						.replace(NAME, paramName));
 			}
 		}
 		paramRegex.append("\\s*?");
@@ -220,19 +207,64 @@ public class JavaProjectSplDiscoverer<T> {
 	}
 
 	/**
-	 * A getter for the contents of the file
+	 * A getter for the contents of the file.
 	 *
-	 * @return The file content as string
+	 * @return The sanitized file content used for source-position matching
 	 */
 	public String getContents() {
 		return this.contents;
 	}
 
-	public Set<String> getSurroundingAntennaAnnotations(final ElementPosition<T> classifierPosition) {
-		return this.expressionHandler.getSurroundingAntennaAnnotations(classifierPosition);
+	/**
+	 * Gets all supported feature annotations surrounding the program element.
+	 * Antenna expressions and HAnS feature references are combined.
+	 */
+	public Set<String> getSurroundingFeatureAnnotations(final ElementPosition<? extends T> position) {
+		return this.annotationSupport.getSurroundingFeatureAnnotations(position);
 	}
 
+	/** Gets only HAnS feature annotations surrounding the program element. */
+	public Set<String> getSurroundingHansAnnotations(final ElementPosition<? extends T> position) {
+		return this.annotationSupport.getSurroundingHansAnnotations(position);
+	}
+
+	/** Gets only Antenna expressions surrounding the program element. */
+	public Set<String> getSurroundingOnlyAntennaAnnotations(final ElementPosition<? extends T> position) {
+		return this.annotationSupport.getSurroundingAntennaAnnotations(position);
+	}
+
+	/**
+	 * Compatibility entry point used by the existing SPL conversion pipeline.
+	 * It now returns all supported source feature annotations so HAnS works
+	 * without changing existing callers.
+	 *
+	 * @deprecated use {@link #getSurroundingFeatureAnnotations(ElementPosition)}
+	 */
+	@Deprecated
+	public Set<String> getSurroundingAntennaAnnotations(final ElementPosition<? extends T> position) {
+		return getSurroundingFeatureAnnotations(position);
+	}
+
+	public boolean hasFeatureAnnotations() {
+		return this.annotationSupport.containsFeatureAnnotations();
+	}
+
+	public boolean hasHansAnnotations() {
+		return this.annotationSupport.containsHansAnnotations();
+	}
+
+	public boolean containsAntennaAnnotations() {
+		return this.annotationSupport.containsAntennaAnnotations();
+	}
+
+	/**
+	 * Compatibility entry point used by existing callers. It now reports whether
+	 * any supported feature-annotation syntax is present.
+	 *
+	 * @deprecated use {@link #hasFeatureAnnotations()}
+	 */
+	@Deprecated
 	public boolean hasAntennaAnnotations() {
-		return this.expressionHandler.containsAntennaAnnotations();
+		return hasFeatureAnnotations();
 	}
 }
