@@ -5,26 +5,28 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gravity.typegraph.spl.yaml.ParsedYamlFeatureModel;
+import org.gravity.typegraph.spl.FeatureModelLoader;
+import org.gravity.typegraph.spl.features.FeatureModelLoadingOptions;
+import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
 import org.gravity.typegraph.spl.yaml.YamlFeatureMappingCatalogParser;
-import org.gravity.typegraph.spl.yaml.YamlFeatureModelParser;
 
-/**
- * Facade for the common workflow: parse a project's YAML feature model and
- * resolve its feature-to-control mappings against already loaded standard
- * resources.
- */
+/** Facade for loading any configured project feature representation and mapping it to standards. */
 public final class ProjectStandardsIntegration {
 
-    public record Result(ParsedYamlFeatureModel project, FeatureStandardsMappingResult mappings) {
+    public record Result(ParsedProjectFeatureModel project, FeatureStandardsMappingResult mappings) {
     }
 
     private ProjectStandardsIntegration() {
     }
 
-    public static Result load(final Path projectYaml, final Path mappingCatalog,
+    public static Result load(final Path projectFeatures, final Path mappingCatalog,
             final Collection<? extends Resource> standardsResources) {
-        final ParsedYamlFeatureModel project = new YamlFeatureModelParser().parse(projectYaml);
+        return load(projectFeatures, FeatureModelLoadingOptions.defaults(), mappingCatalog, standardsResources);
+    }
+
+    public static Result load(final Path projectFeatures, final FeatureModelLoadingOptions options,
+            final Path mappingCatalog, final Collection<? extends Resource> standardsResources) {
+        final ParsedProjectFeatureModel project = FeatureModelLoader.loadProject(projectFeatures, options);
         final FeatureMappingCatalog catalog = mappingCatalog == null ? null
                 : new YamlFeatureMappingCatalogParser().parse(mappingCatalog);
         final FeatureStandardsMappingResult mappings = new ProjectFeatureStandardsMapper().map(project, catalog,

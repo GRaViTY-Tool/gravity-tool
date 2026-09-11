@@ -1,36 +1,39 @@
 package org.gravity.typegraph.spl;
 
 import java.nio.file.Path;
-import java.util.Locale;
 
-import org.gravity.typegraph.spl.yaml.YamlFeatureModelParser;
+import org.gravity.typegraph.spl.features.FeatureModelLoadingOptions;
+import org.gravity.typegraph.spl.features.FeatureModelRepresentationRegistry;
+import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
 
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
-import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
-import de.ovgu.featureide.fm.core.io.manager.FeatureModelManager;
 
-/**
- * Loads FeatureIDE feature models and additionally supports YAML project feature
- * descriptions used by GRaViTY.
- */
+/** Loads project feature models through configurable representation adapters. */
 public final class FeatureModelLoader {
 
     private FeatureModelLoader() {
-        // Utility class.
     }
 
-    /**
-     * Loads a feature model from a FeatureIDE-supported format or YAML.
-     *
-     * @param path the feature-model path
-     * @return the loaded in-memory FeatureIDE model
-     */
     public static IFeatureModel load(final Path path) {
-        FMCoreLibrary.getInstance().install();
-        final String fileName = path.getFileName().toString().toLowerCase(Locale.ROOT);
-        if (fileName.endsWith(".yaml") || fileName.endsWith(".yml")) {
-            return new YamlFeatureModelParser().parse(path).featureModel();
-        }
-        return FeatureModelManager.load(path);
+        return loadProject(path, FeatureModelLoadingOptions.defaults()).featureModel();
+    }
+
+    public static IFeatureModel load(final Path path, final FeatureModelLoadingOptions options) {
+        return loadProject(path, options).featureModel();
+    }
+
+    public static ParsedProjectFeatureModel loadProject(final Path path) {
+        return loadProject(path, FeatureModelLoadingOptions.defaults());
+    }
+
+    public static ParsedProjectFeatureModel loadProject(final Path path, final FeatureModelLoadingOptions options) {
+        final var effectiveOptions = options == null ? FeatureModelLoadingOptions.defaults() : options;
+        return new FeatureModelRepresentationRegistry(effectiveOptions).parse(path, effectiveOptions);
+    }
+
+    public static ParsedProjectFeatureModel loadProject(final Path path, final FeatureModelLoadingOptions options,
+            final FeatureModelRepresentationRegistry registry) {
+        final var effectiveOptions = options == null ? FeatureModelLoadingOptions.defaults() : options;
+        return registry.parse(path, effectiveOptions);
     }
 }

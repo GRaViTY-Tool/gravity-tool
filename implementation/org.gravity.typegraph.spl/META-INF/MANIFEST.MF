@@ -3,6 +3,7 @@ Bundle-SymbolicName: org.gravity.typegraph.spl;singleton:=true
 Export-Package: org.gravity.typegraph.spl.util,
  org.gravity.typegraph.spl.impl,
  org.gravity.typegraph.spl,
+ org.gravity.typegraph.spl.features,
  org.gravity.typegraph.spl.yaml,
  org.gravity.typegraph.spl.standards
 Bundle-Name: %pluginName
