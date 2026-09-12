@@ -68,9 +68,15 @@ public final class Iso2700xPdfImporter {
     private static final Pattern HASH_PROPERTY = Pattern.compile("#\\s*([^#\\r\\n,;]+)");
     private static final List<String> ATTRIBUTE_BOUNDARIES = List.of("control type", "cybersecurity concepts",
             "operational capabilities", "security domains", "guidance", "purpose");
-    private static final List<String> FALLBACK_PROPERTIES = List.of("Confidentiality", "Integrity", "Availability",
-            "Authenticity", "Accountability", "Non-repudiation", "Resistance", "Reliability", "Recoverability",
-            "Fault tolerance");
+
+    /**
+     * ISO/IEC 25010 Security subcharacteristics. These are used only as a
+     * conservative fallback when PDF text extraction has removed the '#' markers.
+     * The primary hashtag parser above is intentionally open-ended and therefore
+     * keeps any additional property explicitly present in ISO/IEC 27002.
+     */
+    private static final List<String> FALLBACK_PROPERTIES = List.of("Confidentiality", "Integrity", "Non-repudiation",
+            "Accountability", "Authenticity", "Resistance");
 
     private Iso2700xPdfImporter() {
     }
@@ -209,9 +215,9 @@ public final class Iso2700xPdfImporter {
             }
         }
 
-        // Some PDF extractors drop the '#' glyph. Retain a conservative fallback for
-        // the established ISO/IEC 25010-derived labels while preferring the generic
-        // hashtag extraction above.
+        // Some PDF extractors drop the '#' glyph. In that case only recognize the
+        // ISO/IEC 25010 Security subcharacteristics; the normal hashtag path above
+        // remains generic and is the authority when explicit labels are available.
         if (result.isEmpty()) {
             final String normalizedAttributes = FeatureMappingCatalog.normalize(attributes);
             for (final String property : FALLBACK_PROPERTIES) {
