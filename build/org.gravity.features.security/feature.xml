@@ -15,7 +15,7 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.gravity.features.eclipse" version="1.0.0.qualifier"/>
+      <import feature="org.gravity.features.eclipse"/>
    </requires>
 
    <plugin

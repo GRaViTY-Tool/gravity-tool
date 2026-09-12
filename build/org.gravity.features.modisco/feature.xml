@@ -18,9 +18,9 @@ code.
 
    <url>
       <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
- 	  <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
-      <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
-      <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
+      <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
+      <discovery label="MoDisco" url="https://download.eclipse.org/releases/latest"/>
+      <discovery label="EMF" url="https://download.eclipse.org/modeling/emf/updates/releases/"/>
    </url>
 
    <includes
@@ -32,8 +32,8 @@ code.
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202405111921"/>
-      <import feature="org.eclipse.modisco.eclipse.feature" version="1.5.4.v20240304-1105"/>
+      <import feature="org.moflon.tgg.mosl.feature"/>
+      <import feature="org.eclipse.modisco.eclipse.feature"/>
    </requires>
 
    <plugin
