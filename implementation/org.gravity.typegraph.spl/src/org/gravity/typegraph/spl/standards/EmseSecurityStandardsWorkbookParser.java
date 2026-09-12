@@ -15,9 +15,9 @@ import java.util.List;
  */
 public final class EmseSecurityStandardsWorkbookParser {
 
-    public static final String REPLICATION_PACKAGE_DOI = EmseSecurityStandardsWorkbookParser2.REPLICATION_PACKAGE_DOI;
-    public static final String WORKBOOK_NAME = EmseSecurityStandardsWorkbookParser2.WORKBOOK_NAME;
-    public static final String WORKBOOK_MD5 = EmseSecurityStandardsWorkbookParser2.WORKBOOK_MD5;
+    public static final String REPLICATION_PACKAGE_DOI = EmseSecurityStandardsWorkbookReader.REPLICATION_PACKAGE_DOI;
+    public static final String WORKBOOK_NAME = EmseSecurityStandardsWorkbookReader.WORKBOOK_NAME;
+    public static final String WORKBOOK_MD5 = EmseSecurityStandardsWorkbookReader.WORKBOOK_MD5;
 
     public record ParseResult(FeatureMappingCatalog catalog, int mappingCount, List<String> mappedSheets) {
         public ParseResult {
@@ -29,11 +29,11 @@ public final class EmseSecurityStandardsWorkbookParser {
     }
 
     public static FeatureMappingCatalog parse(final Path workbook) throws IOException {
-        return EmseSecurityStandardsWorkbookParser2.parse(workbook);
+        return EmseSecurityStandardsWorkbookReader.parse(workbook);
     }
 
     public static ParseResult parseWithDiagnostics(final Path workbook) throws IOException {
-        final var result = EmseSecurityStandardsWorkbookParser2.parseWithDiagnostics(workbook);
+        final var result = EmseSecurityStandardsWorkbookReader.parseWithDiagnostics(workbook);
         return new ParseResult(result.catalog(), result.mappingCount(), result.mappedSheets());
     }
 }
