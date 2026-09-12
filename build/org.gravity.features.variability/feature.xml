@@ -15,10 +15,6 @@
       (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
 
-   <url>
-      <discovery label="Henshin MultiVar" url="https://gravity-tool.org/henshin-multivar/updatesite"/>
-   </url>
-
    <includes
          id="org.gravity.license.epl"
          version="0.0.0"/>
@@ -27,7 +23,6 @@
       <!-- MoDisco already aggregates the Eclipse and type-graph base features. -->
       <import feature="org.gravity.features.modisco"/>
       <import feature="de.ovgu.featureide"/>
-      <import feature="org.eclipse.emf.henshin.sdk"/>
    </requires>
 
    <plugin
