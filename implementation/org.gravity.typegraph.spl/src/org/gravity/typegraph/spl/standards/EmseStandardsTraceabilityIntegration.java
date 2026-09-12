@@ -19,6 +19,9 @@ import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
  */
 public final class EmseStandardsTraceabilityIntegration {
 
+    /** Number of functional security features in the published EMSE taxonomy. */
+    public static final int EMSE_TAXONOMY_FEATURE_COUNT = 68;
+
     public record Result(ProjectTaxonomyConformance.Result conformance, FeatureStandardsMappingResult mappings,
             StandardTraceabilityBuilder.BuildResult traceability,
             DynamicQualityModelGenerator.GenerationResult qualityModel) {
@@ -31,9 +34,7 @@ public final class EmseStandardsTraceabilityIntegration {
             final Collection<? extends Resource> standardsResources, final ResourceSet outputResourceSet,
             final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
             final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
-        if (emseTaxonomy == null) {
-            throw new IllegalArgumentException("The complete EMSE taxonomy/mapping catalog is required");
-        }
+        requireCompleteTaxonomy(emseTaxonomy);
         final var conformance = new ProjectTaxonomyConformance().requireConformant(project, emseTaxonomy);
         final Collection<? extends Resource> resources = standardsResources == null ? List.of() : standardsResources;
         final var mappings = new ProjectFeatureStandardsMapper().map(project, emseTaxonomy, resources);
@@ -42,5 +43,16 @@ public final class EmseStandardsTraceabilityIntegration {
         final var qualityModel = new DynamicQualityModelGenerator().generate(outputResourceSet, qualityModelEcore,
                 qualityModelXmi, resources);
         return new Result(conformance, mappings, traceability, qualityModel);
+    }
+
+    public static void requireCompleteTaxonomy(final FeatureMappingCatalog emseTaxonomy) {
+        if (emseTaxonomy == null) {
+            throw new IllegalArgumentException("The complete EMSE taxonomy/mapping catalog is required");
+        }
+        if (emseTaxonomy.entries().size() != EMSE_TAXONOMY_FEATURE_COUNT) {
+            throw new IllegalArgumentException("The EMSE taxonomy catalog must contain exactly "
+                    + EMSE_TAXONOMY_FEATURE_COUNT + " canonical features but contains "
+                    + emseTaxonomy.entries().size());
+        }
     }
 }

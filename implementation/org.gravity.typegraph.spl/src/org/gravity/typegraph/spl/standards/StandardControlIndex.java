@@ -139,7 +139,14 @@ public final class StandardControlIndex {
     }
 
     private static String normalizeControl(final String value) {
-        return value == null ? "" : value.trim().toUpperCase(Locale.ROOT).replaceAll("\\s+", "");
+        if (value == null) {
+            return "";
+        }
+        String normalized = value.trim().toUpperCase(Locale.ROOT).replaceAll("\\s+", "");
+        if (normalized.matches("A\\.[5-8]\\.\\d+")) {
+            normalized = normalized.substring(2);
+        }
+        return normalized;
     }
 
     private static String normalizeStandard(final String value) {
