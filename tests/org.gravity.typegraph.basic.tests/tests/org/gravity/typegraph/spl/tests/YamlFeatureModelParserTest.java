@@ -114,7 +114,7 @@ public class YamlFeatureModelParserTest {
         final var result = new ProjectFeatureStandardsMapper().map(parsed, catalog, List.of(requirements),
                 reference -> reference.standard().contains("27002"));
         final var aesMapping = result.mappings().stream()
-                .filter(mapping -> "AES256".equals(mapping.feature().getName()))
+                .filter(mapping -> "AES256".equals(parsed.sourceName(mapping.feature())))
                 .findFirst().orElseThrow();
         assertEquals("encryption", aesMapping.canonicalFeature());
         assertSame(expectedControl, aesMapping.control());
