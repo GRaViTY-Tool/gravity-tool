@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -64,8 +65,12 @@ public final class Iso2700xPdfImporter {
 
     private static final Pattern ISO_27001_CONTROL = Pattern.compile("^A\\.(5|6|7|8)\\.(\\d+)\\s+(.+)$");
     private static final Pattern ISO_27002_CONTROL = Pattern.compile("^(5|6|7|8)\\.(\\d+)\\s+(.+)$");
+    private static final Pattern HASH_PROPERTY = Pattern.compile("#\\s*([^#\\r\\n,;]+)");
     private static final List<String> ATTRIBUTE_BOUNDARIES = List.of("control type", "cybersecurity concepts",
             "operational capabilities", "security domains", "guidance", "purpose");
+    private static final List<String> FALLBACK_PROPERTIES = List.of("Confidentiality", "Integrity", "Availability",
+            "Authenticity", "Accountability", "Non-repudiation", "Resistance", "Reliability", "Recoverability",
+            "Fault tolerance");
 
     private Iso2700xPdfImporter() {
     }
@@ -169,34 +174,68 @@ public final class Iso2700xPdfImporter {
         return new ParsedControl(identifier, title, text.strip(), extractSecurityProperties(text));
     }
 
+    /**
+     * Extracts every value from the ISO/IEC 27002 "Information security
+     * properties" attribute. The standard renders these values as hashtag labels;
+     * parsing them generically keeps the importer open to the complete ISO/IEC
+     * 25010-derived property vocabulary instead of hard-coding CIA.
+     */
     static Set<String> extractSecurityProperties(final String controlText) {
         if (controlText == null || controlText.isBlank()) {
             return Set.of();
         }
-        final String lower = controlText.toLowerCase(java.util.Locale.ROOT);
+        final String lower = controlText.toLowerCase(Locale.ROOT);
         final String marker = "information security properties";
         final int markerIndex = lower.indexOf(marker);
         if (markerIndex < 0) {
             return Set.of();
         }
-        int end = Math.min(controlText.length(), markerIndex + marker.length() + 500);
+        final int valuesStart = markerIndex + marker.length();
+        int end = Math.min(controlText.length(), valuesStart + 500);
         for (final String boundary : ATTRIBUTE_BOUNDARIES) {
-            final int candidate = lower.indexOf(boundary, markerIndex + marker.length());
+            final int candidate = lower.indexOf(boundary, valuesStart);
             if (candidate >= 0) {
                 end = Math.min(end, candidate);
             }
         }
-        final String attributes = lower.substring(markerIndex, end);
+
+        final String attributes = controlText.substring(valuesStart, end);
         final Set<String> result = new LinkedHashSet<>();
-        if (attributes.contains("confidentiality")) {
-            result.add("Confidentiality");
+        final Matcher hashtags = HASH_PROPERTY.matcher(attributes);
+        while (hashtags.find()) {
+            final String property = canonicalSecurityProperty(hashtags.group(1));
+            if (!property.isBlank()) {
+                result.add(property);
+            }
         }
-        if (attributes.contains("integrity")) {
-            result.add("Integrity");
-        }
-        if (attributes.contains("availability")) {
-            result.add("Availability");
+
+        // Some PDF extractors drop the '#' glyph. Retain a conservative fallback for
+        // the established ISO/IEC 25010-derived labels while preferring the generic
+        // hashtag extraction above.
+        if (result.isEmpty()) {
+            final String normalizedAttributes = FeatureMappingCatalog.normalize(attributes);
+            for (final String property : FALLBACK_PROPERTIES) {
+                if (normalizedAttributes.contains(FeatureMappingCatalog.normalize(property))) {
+                    result.add(property);
+                }
+            }
         }
         return result;
+    }
+
+    private static String canonicalSecurityProperty(final String raw) {
+        if (raw == null) {
+            return "";
+        }
+        String value = raw.trim().replace('_', ' ').replace('–', '-').replace('—', '-').replaceAll("\\s+", " ");
+        value = value.replaceAll("^[\\-:]+|[\\-:]+$", "").trim();
+        if (value.isBlank()) {
+            return "";
+        }
+        final String normalized = value.toLowerCase(Locale.ROOT);
+        if (normalized.equals("non repudiation") || normalized.equals("non-repudiation")) {
+            return "Non-repudiation";
+        }
+        return Character.toUpperCase(normalized.charAt(0)) + normalized.substring(1);
     }
 }

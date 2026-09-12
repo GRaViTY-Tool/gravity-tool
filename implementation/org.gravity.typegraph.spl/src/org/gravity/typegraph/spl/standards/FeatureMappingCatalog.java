@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Predicate;
 
 /**
  * Curated mapping from canonical implementation-level security features (plus
@@ -66,6 +67,23 @@ public final class FeatureMappingCatalog {
             return Optional.ofNullable(byName.get(normalize(projectFeature)));
         }
         return Optional.empty();
+    }
+
+    /**
+     * Returns an equivalent feature catalog with only control references accepted by
+     * the supplied predicate. Canonical features and aliases are retained even when
+     * no control reference remains. This is useful for keeping taxonomy conformance
+     * independent of a standard-specific mapping workflow.
+     */
+    public FeatureMappingCatalog filterControls(final Predicate<StandardControlReference> predicate) {
+        if (predicate == null) {
+            return this;
+        }
+        final List<Entry> filtered = entries.stream()
+                .map(entry -> new Entry(entry.canonicalFeature(), entry.aliases(),
+                        entry.controls().stream().filter(predicate).toList()))
+                .toList();
+        return new FeatureMappingCatalog(filtered);
     }
 
     public List<Entry> entries() {

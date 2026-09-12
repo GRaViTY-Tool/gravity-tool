@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.gravity.typegraph.spl.features.YamlFeatureModelRepresentation;
 import org.gravity.typegraph.spl.standards.FeatureMappingCatalog;
 import org.gravity.typegraph.spl.standards.ProjectFeatureStandardsMapper;
+import org.gravity.typegraph.spl.standards.ProjectTaxonomyConformance;
 import org.gravity.typegraph.spl.standards.StandardControlReference;
 import org.junit.Test;
 
@@ -61,7 +62,7 @@ public class YamlFeatureModelParserTest {
                 """);
         final var parsed = new YamlFeatureModelRepresentation().parse(yaml);
 
-        final Resource requirements = createRequirementsResource();
+        final Resource requirements = createRequirementsResource("5.17");
         final EObject requirementsSet = requirements.getContents().get(0);
         @SuppressWarnings("unchecked")
         final List<EObject> controls = (List<EObject>) requirementsSet
@@ -80,7 +81,47 @@ public class YamlFeatureModelParserTest {
         assertSame(expectedControl, result.mappings().get(0).control());
     }
 
-    private Resource createRequirementsResource() {
+    @Test
+    public void customSubfeatureInheritsEmseAncestorMapping() throws Exception {
+        final var yaml = Files.createTempFile("gravity-features", ".yaml");
+        Files.writeString(yaml, """
+                project: Shop
+                root:
+                  name: Shop
+                  group: and
+                  children:
+                    - name: encryption
+                      optional: true
+                      children:
+                        - name: AES256
+                          optional: true
+                """);
+        final var parsed = new YamlFeatureModelRepresentation().parse(yaml);
+        final Resource requirements = createRequirementsResource("8.24");
+        final EObject requirementsSet = requirements.getContents().get(0);
+        @SuppressWarnings("unchecked")
+        final List<EObject> controls = (List<EObject>) requirementsSet
+                .eGet(requirementsSet.eClass().getEStructuralFeature("requirements"));
+        final EObject expectedControl = controls.get(0);
+
+        final var catalog = new FeatureMappingCatalog(List.of(FeatureMappingCatalog.entry("encryption", List.of(),
+                List.of(new StandardControlReference("ISO/IEC 27002:2022", "8.24")))));
+
+        final var conformance = new ProjectTaxonomyConformance().check(parsed, catalog);
+        assertTrue(conformance.isConformant());
+        assertEquals("encryption", conformance.canonicalFeatures().get("AES256"));
+
+        final var result = new ProjectFeatureStandardsMapper().map(parsed, catalog, List.of(requirements),
+                reference -> reference.standard().contains("27002"));
+        final var aesMapping = result.mappings().stream()
+                .filter(mapping -> "AES256".equals(mapping.feature().getName()))
+                .findFirst().orElseThrow();
+        assertEquals("encryption", aesMapping.canonicalFeature());
+        assertSame(expectedControl, aesMapping.control());
+        assertEquals("8.24", aesMapping.reference().control());
+    }
+
+    private Resource createRequirementsResource(final String controlId) {
         final var factory = EcoreFactory.eINSTANCE;
         final var pkg = factory.createEPackage();
         pkg.setName("requirements");
@@ -119,7 +160,7 @@ public class YamlFeatureModelParserTest {
         requirementsSet.eSet(setId, "ISO/IEC 27002:2022");
         requirementsSet.eSet(setTitle, "ISO/IEC 27002:2022");
         final EObject requirement = pkg.getEFactoryInstance().create(requirementClass);
-        requirement.eSet(requirementId, "5.17");
+        requirement.eSet(requirementId, controlId);
         @SuppressWarnings("unchecked")
         final List<EObject> requirements = (List<EObject>) requirementsSet.eGet(requirementsReference);
         requirements.add(requirement);

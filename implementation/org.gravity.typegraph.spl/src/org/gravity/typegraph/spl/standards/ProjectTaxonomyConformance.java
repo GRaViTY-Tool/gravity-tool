@@ -14,6 +14,10 @@ import de.ovgu.featureide.fm.core.base.IFeature;
  * feature taxonomy. The taxonomy is represented by a {@link FeatureMappingCatalog}
  * so canonical names and aliases are shared with the standards-mapping step.
  * <p>
+ * Custom project features are accepted when one of their FeatureIDE ancestors is
+ * a taxonomy feature. This allows projects to refine the EMSE taxonomy with local
+ * subfeatures while retaining a well-defined standards interpretation.
+ * <p>
  * This check is intentionally not used by source annotation parsing or program
  * model enrichment. It is a prerequisite only for taxonomy-based standards
  * traceability.
@@ -48,10 +52,9 @@ public final class ProjectTaxonomyConformance {
             if (feature == root) {
                 continue;
             }
-            final var metadata = project.metadata(feature);
-            final var entry = taxonomy.resolve(project.sourceName(feature), metadata.semanticFeature());
-            if (entry.isPresent()) {
-                resolved.put(feature.getName(), entry.get().canonicalFeature());
+            final var match = ProjectFeatureTaxonomyResolver.nearest(project, feature, taxonomy);
+            if (match.isPresent()) {
+                resolved.put(feature.getName(), match.get().taxonomyEntry().canonicalFeature());
             } else {
                 unknown.add(project.sourceName(feature));
             }
@@ -63,8 +66,9 @@ public final class ProjectTaxonomyConformance {
         final Result result = check(project, taxonomy);
         if (!result.isConformant()) {
             throw new IllegalArgumentException(
-                    "Project feature model does not conform to the supplied security-feature taxonomy. Unknown features: "
-                            + result.unknownFeatures());
+                    "Project feature model does not conform to the supplied security-feature taxonomy. "
+                            + "Every non-root feature must either be a taxonomy feature/alias or descend from one. "
+                            + "Unknown features: " + result.unknownFeatures());
         }
         return result;
     }

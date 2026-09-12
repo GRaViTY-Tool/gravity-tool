@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -18,6 +19,19 @@ public final class ProjectFeatureStandardsMapper {
 
     public FeatureStandardsMappingResult map(final ParsedProjectFeatureModel project, final FeatureMappingCatalog catalog,
             final Collection<? extends Resource> standardsResources) {
+        return map(project, catalog, standardsResources, reference -> true);
+    }
+
+    /**
+     * Resolves project features using direct mappings plus the nearest feature-model
+     * ancestor whose taxonomy entry has a control accepted by {@code controlFilter}.
+     * This lets custom project subfeatures inherit the standard semantics of their
+     * EMSE ancestor without adding project-specific names to the taxonomy itself.
+     */
+    public FeatureStandardsMappingResult map(final ParsedProjectFeatureModel project, final FeatureMappingCatalog catalog,
+            final Collection<? extends Resource> standardsResources,
+            final Predicate<StandardControlReference> controlFilter) {
+        final Predicate<StandardControlReference> accepted = controlFilter == null ? reference -> true : controlFilter;
         final StandardControlIndex index = new StandardControlIndex(standardsResources);
         final List<FeatureControlMapping> resolved = new ArrayList<>();
         final List<UnresolvedFeatureControlMapping> unresolved = new ArrayList<>();
@@ -25,13 +39,21 @@ public final class ProjectFeatureStandardsMapper {
 
         for (final IFeature feature : project.featureModel().getFeatures()) {
             final var metadata = project.metadata(feature);
-            final Set<StandardControlReference> references = new LinkedHashSet<>(metadata.directMappings());
+            final Set<StandardControlReference> references = new LinkedHashSet<>();
+            metadata.directMappings().stream().filter(accepted).forEach(references::add);
+
             String canonicalFeature = metadata.semanticFeature();
             if (catalog != null) {
-                final var entry = catalog.resolve(project.sourceName(feature), metadata.semanticFeature());
-                if (entry.isPresent()) {
-                    canonicalFeature = entry.get().canonicalFeature();
-                    references.addAll(entry.get().controls());
+                final var taxonomyMatch = ProjectFeatureTaxonomyResolver.nearest(project, feature, catalog);
+                if (taxonomyMatch.isPresent()) {
+                    canonicalFeature = taxonomyMatch.get().taxonomyEntry().canonicalFeature();
+                }
+
+                final var mappedAncestor = ProjectFeatureTaxonomyResolver.nearest(project, feature, catalog,
+                        entry -> entry.controls().stream().anyMatch(accepted));
+                if (mappedAncestor.isPresent()) {
+                    canonicalFeature = mappedAncestor.get().taxonomyEntry().canonicalFeature();
+                    mappedAncestor.get().taxonomyEntry().controls().stream().filter(accepted).forEach(references::add);
                 }
             }
 

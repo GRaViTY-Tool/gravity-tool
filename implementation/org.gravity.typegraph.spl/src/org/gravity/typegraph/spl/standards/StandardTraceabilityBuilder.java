@@ -16,10 +16,11 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
 
 /**
- * Persists the join between EMSE taxonomy features, TraceSec standard
- * requirements, and program-model locations. Quality models can point to the
- * same Requirement EObjects, yielding Quality -> Requirement ->
- * FeatureStandardTrace -> program element.
+ * Persists provenance for the join between EMSE taxonomy features, TraceSec
+ * standard requirements, and program-model locations. This sidecar records the
+ * canonical/project feature names, workbook evidence, presence conditions, and
+ * resolved EObjects. TraceSec itself consumes the native requirement-to-code
+ * correspondence model produced by {@link TraceSecCorrespondenceBuilder}.
  */
 public final class StandardTraceabilityBuilder {
 
