@@ -90,6 +90,7 @@
     <module>implementation/org.gravity.typegraph.basic.ui</module>
     <module>implementation/org.gravity.typegraph.spl</module>
     <module>implementation/org.gravity.umlsecrt</module>
+    <module>implementation/org.tracesec.prioritization</module>
     <module>tests/org.gravity.eclipse.tests</module>
     <!--<module>tests/org.gravity.goblin.tests</module>--><!--deprecated-->
     <module>tests/org.gravity.headless.tests</module>
