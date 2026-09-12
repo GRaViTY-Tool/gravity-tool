@@ -144,8 +144,9 @@ public class TraceSecRuntimeEndToEndTest {
                 .flatMap(List::stream).map(SonarlintFinding.class::cast).toList();
         assertEquals(1, prioritized.size());
         assertEquals("java:S9999", prioritized.get(0).getRulekey());
+        assertFalse(execution.prioritizedFindings().isEmpty());
         assertTrue("The finding must be reachable from the quality root in the TraceSec flow graph",
-                execution.prioritizedFindings().firstKey() >= 0);
+                execution.prioritizedFindings().firstKey() > 0);
     }
 
     private static Path materializeGeneratedEcore(final EPackage ePackage, final String prefix) throws Exception {
