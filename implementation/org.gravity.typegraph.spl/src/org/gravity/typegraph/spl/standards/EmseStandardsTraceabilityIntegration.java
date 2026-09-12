@@ -16,13 +16,12 @@ import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
  * Orchestrates the taxonomy-dependent part of standards traceability.
  * <p>
  * Source annotations and program-model enrichment are intentionally outside of
- * this class. A project only needs to conform to the supplied EMSE taxonomy when
- * this standards-mapping workflow is requested.
+ * this class. A project only needs to conform to the EMSE taxonomy when this
+ * standards-mapping workflow is requested.
  */
 public final class EmseStandardsTraceabilityIntegration {
 
-    /** Number of functional security features in the published EMSE taxonomy. */
-    public static final int EMSE_TAXONOMY_FEATURE_COUNT = 68;
+    public static final int EMSE_TAXONOMY_FEATURE_COUNT = EmseSecurityFeatureTaxonomy.FEATURE_COUNT;
 
     public record Result(ProjectTaxonomyConformance.Result conformance, FeatureStandardsMappingResult mappings,
             StandardTraceabilityBuilder.BuildResult traceability,
@@ -32,9 +31,7 @@ public final class EmseStandardsTraceabilityIntegration {
     private EmseStandardsTraceabilityIntegration() {
     }
 
-    /**
-     * Creates the integration using an already combined taxonomy/mapping catalog.
-     */
+    /** Creates the integration using an already combined taxonomy/mapping catalog. */
     public static Result create(final ParsedProjectFeatureModel project, final FeatureMappingCatalog emseTaxonomy,
             final Collection<? extends Resource> standardsResources, final ResourceSet outputResourceSet,
             final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
@@ -51,8 +48,21 @@ public final class EmseStandardsTraceabilityIntegration {
     }
 
     /**
-     * Creates the integration using the authoritative standards-to-feature mapping
-     * from the EMSE replication-package workbook.
+     * Creates the integration using the built-in final 68-feature EMSE taxonomy and
+     * the authoritative standards mapping from the replication-package workbook.
+     */
+    public static Result create(final ParsedProjectFeatureModel project, final Path replicationPackageStandardsWorkbook,
+            final Collection<? extends Resource> standardsResources, final ResourceSet outputResourceSet,
+            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
+            final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
+        return create(project, EmseSecurityFeatureTaxonomy.catalog(), replicationPackageStandardsWorkbook,
+                standardsResources, outputResourceSet, programModel, traceabilityEcore, traceabilityXmi,
+                qualityModelEcore, qualityModelXmi);
+    }
+
+    /**
+     * Creates the integration using a caller-supplied complete taxonomy plus the
+     * authoritative standards-to-feature mapping from the replication workbook.
      */
     public static Result create(final ParsedProjectFeatureModel project, final FeatureMappingCatalog emseTaxonomy,
             final Path replicationPackageStandardsWorkbook,
@@ -69,8 +79,8 @@ public final class EmseStandardsTraceabilityIntegration {
 
     /**
      * Adds workbook-derived control references to the complete 68-feature taxonomy
-     * while preserving taxonomy aliases. A mapping to an unknown feature is treated
-     * as a data/schema mismatch rather than silently extending the taxonomy.
+     * while preserving project aliases. A workbook mapping that cannot be resolved
+     * to a taxonomy entry is rejected instead of silently extending the taxonomy.
      */
     public static FeatureMappingCatalog mergeTaxonomyAndMappings(final FeatureMappingCatalog taxonomy,
             final FeatureMappingCatalog standardsMappings) {
@@ -80,20 +90,26 @@ public final class EmseStandardsTraceabilityIntegration {
         }
 
         final List<FeatureMappingCatalog.Entry> merged = new ArrayList<>();
+        final LinkedHashSet<FeatureMappingCatalog.Entry> consumedMappings = new LinkedHashSet<>();
         for (final FeatureMappingCatalog.Entry taxonomyEntry : taxonomy.entries()) {
             final LinkedHashSet<StandardControlReference> controls = new LinkedHashSet<>(taxonomyEntry.controls());
-            standardsMappings.resolve(taxonomyEntry.canonicalFeature(), taxonomyEntry.canonicalFeature())
-                    .ifPresent(mapping -> controls.addAll(mapping.controls()));
+            final var mapping = standardsMappings.resolve(taxonomyEntry.canonicalFeature(), taxonomyEntry.canonicalFeature());
+            if (mapping.isPresent()) {
+                controls.addAll(mapping.get().controls());
+                consumedMappings.add(mapping.get());
+            }
+            for (final String alias : taxonomyEntry.aliases()) {
+                standardsMappings.resolve(alias, alias).ifPresent(aliasMapping -> {
+                    controls.addAll(aliasMapping.controls());
+                    consumedMappings.add(aliasMapping);
+                });
+            }
             merged.add(FeatureMappingCatalog.entry(taxonomyEntry.canonicalFeature(), taxonomyEntry.aliases(),
                     List.copyOf(controls)));
         }
 
-        final List<String> unknown = new ArrayList<>();
-        for (final FeatureMappingCatalog.Entry mapping : standardsMappings.entries()) {
-            if (taxonomy.resolve(mapping.canonicalFeature(), mapping.canonicalFeature()).isEmpty()) {
-                unknown.add(mapping.canonicalFeature());
-            }
-        }
+        final List<String> unknown = standardsMappings.entries().stream().filter(entry -> !consumedMappings.contains(entry))
+                .map(FeatureMappingCatalog.Entry::canonicalFeature).toList();
         if (!unknown.isEmpty()) {
             throw new IllegalArgumentException("Replication-package mappings contain features not present in the "
                     + "supplied 68-feature EMSE taxonomy: " + unknown);
