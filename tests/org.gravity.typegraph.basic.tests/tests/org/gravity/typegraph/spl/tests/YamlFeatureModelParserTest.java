@@ -61,16 +61,17 @@ public class YamlFeatureModelParserTest {
                 """);
         final var parsed = new YamlFeatureModelRepresentation().parse(yaml);
 
-        final Resource standards = createStandardsResource();
-        final EObject standard = standards.getContents().get(0);
+        final Resource requirements = createRequirementsResource();
+        final EObject requirementsSet = requirements.getContents().get(0);
         @SuppressWarnings("unchecked")
-        final List<EObject> controls = (List<EObject>) standard.eGet(standard.eClass().getEStructuralFeature("controls"));
+        final List<EObject> controls = (List<EObject>) requirementsSet
+                .eGet(requirementsSet.eClass().getEStructuralFeature("requirements"));
         final EObject expectedControl = controls.get(0);
 
         final var catalog = new FeatureMappingCatalog(List.of(FeatureMappingCatalog.entry("authentication",
                 List.of("Sign In"), List.of(new StandardControlReference("ISO/IEC 27002:2022", "5.17")))));
 
-        final var result = new ProjectFeatureStandardsMapper().map(parsed, catalog, List.of(standards));
+        final var result = new ProjectFeatureStandardsMapper().map(parsed, catalog, List.of(requirements));
 
         assertTrue(result.unresolved().isEmpty());
         assertTrue(result.unmappedFeatures().isEmpty());
@@ -79,47 +80,52 @@ public class YamlFeatureModelParserTest {
         assertSame(expectedControl, result.mappings().get(0).control());
     }
 
-    private Resource createStandardsResource() {
+    private Resource createRequirementsResource() {
         final var factory = EcoreFactory.eINSTANCE;
         final var pkg = factory.createEPackage();
-        pkg.setName("standards");
-        pkg.setNsPrefix("standards");
-        pkg.setNsURI("urn:test:standards");
+        pkg.setName("requirements");
+        pkg.setNsPrefix("requirements");
+        pkg.setNsURI("urn:test:requirements");
 
-        final EClass standardClass = factory.createEClass();
-        standardClass.setName("Standard");
-        final var standardIdentifier = factory.createEAttribute();
-        standardIdentifier.setName("identifier");
-        standardIdentifier.setEType(EcorePackage.Literals.ESTRING);
-        standardClass.getEStructuralFeatures().add(standardIdentifier);
+        final EClass requirementsSetClass = factory.createEClass();
+        requirementsSetClass.setName("RequirementsSet");
+        final var setId = factory.createEAttribute();
+        setId.setName("id");
+        setId.setEType(EcorePackage.Literals.ESTRING);
+        requirementsSetClass.getEStructuralFeatures().add(setId);
+        final var setTitle = factory.createEAttribute();
+        setTitle.setName("title");
+        setTitle.setEType(EcorePackage.Literals.ESTRING);
+        requirementsSetClass.getEStructuralFeatures().add(setTitle);
 
-        final EClass controlClass = factory.createEClass();
-        controlClass.setName("Control");
-        final var controlIdentifier = factory.createEAttribute();
-        controlIdentifier.setName("identifier");
-        controlIdentifier.setEType(EcorePackage.Literals.ESTRING);
-        controlClass.getEStructuralFeatures().add(controlIdentifier);
+        final EClass requirementClass = factory.createEClass();
+        requirementClass.setName("Requirement");
+        final var requirementId = factory.createEAttribute();
+        requirementId.setName("id");
+        requirementId.setEType(EcorePackage.Literals.ESTRING);
+        requirementClass.getEStructuralFeatures().add(requirementId);
 
-        final var controlsReference = factory.createEReference();
-        controlsReference.setName("controls");
-        controlsReference.setEType(controlClass);
-        controlsReference.setContainment(true);
-        controlsReference.setUpperBound(-1);
-        standardClass.getEStructuralFeatures().add(controlsReference);
+        final var requirementsReference = factory.createEReference();
+        requirementsReference.setName("requirements");
+        requirementsReference.setEType(requirementClass);
+        requirementsReference.setContainment(true);
+        requirementsReference.setUpperBound(-1);
+        requirementsSetClass.getEStructuralFeatures().add(requirementsReference);
 
-        pkg.getEClassifiers().add(standardClass);
-        pkg.getEClassifiers().add(controlClass);
+        pkg.getEClassifiers().add(requirementsSetClass);
+        pkg.getEClassifiers().add(requirementClass);
 
-        final EObject standard = pkg.getEFactoryInstance().create(standardClass);
-        standard.eSet(standardIdentifier, "ISO/IEC 27002:2022");
-        final EObject control = pkg.getEFactoryInstance().create(controlClass);
-        control.eSet(controlIdentifier, "5.17");
+        final EObject requirementsSet = pkg.getEFactoryInstance().create(requirementsSetClass);
+        requirementsSet.eSet(setId, "ISO/IEC 27002:2022");
+        requirementsSet.eSet(setTitle, "ISO/IEC 27002:2022");
+        final EObject requirement = pkg.getEFactoryInstance().create(requirementClass);
+        requirement.eSet(requirementId, "5.17");
         @SuppressWarnings("unchecked")
-        final List<EObject> controls = (List<EObject>) standard.eGet(controlsReference);
-        controls.add(control);
+        final List<EObject> requirements = (List<EObject>) requirementsSet.eGet(requirementsReference);
+        requirements.add(requirement);
 
-        final Resource resource = new ResourceImpl(URI.createURI("memory:/standards.xmi"));
-        resource.getContents().add(standard);
+        final Resource resource = new ResourceImpl(URI.createURI("memory:/requirements.xmi"));
+        resource.getContents().add(requirementsSet);
         return resource;
     }
 }
