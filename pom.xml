@@ -217,5 +217,10 @@
       <layout>p2</layout>
       <url>https://featureide.uni-ulm.de/update/v3/</url>
     </repository>
+    <repository>
+      <id>SonarQube for IDE 12.7</id>
+      <layout>p2</layout>
+      <url>https://binaries.sonarsource.com/SonarLint-for-Eclipse/releases/12.7.0.84850/</url>
+    </repository>
   </repositories>
 </project>
