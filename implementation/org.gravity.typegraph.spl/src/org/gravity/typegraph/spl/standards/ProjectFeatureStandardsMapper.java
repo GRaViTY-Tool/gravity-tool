@@ -13,7 +13,7 @@ import org.gravity.typegraph.spl.yaml.ParsedYamlFeatureModel;
 
 import de.ovgu.featureide.fm.core.base.IFeature;
 
-/** Resolves normalized project features to actual Control EObjects. */
+/** Resolves normalized project features to TraceSec Requirement EObjects. */
 public final class ProjectFeatureStandardsMapper {
 
     public FeatureStandardsMappingResult map(final ParsedProjectFeatureModel project, final FeatureMappingCatalog catalog,
@@ -48,7 +48,7 @@ public final class ProjectFeatureStandardsMapper {
                     resolved.add(new FeatureControlMapping(feature, control.get(), reference, canonicalFeature));
                 } else {
                     unresolved.add(new UnresolvedFeatureControlMapping(project.sourceName(feature), reference,
-                            "No unique Control EObject found for standard='" + reference.standard() + "', control='"
+                            "No unique Requirement EObject found for standard='" + reference.standard() + "', control='"
                                     + reference.control() + "'"));
                 }
             }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -16,12 +15,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
  * Creates a TraceSec-compatible quality-model instance from the information
- * security properties attached to parsed standard controls.
+ * security properties stated in imported ISO/IEC 27002 requirements.
  * <p>
- * This class loads the TraceSec quality metamodel dynamically. Consequently the
- * standards integration has no compile-time dependency on TraceSec generated
- * classes. The generated qualities reference the actual Control EObjects through
- * Quality.relevantElements.
+ * Standards are represented with TraceSec's requirements metamodel. Therefore
+ * generated qualities reference the actual {@code Requirement} EObjects through
+ * {@code Quality.relevantElements}; no parallel standards metamodel is needed.
  */
 public final class DynamicQualityModelGenerator {
 
@@ -46,14 +44,14 @@ public final class DynamicQualityModelGenerator {
 
         final Map<String, EObject> qualities = new LinkedHashMap<>();
         final EObject root = quality(qualityPackage, ROOT,
-                "Information-security qualities derived from standard control security properties.");
+                "Information-security qualities derived from standard requirement security properties.");
         DynamicModelSupport.add(qualityModel, "qualities", root);
         DynamicModelSupport.set(qualityModel, "root", root);
         qualities.put(ROOT, root);
 
         for (final String property : PROPERTIES) {
             final EObject child = quality(qualityPackage, property,
-                    property + " controls derived from the imported security standard.");
+                    property + " requirements derived from the imported security standard.");
             DynamicModelSupport.add(qualityModel, "qualities", child);
             final EObject aspect = DynamicModelSupport.create(qualityPackage, "Aspect");
             DynamicModelSupport.set(aspect, "quality", child);
@@ -68,10 +66,10 @@ public final class DynamicQualityModelGenerator {
                     continue;
                 }
                 for (final EObject rootObject : standardResource.getContents()) {
-                    attachControls(rootObject, qualities);
+                    attachRequirement(rootObject, qualities);
                     final var iterator = rootObject.eAllContents();
                     while (iterator.hasNext()) {
-                        attachControls(iterator.next(), qualities);
+                        attachRequirement(iterator.next(), qualities);
                     }
                 }
             }
@@ -88,24 +86,15 @@ public final class DynamicQualityModelGenerator {
         return quality;
     }
 
-    private void attachControls(final EObject object, final Map<String, EObject> qualities) {
-        if (!"Control".equals(object.eClass().getName())) {
+    private void attachRequirement(final EObject object, final Map<String, EObject> qualities) {
+        if (!"Requirement".equals(object.eClass().getName())) {
             return;
         }
-        final var propertyFeature = object.eClass().getEStructuralFeature("securityProperties");
-        if (propertyFeature == null || !propertyFeature.isMany()) {
-            return;
-        }
-        final Object value = object.eGet(propertyFeature, false);
-        if (!(value instanceof Collection<?> properties)) {
-            return;
-        }
-        for (final Object propertyValue : properties) {
-            final String property = propertyValue == null ? "" : propertyValue.toString().trim();
-            for (final String known : PROPERTIES) {
-                if (known.toLowerCase(Locale.ROOT).equals(property.toLowerCase(Locale.ROOT))) {
-                    DynamicModelSupport.add(qualities.get(known), "relevantElements", object);
-                }
+        final String wording = DynamicModelSupport.string(object, "wording");
+        for (final String property : Iso2700xPdfImporter.extractSecurityProperties(wording)) {
+            final EObject quality = qualities.get(property);
+            if (quality != null) {
+                DynamicModelSupport.add(quality, "relevantElements", object);
             }
         }
     }

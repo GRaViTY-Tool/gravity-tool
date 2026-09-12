@@ -12,7 +12,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-/** Convenience loader for a dynamically loaded standards.ecore + standards XMI. */
+/**
+ * Convenience loader for a standards instance represented with TraceSec's
+ * {@code requirements.ecore}. The class name is retained for source
+ * compatibility with the earlier standards integration API.
+ */
 public final class DynamicStandardsModelLoader {
 
     public record LoadedStandardsModel(ResourceSet resourceSet, EPackage metamodel, Resource model) {
@@ -21,23 +25,24 @@ public final class DynamicStandardsModelLoader {
     private DynamicStandardsModelLoader() {
     }
 
-    public static LoadedStandardsModel load(final Path standardsEcore, final Path standardsXmi) {
+    public static LoadedStandardsModel load(final Path requirementsEcore, final Path requirementsXmi) {
         final ResourceSet set = new ResourceSetImpl();
         set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
         set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 
-        final Resource ecoreResource = set.getResource(URI.createFileURI(standardsEcore.toAbsolutePath().toString()), true);
-        final EPackage ePackage = ecoreResource.getContents().stream().filter(EPackage.class::isInstance).map(EPackage.class::cast)
-                .findFirst().orElseThrow(() -> new IllegalArgumentException("No EPackage in " + standardsEcore));
+        final Resource ecoreResource = set.getResource(URI.createFileURI(requirementsEcore.toAbsolutePath().toString()), true);
+        final EPackage ePackage = ecoreResource.getContents().stream().filter(EPackage.class::isInstance)
+                .map(EPackage.class::cast).findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("No EPackage in " + requirementsEcore));
         set.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
 
-        final Resource model = set.getResource(URI.createFileURI(standardsXmi.toAbsolutePath().toString()), true);
+        final Resource model = set.getResource(URI.createFileURI(requirementsXmi.toAbsolutePath().toString()), true);
         try {
             if (!model.isLoaded()) {
                 model.load(Map.of());
             }
         } catch (final IOException e) {
-            throw new IllegalArgumentException("Cannot load standards model " + standardsXmi, e);
+            throw new IllegalArgumentException("Cannot load requirements-based standards model " + requirementsXmi, e);
         }
         return new LoadedStandardsModel(set, ePackage, model);
     }

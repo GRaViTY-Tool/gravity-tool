@@ -3,9 +3,9 @@ package org.gravity.typegraph.spl.standards;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -23,29 +23,28 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * Imports ISO/IEC 27001:2022 Annex A or ISO/IEC 27002:2022 controls from a PDF
- * into the dynamic standards model.
+ * into an instance of TraceSec's {@code requirements.ecore}.
  * <p>
- * The parser deliberately recognizes structural control headings and the
- * ISO/IEC 27002 information-security-property attribute only. It does not ship
- * or reconstruct standard text; callers must provide a legitimately obtained
- * PDF.
+ * A standard is represented by a root {@code RequirementsSet}, its control
+ * groups by nested {@code RequirementsSet}s, and individual controls by
+ * {@code Requirement}s. The parser deliberately recognizes structural control
+ * headings and the ISO/IEC 27002 information-security-property attribute only.
+ * It does not ship or reconstruct standard text; callers must provide a
+ * legitimately obtained PDF.
  */
 public final class Iso2700xPdfImporter {
 
     public enum StandardKind {
-        ISO_IEC_27001_2022("ISO/IEC 27001:2022", "ISO/IEC 27001", "2022", true),
-        ISO_IEC_27002_2022("ISO/IEC 27002:2022", "ISO/IEC 27002", "2022", false);
+        ISO_IEC_27001_2022("ISO/IEC 27001:2022", "ISO/IEC 27001:2022", true),
+        ISO_IEC_27002_2022("ISO/IEC 27002:2022", "ISO/IEC 27002:2022", false);
 
         private final String identifier;
         private final String title;
-        private final String edition;
         private final boolean annexPrefixRequired;
 
-        StandardKind(final String identifier, final String title, final String edition,
-                final boolean annexPrefixRequired) {
+        StandardKind(final String identifier, final String title, final boolean annexPrefixRequired) {
             this.identifier = identifier;
             this.title = title;
-            this.edition = edition;
             this.annexPrefixRequired = annexPrefixRequired;
         }
     }
@@ -71,45 +70,54 @@ public final class Iso2700xPdfImporter {
     private Iso2700xPdfImporter() {
     }
 
-    public static ImportResult importPdf(final Path pdf, final Path standardsEcore, final Path outputXmi,
+    public static ImportResult importPdf(final Path pdf, final Path requirementsEcore, final Path outputXmi,
             final StandardKind kind) throws IOException {
         final String text;
         try (PDDocument document = Loader.loadPDF(pdf.toFile())) {
             text = new PDFTextStripper().getText(document);
         }
-        return importText(text, pdf.toAbsolutePath().toString(), standardsEcore, outputXmi, kind);
+        return importText(text, requirementsEcore, outputXmi, kind);
     }
 
     /** Entry point intended for deterministic parser tests without a PDF fixture. */
-    public static ImportResult importText(final String text, final String source, final Path standardsEcore,
-            final Path outputXmi, final StandardKind kind) throws IOException {
+    public static ImportResult importText(final String text, final Path requirementsEcore, final Path outputXmi,
+            final StandardKind kind) throws IOException {
         final List<ParsedControl> parsed = parseControls(text, kind);
         if (parsed.isEmpty()) {
             throw new IllegalArgumentException("No " + kind.identifier + " controls found in supplied text");
         }
 
         final ResourceSet set = new ResourceSetImpl();
-        final EPackage standards = DynamicModelSupport.loadPackage(set, standardsEcore);
+        final EPackage requirements = DynamicModelSupport.loadPackage(set, requirementsEcore);
         final Resource model = set.createResource(URI.createFileURI(outputXmi.toAbsolutePath().toString()));
-        final EObject standard = DynamicModelSupport.create(standards, "Standard");
-        DynamicModelSupport.set(standard, "identifier", kind.identifier);
+        final EObject standard = DynamicModelSupport.create(requirements, "RequirementsSet");
+        DynamicModelSupport.set(standard, "id", kind.identifier);
         DynamicModelSupport.set(standard, "title", kind.title);
-        DynamicModelSupport.set(standard, "edition", kind.edition);
-        DynamicModelSupport.set(standard, "source", source == null ? "" : source);
+        DynamicModelSupport.set(standard, "wording", "");
         model.getContents().add(standard);
 
+        final Map<String, EObject> groups = new LinkedHashMap<>();
         final List<EObject> controls = new ArrayList<>();
         for (final ParsedControl parsedControl : parsed) {
-            final EObject control = DynamicModelSupport.create(standards, "Control");
-            DynamicModelSupport.set(control, "identifier", parsedControl.identifier());
+            final String groupId = controlGroup(parsedControl.identifier());
+            final EObject group = groups.computeIfAbsent(groupId, id -> {
+                final EObject created = DynamicModelSupport.create(requirements, "RequirementsSet");
+                DynamicModelSupport.set(created, "id", id);
+                DynamicModelSupport.set(created, "title", "Control group " + id);
+                DynamicModelSupport.set(created, "wording", "");
+                DynamicModelSupport.add(standard, "requirements", created);
+                return created;
+            });
+
+            final EObject control = DynamicModelSupport.create(requirements, "Requirement");
+            DynamicModelSupport.set(control, "id", parsedControl.identifier());
             DynamicModelSupport.set(control, "title", parsedControl.title());
-            DynamicModelSupport.set(control, "text", parsedControl.text());
-            DynamicModelSupport.addAll(control, "securityProperties", parsedControl.securityProperties());
-            DynamicModelSupport.add(standard, "controls", control);
+            DynamicModelSupport.set(control, "wording", parsedControl.text());
+            DynamicModelSupport.add(group, "requirements", control);
             controls.add(control);
         }
         model.save(Map.of());
-        return new ImportResult(set, standards, model, standard, controls);
+        return new ImportResult(set, requirements, model, standard, controls);
     }
 
     public static List<ParsedControl> parseControls(final String text, final StandardKind kind) {
@@ -149,6 +157,14 @@ public final class Iso2700xPdfImporter {
         return controls;
     }
 
+    private static String controlGroup(final String identifier) {
+        final String[] parts = identifier.split("\\.");
+        if (identifier.startsWith("A.") && parts.length >= 2) {
+            return "A." + parts[1];
+        }
+        return parts.length == 0 ? identifier : parts[0];
+    }
+
     private static ParsedControl control(final String identifier, final String title, final String text) {
         return new ParsedControl(identifier, title, text.strip(), extractSecurityProperties(text));
     }
@@ -157,7 +173,7 @@ public final class Iso2700xPdfImporter {
         if (controlText == null || controlText.isBlank()) {
             return Set.of();
         }
-        final String lower = controlText.toLowerCase(Locale.ROOT);
+        final String lower = controlText.toLowerCase(java.util.Locale.ROOT);
         final String marker = "information security properties";
         final int markerIndex = lower.indexOf(marker);
         if (markerIndex < 0) {

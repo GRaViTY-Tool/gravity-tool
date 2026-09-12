@@ -17,8 +17,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
- * Indexes actual {@code Control} EObjects from the standards model without a
- * compile-time dependency on generated standards classes.
+ * Indexes TraceSec {@code Requirement} EObjects that represent standard
+ * controls. The index intentionally has no compile-time dependency on generated
+ * TraceSec classes.
  */
 public final class StandardControlIndex {
 
@@ -75,10 +76,10 @@ public final class StandardControlIndex {
     }
 
     private void indexObject(final EObject object) {
-        if ((object == null) || !"Control".equals(object.eClass().getName()) || !indexedControls.add(object)) {
+        if ((object == null) || !"Requirement".equals(object.eClass().getName()) || !indexedControls.add(object)) {
             return;
         }
-        final String control = firstAttribute(object, "identifier", "id", "controlId", "number");
+        final String control = firstAttribute(object, "id", "identifier", "controlId", "number");
         if ((control == null) || control.isBlank()) {
             indexedControls.remove(object);
             return;
@@ -96,20 +97,22 @@ public final class StandardControlIndex {
         }
     }
 
+    /** Returns aliases from the outermost enclosing RequirementsSet. */
     private Set<String> findStandardAliases(final EObject control) {
         EObject current = control.eContainer();
+        EObject standard = null;
         while (current != null) {
-            if ("Standard".equals(current.eClass().getName())) {
-                final Set<String> aliases = new LinkedHashSet<>();
-                addAttribute(aliases, current, "identifier");
-                addAttribute(aliases, current, "shortName");
-                addAttribute(aliases, current, "name");
-                addAttribute(aliases, current, "title");
-                return aliases;
+            if ("RequirementsSet".equals(current.eClass().getName())) {
+                standard = current;
             }
             current = current.eContainer();
         }
-        return new LinkedHashSet<>();
+        final Set<String> aliases = new LinkedHashSet<>();
+        if (standard != null) {
+            addAttribute(aliases, standard, "id");
+            addAttribute(aliases, standard, "title");
+        }
+        return aliases;
     }
 
     private void addAttribute(final Set<String> values, final EObject object, final String name) {
@@ -150,6 +153,12 @@ public final class StandardControlIndex {
     }
 
     private static String normalizeStandard(final String value) {
-        return value == null ? "" : value.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+", "");
+        if (value == null) {
+            return "";
+        }
+        String normalized = value.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+", "");
+        normalized = normalized.replace("isoiec", "iso");
+        normalized = normalized.replace("2022", "");
+        return normalized;
     }
 }

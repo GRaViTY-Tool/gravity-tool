@@ -16,9 +16,10 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
 
 /**
- * Persists the join between EMSE taxonomy features, standard controls, and
- * program-model locations. Quality models can point to the same Control EObjects,
- * yielding Quality -> Control -> FeatureStandardTrace -> program element.
+ * Persists the join between EMSE taxonomy features, TraceSec standard
+ * requirements, and program-model locations. Quality models can point to the
+ * same Requirement EObjects, yielding Quality -> Requirement ->
+ * FeatureStandardTrace -> program element.
  */
 public final class StandardTraceabilityBuilder {
 
@@ -49,9 +50,10 @@ public final class StandardTraceabilityBuilder {
             DynamicModelSupport.set(trace, "relation", mapping.reference().relation().name());
             DynamicModelSupport.set(trace, "source", mapping.reference().source());
             DynamicModelSupport.set(trace, "confidence", mapping.reference().confidence());
-            DynamicModelSupport.set(trace, "control", mapping.control());
-            if (mapping.control().eContainer() != null && "Standard".equals(mapping.control().eContainer().eClass().getName())) {
-                DynamicModelSupport.set(trace, "standard", mapping.control().eContainer());
+            DynamicModelSupport.set(trace, "requirement", mapping.control());
+            final EObject standard = enclosingStandard(mapping.control());
+            if (standard != null) {
+                DynamicModelSupport.set(trace, "requirementsSet", standard);
             }
 
             final LinkedHashSet<ProgramFeatureLocationIndex.Location> locations = new LinkedHashSet<>(locationIndex.locations(
@@ -65,6 +67,18 @@ public final class StandardTraceabilityBuilder {
         }
         resource.save(Map.of());
         return new BuildResult(resource, traces);
+    }
+
+    private static EObject enclosingStandard(final EObject requirement) {
+        EObject current = requirement == null ? null : requirement.eContainer();
+        EObject standard = null;
+        while (current != null) {
+            if ("RequirementsSet".equals(current.eClass().getName())) {
+                standard = current;
+            }
+            current = current.eContainer();
+        }
+        return standard;
     }
 
     private static String safe(final String value) {
