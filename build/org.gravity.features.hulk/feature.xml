@@ -25,8 +25,6 @@
          version="0.0.0"/>
 
    <requires>
-      <!-- Hulk's Henshin rules need the interpreter at runtime. Other bundle dependencies are declared in manifests. -->
-      <import plugin="org.eclipse.emf.henshin.interpreter"/>
       <import feature="org.gravity.features.eclipse"/>
       <import feature="org.gravity.features.modisco"/>
       <import feature="org.gravity.features.refactorings"/>

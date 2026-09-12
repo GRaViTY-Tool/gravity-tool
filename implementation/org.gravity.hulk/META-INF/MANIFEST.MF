@@ -12,7 +12,9 @@ Export-Package: org.gravity.hulk,
 Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Require-Bundle: org.eclipse.emf.ecore.xmi,
+Require-Bundle: org.eclipse.emf.henshin.model,
+ org.eclipse.emf.henshin.interpreter,
+ org.eclipse.emf.ecore.xmi,
  org.gravity.eclipse,
  org.gravity.security.annotations.pm,
  org.gravity.hulk.antipatterngraph;visibility:=reexport,

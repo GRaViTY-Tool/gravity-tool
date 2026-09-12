@@ -198,11 +198,6 @@
       <url>https://download.eclipse.org/modeling/emft/henshin/updates/nightly</url>
     </repository>
     <repository>
-      <id>Henshin MultiVar</id>
-      <layout>p2</layout>
-      <url>https://gravity-tool.org/henshin-multivar/updatesite</url>
-    </repository>
-    <repository>
       <id>plantuml</id>
       <layout>p2</layout>
       <url>https://hallvard.github.io/plantuml</url>
