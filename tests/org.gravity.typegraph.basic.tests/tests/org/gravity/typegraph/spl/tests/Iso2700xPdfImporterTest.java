@@ -26,17 +26,17 @@ public class Iso2700xPdfImporterTest {
     }
 
     @Test
-    public void retainsPlainTextFallbackForIso25010SecuritySubcharacteristics() {
+    public void retainsPlainTextFallbackForSecurityPropertiesPlusAvailability() {
         final var controls = Iso2700xPdfImporter.parseControls("""
                 5.17 Authentication information
                 Information security properties
-                Confidentiality Integrity Non-repudiation Accountability Authenticity Resistance
+                Confidentiality Integrity Non-repudiation Accountability Authenticity Resistance Availability
                 Control type
                 Preventive
                 """, Iso2700xPdfImporter.StandardKind.ISO_IEC_27002_2022);
 
         assertEquals(Set.of("Confidentiality", "Integrity", "Non-repudiation", "Accountability", "Authenticity",
-                "Resistance"), controls.get(0).securityProperties());
+                "Resistance", "Availability"), controls.get(0).securityProperties());
     }
 
     @Test

@@ -24,6 +24,10 @@ Standards are represented with TraceSec's existing `org.tracesec.requirements/mo
 
 The repository does not contain ISO standard text. Tests use synthetic text fragments.
 
+The importer also returns a structured `Requirement -> information-security properties` index in `ImportResult`. That index is intentionally not added to the TraceSec requirements metamodel. It preserves the extracted control attributes for subsequent quality-model construction without reparsing `Requirement.wording`.
+
+For explicit hashtag labels the property parser is open-ended and keeps the labels present in the supplied ISO/IEC 27002 text, including properties such as authenticity. If PDF extraction removes the hashtag glyph, the conservative fallback vocabulary is the ISO/IEC 25010 security vocabulary used by this integration plus Availability, because Availability is also used as an ISO/IEC 27002 information-security property.
+
 ## Authoritative EMSE standards mapping
 
 The standards-to-feature mapping is read from the article replication package rather than reconstructed from standard prose:
@@ -36,9 +40,9 @@ The standards-to-feature mapping is read from the article replication package ra
 
 ## ISO/IEC 27002-derived quality model
 
-`DynamicQualityModelGenerator` loads TraceSec's `qualitymodel.ecore` dynamically. It creates an `Information Security` root and discovers every value in the ISO/IEC 27002 `Information security properties` attribute of the imported requirements. Each discovered property becomes a direct child `Quality`, and the corresponding ISO/IEC 27002 `Requirement` objects are added to `Quality.relevantElements`.
+`DynamicQualityModelGenerator` loads TraceSec's `qualitymodel.ecore` dynamically. It creates an `Information Security` root and consumes the structured property index created by `Iso2700xPdfImporter`. Each discovered property becomes a direct child `Quality`, and the corresponding ISO/IEC 27002 `Requirement` objects are added to `Quality.relevantElements`.
 
-The importer does not hard-code CIA. It parses the hashtag-labelled values generically, so properties such as `Authenticity`, `Accountability`, and `Non-repudiation` are represented when present, together with Confidentiality, Integrity, Availability, or other properties found in the standard. Every generated aspect currently receives TraceSec priority `ESSENTIAL`.
+The quality generator does not parse standard text. Property extraction happens once in the ISO importer. Every generated aspect currently receives TraceSec priority `ESSENTIAL`.
 
 ## TraceSec-native requirement-to-code links
 
@@ -62,17 +66,27 @@ The builder uses the exact TraceSec/Moflon namespace URIs. If those generated pa
 
 TraceSec consumes the native correspondence model, while this sidecar retains the evidence explaining why each correspondence exists.
 
+## Artifact construction and TraceSec execution are separate
+
+`TraceSecArtifactBuilder` is the construction boundary. It validates the project taxonomy, resolves custom project descendants to mapped ISO/IEC 27002 requirements, creates provenance, creates native TraceSec correspondences, and creates the quality model. It does not execute TraceSec.
+
+`EmseStandardsTraceabilityIntegration.createTraceSec(...)` prepares the complete EMSE/workbook-backed inputs and delegates artifact construction to `TraceSecArtifactBuilder`.
+
+`TraceSecExecutor` is the execution boundary. It requires a TraceSec-enabled runtime, reloads the serialized program, requirements, correspondence and quality XMI with TraceSec's generated packages, loads a `.tracesec` graph configuration, invokes `GraphBuilder`, links SonarLint findings to the quality model, and invokes `Priorizitation`. This reload step is important because artifact construction deliberately permits dynamic EMF package instances while TraceSec executes on its generated Java model types.
+
 ## End-to-end TraceSec path
 
-`EmseStandardsTraceabilityIntegration.createTraceSec(...)` creates the standards-derived artifacts for the prioritization workflow:
+The construction path is:
 
-1. validate each project feature against itself or an EMSE ancestor,
-2. read the authoritative replication workbook,
-3. retain ISO/IEC 27002 control mappings,
+1. parse project features and validate each project feature against itself or a taxonomy ancestor,
+2. import ISO/IEC 27002 controls as TraceSec requirements while extracting information-security properties once,
+3. read the authoritative replication workbook and retain ISO/IEC 27002 mappings,
 4. resolve project features/custom descendants to ISO/IEC 27002 `Requirement`s,
 5. create provenance traces,
 6. create native TraceSec `Requirement -> program element` correspondences,
-7. create the quality model from all ISO/IEC 27002 information-security properties.
+7. create the quality model from the importer's structured ISO/IEC 27002 property index.
+
+Execution is a separate subsequent step through `TraceSecExecutor`.
 
 With TraceSec's SonarLint enrichment on the same GRaViTY `TypeGraph`, the flow network can follow:
 

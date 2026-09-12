@@ -56,10 +56,23 @@ public final class Iso2700xPdfImporter {
         }
     }
 
+    /**
+     * Imported requirements plus the structured security-property information
+     * extracted while parsing the source. The property index is deliberately kept
+     * outside TraceSec's requirements metamodel so the standard model remains
+     * TraceSec-native while downstream quality-model generation does not need to
+     * parse {@code Requirement.wording} a second time.
+     */
     public record ImportResult(ResourceSet resourceSet, EPackage metamodel, Resource model, EObject standard,
-            List<EObject> controls) {
+            List<EObject> controls, Map<EObject, Set<String>> securityPropertiesByControl, StandardKind kind) {
         public ImportResult {
-            controls = List.copyOf(controls);
+            controls = controls == null ? List.of() : List.copyOf(controls);
+            final Map<EObject, Set<String>> properties = new LinkedHashMap<>();
+            if (securityPropertiesByControl != null) {
+                securityPropertiesByControl.forEach((control, values) -> properties.put(control,
+                        values == null ? Set.of() : Set.copyOf(values)));
+            }
+            securityPropertiesByControl = Map.copyOf(properties);
         }
     }
 
@@ -70,35 +83,58 @@ public final class Iso2700xPdfImporter {
             "operational capabilities", "security domains", "guidance", "purpose");
 
     /**
-     * ISO/IEC 25010 Security subcharacteristics. These are used only as a
-     * conservative fallback when PDF text extraction has removed the '#' markers.
-     * The primary hashtag parser above is intentionally open-ended and therefore
-     * keeps any additional property explicitly present in ISO/IEC 27002.
+     * Conservative fallback vocabulary for PDF extractors that drop the '#' glyph.
+     * It combines the ISO/IEC 25010 security subcharacteristics used by the
+     * integration with Availability, which ISO/IEC 27002 also uses as an
+     * information-security property. Explicit hashtag labels remain open-ended and
+     * therefore take precedence over this fallback vocabulary.
      */
     private static final List<String> FALLBACK_PROPERTIES = List.of("Confidentiality", "Integrity", "Non-repudiation",
-            "Accountability", "Authenticity", "Resistance");
+            "Accountability", "Authenticity", "Resistance", "Availability");
 
     private Iso2700xPdfImporter() {
     }
 
     public static ImportResult importPdf(final Path pdf, final Path requirementsEcore, final Path outputXmi,
             final StandardKind kind) throws IOException {
+        return importPdf(new ResourceSetImpl(), pdf, requirementsEcore, outputXmi, kind);
+    }
+
+    /** Imports into a caller-supplied resource set so all generated artifacts can share references. */
+    public static ImportResult importPdf(final ResourceSet set, final Path pdf, final Path requirementsEcore,
+            final Path outputXmi, final StandardKind kind) throws IOException {
         final String text;
         try (PDDocument document = Loader.loadPDF(pdf.toFile())) {
             text = new PDFTextStripper().getText(document);
         }
-        return importText(text, requirementsEcore, outputXmi, kind);
+        return importText(set, text, requirementsEcore, outputXmi, kind);
     }
 
     /** Entry point intended for deterministic parser tests without a PDF fixture. */
     public static ImportResult importText(final String text, final Path requirementsEcore, final Path outputXmi,
             final StandardKind kind) throws IOException {
+        return importText(new ResourceSetImpl(), text, requirementsEcore, outputXmi, kind);
+    }
+
+    /**
+     * Imports deterministic text into a caller-supplied resource set. This is the
+     * preferred entry point for end-to-end construction because requirements,
+     * program-model correspondences and the quality model can then share one EMF
+     * resource set.
+     */
+    public static ImportResult importText(final ResourceSet set, final String text, final Path requirementsEcore,
+            final Path outputXmi, final StandardKind kind) throws IOException {
+        if (set == null) {
+            throw new IllegalArgumentException("set must not be null");
+        }
+        if (kind == null) {
+            throw new IllegalArgumentException("kind must not be null");
+        }
         final List<ParsedControl> parsed = parseControls(text, kind);
         if (parsed.isEmpty()) {
             throw new IllegalArgumentException("No " + kind.identifier + " controls found in supplied text");
         }
 
-        final ResourceSet set = new ResourceSetImpl();
         final EPackage requirements = DynamicModelSupport.loadPackage(set, requirementsEcore);
         final Resource model = set.createResource(URI.createFileURI(outputXmi.toAbsolutePath().toString()));
         final EObject standard = DynamicModelSupport.create(requirements, "RequirementsSet");
@@ -109,6 +145,7 @@ public final class Iso2700xPdfImporter {
 
         final Map<String, EObject> groups = new LinkedHashMap<>();
         final List<EObject> controls = new ArrayList<>();
+        final Map<EObject, Set<String>> securityPropertiesByControl = new LinkedHashMap<>();
         for (final ParsedControl parsedControl : parsed) {
             final String groupId = controlGroup(parsedControl.identifier());
             final EObject group = groups.computeIfAbsent(groupId, id -> {
@@ -126,12 +163,16 @@ public final class Iso2700xPdfImporter {
             DynamicModelSupport.set(control, "wording", parsedControl.text());
             DynamicModelSupport.add(group, "requirements", control);
             controls.add(control);
+            securityPropertiesByControl.put(control, parsedControl.securityProperties());
         }
         model.save(Map.of());
-        return new ImportResult(set, requirements, model, standard, controls);
+        return new ImportResult(set, requirements, model, standard, controls, securityPropertiesByControl, kind);
     }
 
     public static List<ParsedControl> parseControls(final String text, final StandardKind kind) {
+        if (kind == null) {
+            throw new IllegalArgumentException("kind must not be null");
+        }
         if (text == null || text.isBlank()) {
             return List.of();
         }
@@ -182,9 +223,8 @@ public final class Iso2700xPdfImporter {
 
     /**
      * Extracts every value from the ISO/IEC 27002 "Information security
-     * properties" attribute. The standard renders these values as hashtag labels;
-     * parsing them generically keeps the importer open to the complete ISO/IEC
-     * 25010-derived property vocabulary instead of hard-coding CIA.
+     * properties" attribute. Hashtag-labelled values are parsed generically so the
+     * importer preserves the vocabulary actually present in the supplied standard.
      */
     static Set<String> extractSecurityProperties(final String controlText) {
         if (controlText == null || controlText.isBlank()) {
@@ -215,9 +255,6 @@ public final class Iso2700xPdfImporter {
             }
         }
 
-        // Some PDF extractors drop the '#' glyph. In that case only recognize the
-        // ISO/IEC 25010 Security subcharacteristics; the normal hashtag path above
-        // remains generic and is the authority when explicit labels are available.
         if (result.isEmpty()) {
             final String normalizedAttributes = FeatureMappingCatalog.normalize(attributes);
             for (final String property : FALLBACK_PROPERTIES) {

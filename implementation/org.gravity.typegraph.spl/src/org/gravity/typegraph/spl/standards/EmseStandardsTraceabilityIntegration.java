@@ -8,7 +8,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.spl.features.ParsedProjectFeatureModel;
@@ -29,7 +28,7 @@ public final class EmseStandardsTraceabilityIntegration {
             DynamicQualityModelGenerator.GenerationResult qualityModel) {
     }
 
-    /** Complete output needed by TraceSec's flow-network construction. */
+    /** Complete artifact set needed by TraceSec's flow-network construction. */
     public record TraceSecResult(ProjectTaxonomyConformance.Result conformance, FeatureStandardsMappingResult mappings,
             StandardTraceabilityBuilder.BuildResult provenance,
             TraceSecCorrespondenceBuilder.BuildResult correspondences,
@@ -41,17 +40,18 @@ public final class EmseStandardsTraceabilityIntegration {
 
     /** Creates the integration using an already combined taxonomy/mapping catalog. */
     public static Result create(final ParsedProjectFeatureModel project, final FeatureMappingCatalog emseTaxonomy,
-            final Collection<? extends Resource> standardsResources, final ResourceSet outputResourceSet,
-            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
-            final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
+            final Collection<Iso2700xPdfImporter.ImportResult> standardsImports,
+            final ResourceSet outputResourceSet, final TypeGraph programModel, final Path traceabilityEcore,
+            final Path traceabilityXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         requireCompleteTaxonomy(emseTaxonomy);
+        final var imports = safeImports(standardsImports);
+        final var resources = imports.stream().map(Iso2700xPdfImporter.ImportResult::model).toList();
         final var conformance = new ProjectTaxonomyConformance().requireConformant(project, emseTaxonomy);
-        final Collection<? extends Resource> resources = standardsResources == null ? List.of() : standardsResources;
         final var mappings = new ProjectFeatureStandardsMapper().map(project, emseTaxonomy, resources);
         final var traceability = new StandardTraceabilityBuilder().build(outputResourceSet, traceabilityEcore,
                 traceabilityXmi, project, mappings, programModel);
         final var qualityModel = new DynamicQualityModelGenerator().generate(outputResourceSet, qualityModelEcore,
-                qualityModelXmi, resources);
+                qualityModelXmi, imports);
         return new Result(conformance, mappings, traceability, qualityModel);
     }
 
@@ -60,11 +60,11 @@ public final class EmseStandardsTraceabilityIntegration {
      * the authoritative standards mapping from the replication-package workbook.
      */
     public static Result create(final ParsedProjectFeatureModel project, final Path replicationPackageStandardsWorkbook,
-            final Collection<? extends Resource> standardsResources, final ResourceSet outputResourceSet,
-            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
-            final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
+            final Collection<Iso2700xPdfImporter.ImportResult> standardsImports,
+            final ResourceSet outputResourceSet, final TypeGraph programModel, final Path traceabilityEcore,
+            final Path traceabilityXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         return create(project, EmseSecurityFeatureTaxonomy.catalog(), replicationPackageStandardsWorkbook,
-                standardsResources, outputResourceSet, programModel, traceabilityEcore, traceabilityXmi,
+                standardsImports, outputResourceSet, programModel, traceabilityEcore, traceabilityXmi,
                 qualityModelEcore, qualityModelXmi);
     }
 
@@ -74,29 +74,28 @@ public final class EmseStandardsTraceabilityIntegration {
      */
     public static Result create(final ParsedProjectFeatureModel project, final FeatureMappingCatalog emseTaxonomy,
             final Path replicationPackageStandardsWorkbook,
-            final Collection<? extends Resource> standardsResources, final ResourceSet outputResourceSet,
-            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
-            final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
+            final Collection<Iso2700xPdfImporter.ImportResult> standardsImports,
+            final ResourceSet outputResourceSet, final TypeGraph programModel, final Path traceabilityEcore,
+            final Path traceabilityXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         requireCompleteTaxonomy(emseTaxonomy);
         final FeatureMappingCatalog workbookMappings = EmseSecurityStandardsWorkbookParser
                 .parse(replicationPackageStandardsWorkbook);
         final FeatureMappingCatalog combined = mergeTaxonomyAndMappings(emseTaxonomy, workbookMappings);
-        return create(project, combined, standardsResources, outputResourceSet, programModel, traceabilityEcore,
+        return create(project, combined, standardsImports, outputResourceSet, programModel, traceabilityEcore,
                 traceabilityXmi, qualityModelEcore, qualityModelXmi);
     }
 
     /**
-     * Builds the standards-derived models required by the TraceSec prioritization
-     * workflow. Only ISO/IEC 27002 mappings from the EMSE replication workbook are
-     * inherited by project features; other standards in the workbook are ignored
-     * for this workflow. Custom project subfeatures inherit from the nearest EMSE
-     * ancestor that has an ISO/IEC 27002 mapping.
+     * Constructs the TraceSec input artifacts using the built-in taxonomy and the
+     * authoritative ISO/IEC 27002 mappings. Execution of TraceSec is intentionally
+     * separate; use {@link TraceSecExecutor} after these artifacts are serialized.
      */
     public static TraceSecResult createTraceSec(final ParsedProjectFeatureModel project,
             final Path replicationPackageStandardsWorkbook,
-            final Collection<? extends Resource> iso27002Resources, final ResourceSet outputResourceSet,
-            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
-            final Path correspondenceXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
+            final Collection<Iso2700xPdfImporter.ImportResult> iso27002Imports,
+            final ResourceSet outputResourceSet, final TypeGraph programModel, final Path traceabilityEcore,
+            final Path traceabilityXmi, final Path correspondenceXmi, final Path qualityModelEcore,
+            final Path qualityModelXmi) throws IOException {
         final FeatureMappingCatalog taxonomy = EmseSecurityFeatureTaxonomy.catalog();
         requireCompleteTaxonomy(taxonomy);
         final FeatureMappingCatalog workbookMappings = EmseSecurityStandardsWorkbookParser
@@ -104,17 +103,10 @@ public final class EmseStandardsTraceabilityIntegration {
         final FeatureMappingCatalog combined = mergeTaxonomyAndMappings(taxonomy, workbookMappings)
                 .filterControls(EmseStandardsTraceabilityIntegration::isIso27002);
 
-        final Collection<? extends Resource> resources = iso27002Resources == null ? List.of() : iso27002Resources;
-        final var conformance = new ProjectTaxonomyConformance().requireConformant(project, taxonomy);
-        final var mappings = new ProjectFeatureStandardsMapper().map(project, combined, resources,
-                EmseStandardsTraceabilityIntegration::isIso27002);
-        final var provenance = new StandardTraceabilityBuilder().build(outputResourceSet, traceabilityEcore,
-                traceabilityXmi, project, mappings, programModel);
-        final var correspondences = new TraceSecCorrespondenceBuilder().build(outputResourceSet, correspondenceXmi,
-                project, mappings, programModel);
-        final var qualityModel = new DynamicQualityModelGenerator().generate(outputResourceSet, qualityModelEcore,
-                qualityModelXmi, resources);
-        return new TraceSecResult(conformance, mappings, provenance, correspondences, qualityModel);
+        final var built = new TraceSecArtifactBuilder().build(project, combined, iso27002Imports, outputResourceSet,
+                programModel, traceabilityEcore, traceabilityXmi, correspondenceXmi, qualityModelEcore, qualityModelXmi);
+        return new TraceSecResult(built.conformance(), built.mappings(), built.provenance(), built.correspondences(),
+                built.qualityModel());
     }
 
     public static boolean isIso27002(final StandardControlReference reference) {
@@ -174,5 +166,10 @@ public final class EmseStandardsTraceabilityIntegration {
                     + EMSE_TAXONOMY_FEATURE_COUNT + " canonical features but contains "
                     + emseTaxonomy.entries().size());
         }
+    }
+
+    private static List<Iso2700xPdfImporter.ImportResult> safeImports(
+            final Collection<Iso2700xPdfImporter.ImportResult> imports) {
+        return imports == null ? List.of() : imports.stream().filter(java.util.Objects::nonNull).toList();
     }
 }

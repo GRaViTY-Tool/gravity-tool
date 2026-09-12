@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,16 +18,11 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
- * Creates a TraceSec-compatible quality-model instance from the information
- * security properties stated in imported ISO/IEC 27002 requirements.
+ * Creates a TraceSec-compatible quality-model instance from the structured
+ * information-security properties extracted while importing ISO/IEC 27002.
  * <p>
- * ISO/IEC 27002 explicitly associates controls with information-security
- * properties derived from the ISO/IEC 25010 quality vocabulary. The generator
- * therefore discovers all properties present in the supplied standard model
- * (for example confidentiality, integrity, availability, authenticity,
- * accountability, or non-repudiation) instead of fixing the model to CIA.
- * Every discovered property is represented as a direct child quality of the
- * Information Security root and receives ESSENTIAL priority.
+ * The importer is the single parsing authority. This generator only consumes its
+ * property index and therefore never reparses {@code Requirement.wording}.
  */
 public final class DynamicQualityModelGenerator {
 
@@ -41,7 +35,28 @@ public final class DynamicQualityModelGenerator {
     private static final String ROOT = "Information Security";
 
     public GenerationResult generate(final ResourceSet set, final Path qualityModelEcore, final Path outputXmi,
-            final Collection<? extends Resource> standardsResources) throws IOException {
+            final Collection<Iso2700xPdfImporter.ImportResult> standardsImports) throws IOException {
+        final Map<EObject, Collection<String>> propertiesByRequirement = new LinkedHashMap<>();
+        if (standardsImports != null) {
+            for (final Iso2700xPdfImporter.ImportResult imported : standardsImports) {
+                if (imported == null || imported.kind() != Iso2700xPdfImporter.StandardKind.ISO_IEC_27002_2022) {
+                    continue;
+                }
+                imported.securityPropertiesByControl().forEach((requirement, properties) -> propertiesByRequirement
+                        .computeIfAbsent(requirement, ignored -> new LinkedHashSet<>()).addAll(properties));
+            }
+        }
+        return generateFromProperties(set, qualityModelEcore, outputXmi, propertiesByRequirement);
+    }
+
+    /**
+     * Generates a quality model from an already structured property index. This is
+     * useful for additional standards importers as long as they provide actual
+     * requirement EObjects and normalized property labels.
+     */
+    public GenerationResult generateFromProperties(final ResourceSet set, final Path qualityModelEcore,
+            final Path outputXmi, final Map<? extends EObject, ? extends Collection<String>> propertiesByRequirement)
+            throws IOException {
         if (set == null) {
             throw new IllegalArgumentException("set must not be null");
         }
@@ -50,7 +65,7 @@ public final class DynamicQualityModelGenerator {
         final EObject qualityModel = DynamicModelSupport.create(qualityPackage, "QualityModel");
         resultResource.getContents().add(qualityModel);
 
-        final Map<String, Set<EObject>> requirementsByProperty = discoverProperties(standardsResources);
+        final Map<String, Set<EObject>> requirementsByProperty = invert(propertiesByRequirement);
         final Map<String, EObject> qualities = new LinkedHashMap<>();
         final EObject root = quality(qualityPackage, ROOT,
                 "Information-security qualities derived from ISO/IEC 27002 Information security properties.");
@@ -77,51 +92,24 @@ public final class DynamicQualityModelGenerator {
         return new GenerationResult(resultResource, qualityModel, qualities);
     }
 
-    private Map<String, Set<EObject>> discoverProperties(final Collection<? extends Resource> standardsResources) {
+    private Map<String, Set<EObject>> invert(
+            final Map<? extends EObject, ? extends Collection<String>> propertiesByRequirement) {
         final Map<String, Set<EObject>> requirementsByProperty = new LinkedHashMap<>();
-        if (standardsResources == null) {
+        if (propertiesByRequirement == null) {
             return requirementsByProperty;
         }
-        for (final Resource standardResource : standardsResources) {
-            if (standardResource == null) {
-                continue;
+        propertiesByRequirement.forEach((requirement, properties) -> {
+            if (requirement == null || properties == null) {
+                return;
             }
-            for (final EObject rootObject : standardResource.getContents()) {
-                collectRequirement(rootObject, requirementsByProperty);
-                final var iterator = rootObject.eAllContents();
-                while (iterator.hasNext()) {
-                    collectRequirement(iterator.next(), requirementsByProperty);
+            for (final String property : properties) {
+                if (property == null || property.isBlank()) {
+                    continue;
                 }
+                requirementsByProperty.computeIfAbsent(property, ignored -> new LinkedHashSet<>()).add(requirement);
             }
-        }
+        });
         return requirementsByProperty;
-    }
-
-    private void collectRequirement(final EObject object, final Map<String, Set<EObject>> requirementsByProperty) {
-        if (!"Requirement".equals(object.eClass().getName()) || !belongsToIso27002(object)) {
-            return;
-        }
-        final String wording = DynamicModelSupport.string(object, "wording");
-        for (final String property : Iso2700xPdfImporter.extractSecurityProperties(wording)) {
-            requirementsByProperty.computeIfAbsent(property, ignored -> new LinkedHashSet<>()).add(object);
-        }
-    }
-
-    private boolean belongsToIso27002(final EObject requirement) {
-        EObject current = requirement.eContainer();
-        EObject standard = null;
-        while (current != null) {
-            if ("RequirementsSet".equals(current.eClass().getName())) {
-                standard = current;
-            }
-            current = current.eContainer();
-        }
-        if (standard == null) {
-            return false;
-        }
-        final String identity = DynamicModelSupport.string(standard, "id") + " "
-                + DynamicModelSupport.string(standard, "title");
-        return identity.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+", "").contains("27002");
     }
 
     private EObject quality(final EPackage qualityPackage, final String title, final String description) {
