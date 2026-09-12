@@ -13,4 +13,8 @@
 	path = implementation/org.gravity.umlsecrt
 	url = https://github.com/GRaViTY-Tool/umlsecrt.git
 	branch = master
+[submodule "implementation/org.tracesec.prioritization"]
+	path = implementation/org.tracesec.prioritization
+	url = https://github.com/SvenPeldszus/tracesec-prioritization.git
+	branch = master
 
