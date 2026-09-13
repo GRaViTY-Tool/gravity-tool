@@ -162,14 +162,14 @@ public class ASTNodeToTAnnotatableImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class ASTNodeToTAnnotatableImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
-			setSource((ASTNode) newValue);
-			return;
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
-			setTarget((TAnnotatable) newValue);
-			return;
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
+				setSource((ASTNode) newValue);
+				return;
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
+				setTarget((TAnnotatable) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class ASTNodeToTAnnotatableImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
-			setSource((ASTNode) null);
-			return;
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
-			setTarget((TAnnotatable) null);
-			return;
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
+				setSource((ASTNode) null);
+				return;
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
+				setTarget((TAnnotatable) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class ASTNodeToTAnnotatableImpl extends AbstractCorrespondenceImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
-			return source != null;
-		case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
-			return target != null;
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__SOURCE:
+				return source != null;
+			case PmPackage.AST_NODE_TO_TANNOTATABLE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

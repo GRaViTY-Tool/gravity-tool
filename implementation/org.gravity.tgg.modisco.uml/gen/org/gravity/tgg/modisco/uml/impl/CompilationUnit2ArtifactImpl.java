@@ -162,14 +162,14 @@ public class CompilationUnit2ArtifactImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class CompilationUnit2ArtifactImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
-			setSource((CompilationUnit) newValue);
-			return;
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
-			setTarget((Artifact) newValue);
-			return;
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
+				setSource((CompilationUnit) newValue);
+				return;
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
+				setTarget((Artifact) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class CompilationUnit2ArtifactImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
-			setSource((CompilationUnit) null);
-			return;
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
-			setTarget((Artifact) null);
-			return;
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
+				setSource((CompilationUnit) null);
+				return;
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
+				setTarget((Artifact) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class CompilationUnit2ArtifactImpl extends AbstractCorrespondenceImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
-			return source != null;
-		case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
-			return target != null;
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__SOURCE:
+				return source != null;
+			case UmlPackage.COMPILATION_UNIT2_ARTIFACT__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

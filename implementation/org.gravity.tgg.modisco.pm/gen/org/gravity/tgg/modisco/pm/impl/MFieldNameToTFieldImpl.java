@@ -162,14 +162,14 @@ public class MFieldNameToTFieldImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class MFieldNameToTFieldImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
-			setSource((MFieldName) newValue);
-			return;
-		case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
-			setTarget((TField) newValue);
-			return;
+			case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
+				setSource((MFieldName) newValue);
+				return;
+			case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
+				setTarget((TField) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class MFieldNameToTFieldImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
-			setSource((MFieldName) null);
-			return;
-		case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
-			setTarget((TField) null);
-			return;
+			case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
+				setSource((MFieldName) null);
+				return;
+			case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
+				setTarget((TField) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class MFieldNameToTFieldImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
-			return source != null;
-		case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
-			return target != null;
+			case PmPackage.MFIELD_NAME_TO_TFIELD__SOURCE:
+				return source != null;
+			case PmPackage.MFIELD_NAME_TO_TFIELD__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

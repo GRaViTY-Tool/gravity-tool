@@ -1,0 +1,40 @@
+{
+	"src/test/Main.java": [
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example.Supplier.method():java.util.List"
+		],
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example.Supplier.method():java.util.List"
+		],
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example2.OtherSupplier.method():void"
+		],
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example2.OtherSupplier.method():void"
+		]
+	],
+	"src/example/Supplier.java": [
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example.Supplier.method():java.util.List"
+		],
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example.Supplier.method():java.util.List"
+		]
+	],
+	"src/example2/OtherSupplier.java": [
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example2.OtherSupplier.method():void"
+		],
+		[
+			"test.Main.main(java.lang.String[]):void",
+			"example2.OtherSupplier.method():void"
+		]
+	]
+}

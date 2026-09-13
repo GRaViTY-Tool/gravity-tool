@@ -62,6 +62,8 @@ public class MavenImport extends ProjectImport {
 	private final File m2;
 	private final File mavenRepository;
 
+	private boolean ignoreBuildErrors;
+
 	/**
 	 * Creates an new instance of the maven project importer
 	 *
@@ -70,7 +72,8 @@ public class MavenImport extends ProjectImport {
 	 * @throws ImportException If the importer cannot be created for the project
 	 */
 	public MavenImport(final File rootDir, final boolean ignoreBuildErrors) throws ImportException {
-		super(rootDir, ignoreBuildErrors, "pom.xml");
+		super(rootDir, "pom.xml");
+		this.ignoreBuildErrors = ignoreBuildErrors;
 		this.modulePoms = new LinkedList<>();
 		this.sourceFolders = new HashSet<>();
 		try {
@@ -129,6 +132,10 @@ public class MavenImport extends ProjectImport {
 			LOGGER.error(e.getLocalizedMessage(), e);
 		}
 		return javaProject;
+	}
+
+	private boolean ignoreBuildErrors() {
+		return this.ignoreBuildErrors;
 	}
 
 	/**

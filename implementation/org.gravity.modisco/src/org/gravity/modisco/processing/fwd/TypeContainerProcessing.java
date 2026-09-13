@@ -5,6 +5,7 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -32,28 +33,44 @@ public class TypeContainerProcessing extends AbstractTypedModiscoProcessor<Abstr
 	public boolean process(final MGravityModel model, final Collection<AbstractTypeDeclaration> elements,
 			final IFolder debug, final IProgressMonitor monitor) {
 		elements.add(MoDiscoUtil.getOrCreateJavaLangObject(model));
-		
-		List<ClassFile> classFiles = model.getClassFiles();
-		for (AbstractTypeDeclaration type : elements) {
+
+		final List<ClassFile> classFiles = model.getClassFiles();
+		for (final AbstractTypeDeclaration type : elements) {
 			if (type.getOriginalClassFile() == null && type.getOriginalCompilationUnit() == null) {
-				if (type.isProxy()) {
-					classFiles.add(createClassFile(type));
-				}
-				else {
-					LOGGER.error("Found source file that is not in compilation unit: "+type);
+				if (!type.isProxy()) {
+					LOGGER.error("Found source file that is not in compilation unit: " + type);
 					return false;
 				}
+				classFiles.add(this.createClassFile(type, model));
 			}
 		}
 
 		return true;
 	}
 
-	private ClassFile createClassFile(AbstractTypeDeclaration type) {
-		ClassFile file = JavaFactory.eINSTANCE.createClassFile();
-		file.setName(type.getName() + ".class");
-		file.setOriginalFilePath("${CP}/" + file.getName());
-		file.setPackage(type.getPackage());
+	private ClassFile createClassFile(final AbstractTypeDeclaration type, final MGravityModel model) {
+		final var file = JavaFactory.eINSTANCE.createClassFile();
+		var name = type.getName();
+		String qualifiedName;
+		if (name.endsWith(";")) {
+			qualifiedName = name.substring(1, name.length() - 1);
+			final var separator = qualifiedName.lastIndexOf('/');
+			name = qualifiedName.substring(separator + 1);
+			if (type.getPackage() == null) {
+				final var namespace = qualifiedName.substring(0, separator);
+				final var object = MoDiscoUtil.getOrCreatePackage(model, namespace.split("/"));
+				type.setPackage(object);
+			}
+		} else {
+			qualifiedName = MoDiscoUtil.getQualifiedName(type, "/");
+		}
+		file.setName(name + ".class");
+		file.setOriginalFilePath("${CP}/" + qualifiedName + ".class");
+		var namespace = type.getPackage();
+		if (namespace == null && type.eContainer() instanceof final AbstractTypeDeclaration container) {
+			namespace = container.getPackage();
+		}
+		file.setPackage(namespace);
 		file.setProxy(file.isProxy());
 		file.setType(type);
 		type.setOriginalClassFile(file);

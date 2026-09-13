@@ -29,7 +29,6 @@ import org.gravity.goblin.repair.VisibilityRepairer;
 import org.gravity.goblin.typegraph.equality.EqualityHelper;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.spl.SplPackage;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 
@@ -333,7 +332,6 @@ public class SearchTypeGraph {
 		}
 		BasicPackage.eINSTANCE.eClass();
 		RequirementsPackage.eINSTANCE.eClass();
-		SplPackage.eINSTANCE.eClass();
 		LOGGER.log(Level.INFO, "Search started.");
 
 		search.initializeFitnessFunctions();

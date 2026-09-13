@@ -24,7 +24,7 @@
                   label="Synchronize Backward"
                   style="push">
             </command>
-            <menu
+           	<menu
                   id="org.gravity.settingsmenu"
                   label="Settings">
                <menu

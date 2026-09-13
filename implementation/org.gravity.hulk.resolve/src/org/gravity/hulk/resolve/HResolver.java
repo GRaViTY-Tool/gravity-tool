@@ -3,8 +3,6 @@
 package org.gravity.hulk.resolve;
 
 import org.gravity.hulk.HDetector;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->

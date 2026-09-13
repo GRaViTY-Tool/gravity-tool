@@ -12,17 +12,12 @@
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University
-of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
-Darmstadt.
+      (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
-
    <url>
-      <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
+      <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
+      <discovery label="Henshin" url="https://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
    </url>
 
    <includes
@@ -30,73 +25,37 @@ Darmstadt.
          version="0.0.0"/>
 
    <requires>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.gravity.eclipse"/>
-      <import plugin="org.eclipse.emf.henshin.interpreter"/>
-      <import plugin="org.gravity.security.annotations.pm"/>
-      <import plugin="org.moflon.core.dfs"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.jdt.core"/>
-      <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.swt"/>
-      <import plugin="org.gravity.refactorings"/>
-      <import plugin="org.eclipse.ui.ide" version="3.11.0" match="greaterOrEqual"/>
-      <import feature="org.gravity.features.eclipse" version="1.0.0.qualifier"/>
-      <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
-      <import feature="org.gravity.features.refactorings" version="1.0.0.qualifier"/>
+      <import feature="org.gravity.features.eclipse"/>
+      <import feature="org.gravity.features.modisco"/>
+      <import feature="org.gravity.features.refactorings"/>
    </requires>
 
    <plugin
          id="org.gravity.hulk"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.antipatterngraph"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.annotations"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.refactoringgraph"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.resolve"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.hulk.ui.visualization"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>

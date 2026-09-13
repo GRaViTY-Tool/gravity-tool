@@ -9,28 +9,21 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
-import org.eclipse.ui.ISelectionService;
-import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.selection.SelectionHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
-import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkActivator;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.impl.HAntiPatternDetection;
 import org.gravity.hulk.ui.visualization.detection.SpaghettiCodePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SwissArmyKnifePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.preprocessNACCMetric;
@@ -45,25 +38,25 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 	private static final Logger LOGGER = Logger.getLogger(OpenAntipatternXmiHandler.class);
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
+		final var window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 
-		ISelectionService service = window.getSelectionService();
-		IStructuredSelection structured = (IStructuredSelection) service.getSelection();
-		List<Object> workspaceSelection = Arrays.asList(structured.toArray());
+		final var service = window.getSelectionService();
+		final var structured = (IStructuredSelection) service.getSelection();
+		final List<Object> workspaceSelection = Arrays.asList(structured.toArray());
 
 		try {
-			for (IJavaProject project : SelectionHelper.getJavaProjects(workspaceSelection)) {
-				openProject(project.getProject());
+			for (final IJavaProject project : SelectionHelper.getJavaProjects(workspaceSelection)) {
+				this.openProject(project.getProject());
 			}
-		} catch (IOException e) {
-			MessageBox failure = new MessageBox(window.getShell(), SWT.ICON_INFORMATION | SWT.OK);
+		} catch (final IOException e) {
+			final var failure = new MessageBox(window.getShell(), SWT.ICON_INFORMATION | SWT.OK);
 			failure.setText("Visualisation not possible");
 			failure.setMessage("You must scan the project for Antipatterns before you can visualize it!");
 			failure.open();
 			return false;
 		}
-		MessageBox success = new MessageBox(window.getShell(), SWT.ICON_INFORMATION | SWT.OK);
+		final var success = new MessageBox(window.getShell(), SWT.ICON_INFORMATION | SWT.OK);
 		success.setText("Visualisation loaded");
 		success.setMessage("Visualisation was successfully loaded!");
 		success.open();
@@ -71,14 +64,14 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		return true;
 	}
 
-	private void openProject(IProject project) throws IOException {
-		IFolder src = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
-		IFile antiPatternXmi = src.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
-		URI uri = URI.createFileURI(antiPatternXmi.getLocation().toString());
-		Resource antiPatternResource = new ResourceSetImpl().getResource(uri, true);
+	private void openProject(final IProject project) throws IOException {
+		final var src = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
+		final var antiPatternXmi = src.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
+		final var uri = URI.createFileURI(antiPatternXmi.getLocation().toString());
+		final var antiPatternResource = new ResourceSetImpl().getResource(uri, true);
 		antiPatternResource.load(Collections.emptyMap());
-		EList<EObject> contents = antiPatternResource.getContents();
-		EObject eObject = contents.get(0);
+		final var contents = antiPatternResource.getContents();
+		final var eObject = contents.get(0);
 		HAntiPatternGraph apg;
 		if (eObject instanceof HAntiPatternGraph) {
 			apg = (HAntiPatternGraph) eObject;
@@ -90,17 +83,18 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		}
 
 		InformationViewContentProvider.setAPG(apg);
-		
-		IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
-		if(javaProject == null) {
-			LOGGER.error("Not a Java project: "+project.getName());
+
+		final var javaProject = JavaProjectUtil.getJavaProject(project);
+		if (javaProject == null) {
+			LOGGER.error("Not a Java project: " + project.getName());
 			return;
 		}
-		
-		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg, new preprocessNACCMetric(), javaProject);
-		AntipatternMarkerManager swissArmyKnifeManager = new AntipatternMarkerManager(apg,
+
+		final var theBlobManager = new AntipatternMarkerManager(apg, new preprocessNACCMetric(),
+				javaProject);
+		final var swissArmyKnifeManager = new AntipatternMarkerManager(apg,
 				new SwissArmyKnifePreprocessor(), javaProject);
-		AntipatternMarkerManager spaghettiCodeManager = new AntipatternMarkerManager(apg,
+		final var spaghettiCodeManager = new AntipatternMarkerManager(apg,
 				new SpaghettiCodePreprocessor(), javaProject);
 		theBlobManager.setMarkers();
 		swissArmyKnifeManager.setMarkers();

@@ -456,7 +456,7 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_58(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_155(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = IgnoreOrphanTypesEdgeImpl
 				.pattern_IgnoreOrphanTypesEdge_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -790,74 +790,74 @@ public class IgnoreOrphanTypesEdgeImpl extends AbstractRuleImpl implements Ignor
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
-					(Model) arguments.get(2));
-			return null;
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PARAMETERIZEDTYPE_MODEL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ParameterizedType) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2));
-			return null;
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_BWD__MATCH:
-			return isAppropriate_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0));
-			return null;
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_58__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_58((EMoflonEdge) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_CC__PARAMETERIZEDTYPE_MODEL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((ParameterizedType) arguments.get(0), (Model) arguments.get(1),
-					(Match) arguments.get(2), (Match) arguments.get(3));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_FWD__PARAMETERIZEDTYPE_MODEL:
-			return checkDEC_FWD((ParameterizedType) arguments.get(0), (Model) arguments.get(1));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_BWD:
-			return checkDEC_BWD();
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL__RULEENTRYCONTAINER_PARAMETERIZEDTYPE_MODEL:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ParameterizedType) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PARAMETERIZEDTYPE_MODEL_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ParameterizedType) arguments.get(1), (Model) arguments.get(2),
-					(ModelgeneratorRuleResult) arguments.get(3));
-		case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+						(Model) arguments.get(2));
+				return null;
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PARAMETERIZEDTYPE_MODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ParameterizedType) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PARAMETERIZEDTYPE_MODEL:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(ParameterizedType) arguments.get(1), (Model) arguments.get(2));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2));
+				return null;
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_BWD__MATCH:
+				return isAppropriate_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH:
+				registerObjectsToMatch_BWD((Match) arguments.get(0));
+				return null;
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_155__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_155((EMoflonEdge) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_SOLVE_CSP_CC__PARAMETERIZEDTYPE_MODEL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((ParameterizedType) arguments.get(0), (Model) arguments.get(1),
+						(Match) arguments.get(2), (Match) arguments.get(3));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_FWD__PARAMETERIZEDTYPE_MODEL:
+				return checkDEC_FWD((ParameterizedType) arguments.get(0), (Model) arguments.get(1));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___CHECK_DEC_BWD:
+				return checkDEC_BWD();
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL__RULEENTRYCONTAINER_PARAMETERIZEDTYPE_MODEL:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ParameterizedType) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PARAMETERIZEDTYPE_MODEL_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ParameterizedType) arguments.get(1), (Model) arguments.get(2),
+						(ModelgeneratorRuleResult) arguments.get(3));
+			case RulesPackage.IGNORE_ORPHAN_TYPES_EDGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -1,6 +1,7 @@
 package org.gravity.modisco;
 
 import org.eclipse.modisco.java.Annotation;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.Initializer;
@@ -16,6 +17,11 @@ import org.gravity.modisco.bugfixes.MAnnotation;
  *
  */
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
+
+	@Override
+	public AnonymousClassDeclaration createAnonymousClassDeclaration() {
+		return ModiscoFactory.eINSTANCE.createMAnonymousClass();
+	}
 
 	@Override
 	public Annotation createAnnotation() {

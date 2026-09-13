@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
-		<attributes>
-			<attribute name="module" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src/"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/angus-activation.jar"/>
@@ -55,6 +50,6 @@
 	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-security.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-server.jar"/>
 	<classpathentry exported="true" kind="lib" path="target/dependency/jetty-util.jar"/>
-	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar"/>
+	<classpathentry exported="true" kind="lib" path="target/dependency/commons-cli.jar" sourcepath="/home/sven/Downloads/commons-cli-1.9.0-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

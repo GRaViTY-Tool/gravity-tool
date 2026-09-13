@@ -7,14 +7,12 @@
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0.qualifier">
 
-   <description>
+   <description url="https://www.gravity-tool.org">
       The plugins providing the backend for the GRaViTY tool.
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University
-of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
-Darmstadt.
+      (C) Copyright ${year} Universityof Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum.
    </copyright>
 
    <license url="http://www.example.com/license">
@@ -29,31 +27,12 @@ Darmstadt.
          id="org.gravity.license.epl"
          version="0.0.0"/>
 
-   <requires>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.jdt.core"/>
-      <import plugin="org.eclipse.jdt.launching"/>
-      <import plugin="org.eclipse.jgit"/>
-      <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-   </requires>
-
    <plugin
          id="org.gravity.eclipse.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.eclipse"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>

@@ -13,6 +13,7 @@ import org.eclipse.modisco.java.AbstractMethodInvocation;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.AbstractTypeQualifiedExpression;
 import org.eclipse.modisco.java.AbstractVariablesContainer;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
@@ -373,6 +374,14 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAccess(mClassInstanceCreation);
 				if (result == null) result = caseASTNode(mClassInstanceCreation);
 				if (result == null) result = caseMAbstractFlowElement(mClassInstanceCreation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MANONYMOUS_CLASS: {
+				MAnonymousClass mAnonymousClass = (MAnonymousClass)theEObject;
+				T result = caseMAnonymousClass(mAnonymousClass);
+				if (result == null) result = caseAnonymousClassDeclaration(mAnonymousClass);
+				if (result == null) result = caseASTNode(mAnonymousClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -839,6 +848,21 @@ public class ModiscoSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MAnonymous Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MAnonymous Class</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMAnonymousClass(MAnonymousClass object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MSuper Constructor Invocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1240,6 +1264,21 @@ public class ModiscoSwitch<T> {
 	 * @generated
 	 */
 	public T caseClassInstanceCreation(ClassInstanceCreation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Anonymous Class Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Anonymous Class Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnonymousClassDeclaration(AnonymousClassDeclaration object) {
 		return null;
 	}
 

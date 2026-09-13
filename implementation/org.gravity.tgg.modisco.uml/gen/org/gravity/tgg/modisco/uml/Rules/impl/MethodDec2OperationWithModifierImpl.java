@@ -729,7 +729,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Operation_0(Operation feature) {
+	public EObjectContainer isAppropriate_BWD_Operation_1(Operation feature) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,7 +786,7 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_41(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_144(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = MethodDec2OperationWithModifierImpl
 				.pattern_MethodDec2OperationWithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -855,13 +855,13 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
+
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
@@ -936,13 +936,13 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
-
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
+
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
@@ -1297,84 +1297,84 @@ public class MethodDec2OperationWithModifierImpl extends AbstractRuleImpl implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
-			return isAppropriate_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
-			return null;
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODIFIER_MMETHODDEFINITION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5));
-			return null;
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD__MATCH_OPERATION:
-			return isAppropriate_BWD((Match) arguments.get(0), (Operation) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_OPERATION:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Operation) arguments.get(1));
-			return null;
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_OPERATION:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Operation) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5));
-			return null;
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_0__OPERATION:
-			return isAppropriate_BWD_Operation_0((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_41__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_41((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_MODIFIER_MMETHODDEFINITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Operation) arguments.get(0), (Modifier) arguments.get(1),
-					(MMethodDefinition) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_FWD__MODIFIER_MMETHODDEFINITION:
-			return checkDEC_FWD((Modifier) arguments.get(0), (MMethodDefinition) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_BWD__OPERATION:
-			return checkDEC_BWD((Operation) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
+				return isAppropriate_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
+						(MMethodDefinition) arguments.get(2));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
+						(MMethodDefinition) arguments.get(2));
+				return null;
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODIFIER_MMETHODDEFINITION:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Modifier) arguments.get(1),
+						(MMethodDefinition) arguments.get(2));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODIFIER_MMETHODDEFINITION:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Modifier) arguments.get(1),
+						(MMethodDefinition) arguments.get(2));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5));
+				return null;
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD__MATCH_OPERATION:
+				return isAppropriate_BWD((Match) arguments.get(0), (Operation) arguments.get(1));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_OPERATION:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Operation) arguments.get(1));
+				return null;
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_OPERATION:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Operation) arguments.get(1));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5));
+				return null;
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_BWD_OPERATION_1__OPERATION:
+				return isAppropriate_BWD_Operation_1((Operation) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_144__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_144((EMoflonEdge) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_MODIFIER_MMETHODDEFINITION_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Operation) arguments.get(0), (Modifier) arguments.get(1),
+						(MMethodDefinition) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_FWD__MODIFIER_MMETHODDEFINITION:
+				return checkDEC_FWD((Modifier) arguments.get(0), (MMethodDefinition) arguments.get(1));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___CHECK_DEC_BWD__OPERATION:
+				return checkDEC_BWD((Operation) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.METHOD_DEC2_OPERATION_WITH_MODIFIER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

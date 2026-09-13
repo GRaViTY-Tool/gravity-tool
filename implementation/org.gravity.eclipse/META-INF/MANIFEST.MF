@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.jgit,
  org.eclipse.jgit.ssh.apache,
  org.apache.log4j,
- org.gravity.typegraph.basic;visibility:=reexport
+ org.gravity.typegraph.basic;visibility:=reexport,
+ org.eclipse.core.commands
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.eclipse,

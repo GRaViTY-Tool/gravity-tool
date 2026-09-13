@@ -162,14 +162,14 @@ public class ElementToModuleImpl extends AbstractCorrespondenceImpl implements E
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.ELEMENT_TO_MODULE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.ELEMENT_TO_MODULE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.ELEMENT_TO_MODULE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.ELEMENT_TO_MODULE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class ElementToModuleImpl extends AbstractCorrespondenceImpl implements E
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.ELEMENT_TO_MODULE__SOURCE:
-			setSource((NamedElement) newValue);
-			return;
-		case PmPackage.ELEMENT_TO_MODULE__TARGET:
-			setTarget((TModule) newValue);
-			return;
+			case PmPackage.ELEMENT_TO_MODULE__SOURCE:
+				setSource((NamedElement) newValue);
+				return;
+			case PmPackage.ELEMENT_TO_MODULE__TARGET:
+				setTarget((TModule) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class ElementToModuleImpl extends AbstractCorrespondenceImpl implements E
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.ELEMENT_TO_MODULE__SOURCE:
-			setSource((NamedElement) null);
-			return;
-		case PmPackage.ELEMENT_TO_MODULE__TARGET:
-			setTarget((TModule) null);
-			return;
+			case PmPackage.ELEMENT_TO_MODULE__SOURCE:
+				setSource((NamedElement) null);
+				return;
+			case PmPackage.ELEMENT_TO_MODULE__TARGET:
+				setTarget((TModule) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class ElementToModuleImpl extends AbstractCorrespondenceImpl implements E
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.ELEMENT_TO_MODULE__SOURCE:
-			return source != null;
-		case PmPackage.ELEMENT_TO_MODULE__TARGET:
-			return target != null;
+			case PmPackage.ELEMENT_TO_MODULE__SOURCE:
+				return source != null;
+			case PmPackage.ELEMENT_TO_MODULE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

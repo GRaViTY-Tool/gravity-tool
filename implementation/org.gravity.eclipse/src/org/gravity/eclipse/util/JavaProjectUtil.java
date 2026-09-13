@@ -115,6 +115,28 @@ public final class JavaProjectUtil {
 	 * Creates a new empty java project in the current workspace
 	 *
 	 * @param name              The desired name of the project
+	 * @param force             whether potentially existing projects should be
+	 *                          overridden
+	 * @param sourceFolderNames The names of the source folders
+	 * @param monitor           A progress monitor
+	 * @return The new java project
+	 * @throws DuplicateProjectNameException If there is already a project with this
+	 *                                       name
+	 * @throws CoreException                 If the creation fails
+	 */
+	public static IJavaProject createJavaProject(final String name, final boolean force,
+			final Collection<String> sourceFolderNames, final IProgressMonitor monitor)
+			throws DuplicateProjectNameException, CoreException {
+		// Create new project with given name
+		final var project = EclipseProjectUtil.createProject(name, force, monitor);
+
+		return convertToJavaProject(sourceFolderNames, project, monitor);
+	}
+
+	/**
+	 * Creates a new empty java project in the current workspace
+	 *
+	 * @param name              The desired name of the project
 	 * @param sourceFolderNames The names of the source folders
 	 * @param monitor           A progress monitor
 	 * @return The new java project
@@ -124,10 +146,7 @@ public final class JavaProjectUtil {
 	 */
 	public static IJavaProject createJavaProject(final String name, final Collection<String> sourceFolderNames,
 			final IProgressMonitor monitor) throws DuplicateProjectNameException, CoreException {
-		// Create new project with given name
-		final var project = EclipseProjectUtil.createProject(name, monitor);
-
-		return convertToJavaProject(sourceFolderNames, project, monitor);
+		return createJavaProject(name, false, sourceFolderNames, monitor);
 	}
 
 	/**
@@ -188,7 +207,7 @@ public final class JavaProjectUtil {
 		final var newClasspath = new IClasspathEntry[rawClasspath.length + entries.size()];
 		System.arraycopy(rawClasspath, 0, newClasspath, 0, rawClasspath.length);
 		var i = rawClasspath.length;
-		for(final IClasspathEntry entry : entries) {
+		for (final IClasspathEntry entry : entries) {
 			newClasspath[i++] = entry;
 		}
 		project.setRawClasspath(newClasspath, monitor);
@@ -266,7 +285,7 @@ public final class JavaProjectUtil {
 	 */
 	public static void addJavaClassesToPackageFragment(final IPackageFragment packeFragment,
 			final List<Path> javaClasses, final boolean link, final IProgressMonitor monitor)
-					throws IOException, CoreException {
+			throws IOException, CoreException {
 		for (final Path javaFile : javaClasses) {
 			final var fileName = javaFile.getFileName().toFile().getName();
 			final IPath location = new org.eclipse.core.runtime.Path(javaFile.toFile().getAbsolutePath());
@@ -296,14 +315,13 @@ public final class JavaProjectUtil {
 			// It is not the same file that should be added to the project, again
 			final var sameContent = FileUtils.getContentsAsString(existing.getLocation().toFile())
 					.equals(FileUtils.getContentsAsString(additional.toFile()));
-			if (sameContent) {
-				// The two classes have the same content and adding only one is ok
-				LOGGER.warn("Duplicate with identical content: " + additional.toString());
-			} else {
+			if (!sameContent) {
 				throw new IOException(
 						"Duplicate: \n\t" + existing.getLocation().toFile().toPath().toRealPath().toString() + "\n\t"
 								+ additional.toString());
 			}
+			// The two classes have the same content and adding only one is ok
+			LOGGER.warn("Duplicate with identical content: " + additional.toString());
 		}
 	}
 

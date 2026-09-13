@@ -163,14 +163,14 @@ public class VariableDeclarationFragmentToTFieldDefinitionImpl extends AbstractC
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class VariableDeclarationFragmentToTFieldDefinitionImpl extends AbstractC
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
-			setSource((VariableDeclarationFragment) newValue);
-			return;
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
-			setTarget((TFieldDefinition) newValue);
-			return;
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
+				setSource((VariableDeclarationFragment) newValue);
+				return;
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
+				setTarget((TFieldDefinition) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class VariableDeclarationFragmentToTFieldDefinitionImpl extends AbstractC
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
-			setSource((VariableDeclarationFragment) null);
-			return;
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
-			setTarget((TFieldDefinition) null);
-			return;
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
+				setSource((VariableDeclarationFragment) null);
+				return;
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
+				setTarget((TFieldDefinition) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class VariableDeclarationFragmentToTFieldDefinitionImpl extends AbstractC
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
-			return source != null;
-		case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
-			return target != null;
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__SOURCE:
+				return source != null;
+			case PmPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

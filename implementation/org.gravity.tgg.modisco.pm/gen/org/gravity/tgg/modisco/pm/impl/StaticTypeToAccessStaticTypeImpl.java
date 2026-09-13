@@ -163,14 +163,14 @@ public class StaticTypeToAccessStaticTypeImpl extends AbstractCorrespondenceImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class StaticTypeToAccessStaticTypeImpl extends AbstractCorrespondenceImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
-			setSource((Type) newValue);
-			return;
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
-			setTarget((TCall) newValue);
-			return;
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
+				setSource((Type) newValue);
+				return;
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
+				setTarget((TCall) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class StaticTypeToAccessStaticTypeImpl extends AbstractCorrespondenceImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
-			setSource((Type) null);
-			return;
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
-			setTarget((TCall) null);
-			return;
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
+				setSource((Type) null);
+				return;
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
+				setTarget((TCall) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class StaticTypeToAccessStaticTypeImpl extends AbstractCorrespondenceImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
-			return source != null;
-		case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
-			return target != null;
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__SOURCE:
+				return source != null;
+			case PmPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

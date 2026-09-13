@@ -13,46 +13,28 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
- * Calculates PCs of the elements in the program model in a preprocessing
- *
- * @author speldszus
- *
+ * Adds source-level feature presence conditions to the discovered program model.
+ * HAnS and Antenna parsing is intentionally independent of FeatureIDE project
+ * nature and of any security-feature taxonomy.
  */
 public class ProgramGraphProcessor implements IProgramGraphProcessor {
 
-	private static final Logger LOGGER = Logger.getLogger(ProgramGraphProcessor.class);
+    private static final Logger LOGGER = Logger.getLogger(ProgramGraphProcessor.class);
 
-	/**
-	 * Adds variability annotations from Antenna annotations in the discovered
-	 * project to the program model
-	 *
-	 * @param pg       The discovered program model
-	 * @param monition A progress monitor
-	 */
-	@Override
-	public boolean process(final TypeGraph pg, final IProgressMonitor monitor) {
-		final var project = EclipseProjectUtil.getProjectByName(pg.getTName());
-		try {
-			if (!project.hasNature("de.ovgu.featureide.core.featureProjectNature")) {
-				// Only process FeatureIDE projects
-				return true;
-			}
-		} catch (final CoreException e) {
-			LOGGER.error(e);
-		}
-		final var javaProject = JavaCore.create(project);
-		for (final TAbstractType tType : pg.getAllTypes()) {
-			if (tType.isDeclared() && (tType.getOuterType() == null)) {
-				try {
-					new TypeProcessor(tType, javaProject).process();
-				} catch (IOException | CoreException e) {
-					LOGGER.log(Level.ERROR, e);
-					return false;
-				}
-			}
-		}
-
-		return true;
-	}
-
+    @Override
+    public boolean process(final TypeGraph pg, final IProgressMonitor monitor) {
+        final var project = EclipseProjectUtil.getProjectByName(pg.getTName());
+        final var javaProject = JavaCore.create(project);
+        for (final TAbstractType tType : pg.getAllTypes()) {
+            if (tType.isDeclared() && (tType.getOuterType() == null)) {
+                try {
+                    new TypeProcessor(tType, javaProject).process();
+                } catch (IOException | CoreException e) {
+                    LOGGER.log(Level.ERROR, e);
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

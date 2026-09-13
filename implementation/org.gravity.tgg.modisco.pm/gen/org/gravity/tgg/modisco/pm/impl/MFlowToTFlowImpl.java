@@ -160,14 +160,14 @@ public class MFlowToTFlowImpl extends AbstractCorrespondenceImpl implements MFlo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MFLOW_TO_TFLOW__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MFLOW_TO_TFLOW__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MFLOW_TO_TFLOW__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MFLOW_TO_TFLOW__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,12 +180,12 @@ public class MFlowToTFlowImpl extends AbstractCorrespondenceImpl implements MFlo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MFLOW_TO_TFLOW__SOURCE:
-			setSource((MFlow) newValue);
-			return;
-		case PmPackage.MFLOW_TO_TFLOW__TARGET:
-			setTarget((TFlow) newValue);
-			return;
+			case PmPackage.MFLOW_TO_TFLOW__SOURCE:
+				setSource((MFlow) newValue);
+				return;
+			case PmPackage.MFLOW_TO_TFLOW__TARGET:
+				setTarget((TFlow) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,12 +198,12 @@ public class MFlowToTFlowImpl extends AbstractCorrespondenceImpl implements MFlo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MFLOW_TO_TFLOW__SOURCE:
-			setSource((MFlow) null);
-			return;
-		case PmPackage.MFLOW_TO_TFLOW__TARGET:
-			setTarget((TFlow) null);
-			return;
+			case PmPackage.MFLOW_TO_TFLOW__SOURCE:
+				setSource((MFlow) null);
+				return;
+			case PmPackage.MFLOW_TO_TFLOW__TARGET:
+				setTarget((TFlow) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -216,10 +216,10 @@ public class MFlowToTFlowImpl extends AbstractCorrespondenceImpl implements MFlo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MFLOW_TO_TFLOW__SOURCE:
-			return source != null;
-		case PmPackage.MFLOW_TO_TFLOW__TARGET:
-			return target != null;
+			case PmPackage.MFLOW_TO_TFLOW__SOURCE:
+				return source != null;
+			case PmPackage.MFLOW_TO_TFLOW__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

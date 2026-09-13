@@ -4,11 +4,12 @@ package org.gravity.tgg.modisco.uml.Rules;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.EnumConstantDeclaration;
 import org.eclipse.modisco.java.EnumDeclaration;
 
 import org.eclipse.uml2.uml.Enumeration;
+
+import org.gravity.modisco.MAnonymousClass;
 
 import org.gravity.tgg.modisco.uml.ASTNode2Element;
 import org.gravity.tgg.modisco.uml.JavaPackage2UmlPackage;
@@ -47,7 +48,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon,
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
@@ -72,8 +73,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			AnonymousClassDeclaration mAnon, EnumConstantDeclaration mMember, EnumDeclaration jContainer);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon,
+			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,8 +82,8 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			AnonymousClassDeclaration mAnon, EnumConstantDeclaration mMember, EnumDeclaration jContainer);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon,
+			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,7 +100,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
+			org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, ASTNode2Element ne2ne,
 			JavaPackage2UmlPackage p2p);
 
@@ -223,7 +224,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_package);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_package);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +232,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_anonymousClassDeclaration);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_117(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +265,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class feature, org.eclipse.uml2.uml.Package uPackage,
-			org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon, Enumeration uContainer,
+			org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon, Enumeration uContainer,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -281,7 +282,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, AnonymousClassDeclaration mAnon,
+	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, MAnonymousClass mAnon,
 			EnumConstantDeclaration mMember, EnumDeclaration jContainer);
 
 	/**
@@ -299,7 +300,7 @@ public interface AnonymousClass4EnumConstInPackage extends EObject, AbstractRule
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element ne2neParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, JavaPackage2UmlPackage p2pParameter);
 
 	/**
 	 * <!-- begin-user-doc -->

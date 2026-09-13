@@ -92,7 +92,7 @@
         <attributes xmi:id="_TsKAgOGREey8I6Gm2JN-ZQ" value="false">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
-        <attributes xmi:id="_T2JC8OGREey8I6Gm2JN-ZQ" value="&quot;OuterClass$InnerClass$Anonymous&quot;">
+        <attributes xmi:id="_T2JC8OGREey8I6Gm2JN-ZQ" value="&quot;OuterClass$InnerClass$1&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -265,7 +265,7 @@
         <attributes xmi:id="_TsKAgeGREey8I6Gm2JN-ZQ" value="false">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
-        <attributes xmi:id="_T2JC8eGREey8I6Gm2JN-ZQ" value="&quot;OuterClass$InnerClass$Anonymous&quot;">
+        <attributes xmi:id="_T2JC8eGREey8I6Gm2JN-ZQ" value="&quot;OuterClass$InnerClass$1&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
