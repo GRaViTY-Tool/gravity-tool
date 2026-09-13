@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.gravity.tools</groupId>
-  <artifactId>standards-reference-artifact-generator</artifactId>
+  <artifactId>iso27002-model-generator</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -24,18 +24,13 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.5.0</version>
         <configuration>
-          <mainClass>org.gravity.typegraph.spl.standards.generator.GenerateStandardsArtifacts</mainClass>
+          <mainClass>org.gravity.typegraph.spl.standards.generator.GenerateIso27002</mainClass>
         </configuration>
       </plugin>
     </plugins>
   </build>
 
   <dependencies>
-    <dependency>
-      <groupId>org.gravity</groupId>
-      <artifactId>org.gravity.typegraph.spl</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
     <dependency>
       <groupId>org.apache.pdfbox</groupId>
       <artifactId>pdfbox</artifactId>
