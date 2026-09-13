@@ -79,6 +79,8 @@ public final class EmseStandardsTraceabilityIntegration {
 
     private static List<StandardRequirementsModel> safeStandards(
             final Collection<? extends StandardRequirementsModel> standards) {
-        return standards == null ? List.of() : standards.stream().filter(java.util.Objects::nonNull).toList();
+        return standards == null ? List.of()
+                : standards.stream().filter(java.util.Objects::nonNull)
+                        .map(StandardRequirementsModel.class::cast).toList();
     }
 }
