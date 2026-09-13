@@ -1,4 +1,4 @@
-package org.gravity.typegraph.spl.standards;
+package org.gravity.typegraph.spl.standards.generator;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,11 +17,10 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-/** Minimal XLSX reader for the tabular EMSE replication-package workbook. */
+/** Minimal XLSX reader used only by the offline EMSE artifact generator. */
 final class XlsxWorkbookReader {
 
     record Sheet(String name, List<List<String>> rows) {
@@ -46,13 +45,11 @@ final class XlsxWorkbookReader {
             final NodeList sheets = workbook.getElementsByTagNameNS(SPREADSHEET_NS, "sheet");
             for (int i = 0; i < sheets.getLength(); i++) {
                 final Element sheet = (Element) sheets.item(i);
-                final String name = sheet.getAttribute("name");
-                final String relationshipId = sheet.getAttributeNS(OFFICE_REL_NS, "id");
-                final String target = relationships.get(relationshipId);
-                if (target == null || target.isBlank()) {
-                    continue;
+                final String target = relationships.get(sheet.getAttributeNS(OFFICE_REL_NS, "id"));
+                if (target != null && !target.isBlank()) {
+                    result.add(new Sheet(sheet.getAttribute("name"),
+                            readSheet(zip, normalizeTarget(target), sharedStrings)));
                 }
-                result.add(new Sheet(name, readSheet(zip, normalizeTarget(target), sharedStrings)));
             }
             return List.copyOf(result);
         }
@@ -62,14 +59,13 @@ final class XlsxWorkbookReader {
         if (zip.getEntry("xl/sharedStrings.xml") == null) {
             return List.of();
         }
-        final Document document = readXml(zip, "xl/sharedStrings.xml");
-        final NodeList items = document.getElementsByTagNameNS(SPREADSHEET_NS, "si");
+        final NodeList items = readXml(zip, "xl/sharedStrings.xml").getElementsByTagNameNS(SPREADSHEET_NS, "si");
         final List<String> values = new ArrayList<>(items.getLength());
         for (int i = 0; i < items.getLength(); i++) {
-            final NodeList textNodes = ((Element) items.item(i)).getElementsByTagNameNS(SPREADSHEET_NS, "t");
+            final NodeList texts = ((Element) items.item(i)).getElementsByTagNameNS(SPREADSHEET_NS, "t");
             final StringBuilder value = new StringBuilder();
-            for (int j = 0; j < textNodes.getLength(); j++) {
-                value.append(textNodes.item(j).getTextContent());
+            for (int j = 0; j < texts.getLength(); j++) {
+                value.append(texts.item(j).getTextContent());
             }
             values.add(value.toString());
         }
@@ -77,8 +73,8 @@ final class XlsxWorkbookReader {
     }
 
     private static Map<String, String> readWorkbookRelationships(final ZipFile zip) throws IOException {
-        final Document document = readXml(zip, "xl/_rels/workbook.xml.rels");
-        final NodeList relationships = document.getElementsByTagNameNS(PACKAGE_REL_NS, "Relationship");
+        final NodeList relationships = readXml(zip, "xl/_rels/workbook.xml.rels")
+                .getElementsByTagNameNS(PACKAGE_REL_NS, "Relationship");
         final Map<String, String> result = new LinkedHashMap<>();
         for (int i = 0; i < relationships.getLength(); i++) {
             final Element relationship = (Element) relationships.item(i);
@@ -89,12 +85,10 @@ final class XlsxWorkbookReader {
 
     private static List<List<String>> readSheet(final ZipFile zip, final String entryName,
             final List<String> sharedStrings) throws IOException {
-        final Document document = readXml(zip, entryName);
-        final NodeList rows = document.getElementsByTagNameNS(SPREADSHEET_NS, "row");
+        final NodeList rows = readXml(zip, entryName).getElementsByTagNameNS(SPREADSHEET_NS, "row");
         final List<List<String>> result = new ArrayList<>(rows.getLength());
         for (int i = 0; i < rows.getLength(); i++) {
-            final Element row = (Element) rows.item(i);
-            final NodeList cells = row.getElementsByTagNameNS(SPREADSHEET_NS, "c");
+            final NodeList cells = ((Element) rows.item(i)).getElementsByTagNameNS(SPREADSHEET_NS, "c");
             final Map<Integer, String> values = new HashMap<>();
             int maxColumn = -1;
             for (int j = 0; j < cells.getLength(); j++) {

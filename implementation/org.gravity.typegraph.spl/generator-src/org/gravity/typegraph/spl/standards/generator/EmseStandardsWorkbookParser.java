@@ -1,4 +1,4 @@
-package org.gravity.typegraph.spl.standards;
+package org.gravity.typegraph.spl.standards.generator;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -12,8 +12,13 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/** Internal reader for the exact tabular structure of the EMSE standards workbook. */
-final class EmseSecurityStandardsWorkbookReader {
+import org.gravity.typegraph.spl.standards.EmseSecurityFeatureTaxonomy;
+import org.gravity.typegraph.spl.standards.FeatureMappingCatalog;
+import org.gravity.typegraph.spl.standards.MappingRelation;
+import org.gravity.typegraph.spl.standards.StandardControlReference;
+
+/** Parses the EMSE replication workbook only for offline artifact generation. */
+final class EmseStandardsWorkbookParser {
 
     static final String REPLICATION_PACKAGE_DOI = "https://doi.org/10.5281/zenodo.11091429";
     static final String WORKBOOK_NAME = "2) Systematic Review - Security Standards.xlsx";
@@ -24,27 +29,15 @@ final class EmseSecurityStandardsWorkbookReader {
     private static final Pattern CSF_CONTROL = Pattern.compile("(?i)\\b[A-Z]{2}\\.[A-Z]{2}-\\d+\\b");
     private static final Pattern CC_CONTROL = Pattern.compile("\\b\\d{1,2}\\.\\d+\\b");
 
-    record ParseResult(FeatureMappingCatalog catalog, int mappingCount, List<String> mappedSheets) {
-        ParseResult {
-            mappedSheets = List.copyOf(mappedSheets);
-        }
-    }
-
     private record Columns(int headerRow, int implementable, int control, List<Integer> features) {
     }
 
-    private EmseSecurityStandardsWorkbookReader() {
+    private EmseStandardsWorkbookParser() {
     }
 
     static FeatureMappingCatalog parse(final Path workbook) throws IOException {
-        return parseWithDiagnostics(workbook).catalog();
-    }
-
-    static ParseResult parseWithDiagnostics(final Path workbook) throws IOException {
         final Map<String, Set<StandardControlReference>> controlsByFeature = new LinkedHashMap<>();
         final Map<String, String> displayNameByFeature = new LinkedHashMap<>();
-        final List<String> mappedSheets = new ArrayList<>();
-        int mappingCount = 0;
 
         for (final XlsxWorkbookReader.Sheet sheet : XlsxWorkbookReader.read(workbook)) {
             final Columns columns = detectColumns(sheet.rows());
@@ -52,7 +45,6 @@ final class EmseSecurityStandardsWorkbookReader {
                 continue;
             }
             final String standard = standardName(sheet.name());
-            int sheetMappings = 0;
             for (int rowIndex = columns.headerRow() + 1; rowIndex < sheet.rows().size(); rowIndex++) {
                 final List<String> row = sheet.rows().get(rowIndex);
                 if (columns.implementable() >= 0 && !isYes(value(row, columns.implementable()))) {
@@ -68,7 +60,7 @@ final class EmseSecurityStandardsWorkbookReader {
                 }
                 for (final String rawFeature : rawFeatures) {
                     final String feature = canonicalFeature(standard, control, rawFeature);
-                    final String normalized = FeatureMappingCatalog.normalize(feature);
+                    final String normalized = normalize(feature);
                     if (normalized.isBlank()) {
                         continue;
                     }
@@ -78,12 +70,7 @@ final class EmseSecurityStandardsWorkbookReader {
                             MappingRelation.REALIZES, source, 1.0d);
                     controlsByFeature.computeIfAbsent(normalized, ignored -> new LinkedHashSet<>()).add(reference);
                     displayNameByFeature.putIfAbsent(normalized, feature);
-                    mappingCount++;
-                    sheetMappings++;
                 }
-            }
-            if (sheetMappings > 0) {
-                mappedSheets.add(sheet.name());
             }
         }
 
@@ -97,7 +84,7 @@ final class EmseSecurityStandardsWorkbookReader {
             entries.add(FeatureMappingCatalog.entry(displayNameByFeature.get(entry.getKey()), Set.of(),
                     List.copyOf(entry.getValue())));
         }
-        return new ParseResult(new FeatureMappingCatalog(entries), mappingCount, mappedSheets);
+        return new FeatureMappingCatalog(entries);
     }
 
     private static Columns detectColumns(final List<List<String>> rows) {
@@ -115,13 +102,9 @@ final class EmseSecurityStandardsWorkbookReader {
                 if (header.contains("related to implementation level feature")
                         || (header.contains("implementation level") && header.contains("yes no"))) {
                     implementable = column;
-                    continue;
-                }
-                if (isFeatureHeader(header)) {
+                } else if (isFeatureHeader(header)) {
                     featureColumns.add(column);
-                    continue;
-                }
-                if (control < 0 && isControlHeader(header)) {
+                } else if (control < 0 && isControlHeader(header)) {
                     control = column;
                 }
             }
@@ -171,8 +154,8 @@ final class EmseSecurityStandardsWorkbookReader {
         if (value == null || value.isBlank()) {
             return "";
         }
-        final Pattern pattern;
         final String normalizedStandard = standard.toLowerCase(Locale.ROOT);
+        final Pattern pattern;
         if (normalizedStandard.contains("27001") || normalizedStandard.contains("27002")) {
             pattern = ISO_CONTROL;
         } else if (normalizedStandard.contains("cybersecurity framework")) {
@@ -190,7 +173,7 @@ final class EmseSecurityStandardsWorkbookReader {
 
     private static String canonicalFeature(final String standard, final String control, final String rawFeature) {
         if ("Common Criteria".equals(standard) && "15.12".equals(control)
-                && "system state protection".equals(FeatureMappingCatalog.normalize(rawFeature))) {
+                && "system state protection".equals(normalize(rawFeature))) {
             return "state synchronization";
         }
         return EmseSecurityFeatureTaxonomy.canonicalizeWorkbookFeature(rawFeature);
@@ -208,7 +191,7 @@ final class EmseSecurityStandardsWorkbookReader {
                 continue;
             }
             feature = feature.replaceFirst("(?i)^feature\\s*:\\s*", "").trim();
-            if (!FeatureMappingCatalog.normalize(feature).isBlank()) {
+            if (!normalize(feature).isBlank()) {
                 features.add(feature);
             }
         }
@@ -252,6 +235,10 @@ final class EmseSecurityStandardsWorkbookReader {
     }
 
     private static String normalizeHeader(final String value) {
+        return normalize(value);
+    }
+
+    private static String normalize(final String value) {
         return value == null ? ""
                 : value.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+", " ").trim().replaceAll("\\s+", " ");
     }

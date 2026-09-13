@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.gravity.typegraph.spl.standards.EmseSecurityFeatureTaxonomy;
-import org.gravity.typegraph.spl.standards.EmseSecurityStandardsWorkbookParser;
 import org.gravity.typegraph.spl.standards.FeatureMappingCatalog;
 import org.gravity.typegraph.spl.standards.StandardControlReference;
 
@@ -30,7 +29,7 @@ public final class EmseStandardsArtifactGenerator {
         if (workbook == null || catalogEcore == null || outputXmi == null) {
             throw new IllegalArgumentException("workbook, catalogEcore, and outputXmi must not be null");
         }
-        final FeatureMappingCatalog mappings = EmseSecurityStandardsWorkbookParser.parse(workbook);
+        final FeatureMappingCatalog mappings = EmseStandardsWorkbookParser.parse(workbook);
         final FeatureMappingCatalog combined = merge(EmseSecurityFeatureTaxonomy.catalog(), mappings);
 
         final ResourceSetImpl set = new ResourceSetImpl();
@@ -40,9 +39,9 @@ public final class EmseStandardsArtifactGenerator {
         final Resource resource = set.createResource(URI.createFileURI(outputXmi.toAbsolutePath().toString()));
         final EObject root = create(model, "EmseCatalog");
         set(root, "articleDoi", EmseSecurityFeatureTaxonomy.ARTICLE_DOI);
-        set(root, "replicationPackageDoi", EmseSecurityStandardsWorkbookParser.REPLICATION_PACKAGE_DOI);
-        set(root, "workbookName", EmseSecurityStandardsWorkbookParser.WORKBOOK_NAME);
-        set(root, "workbookMd5", EmseSecurityStandardsWorkbookParser.WORKBOOK_MD5);
+        set(root, "replicationPackageDoi", EmseStandardsWorkbookParser.REPLICATION_PACKAGE_DOI);
+        set(root, "workbookName", EmseStandardsWorkbookParser.WORKBOOK_NAME);
+        set(root, "workbookMd5", EmseStandardsWorkbookParser.WORKBOOK_MD5);
         resource.getContents().add(root);
 
         for (final FeatureMappingCatalog.Entry catalogEntry : combined.entries()) {
