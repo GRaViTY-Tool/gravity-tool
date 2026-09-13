@@ -185,7 +185,7 @@ public class TraceSecRuntimeEndToEndTest {
                 include {
                     type Quality {
                         include {
-                            reference aspects -- Aspect -- quality -> assoc.priority
+                            reference aspects -- Aspect -- quality -> priority
                         }
                     }
                 }
