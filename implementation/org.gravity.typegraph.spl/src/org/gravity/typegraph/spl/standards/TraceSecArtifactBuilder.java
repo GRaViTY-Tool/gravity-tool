@@ -20,14 +20,14 @@ public final class TraceSecArtifactBuilder {
     }
 
     public BuildResult build(final ParsedProjectFeatureModel project, final FeatureMappingCatalog taxonomyAndMappings,
-            final Collection<StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
+            final Collection<? extends StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
             final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
             final Path correspondenceXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         if (project == null || taxonomyAndMappings == null || outputResourceSet == null || programModel == null) {
             throw new IllegalArgumentException(
                     "project, taxonomyAndMappings, outputResourceSet, and programModel must not be null");
         }
-        final List<StandardRequirementsModel> iso27002 = standards == null ? List.of()
+        final List<? extends StandardRequirementsModel> iso27002 = standards == null ? List.of()
                 : standards.stream().filter(model -> model != null && model.isIso27002()).toList();
         final List<Resource> requirementsResources = iso27002.stream().map(StandardRequirementsModel::model).toList();
 

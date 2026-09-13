@@ -29,7 +29,7 @@ public final class DynamicQualityModelGenerator {
     private static final String ROOT = "Information Security";
 
     public GenerationResult generate(final ResourceSet set, final Path qualityModelEcore, final Path outputXmi,
-            final Collection<StandardRequirementsModel> standards) throws IOException {
+            final Collection<? extends StandardRequirementsModel> standards) throws IOException {
         final Map<EObject, Collection<String>> propertiesByRequirement = new LinkedHashMap<>();
         if (standards != null) {
             for (final StandardRequirementsModel standard : standards) {

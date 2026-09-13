@@ -1,93 +1,78 @@
-# ISO standards and TraceSec feature traceability
+# ISO/IEC 27002 and TraceSec feature traceability
 
-This integration keeps source-level feature discovery separate from the security-feature taxonomy and only introduces the EMSE/standards assumptions when TraceSec standards traceability is requested.
+This integration separates immutable standard-artifact generation from normal project analysis.
 
-## Independent program-model enrichment
+## Runtime data flow
 
-`ProgramGraphProcessor` and `TypeProcessor` discover HAnS and Antenna annotations and create `TPresenceCondition` annotations on GRaViTY program elements. This step neither loads nor validates the EMSE security-feature taxonomy. A project may therefore use any project-specific feature model when only variability-aware program discovery is required.
+The intended TraceSec path is:
 
-## EMSE taxonomy with project-specific descendants
+`Information Security -> security-property Quality -> ISO/IEC 27002 Requirement -> program element -> findings`
 
-The EMSE taxonomy contains 68 implementation-level security features. The built-in catalog contains those canonical names and aliases. For the standards workflow a project feature does not have to be one of the 68 names itself: it is also conformant when walking its FeatureIDE parent chain reaches an EMSE feature. This supports project-specific refinements such as `encryption -> AES -> AES256` while keeping `encryption` as the standards-level meaning.
+The same ISO/IEC 27002 `Requirement` EObject is referenced by both the generated quality model and the TraceSec correspondence model. The correspondence model therefore provides the `Requirement -> program element` edge, while `Quality.relevantElements` provides the `Quality -> Requirement` edge.
 
-For standards mapping, the same parent walk continues until the nearest EMSE feature with a mapping for the selected standard is found. Consequently a custom descendant, and also an EMSE feature without its own ISO/IEC 27002 mapping, can inherit the nearest applicable mapping from its taxonomy ancestors.
+## Program-model enrichment
 
-## Standards are TraceSec requirements models
+`ProgramGraphProcessor` discovers HAnS and Antenna source annotations and creates `TPresenceCondition` annotations on the GRaViTY program model. This is independent of the standards taxonomy.
 
-Standards are represented with TraceSec's existing `org.tracesec.requirements/model/requirements.ecore`; GRaViTY does not define a parallel standards metamodel.
+Project-specific feature refinements are supported. During standards analysis, `ProjectFeatureTaxonomyResolver` walks the project feature's parent chain until it reaches the nearest Herrmann/EMSE taxonomy feature. A project structure such as `encryption -> AES -> AES256` therefore keeps `AES256` as the concrete implementation feature while inheriting the standards meaning and mapping of `encryption`.
 
-`Iso2700xPdfImporter` accepts a locally available, legitimately obtained ISO/IEC 27001:2022 or ISO/IEC 27002:2022 PDF and a path to TraceSec's `requirements.ecore`. The importer creates:
+## One-time ISO/IEC 27002 artifact generation
 
-- a root `RequirementsSet` for the standard,
-- nested `RequirementsSet`s for control groups,
-- a `Requirement` for each parsed control.
+ISO/IEC 27002 PDF parsing is not part of the assembled Eclipse plugin.
 
-The repository does not contain ISO standard text. Tests use synthetic text fragments.
+The generator source is under:
 
-The importer also returns a structured `Requirement -> information-security properties` index in `ImportResult`. That index is intentionally not added to the TraceSec requirements metamodel. It preserves the extracted control attributes for subsequent quality-model construction without reparsing `Requirement.wording`.
+`generator-src/org/gravity/typegraph/spl/standards/generator/Iso27002ModelGenerator.java`
 
-For explicit hashtag labels the property parser is open-ended and keeps the labels present in the supplied ISO/IEC 27002 text, including properties such as authenticity. If PDF extraction removes the hashtag glyph, the conservative fallback vocabulary is the ISO/IEC 25010 security vocabulary used by this integration plus Availability, because Availability is also used as an ISO/IEC 27002 information-security property.
+`generator-src` is intentionally absent from `source..` in `build.properties`, and PDFBox is not on the runtime bundle classpath. Consequently the ISO parser and PDFBox are not shipped with the plugin/product.
 
-## Authoritative EMSE standards mapping
+The one-time generator consumes a legitimately obtained ISO/IEC 27002:2022 PDF and produces two reusable artifacts:
 
-The standards-to-feature mapping is read from the article replication package rather than reconstructed from standard prose:
+- a TraceSec requirements XMI containing `RequirementsSet`/`Requirement` instances;
+- a security-property sidecar XMI mapping requirement IDs to the extracted ISO/IEC 27002 information-security properties.
 
-- DOI: `https://doi.org/10.5281/zenodo.11091429`
-- workbook: `2) Systematic Review - Security Standards.xlsx`
-- published MD5: `61849150ceb83e38d704348d7dd7d972`
+The sidecar conforms to `model/standard-properties.ecore`. It exists because the TraceSec requirements metamodel intentionally remains unchanged and does not contain the ISO information-security-property attribute.
 
-`EmseSecurityStandardsWorkbookParser` reads the XLSX directly with JDK ZIP/XML APIs and creates `StandardControlReference`s. `EmseStandardsTraceabilityIntegration` merges those references into the complete 68-feature taxonomy. The TraceSec-specific workflow filters the resulting references to ISO/IEC 27002; mappings to the other standards reviewed in the workbook are not introduced into that flow network.
+Once these two files have been generated, project analysis never reparses the ISO PDF.
 
-## ISO/IEC 27002-derived quality model
+## Loading the generated standard
 
-`DynamicQualityModelGenerator` loads TraceSec's `qualitymodel.ecore` dynamically. It creates an `Information Security` root and consumes the structured property index created by `Iso2700xPdfImporter`. Each discovered property becomes a direct child `Quality`, and the corresponding ISO/IEC 27002 `Requirement` objects are added to `Quality.relevantElements`.
+`StandardRequirementsModelLoader` loads the persisted requirements model and property sidecar into a shared EMF `ResourceSet` and returns a `StandardRequirementsModel`. Property entries are resolved back to the actual `Requirement` EObjects by requirement ID.
 
-The quality generator does not parse standard text. Property extraction happens once in the ISO importer. Every generated aspect currently receives TraceSec priority `ESSENTIAL`.
+Downstream code depends on `StandardRequirementsModel`, not on the ISO importer/generator.
 
-## TraceSec-native requirement-to-code links
+## Standards mappings
 
-`TraceSecCorrespondenceBuilder` creates the inter-model links used by TraceSec's `GraphBuilder`. The output is a Moflon `CorrespondenceModel` containing TraceSec `TraceLink` objects with:
+The 68-feature Herrmann/EMSE taxonomy remains the standards-level feature vocabulary. The authoritative feature-to-standard mappings are read from the replication-package workbook. Custom project descendants inherit the nearest mapped taxonomy ancestor.
 
-- `source` = the ISO/IEC 27002 `Requirement`,
-- `target` = the GRaViTY program element whose presence condition contains the mapped project feature.
+For TraceSec construction the mapping set is filtered to ISO/IEC 27002 references.
 
-Duplicate requirement/program-element pairs are removed. The build result also reports mappings for which no annotated program location was found.
+## Generated project artifacts
 
-The builder uses the exact TraceSec/Moflon namespace URIs. If those generated packages are already registered in the supplied `ResourceSet`, they are reused; otherwise compatible dynamic package definitions are used for serialization. This avoids a compile-time dependency from GRaViTY to the TraceSec repository while producing an XMI model that TraceSec can load with its generated packages.
+`TraceSecArtifactBuilder` consumes:
 
-## Provenance sidecar
+- the parsed project feature model;
+- the Herrmann/EMSE taxonomy and standards mappings;
+- one or more pre-generated `StandardRequirementsModel`s;
+- the HAnS-enriched GRaViTY `TypeGraph`.
 
-`StandardTraceabilityBuilder` still creates `model/standards-traceability.ecore` instances, but this model is provenance rather than the flow-network link. It records:
+It persists:
 
-- root `RequirementsSet` and mapped `Requirement`,
-- canonical EMSE feature and concrete project feature,
-- mapping relation, replication-workbook source, and confidence,
-- matching GRaViTY program elements and `TPresenceCondition`s.
+- `standards-traceability.xmi`: provenance explaining the taxonomy/mapping decision and matching presence conditions;
+- `correspondence.xmi`: native TraceSec `TraceLink`s from ISO requirements to program elements;
+- `quality-model.xmi`: `Information Security` plus security-property qualities whose `relevantElements` reference the corresponding ISO requirements.
 
-TraceSec consumes the native correspondence model, while this sidecar retains the evidence explaining why each correspondence exists.
+`TraceSecExecutor` remains a subsequent, separate execution phase.
 
-## Artifact construction and TraceSec execution are separate
+## Complete project pipeline
 
-`TraceSecArtifactBuilder` is the construction boundary. It validates the project taxonomy, resolves custom project descendants to mapped ISO/IEC 27002 requirements, creates provenance, creates native TraceSec correspondences, and creates the quality model. It does not execute TraceSec.
+`StandardsAnalysisPipeline` is the application-level orchestration entry point. It:
 
-`EmseStandardsTraceabilityIntegration.createTraceSec(...)` prepares the complete EMSE/workbook-backed inputs and delegates artifact construction to `TraceSecArtifactBuilder`.
+1. loads the project feature model;
+2. creates the GRaViTY program model through `GravityAPI` (therefore executing the registered HAnS/Antenna program-graph processor);
+3. persists the resulting program model as `program.xmi`;
+4. loads the pre-generated ISO/IEC 27002 requirements and property artifacts;
+5. resolves concrete project features, including custom descendants, to taxonomy mappings and ISO requirements;
+6. creates and persists provenance, TraceSec correspondences, and the quality model.
 
-`TraceSecExecutor` is the execution boundary. It requires a TraceSec-enabled runtime, reloads the serialized program, requirements, correspondence and quality XMI with TraceSec's generated packages, loads a `.tracesec` graph configuration, invokes `GraphBuilder`, links SonarLint findings to the quality model, and invokes `Priorizitation`. This reload step is important because artifact construction deliberately permits dynamic EMF package instances while TraceSec executes on its generated Java model types.
-
-## End-to-end TraceSec path
-
-The construction path is:
-
-1. parse project features and validate each project feature against itself or a taxonomy ancestor,
-2. import ISO/IEC 27002 controls as TraceSec requirements while extracting information-security properties once,
-3. read the authoritative replication workbook and retain ISO/IEC 27002 mappings,
-4. resolve project features/custom descendants to ISO/IEC 27002 `Requirement`s,
-5. create provenance traces,
-6. create native TraceSec `Requirement -> program element` correspondences,
-7. create the quality model from the importer's structured ISO/IEC 27002 property index.
-
-Execution is a separate subsequent step through `TraceSecExecutor`.
-
-With TraceSec's SonarLint enrichment on the same GRaViTY `TypeGraph`, the flow network can follow:
-
-`Information Security -> security property Quality -> ISO/IEC 27002 Requirement -> program element -> SonarLintFinding`
+The ISO requirements model is an already-persisted input artifact and is reused rather than regenerated or copied for each project.
