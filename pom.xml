@@ -89,6 +89,7 @@
     <module>implementation/org.gravity.typegraph.basic</module>
     <module>implementation/org.gravity.typegraph.basic.ui</module>
     <module>implementation/org.gravity.typegraph.spl</module>
+    <module>implementation/org.gravity.typegraph.spl/generator-src</module>
     <module>implementation/org.gravity.umlsecrt</module>
     <module>implementation/org.tracesec.prioritization</module>
     <module>tests/org.gravity.eclipse.tests</module>
