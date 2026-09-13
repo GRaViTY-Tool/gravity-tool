@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="standardproperties"
+    nsURI="http://www.gravity-tool.org/standards/properties"
+    nsPrefix="standardproperties">
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityPropertyIndex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1" containment="true" eType="#//SecurityPropertyEntry"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityPropertyEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirementId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="properties" upperBound="-1" unique="true" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

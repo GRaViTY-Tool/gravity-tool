@@ -17,13 +17,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
-/**
- * Creates a TraceSec-compatible quality-model instance from the structured
- * information-security properties extracted while importing ISO/IEC 27002.
- * <p>
- * The importer is the single parsing authority. This generator only consumes its
- * property index and therefore never reparses {@code Requirement.wording}.
- */
+/** Creates a TraceSec quality model from pre-generated standard artifacts. */
 public final class DynamicQualityModelGenerator {
 
     public record GenerationResult(Resource model, EObject qualityModel, Map<String, EObject> qualities) {
@@ -35,25 +29,20 @@ public final class DynamicQualityModelGenerator {
     private static final String ROOT = "Information Security";
 
     public GenerationResult generate(final ResourceSet set, final Path qualityModelEcore, final Path outputXmi,
-            final Collection<Iso2700xPdfImporter.ImportResult> standardsImports) throws IOException {
+            final Collection<StandardRequirementsModel> standards) throws IOException {
         final Map<EObject, Collection<String>> propertiesByRequirement = new LinkedHashMap<>();
-        if (standardsImports != null) {
-            for (final Iso2700xPdfImporter.ImportResult imported : standardsImports) {
-                if (imported == null || imported.kind() != Iso2700xPdfImporter.StandardKind.ISO_IEC_27002_2022) {
+        if (standards != null) {
+            for (final StandardRequirementsModel standard : standards) {
+                if (standard == null || !standard.isIso27002()) {
                     continue;
                 }
-                imported.securityPropertiesByControl().forEach((requirement, properties) -> propertiesByRequirement
+                standard.securityPropertiesByControl().forEach((requirement, properties) -> propertiesByRequirement
                         .computeIfAbsent(requirement, ignored -> new LinkedHashSet<>()).addAll(properties));
             }
         }
         return generateFromProperties(set, qualityModelEcore, outputXmi, propertiesByRequirement);
     }
 
-    /**
-     * Generates a quality model from an already structured property index. This is
-     * useful for additional standards importers as long as they provide actual
-     * requirement EObjects and normalized property labels.
-     */
     public GenerationResult generateFromProperties(final ResourceSet set, final Path qualityModelEcore,
             final Path outputXmi, final Map<? extends EObject, ? extends Collection<String>> propertiesByRequirement)
             throws IOException {
@@ -80,36 +69,27 @@ public final class DynamicQualityModelGenerator {
                     property + " requirements derived from ISO/IEC 27002 Information security properties.");
             DynamicModelSupport.addAll(child, "relevantElements", requirementsByProperty.get(property));
             DynamicModelSupport.add(qualityModel, "qualities", child);
-
             final EObject aspect = DynamicModelSupport.create(qualityPackage, "Aspect");
             DynamicModelSupport.set(aspect, "quality", child);
             setEnumLiteral(aspect, "priority", "ESSENTIAL");
             DynamicModelSupport.add(root, "aspects", aspect);
             qualities.put(property, child);
         }
-
         resultResource.save(Map.of());
         return new GenerationResult(resultResource, qualityModel, qualities);
     }
 
-    private Map<String, Set<EObject>> invert(
-            final Map<? extends EObject, ? extends Collection<String>> propertiesByRequirement) {
-        final Map<String, Set<EObject>> requirementsByProperty = new LinkedHashMap<>();
-        if (propertiesByRequirement == null) {
-            return requirementsByProperty;
-        }
-        propertiesByRequirement.forEach((requirement, properties) -> {
-            if (requirement == null || properties == null) {
-                return;
-            }
-            for (final String property : properties) {
-                if (property == null || property.isBlank()) {
-                    continue;
+    private Map<String, Set<EObject>> invert(final Map<? extends EObject, ? extends Collection<String>> source) {
+        final Map<String, Set<EObject>> result = new LinkedHashMap<>();
+        if (source != null) {
+            source.forEach((requirement, properties) -> {
+                if (requirement != null && properties != null) {
+                    properties.stream().filter(p -> p != null && !p.isBlank())
+                            .forEach(p -> result.computeIfAbsent(p, ignored -> new LinkedHashSet<>()).add(requirement));
                 }
-                requirementsByProperty.computeIfAbsent(property, ignored -> new LinkedHashSet<>()).add(requirement);
-            }
-        });
-        return requirementsByProperty;
+            });
+        }
+        return result;
     }
 
     private EObject quality(final EPackage qualityPackage, final String title, final String description) {
@@ -121,10 +101,8 @@ public final class DynamicQualityModelGenerator {
 
     private void setEnumLiteral(final EObject object, final String featureName, final String literal) {
         final var feature = object.eClass().getEStructuralFeature(featureName);
-        if (feature == null || !(feature.getEType() instanceof EDataType dataType)) {
-            return;
+        if (feature != null && feature.getEType() instanceof EDataType dataType) {
+            object.eSet(feature, dataType.getEPackage().getEFactoryInstance().createFromString(dataType, literal));
         }
-        final Object value = dataType.getEPackage().getEFactoryInstance().createFromString(dataType, literal);
-        object.eSet(feature, value);
     }
 }
