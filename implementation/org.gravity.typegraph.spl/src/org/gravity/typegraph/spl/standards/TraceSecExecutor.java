@@ -69,7 +69,6 @@ public final class TraceSecExecutor {
         try {
             initializeGraphConfigurationDsl();
             final ResourceSet set = createRuntimeResourceSet();
-            final EObject configuration = loadRoot(set, request.configuration());
             final List<EPackage> order = resolveOrder(set, request.modelOrderNsUris());
 
             final List<Resource> modelResources = new ArrayList<>();
@@ -78,6 +77,15 @@ public final class TraceSecExecutor {
             }
             final Resource correspondence = load(set, request.correspondenceXmi());
             final Resource qualityResource = load(set, request.qualityModelXmi());
+            EcoreUtil.resolveAll(set);
+
+            // TraceSec's graph-configuration scoping resolves EClasses, EReferences and
+            // attribute-based weights against metamodel resources already present in the
+            // ResourceSet. Load the serialized models before parsing the configuration,
+            // matching TraceSec's native execution order. Loading the configuration first
+            // can leave expressions such as "assoc.priority" unresolved, which later
+            // reaches GraphBuilder#getWeight as a null EAttribute.
+            final EObject configuration = loadRoot(set, request.configuration());
             EcoreUtil.resolveAll(set);
 
             final EObject qualityModel = findRootByClassName(qualityResource, "QualityModel");
