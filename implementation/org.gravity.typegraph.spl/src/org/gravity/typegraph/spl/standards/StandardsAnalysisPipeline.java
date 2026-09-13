@@ -21,20 +21,22 @@ import org.gravity.typegraph.spl.FeatureModelLoader;
 /**
  * End-to-end project analysis pipeline for standards traceability.
  * <p>
- * It creates and persists the HAnS-enriched GRaViTY program model, loads a
- * pre-generated ISO/IEC 27002 requirements artifact, resolves project features
- * (including taxonomy descendants), then persists the TraceSec correspondence,
- * provenance, and quality models.
+ * It creates and persists the HAnS-enriched GRaViTY program model, loads the
+ * pre-generated ISO/IEC 27002 and EMSE reference artifacts, resolves project
+ * features (including taxonomy descendants), then persists the TraceSec
+ * correspondence, provenance, and quality models.
  */
 public final class StandardsAnalysisPipeline {
 
-    public record Request(IJavaProject javaProject, Path featureModel, Path replicationWorkbook,
+    public record Request(IJavaProject javaProject, Path featureModel,
             Path requirementsEcore, Path requirementsXmi, Path propertiesEcore, Path propertiesXmi,
+            Path emseCatalogEcore, Path emseCatalogXmi,
             Path traceabilityEcore, Path qualityModelEcore, Path outputDirectory) {
     }
 
     public record Result(TypeGraph programModel, Resource programModelResource,
-            StandardRequirementsModel standard, EmseStandardsTraceabilityIntegration.TraceSecResult traceSec) {
+            StandardRequirementsModel standard, FeatureMappingCatalog emseCatalog,
+            EmseStandardsTraceabilityIntegration.TraceSecResult traceSec) {
     }
 
     public Result execute(final Request request, final IProgressMonitor monitor)
@@ -67,21 +69,24 @@ public final class StandardsAnalysisPipeline {
             throw new IllegalArgumentException("Expected pre-generated ISO/IEC 27002 requirements model but loaded '"
                     + standard.identifier() + "'");
         }
+        final FeatureMappingCatalog emseCatalog = EmseStandardsArtifactLoader.load(set,
+                request.emseCatalogEcore(), request.emseCatalogXmi());
 
-        final var traceSec = EmseStandardsTraceabilityIntegration.createTraceSec(projectFeatures,
-                request.replicationWorkbook(), List.of(standard), set, discovered, request.traceabilityEcore(),
+        final var traceSec = EmseStandardsTraceabilityIntegration.createTraceSec(projectFeatures, emseCatalog,
+                List.of(standard), set, discovered, request.traceabilityEcore(),
                 request.outputDirectory().resolve("standards-traceability.xmi"),
                 request.outputDirectory().resolve("correspondence.xmi"), request.qualityModelEcore(),
                 request.outputDirectory().resolve("quality-model.xmi"));
-        return new Result(discovered, programResource, standard, traceSec);
+        return new Result(discovered, programResource, standard, emseCatalog, traceSec);
     }
 
     private static void require(final Request request) {
         if (request == null || request.javaProject() == null || request.featureModel() == null
-                || request.replicationWorkbook() == null || request.requirementsEcore() == null
-                || request.requirementsXmi() == null || request.propertiesEcore() == null
-                || request.propertiesXmi() == null || request.traceabilityEcore() == null
-                || request.qualityModelEcore() == null || request.outputDirectory() == null) {
+                || request.requirementsEcore() == null || request.requirementsXmi() == null
+                || request.propertiesEcore() == null || request.propertiesXmi() == null
+                || request.emseCatalogEcore() == null || request.emseCatalogXmi() == null
+                || request.traceabilityEcore() == null || request.qualityModelEcore() == null
+                || request.outputDirectory() == null) {
             throw new IllegalArgumentException("All standards-analysis request fields must be provided");
         }
     }

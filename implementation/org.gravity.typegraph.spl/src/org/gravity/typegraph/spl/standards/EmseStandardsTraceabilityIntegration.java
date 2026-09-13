@@ -32,7 +32,7 @@ public final class EmseStandardsTraceabilityIntegration {
     }
 
     public static Result create(final ParsedProjectFeatureModel project, final FeatureMappingCatalog emseTaxonomy,
-            final Collection<StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
+            final Collection<? extends StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
             final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
             final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         requireCompleteTaxonomy(emseTaxonomy);
@@ -47,18 +47,25 @@ public final class EmseStandardsTraceabilityIntegration {
         return new Result(conformance, mappings, traceability, qualityModel);
     }
 
+    /**
+     * Legacy convenience entry point. Normal analysis should load the pre-generated
+     * EMSE artifact with {@link EmseStandardsArtifactLoader} instead of parsing the
+     * replication workbook repeatedly.
+     */
     public static Result create(final ParsedProjectFeatureModel project, final Path replicationPackageStandardsWorkbook,
-            final Collection<StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
+            final Collection<? extends StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
             final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
             final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         return create(project, EmseSecurityFeatureTaxonomy.catalog(), replicationPackageStandardsWorkbook, standards,
                 outputResourceSet, programModel, traceabilityEcore, traceabilityXmi, qualityModelEcore, qualityModelXmi);
     }
 
+    /** Legacy workbook-based adapter retained for compatibility and generator tests. */
     public static Result create(final ParsedProjectFeatureModel project, final FeatureMappingCatalog emseTaxonomy,
-            final Path replicationPackageStandardsWorkbook, final Collection<StandardRequirementsModel> standards,
-            final ResourceSet outputResourceSet, final TypeGraph programModel, final Path traceabilityEcore,
-            final Path traceabilityXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
+            final Path replicationPackageStandardsWorkbook,
+            final Collection<? extends StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
+            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
+            final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         requireCompleteTaxonomy(emseTaxonomy);
         final FeatureMappingCatalog workbookMappings = EmseSecurityStandardsWorkbookParser
                 .parse(replicationPackageStandardsWorkbook);
@@ -67,21 +74,33 @@ public final class EmseStandardsTraceabilityIntegration {
                 traceabilityXmi, qualityModelEcore, qualityModelXmi);
     }
 
+    /** Constructs TraceSec artifacts from an already generated complete EMSE catalog. */
     public static TraceSecResult createTraceSec(final ParsedProjectFeatureModel project,
-            final Path replicationPackageStandardsWorkbook, final Collection<StandardRequirementsModel> standards,
+            final FeatureMappingCatalog emseCatalog, final Collection<? extends StandardRequirementsModel> standards,
             final ResourceSet outputResourceSet, final TypeGraph programModel, final Path traceabilityEcore,
             final Path traceabilityXmi, final Path correspondenceXmi, final Path qualityModelEcore,
             final Path qualityModelXmi) throws IOException {
+        requireCompleteTaxonomy(emseCatalog);
+        final FeatureMappingCatalog iso27002 = emseCatalog.filterControls(EmseStandardsTraceabilityIntegration::isIso27002);
+        final var built = new TraceSecArtifactBuilder().build(project, iso27002, standards, outputResourceSet,
+                programModel, traceabilityEcore, traceabilityXmi, correspondenceXmi, qualityModelEcore, qualityModelXmi);
+        return new TraceSecResult(built.conformance(), built.mappings(), built.provenance(), built.correspondences(),
+                built.qualityModel());
+    }
+
+    /** Legacy workbook-based adapter; prefer the pre-generated catalog overload. */
+    public static TraceSecResult createTraceSec(final ParsedProjectFeatureModel project,
+            final Path replicationPackageStandardsWorkbook,
+            final Collection<? extends StandardRequirementsModel> standards, final ResourceSet outputResourceSet,
+            final TypeGraph programModel, final Path traceabilityEcore, final Path traceabilityXmi,
+            final Path correspondenceXmi, final Path qualityModelEcore, final Path qualityModelXmi) throws IOException {
         final FeatureMappingCatalog taxonomy = EmseSecurityFeatureTaxonomy.catalog();
         requireCompleteTaxonomy(taxonomy);
         final FeatureMappingCatalog workbookMappings = EmseSecurityStandardsWorkbookParser
                 .parse(replicationPackageStandardsWorkbook);
-        final FeatureMappingCatalog combined = mergeTaxonomyAndMappings(taxonomy, workbookMappings)
-                .filterControls(EmseStandardsTraceabilityIntegration::isIso27002);
-        final var built = new TraceSecArtifactBuilder().build(project, combined, standards, outputResourceSet,
-                programModel, traceabilityEcore, traceabilityXmi, correspondenceXmi, qualityModelEcore, qualityModelXmi);
-        return new TraceSecResult(built.conformance(), built.mappings(), built.provenance(), built.correspondences(),
-                built.qualityModel());
+        final FeatureMappingCatalog combined = mergeTaxonomyAndMappings(taxonomy, workbookMappings);
+        return createTraceSec(project, combined, standards, outputResourceSet, programModel, traceabilityEcore,
+                traceabilityXmi, correspondenceXmi, qualityModelEcore, qualityModelXmi);
     }
 
     public static boolean isIso27002(final StandardControlReference reference) {
@@ -134,7 +153,8 @@ public final class EmseStandardsTraceabilityIntegration {
         }
     }
 
-    private static List<StandardRequirementsModel> safeStandards(final Collection<StandardRequirementsModel> standards) {
+    private static List<StandardRequirementsModel> safeStandards(
+            final Collection<? extends StandardRequirementsModel> standards) {
         return standards == null ? List.of() : standards.stream().filter(java.util.Objects::nonNull).toList();
     }
 }
