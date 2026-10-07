@@ -162,14 +162,14 @@ public class Interface2TInterfaceImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Interface2TInterfaceImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
-			setSource((Interface) newValue);
-			return;
-		case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
-			setTarget((TInterface) newValue);
-			return;
+			case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
+				setSource((Interface) newValue);
+				return;
+			case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
+				setTarget((TInterface) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Interface2TInterfaceImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
-			setSource((Interface) null);
-			return;
-		case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
-			setTarget((TInterface) null);
-			return;
+			case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
+				setSource((Interface) null);
+				return;
+			case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
+				setTarget((TInterface) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Interface2TInterfaceImpl extends AbstractCorrespondenceImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
-			return source != null;
-		case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
-			return target != null;
+			case UmlPackage.INTERFACE2_TINTERFACE__SOURCE:
+				return source != null;
+			case UmlPackage.INTERFACE2_TINTERFACE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

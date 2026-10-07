@@ -162,14 +162,14 @@ public class MEntryToTParameterImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class MEntryToTParameterImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
-			setSource((MEntry) newValue);
-			return;
-		case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
-			setTarget((TParameter) newValue);
-			return;
+			case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
+				setSource((MEntry) newValue);
+				return;
+			case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
+				setTarget((TParameter) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class MEntryToTParameterImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
-			setSource((MEntry) null);
-			return;
-		case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
-			setTarget((TParameter) null);
-			return;
+			case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
+				setSource((MEntry) null);
+				return;
+			case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
+				setTarget((TParameter) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class MEntryToTParameterImpl extends AbstractCorrespondenceImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
-			return source != null;
-		case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
-			return target != null;
+			case PmPackage.MENTRY_TO_TPARAMETER__SOURCE:
+				return source != null;
+			case PmPackage.MENTRY_TO_TPARAMETER__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

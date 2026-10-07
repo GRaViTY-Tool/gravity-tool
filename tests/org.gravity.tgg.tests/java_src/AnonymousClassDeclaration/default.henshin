@@ -17,7 +17,7 @@
       </nodes>
       <nodes xmi:id="_YJsVMJiFEeq4spDLGVfnoA" incoming="_qV-p0I72EeuVXpn9yc3Afg" outgoing="_xup9MJiFEeq4spDLGVfnoA _Eb7LcJjEEeq4spDLGVfnoA _Lh0ecFvEEeusLa39wZCfig">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_d-_7sJiFEeq4spDLGVfnoA" value="&quot;TestClass$Anonymous&quot;">
+        <attributes xmi:id="_d-_7sJiFEeq4spDLGVfnoA" value="&quot;TestClass$1&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -115,7 +115,7 @@
       </nodes>
       <nodes xmi:id="_YJsVMZiFEeq4spDLGVfnoA" incoming="_qV_Q4I72EeuVXpn9yc3Afg" outgoing="_xup9MZiFEeq4spDLGVfnoA _Eb7ygJjEEeq4spDLGVfnoA _Lh0ecVvEEeusLa39wZCfig">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_d_AiwJiFEeq4spDLGVfnoA" value="&quot;TestClass$Anonymous&quot;">
+        <attributes xmi:id="_d_AiwJiFEeq4spDLGVfnoA" value="&quot;TestClass$1&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>

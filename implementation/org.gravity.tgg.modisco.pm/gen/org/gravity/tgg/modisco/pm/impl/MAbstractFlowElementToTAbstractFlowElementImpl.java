@@ -163,14 +163,14 @@ public class MAbstractFlowElementToTAbstractFlowElementImpl extends AbstractCorr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class MAbstractFlowElementToTAbstractFlowElementImpl extends AbstractCorr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
-			setSource((MAbstractFlowElement) newValue);
-			return;
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
-			setTarget((TAbstractFlowElement) newValue);
-			return;
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
+				setSource((MAbstractFlowElement) newValue);
+				return;
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
+				setTarget((TAbstractFlowElement) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class MAbstractFlowElementToTAbstractFlowElementImpl extends AbstractCorr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
-			setSource((MAbstractFlowElement) null);
-			return;
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
-			setTarget((TAbstractFlowElement) null);
-			return;
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
+				setSource((MAbstractFlowElement) null);
+				return;
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
+				setTarget((TAbstractFlowElement) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class MAbstractFlowElementToTAbstractFlowElementImpl extends AbstractCorr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
-			return source != null;
-		case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
-			return target != null;
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__SOURCE:
+				return source != null;
+			case PmPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

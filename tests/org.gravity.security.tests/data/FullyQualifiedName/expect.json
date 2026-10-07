@@ -1,0 +1,14 @@
+{
+	"src/test/Main.java": [
+		[
+			"test.Supplier.method1(java.lang.String):java.lang.String",
+			"test.Main.main(java.lang.String[]):void"
+		]
+	],
+	"src/test/Supplier.java":[ 
+		[
+			"test.Supplier.method1(java.lang.String):java.lang.String",
+			"test.Main.main(java.lang.String[]):void"
+		]
+	]
+}

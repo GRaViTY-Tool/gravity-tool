@@ -725,7 +725,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsCharImpl
 				.pattern_PrimitiveTypeIsChar_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -783,7 +783,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_16(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsCharImpl
 				.pattern_PrimitiveTypeIsChar_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1178,92 +1178,93 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-					(Model) arguments.get(2));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPECHAR_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-					(ModelToTypeGraph) arguments.get(2), (TModule) arguments.get(3), (TypeGraph) arguments.get(4),
-					(Model) arguments.get(5));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-			return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1), (TypeGraph) arguments.get(2),
-					(TClass) arguments.get(3));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_TCLASS_MODEL:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (TClass) arguments.get(4),
-					(Model) arguments.get(5));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-			return null;
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD_EMOFLON_EDGE_16__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD_EMOFLON_EDGE_16__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPECHAR_TMODULE_TYPEGRAPH_TCLASS_MODEL_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((PrimitiveTypeChar) arguments.get(0), (TModule) arguments.get(1),
-					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Model) arguments.get(4),
-					(Match) arguments.get(5), (Match) arguments.get(6));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_FWD__PRIMITIVETYPECHAR_MODEL:
-			return checkDEC_FWD((PrimitiveTypeChar) arguments.get(0), (Model) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_BWD__TMODULE_TYPEGRAPH_TCLASS:
-			return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1), (TClass) arguments.get(2));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
-			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
-					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (Model) arguments.get(4),
-					(ModelgeneratorRuleResult) arguments.get(5));
-		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+						(Model) arguments.get(2));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPECHAR_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(PrimitiveTypeChar) arguments.get(1), (ModelToTypeGraph) arguments.get(2),
+						(TModule) arguments.get(3), (TypeGraph) arguments.get(4), (Model) arguments.get(5));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+				return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_TCLASS_MODEL:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (TypeGraph) arguments.get(3),
+						(TClass) arguments.get(4), (Model) arguments.get(5));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+				return null;
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD_EMOFLON_EDGE_9__EMOFLONEDGE:
+				return isAppropriate_BWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPECHAR_TMODULE_TYPEGRAPH_TCLASS_MODEL_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((PrimitiveTypeChar) arguments.get(0), (TModule) arguments.get(1),
+						(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Model) arguments.get(4),
+						(Match) arguments.get(5), (Match) arguments.get(6));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_FWD__PRIMITIVETYPECHAR_MODEL:
+				return checkDEC_FWD((PrimitiveTypeChar) arguments.get(0), (Model) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_BWD__TMODULE_TYPEGRAPH_TCLASS:
+				return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1),
+						(TClass) arguments.get(2));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+				return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (TypeGraph) arguments.get(3),
+						(Model) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2450,7 +2451,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_742247 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_867578 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2459,9 +2460,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_129693 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_885618 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_129693)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_885618)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2470,9 +2471,11 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_598633 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_598633 != null) {
-			return new Object[] { tPrimitiveClass };
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_72765 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_72765 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_72765)) {
+				return new Object[] { tPrimitiveClass };
+			}
 		}
 
 		return null;
@@ -2480,11 +2483,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_712425 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_712425 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_712425)) {
-				return new Object[] { tPrimitiveClass };
-			}
+		TPackage __DEC_tPrimitiveClass_allTypes_772533 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_772533 != null) {
+			return new Object[] { tPrimitiveClass };
 		}
 
 		return null;
@@ -2910,7 +2911,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_0B(TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_277633 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_693994 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2919,9 +2920,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_1BB(TClass tPrimitiveClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_895252 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_948690 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_895252)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_948690)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2929,20 +2930,20 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_2B(TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_687063 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_687063 != null) {
-			return new Object[] { tPrimitiveClass };
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_939692 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_939692 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_939692)) {
+				return new Object[] { tPrimitiveClass };
+			}
 		}
 
 		return null;
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_3B(TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_148381 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_148381 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_148381)) {
-				return new Object[] { tPrimitiveClass };
-			}
+		TPackage __DEC_tPrimitiveClass_allTypes_540044 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_540044 != null) {
+			return new Object[] { tPrimitiveClass };
 		}
 
 		return null;

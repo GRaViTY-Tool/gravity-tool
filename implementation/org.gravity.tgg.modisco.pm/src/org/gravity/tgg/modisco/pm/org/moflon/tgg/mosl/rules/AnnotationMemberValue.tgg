@@ -177,4 +177,11 @@
 	eq(mValue.escapedValue, tValue.tText)
 }
 
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
 
+#rule AnnotationMemberValueArray #extends AnnotationMemberValue #with org.gravity.tgg.modisco.pm
+
+#source {
+	++mValue:ArrayCreation
+}

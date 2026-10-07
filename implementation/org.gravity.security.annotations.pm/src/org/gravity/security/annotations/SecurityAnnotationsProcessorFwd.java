@@ -11,15 +11,12 @@ import java.util.stream.Collectors;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gravity.security.annotations.access.AccessPackage;
 import org.gravity.security.annotations.access.Api;
 import org.gravity.security.annotations.requirements.Critical;
-import org.gravity.security.annotations.requirements.High;
 import org.gravity.security.annotations.requirements.Integrity;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.security.annotations.requirements.Secrecy;
@@ -32,7 +29,6 @@ import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
-import org.gravity.typegraph.basic.annotations.TAnnotationValue;
 import org.gravity.typegraph.basic.annotations.TTextNode;
 
 /**
@@ -54,30 +50,26 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	public boolean process(final TypeGraph programModel, final IProgressMonitor monitor) {
 		this.rs = programModel.eResource().getResourceSet();
 		for (final TAnnotationType tAnnotationType : programModel.getAnnotationTypes()) {
-			final String tFullyQualifiedName = tAnnotationType.getFullyQualifiedName();
+			final var tFullyQualifiedName = tAnnotationType.getFullyQualifiedName();
 			final List<TAnnotation> annotations = new ArrayList<>(tAnnotationType.getAnnotations());
 			if (tFullyQualifiedName.equals(Secrecy.class.getName())) {
-				final Collection<TAnnotation> replacements = replaceAll(annotations,
+				final var replacements = this.replaceAll(annotations,
 						RequirementsPackage.eINSTANCE.getTSecrecy());
-				addCounterMeasures((Collection<? extends TAnnotationWithCounterMeasure>) replacements);
+				this.addCounterMeasures((Collection<? extends TAnnotationWithCounterMeasure>) replacements);
 			} else if (tFullyQualifiedName.equals(Integrity.class.getName())) {
-				final Collection<TAnnotation> replacements = replaceAll(annotations,
+				final var replacements = this.replaceAll(annotations,
 						RequirementsPackage.eINSTANCE.getTIntegrity());
-				addCounterMeasures((Collection<? extends TAnnotationWithCounterMeasure>) replacements);
-			} else if (tFullyQualifiedName.equals(High.class.getName())) {
-				final Collection<TAnnotation> replacements = replaceAll(annotations,
-						RequirementsPackage.eINSTANCE.getTHigh());
-				addCounterMeasures((Collection<? extends TAnnotationWithCounterMeasure>) replacements);
+				this.addCounterMeasures((Collection<? extends TAnnotationWithCounterMeasure>) replacements);
 			} else if (tFullyQualifiedName.equals(Critical.class.getName())) {
-				final Collection<TAnnotation> replacements = replaceAll(annotations,
+				final var replacements = this.replaceAll(annotations,
 						RequirementsPackage.eINSTANCE.getTCritical());
-				addReferences((Collection<? extends TCritical>) replacements, programModel);
+				this.addReferences((Collection<? extends TCritical>) replacements, programModel);
 			} else if (tFullyQualifiedName.equals(Api.class.getName())) {
-				replaceAll(annotations, AccessPackage.eINSTANCE.getTApi());
+				this.replaceAll(annotations, AccessPackage.eINSTANCE.getTApi());
 			} else if (tFullyQualifiedName.equals(Tainted.class.getName())) {
-				replaceAll(annotations, AnnotationsPackage.eINSTANCE.getTTainted());
+				this.replaceAll(annotations, AnnotationsPackage.eINSTANCE.getTTainted());
 			} else if (tFullyQualifiedName.equals(CounterMeasure.class.getName())) {
-				replaceAll(annotations, AnnotationsPackage.eINSTANCE.getTCounterMeasure());
+				this.replaceAll(annotations, AnnotationsPackage.eINSTANCE.getTCounterMeasure());
 			}
 		}
 		return true;
@@ -86,11 +78,13 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	private void addReferences(final Collection<? extends TCritical> replacements, final TypeGraph model) {
 		for (final TCritical critical : replacements) {
 			critical.getSecrecy().addAll(
-					getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_Secrecy().getName(), model));
+					this.getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_Secrecy().getName(),
+							model));
 			critical.getIntegrity().addAll(
-					getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_Integrity().getName(), model));
+					this.getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_Integrity().getName(),
+							model));
 			critical.getHigh().addAll(
-					getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_High().getName(), model));
+					this.getSignatures(critical, RequirementsPackage.eINSTANCE.getTCritical_High().getName(), model));
 		}
 	}
 
@@ -103,25 +97,24 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @return The signatures
 	 */
 	private Set<TSignature> getSignatures(final TCritical critical, final String key, final TypeGraph model) {
-		final TAnnotationValue values = critical.getValue(key);
+		final var values = critical.getValue(key);
 		if (values == null) {
 			return Collections.emptySet();
 		}
 		return values.getTValue().parallelStream().map(signature -> {
-			String string = ((TTextNode) signature).getTText();
-			string = unescape(string);
-			TSignature match = model.getSignature(string);
-			return match;
+			var string = ((TTextNode) signature).getTText();
+			string = this.unescape(string);
+			return model.getSignature(string);
 		}).filter(Objects::nonNull).collect(Collectors.toSet());
 	}
 
 	private void addCounterMeasures(final Collection<? extends TAnnotationWithCounterMeasure> replacements) {
 		for (final TAnnotationWithCounterMeasure annotation : replacements) {
-			final TAnnotationValue earlyReturn = annotation.getValue("earlyReturn");
+			final var earlyReturn = annotation.getValue("earlyReturn");
 			if (earlyReturn != null) {
-				final TTextNode value = (TTextNode) earlyReturn.getTValue().get(0);
-				final String text = unescape(value.getTText());
-				final TMember definition = ((TMember) annotation.getTAnnotated()).getDefinedBy()
+				final var value = (TTextNode) earlyReturn.getTValue().get(0);
+				final var text = this.unescape(value.getTText());
+				final var definition = ((TMember) annotation.getTAnnotated()).getDefinedBy()
 						.getTDefinition(text);
 				annotation.setCountermeasure((TMethodDefinition) definition);
 			}
@@ -135,8 +128,8 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @return The unescaped text
 	 */
 	private String unescape(final String text) {
-		if(text.startsWith("\"") && text.endsWith("\"")) {
-			return text.substring(1, text.length() -1);
+		if (text.startsWith("\"") && text.endsWith("\"")) {
+			return text.substring(1, text.length() - 1);
 		}
 		return text;
 	}
@@ -149,10 +142,10 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @return The collection of replacements
 	 */
 	private Collection<TAnnotation> replaceAll(final Collection<TAnnotation> annotations, final EClass eClass) {
-		final EFactory factory = eClass.getEPackage().getEFactoryInstance();
+		final var factory = eClass.getEPackage().getEFactoryInstance();
 		return annotations.stream().map(tAnnotation -> {
 			if (!eClass.isInstance(tAnnotation)) {
-				return replace(tAnnotation, (TAnnotation) factory.create(eClass));
+				return this.replace(tAnnotation, (TAnnotation) factory.create(eClass));
 			}
 			return tAnnotation;
 		}).collect(Collectors.toList());
@@ -166,15 +159,15 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	 * @return Returns the replacement
 	 */
 	private TAnnotation replace(final TAnnotation tAnnotation, final TAnnotation replacement) {
-		final EList<TAnnotationValue> values = tAnnotation.getTValues();
+		final var values = tAnnotation.getTValues();
 		EcoreUtil.replace(tAnnotation, replacement);
 		for (final Setting setting : EcoreUtil.UsageCrossReferencer.find(tAnnotation, this.rs)) {
-			final EObject eObject = setting.getEObject();
+			final var eObject = setting.getEObject();
 			eObject.eSetDeliver(false);
 			if (setting instanceof EList) {
 				@SuppressWarnings("unchecked")
-				final EList<TAnnotation> list = (EList<TAnnotation>) setting;
-				final int index = list.indexOf(tAnnotation);
+				final var list = (EList<TAnnotation>) setting;
+				final var index = list.indexOf(tAnnotation);
 				list.set(index, replacement);
 			} else {
 				eObject.eSet(setting.getEStructuralFeature(), replacement);

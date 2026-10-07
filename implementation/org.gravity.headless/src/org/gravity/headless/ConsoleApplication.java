@@ -66,7 +66,7 @@ public class ConsoleApplication implements IApplication {
 		final var options = getCLIOptions();
 		final var line = parser.parse(options, args);
 
-		setWorspaceLocation(line);
+		this.setWorspaceLocation(line);
 
 		if (line.hasOption(OPTION_VERSION_SHORT)) {
 			System.out.println(
@@ -76,11 +76,11 @@ public class ConsoleApplication implements IApplication {
 			}
 		}
 		if (line.hasOption(OPTION_HELP_SHORT)) {
-			printHelp(options);
+			this.printHelp(options);
 			return IApplication.EXIT_OK;
 		}
-		final var cache = initCache(line);
-		final var log = intLog(line);
+		final var cache = this.initCache(line);
+		final var log = this.intLog(line);
 
 		if (line.hasOption(OPTION_SERVER_SHORT)) {
 			// Run in server mode
@@ -99,27 +99,27 @@ public class ConsoleApplication implements IApplication {
 				System.out.println(Messages.launched);
 				System.out.println(MessageFormat.format(Messages.runningOn, Integer.toString(port)));
 				System.out.println(Messages.howtoShutdown);
-				waitForExit();
+				this.waitForExit();
 				return IApplication.EXIT_OK;
-			} else {
-				System.err.println(Messages.noPort);
 			}
+			System.err.println(Messages.noPort);
 		} else {
 			// Run in batch mode
 			System.out.println(Messages.batch);
 		}
-		printHelp(options);
+		this.printHelp(options);
 		return IApplication.EXIT_OK;
 	}
 
 	/**
-	 * Sets the workspace location to a temp directory if no location has been specified manually
+	 * Sets the workspace location to a temp directory if no location has been
+	 * specified manually
 	 *
 	 * @param line The command line arguments
 	 * @throws IOException If the workspace location cannot be set
 	 */
 	private void setWorspaceLocation(final CommandLine line) throws IOException {
-		if(!line.hasOption(OPTION_WORKSPACE_LOCATION)) {
+		if (!line.hasOption(OPTION_WORKSPACE_LOCATION)) {
 			final Set<PosixFilePermission> perms = new HashSet<>();
 			// user permission
 			perms.add(PosixFilePermission.OWNER_READ);
@@ -131,7 +131,7 @@ public class ConsoleApplication implements IApplication {
 
 			final var ws = Files.createTempDirectory("gravity-ws", PosixFilePermissions.asFileAttribute(perms));
 			final var location = Platform.getInstanceLocation();
-			if(!location.isSet()) {
+			if (!location.isSet()) {
 				location.set(ws.toUri().toURL(), true);
 			}
 		}
@@ -173,7 +173,8 @@ public class ConsoleApplication implements IApplication {
 	 * Initializes the logging according to the arguments on the command line
 	 *
 	 * @param line the parsed command line the application has been launched with
-	 * @return The configuration containing the location to which log files should be written
+	 * @return The configuration containing the location to which log files should
+	 *         be written
 	 * @throws IOException If the log location cannot be initialized
 	 */
 	private LoggingConfiguration intLog(final CommandLine line) throws IOException {

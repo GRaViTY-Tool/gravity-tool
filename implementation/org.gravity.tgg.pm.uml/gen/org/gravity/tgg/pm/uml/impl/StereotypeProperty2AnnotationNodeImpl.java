@@ -163,14 +163,14 @@ public class StereotypeProperty2AnnotationNodeImpl extends AbstractCorrespondenc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class StereotypeProperty2AnnotationNodeImpl extends AbstractCorrespondenc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
-			setSource((Property) newValue);
-			return;
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
-			setTarget((TAbstractNode) newValue);
-			return;
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
+				setSource((Property) newValue);
+				return;
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
+				setTarget((TAbstractNode) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class StereotypeProperty2AnnotationNodeImpl extends AbstractCorrespondenc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
-			setSource((Property) null);
-			return;
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
-			setTarget((TAbstractNode) null);
-			return;
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
+				setSource((Property) null);
+				return;
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
+				setTarget((TAbstractNode) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class StereotypeProperty2AnnotationNodeImpl extends AbstractCorrespondenc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
-			return source != null;
-		case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
-			return target != null;
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__SOURCE:
+				return source != null;
+			case UmlPackage.STEREOTYPE_PROPERTY2_ANNOTATION_NODE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

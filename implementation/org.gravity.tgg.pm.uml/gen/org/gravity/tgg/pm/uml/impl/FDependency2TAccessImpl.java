@@ -162,14 +162,14 @@ public class FDependency2TAccessImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class FDependency2TAccessImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
-			setSource((Dependency) newValue);
-			return;
-		case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
-			setTarget((TAccess) newValue);
-			return;
+			case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
+				setSource((Dependency) newValue);
+				return;
+			case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
+				setTarget((TAccess) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class FDependency2TAccessImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
-			setSource((Dependency) null);
-			return;
-		case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
-			setTarget((TAccess) null);
-			return;
+			case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
+				setSource((Dependency) null);
+				return;
+			case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
+				setTarget((TAccess) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class FDependency2TAccessImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
-			return source != null;
-		case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
-			return target != null;
+			case UmlPackage.FDEPENDENCY2_TACCESS__SOURCE:
+				return source != null;
+			case UmlPackage.FDEPENDENCY2_TACCESS__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

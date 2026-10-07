@@ -162,14 +162,14 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
-			setSource((Stereotype) newValue);
-			return;
-		case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
-			setTarget((TAnnotation) newValue);
-			return;
+			case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
+				setSource((Stereotype) newValue);
+				return;
+			case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
+				setTarget((TAnnotation) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
-			setSource((Stereotype) null);
-			return;
-		case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
-			setTarget((TAnnotation) null);
-			return;
+			case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
+				setSource((Stereotype) null);
+				return;
+			case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
+				setTarget((TAnnotation) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Stereotype2TAnnotationImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
-			return source != null;
-		case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
-			return target != null;
+			case UmlPackage.STEREOTYPE2_TANNOTATION__SOURCE:
+				return source != null;
+			case UmlPackage.STEREOTYPE2_TANNOTATION__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

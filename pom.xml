@@ -24,11 +24,13 @@
   </scm>
 
   <properties>
-    <tycho-version>4.0.3</tycho-version>
-    <jacoco.version>0.8.11</jacoco.version>
-    <dependency-plugin>3.6.1</dependency-plugin>
+    <tycho-version>4.0.13</tycho-version>
+    <jacoco.version>0.8.13</jacoco.version>
+    <dependency-plugin>3.10.0</dependency-plugin>
 
     <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -60,7 +62,7 @@
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.java.spl</module>
     <module>implementation/org.gravity.eclipse.ui</module>
-    <module>implementation/org.gravity.goblin</module>
+    <!--<module>implementation/org.gravity.goblin</module>--><!--deprecated-->
     <module>implementation/org.gravity.headless</module>
     <module>implementation/org.gravity.hulk</module>
     <module>implementation/org.gravity.hulk.annotations</module>
@@ -76,6 +78,7 @@
     <module>implementation/org.gravity.secdfd</module>
     <module>implementation/org.gravity.security.metrics</module>
     <module>implementation/org.gravity.security.annotations</module>
+    <module>implementation/org.gravity.security.annotations.check</module>
     <module>implementation/org.gravity.security.annotations.ui</module>
     <module>implementation/org.gravity.security.annotations.pm</module>
     <module>implementation/org.gravity.security.violation.patterns</module>
@@ -86,9 +89,11 @@
     <module>implementation/org.gravity.typegraph.basic</module>
     <module>implementation/org.gravity.typegraph.basic.ui</module>
     <module>implementation/org.gravity.typegraph.spl</module>
+    <module>implementation/org.gravity.typegraph.spl/generator-src</module>
     <module>implementation/org.gravity.umlsecrt</module>
+    <module>implementation/org.tracesec.prioritization</module>
     <module>tests/org.gravity.eclipse.tests</module>
-    <module>tests/org.gravity.goblin.tests</module>
+    <!--<module>tests/org.gravity.goblin.tests</module>--><!--deprecated-->
     <module>tests/org.gravity.headless.tests</module>
     <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
@@ -106,9 +111,9 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-        <!--<configuration>
+        <configuration>
           <pomDependencies>consider</pomDependencies>
-        </configuration>-->
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -149,7 +154,7 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <executionEnvironment>JavaSE-17</executionEnvironment>
+          <executionEnvironment>JavaSE-21</executionEnvironment>
           <environments>
             <environment>
               <os>linux</os>
@@ -174,14 +179,14 @@
 
   <repositories>
     <repository>
-      <id>Eclipse 2023-12</id>
+      <id>Eclipse 2025-09</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/releases/2023-12</url>
+      <url>https://download.eclipse.org/releases/2025-09</url>
     </repository>
     <repository>
-      <id>Papyrus 2023-06</id>
+      <id>Eclipse 2025-06 for Papyrus</id>
       <layout>p2</layout>
-      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-06</url>
+      <url>https://download.eclipse.org/releases/2025-06</url>
     </repository>
     <repository>
       <id>eMoflon TIE</id>
@@ -194,16 +199,6 @@
       <url>https://download.eclipse.org/modeling/emft/henshin/updates/nightly</url>
     </repository>
     <repository>
-      <id>Henshin MultiVar</id>
-      <layout>p2</layout>
-      <url>https://gravity-tool.org/henshin-multivar/updatesite</url>
-    </repository>
-    <repository>
-      <id>MoMOT</id>
-      <layout>p2</layout>
-      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
-    </repository>
-    <repository>
       <id>plantuml</id>
       <layout>p2</layout>
       <url>https://hallvard.github.io/plantuml</url>
@@ -211,17 +206,17 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://rgse.uni-koblenz.de/carisma/updatesite/</url>
-    </repository>
-    <repository>
-      <id>SecPL</id>
-      <layout>p2</layout>
-      <url>https://gravity-tool.org/secpl/updatesite/</url>
+      <url>https://carisma-tool.github.io/carisma-tool</url>
     </repository>
     <repository>
       <id>FeatureIDE</id>
       <layout>p2</layout>
       <url>https://featureide.uni-ulm.de/update/v3/</url>
+    </repository>
+    <repository>
+      <id>SonarQube for IDE 12.7</id>
+      <layout>p2</layout>
+      <url>https://binaries.sonarsource.com/SonarLint-for-Eclipse/releases/12.7.0.84850/</url>
     </repository>
   </repositories>
 </project>

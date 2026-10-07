@@ -9,5 +9,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.tgg.modisco.pm,
  org.apache.log4j
 Automatic-Module-Name: org.gravity.tgg.modisco.ui
+Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.tgg.modisco.ui.selection
 Bundle-ClassPath: .

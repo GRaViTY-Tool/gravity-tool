@@ -1,0 +1,32 @@
+{
+	"src/test/Child.java":[
+		[
+			"test.Main.method(java.lang.String):java.lang.String",
+			"test.Child.fwd1(java.lang.Object):java.lang.Object"
+		]
+	],
+	"src/test/Main.java":[
+		[
+			"test.Main.method(java.lang.String):java.lang.String",
+			"test.ParameterizedClass.fwd1(java.lang.Object):java.lang.Object"
+		],
+		[
+			"test.Main.method(java.lang.String):java.lang.String",
+			"test.ParameterizedClass.fwd1(java.lang.Object):java.lang.Object"
+		],
+		[
+			"test.Main.method(java.lang.String):java.lang.String",
+			"test.Child.fwd1(java.lang.Object):java.lang.Object"
+		]
+	],
+	"src/test/ParameterizedClass.java":[
+		[
+			"test.Main.method(java.lang.String):java.lang.String",
+			"test.ParameterizedClass.fwd1(java.lang.Object):java.lang.Object"
+		],
+		[
+			"test.Main.method(java.lang.String):java.lang.String",
+			"test.ParameterizedClass.fwd1(java.lang.Object):java.lang.Object"
+		]
+	]
+}

@@ -111,9 +111,9 @@ public class MSingleVariableDeclarationImpl extends SingleVariableDeclarationImp
 		if (newMEntry != mEntry) {
 			NotificationChain msgs = null;
 			if (mEntry != null)
-				msgs = ((InternalEObject)mEntry).eInverseRemove(this, ModiscoPackage.MENTRY__PARAMETERS, MEntry.class, msgs);
+				msgs = ((InternalEObject)mEntry).eInverseRemove(this, ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES, MEntry.class, msgs);
 			if (newMEntry != null)
-				msgs = ((InternalEObject)newMEntry).eInverseAdd(this, ModiscoPackage.MENTRY__PARAMETERS, MEntry.class, msgs);
+				msgs = ((InternalEObject)newMEntry).eInverseAdd(this, ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES, MEntry.class, msgs);
 			msgs = basicSetMEntry(newMEntry, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -131,7 +131,7 @@ public class MSingleVariableDeclarationImpl extends SingleVariableDeclarationImp
 		switch (featureID) {
 			case ModiscoPackage.MSINGLE_VARIABLE_DECLARATION__MENTRY:
 				if (mEntry != null)
-					msgs = ((InternalEObject)mEntry).eInverseRemove(this, ModiscoPackage.MENTRY__PARAMETERS, MEntry.class, msgs);
+					msgs = ((InternalEObject)mEntry).eInverseRemove(this, ModiscoPackage.MENTRY__ALL_PARAMETER_INSTANCES, MEntry.class, msgs);
 				return basicSetMEntry((MEntry)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

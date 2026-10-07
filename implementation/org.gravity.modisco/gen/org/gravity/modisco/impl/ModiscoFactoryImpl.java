@@ -76,6 +76,7 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 			case ModiscoPackage.MSINGLE_VARIABLE_DECLARATION: return createMSingleVariableDeclaration();
 			case ModiscoPackage.MSUPER_METHOD_INVOCATION: return createMSuperMethodInvocation();
 			case ModiscoPackage.MCLASS_INSTANCE_CREATION: return createMClassInstanceCreation();
+			case ModiscoPackage.MANONYMOUS_CLASS: return createMAnonymousClass();
 			case ModiscoPackage.MSUPER_CONSTRUCTOR_INVOCATION: return createMSuperConstructorInvocation();
 			case ModiscoPackage.MINITIALIZER: return createMInitializer();
 			case ModiscoPackage.MENUM_CONSTANT_DECLARATION: return createMEnumConstantDeclaration();
@@ -321,6 +322,17 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	public MClassInstanceCreation createMClassInstanceCreation() {
 		MClassInstanceCreationImpl mClassInstanceCreation = new MClassInstanceCreationImpl();
 		return mClassInstanceCreation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MAnonymousClass createMAnonymousClass() {
+		MAnonymousClassImpl mAnonymousClass = new MAnonymousClassImpl();
+		return mAnonymousClass;
 	}
 
 	/**

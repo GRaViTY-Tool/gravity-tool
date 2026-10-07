@@ -11,5 +11,10 @@
 	url = git@github.com:SvenPeldszus/GRaViTY-SecDFD-Mapping.git
 [submodule "implementation/org.gravity.umlsecrt"]
 	path = implementation/org.gravity.umlsecrt
-	url = git@github.com:CARiSMA-Tool/umlsecrt.git
+	url = https://github.com/GRaViTY-Tool/umlsecrt.git
+	branch = master
+[submodule "implementation/org.tracesec.prioritization"]
+	path = implementation/org.tracesec.prioritization
+	url = https://github.com/SvenPeldszus/tracesec-prioritization.git
+	branch = master
 

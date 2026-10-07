@@ -162,14 +162,14 @@ public class TypeAccess2GeneralizationImpl extends AbstractCorrespondenceImpl im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class TypeAccess2GeneralizationImpl extends AbstractCorrespondenceImpl im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
-			setSource((TypeAccess) newValue);
-			return;
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
-			setTarget((Generalization) newValue);
-			return;
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
+				setSource((TypeAccess) newValue);
+				return;
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
+				setTarget((Generalization) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class TypeAccess2GeneralizationImpl extends AbstractCorrespondenceImpl im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
-			setSource((TypeAccess) null);
-			return;
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
-			setTarget((Generalization) null);
-			return;
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
+				setSource((TypeAccess) null);
+				return;
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
+				setTarget((Generalization) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class TypeAccess2GeneralizationImpl extends AbstractCorrespondenceImpl im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
-			return source != null;
-		case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
-			return target != null;
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__SOURCE:
+				return source != null;
+			case UmlPackage.TYPE_ACCESS2_GENERALIZATION__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

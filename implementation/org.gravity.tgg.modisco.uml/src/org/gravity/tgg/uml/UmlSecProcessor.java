@@ -25,7 +25,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.security.annotations.requirements.Critical;
-import org.gravity.security.annotations.requirements.High;
 import org.gravity.security.annotations.requirements.Integrity;
 import org.gravity.security.annotations.requirements.Secrecy;
 
@@ -48,16 +47,13 @@ public class UmlSecProcessor {
 	private final Model model;
 
 	private Interface iCritical;
-	private Interface iHigh;
 	private Interface iIntegrity;
 	private Interface iSecrecy;
 
 	private static final String ANNOTATION_CRITICAL = Critical.class.getSimpleName();
-	private static final String ANNOTATION_HIGH = High.class.getSimpleName();
 	private static final String ANNOTATION_INTEGRITY = Integrity.class.getSimpleName();
 	private static final String ANNOTATION_SECRECY = Secrecy.class.getSimpleName();
 
-	private static final String TAG_HIGH = UmlsecPackage.eINSTANCE.getcritical_High().getName();
 	private static final String TAG_INTEGRITY = UmlsecPackage.eINSTANCE.getcritical_Integrity().getName();
 	private static final String TAG_SECRECY = UmlsecPackage.eINSTANCE.getcritical_Secrecy().getName();
 
@@ -67,8 +63,7 @@ public class UmlSecProcessor {
 
 	public boolean processFwd() throws ProcessingException {
 		for (final Element e : this.model.allOwnedElements()) {
-			if (e instanceof Comment) {
-				final var comment = (Comment) e;
+			if (e instanceof final Comment comment) {
 				final var body = comment.getBody();
 
 				final var annotatedElements = comment.getAnnotatedElements();
@@ -80,19 +75,19 @@ public class UmlSecProcessor {
 						.orElse(annotatedElements.get(0));
 				if (ANNOTATION_CRITICAL.equals(body)) {
 					final var critical = getCriticalStereotype((Classifier) element);
-					if (!addValuesToCritical(comment, critical)) {
+					if (!this.addValuesToCritical(comment, critical)) {
 						LOGGER.error("Couldnt add comment to <<critical>>");
 						return false;
 					}
 				} else {
-					final var tag = annotationNameToTagName(body);
+					final var tag = this.annotationNameToTagName(body);
 					if (tag == null) {
 						continue;
 					}
 
 					final var critical = getCriticalStereotype(element);
 					final var signature = getSignature(element);
-					if (!addValuesToCritical(critical, tag, signature)) {
+					if (!this.addValuesToCritical(critical, tag, signature)) {
 						LOGGER.error("Couldn't add " + tag + " = {\"" + signature + "\"} to <<criticial>>");
 						return false;
 					}
@@ -109,15 +104,14 @@ public class UmlSecProcessor {
 	 * @throws ProcessingException
 	 */
 	public boolean processBwd() throws ProcessingException {
-		if(!init(this.model)) {
+		if (!this.init(this.model)) {
 			// Nothing to do
 			return true;
 		}
 		Stream<EObject> delete = Stream.empty();
 		for (final Element element : this.model.allOwnedElements()) {
-			if ((element instanceof Classifier) && !(element instanceof PrimitiveType)) {
-				final var classifier = (Classifier) element;
-				delete = Stream.concat(delete, processBwd(classifier));
+			if ((element instanceof final Classifier classifier) && !(element instanceof PrimitiveType)) {
+				delete = Stream.concat(delete, this.processBwd(classifier));
 			}
 		}
 		EMFUtil.deleteAll(delete.collect(Collectors.toSet()), this.model.eResource());
@@ -131,7 +125,7 @@ public class UmlSecProcessor {
 	 * @return
 	 */
 	private boolean init(final Model model) {
-		if(loaded()) {
+		if (this.loaded()) {
 			return true;
 		}
 		final var namespace = new String[] { "org", "gravity", "security", "annotations", "requirements" };
@@ -154,18 +148,17 @@ public class UmlSecProcessor {
 		}
 		if (reqPack != null) {
 			this.iCritical = (Interface) reqPack.getPackagedElement(ANNOTATION_CRITICAL);
-			this.iHigh = (Interface) reqPack.getPackagedElement(ANNOTATION_HIGH);
 			this.iSecrecy = (Interface) reqPack.getPackagedElement(ANNOTATION_SECRECY);
 			this.iIntegrity = (Interface) reqPack.getPackagedElement(ANNOTATION_INTEGRITY);
 		}
-		return loaded();
+		return this.loaded();
 	}
 
 	/**
 	 * @return
 	 */
 	private boolean loaded() {
-		return (this.iCritical != null) && (this.iHigh != null) && (this.iSecrecy != null) && (this.iIntegrity != null);
+		return (this.iCritical != null) && (this.iSecrecy != null) && (this.iIntegrity != null);
 	}
 
 	/**
@@ -177,24 +170,18 @@ public class UmlSecProcessor {
 	 */
 	private Stream<Comment> processBwd(final Classifier classifier) throws ProcessingException {
 		final var signatures = new HashMap<String, Element>();
-		final var highComments = new HashMap<String, Comment>();
 		final var secrecyComments = new HashMap<String, Comment>();
 		final var integrityComments = new HashMap<String, Comment>();
 
-		final var criticalComment = getComments(classifier, signatures, highComments, secrecyComments,
+		final var criticalComment = getComments(classifier, signatures, secrecyComments,
 				integrityComments);
 
 		for (final EObject stereotype : classifier.getStereotypeApplications()) {
-			if (stereotype instanceof critical) {
-				final var critical = (critical) stereotype;
-
-				processBwd(classifier, signatures, highComments, criticalComment, critical.getHigh(), ANNOTATION_HIGH,
-						TAG_HIGH);
-
-				processBwd(classifier, signatures, secrecyComments, criticalComment, critical.getSecrecy(),
+			if (stereotype instanceof final critical critical) {
+				this.processBwd(classifier, signatures, secrecyComments, criticalComment, critical.getSecrecy(),
 						ANNOTATION_SECRECY, TAG_SECRECY);
 
-				processBwd(classifier, signatures, integrityComments, criticalComment, critical.getIntegrity(),
+				this.processBwd(classifier, signatures, integrityComments, criticalComment, critical.getIntegrity(),
 						ANNOTATION_INTEGRITY, TAG_INTEGRITY);
 
 				// don't continue as a classifier can only have one critical stereotype
@@ -205,8 +192,7 @@ public class UmlSecProcessor {
 		// All comments which haven't been removed from this tables have been deleted on
 		// the tags of the critical stereotype.
 
-		return Stream.concat(
-				Stream.concat(highComments.values().parallelStream(), secrecyComments.values().parallelStream()),
+		return Stream.concat(secrecyComments.values().parallelStream(),
 				integrityComments.values().parallelStream());
 	}
 
@@ -225,7 +211,7 @@ public class UmlSecProcessor {
 					// if the classifier defines a member with the signature add a comment to
 					// the member
 					final var member = signatures.get(value);
-					createComment(memberAnnotationString, member);
+					this.createComment(memberAnnotationString, member);
 				} else {
 					// if the classifier doesn't defines a member with the signature add the
 					// signature to the according tag of the critical comment.
@@ -247,9 +233,7 @@ public class UmlSecProcessor {
 	 */
 	private String annotationNameToTagName(final String name) {
 		String tag;
-		if (ANNOTATION_HIGH.equals(name)) {
-			tag = TAG_HIGH;
-		} else if (ANNOTATION_INTEGRITY.equals(name)) {
+		if (ANNOTATION_INTEGRITY.equals(name)) {
 			tag = TAG_INTEGRITY;
 		} else if (ANNOTATION_SECRECY.equals(name)) {
 			tag = TAG_SECRECY;
@@ -270,9 +254,7 @@ public class UmlSecProcessor {
 		final var comment = UMLFactory.eINSTANCE.createComment();
 		comment.setBody(value);
 		comment.getAnnotatedElements().add(member);
-		if (High.class.getSimpleName().equals(value)) {
-			comment.getAnnotatedElements().add(this.iHigh);
-		} else if (Integrity.class.getSimpleName().equals(value)) {
+		if (Integrity.class.getSimpleName().equals(value)) {
 			comment.getAnnotatedElements().add(this.iIntegrity);
 		} else if (Secrecy.class.getSimpleName().equals(value)) {
 			comment.getAnnotatedElements().add(this.iSecrecy);
@@ -315,7 +297,7 @@ public class UmlSecProcessor {
 			final var tagName = tag.getBody();
 			final var signatures = tag.getOwnedComments().parallelStream().map(Comment::getBody)
 					.toArray(String[]::new);
-			addValuesToCritical(crit, tagName, signatures);
+			this.addValuesToCritical(crit, tagName, signatures);
 		}
 		return true;
 	}
@@ -344,15 +326,15 @@ public class UmlSecProcessor {
 	}
 
 	private static Comment getComments(final Classifier classifier, final HashMap<String, Element> signatures,
-			final HashMap<String, Comment> highComments, final HashMap<String, Comment> secrecyComments,
+			final HashMap<String, Comment> secrecyComments,
 			final HashMap<String, Comment> integrityComments) {
 
 		for (final Operation operation : classifier.getOperations()) {
-			getComments(signatures, highComments, secrecyComments, integrityComments, operation);
+			getComments(signatures, secrecyComments, integrityComments, operation);
 		}
 
 		for (final Property property : classifier.getAttributes()) {
-			getComments(signatures, highComments, secrecyComments, integrityComments, property);
+			getComments(signatures, secrecyComments, integrityComments, property);
 		}
 
 		final var criticalComment = getComment(classifier, ANNOTATION_CRITICAL, false);
@@ -362,9 +344,7 @@ public class UmlSecProcessor {
 
 		for (final Comment tag : criticalComment.getOwnedComments()) {
 			HashMap<String, Comment> addto;
-			if (TAG_HIGH.equals(tag.getBody())) {
-				addto = highComments;
-			} else if (TAG_INTEGRITY.equals(tag.getBody())) {
+			if (TAG_INTEGRITY.equals(tag.getBody())) {
 				addto = integrityComments;
 			} else if (TAG_SECRECY.equals(tag.getBody())) {
 				addto = secrecyComments;
@@ -379,15 +359,13 @@ public class UmlSecProcessor {
 	}
 
 	private static void getComments(final HashMap<String, Element> signatures,
-			final HashMap<String, Comment> highComments, final HashMap<String, Comment> secrecyComments,
+			final HashMap<String, Comment> secrecyComments,
 			final HashMap<String, Comment> integrityComments, final Element operation) {
 		final var signature = getSignature(operation);
 		signatures.put(signature, operation);
 		for (final Comment comment : operation.getOwnedComments()) {
 			final var body = comment.getBody();
-			if (High.class.getSimpleName().equals(body)) {
-				highComments.put(signature, comment);
-			} else if (Integrity.class.getSimpleName().equals(body)) {
+			if (Integrity.class.getSimpleName().equals(body)) {
 				integrityComments.put(signature, comment);
 			} else if (Secrecy.class.getSimpleName().equals(body)) {
 				secrecyComments.put(signature, comment);
@@ -453,10 +431,10 @@ public class UmlSecProcessor {
 	private static String getSignature(final Element element) {
 		if (element instanceof Operation) {
 			return SignatureHelper.getSignature((Operation) element);
-		} else if (element instanceof Property) {
-			return SignatureHelper.getSignature((Property) element);
-		} else {
-			throw new UnsupportedOperationException();
 		}
+		if (element instanceof Property) {
+			return SignatureHelper.getSignature((Property) element);
+		}
+		throw new UnsupportedOperationException();
 	}
 }

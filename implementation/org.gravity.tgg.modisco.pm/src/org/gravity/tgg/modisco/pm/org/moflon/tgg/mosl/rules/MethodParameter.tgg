@@ -53,3 +53,34 @@
 #attributeConditions {
 	upperBound(mType.name, tParameter.upperBound)
 }
+
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule MethodParameterVariable #with org.gravity.tgg.modisco.pm
+
+#source {
+	mEntry:MEntry{
+		++  -allParameterInstances-> mVar
+	}
+
+	++mVar:MSingleVariableDeclaration
+}
+
+#target {
+	tParameter:TParameter
+}
+
+#correspondence {
+	mEntryToTParameter :MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+	++mAnnotToTAnnot : ASTNodeToTAnnotatable {
+		#src->mVar
+		#trg->tParameter
+	}
+}
+
+

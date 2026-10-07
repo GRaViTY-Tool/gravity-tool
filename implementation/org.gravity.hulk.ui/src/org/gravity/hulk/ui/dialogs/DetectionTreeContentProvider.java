@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.gravity.hulk.HDetector;
+import org.gravity.hulk.HulkPackage;
 
 public class DetectionTreeContentProvider implements ITreeContentProvider {
 
@@ -24,66 +22,45 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 	}
 
 	@Override
-	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(LOGGER.isInfoEnabled()) {
-			LOGGER.info("Input changed from \""+oldInput+ "\" to \""+newInput+"\"");
+	public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
+		if (LOGGER.isInfoEnabled()) {
+			LOGGER.info("Input changed from \"" + oldInput + "\" to \"" + newInput + "\"");
 		}
 	}
 
 	@Override
-	public Object[] getElements(Object inputElement) {
+	public Object[] getElements(final Object inputElement) {
 		final List<Object> elements = new ArrayList<>();
-		if (inputElement instanceof EPackage) {
-			final EPackage epackage = (EPackage) inputElement;
-			for (final EPackage esubpackage : epackage.getESubpackages()) {
-				if (epackage.equals(esubpackage.getESuperPackage())) {
-					elements.add(esubpackage);
-				}
-			}
-			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (epackage.equals(eclassifier.getEPackage()) && !eclassifier.getInstanceClass().isInterface()) {
-					elements.add(eclassifier);
-				}
-			}
+		if (inputElement instanceof final HulkPackage epackage) {
+			elements.addAll(epackage.getSubPackages());
+			elements.addAll(epackage.getDetectors());
+		} else {
+			LOGGER.warn("Input element is not of type HulkPackage: " + inputElement);
 		}
 		return elements.toArray();
 	}
 
 	@Override
-	public Object[] getChildren(Object parentElement) {
+	public Object[] getChildren(final Object parentElement) {
 		final List<Object> elements = new ArrayList<>();
-		if (parentElement instanceof EPackage) {
-			final EPackage epackage = (EPackage) parentElement;
-			for (final EPackage esubpackage : epackage.getESubpackages()) {
-				if (epackage.equals(esubpackage.getESuperPackage())) {
-					elements.add(esubpackage);
-				}
-			}
-			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (HDetector.class.isAssignableFrom(eclassifier.getInstanceClass())&&!((EClass) eclassifier).isAbstract()) {
-					elements.add(eclassifier);
-
-				}
-			}
+		if (parentElement instanceof final HulkPackage epackage) {
+			elements.addAll(epackage.getSubPackages());
+			elements.addAll(epackage.getDetectors());
 		}
 		return elements.toArray();
 	}
 
 	@Override
-	public Object getParent(Object element) {
-		if (element instanceof EPackage) {
-			return ((EPackage) element).getESuperPackage();
-		} else if (element instanceof EClassifier) {
-			return ((EClassifier) element).getEPackage();
+	public Object getParent(final Object element) {
+		if ((element instanceof final HulkPackage ePackage) || (element instanceof final HDetector detector)) {
 		}
 		return null;
 	}
 
 	@Override
-	public boolean hasChildren(Object element) {
-		if (element instanceof EPackage) {
-			final EPackage ePackage = (EPackage) element;
-			return !ePackage.getESubpackages().isEmpty() || !ePackage.getEClassifiers().isEmpty();
+	public boolean hasChildren(final Object element) {
+		if (element instanceof final HulkPackage ePackage) {
+			return !ePackage.getSubPackages().isEmpty() || !ePackage.getDetectors().isEmpty();
 		}
 		return false;
 	}

@@ -98,24 +98,24 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		}
 
 		if ((this.log == null) || !this.log.loggingEnabled()) {
-			return internalGetPM4Git(url.trim(), commit.trim());
+			return this.internalGetPM4Git(url.trim(), commit.trim());
 		}
 
 		final var id = url.trim() + ':' + commit.trim();
-		final var fa = initLogging(id);
+		final var fa = this.initLogging(id);
 
 		LOGGER.info("### Request for: " + id);
 		try {
-			return internalGetPM4Git(url, commit);
+			return this.internalGetPM4Git(url, commit);
 		} finally {
-			clearLogging(fa);
+			this.clearLogging(fa);
 		}
 	}
 
 	private Response internalGetPM4Git(final String url, final String commit) {
-		final var model = getCacheFile(CACHE_LOCATION_GIT, url, commit, "pm.xmi");
+		final var model = this.getCacheFile(CACHE_LOCATION_GIT, url, commit, "pm.xmi");
 
-		final var response = readModelOrLock(model);
+		final var response = this.readModelOrLock(model);
 		if (response != null) {
 			return response;
 		}
@@ -123,23 +123,23 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		final var monitor = new NullProgressMonitor();
 		IJavaProject project = null;
 		try {
-			final var root = checkout(url, commit);
+			final var root = this.checkout(url, commit);
 			if (root == null) {
 				return Response.serverError().entity(Messages.errorCloneFailed).build();
 			}
 
-			project = importProject(root, monitor);
+			project = this.importProject(root, monitor);
 			if (project == null) {
 				return Response.serverError().build();
 			}
 
-			final var pm = createModelAndSaveToCache(project, model, monitor);
-			return getResponse(pm.eResource());
+			final var pm = this.createModelAndSaveToCache(project, model, monitor);
+			return this.getResponse(pm.eResource());
 		} catch (final IOException e) {
-			exportProject(project);
+			this.exportProject(project);
 			return Response.serverError().entity(e.getMessage()).build();
 		} finally {
-			cleanup(model, project, monitor);
+			this.cleanup(model, project, monitor);
 		}
 	}
 
@@ -161,29 +161,29 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		}
 
 		if ((this.log == null) || !this.log.loggingEnabled()) {
-			return internatlGetPM4Mvn(groupId, artifactId, version, repo);
+			return this.internatlGetPM4Mvn(groupId, artifactId, version, repo);
 		}
 		final var id = groupId + ':' + artifactId + ':' + version;
 
-		this.appender = initLogging(id);
+		this.appender = this.initLogging(id);
 
 		LOGGER.info("### Request for: " + id);
 		try {
-			return internatlGetPM4Mvn(groupId, artifactId, version, repo);
+			return this.internatlGetPM4Mvn(groupId, artifactId, version, repo);
 		} finally {
-			clearLogging(this.appender);
+			this.clearLogging(this.appender);
 		}
 	}
 
 	private Response internatlGetPM4Mvn(final String groupId, final String artifactId, final String version,
 			final String repo) {
-		final var model = getCacheFile(CACHE_LOCATION_MVN, groupId, artifactId, version, "pm.xmi");
-		final var response = readModelOrLock(model);
+		final var model = this.getCacheFile(CACHE_LOCATION_MVN, groupId, artifactId, version, "pm.xmi");
+		final var response = this.readModelOrLock(model);
 		if (response != null) {
 			return response;
 		}
 
-		final var domain = getMvnRepoDomain(repo);
+		final var domain = this.getMvnRepoDomain(repo);
 
 		final var monitor = new NullProgressMonitor();
 		IJavaProject project = null;
@@ -193,7 +193,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			final var base = String.join("/", domain, groupId.replace('.', '/'), artifactId, version); //$NON-NLS-1$
 			final var url = new URL(base + '/' + file);
 
-			project = forceCreateJavaProject(name, monitor);
+			project = this.forceCreateJavaProject(name, monitor);
 			if (project == null) {
 				return Response.serverError().build();
 			}
@@ -202,20 +202,21 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 				ZipUtil.unzip(stream, src.toPath());
 			}
 
-			final var pm = createModelAndSaveToCache(project, model, monitor);
-			return getResponse(pm.eResource());
+			final var pm = this.createModelAndSaveToCache(project, model, monitor);
+			return this.getResponse(pm.eResource());
 
 		} catch (final IOException | CoreException e) {
-			exportProject(project);
+			this.exportProject(project);
 			return Response.serverError().entity(Messages.errorGravityTGG).build();
 		} finally {
-			cleanup(model, project, monitor);
+			this.cleanup(model, project, monitor);
 		}
 	}
 
 	private void exportProject(final IJavaProject project) {
-		if(this.save && (project != null) && project.exists()) {
-			final var zip = new File(new File(this.appender.getFile()).getParent(), project.getProject().getName()+".zip");
+		if (this.save && (project != null) && project.exists()) {
+			final var zip = new File(new File(this.appender.getFile()).getParent(),
+					project.getProject().getName() + ".zip");
 			try {
 				ZipUtil.zipProject(project, zip);
 			} catch (final IOException e) {
@@ -238,7 +239,8 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 		final var thread = Thread.currentThread().getId();
 		final var fa = new FileAppender();
 		fa.setName("FileLogger-" + id);
-		fa.setFile(new File(new File(this.log.getLogDestination(), id), this.date.format(new Date()) + ".log").getAbsolutePath());
+		fa.setFile(new File(new File(this.log.getLogDestination(), id), this.date.format(new Date()) + ".log")
+				.getAbsolutePath());
 		fa.setLayout(new PatternLayout("%d %-5p [%c{1}] %m%n"));
 		fa.setThreshold(Level.DEBUG);
 		fa.addFilter(new Filter() {
@@ -246,9 +248,8 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			public int decide(final LoggingEvent event) {
 				if (thread == Thread.currentThread().getId()) {
 					return ACCEPT;
-				} else {
-					return DENY;
 				}
+				return DENY;
 			}
 		});
 		fa.setAppend(true);
@@ -259,7 +260,8 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	}
 
 	/**
-	 * Creates appender new Java project with the given name. Any existing project with the
+	 * Creates appender new Java project with the given name. Any existing project
+	 * with the
 	 * same name will be deleted.
 	 *
 	 * @param name    The name of the new Java project
@@ -305,7 +307,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			}
 		}
 		try {
-			deleteLock(model);
+			this.deleteLock(model);
 		} catch (final IOException e) {
 			LOGGER.error(e.getMessage(), e);
 		}
@@ -328,7 +330,8 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * @param model   The model to be monitored
 	 * @param timeout Timeout in ms for waiting for the lock being released. Non
 	 *                positive values are rated as no timeout.
-	 * @throws TimeoutException If the timeout in case of appender locked model exceeded
+	 * @throws TimeoutException If the timeout in case of appender locked model
+	 *                          exceeded
 	 */
 	private void waitIfLocked(final File model, final long timeout) throws TimeoutException {
 		final var lock = new File(model.getParentFile(), GRAVITY_LOCK);
@@ -380,31 +383,32 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * not present
 	 *
 	 * @param model The model to read
-	 * @return A response message if the model has been read or appender timeout occurred,
+	 * @return A response message if the model has been read or appender timeout
+	 *         occurred,
 	 *         otherwise <code>null</code>
 	 */
 	private Response readModelOrLock(final File model) {
 		if (model.exists()) {
 			try {
-				return readModel(model);
+				return this.readModel(model);
 			} catch (final IOException e) {
 				// Try appender new construction of appender pm
 			}
 		}
 		try {
-			waitIfLocked(model, TIMEOUT_LOCK_MS);
+			this.waitIfLocked(model, TIMEOUT_LOCK_MS);
 		} catch (final TimeoutException e) {
 			return Response.status(Response.Status.REQUEST_TIMEOUT).build();
 		}
 
 		if (model.exists()) {
 			try {
-				return readModel(model);
+				return this.readModel(model);
 			} catch (final IOException e) {
 				// Try appender new construction of appender pm
 			}
 		}
-		createLock(model);
+		this.createLock(model);
 		return null;
 	}
 
@@ -462,7 +466,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 */
 	private TypeGraph createModelAndSaveToCache(final IJavaProject project, final File model,
 			final NullProgressMonitor monitor) throws IOException {
-		freeCache(this.models, this.maxModels);
+		this.freeCache(this.models, this.maxModels);
 		TypeGraph pm;
 		try {
 			pm = GravityAPI.createProgramModel(project, monitor);
@@ -500,7 +504,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 			if (new File(location, "pom.xml").exists()) { //$NON-NLS-1$
 				importer = new MavenImport(location, true);
 			} else if (new File(location, "build.gradle").exists()) { //$NON-NLS-1$
-				importer = new GradleImport(location, true);
+				importer = new GradleImport(location);
 			} else {
 				throw new IOException(Messages.errorNoSupportetBuildSystem);
 			}
@@ -521,7 +525,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * @throws IOException If no error response could be sent
 	 */
 	private File checkout(final String url, final String commit) throws IOException {
-		freeCache(this.repositories, this.maxRepositories);
+		this.freeCache(this.repositories, this.maxRepositories);
 		try (var git = new GitTools(url, this.workspace, true, true)) {
 			if (!git.changeVersion(commit)) {
 				throw new IOException(MessageFormat.format(Messages.errorCannotCheckoutCommit, commit));
@@ -567,7 +571,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 */
 	public void setMaxModels(final int maxModels) throws IOException {
 		this.maxModels = maxModels;
-		freeCache(this.models, this.maxModels);
+		this.freeCache(this.models, this.maxModels);
 	}
 
 	/**
@@ -578,11 +582,12 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 */
 	public void setMaxRepositories(final int maxRepositories) throws IOException {
 		this.maxRepositories = maxRepositories;
-		freeCache(this.repositories, this.maxRepositories);
+		this.freeCache(this.repositories, this.maxRepositories);
 	}
 
 	/**
-	 * Sets the cache to the given location. If appender location was set before, the
+	 * Sets the cache to the given location. If appender location was set before,
+	 * the
 	 * cached models will not be moved to the new location and the old cache will
 	 * not be deleted.
 	 *
@@ -603,7 +608,7 @@ public class ProgramModelApiServiceImpl implements ProgramModelApi {
 	 * Enables the logging to the given folder or disables logging if
 	 * <code>null</code> is given
 	 *
-	 * @param log The location to which log files should be written
+	 * @param log  The location to which log files should be written
 	 * @param save Wheter failed projects should be copied to the logs
 	 */
 	public void setLogConfiguration(final LoggingConfiguration configuration) {

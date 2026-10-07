@@ -183,7 +183,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 	 */
 	@Override
 	public MGravityModel discoverModel(final IProgressMonitor monitor) throws DiscoveryException {
-		return discoverModel(Collections.emptySet(), monitor);
+		return this.discoverModel(Collections.emptySet(), monitor);
 	}
 
 	/**
@@ -197,28 +197,27 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 	@Override
 	public MGravityModel discoverModel(final Collection<IPath> libs, final IProgressMonitor monitor)
 			throws DiscoveryException {
-		if(this.model != null && this.model.eResource() != null) {
+		if (this.model != null && this.model.eResource() != null) {
 			this.model.eResource().unload();
 			this.model = null;
 		}
 		if (this.load && this.discoveredLibs.containsAll(libs)) {
 			try {
-				this.model = loadModel();
+				this.model = this.loadModel();
 				if ((this.model != null) && !this.model.eIsProxy()) {
 					return this.model;
-				} else {
-					this.model = null;
 				}
+				this.model = null;
 			} catch (final IOException e) {
 				LOGGER.error(e);
 			}
 		}
-		return discoverModelNoLoad(libs, monitor);
+		return this.discoverModelNoLoad(libs, monitor);
 	}
 
 	private MGravityModel discoverModelNoLoad(final Collection<IPath> libs, final IProgressMonitor monitor)
 			throws DiscoveryException {
-		refreshProject(monitor);
+		this.refreshProject(monitor);
 		this.discoveredLibs = new HashSet<>(libs);
 
 		var t0 = 0L;
@@ -229,7 +228,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 			LOGGER.info(t0 + " MoDisco discover project: " + this.project.getProject().getName());
 		}
 
-		final var eObject = discoverProject(this.project, this.uri, libs, monitor);
+		final var eObject = this.discoverProject(this.project, this.uri, libs, monitor);
 
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			GravityActivator.recordMessage("Discovery:" + (System.currentTimeMillis() - t0) + "ms");
@@ -253,13 +252,12 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 			LOGGER.info(t2 + " MoDisco preprocessing");
 		}
 
-		if (eObject instanceof MGravityModel) {
-			this.model = (MGravityModel) eObject;
-			processFwd(this.model, (IFolder) this.modiscoFile.getParent(), monitor);
-		} else {
+		if (!(eObject instanceof final MGravityModel modelInstance)) {
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
 		}
-		asyncSave();
+		this.model = modelInstance;
+		processFwd(this.model, (IFolder) this.modiscoFile.getParent(), monitor);
+		this.asyncSave();
 
 		if (GravityActivator.MEASURE_PERFORMANCE) {
 			GravityActivator.recordMessage("preprocessing:" + (System.currentTimeMillis() - t2) + "ms");
@@ -328,7 +326,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 				Thread.currentThread().interrupt();
 			}
 		}
-		if (canLoadModel(this.modiscoFile)) {
+		if (this.canLoadModel(this.modiscoFile)) {
 			Resource resource;
 			if (this.model == null) {
 				resource = this.discoverer.getResourceSet().getResource(this.uri, true);
@@ -342,7 +340,8 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 			this.model = resource.getContents().stream().filter(MGravityModel.class::isInstance)
 					.map(MGravityModel.class::cast).findAny().orElse(null);
 			return this.model;
-		} else if (this.model != null) {
+		}
+		if (this.model != null) {
 			LOGGER.info("Model is not upto date.");
 			this.model.eResource().unload();
 			this.model = null;
@@ -448,7 +447,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 				if (seen.add(next)) {
 					final Class<? extends EObject> nextClass = next.getClass();
 					keys.parallelStream().filter(c -> c.isAssignableFrom(nextClass))
-					.forEach(c -> ((List<EObject>) elements.get(c)).add(next));
+							.forEach(c -> ((List<EObject>) elements.get(c)).add(next));
 
 					addReferencedObjectsToStack(stack, next);
 				}
@@ -460,7 +459,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 	/**
 	 * Adds all referenced objects to the stack
 	 *
-	 * @param stack The stack
+	 * @param stack   The stack
 	 * @param eobject an object
 	 */
 	private static void addReferencedObjectsToStack(final Deque<EObject> stack, final EObject eobject) {
@@ -481,7 +480,7 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 
 			ElementsToAnalyze analyze;
 			try {
-				analyze = getElementsToAnalyze(javaProject, libs);
+				analyze = this.getElementsToAnalyze(javaProject, libs);
 			} catch (final JavaModelException e) {
 				throw new DiscoveryException(e);
 			}
@@ -523,12 +522,11 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 
 		for (final Object discoverableObject : discoverableElements) {
 			IPackageFragmentRoot root;
-			if (discoverableObject instanceof IPackageFragmentRoot) {
-				root = (IPackageFragmentRoot) discoverableObject;
-			} else {
+			if (!(discoverableObject instanceof IPackageFragmentRoot)) {
 				continue;
 			}
-			addToAnalyzeIfConsideredLib(root, libs, analyze);
+			root = (IPackageFragmentRoot) discoverableObject;
+			this.addToAnalyzeIfConsideredLib(root, libs, analyze);
 		}
 		return analyze;
 	}

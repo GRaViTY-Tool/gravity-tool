@@ -12,24 +12,16 @@
    </description>
 
    <copyright>
-      (C) Copyright ${year} Research Group Software Engineering - University
-of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
-Darmstadt.
+      (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
+   <url>
+      <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
+   </url>
 
    <includes
          id="org.gravity.license.epl"
          version="0.0.0"/>
-
-   <requires>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-   </requires>
 
    <plugin
          id="org.gravity.typegraph.basic"

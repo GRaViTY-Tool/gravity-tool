@@ -28,3 +28,51 @@
 		#trg->tAnnotation
 	}
 }
+
+#using org.gravity.tgg.modisco.pm.*
+#using AttrCondDefLibrary.*
+
+#rule ParameterAnnotation  #with org.gravity.tgg.modisco.pm
+
+#source {
+	method : MMethodDefinition {
+		-parameters->astNode
+	}
+	
+	astNode : MSingleVariableDeclaration {
+		++ -annotations-> Annotation
+	}
+	
+	++ Annotation : Annotation
+}
+
+#target {
+	++ tAnnotation : TAnnotation {
+		++  -tAnnotated -> tAnnotable
+	}
+	
+	tParam : TParameter
+	
+	tSignature : TMethodSignature {
+		-parameters->tParam
+		-definitions->tAnnotable
+	}
+	
+	tAnnotable : TMethodDefinition
+}
+
+#correspondence {
+	mMethodToTDef : MDefinitionToTMember {
+		#src->method
+		#trg->tAnnotable
+	}
+	
+	aSTNodeToTAnnotable : ASTNodeToTAnnotatable {
+		#src->astNode
+		#trg->tParam
+	}
+	++ AnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->Annotation
+		#trg->tAnnotation
+	}
+}

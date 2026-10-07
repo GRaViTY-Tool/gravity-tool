@@ -7,24 +7,20 @@
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0.qualifier">
 
-   <description url="http://www.example.com/description">
-      This features provides functionalities for creating and synchronizing UML models with source code and the GRaViTY program model.
+   <description url="https://www.gravity-tool.org">
+      This feature provides functionalities for creating and synchronizing UML models with source code and the GRaViTY program model.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright>
+      (C) Copyright ${year} University of Koblenz-Landau, Technische Universität Darmstadt, and Ruhr University Bochum
    </copyright>
-
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
 
    <url>
       <update label="GRaViTY Updatesite" url="https://gravity-tool.org/updatesite"/>
       <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
-      <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
-      <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
-      <discovery label="CARiSMA" url="https://rgse.uni-koblenz.de/carisma/updatesite/"/>
+      <discovery label="MoDisco" url="https://download.eclipse.org/releases/latest"/>
+      <discovery label="EMF" url="https://download.eclipse.org/modeling/emf/updates/releases/"/>
+      <discovery label="CARiSMA" url="https://carisma-tool.github.io/carisma-tool"/>
    </url>
 
    <includes
@@ -32,43 +28,18 @@
          version="0.0.0"/>
 
    <requires>
-      <import plugin="org.eclipse.emf.compare"/>
-      <import plugin="carisma.profile.umlsec"/>
-      <import plugin="org.eclipse.modisco.java.discoverer"/>
-      <import plugin="org.gravity.eclipse"/>
-      <import plugin="org.gravity.modisco"/>
-      <import plugin="org.gravity.eclipse.ui"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import feature="feature.carisma.core" version="1.4.7.201807301029"/>
-      <import feature="feature.carisma.uml2" version="1.1.8.201807301029"/>
-      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.moflon.core.utilities"/>
-      <import plugin="org.moflon.tgg.language"/>
-      <import plugin="org.moflon.tgg.runtime"/>
-      <import plugin="SDMLanguage"/>
-      <import plugin="MocaTree"/>
-      <import plugin="org.eclipse.emf.common"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.uml2.uml"/>
-      <import plugin="org.gravity.tgg.modisco.pm"/>
-      <import plugin="org.eclipse.core.commands"/>
-      <import feature="org.gravity.features.security" version="1.0.0.qualifier"/>
+      <import feature="feature.carisma.uml2"/>
+      <import feature="org.gravity.features.security"/>
+      <import feature="org.gravity.features.modisco"/>
+      <import feature="org.moflon.tgg.mosl.feature"/>
    </requires>
 
    <plugin
          id="org.gravity.tgg.modisco.uml"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.gravity.tgg.pm.uml"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>

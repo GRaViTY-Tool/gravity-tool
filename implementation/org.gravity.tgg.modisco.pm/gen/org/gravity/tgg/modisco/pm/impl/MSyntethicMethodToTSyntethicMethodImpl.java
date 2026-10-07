@@ -163,14 +163,14 @@ public class MSyntethicMethodToTSyntethicMethodImpl extends AbstractCorresponden
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class MSyntethicMethodToTSyntethicMethodImpl extends AbstractCorresponden
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
-			setSource((MSyntheticMethodDefinition) newValue);
-			return;
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
-			setTarget((TSyntethicMethod) newValue);
-			return;
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
+				setSource((MSyntheticMethodDefinition) newValue);
+				return;
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
+				setTarget((TSyntethicMethod) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class MSyntethicMethodToTSyntethicMethodImpl extends AbstractCorresponden
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
-			setSource((MSyntheticMethodDefinition) null);
-			return;
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
-			setTarget((TSyntethicMethod) null);
-			return;
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
+				setSource((MSyntheticMethodDefinition) null);
+				return;
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
+				setTarget((TSyntethicMethod) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class MSyntethicMethodToTSyntethicMethodImpl extends AbstractCorresponden
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
-			return source != null;
-		case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
-			return target != null;
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__SOURCE:
+				return source != null;
+			case PmPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

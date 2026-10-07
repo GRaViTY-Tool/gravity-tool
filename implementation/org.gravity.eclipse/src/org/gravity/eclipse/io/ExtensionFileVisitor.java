@@ -2,6 +2,7 @@ package org.gravity.eclipse.io;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -27,14 +28,15 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 	private final List<Path> files;
 
 	/**
-	 * Creates a new file visitor collecting files with one of the given file extensions
+	 * Creates a new file visitor collecting files with one of the given file
+	 * extensions
 	 *
 	 * @param fileExtensions The extensions of the files
 	 */
-	public ExtensionFileVisitor(Collection<String> fileExtensions) {
+	public ExtensionFileVisitor(final Collection<String> fileExtensions) {
 		this.fileExtensions = new ArrayList<>(fileExtensions.size());
-		for(final String f : fileExtensions) {
-			this.fileExtensions.add(addPrefix(f));
+		for (final String f : fileExtensions) {
+			this.fileExtensions.add(this.addPrefix(f));
 		}
 		this.files = new LinkedList<>();
 	}
@@ -44,10 +46,10 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 	 *
 	 * @param fileExtensions The extensions of the files
 	 */
-	public ExtensionFileVisitor(String... fileExtensions) {
+	public ExtensionFileVisitor(final String... fileExtensions) {
 		this.fileExtensions = new ArrayList<>(fileExtensions.length);
-		for(final String f : fileExtensions) {
-			this.fileExtensions.add(addPrefix(f));
+		for (final String f : fileExtensions) {
+			this.fileExtensions.add(this.addPrefix(f));
 		}
 		this.files = new LinkedList<>();
 	}
@@ -57,8 +59,8 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 	 *
 	 * @param fileExtension The extension of the files
 	 */
-	public ExtensionFileVisitor(String fileExtension) {
-		this.fileExtensions = Arrays.asList(addPrefix(fileExtension));
+	public ExtensionFileVisitor(final String fileExtension) {
+		this.fileExtensions = Arrays.asList(this.addPrefix(fileExtension));
 		this.files = new LinkedList<>();
 	}
 
@@ -68,38 +70,43 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 	 * @param fileExtension The file extension
 	 * @return The file extension with prefix
 	 */
-	private String addPrefix(String fileExtension) {
-		if(fileExtension.charAt(0) == '.') {
+	private String addPrefix(final String fileExtension) {
+		if (fileExtension.charAt(0) == '.') {
 			return fileExtension;
 		}
 		return "." + fileExtension;
 	}
 
 	@Override
-	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+	public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs) throws IOException {
 		if (attrs.isRegularFile()) {
-			checkAndAdd(file);
+			this.checkAndAdd(file);
 		}
 		return super.visitFile(file, attrs);
 	}
 
 	@Override
-	public boolean visit(IResource resource) throws CoreException {
-		if(resource.getType() == IResource.FILE) {
-			final Path path = resource.getLocation().toFile().toPath();
-			checkAndAdd(path);
+	public boolean visit(final IResource resource) throws CoreException {
+		if (resource.getType() == IResource.FILE) {
+			final var path = resource.getLocation().toFile().toPath();
+			this.checkAndAdd(path);
 		}
 		return true;
 	}
 
+	public void visit(final Path path) throws IOException {
+		Files.walkFileTree(path, this);
+	}
+
 	/**
-	 * Checks if the file has the searched extension and adds it to the list of matching files if yes.
+	 * Checks if the file has the searched extension and adds it to the list of
+	 * matching files if yes.
 	 *
 	 * @param file The file
 	 */
-	private void checkAndAdd(Path file) {
-		final String name = file.toString();
-		for(final String extension : this.fileExtensions) {
+	private void checkAndAdd(final Path file) {
+		final var name = file.toString();
+		for (final String extension : this.fileExtensions) {
 			if (name.endsWith(extension)) {
 				this.files.add(file);
 				return;

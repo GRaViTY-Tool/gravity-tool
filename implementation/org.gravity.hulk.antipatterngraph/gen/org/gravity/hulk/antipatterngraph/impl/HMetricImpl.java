@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 // <-- [user defined imports]
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -14,10 +15,8 @@ import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.antipatterngraph.values.ValuesFactory;
-import org.gravity.hulk.help.HSort;
 // [user defined imports] -->
 
 /**
@@ -27,7 +26,8 @@ import org.gravity.hulk.help.HSort;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HMetricImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.gravity.hulk.antipatterngraph.impl.HMetricImpl#getValue
+ * <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,7 +36,7 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -55,14 +55,15 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HMetricImpl() {
-		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,63 +73,66 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public double getValue() {
-		return value;
+		return this.value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void setValue(double newValue) {
-		double oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AntipatterngraphPackage.HMETRIC__VALUE, oldValue,
-					value));
+	public void setValue(final double newValue) {
+		final var oldValue = this.value;
+		this.value = newValue;
+		if (this.eNotificationRequired()) {
+			this.eNotify(new ENotificationImpl(this, Notification.SET, AntipatterngraphPackage.HMETRIC__VALUE, oldValue,
+					this.value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public HRelativeValue getRelativeAmount() {
 		// [user code injected with eMoflon]
-		EList<HAnnotation> annotations = getApg().getHAnnotations();
+		final var annotations = this.getApg().getHAnnotations();
 
-		SortedSet<Double> keys = new TreeSet<>();
+		final SortedSet<Double> keys = new TreeSet<>();
 
-		for (HAnnotation a : annotations) {
+		for (final HAnnotation a : annotations) {
 			if (this.getClass().equals(a.getClass())) {
-				double key = ((HMetric) a).getValue();
+				final var key = ((HMetric) a).getValue();
 				keys.add(key);
 			}
 		}
 
-		double index = keys.headSet(this.getValue()).size();
+		final double index = keys.headSet(this.getValue()).size();
 
 		if (index == -1) {
 			throw new RuntimeException();
 		}
 
-		HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
+		final var value = ValuesFactory.eINSTANCE.createHRelativeValue();
 
-		double q = (index + 1) / keys.size();
+		final var q = (index + 1) / keys.size();
 
-		if (q < 0.2) {
+		if (q <= 0.2) {
 			value.setValue(HRelativeValueConstants.VERY_LOW);
-		} else if (q < 0.4) {
+		} else if (q <= 0.4) {
 			value.setValue(HRelativeValueConstants.LOW);
-		} else if (q < 0.6) {
+		} else if (q <= 0.6) {
 			value.setValue(HRelativeValueConstants.MEDIUM);
-		} else if (q < 0.8) {
+		} else if (q <= 0.8) {
 			value.setValue(HRelativeValueConstants.HIGH);
 		} else {
 			value.setValue(HRelativeValueConstants.VERY_HIGH);
@@ -140,7 +144,7 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -152,85 +156,92 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
-		case AntipatterngraphPackage.HMETRIC__VALUE:
-			return getValue();
+			case AntipatterngraphPackage.HMETRIC__VALUE:
+				return this.getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
-		case AntipatterngraphPackage.HMETRIC__VALUE:
-			setValue((Double) newValue);
-			return;
+			case AntipatterngraphPackage.HMETRIC__VALUE:
+				this.setValue((Double) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
-		case AntipatterngraphPackage.HMETRIC__VALUE:
-			setValue(VALUE_EDEFAULT);
-			return;
+			case AntipatterngraphPackage.HMETRIC__VALUE:
+				this.setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
-		case AntipatterngraphPackage.HMETRIC__VALUE:
-			return value != VALUE_EDEFAULT;
+			case AntipatterngraphPackage.HMETRIC__VALUE:
+				return this.value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case AntipatterngraphPackage.HMETRIC___GET_RELATIVE_AMOUNT:
-			return getRelativeAmount();
-		case AntipatterngraphPackage.HMETRIC___INCREMENT:
-			return increment();
+			case AntipatterngraphPackage.HMETRIC___GET_RELATIVE_AMOUNT:
+				return this.getRelativeAmount();
+			case AntipatterngraphPackage.HMETRIC___INCREMENT:
+				return this.increment();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (this.eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuilder result = new StringBuilder(super.toString());
+		final var result = new StringBuilder(super.toString());
 		result.append(" (value: ");
-		result.append(value);
+		result.append(this.value);
 		result.append(')');
 		return result.toString();
 	}

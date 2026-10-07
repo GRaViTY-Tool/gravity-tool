@@ -163,14 +163,14 @@ public class AnnotationMemberValuePairToTAnnotationValueImpl extends AbstractCor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class AnnotationMemberValuePairToTAnnotationValueImpl extends AbstractCor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
-			setSource((AnnotationMemberValuePair) newValue);
-			return;
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
-			setTarget((TAnnotationValue) newValue);
-			return;
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
+				setSource((AnnotationMemberValuePair) newValue);
+				return;
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
+				setTarget((TAnnotationValue) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class AnnotationMemberValuePairToTAnnotationValueImpl extends AbstractCor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
-			setSource((AnnotationMemberValuePair) null);
-			return;
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
-			setTarget((TAnnotationValue) null);
-			return;
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
+				setSource((AnnotationMemberValuePair) null);
+				return;
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
+				setTarget((TAnnotationValue) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class AnnotationMemberValuePairToTAnnotationValueImpl extends AbstractCor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
-			return source != null;
-		case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
-			return target != null;
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__SOURCE:
+				return source != null;
+			case PmPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

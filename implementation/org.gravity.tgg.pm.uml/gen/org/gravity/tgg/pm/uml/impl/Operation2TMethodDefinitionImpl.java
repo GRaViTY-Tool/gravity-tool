@@ -162,14 +162,14 @@ public class Operation2TMethodDefinitionImpl extends AbstractCorrespondenceImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class Operation2TMethodDefinitionImpl extends AbstractCorrespondenceImpl 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
-			setSource((Operation) newValue);
-			return;
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
-			setTarget((TMethodDefinition) newValue);
-			return;
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
+				setSource((Operation) newValue);
+				return;
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
+				setTarget((TMethodDefinition) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class Operation2TMethodDefinitionImpl extends AbstractCorrespondenceImpl 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
-			setSource((Operation) null);
-			return;
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
-			setTarget((TMethodDefinition) null);
-			return;
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
+				setSource((Operation) null);
+				return;
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
+				setTarget((TMethodDefinition) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class Operation2TMethodDefinitionImpl extends AbstractCorrespondenceImpl 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
-			return source != null;
-		case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
-			return target != null;
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__SOURCE:
+				return source != null;
+			case UmlPackage.OPERATION2_TMETHOD_DEFINITION__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

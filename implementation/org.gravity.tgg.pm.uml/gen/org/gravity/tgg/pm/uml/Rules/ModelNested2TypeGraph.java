@@ -109,8 +109,8 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel,
-			EObject pm, EObject outerModel2PM);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm,
+			EObject outerModel2PM, EObject model2PM);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel,
-			EObject pm, EObject outerModel2PM);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm,
+			EObject outerModel2PM, EObject model2PM);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface ModelNested2TypeGraph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph pm);
+	EObjectContainer isAppropriate_BWD_TypeGraph_1(TypeGraph pm);
 
 	/**
 	 * <!-- begin-user-doc -->

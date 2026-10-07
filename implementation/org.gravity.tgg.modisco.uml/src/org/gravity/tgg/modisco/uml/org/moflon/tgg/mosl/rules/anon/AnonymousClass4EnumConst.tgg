@@ -12,7 +12,7 @@
 		++-anonymousClassDeclaration->mAnon
 	}
 	
-	++mAnon:AnonymousClassDeclaration
+	++mAnon:MAnonymousClass
 }
 
 #target {

@@ -181,34 +181,34 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 				.pattern_FieldDec2Property_WithModifier_1_1_performtransformation_greenFFFBBB(bodyDeclaration, modifier,
 						csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		Property feature = (Property) result1_green[1];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		Property feature = (Property) result1_green[2];
 
 		Object[] result2_black = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(m2f, feature, b2e,
+				.pattern_FieldDec2Property_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier, vdf);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ", " + "[vdf] = " + vdf + ".");
 		}
 		Object[] result2_green = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(m2f, feature, b2e,
+				.pattern_FieldDec2Property_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier, vdf);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, m2f, feature,
-						b2e, bodyDeclaration, modifier, vdf);
+				.pattern_FieldDec2Property_WithModifier_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, m2f, b2e,
+						feature, bodyDeclaration, modifier, vdf);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", " + "[vdf] = "
 					+ vdf + ".");
 		}
 		FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier, vdf);
+						b2e, feature, bodyDeclaration, modifier, vdf);
 		//nothing EMoflonEdge vdf__bodyDeclaration____variablesContainer = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bodyDeclaration__vdf____fragments = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[9];
@@ -222,7 +222,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		// 
 		FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier, vdf);
+						b2e, feature, bodyDeclaration, modifier, vdf);
 		return FieldDec2Property_WithModifierImpl.pattern_FieldDec2Property_WithModifier_1_6_expressionFB(ruleresult);
 	}
 
@@ -414,11 +414,11 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier, EObject vdf) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("vdf", vdf);
@@ -507,38 +507,38 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		Property feature = (Property) result1_bindingAndBlack[0];
 		CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_11_1_performtransformation_greenFBFFFFB(feature, csp);
+				.pattern_FieldDec2Property_WithModifier_11_1_performtransformation_greenFFBFFFB(feature, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
 		MFieldDefinition bodyDeclaration = (MFieldDefinition) result1_green[3];
 		Modifier modifier = (Modifier) result1_green[4];
 		VariableDeclarationFragment vdf = (VariableDeclarationFragment) result1_green[5];
 
 		Object[] result2_black = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(m2f, feature, b2e,
+				.pattern_FieldDec2Property_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier, vdf);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = "
+					+ "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[modifier] = " + modifier + ", " + "[vdf] = " + vdf + ".");
 		}
 		Object[] result2_green = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(m2f, feature, b2e,
+				.pattern_FieldDec2Property_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(m2f, b2e, feature,
 						bodyDeclaration, modifier, vdf);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = FieldDec2Property_WithModifierImpl
-				.pattern_FieldDec2Property_WithModifier_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, m2f, feature,
-						b2e, bodyDeclaration, modifier, vdf);
+				.pattern_FieldDec2Property_WithModifier_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, m2f, b2e,
+						feature, bodyDeclaration, modifier, vdf);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[b2e] = " + b2e + ", " + "[feature] = " + feature + ", "
 					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[modifier] = " + modifier + ", " + "[vdf] = "
 					+ vdf + ".");
 		}
 		FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier, vdf);
+						b2e, feature, bodyDeclaration, modifier, vdf);
 		//nothing EMoflonEdge vdf__bodyDeclaration____variablesContainer = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bodyDeclaration__vdf____fragments = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[9];
@@ -552,7 +552,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		// 
 		FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, m2f,
-						feature, b2e, bodyDeclaration, modifier, vdf);
+						b2e, feature, bodyDeclaration, modifier, vdf);
 		return FieldDec2Property_WithModifierImpl.pattern_FieldDec2Property_WithModifier_11_6_expressionFB(ruleresult);
 	}
 
@@ -728,11 +728,11 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature,
 			EObject bodyDeclaration, EObject modifier, EObject vdf) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("vdf", vdf);
@@ -811,7 +811,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_25(EMoflonEdge _edge_variablesContainer) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_116(EMoflonEdge _edge_variablesContainer) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property_WithModifierImpl
 				.pattern_FieldDec2Property_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -881,21 +881,21 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
-		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
-		var_vdf_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
+		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
+		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
+		var_vdf_name.setType("String");
 
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
+
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
@@ -962,21 +962,21 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
-		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
-		var_vdf_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
 
-		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
-		var_feature_isStatic.setType("boolean");
+		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
+		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
+		var_vdf_name.setType("String");
 
 		Variable var_modifier_static = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
 		var_modifier_static.setValue(__helper.getValue("modifier", "static"));
 		var_modifier_static.setType("boolean");
+
+		Variable var_feature_isStatic = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_isStatic.setValue(__helper.getValue("feature", "isStatic"));
+		var_feature_isStatic.setType("boolean");
 
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
@@ -1085,10 +1085,10 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 							+ "[vdf] = " + vdf + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				FieldDec2Property_WithModifierImpl
-						.pattern_FieldDec2Property_WithModifier_24_6_createcorrespondence_greenFBFBBB(feature,
+						.pattern_FieldDec2Property_WithModifier_24_6_createcorrespondence_greenFFBBBB(feature,
 								bodyDeclaration, modifier, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
 
 				Object[] result7_black = FieldDec2Property_WithModifierImpl
 						.pattern_FieldDec2Property_WithModifier_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1243,8 +1243,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 				FieldDec2Property_WithModifierImpl
 						.pattern_FieldDec2Property_WithModifier_29_6_perform_greenFFFFFFBB(ruleResult, csp);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing Property feature = (Property) result6_green[1];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+				//nothing Property feature = (Property) result6_green[2];
 				//nothing MFieldDefinition bodyDeclaration = (MFieldDefinition) result6_green[3];
 				//nothing Modifier modifier = (Modifier) result6_green[4];
 				//nothing VariableDeclarationFragment vdf = (VariableDeclarationFragment) result6_green[5];
@@ -1322,86 +1322,87 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
-			return isAppropriate_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
-			return null;
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD__MATCH_PROPERTY:
-			return isAppropriate_BWD((Match) arguments.get(0), (Property) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PROPERTY:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Property) arguments.get(1));
-			return null;
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PROPERTY:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Property) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PROPERTY:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Property) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5), (EObject) arguments.get(6));
-			return null;
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_0__PROPERTY:
-			return isAppropriate_BWD_Property_0((Property) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_25__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_25((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__PROPERTY_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Property) arguments.get(0), (MFieldDefinition) arguments.get(1),
-					(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3),
-					(Match) arguments.get(4), (Match) arguments.get(5));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_DEC_FWD__MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
-			return checkDEC_FWD((MFieldDefinition) arguments.get(0), (Modifier) arguments.get(1),
-					(VariableDeclarationFragment) arguments.get(2));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_DEC_BWD__PROPERTY:
-			return checkDEC_BWD((Property) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___GENERATE_MODEL__RULEENTRYCONTAINER:
-			return generateModel((RuleEntryContainer) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(ModelgeneratorRuleResult) arguments.get(1));
-		case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD__MATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
+				return isAppropriate_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
+						(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
+						(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
+				return null;
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MFieldDefinition) arguments.get(1),
+						(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+						(MFieldDefinition) arguments.get(1), (Modifier) arguments.get(2),
+						(VariableDeclarationFragment) arguments.get(3));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD__MATCH_PROPERTY:
+				return isAppropriate_BWD((Match) arguments.get(0), (Property) arguments.get(1));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PROPERTY:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (Property) arguments.get(1));
+				return null;
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PROPERTY:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Property) arguments.get(1));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PROPERTY:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Property) arguments.get(1));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5), (EObject) arguments.get(6));
+				return null;
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_BWD_PROPERTY_0__PROPERTY:
+				return isAppropriate_BWD_Property_0((Property) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_116__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_116((EMoflonEdge) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_SOLVE_CSP_CC__PROPERTY_MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Property) arguments.get(0), (MFieldDefinition) arguments.get(1),
+						(Modifier) arguments.get(2), (VariableDeclarationFragment) arguments.get(3),
+						(Match) arguments.get(4), (Match) arguments.get(5));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_DEC_FWD__MFIELDDEFINITION_MODIFIER_VARIABLEDECLARATIONFRAGMENT:
+				return checkDEC_FWD((MFieldDefinition) arguments.get(0), (Modifier) arguments.get(1),
+						(VariableDeclarationFragment) arguments.get(2));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___CHECK_DEC_BWD__PROPERTY:
+				return checkDEC_BWD((Property) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___GENERATE_MODEL__RULEENTRYCONTAINER:
+				return generateModel((RuleEntryContainer) arguments.get(0));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+						(ModelgeneratorRuleResult) arguments.get(1));
+			case RulesPackage.FIELD_DEC2_PROPERTY_WITH_MODIFIER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1569,14 +1570,14 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_FieldDec2Property_WithModifier_1_1_performtransformation_greenFFFBBB(
 			MFieldDefinition bodyDeclaration, Modifier modifier, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Property feature = UMLFactory.eINSTANCE.createProperty();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Property feature = UMLFactory.eINSTANCE.createProperty();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("feature", "isStatic");
 		Object _localVariable_2 = csp.getValue("feature", "visibility");
 		m2f.setSource(modifier);
-		m2f.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		m2f.setTarget(feature);
 		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		boolean feature_isStatic_prime = (boolean) _localVariable_1;
@@ -1584,47 +1585,47 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		feature.setName(feature_name_prime);
 		feature.setIsStatic(Boolean.valueOf(feature_isStatic_prime));
 		feature.setVisibility(feature_visibility_prime);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, csp };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(
-			Modifier2NamedElement m2f, Property feature, ASTNode2Element b2e, MFieldDefinition bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Property feature, MFieldDefinition bodyDeclaration,
 			Modifier modifier, VariableDeclarationFragment vdf) {
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, vdf };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, vdf };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(
-			Modifier2NamedElement m2f, Property feature, ASTNode2Element b2e, MFieldDefinition bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Property feature, MFieldDefinition bodyDeclaration,
 			Modifier modifier, VariableDeclarationFragment vdf) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
 		ruleresult.getTranslatedElements().add(modifier);
 		ruleresult.getTranslatedElements().add(vdf);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, vdf };
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, vdf };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier, EObject vdf) {
 		if (!m2f.equals(modifier)) {
 			if (!m2f.equals(vdf)) {
-				if (!feature.equals(m2f)) {
-					if (!feature.equals(modifier)) {
-						if (!feature.equals(vdf)) {
-							if (!b2e.equals(m2f)) {
-								if (!b2e.equals(feature)) {
-									if (!b2e.equals(bodyDeclaration)) {
-										if (!b2e.equals(modifier)) {
-											if (!b2e.equals(vdf)) {
+				if (!b2e.equals(m2f)) {
+					if (!b2e.equals(feature)) {
+						if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(modifier)) {
+								if (!b2e.equals(vdf)) {
+									if (!feature.equals(m2f)) {
+										if (!feature.equals(modifier)) {
+											if (!feature.equals(vdf)) {
 												if (!bodyDeclaration.equals(m2f)) {
 													if (!bodyDeclaration.equals(feature)) {
 														if (!bodyDeclaration.equals(modifier)) {
 															if (!bodyDeclaration.equals(vdf)) {
 																if (!modifier.equals(vdf)) {
-																	return new Object[] { ruleresult, m2f, feature, b2e,
+																	return new Object[] { ruleresult, m2f, b2e, feature,
 																			bodyDeclaration, modifier, vdf };
 																}
 															}
@@ -1645,7 +1646,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier, EObject vdf) {
 		EMoflonEdge vdf__bodyDeclaration____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__vdf____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1697,7 +1698,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, vdf,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, vdf,
 				vdf__bodyDeclaration____variablesContainer, bodyDeclaration__vdf____fragments,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
 				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
@@ -1705,9 +1706,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final void pattern_FieldDec2Property_WithModifier_1_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property_WithModifier _this, PerformRuleResult ruleresult, EObject m2f, EObject feature,
-			EObject b2e, EObject bodyDeclaration, EObject modifier, EObject vdf) {
-		_this.registerObjects_FWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, vdf);
+			FieldDec2Property_WithModifier _this, PerformRuleResult ruleresult, EObject m2f, EObject b2e,
+			EObject feature, EObject bodyDeclaration, EObject modifier, EObject vdf) {
+		_this.registerObjects_FWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, vdf);
 
 	}
 
@@ -2017,7 +2018,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_FieldDec2Property_WithModifier_11_1_performtransformation_greenFBFFFFB(
+	public static final Object[] pattern_FieldDec2Property_WithModifier_11_1_performtransformation_greenFFBFFFB(
 			Property feature, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -2039,47 +2040,47 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		modifier.setStatic(Boolean.valueOf(modifier_static_prime));
 		modifier.setVisibility(modifier_visibility_prime);
 		vdf.setName(vdf_name_prime);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, vdf, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, vdf, csp };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(
-			Modifier2NamedElement m2f, Property feature, ASTNode2Element b2e, MFieldDefinition bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Property feature, MFieldDefinition bodyDeclaration,
 			Modifier modifier, VariableDeclarationFragment vdf) {
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, vdf };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, vdf };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(
-			Modifier2NamedElement m2f, Property feature, ASTNode2Element b2e, MFieldDefinition bodyDeclaration,
+			Modifier2NamedElement m2f, ASTNode2Element b2e, Property feature, MFieldDefinition bodyDeclaration,
 			Modifier modifier, VariableDeclarationFragment vdf) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
 		ruleresult.getCreatedElements().add(modifier);
 		ruleresult.getCreatedElements().add(vdf);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, vdf };
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, vdf };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier, EObject vdf) {
 		if (!m2f.equals(modifier)) {
 			if (!m2f.equals(vdf)) {
-				if (!feature.equals(m2f)) {
-					if (!feature.equals(modifier)) {
-						if (!feature.equals(vdf)) {
-							if (!b2e.equals(m2f)) {
-								if (!b2e.equals(feature)) {
-									if (!b2e.equals(bodyDeclaration)) {
-										if (!b2e.equals(modifier)) {
-											if (!b2e.equals(vdf)) {
+				if (!b2e.equals(m2f)) {
+					if (!b2e.equals(feature)) {
+						if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(modifier)) {
+								if (!b2e.equals(vdf)) {
+									if (!feature.equals(m2f)) {
+										if (!feature.equals(modifier)) {
+											if (!feature.equals(vdf)) {
 												if (!bodyDeclaration.equals(m2f)) {
 													if (!bodyDeclaration.equals(feature)) {
 														if (!bodyDeclaration.equals(modifier)) {
 															if (!bodyDeclaration.equals(vdf)) {
 																if (!modifier.equals(vdf)) {
-																	return new Object[] { ruleresult, m2f, feature, b2e,
+																	return new Object[] { ruleresult, m2f, b2e, feature,
 																			bodyDeclaration, modifier, vdf };
 																}
 															}
@@ -2100,7 +2101,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bodyDeclaration,
+			PerformRuleResult ruleresult, EObject m2f, EObject b2e, EObject feature, EObject bodyDeclaration,
 			EObject modifier, EObject vdf) {
 		EMoflonEdge vdf__bodyDeclaration____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__vdf____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2152,7 +2153,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, vdf,
+		return new Object[] { ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, vdf,
 				vdf__bodyDeclaration____variablesContainer, bodyDeclaration__vdf____fragments,
 				bodyDeclaration__modifier____modifier, modifier__bodyDeclaration____bodyDeclaration,
 				m2f__feature____target, b2e__bodyDeclaration____source, m2f__modifier____source,
@@ -2160,9 +2161,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final void pattern_FieldDec2Property_WithModifier_11_5_registerobjects_expressionBBBBBBBB(
-			FieldDec2Property_WithModifier _this, PerformRuleResult ruleresult, EObject m2f, EObject feature,
-			EObject b2e, EObject bodyDeclaration, EObject modifier, EObject vdf) {
-		_this.registerObjects_BWD(ruleresult, m2f, feature, b2e, bodyDeclaration, modifier, vdf);
+			FieldDec2Property_WithModifier _this, PerformRuleResult ruleresult, EObject m2f, EObject b2e,
+			EObject feature, EObject bodyDeclaration, EObject modifier, EObject vdf) {
+		_this.registerObjects_BWD(ruleresult, m2f, b2e, feature, bodyDeclaration, modifier, vdf);
 
 	}
 
@@ -2368,8 +2369,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Property feature) {
-		Type __DEC_feature_type_742175 = feature.getType();
-		if (__DEC_feature_type_742175 != null) {
+		Type __DEC_feature_type_440872 = feature.getType();
+		if (__DEC_feature_type_440872 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2487,9 +2488,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_21_2_testcorematchandDECs_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_212217 : bodyDeclaration
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_170548 : bodyDeclaration
 				.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_212217)) {
+			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_170548)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2699,7 +2700,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		return new Object[] { feature, bodyDeclaration, modifier, vdf, ccMatch };
 	}
 
-	public static final Object[] pattern_FieldDec2Property_WithModifier_24_6_createcorrespondence_greenFBFBBB(
+	public static final Object[] pattern_FieldDec2Property_WithModifier_24_6_createcorrespondence_greenFFBBBB(
 			Property feature, MFieldDefinition bodyDeclaration, Modifier modifier, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
@@ -2709,7 +2710,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, ccMatch };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, ccMatch };
 	}
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_24_7_addtoreturnedresult_blackBB(
@@ -2735,9 +2736,9 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_27_1_matchtggpattern_black_nac_0BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_980333 : bodyDeclaration
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_variablesContainer_506882 : bodyDeclaration
 				.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_980333)) {
+			if (!vdf.equals(__DEC_bodyDeclaration_variablesContainer_506882)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2769,8 +2770,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_FieldDec2Property_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			Property feature) {
-		Type __DEC_feature_type_590392 = feature.getType();
-		if (__DEC_feature_type_590392 != null) {
+		Type __DEC_feature_type_773674 = feature.getType();
+		if (__DEC_feature_type_773674 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2860,8 +2861,8 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_FieldDec2Property_WithModifier_29_6_perform_greenFFFFFFBB(
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Property feature = UMLFactory.eINSTANCE.createProperty();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		Property feature = UMLFactory.eINSTANCE.createProperty();
 		MFieldDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMFieldDefinition();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		VariableDeclarationFragment vdf = JavaFactory.eINSTANCE.createVariableDeclarationFragment();
@@ -2874,10 +2875,10 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_6 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
-		m2f.setTarget(feature);
-		ruleResult.getTargetObjects().add(feature);
-		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
+		m2f.setTarget(feature);
+		b2e.setTarget(feature);
+		ruleResult.getTargetObjects().add(feature);
 		b2e.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
 		bodyDeclaration.setModifier(modifier);
@@ -2900,7 +2901,7 @@ public class FieldDec2Property_WithModifierImpl extends AbstractRuleImpl impleme
 		modifier.setVisibility(modifier_visibility_prime);
 		vdf.setName(vdf_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, feature, b2e, bodyDeclaration, modifier, vdf, ruleResult, csp };
+		return new Object[] { m2f, b2e, feature, bodyDeclaration, modifier, vdf, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_FieldDec2Property_WithModifier_29_7_expressionFB(

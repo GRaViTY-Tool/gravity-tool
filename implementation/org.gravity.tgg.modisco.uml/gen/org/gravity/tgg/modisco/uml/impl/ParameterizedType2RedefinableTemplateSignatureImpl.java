@@ -163,14 +163,14 @@ public class ParameterizedType2RedefinableTemplateSignatureImpl extends Abstract
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +183,12 @@ public class ParameterizedType2RedefinableTemplateSignatureImpl extends Abstract
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
-			setSource((ParameterizedType) newValue);
-			return;
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
-			setTarget((RedefinableTemplateSignature) newValue);
-			return;
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
+				setSource((ParameterizedType) newValue);
+				return;
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
+				setTarget((RedefinableTemplateSignature) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,12 +201,12 @@ public class ParameterizedType2RedefinableTemplateSignatureImpl extends Abstract
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
-			setSource((ParameterizedType) null);
-			return;
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
-			setTarget((RedefinableTemplateSignature) null);
-			return;
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
+				setSource((ParameterizedType) null);
+				return;
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
+				setTarget((RedefinableTemplateSignature) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,10 +219,10 @@ public class ParameterizedType2RedefinableTemplateSignatureImpl extends Abstract
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
-			return source != null;
-		case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
-			return target != null;
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__SOURCE:
+				return source != null;
+			case UmlPackage.PARAMETERIZED_TYPE2_REDEFINABLE_TEMPLATE_SIGNATURE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

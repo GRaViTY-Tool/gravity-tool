@@ -1,26 +1,24 @@
 package org.gravity.hulk.ui.handlers.scan;
 
-import org.gravity.hulk.HulkFactory;
-import org.gravity.hulk.detection.DetectionPackage;
+import org.gravity.hulk.detection.HulkDetectionPackage;
+import org.gravity.hulk.impl.HAntiPatternDetection;
 
 public class HulkScanHandler extends HulkHandler {
 
-	
 	@Override
 	protected void setJobName() {
-		jobName = "Anti-Pattern detection";
-		
+		this.jobName = "Anti-Pattern detection";
+
 	}
-	
+
 	@Override
 	protected void setSelectionDialogInput() {
-		selectionDialogInput = DetectionPackage.eINSTANCE;
+		this.selectionDialogInput = HulkDetectionPackage.INSTANCE;
 	}
-	
+
 	@Override
 	protected void setHulk() {
-		hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
+		this.hulk = new HAntiPatternDetection();
 	}
-	
-	
+
 }

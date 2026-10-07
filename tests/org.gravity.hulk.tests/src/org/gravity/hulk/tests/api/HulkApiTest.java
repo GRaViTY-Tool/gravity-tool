@@ -1,10 +1,13 @@
 package org.gravity.hulk.tests.api;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -39,9 +42,13 @@ import org.junit.runners.model.InitializationError;
  */
 public class HulkApiTest {
 
+	private static final String PROJECT_WITH_SPAGHETTI_CODE = "ProjectWithSpaghettiCode";
+
+	private static final String PROJECT_WITH_BLOB = "ProjectWithBlob";
+
 	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class);
 
-	private final IJavaProject javaProject;
+	private final Map<String, IJavaProject> javaProjects = new HashMap<>();
 
 	/**
 	 * Collects the projects from the current workspace on which Hulk should be
@@ -54,10 +61,17 @@ public class HulkApiTest {
 	 * @throws InitializationError
 	 */
 	public HulkApiTest() throws CoreException, GitCloneException, IOException, InitializationError {
-		this.javaProject = JavaProjectUtil.getJavaProject(
-				EclipseProjectUtil.importProject(new File(new File("java_src"), "ProjectWithBlob").getAbsoluteFile(), null));
-		if (this.javaProject == null) {
-			throw new InitializationError("Couldn't load java project");
+		final var names = new String[] { PROJECT_WITH_BLOB, PROJECT_WITH_SPAGHETTI_CODE };
+		final var src = new File("java_src");
+		for (final var name : names) {
+
+			final var javaProject = JavaProjectUtil.getJavaProject(
+					EclipseProjectUtil.importProject(new File(src, name).getAbsoluteFile(),
+							null));
+			if (javaProject == null) {
+				throw new InitializationError("Couldn't load java project");
+			}
+			this.javaProjects.put(name, javaProject);
 		}
 		BasicConfigurator.configure();
 	}
@@ -70,9 +84,26 @@ public class HulkApiTest {
 	 */
 	@Test
 	public void detectBlobsAPI() throws DetectionFailedException, CoreException {
-		final var results = HulkAPI.detect(this.javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB);
+		final var results = HulkAPI.detect(this.javaProjects.get(PROJECT_WITH_BLOB), new NullProgressMonitor(),
+				AntiPatternNames.BLOB);
 		assertNotNull(results);
+		assertEquals(1, results.size());
 		LOGGER.log(Level.INFO, "Number of Blobs = " + results.size());
+	}
+
+	/**
+	 * The HulkAPI is used to detect Spaghetti Code anti-pattern
+	 *
+	 * @throws DetectionFailedException If the detection failed
+	 * @throws CoreException
+	 */
+	@Test
+	public void detectSpaghettiCodeAPI() throws DetectionFailedException, CoreException {
+		final var results = HulkAPI.detect(this.javaProjects.get(PROJECT_WITH_SPAGHETTI_CODE),
+				new NullProgressMonitor(), AntiPatternNames.SPAGHETTI_CODE);
+		assertNotNull(results);
+		assertEquals(1, results.size());
+		LOGGER.log(Level.INFO, "Number of Spaghetti Code = " + results.size());
 	}
 
 	/**
@@ -83,30 +114,34 @@ public class HulkApiTest {
 	 */
 	@Test
 	public void detectAllAPI() throws DetectionFailedException, CoreException {
-		final var results = HulkAPI.detect(this.javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB,
-				AntiPatternNames.IGAT, AntiPatternNames.IGAM, AntiPatternNames.SPAGHETTI_CODE,
-				AntiPatternNames.SWISS_ARMY_KNIFE, AntiPatternNames.TOTAL_METHOD_VISIBILITY,
-				AntiPatternNames.TOTAL_COUPLING);
-		assertNotNull(results);
-		var blobs = 0;
-		for (final HAnnotation hAnnotation : results) {
-			if (hAnnotation instanceof HBlobAntiPattern) {
-				blobs++;
-			}
-			if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				if (hAnnotation instanceof HIGAMMetric) {
-					LOGGER.log(Level.INFO, "IGAM = " + ((HMetric) hAnnotation).getValue());
-				} else if (hAnnotation instanceof HIGATMetric) {
-					LOGGER.log(Level.INFO, "IGAT = " + ((HMetric) hAnnotation).getValue());
+		for (final var javaProject : this.javaProjects.values()) {
+			LOGGER.info(javaProject);
+
+			final var results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB,
+					AntiPatternNames.IGAT, AntiPatternNames.IGAM, AntiPatternNames.SPAGHETTI_CODE,
+					AntiPatternNames.SWISS_ARMY_KNIFE, AntiPatternNames.TOTAL_METHOD_VISIBILITY,
+					AntiPatternNames.TOTAL_COUPLING);
+			assertNotNull(results);
+			var blobs = 0;
+			for (final HAnnotation hAnnotation : results) {
+				if (hAnnotation instanceof HBlobAntiPattern) {
+					blobs++;
+				}
+				if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
+					if (hAnnotation instanceof HIGAMMetric) {
+						LOGGER.log(Level.INFO, "IGAM = " + ((HMetric) hAnnotation).getValue());
+					} else if (hAnnotation instanceof HIGATMetric) {
+						LOGGER.log(Level.INFO, "IGAT = " + ((HMetric) hAnnotation).getValue());
+					}
 				}
 			}
+			LOGGER.log(Level.INFO, "Blobs = " + blobs);
 		}
-		LOGGER.log(Level.INFO, "Blobs = " + blobs);
 	}
 
 	@Test
 	public void detectAllWithSync() throws NoConverterRegisteredException, CoreException, DetectionFailedException {
-		final var project = this.javaProject.getProject();
+		final var project = this.javaProjects.get(PROJECT_WITH_BLOB).getProject();
 		final var converter = GravityActivator.getDefault().getNewConverter(project);
 		final var success = converter.convertProject(new NullProgressMonitor());
 		assertTrue(success);
@@ -121,10 +156,13 @@ public class HulkApiTest {
 
 	@Before
 	public void cleanProject() throws IOException, CoreException {
-		GravityActivator.getDefault().discardConverter(this.javaProject.getProject());
-		final var folder = EclipseProjectUtil.getGravityFolder(this.javaProject.getProject(), null);
-		if (folder.exists()) {
-			folder.delete(true, null);
+		for (final var javaProject : this.javaProjects.values()) {
+			final var project = javaProject.getProject();
+			GravityActivator.getDefault().discardConverter(project);
+			final var folder = EclipseProjectUtil.getGravityFolder(project, null);
+			if (folder.exists()) {
+				folder.delete(true, null);
+			}
 		}
 	}
 

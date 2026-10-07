@@ -5,7 +5,7 @@
     <lhs xmi:id="_SvZPsJiFEeq4spDLGVfnoA" name="Lhs">
       <nodes xmi:id="_XMOAUJiFEeq4spDLGVfnoA" incoming="_CDssQFvGEeusLa39wZCfig _OT4EcFvGEeusLa39wZCfig">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_bBBusJiFEeq4spDLGVfnoA" value="&quot;OuterClass$Anonymous$InnerClass&quot;">
+        <attributes xmi:id="_bBBusJiFEeq4spDLGVfnoA" value="&quot;OuterClass$1$InnerClass&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -17,7 +17,7 @@
       </nodes>
       <nodes xmi:id="_YJsVMJiFEeq4spDLGVfnoA" incoming="_BpuGAFvGEeusLa39wZCfig _N70w0FvGEeusLa39wZCfig" outgoing="_OT4EcFvGEeusLa39wZCfig _qssUIFvGEeusLa39wZCfig">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_d-_7sJiFEeq4spDLGVfnoA" value="&quot;OuterClass$Anonymous&quot;">
+        <attributes xmi:id="_d-_7sJiFEeq4spDLGVfnoA" value="&quot;OuterClass$1&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -94,7 +94,7 @@
     <rhs xmi:id="_SvZPsZiFEeq4spDLGVfnoA" name="Rhs">
       <nodes xmi:id="_XMOAUZiFEeq4spDLGVfnoA" incoming="_CDssQVvGEeusLa39wZCfig _OT4EcVvGEeusLa39wZCfig">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_bBCVwJiFEeq4spDLGVfnoA" value="&quot;OuterClass$Anonymous$InnerClass&quot;">
+        <attributes xmi:id="_bBCVwJiFEeq4spDLGVfnoA" value="&quot;OuterClass$1$InnerClass&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
@@ -106,7 +106,7 @@
       </nodes>
       <nodes xmi:id="_YJsVMZiFEeq4spDLGVfnoA" incoming="_BpuGAVvGEeusLa39wZCfig _N71X4FvGEeusLa39wZCfig" outgoing="_OT4EcVvGEeusLa39wZCfig _qssUIVvGEeusLa39wZCfig">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-        <attributes xmi:id="_d_AiwJiFEeq4spDLGVfnoA" value="&quot;OuterClass$Anonymous&quot;">
+        <attributes xmi:id="_d_AiwJiFEeq4spDLGVfnoA" value="&quot;OuterClass$1&quot;">
           <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>

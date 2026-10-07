@@ -5,13 +5,16 @@ Bundle-SymbolicName: org.gravity.security.tests
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Ruhr University Bochum
 Automatic-Module-Name: org.gravity.security.tests
+Import-Package: org.junit.jupiter.api
 Bundle-ClassPath: .,
  target/dependency/gson.jar
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Require-Bundle: org.junit,
- junit-jupiter-api,
- org.gravity.eclipse,
- junit-jupiter-params,
+Require-Bundle: org.gravity.eclipse,
  org.apache.log4j,
- org.gravity.security.annotations.ui,
- org.gravity.security.annotations.pm
+ org.gravity.security.annotations.pm,
+ org.gravity.security.annotations.check,
+ org.junit,
+ junit-jupiter-api,
+ junit-jupiter-params,
+ junit-platform-commons
+

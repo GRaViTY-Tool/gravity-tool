@@ -3,9 +3,7 @@
 package org.gravity.hulk.resolve.calculators;
 
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
-import org.gravity.hulk.detection.HMetricCalculator;
-
+import org.gravity.hulk.detection.metrics.HMetricCalculator;
 import org.gravity.hulk.resolve.HResolver;
 // <-- [user defined imports]
 // [user defined imports] -->

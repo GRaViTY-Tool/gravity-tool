@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Level;
@@ -80,21 +79,10 @@ public final class GradleIncludes {
 	 * @return All java source files of the build
 	 * @throws IOException
 	 */
-	public Set<Path> getJavaSourceFiles(final Path buildDotGradle) throws IOException {
-		Set<Path> javaSourceFiles = null;
-		try {
-			javaSourceFiles = GradleJavaFiles.getJavaFiles(buildDotGradle);
-		} catch (final IOException e) {
-			GradleImport.LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-		} catch (final GradleImportException e) {
-			GradleImport.LOGGER.log(Level.INFO, e.getMessage(), e);
-		}
-		if ((javaSourceFiles == null) || javaSourceFiles.isEmpty()) {
-			GradleImport.LOGGER.warn("Falling back to manual analysis of build.gradle files!");
-			javaSourceFiles = new HashSet<>();
-			for (final Path root : this.includes) {
-				this.scanRootForSourceFiles(root.toFile(), javaSourceFiles);
-			}
+	public Set<Path> getJavaSourceFiles() throws IOException {
+		final Set<Path> javaSourceFiles = new HashSet<>();
+		for (final Path root : this.includes) {
+			this.scanRootForSourceFiles(root.toFile(), javaSourceFiles);
 		}
 		return javaSourceFiles;
 	}
@@ -119,7 +107,7 @@ public final class GradleIncludes {
 			while (defMatcher.find()) {
 				defs.put(defMatcher.group(1), defMatcher.group(2));
 			}
-			subRoots.addAll(this.searchIncludes(settingsContentString, rootDir, defs));
+			subRoots.addAll(this.searchIncludes(settingsContentString, rootDir));
 		}
 		return subRoots;
 	}
@@ -133,7 +121,7 @@ public final class GradleIncludes {
 	 * @param defs          A table of defined vars
 	 * @throws IOException
 	 */
-	public Set<Path> searchIncludes(final String contentString, final File rootDir, final Map<String, String> defs)
+	public Set<Path> searchIncludes(final String contentString, final File rootDir)
 			throws IOException {
 		final Set<Path> includedFiles = new HashSet<>();
 		this.searchSingleInclude(contentString, rootDir, includedFiles);

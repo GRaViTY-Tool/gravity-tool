@@ -160,38 +160,38 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 		CSP csp = (CSP) result1_bindingAndBlack[3];
 		Object[] result1_green = ModelNested2TypeGraphImpl
 				.pattern_ModelNested2TypeGraph_1_1_performtransformation_greenBFFB(model, csp);
-		Model2TypeGraph model2PM = (Model2TypeGraph) result1_green[1];
-		TypeGraph pm = (TypeGraph) result1_green[2];
+		TypeGraph pm = (TypeGraph) result1_green[1];
+		Model2TypeGraph model2PM = (Model2TypeGraph) result1_green[2];
 
 		Object[] result2_black = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_1_2_collecttranslatedelements_blackBBB(model, model2PM, pm);
+				.pattern_ModelNested2TypeGraph_1_2_collecttranslatedelements_blackBBB(model, pm, model2PM);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
-					+ "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ".");
+					+ "[pm] = " + pm + ", " + "[model2PM] = " + model2PM + ".");
 		}
 		Object[] result2_green = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_1_2_collecttranslatedelements_greenFBBB(model, model2PM, pm);
+				.pattern_ModelNested2TypeGraph_1_2_collecttranslatedelements_greenFBBB(model, pm, model2PM);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, model, model2PM,
-						outerModel, pm, outerModel2PM);
+				.pattern_ModelNested2TypeGraph_1_3_bookkeepingforedges_blackBBBBBB(ruleresult, model, outerModel, pm,
+						outerModel2PM, model2PM);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[model] = " + model + ", " + "[model2PM] = " + model2PM + ", " + "[outerModel] = "
-					+ outerModel + ", " + "[pm] = " + pm + ", " + "[outerModel2PM] = " + outerModel2PM + ".");
+					+ ", " + "[model] = " + model + ", " + "[outerModel] = " + outerModel + ", " + "[pm] = " + pm + ", "
+					+ "[outerModel2PM] = " + outerModel2PM + ", " + "[model2PM] = " + model2PM + ".");
 		}
 		ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				model, model2PM, outerModel, pm);
-		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge outerModel__model____nestedPackage = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge model__outerModel____nestingPackage = (EMoflonEdge) result3_green[8];
+				model, outerModel, pm, model2PM);
+		//nothing EMoflonEdge outerModel__model____nestedPackage = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge model__outerModel____nestingPackage = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_1_5_registerobjects_expressionBBBBBBB(this, ruleresult,
-				model, model2PM, outerModel, pm, outerModel2PM);
+				model, outerModel, pm, outerModel2PM, model2PM);
 		return ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_1_6_expressionFB(ruleresult);
 	}
 
@@ -357,13 +357,13 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel,
-			EObject pm, EObject outerModel2PM) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm,
+			EObject outerModel2PM, EObject model2PM) {
 		ruleresult.registerObject("model", model);
-		ruleresult.registerObject("model2PM", model2PM);
 		ruleresult.registerObject("outerModel", outerModel);
 		ruleresult.registerObject("pm", pm);
 		ruleresult.registerObject("outerModel2PM", outerModel2PM);
+		ruleresult.registerObject("model2PM", model2PM);
 
 	}
 
@@ -444,39 +444,39 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 		Model2TypeGraph outerModel2PM = (Model2TypeGraph) result1_bindingAndBlack[2];
 		CSP csp = (CSP) result1_bindingAndBlack[3];
 		Object[] result1_green = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_11_1_performtransformation_greenFFBBB(outerModel, pm, csp);
+				.pattern_ModelNested2TypeGraph_11_1_performtransformation_greenFBBFB(outerModel, pm, csp);
 		Model model = (Model) result1_green[0];
-		Model2TypeGraph model2PM = (Model2TypeGraph) result1_green[1];
+		Model2TypeGraph model2PM = (Model2TypeGraph) result1_green[3];
 
 		Object[] result2_black = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_11_2_collecttranslatedelements_blackBBB(model, model2PM, pm);
+				.pattern_ModelNested2TypeGraph_11_2_collecttranslatedelements_blackBBB(model, pm, model2PM);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[model] = " + model + ", "
-					+ "[model2PM] = " + model2PM + ", " + "[pm] = " + pm + ".");
+					+ "[pm] = " + pm + ", " + "[model2PM] = " + model2PM + ".");
 		}
 		Object[] result2_green = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_11_2_collecttranslatedelements_greenFBBB(model, model2PM, pm);
+				.pattern_ModelNested2TypeGraph_11_2_collecttranslatedelements_greenFBBB(model, pm, model2PM);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ModelNested2TypeGraphImpl
-				.pattern_ModelNested2TypeGraph_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, model, model2PM,
-						outerModel, pm, outerModel2PM);
+				.pattern_ModelNested2TypeGraph_11_3_bookkeepingforedges_blackBBBBBB(ruleresult, model, outerModel, pm,
+						outerModel2PM, model2PM);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[model] = " + model + ", " + "[model2PM] = " + model2PM + ", " + "[outerModel] = "
-					+ outerModel + ", " + "[pm] = " + pm + ", " + "[outerModel2PM] = " + outerModel2PM + ".");
+					+ ", " + "[model] = " + model + ", " + "[outerModel] = " + outerModel + ", " + "[pm] = " + pm + ", "
+					+ "[outerModel2PM] = " + outerModel2PM + ", " + "[model2PM] = " + model2PM + ".");
 		}
 		ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult,
-				model, model2PM, outerModel, pm);
-		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge outerModel__model____nestedPackage = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge model__outerModel____nestingPackage = (EMoflonEdge) result3_green[8];
+				model, outerModel, pm, model2PM);
+		//nothing EMoflonEdge outerModel__model____nestedPackage = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge model__outerModel____nestingPackage = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge model2PM__pm____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge model2PM__model____source = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
 		ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_11_5_registerobjects_expressionBBBBBBB(this, ruleresult,
-				model, model2PM, outerModel, pm, outerModel2PM);
+				model, outerModel, pm, outerModel2PM, model2PM);
 		return ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_11_6_expressionFB(ruleresult);
 	}
 
@@ -516,8 +516,8 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 				Object[] result3_green = ModelNested2TypeGraphImpl
 						.pattern_ModelNested2TypeGraph_12_3_findcontext_greenBBBFFF(outerModel, pm, outerModel2PM);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[3];
-				//nothing EMoflonEdge outerModel2PM__pm____target = (EMoflonEdge) result3_green[4];
-				//nothing EMoflonEdge outerModel2PM__outerModel____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge outerModel2PM__outerModel____source = (EMoflonEdge) result3_green[4];
+				//nothing EMoflonEdge outerModel2PM__pm____target = (EMoflonEdge) result3_green[5];
 
 				Object[] result4_bindingAndBlack = ModelNested2TypeGraphImpl
 						.pattern_ModelNested2TypeGraph_12_4_solveCSP_bindingAndBlackFBBBBB(this, isApplicableMatch,
@@ -640,13 +640,13 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel,
-			EObject pm, EObject outerModel2PM) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm,
+			EObject outerModel2PM, EObject model2PM) {
 		ruleresult.registerObject("model", model);
-		ruleresult.registerObject("model2PM", model2PM);
 		ruleresult.registerObject("outerModel", outerModel);
 		ruleresult.registerObject("pm", pm);
 		ruleresult.registerObject("outerModel2PM", outerModel2PM);
+		ruleresult.registerObject("model2PM", model2PM);
 
 	}
 
@@ -664,7 +664,7 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_TypeGraph_0(TypeGraph pm) {
+	public EObjectContainer isAppropriate_BWD_TypeGraph_1(TypeGraph pm) {
 
 		Object[] result1_bindingAndBlack = ModelNested2TypeGraphImpl
 				.pattern_ModelNested2TypeGraph_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -788,13 +788,13 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_model_name = CSPFactoryHelper.eINSTANCE.createVariable("model", true, csp);
-		var_model_name.setValue(__helper.getValue("model", "name"));
-		var_model_name.setType("String");
-
 		Variable var_pm_tName = CSPFactoryHelper.eINSTANCE.createVariable("pm", true, csp);
 		var_pm_tName.setValue(__helper.getValue("pm", "tName"));
 		var_pm_tName.setType("String");
+
+		Variable var_model_name = CSPFactoryHelper.eINSTANCE.createVariable("model", true, csp);
+		var_model_name.setValue(__helper.getValue("model", "name"));
+		var_model_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -835,13 +835,13 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_model_name = CSPFactoryHelper.eINSTANCE.createVariable("model", true, csp);
-		var_model_name.setValue(__helper.getValue("model", "name"));
-		var_model_name.setType("String");
-
 		Variable var_pm_tName = CSPFactoryHelper.eINSTANCE.createVariable("pm", true, csp);
 		var_pm_tName.setValue(__helper.getValue("pm", "tName"));
 		var_pm_tName.setType("String");
+
+		Variable var_model_name = CSPFactoryHelper.eINSTANCE.createVariable("model", true, csp);
+		var_model_name.setValue(__helper.getValue("model", "name"));
+		var_model_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -920,9 +920,9 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 							+ "[outerModel] = " + outerModel + ", " + "[pm] = " + pm + ", " + "[ccMatch] = " + ccMatch
 							+ ".");
 				}
-				ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_24_6_createcorrespondence_greenBFBB(model, pm,
+				ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_24_6_createcorrespondence_greenBBFB(model, pm,
 						ccMatch);
-				//nothing Model2TypeGraph model2PM = (Model2TypeGraph) result6_green[1];
+				//nothing Model2TypeGraph model2PM = (Model2TypeGraph) result6_green[2];
 
 				Object[] result7_black = ModelNested2TypeGraphImpl
 						.pattern_ModelNested2TypeGraph_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1059,11 +1059,11 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 								+ outerModel + ", " + "[outerModel2PM] = " + outerModel2PM + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_29_6_perform_greenFFBFBB(outerModel,
+					ModelNested2TypeGraphImpl.pattern_ModelNested2TypeGraph_29_6_perform_greenFBFFBB(outerModel,
 							ruleResult, csp);
 					//nothing Model model = (Model) result6_green[0];
-					//nothing Model2TypeGraph model2PM = (Model2TypeGraph) result6_green[1];
-					//nothing TypeGraph pm = (TypeGraph) result6_green[3];
+					//nothing TypeGraph pm = (TypeGraph) result6_green[2];
+					//nothing Model2TypeGraph model2PM = (Model2TypeGraph) result6_green[3];
 
 				} else {
 				}
@@ -1127,83 +1127,84 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD__MATCH_MODEL_MODEL:
-			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___PERFORM_FWD__ISAPPLICABLEMATCH:
-			return perform_FWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_FWD__MATCH:
-			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_MODEL:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2));
-			return null;
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_MODEL:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
-					(Model) arguments.get(2));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_MODEL2TYPEGRAPH:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(Model) arguments.get(2), (Model2TypeGraph) arguments.get(3));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5));
-			return null;
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_FWD__MATCH:
-			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH:
-			return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___PERFORM_BWD__ISAPPLICABLEMATCH:
-			return perform_BWD((IsApplicableMatch) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_BWD__MATCH:
-			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1));
-			return null;
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_TYPEGRAPH_MODEL2TYPEGRAPH:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(TypeGraph) arguments.get(2), (Model2TypeGraph) arguments.get(3));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-					(EObject) arguments.get(5));
-			return null;
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH:
-			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_0__TYPEGRAPH:
-			return isAppropriate_BWD_TypeGraph_0((TypeGraph) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-			return checkAttributes_FWD((TripleMatch) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-			return checkAttributes_BWD((TripleMatch) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH:
-			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_TYPEGRAPH_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Model) arguments.get(0), (Model) arguments.get(1),
-					(TypeGraph) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_DEC_FWD__MODEL_MODEL:
-			return checkDEC_FWD((Model) arguments.get(0), (Model) arguments.get(1));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_DEC_BWD__TYPEGRAPH:
-			return checkDEC_BWD((TypeGraph) arguments.get(0));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL__RULEENTRYCONTAINER_MODEL2TYPEGRAPH:
-			return generateModel((RuleEntryContainer) arguments.get(0), (Model2TypeGraph) arguments.get(1));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL2TYPEGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
-					(Model2TypeGraph) arguments.get(2), (ModelgeneratorRuleResult) arguments.get(3));
-		case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD__MATCH_MODEL_MODEL:
+				return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1), (Model) arguments.get(2));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___PERFORM_FWD__ISAPPLICABLEMATCH:
+				return perform_FWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_FWD__MATCH:
+				return isApplicable_FWD((Match) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_MODEL:
+				registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+						(Model) arguments.get(2));
+				return null;
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_MODEL:
+				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+						(Model) arguments.get(2));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_MODEL_MODEL2TYPEGRAPH:
+				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+						(Model) arguments.get(2), (Model2TypeGraph) arguments.get(3));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5));
+				return null;
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_FWD__MATCH:
+				return checkTypes_FWD((Match) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH:
+				return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___PERFORM_BWD__ISAPPLICABLEMATCH:
+				return perform_BWD((IsApplicableMatch) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_BWD__MATCH:
+				return isApplicable_BWD((Match) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH:
+				registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1));
+				return null;
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH:
+				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_TYPEGRAPH_MODEL2TYPEGRAPH:
+				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+						(TypeGraph) arguments.get(2), (Model2TypeGraph) arguments.get(3));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+						(EObject) arguments.get(5));
+				return null;
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_TYPES_BWD__MATCH:
+				return checkTypes_BWD((Match) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_BWD_TYPE_GRAPH_1__TYPEGRAPH:
+				return isAppropriate_BWD_TypeGraph_1((TypeGraph) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+				return isAppropriate_FWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+				return checkAttributes_FWD((TripleMatch) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+				return checkAttributes_BWD((TripleMatch) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CC__MATCH_MATCH:
+				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_MODEL_TYPEGRAPH_MATCH_MATCH:
+				return isApplicable_solveCsp_CC((Model) arguments.get(0), (Model) arguments.get(1),
+						(TypeGraph) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_DEC_FWD__MODEL_MODEL:
+				return checkDEC_FWD((Model) arguments.get(0), (Model) arguments.get(1));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___CHECK_DEC_BWD__TYPEGRAPH:
+				return checkDEC_BWD((TypeGraph) arguments.get(0));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL__RULEENTRYCONTAINER_MODEL2TYPEGRAPH:
+				return generateModel((RuleEntryContainer) arguments.get(0), (Model2TypeGraph) arguments.get(1));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_MODEL2TYPEGRAPH_MODELGENERATORRULERESULT:
+				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+						(Model2TypeGraph) arguments.get(2), (ModelgeneratorRuleResult) arguments.get(3));
+			case RulesPackage.MODEL_NESTED2_TYPE_GRAPH___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1368,45 +1369,45 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 
 	public static final Object[] pattern_ModelNested2TypeGraph_1_1_performtransformation_greenBFFB(Model model,
 			CSP csp) {
-		Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		TypeGraph pm = BasicFactory.eINSTANCE.createTypeGraph();
+		Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		Object _localVariable_0 = csp.getValue("pm", "tName");
-		model2PM.setSource(model);
 		model2PM.setTarget(pm);
+		model2PM.setSource(model);
 		String pm_tName_prime = (String) _localVariable_0;
 		pm.setTName(pm_tName_prime);
-		return new Object[] { model, model2PM, pm, csp };
+		return new Object[] { model, pm, model2PM, csp };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_1_2_collecttranslatedelements_blackBBB(Model model,
-			Model2TypeGraph model2PM, TypeGraph pm) {
-		return new Object[] { model, model2PM, pm };
+			TypeGraph pm, Model2TypeGraph model2PM) {
+		return new Object[] { model, pm, model2PM };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_1_2_collecttranslatedelements_greenFBBB(Model model,
-			Model2TypeGraph model2PM, TypeGraph pm) {
+			TypeGraph pm, Model2TypeGraph model2PM) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(model);
-		ruleresult.getCreatedLinkElements().add(model2PM);
 		ruleresult.getCreatedElements().add(pm);
-		return new Object[] { ruleresult, model, model2PM, pm };
+		ruleresult.getCreatedLinkElements().add(model2PM);
+		return new Object[] { ruleresult, model, pm, model2PM };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_1_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel, EObject pm,
-			EObject outerModel2PM) {
-		if (!model.equals(model2PM)) {
-			if (!model.equals(outerModel)) {
-				if (!model.equals(pm)) {
-					if (!model.equals(outerModel2PM)) {
-						if (!model2PM.equals(outerModel)) {
-							if (!model2PM.equals(pm)) {
-								if (!model2PM.equals(outerModel2PM)) {
-									if (!outerModel.equals(pm)) {
-										if (!outerModel.equals(outerModel2PM)) {
-											if (!outerModel2PM.equals(pm)) {
-												return new Object[] { ruleresult, model, model2PM, outerModel, pm,
-														outerModel2PM };
+			PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm, EObject outerModel2PM,
+			EObject model2PM) {
+		if (!model.equals(outerModel)) {
+			if (!model.equals(pm)) {
+				if (!model.equals(outerModel2PM)) {
+					if (!model.equals(model2PM)) {
+						if (!outerModel.equals(pm)) {
+							if (!outerModel.equals(outerModel2PM)) {
+								if (!outerModel2PM.equals(pm)) {
+									if (!model2PM.equals(outerModel)) {
+										if (!model2PM.equals(pm)) {
+											if (!model2PM.equals(outerModel2PM)) {
+												return new Object[] { ruleresult, model, outerModel, pm, outerModel2PM,
+														model2PM };
 											}
 										}
 									}
@@ -1421,41 +1422,41 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel, EObject pm) {
-		EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm, EObject model2PM) {
 		EMoflonEdge outerModel__model____nestedPackage = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__outerModel____nestingPackage = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ModelNested2TypeGraph";
-		String model2PM__model____source_name_prime = "source";
-		String model2PM__pm____target_name_prime = "target";
 		String outerModel__model____nestedPackage_name_prime = "nestedPackage";
 		String model__outerModel____nestingPackage_name_prime = "nestingPackage";
-		model2PM__model____source.setSrc(model2PM);
-		model2PM__model____source.setTrg(model);
-		ruleresult.getCreatedEdges().add(model2PM__model____source);
-		model2PM__pm____target.setSrc(model2PM);
-		model2PM__pm____target.setTrg(pm);
-		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		String model2PM__pm____target_name_prime = "target";
+		String model2PM__model____source_name_prime = "source";
 		outerModel__model____nestedPackage.setSrc(outerModel);
 		outerModel__model____nestedPackage.setTrg(model);
 		ruleresult.getTranslatedEdges().add(outerModel__model____nestedPackage);
 		model__outerModel____nestingPackage.setSrc(model);
 		model__outerModel____nestingPackage.setTrg(outerModel);
 		ruleresult.getTranslatedEdges().add(model__outerModel____nestingPackage);
+		model2PM__pm____target.setSrc(model2PM);
+		model2PM__pm____target.setTrg(pm);
+		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		model2PM__model____source.setSrc(model2PM);
+		model2PM__model____source.setTrg(model);
+		ruleresult.getCreatedEdges().add(model2PM__model____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model2PM__model____source.setName(model2PM__model____source_name_prime);
-		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
 		outerModel__model____nestedPackage.setName(outerModel__model____nestedPackage_name_prime);
 		model__outerModel____nestingPackage.setName(model__outerModel____nestingPackage_name_prime);
-		return new Object[] { ruleresult, model, model2PM, outerModel, pm, model2PM__model____source,
-				model2PM__pm____target, outerModel__model____nestedPackage, model__outerModel____nestingPackage };
+		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
+		model2PM__model____source.setName(model2PM__model____source_name_prime);
+		return new Object[] { ruleresult, model, outerModel, pm, model2PM, outerModel__model____nestedPackage,
+				model__outerModel____nestingPackage, model2PM__pm____target, model2PM__model____source };
 	}
 
 	public static final void pattern_ModelNested2TypeGraph_1_5_registerobjects_expressionBBBBBBB(
-			ModelNested2TypeGraph _this, PerformRuleResult ruleresult, EObject model, EObject model2PM,
-			EObject outerModel, EObject pm, EObject outerModel2PM) {
-		_this.registerObjects_FWD(ruleresult, model, model2PM, outerModel, pm, outerModel2PM);
+			ModelNested2TypeGraph _this, PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm,
+			EObject outerModel2PM, EObject model2PM) {
+		_this.registerObjects_FWD(ruleresult, model, outerModel, pm, outerModel2PM, model2PM);
 
 	}
 
@@ -1771,48 +1772,48 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 		return null;
 	}
 
-	public static final Object[] pattern_ModelNested2TypeGraph_11_1_performtransformation_greenFFBBB(Model outerModel,
+	public static final Object[] pattern_ModelNested2TypeGraph_11_1_performtransformation_greenFBBFB(Model outerModel,
 			TypeGraph pm, CSP csp) {
 		Model model = UMLFactory.eINSTANCE.createModel();
 		Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		Object _localVariable_0 = csp.getValue("model", "name");
 		outerModel.getNestedPackages().add(model);
-		model2PM.setSource(model);
 		model2PM.setTarget(pm);
+		model2PM.setSource(model);
 		String model_name_prime = (String) _localVariable_0;
 		model.setName(model_name_prime);
-		return new Object[] { model, model2PM, outerModel, pm, csp };
+		return new Object[] { model, outerModel, pm, model2PM, csp };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_11_2_collecttranslatedelements_blackBBB(Model model,
-			Model2TypeGraph model2PM, TypeGraph pm) {
-		return new Object[] { model, model2PM, pm };
+			TypeGraph pm, Model2TypeGraph model2PM) {
+		return new Object[] { model, pm, model2PM };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_11_2_collecttranslatedelements_greenFBBB(Model model,
-			Model2TypeGraph model2PM, TypeGraph pm) {
+			TypeGraph pm, Model2TypeGraph model2PM) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(model);
-		ruleresult.getCreatedLinkElements().add(model2PM);
 		ruleresult.getTranslatedElements().add(pm);
-		return new Object[] { ruleresult, model, model2PM, pm };
+		ruleresult.getCreatedLinkElements().add(model2PM);
+		return new Object[] { ruleresult, model, pm, model2PM };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_11_3_bookkeepingforedges_blackBBBBBB(
-			PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel, EObject pm,
-			EObject outerModel2PM) {
-		if (!model.equals(model2PM)) {
-			if (!model.equals(outerModel)) {
-				if (!model.equals(pm)) {
-					if (!model.equals(outerModel2PM)) {
-						if (!model2PM.equals(outerModel)) {
-							if (!model2PM.equals(pm)) {
-								if (!model2PM.equals(outerModel2PM)) {
-									if (!outerModel.equals(pm)) {
-										if (!outerModel.equals(outerModel2PM)) {
-											if (!outerModel2PM.equals(pm)) {
-												return new Object[] { ruleresult, model, model2PM, outerModel, pm,
-														outerModel2PM };
+			PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm, EObject outerModel2PM,
+			EObject model2PM) {
+		if (!model.equals(outerModel)) {
+			if (!model.equals(pm)) {
+				if (!model.equals(outerModel2PM)) {
+					if (!model.equals(model2PM)) {
+						if (!outerModel.equals(pm)) {
+							if (!outerModel.equals(outerModel2PM)) {
+								if (!outerModel2PM.equals(pm)) {
+									if (!model2PM.equals(outerModel)) {
+										if (!model2PM.equals(pm)) {
+											if (!model2PM.equals(outerModel2PM)) {
+												return new Object[] { ruleresult, model, outerModel, pm, outerModel2PM,
+														model2PM };
 											}
 										}
 									}
@@ -1827,41 +1828,41 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject model, EObject model2PM, EObject outerModel, EObject pm) {
-		EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm, EObject model2PM) {
 		EMoflonEdge outerModel__model____nestedPackage = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__outerModel____nestingPackage = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model2PM__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ModelNested2TypeGraph";
-		String model2PM__model____source_name_prime = "source";
-		String model2PM__pm____target_name_prime = "target";
 		String outerModel__model____nestedPackage_name_prime = "nestedPackage";
 		String model__outerModel____nestingPackage_name_prime = "nestingPackage";
-		model2PM__model____source.setSrc(model2PM);
-		model2PM__model____source.setTrg(model);
-		ruleresult.getCreatedEdges().add(model2PM__model____source);
-		model2PM__pm____target.setSrc(model2PM);
-		model2PM__pm____target.setTrg(pm);
-		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		String model2PM__pm____target_name_prime = "target";
+		String model2PM__model____source_name_prime = "source";
 		outerModel__model____nestedPackage.setSrc(outerModel);
 		outerModel__model____nestedPackage.setTrg(model);
 		ruleresult.getCreatedEdges().add(outerModel__model____nestedPackage);
 		model__outerModel____nestingPackage.setSrc(model);
 		model__outerModel____nestingPackage.setTrg(outerModel);
 		ruleresult.getCreatedEdges().add(model__outerModel____nestingPackage);
+		model2PM__pm____target.setSrc(model2PM);
+		model2PM__pm____target.setTrg(pm);
+		ruleresult.getCreatedEdges().add(model2PM__pm____target);
+		model2PM__model____source.setSrc(model2PM);
+		model2PM__model____source.setTrg(model);
+		ruleresult.getCreatedEdges().add(model2PM__model____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		model2PM__model____source.setName(model2PM__model____source_name_prime);
-		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
 		outerModel__model____nestedPackage.setName(outerModel__model____nestedPackage_name_prime);
 		model__outerModel____nestingPackage.setName(model__outerModel____nestingPackage_name_prime);
-		return new Object[] { ruleresult, model, model2PM, outerModel, pm, model2PM__model____source,
-				model2PM__pm____target, outerModel__model____nestedPackage, model__outerModel____nestingPackage };
+		model2PM__pm____target.setName(model2PM__pm____target_name_prime);
+		model2PM__model____source.setName(model2PM__model____source_name_prime);
+		return new Object[] { ruleresult, model, outerModel, pm, model2PM, outerModel__model____nestedPackage,
+				model__outerModel____nestingPackage, model2PM__pm____target, model2PM__model____source };
 	}
 
 	public static final void pattern_ModelNested2TypeGraph_11_5_registerobjects_expressionBBBBBBB(
-			ModelNested2TypeGraph _this, PerformRuleResult ruleresult, EObject model, EObject model2PM,
-			EObject outerModel, EObject pm, EObject outerModel2PM) {
-		_this.registerObjects_BWD(ruleresult, model, model2PM, outerModel, pm, outerModel2PM);
+			ModelNested2TypeGraph _this, PerformRuleResult ruleresult, EObject model, EObject outerModel, EObject pm,
+			EObject outerModel2PM, EObject model2PM) {
+		_this.registerObjects_BWD(ruleresult, model, outerModel, pm, outerModel2PM, model2PM);
 
 	}
 
@@ -1949,8 +1950,8 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	public static final Iterable<Object[]> pattern_ModelNested2TypeGraph_12_3_findcontext_blackBBB(Model outerModel,
 			TypeGraph pm, Model2TypeGraph outerModel2PM) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (pm.equals(outerModel2PM.getTarget())) {
-			if (outerModel.equals(outerModel2PM.getSource())) {
+		if (outerModel.equals(outerModel2PM.getSource())) {
+			if (pm.equals(outerModel2PM.getTarget())) {
 				_result.add(new Object[] { outerModel, pm, outerModel2PM });
 			}
 		}
@@ -1960,23 +1961,23 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 	public static final Object[] pattern_ModelNested2TypeGraph_12_3_findcontext_greenBBBFFF(Model outerModel,
 			TypeGraph pm, Model2TypeGraph outerModel2PM) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge outerModel2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge outerModel2PM__outerModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String outerModel2PM__pm____target_name_prime = "target";
+		EMoflonEdge outerModel2PM__pm____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String outerModel2PM__outerModel____source_name_prime = "source";
+		String outerModel2PM__pm____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(outerModel);
 		isApplicableMatch.getAllContextElements().add(pm);
 		isApplicableMatch.getAllContextElements().add(outerModel2PM);
-		outerModel2PM__pm____target.setSrc(outerModel2PM);
-		outerModel2PM__pm____target.setTrg(pm);
-		isApplicableMatch.getAllContextElements().add(outerModel2PM__pm____target);
 		outerModel2PM__outerModel____source.setSrc(outerModel2PM);
 		outerModel2PM__outerModel____source.setTrg(outerModel);
 		isApplicableMatch.getAllContextElements().add(outerModel2PM__outerModel____source);
-		outerModel2PM__pm____target.setName(outerModel2PM__pm____target_name_prime);
+		outerModel2PM__pm____target.setSrc(outerModel2PM);
+		outerModel2PM__pm____target.setTrg(pm);
+		isApplicableMatch.getAllContextElements().add(outerModel2PM__pm____target);
 		outerModel2PM__outerModel____source.setName(outerModel2PM__outerModel____source_name_prime);
-		return new Object[] { outerModel, pm, outerModel2PM, isApplicableMatch, outerModel2PM__pm____target,
-				outerModel2PM__outerModel____source };
+		outerModel2PM__pm____target.setName(outerModel2PM__pm____target_name_prime);
+		return new Object[] { outerModel, pm, outerModel2PM, isApplicableMatch, outerModel2PM__outerModel____source,
+				outerModel2PM__pm____target };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_12_4_solveCSP_bindingFBBBBB(ModelNested2TypeGraph _this,
@@ -2364,9 +2365,9 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 			Model outerModel, TypeGraph pm, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (Model2TypeGraph outerModel2PM : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(pm,
-					Model2TypeGraph.class, "target")) {
-				if (outerModel.equals(outerModel2PM.getSource())) {
+			for (Model2TypeGraph outerModel2PM : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(outerModel, Model2TypeGraph.class, "source")) {
+				if (pm.equals(outerModel2PM.getTarget())) {
 					_result.add(new Object[] { outerModel, pm, outerModel2PM, sourceMatch, targetMatch });
 				}
 			}
@@ -2393,13 +2394,13 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 		return null;
 	}
 
-	public static final Object[] pattern_ModelNested2TypeGraph_24_6_createcorrespondence_greenBFBB(Model model,
+	public static final Object[] pattern_ModelNested2TypeGraph_24_6_createcorrespondence_greenBBFB(Model model,
 			TypeGraph pm, CCMatch ccMatch) {
 		Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
-		model2PM.setSource(model);
 		model2PM.setTarget(pm);
+		model2PM.setSource(model);
 		ccMatch.getCreateCorr().add(model2PM);
-		return new Object[] { model, model2PM, pm, ccMatch };
+		return new Object[] { model, pm, model2PM, ccMatch };
 	}
 
 	public static final Object[] pattern_ModelNested2TypeGraph_24_7_addtoreturnedresult_blackBB(
@@ -2561,21 +2562,21 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 		return new Object[] { outerModel, outerModel2PM, ruleResult };
 	}
 
-	public static final Object[] pattern_ModelNested2TypeGraph_29_6_perform_greenFFBFBB(Model outerModel,
+	public static final Object[] pattern_ModelNested2TypeGraph_29_6_perform_greenFBFFBB(Model outerModel,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Model model = UMLFactory.eINSTANCE.createModel();
-		Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		TypeGraph pm = BasicFactory.eINSTANCE.createTypeGraph();
+		Model2TypeGraph model2PM = UmlFactory.eINSTANCE.createModel2TypeGraph();
 		Object _localVariable_0 = csp.getValue("model", "name");
 		Object _localVariable_1 = csp.getValue("pm", "tName");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		outerModel.getNestedPackages().add(model);
 		ruleResult.getSourceObjects().add(model);
+		ruleResult.getTargetObjects().add(pm);
+		model2PM.setTarget(pm);
 		model2PM.setSource(model);
 		ruleResult.getCorrObjects().add(model2PM);
-		model2PM.setTarget(pm);
-		ruleResult.getTargetObjects().add(pm);
 		String model_name_prime = (String) _localVariable_0;
 		String pm_tName_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2583,7 +2584,7 @@ public class ModelNested2TypeGraphImpl extends AbstractRuleImpl implements Model
 		model.setName(model_name_prime);
 		pm.setTName(pm_tName_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { model, model2PM, outerModel, pm, ruleResult, csp };
+		return new Object[] { model, outerModel, pm, model2PM, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ModelNested2TypeGraph_29_7_expressionFB(

@@ -162,14 +162,14 @@ public class MSignatureToTSignatureImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class MSignatureToTSignatureImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
-			setSource((MSignature) newValue);
-			return;
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
-			setTarget((TSignature) newValue);
-			return;
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
+				setSource((MSignature) newValue);
+				return;
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
+				setTarget((TSignature) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class MSignatureToTSignatureImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
-			setSource((MSignature) null);
-			return;
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
-			setTarget((TSignature) null);
-			return;
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
+				setSource((MSignature) null);
+				return;
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
+				setTarget((TSignature) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class MSignatureToTSignatureImpl extends AbstractCorrespondenceImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
-			return source != null;
-		case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
-			return target != null;
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__SOURCE:
+				return source != null;
+			case PmPackage.MSIGNATURE_TO_TSIGNATURE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

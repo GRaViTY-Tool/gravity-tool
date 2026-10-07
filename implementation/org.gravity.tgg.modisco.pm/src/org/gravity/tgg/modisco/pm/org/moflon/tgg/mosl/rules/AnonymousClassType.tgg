@@ -37,10 +37,6 @@
 #rule AnonymousClassTypeInterface #extends AnonymousClassType
 #with org.gravity.tgg.modisco.pm
 
-#source {
-	mParent : InterfaceDeclaration
-}
-
 #target {
 	tClass : TClass {
 		++-implements->tParent
@@ -51,10 +47,6 @@
 
 #rule AnonymousClassTypeClass #extends AnonymousClassType
 #with org.gravity.tgg.modisco.pm
-
-#source {
-	mParent : ClassDeclaration
-}
 
 #target {
 	tClass : TClass {

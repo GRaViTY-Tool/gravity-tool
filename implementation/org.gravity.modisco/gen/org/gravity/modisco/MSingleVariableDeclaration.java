@@ -23,14 +23,14 @@ import org.eclipse.modisco.java.SingleVariableDeclaration;
 public interface MSingleVariableDeclaration extends SingleVariableDeclaration {
 	/**
 	 * Returns the value of the '<em><b>MEntry</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MEntry#getParameters <em>Parameters</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MEntry#getAllParameterInstances <em>All Parameter Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MEntry</em>' reference.
 	 * @see #setMEntry(MEntry)
 	 * @see org.gravity.modisco.ModiscoPackage#getMSingleVariableDeclaration_MEntry()
-	 * @see org.gravity.modisco.MEntry#getParameters
-	 * @model opposite="parameters" required="true"
+	 * @see org.gravity.modisco.MEntry#getAllParameterInstances
+	 * @model opposite="allParameterInstances" required="true"
 	 * @generated
 	 */
 	MEntry getMEntry();

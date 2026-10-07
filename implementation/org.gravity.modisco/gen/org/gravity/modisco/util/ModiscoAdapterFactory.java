@@ -15,6 +15,7 @@ import org.eclipse.modisco.java.AbstractMethodInvocation;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.AbstractTypeQualifiedExpression;
 import org.eclipse.modisco.java.AbstractVariablesContainer;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.ClassInstanceCreation;
@@ -208,6 +209,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMClassInstanceCreationAdapter();
 			}
 			@Override
+			public Adapter caseMAnonymousClass(MAnonymousClass object) {
+				return createMAnonymousClassAdapter();
+			}
+			@Override
 			public Adapter caseMSuperConstructorInvocation(MSuperConstructorInvocation object) {
 				return createMSuperConstructorInvocationAdapter();
 			}
@@ -314,6 +319,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseClassInstanceCreation(ClassInstanceCreation object) {
 				return createClassInstanceCreationAdapter();
+			}
+			@Override
+			public Adapter caseAnonymousClassDeclaration(AnonymousClassDeclaration object) {
+				return createAnonymousClassDeclarationAdapter();
 			}
 			@Override
 			public Adapter caseSuperConstructorInvocation(SuperConstructorInvocation object) {
@@ -740,6 +749,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAnonymousClass <em>MAnonymous Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MAnonymousClass
+	 * @generated
+	 */
+	public Adapter createMAnonymousClassAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MSuperConstructorInvocation <em>MSuper Constructor Invocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1114,6 +1137,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClassInstanceCreationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AnonymousClassDeclaration <em>Anonymous Class Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.AnonymousClassDeclaration
+	 * @generated
+	 */
+	public Adapter createAnonymousClassDeclarationAdapter() {
 		return null;
 	}
 

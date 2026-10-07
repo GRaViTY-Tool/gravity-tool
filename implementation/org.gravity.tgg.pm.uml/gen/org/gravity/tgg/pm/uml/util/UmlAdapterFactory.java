@@ -69,13 +69,13 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected UmlSwitch<Adapter> modelSwitch = new UmlSwitch<Adapter>() {
 		@Override
-		public Adapter caseInterface2TInterface(Interface2TInterface object) {
-			return createInterface2TInterfaceAdapter();
+		public Adapter caseModel2TypeGraph(Model2TypeGraph object) {
+			return createModel2TypeGraphAdapter();
 		}
 
 		@Override
-		public Adapter caseType2TAbstractType(Type2TAbstractType object) {
-			return createType2TAbstractTypeAdapter();
+		public Adapter caseOperation2TMethodName(Operation2TMethodName object) {
+			return createOperation2TMethodNameAdapter();
 		}
 
 		@Override
@@ -89,23 +89,8 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseOperation2TMethodSignature(Operation2TMethodSignature object) {
-			return createOperation2TMethodSignatureAdapter();
-		}
-
-		@Override
 		public Adapter caseProperty2TFieldDefinition(Property2TFieldDefinition object) {
 			return createProperty2TFieldDefinitionAdapter();
-		}
-
-		@Override
-		public Adapter caseProperty2TFieldName(Property2TFieldName object) {
-			return createProperty2TFieldNameAdapter();
-		}
-
-		@Override
-		public Adapter caseStereotypeProperty2AnnotationNode(StereotypeProperty2AnnotationNode object) {
-			return createStereotypeProperty2AnnotationNodeAdapter();
 		}
 
 		@Override
@@ -114,38 +99,8 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseClass2TClass(Class2TClass object) {
-			return createClass2TClassAdapter();
-		}
-
-		@Override
 		public Adapter caseComment2TTextAnnotation(Comment2TTextAnnotation object) {
 			return createComment2TTextAnnotationAdapter();
-		}
-
-		@Override
-		public Adapter caseModel2TypeGraph(Model2TypeGraph object) {
-			return createModel2TypeGraphAdapter();
-		}
-
-		@Override
-		public Adapter caseParameter2TParameter(Parameter2TParameter object) {
-			return createParameter2TParameterAdapter();
-		}
-
-		@Override
-		public Adapter caseFeature2TMember(Feature2TMember object) {
-			return createFeature2TMemberAdapter();
-		}
-
-		@Override
-		public Adapter caseProperty2TFieldSignature(Property2TFieldSignature object) {
-			return createProperty2TFieldSignatureAdapter();
-		}
-
-		@Override
-		public Adapter caseFeature2TSignature(Feature2TSignature object) {
-			return createFeature2TSignatureAdapter();
 		}
 
 		@Override
@@ -154,8 +109,28 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseOperation2TMethodName(Operation2TMethodName object) {
-			return createOperation2TMethodNameAdapter();
+		public Adapter caseStereotype2TAnnotation(Stereotype2TAnnotation object) {
+			return createStereotype2TAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseOperation2TMethodSignature(Operation2TMethodSignature object) {
+			return createOperation2TMethodSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseParameter2TParameter(Parameter2TParameter object) {
+			return createParameter2TParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseClass2TClass(Class2TClass object) {
+			return createClass2TClassAdapter();
+		}
+
+		@Override
+		public Adapter caseType2TAbstractType(Type2TAbstractType object) {
+			return createType2TAbstractTypeAdapter();
 		}
 
 		@Override
@@ -164,8 +139,33 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStereotype2TAnnotation(Stereotype2TAnnotation object) {
-			return createStereotype2TAnnotationAdapter();
+		public Adapter caseFeature2TSignature(Feature2TSignature object) {
+			return createFeature2TSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseFeature2TMember(Feature2TMember object) {
+			return createFeature2TMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseStereotypeProperty2AnnotationNode(StereotypeProperty2AnnotationNode object) {
+			return createStereotypeProperty2AnnotationNodeAdapter();
+		}
+
+		@Override
+		public Adapter caseProperty2TFieldSignature(Property2TFieldSignature object) {
+			return createProperty2TFieldSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseInterface2TInterface(Interface2TInterface object) {
+			return createInterface2TInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseProperty2TFieldName(Property2TFieldName object) {
+			return createProperty2TFieldNameAdapter();
 		}
 
 		@Override
@@ -193,30 +193,30 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Interface2TInterface <em>Interface2 TInterface</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Model2TypeGraph <em>Model2 Type Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Interface2TInterface
+	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph
 	 * @generated
 	 */
-	public Adapter createInterface2TInterfaceAdapter() {
+	public Adapter createModel2TypeGraphAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Type2TAbstractType <em>Type2 TAbstract Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Operation2TMethodName <em>Operation2 TMethod Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName
 	 * @generated
 	 */
-	public Adapter createType2TAbstractTypeAdapter() {
+	public Adapter createOperation2TMethodNameAdapter() {
 		return null;
 	}
 
@@ -249,20 +249,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature <em>Operation2 TMethod Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature
-	 * @generated
-	 */
-	public Adapter createOperation2TMethodSignatureAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Property2TFieldDefinition <em>Property2 TField Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -273,34 +259,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProperty2TFieldDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Property2TFieldName <em>Property2 TField Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldName
-	 * @generated
-	 */
-	public Adapter createProperty2TFieldNameAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode <em>Stereotype Property2 Annotation Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode
-	 * @generated
-	 */
-	public Adapter createStereotypeProperty2AnnotationNodeAdapter() {
 		return null;
 	}
 
@@ -319,20 +277,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Class2TClass <em>Class2 TClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Class2TClass
-	 * @generated
-	 */
-	public Adapter createClass2TClassAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Comment2TTextAnnotation <em>Comment2 TText Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -343,76 +287,6 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComment2TTextAnnotationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Model2TypeGraph <em>Model2 Type Graph</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph
-	 * @generated
-	 */
-	public Adapter createModel2TypeGraphAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Parameter2TParameter <em>Parameter2 TParameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter
-	 * @generated
-	 */
-	public Adapter createParameter2TParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Feature2TMember <em>Feature2 TMember</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Feature2TMember
-	 * @generated
-	 */
-	public Adapter createFeature2TMemberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature <em>Property2 TField Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature
-	 * @generated
-	 */
-	public Adapter createProperty2TFieldSignatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Feature2TSignature <em>Feature2 TSignature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Feature2TSignature
-	 * @generated
-	 */
-	public Adapter createFeature2TSignatureAdapter() {
 		return null;
 	}
 
@@ -431,16 +305,72 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Operation2TMethodName <em>Operation2 TMethod Name</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation <em>Stereotype2 TAnnotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName
+	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation
 	 * @generated
 	 */
-	public Adapter createOperation2TMethodNameAdapter() {
+	public Adapter createStereotype2TAnnotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature <em>Operation2 TMethod Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature
+	 * @generated
+	 */
+	public Adapter createOperation2TMethodSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Parameter2TParameter <em>Parameter2 TParameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter
+	 * @generated
+	 */
+	public Adapter createParameter2TParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Class2TClass <em>Class2 TClass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Class2TClass
+	 * @generated
+	 */
+	public Adapter createClass2TClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Type2TAbstractType <em>Type2 TAbstract Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType
+	 * @generated
+	 */
+	public Adapter createType2TAbstractTypeAdapter() {
 		return null;
 	}
 
@@ -459,16 +389,86 @@ public class UmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation <em>Stereotype2 TAnnotation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Feature2TSignature <em>Feature2 TSignature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation
+	 * @see org.gravity.tgg.pm.uml.Feature2TSignature
 	 * @generated
 	 */
-	public Adapter createStereotype2TAnnotationAdapter() {
+	public Adapter createFeature2TSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Feature2TMember <em>Feature2 TMember</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Feature2TMember
+	 * @generated
+	 */
+	public Adapter createFeature2TMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode <em>Stereotype Property2 Annotation Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode
+	 * @generated
+	 */
+	public Adapter createStereotypeProperty2AnnotationNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature <em>Property2 TField Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature
+	 * @generated
+	 */
+	public Adapter createProperty2TFieldSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Interface2TInterface <em>Interface2 TInterface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Interface2TInterface
+	 * @generated
+	 */
+	public Adapter createInterface2TInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.tgg.pm.uml.Property2TFieldName <em>Property2 TField Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldName
+	 * @generated
+	 */
+	public Adapter createProperty2TFieldNameAdapter() {
 		return null;
 	}
 

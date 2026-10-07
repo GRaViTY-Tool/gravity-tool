@@ -160,14 +160,14 @@ public class PackageToTPackageImpl extends AbstractCorrespondenceImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,12 +180,12 @@ public class PackageToTPackageImpl extends AbstractCorrespondenceImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
-			setSource((org.eclipse.modisco.java.Package) newValue);
-			return;
-		case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
-			setTarget((TPackage) newValue);
-			return;
+			case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
+				setSource((org.eclipse.modisco.java.Package) newValue);
+				return;
+			case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
+				setTarget((TPackage) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,12 +198,12 @@ public class PackageToTPackageImpl extends AbstractCorrespondenceImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
-			setSource((org.eclipse.modisco.java.Package) null);
-			return;
-		case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
-			setTarget((TPackage) null);
-			return;
+			case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
+				setSource((org.eclipse.modisco.java.Package) null);
+				return;
+			case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
+				setTarget((TPackage) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -216,10 +216,10 @@ public class PackageToTPackageImpl extends AbstractCorrespondenceImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
-			return source != null;
-		case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
-			return target != null;
+			case PmPackage.PACKAGE_TO_TPACKAGE__SOURCE:
+				return source != null;
+			case PmPackage.PACKAGE_TO_TPACKAGE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}

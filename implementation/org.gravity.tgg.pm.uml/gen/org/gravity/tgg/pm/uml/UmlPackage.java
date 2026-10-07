@@ -58,14 +58,14 @@ public interface UmlPackage extends EPackage {
 	UmlPackage eINSTANCE = org.gravity.tgg.pm.uml.impl.UmlPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl <em>Interface2 TInterface</em>}' class.
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl <em>Model2 Type Graph</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getInterface2TInterface()
+	 * @see org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getModel2TypeGraph()
 	 * @generated
 	 */
-	int INTERFACE2_TINTERFACE = 0;
+	int MODEL2_TYPE_GRAPH = 0;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -74,7 +74,7 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE2_TINTERFACE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+	int MODEL2_TYPE_GRAPH__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -83,35 +83,35 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE2_TINTERFACE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+	int MODEL2_TYPE_GRAPH__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Interface2 TInterface</em>' class.
+	 * The number of structural features of the '<em>Model2 Type Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE2_TINTERFACE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+	int MODEL2_TYPE_GRAPH_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Interface2 TInterface</em>' class.
+	 * The number of operations of the '<em>Model2 Type Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE2_TINTERFACE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+	int MODEL2_TYPE_GRAPH_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl <em>Type2 TAbstract Type</em>}' class.
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl <em>Operation2 TMethod Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getType2TAbstractType()
+	 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodName()
 	 * @generated
 	 */
-	int TYPE2_TABSTRACT_TYPE = 1;
+	int OPERATION2_TMETHOD_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -120,7 +120,7 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE2_TABSTRACT_TYPE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+	int OPERATION2_TMETHOD_NAME__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -129,25 +129,25 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE2_TABSTRACT_TYPE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+	int OPERATION2_TMETHOD_NAME__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Type2 TAbstract Type</em>' class.
+	 * The number of structural features of the '<em>Operation2 TMethod Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE2_TABSTRACT_TYPE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+	int OPERATION2_TMETHOD_NAME_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Type2 TAbstract Type</em>' class.
+	 * The number of operations of the '<em>Operation2 TMethod Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE2_TABSTRACT_TYPE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+	int OPERATION2_TMETHOD_NAME_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.PrimitiveType2TClassImpl <em>Primitive Type2 TClass</em>}' class.
@@ -242,52 +242,6 @@ public interface UmlPackage extends EPackage {
 	int ELEMENT2_TANNOTATABLE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl <em>Operation2 TMethod Signature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodSignature()
-	 * @generated
-	 */
-	int OPERATION2_TMETHOD_SIGNATURE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_SIGNATURE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_SIGNATURE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Operation2 TMethod Signature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_SIGNATURE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Operation2 TMethod Signature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_SIGNATURE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldDefinitionImpl <em>Property2 TField Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,7 +249,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getProperty2TFieldDefinition()
 	 * @generated
 	 */
-	int PROPERTY2_TFIELD_DEFINITION = 5;
+	int PROPERTY2_TFIELD_DEFINITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -334,14 +288,14 @@ public interface UmlPackage extends EPackage {
 	int PROPERTY2_TFIELD_DEFINITION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl <em>Property2 TField Name</em>}' class.
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl <em>Operation2 TMethod Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getProperty2TFieldName()
+	 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodDefinition()
 	 * @generated
 	 */
-	int PROPERTY2_TFIELD_NAME = 6;
+	int OPERATION2_TMETHOD_DEFINITION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -350,7 +304,7 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY2_TFIELD_NAME__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+	int OPERATION2_TMETHOD_DEFINITION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -359,25 +313,485 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY2_TFIELD_NAME__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+	int OPERATION2_TMETHOD_DEFINITION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Property2 TField Name</em>' class.
+	 * The number of structural features of the '<em>Operation2 TMethod Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY2_TFIELD_NAME_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+	int OPERATION2_TMETHOD_DEFINITION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Property2 TField Name</em>' class.
+	 * The number of operations of the '<em>Operation2 TMethod Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY2_TFIELD_NAME_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+	int OPERATION2_TMETHOD_DEFINITION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl <em>Comment2 TText Annotation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getComment2TTextAnnotation()
+	 * @generated
+	 */
+	int COMMENT2_TTEXT_ANNOTATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT2_TTEXT_ANNOTATION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT2_TTEXT_ANNOTATION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Comment2 TText Annotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT2_TTEXT_ANNOTATION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Comment2 TText Annotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT2_TTEXT_ANNOTATION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Package2TPackageImpl <em>Package2 TPackage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Package2TPackageImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getPackage2TPackage()
+	 * @generated
+	 */
+	int PACKAGE2_TPACKAGE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE2_TPACKAGE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE2_TPACKAGE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Package2 TPackage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE2_TPACKAGE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Package2 TPackage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE2_TPACKAGE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl <em>Stereotype2 TAnnotation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getStereotype2TAnnotation()
+	 * @generated
+	 */
+	int STEREOTYPE2_TANNOTATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE2_TANNOTATION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE2_TANNOTATION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Stereotype2 TAnnotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE2_TANNOTATION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Stereotype2 TAnnotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE2_TANNOTATION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl <em>Operation2 TMethod Signature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodSignature()
+	 * @generated
+	 */
+	int OPERATION2_TMETHOD_SIGNATURE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION2_TMETHOD_SIGNATURE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION2_TMETHOD_SIGNATURE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Operation2 TMethod Signature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION2_TMETHOD_SIGNATURE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Operation2 TMethod Signature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION2_TMETHOD_SIGNATURE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl <em>Parameter2 TParameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getParameter2TParameter()
+	 * @generated
+	 */
+	int PARAMETER2_TPARAMETER = 10;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER2_TPARAMETER__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER2_TPARAMETER__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter2 TParameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER2_TPARAMETER_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter2 TParameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER2_TPARAMETER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Class2TClassImpl <em>Class2 TClass</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Class2TClassImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getClass2TClass()
+	 * @generated
+	 */
+	int CLASS2_TCLASS = 11;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS2_TCLASS__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS2_TCLASS__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Class2 TClass</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS2_TCLASS_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Class2 TClass</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS2_TCLASS_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl <em>Type2 TAbstract Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getType2TAbstractType()
+	 * @generated
+	 */
+	int TYPE2_TABSTRACT_TYPE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE2_TABSTRACT_TYPE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE2_TABSTRACT_TYPE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Type2 TAbstract Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE2_TABSTRACT_TYPE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Type2 TAbstract Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE2_TABSTRACT_TYPE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl <em>FDependency2 TAccess</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFDependency2TAccess()
+	 * @generated
+	 */
+	int FDEPENDENCY2_TACCESS = 13;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FDEPENDENCY2_TACCESS__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FDEPENDENCY2_TACCESS__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>FDependency2 TAccess</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FDEPENDENCY2_TACCESS_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>FDependency2 TAccess</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FDEPENDENCY2_TACCESS_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl <em>Feature2 TSignature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TSignature()
+	 * @generated
+	 */
+	int FEATURE2_TSIGNATURE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TSIGNATURE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TSIGNATURE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature2 TSignature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TSIGNATURE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature2 TSignature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TSIGNATURE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl <em>Feature2 TMember</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TMember()
+	 * @generated
+	 */
+	int FEATURE2_TMEMBER = 15;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TMEMBER__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TMEMBER__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature2 TMember</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TMEMBER_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature2 TMember</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE2_TMEMBER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.StereotypeProperty2AnnotationNodeImpl <em>Stereotype Property2 Annotation Node</em>}' class.
@@ -387,7 +801,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getStereotypeProperty2AnnotationNode()
 	 * @generated
 	 */
-	int STEREOTYPE_PROPERTY2_ANNOTATION_NODE = 7;
+	int STEREOTYPE_PROPERTY2_ANNOTATION_NODE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -427,282 +841,6 @@ public interface UmlPackage extends EPackage {
 			+ 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl <em>Operation2 TMethod Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodDefinition()
-	 * @generated
-	 */
-	int OPERATION2_TMETHOD_DEFINITION = 8;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_DEFINITION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_DEFINITION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Operation2 TMethod Definition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_DEFINITION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Operation2 TMethod Definition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_DEFINITION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Class2TClassImpl <em>Class2 TClass</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Class2TClassImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getClass2TClass()
-	 * @generated
-	 */
-	int CLASS2_TCLASS = 9;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS2_TCLASS__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS2_TCLASS__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Class2 TClass</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS2_TCLASS_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Class2 TClass</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS2_TCLASS_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl <em>Comment2 TText Annotation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getComment2TTextAnnotation()
-	 * @generated
-	 */
-	int COMMENT2_TTEXT_ANNOTATION = 10;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT2_TTEXT_ANNOTATION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT2_TTEXT_ANNOTATION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Comment2 TText Annotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT2_TTEXT_ANNOTATION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Comment2 TText Annotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT2_TTEXT_ANNOTATION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl <em>Model2 Type Graph</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getModel2TypeGraph()
-	 * @generated
-	 */
-	int MODEL2_TYPE_GRAPH = 11;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL2_TYPE_GRAPH__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL2_TYPE_GRAPH__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Model2 Type Graph</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL2_TYPE_GRAPH_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Model2 Type Graph</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL2_TYPE_GRAPH_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl <em>Parameter2 TParameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getParameter2TParameter()
-	 * @generated
-	 */
-	int PARAMETER2_TPARAMETER = 12;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER2_TPARAMETER__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER2_TPARAMETER__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Parameter2 TParameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER2_TPARAMETER_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Parameter2 TParameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER2_TPARAMETER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl <em>Feature2 TMember</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TMember()
-	 * @generated
-	 */
-	int FEATURE2_TMEMBER = 13;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE2_TMEMBER__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE2_TMEMBER__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Feature2 TMember</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE2_TMEMBER_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Feature2 TMember</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE2_TMEMBER_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldSignatureImpl <em>Property2 TField Signature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -710,7 +848,7 @@ public interface UmlPackage extends EPackage {
 	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getProperty2TFieldSignature()
 	 * @generated
 	 */
-	int PROPERTY2_TFIELD_SIGNATURE = 14;
+	int PROPERTY2_TFIELD_SIGNATURE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -749,14 +887,14 @@ public interface UmlPackage extends EPackage {
 	int PROPERTY2_TFIELD_SIGNATURE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl <em>Feature2 TSignature</em>}' class.
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl <em>Interface2 TInterface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TSignature()
+	 * @see org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getInterface2TInterface()
 	 * @generated
 	 */
-	int FEATURE2_TSIGNATURE = 15;
+	int INTERFACE2_TINTERFACE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -765,7 +903,7 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE2_TSIGNATURE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+	int INTERFACE2_TINTERFACE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -774,35 +912,35 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE2_TSIGNATURE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+	int INTERFACE2_TINTERFACE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Feature2 TSignature</em>' class.
+	 * The number of structural features of the '<em>Interface2 TInterface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE2_TSIGNATURE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+	int INTERFACE2_TINTERFACE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Feature2 TSignature</em>' class.
+	 * The number of operations of the '<em>Interface2 TInterface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE2_TSIGNATURE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+	int INTERFACE2_TINTERFACE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Package2TPackageImpl <em>Package2 TPackage</em>}' class.
+	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl <em>Property2 TField Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Package2TPackageImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getPackage2TPackage()
+	 * @see org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl
+	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getProperty2TFieldName()
 	 * @generated
 	 */
-	int PACKAGE2_TPACKAGE = 16;
+	int PROPERTY2_TFIELD_NAME = 19;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -811,7 +949,7 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE2_TPACKAGE__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+	int PROPERTY2_TFIELD_NAME__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -820,227 +958,89 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE2_TPACKAGE__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+	int PROPERTY2_TFIELD_NAME__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Package2 TPackage</em>' class.
+	 * The number of structural features of the '<em>Property2 TField Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE2_TPACKAGE_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+	int PROPERTY2_TFIELD_NAME_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Package2 TPackage</em>' class.
+	 * The number of operations of the '<em>Property2 TField Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE2_TPACKAGE_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+	int PROPERTY2_TFIELD_NAME_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl <em>Operation2 TMethod Name</em>}' class.
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Model2TypeGraph <em>Model2 Type Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodName()
+	 * @return the meta object for class '<em>Model2 Type Graph</em>'.
+	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph
 	 * @generated
 	 */
-	int OPERATION2_TMETHOD_NAME = 17;
+	EClass getModel2TypeGraph();
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_NAME__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_NAME__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Operation2 TMethod Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_NAME_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Operation2 TMethod Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION2_TMETHOD_NAME_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl <em>FDependency2 TAccess</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFDependency2TAccess()
-	 * @generated
-	 */
-	int FDEPENDENCY2_TACCESS = 18;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FDEPENDENCY2_TACCESS__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FDEPENDENCY2_TACCESS__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>FDependency2 TAccess</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FDEPENDENCY2_TACCESS_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>FDependency2 TAccess</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FDEPENDENCY2_TACCESS_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl <em>Stereotype2 TAnnotation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl
-	 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getStereotype2TAnnotation()
-	 * @generated
-	 */
-	int STEREOTYPE2_TANNOTATION = 19;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEREOTYPE2_TANNOTATION__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEREOTYPE2_TANNOTATION__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Stereotype2 TAnnotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEREOTYPE2_TANNOTATION_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Stereotype2 TAnnotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEREOTYPE2_TANNOTATION_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Interface2TInterface <em>Interface2 TInterface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Interface2 TInterface</em>'.
-	 * @see org.gravity.tgg.pm.uml.Interface2TInterface
-	 * @generated
-	 */
-	EClass getInterface2TInterface();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Interface2TInterface#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Model2TypeGraph#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Interface2TInterface#getSource()
-	 * @see #getInterface2TInterface()
+	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph#getSource()
+	 * @see #getModel2TypeGraph()
 	 * @generated
 	 */
-	EReference getInterface2TInterface_Source();
+	EReference getModel2TypeGraph_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Interface2TInterface#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Model2TypeGraph#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Interface2TInterface#getTarget()
-	 * @see #getInterface2TInterface()
+	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph#getTarget()
+	 * @see #getModel2TypeGraph()
 	 * @generated
 	 */
-	EReference getInterface2TInterface_Target();
+	EReference getModel2TypeGraph_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Type2TAbstractType <em>Type2 TAbstract Type</em>}'.
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Operation2TMethodName <em>Operation2 TMethod Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type2 TAbstract Type</em>'.
-	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType
+	 * @return the meta object for class '<em>Operation2 TMethod Name</em>'.
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName
 	 * @generated
 	 */
-	EClass getType2TAbstractType();
+	EClass getOperation2TMethodName();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Type2TAbstractType#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodName#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType#getSource()
-	 * @see #getType2TAbstractType()
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName#getSource()
+	 * @see #getOperation2TMethodName()
 	 * @generated
 	 */
-	EReference getType2TAbstractType_Source();
+	EReference getOperation2TMethodName_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Type2TAbstractType#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodName#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType#getTarget()
-	 * @see #getType2TAbstractType()
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName#getTarget()
+	 * @see #getOperation2TMethodName()
 	 * @generated
 	 */
-	EReference getType2TAbstractType_Target();
+	EReference getOperation2TMethodName_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.PrimitiveType2TClass <em>Primitive Type2 TClass</em>}'.
@@ -1107,38 +1107,6 @@ public interface UmlPackage extends EPackage {
 	EReference getElement2TAnnotatable_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature <em>Operation2 TMethod Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation2 TMethod Signature</em>'.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature
-	 * @generated
-	 */
-	EClass getOperation2TMethodSignature();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature#getSource()
-	 * @see #getOperation2TMethodSignature()
-	 * @generated
-	 */
-	EReference getOperation2TMethodSignature_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature#getTarget()
-	 * @see #getOperation2TMethodSignature()
-	 * @generated
-	 */
-	EReference getOperation2TMethodSignature_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Property2TFieldDefinition <em>Property2 TField Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1169,70 +1137,6 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProperty2TFieldDefinition_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Property2TFieldName <em>Property2 TField Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property2 TField Name</em>'.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldName
-	 * @generated
-	 */
-	EClass getProperty2TFieldName();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldName#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldName#getSource()
-	 * @see #getProperty2TFieldName()
-	 * @generated
-	 */
-	EReference getProperty2TFieldName_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldName#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldName#getTarget()
-	 * @see #getProperty2TFieldName()
-	 * @generated
-	 */
-	EReference getProperty2TFieldName_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode <em>Stereotype Property2 Annotation Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Stereotype Property2 Annotation Node</em>'.
-	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode
-	 * @generated
-	 */
-	EClass getStereotypeProperty2AnnotationNode();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getSource()
-	 * @see #getStereotypeProperty2AnnotationNode()
-	 * @generated
-	 */
-	EReference getStereotypeProperty2AnnotationNode_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getTarget()
-	 * @see #getStereotypeProperty2AnnotationNode()
-	 * @generated
-	 */
-	EReference getStereotypeProperty2AnnotationNode_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Operation2TMethodDefinition <em>Operation2 TMethod Definition</em>}'.
@@ -1267,38 +1171,6 @@ public interface UmlPackage extends EPackage {
 	EReference getOperation2TMethodDefinition_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Class2TClass <em>Class2 TClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Class2 TClass</em>'.
-	 * @see org.gravity.tgg.pm.uml.Class2TClass
-	 * @generated
-	 */
-	EClass getClass2TClass();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Class2TClass#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Class2TClass#getSource()
-	 * @see #getClass2TClass()
-	 * @generated
-	 */
-	EReference getClass2TClass_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Class2TClass#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Class2TClass#getTarget()
-	 * @see #getClass2TClass()
-	 * @generated
-	 */
-	EReference getClass2TClass_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Comment2TTextAnnotation <em>Comment2 TText Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1329,166 +1201,6 @@ public interface UmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComment2TTextAnnotation_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Model2TypeGraph <em>Model2 Type Graph</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model2 Type Graph</em>'.
-	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph
-	 * @generated
-	 */
-	EClass getModel2TypeGraph();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Model2TypeGraph#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph#getSource()
-	 * @see #getModel2TypeGraph()
-	 * @generated
-	 */
-	EReference getModel2TypeGraph_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Model2TypeGraph#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Model2TypeGraph#getTarget()
-	 * @see #getModel2TypeGraph()
-	 * @generated
-	 */
-	EReference getModel2TypeGraph_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Parameter2TParameter <em>Parameter2 TParameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parameter2 TParameter</em>'.
-	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter
-	 * @generated
-	 */
-	EClass getParameter2TParameter();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Parameter2TParameter#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter#getSource()
-	 * @see #getParameter2TParameter()
-	 * @generated
-	 */
-	EReference getParameter2TParameter_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Parameter2TParameter#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter#getTarget()
-	 * @see #getParameter2TParameter()
-	 * @generated
-	 */
-	EReference getParameter2TParameter_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Feature2TMember <em>Feature2 TMember</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature2 TMember</em>'.
-	 * @see org.gravity.tgg.pm.uml.Feature2TMember
-	 * @generated
-	 */
-	EClass getFeature2TMember();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TMember#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Feature2TMember#getSource()
-	 * @see #getFeature2TMember()
-	 * @generated
-	 */
-	EReference getFeature2TMember_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TMember#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Feature2TMember#getTarget()
-	 * @see #getFeature2TMember()
-	 * @generated
-	 */
-	EReference getFeature2TMember_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature <em>Property2 TField Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property2 TField Signature</em>'.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature
-	 * @generated
-	 */
-	EClass getProperty2TFieldSignature();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature#getSource()
-	 * @see #getProperty2TFieldSignature()
-	 * @generated
-	 */
-	EReference getProperty2TFieldSignature_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature#getTarget()
-	 * @see #getProperty2TFieldSignature()
-	 * @generated
-	 */
-	EReference getProperty2TFieldSignature_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Feature2TSignature <em>Feature2 TSignature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature2 TSignature</em>'.
-	 * @see org.gravity.tgg.pm.uml.Feature2TSignature
-	 * @generated
-	 */
-	EClass getFeature2TSignature();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TSignature#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Feature2TSignature#getSource()
-	 * @see #getFeature2TSignature()
-	 * @generated
-	 */
-	EReference getFeature2TSignature_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TSignature#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Feature2TSignature#getTarget()
-	 * @see #getFeature2TSignature()
-	 * @generated
-	 */
-	EReference getFeature2TSignature_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Package2TPackage <em>Package2 TPackage</em>}'.
@@ -1523,36 +1235,164 @@ public interface UmlPackage extends EPackage {
 	EReference getPackage2TPackage_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Operation2TMethodName <em>Operation2 TMethod Name</em>}'.
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation <em>Stereotype2 TAnnotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation2 TMethod Name</em>'.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName
+	 * @return the meta object for class '<em>Stereotype2 TAnnotation</em>'.
+	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation
 	 * @generated
 	 */
-	EClass getOperation2TMethodName();
+	EClass getStereotype2TAnnotation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodName#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName#getSource()
-	 * @see #getOperation2TMethodName()
+	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getSource()
+	 * @see #getStereotype2TAnnotation()
 	 * @generated
 	 */
-	EReference getOperation2TMethodName_Source();
+	EReference getStereotype2TAnnotation_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodName#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Operation2TMethodName#getTarget()
-	 * @see #getOperation2TMethodName()
+	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getTarget()
+	 * @see #getStereotype2TAnnotation()
 	 * @generated
 	 */
-	EReference getOperation2TMethodName_Target();
+	EReference getStereotype2TAnnotation_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature <em>Operation2 TMethod Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation2 TMethod Signature</em>'.
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature
+	 * @generated
+	 */
+	EClass getOperation2TMethodSignature();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature#getSource()
+	 * @see #getOperation2TMethodSignature()
+	 * @generated
+	 */
+	EReference getOperation2TMethodSignature_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Operation2TMethodSignature#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Operation2TMethodSignature#getTarget()
+	 * @see #getOperation2TMethodSignature()
+	 * @generated
+	 */
+	EReference getOperation2TMethodSignature_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Parameter2TParameter <em>Parameter2 TParameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter2 TParameter</em>'.
+	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter
+	 * @generated
+	 */
+	EClass getParameter2TParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Parameter2TParameter#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter#getSource()
+	 * @see #getParameter2TParameter()
+	 * @generated
+	 */
+	EReference getParameter2TParameter_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Parameter2TParameter#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Parameter2TParameter#getTarget()
+	 * @see #getParameter2TParameter()
+	 * @generated
+	 */
+	EReference getParameter2TParameter_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Class2TClass <em>Class2 TClass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Class2 TClass</em>'.
+	 * @see org.gravity.tgg.pm.uml.Class2TClass
+	 * @generated
+	 */
+	EClass getClass2TClass();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Class2TClass#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Class2TClass#getSource()
+	 * @see #getClass2TClass()
+	 * @generated
+	 */
+	EReference getClass2TClass_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Class2TClass#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Class2TClass#getTarget()
+	 * @see #getClass2TClass()
+	 * @generated
+	 */
+	EReference getClass2TClass_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Type2TAbstractType <em>Type2 TAbstract Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type2 TAbstract Type</em>'.
+	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType
+	 * @generated
+	 */
+	EClass getType2TAbstractType();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Type2TAbstractType#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType#getSource()
+	 * @see #getType2TAbstractType()
+	 * @generated
+	 */
+	EReference getType2TAbstractType_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Type2TAbstractType#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Type2TAbstractType#getTarget()
+	 * @see #getType2TAbstractType()
+	 * @generated
+	 */
+	EReference getType2TAbstractType_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.FDependency2TAccess <em>FDependency2 TAccess</em>}'.
@@ -1587,36 +1427,196 @@ public interface UmlPackage extends EPackage {
 	EReference getFDependency2TAccess_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation <em>Stereotype2 TAnnotation</em>}'.
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Feature2TSignature <em>Feature2 TSignature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Stereotype2 TAnnotation</em>'.
-	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation
+	 * @return the meta object for class '<em>Feature2 TSignature</em>'.
+	 * @see org.gravity.tgg.pm.uml.Feature2TSignature
 	 * @generated
 	 */
-	EClass getStereotype2TAnnotation();
+	EClass getFeature2TSignature();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TSignature#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getSource()
-	 * @see #getStereotype2TAnnotation()
+	 * @see org.gravity.tgg.pm.uml.Feature2TSignature#getSource()
+	 * @see #getFeature2TSignature()
 	 * @generated
 	 */
-	EReference getStereotype2TAnnotation_Source();
+	EReference getFeature2TSignature_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TSignature#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.gravity.tgg.pm.uml.Stereotype2TAnnotation#getTarget()
-	 * @see #getStereotype2TAnnotation()
+	 * @see org.gravity.tgg.pm.uml.Feature2TSignature#getTarget()
+	 * @see #getFeature2TSignature()
 	 * @generated
 	 */
-	EReference getStereotype2TAnnotation_Target();
+	EReference getFeature2TSignature_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Feature2TMember <em>Feature2 TMember</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature2 TMember</em>'.
+	 * @see org.gravity.tgg.pm.uml.Feature2TMember
+	 * @generated
+	 */
+	EClass getFeature2TMember();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TMember#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Feature2TMember#getSource()
+	 * @see #getFeature2TMember()
+	 * @generated
+	 */
+	EReference getFeature2TMember_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Feature2TMember#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Feature2TMember#getTarget()
+	 * @see #getFeature2TMember()
+	 * @generated
+	 */
+	EReference getFeature2TMember_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode <em>Stereotype Property2 Annotation Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stereotype Property2 Annotation Node</em>'.
+	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode
+	 * @generated
+	 */
+	EClass getStereotypeProperty2AnnotationNode();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getSource()
+	 * @see #getStereotypeProperty2AnnotationNode()
+	 * @generated
+	 */
+	EReference getStereotypeProperty2AnnotationNode_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.StereotypeProperty2AnnotationNode#getTarget()
+	 * @see #getStereotypeProperty2AnnotationNode()
+	 * @generated
+	 */
+	EReference getStereotypeProperty2AnnotationNode_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature <em>Property2 TField Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property2 TField Signature</em>'.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature
+	 * @generated
+	 */
+	EClass getProperty2TFieldSignature();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature#getSource()
+	 * @see #getProperty2TFieldSignature()
+	 * @generated
+	 */
+	EReference getProperty2TFieldSignature_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldSignature#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldSignature#getTarget()
+	 * @see #getProperty2TFieldSignature()
+	 * @generated
+	 */
+	EReference getProperty2TFieldSignature_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Interface2TInterface <em>Interface2 TInterface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interface2 TInterface</em>'.
+	 * @see org.gravity.tgg.pm.uml.Interface2TInterface
+	 * @generated
+	 */
+	EClass getInterface2TInterface();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Interface2TInterface#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Interface2TInterface#getSource()
+	 * @see #getInterface2TInterface()
+	 * @generated
+	 */
+	EReference getInterface2TInterface_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Interface2TInterface#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Interface2TInterface#getTarget()
+	 * @see #getInterface2TInterface()
+	 * @generated
+	 */
+	EReference getInterface2TInterface_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.tgg.pm.uml.Property2TFieldName <em>Property2 TField Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property2 TField Name</em>'.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldName
+	 * @generated
+	 */
+	EClass getProperty2TFieldName();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldName#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldName#getSource()
+	 * @see #getProperty2TFieldName()
+	 * @generated
+	 */
+	EReference getProperty2TFieldName_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.tgg.pm.uml.Property2TFieldName#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.gravity.tgg.pm.uml.Property2TFieldName#getTarget()
+	 * @see #getProperty2TFieldName()
+	 * @generated
+	 */
+	EReference getProperty2TFieldName_Target();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1642,14 +1642,14 @@ public interface UmlPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl <em>Interface2 TInterface</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl <em>Model2 Type Graph</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getInterface2TInterface()
+		 * @see org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getModel2TypeGraph()
 		 * @generated
 		 */
-		EClass INTERFACE2_TINTERFACE = eINSTANCE.getInterface2TInterface();
+		EClass MODEL2_TYPE_GRAPH = eINSTANCE.getModel2TypeGraph();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1657,7 +1657,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERFACE2_TINTERFACE__SOURCE = eINSTANCE.getInterface2TInterface_Source();
+		EReference MODEL2_TYPE_GRAPH__SOURCE = eINSTANCE.getModel2TypeGraph_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1665,17 +1665,17 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERFACE2_TINTERFACE__TARGET = eINSTANCE.getInterface2TInterface_Target();
+		EReference MODEL2_TYPE_GRAPH__TARGET = eINSTANCE.getModel2TypeGraph_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl <em>Type2 TAbstract Type</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl <em>Operation2 TMethod Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getType2TAbstractType()
+		 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodName()
 		 * @generated
 		 */
-		EClass TYPE2_TABSTRACT_TYPE = eINSTANCE.getType2TAbstractType();
+		EClass OPERATION2_TMETHOD_NAME = eINSTANCE.getOperation2TMethodName();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1683,7 +1683,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE2_TABSTRACT_TYPE__SOURCE = eINSTANCE.getType2TAbstractType_Source();
+		EReference OPERATION2_TMETHOD_NAME__SOURCE = eINSTANCE.getOperation2TMethodName_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1691,7 +1691,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE2_TABSTRACT_TYPE__TARGET = eINSTANCE.getType2TAbstractType_Target();
+		EReference OPERATION2_TMETHOD_NAME__TARGET = eINSTANCE.getOperation2TMethodName_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.PrimitiveType2TClassImpl <em>Primitive Type2 TClass</em>}' class.
@@ -1746,32 +1746,6 @@ public interface UmlPackage extends EPackage {
 		EReference ELEMENT2_TANNOTATABLE__TARGET = eINSTANCE.getElement2TAnnotatable_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl <em>Operation2 TMethod Signature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodSignature()
-		 * @generated
-		 */
-		EClass OPERATION2_TMETHOD_SIGNATURE = eINSTANCE.getOperation2TMethodSignature();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION2_TMETHOD_SIGNATURE__SOURCE = eINSTANCE.getOperation2TMethodSignature_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION2_TMETHOD_SIGNATURE__TARGET = eINSTANCE.getOperation2TMethodSignature_Target();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldDefinitionImpl <em>Property2 TField Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1798,14 +1772,14 @@ public interface UmlPackage extends EPackage {
 		EReference PROPERTY2_TFIELD_DEFINITION__TARGET = eINSTANCE.getProperty2TFieldDefinition_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl <em>Property2 TField Name</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl <em>Operation2 TMethod Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getProperty2TFieldName()
+		 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodDefinition()
 		 * @generated
 		 */
-		EClass PROPERTY2_TFIELD_NAME = eINSTANCE.getProperty2TFieldName();
+		EClass OPERATION2_TMETHOD_DEFINITION = eINSTANCE.getOperation2TMethodDefinition();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1813,7 +1787,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY2_TFIELD_NAME__SOURCE = eINSTANCE.getProperty2TFieldName_Source();
+		EReference OPERATION2_TMETHOD_DEFINITION__SOURCE = eINSTANCE.getOperation2TMethodDefinition_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1821,7 +1795,267 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY2_TFIELD_NAME__TARGET = eINSTANCE.getProperty2TFieldName_Target();
+		EReference OPERATION2_TMETHOD_DEFINITION__TARGET = eINSTANCE.getOperation2TMethodDefinition_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl <em>Comment2 TText Annotation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getComment2TTextAnnotation()
+		 * @generated
+		 */
+		EClass COMMENT2_TTEXT_ANNOTATION = eINSTANCE.getComment2TTextAnnotation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMENT2_TTEXT_ANNOTATION__SOURCE = eINSTANCE.getComment2TTextAnnotation_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMENT2_TTEXT_ANNOTATION__TARGET = eINSTANCE.getComment2TTextAnnotation_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Package2TPackageImpl <em>Package2 TPackage</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Package2TPackageImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getPackage2TPackage()
+		 * @generated
+		 */
+		EClass PACKAGE2_TPACKAGE = eINSTANCE.getPackage2TPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE2_TPACKAGE__SOURCE = eINSTANCE.getPackage2TPackage_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE2_TPACKAGE__TARGET = eINSTANCE.getPackage2TPackage_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl <em>Stereotype2 TAnnotation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getStereotype2TAnnotation()
+		 * @generated
+		 */
+		EClass STEREOTYPE2_TANNOTATION = eINSTANCE.getStereotype2TAnnotation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STEREOTYPE2_TANNOTATION__SOURCE = eINSTANCE.getStereotype2TAnnotation_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STEREOTYPE2_TANNOTATION__TARGET = eINSTANCE.getStereotype2TAnnotation_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl <em>Operation2 TMethod Signature</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodSignatureImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodSignature()
+		 * @generated
+		 */
+		EClass OPERATION2_TMETHOD_SIGNATURE = eINSTANCE.getOperation2TMethodSignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION2_TMETHOD_SIGNATURE__SOURCE = eINSTANCE.getOperation2TMethodSignature_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION2_TMETHOD_SIGNATURE__TARGET = eINSTANCE.getOperation2TMethodSignature_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl <em>Parameter2 TParameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getParameter2TParameter()
+		 * @generated
+		 */
+		EClass PARAMETER2_TPARAMETER = eINSTANCE.getParameter2TParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER2_TPARAMETER__SOURCE = eINSTANCE.getParameter2TParameter_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER2_TPARAMETER__TARGET = eINSTANCE.getParameter2TParameter_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Class2TClassImpl <em>Class2 TClass</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Class2TClassImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getClass2TClass()
+		 * @generated
+		 */
+		EClass CLASS2_TCLASS = eINSTANCE.getClass2TClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS2_TCLASS__SOURCE = eINSTANCE.getClass2TClass_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS2_TCLASS__TARGET = eINSTANCE.getClass2TClass_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl <em>Type2 TAbstract Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Type2TAbstractTypeImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getType2TAbstractType()
+		 * @generated
+		 */
+		EClass TYPE2_TABSTRACT_TYPE = eINSTANCE.getType2TAbstractType();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE2_TABSTRACT_TYPE__SOURCE = eINSTANCE.getType2TAbstractType_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE2_TABSTRACT_TYPE__TARGET = eINSTANCE.getType2TAbstractType_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl <em>FDependency2 TAccess</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFDependency2TAccess()
+		 * @generated
+		 */
+		EClass FDEPENDENCY2_TACCESS = eINSTANCE.getFDependency2TAccess();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FDEPENDENCY2_TACCESS__SOURCE = eINSTANCE.getFDependency2TAccess_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FDEPENDENCY2_TACCESS__TARGET = eINSTANCE.getFDependency2TAccess_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl <em>Feature2 TSignature</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TSignature()
+		 * @generated
+		 */
+		EClass FEATURE2_TSIGNATURE = eINSTANCE.getFeature2TSignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE2_TSIGNATURE__SOURCE = eINSTANCE.getFeature2TSignature_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE2_TSIGNATURE__TARGET = eINSTANCE.getFeature2TSignature_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl <em>Feature2 TMember</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TMember()
+		 * @generated
+		 */
+		EClass FEATURE2_TMEMBER = eINSTANCE.getFeature2TMember();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE2_TMEMBER__SOURCE = eINSTANCE.getFeature2TMember_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE2_TMEMBER__TARGET = eINSTANCE.getFeature2TMember_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.StereotypeProperty2AnnotationNodeImpl <em>Stereotype Property2 Annotation Node</em>}' class.
@@ -1852,162 +2086,6 @@ public interface UmlPackage extends EPackage {
 				.getStereotypeProperty2AnnotationNode_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl <em>Operation2 TMethod Definition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodDefinitionImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodDefinition()
-		 * @generated
-		 */
-		EClass OPERATION2_TMETHOD_DEFINITION = eINSTANCE.getOperation2TMethodDefinition();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION2_TMETHOD_DEFINITION__SOURCE = eINSTANCE.getOperation2TMethodDefinition_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION2_TMETHOD_DEFINITION__TARGET = eINSTANCE.getOperation2TMethodDefinition_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Class2TClassImpl <em>Class2 TClass</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Class2TClassImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getClass2TClass()
-		 * @generated
-		 */
-		EClass CLASS2_TCLASS = eINSTANCE.getClass2TClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASS2_TCLASS__SOURCE = eINSTANCE.getClass2TClass_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASS2_TCLASS__TARGET = eINSTANCE.getClass2TClass_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl <em>Comment2 TText Annotation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Comment2TTextAnnotationImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getComment2TTextAnnotation()
-		 * @generated
-		 */
-		EClass COMMENT2_TTEXT_ANNOTATION = eINSTANCE.getComment2TTextAnnotation();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMENT2_TTEXT_ANNOTATION__SOURCE = eINSTANCE.getComment2TTextAnnotation_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMENT2_TTEXT_ANNOTATION__TARGET = eINSTANCE.getComment2TTextAnnotation_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl <em>Model2 Type Graph</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Model2TypeGraphImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getModel2TypeGraph()
-		 * @generated
-		 */
-		EClass MODEL2_TYPE_GRAPH = eINSTANCE.getModel2TypeGraph();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL2_TYPE_GRAPH__SOURCE = eINSTANCE.getModel2TypeGraph_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL2_TYPE_GRAPH__TARGET = eINSTANCE.getModel2TypeGraph_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl <em>Parameter2 TParameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Parameter2TParameterImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getParameter2TParameter()
-		 * @generated
-		 */
-		EClass PARAMETER2_TPARAMETER = eINSTANCE.getParameter2TParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER2_TPARAMETER__SOURCE = eINSTANCE.getParameter2TParameter_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER2_TPARAMETER__TARGET = eINSTANCE.getParameter2TParameter_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl <em>Feature2 TMember</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Feature2TMemberImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TMember()
-		 * @generated
-		 */
-		EClass FEATURE2_TMEMBER = eINSTANCE.getFeature2TMember();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE2_TMEMBER__SOURCE = eINSTANCE.getFeature2TMember_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE2_TMEMBER__TARGET = eINSTANCE.getFeature2TMember_Target();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldSignatureImpl <em>Property2 TField Signature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2034,14 +2112,14 @@ public interface UmlPackage extends EPackage {
 		EReference PROPERTY2_TFIELD_SIGNATURE__TARGET = eINSTANCE.getProperty2TFieldSignature_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl <em>Feature2 TSignature</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl <em>Interface2 TInterface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Feature2TSignatureImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFeature2TSignature()
+		 * @see org.gravity.tgg.pm.uml.impl.Interface2TInterfaceImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getInterface2TInterface()
 		 * @generated
 		 */
-		EClass FEATURE2_TSIGNATURE = eINSTANCE.getFeature2TSignature();
+		EClass INTERFACE2_TINTERFACE = eINSTANCE.getInterface2TInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -2049,7 +2127,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEATURE2_TSIGNATURE__SOURCE = eINSTANCE.getFeature2TSignature_Source();
+		EReference INTERFACE2_TINTERFACE__SOURCE = eINSTANCE.getInterface2TInterface_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -2057,17 +2135,17 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEATURE2_TSIGNATURE__TARGET = eINSTANCE.getFeature2TSignature_Target();
+		EReference INTERFACE2_TINTERFACE__TARGET = eINSTANCE.getInterface2TInterface_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Package2TPackageImpl <em>Package2 TPackage</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl <em>Property2 TField Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Package2TPackageImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getPackage2TPackage()
+		 * @see org.gravity.tgg.pm.uml.impl.Property2TFieldNameImpl
+		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getProperty2TFieldName()
 		 * @generated
 		 */
-		EClass PACKAGE2_TPACKAGE = eINSTANCE.getPackage2TPackage();
+		EClass PROPERTY2_TFIELD_NAME = eINSTANCE.getProperty2TFieldName();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -2075,7 +2153,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE2_TPACKAGE__SOURCE = eINSTANCE.getPackage2TPackage_Source();
+		EReference PROPERTY2_TFIELD_NAME__SOURCE = eINSTANCE.getProperty2TFieldName_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -2083,85 +2161,7 @@ public interface UmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE2_TPACKAGE__TARGET = eINSTANCE.getPackage2TPackage_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl <em>Operation2 TMethod Name</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Operation2TMethodNameImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getOperation2TMethodName()
-		 * @generated
-		 */
-		EClass OPERATION2_TMETHOD_NAME = eINSTANCE.getOperation2TMethodName();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION2_TMETHOD_NAME__SOURCE = eINSTANCE.getOperation2TMethodName_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION2_TMETHOD_NAME__TARGET = eINSTANCE.getOperation2TMethodName_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl <em>FDependency2 TAccess</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.FDependency2TAccessImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getFDependency2TAccess()
-		 * @generated
-		 */
-		EClass FDEPENDENCY2_TACCESS = eINSTANCE.getFDependency2TAccess();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FDEPENDENCY2_TACCESS__SOURCE = eINSTANCE.getFDependency2TAccess_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FDEPENDENCY2_TACCESS__TARGET = eINSTANCE.getFDependency2TAccess_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl <em>Stereotype2 TAnnotation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.tgg.pm.uml.impl.Stereotype2TAnnotationImpl
-		 * @see org.gravity.tgg.pm.uml.impl.UmlPackageImpl#getStereotype2TAnnotation()
-		 * @generated
-		 */
-		EClass STEREOTYPE2_TANNOTATION = eINSTANCE.getStereotype2TAnnotation();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STEREOTYPE2_TANNOTATION__SOURCE = eINSTANCE.getStereotype2TAnnotation_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STEREOTYPE2_TANNOTATION__TARGET = eINSTANCE.getStereotype2TAnnotation_Target();
+		EReference PROPERTY2_TFIELD_NAME__TARGET = eINSTANCE.getProperty2TFieldName_Target();
 
 	}
 

@@ -162,14 +162,14 @@ public class TypeToTAbstractTypeImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
-			if (resolve)
-				return getSource();
-			return basicGetSource();
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
-			if (resolve)
-				return getTarget();
-			return basicGetTarget();
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
+				if (resolve)
+					return getSource();
+				return basicGetSource();
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
+				if (resolve)
+					return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,12 +182,12 @@ public class TypeToTAbstractTypeImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
-			setSource((Type) newValue);
-			return;
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
-			setTarget((TAbstractType) newValue);
-			return;
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
+				setSource((Type) newValue);
+				return;
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
+				setTarget((TAbstractType) newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,12 +200,12 @@ public class TypeToTAbstractTypeImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
-			setSource((Type) null);
-			return;
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
-			setTarget((TAbstractType) null);
-			return;
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
+				setSource((Type) null);
+				return;
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
+				setTarget((TAbstractType) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,10 +218,10 @@ public class TypeToTAbstractTypeImpl extends AbstractCorrespondenceImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
-			return source != null;
-		case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
-			return target != null;
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__SOURCE:
+				return source != null;
+			case PmPackage.TYPE_TO_TABSTRACT_TYPE__TARGET:
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}
