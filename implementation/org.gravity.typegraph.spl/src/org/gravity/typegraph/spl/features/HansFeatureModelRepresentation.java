@@ -184,10 +184,10 @@ public final class HansFeatureModelRepresentation implements FeatureModelReprese
             if (name.isBlank()) {
                 continue;
             }
-            if (!name.matches("[A-Za-z0-9_']+(?:\\\\ [A-Za-z0-9_']+)*")) {
+            if (!name.matches("[A-Za-z0-9_']+")) {
                 throw new IllegalArgumentException("Invalid HAnS feature name at line " + (lineNumber + 1) + ": " + name);
             }
-            final Node node = new Node(name.replace("\\\\ ", " "), new ArrayList<>());
+            final Node node = new Node(name, new ArrayList<>());
             while (!stack.isEmpty() && indent <= stack.peekLast().indent()) {
                 stack.removeLast();
             }
