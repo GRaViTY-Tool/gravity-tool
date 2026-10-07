@@ -111,9 +111,6 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-        <configuration>
-          <pomDependencies>consider</pomDependencies>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
