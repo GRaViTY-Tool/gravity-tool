@@ -151,7 +151,6 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <pomDependencies>wrapAsBundle</pomDependencies>
           <executionEnvironment>JavaSE-21</executionEnvironment>
           <environments>
             <environment>

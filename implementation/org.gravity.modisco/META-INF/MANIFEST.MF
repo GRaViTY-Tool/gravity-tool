@@ -12,9 +12,6 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.moflon.tgg.runtime,
  org.moflon.tgg.language,
  org.apache.xmlgraphics
-Import-Package: guru.nidi.graphviz.attribute,
- guru.nidi.graphviz.engine,
- guru.nidi.graphviz.model
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
@@ -33,4 +30,18 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-Activator: org.gravity.modisco.GravityMoDiscoActivator
 Automatic-Module-Name: org.gravity.modisco
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ target/dependency/commons-exec.jar,
+ target/dependency/graphviz-java.jar,
+ target/dependency/j2v8_linux_x86_64.jar,
+ target/dependency/jcl-over-slf4j.jar,
+ target/dependency/jsr305.jar,
+ target/dependency/jul-to-slf4j.jar,
+ target/dependency/nashorn-promise.jar,
+ target/dependency/org.osgi.service.prefs.jar,
+ target/dependency/org.ow2.sat4j.core.jar,
+ target/dependency/org.ow2.sat4j.pb.jar,
+ target/dependency/osgi.annotation.jar,
+ target/dependency/slf4j-api.jar,
+ target/dependency/svgSalamander.jar,
+ target/dependency/viz.js-graphviz-java.jar
