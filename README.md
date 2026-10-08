@@ -25,8 +25,22 @@ This is the main repository under which everything is merged
 
 ## HowTo Build GRaViTY using Maven
 
-1. Clone this repository including submodules
-2. Run ''mvn verify''
+Requirements: JDK 21 and the official Apache Maven distribution (3.9.11 or newer). Keep the Tycho version in `.mvn/extensions.xml` aligned with `tycho-version` in `pom.xml`.
+
+1. Clone this repository including submodules:
+   ```sh
+   git clone --recurse-submodules https://github.com/GRaViTY-Tool/gravity-tool.git
+   cd gravity-tool
+   ```
+2. For an existing checkout, initialize missing submodules at their recorded revisions:
+   ```sh
+   git submodule update --init --recursive
+   ```
+3. Confirm the Maven and Java versions with `mvn --version`, then run `mvn verify`.
+
+If Maven reports a missing child module `pom.xml`, check `git submodule status`: a leading `-` means that submodule has not been initialized. Run step 2 before rebuilding.
+
+If Tycho fails with `No implementation for TargetPlatformArtifactResolver was bound`, use the official Apache Maven distribution. Ubuntu's Maven 3.9.12 package was found to load Sisu 0.3.5 and fail during Tycho 5.0.4 startup, while the official Maven 3.9.12 distribution passed that stage.
 
 ## HowTo Build GRaViTY in Eclipse
 
