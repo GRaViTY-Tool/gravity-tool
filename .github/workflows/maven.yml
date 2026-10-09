@@ -31,6 +31,20 @@ jobs:
           java-version: 21
           cache: maven
 
+      - name: Setup Apache Maven
+        env:
+          MAVEN_VERSION: 3.9.12
+        run: |
+          archive="apache-maven-${MAVEN_VERSION}-bin.tar.gz"
+          curl --fail --location --retry 3 \
+            "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/${MAVEN_VERSION}/${archive}" \
+            --output "${RUNNER_TEMP}/${archive}"
+          tar -xzf "${RUNNER_TEMP}/${archive}" -C "${RUNNER_TEMP}"
+          echo "${RUNNER_TEMP}/apache-maven-${MAVEN_VERSION}/bin" >> "$GITHUB_PATH"
+
+      - name: Check Maven and Java versions
+        run: mvn --version
+
       # SonarQube Cloud Free supports main-branch analysis and PR analysis targeting main.
       # Keep Sonar enabled for master pushes and trusted same-repository PRs to master.
       - name: Build & Test with SonarCloud
