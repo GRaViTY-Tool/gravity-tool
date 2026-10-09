@@ -8,7 +8,7 @@
       license-feature-version="1.0.0.qualifier">
 
    <description url="https://www.gravity-tool.org">
-      This features provides functionalities for creating and synchronizing UML models with source code and the GRaViTY program model.
+      This feature provides functionalities for creating and synchronizing UML models with source code and the GRaViTY program model.
    </description>
 
    <copyright>
@@ -18,9 +18,9 @@
    <url>
       <update label="GRaViTY Updatesite" url="https://gravity-tool.org/updatesite"/>
       <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
-      <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
-      <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
-      <discovery label="CARiSMA" url="https://rgse.uni-koblenz.de/carisma/updatesite/"/>
+      <discovery label="MoDisco" url="https://download.eclipse.org/releases/latest"/>
+      <discovery label="EMF" url="https://download.eclipse.org/modeling/emf/updates/releases/"/>
+      <discovery label="CARiSMA" url="https://carisma-tool.github.io/carisma-tool"/>
    </url>
 
    <includes
@@ -28,10 +28,10 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="feature.carisma.uml2" version="1.1.8.201807301029"/>
-      <import feature="org.gravity.features.security" version="1.0.0.qualifier"/>
-      <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
-      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202207071646"/>
+      <import feature="feature.carisma.uml2"/>
+      <import feature="org.gravity.features.security"/>
+      <import feature="org.gravity.features.modisco"/>
+      <import feature="org.moflon.tgg.mosl.feature"/>
    </requires>
 
    <plugin
