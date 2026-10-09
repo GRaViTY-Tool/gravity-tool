@@ -17,7 +17,7 @@
 
    <url>
       <update label="GRaViTY Updatesite" url="https://www.gravity-tool.org/updatesite"/>
-      <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
+      <discovery label="Henshin" url="https://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
    </url>
 
    <includes
