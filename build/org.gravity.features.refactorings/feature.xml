@@ -25,6 +25,7 @@
          version="0.0.0"/>
 
    <requires>
+      <import feature="org.gravity.features.eclipse"/>
       <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.apache.log4j"/>
