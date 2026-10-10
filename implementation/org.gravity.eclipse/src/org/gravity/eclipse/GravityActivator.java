@@ -303,7 +303,14 @@ public class GravityActivator extends Plugin {
 		} catch (IOException | CoreException e) {
 			LOGGER.error(e);
 		}
-		return this.factories.put(project, converter);
+		final var previous = this.factories.put(project, converter);
+		// A cached converter belongs to the previous selection and must not be
+		// reused after changing the factory.
+		final var cached = this.converters.get(project);
+		if ((cached != null) && !converter.belongsToFactory(cached)) {
+			this.discardConverter(project);
+		}
+		return previous;
 	}
 
 	/**

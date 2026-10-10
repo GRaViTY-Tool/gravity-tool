@@ -24,7 +24,7 @@ public abstract class AbstractTransformationHandler extends AbstractHandler {
 				if (factory != null) {
 					activator.setSelectedConverterFactory(project, factory);
 				}
-			} else if (!selection.supportsFWDTrafo()) {
+			} else if (!constraint.test(selection)) {
 				return false;
 			}
 		}
