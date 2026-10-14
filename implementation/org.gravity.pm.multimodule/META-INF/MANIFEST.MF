@@ -9,8 +9,8 @@ Require-Bundle: org.eclipse.core.resources,
  org.eclipse.jdt.core,
  org.eclipse.emf.ecore,
  org.eclipse.m2e.core,
+ org.gravity.eclipse,
  org.gravity.typegraph.basic
 Export-Package: org.gravity.pm.multimodule,
- org.gravity.pm.multimodule.builder,
  org.gravity.pm.multimodule.project,
  org.gravity.pm.multimodule.link

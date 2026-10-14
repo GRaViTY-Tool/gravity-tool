@@ -3,10 +3,10 @@
 <schema targetNamespace="org.gravity.eclipse" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.gravity.eclipse" id="org.gravity.tgg.converters" name="TGGConverters"/>
+         <meta.schema plugin="org.gravity.eclipse" id="org.gravity.tgg.converters" name="Program Model Converters"/>
       </appinfo>
       <documentation>
-         [Enter description of this extension point.]
+         Registers program-model converter implementations. The extension point is technology-independent; TGG is one possible backend.
       </documentation>
    </annotation>
 

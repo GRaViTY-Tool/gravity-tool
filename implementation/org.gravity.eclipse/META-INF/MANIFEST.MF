@@ -23,6 +23,7 @@ Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.importer.maven,
  org.gravity.eclipse.io,
  org.gravity.eclipse.os,
+ org.gravity.eclipse.programmodel,
  org.gravity.eclipse.selection,
  org.gravity.eclipse.util
 Automatic-Module-Name: org.gravity.eclipse
