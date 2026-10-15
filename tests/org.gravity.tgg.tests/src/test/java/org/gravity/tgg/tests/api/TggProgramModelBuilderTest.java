@@ -1,8 +1,6 @@
 package org.gravity.tgg.tests.api;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertEquals;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import org.eclipse.core.resources.IFile;
@@ -67,6 +65,7 @@ public class TggProgramModelBuilderTest {
 		assertTrue("Forward synchronization failed", builder.synchronizeForward(javaProject.getProject(),
 				model, new NullProgressMonitor()));
 		assertNotNull("Existing model must still be available", model.getClass("dummy.Clazz"));
+		assertNotNull("Forward synchronization must add the method", model.getClass("dummy.Clazz").getTMethodDefinition("added():void"));
 	}
 
 	@Test
