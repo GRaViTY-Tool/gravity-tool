@@ -16,7 +16,7 @@ Export-Package: org.gravity.security.annotations,
 Bundle-Name: Security Annotations for the Program Model
 Bundle-Version: 1.0.0.qualifier
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Require-Bundle: org.gravity.tgg.modisco.pm,

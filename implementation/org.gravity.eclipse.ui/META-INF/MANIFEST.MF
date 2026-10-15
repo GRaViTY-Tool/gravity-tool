@@ -10,7 +10,7 @@ Require-Bundle: org.gravity.eclipse,
  org.apache.log4j,
  org.eclipse.jdt.core,
  org.eclipse.core.resources
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.eclipse.ui,
  org.gravity.eclipse.ui.dynamic,

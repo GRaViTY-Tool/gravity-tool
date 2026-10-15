@@ -1,5 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Bundle-Activator: org.gravity.pm.multimodule.MultiModulePMActivator
+Bundle-ActivationPolicy: lazy
 Bundle-Name: GRaViTY Multi-Project Program Models
 Bundle-SymbolicName: org.gravity.pm.multimodule;singleton:=true
 Bundle-Version: 1.0.0.qualifier
