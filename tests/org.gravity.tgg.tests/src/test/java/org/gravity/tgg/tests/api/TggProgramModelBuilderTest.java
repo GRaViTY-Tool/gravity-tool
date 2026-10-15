@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.modisco.java.MethodDeclaration;
 import org.eclipse.modisco.java.Model;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.MMethodDefinition;
+import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.util.MoDiscoUtil;
 import org.junit.Test;
@@ -85,7 +87,28 @@ public class TggProgramModelBuilderTest {
 						.map(MethodDeclaration.class::cast)
 						.filter(m -> "added".equals(m.getName()))
 						.findFirst().orElseThrow();
-				oldClass.getBodyDeclarations().add(EcoreUtil.copy(method));
+				// Copy the declaration but reconstruct GRaViTY's preprocessed
+				// definition -> name -> signature graph in the original model.
+				// Copying only the AST declaration leaves the TGG source incomplete.
+				final var definition = (MMethodDefinition) EcoreUtil.copy(method);
+				final var voidType = MoDiscoUtil.getVoid(oldModel);
+				definition.getReturnType().setType(voidType);
+				oldClass.getBodyDeclarations().add(definition);
+				oldModel.getMAbstractMethodDefinitions().add(definition);
+
+				final var name = ModiscoFactory.eINSTANCE.createMMethodName();
+				name.setMName("added");
+				oldModel.getMMethodNames().add(name);
+				name.getMDefinitions().add(definition);
+
+				final var signature = ModiscoFactory.eINSTANCE.createMMethodSignature();
+				name.getMSignatures().add(signature);
+				signature.setReturnType(voidType);
+				definition.setMSignature(signature);
+
+				assertNotNull("Patched method must have a signature", definition.getMSignature());
+				assertTrue("Patched method must belong to its original class",
+						oldClass.getBodyDeclarations().contains(definition));
 			}
 
 			@Override
