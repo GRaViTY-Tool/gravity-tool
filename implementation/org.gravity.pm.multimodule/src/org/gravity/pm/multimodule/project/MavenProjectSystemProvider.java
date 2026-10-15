@@ -33,7 +33,7 @@ public final class MavenProjectSystemProvider implements IProjectSystemProvider 
     public boolean supports(final IProject project) throws CoreException {
         return project != null && project.isAccessible()
                 && project.hasNature("org.eclipse.m2e.core.maven2Nature")
-                && MavenPlugin.getMavenProjectRegistry().getProject(project.getFile("pom.xml")) != null;
+                && MavenPlugin.getMavenProjectRegistry().getProject(project) != null;
     }
 
     @Override
@@ -73,16 +73,14 @@ public final class MavenProjectSystemProvider implements IProjectSystemProvider 
             return;
         }
         final IMavenProjectFacade facade = MavenPlugin.getMavenProjectRegistry()
-                .getProject(project.getFile("pom.xml"));
+                .getProject(project);
         if (facade == null) {
             throw new IllegalStateException("Missing m2e project facade: " + project.getName());
         }
-        final File base = facade.getMavenProject().getBasedir();
-        for (final String module : facade.getMavenProject().getModules()) {
-            final IProject child = imported.get(canonical(new File(base, module)));
-            if (child == null) {
-                throw new IllegalStateException("Maven module is not imported into the workspace: "
-                        + new File(base, module));
+        final File base = canonical(project.getLocation().toFile());
+        for (final IProject child : imported.values()) {
+            if (child.equals(project) || !base.toPath().equals(canonical(child.getLocation().toFile()).toPath().getParent())) {
+                continue;
             }
             collect(child, imported, modules);
         }
