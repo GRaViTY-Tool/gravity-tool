@@ -1,6 +1,12 @@
 package org.gravity.tgg.tests.api;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertEquals;
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
+import org.eclipse.core.resources.IFile;
+import org.gravity.typegraph.basic.BasicFactory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -47,6 +53,32 @@ public class TggProgramModelBuilderTest {
 		} finally {
 			project.delete(true, new NullProgressMonitor());
 		}
+	}
+
+	@Test
+	public void forwardSynchronizationUsesBuiltModel() throws Exception {
+		javaProject = TestHelper.generateSimpleProject("TggBuilderForwardSync");
+		final var builder = new TggProgramModelBuilder();
+		final var model = builder.build(javaProject.getProject(), new NullProgressMonitor());
+		final IFile file = javaProject.getProject().getFile("src/dummy/Clazz.java");
+		final var source = "package dummy; public class Clazz { public void added() {} }";
+		file.setContents(new ByteArrayInputStream(source.getBytes(StandardCharsets.UTF_8)), true, false,
+				new NullProgressMonitor());
+		assertTrue("Forward synchronization failed", builder.synchronizeForward(javaProject.getProject(),
+				model, new NullProgressMonitor()));
+		assertNotNull("Existing model must still be available", model.getClass("dummy.Clazz"));
+	}
+
+	@Test
+	public void backwardSynchronizationUsesSuppliedModel() throws Exception {
+		javaProject = TestHelper.generateSimpleProject("TggBuilderBackwardSync");
+		final var builder = new TggProgramModelBuilder();
+		final var model = builder.build(javaProject.getProject(), new NullProgressMonitor());
+		assertNotNull(model.getClass("dummy.Clazz"));
+		final var otherModel = BasicFactory.eINSTANCE.createTypeGraph();
+		otherModel.setTName("unrelated-model");
+		assertFalse("Adapter must not silently synchronize an unrelated TypeGraph",
+				builder.synchronizeBackward(javaProject.getProject(), otherModel, new NullProgressMonitor()));
 	}
 
 	private static void assertEqualsId(final TggProgramModelBuilder builder) {
