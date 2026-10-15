@@ -44,4 +44,13 @@ public interface IGravityModiscoProjectDiscoverer {
 	 */
 	MGravityModel discoverModel(final Collection<IPath> libs, final IProgressMonitor monitor) throws DiscoveryException;
 
+	/**
+	 * Configure whether the discoverer should load an existing model instead of
+	 * creating a fresh one if there are no changes
+	 * 
+	 * @param load true, if an existing model should be loaded
+	 * @return the previous load state
+	 */
+	boolean setLoadMode(boolean load);
+
 }

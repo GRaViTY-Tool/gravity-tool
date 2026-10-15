@@ -93,8 +93,8 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration mVar,
-			MEntryToTParameter mEntryToTParameter, TParameter tParameter, MEntry mEntry);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MEntryToTParameter mEntryToTParameter,
+			MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnnotToTAnnot, EObject mVar,
-			EObject mEntryToTParameter, EObject tParameter, EObject mEntry);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mEntryToTParameter, EObject mAnnotToTAnnot,
+			EObject mVar, EObject mEntry, EObject tParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,7 +191,7 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_allParameterInstances);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_allParameterInstances);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration mVar, TParameter tParameter, MEntry mEntry,
+	CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration mVar, MEntry mEntry, TParameter tParameter,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -266,7 +266,7 @@ public interface MethodParameterVariable extends EObject, AbstractRule {
 	 * @generated
 	 */
 	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MEntryToTParameter mEntryToTParameter,
-			TParameter tParameter, MEntry mEntry, ModelgeneratorRuleResult ruleResult);
+			MEntry mEntry, TParameter tParameter, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -786,7 +786,7 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_142(EMoflonEdge _edge_package) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_138(EMoflonEdge _edge_package) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InEnumImpl
 				.pattern_InnerDeclaration2InnerClassifier_InEnum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -847,7 +847,7 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_158(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_148(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InEnumImpl
 				.pattern_InnerDeclaration2InnerClassifier_InEnum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1254,108 +1254,107 @@ public class InnerDeclaration2InnerClassifier_InEnumImpl extends AbstractRuleImp
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD__MATCH_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-						(AbstractTypeDeclaration) arguments.get(2), (EnumDeclaration) arguments.get(3));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.Package) arguments.get(1), (AbstractTypeDeclaration) arguments.get(2),
-						(EnumDeclaration) arguments.get(3));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.Package) arguments.get(1), (AbstractTypeDeclaration) arguments.get(2),
-						(EnumDeclaration) arguments.get(3));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
-						(org.eclipse.uml2.uml.Package) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-						(Enumeration) arguments.get(6), (EnumDeclaration) arguments.get(7),
-						(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_PACKAGE_ENUMERATION:
-				return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_PACKAGE_ENUMERATION:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_PACKAGE_ENUMERATION:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
-						(org.eclipse.uml2.uml.Package) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-						(Enumeration) arguments.get(6), (EnumDeclaration) arguments.get(7),
-						(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_142__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_142((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_158__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_158((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((Classifier) arguments.get(0),
-						(org.eclipse.modisco.java.Package) arguments.get(1),
-						(org.eclipse.uml2.uml.Package) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
-						(Enumeration) arguments.get(4), (EnumDeclaration) arguments.get(5), (Match) arguments.get(6),
-						(Match) arguments.get(7));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_DEC_FWD__PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
-				return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
-						(AbstractTypeDeclaration) arguments.get(1), (EnumDeclaration) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_DEC_BWD__CLASSIFIER_PACKAGE_ENUMERATION:
-				return checkDEC_BWD((Classifier) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
-						(Enumeration) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
-						(org.eclipse.uml2.uml.Package) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
-						(Enumeration) arguments.get(6), (EnumDeclaration) arguments.get(7),
-						(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9),
-						(ModelgeneratorRuleResult) arguments.get(10));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD__MATCH_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+					(AbstractTypeDeclaration) arguments.get(2), (EnumDeclaration) arguments.get(3));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+					(AbstractTypeDeclaration) arguments.get(2), (EnumDeclaration) arguments.get(3));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+					(org.eclipse.modisco.java.Package) arguments.get(1), (AbstractTypeDeclaration) arguments.get(2),
+					(EnumDeclaration) arguments.get(3));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
+					(Enumeration) arguments.get(6), (EnumDeclaration) arguments.get(7),
+					(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_PACKAGE_ENUMERATION:
+			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_PACKAGE_ENUMERATION:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_PACKAGE_ENUMERATION:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (Enumeration) arguments.get(3));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
+					(Enumeration) arguments.get(6), (EnumDeclaration) arguments.get(7),
+					(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_138__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_138((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_148__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_148((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Classifier) arguments.get(0),
+					(org.eclipse.modisco.java.Package) arguments.get(1),
+					(org.eclipse.uml2.uml.Package) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+					(Enumeration) arguments.get(4), (EnumDeclaration) arguments.get(5), (Match) arguments.get(6),
+					(Match) arguments.get(7));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_DEC_FWD__PACKAGE_ABSTRACTTYPEDECLARATION_ENUMDECLARATION:
+			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
+					(AbstractTypeDeclaration) arguments.get(1), (EnumDeclaration) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___CHECK_DEC_BWD__CLASSIFIER_PACKAGE_ENUMERATION:
+			return checkDEC_BWD((Classifier) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(Enumeration) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_PACKAGE_PACKAGE_ABSTRACTTYPEDECLARATION_ENUMERATION_ENUMDECLARATION_ASTNODE2ELEMENT_JAVAPACKAGE2UMLPACKAGE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(org.eclipse.uml2.uml.Package) arguments.get(4), (AbstractTypeDeclaration) arguments.get(5),
+					(Enumeration) arguments.get(6), (EnumDeclaration) arguments.get(7),
+					(ASTNode2Element) arguments.get(8), (JavaPackage2UmlPackage) arguments.get(9),
+					(ModelgeneratorRuleResult) arguments.get(10));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ENUM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

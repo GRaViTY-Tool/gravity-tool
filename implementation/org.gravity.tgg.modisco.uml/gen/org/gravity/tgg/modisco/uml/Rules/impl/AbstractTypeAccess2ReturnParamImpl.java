@@ -26,7 +26,6 @@ import org.eclipse.modisco.java.TypeAccess;
 
 import org.eclipse.modisco.java.emf.JavaFactory;
 
-import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -185,19 +184,19 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		TypeAccess typeAccess = (TypeAccess) result1_bindingAndBlack[0];
-		Type jType = (Type) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[0];
+		TypeAccess typeAccess = (TypeAccess) result1_bindingAndBlack[1];
 		ASTNode2Element m2o = (ASTNode2Element) result1_bindingAndBlack[2];
-		Operation operation = (Operation) result1_bindingAndBlack[3];
-		MMethodDefinition method = (MMethodDefinition) result1_bindingAndBlack[4];
-		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[5];
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[6];
+		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[3];
+		Type jType = (Type) result1_bindingAndBlack[4];
+		Operation operation = (Operation) result1_bindingAndBlack[5];
+		MMethodDefinition method = (MMethodDefinition) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_greenBFFBBB(typeAccess, operation,
-						uType, csp);
-		TypeAccess2Parameter ta2p = (TypeAccess2Parameter) result1_green[1];
-		Parameter returnParam = (Parameter) result1_green[2];
+				.pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_greenBBFBFB(uType, typeAccess,
+						operation, csp);
+		TypeAccess2Parameter ta2p = (TypeAccess2Parameter) result1_green[2];
+		Parameter returnParam = (Parameter) result1_green[4];
 
 		Object[] result2_black = AbstractTypeAccess2ReturnParamImpl
 				.pattern_AbstractTypeAccess2ReturnParam_1_2_collecttranslatedelements_blackBBB(typeAccess, ta2p,
@@ -212,31 +211,31 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, typeAccess,
-						jType, ta2p, m2o, returnParam, operation, method, ne2ne, uType);
+				.pattern_AbstractTypeAccess2ReturnParam_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, uType,
+						typeAccess, ta2p, m2o, ne2ne, jType, operation, method, returnParam);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeAccess] = " + typeAccess + ", " + "[jType] = " + jType + ", " + "[ta2p] = " + ta2p
-					+ ", " + "[m2o] = " + m2o + ", " + "[returnParam] = " + returnParam + ", " + "[operation] = "
-					+ operation + ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ", " + "[uType] = "
-					+ uType + ".");
+					+ ", " + "[uType] = " + uType + ", " + "[typeAccess] = " + typeAccess + ", " + "[ta2p] = " + ta2p
+					+ ", " + "[m2o] = " + m2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[jType] = " + jType + ", "
+					+ "[operation] = " + operation + ", " + "[method] = " + method + ", " + "[returnParam] = "
+					+ returnParam + ".");
 		}
 		AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFF(ruleresult,
-						typeAccess, jType, ta2p, returnParam, operation, method, uType);
-		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge ta2p__returnParam____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result3_green[14];
+				.pattern_AbstractTypeAccess2ReturnParam_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFF(ruleresult, uType,
+						typeAccess, ta2p, jType, operation, method, returnParam);
+		//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge ta2p__returnParam____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
 		AbstractTypeAccess2ReturnParamImpl
 				.pattern_AbstractTypeAccess2ReturnParam_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						typeAccess, jType, ta2p, m2o, returnParam, operation, method, ne2ne, uType);
+						uType, typeAccess, ta2p, m2o, ne2ne, jType, operation, method, returnParam);
 		return AbstractTypeAccess2ReturnParamImpl.pattern_AbstractTypeAccess2ReturnParam_1_6_expressionFB(ruleresult);
 	}
 
@@ -269,36 +268,36 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		Type jType = (Type) result2_binding[1];
 		MMethodDefinition method = (MMethodDefinition) result2_binding[2];
 		for (Object[] result2_black : AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_2_2_corematch_blackBBFFBFFB(typeAccess, jType, method, match)) {
+				.pattern_AbstractTypeAccess2ReturnParam_2_2_corematch_blackFBFFBFBB(typeAccess, jType, method, match)) {
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[0];
 			ASTNode2Element m2o = (ASTNode2Element) result2_black[2];
-			Operation operation = (Operation) result2_black[3];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[6];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[3];
+			Operation operation = (Operation) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_2_3_findcontext_blackBBBBBBB(typeAccess, jType, m2o,
-							operation, method, ne2ne, uType)) {
+					.pattern_AbstractTypeAccess2ReturnParam_2_3_findcontext_blackBBBBBBB(uType, typeAccess, m2o, ne2ne,
+							jType, operation, method)) {
 				Object[] result3_green = AbstractTypeAccess2ReturnParamImpl
-						.pattern_AbstractTypeAccess2ReturnParam_2_3_findcontext_greenBBBBBBBFFFFFFFF(typeAccess, jType,
-								m2o, operation, method, ne2ne, uType);
+						.pattern_AbstractTypeAccess2ReturnParam_2_3_findcontext_greenBBBBBBBFFFFFFFF(uType, typeAccess,
+								m2o, ne2ne, jType, operation, method);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge m2o__operation____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge m2o__operation____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge m2o__method____source = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
 						.pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, typeAccess, jType, m2o, operation, method, ne2ne, uType);
+								isApplicableMatch, uType, typeAccess, m2o, ne2ne, jType, operation, method);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[typeAccess] = " + typeAccess
-							+ ", " + "[jType] = " + jType + ", " + "[m2o] = " + m2o + ", " + "[operation] = "
-							+ operation + ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ", "
-							+ "[uType] = " + uType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
+							+ "[typeAccess] = " + typeAccess + ", " + "[m2o] = " + m2o + ", " + "[ne2ne] = " + ne2ne
+							+ ", " + "[jType] = " + jType + ", " + "[operation] = " + operation + ", " + "[method] = "
+							+ method + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -371,9 +370,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess typeAccess, Type jType,
-			ASTNode2Element m2o, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			TypeAccess typeAccess, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation,
+			MMethodDefinition method) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -395,13 +394,13 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		isReturn.solve(var_returnParam_direction);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("typeAccess", typeAccess);
-		isApplicableMatch.registerObject("jType", jType);
 		isApplicableMatch.registerObject("m2o", m2o);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("jType", jType);
 		isApplicableMatch.registerObject("operation", operation);
 		isApplicableMatch.registerObject("method", method);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
-		isApplicableMatch.registerObject("uType", uType);
 		return csp;
 	}
 
@@ -419,17 +418,17 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject ta2p,
-			EObject m2o, EObject returnParam, EObject operation, EObject method, EObject ne2ne, EObject uType) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ta2p,
+			EObject m2o, EObject ne2ne, EObject jType, EObject operation, EObject method, EObject returnParam) {
+		ruleresult.registerObject("uType", uType);
 		ruleresult.registerObject("typeAccess", typeAccess);
-		ruleresult.registerObject("jType", jType);
 		ruleresult.registerObject("ta2p", ta2p);
 		ruleresult.registerObject("m2o", m2o);
-		ruleresult.registerObject("returnParam", returnParam);
+		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("jType", jType);
 		ruleresult.registerObject("operation", operation);
 		ruleresult.registerObject("method", method);
-		ruleresult.registerObject("ne2ne", ne2ne);
-		ruleresult.registerObject("uType", uType);
+		ruleresult.registerObject("returnParam", returnParam);
 
 	}
 
@@ -448,25 +447,25 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
+	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
 
 		Object[] result1_black = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_10_1_initialbindings_blackBBBBB(this, match, returnParam,
-						operation, uType);
+				.pattern_AbstractTypeAccess2ReturnParam_10_1_initialbindings_blackBBBBB(this, match, uType, operation,
+						returnParam);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[returnParam] = " + returnParam + ", " + "[operation] = "
-					+ operation + ", " + "[uType] = " + uType + ".");
+					+ "[match] = " + match + ", " + "[uType] = " + uType + ", " + "[operation] = " + operation + ", "
+					+ "[returnParam] = " + returnParam + ".");
 		}
 
 		Object[] result2_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, returnParam,
-						operation, uType);
+				.pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, uType,
+						operation, returnParam);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[returnParam] = " + returnParam + ", " + "[operation] = "
-					+ operation + ", " + "[uType] = " + uType + ".");
+					+ "[match] = " + match + ", " + "[uType] = " + uType + ", " + "[operation] = " + operation + ", "
+					+ "[returnParam] = " + returnParam + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -474,35 +473,35 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 				csp)) {
 
 			Object[] result4_black = AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_10_4_collectelementstobetranslated_blackBBBB(match,
-							returnParam, operation, uType);
+					.pattern_AbstractTypeAccess2ReturnParam_10_4_collectelementstobetranslated_blackBBBB(match, uType,
+							operation, returnParam);
 			if (result4_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[returnParam] = " + returnParam + ", " + "[operation] = " + operation + ", " + "[uType] = "
-						+ uType + ".");
+				throw new RuntimeException(
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[uType] = " + uType
+								+ ", " + "[operation] = " + operation + ", " + "[returnParam] = " + returnParam + ".");
 			}
 			AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_10_4_collectelementstobetranslated_greenBBBBFF(match,
-							returnParam, operation, uType);
-			//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result4_green[5];
+					.pattern_AbstractTypeAccess2ReturnParam_10_4_collectelementstobetranslated_greenBBBBFF(match, uType,
+							operation, returnParam);
+			//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_10_5_collectcontextelements_blackBBBB(match, returnParam,
-							operation, uType);
+					.pattern_AbstractTypeAccess2ReturnParam_10_5_collectcontextelements_blackBBBB(match, uType,
+							operation, returnParam);
 			if (result5_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[returnParam] = " + returnParam + ", " + "[operation] = " + operation + ", " + "[uType] = "
-						+ uType + ".");
+				throw new RuntimeException(
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[uType] = " + uType
+								+ ", " + "[operation] = " + operation + ", " + "[returnParam] = " + returnParam + ".");
 			}
 			AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_10_5_collectcontextelements_greenBBB(match, operation,
-							uType);
+					.pattern_AbstractTypeAccess2ReturnParam_10_5_collectcontextelements_greenBBB(match, uType,
+							operation);
 
 			// 
 			AbstractTypeAccess2ReturnParamImpl
 					.pattern_AbstractTypeAccess2ReturnParam_10_6_registerobjectstomatch_expressionBBBBB(this, match,
-							returnParam, operation, uType);
+							uType, operation, returnParam);
 			return AbstractTypeAccess2ReturnParamImpl.pattern_AbstractTypeAccess2ReturnParam_10_7_expressionF();
 		} else {
 			return AbstractTypeAccess2ReturnParamImpl.pattern_AbstractTypeAccess2ReturnParam_10_8_expressionF();
@@ -524,19 +523,19 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Type jType = (Type) result1_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[0];
 		ASTNode2Element m2o = (ASTNode2Element) result1_bindingAndBlack[1];
-		Parameter returnParam = (Parameter) result1_bindingAndBlack[2];
-		Operation operation = (Operation) result1_bindingAndBlack[3];
-		MMethodDefinition method = (MMethodDefinition) result1_bindingAndBlack[4];
-		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[5];
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[6];
+		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[2];
+		Type jType = (Type) result1_bindingAndBlack[3];
+		Operation operation = (Operation) result1_bindingAndBlack[4];
+		MMethodDefinition method = (MMethodDefinition) result1_bindingAndBlack[5];
+		Parameter returnParam = (Parameter) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_greenFBFBB(jType, returnParam,
-						method);
+				.pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_greenFFBBB(jType, method,
+						returnParam);
 		TypeAccess typeAccess = (TypeAccess) result1_green[0];
-		TypeAccess2Parameter ta2p = (TypeAccess2Parameter) result1_green[2];
+		TypeAccess2Parameter ta2p = (TypeAccess2Parameter) result1_green[1];
 
 		Object[] result2_black = AbstractTypeAccess2ReturnParamImpl
 				.pattern_AbstractTypeAccess2ReturnParam_11_2_collecttranslatedelements_blackBBB(typeAccess, ta2p,
@@ -551,31 +550,31 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, typeAccess,
-						jType, ta2p, m2o, returnParam, operation, method, ne2ne, uType);
+				.pattern_AbstractTypeAccess2ReturnParam_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, uType,
+						typeAccess, ta2p, m2o, ne2ne, jType, operation, method, returnParam);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeAccess] = " + typeAccess + ", " + "[jType] = " + jType + ", " + "[ta2p] = " + ta2p
-					+ ", " + "[m2o] = " + m2o + ", " + "[returnParam] = " + returnParam + ", " + "[operation] = "
-					+ operation + ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ", " + "[uType] = "
-					+ uType + ".");
+					+ ", " + "[uType] = " + uType + ", " + "[typeAccess] = " + typeAccess + ", " + "[ta2p] = " + ta2p
+					+ ", " + "[m2o] = " + m2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[jType] = " + jType + ", "
+					+ "[operation] = " + operation + ", " + "[method] = " + method + ", " + "[returnParam] = "
+					+ returnParam + ".");
 		}
 		AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFF(ruleresult,
-						typeAccess, jType, ta2p, returnParam, operation, method, uType);
-		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge ta2p__returnParam____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result3_green[14];
+				.pattern_AbstractTypeAccess2ReturnParam_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFF(ruleresult, uType,
+						typeAccess, ta2p, jType, operation, method, returnParam);
+		//nothing EMoflonEdge ta2p__typeAccess____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge ta2p__returnParam____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge method__typeAccess____returnType = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
 		AbstractTypeAccess2ReturnParamImpl
 				.pattern_AbstractTypeAccess2ReturnParam_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-						typeAccess, jType, ta2p, m2o, returnParam, operation, method, ne2ne, uType);
+						uType, typeAccess, ta2p, m2o, ne2ne, jType, operation, method, returnParam);
 		return AbstractTypeAccess2ReturnParamImpl.pattern_AbstractTypeAccess2ReturnParam_11_6_expressionFB(ruleresult);
 	}
 
@@ -604,40 +603,40 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Parameter returnParam = (Parameter) result2_binding[0];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_binding[0];
 		Operation operation = (Operation) result2_binding[1];
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_binding[2];
+		Parameter returnParam = (Parameter) result2_binding[2];
 		for (Object[] result2_black : AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_12_2_corematch_blackFFBBFFBB(returnParam, operation, uType,
+				.pattern_AbstractTypeAccess2ReturnParam_12_2_corematch_blackBFFFBFBB(uType, operation, returnParam,
 						match)) {
-			Type jType = (Type) result2_black[0];
 			ASTNode2Element m2o = (ASTNode2Element) result2_black[1];
-			MMethodDefinition method = (MMethodDefinition) result2_black[4];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[2];
+			Type jType = (Type) result2_black[3];
+			MMethodDefinition method = (MMethodDefinition) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_blackBBBBBBB(jType, m2o, returnParam,
-							operation, method, ne2ne, uType)) {
+					.pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_blackBBBBBBB(uType, m2o, ne2ne, jType,
+							operation, method, returnParam)) {
 				Object[] result3_green = AbstractTypeAccess2ReturnParamImpl
-						.pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_greenBBBBBBBFFFFFFF(jType, m2o,
-								returnParam, operation, method, ne2ne, uType);
+						.pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_greenBBBBBBBFFFFFFF(uType, m2o, ne2ne,
+								jType, operation, method, returnParam);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge m2o__operation____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge m2o__method____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge operation__returnParam____ownedParameter = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge m2o__operation____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge returnParam__uType____type = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge m2o__method____source = (EMoflonEdge) result3_green[13];
 
 				Object[] result4_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
 						.pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-								isApplicableMatch, jType, m2o, returnParam, operation, method, ne2ne, uType);
+								isApplicableMatch, uType, m2o, ne2ne, jType, operation, method, returnParam);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jType] = " + jType + ", "
-							+ "[m2o] = " + m2o + ", " + "[returnParam] = " + returnParam + ", " + "[operation] = "
-							+ operation + ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ", "
-							+ "[uType] = " + uType + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
+							+ "[m2o] = " + m2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[jType] = " + jType + ", "
+							+ "[operation] = " + operation + ", " + "[method] = " + method + ", " + "[returnParam] = "
+							+ returnParam + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -669,11 +668,11 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
-		match.registerObject("returnParam", returnParam);
-		match.registerObject("operation", operation);
+	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
 		match.registerObject("uType", uType);
+		match.registerObject("operation", operation);
+		match.registerObject("returnParam", returnParam);
 
 	}
 
@@ -682,8 +681,8 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -721,9 +720,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type jType, ASTNode2Element m2o,
-			Parameter returnParam, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation, MMethodDefinition method,
+			Parameter returnParam) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -738,13 +737,13 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jType", jType);
+		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("m2o", m2o);
-		isApplicableMatch.registerObject("returnParam", returnParam);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("jType", jType);
 		isApplicableMatch.registerObject("operation", operation);
 		isApplicableMatch.registerObject("method", method);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
-		isApplicableMatch.registerObject("uType", uType);
+		isApplicableMatch.registerObject("returnParam", returnParam);
 		return csp;
 	}
 
@@ -762,17 +761,17 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject ta2p,
-			EObject m2o, EObject returnParam, EObject operation, EObject method, EObject ne2ne, EObject uType) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ta2p,
+			EObject m2o, EObject ne2ne, EObject jType, EObject operation, EObject method, EObject returnParam) {
+		ruleresult.registerObject("uType", uType);
 		ruleresult.registerObject("typeAccess", typeAccess);
-		ruleresult.registerObject("jType", jType);
 		ruleresult.registerObject("ta2p", ta2p);
 		ruleresult.registerObject("m2o", m2o);
-		ruleresult.registerObject("returnParam", returnParam);
+		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("jType", jType);
 		ruleresult.registerObject("operation", operation);
 		ruleresult.registerObject("method", method);
-		ruleresult.registerObject("ne2ne", ne2ne);
-		ruleresult.registerObject("uType", uType);
+		ruleresult.registerObject("returnParam", returnParam);
 
 	}
 
@@ -791,7 +790,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_131(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_105(EMoflonEdge _edge_ownedParameter) {
 
 		Object[] result1_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
 				.pattern_AbstractTypeAccess2ReturnParam_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -807,10 +806,10 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 		// ForEach 
 		for (Object[] result2_black : AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_20_2_testcorematchandDECs_blackFFFB(_edge_type)) {
-			Parameter returnParam = (Parameter) result2_black[0];
+				.pattern_AbstractTypeAccess2ReturnParam_20_2_testcorematchandDECs_blackFFFB(_edge_ownedParameter)) {
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[0];
 			Operation operation = (Operation) result2_black[1];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[2];
+			Parameter returnParam = (Parameter) result2_black[2];
 			Object[] result2_green = AbstractTypeAccess2ReturnParamImpl
 					.pattern_AbstractTypeAccess2ReturnParam_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -818,7 +817,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 			// 
 			if (AbstractTypeAccess2ReturnParamImpl
 					.pattern_AbstractTypeAccess2ReturnParam_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, returnParam, operation, uType)) {
+							this, match, uType, operation, returnParam)) {
 				// 
 				if (AbstractTypeAccess2ReturnParamImpl
 						.pattern_AbstractTypeAccess2ReturnParam_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -851,7 +850,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_143(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_111(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
 				.pattern_AbstractTypeAccess2ReturnParam_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1013,45 +1012,45 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		TypeAccess typeAccess = (TypeAccess) result2_bindingAndBlack[0];
-		Type jType = (Type) result2_bindingAndBlack[1];
-		Parameter returnParam = (Parameter) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_bindingAndBlack[0];
+		TypeAccess typeAccess = (TypeAccess) result2_bindingAndBlack[1];
+		Type jType = (Type) result2_bindingAndBlack[2];
 		Operation operation = (Operation) result2_bindingAndBlack[3];
 		MMethodDefinition method = (MMethodDefinition) result2_bindingAndBlack[4];
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_bindingAndBlack[5];
+		Parameter returnParam = (Parameter) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, typeAccess, jType,
-						returnParam, operation, method, uType, sourceMatch, targetMatch);
+				.pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, uType, typeAccess,
+						jType, operation, method, returnParam, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
-			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[typeAccess] = "
-							+ typeAccess + ", " + "[jType] = " + jType + ", " + "[returnParam] = " + returnParam + ", "
-							+ "[operation] = " + operation + ", " + "[method] = " + method + ", " + "[uType] = " + uType
-							+ ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
+					+ "[uType] = " + uType + ", " + "[typeAccess] = " + typeAccess + ", " + "[jType] = " + jType + ", "
+					+ "[operation] = " + operation + ", " + "[method] = " + method + ", " + "[returnParam] = "
+					+ returnParam + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
+					+ ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (AbstractTypeAccess2ReturnParamImpl.pattern_AbstractTypeAccess2ReturnParam_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : AbstractTypeAccess2ReturnParamImpl
-					.pattern_AbstractTypeAccess2ReturnParam_24_5_matchcorrcontext_blackBFBBFBBB(jType, operation,
-							method, uType, sourceMatch, targetMatch)) {
+					.pattern_AbstractTypeAccess2ReturnParam_24_5_matchcorrcontext_blackBFFBBBBB(uType, jType, operation,
+							method, sourceMatch, targetMatch)) {
 				ASTNode2Element m2o = (ASTNode2Element) result5_black[1];
-				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[4];
+				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[2];
 				Object[] result5_green = AbstractTypeAccess2ReturnParamImpl
 						.pattern_AbstractTypeAccess2ReturnParam_24_5_matchcorrcontext_greenBBBBF(m2o, ne2ne,
 								sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = AbstractTypeAccess2ReturnParamImpl
-						.pattern_AbstractTypeAccess2ReturnParam_24_6_createcorrespondence_blackBBBBBBB(typeAccess,
-								jType, returnParam, operation, method, uType, ccMatch);
+						.pattern_AbstractTypeAccess2ReturnParam_24_6_createcorrespondence_blackBBBBBBB(uType,
+								typeAccess, jType, operation, method, returnParam, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeAccess] = "
-							+ typeAccess + ", " + "[jType] = " + jType + ", " + "[returnParam] = " + returnParam + ", "
-							+ "[operation] = " + operation + ", " + "[method] = " + method + ", " + "[uType] = " + uType
-							+ ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uType] = " + uType + ", "
+							+ "[typeAccess] = " + typeAccess + ", " + "[jType] = " + jType + ", " + "[operation] = "
+							+ operation + ", " + "[method] = " + method + ", " + "[returnParam] = " + returnParam + ", "
+							+ "[ccMatch] = " + ccMatch + ".");
 				}
 				AbstractTypeAccess2ReturnParamImpl
 						.pattern_AbstractTypeAccess2ReturnParam_24_6_createcorrespondence_greenBFBB(typeAccess,
@@ -1079,8 +1078,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(TypeAccess typeAccess, Type jType, Parameter returnParam, Operation operation,
-			MMethodDefinition method, org.eclipse.uml2.uml.Type uType, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType,
+			Operation operation, MMethodDefinition method, Parameter returnParam, Match sourceMatch,
+			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1134,9 +1134,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType) {// 
+	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam) {// 
 		Object[] result1_black = AbstractTypeAccess2ReturnParamImpl
-				.pattern_AbstractTypeAccess2ReturnParam_28_1_matchtggpattern_blackBBB(returnParam, operation, uType);
+				.pattern_AbstractTypeAccess2ReturnParam_28_1_matchtggpattern_blackBBB(uType, operation, returnParam);
 		if (result1_black != null) {
 			return AbstractTypeAccess2ReturnParamImpl.pattern_AbstractTypeAccess2ReturnParam_28_2_expressionF();
 		} else {
@@ -1168,9 +1168,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 				.pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
-			Type jType = (Type) result2_black[1];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[1];
 			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[2];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[3];
+			Type jType = (Type) result2_black[3];
 			//nothing RuleEntryList m2oList = (RuleEntryList) result2_black[4];
 			ASTNode2Element m2o = (ASTNode2Element) result2_black[5];
 			Operation operation = (Operation) result2_black[6];
@@ -1178,13 +1178,12 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 			Object[] result3_bindingAndBlack = AbstractTypeAccess2ReturnParamImpl
 					.pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this,
-							isApplicableMatch, jType, m2o, operation, method, ne2ne, uType, ruleResult);
+							isApplicableMatch, uType, m2o, ne2ne, jType, operation, method, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jType] = " + jType + ", " + "[m2o] = "
-						+ m2o + ", " + "[operation] = " + operation + ", " + "[method] = " + method + ", "
-						+ "[ne2ne] = " + ne2ne + ", " + "[uType] = " + uType + ", " + "[ruleResult] = " + ruleResult
-						+ ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", " + "[m2o] = "
+						+ m2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[jType] = " + jType + ", " + "[operation] = "
+						+ operation + ", " + "[method] = " + method + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
@@ -1192,25 +1191,25 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					.pattern_AbstractTypeAccess2ReturnParam_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = AbstractTypeAccess2ReturnParamImpl
-						.pattern_AbstractTypeAccess2ReturnParam_29_5_checknacs_blackBBBBBB(jType, m2o, operation,
-								method, ne2ne, uType);
+						.pattern_AbstractTypeAccess2ReturnParam_29_5_checknacs_blackBBBBBB(uType, m2o, ne2ne, jType,
+								operation, method);
 				if (result5_black != null) {
 
 					Object[] result6_black = AbstractTypeAccess2ReturnParamImpl
-							.pattern_AbstractTypeAccess2ReturnParam_29_6_perform_blackBBBBBBB(jType, m2o, operation,
-									method, ne2ne, uType, ruleResult);
+							.pattern_AbstractTypeAccess2ReturnParam_29_6_perform_blackBBBBBBB(uType, m2o, ne2ne, jType,
+									operation, method, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jType] = " + jType
-								+ ", " + "[m2o] = " + m2o + ", " + "[operation] = " + operation + ", " + "[method] = "
-								+ method + ", " + "[ne2ne] = " + ne2ne + ", " + "[uType] = " + uType + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uType] = " + uType
+								+ ", " + "[m2o] = " + m2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[jType] = " + jType
+								+ ", " + "[operation] = " + operation + ", " + "[method] = " + method + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
 					AbstractTypeAccess2ReturnParamImpl
-							.pattern_AbstractTypeAccess2ReturnParam_29_6_perform_greenFBFFBBBBB(jType, operation,
-									method, uType, ruleResult, csp);
-					//nothing TypeAccess typeAccess = (TypeAccess) result6_green[0];
+							.pattern_AbstractTypeAccess2ReturnParam_29_6_perform_greenBFFBBBFBB(uType, jType, operation,
+									method, ruleResult, csp);
+					//nothing TypeAccess typeAccess = (TypeAccess) result6_green[1];
 					//nothing TypeAccess2Parameter ta2p = (TypeAccess2Parameter) result6_green[2];
-					//nothing Parameter returnParam = (Parameter) result6_green[3];
+					//nothing Parameter returnParam = (Parameter) result6_green[6];
 
 				} else {
 				}
@@ -1227,8 +1226,8 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Type jType, ASTNode2Element m2o,
-			Operation operation, MMethodDefinition method, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation, MMethodDefinition method,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1251,12 +1250,12 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		isReturn.solve(var_returnParam_direction);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jType", jType);
+		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("m2o", m2o);
+		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("jType", jType);
 		isApplicableMatch.registerObject("operation", operation);
 		isApplicableMatch.registerObject("method", method);
-		isApplicableMatch.registerObject("ne2ne", ne2ne);
-		isApplicableMatch.registerObject("uType", uType);
 		return csp;
 	}
 
@@ -1277,101 +1276,100 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_TYPE_MMETHODDEFINITION:
-				return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-						(Type) arguments.get(2), (MMethodDefinition) arguments.get(3));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_TYPE_MMETHODDEFINITION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-						(Type) arguments.get(2), (MMethodDefinition) arguments.get(3));
-				return null;
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_TYPE_MMETHODDEFINITION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
-						(Type) arguments.get(2), (MMethodDefinition) arguments.get(3));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEACCESS_TYPE_ASTNODE2ELEMENT_OPERATION_MMETHODDEFINITION_ASTNODE2ELEMENT_TYPE:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (TypeAccess) arguments.get(1),
-						(Type) arguments.get(2), (ASTNode2Element) arguments.get(3), (Operation) arguments.get(4),
-						(MMethodDefinition) arguments.get(5), (ASTNode2Element) arguments.get(6),
-						(org.eclipse.uml2.uml.Type) arguments.get(7));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9));
-				return null;
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_BWD__MATCH_PARAMETER_OPERATION_TYPE:
-				return isAppropriate_BWD((Match) arguments.get(0), (Parameter) arguments.get(1),
-						(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PARAMETER_OPERATION_TYPE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Parameter) arguments.get(1),
-						(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3));
-				return null;
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PARAMETER_OPERATION_TYPE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Parameter) arguments.get(1),
-						(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_ASTNODE2ELEMENT_PARAMETER_OPERATION_MMETHODDEFINITION_ASTNODE2ELEMENT_TYPE:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (Parameter) arguments.get(3), (Operation) arguments.get(4),
-						(MMethodDefinition) arguments.get(5), (ASTNode2Element) arguments.get(6),
-						(org.eclipse.uml2.uml.Type) arguments.get(7));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9));
-				return null;
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_131__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_131((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_143__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_143((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_SOLVE_CSP_CC__TYPEACCESS_TYPE_PARAMETER_OPERATION_MMETHODDEFINITION_TYPE_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((TypeAccess) arguments.get(0), (Type) arguments.get(1),
-						(Parameter) arguments.get(2), (Operation) arguments.get(3),
-						(MMethodDefinition) arguments.get(4), (org.eclipse.uml2.uml.Type) arguments.get(5),
-						(Match) arguments.get(6), (Match) arguments.get(7));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_DEC_FWD__TYPEACCESS_TYPE_MMETHODDEFINITION:
-				return checkDEC_FWD((TypeAccess) arguments.get(0), (Type) arguments.get(1),
-						(MMethodDefinition) arguments.get(2));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_DEC_BWD__PARAMETER_OPERATION_TYPE:
-				return checkDEC_BWD((Parameter) arguments.get(0), (Operation) arguments.get(1),
-						(org.eclipse.uml2.uml.Type) arguments.get(2));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_ASTNODE2ELEMENT_OPERATION_MMETHODDEFINITION_ASTNODE2ELEMENT_TYPE_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Type) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (Operation) arguments.get(3),
-						(MMethodDefinition) arguments.get(4), (ASTNode2Element) arguments.get(5),
-						(org.eclipse.uml2.uml.Type) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
-			case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_FWD__MATCH_TYPEACCESS_TYPE_MMETHODDEFINITION:
+			return isAppropriate_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1), (Type) arguments.get(2),
+					(MMethodDefinition) arguments.get(3));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEACCESS_TYPE_MMETHODDEFINITION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1), (Type) arguments.get(2),
+					(MMethodDefinition) arguments.get(3));
+			return null;
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEACCESS_TYPE_MMETHODDEFINITION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (TypeAccess) arguments.get(1),
+					(Type) arguments.get(2), (MMethodDefinition) arguments.get(3));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPE_TYPEACCESS_ASTNODE2ELEMENT_ASTNODE2ELEMENT_TYPE_OPERATION_MMETHODDEFINITION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(org.eclipse.uml2.uml.Type) arguments.get(1), (TypeAccess) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (ASTNode2Element) arguments.get(4), (Type) arguments.get(5),
+					(Operation) arguments.get(6), (MMethodDefinition) arguments.get(7));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
+			return null;
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_BWD__MATCH_TYPE_OPERATION_PARAMETER:
+			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Type) arguments.get(1),
+					(Operation) arguments.get(2), (Parameter) arguments.get(3));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPE_OPERATION_PARAMETER:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Type) arguments.get(1),
+					(Operation) arguments.get(2), (Parameter) arguments.get(3));
+			return null;
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPE_OPERATION_PARAMETER:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Type) arguments.get(1),
+					(Operation) arguments.get(2), (Parameter) arguments.get(3));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_TYPE_OPERATION_MMETHODDEFINITION_PARAMETER:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(org.eclipse.uml2.uml.Type) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Type) arguments.get(4), (Operation) arguments.get(5),
+					(MMethodDefinition) arguments.get(6), (Parameter) arguments.get(7));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
+			return null;
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_105__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_105((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_111__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_111((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_SOLVE_CSP_CC__TYPE_TYPEACCESS_TYPE_OPERATION_MMETHODDEFINITION_PARAMETER_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((org.eclipse.uml2.uml.Type) arguments.get(0), (TypeAccess) arguments.get(1),
+					(Type) arguments.get(2), (Operation) arguments.get(3), (MMethodDefinition) arguments.get(4),
+					(Parameter) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_DEC_FWD__TYPEACCESS_TYPE_MMETHODDEFINITION:
+			return checkDEC_FWD((TypeAccess) arguments.get(0), (Type) arguments.get(1),
+					(MMethodDefinition) arguments.get(2));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___CHECK_DEC_BWD__TYPE_OPERATION_PARAMETER:
+			return checkDEC_BWD((org.eclipse.uml2.uml.Type) arguments.get(0), (Operation) arguments.get(1),
+					(Parameter) arguments.get(2));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_TYPE_OPERATION_MMETHODDEFINITION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(org.eclipse.uml2.uml.Type) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(ASTNode2Element) arguments.get(3), (Type) arguments.get(4), (Operation) arguments.get(5),
+					(MMethodDefinition) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.ABSTRACT_TYPE_ACCESS2_RETURN_PARAM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1483,35 +1481,35 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("typeAccess");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jType");
+		EObject _localVariable_0 = isApplicableMatch.getObject("uType");
+		EObject _localVariable_1 = isApplicableMatch.getObject("typeAccess");
 		EObject _localVariable_2 = isApplicableMatch.getObject("m2o");
-		EObject _localVariable_3 = isApplicableMatch.getObject("operation");
-		EObject _localVariable_4 = isApplicableMatch.getObject("method");
-		EObject _localVariable_5 = isApplicableMatch.getObject("ne2ne");
-		EObject _localVariable_6 = isApplicableMatch.getObject("uType");
-		EObject tmpTypeAccess = _localVariable_0;
-		EObject tmpJType = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("ne2ne");
+		EObject _localVariable_4 = isApplicableMatch.getObject("jType");
+		EObject _localVariable_5 = isApplicableMatch.getObject("operation");
+		EObject _localVariable_6 = isApplicableMatch.getObject("method");
+		EObject tmpUType = _localVariable_0;
+		EObject tmpTypeAccess = _localVariable_1;
 		EObject tmpM2o = _localVariable_2;
-		EObject tmpOperation = _localVariable_3;
-		EObject tmpMethod = _localVariable_4;
-		EObject tmpNe2ne = _localVariable_5;
-		EObject tmpUType = _localVariable_6;
-		if (tmpTypeAccess instanceof TypeAccess) {
-			TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
-			if (tmpJType instanceof Type) {
-				Type jType = (Type) tmpJType;
+		EObject tmpNe2ne = _localVariable_3;
+		EObject tmpJType = _localVariable_4;
+		EObject tmpOperation = _localVariable_5;
+		EObject tmpMethod = _localVariable_6;
+		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+			if (tmpTypeAccess instanceof TypeAccess) {
+				TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
 				if (tmpM2o instanceof ASTNode2Element) {
 					ASTNode2Element m2o = (ASTNode2Element) tmpM2o;
-					if (tmpOperation instanceof Operation) {
-						Operation operation = (Operation) tmpOperation;
-						if (tmpMethod instanceof MMethodDefinition) {
-							MMethodDefinition method = (MMethodDefinition) tmpMethod;
-							if (tmpNe2ne instanceof ASTNode2Element) {
-								ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-								if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-									org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-									return new Object[] { typeAccess, jType, m2o, operation, method, ne2ne, uType,
+					if (tmpNe2ne instanceof ASTNode2Element) {
+						ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+						if (tmpJType instanceof Type) {
+							Type jType = (Type) tmpJType;
+							if (tmpOperation instanceof Operation) {
+								Operation operation = (Operation) tmpOperation;
+								if (tmpMethod instanceof MMethodDefinition) {
+									MMethodDefinition method = (MMethodDefinition) tmpMethod;
+									return new Object[] { uType, typeAccess, m2o, ne2ne, jType, operation, method,
 											isApplicableMatch };
 								}
 							}
@@ -1524,14 +1522,14 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_blackBBBBBBBFBB(
-			TypeAccess typeAccess, Type jType, ASTNode2Element m2o, Operation operation, MMethodDefinition method,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType, AbstractTypeAccess2ReturnParam _this,
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, ASTNode2Element m2o, ASTNode2Element ne2ne,
+			Type jType, Operation operation, MMethodDefinition method, AbstractTypeAccess2ReturnParam _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!m2o.equals(ne2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { typeAccess, jType, m2o, operation, method, ne2ne, uType, csp, _this,
+					return new Object[] { uType, typeAccess, m2o, ne2ne, jType, operation, method, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1544,38 +1542,38 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding = pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding != null) {
-			TypeAccess typeAccess = (TypeAccess) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[0];
-			Type jType = (Type) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[0];
+			TypeAccess typeAccess = (TypeAccess) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[1];
 			ASTNode2Element m2o = (ASTNode2Element) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[2];
-			Operation operation = (Operation) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[3];
-			MMethodDefinition method = (MMethodDefinition) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[4];
-			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[5];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[6];
+			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[3];
+			Type jType = (Type) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[4];
+			Operation operation = (Operation) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[5];
+			MMethodDefinition method = (MMethodDefinition) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_black = pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_blackBBBBBBBFBB(
-					typeAccess, jType, m2o, operation, method, ne2ne, uType, _this, isApplicableMatch);
+					uType, typeAccess, m2o, ne2ne, jType, operation, method, _this, isApplicableMatch);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_black[7];
 
-				return new Object[] { typeAccess, jType, m2o, operation, method, ne2ne, uType, csp, _this,
+				return new Object[] { uType, typeAccess, m2o, ne2ne, jType, operation, method, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_greenBFFBBB(
-			TypeAccess typeAccess, Operation operation, org.eclipse.uml2.uml.Type uType, CSP csp) {
+	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_1_performtransformation_greenBBFBFB(
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Operation operation, CSP csp) {
 		TypeAccess2Parameter ta2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
 		Parameter returnParam = UMLFactory.eINSTANCE.createParameter();
 		Object _localVariable_0 = csp.getValue("returnParam", "direction");
 		ta2p.setSource(typeAccess);
+		operation.getOwnedParameters().add(returnParam);
 		ta2p.setTarget(returnParam);
 		returnParam.setType(uType);
-		operation.getOwnedParameters().add(returnParam);
 		ParameterDirectionKind returnParam_direction_prime = (ParameterDirectionKind) _localVariable_0;
 		returnParam.setDirection(returnParam_direction_prime);
-		return new Object[] { typeAccess, ta2p, returnParam, operation, uType, csp };
+		return new Object[] { uType, typeAccess, ta2p, operation, returnParam, csp };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_2_collecttranslatedelements_blackBBB(
@@ -1593,71 +1591,69 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject ta2p, EObject m2o,
-			EObject returnParam, EObject operation, EObject method, EObject ne2ne, EObject uType) {
+			PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ta2p, EObject m2o, EObject ne2ne,
+			EObject jType, EObject operation, EObject method, EObject returnParam) {
 		if (!typeAccess.equals(uType)) {
-			if (!jType.equals(typeAccess)) {
-				if (!jType.equals(ta2p)) {
-					if (!jType.equals(m2o)) {
-						if (!jType.equals(returnParam)) {
-							if (!jType.equals(operation)) {
-								if (!jType.equals(method)) {
-									if (!jType.equals(ne2ne)) {
-										if (!jType.equals(uType)) {
-											if (!ta2p.equals(typeAccess)) {
-												if (!ta2p.equals(uType)) {
-													if (!m2o.equals(typeAccess)) {
-														if (!m2o.equals(ta2p)) {
-															if (!m2o.equals(returnParam)) {
-																if (!m2o.equals(operation)) {
-																	if (!m2o.equals(method)) {
-																		if (!m2o.equals(ne2ne)) {
-																			if (!m2o.equals(uType)) {
-																				if (!returnParam.equals(typeAccess)) {
-																					if (!returnParam.equals(ta2p)) {
-																						if (!returnParam
-																								.equals(uType)) {
-																							if (!operation.equals(
-																									typeAccess)) {
-																								if (!operation
-																										.equals(ta2p)) {
+			if (!ta2p.equals(uType)) {
+				if (!ta2p.equals(typeAccess)) {
+					if (!m2o.equals(uType)) {
+						if (!m2o.equals(typeAccess)) {
+							if (!m2o.equals(ta2p)) {
+								if (!m2o.equals(ne2ne)) {
+									if (!m2o.equals(operation)) {
+										if (!m2o.equals(method)) {
+											if (!m2o.equals(returnParam)) {
+												if (!ne2ne.equals(uType)) {
+													if (!ne2ne.equals(typeAccess)) {
+														if (!ne2ne.equals(ta2p)) {
+															if (!ne2ne.equals(operation)) {
+																if (!ne2ne.equals(returnParam)) {
+																	if (!jType.equals(uType)) {
+																		if (!jType.equals(typeAccess)) {
+																			if (!jType.equals(ta2p)) {
+																				if (!jType.equals(m2o)) {
+																					if (!jType.equals(ne2ne)) {
+																						if (!jType.equals(operation)) {
+																							if (!jType.equals(method)) {
+																								if (!jType.equals(
+																										returnParam)) {
 																									if (!operation
-																											.equals(returnParam)) {
+																											.equals(uType)) {
 																										if (!operation
-																												.equals(uType)) {
-																											if (!method
-																													.equals(typeAccess)) {
-																												if (!method
-																														.equals(ta2p)) {
+																												.equals(typeAccess)) {
+																											if (!operation
+																													.equals(ta2p)) {
+																												if (!operation
+																														.equals(returnParam)) {
 																													if (!method
-																															.equals(returnParam)) {
+																															.equals(uType)) {
 																														if (!method
-																																.equals(operation)) {
+																																.equals(typeAccess)) {
 																															if (!method
-																																	.equals(ne2ne)) {
+																																	.equals(ta2p)) {
 																																if (!method
-																																		.equals(uType)) {
-																																	if (!ne2ne
-																																			.equals(typeAccess)) {
-																																		if (!ne2ne
-																																				.equals(ta2p)) {
-																																			if (!ne2ne
-																																					.equals(returnParam)) {
-																																				if (!ne2ne
-																																						.equals(operation)) {
-																																					if (!ne2ne
-																																							.equals(uType)) {
+																																		.equals(ne2ne)) {
+																																	if (!method
+																																			.equals(operation)) {
+																																		if (!method
+																																				.equals(returnParam)) {
+																																			if (!returnParam
+																																					.equals(uType)) {
+																																				if (!returnParam
+																																						.equals(typeAccess)) {
+																																					if (!returnParam
+																																							.equals(ta2p)) {
 																																						return new Object[] {
 																																								ruleresult,
+																																								uType,
 																																								typeAccess,
-																																								jType,
 																																								ta2p,
 																																								m2o,
-																																								returnParam,
+																																								ne2ne,
+																																								jType,
 																																								operation,
 																																								method,
-																																								ne2ne,
-																																								uType };
+																																								returnParam };
 																																					}
 																																				}
 																																			}
@@ -1698,32 +1694,35 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_1_3_bookkeepingforedges_greenBBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject ta2p, EObject returnParam,
-			EObject operation, EObject method, EObject uType) {
+			PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ta2p, EObject jType,
+			EObject operation, EObject method, EObject returnParam) {
+		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge operation__returnParam____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2p__returnParam____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge returnParam__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__typeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge operation__returnParam____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AbstractTypeAccess2ReturnParam";
+		String ta2p__typeAccess____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String ta2p__typeAccess____source_name_prime = "source";
+		String operation__returnParam____ownedParameter_name_prime = "ownedParameter";
 		String ta2p__returnParam____target_name_prime = "target";
 		String returnParam__uType____type_name_prime = "type";
 		String method__typeAccess____returnType_name_prime = "returnType";
-		String operation__returnParam____ownedParameter_name_prime = "ownedParameter";
+		ta2p__typeAccess____source.setSrc(ta2p);
+		ta2p__typeAccess____source.setTrg(typeAccess);
+		ruleresult.getCreatedEdges().add(ta2p__typeAccess____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		ruleresult.getTranslatedEdges().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		ruleresult.getTranslatedEdges().add(jType__typeAccess____usagesInTypeAccess);
-		ta2p__typeAccess____source.setSrc(ta2p);
-		ta2p__typeAccess____source.setTrg(typeAccess);
-		ruleresult.getCreatedEdges().add(ta2p__typeAccess____source);
+		operation__returnParam____ownedParameter.setSrc(operation);
+		operation__returnParam____ownedParameter.setTrg(returnParam);
+		ruleresult.getCreatedEdges().add(operation__returnParam____ownedParameter);
 		ta2p__returnParam____target.setSrc(ta2p);
 		ta2p__returnParam____target.setTrg(returnParam);
 		ruleresult.getCreatedEdges().add(ta2p__returnParam____target);
@@ -1733,29 +1732,26 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		method__typeAccess____returnType.setSrc(method);
 		method__typeAccess____returnType.setTrg(typeAccess);
 		ruleresult.getTranslatedEdges().add(method__typeAccess____returnType);
-		operation__returnParam____ownedParameter.setSrc(operation);
-		operation__returnParam____ownedParameter.setTrg(returnParam);
-		ruleresult.getCreatedEdges().add(operation__returnParam____ownedParameter);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
-		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
+		operation__returnParam____ownedParameter.setName(operation__returnParam____ownedParameter_name_prime);
 		ta2p__returnParam____target.setName(ta2p__returnParam____target_name_prime);
 		returnParam__uType____type.setName(returnParam__uType____type_name_prime);
 		method__typeAccess____returnType.setName(method__typeAccess____returnType_name_prime);
-		operation__returnParam____ownedParameter.setName(operation__returnParam____ownedParameter_name_prime);
-		return new Object[] { ruleresult, typeAccess, jType, ta2p, returnParam, operation, method, uType,
-				typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess, ta2p__typeAccess____source,
-				ta2p__returnParam____target, returnParam__uType____type, method__typeAccess____returnType,
-				operation__returnParam____ownedParameter };
+		return new Object[] { ruleresult, uType, typeAccess, ta2p, jType, operation, method, returnParam,
+				ta2p__typeAccess____source, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+				operation__returnParam____ownedParameter, ta2p__returnParam____target, returnParam__uType____type,
+				method__typeAccess____returnType };
 	}
 
 	public static final void pattern_AbstractTypeAccess2ReturnParam_1_5_registerobjects_expressionBBBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, PerformRuleResult ruleresult, EObject typeAccess, EObject jType,
-			EObject ta2p, EObject m2o, EObject returnParam, EObject operation, EObject method, EObject ne2ne,
-			EObject uType) {
-		_this.registerObjects_FWD(ruleresult, typeAccess, jType, ta2p, m2o, returnParam, operation, method, ne2ne,
-				uType);
+			AbstractTypeAccess2ReturnParam _this, PerformRuleResult ruleresult, EObject uType, EObject typeAccess,
+			EObject ta2p, EObject m2o, EObject ne2ne, EObject jType, EObject operation, EObject method,
+			EObject returnParam) {
+		_this.registerObjects_FWD(ruleresult, uType, typeAccess, ta2p, m2o, ne2ne, jType, operation, method,
+				returnParam);
 
 	}
 
@@ -1836,7 +1832,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_2_2_corematch_blackBBFFBFFB(
+	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_2_2_corematch_blackFBFFBFBB(
 			TypeAccess typeAccess, Type jType, MMethodDefinition method, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jType,
@@ -1851,7 +1847,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 						if (tmpOperation instanceof Operation) {
 							Operation operation = (Operation) tmpOperation;
 							_result.add(
-									new Object[] { typeAccess, jType, m2o, operation, method, ne2ne, uType, match });
+									new Object[] { uType, typeAccess, m2o, ne2ne, jType, operation, method, match });
 						}
 
 					}
@@ -1863,18 +1859,18 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_2_3_findcontext_blackBBBBBBB(
-			TypeAccess typeAccess, Type jType, ASTNode2Element m2o, Operation operation, MMethodDefinition method,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType) {
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, ASTNode2Element m2o, ASTNode2Element ne2ne,
+			Type jType, Operation operation, MMethodDefinition method) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!m2o.equals(ne2ne)) {
-			if (jType.equals(typeAccess.getType())) {
-				if (operation.equals(m2o.getTarget())) {
-					if (typeAccess.equals(method.getReturnType())) {
-						if (jType.equals(ne2ne.getSource())) {
+			if (jType.equals(ne2ne.getSource())) {
+				if (jType.equals(typeAccess.getType())) {
+					if (operation.equals(m2o.getTarget())) {
+						if (uType.equals(ne2ne.getTarget())) {
 							if (method.equals(m2o.getSource())) {
-								if (uType.equals(ne2ne.getTarget())) {
+								if (typeAccess.equals(method.getReturnType())) {
 									_result.add(
-											new Object[] { typeAccess, jType, m2o, operation, method, ne2ne, uType });
+											new Object[] { uType, typeAccess, m2o, ne2ne, jType, operation, method });
 								}
 							}
 						}
@@ -1886,30 +1882,33 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_2_3_findcontext_greenBBBBBBBFFFFFFFF(
-			TypeAccess typeAccess, Type jType, ASTNode2Element m2o, Operation operation, MMethodDefinition method,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType) {
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, ASTNode2Element m2o, ASTNode2Element ne2ne,
+			Type jType, Operation operation, MMethodDefinition method) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge m2o__operation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge method__typeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge method__typeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String ne2ne__jType____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String m2o__operation____target_name_prime = "target";
-		String method__typeAccess____returnType_name_prime = "returnType";
-		String ne2ne__jType____source_name_prime = "source";
-		String m2o__method____source_name_prime = "source";
 		String ne2ne__uType____target_name_prime = "target";
+		String m2o__method____source_name_prime = "source";
+		String method__typeAccess____returnType_name_prime = "returnType";
+		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(typeAccess);
-		isApplicableMatch.getAllContextElements().add(jType);
 		isApplicableMatch.getAllContextElements().add(m2o);
+		isApplicableMatch.getAllContextElements().add(ne2ne);
+		isApplicableMatch.getAllContextElements().add(jType);
 		isApplicableMatch.getAllContextElements().add(operation);
 		isApplicableMatch.getAllContextElements().add(method);
-		isApplicableMatch.getAllContextElements().add(ne2ne);
-		isApplicableMatch.getAllContextElements().add(uType);
+		ne2ne__jType____source.setSrc(ne2ne);
+		ne2ne__jType____source.setTrg(jType);
+		isApplicableMatch.getAllContextElements().add(ne2ne__jType____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(typeAccess__jType____type);
@@ -1919,41 +1918,38 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		m2o__operation____target.setSrc(m2o);
 		m2o__operation____target.setTrg(operation);
 		isApplicableMatch.getAllContextElements().add(m2o__operation____target);
-		method__typeAccess____returnType.setSrc(method);
-		method__typeAccess____returnType.setTrg(typeAccess);
-		isApplicableMatch.getAllContextElements().add(method__typeAccess____returnType);
-		ne2ne__jType____source.setSrc(ne2ne);
-		ne2ne__jType____source.setTrg(jType);
-		isApplicableMatch.getAllContextElements().add(ne2ne__jType____source);
-		m2o__method____source.setSrc(m2o);
-		m2o__method____source.setTrg(method);
-		isApplicableMatch.getAllContextElements().add(m2o__method____source);
 		ne2ne__uType____target.setSrc(ne2ne);
 		ne2ne__uType____target.setTrg(uType);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uType____target);
+		m2o__method____source.setSrc(m2o);
+		m2o__method____source.setTrg(method);
+		isApplicableMatch.getAllContextElements().add(m2o__method____source);
+		method__typeAccess____returnType.setSrc(method);
+		method__typeAccess____returnType.setTrg(typeAccess);
+		isApplicableMatch.getAllContextElements().add(method__typeAccess____returnType);
+		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
 		m2o__operation____target.setName(m2o__operation____target_name_prime);
-		method__typeAccess____returnType.setName(method__typeAccess____returnType_name_prime);
-		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
-		m2o__method____source.setName(m2o__method____source_name_prime);
 		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
-		return new Object[] { typeAccess, jType, m2o, operation, method, ne2ne, uType, isApplicableMatch,
-				typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess, m2o__operation____target,
-				method__typeAccess____returnType, ne2ne__jType____source, m2o__method____source,
-				ne2ne__uType____target };
+		m2o__method____source.setName(m2o__method____source_name_prime);
+		method__typeAccess____returnType.setName(method__typeAccess____returnType_name_prime);
+		return new Object[] { uType, typeAccess, m2o, ne2ne, jType, operation, method, isApplicableMatch,
+				ne2ne__jType____source, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+				m2o__operation____target, ne2ne__uType____target, m2o__method____source,
+				method__typeAccess____returnType };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_bindingFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, TypeAccess typeAccess,
-			Type jType, ASTNode2Element m2o, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, typeAccess, jType, m2o, operation,
-				method, ne2ne, uType);
+			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			TypeAccess typeAccess, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation,
+			MMethodDefinition method) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, uType, typeAccess, m2o, ne2ne, jType,
+				operation, method);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, typeAccess, jType, m2o, operation, method, ne2ne,
-					uType };
+			return new Object[] { csp, _this, isApplicableMatch, uType, typeAccess, m2o, ne2ne, jType, operation,
+					method };
 		}
 		return null;
 	}
@@ -1963,11 +1959,11 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, TypeAccess typeAccess,
-			Type jType, ASTNode2Element m2o, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {
+			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			TypeAccess typeAccess, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation,
+			MMethodDefinition method) {
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_binding = pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, typeAccess, jType, m2o, operation, method, ne2ne, uType);
+				_this, isApplicableMatch, uType, typeAccess, m2o, ne2ne, jType, operation, method);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_binding[0];
 
@@ -1975,8 +1971,8 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, typeAccess, jType, m2o, operation, method, ne2ne,
-						uType };
+				return new Object[] { csp, _this, isApplicableMatch, uType, typeAccess, m2o, ne2ne, jType, operation,
+						method };
 			}
 		}
 		return null;
@@ -2011,18 +2007,18 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_1_initialbindings_blackBBBBB(
-			AbstractTypeAccess2ReturnParam _this, Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
-		return new Object[] { _this, match, returnParam, operation, uType };
+			AbstractTypeAccess2ReturnParam _this, Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
+		return new Object[] { _this, match, uType, operation, returnParam };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_bindingFBBBBB(
-			AbstractTypeAccess2ReturnParam _this, Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, returnParam, operation, uType);
+			AbstractTypeAccess2ReturnParam _this, Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uType, operation, returnParam);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, returnParam, operation, uType };
+			return new Object[] { csp, _this, match, uType, operation, returnParam };
 		}
 		return null;
 	}
@@ -2032,10 +2028,10 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			AbstractTypeAccess2ReturnParam _this, Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
+			AbstractTypeAccess2ReturnParam _this, Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_binding = pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, returnParam, operation, uType);
+				_this, match, uType, operation, returnParam);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_binding[0];
 
@@ -2043,7 +2039,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, returnParam, operation, uType };
+				return new Object[] { csp, _this, match, uType, operation, returnParam };
 			}
 		}
 		return null;
@@ -2057,45 +2053,45 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType) {
-		return new Object[] { match, returnParam, operation, uType };
+			Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam) {
+		return new Object[] { match, uType, operation, returnParam };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_4_collectelementstobetranslated_greenBBBBFF(
-			Match match, Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType) {
-		EMoflonEdge returnParam__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam) {
 		EMoflonEdge operation__returnParam____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge returnParam__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(returnParam);
-		String returnParam__uType____type_name_prime = "type";
 		String operation__returnParam____ownedParameter_name_prime = "ownedParameter";
-		returnParam__uType____type.setSrc(returnParam);
-		returnParam__uType____type.setTrg(uType);
-		match.getToBeTranslatedEdges().add(returnParam__uType____type);
+		String returnParam__uType____type_name_prime = "type";
 		operation__returnParam____ownedParameter.setSrc(operation);
 		operation__returnParam____ownedParameter.setTrg(returnParam);
 		match.getToBeTranslatedEdges().add(operation__returnParam____ownedParameter);
-		returnParam__uType____type.setName(returnParam__uType____type_name_prime);
+		returnParam__uType____type.setSrc(returnParam);
+		returnParam__uType____type.setTrg(uType);
+		match.getToBeTranslatedEdges().add(returnParam__uType____type);
 		operation__returnParam____ownedParameter.setName(operation__returnParam____ownedParameter_name_prime);
-		return new Object[] { match, returnParam, operation, uType, returnParam__uType____type,
-				operation__returnParam____ownedParameter };
+		returnParam__uType____type.setName(returnParam__uType____type_name_prime);
+		return new Object[] { match, uType, operation, returnParam, operation__returnParam____ownedParameter,
+				returnParam__uType____type };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_5_collectcontextelements_blackBBBB(
-			Match match, Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType) {
-		return new Object[] { match, returnParam, operation, uType };
+			Match match, org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam) {
+		return new Object[] { match, uType, operation, returnParam };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_10_5_collectcontextelements_greenBBB(
-			Match match, Operation operation, org.eclipse.uml2.uml.Type uType) {
-		match.getContextNodes().add(operation);
+			Match match, org.eclipse.uml2.uml.Type uType, Operation operation) {
 		match.getContextNodes().add(uType);
-		return new Object[] { match, operation, uType };
+		match.getContextNodes().add(operation);
+		return new Object[] { match, uType, operation };
 	}
 
 	public static final void pattern_AbstractTypeAccess2ReturnParam_10_6_registerobjectstomatch_expressionBBBBB(
-			AbstractTypeAccess2ReturnParam _this, Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
-		_this.registerObjectsToMatch_BWD(match, returnParam, operation, uType);
+			AbstractTypeAccess2ReturnParam _this, Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
+		_this.registerObjectsToMatch_BWD(match, uType, operation, returnParam);
 
 	}
 
@@ -2111,35 +2107,35 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jType");
+		EObject _localVariable_0 = isApplicableMatch.getObject("uType");
 		EObject _localVariable_1 = isApplicableMatch.getObject("m2o");
-		EObject _localVariable_2 = isApplicableMatch.getObject("returnParam");
-		EObject _localVariable_3 = isApplicableMatch.getObject("operation");
-		EObject _localVariable_4 = isApplicableMatch.getObject("method");
-		EObject _localVariable_5 = isApplicableMatch.getObject("ne2ne");
-		EObject _localVariable_6 = isApplicableMatch.getObject("uType");
-		EObject tmpJType = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("ne2ne");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("operation");
+		EObject _localVariable_5 = isApplicableMatch.getObject("method");
+		EObject _localVariable_6 = isApplicableMatch.getObject("returnParam");
+		EObject tmpUType = _localVariable_0;
 		EObject tmpM2o = _localVariable_1;
-		EObject tmpReturnParam = _localVariable_2;
-		EObject tmpOperation = _localVariable_3;
-		EObject tmpMethod = _localVariable_4;
-		EObject tmpNe2ne = _localVariable_5;
-		EObject tmpUType = _localVariable_6;
-		if (tmpJType instanceof Type) {
-			Type jType = (Type) tmpJType;
+		EObject tmpNe2ne = _localVariable_2;
+		EObject tmpJType = _localVariable_3;
+		EObject tmpOperation = _localVariable_4;
+		EObject tmpMethod = _localVariable_5;
+		EObject tmpReturnParam = _localVariable_6;
+		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
 			if (tmpM2o instanceof ASTNode2Element) {
 				ASTNode2Element m2o = (ASTNode2Element) tmpM2o;
-				if (tmpReturnParam instanceof Parameter) {
-					Parameter returnParam = (Parameter) tmpReturnParam;
-					if (tmpOperation instanceof Operation) {
-						Operation operation = (Operation) tmpOperation;
-						if (tmpMethod instanceof MMethodDefinition) {
-							MMethodDefinition method = (MMethodDefinition) tmpMethod;
-							if (tmpNe2ne instanceof ASTNode2Element) {
-								ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-								if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-									org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-									return new Object[] { jType, m2o, returnParam, operation, method, ne2ne, uType,
+				if (tmpNe2ne instanceof ASTNode2Element) {
+					ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+					if (tmpJType instanceof Type) {
+						Type jType = (Type) tmpJType;
+						if (tmpOperation instanceof Operation) {
+							Operation operation = (Operation) tmpOperation;
+							if (tmpMethod instanceof MMethodDefinition) {
+								MMethodDefinition method = (MMethodDefinition) tmpMethod;
+								if (tmpReturnParam instanceof Parameter) {
+									Parameter returnParam = (Parameter) tmpReturnParam;
+									return new Object[] { uType, m2o, ne2ne, jType, operation, method, returnParam,
 											isApplicableMatch };
 								}
 							}
@@ -2152,14 +2148,14 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_blackBBBBBBBFBB(
-			Type jType, ASTNode2Element m2o, Parameter returnParam, Operation operation, MMethodDefinition method,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType, AbstractTypeAccess2ReturnParam _this,
+			org.eclipse.uml2.uml.Type uType, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType,
+			Operation operation, MMethodDefinition method, Parameter returnParam, AbstractTypeAccess2ReturnParam _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!m2o.equals(ne2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { jType, m2o, returnParam, operation, method, ne2ne, uType, csp, _this,
+					return new Object[] { uType, m2o, ne2ne, jType, operation, method, returnParam, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -2172,35 +2168,35 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding = pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding != null) {
-			Type jType = (Type) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[0];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[0];
 			ASTNode2Element m2o = (ASTNode2Element) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[1];
-			Parameter returnParam = (Parameter) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[2];
-			Operation operation = (Operation) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[3];
-			MMethodDefinition method = (MMethodDefinition) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[4];
-			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[5];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[6];
+			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[2];
+			Type jType = (Type) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[3];
+			Operation operation = (Operation) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[4];
+			MMethodDefinition method = (MMethodDefinition) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[5];
+			Parameter returnParam = (Parameter) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_black = pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_blackBBBBBBBFBB(
-					jType, m2o, returnParam, operation, method, ne2ne, uType, _this, isApplicableMatch);
+					uType, m2o, ne2ne, jType, operation, method, returnParam, _this, isApplicableMatch);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_black[7];
 
-				return new Object[] { jType, m2o, returnParam, operation, method, ne2ne, uType, csp, _this,
+				return new Object[] { uType, m2o, ne2ne, jType, operation, method, returnParam, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_greenFBFBB(
-			Type jType, Parameter returnParam, MMethodDefinition method) {
+	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_1_performtransformation_greenFFBBB(
+			Type jType, MMethodDefinition method, Parameter returnParam) {
 		TypeAccess typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		TypeAccess2Parameter ta2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
 		typeAccess.setType(jType);
 		method.setReturnType(typeAccess);
 		ta2p.setSource(typeAccess);
 		ta2p.setTarget(returnParam);
-		return new Object[] { typeAccess, jType, ta2p, returnParam, method };
+		return new Object[] { typeAccess, ta2p, jType, method, returnParam };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_2_collecttranslatedelements_blackBBB(
@@ -2218,71 +2214,69 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject ta2p, EObject m2o,
-			EObject returnParam, EObject operation, EObject method, EObject ne2ne, EObject uType) {
+			PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ta2p, EObject m2o, EObject ne2ne,
+			EObject jType, EObject operation, EObject method, EObject returnParam) {
 		if (!typeAccess.equals(uType)) {
-			if (!jType.equals(typeAccess)) {
-				if (!jType.equals(ta2p)) {
-					if (!jType.equals(m2o)) {
-						if (!jType.equals(returnParam)) {
-							if (!jType.equals(operation)) {
-								if (!jType.equals(method)) {
-									if (!jType.equals(ne2ne)) {
-										if (!jType.equals(uType)) {
-											if (!ta2p.equals(typeAccess)) {
-												if (!ta2p.equals(uType)) {
-													if (!m2o.equals(typeAccess)) {
-														if (!m2o.equals(ta2p)) {
-															if (!m2o.equals(returnParam)) {
-																if (!m2o.equals(operation)) {
-																	if (!m2o.equals(method)) {
-																		if (!m2o.equals(ne2ne)) {
-																			if (!m2o.equals(uType)) {
-																				if (!returnParam.equals(typeAccess)) {
-																					if (!returnParam.equals(ta2p)) {
-																						if (!returnParam
-																								.equals(uType)) {
-																							if (!operation.equals(
-																									typeAccess)) {
-																								if (!operation
-																										.equals(ta2p)) {
+			if (!ta2p.equals(uType)) {
+				if (!ta2p.equals(typeAccess)) {
+					if (!m2o.equals(uType)) {
+						if (!m2o.equals(typeAccess)) {
+							if (!m2o.equals(ta2p)) {
+								if (!m2o.equals(ne2ne)) {
+									if (!m2o.equals(operation)) {
+										if (!m2o.equals(method)) {
+											if (!m2o.equals(returnParam)) {
+												if (!ne2ne.equals(uType)) {
+													if (!ne2ne.equals(typeAccess)) {
+														if (!ne2ne.equals(ta2p)) {
+															if (!ne2ne.equals(operation)) {
+																if (!ne2ne.equals(returnParam)) {
+																	if (!jType.equals(uType)) {
+																		if (!jType.equals(typeAccess)) {
+																			if (!jType.equals(ta2p)) {
+																				if (!jType.equals(m2o)) {
+																					if (!jType.equals(ne2ne)) {
+																						if (!jType.equals(operation)) {
+																							if (!jType.equals(method)) {
+																								if (!jType.equals(
+																										returnParam)) {
 																									if (!operation
-																											.equals(returnParam)) {
+																											.equals(uType)) {
 																										if (!operation
-																												.equals(uType)) {
-																											if (!method
-																													.equals(typeAccess)) {
-																												if (!method
-																														.equals(ta2p)) {
+																												.equals(typeAccess)) {
+																											if (!operation
+																													.equals(ta2p)) {
+																												if (!operation
+																														.equals(returnParam)) {
 																													if (!method
-																															.equals(returnParam)) {
+																															.equals(uType)) {
 																														if (!method
-																																.equals(operation)) {
+																																.equals(typeAccess)) {
 																															if (!method
-																																	.equals(ne2ne)) {
+																																	.equals(ta2p)) {
 																																if (!method
-																																		.equals(uType)) {
-																																	if (!ne2ne
-																																			.equals(typeAccess)) {
-																																		if (!ne2ne
-																																				.equals(ta2p)) {
-																																			if (!ne2ne
-																																					.equals(returnParam)) {
-																																				if (!ne2ne
-																																						.equals(operation)) {
-																																					if (!ne2ne
-																																							.equals(uType)) {
+																																		.equals(ne2ne)) {
+																																	if (!method
+																																			.equals(operation)) {
+																																		if (!method
+																																				.equals(returnParam)) {
+																																			if (!returnParam
+																																					.equals(uType)) {
+																																				if (!returnParam
+																																						.equals(typeAccess)) {
+																																					if (!returnParam
+																																							.equals(ta2p)) {
 																																						return new Object[] {
 																																								ruleresult,
+																																								uType,
 																																								typeAccess,
-																																								jType,
 																																								ta2p,
 																																								m2o,
-																																								returnParam,
+																																								ne2ne,
+																																								jType,
 																																								operation,
 																																								method,
-																																								ne2ne,
-																																								uType };
+																																								returnParam };
 																																					}
 																																				}
 																																			}
@@ -2323,32 +2317,35 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_11_3_bookkeepingforedges_greenBBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject typeAccess, EObject jType, EObject ta2p, EObject returnParam,
-			EObject operation, EObject method, EObject uType) {
+			PerformRuleResult ruleresult, EObject uType, EObject typeAccess, EObject ta2p, EObject jType,
+			EObject operation, EObject method, EObject returnParam) {
+		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ta2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge operation__returnParam____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ta2p__returnParam____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge returnParam__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__typeAccess____returnType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge operation__returnParam____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "AbstractTypeAccess2ReturnParam";
+		String ta2p__typeAccess____source_name_prime = "source";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String ta2p__typeAccess____source_name_prime = "source";
+		String operation__returnParam____ownedParameter_name_prime = "ownedParameter";
 		String ta2p__returnParam____target_name_prime = "target";
 		String returnParam__uType____type_name_prime = "type";
 		String method__typeAccess____returnType_name_prime = "returnType";
-		String operation__returnParam____ownedParameter_name_prime = "ownedParameter";
+		ta2p__typeAccess____source.setSrc(ta2p);
+		ta2p__typeAccess____source.setTrg(typeAccess);
+		ruleresult.getCreatedEdges().add(ta2p__typeAccess____source);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		ruleresult.getCreatedEdges().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		ruleresult.getCreatedEdges().add(jType__typeAccess____usagesInTypeAccess);
-		ta2p__typeAccess____source.setSrc(ta2p);
-		ta2p__typeAccess____source.setTrg(typeAccess);
-		ruleresult.getCreatedEdges().add(ta2p__typeAccess____source);
+		operation__returnParam____ownedParameter.setSrc(operation);
+		operation__returnParam____ownedParameter.setTrg(returnParam);
+		ruleresult.getTranslatedEdges().add(operation__returnParam____ownedParameter);
 		ta2p__returnParam____target.setSrc(ta2p);
 		ta2p__returnParam____target.setTrg(returnParam);
 		ruleresult.getCreatedEdges().add(ta2p__returnParam____target);
@@ -2358,29 +2355,26 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		method__typeAccess____returnType.setSrc(method);
 		method__typeAccess____returnType.setTrg(typeAccess);
 		ruleresult.getCreatedEdges().add(method__typeAccess____returnType);
-		operation__returnParam____ownedParameter.setSrc(operation);
-		operation__returnParam____ownedParameter.setTrg(returnParam);
-		ruleresult.getTranslatedEdges().add(operation__returnParam____ownedParameter);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
-		ta2p__typeAccess____source.setName(ta2p__typeAccess____source_name_prime);
+		operation__returnParam____ownedParameter.setName(operation__returnParam____ownedParameter_name_prime);
 		ta2p__returnParam____target.setName(ta2p__returnParam____target_name_prime);
 		returnParam__uType____type.setName(returnParam__uType____type_name_prime);
 		method__typeAccess____returnType.setName(method__typeAccess____returnType_name_prime);
-		operation__returnParam____ownedParameter.setName(operation__returnParam____ownedParameter_name_prime);
-		return new Object[] { ruleresult, typeAccess, jType, ta2p, returnParam, operation, method, uType,
-				typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess, ta2p__typeAccess____source,
-				ta2p__returnParam____target, returnParam__uType____type, method__typeAccess____returnType,
-				operation__returnParam____ownedParameter };
+		return new Object[] { ruleresult, uType, typeAccess, ta2p, jType, operation, method, returnParam,
+				ta2p__typeAccess____source, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
+				operation__returnParam____ownedParameter, ta2p__returnParam____target, returnParam__uType____type,
+				method__typeAccess____returnType };
 	}
 
 	public static final void pattern_AbstractTypeAccess2ReturnParam_11_5_registerobjects_expressionBBBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, PerformRuleResult ruleresult, EObject typeAccess, EObject jType,
-			EObject ta2p, EObject m2o, EObject returnParam, EObject operation, EObject method, EObject ne2ne,
-			EObject uType) {
-		_this.registerObjects_BWD(ruleresult, typeAccess, jType, ta2p, m2o, returnParam, operation, method, ne2ne,
-				uType);
+			AbstractTypeAccess2ReturnParam _this, PerformRuleResult ruleresult, EObject uType, EObject typeAccess,
+			EObject ta2p, EObject m2o, EObject ne2ne, EObject jType, EObject operation, EObject method,
+			EObject returnParam) {
+		_this.registerObjects_BWD(ruleresult, uType, typeAccess, ta2p, m2o, ne2ne, jType, operation, method,
+				returnParam);
 
 	}
 
@@ -2442,27 +2436,27 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("returnParam");
+		EObject _localVariable_0 = match.getObject("uType");
 		EObject _localVariable_1 = match.getObject("operation");
-		EObject _localVariable_2 = match.getObject("uType");
-		EObject tmpReturnParam = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("returnParam");
+		EObject tmpUType = _localVariable_0;
 		EObject tmpOperation = _localVariable_1;
-		EObject tmpUType = _localVariable_2;
-		if (tmpReturnParam instanceof Parameter) {
-			Parameter returnParam = (Parameter) tmpReturnParam;
+		EObject tmpReturnParam = _localVariable_2;
+		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
 			if (tmpOperation instanceof Operation) {
 				Operation operation = (Operation) tmpOperation;
-				if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-					org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-					return new Object[] { returnParam, operation, uType, match };
+				if (tmpReturnParam instanceof Parameter) {
+					Parameter returnParam = (Parameter) tmpReturnParam;
+					return new Object[] { uType, operation, returnParam, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_12_2_corematch_blackFFBBFFBB(
-			Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType, Match match) {
+	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_12_2_corematch_blackBFFFBFBB(
+			org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element m2o : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(operation,
 				ASTNode2Element.class, "target")) {
@@ -2476,7 +2470,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 						if (tmpJType instanceof Type) {
 							Type jType = (Type) tmpJType;
 							_result.add(
-									new Object[] { jType, m2o, returnParam, operation, method, ne2ne, uType, match });
+									new Object[] { uType, m2o, ne2ne, jType, operation, method, returnParam, match });
 						}
 
 					}
@@ -2488,18 +2482,18 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_blackBBBBBBB(
-			Type jType, ASTNode2Element m2o, Parameter returnParam, Operation operation, MMethodDefinition method,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType) {
+			org.eclipse.uml2.uml.Type uType, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType,
+			Operation operation, MMethodDefinition method, Parameter returnParam) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!m2o.equals(ne2ne)) {
-			if (operation.equals(m2o.getTarget())) {
-				if (uType.equals(returnParam.getType())) {
-					if (jType.equals(ne2ne.getSource())) {
-						if (method.equals(m2o.getSource())) {
-							if (operation.getOwnedParameters().contains(returnParam)) {
-								if (uType.equals(ne2ne.getTarget())) {
+			if (jType.equals(ne2ne.getSource())) {
+				if (operation.getOwnedParameters().contains(returnParam)) {
+					if (operation.equals(m2o.getTarget())) {
+						if (uType.equals(ne2ne.getTarget())) {
+							if (uType.equals(returnParam.getType())) {
+								if (method.equals(m2o.getSource())) {
 									_result.add(
-											new Object[] { jType, m2o, returnParam, operation, method, ne2ne, uType });
+											new Object[] { uType, m2o, ne2ne, jType, operation, method, returnParam });
 								}
 							}
 						}
@@ -2510,68 +2504,68 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_greenBBBBBBBFFFFFFF(Type jType,
-			ASTNode2Element m2o, Parameter returnParam, Operation operation, MMethodDefinition method,
-			ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType) {
+	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_12_3_findcontext_greenBBBBBBBFFFFFFF(
+			org.eclipse.uml2.uml.Type uType, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType,
+			Operation operation, MMethodDefinition method, Parameter returnParam) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge m2o__operation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge returnParam__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge operation__returnParam____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2o__operation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String m2o__operation____target_name_prime = "target";
-		String returnParam__uType____type_name_prime = "type";
+		EMoflonEdge returnParam__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ne2ne__jType____source_name_prime = "source";
-		String m2o__method____source_name_prime = "source";
 		String operation__returnParam____ownedParameter_name_prime = "ownedParameter";
+		String m2o__operation____target_name_prime = "target";
 		String ne2ne__uType____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(jType);
+		String returnParam__uType____type_name_prime = "type";
+		String m2o__method____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(m2o);
-		isApplicableMatch.getAllContextElements().add(returnParam);
+		isApplicableMatch.getAllContextElements().add(ne2ne);
+		isApplicableMatch.getAllContextElements().add(jType);
 		isApplicableMatch.getAllContextElements().add(operation);
 		isApplicableMatch.getAllContextElements().add(method);
-		isApplicableMatch.getAllContextElements().add(ne2ne);
-		isApplicableMatch.getAllContextElements().add(uType);
-		m2o__operation____target.setSrc(m2o);
-		m2o__operation____target.setTrg(operation);
-		isApplicableMatch.getAllContextElements().add(m2o__operation____target);
-		returnParam__uType____type.setSrc(returnParam);
-		returnParam__uType____type.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(returnParam__uType____type);
+		isApplicableMatch.getAllContextElements().add(returnParam);
 		ne2ne__jType____source.setSrc(ne2ne);
 		ne2ne__jType____source.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(ne2ne__jType____source);
-		m2o__method____source.setSrc(m2o);
-		m2o__method____source.setTrg(method);
-		isApplicableMatch.getAllContextElements().add(m2o__method____source);
 		operation__returnParam____ownedParameter.setSrc(operation);
 		operation__returnParam____ownedParameter.setTrg(returnParam);
 		isApplicableMatch.getAllContextElements().add(operation__returnParam____ownedParameter);
+		m2o__operation____target.setSrc(m2o);
+		m2o__operation____target.setTrg(operation);
+		isApplicableMatch.getAllContextElements().add(m2o__operation____target);
 		ne2ne__uType____target.setSrc(ne2ne);
 		ne2ne__uType____target.setTrg(uType);
 		isApplicableMatch.getAllContextElements().add(ne2ne__uType____target);
-		m2o__operation____target.setName(m2o__operation____target_name_prime);
-		returnParam__uType____type.setName(returnParam__uType____type_name_prime);
+		returnParam__uType____type.setSrc(returnParam);
+		returnParam__uType____type.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(returnParam__uType____type);
+		m2o__method____source.setSrc(m2o);
+		m2o__method____source.setTrg(method);
+		isApplicableMatch.getAllContextElements().add(m2o__method____source);
 		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
-		m2o__method____source.setName(m2o__method____source_name_prime);
 		operation__returnParam____ownedParameter.setName(operation__returnParam____ownedParameter_name_prime);
+		m2o__operation____target.setName(m2o__operation____target_name_prime);
 		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
-		return new Object[] { jType, m2o, returnParam, operation, method, ne2ne, uType, isApplicableMatch,
-				m2o__operation____target, returnParam__uType____type, ne2ne__jType____source, m2o__method____source,
-				operation__returnParam____ownedParameter, ne2ne__uType____target };
+		returnParam__uType____type.setName(returnParam__uType____type_name_prime);
+		m2o__method____source.setName(m2o__method____source_name_prime);
+		return new Object[] { uType, m2o, ne2ne, jType, operation, method, returnParam, isApplicableMatch,
+				ne2ne__jType____source, operation__returnParam____ownedParameter, m2o__operation____target,
+				ne2ne__uType____target, returnParam__uType____type, m2o__method____source };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_bindingFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, Type jType, ASTNode2Element m2o,
-			Parameter returnParam, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jType, m2o, returnParam, operation,
-				method, ne2ne, uType);
+			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation, MMethodDefinition method,
+			Parameter returnParam) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uType, m2o, ne2ne, jType, operation,
+				method, returnParam);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jType, m2o, returnParam, operation, method, ne2ne,
-					uType };
+			return new Object[] { csp, _this, isApplicableMatch, uType, m2o, ne2ne, jType, operation, method,
+					returnParam };
 		}
 		return null;
 	}
@@ -2581,11 +2575,11 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, Type jType, ASTNode2Element m2o,
-			Parameter returnParam, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {
+			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation, MMethodDefinition method,
+			Parameter returnParam) {
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_binding = pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, jType, m2o, returnParam, operation, method, ne2ne, uType);
+				_this, isApplicableMatch, uType, m2o, ne2ne, jType, operation, method, returnParam);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_binding[0];
 
@@ -2593,8 +2587,8 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jType, m2o, returnParam, operation, method, ne2ne,
-						uType };
+				return new Object[] { csp, _this, isApplicableMatch, uType, m2o, ne2ne, jType, operation, method,
+						returnParam };
 			}
 		}
 		return null;
@@ -2683,22 +2677,20 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_20_2_testcorematchandDECs_blackFFFB(
-			EMoflonEdge _edge_type) {
+			EMoflonEdge _edge_ownedParameter) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpReturnParam = _edge_type.getSrc();
-		if (tmpReturnParam instanceof Parameter) {
-			Parameter returnParam = (Parameter) tmpReturnParam;
-			EObject tmpUType = _edge_type.getTrg();
-			if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-				org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-				if (uType.equals(returnParam.getType())) {
-					for (BehavioralFeature tmpOperation : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(returnParam, BehavioralFeature.class, "ownedParameter")) {
-						if (tmpOperation instanceof Operation) {
-							Operation operation = (Operation) tmpOperation;
-							_result.add(new Object[] { returnParam, operation, uType, _edge_type });
-						}
+		EObject tmpOperation = _edge_ownedParameter.getSrc();
+		if (tmpOperation instanceof Operation) {
+			Operation operation = (Operation) tmpOperation;
+			EObject tmpReturnParam = _edge_ownedParameter.getTrg();
+			if (tmpReturnParam instanceof Parameter) {
+				Parameter returnParam = (Parameter) tmpReturnParam;
+				if (operation.getOwnedParameters().contains(returnParam)) {
+					org.eclipse.uml2.uml.Type uType = returnParam.getType();
+					if (uType != null) {
+						_result.add(new Object[] { uType, operation, returnParam, _edge_ownedParameter });
 					}
+
 				}
 			}
 
@@ -2718,9 +2710,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final boolean pattern_AbstractTypeAccess2ReturnParam_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			AbstractTypeAccess2ReturnParam _this, Match match, Parameter returnParam, Operation operation,
-			org.eclipse.uml2.uml.Type uType) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, returnParam, operation, uType);
+			AbstractTypeAccess2ReturnParam _this, Match match, org.eclipse.uml2.uml.Type uType, Operation operation,
+			Parameter returnParam) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uType, operation, returnParam);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2810,9 +2802,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess typeAccess, Type jType) {
-		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_961823 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_759575 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!jType.equals(__DEC_typeAccess_superInterfaces_961823)) {
+			if (!jType.equals(__DEC_typeAccess_superInterfaces_759575)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2821,7 +2813,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeAccess) {
-		for (Annotation __DEC_typeAccess_type_718016 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAccess_type_482925 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, Annotation.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -2830,9 +2822,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ArrayType __DEC_typeAccess_elementType_824586 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAccess_elementType_729705 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ArrayType.class, "elementType")) {
-			if (!jType.equals(__DEC_typeAccess_elementType_824586)) {
+			if (!jType.equals(__DEC_typeAccess_elementType_729705)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2841,9 +2833,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_3BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ClassDeclaration __DEC_typeAccess_superClass_437367 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAccess_superClass_470921 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ClassDeclaration.class, "superClass")) {
-			if (!jType.equals(__DEC_typeAccess_superClass_437367)) {
+			if (!jType.equals(__DEC_typeAccess_superClass_470921)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2852,9 +2844,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ParameterizedType __DEC_typeAccess_type_401413 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAccess_type_695821 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ParameterizedType.class, "type")) {
-			if (!jType.equals(__DEC_typeAccess_type_401413)) {
+			if (!jType.equals(__DEC_typeAccess_type_695821)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -2863,7 +2855,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess typeAccess) {
-		for (SingleVariableDeclaration __DEC_typeAccess_type_35399 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAccess_type_834995 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -2872,7 +2864,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeAccess_value_706674 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAccess_value_237457 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAccess };
 		}
@@ -2985,33 +2977,33 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("typeAccess");
-		EObject _localVariable_1 = sourceMatch.getObject("jType");
-		EObject _localVariable_2 = targetMatch.getObject("returnParam");
+			Match targetMatch, Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("uType");
+		EObject _localVariable_1 = sourceMatch.getObject("typeAccess");
+		EObject _localVariable_2 = sourceMatch.getObject("jType");
 		EObject _localVariable_3 = targetMatch.getObject("operation");
 		EObject _localVariable_4 = sourceMatch.getObject("method");
-		EObject _localVariable_5 = targetMatch.getObject("uType");
-		EObject tmpTypeAccess = _localVariable_0;
-		EObject tmpJType = _localVariable_1;
-		EObject tmpReturnParam = _localVariable_2;
+		EObject _localVariable_5 = targetMatch.getObject("returnParam");
+		EObject tmpUType = _localVariable_0;
+		EObject tmpTypeAccess = _localVariable_1;
+		EObject tmpJType = _localVariable_2;
 		EObject tmpOperation = _localVariable_3;
 		EObject tmpMethod = _localVariable_4;
-		EObject tmpUType = _localVariable_5;
-		if (tmpTypeAccess instanceof TypeAccess) {
-			TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
-			if (tmpJType instanceof Type) {
-				Type jType = (Type) tmpJType;
-				if (tmpReturnParam instanceof Parameter) {
-					Parameter returnParam = (Parameter) tmpReturnParam;
+		EObject tmpReturnParam = _localVariable_5;
+		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+			if (tmpTypeAccess instanceof TypeAccess) {
+				TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
+				if (tmpJType instanceof Type) {
+					Type jType = (Type) tmpJType;
 					if (tmpOperation instanceof Operation) {
 						Operation operation = (Operation) tmpOperation;
 						if (tmpMethod instanceof MMethodDefinition) {
 							MMethodDefinition method = (MMethodDefinition) tmpMethod;
-							if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-								org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-								return new Object[] { typeAccess, jType, returnParam, operation, method, uType,
-										sourceMatch, targetMatch };
+							if (tmpReturnParam instanceof Parameter) {
+								Parameter returnParam = (Parameter) tmpReturnParam;
+								return new Object[] { uType, typeAccess, jType, operation, method, returnParam,
+										targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -3022,10 +3014,10 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_blackBBBBBBBB(
-			TypeAccess typeAccess, Type jType, Parameter returnParam, Operation operation, MMethodDefinition method,
-			org.eclipse.uml2.uml.Type uType, Match sourceMatch, Match targetMatch) {
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, Operation operation,
+			MMethodDefinition method, Parameter returnParam, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { typeAccess, jType, returnParam, operation, method, uType, sourceMatch, targetMatch };
+			return new Object[] { uType, typeAccess, jType, operation, method, returnParam, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3033,20 +3025,20 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding = pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding != null) {
-			TypeAccess typeAccess = (TypeAccess) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[0];
-			Type jType = (Type) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[1];
-			Parameter returnParam = (Parameter) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[0];
+			TypeAccess typeAccess = (TypeAccess) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[1];
+			Type jType = (Type) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[2];
 			Operation operation = (Operation) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[3];
 			MMethodDefinition method = (MMethodDefinition) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[4];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[5];
+			Parameter returnParam = (Parameter) result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_black = pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					typeAccess, jType, returnParam, operation, method, uType, sourceMatch, targetMatch);
+					uType, typeAccess, jType, operation, method, returnParam, sourceMatch, targetMatch);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { typeAccess, jType, returnParam, operation, method, uType, sourceMatch,
+				return new Object[] { uType, typeAccess, jType, operation, method, returnParam, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3054,14 +3046,14 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_bindingFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, TypeAccess typeAccess, Type jType, Parameter returnParam,
-			Operation operation, MMethodDefinition method, org.eclipse.uml2.uml.Type uType, Match sourceMatch,
+			AbstractTypeAccess2ReturnParam _this, org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType,
+			Operation operation, MMethodDefinition method, Parameter returnParam, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(typeAccess, jType, returnParam, operation, method, uType,
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(uType, typeAccess, jType, operation, method, returnParam,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, typeAccess, jType, returnParam, operation, method, uType, sourceMatch,
+			return new Object[] { csp, _this, uType, typeAccess, jType, operation, method, returnParam, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3072,11 +3064,11 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, TypeAccess typeAccess, Type jType, Parameter returnParam,
-			Operation operation, MMethodDefinition method, org.eclipse.uml2.uml.Type uType, Match sourceMatch,
+			AbstractTypeAccess2ReturnParam _this, org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType,
+			Operation operation, MMethodDefinition method, Parameter returnParam, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_binding = pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, typeAccess, jType, returnParam, operation, method, uType, sourceMatch, targetMatch);
+				_this, uType, typeAccess, jType, operation, method, returnParam, sourceMatch, targetMatch);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_binding[0];
 
@@ -3084,7 +3076,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, typeAccess, jType, returnParam, operation, method, uType, sourceMatch,
+				return new Object[] { csp, _this, uType, typeAccess, jType, operation, method, returnParam, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3097,19 +3089,19 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_24_5_matchcorrcontext_blackBFBBFBBB(
-			Type jType, Operation operation, MMethodDefinition method, org.eclipse.uml2.uml.Type uType,
+	public static final Iterable<Object[]> pattern_AbstractTypeAccess2ReturnParam_24_5_matchcorrcontext_blackBFFBBBBB(
+			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, MMethodDefinition method,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (ASTNode2Element m2o : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(operation,
-					ASTNode2Element.class, "target")) {
-				if (method.equals(m2o.getSource())) {
-					for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(jType, ASTNode2Element.class, "source")) {
+			for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jType,
+					ASTNode2Element.class, "source")) {
+				if (uType.equals(ne2ne.getTarget())) {
+					for (ASTNode2Element m2o : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(operation, ASTNode2Element.class, "target")) {
 						if (!m2o.equals(ne2ne)) {
-							if (uType.equals(ne2ne.getTarget())) {
-								_result.add(new Object[] { jType, m2o, operation, method, ne2ne, uType, sourceMatch,
+							if (method.equals(m2o.getSource())) {
+								_result.add(new Object[] { uType, m2o, ne2ne, jType, operation, method, sourceMatch,
 										targetMatch });
 							}
 						}
@@ -3133,9 +3125,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_6_createcorrespondence_blackBBBBBBB(
-			TypeAccess typeAccess, Type jType, Parameter returnParam, Operation operation, MMethodDefinition method,
-			org.eclipse.uml2.uml.Type uType, CCMatch ccMatch) {
-		return new Object[] { typeAccess, jType, returnParam, operation, method, uType, ccMatch };
+			org.eclipse.uml2.uml.Type uType, TypeAccess typeAccess, Type jType, Operation operation,
+			MMethodDefinition method, Parameter returnParam, CCMatch ccMatch) {
+		return new Object[] { uType, typeAccess, jType, operation, method, returnParam, ccMatch };
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_24_6_createcorrespondence_greenBFBB(
@@ -3170,9 +3162,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_0BB(
 			TypeAccess typeAccess, Type jType) {
-		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_446950 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_923004 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!jType.equals(__DEC_typeAccess_superInterfaces_446950)) {
+			if (!jType.equals(__DEC_typeAccess_superInterfaces_923004)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3181,7 +3173,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeAccess) {
-		for (Annotation __DEC_typeAccess_type_827461 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAccess_type_269165 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, Annotation.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -3190,9 +3182,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ArrayType __DEC_typeAccess_elementType_198064 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAccess_elementType_178163 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ArrayType.class, "elementType")) {
-			if (!jType.equals(__DEC_typeAccess_elementType_198064)) {
+			if (!jType.equals(__DEC_typeAccess_elementType_178163)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3201,9 +3193,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_3BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ClassDeclaration __DEC_typeAccess_superClass_638276 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAccess_superClass_524461 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ClassDeclaration.class, "superClass")) {
-			if (!jType.equals(__DEC_typeAccess_superClass_638276)) {
+			if (!jType.equals(__DEC_typeAccess_superClass_524461)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3212,9 +3204,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_4BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ParameterizedType __DEC_typeAccess_type_425135 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAccess_type_749028 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ParameterizedType.class, "type")) {
-			if (!jType.equals(__DEC_typeAccess_type_425135)) {
+			if (!jType.equals(__DEC_typeAccess_type_749028)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3223,7 +3215,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess typeAccess) {
-		for (SingleVariableDeclaration __DEC_typeAccess_type_55616 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_typeAccess_type_857509 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, SingleVariableDeclaration.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -3232,7 +3224,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeAccess_value_184652 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAccess_value_638557 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAccess };
 		}
@@ -3280,10 +3272,10 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_28_1_matchtggpattern_blackBBB(
-			Parameter returnParam, Operation operation, org.eclipse.uml2.uml.Type uType) {
-		if (uType.equals(returnParam.getType())) {
-			if (operation.getOwnedParameters().contains(returnParam)) {
-				return new Object[] { returnParam, operation, uType };
+			org.eclipse.uml2.uml.Type uType, Operation operation, Parameter returnParam) {
+		if (operation.getOwnedParameters().contains(returnParam)) {
+			if (uType.equals(returnParam.getType())) {
+				return new Object[] { uType, operation, returnParam };
 			}
 		}
 		return null;
@@ -3313,9 +3305,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Type jType) {
-		if (ruleResult.getSourceObjects().contains(jType)) {
-			return new Object[] { ruleResult, jType };
+			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Type uType) {
+		if (ruleResult.getTargetObjects().contains(uType)) {
+			return new Object[] { ruleResult, uType };
 		}
 		return null;
 	}
@@ -3329,9 +3321,9 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Type uType) {
-		if (ruleResult.getTargetObjects().contains(uType)) {
-			return new Object[] { ruleResult, uType };
+			ModelgeneratorRuleResult ruleResult, Type jType) {
+		if (ruleResult.getSourceObjects().contains(jType)) {
+			return new Object[] { ruleResult, jType };
 		}
 		return null;
 	}
@@ -3369,18 +3361,18 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
 						if (tmpNe2ne instanceof ASTNode2Element) {
 							ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-							ASTNode tmpJType = ne2ne.getSource();
-							if (tmpJType instanceof Type) {
-								Type jType = (Type) tmpJType;
-								Element tmpUType = ne2ne.getTarget();
-								if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-									org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+							Element tmpUType = ne2ne.getTarget();
+							if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+								org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+								ASTNode tmpJType = ne2ne.getSource();
+								if (tmpJType instanceof Type) {
+									Type jType = (Type) tmpJType;
 									if (pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_black_nac_1BB(
 											ruleResult, ne2ne) == null) {
 										if (pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, jType) == null) {
+												ruleResult, uType) == null) {
 											if (pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, uType) == null) {
+													ruleResult, jType) == null) {
 												for (EObject tmpM2o : m2oList.getEntryObjects()) {
 													if (tmpM2o instanceof ASTNode2Element) {
 														ASTNode2Element m2o = (ASTNode2Element) tmpM2o;
@@ -3398,7 +3390,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 																			if (pattern_AbstractTypeAccess2ReturnParam_29_2_isapplicablecore_black_nac_5BB(
 																					ruleResult, method) == null) {
 																				_result.add(new Object[] { ne2neList,
-																						jType, ne2ne, uType, m2oList,
+																						uType, ne2ne, jType, m2oList,
 																						m2o, operation, method,
 																						ruleEntryContainer,
 																						ruleResult });
@@ -3428,14 +3420,14 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_bindingFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, Type jType, ASTNode2Element m2o,
-			Operation operation, MMethodDefinition method, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType,
+			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation, MMethodDefinition method,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jType, m2o, operation, method, ne2ne,
-				uType, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uType, m2o, ne2ne, jType, operation,
+				method, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jType, m2o, operation, method, ne2ne, uType,
+			return new Object[] { csp, _this, isApplicableMatch, uType, m2o, ne2ne, jType, operation, method,
 					ruleResult };
 		}
 		return null;
@@ -3446,11 +3438,11 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 	}
 
 	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, Type jType, ASTNode2Element m2o,
-			Operation operation, MMethodDefinition method, ASTNode2Element ne2ne, org.eclipse.uml2.uml.Type uType,
+			AbstractTypeAccess2ReturnParam _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
+			ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType, Operation operation, MMethodDefinition method,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_binding = pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, jType, m2o, operation, method, ne2ne, uType, ruleResult);
+				_this, isApplicableMatch, uType, m2o, ne2ne, jType, operation, method, ruleResult);
 		if (result_pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_binding[0];
 
@@ -3458,7 +3450,7 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 					csp);
 			if (result_pattern_AbstractTypeAccess2ReturnParam_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jType, m2o, operation, method, ne2ne, uType,
+				return new Object[] { csp, _this, isApplicableMatch, uType, m2o, ne2ne, jType, operation, method,
 						ruleResult };
 			}
 		}
@@ -3472,26 +3464,26 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_5_checknacs_blackBBBBBB(Type jType,
-			ASTNode2Element m2o, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType) {
+	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_5_checknacs_blackBBBBBB(
+			org.eclipse.uml2.uml.Type uType, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType,
+			Operation operation, MMethodDefinition method) {
 		if (!m2o.equals(ne2ne)) {
-			return new Object[] { jType, m2o, operation, method, ne2ne, uType };
+			return new Object[] { uType, m2o, ne2ne, jType, operation, method };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_6_perform_blackBBBBBBB(Type jType,
-			ASTNode2Element m2o, Operation operation, MMethodDefinition method, ASTNode2Element ne2ne,
-			org.eclipse.uml2.uml.Type uType, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_6_perform_blackBBBBBBB(
+			org.eclipse.uml2.uml.Type uType, ASTNode2Element m2o, ASTNode2Element ne2ne, Type jType,
+			Operation operation, MMethodDefinition method, ModelgeneratorRuleResult ruleResult) {
 		if (!m2o.equals(ne2ne)) {
-			return new Object[] { jType, m2o, operation, method, ne2ne, uType, ruleResult };
+			return new Object[] { uType, m2o, ne2ne, jType, operation, method, ruleResult };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_6_perform_greenFBFFBBBBB(Type jType,
-			Operation operation, MMethodDefinition method, org.eclipse.uml2.uml.Type uType,
+	public static final Object[] pattern_AbstractTypeAccess2ReturnParam_29_6_perform_greenBFFBBBFBB(
+			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, MMethodDefinition method,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		TypeAccess typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		TypeAccess2Parameter ta2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
@@ -3504,16 +3496,16 @@ public class AbstractTypeAccess2ReturnParamImpl extends AbstractRuleImpl impleme
 		ruleResult.getSourceObjects().add(typeAccess);
 		ta2p.setSource(typeAccess);
 		ruleResult.getCorrObjects().add(ta2p);
+		operation.getOwnedParameters().add(returnParam);
 		ta2p.setTarget(returnParam);
 		returnParam.setType(uType);
-		operation.getOwnedParameters().add(returnParam);
 		ruleResult.getTargetObjects().add(returnParam);
 		ParameterDirectionKind returnParam_direction_prime = (ParameterDirectionKind) _localVariable_0;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_1);
 		returnParam.setDirection(returnParam_direction_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { typeAccess, jType, ta2p, returnParam, operation, method, uType, ruleResult, csp };
+		return new Object[] { uType, typeAccess, ta2p, jType, operation, method, returnParam, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_AbstractTypeAccess2ReturnParam_29_7_expressionFB(

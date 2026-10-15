@@ -301,8 +301,8 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 				//nothing EMoflonEdge v2p__variable____source = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge v2p__element____target = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge type2Interface__type____source = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge annotation__access____type = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge type2Interface__interf____target = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge type2Interface__interf____target = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge annotation__access____type = (EMoflonEdge) result3_green[16];
 
 				Object[] result4_bindingAndBlack = JavaAnnotation2Comment4SingleVariableDeclarationImpl
 						.pattern_JavaAnnotation2Comment4SingleVariableDeclaration_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
@@ -834,7 +834,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_121(EMoflonEdge _edge_ownedComment) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_ownedComment) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotation2Comment4SingleVariableDeclarationImpl
 				.pattern_JavaAnnotation2Comment4SingleVariableDeclaration_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -898,7 +898,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_132(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_113(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = JavaAnnotation2Comment4SingleVariableDeclarationImpl
 				.pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -1357,107 +1357,104 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_FWD__MATCH_ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
-						(TypeAccess) arguments.get(2), (SingleVariableDeclaration) arguments.get(3),
-						(AnnotationTypeDeclaration) arguments.get(4));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
-						(TypeAccess) arguments.get(2), (SingleVariableDeclaration) arguments.get(3),
-						(AnnotationTypeDeclaration) arguments.get(4));
-				return null;
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
-						(TypeAccess) arguments.get(2), (SingleVariableDeclaration) arguments.get(3),
-						(AnnotationTypeDeclaration) arguments.get(4));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_TYPEACCESS_ASTNODE2ELEMENT_SINGLEVARIABLEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_PARAMETER:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
-						(TypeAccess) arguments.get(2), (ASTNode2Element) arguments.get(3),
-						(SingleVariableDeclaration) arguments.get(4), (Interface) arguments.get(5),
-						(AnnotationTypeDeclaration) arguments.get(6), (ASTNode2Element) arguments.get(7),
-						(Parameter) arguments.get(8));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-				return null;
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_BWD__MATCH_COMMENT_INTERFACE_PARAMETER:
-				return isAppropriate_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
-						(Interface) arguments.get(2), (Parameter) arguments.get(3));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMENT_INTERFACE_PARAMETER:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
-						(Interface) arguments.get(2), (Parameter) arguments.get(3));
-				return null;
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMENT_INTERFACE_PARAMETER:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
-						(Interface) arguments.get(2), (Parameter) arguments.get(3));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_SINGLEVARIABLEDECLARATION_COMMENT_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_PARAMETER:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(ASTNode2Element) arguments.get(1), (SingleVariableDeclaration) arguments.get(2),
-						(Comment) arguments.get(3), (Interface) arguments.get(4),
-						(AnnotationTypeDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6),
-						(Parameter) arguments.get(7));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
-				return null;
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_121__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_132__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_132((EMoflonEdge) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_COMMENT_INTERFACE_ANNOTATIONTYPEDECLARATION_PARAMETER_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((Annotation) arguments.get(0), (TypeAccess) arguments.get(1),
-						(SingleVariableDeclaration) arguments.get(2), (Comment) arguments.get(3),
-						(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
-						(Parameter) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_DEC_FWD__ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				return checkDEC_FWD((Annotation) arguments.get(0), (TypeAccess) arguments.get(1),
-						(SingleVariableDeclaration) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_DEC_BWD__COMMENT_INTERFACE_PARAMETER:
-				return checkDEC_BWD((Comment) arguments.get(0), (Interface) arguments.get(1),
-						(Parameter) arguments.get(2));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_SINGLEVARIABLEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_PARAMETER_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(ASTNode2Element) arguments.get(1), (SingleVariableDeclaration) arguments.get(2),
-						(Interface) arguments.get(3), (AnnotationTypeDeclaration) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (Parameter) arguments.get(6),
-						(ModelgeneratorRuleResult) arguments.get(7));
-			case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_FWD__MATCH_ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
+					(TypeAccess) arguments.get(2), (SingleVariableDeclaration) arguments.get(3),
+					(AnnotationTypeDeclaration) arguments.get(4));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
+					(TypeAccess) arguments.get(2), (SingleVariableDeclaration) arguments.get(3),
+					(AnnotationTypeDeclaration) arguments.get(4));
+			return null;
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Annotation) arguments.get(1),
+					(TypeAccess) arguments.get(2), (SingleVariableDeclaration) arguments.get(3),
+					(AnnotationTypeDeclaration) arguments.get(4));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATION_TYPEACCESS_ASTNODE2ELEMENT_SINGLEVARIABLEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_PARAMETER:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Annotation) arguments.get(1),
+					(TypeAccess) arguments.get(2), (ASTNode2Element) arguments.get(3),
+					(SingleVariableDeclaration) arguments.get(4), (Interface) arguments.get(5),
+					(AnnotationTypeDeclaration) arguments.get(6), (ASTNode2Element) arguments.get(7),
+					(Parameter) arguments.get(8));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+			return null;
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_BWD__MATCH_COMMENT_INTERFACE_PARAMETER:
+			return isAppropriate_BWD((Match) arguments.get(0), (Comment) arguments.get(1), (Interface) arguments.get(2),
+					(Parameter) arguments.get(3));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMENT_INTERFACE_PARAMETER:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+					(Interface) arguments.get(2), (Parameter) arguments.get(3));
+			return null;
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMENT_INTERFACE_PARAMETER:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Comment) arguments.get(1),
+					(Interface) arguments.get(2), (Parameter) arguments.get(3));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_SINGLEVARIABLEDECLARATION_COMMENT_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_PARAMETER:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(SingleVariableDeclaration) arguments.get(2), (Comment) arguments.get(3),
+					(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(ASTNode2Element) arguments.get(6), (Parameter) arguments.get(7));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10));
+			return null;
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_BWD_EMOFLON_EDGE_107__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_107((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPROPRIATE_FWD_EMOFLON_EDGE_113__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_113((EMoflonEdge) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_COMMENT_INTERFACE_ANNOTATIONTYPEDECLARATION_PARAMETER_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Annotation) arguments.get(0), (TypeAccess) arguments.get(1),
+					(SingleVariableDeclaration) arguments.get(2), (Comment) arguments.get(3),
+					(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(Parameter) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_DEC_FWD__ANNOTATION_TYPEACCESS_SINGLEVARIABLEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			return checkDEC_FWD((Annotation) arguments.get(0), (TypeAccess) arguments.get(1),
+					(SingleVariableDeclaration) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___CHECK_DEC_BWD__COMMENT_INTERFACE_PARAMETER:
+			return checkDEC_BWD((Comment) arguments.get(0), (Interface) arguments.get(1), (Parameter) arguments.get(2));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_SINGLEVARIABLEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_PARAMETER_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(SingleVariableDeclaration) arguments.get(2), (Interface) arguments.get(3),
+					(AnnotationTypeDeclaration) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(Parameter) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.JAVA_ANNOTATION2_COMMENT4_SINGLE_VARIABLE_DECLARATION___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2021,8 +2018,8 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 					if (variable.equals(v2p.getSource())) {
 						if (element.equals(v2p.getTarget())) {
 							if (type.equals(type2Interface.getSource())) {
-								if (access.equals(annotation.getType())) {
-									if (interf.equals(type2Interface.getTarget())) {
+								if (interf.equals(type2Interface.getTarget())) {
+									if (access.equals(annotation.getType())) {
 										_result.add(new Object[] { annotation, access, v2p, variable, interf, type,
 												type2Interface, element });
 									}
@@ -2046,16 +2043,16 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 		EMoflonEdge v2p__variable____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge v2p__element____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Interface__type____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge annotation__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge type2Interface__interf____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge annotation__access____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String access__type____type_name_prime = "type";
 		String type__access____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String variable__annotation____annotations_name_prime = "annotations";
 		String v2p__variable____source_name_prime = "source";
 		String v2p__element____target_name_prime = "target";
 		String type2Interface__type____source_name_prime = "source";
-		String annotation__access____type_name_prime = "type";
 		String type2Interface__interf____target_name_prime = "target";
+		String annotation__access____type_name_prime = "type";
 		isApplicableMatch.getAllContextElements().add(annotation);
 		isApplicableMatch.getAllContextElements().add(access);
 		isApplicableMatch.getAllContextElements().add(v2p);
@@ -2082,24 +2079,24 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 		type2Interface__type____source.setSrc(type2Interface);
 		type2Interface__type____source.setTrg(type);
 		isApplicableMatch.getAllContextElements().add(type2Interface__type____source);
-		annotation__access____type.setSrc(annotation);
-		annotation__access____type.setTrg(access);
-		isApplicableMatch.getAllContextElements().add(annotation__access____type);
 		type2Interface__interf____target.setSrc(type2Interface);
 		type2Interface__interf____target.setTrg(interf);
 		isApplicableMatch.getAllContextElements().add(type2Interface__interf____target);
+		annotation__access____type.setSrc(annotation);
+		annotation__access____type.setTrg(access);
+		isApplicableMatch.getAllContextElements().add(annotation__access____type);
 		access__type____type.setName(access__type____type_name_prime);
 		type__access____usagesInTypeAccess.setName(type__access____usagesInTypeAccess_name_prime);
 		variable__annotation____annotations.setName(variable__annotation____annotations_name_prime);
 		v2p__variable____source.setName(v2p__variable____source_name_prime);
 		v2p__element____target.setName(v2p__element____target_name_prime);
 		type2Interface__type____source.setName(type2Interface__type____source_name_prime);
-		annotation__access____type.setName(annotation__access____type_name_prime);
 		type2Interface__interf____target.setName(type2Interface__interf____target_name_prime);
+		annotation__access____type.setName(annotation__access____type_name_prime);
 		return new Object[] { annotation, access, v2p, variable, interf, type, type2Interface, element,
 				isApplicableMatch, access__type____type, type__access____usagesInTypeAccess,
 				variable__annotation____annotations, v2p__variable____source, v2p__element____target,
-				type2Interface__type____source, annotation__access____type, type2Interface__interf____target };
+				type2Interface__type____source, type2Interface__interf____target, annotation__access____type };
 	}
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_2_4_solveCSP_bindingFBBBBBBBBBB(
@@ -2901,10 +2898,10 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_20_2_testcorematchandDECs_black_nac_0BBB(
 			Comment comment, Interface interf, Parameter element) {
-		for (Element __DEC_comment_annotatedElement_990919 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_990919)) {
-				if (!interf.equals(__DEC_comment_annotatedElement_990919)) {
-					if (!element.equals(__DEC_comment_annotatedElement_990919)) {
+		for (Element __DEC_comment_annotatedElement_875608 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_875608)) {
+				if (!interf.equals(__DEC_comment_annotatedElement_875608)) {
+					if (!element.equals(__DEC_comment_annotatedElement_875608)) {
 						return new Object[] { comment, interf, element };
 					}
 				}
@@ -3045,9 +3042,9 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_0BB(
 			Annotation annotation, AnnotationTypeDeclaration type) {
-		for (BodyDeclaration __DEC_annotation_annotations_806938 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (BodyDeclaration __DEC_annotation_annotations_175694 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, BodyDeclaration.class, "annotations")) {
-			if (!type.equals(__DEC_annotation_annotations_806938)) {
+			if (!type.equals(__DEC_annotation_annotations_175694)) {
 				return new Object[] { annotation, type };
 			}
 		}
@@ -3056,7 +3053,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_1B(
 			Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_annotation_value_458281 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_annotation_value_477402 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -3065,9 +3062,9 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess access, AnnotationTypeDeclaration type) {
-		for (AbstractTypeDeclaration __DEC_access_superInterfaces_597413 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_access_superInterfaces_545119 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!type.equals(__DEC_access_superInterfaces_597413)) {
+			if (!type.equals(__DEC_access_superInterfaces_545119)) {
 				return new Object[] { access, type };
 			}
 		}
@@ -3076,7 +3073,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess access) {
-		for (ArrayType __DEC_access_elementType_554008 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_access_elementType_549827 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
 			return new Object[] { access };
 		}
@@ -3085,7 +3082,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_4B(
 			TypeAccess access) {
-		for (ClassDeclaration __DEC_access_superClass_458146 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_access_superClass_3390 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
 			return new Object[] { access };
 		}
@@ -3094,7 +3091,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess access) {
-		for (MethodDeclaration __DEC_access_returnType_534581 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_access_returnType_17723 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
 			return new Object[] { access };
 		}
@@ -3103,7 +3100,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess access) {
-		for (ParameterizedType __DEC_access_type_348359 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_access_type_841284 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
 			return new Object[] { access };
 		}
@@ -3112,9 +3109,9 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_7BB(
 			TypeAccess access, SingleVariableDeclaration variable) {
-		for (SingleVariableDeclaration __DEC_access_type_393461 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_access_type_100129 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, SingleVariableDeclaration.class, "type")) {
-			if (!variable.equals(__DEC_access_type_393461)) {
+			if (!variable.equals(__DEC_access_type_100129)) {
 				return new Object[] { access, variable };
 			}
 		}
@@ -3123,7 +3120,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_21_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess access) {
-		for (AnnotationMemberValuePair __DEC_access_value_687290 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_access_value_78532 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { access };
 		}
@@ -3471,9 +3468,9 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_0BB(
 			Annotation annotation, AnnotationTypeDeclaration type) {
-		for (BodyDeclaration __DEC_annotation_annotations_51832 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (BodyDeclaration __DEC_annotation_annotations_777522 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, BodyDeclaration.class, "annotations")) {
-			if (!type.equals(__DEC_annotation_annotations_51832)) {
+			if (!type.equals(__DEC_annotation_annotations_777522)) {
 				return new Object[] { annotation, type };
 			}
 		}
@@ -3482,7 +3479,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_1B(
 			Annotation annotation) {
-		for (AnnotationMemberValuePair __DEC_annotation_value_115282 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_annotation_value_158895 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(annotation, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { annotation };
 		}
@@ -3491,9 +3488,9 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess access, AnnotationTypeDeclaration type) {
-		for (AbstractTypeDeclaration __DEC_access_superInterfaces_36452 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_access_superInterfaces_815158 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!type.equals(__DEC_access_superInterfaces_36452)) {
+			if (!type.equals(__DEC_access_superInterfaces_815158)) {
 				return new Object[] { access, type };
 			}
 		}
@@ -3502,7 +3499,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_3B(
 			TypeAccess access) {
-		for (ArrayType __DEC_access_elementType_428280 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_access_elementType_929299 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ArrayType.class, "elementType")) {
 			return new Object[] { access };
 		}
@@ -3511,7 +3508,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_4B(
 			TypeAccess access) {
-		for (ClassDeclaration __DEC_access_superClass_117068 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_access_superClass_755830 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ClassDeclaration.class, "superClass")) {
 			return new Object[] { access };
 		}
@@ -3520,7 +3517,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_5B(
 			TypeAccess access) {
-		for (MethodDeclaration __DEC_access_returnType_980421 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_access_returnType_884588 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, MethodDeclaration.class, "returnType")) {
 			return new Object[] { access };
 		}
@@ -3529,7 +3526,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess access) {
-		for (ParameterizedType __DEC_access_type_669613 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_access_type_398518 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, ParameterizedType.class, "type")) {
 			return new Object[] { access };
 		}
@@ -3538,9 +3535,9 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_7BB(
 			TypeAccess access, SingleVariableDeclaration variable) {
-		for (SingleVariableDeclaration __DEC_access_type_965643 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (SingleVariableDeclaration __DEC_access_type_491571 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, SingleVariableDeclaration.class, "type")) {
-			if (!variable.equals(__DEC_access_type_965643)) {
+			if (!variable.equals(__DEC_access_type_491571)) {
 				return new Object[] { access, variable };
 			}
 		}
@@ -3549,7 +3546,7 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_27_1_matchtggpattern_black_nac_8B(
 			TypeAccess access) {
-		for (AnnotationMemberValuePair __DEC_access_value_428645 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_access_value_152197 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(access, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { access };
 		}
@@ -3642,10 +3639,10 @@ public class JavaAnnotation2Comment4SingleVariableDeclarationImpl extends Abstra
 
 	public static final Object[] pattern_JavaAnnotation2Comment4SingleVariableDeclaration_28_1_matchtggpattern_black_nac_0BBB(
 			Comment comment, Interface interf, Parameter element) {
-		for (Element __DEC_comment_annotatedElement_135199 : comment.getAnnotatedElements()) {
-			if (!comment.equals(__DEC_comment_annotatedElement_135199)) {
-				if (!interf.equals(__DEC_comment_annotatedElement_135199)) {
-					if (!element.equals(__DEC_comment_annotatedElement_135199)) {
+		for (Element __DEC_comment_annotatedElement_662227 : comment.getAnnotatedElements()) {
+			if (!comment.equals(__DEC_comment_annotatedElement_662227)) {
+				if (!interf.equals(__DEC_comment_annotatedElement_662227)) {
+					if (!element.equals(__DEC_comment_annotatedElement_662227)) {
 						return new Object[] { comment, interf, element };
 					}
 				}

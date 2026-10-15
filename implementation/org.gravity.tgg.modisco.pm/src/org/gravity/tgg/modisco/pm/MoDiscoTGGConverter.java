@@ -231,7 +231,9 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 
 		MGravityModel newModiscoModel;
 		try {
+			boolean load = this.discoverer.setLoadMode(false);
 			newModiscoModel = this.discoverer.discoverModel(monitor);
+			discoverer.setLoadMode(load);
 		} catch (final DiscoveryException e) {
 			LOGGER.error(e);
 			return false;
@@ -241,6 +243,10 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		}
 
 		final var patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
+		if(patcher == null) {
+			LOGGER.error("No patcher available for synchronization");
+			return false;
+		}
 
 		final Consumer<EObject> changes = change -> {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch");
@@ -249,7 +255,10 @@ public class MoDiscoTGGConverter extends AbstractModiscoTGGConverter implements 
 		};
 
 		final var success = syncProjectFwd(changes, monitor);
-
+		
+		// Unload the newly discovered model as the old one has been updated
+		newModiscoModel.eResource().unload();
+		
 		if (infoEnabled) {
 			final var stop = System.currentTimeMillis();
 			LOGGER.log(Level.INFO, stop + "MoDisco sync project -done: " + (stop - start) + "ms");

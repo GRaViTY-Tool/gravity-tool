@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.Model;
-import org.eclipse.modisco.java.Type;
 
 import org.eclipse.modisco.java.emf.JavaFactory;
 
@@ -102,60 +101,62 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.TypeParameter typeParameter,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, org.eclipse.modisco.java.Package java,
-			MGravityModel model) {
+	public boolean isAppropriate_FWD(Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java) {
 
 		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_0_1_initialbindings_blackBBBBBBB(this, match,
-				typeParameter, lang, object, java, model);
+				object, lang, model, typeParameter, java);
 		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[typeParameter] = " + typeParameter + ", " + "[lang] = " + lang
-					+ ", " + "[object] = " + object + ", " + "[java] = " + java + ", " + "[model] = " + model + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[object] = " + object + ", " + "[lang] = " + lang + ", " + "[model] = " + model
+							+ ", " + "[typeParameter] = " + typeParameter + ", " + "[java] = " + java + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeParameterImpl.pattern_TypeParameter_0_2_SolveCSP_bindingAndBlackFBBBBBBB(
-				this, match, typeParameter, lang, object, java, model);
+				this, match, object, lang, model, typeParameter, java);
 		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[typeParameter] = " + typeParameter + ", " + "[lang] = " + lang
-					+ ", " + "[object] = " + object + ", " + "[java] = " + java + ", " + "[model] = " + model + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
+							+ ", " + "[object] = " + object + ", " + "[lang] = " + lang + ", " + "[model] = " + model
+							+ ", " + "[typeParameter] = " + typeParameter + ", " + "[java] = " + java + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (TypeParameterImpl.pattern_TypeParameter_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = TypeParameterImpl
-					.pattern_TypeParameter_0_4_collectelementstobetranslated_blackBBBBBB(match, typeParameter, lang,
-							object, java, model);
+					.pattern_TypeParameter_0_4_collectelementstobetranslated_blackBBBBBB(match, object, lang, model,
+							typeParameter, java);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[typeParameter] = " + typeParameter + ", " + "[lang] = " + lang + ", " + "[object] = "
-						+ object + ", " + "[java] = " + java + ", " + "[model] = " + model + ".");
+						+ "[object] = " + object + ", " + "[lang] = " + lang + ", " + "[model] = " + model + ", "
+						+ "[typeParameter] = " + typeParameter + ", " + "[java] = " + java + ".");
 			}
-			TypeParameterImpl.pattern_TypeParameter_0_4_collectelementstobetranslated_greenBBBF(match, typeParameter,
-					model);
+			TypeParameterImpl.pattern_TypeParameter_0_4_collectelementstobetranslated_greenBBBF(match, model,
+					typeParameter);
 			//nothing EMoflonEdge model__typeParameter____typeParameters = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_0_5_collectcontextelements_blackBBBBBB(
-					match, typeParameter, lang, object, java, model);
+					match, object, lang, model, typeParameter, java);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[typeParameter] = " + typeParameter + ", " + "[lang] = " + lang + ", " + "[object] = "
-						+ object + ", " + "[java] = " + java + ", " + "[model] = " + model + ".");
+						+ "[object] = " + object + ", " + "[lang] = " + lang + ", " + "[model] = " + model + ", "
+						+ "[typeParameter] = " + typeParameter + ", " + "[java] = " + java + ".");
 			}
-			TypeParameterImpl.pattern_TypeParameter_0_5_collectcontextelements_greenBBBBBFFFFFF(match, lang, object,
-					java, model);
-			//nothing EMoflonEdge java__lang____ownedPackages = (EMoflonEdge) result5_green[5];
-			//nothing EMoflonEdge lang__java____package = (EMoflonEdge) result5_green[6];
-			//nothing EMoflonEdge lang__object____ownedElements = (EMoflonEdge) result5_green[7];
-			//nothing EMoflonEdge object__lang____package = (EMoflonEdge) result5_green[8];
-			//nothing EMoflonEdge model__java____ownedElements = (EMoflonEdge) result5_green[9];
-			//nothing EMoflonEdge java__model____model = (EMoflonEdge) result5_green[10];
+			TypeParameterImpl.pattern_TypeParameter_0_5_collectcontextelements_greenBBBBBFFFFFF(match, object, lang,
+					model, java);
+			//nothing EMoflonEdge model__java____ownedElements = (EMoflonEdge) result5_green[5];
+			//nothing EMoflonEdge java__model____model = (EMoflonEdge) result5_green[6];
+			//nothing EMoflonEdge java__lang____ownedPackages = (EMoflonEdge) result5_green[7];
+			//nothing EMoflonEdge lang__java____package = (EMoflonEdge) result5_green[8];
+			//nothing EMoflonEdge lang__object____ownedElements = (EMoflonEdge) result5_green[9];
+			//nothing EMoflonEdge object__lang____package = (EMoflonEdge) result5_green[10];
 
 			// 
-			TypeParameterImpl.pattern_TypeParameter_0_6_registerobjectstomatch_expressionBBBBBBB(this, match,
-					typeParameter, lang, object, java, model);
+			TypeParameterImpl.pattern_TypeParameter_0_6_registerobjectstomatch_expressionBBBBBBB(this, match, object,
+					lang, model, typeParameter, java);
 			return TypeParameterImpl.pattern_TypeParameter_0_7_expressionF();
 		} else {
 			return TypeParameterImpl.pattern_TypeParameter_0_8_expressionF();
@@ -177,57 +178,57 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result1_bindingAndBlack[0];
+		ClassDeclaration object = (ClassDeclaration) result1_bindingAndBlack[0];
 		TypeGraph pg = (TypeGraph) result1_bindingAndBlack[1];
 		PackageToTPackage langToLang = (PackageToTPackage) result1_bindingAndBlack[2];
-		TypeToTAbstractType objectToObject = (TypeToTAbstractType) result1_bindingAndBlack[3];
-		TPackage tPackageJava = (TPackage) result1_bindingAndBlack[4];
-		PackageToTPackage javaToJava = (PackageToTPackage) result1_bindingAndBlack[5];
-		org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[6];
-		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[7];
-		ClassDeclaration object = (ClassDeclaration) result1_bindingAndBlack[8];
-		TClass tClass = (TClass) result1_bindingAndBlack[9];
-		org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[10];
-		TPackage tPackageLang = (TPackage) result1_bindingAndBlack[11];
-		MGravityModel model = (MGravityModel) result1_bindingAndBlack[12];
+		TPackage tPackageJava = (TPackage) result1_bindingAndBlack[3];
+		org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[4];
+		MGravityModel model = (MGravityModel) result1_bindingAndBlack[5];
+		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result1_bindingAndBlack[6];
+		org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[7];
+		TPackage tPackageLang = (TPackage) result1_bindingAndBlack[8];
+		TypeToTAbstractType objectToObject = (TypeToTAbstractType) result1_bindingAndBlack[9];
+		ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result1_bindingAndBlack[10];
+		PackageToTPackage javaToJava = (PackageToTPackage) result1_bindingAndBlack[11];
+		TClass tClass = (TClass) result1_bindingAndBlack[12];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[13];
 		Object[] result1_green = TypeParameterImpl
-				.pattern_TypeParameter_1_1_performtransformation_greenBFB(typeParameter, tClass);
-		TypeToTAbstractType templateTypeToTClass = (TypeToTAbstractType) result1_green[1];
+				.pattern_TypeParameter_1_1_performtransformation_greenFBB(typeParameter, tClass);
+		TypeToTAbstractType templateTypeToTClass = (TypeToTAbstractType) result1_green[0];
 
 		Object[] result2_black = TypeParameterImpl
-				.pattern_TypeParameter_1_2_collecttranslatedelements_blackBB(typeParameter, templateTypeToTClass);
+				.pattern_TypeParameter_1_2_collecttranslatedelements_blackBB(templateTypeToTClass, typeParameter);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeParameter] = "
-					+ typeParameter + ", " + "[templateTypeToTClass] = " + templateTypeToTClass + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[templateTypeToTClass] = "
+					+ templateTypeToTClass + ", " + "[typeParameter] = " + typeParameter + ".");
 		}
 		Object[] result2_green = TypeParameterImpl
-				.pattern_TypeParameter_1_2_collecttranslatedelements_greenFBB(typeParameter, templateTypeToTClass);
+				.pattern_TypeParameter_1_2_collecttranslatedelements_greenFBB(templateTypeToTClass, typeParameter);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = TypeParameterImpl.pattern_TypeParameter_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(
-				ruleresult, typeParameter, templateTypeToTClass, pg, langToLang, objectToObject, tPackageJava,
-				javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model);
+				ruleresult, object, pg, langToLang, templateTypeToTClass, tPackageJava, lang, model, typeParameter,
+				java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[typeParameter] = " + typeParameter + ", " + "[templateTypeToTClass] = "
-					+ templateTypeToTClass + ", " + "[pg] = " + pg + ", " + "[langToLang] = " + langToLang + ", "
-					+ "[objectToObject] = " + objectToObject + ", " + "[tPackageJava] = " + tPackageJava + ", "
-					+ "[javaToJava] = " + javaToJava + ", " + "[lang] = " + lang + ", " + "[eModelToPg] = " + eModelToPg
-					+ ", " + "[object] = " + object + ", " + "[tClass] = " + tClass + ", " + "[java] = " + java + ", "
-					+ "[tPackageLang] = " + tPackageLang + ", " + "[model] = " + model + ".");
+					+ ", " + "[object] = " + object + ", " + "[pg] = " + pg + ", " + "[langToLang] = " + langToLang
+					+ ", " + "[templateTypeToTClass] = " + templateTypeToTClass + ", " + "[tPackageJava] = "
+					+ tPackageJava + ", " + "[lang] = " + lang + ", " + "[model] = " + model + ", "
+					+ "[typeParameter] = " + typeParameter + ", " + "[java] = " + java + ", " + "[tPackageLang] = "
+					+ tPackageLang + ", " + "[objectToObject] = " + objectToObject + ", " + "[eModelToPg] = "
+					+ eModelToPg + ", " + "[javaToJava] = " + javaToJava + ", " + "[tClass] = " + tClass + ".");
 		}
-		TypeParameterImpl.pattern_TypeParameter_1_3_bookkeepingforedges_greenBBBBBFFF(ruleresult, typeParameter,
-				templateTypeToTClass, tClass, model);
+		TypeParameterImpl.pattern_TypeParameter_1_3_bookkeepingforedges_greenBBBBBFFF(ruleresult, templateTypeToTClass,
+				model, typeParameter, tClass);
 		//nothing EMoflonEdge templateTypeToTClass__typeParameter____source = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge templateTypeToTClass__tClass____target = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge model__typeParameter____typeParameters = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge model__typeParameter____typeParameters = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge templateTypeToTClass__tClass____target = (EMoflonEdge) result3_green[7];
 
 		// 
 		// 
-		TypeParameterImpl.pattern_TypeParameter_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(this, ruleresult,
-				typeParameter, templateTypeToTClass, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang,
-				eModelToPg, object, tClass, java, tPackageLang, model);
+		TypeParameterImpl.pattern_TypeParameter_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(this, ruleresult, object,
+				pg, langToLang, templateTypeToTClass, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+				objectToObject, eModelToPg, javaToJava, tClass);
 		return TypeParameterImpl.pattern_TypeParameter_1_6_expressionFB(ruleresult);
 	}
 
@@ -255,63 +256,63 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_binding[0];
+		ClassDeclaration object = (ClassDeclaration) result2_binding[0];
 		org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result2_binding[1];
-		ClassDeclaration object = (ClassDeclaration) result2_binding[2];
-		org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_binding[3];
-		MGravityModel model = (MGravityModel) result2_binding[4];
-		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_2_2_corematch_blackBFFFFFBFBFBFBB(
-				typeParameter, lang, object, java, model, match)) {
+		MGravityModel model = (MGravityModel) result2_binding[2];
+		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_binding[3];
+		org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_binding[4];
+		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_2_2_corematch_blackBFFFBBBBFFFFFB(object,
+				lang, model, typeParameter, java, match)) {
 			TypeGraph pg = (TypeGraph) result2_black[1];
 			PackageToTPackage langToLang = (PackageToTPackage) result2_black[2];
-			TypeToTAbstractType objectToObject = (TypeToTAbstractType) result2_black[3];
-			TPackage tPackageJava = (TPackage) result2_black[4];
-			PackageToTPackage javaToJava = (PackageToTPackage) result2_black[5];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[7];
-			TClass tClass = (TClass) result2_black[9];
-			TPackage tPackageLang = (TPackage) result2_black[11];
+			TPackage tPackageJava = (TPackage) result2_black[3];
+			TPackage tPackageLang = (TPackage) result2_black[8];
+			TypeToTAbstractType objectToObject = (TypeToTAbstractType) result2_black[9];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[10];
+			PackageToTPackage javaToJava = (PackageToTPackage) result2_black[11];
+			TClass tClass = (TClass) result2_black[12];
 			// ForEach 
 			for (Object[] result3_black : TypeParameterImpl.pattern_TypeParameter_2_3_findcontext_blackBBBBBBBBBBBBB(
-					typeParameter, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object,
-					tClass, java, tPackageLang, model)) {
+					object, pg, langToLang, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+					objectToObject, eModelToPg, javaToJava, tClass)) {
 				Object[] result3_green = TypeParameterImpl
-						.pattern_TypeParameter_2_3_findcontext_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFFF(typeParameter, pg,
-								langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object, tClass,
-								java, tPackageLang, model);
+						.pattern_TypeParameter_2_3_findcontext_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFFF(object, pg,
+								langToLang, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+								objectToObject, eModelToPg, javaToJava, tClass);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[13];
-				//nothing EMoflonEdge pg__tPackageJava____packages = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge javaToJava__tPackageJava____target = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge tPackageJava__tPackageLang____subpackages = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge tPackageLang__tPackageJava____parent = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge objectToObject__object____source = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge java__lang____ownedPackages = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge lang__java____package = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge javaToJava__java____source = (EMoflonEdge) result3_green[22];
-				//nothing EMoflonEdge objectToObject__tClass____target = (EMoflonEdge) result3_green[23];
-				//nothing EMoflonEdge langToLang__lang____source = (EMoflonEdge) result3_green[24];
-				//nothing EMoflonEdge langToLang__tPackageLang____target = (EMoflonEdge) result3_green[25];
-				//nothing EMoflonEdge tPackageLang__tClass____classes = (EMoflonEdge) result3_green[26];
-				//nothing EMoflonEdge lang__object____ownedElements = (EMoflonEdge) result3_green[27];
-				//nothing EMoflonEdge object__lang____package = (EMoflonEdge) result3_green[28];
-				//nothing EMoflonEdge model__java____ownedElements = (EMoflonEdge) result3_green[29];
-				//nothing EMoflonEdge java__model____model = (EMoflonEdge) result3_green[30];
-				//nothing EMoflonEdge model__typeParameter____typeParameters = (EMoflonEdge) result3_green[31];
-				//nothing EMoflonEdge eModelToPg__model____source = (EMoflonEdge) result3_green[32];
+				//nothing EMoflonEdge tPackageJava__tPackageLang____subpackages = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tPackageLang__tPackageJava____parent = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge model__java____ownedElements = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge java__model____model = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge pg__tPackageJava____packages = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge java__lang____ownedPackages = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge lang__java____package = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge langToLang__lang____source = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge model__typeParameter____typeParameters = (EMoflonEdge) result3_green[22];
+				//nothing EMoflonEdge tPackageLang__tClass____classes = (EMoflonEdge) result3_green[23];
+				//nothing EMoflonEdge lang__object____ownedElements = (EMoflonEdge) result3_green[24];
+				//nothing EMoflonEdge object__lang____package = (EMoflonEdge) result3_green[25];
+				//nothing EMoflonEdge objectToObject__object____source = (EMoflonEdge) result3_green[26];
+				//nothing EMoflonEdge eModelToPg__pg____target = (EMoflonEdge) result3_green[27];
+				//nothing EMoflonEdge eModelToPg__model____source = (EMoflonEdge) result3_green[28];
+				//nothing EMoflonEdge javaToJava__tPackageJava____target = (EMoflonEdge) result3_green[29];
+				//nothing EMoflonEdge javaToJava__java____source = (EMoflonEdge) result3_green[30];
+				//nothing EMoflonEdge objectToObject__tClass____target = (EMoflonEdge) result3_green[31];
+				//nothing EMoflonEdge langToLang__tPackageLang____target = (EMoflonEdge) result3_green[32];
 
 				Object[] result4_bindingAndBlack = TypeParameterImpl
 						.pattern_TypeParameter_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBBBBB(this, isApplicableMatch,
-								typeParameter, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang,
-								eModelToPg, object, tClass, java, tPackageLang, model);
+								object, pg, langToLang, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+								objectToObject, eModelToPg, javaToJava, tClass);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[typeParameter] = " + typeParameter
-							+ ", " + "[pg] = " + pg + ", " + "[langToLang] = " + langToLang + ", "
-							+ "[objectToObject] = " + objectToObject + ", " + "[tPackageJava] = " + tPackageJava + ", "
-							+ "[javaToJava] = " + javaToJava + ", " + "[lang] = " + lang + ", " + "[eModelToPg] = "
-							+ eModelToPg + ", " + "[object] = " + object + ", " + "[tClass] = " + tClass + ", "
-							+ "[java] = " + java + ", " + "[tPackageLang] = " + tPackageLang + ", " + "[model] = "
-							+ model + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[object] = " + object + ", "
+							+ "[pg] = " + pg + ", " + "[langToLang] = " + langToLang + ", " + "[tPackageJava] = "
+							+ tPackageJava + ", " + "[lang] = " + lang + ", " + "[model] = " + model + ", "
+							+ "[typeParameter] = " + typeParameter + ", " + "[java] = " + java + ", "
+							+ "[tPackageLang] = " + tPackageLang + ", " + "[objectToObject] = " + objectToObject + ", "
+							+ "[eModelToPg] = " + eModelToPg + ", " + "[javaToJava] = " + javaToJava + ", "
+							+ "[tClass] = " + tClass + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -340,14 +341,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.TypeParameter typeParameter,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, org.eclipse.modisco.java.Package java,
-			MGravityModel model) {
-		match.registerObject("typeParameter", typeParameter);
-		match.registerObject("lang", lang);
+	public void registerObjectsToMatch_FWD(Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java) {
 		match.registerObject("object", object);
-		match.registerObject("java", java);
+		match.registerObject("lang", lang);
 		match.registerObject("model", model);
+		match.registerObject("typeParameter", typeParameter);
+		match.registerObject("java", java);
 
 	}
 
@@ -356,9 +357,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.TypeParameter typeParameter,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, org.eclipse.modisco.java.Package java,
-			MGravityModel model) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -387,11 +388,11 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, TPackage tPackageJava, PackageToTPackage javaToJava,
-			org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDeclaration object, TypeGraph pg,
+			PackageToTPackage langToLang, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java, TPackage tPackageLang, TypeToTAbstractType objectToObject,
+			ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava, TClass tClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -406,19 +407,19 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("typeParameter", typeParameter);
+		isApplicableMatch.registerObject("object", object);
 		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("langToLang", langToLang);
-		isApplicableMatch.registerObject("objectToObject", objectToObject);
 		isApplicableMatch.registerObject("tPackageJava", tPackageJava);
-		isApplicableMatch.registerObject("javaToJava", javaToJava);
 		isApplicableMatch.registerObject("lang", lang);
-		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
-		isApplicableMatch.registerObject("object", object);
-		isApplicableMatch.registerObject("tClass", tClass);
+		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("typeParameter", typeParameter);
 		isApplicableMatch.registerObject("java", java);
 		isApplicableMatch.registerObject("tPackageLang", tPackageLang);
-		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("objectToObject", objectToObject);
+		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
+		isApplicableMatch.registerObject("javaToJava", javaToJava);
+		isApplicableMatch.registerObject("tClass", tClass);
 		return csp;
 	}
 
@@ -436,24 +437,24 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject typeParameter, EObject templateTypeToTClass,
-			EObject pg, EObject langToLang, EObject objectToObject, EObject tPackageJava, EObject javaToJava,
-			EObject lang, EObject eModelToPg, EObject object, EObject tClass, EObject java, EObject tPackageLang,
-			EObject model) {
-		ruleresult.registerObject("typeParameter", typeParameter);
-		ruleresult.registerObject("templateTypeToTClass", templateTypeToTClass);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject object, EObject pg, EObject langToLang,
+			EObject templateTypeToTClass, EObject tPackageJava, EObject lang, EObject model, EObject typeParameter,
+			EObject java, EObject tPackageLang, EObject objectToObject, EObject eModelToPg, EObject javaToJava,
+			EObject tClass) {
+		ruleresult.registerObject("object", object);
 		ruleresult.registerObject("pg", pg);
 		ruleresult.registerObject("langToLang", langToLang);
-		ruleresult.registerObject("objectToObject", objectToObject);
+		ruleresult.registerObject("templateTypeToTClass", templateTypeToTClass);
 		ruleresult.registerObject("tPackageJava", tPackageJava);
-		ruleresult.registerObject("javaToJava", javaToJava);
 		ruleresult.registerObject("lang", lang);
-		ruleresult.registerObject("eModelToPg", eModelToPg);
-		ruleresult.registerObject("object", object);
-		ruleresult.registerObject("tClass", tClass);
+		ruleresult.registerObject("model", model);
+		ruleresult.registerObject("typeParameter", typeParameter);
 		ruleresult.registerObject("java", java);
 		ruleresult.registerObject("tPackageLang", tPackageLang);
-		ruleresult.registerObject("model", model);
+		ruleresult.registerObject("objectToObject", objectToObject);
+		ruleresult.registerObject("eModelToPg", eModelToPg);
+		ruleresult.registerObject("javaToJava", javaToJava);
+		ruleresult.registerObject("tClass", tClass);
 
 	}
 
@@ -472,23 +473,23 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass,
-			TPackage tPackageLang) {
+	public boolean isAppropriate_BWD(Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang,
+			TClass tClass) {
 
 		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_10_1_initialbindings_blackBBBBBB(this, match,
-				pg, tPackageJava, tClass, tPackageLang);
+				pg, tPackageJava, tPackageLang, tClass);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", "
-					+ "[tClass] = " + tClass + ", " + "[tPackageLang] = " + tPackageLang + ".");
+					+ "[tPackageLang] = " + tPackageLang + ", " + "[tClass] = " + tClass + ".");
 		}
 
 		Object[] result2_bindingAndBlack = TypeParameterImpl.pattern_TypeParameter_10_2_SolveCSP_bindingAndBlackFBBBBBB(
-				this, match, pg, tPackageJava, tClass, tPackageLang);
+				this, match, pg, tPackageJava, tPackageLang, tClass);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[match] = " + match + ", " + "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", "
-					+ "[tClass] = " + tClass + ", " + "[tPackageLang] = " + tPackageLang + ".");
+					+ "[tPackageLang] = " + tPackageLang + ", " + "[tClass] = " + tClass + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
@@ -496,30 +497,30 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 			Object[] result4_black = TypeParameterImpl
 					.pattern_TypeParameter_10_4_collectelementstobetranslated_blackBBBBB(match, pg, tPackageJava,
-							tClass, tPackageLang);
+							tPackageLang, tClass);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", " + "[tClass] = " + tClass
-						+ ", " + "[tPackageLang] = " + tPackageLang + ".");
+						+ "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", " + "[tPackageLang] = "
+						+ tPackageLang + ", " + "[tClass] = " + tClass + ".");
 			}
 
 			Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_10_5_collectcontextelements_blackBBBBB(
-					match, pg, tPackageJava, tClass, tPackageLang);
+					match, pg, tPackageJava, tPackageLang, tClass);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", " + "[tClass] = " + tClass
-						+ ", " + "[tPackageLang] = " + tPackageLang + ".");
+						+ "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", " + "[tPackageLang] = "
+						+ tPackageLang + ", " + "[tClass] = " + tClass + ".");
 			}
 			TypeParameterImpl.pattern_TypeParameter_10_5_collectcontextelements_greenBBBBBFFFF(match, pg, tPackageJava,
-					tClass, tPackageLang);
-			//nothing EMoflonEdge pg__tPackageJava____packages = (EMoflonEdge) result5_green[5];
-			//nothing EMoflonEdge tPackageJava__tPackageLang____subpackages = (EMoflonEdge) result5_green[6];
-			//nothing EMoflonEdge tPackageLang__tPackageJava____parent = (EMoflonEdge) result5_green[7];
+					tPackageLang, tClass);
+			//nothing EMoflonEdge tPackageJava__tPackageLang____subpackages = (EMoflonEdge) result5_green[5];
+			//nothing EMoflonEdge tPackageLang__tPackageJava____parent = (EMoflonEdge) result5_green[6];
+			//nothing EMoflonEdge pg__tPackageJava____packages = (EMoflonEdge) result5_green[7];
 			//nothing EMoflonEdge tPackageLang__tClass____classes = (EMoflonEdge) result5_green[8];
 
 			// 
 			TypeParameterImpl.pattern_TypeParameter_10_6_registerobjectstomatch_expressionBBBBBB(this, match, pg,
-					tPackageJava, tClass, tPackageLang);
+					tPackageJava, tPackageLang, tClass);
 			return TypeParameterImpl.pattern_TypeParameter_10_7_expressionF();
 		} else {
 			return TypeParameterImpl.pattern_TypeParameter_10_8_expressionF();
@@ -556,12 +557,12 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass,
-			TPackage tPackageLang) {
+	public void registerObjectsToMatch_BWD(Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang,
+			TClass tClass) {
 		match.registerObject("pg", pg);
 		match.registerObject("tPackageJava", tPackageJava);
-		match.registerObject("tClass", tClass);
 		match.registerObject("tPackageLang", tPackageLang);
+		match.registerObject("tClass", tClass);
 
 	}
 
@@ -570,8 +571,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass,
-			TPackage tPackageLang) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang,
+			TClass tClass) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -625,8 +626,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// ForEach 
 		for (Object[] result2_black : TypeParameterImpl.pattern_TypeParameter_17_2_testcorematchandDECs_blackBFFF(pg)) {
 			TPackage tPackageJava = (TPackage) result2_black[1];
-			TClass tClass = (TClass) result2_black[2];
-			TPackage tPackageLang = (TPackage) result2_black[3];
+			TPackage tPackageLang = (TPackage) result2_black[2];
+			TClass tClass = (TClass) result2_black[3];
 			Object[] result2_green = TypeParameterImpl
 					.pattern_TypeParameter_17_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -634,7 +635,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			// 
 			if (TypeParameterImpl
 					.pattern_TypeParameter_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(this, match,
-							pg, tPackageJava, tClass, tPackageLang)) {
+							pg, tPackageJava, tPackageLang, tClass)) {
 				// 
 				if (TypeParameterImpl
 						.pattern_TypeParameter_17_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -666,7 +667,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_94(EMoflonEdge _edge_typeParameters) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_52(EMoflonEdge _edge_typeParameters) {
 
 		Object[] result1_bindingAndBlack = TypeParameterImpl
 				.pattern_TypeParameter_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -682,11 +683,11 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// ForEach 
 		for (Object[] result2_black : TypeParameterImpl
 				.pattern_TypeParameter_18_2_testcorematchandDECs_blackFFFFFB(_edge_typeParameters)) {
-			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_black[0];
+			ClassDeclaration object = (ClassDeclaration) result2_black[0];
 			org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result2_black[1];
-			ClassDeclaration object = (ClassDeclaration) result2_black[2];
-			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_black[3];
-			MGravityModel model = (MGravityModel) result2_black[4];
+			MGravityModel model = (MGravityModel) result2_black[2];
+			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_black[3];
+			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_black[4];
 			Object[] result2_green = TypeParameterImpl
 					.pattern_TypeParameter_18_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -694,7 +695,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			// 
 			if (TypeParameterImpl
 					.pattern_TypeParameter_18_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(this,
-							match, typeParameter, lang, object, java, model)) {
+							match, object, lang, model, typeParameter, java)) {
 				// 
 				if (TypeParameterImpl
 						.pattern_TypeParameter_18_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -736,22 +737,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tPackageJava", "tName", "java", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
-
 		if (!__helper.hasExpectedValue("object", "name", "Object", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tClass", "tName", "Object", ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tPackageJava", "tName", "java", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
 		if (!__helper.hasExpectedValue("tPackageLang", "tName", "lang", ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
+		if (!__helper.hasExpectedValue("tClass", "tName", "Object", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -786,22 +787,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		if (!__helper.hasExpectedValue("tPackageJava", "tName", "java", ComparingOperator.EQUAL)) {
-			ruleResult.setSuccess(false);
-			return ruleResult;
-		}
-
 		if (!__helper.hasExpectedValue("object", "name", "Object", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
-		if (!__helper.hasExpectedValue("tClass", "tName", "Object", ComparingOperator.EQUAL)) {
+		if (!__helper.hasExpectedValue("tPackageJava", "tName", "java", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
 
 		if (!__helper.hasExpectedValue("tPackageLang", "tName", "lang", ComparingOperator.EQUAL)) {
+			ruleResult.setSuccess(false);
+			return ruleResult;
+		}
+
+		if (!__helper.hasExpectedValue("tClass", "tName", "Object", ComparingOperator.EQUAL)) {
 			ruleResult.setSuccess(false);
 			return ruleResult;
 		}
@@ -841,55 +842,54 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_bindingAndBlack[0];
+		ClassDeclaration object = (ClassDeclaration) result2_bindingAndBlack[0];
 		TypeGraph pg = (TypeGraph) result2_bindingAndBlack[1];
 		TPackage tPackageJava = (TPackage) result2_bindingAndBlack[2];
 		org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[3];
-		ClassDeclaration object = (ClassDeclaration) result2_bindingAndBlack[4];
-		TClass tClass = (TClass) result2_bindingAndBlack[5];
+		MGravityModel model = (MGravityModel) result2_bindingAndBlack[4];
+		org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result2_bindingAndBlack[5];
 		org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[6];
 		TPackage tPackageLang = (TPackage) result2_bindingAndBlack[7];
-		MGravityModel model = (MGravityModel) result2_bindingAndBlack[8];
+		TClass tClass = (TClass) result2_bindingAndBlack[8];
 
 		Object[] result3_bindingAndBlack = TypeParameterImpl
-				.pattern_TypeParameter_21_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(this, typeParameter, pg, tPackageJava,
-						lang, object, tClass, java, tPackageLang, model, sourceMatch, targetMatch);
+				.pattern_TypeParameter_21_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(this, object, pg, tPackageJava, lang,
+						model, typeParameter, java, tPackageLang, tClass, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[typeParameter] = " + typeParameter + ", " + "[pg] = " + pg + ", " + "[tPackageJava] = "
-					+ tPackageJava + ", " + "[lang] = " + lang + ", " + "[object] = " + object + ", " + "[tClass] = "
-					+ tClass + ", " + "[java] = " + java + ", " + "[tPackageLang] = " + tPackageLang + ", "
-					+ "[model] = " + model + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
-					+ targetMatch + ".");
+					+ "[object] = " + object + ", " + "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", "
+					+ "[lang] = " + lang + ", " + "[model] = " + model + ", " + "[typeParameter] = " + typeParameter
+					+ ", " + "[java] = " + java + ", " + "[tPackageLang] = " + tPackageLang + ", " + "[tClass] = "
+					+ tClass + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (TypeParameterImpl.pattern_TypeParameter_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : TypeParameterImpl
-					.pattern_TypeParameter_21_5_matchcorrcontext_blackBFFBFBFBBBBBBB(pg, tPackageJava, lang, object,
-							tClass, java, tPackageLang, model, sourceMatch, targetMatch)) {
-				PackageToTPackage langToLang = (PackageToTPackage) result5_black[1];
-				TypeToTAbstractType objectToObject = (TypeToTAbstractType) result5_black[2];
-				PackageToTPackage javaToJava = (PackageToTPackage) result5_black[4];
-				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result5_black[6];
+					.pattern_TypeParameter_21_5_matchcorrcontext_blackBBFBBBBBFFFBBB(object, pg, tPackageJava, lang,
+							model, java, tPackageLang, tClass, sourceMatch, targetMatch)) {
+				PackageToTPackage langToLang = (PackageToTPackage) result5_black[2];
+				TypeToTAbstractType objectToObject = (TypeToTAbstractType) result5_black[8];
+				ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result5_black[9];
+				PackageToTPackage javaToJava = (PackageToTPackage) result5_black[10];
 				Object[] result5_green = TypeParameterImpl.pattern_TypeParameter_21_5_matchcorrcontext_greenBBBBBBF(
-						langToLang, objectToObject, javaToJava, eModelToPg, sourceMatch, targetMatch);
+						langToLang, objectToObject, eModelToPg, javaToJava, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[6];
 
 				Object[] result6_black = TypeParameterImpl
-						.pattern_TypeParameter_21_6_createcorrespondence_blackBBBBBBBBBB(typeParameter, pg,
-								tPackageJava, lang, object, tClass, java, tPackageLang, model, ccMatch);
+						.pattern_TypeParameter_21_6_createcorrespondence_blackBBBBBBBBBB(object, pg, tPackageJava, lang,
+								model, typeParameter, java, tPackageLang, tClass, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[typeParameter] = "
-							+ typeParameter + ", " + "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", "
-							+ "[lang] = " + lang + ", " + "[object] = " + object + ", " + "[tClass] = " + tClass + ", "
-							+ "[java] = " + java + ", " + "[tPackageLang] = " + tPackageLang + ", " + "[model] = "
-							+ model + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[object] = " + object
+							+ ", " + "[pg] = " + pg + ", " + "[tPackageJava] = " + tPackageJava + ", " + "[lang] = "
+							+ lang + ", " + "[model] = " + model + ", " + "[typeParameter] = " + typeParameter + ", "
+							+ "[java] = " + java + ", " + "[tPackageLang] = " + tPackageLang + ", " + "[tClass] = "
+							+ tClass + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				TypeParameterImpl.pattern_TypeParameter_21_6_createcorrespondence_greenBFBB(typeParameter, tClass,
+				TypeParameterImpl.pattern_TypeParameter_21_6_createcorrespondence_greenFBBB(typeParameter, tClass,
 						ccMatch);
-				//nothing TypeToTAbstractType templateTypeToTClass = (TypeToTAbstractType) result6_green[1];
+				//nothing TypeToTAbstractType templateTypeToTClass = (TypeToTAbstractType) result6_green[0];
 
 				Object[] result7_black = TypeParameterImpl
 						.pattern_TypeParameter_21_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -911,10 +911,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg,
-			TPackage tPackageJava, org.eclipse.modisco.java.Package lang, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(ClassDeclaration object, TypeGraph pg, TPackage tPackageJava,
+			org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TClass tClass, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -943,11 +943,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(org.eclipse.modisco.java.TypeParameter typeParameter,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, org.eclipse.modisco.java.Package java,
-			MGravityModel model) {// 
-		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_24_1_matchtggpattern_blackBBBBB(typeParameter,
-				lang, object, java, model);
+	public boolean checkDEC_FWD(ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {// 
+		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_24_1_matchtggpattern_blackBBBBB(object, lang,
+				model, typeParameter, java);
 		if (result1_black != null) {
 			return TypeParameterImpl.pattern_TypeParameter_24_2_expressionF();
 		} else {
@@ -961,9 +960,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {// 
+	public boolean checkDEC_BWD(TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {// 
 		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_25_1_matchtggpattern_blackBBBB(pg,
-				tPackageJava, tClass, tPackageLang);
+				tPackageJava, tPackageLang, tClass);
 		if (result1_black != null) {
 			return TypeParameterImpl.pattern_TypeParameter_25_2_expressionF();
 		} else {
@@ -978,7 +977,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType objectToObjectParameter) {
+			ModelToTypeGraph eModelToPgParameter) {
 
 		Object[] result1_black = TypeParameterImpl.pattern_TypeParameter_26_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -991,57 +990,57 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// ForEach 
 		for (Object[] result2_black : TypeParameterImpl
 				.pattern_TypeParameter_26_2_isapplicablecore_blackFFFFFFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList objectToObjectList = (RuleEntryList) result2_black[0];
-			TypeGraph pg = (TypeGraph) result2_black[1];
-			TPackage tPackageJava = (TPackage) result2_black[2];
-			TPackage tPackageLang = (TPackage) result2_black[3];
-			TClass tClass = (TClass) result2_black[4];
-			TypeToTAbstractType objectToObject = (TypeToTAbstractType) result2_black[5];
-			ClassDeclaration object = (ClassDeclaration) result2_black[6];
-			org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result2_black[7];
-			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_black[8];
-			PackageToTPackage javaToJava = (PackageToTPackage) result2_black[9];
-			MGravityModel model = (MGravityModel) result2_black[10];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[11];
-			PackageToTPackage langToLang = (PackageToTPackage) result2_black[12];
+			//nothing RuleEntryList eModelToPgList = (RuleEntryList) result2_black[0];
+			ClassDeclaration object = (ClassDeclaration) result2_black[1];
+			org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result2_black[2];
+			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result2_black[3];
+			MGravityModel model = (MGravityModel) result2_black[4];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result2_black[5];
+			TypeGraph pg = (TypeGraph) result2_black[6];
+			TPackage tPackageJava = (TPackage) result2_black[7];
+			TPackage tPackageLang = (TPackage) result2_black[8];
+			TClass tClass = (TClass) result2_black[9];
+			TypeToTAbstractType objectToObject = (TypeToTAbstractType) result2_black[10];
+			PackageToTPackage langToLang = (PackageToTPackage) result2_black[11];
+			PackageToTPackage javaToJava = (PackageToTPackage) result2_black[12];
 
 			Object[] result3_bindingAndBlack = TypeParameterImpl
-					.pattern_TypeParameter_26_3_solveCSP_bindingAndBlackFBBBBBBBBBBBBBBB(this, isApplicableMatch, pg,
-							langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object, tClass,
-							java, tPackageLang, model, ruleResult);
+					.pattern_TypeParameter_26_3_solveCSP_bindingAndBlackFBBBBBBBBBBBBBBB(this, isApplicableMatch,
+							object, pg, langToLang, tPackageJava, lang, model, java, tPackageLang, objectToObject,
+							eModelToPg, javaToJava, tClass, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pg] = " + pg + ", "
-						+ "[langToLang] = " + langToLang + ", " + "[objectToObject] = " + objectToObject + ", "
-						+ "[tPackageJava] = " + tPackageJava + ", " + "[javaToJava] = " + javaToJava + ", "
-						+ "[lang] = " + lang + ", " + "[eModelToPg] = " + eModelToPg + ", " + "[object] = " + object
-						+ ", " + "[tClass] = " + tClass + ", " + "[java] = " + java + ", " + "[tPackageLang] = "
-						+ tPackageLang + ", " + "[model] = " + model + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[object] = " + object + ", "
+						+ "[pg] = " + pg + ", " + "[langToLang] = " + langToLang + ", " + "[tPackageJava] = "
+						+ tPackageJava + ", " + "[lang] = " + lang + ", " + "[model] = " + model + ", " + "[java] = "
+						+ java + ", " + "[tPackageLang] = " + tPackageLang + ", " + "[objectToObject] = "
+						+ objectToObject + ", " + "[eModelToPg] = " + eModelToPg + ", " + "[javaToJava] = " + javaToJava
+						+ ", " + "[tClass] = " + tClass + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (TypeParameterImpl.pattern_TypeParameter_26_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_26_5_checknacs_blackBBBBBBBBBBBB(pg,
-						langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object, tClass, java,
-						tPackageLang, model);
+				Object[] result5_black = TypeParameterImpl.pattern_TypeParameter_26_5_checknacs_blackBBBBBBBBBBBB(
+						object, pg, langToLang, tPackageJava, lang, model, java, tPackageLang, objectToObject,
+						eModelToPg, javaToJava, tClass);
 				if (result5_black != null) {
 
-					Object[] result6_black = TypeParameterImpl.pattern_TypeParameter_26_6_perform_blackBBBBBBBBBBBBB(pg,
-							langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object, tClass,
-							java, tPackageLang, model, ruleResult);
+					Object[] result6_black = TypeParameterImpl.pattern_TypeParameter_26_6_perform_blackBBBBBBBBBBBBB(
+							object, pg, langToLang, tPackageJava, lang, model, java, tPackageLang, objectToObject,
+							eModelToPg, javaToJava, tClass, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pg] = " + pg + ", "
-								+ "[langToLang] = " + langToLang + ", " + "[objectToObject] = " + objectToObject + ", "
-								+ "[tPackageJava] = " + tPackageJava + ", " + "[javaToJava] = " + javaToJava + ", "
-								+ "[lang] = " + lang + ", " + "[eModelToPg] = " + eModelToPg + ", " + "[object] = "
-								+ object + ", " + "[tClass] = " + tClass + ", " + "[java] = " + java + ", "
-								+ "[tPackageLang] = " + tPackageLang + ", " + "[model] = " + model + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[object] = " + object
+								+ ", " + "[pg] = " + pg + ", " + "[langToLang] = " + langToLang + ", "
+								+ "[tPackageJava] = " + tPackageJava + ", " + "[lang] = " + lang + ", " + "[model] = "
+								+ model + ", " + "[java] = " + java + ", " + "[tPackageLang] = " + tPackageLang + ", "
+								+ "[objectToObject] = " + objectToObject + ", " + "[eModelToPg] = " + eModelToPg + ", "
+								+ "[javaToJava] = " + javaToJava + ", " + "[tClass] = " + tClass + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					TypeParameterImpl.pattern_TypeParameter_26_6_perform_greenFFBBB(tClass, model, ruleResult);
-					//nothing org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result6_green[0];
-					//nothing TypeToTAbstractType templateTypeToTClass = (TypeToTAbstractType) result6_green[1];
+					TypeParameterImpl.pattern_TypeParameter_26_6_perform_greenFBFBB(model, tClass, ruleResult);
+					//nothing TypeToTAbstractType templateTypeToTClass = (TypeToTAbstractType) result6_green[0];
+					//nothing org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result6_green[2];
 
 				} else {
 				}
@@ -1058,11 +1057,11 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph pg,
-			PackageToTPackage langToLang, TypeToTAbstractType objectToObject, TPackage tPackageJava,
-			PackageToTPackage javaToJava, org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg,
-			ClassDeclaration object, TClass tClass, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
-			MGravityModel model, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDeclaration object, TypeGraph pg,
+			PackageToTPackage langToLang, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
+			TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava,
+			TClass tClass, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1077,18 +1076,18 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("object", object);
 		isApplicableMatch.registerObject("pg", pg);
 		isApplicableMatch.registerObject("langToLang", langToLang);
-		isApplicableMatch.registerObject("objectToObject", objectToObject);
 		isApplicableMatch.registerObject("tPackageJava", tPackageJava);
-		isApplicableMatch.registerObject("javaToJava", javaToJava);
 		isApplicableMatch.registerObject("lang", lang);
-		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
-		isApplicableMatch.registerObject("object", object);
-		isApplicableMatch.registerObject("tClass", tClass);
+		isApplicableMatch.registerObject("model", model);
 		isApplicableMatch.registerObject("java", java);
 		isApplicableMatch.registerObject("tPackageLang", tPackageLang);
-		isApplicableMatch.registerObject("model", model);
+		isApplicableMatch.registerObject("objectToObject", objectToObject);
+		isApplicableMatch.registerObject("eModelToPg", eModelToPg);
+		isApplicableMatch.registerObject("javaToJava", javaToJava);
+		isApplicableMatch.registerObject("tClass", tClass);
 		return csp;
 	}
 
@@ -1109,125 +1108,124 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD__MATCH_TYPEPARAMETER_PACKAGE_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL:
-				return isAppropriate_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.TypeParameter) arguments.get(1),
-						(org.eclipse.modisco.java.Package) arguments.get(2), (ClassDeclaration) arguments.get(3),
-						(org.eclipse.modisco.java.Package) arguments.get(4), (MGravityModel) arguments.get(5));
-			case RulesPackage.TYPE_PARAMETER___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_TYPEPARAMETER_PACKAGE_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL:
-				registerObjectsToMatch_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.TypeParameter) arguments.get(1),
-						(org.eclipse.modisco.java.Package) arguments.get(2), (ClassDeclaration) arguments.get(3),
-						(org.eclipse.modisco.java.Package) arguments.get(4), (MGravityModel) arguments.get(5));
-				return null;
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_TYPEPARAMETER_PACKAGE_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.TypeParameter) arguments.get(1),
-						(org.eclipse.modisco.java.Package) arguments.get(2), (ClassDeclaration) arguments.get(3),
-						(org.eclipse.modisco.java.Package) arguments.get(4), (MGravityModel) arguments.get(5));
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TYPEPARAMETER_TYPEGRAPH_PACKAGETOTPACKAGE_TYPETOTABSTRACTTYPE_TPACKAGE_PACKAGETOTPACKAGE_PACKAGE_MODELTOTYPEGRAPH_CLASSDECLARATION_TCLASS_PACKAGE_TPACKAGE_MGRAVITYMODEL:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(org.eclipse.modisco.java.TypeParameter) arguments.get(1), (TypeGraph) arguments.get(2),
-						(PackageToTPackage) arguments.get(3), (TypeToTAbstractType) arguments.get(4),
-						(TPackage) arguments.get(5), (PackageToTPackage) arguments.get(6),
-						(org.eclipse.modisco.java.Package) arguments.get(7), (ModelToTypeGraph) arguments.get(8),
-						(ClassDeclaration) arguments.get(9), (TClass) arguments.get(10),
-						(org.eclipse.modisco.java.Package) arguments.get(11), (TPackage) arguments.get(12),
-						(MGravityModel) arguments.get(13));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-						(EObject) arguments.get(11), (EObject) arguments.get(12), (EObject) arguments.get(13),
-						(EObject) arguments.get(14));
-				return null;
-			case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TPACKAGE_TCLASS_TPACKAGE:
-				return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TPackage) arguments.get(2), (TClass) arguments.get(3), (TPackage) arguments.get(4));
-			case RulesPackage.TYPE_PARAMETER___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TPACKAGE_TCLASS_TPACKAGE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TPackage) arguments.get(2), (TClass) arguments.get(3), (TPackage) arguments.get(4));
-				return null;
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TPACKAGE_TCLASS_TPACKAGE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TPackage) arguments.get(2), (TClass) arguments.get(3), (TPackage) arguments.get(4));
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD_TYPE_GRAPH_1__TYPEGRAPH:
-				return isAppropriate_BWD_TypeGraph_1((TypeGraph) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_94__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_94((EMoflonEdge) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_CC__TYPEPARAMETER_TYPEGRAPH_TPACKAGE_PACKAGE_CLASSDECLARATION_TCLASS_PACKAGE_TPACKAGE_MGRAVITYMODEL_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((org.eclipse.modisco.java.TypeParameter) arguments.get(0),
-						(TypeGraph) arguments.get(1), (TPackage) arguments.get(2),
-						(org.eclipse.modisco.java.Package) arguments.get(3), (ClassDeclaration) arguments.get(4),
-						(TClass) arguments.get(5), (org.eclipse.modisco.java.Package) arguments.get(6),
-						(TPackage) arguments.get(7), (MGravityModel) arguments.get(8), (Match) arguments.get(9),
-						(Match) arguments.get(10));
-			case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.TYPE_PARAMETER___CHECK_DEC_FWD__TYPEPARAMETER_PACKAGE_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL:
-				return checkDEC_FWD((org.eclipse.modisco.java.TypeParameter) arguments.get(0),
-						(org.eclipse.modisco.java.Package) arguments.get(1), (ClassDeclaration) arguments.get(2),
-						(org.eclipse.modisco.java.Package) arguments.get(3), (MGravityModel) arguments.get(4));
-			case RulesPackage.TYPE_PARAMETER___CHECK_DEC_BWD__TYPEGRAPH_TPACKAGE_TCLASS_TPACKAGE:
-				return checkDEC_BWD((TypeGraph) arguments.get(0), (TPackage) arguments.get(1),
-						(TClass) arguments.get(2), (TPackage) arguments.get(3));
-			case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
-				return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-			case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_PACKAGETOTPACKAGE_TYPETOTABSTRACTTYPE_TPACKAGE_PACKAGETOTPACKAGE_PACKAGE_MODELTOTYPEGRAPH_CLASSDECLARATION_TCLASS_PACKAGE_TPACKAGE_MGRAVITYMODEL_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-						(PackageToTPackage) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
-						(TPackage) arguments.get(4), (PackageToTPackage) arguments.get(5),
-						(org.eclipse.modisco.java.Package) arguments.get(6), (ModelToTypeGraph) arguments.get(7),
-						(ClassDeclaration) arguments.get(8), (TClass) arguments.get(9),
-						(org.eclipse.modisco.java.Package) arguments.get(10), (TPackage) arguments.get(11),
-						(MGravityModel) arguments.get(12), (ModelgeneratorRuleResult) arguments.get(13));
-			case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD__MATCH_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL_TYPEPARAMETER_PACKAGE:
+			return isAppropriate_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (MGravityModel) arguments.get(3),
+					(org.eclipse.modisco.java.TypeParameter) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(5));
+		case RulesPackage.TYPE_PARAMETER___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL_TYPEPARAMETER_PACKAGE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (MGravityModel) arguments.get(3),
+					(org.eclipse.modisco.java.TypeParameter) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(5));
+			return null;
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSDECLARATION_PACKAGE_MGRAVITYMODEL_TYPEPARAMETER_PACKAGE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (MGravityModel) arguments.get(3),
+					(org.eclipse.modisco.java.TypeParameter) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(5));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSDECLARATION_TYPEGRAPH_PACKAGETOTPACKAGE_TPACKAGE_PACKAGE_MGRAVITYMODEL_TYPEPARAMETER_PACKAGE_TPACKAGE_TYPETOTABSTRACTTYPE_MODELTOTYPEGRAPH_PACKAGETOTPACKAGE_TCLASS:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(TypeGraph) arguments.get(2), (PackageToTPackage) arguments.get(3), (TPackage) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(5), (MGravityModel) arguments.get(6),
+					(org.eclipse.modisco.java.TypeParameter) arguments.get(7),
+					(org.eclipse.modisco.java.Package) arguments.get(8), (TPackage) arguments.get(9),
+					(TypeToTAbstractType) arguments.get(10), (ModelToTypeGraph) arguments.get(11),
+					(PackageToTPackage) arguments.get(12), (TClass) arguments.get(13));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+					(EObject) arguments.get(11), (EObject) arguments.get(12), (EObject) arguments.get(13),
+					(EObject) arguments.get(14));
+			return null;
+		case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TPACKAGE_TPACKAGE_TCLASS:
+			return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TPackage) arguments.get(2), (TPackage) arguments.get(3), (TClass) arguments.get(4));
+		case RulesPackage.TYPE_PARAMETER___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TPACKAGE_TPACKAGE_TCLASS:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TPackage) arguments.get(2), (TPackage) arguments.get(3), (TClass) arguments.get(4));
+			return null;
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TPACKAGE_TPACKAGE_TCLASS:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TPackage) arguments.get(2), (TPackage) arguments.get(3), (TClass) arguments.get(4));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_BWD_TYPE_GRAPH_1__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_1((TypeGraph) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_52__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_52((EMoflonEdge) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_SOLVE_CSP_CC__CLASSDECLARATION_TYPEGRAPH_TPACKAGE_PACKAGE_MGRAVITYMODEL_TYPEPARAMETER_PACKAGE_TPACKAGE_TCLASS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((ClassDeclaration) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TPackage) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(MGravityModel) arguments.get(4), (org.eclipse.modisco.java.TypeParameter) arguments.get(5),
+					(org.eclipse.modisco.java.Package) arguments.get(6), (TPackage) arguments.get(7),
+					(TClass) arguments.get(8), (Match) arguments.get(9), (Match) arguments.get(10));
+		case RulesPackage.TYPE_PARAMETER___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.TYPE_PARAMETER___CHECK_DEC_FWD__CLASSDECLARATION_PACKAGE_MGRAVITYMODEL_TYPEPARAMETER_PACKAGE:
+			return checkDEC_FWD((ClassDeclaration) arguments.get(0),
+					(org.eclipse.modisco.java.Package) arguments.get(1), (MGravityModel) arguments.get(2),
+					(org.eclipse.modisco.java.TypeParameter) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4));
+		case RulesPackage.TYPE_PARAMETER___CHECK_DEC_BWD__TYPEGRAPH_TPACKAGE_TPACKAGE_TCLASS:
+			return checkDEC_BWD((TypeGraph) arguments.get(0), (TPackage) arguments.get(1), (TPackage) arguments.get(2),
+					(TClass) arguments.get(3));
+		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDECLARATION_TYPEGRAPH_PACKAGETOTPACKAGE_TPACKAGE_PACKAGE_MGRAVITYMODEL_PACKAGE_TPACKAGE_TYPETOTABSTRACTTYPE_MODELTOTYPEGRAPH_PACKAGETOTPACKAGE_TCLASS_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(TypeGraph) arguments.get(2), (PackageToTPackage) arguments.get(3), (TPackage) arguments.get(4),
+					(org.eclipse.modisco.java.Package) arguments.get(5), (MGravityModel) arguments.get(6),
+					(org.eclipse.modisco.java.Package) arguments.get(7), (TPackage) arguments.get(8),
+					(TypeToTAbstractType) arguments.get(9), (ModelToTypeGraph) arguments.get(10),
+					(PackageToTPackage) arguments.get(11), (TClass) arguments.get(12),
+					(ModelgeneratorRuleResult) arguments.get(13));
+		case RulesPackage.TYPE_PARAMETER___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	public static final Object[] pattern_TypeParameter_0_1_initialbindings_blackBBBBBBB(TypeParameter _this,
-			Match match, org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
+			Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
 		if (!java.equals(lang)) {
-			return new Object[] { _this, match, typeParameter, lang, object, java, model };
+			return new Object[] { _this, match, object, lang, model, typeParameter, java };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_0_2_SolveCSP_bindingFBBBBBBB(TypeParameter _this, Match match,
-			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, typeParameter, lang, object, java, model);
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, object, lang, model, typeParameter, java);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, typeParameter, lang, object, java, model };
+			return new Object[] { csp, _this, match, object, lang, model, typeParameter, java };
 		}
 		return null;
 	}
@@ -1237,17 +1235,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_0_2_SolveCSP_bindingAndBlackFBBBBBBB(TypeParameter _this,
-			Match match, org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
+			Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
 		Object[] result_pattern_TypeParameter_0_2_SolveCSP_binding = pattern_TypeParameter_0_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, typeParameter, lang, object, java, model);
+				_this, match, object, lang, model, typeParameter, java);
 		if (result_pattern_TypeParameter_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_0_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_0_2_SolveCSP_black = pattern_TypeParameter_0_2_SolveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, typeParameter, lang, object, java, model };
+				return new Object[] { csp, _this, match, object, lang, model, typeParameter, java };
 			}
 		}
 		return null;
@@ -1260,16 +1258,16 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_0_4_collectelementstobetranslated_blackBBBBBB(Match match,
-			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
 		if (!java.equals(lang)) {
-			return new Object[] { match, typeParameter, lang, object, java, model };
+			return new Object[] { match, object, lang, model, typeParameter, java };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_0_4_collectelementstobetranslated_greenBBBF(Match match,
-			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter) {
 		EMoflonEdge model__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(typeParameter);
 		String model__typeParameter____typeParameters_name_prime = "typeParameters";
@@ -1277,37 +1275,43 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		model__typeParameter____typeParameters.setTrg(typeParameter);
 		match.getToBeTranslatedEdges().add(model__typeParameter____typeParameters);
 		model__typeParameter____typeParameters.setName(model__typeParameter____typeParameters_name_prime);
-		return new Object[] { match, typeParameter, model, model__typeParameter____typeParameters };
+		return new Object[] { match, model, typeParameter, model__typeParameter____typeParameters };
 	}
 
 	public static final Object[] pattern_TypeParameter_0_5_collectcontextelements_blackBBBBBB(Match match,
-			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
 		if (!java.equals(lang)) {
-			return new Object[] { match, typeParameter, lang, object, java, model };
+			return new Object[] { match, object, lang, model, typeParameter, java };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_0_5_collectcontextelements_greenBBBBBFFFFFF(Match match,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, org.eclipse.modisco.java.Package java,
-			MGravityModel model) {
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.Package java) {
+		EMoflonEdge model__java____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge java__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge java__lang____ownedPackages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge lang__java____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge lang__object____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge object__lang____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model__java____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge java__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getContextNodes().add(lang);
 		match.getContextNodes().add(object);
-		match.getContextNodes().add(java);
+		match.getContextNodes().add(lang);
 		match.getContextNodes().add(model);
+		match.getContextNodes().add(java);
+		String model__java____ownedElements_name_prime = "ownedElements";
+		String java__model____model_name_prime = "model";
 		String java__lang____ownedPackages_name_prime = "ownedPackages";
 		String lang__java____package_name_prime = "package";
 		String lang__object____ownedElements_name_prime = "ownedElements";
 		String object__lang____package_name_prime = "package";
-		String model__java____ownedElements_name_prime = "ownedElements";
-		String java__model____model_name_prime = "model";
+		model__java____ownedElements.setSrc(model);
+		model__java____ownedElements.setTrg(java);
+		match.getContextEdges().add(model__java____ownedElements);
+		java__model____model.setSrc(java);
+		java__model____model.setTrg(model);
+		match.getContextEdges().add(java__model____model);
 		java__lang____ownedPackages.setSrc(java);
 		java__lang____ownedPackages.setTrg(lang);
 		match.getContextEdges().add(java__lang____ownedPackages);
@@ -1320,27 +1324,21 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		object__lang____package.setSrc(object);
 		object__lang____package.setTrg(lang);
 		match.getContextEdges().add(object__lang____package);
-		model__java____ownedElements.setSrc(model);
-		model__java____ownedElements.setTrg(java);
-		match.getContextEdges().add(model__java____ownedElements);
-		java__model____model.setSrc(java);
-		java__model____model.setTrg(model);
-		match.getContextEdges().add(java__model____model);
+		model__java____ownedElements.setName(model__java____ownedElements_name_prime);
+		java__model____model.setName(java__model____model_name_prime);
 		java__lang____ownedPackages.setName(java__lang____ownedPackages_name_prime);
 		lang__java____package.setName(lang__java____package_name_prime);
 		lang__object____ownedElements.setName(lang__object____ownedElements_name_prime);
 		object__lang____package.setName(object__lang____package_name_prime);
-		model__java____ownedElements.setName(model__java____ownedElements_name_prime);
-		java__model____model.setName(java__model____model_name_prime);
-		return new Object[] { match, lang, object, java, model, java__lang____ownedPackages, lang__java____package,
-				lang__object____ownedElements, object__lang____package, model__java____ownedElements,
-				java__model____model };
+		return new Object[] { match, object, lang, model, java, model__java____ownedElements, java__model____model,
+				java__lang____ownedPackages, lang__java____package, lang__object____ownedElements,
+				object__lang____package };
 	}
 
 	public static final void pattern_TypeParameter_0_6_registerobjectstomatch_expressionBBBBBBB(TypeParameter _this,
-			Match match, org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
-		_this.registerObjectsToMatch_FWD(match, typeParameter, lang, object, java, model);
+			Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
+		_this.registerObjectsToMatch_FWD(match, object, lang, model, typeParameter, java);
 
 	}
 
@@ -1356,62 +1354,62 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_1_1_performtransformation_bindingFFFFFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("typeParameter");
+		EObject _localVariable_0 = isApplicableMatch.getObject("object");
 		EObject _localVariable_1 = isApplicableMatch.getObject("pg");
 		EObject _localVariable_2 = isApplicableMatch.getObject("langToLang");
-		EObject _localVariable_3 = isApplicableMatch.getObject("objectToObject");
-		EObject _localVariable_4 = isApplicableMatch.getObject("tPackageJava");
-		EObject _localVariable_5 = isApplicableMatch.getObject("javaToJava");
-		EObject _localVariable_6 = isApplicableMatch.getObject("lang");
-		EObject _localVariable_7 = isApplicableMatch.getObject("eModelToPg");
-		EObject _localVariable_8 = isApplicableMatch.getObject("object");
-		EObject _localVariable_9 = isApplicableMatch.getObject("tClass");
-		EObject _localVariable_10 = isApplicableMatch.getObject("java");
-		EObject _localVariable_11 = isApplicableMatch.getObject("tPackageLang");
-		EObject _localVariable_12 = isApplicableMatch.getObject("model");
-		EObject tmpTypeParameter = _localVariable_0;
+		EObject _localVariable_3 = isApplicableMatch.getObject("tPackageJava");
+		EObject _localVariable_4 = isApplicableMatch.getObject("lang");
+		EObject _localVariable_5 = isApplicableMatch.getObject("model");
+		EObject _localVariable_6 = isApplicableMatch.getObject("typeParameter");
+		EObject _localVariable_7 = isApplicableMatch.getObject("java");
+		EObject _localVariable_8 = isApplicableMatch.getObject("tPackageLang");
+		EObject _localVariable_9 = isApplicableMatch.getObject("objectToObject");
+		EObject _localVariable_10 = isApplicableMatch.getObject("eModelToPg");
+		EObject _localVariable_11 = isApplicableMatch.getObject("javaToJava");
+		EObject _localVariable_12 = isApplicableMatch.getObject("tClass");
+		EObject tmpObject = _localVariable_0;
 		EObject tmpPg = _localVariable_1;
 		EObject tmpLangToLang = _localVariable_2;
-		EObject tmpObjectToObject = _localVariable_3;
-		EObject tmpTPackageJava = _localVariable_4;
-		EObject tmpJavaToJava = _localVariable_5;
-		EObject tmpLang = _localVariable_6;
-		EObject tmpEModelToPg = _localVariable_7;
-		EObject tmpObject = _localVariable_8;
-		EObject tmpTClass = _localVariable_9;
-		EObject tmpJava = _localVariable_10;
-		EObject tmpTPackageLang = _localVariable_11;
-		EObject tmpModel = _localVariable_12;
-		if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
-			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
+		EObject tmpTPackageJava = _localVariable_3;
+		EObject tmpLang = _localVariable_4;
+		EObject tmpModel = _localVariable_5;
+		EObject tmpTypeParameter = _localVariable_6;
+		EObject tmpJava = _localVariable_7;
+		EObject tmpTPackageLang = _localVariable_8;
+		EObject tmpObjectToObject = _localVariable_9;
+		EObject tmpEModelToPg = _localVariable_10;
+		EObject tmpJavaToJava = _localVariable_11;
+		EObject tmpTClass = _localVariable_12;
+		if (tmpObject instanceof ClassDeclaration) {
+			ClassDeclaration object = (ClassDeclaration) tmpObject;
 			if (tmpPg instanceof TypeGraph) {
 				TypeGraph pg = (TypeGraph) tmpPg;
 				if (tmpLangToLang instanceof PackageToTPackage) {
 					PackageToTPackage langToLang = (PackageToTPackage) tmpLangToLang;
-					if (tmpObjectToObject instanceof TypeToTAbstractType) {
-						TypeToTAbstractType objectToObject = (TypeToTAbstractType) tmpObjectToObject;
-						if (tmpTPackageJava instanceof TPackage) {
-							TPackage tPackageJava = (TPackage) tmpTPackageJava;
-							if (tmpJavaToJava instanceof PackageToTPackage) {
-								PackageToTPackage javaToJava = (PackageToTPackage) tmpJavaToJava;
-								if (tmpLang instanceof org.eclipse.modisco.java.Package) {
-									org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) tmpLang;
-									if (tmpEModelToPg instanceof ModelToTypeGraph) {
-										ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
-										if (tmpObject instanceof ClassDeclaration) {
-											ClassDeclaration object = (ClassDeclaration) tmpObject;
-											if (tmpTClass instanceof TClass) {
-												TClass tClass = (TClass) tmpTClass;
-												if (tmpJava instanceof org.eclipse.modisco.java.Package) {
-													org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) tmpJava;
-													if (tmpTPackageLang instanceof TPackage) {
-														TPackage tPackageLang = (TPackage) tmpTPackageLang;
-														if (tmpModel instanceof MGravityModel) {
-															MGravityModel model = (MGravityModel) tmpModel;
-															return new Object[] { typeParameter, pg, langToLang,
-																	objectToObject, tPackageJava, javaToJava, lang,
-																	eModelToPg, object, tClass, java, tPackageLang,
-																	model, isApplicableMatch };
+					if (tmpTPackageJava instanceof TPackage) {
+						TPackage tPackageJava = (TPackage) tmpTPackageJava;
+						if (tmpLang instanceof org.eclipse.modisco.java.Package) {
+							org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) tmpLang;
+							if (tmpModel instanceof MGravityModel) {
+								MGravityModel model = (MGravityModel) tmpModel;
+								if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
+									org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
+									if (tmpJava instanceof org.eclipse.modisco.java.Package) {
+										org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) tmpJava;
+										if (tmpTPackageLang instanceof TPackage) {
+											TPackage tPackageLang = (TPackage) tmpTPackageLang;
+											if (tmpObjectToObject instanceof TypeToTAbstractType) {
+												TypeToTAbstractType objectToObject = (TypeToTAbstractType) tmpObjectToObject;
+												if (tmpEModelToPg instanceof ModelToTypeGraph) {
+													ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
+													if (tmpJavaToJava instanceof PackageToTPackage) {
+														PackageToTPackage javaToJava = (PackageToTPackage) tmpJavaToJava;
+														if (tmpTClass instanceof TClass) {
+															TClass tClass = (TClass) tmpTClass;
+															return new Object[] { object, pg, langToLang, tPackageJava,
+																	lang, model, typeParameter, java, tPackageLang,
+																	objectToObject, eModelToPg, javaToJava, tClass,
+																	isApplicableMatch };
 														}
 													}
 												}
@@ -1429,19 +1427,19 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_1_1_performtransformation_blackBBBBBBBBBBBBBFBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, TPackage tPackageJava, PackageToTPackage javaToJava,
-			org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, TypeParameter _this,
-			IsApplicableMatch isApplicableMatch) {
+			ClassDeclaration object, TypeGraph pg, PackageToTPackage langToLang, TPackage tPackageJava,
+			org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg,
+			PackageToTPackage javaToJava, TClass tClass, TypeParameter _this, IsApplicableMatch isApplicableMatch) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			if (!javaToJava.equals(langToLang)) {
-				if (!java.equals(lang)) {
+			if (!java.equals(lang)) {
+				if (!javaToJava.equals(langToLang)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { typeParameter, pg, langToLang, objectToObject, tPackageJava,
-									javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model, csp, _this,
+							return new Object[] { object, pg, langToLang, tPackageJava, lang, model, typeParameter,
+									java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass, csp, _this,
 									isApplicableMatch };
 						}
 					}
@@ -1456,239 +1454,237 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		Object[] result_pattern_TypeParameter_1_1_performtransformation_binding = pattern_TypeParameter_1_1_performtransformation_bindingFFFFFFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_TypeParameter_1_1_performtransformation_binding != null) {
-			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result_pattern_TypeParameter_1_1_performtransformation_binding[0];
+			ClassDeclaration object = (ClassDeclaration) result_pattern_TypeParameter_1_1_performtransformation_binding[0];
 			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[1];
 			PackageToTPackage langToLang = (PackageToTPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[2];
-			TypeToTAbstractType objectToObject = (TypeToTAbstractType) result_pattern_TypeParameter_1_1_performtransformation_binding[3];
-			TPackage tPackageJava = (TPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[4];
-			PackageToTPackage javaToJava = (PackageToTPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[5];
-			org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result_pattern_TypeParameter_1_1_performtransformation_binding[6];
-			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[7];
-			ClassDeclaration object = (ClassDeclaration) result_pattern_TypeParameter_1_1_performtransformation_binding[8];
-			TClass tClass = (TClass) result_pattern_TypeParameter_1_1_performtransformation_binding[9];
-			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result_pattern_TypeParameter_1_1_performtransformation_binding[10];
-			TPackage tPackageLang = (TPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[11];
-			MGravityModel model = (MGravityModel) result_pattern_TypeParameter_1_1_performtransformation_binding[12];
+			TPackage tPackageJava = (TPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[3];
+			org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result_pattern_TypeParameter_1_1_performtransformation_binding[4];
+			MGravityModel model = (MGravityModel) result_pattern_TypeParameter_1_1_performtransformation_binding[5];
+			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result_pattern_TypeParameter_1_1_performtransformation_binding[6];
+			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result_pattern_TypeParameter_1_1_performtransformation_binding[7];
+			TPackage tPackageLang = (TPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[8];
+			TypeToTAbstractType objectToObject = (TypeToTAbstractType) result_pattern_TypeParameter_1_1_performtransformation_binding[9];
+			ModelToTypeGraph eModelToPg = (ModelToTypeGraph) result_pattern_TypeParameter_1_1_performtransformation_binding[10];
+			PackageToTPackage javaToJava = (PackageToTPackage) result_pattern_TypeParameter_1_1_performtransformation_binding[11];
+			TClass tClass = (TClass) result_pattern_TypeParameter_1_1_performtransformation_binding[12];
 
 			Object[] result_pattern_TypeParameter_1_1_performtransformation_black = pattern_TypeParameter_1_1_performtransformation_blackBBBBBBBBBBBBBFBB(
-					typeParameter, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object,
-					tClass, java, tPackageLang, model, _this, isApplicableMatch);
+					object, pg, langToLang, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+					objectToObject, eModelToPg, javaToJava, tClass, _this, isApplicableMatch);
 			if (result_pattern_TypeParameter_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_TypeParameter_1_1_performtransformation_black[13];
 
-				return new Object[] { typeParameter, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang,
-						eModelToPg, object, tClass, java, tPackageLang, model, csp, _this, isApplicableMatch };
+				return new Object[] { object, pg, langToLang, tPackageJava, lang, model, typeParameter, java,
+						tPackageLang, objectToObject, eModelToPg, javaToJava, tClass, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_1_1_performtransformation_greenBFB(
+	public static final Object[] pattern_TypeParameter_1_1_performtransformation_greenFBB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass) {
 		TypeToTAbstractType templateTypeToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		templateTypeToTClass.setSource(typeParameter);
 		templateTypeToTClass.setTarget(tClass);
-		return new Object[] { typeParameter, templateTypeToTClass, tClass };
+		return new Object[] { templateTypeToTClass, typeParameter, tClass };
 	}
 
 	public static final Object[] pattern_TypeParameter_1_2_collecttranslatedelements_blackBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeToTAbstractType templateTypeToTClass) {
-		return new Object[] { typeParameter, templateTypeToTClass };
+			TypeToTAbstractType templateTypeToTClass, org.eclipse.modisco.java.TypeParameter typeParameter) {
+		return new Object[] { templateTypeToTClass, typeParameter };
 	}
 
 	public static final Object[] pattern_TypeParameter_1_2_collecttranslatedelements_greenFBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeToTAbstractType templateTypeToTClass) {
+			TypeToTAbstractType templateTypeToTClass, org.eclipse.modisco.java.TypeParameter typeParameter) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(typeParameter);
 		ruleresult.getCreatedLinkElements().add(templateTypeToTClass);
-		return new Object[] { ruleresult, typeParameter, templateTypeToTClass };
+		ruleresult.getTranslatedElements().add(typeParameter);
+		return new Object[] { ruleresult, templateTypeToTClass, typeParameter };
 	}
 
 	public static final Object[] pattern_TypeParameter_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject typeParameter, EObject templateTypeToTClass, EObject pg,
-			EObject langToLang, EObject objectToObject, EObject tPackageJava, EObject javaToJava, EObject lang,
-			EObject eModelToPg, EObject object, EObject tClass, EObject java, EObject tPackageLang, EObject model) {
-		if (!templateTypeToTClass.equals(typeParameter)) {
-			if (!pg.equals(typeParameter)) {
-				if (!pg.equals(templateTypeToTClass)) {
-					if (!pg.equals(tPackageJava)) {
-						if (!pg.equals(tClass)) {
-							if (!pg.equals(tPackageLang)) {
-								if (!langToLang.equals(typeParameter)) {
-									if (!langToLang.equals(templateTypeToTClass)) {
-										if (!langToLang.equals(pg)) {
-											if (!langToLang.equals(objectToObject)) {
-												if (!langToLang.equals(tPackageJava)) {
-													if (!langToLang.equals(object)) {
-														if (!langToLang.equals(tClass)) {
-															if (!langToLang.equals(tPackageLang)) {
-																if (!langToLang.equals(model)) {
-																	if (!objectToObject.equals(typeParameter)) {
-																		if (!objectToObject
-																				.equals(templateTypeToTClass)) {
-																			if (!objectToObject.equals(pg)) {
-																				if (!objectToObject
-																						.equals(tPackageJava)) {
-																					if (!objectToObject
-																							.equals(tClass)) {
-																						if (!objectToObject
-																								.equals(tPackageLang)) {
-																							if (!tPackageJava.equals(
-																									typeParameter)) {
+			PerformRuleResult ruleresult, EObject object, EObject pg, EObject langToLang, EObject templateTypeToTClass,
+			EObject tPackageJava, EObject lang, EObject model, EObject typeParameter, EObject java,
+			EObject tPackageLang, EObject objectToObject, EObject eModelToPg, EObject javaToJava, EObject tClass) {
+		if (!object.equals(pg)) {
+			if (!object.equals(templateTypeToTClass)) {
+				if (!object.equals(tPackageJava)) {
+					if (!object.equals(typeParameter)) {
+						if (!object.equals(tPackageLang)) {
+							if (!object.equals(objectToObject)) {
+								if (!object.equals(tClass)) {
+									if (!pg.equals(templateTypeToTClass)) {
+										if (!pg.equals(tPackageJava)) {
+											if (!pg.equals(typeParameter)) {
+												if (!pg.equals(tPackageLang)) {
+													if (!pg.equals(tClass)) {
+														if (!langToLang.equals(object)) {
+															if (!langToLang.equals(pg)) {
+																if (!langToLang.equals(templateTypeToTClass)) {
+																	if (!langToLang.equals(tPackageJava)) {
+																		if (!langToLang.equals(model)) {
+																			if (!langToLang.equals(typeParameter)) {
+																				if (!langToLang.equals(tPackageLang)) {
+																					if (!langToLang
+																							.equals(objectToObject)) {
+																						if (!langToLang
+																								.equals(tClass)) {
+																							if (!templateTypeToTClass
+																									.equals(typeParameter)) {
 																								if (!tPackageJava
 																										.equals(templateTypeToTClass)) {
 																									if (!tPackageJava
-																											.equals(tPackageLang)) {
-																										if (!javaToJava
-																												.equals(typeParameter)) {
-																											if (!javaToJava
-																													.equals(templateTypeToTClass)) {
-																												if (!javaToJava
+																											.equals(typeParameter)) {
+																										if (!tPackageJava
+																												.equals(tPackageLang)) {
+																											if (!lang
+																													.equals(object)) {
+																												if (!lang
 																														.equals(pg)) {
-																													if (!javaToJava
+																													if (!lang
 																															.equals(langToLang)) {
-																														if (!javaToJava
-																																.equals(objectToObject)) {
-																															if (!javaToJava
+																														if (!lang
+																																.equals(templateTypeToTClass)) {
+																															if (!lang
 																																	.equals(tPackageJava)) {
-																																if (!javaToJava
-																																		.equals(lang)) {
-																																	if (!javaToJava
-																																			.equals(object)) {
-																																		if (!javaToJava
-																																				.equals(tClass)) {
-																																			if (!javaToJava
-																																					.equals(tPackageLang)) {
-																																				if (!javaToJava
-																																						.equals(model)) {
-																																					if (!lang
-																																							.equals(typeParameter)) {
-																																						if (!lang
-																																								.equals(templateTypeToTClass)) {
-																																							if (!lang
-																																									.equals(pg)) {
-																																								if (!lang
-																																										.equals(langToLang)) {
-																																									if (!lang
-																																											.equals(objectToObject)) {
-																																										if (!lang
-																																												.equals(tPackageJava)) {
-																																											if (!lang
-																																													.equals(object)) {
-																																												if (!lang
+																																if (!lang
+																																		.equals(model)) {
+																																	if (!lang
+																																			.equals(typeParameter)) {
+																																		if (!lang
+																																				.equals(tPackageLang)) {
+																																			if (!lang
+																																					.equals(objectToObject)) {
+																																				if (!lang
+																																						.equals(tClass)) {
+																																					if (!model
+																																							.equals(object)) {
+																																						if (!model
+																																								.equals(pg)) {
+																																							if (!model
+																																									.equals(templateTypeToTClass)) {
+																																								if (!model
+																																										.equals(tPackageJava)) {
+																																									if (!model
+																																											.equals(typeParameter)) {
+																																										if (!model
+																																												.equals(tPackageLang)) {
+																																											if (!model
+																																													.equals(objectToObject)) {
+																																												if (!model
 																																														.equals(tClass)) {
-																																													if (!lang
-																																															.equals(tPackageLang)) {
-																																														if (!lang
-																																																.equals(model)) {
-																																															if (!eModelToPg
-																																																	.equals(typeParameter)) {
-																																																if (!eModelToPg
+																																													if (!java
+																																															.equals(object)) {
+																																														if (!java
+																																																.equals(pg)) {
+																																															if (!java
+																																																	.equals(langToLang)) {
+																																																if (!java
 																																																		.equals(templateTypeToTClass)) {
-																																																	if (!eModelToPg
-																																																			.equals(pg)) {
-																																																		if (!eModelToPg
-																																																				.equals(langToLang)) {
-																																																			if (!eModelToPg
-																																																					.equals(objectToObject)) {
-																																																				if (!eModelToPg
-																																																						.equals(tPackageJava)) {
-																																																					if (!eModelToPg
-																																																							.equals(javaToJava)) {
-																																																						if (!eModelToPg
-																																																								.equals(lang)) {
-																																																							if (!eModelToPg
-																																																									.equals(object)) {
-																																																								if (!eModelToPg
+																																																	if (!java
+																																																			.equals(tPackageJava)) {
+																																																		if (!java
+																																																				.equals(lang)) {
+																																																			if (!java
+																																																					.equals(model)) {
+																																																				if (!java
+																																																						.equals(typeParameter)) {
+																																																					if (!java
+																																																							.equals(tPackageLang)) {
+																																																						if (!java
+																																																								.equals(objectToObject)) {
+																																																							if (!java
+																																																									.equals(javaToJava)) {
+																																																								if (!java
 																																																										.equals(tClass)) {
-																																																									if (!eModelToPg
-																																																											.equals(java)) {
-																																																										if (!eModelToPg
-																																																												.equals(tPackageLang)) {
-																																																											if (!eModelToPg
-																																																													.equals(model)) {
-																																																												if (!object
-																																																														.equals(typeParameter)) {
-																																																													if (!object
-																																																															.equals(templateTypeToTClass)) {
-																																																														if (!object
-																																																																.equals(pg)) {
-																																																															if (!object
-																																																																	.equals(objectToObject)) {
-																																																																if (!object
-																																																																		.equals(tPackageJava)) {
-																																																																	if (!object
-																																																																			.equals(tClass)) {
-																																																																		if (!object
-																																																																				.equals(tPackageLang)) {
-																																																																			if (!tClass
-																																																																					.equals(typeParameter)) {
-																																																																				if (!tClass
+																																																									if (!tPackageLang
+																																																											.equals(templateTypeToTClass)) {
+																																																										if (!tPackageLang
+																																																												.equals(typeParameter)) {
+																																																											if (!objectToObject
+																																																													.equals(pg)) {
+																																																												if (!objectToObject
+																																																														.equals(templateTypeToTClass)) {
+																																																													if (!objectToObject
+																																																															.equals(tPackageJava)) {
+																																																														if (!objectToObject
+																																																																.equals(typeParameter)) {
+																																																															if (!objectToObject
+																																																																	.equals(tPackageLang)) {
+																																																																if (!objectToObject
+																																																																		.equals(tClass)) {
+																																																																	if (!eModelToPg
+																																																																			.equals(object)) {
+																																																																		if (!eModelToPg
+																																																																				.equals(pg)) {
+																																																																			if (!eModelToPg
+																																																																					.equals(langToLang)) {
+																																																																				if (!eModelToPg
 																																																																						.equals(templateTypeToTClass)) {
-																																																																					if (!tClass
+																																																																					if (!eModelToPg
 																																																																							.equals(tPackageJava)) {
-																																																																						if (!tClass
-																																																																								.equals(tPackageLang)) {
-																																																																							if (!java
-																																																																									.equals(typeParameter)) {
-																																																																								if (!java
-																																																																										.equals(templateTypeToTClass)) {
-																																																																									if (!java
-																																																																											.equals(pg)) {
-																																																																										if (!java
-																																																																												.equals(langToLang)) {
-																																																																											if (!java
+																																																																						if (!eModelToPg
+																																																																								.equals(lang)) {
+																																																																							if (!eModelToPg
+																																																																									.equals(model)) {
+																																																																								if (!eModelToPg
+																																																																										.equals(typeParameter)) {
+																																																																									if (!eModelToPg
+																																																																											.equals(java)) {
+																																																																										if (!eModelToPg
+																																																																												.equals(tPackageLang)) {
+																																																																											if (!eModelToPg
 																																																																													.equals(objectToObject)) {
-																																																																												if (!java
-																																																																														.equals(tPackageJava)) {
-																																																																													if (!java
-																																																																															.equals(javaToJava)) {
-																																																																														if (!java
-																																																																																.equals(lang)) {
-																																																																															if (!java
-																																																																																	.equals(object)) {
-																																																																																if (!java
-																																																																																		.equals(tClass)) {
-																																																																																	if (!java
-																																																																																			.equals(tPackageLang)) {
-																																																																																		if (!java
-																																																																																				.equals(model)) {
-																																																																																			if (!tPackageLang
-																																																																																					.equals(typeParameter)) {
-																																																																																				if (!tPackageLang
-																																																																																						.equals(templateTypeToTClass)) {
-																																																																																					if (!model
+																																																																												if (!eModelToPg
+																																																																														.equals(javaToJava)) {
+																																																																													if (!eModelToPg
+																																																																															.equals(tClass)) {
+																																																																														if (!javaToJava
+																																																																																.equals(object)) {
+																																																																															if (!javaToJava
+																																																																																	.equals(pg)) {
+																																																																																if (!javaToJava
+																																																																																		.equals(langToLang)) {
+																																																																																	if (!javaToJava
+																																																																																			.equals(templateTypeToTClass)) {
+																																																																																		if (!javaToJava
+																																																																																				.equals(tPackageJava)) {
+																																																																																			if (!javaToJava
+																																																																																					.equals(lang)) {
+																																																																																				if (!javaToJava
+																																																																																						.equals(model)) {
+																																																																																					if (!javaToJava
 																																																																																							.equals(typeParameter)) {
-																																																																																						if (!model
-																																																																																								.equals(templateTypeToTClass)) {
-																																																																																							if (!model
-																																																																																									.equals(pg)) {
-																																																																																								if (!model
-																																																																																										.equals(objectToObject)) {
-																																																																																									if (!model
-																																																																																											.equals(tPackageJava)) {
-																																																																																										if (!model
-																																																																																												.equals(object)) {
-																																																																																											if (!model
-																																																																																													.equals(tClass)) {
-																																																																																												if (!model
+																																																																																						if (!javaToJava
+																																																																																								.equals(tPackageLang)) {
+																																																																																							if (!javaToJava
+																																																																																									.equals(objectToObject)) {
+																																																																																								if (!javaToJava
+																																																																																										.equals(tClass)) {
+																																																																																									if (!tClass
+																																																																																											.equals(templateTypeToTClass)) {
+																																																																																										if (!tClass
+																																																																																												.equals(tPackageJava)) {
+																																																																																											if (!tClass
+																																																																																													.equals(typeParameter)) {
+																																																																																												if (!tClass
 																																																																																														.equals(tPackageLang)) {
 																																																																																													return new Object[] {
 																																																																																															ruleresult,
-																																																																																															typeParameter,
-																																																																																															templateTypeToTClass,
+																																																																																															object,
 																																																																																															pg,
 																																																																																															langToLang,
-																																																																																															objectToObject,
+																																																																																															templateTypeToTClass,
 																																																																																															tPackageJava,
-																																																																																															javaToJava,
 																																																																																															lang,
-																																																																																															eModelToPg,
-																																																																																															object,
-																																																																																															tClass,
+																																																																																															model,
+																																																																																															typeParameter,
 																																																																																															java,
 																																																																																															tPackageLang,
-																																																																																															model };
+																																																																																															objectToObject,
+																																																																																															eModelToPg,
+																																																																																															javaToJava,
+																																																																																															tClass };
 																																																																																												}
 																																																																																											}
 																																																																																										}
@@ -1784,39 +1780,39 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_1_3_bookkeepingforedges_greenBBBBBFFF(
-			PerformRuleResult ruleresult, EObject typeParameter, EObject templateTypeToTClass, EObject tClass,
-			EObject model) {
+			PerformRuleResult ruleresult, EObject templateTypeToTClass, EObject model, EObject typeParameter,
+			EObject tClass) {
 		EMoflonEdge templateTypeToTClass__typeParameter____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge templateTypeToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge model__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge templateTypeToTClass__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "TypeParameter";
 		String templateTypeToTClass__typeParameter____source_name_prime = "source";
-		String templateTypeToTClass__tClass____target_name_prime = "target";
 		String model__typeParameter____typeParameters_name_prime = "typeParameters";
+		String templateTypeToTClass__tClass____target_name_prime = "target";
 		templateTypeToTClass__typeParameter____source.setSrc(templateTypeToTClass);
 		templateTypeToTClass__typeParameter____source.setTrg(typeParameter);
 		ruleresult.getCreatedEdges().add(templateTypeToTClass__typeParameter____source);
-		templateTypeToTClass__tClass____target.setSrc(templateTypeToTClass);
-		templateTypeToTClass__tClass____target.setTrg(tClass);
-		ruleresult.getCreatedEdges().add(templateTypeToTClass__tClass____target);
 		model__typeParameter____typeParameters.setSrc(model);
 		model__typeParameter____typeParameters.setTrg(typeParameter);
 		ruleresult.getTranslatedEdges().add(model__typeParameter____typeParameters);
+		templateTypeToTClass__tClass____target.setSrc(templateTypeToTClass);
+		templateTypeToTClass__tClass____target.setTrg(tClass);
+		ruleresult.getCreatedEdges().add(templateTypeToTClass__tClass____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		templateTypeToTClass__typeParameter____source.setName(templateTypeToTClass__typeParameter____source_name_prime);
-		templateTypeToTClass__tClass____target.setName(templateTypeToTClass__tClass____target_name_prime);
 		model__typeParameter____typeParameters.setName(model__typeParameter____typeParameters_name_prime);
-		return new Object[] { ruleresult, typeParameter, templateTypeToTClass, tClass, model,
-				templateTypeToTClass__typeParameter____source, templateTypeToTClass__tClass____target,
-				model__typeParameter____typeParameters };
+		templateTypeToTClass__tClass____target.setName(templateTypeToTClass__tClass____target_name_prime);
+		return new Object[] { ruleresult, templateTypeToTClass, model, typeParameter, tClass,
+				templateTypeToTClass__typeParameter____source, model__typeParameter____typeParameters,
+				templateTypeToTClass__tClass____target };
 	}
 
 	public static final void pattern_TypeParameter_1_5_registerobjects_expressionBBBBBBBBBBBBBBBB(TypeParameter _this,
-			PerformRuleResult ruleresult, EObject typeParameter, EObject templateTypeToTClass, EObject pg,
-			EObject langToLang, EObject objectToObject, EObject tPackageJava, EObject javaToJava, EObject lang,
-			EObject eModelToPg, EObject object, EObject tClass, EObject java, EObject tPackageLang, EObject model) {
-		_this.registerObjects_FWD(ruleresult, typeParameter, templateTypeToTClass, pg, langToLang, objectToObject,
-				tPackageJava, javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model);
+			PerformRuleResult ruleresult, EObject object, EObject pg, EObject langToLang, EObject templateTypeToTClass,
+			EObject tPackageJava, EObject lang, EObject model, EObject typeParameter, EObject java,
+			EObject tPackageLang, EObject objectToObject, EObject eModelToPg, EObject javaToJava, EObject tClass) {
+		_this.registerObjects_FWD(ruleresult, object, pg, langToLang, templateTypeToTClass, tPackageJava, lang, model,
+				typeParameter, java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass);
 
 	}
 
@@ -1874,27 +1870,27 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_2_2_corematch_bindingFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("typeParameter");
+		EObject _localVariable_0 = match.getObject("object");
 		EObject _localVariable_1 = match.getObject("lang");
-		EObject _localVariable_2 = match.getObject("object");
-		EObject _localVariable_3 = match.getObject("java");
-		EObject _localVariable_4 = match.getObject("model");
-		EObject tmpTypeParameter = _localVariable_0;
+		EObject _localVariable_2 = match.getObject("model");
+		EObject _localVariable_3 = match.getObject("typeParameter");
+		EObject _localVariable_4 = match.getObject("java");
+		EObject tmpObject = _localVariable_0;
 		EObject tmpLang = _localVariable_1;
-		EObject tmpObject = _localVariable_2;
-		EObject tmpJava = _localVariable_3;
-		EObject tmpModel = _localVariable_4;
-		if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
-			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
+		EObject tmpModel = _localVariable_2;
+		EObject tmpTypeParameter = _localVariable_3;
+		EObject tmpJava = _localVariable_4;
+		if (tmpObject instanceof ClassDeclaration) {
+			ClassDeclaration object = (ClassDeclaration) tmpObject;
 			if (tmpLang instanceof org.eclipse.modisco.java.Package) {
 				org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) tmpLang;
-				if (tmpObject instanceof ClassDeclaration) {
-					ClassDeclaration object = (ClassDeclaration) tmpObject;
-					if (tmpJava instanceof org.eclipse.modisco.java.Package) {
-						org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) tmpJava;
-						if (tmpModel instanceof MGravityModel) {
-							MGravityModel model = (MGravityModel) tmpModel;
-							return new Object[] { typeParameter, lang, object, java, model, match };
+				if (tmpModel instanceof MGravityModel) {
+					MGravityModel model = (MGravityModel) tmpModel;
+					if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
+						org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
+						if (tmpJava instanceof org.eclipse.modisco.java.Package) {
+							org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) tmpJava;
+							return new Object[] { object, lang, model, typeParameter, java, match };
 						}
 					}
 				}
@@ -1903,43 +1899,43 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeParameter_2_2_corematch_blackBFFFFFBFBFBFBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model, Match match) {
+	public static final Iterable<Object[]> pattern_TypeParameter_2_2_corematch_blackBFFFBBBBFFFFFB(
+			ClassDeclaration object, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!java.equals(lang)) {
 			String object_name = object.getName();
 			if (object_name.equals("Object")) {
-				for (TypeToTAbstractType objectToObject : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(object, TypeToTAbstractType.class, "source")) {
-					TAbstractType tmpTClass = objectToObject.getTarget();
-					if (tmpTClass instanceof TClass) {
-						TClass tClass = (TClass) tmpTClass;
-						String tClass_tName = tClass.getTName();
-						if (tClass_tName.equals("Object")) {
-							for (PackageToTPackage javaToJava : org.moflon.core.utilities.eMoflonEMFUtil
-									.getOppositeReferenceTyped(java, PackageToTPackage.class, "source")) {
-								TPackage tPackageJava = javaToJava.getTarget();
-								if (tPackageJava != null) {
-									String tPackageJava_tName = tPackageJava.getTName();
-									if (tPackageJava_tName.equals("java")) {
-										for (PackageToTPackage langToLang : org.moflon.core.utilities.eMoflonEMFUtil
-												.getOppositeReferenceTyped(lang, PackageToTPackage.class, "source")) {
-											if (!javaToJava.equals(langToLang)) {
-												TPackage tPackageLang = langToLang.getTarget();
-												if (tPackageLang != null) {
-													if (!tPackageJava.equals(tPackageLang)) {
-														String tPackageLang_tName = tPackageLang.getTName();
-														if (tPackageLang_tName.equals("lang")) {
-															for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
-																	.getOppositeReferenceTyped(model,
-																			ModelToTypeGraph.class, "source")) {
-																TypeGraph pg = eModelToPg.getTarget();
-																if (pg != null) {
-																	_result.add(new Object[] { typeParameter, pg,
-																			langToLang, objectToObject, tPackageJava,
-																			javaToJava, lang, eModelToPg, object,
-																			tClass, java, tPackageLang, model, match });
+				for (PackageToTPackage langToLang : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(lang, PackageToTPackage.class, "source")) {
+					TPackage tPackageLang = langToLang.getTarget();
+					if (tPackageLang != null) {
+						String tPackageLang_tName = tPackageLang.getTName();
+						if (tPackageLang_tName.equals("lang")) {
+							for (TypeToTAbstractType objectToObject : org.moflon.core.utilities.eMoflonEMFUtil
+									.getOppositeReferenceTyped(object, TypeToTAbstractType.class, "source")) {
+								TAbstractType tmpTClass = objectToObject.getTarget();
+								if (tmpTClass instanceof TClass) {
+									TClass tClass = (TClass) tmpTClass;
+									String tClass_tName = tClass.getTName();
+									if (tClass_tName.equals("Object")) {
+										for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
+												.getOppositeReferenceTyped(model, ModelToTypeGraph.class, "source")) {
+											TypeGraph pg = eModelToPg.getTarget();
+											if (pg != null) {
+												for (PackageToTPackage javaToJava : org.moflon.core.utilities.eMoflonEMFUtil
+														.getOppositeReferenceTyped(java, PackageToTPackage.class,
+																"source")) {
+													if (!javaToJava.equals(langToLang)) {
+														TPackage tPackageJava = javaToJava.getTarget();
+														if (tPackageJava != null) {
+															if (!tPackageJava.equals(tPackageLang)) {
+																String tPackageJava_tName = tPackageJava.getTName();
+																if (tPackageJava_tName.equals("java")) {
+																	_result.add(new Object[] { object, pg, langToLang,
+																			tPackageJava, lang, model, typeParameter,
+																			java, tPackageLang, objectToObject,
+																			eModelToPg, javaToJava, tClass, match });
 																}
 
 															}
@@ -1947,8 +1943,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 													}
 												}
-
 											}
+
 										}
 									}
 
@@ -1967,59 +1963,60 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Iterable<Object[]> pattern_TypeParameter_2_3_findcontext_blackBBBBBBBBBBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, TPackage tPackageJava, PackageToTPackage javaToJava,
-			org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model) {
+			ClassDeclaration object, TypeGraph pg, PackageToTPackage langToLang, TPackage tPackageJava,
+			org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg,
+			PackageToTPackage javaToJava, TClass tClass) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tPackageJava.equals(tPackageLang)) {
-			if (!javaToJava.equals(langToLang)) {
-				if (!java.equals(lang)) {
-					if (pg.getPackages().contains(tPackageJava)) {
-						if (tPackageJava.equals(javaToJava.getTarget())) {
-							if (tPackageJava.getSubpackages().contains(tPackageLang)) {
-								if (pg.equals(eModelToPg.getTarget())) {
-									if (object.equals(objectToObject.getSource())) {
-										if (java.getOwnedPackages().contains(lang)) {
-											if (java.equals(javaToJava.getSource())) {
-												if (tClass.equals(objectToObject.getTarget())) {
-													if (lang.equals(langToLang.getSource())) {
-														if (tPackageLang.equals(langToLang.getTarget())) {
-															if (tPackageLang.getClasses().contains(tClass)) {
-																if (lang.getOwnedElements().contains(object)) {
-																	if (model.getOwnedElements().contains(java)) {
-																		if (model.getTypeParameters()
-																				.contains(typeParameter)) {
-																			if (model.equals(eModelToPg.getSource())) {
-																				String tPackageJava_tName = tPackageJava
-																						.getTName();
-																				if (tPackageJava_tName.equals("java")) {
-																					String object_name = object
-																							.getName();
-																					if (object_name.equals("Object")) {
-																						String tClass_tName = tClass
+			if (!java.equals(lang)) {
+				if (!javaToJava.equals(langToLang)) {
+					if (tPackageJava.getSubpackages().contains(tPackageLang)) {
+						if (model.getOwnedElements().contains(java)) {
+							if (pg.getPackages().contains(tPackageJava)) {
+								if (java.getOwnedPackages().contains(lang)) {
+									if (lang.equals(langToLang.getSource())) {
+										if (model.getTypeParameters().contains(typeParameter)) {
+											if (tPackageLang.getClasses().contains(tClass)) {
+												if (lang.getOwnedElements().contains(object)) {
+													if (object.equals(objectToObject.getSource())) {
+														if (pg.equals(eModelToPg.getTarget())) {
+															if (model.equals(eModelToPg.getSource())) {
+																if (tPackageJava.equals(javaToJava.getTarget())) {
+																	if (java.equals(javaToJava.getSource())) {
+																		if (tClass.equals(objectToObject.getTarget())) {
+																			if (tPackageLang
+																					.equals(langToLang.getTarget())) {
+																				String object_name = object.getName();
+																				if (object_name.equals("Object")) {
+																					String tPackageJava_tName = tPackageJava
+																							.getTName();
+																					if (tPackageJava_tName
+																							.equals("java")) {
+																						String tPackageLang_tName = tPackageLang
 																								.getTName();
-																						if (tClass_tName
-																								.equals("Object")) {
-																							String tPackageLang_tName = tPackageLang
+																						if (tPackageLang_tName
+																								.equals("lang")) {
+																							String tClass_tName = tClass
 																									.getTName();
-																							if (tPackageLang_tName
-																									.equals("lang")) {
+																							if (tClass_tName
+																									.equals("Object")) {
 																								_result.add(
 																										new Object[] {
-																												typeParameter,
+																												object,
 																												pg,
 																												langToLang,
-																												objectToObject,
 																												tPackageJava,
-																												javaToJava,
 																												lang,
-																												eModelToPg,
-																												object,
-																												tClass,
+																												model,
+																												typeParameter,
 																												java,
 																												tPackageLang,
-																												model });
+																												objectToObject,
+																												eModelToPg,
+																												javaToJava,
+																												tClass });
 																							}
 
 																						}
@@ -2050,98 +2047,90 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_2_3_findcontext_greenBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFFFF(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, TPackage tPackageJava, PackageToTPackage javaToJava,
-			org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model) {
+			ClassDeclaration object, TypeGraph pg, PackageToTPackage langToLang, TPackage tPackageJava,
+			org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg,
+			PackageToTPackage javaToJava, TClass tClass) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge pg__tPackageJava____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge javaToJava__tPackageJava____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackageJava__tPackageLang____subpackages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackageLang__tPackageJava____parent = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge objectToObject__object____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__java____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge java__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tPackageJava____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge java__lang____ownedPackages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge lang__java____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge javaToJava__java____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge objectToObject__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge langToLang__lang____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge langToLang__tPackageLang____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge model__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackageLang__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge lang__object____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge object__lang____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model__java____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge java__model____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge model__typeParameter____typeParameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge objectToObject__object____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModelToPg__pg____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eModelToPg__model____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String pg__tPackageJava____packages_name_prime = "packages";
-		String javaToJava__tPackageJava____target_name_prime = "target";
+		EMoflonEdge javaToJava__tPackageJava____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge javaToJava__java____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge objectToObject__tClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge langToLang__tPackageLang____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String tPackageJava__tPackageLang____subpackages_name_prime = "subpackages";
 		String tPackageLang__tPackageJava____parent_name_prime = "parent";
-		String eModelToPg__pg____target_name_prime = "target";
-		String objectToObject__object____source_name_prime = "source";
+		String model__java____ownedElements_name_prime = "ownedElements";
+		String java__model____model_name_prime = "model";
+		String pg__tPackageJava____packages_name_prime = "packages";
 		String java__lang____ownedPackages_name_prime = "ownedPackages";
 		String lang__java____package_name_prime = "package";
-		String javaToJava__java____source_name_prime = "source";
-		String objectToObject__tClass____target_name_prime = "target";
 		String langToLang__lang____source_name_prime = "source";
-		String langToLang__tPackageLang____target_name_prime = "target";
+		String model__typeParameter____typeParameters_name_prime = "typeParameters";
 		String tPackageLang__tClass____classes_name_prime = "classes";
 		String lang__object____ownedElements_name_prime = "ownedElements";
 		String object__lang____package_name_prime = "package";
-		String model__java____ownedElements_name_prime = "ownedElements";
-		String java__model____model_name_prime = "model";
-		String model__typeParameter____typeParameters_name_prime = "typeParameters";
+		String objectToObject__object____source_name_prime = "source";
+		String eModelToPg__pg____target_name_prime = "target";
 		String eModelToPg__model____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(typeParameter);
+		String javaToJava__tPackageJava____target_name_prime = "target";
+		String javaToJava__java____source_name_prime = "source";
+		String objectToObject__tClass____target_name_prime = "target";
+		String langToLang__tPackageLang____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(object);
 		isApplicableMatch.getAllContextElements().add(pg);
 		isApplicableMatch.getAllContextElements().add(langToLang);
-		isApplicableMatch.getAllContextElements().add(objectToObject);
 		isApplicableMatch.getAllContextElements().add(tPackageJava);
-		isApplicableMatch.getAllContextElements().add(javaToJava);
 		isApplicableMatch.getAllContextElements().add(lang);
-		isApplicableMatch.getAllContextElements().add(eModelToPg);
-		isApplicableMatch.getAllContextElements().add(object);
-		isApplicableMatch.getAllContextElements().add(tClass);
+		isApplicableMatch.getAllContextElements().add(model);
+		isApplicableMatch.getAllContextElements().add(typeParameter);
 		isApplicableMatch.getAllContextElements().add(java);
 		isApplicableMatch.getAllContextElements().add(tPackageLang);
-		isApplicableMatch.getAllContextElements().add(model);
-		pg__tPackageJava____packages.setSrc(pg);
-		pg__tPackageJava____packages.setTrg(tPackageJava);
-		isApplicableMatch.getAllContextElements().add(pg__tPackageJava____packages);
-		javaToJava__tPackageJava____target.setSrc(javaToJava);
-		javaToJava__tPackageJava____target.setTrg(tPackageJava);
-		isApplicableMatch.getAllContextElements().add(javaToJava__tPackageJava____target);
+		isApplicableMatch.getAllContextElements().add(objectToObject);
+		isApplicableMatch.getAllContextElements().add(eModelToPg);
+		isApplicableMatch.getAllContextElements().add(javaToJava);
+		isApplicableMatch.getAllContextElements().add(tClass);
 		tPackageJava__tPackageLang____subpackages.setSrc(tPackageJava);
 		tPackageJava__tPackageLang____subpackages.setTrg(tPackageLang);
 		isApplicableMatch.getAllContextElements().add(tPackageJava__tPackageLang____subpackages);
 		tPackageLang__tPackageJava____parent.setSrc(tPackageLang);
 		tPackageLang__tPackageJava____parent.setTrg(tPackageJava);
 		isApplicableMatch.getAllContextElements().add(tPackageLang__tPackageJava____parent);
-		eModelToPg__pg____target.setSrc(eModelToPg);
-		eModelToPg__pg____target.setTrg(pg);
-		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
-		objectToObject__object____source.setSrc(objectToObject);
-		objectToObject__object____source.setTrg(object);
-		isApplicableMatch.getAllContextElements().add(objectToObject__object____source);
+		model__java____ownedElements.setSrc(model);
+		model__java____ownedElements.setTrg(java);
+		isApplicableMatch.getAllContextElements().add(model__java____ownedElements);
+		java__model____model.setSrc(java);
+		java__model____model.setTrg(model);
+		isApplicableMatch.getAllContextElements().add(java__model____model);
+		pg__tPackageJava____packages.setSrc(pg);
+		pg__tPackageJava____packages.setTrg(tPackageJava);
+		isApplicableMatch.getAllContextElements().add(pg__tPackageJava____packages);
 		java__lang____ownedPackages.setSrc(java);
 		java__lang____ownedPackages.setTrg(lang);
 		isApplicableMatch.getAllContextElements().add(java__lang____ownedPackages);
 		lang__java____package.setSrc(lang);
 		lang__java____package.setTrg(java);
 		isApplicableMatch.getAllContextElements().add(lang__java____package);
-		javaToJava__java____source.setSrc(javaToJava);
-		javaToJava__java____source.setTrg(java);
-		isApplicableMatch.getAllContextElements().add(javaToJava__java____source);
-		objectToObject__tClass____target.setSrc(objectToObject);
-		objectToObject__tClass____target.setTrg(tClass);
-		isApplicableMatch.getAllContextElements().add(objectToObject__tClass____target);
 		langToLang__lang____source.setSrc(langToLang);
 		langToLang__lang____source.setTrg(lang);
 		isApplicableMatch.getAllContextElements().add(langToLang__lang____source);
-		langToLang__tPackageLang____target.setSrc(langToLang);
-		langToLang__tPackageLang____target.setTrg(tPackageLang);
-		isApplicableMatch.getAllContextElements().add(langToLang__tPackageLang____target);
+		model__typeParameter____typeParameters.setSrc(model);
+		model__typeParameter____typeParameters.setTrg(typeParameter);
+		isApplicableMatch.getAllContextElements().add(model__typeParameter____typeParameters);
 		tPackageLang__tClass____classes.setSrc(tPackageLang);
 		tPackageLang__tClass____classes.setTrg(tClass);
 		isApplicableMatch.getAllContextElements().add(tPackageLang__tClass____classes);
@@ -2151,60 +2140,69 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		object__lang____package.setSrc(object);
 		object__lang____package.setTrg(lang);
 		isApplicableMatch.getAllContextElements().add(object__lang____package);
-		model__java____ownedElements.setSrc(model);
-		model__java____ownedElements.setTrg(java);
-		isApplicableMatch.getAllContextElements().add(model__java____ownedElements);
-		java__model____model.setSrc(java);
-		java__model____model.setTrg(model);
-		isApplicableMatch.getAllContextElements().add(java__model____model);
-		model__typeParameter____typeParameters.setSrc(model);
-		model__typeParameter____typeParameters.setTrg(typeParameter);
-		isApplicableMatch.getAllContextElements().add(model__typeParameter____typeParameters);
+		objectToObject__object____source.setSrc(objectToObject);
+		objectToObject__object____source.setTrg(object);
+		isApplicableMatch.getAllContextElements().add(objectToObject__object____source);
+		eModelToPg__pg____target.setSrc(eModelToPg);
+		eModelToPg__pg____target.setTrg(pg);
+		isApplicableMatch.getAllContextElements().add(eModelToPg__pg____target);
 		eModelToPg__model____source.setSrc(eModelToPg);
 		eModelToPg__model____source.setTrg(model);
 		isApplicableMatch.getAllContextElements().add(eModelToPg__model____source);
-		pg__tPackageJava____packages.setName(pg__tPackageJava____packages_name_prime);
-		javaToJava__tPackageJava____target.setName(javaToJava__tPackageJava____target_name_prime);
+		javaToJava__tPackageJava____target.setSrc(javaToJava);
+		javaToJava__tPackageJava____target.setTrg(tPackageJava);
+		isApplicableMatch.getAllContextElements().add(javaToJava__tPackageJava____target);
+		javaToJava__java____source.setSrc(javaToJava);
+		javaToJava__java____source.setTrg(java);
+		isApplicableMatch.getAllContextElements().add(javaToJava__java____source);
+		objectToObject__tClass____target.setSrc(objectToObject);
+		objectToObject__tClass____target.setTrg(tClass);
+		isApplicableMatch.getAllContextElements().add(objectToObject__tClass____target);
+		langToLang__tPackageLang____target.setSrc(langToLang);
+		langToLang__tPackageLang____target.setTrg(tPackageLang);
+		isApplicableMatch.getAllContextElements().add(langToLang__tPackageLang____target);
 		tPackageJava__tPackageLang____subpackages.setName(tPackageJava__tPackageLang____subpackages_name_prime);
 		tPackageLang__tPackageJava____parent.setName(tPackageLang__tPackageJava____parent_name_prime);
-		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
-		objectToObject__object____source.setName(objectToObject__object____source_name_prime);
+		model__java____ownedElements.setName(model__java____ownedElements_name_prime);
+		java__model____model.setName(java__model____model_name_prime);
+		pg__tPackageJava____packages.setName(pg__tPackageJava____packages_name_prime);
 		java__lang____ownedPackages.setName(java__lang____ownedPackages_name_prime);
 		lang__java____package.setName(lang__java____package_name_prime);
-		javaToJava__java____source.setName(javaToJava__java____source_name_prime);
-		objectToObject__tClass____target.setName(objectToObject__tClass____target_name_prime);
 		langToLang__lang____source.setName(langToLang__lang____source_name_prime);
-		langToLang__tPackageLang____target.setName(langToLang__tPackageLang____target_name_prime);
+		model__typeParameter____typeParameters.setName(model__typeParameter____typeParameters_name_prime);
 		tPackageLang__tClass____classes.setName(tPackageLang__tClass____classes_name_prime);
 		lang__object____ownedElements.setName(lang__object____ownedElements_name_prime);
 		object__lang____package.setName(object__lang____package_name_prime);
-		model__java____ownedElements.setName(model__java____ownedElements_name_prime);
-		java__model____model.setName(java__model____model_name_prime);
-		model__typeParameter____typeParameters.setName(model__typeParameter____typeParameters_name_prime);
+		objectToObject__object____source.setName(objectToObject__object____source_name_prime);
+		eModelToPg__pg____target.setName(eModelToPg__pg____target_name_prime);
 		eModelToPg__model____source.setName(eModelToPg__model____source_name_prime);
-		return new Object[] { typeParameter, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg,
-				object, tClass, java, tPackageLang, model, isApplicableMatch, pg__tPackageJava____packages,
-				javaToJava__tPackageJava____target, tPackageJava__tPackageLang____subpackages,
-				tPackageLang__tPackageJava____parent, eModelToPg__pg____target, objectToObject__object____source,
-				java__lang____ownedPackages, lang__java____package, javaToJava__java____source,
-				objectToObject__tClass____target, langToLang__lang____source, langToLang__tPackageLang____target,
-				tPackageLang__tClass____classes, lang__object____ownedElements, object__lang____package,
-				model__java____ownedElements, java__model____model, model__typeParameter____typeParameters,
-				eModelToPg__model____source };
+		javaToJava__tPackageJava____target.setName(javaToJava__tPackageJava____target_name_prime);
+		javaToJava__java____source.setName(javaToJava__java____source_name_prime);
+		objectToObject__tClass____target.setName(objectToObject__tClass____target_name_prime);
+		langToLang__tPackageLang____target.setName(langToLang__tPackageLang____target_name_prime);
+		return new Object[] { object, pg, langToLang, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+				objectToObject, eModelToPg, javaToJava, tClass, isApplicableMatch,
+				tPackageJava__tPackageLang____subpackages, tPackageLang__tPackageJava____parent,
+				model__java____ownedElements, java__model____model, pg__tPackageJava____packages,
+				java__lang____ownedPackages, lang__java____package, langToLang__lang____source,
+				model__typeParameter____typeParameters, tPackageLang__tClass____classes, lang__object____ownedElements,
+				object__lang____package, objectToObject__object____source, eModelToPg__pg____target,
+				eModelToPg__model____source, javaToJava__tPackageJava____target, javaToJava__java____source,
+				objectToObject__tClass____target, langToLang__tPackageLang____target };
 	}
 
 	public static final Object[] pattern_TypeParameter_2_4_solveCSP_bindingFBBBBBBBBBBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg,
-			PackageToTPackage langToLang, TypeToTAbstractType objectToObject, TPackage tPackageJava,
-			PackageToTPackage javaToJava, org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg,
-			ClassDeclaration object, TClass tClass, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
-			MGravityModel model) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, typeParameter, pg, langToLang,
-				objectToObject, tPackageJava, javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model);
+			IsApplicableMatch isApplicableMatch, ClassDeclaration object, TypeGraph pg, PackageToTPackage langToLang,
+			TPackage tPackageJava, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg,
+			PackageToTPackage javaToJava, TClass tClass) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, object, pg, langToLang, tPackageJava,
+				lang, model, typeParameter, java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, typeParameter, pg, langToLang, objectToObject,
-					tPackageJava, javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model };
+			return new Object[] { csp, _this, isApplicableMatch, object, pg, langToLang, tPackageJava, lang, model,
+					typeParameter, java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass };
 		}
 		return null;
 	}
@@ -2214,22 +2212,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_2_4_solveCSP_bindingAndBlackFBBBBBBBBBBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg,
-			PackageToTPackage langToLang, TypeToTAbstractType objectToObject, TPackage tPackageJava,
-			PackageToTPackage javaToJava, org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg,
-			ClassDeclaration object, TClass tClass, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
-			MGravityModel model) {
+			IsApplicableMatch isApplicableMatch, ClassDeclaration object, TypeGraph pg, PackageToTPackage langToLang,
+			TPackage tPackageJava, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg,
+			PackageToTPackage javaToJava, TClass tClass) {
 		Object[] result_pattern_TypeParameter_2_4_solveCSP_binding = pattern_TypeParameter_2_4_solveCSP_bindingFBBBBBBBBBBBBBBB(
-				_this, isApplicableMatch, typeParameter, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang,
-				eModelToPg, object, tClass, java, tPackageLang, model);
+				_this, isApplicableMatch, object, pg, langToLang, tPackageJava, lang, model, typeParameter, java,
+				tPackageLang, objectToObject, eModelToPg, javaToJava, tClass);
 		if (result_pattern_TypeParameter_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_2_4_solveCSP_black = pattern_TypeParameter_2_4_solveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, typeParameter, pg, langToLang, objectToObject,
-						tPackageJava, javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model };
+				return new Object[] { csp, _this, isApplicableMatch, object, pg, langToLang, tPackageJava, lang, model,
+						typeParameter, java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass };
 			}
 		}
 		return null;
@@ -2263,19 +2261,19 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_10_1_initialbindings_blackBBBBBB(TypeParameter _this,
-			Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
+			Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			return new Object[] { _this, match, pg, tPackageJava, tClass, tPackageLang };
+			return new Object[] { _this, match, pg, tPackageJava, tPackageLang, tClass };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_10_2_SolveCSP_bindingFBBBBBB(TypeParameter _this, Match match,
-			TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pg, tPackageJava, tClass, tPackageLang);
+			TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pg, tPackageJava, tPackageLang, tClass);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, pg, tPackageJava, tClass, tPackageLang };
+			return new Object[] { csp, _this, match, pg, tPackageJava, tPackageLang, tClass };
 		}
 		return null;
 	}
@@ -2285,16 +2283,16 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_10_2_SolveCSP_bindingAndBlackFBBBBBB(TypeParameter _this,
-			Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
+			Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
 		Object[] result_pattern_TypeParameter_10_2_SolveCSP_binding = pattern_TypeParameter_10_2_SolveCSP_bindingFBBBBBB(
-				_this, match, pg, tPackageJava, tClass, tPackageLang);
+				_this, match, pg, tPackageJava, tPackageLang, tClass);
 		if (result_pattern_TypeParameter_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_10_2_SolveCSP_black = pattern_TypeParameter_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, pg, tPackageJava, tClass, tPackageLang };
+				return new Object[] { csp, _this, match, pg, tPackageJava, tPackageLang, tClass };
 			}
 		}
 		return null;
@@ -2307,59 +2305,58 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_10_4_collectelementstobetranslated_blackBBBBB(Match match,
-			TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
+			TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			return new Object[] { match, pg, tPackageJava, tClass, tPackageLang };
+			return new Object[] { match, pg, tPackageJava, tPackageLang, tClass };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_10_5_collectcontextelements_blackBBBBB(Match match, TypeGraph pg,
-			TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
+			TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			return new Object[] { match, pg, tPackageJava, tClass, tPackageLang };
+			return new Object[] { match, pg, tPackageJava, tPackageLang, tClass };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_TypeParameter_10_5_collectcontextelements_greenBBBBBFFFF(Match match,
-			TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
-		EMoflonEdge pg__tPackageJava____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
 		EMoflonEdge tPackageJava__tPackageLang____subpackages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackageLang__tPackageJava____parent = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge pg__tPackageJava____packages = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackageLang__tClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getContextNodes().add(pg);
 		match.getContextNodes().add(tPackageJava);
-		match.getContextNodes().add(tClass);
 		match.getContextNodes().add(tPackageLang);
-		String pg__tPackageJava____packages_name_prime = "packages";
+		match.getContextNodes().add(tClass);
 		String tPackageJava__tPackageLang____subpackages_name_prime = "subpackages";
 		String tPackageLang__tPackageJava____parent_name_prime = "parent";
+		String pg__tPackageJava____packages_name_prime = "packages";
 		String tPackageLang__tClass____classes_name_prime = "classes";
-		pg__tPackageJava____packages.setSrc(pg);
-		pg__tPackageJava____packages.setTrg(tPackageJava);
-		match.getContextEdges().add(pg__tPackageJava____packages);
 		tPackageJava__tPackageLang____subpackages.setSrc(tPackageJava);
 		tPackageJava__tPackageLang____subpackages.setTrg(tPackageLang);
 		match.getContextEdges().add(tPackageJava__tPackageLang____subpackages);
 		tPackageLang__tPackageJava____parent.setSrc(tPackageLang);
 		tPackageLang__tPackageJava____parent.setTrg(tPackageJava);
 		match.getContextEdges().add(tPackageLang__tPackageJava____parent);
+		pg__tPackageJava____packages.setSrc(pg);
+		pg__tPackageJava____packages.setTrg(tPackageJava);
+		match.getContextEdges().add(pg__tPackageJava____packages);
 		tPackageLang__tClass____classes.setSrc(tPackageLang);
 		tPackageLang__tClass____classes.setTrg(tClass);
 		match.getContextEdges().add(tPackageLang__tClass____classes);
-		pg__tPackageJava____packages.setName(pg__tPackageJava____packages_name_prime);
 		tPackageJava__tPackageLang____subpackages.setName(tPackageJava__tPackageLang____subpackages_name_prime);
 		tPackageLang__tPackageJava____parent.setName(tPackageLang__tPackageJava____parent_name_prime);
+		pg__tPackageJava____packages.setName(pg__tPackageJava____packages_name_prime);
 		tPackageLang__tClass____classes.setName(tPackageLang__tClass____classes_name_prime);
-		return new Object[] { match, pg, tPackageJava, tClass, tPackageLang, pg__tPackageJava____packages,
-				tPackageJava__tPackageLang____subpackages, tPackageLang__tPackageJava____parent,
-				tPackageLang__tClass____classes };
+		return new Object[] { match, pg, tPackageJava, tPackageLang, tClass, tPackageJava__tPackageLang____subpackages,
+				tPackageLang__tPackageJava____parent, pg__tPackageJava____packages, tPackageLang__tClass____classes };
 	}
 
 	public static final void pattern_TypeParameter_10_6_registerobjectstomatch_expressionBBBBBB(TypeParameter _this,
-			Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
-		_this.registerObjectsToMatch_BWD(match, pg, tPackageJava, tClass, tPackageLang);
+			Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
+		_this.registerObjectsToMatch_BWD(match, pg, tPackageJava, tPackageLang, tClass);
 
 	}
 
@@ -2438,7 +2435,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 							for (TClass tClass : tPackageLang.getClasses()) {
 								String tClass_tName = tClass.getTName();
 								if (tClass_tName.equals("Object")) {
-									_result.add(new Object[] { pg, tPackageJava, tClass, tPackageLang });
+									_result.add(new Object[] { pg, tPackageJava, tPackageLang, tClass });
 								}
 
 							}
@@ -2462,9 +2459,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final boolean pattern_TypeParameter_17_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			TypeParameter _this, Match match, TypeGraph pg, TPackage tPackageJava, TClass tClass,
-			TPackage tPackageLang) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pg, tPackageJava, tClass, tPackageLang);
+			TypeParameter _this, Match match, TypeGraph pg, TPackage tPackageJava, TPackage tPackageLang,
+			TClass tClass) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pg, tPackageJava, tPackageLang, tClass);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2552,9 +2549,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_18_2_testcorematchandDECs_black_nac_0BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (MGravityModel __DEC_typeParameter_typeParameters_420366 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MGravityModel __DEC_typeParameter_typeParameters_128351 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, MGravityModel.class, "typeParameters")) {
-			if (!model.equals(__DEC_typeParameter_typeParameters_420366)) {
+			if (!model.equals(__DEC_typeParameter_typeParameters_128351)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2563,9 +2560,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_18_2_testcorematchandDECs_black_nac_1BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (Model __DEC_typeParameter_orphanTypes_673252 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_typeParameter_orphanTypes_480030 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, Model.class, "orphanTypes")) {
-			if (!model.equals(__DEC_typeParameter_orphanTypes_673252)) {
+			if (!model.equals(__DEC_typeParameter_orphanTypes_480030)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2603,8 +2600,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 													ClassDeclaration object = (ClassDeclaration) tmpObject;
 													String object_name = object.getName();
 													if (object_name.equals("Object")) {
-														_result.add(new Object[] { typeParameter, lang, object, java,
-																model, _edge_typeParameters });
+														_result.add(new Object[] { object, lang, model, typeParameter,
+																java, _edge_typeParameters });
 													}
 
 												}
@@ -2633,10 +2630,10 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final boolean pattern_TypeParameter_18_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			TypeParameter _this, Match match, org.eclipse.modisco.java.TypeParameter typeParameter,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, org.eclipse.modisco.java.Package java,
-			MGravityModel model) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, typeParameter, lang, object, java, model);
+			TypeParameter _this, Match match, ClassDeclaration object, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, object, lang, model, typeParameter, java);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2680,44 +2677,44 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_21_2_matchsrctrgcontext_bindingFFFFFFFFFBB(Match sourceMatch,
 			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("typeParameter");
+		EObject _localVariable_0 = sourceMatch.getObject("object");
 		EObject _localVariable_1 = targetMatch.getObject("pg");
 		EObject _localVariable_2 = targetMatch.getObject("tPackageJava");
 		EObject _localVariable_3 = sourceMatch.getObject("lang");
-		EObject _localVariable_4 = sourceMatch.getObject("object");
-		EObject _localVariable_5 = targetMatch.getObject("tClass");
+		EObject _localVariable_4 = sourceMatch.getObject("model");
+		EObject _localVariable_5 = sourceMatch.getObject("typeParameter");
 		EObject _localVariable_6 = sourceMatch.getObject("java");
 		EObject _localVariable_7 = targetMatch.getObject("tPackageLang");
-		EObject _localVariable_8 = sourceMatch.getObject("model");
-		EObject tmpTypeParameter = _localVariable_0;
+		EObject _localVariable_8 = targetMatch.getObject("tClass");
+		EObject tmpObject = _localVariable_0;
 		EObject tmpPg = _localVariable_1;
 		EObject tmpTPackageJava = _localVariable_2;
 		EObject tmpLang = _localVariable_3;
-		EObject tmpObject = _localVariable_4;
-		EObject tmpTClass = _localVariable_5;
+		EObject tmpModel = _localVariable_4;
+		EObject tmpTypeParameter = _localVariable_5;
 		EObject tmpJava = _localVariable_6;
 		EObject tmpTPackageLang = _localVariable_7;
-		EObject tmpModel = _localVariable_8;
-		if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
-			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
+		EObject tmpTClass = _localVariable_8;
+		if (tmpObject instanceof ClassDeclaration) {
+			ClassDeclaration object = (ClassDeclaration) tmpObject;
 			if (tmpPg instanceof TypeGraph) {
 				TypeGraph pg = (TypeGraph) tmpPg;
 				if (tmpTPackageJava instanceof TPackage) {
 					TPackage tPackageJava = (TPackage) tmpTPackageJava;
 					if (tmpLang instanceof org.eclipse.modisco.java.Package) {
 						org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) tmpLang;
-						if (tmpObject instanceof ClassDeclaration) {
-							ClassDeclaration object = (ClassDeclaration) tmpObject;
-							if (tmpTClass instanceof TClass) {
-								TClass tClass = (TClass) tmpTClass;
+						if (tmpModel instanceof MGravityModel) {
+							MGravityModel model = (MGravityModel) tmpModel;
+							if (tmpTypeParameter instanceof org.eclipse.modisco.java.TypeParameter) {
+								org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) tmpTypeParameter;
 								if (tmpJava instanceof org.eclipse.modisco.java.Package) {
 									org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) tmpJava;
 									if (tmpTPackageLang instanceof TPackage) {
 										TPackage tPackageLang = (TPackage) tmpTPackageLang;
-										if (tmpModel instanceof MGravityModel) {
-											MGravityModel model = (MGravityModel) tmpModel;
-											return new Object[] { typeParameter, pg, tPackageJava, lang, object, tClass,
-													java, tPackageLang, model, sourceMatch, targetMatch };
+										if (tmpTClass instanceof TClass) {
+											TClass tClass = (TClass) tmpTClass;
+											return new Object[] { object, pg, tPackageJava, lang, model, typeParameter,
+													java, tPackageLang, tClass, sourceMatch, targetMatch };
 										}
 									}
 								}
@@ -2730,24 +2727,23 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_21_2_matchsrctrgcontext_blackBBBBBBBBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TPackage tPackageJava,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_TypeParameter_21_2_matchsrctrgcontext_blackBBBBBBBBBBB(ClassDeclaration object,
+			TypeGraph pg, TPackage tPackageJava, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java,
+			TPackage tPackageLang, TClass tClass, Match sourceMatch, Match targetMatch) {
 		if (!tPackageJava.equals(tPackageLang)) {
 			if (!java.equals(lang)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					String tPackageJava_tName = tPackageJava.getTName();
-					if (tPackageJava_tName.equals("java")) {
-						String object_name = object.getName();
-						if (object_name.equals("Object")) {
-							String tClass_tName = tClass.getTName();
-							if (tClass_tName.equals("Object")) {
-								String tPackageLang_tName = tPackageLang.getTName();
-								if (tPackageLang_tName.equals("lang")) {
-									return new Object[] { typeParameter, pg, tPackageJava, lang, object, tClass, java,
-											tPackageLang, model, sourceMatch, targetMatch };
+					String object_name = object.getName();
+					if (object_name.equals("Object")) {
+						String tPackageJava_tName = tPackageJava.getTName();
+						if (tPackageJava_tName.equals("java")) {
+							String tPackageLang_tName = tPackageLang.getTName();
+							if (tPackageLang_tName.equals("lang")) {
+								String tClass_tName = tClass.getTName();
+								if (tClass_tName.equals("Object")) {
+									return new Object[] { object, pg, tPackageJava, lang, model, typeParameter, java,
+											tPackageLang, tClass, sourceMatch, targetMatch };
 								}
 
 							}
@@ -2767,22 +2763,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		Object[] result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding = pattern_TypeParameter_21_2_matchsrctrgcontext_bindingFFFFFFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding != null) {
-			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[0];
+			ClassDeclaration object = (ClassDeclaration) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[0];
 			TypeGraph pg = (TypeGraph) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[1];
 			TPackage tPackageJava = (TPackage) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[2];
 			org.eclipse.modisco.java.Package lang = (org.eclipse.modisco.java.Package) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[3];
-			ClassDeclaration object = (ClassDeclaration) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[4];
-			TClass tClass = (TClass) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[5];
+			MGravityModel model = (MGravityModel) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[4];
+			org.eclipse.modisco.java.TypeParameter typeParameter = (org.eclipse.modisco.java.TypeParameter) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[5];
 			org.eclipse.modisco.java.Package java = (org.eclipse.modisco.java.Package) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[6];
 			TPackage tPackageLang = (TPackage) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[7];
-			MGravityModel model = (MGravityModel) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[8];
+			TClass tClass = (TClass) result_pattern_TypeParameter_21_2_matchsrctrgcontext_binding[8];
 
 			Object[] result_pattern_TypeParameter_21_2_matchsrctrgcontext_black = pattern_TypeParameter_21_2_matchsrctrgcontext_blackBBBBBBBBBBB(
-					typeParameter, pg, tPackageJava, lang, object, tClass, java, tPackageLang, model, sourceMatch,
+					object, pg, tPackageJava, lang, model, typeParameter, java, tPackageLang, tClass, sourceMatch,
 					targetMatch);
 			if (result_pattern_TypeParameter_21_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { typeParameter, pg, tPackageJava, lang, object, tClass, java, tPackageLang, model,
+				return new Object[] { object, pg, tPackageJava, lang, model, typeParameter, java, tPackageLang, tClass,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2790,16 +2786,16 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_21_3_solvecsp_bindingFBBBBBBBBBBBB(TypeParameter _this,
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TPackage tPackageJava,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, Match sourceMatch,
+			ClassDeclaration object, TypeGraph pg, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java, TPackage tPackageLang, TClass tClass, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_9 = _this.isApplicable_solveCsp_CC(typeParameter, pg, tPackageJava, lang, object, tClass,
-				java, tPackageLang, model, sourceMatch, targetMatch);
+		CSP _localVariable_9 = _this.isApplicable_solveCsp_CC(object, pg, tPackageJava, lang, model, typeParameter,
+				java, tPackageLang, tClass, sourceMatch, targetMatch);
 		CSP csp = _localVariable_9;
 		if (csp != null) {
-			return new Object[] { csp, _this, typeParameter, pg, tPackageJava, lang, object, tClass, java, tPackageLang,
-					model, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, object, pg, tPackageJava, lang, model, typeParameter, java, tPackageLang,
+					tClass, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2809,12 +2805,12 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_21_3_solvecsp_bindingAndBlackFBBBBBBBBBBBB(TypeParameter _this,
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TPackage tPackageJava,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, Match sourceMatch,
+			ClassDeclaration object, TypeGraph pg, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java, TPackage tPackageLang, TClass tClass, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_TypeParameter_21_3_solvecsp_binding = pattern_TypeParameter_21_3_solvecsp_bindingFBBBBBBBBBBBB(
-				_this, typeParameter, pg, tPackageJava, lang, object, tClass, java, tPackageLang, model, sourceMatch,
+				_this, object, pg, tPackageJava, lang, model, typeParameter, java, tPackageLang, tClass, sourceMatch,
 				targetMatch);
 		if (result_pattern_TypeParameter_21_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_21_3_solvecsp_binding[0];
@@ -2822,8 +2818,8 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 			Object[] result_pattern_TypeParameter_21_3_solvecsp_black = pattern_TypeParameter_21_3_solvecsp_blackB(csp);
 			if (result_pattern_TypeParameter_21_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, typeParameter, pg, tPackageJava, lang, object, tClass, java,
-						tPackageLang, model, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, object, pg, tPackageJava, lang, model, typeParameter, java,
+						tPackageLang, tClass, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2835,42 +2831,42 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_TypeParameter_21_5_matchcorrcontext_blackBFFBFBFBBBBBBB(TypeGraph pg,
-			TPackage tPackageJava, org.eclipse.modisco.java.Package lang, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, Match sourceMatch,
-			Match targetMatch) {
+	public static final Iterable<Object[]> pattern_TypeParameter_21_5_matchcorrcontext_blackBBFBBBBBFFFBBB(
+			ClassDeclaration object, TypeGraph pg, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.Package java, TPackage tPackageLang, TClass tClass,
+			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tPackageJava.equals(tPackageLang)) {
 			if (!java.equals(lang)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					String tPackageJava_tName = tPackageJava.getTName();
-					if (tPackageJava_tName.equals("java")) {
-						String object_name = object.getName();
-						if (object_name.equals("Object")) {
-							String tClass_tName = tClass.getTName();
-							if (tClass_tName.equals("Object")) {
-								String tPackageLang_tName = tPackageLang.getTName();
-								if (tPackageLang_tName.equals("lang")) {
-									for (PackageToTPackage javaToJava : org.moflon.core.utilities.eMoflonEMFUtil
-											.getOppositeReferenceTyped(tPackageJava, PackageToTPackage.class,
-													"target")) {
-										if (java.equals(javaToJava.getSource())) {
-											for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
-													.getOppositeReferenceTyped(pg, ModelToTypeGraph.class, "target")) {
-												if (model.equals(eModelToPg.getSource())) {
-													for (TypeToTAbstractType objectToObject : org.moflon.core.utilities.eMoflonEMFUtil
-															.getOppositeReferenceTyped(object,
-																	TypeToTAbstractType.class, "source")) {
-														if (tClass.equals(objectToObject.getTarget())) {
-															for (PackageToTPackage langToLang : org.moflon.core.utilities.eMoflonEMFUtil
-																	.getOppositeReferenceTyped(lang,
-																			PackageToTPackage.class, "source")) {
+					String object_name = object.getName();
+					if (object_name.equals("Object")) {
+						String tPackageJava_tName = tPackageJava.getTName();
+						if (tPackageJava_tName.equals("java")) {
+							String tPackageLang_tName = tPackageLang.getTName();
+							if (tPackageLang_tName.equals("lang")) {
+								String tClass_tName = tClass.getTName();
+								if (tClass_tName.equals("Object")) {
+									for (PackageToTPackage langToLang : org.moflon.core.utilities.eMoflonEMFUtil
+											.getOppositeReferenceTyped(lang, PackageToTPackage.class, "source")) {
+										if (tPackageLang.equals(langToLang.getTarget())) {
+											for (TypeToTAbstractType objectToObject : org.moflon.core.utilities.eMoflonEMFUtil
+													.getOppositeReferenceTyped(object, TypeToTAbstractType.class,
+															"source")) {
+												if (tClass.equals(objectToObject.getTarget())) {
+													for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
+															.getOppositeReferenceTyped(pg, ModelToTypeGraph.class,
+																	"target")) {
+														if (model.equals(eModelToPg.getSource())) {
+															for (PackageToTPackage javaToJava : org.moflon.core.utilities.eMoflonEMFUtil
+																	.getOppositeReferenceTyped(tPackageJava,
+																			PackageToTPackage.class, "target")) {
 																if (!javaToJava.equals(langToLang)) {
-																	if (tPackageLang.equals(langToLang.getTarget())) {
-																		_result.add(new Object[] { pg, langToLang,
-																				objectToObject, tPackageJava,
-																				javaToJava, lang, eModelToPg, object,
-																				tClass, java, tPackageLang, model,
+																	if (java.equals(javaToJava.getSource())) {
+																		_result.add(new Object[] { object, pg,
+																				langToLang, tPackageJava, lang, model,
+																				java, tPackageLang, objectToObject,
+																				eModelToPg, javaToJava, tClass,
 																				sourceMatch, targetMatch });
 																	}
 																}
@@ -2896,7 +2892,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_21_5_matchcorrcontext_greenBBBBBBF(PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, PackageToTPackage javaToJava, ModelToTypeGraph eModelToPg,
+			TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava,
 			Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "TypeParameter";
@@ -2904,32 +2900,32 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		ccMatch.setTargetMatch(targetMatch);
 		ccMatch.getAllContextElements().add(langToLang);
 		ccMatch.getAllContextElements().add(objectToObject);
-		ccMatch.getAllContextElements().add(javaToJava);
 		ccMatch.getAllContextElements().add(eModelToPg);
+		ccMatch.getAllContextElements().add(javaToJava);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { langToLang, objectToObject, javaToJava, eModelToPg, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { langToLang, objectToObject, eModelToPg, javaToJava, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_TypeParameter_21_6_createcorrespondence_blackBBBBBBBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, TypeGraph pg, TPackage tPackageJava,
-			org.eclipse.modisco.java.Package lang, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model, CCMatch ccMatch) {
+			ClassDeclaration object, TypeGraph pg, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.TypeParameter typeParameter,
+			org.eclipse.modisco.java.Package java, TPackage tPackageLang, TClass tClass, CCMatch ccMatch) {
 		if (!tPackageJava.equals(tPackageLang)) {
 			if (!java.equals(lang)) {
-				return new Object[] { typeParameter, pg, tPackageJava, lang, object, tClass, java, tPackageLang, model,
+				return new Object[] { object, pg, tPackageJava, lang, model, typeParameter, java, tPackageLang, tClass,
 						ccMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_21_6_createcorrespondence_greenBFBB(
+	public static final Object[] pattern_TypeParameter_21_6_createcorrespondence_greenFBBB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, TClass tClass, CCMatch ccMatch) {
 		TypeToTAbstractType templateTypeToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		templateTypeToTClass.setSource(typeParameter);
 		templateTypeToTClass.setTarget(tClass);
 		ccMatch.getCreateCorr().add(templateTypeToTClass);
-		return new Object[] { typeParameter, templateTypeToTClass, tClass, ccMatch };
+		return new Object[] { templateTypeToTClass, typeParameter, tClass, ccMatch };
 	}
 
 	public static final Object[] pattern_TypeParameter_21_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2954,9 +2950,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_24_1_matchtggpattern_black_nac_0BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (MGravityModel __DEC_typeParameter_typeParameters_319838 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MGravityModel __DEC_typeParameter_typeParameters_880416 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, MGravityModel.class, "typeParameters")) {
-			if (!model.equals(__DEC_typeParameter_typeParameters_319838)) {
+			if (!model.equals(__DEC_typeParameter_typeParameters_880416)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2965,9 +2961,9 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 
 	public static final Object[] pattern_TypeParameter_24_1_matchtggpattern_black_nac_1BB(
 			org.eclipse.modisco.java.TypeParameter typeParameter, MGravityModel model) {
-		for (Model __DEC_typeParameter_orphanTypes_101075 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_typeParameter_orphanTypes_608838 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeParameter, Model.class, "orphanTypes")) {
-			if (!model.equals(__DEC_typeParameter_orphanTypes_101075)) {
+			if (!model.equals(__DEC_typeParameter_orphanTypes_608838)) {
 				return new Object[] { typeParameter, model };
 			}
 		}
@@ -2982,14 +2978,14 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_24_1_matchtggpattern_blackBBBBB(
-			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package lang,
-			ClassDeclaration object, org.eclipse.modisco.java.Package java, MGravityModel model) {
+	public static final Object[] pattern_TypeParameter_24_1_matchtggpattern_blackBBBBB(ClassDeclaration object,
+			org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.TypeParameter typeParameter, org.eclipse.modisco.java.Package java) {
 		if (!java.equals(lang)) {
-			if (java.getOwnedPackages().contains(lang)) {
-				if (lang.getOwnedElements().contains(object)) {
-					if (model.getOwnedElements().contains(java)) {
-						if (model.getTypeParameters().contains(typeParameter)) {
+			if (model.getOwnedElements().contains(java)) {
+				if (java.getOwnedPackages().contains(lang)) {
+					if (model.getTypeParameters().contains(typeParameter)) {
+						if (lang.getOwnedElements().contains(object)) {
 							String object_name = object.getName();
 							if (object_name.equals("Object")) {
 								if (pattern_TypeParameter_24_1_matchtggpattern_black_nac_0BB(typeParameter,
@@ -2998,7 +2994,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 											model) == null) {
 										if (pattern_TypeParameter_24_1_matchtggpattern_black_nac_2BB(model,
 												typeParameter) == null) {
-											return new Object[] { typeParameter, lang, object, java, model };
+											return new Object[] { object, lang, model, typeParameter, java };
 										}
 									}
 								}
@@ -3023,18 +3019,18 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_25_1_matchtggpattern_blackBBBB(TypeGraph pg,
-			TPackage tPackageJava, TClass tClass, TPackage tPackageLang) {
+			TPackage tPackageJava, TPackage tPackageLang, TClass tClass) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			if (pg.getPackages().contains(tPackageJava)) {
-				if (tPackageJava.getSubpackages().contains(tPackageLang)) {
+			if (tPackageJava.getSubpackages().contains(tPackageLang)) {
+				if (pg.getPackages().contains(tPackageJava)) {
 					if (tPackageLang.getClasses().contains(tClass)) {
 						String tPackageJava_tName = tPackageJava.getTName();
 						if (tPackageJava_tName.equals("java")) {
-							String tClass_tName = tClass.getTName();
-							if (tClass_tName.equals("Object")) {
-								String tPackageLang_tName = tPackageLang.getTName();
-								if (tPackageLang_tName.equals("lang")) {
-									return new Object[] { pg, tPackageJava, tClass, tPackageLang };
+							String tPackageLang_tName = tPackageLang.getTName();
+							if (tPackageLang_tName.equals("lang")) {
+								String tClass_tName = tClass.getTName();
+								if (tClass_tName.equals("Object")) {
+									return new Object[] { pg, tPackageJava, tPackageLang, tClass };
 								}
 
 							}
@@ -3071,46 +3067,6 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
-		if (ruleResult.getTargetObjects().contains(pg)) {
-			return new Object[] { ruleResult, pg };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TPackage tPackageJava) {
-		if (ruleResult.getTargetObjects().contains(tPackageJava)) {
-			return new Object[] { ruleResult, tPackageJava };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TPackage tPackageLang) {
-		if (ruleResult.getTargetObjects().contains(tPackageLang)) {
-			return new Object[] { ruleResult, tPackageLang };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, TClass tClass) {
-		if (ruleResult.getTargetObjects().contains(tClass)) {
-			return new Object[] { ruleResult, tClass };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType objectToObject) {
-		if (ruleResult.getCorrObjects().contains(objectToObject)) {
-			return new Object[] { ruleResult, objectToObject };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_5BB(
 			ModelgeneratorRuleResult ruleResult, ClassDeclaration object) {
 		if (ruleResult.getSourceObjects().contains(object)) {
 			return new Object[] { ruleResult, object };
@@ -3118,7 +3074,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_6BB(
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package lang) {
 		if (ruleResult.getSourceObjects().contains(lang)) {
 			return new Object[] { ruleResult, lang };
@@ -3126,7 +3082,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_7BB(
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package java) {
 		if (ruleResult.getSourceObjects().contains(java)) {
 			return new Object[] { ruleResult, java };
@@ -3134,15 +3090,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_8BB(
-			ModelgeneratorRuleResult ruleResult, PackageToTPackage javaToJava) {
-		if (ruleResult.getCorrObjects().contains(javaToJava)) {
-			return new Object[] { ruleResult, javaToJava };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_9BB(
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, MGravityModel model) {
 		if (ruleResult.getSourceObjects().contains(model)) {
 			return new Object[] { ruleResult, model };
@@ -3150,7 +3098,7 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_10BB(
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, ModelToTypeGraph eModelToPg) {
 		if (ruleResult.getCorrObjects().contains(eModelToPg)) {
 			return new Object[] { ruleResult, eModelToPg };
@@ -3158,7 +3106,47 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_11BB(
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
+		if (ruleResult.getTargetObjects().contains(pg)) {
+			return new Object[] { ruleResult, pg };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_6BB(
+			ModelgeneratorRuleResult ruleResult, TPackage tPackageJava) {
+		if (ruleResult.getTargetObjects().contains(tPackageJava)) {
+			return new Object[] { ruleResult, tPackageJava };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_7BB(
+			ModelgeneratorRuleResult ruleResult, TPackage tPackageLang) {
+		if (ruleResult.getTargetObjects().contains(tPackageLang)) {
+			return new Object[] { ruleResult, tPackageLang };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_8BB(
+			ModelgeneratorRuleResult ruleResult, TClass tClass) {
+		if (ruleResult.getTargetObjects().contains(tClass)) {
+			return new Object[] { ruleResult, tClass };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_9BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType objectToObject) {
+		if (ruleResult.getCorrObjects().contains(objectToObject)) {
+			return new Object[] { ruleResult, objectToObject };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_10BB(
 			ModelgeneratorRuleResult ruleResult, PackageToTPackage langToLang) {
 		if (ruleResult.getCorrObjects().contains(langToLang)) {
 			return new Object[] { ruleResult, langToLang };
@@ -3166,129 +3154,131 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
+	public static final Object[] pattern_TypeParameter_26_2_isapplicablecore_black_nac_11BB(
+			ModelgeneratorRuleResult ruleResult, PackageToTPackage javaToJava) {
+		if (ruleResult.getCorrObjects().contains(javaToJava)) {
+			return new Object[] { ruleResult, javaToJava };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_TypeParameter_26_2_isapplicablecore_blackFFFFFFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList objectToObjectList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpObjectToObject : objectToObjectList.getEntryObjects()) {
-				if (tmpObjectToObject instanceof TypeToTAbstractType) {
-					TypeToTAbstractType objectToObject = (TypeToTAbstractType) tmpObjectToObject;
-					TAbstractType tmpTClass = objectToObject.getTarget();
-					if (tmpTClass instanceof TClass) {
-						TClass tClass = (TClass) tmpTClass;
-						Type tmpObject = objectToObject.getSource();
-						if (tmpObject instanceof ClassDeclaration) {
-							ClassDeclaration object = (ClassDeclaration) tmpObject;
-							String tClass_tName = tClass.getTName();
-							if (tClass_tName.equals("Object")) {
-								org.eclipse.modisco.java.Package lang = object.getPackage();
-								if (lang != null) {
-									String object_name = object.getName();
-									if (object_name.equals("Object")) {
-										org.eclipse.modisco.java.Package java = lang.getPackage();
-										if (java != null) {
-											if (!java.equals(lang)) {
-												Model tmpModel = java.getModel();
-												if (tmpModel instanceof MGravityModel) {
-													MGravityModel model = (MGravityModel) tmpModel;
-													if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_4BB(
-															ruleResult, objectToObject) == null) {
-														if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_3BB(
-																ruleResult, tClass) == null) {
-															if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_5BB(
-																	ruleResult, object) == null) {
-																if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_6BB(
-																		ruleResult, lang) == null) {
-																	if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_7BB(
-																			ruleResult, java) == null) {
-																		if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_9BB(
-																				ruleResult, model) == null) {
-																			for (TPackage tPackageLang : org.moflon.core.utilities.eMoflonEMFUtil
-																					.getOppositeReferenceTyped(tClass,
-																							TPackage.class,
-																							"classes")) {
-																				TPackage tPackageJava = tPackageLang
-																						.getParent();
-																				if (tPackageJava != null) {
-																					if (!tPackageJava
-																							.equals(tPackageLang)) {
-																						String tPackageLang_tName = tPackageLang
-																								.getTName();
-																						if (tPackageLang_tName
-																								.equals("lang")) {
-																							String tPackageJava_tName = tPackageJava
-																									.getTName();
-																							if (tPackageJava_tName
-																									.equals("java")) {
-																								if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_2BB(
-																										ruleResult,
-																										tPackageLang) == null) {
-																									if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_1BB(
+		for (RuleEntryList eModelToPgList : ruleEntryContainer.getRuleEntryList()) {
+			for (EObject tmpEModelToPg : eModelToPgList.getEntryObjects()) {
+				if (tmpEModelToPg instanceof ModelToTypeGraph) {
+					ModelToTypeGraph eModelToPg = (ModelToTypeGraph) tmpEModelToPg;
+					Model tmpModel = eModelToPg.getSource();
+					if (tmpModel instanceof MGravityModel) {
+						MGravityModel model = (MGravityModel) tmpModel;
+						TypeGraph pg = eModelToPg.getTarget();
+						if (pg != null) {
+							if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_4BB(ruleResult,
+									eModelToPg) == null) {
+								if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_3BB(ruleResult,
+										model) == null) {
+									if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_5BB(ruleResult,
+											pg) == null) {
+										for (org.eclipse.modisco.java.Package java : model.getOwnedElements()) {
+											if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_2BB(ruleResult,
+													java) == null) {
+												for (TPackage tPackageJava : pg.getPackages()) {
+													String tPackageJava_tName = tPackageJava.getTName();
+													if (tPackageJava_tName.equals("java")) {
+														if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_6BB(
+																ruleResult, tPackageJava) == null) {
+															for (org.eclipse.modisco.java.Package lang : java
+																	.getOwnedPackages()) {
+																if (!java.equals(lang)) {
+																	if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_1BB(
+																			ruleResult, lang) == null) {
+																		for (TPackage tPackageLang : tPackageJava
+																				.getSubpackages()) {
+																			if (!tPackageJava.equals(tPackageLang)) {
+																				String tPackageLang_tName = tPackageLang
+																						.getTName();
+																				if (tPackageLang_tName.equals("lang")) {
+																					if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_7BB(
+																							ruleResult,
+																							tPackageLang) == null) {
+																						for (AbstractTypeDeclaration tmpObject : lang
+																								.getOwnedElements()) {
+																							if (tmpObject instanceof ClassDeclaration) {
+																								ClassDeclaration object = (ClassDeclaration) tmpObject;
+																								String object_name = object
+																										.getName();
+																								if (object_name.equals(
+																										"Object")) {
+																									if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_0BB(
 																											ruleResult,
-																											tPackageJava) == null) {
-																										for (PackageToTPackage langToLang : org.moflon.core.utilities.eMoflonEMFUtil
-																												.getOppositeReferenceTyped(
-																														lang,
-																														PackageToTPackage.class,
-																														"source")) {
-																											if (tPackageLang
-																													.equals(langToLang
-																															.getTarget())) {
-																												if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_11BB(
+																											object) == null) {
+																										for (TClass tClass : tPackageLang
+																												.getClasses()) {
+																											String tClass_tName = tClass
+																													.getTName();
+																											if (tClass_tName
+																													.equals("Object")) {
+																												if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_8BB(
 																														ruleResult,
-																														langToLang) == null) {
+																														tClass) == null) {
 																													for (PackageToTPackage javaToJava : org.moflon.core.utilities.eMoflonEMFUtil
 																															.getOppositeReferenceTyped(
 																																	java,
 																																	PackageToTPackage.class,
 																																	"source")) {
-																														if (!javaToJava
-																																.equals(langToLang)) {
-																															if (tPackageJava
-																																	.equals(javaToJava
-																																			.getTarget())) {
-																																if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_8BB(
-																																		ruleResult,
-																																		javaToJava) == null) {
-																																	for (ModelToTypeGraph eModelToPg : org.moflon.core.utilities.eMoflonEMFUtil
-																																			.getOppositeReferenceTyped(
-																																					model,
-																																					ModelToTypeGraph.class,
-																																					"source")) {
-																																		TypeGraph pg = eModelToPg
-																																				.getTarget();
-																																		if (pg != null) {
-																																			if (pg.getPackages()
-																																					.contains(
-																																							tPackageJava)) {
-																																				if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_10BB(
-																																						ruleResult,
-																																						eModelToPg) == null) {
-																																					if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_0BB(
-																																							ruleResult,
-																																							pg) == null) {
-																																						_result.add(
-																																								new Object[] {
-																																										objectToObjectList,
-																																										pg,
-																																										tPackageJava,
-																																										tPackageLang,
-																																										tClass,
-																																										objectToObject,
-																																										object,
-																																										lang,
-																																										java,
-																																										javaToJava,
-																																										model,
-																																										eModelToPg,
-																																										langToLang,
-																																										ruleEntryContainer,
-																																										ruleResult });
+																														if (tPackageJava
+																																.equals(javaToJava
+																																		.getTarget())) {
+																															if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_11BB(
+																																	ruleResult,
+																																	javaToJava) == null) {
+																																for (PackageToTPackage langToLang : org.moflon.core.utilities.eMoflonEMFUtil
+																																		.getOppositeReferenceTyped(
+																																				lang,
+																																				PackageToTPackage.class,
+																																				"source")) {
+																																	if (!javaToJava
+																																			.equals(langToLang)) {
+																																		if (tPackageLang
+																																				.equals(langToLang
+																																						.getTarget())) {
+																																			if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_10BB(
+																																					ruleResult,
+																																					langToLang) == null) {
+																																				for (TypeToTAbstractType objectToObject : org.moflon.core.utilities.eMoflonEMFUtil
+																																						.getOppositeReferenceTyped(
+																																								object,
+																																								TypeToTAbstractType.class,
+																																								"source")) {
+																																					if (tClass
+																																							.equals(objectToObject
+																																									.getTarget())) {
+																																						if (pattern_TypeParameter_26_2_isapplicablecore_black_nac_9BB(
+																																								ruleResult,
+																																								objectToObject) == null) {
+																																							_result.add(
+																																									new Object[] {
+																																											eModelToPgList,
+																																											object,
+																																											lang,
+																																											java,
+																																											model,
+																																											eModelToPg,
+																																											pg,
+																																											tPackageJava,
+																																											tPackageLang,
+																																											tClass,
+																																											objectToObject,
+																																											langToLang,
+																																											javaToJava,
+																																											ruleEntryContainer,
+																																											ruleResult });
+																																						}
 																																					}
 																																				}
 																																			}
 																																		}
-
 																																	}
 																																}
 																															}
@@ -3296,13 +3286,13 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 																													}
 																												}
 																											}
+
 																										}
 																									}
 																								}
+
 																							}
-
 																						}
-
 																					}
 																				}
 
@@ -3313,17 +3303,13 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 															}
 														}
 													}
-												}
 
+												}
 											}
 										}
-
 									}
-
 								}
-
 							}
-
 						}
 
 					}
@@ -3335,17 +3321,17 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_26_3_solveCSP_bindingFBBBBBBBBBBBBBBB(TypeParameter _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph pg, PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, TPackage tPackageJava, PackageToTPackage javaToJava,
-			org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model,
+			IsApplicableMatch isApplicableMatch, ClassDeclaration object, TypeGraph pg, PackageToTPackage langToLang,
+			TPackage tPackageJava, org.eclipse.modisco.java.Package lang, MGravityModel model,
+			org.eclipse.modisco.java.Package java, TPackage tPackageLang, TypeToTAbstractType objectToObject,
+			ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava, TClass tClass,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, pg, langToLang, objectToObject,
-				tPackageJava, javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, object, pg, langToLang, tPackageJava,
+				lang, model, java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, pg, langToLang, objectToObject, tPackageJava,
-					javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, object, pg, langToLang, tPackageJava, lang, model,
+					java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass, ruleResult };
 		}
 		return null;
 	}
@@ -3355,22 +3341,22 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 	}
 
 	public static final Object[] pattern_TypeParameter_26_3_solveCSP_bindingAndBlackFBBBBBBBBBBBBBBB(
-			TypeParameter _this, IsApplicableMatch isApplicableMatch, TypeGraph pg, PackageToTPackage langToLang,
-			TypeToTAbstractType objectToObject, TPackage tPackageJava, PackageToTPackage javaToJava,
-			org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg, ClassDeclaration object, TClass tClass,
-			org.eclipse.modisco.java.Package java, TPackage tPackageLang, MGravityModel model,
-			ModelgeneratorRuleResult ruleResult) {
+			TypeParameter _this, IsApplicableMatch isApplicableMatch, ClassDeclaration object, TypeGraph pg,
+			PackageToTPackage langToLang, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
+			TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava,
+			TClass tClass, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_TypeParameter_26_3_solveCSP_binding = pattern_TypeParameter_26_3_solveCSP_bindingFBBBBBBBBBBBBBBB(
-				_this, isApplicableMatch, pg, langToLang, objectToObject, tPackageJava, javaToJava, lang, eModelToPg,
-				object, tClass, java, tPackageLang, model, ruleResult);
+				_this, isApplicableMatch, object, pg, langToLang, tPackageJava, lang, model, java, tPackageLang,
+				objectToObject, eModelToPg, javaToJava, tClass, ruleResult);
 		if (result_pattern_TypeParameter_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_TypeParameter_26_3_solveCSP_binding[0];
 
 			Object[] result_pattern_TypeParameter_26_3_solveCSP_black = pattern_TypeParameter_26_3_solveCSP_blackB(csp);
 			if (result_pattern_TypeParameter_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, pg, langToLang, objectToObject, tPackageJava,
-						javaToJava, lang, eModelToPg, object, tClass, java, tPackageLang, model, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, object, pg, langToLang, tPackageJava, lang, model,
+						java, tPackageLang, objectToObject, eModelToPg, javaToJava, tClass, ruleResult };
 			}
 		}
 		return null;
@@ -3382,24 +3368,24 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return _result;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_5_checknacs_blackBBBBBBBBBBBB(TypeGraph pg,
-			PackageToTPackage langToLang, TypeToTAbstractType objectToObject, TPackage tPackageJava,
-			PackageToTPackage javaToJava, org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg,
-			ClassDeclaration object, TClass tClass, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
-			MGravityModel model) {
+	public static final Object[] pattern_TypeParameter_26_5_checknacs_blackBBBBBBBBBBBB(ClassDeclaration object,
+			TypeGraph pg, PackageToTPackage langToLang, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
+			TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava,
+			TClass tClass) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			if (!javaToJava.equals(langToLang)) {
-				if (!java.equals(lang)) {
-					String tPackageJava_tName = tPackageJava.getTName();
-					if (tPackageJava_tName.equals("java")) {
-						String object_name = object.getName();
-						if (object_name.equals("Object")) {
-							String tClass_tName = tClass.getTName();
-							if (tClass_tName.equals("Object")) {
-								String tPackageLang_tName = tPackageLang.getTName();
-								if (tPackageLang_tName.equals("lang")) {
-									return new Object[] { pg, langToLang, objectToObject, tPackageJava, javaToJava,
-											lang, eModelToPg, object, tClass, java, tPackageLang, model };
+			if (!java.equals(lang)) {
+				if (!javaToJava.equals(langToLang)) {
+					String object_name = object.getName();
+					if (object_name.equals("Object")) {
+						String tPackageJava_tName = tPackageJava.getTName();
+						if (tPackageJava_tName.equals("java")) {
+							String tPackageLang_tName = tPackageLang.getTName();
+							if (tPackageLang_tName.equals("lang")) {
+								String tClass_tName = tClass.getTName();
+								if (tClass_tName.equals("Object")) {
+									return new Object[] { object, pg, langToLang, tPackageJava, lang, model, java,
+											tPackageLang, objectToObject, eModelToPg, javaToJava, tClass };
 								}
 
 							}
@@ -3414,24 +3400,24 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_6_perform_blackBBBBBBBBBBBBB(TypeGraph pg,
-			PackageToTPackage langToLang, TypeToTAbstractType objectToObject, TPackage tPackageJava,
-			PackageToTPackage javaToJava, org.eclipse.modisco.java.Package lang, ModelToTypeGraph eModelToPg,
-			ClassDeclaration object, TClass tClass, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
-			MGravityModel model, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_TypeParameter_26_6_perform_blackBBBBBBBBBBBBB(ClassDeclaration object,
+			TypeGraph pg, PackageToTPackage langToLang, TPackage tPackageJava, org.eclipse.modisco.java.Package lang,
+			MGravityModel model, org.eclipse.modisco.java.Package java, TPackage tPackageLang,
+			TypeToTAbstractType objectToObject, ModelToTypeGraph eModelToPg, PackageToTPackage javaToJava,
+			TClass tClass, ModelgeneratorRuleResult ruleResult) {
 		if (!tPackageJava.equals(tPackageLang)) {
-			if (!javaToJava.equals(langToLang)) {
-				if (!java.equals(lang)) {
-					String tPackageJava_tName = tPackageJava.getTName();
-					if (tPackageJava_tName.equals("java")) {
-						String object_name = object.getName();
-						if (object_name.equals("Object")) {
-							String tClass_tName = tClass.getTName();
-							if (tClass_tName.equals("Object")) {
-								String tPackageLang_tName = tPackageLang.getTName();
-								if (tPackageLang_tName.equals("lang")) {
-									return new Object[] { pg, langToLang, objectToObject, tPackageJava, javaToJava,
-											lang, eModelToPg, object, tClass, java, tPackageLang, model, ruleResult };
+			if (!java.equals(lang)) {
+				if (!javaToJava.equals(langToLang)) {
+					String object_name = object.getName();
+					if (object_name.equals("Object")) {
+						String tPackageJava_tName = tPackageJava.getTName();
+						if (tPackageJava_tName.equals("java")) {
+							String tPackageLang_tName = tPackageLang.getTName();
+							if (tPackageLang_tName.equals("lang")) {
+								String tClass_tName = tClass.getTName();
+								if (tClass_tName.equals("Object")) {
+									return new Object[] { object, pg, langToLang, tPackageJava, lang, model, java,
+											tPackageLang, objectToObject, eModelToPg, javaToJava, tClass, ruleResult };
 								}
 
 							}
@@ -3446,21 +3432,21 @@ public class TypeParameterImpl extends AbstractRuleImpl implements TypeParameter
 		return null;
 	}
 
-	public static final Object[] pattern_TypeParameter_26_6_perform_greenFFBBB(TClass tClass, MGravityModel model,
+	public static final Object[] pattern_TypeParameter_26_6_perform_greenFBFBB(MGravityModel model, TClass tClass,
 			ModelgeneratorRuleResult ruleResult) {
-		org.eclipse.modisco.java.TypeParameter typeParameter = JavaFactory.eINSTANCE.createTypeParameter();
 		TypeToTAbstractType templateTypeToTClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
+		org.eclipse.modisco.java.TypeParameter typeParameter = JavaFactory.eINSTANCE.createTypeParameter();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		model.getTypeParameters().add(typeParameter);
-		ruleResult.getSourceObjects().add(typeParameter);
-		templateTypeToTClass.setSource(typeParameter);
 		templateTypeToTClass.setTarget(tClass);
 		ruleResult.getCorrObjects().add(templateTypeToTClass);
+		templateTypeToTClass.setSource(typeParameter);
+		model.getTypeParameters().add(typeParameter);
+		ruleResult.getSourceObjects().add(typeParameter);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { typeParameter, templateTypeToTClass, tClass, model, ruleResult };
+		return new Object[] { templateTypeToTClass, model, typeParameter, tClass, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_TypeParameter_26_7_expressionFB(

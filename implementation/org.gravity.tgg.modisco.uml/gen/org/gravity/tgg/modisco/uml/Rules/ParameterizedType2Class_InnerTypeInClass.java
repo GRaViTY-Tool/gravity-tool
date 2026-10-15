@@ -232,7 +232,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_118(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_124(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,7 +240,7 @@ public interface ParameterizedType2Class_InnerTypeInClass extends EObject, Abstr
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_133(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->

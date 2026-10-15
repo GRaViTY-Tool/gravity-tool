@@ -106,56 +106,56 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
-			Model mModel) {
+	public boolean isAppropriate_FWD(Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess,
+			Type mType) {
 
 		Object[] result1_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_1_initialbindings_blackBBBBBB(this,
-				match, mArrayType, mTypeAccess, mType, mModel);
+				match, mModel, mArrayType, mTypeAccess, mType);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = "
-					+ mTypeAccess + ", " + "[mType] = " + mType + ", " + "[mModel] = " + mModel + ".");
+					+ "[match] = " + match + ", " + "[mModel] = " + mModel + ", " + "[mArrayType] = " + mArrayType
+					+ ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[mType] = " + mType + ".");
 		}
 
 		Object[] result2_bindingAndBlack = ArrayTypeToTypeImpl
-				.pattern_ArrayTypeToType_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mArrayType, mTypeAccess,
-						mType, mModel);
+				.pattern_ArrayTypeToType_0_2_SolveCSP_bindingAndBlackFBBBBBB(this, match, mModel, mArrayType,
+						mTypeAccess, mType);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = "
-					+ mTypeAccess + ", " + "[mType] = " + mType + ", " + "[mModel] = " + mModel + ".");
+					+ "[match] = " + match + ", " + "[mModel] = " + mModel + ", " + "[mArrayType] = " + mArrayType
+					+ ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[mType] = " + mType + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = ArrayTypeToTypeImpl
-					.pattern_ArrayTypeToType_0_4_collectelementstobetranslated_blackBBBBB(match, mArrayType,
-							mTypeAccess, mType, mModel);
+					.pattern_ArrayTypeToType_0_4_collectelementstobetranslated_blackBBBBB(match, mModel, mArrayType,
+							mTypeAccess, mType);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[mType] = "
-						+ mType + ", " + "[mModel] = " + mModel + ".");
+						+ "[mModel] = " + mModel + ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = "
+						+ mTypeAccess + ", " + "[mType] = " + mType + ".");
 			}
-			ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_4_collectelementstobetranslated_greenBBBBBFFFF(match,
-					mArrayType, mTypeAccess, mType, mModel);
-			//nothing EMoflonEdge mArrayType__mTypeAccess____elementType = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge mModel__mArrayType____orphanTypes = (EMoflonEdge) result4_green[8];
+			ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_4_collectelementstobetranslated_greenBBBBBFFFF(match, mModel,
+					mArrayType, mTypeAccess, mType);
+			//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge mModel__mArrayType____orphanTypes = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge mArrayType__mTypeAccess____elementType = (EMoflonEdge) result4_green[8];
 
 			Object[] result5_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_5_collectcontextelements_blackBBBBB(
-					match, mArrayType, mTypeAccess, mType, mModel);
+					match, mModel, mArrayType, mTypeAccess, mType);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[mType] = "
-						+ mType + ", " + "[mModel] = " + mModel + ".");
+						+ "[mModel] = " + mModel + ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = "
+						+ mTypeAccess + ", " + "[mType] = " + mType + ".");
 			}
-			ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_5_collectcontextelements_greenBBB(match, mType, mModel);
+			ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_5_collectcontextelements_greenBBB(match, mModel, mType);
 
 			// 
-			ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_6_registerobjectstomatch_expressionBBBBBB(this, match,
-					mArrayType, mTypeAccess, mType, mModel);
+			ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_6_registerobjectstomatch_expressionBBBBBB(this, match, mModel,
+					mArrayType, mTypeAccess, mType);
 			return ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_7_expressionF();
 		} else {
 			return ArrayTypeToTypeImpl.pattern_ArrayTypeToType_0_8_expressionF();
@@ -176,55 +176,55 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ArrayType mArrayType = (ArrayType) result1_bindingAndBlack[0];
-		TypeGraph tModel = (TypeGraph) result1_bindingAndBlack[1];
-		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[2];
-		TypeAccess mTypeAccess = (TypeAccess) result1_bindingAndBlack[3];
-		ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[4];
-		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[5];
-		Type mType = (Type) result1_bindingAndBlack[6];
-		Model mModel = (Model) result1_bindingAndBlack[7];
+		Model mModel = (Model) result1_bindingAndBlack[0];
+		TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result1_bindingAndBlack[1];
+		ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result1_bindingAndBlack[2];
+		TypeGraph tModel = (TypeGraph) result1_bindingAndBlack[3];
+		TAbstractType tAbstractType = (TAbstractType) result1_bindingAndBlack[4];
+		ArrayType mArrayType = (ArrayType) result1_bindingAndBlack[5];
+		TypeAccess mTypeAccess = (TypeAccess) result1_bindingAndBlack[6];
+		Type mType = (Type) result1_bindingAndBlack[7];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[8];
 		Object[] result1_green = ArrayTypeToTypeImpl
-				.pattern_ArrayTypeToType_1_1_performtransformation_greenBFB(mArrayType, tAbstractType);
+				.pattern_ArrayTypeToType_1_1_performtransformation_greenBFB(tAbstractType, mArrayType);
 		TypeToTAbstractType arrayTypeToTArrayClass = (TypeToTAbstractType) result1_green[1];
 
 		Object[] result2_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_2_collecttranslatedelements_blackBBB(
-				mArrayType, arrayTypeToTArrayClass, mTypeAccess);
+				arrayTypeToTArrayClass, mArrayType, mTypeAccess);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mArrayType] = " + mArrayType
-					+ ", " + "[arrayTypeToTArrayClass] = " + arrayTypeToTArrayClass + ", " + "[mTypeAccess] = "
-					+ mTypeAccess + ".");
+			throw new RuntimeException(
+					"Pattern matching failed." + " Variables: " + "[arrayTypeToTArrayClass] = " + arrayTypeToTArrayClass
+							+ ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = " + mTypeAccess + ".");
 		}
 		Object[] result2_green = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_2_collecttranslatedelements_greenFBBB(
-				mArrayType, arrayTypeToTArrayClass, mTypeAccess);
+				arrayTypeToTArrayClass, mArrayType, mTypeAccess);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, mArrayType, tModel, arrayTypeToTArrayClass, mTypeToTType, mTypeAccess, modelToTypeGraph,
-				tAbstractType, mType, mModel);
+				ruleresult, mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, arrayTypeToTArrayClass,
+				mArrayType, mTypeAccess, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[mArrayType] = " + mArrayType + ", " + "[tModel] = " + tModel + ", "
-					+ "[arrayTypeToTArrayClass] = " + arrayTypeToTArrayClass + ", " + "[mTypeToTType] = " + mTypeToTType
-					+ ", " + "[mTypeAccess] = " + mTypeAccess + ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", "
-					+ "[tAbstractType] = " + tAbstractType + ", " + "[mType] = " + mType + ", " + "[mModel] = " + mModel
-					+ ".");
+					+ ", " + "[mModel] = " + mModel + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
+					+ "[modelToTypeGraph] = " + modelToTypeGraph + ", " + "[tModel] = " + tModel + ", "
+					+ "[tAbstractType] = " + tAbstractType + ", " + "[arrayTypeToTArrayClass] = "
+					+ arrayTypeToTArrayClass + ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = "
+					+ mTypeAccess + ", " + "[mType] = " + mType + ".");
 		}
-		ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult, mArrayType,
-				arrayTypeToTArrayClass, mTypeAccess, tAbstractType, mType, mModel);
-		//nothing EMoflonEdge arrayTypeToTArrayClass__mArrayType____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge mArrayType__mTypeAccess____elementType = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge arrayTypeToTArrayClass__tAbstractType____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge mModel__mArrayType____orphanTypes = (EMoflonEdge) result3_green[12];
+		ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(ruleresult, mModel,
+				tAbstractType, arrayTypeToTArrayClass, mArrayType, mTypeAccess, mType);
+		//nothing EMoflonEdge arrayTypeToTArrayClass__tAbstractType____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge arrayTypeToTArrayClass__mArrayType____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge mModel__mArrayType____orphanTypes = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge mArrayType__mTypeAccess____elementType = (EMoflonEdge) result3_green[12];
 
 		// 
 		// 
-		ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
-				mArrayType, tModel, arrayTypeToTArrayClass, mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType,
-				mType, mModel);
+		ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, mModel,
+				mTypeToTType, modelToTypeGraph, tModel, tAbstractType, arrayTypeToTArrayClass, mArrayType, mTypeAccess,
+				mType);
 		return ArrayTypeToTypeImpl.pattern_ArrayTypeToType_1_6_expressionFB(ruleresult);
 	}
 
@@ -252,45 +252,45 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		ArrayType mArrayType = (ArrayType) result2_binding[0];
-		TypeAccess mTypeAccess = (TypeAccess) result2_binding[1];
-		Type mType = (Type) result2_binding[2];
-		Model mModel = (Model) result2_binding[3];
-		for (Object[] result2_black : ArrayTypeToTypeImpl
-				.pattern_ArrayTypeToType_2_2_corematch_blackBFFBFFBBB(mArrayType, mTypeAccess, mType, mModel, match)) {
-			TypeGraph tModel = (TypeGraph) result2_black[1];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[2];
-			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[4];
-			TAbstractType tAbstractType = (TAbstractType) result2_black[5];
+		Model mModel = (Model) result2_binding[0];
+		ArrayType mArrayType = (ArrayType) result2_binding[1];
+		TypeAccess mTypeAccess = (TypeAccess) result2_binding[2];
+		Type mType = (Type) result2_binding[3];
+		for (Object[] result2_black : ArrayTypeToTypeImpl.pattern_ArrayTypeToType_2_2_corematch_blackBFFFFBBBB(mModel,
+				mArrayType, mTypeAccess, mType, match)) {
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[1];
+			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[2];
+			TypeGraph tModel = (TypeGraph) result2_black[3];
+			TAbstractType tAbstractType = (TAbstractType) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : ArrayTypeToTypeImpl.pattern_ArrayTypeToType_2_3_findcontext_blackBBBBBBBB(
-					mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType, mType, mModel)) {
+					mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType, mTypeAccess, mType)) {
 				Object[] result3_green = ArrayTypeToTypeImpl
-						.pattern_ArrayTypeToType_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(mArrayType, tModel,
-								mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType, mType, mModel);
+						.pattern_ArrayTypeToType_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(mModel, mTypeToTType,
+								modelToTypeGraph, tModel, tAbstractType, mArrayType, mTypeAccess, mType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
-				//nothing EMoflonEdge mArrayType__mTypeAccess____elementType = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tModel__tAbstractType____allTypes = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge tAbstractType__tModel____model = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge mTypeToTType__tAbstractType____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge mModel__mArrayType____orphanTypes = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge modelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge modelToTypeGraph__tModel____target = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge modelToTypeGraph__tModel____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge mTypeToTType__tAbstractType____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge modelToTypeGraph__mModel____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge mTypeAccess__mType____type = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge mModel__mArrayType____orphanTypes = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge tModel__tAbstractType____allTypes = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge tAbstractType__tModel____model = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge mTypeToTType__mType____source = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge mArrayType__mTypeAccess____elementType = (EMoflonEdge) result3_green[18];
 
 				Object[] result4_bindingAndBlack = ArrayTypeToTypeImpl
 						.pattern_ArrayTypeToType_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch,
-								mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType, mType,
-								mModel);
+								mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType, mTypeAccess,
+								mType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mArrayType] = " + mArrayType
-							+ ", " + "[tModel] = " + tModel + ", " + "[mTypeToTType] = " + mTypeToTType + ", "
-							+ "[mTypeAccess] = " + mTypeAccess + ", " + "[modelToTypeGraph] = " + modelToTypeGraph
-							+ ", " + "[tAbstractType] = " + tAbstractType + ", " + "[mType] = " + mType + ", "
-							+ "[mModel] = " + mModel + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
+							+ "[mTypeToTType] = " + mTypeToTType + ", " + "[modelToTypeGraph] = " + modelToTypeGraph
+							+ ", " + "[tModel] = " + tModel + ", " + "[tAbstractType] = " + tAbstractType + ", "
+							+ "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = " + mTypeAccess + ", "
+							+ "[mType] = " + mType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -319,12 +319,12 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
-			Model mModel) {
+	public void registerObjectsToMatch_FWD(Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess,
+			Type mType) {
+		match.registerObject("mModel", mModel);
 		match.registerObject("mArrayType", mArrayType);
 		match.registerObject("mTypeAccess", mTypeAccess);
 		match.registerObject("mType", mType);
-		match.registerObject("mModel", mModel);
 
 	}
 
@@ -333,8 +333,8 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
-			Model mModel) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess,
+			Type mType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -363,9 +363,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ArrayType mArrayType, TypeGraph tModel,
-			TypeToTAbstractType mTypeToTType, TypeAccess mTypeAccess, ModelToTypeGraph modelToTypeGraph,
-			TAbstractType tAbstractType, Type mType, Model mModel) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -380,14 +380,14 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("mArrayType", mArrayType);
-		isApplicableMatch.registerObject("tModel", tModel);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
-		isApplicableMatch.registerObject("mTypeAccess", mTypeAccess);
-		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
-		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
-		isApplicableMatch.registerObject("mType", mType);
 		isApplicableMatch.registerObject("mModel", mModel);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
+		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
+		isApplicableMatch.registerObject("tModel", tModel);
+		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
+		isApplicableMatch.registerObject("mArrayType", mArrayType);
+		isApplicableMatch.registerObject("mTypeAccess", mTypeAccess);
+		isApplicableMatch.registerObject("mType", mType);
 		return csp;
 	}
 
@@ -405,18 +405,18 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mArrayType, EObject tModel,
-			EObject arrayTypeToTArrayClass, EObject mTypeToTType, EObject mTypeAccess, EObject modelToTypeGraph,
-			EObject tAbstractType, EObject mType, EObject mModel) {
-		ruleresult.registerObject("mArrayType", mArrayType);
-		ruleresult.registerObject("tModel", tModel);
-		ruleresult.registerObject("arrayTypeToTArrayClass", arrayTypeToTArrayClass);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
-		ruleresult.registerObject("mTypeAccess", mTypeAccess);
-		ruleresult.registerObject("modelToTypeGraph", modelToTypeGraph);
-		ruleresult.registerObject("tAbstractType", tAbstractType);
-		ruleresult.registerObject("mType", mType);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType,
+			EObject modelToTypeGraph, EObject tModel, EObject tAbstractType, EObject arrayTypeToTArrayClass,
+			EObject mArrayType, EObject mTypeAccess, EObject mType) {
 		ruleresult.registerObject("mModel", mModel);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
+		ruleresult.registerObject("modelToTypeGraph", modelToTypeGraph);
+		ruleresult.registerObject("tModel", tModel);
+		ruleresult.registerObject("tAbstractType", tAbstractType);
+		ruleresult.registerObject("arrayTypeToTArrayClass", arrayTypeToTArrayClass);
+		ruleresult.registerObject("mArrayType", mArrayType);
+		ruleresult.registerObject("mTypeAccess", mTypeAccess);
+		ruleresult.registerObject("mType", mType);
 
 	}
 
@@ -621,7 +621,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_elementType) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_28(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = ArrayTypeToTypeImpl
 				.pattern_ArrayTypeToType_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -636,11 +636,11 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 		// ForEach 
 		for (Object[] result2_black : ArrayTypeToTypeImpl
-				.pattern_ArrayTypeToType_18_2_testcorematchandDECs_blackFFFFB(_edge_elementType)) {
-			ArrayType mArrayType = (ArrayType) result2_black[0];
-			TypeAccess mTypeAccess = (TypeAccess) result2_black[1];
-			Type mType = (Type) result2_black[2];
-			Model mModel = (Model) result2_black[3];
+				.pattern_ArrayTypeToType_18_2_testcorematchandDECs_blackFFFFB(_edge_type)) {
+			Model mModel = (Model) result2_black[0];
+			ArrayType mArrayType = (ArrayType) result2_black[1];
+			TypeAccess mTypeAccess = (TypeAccess) result2_black[2];
+			Type mType = (Type) result2_black[3];
 			Object[] result2_green = ArrayTypeToTypeImpl
 					.pattern_ArrayTypeToType_18_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -648,7 +648,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 			// 
 			if (ArrayTypeToTypeImpl
 					.pattern_ArrayTypeToType_18_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(this,
-							match, mArrayType, mTypeAccess, mType, mModel)) {
+							match, mModel, mArrayType, mTypeAccess, mType)) {
 				// 
 				if (ArrayTypeToTypeImpl
 						.pattern_ArrayTypeToType_18_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -755,21 +755,21 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		ArrayType mArrayType = (ArrayType) result2_bindingAndBlack[0];
+		Model mModel = (Model) result2_bindingAndBlack[0];
 		TypeGraph tModel = (TypeGraph) result2_bindingAndBlack[1];
-		TypeAccess mTypeAccess = (TypeAccess) result2_bindingAndBlack[2];
-		TAbstractType tAbstractType = (TAbstractType) result2_bindingAndBlack[3];
-		Type mType = (Type) result2_bindingAndBlack[4];
-		Model mModel = (Model) result2_bindingAndBlack[5];
+		TAbstractType tAbstractType = (TAbstractType) result2_bindingAndBlack[2];
+		ArrayType mArrayType = (ArrayType) result2_bindingAndBlack[3];
+		TypeAccess mTypeAccess = (TypeAccess) result2_bindingAndBlack[4];
+		Type mType = (Type) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = ArrayTypeToTypeImpl
-				.pattern_ArrayTypeToType_21_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mArrayType, tModel, mTypeAccess,
-						tAbstractType, mType, mModel, sourceMatch, targetMatch);
+				.pattern_ArrayTypeToType_21_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, mModel, tModel, tAbstractType,
+						mArrayType, mTypeAccess, mType, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[mArrayType] = " + mArrayType + ", " + "[tModel] = " + tModel + ", " + "[mTypeAccess] = "
-					+ mTypeAccess + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[mType] = " + mType + ", "
-					+ "[mModel] = " + mModel + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[mModel] = " + mModel + ", " + "[tModel] = " + tModel + ", " + "[tAbstractType] = "
+					+ tAbstractType + ", " + "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = " + mTypeAccess
+					+ ", " + "[mType] = " + mType + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -777,7 +777,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		if (ArrayTypeToTypeImpl.pattern_ArrayTypeToType_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : ArrayTypeToTypeImpl
-					.pattern_ArrayTypeToType_21_5_matchcorrcontext_blackBFFBBBBB(tModel, tAbstractType, mType, mModel,
+					.pattern_ArrayTypeToType_21_5_matchcorrcontext_blackBFFBBBBB(mModel, tModel, tAbstractType, mType,
 							sourceMatch, targetMatch)) {
 				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result5_black[1];
 				ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result5_black[2];
@@ -786,16 +786,16 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = ArrayTypeToTypeImpl
-						.pattern_ArrayTypeToType_21_6_createcorrespondence_blackBBBBBBB(mArrayType, tModel, mTypeAccess,
-								tAbstractType, mType, mModel, ccMatch);
+						.pattern_ArrayTypeToType_21_6_createcorrespondence_blackBBBBBBB(mModel, tModel, tAbstractType,
+								mArrayType, mTypeAccess, mType, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mArrayType] = "
-							+ mArrayType + ", " + "[tModel] = " + tModel + ", " + "[mTypeAccess] = " + mTypeAccess
-							+ ", " + "[tAbstractType] = " + tAbstractType + ", " + "[mType] = " + mType + ", "
-							+ "[mModel] = " + mModel + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
+							+ ", " + "[tModel] = " + tModel + ", " + "[tAbstractType] = " + tAbstractType + ", "
+							+ "[mArrayType] = " + mArrayType + ", " + "[mTypeAccess] = " + mTypeAccess + ", "
+							+ "[mType] = " + mType + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				ArrayTypeToTypeImpl.pattern_ArrayTypeToType_21_6_createcorrespondence_greenBFBB(mArrayType,
-						tAbstractType, ccMatch);
+				ArrayTypeToTypeImpl.pattern_ArrayTypeToType_21_6_createcorrespondence_greenBFBB(tAbstractType,
+						mArrayType, ccMatch);
 				//nothing TypeToTAbstractType arrayTypeToTArrayClass = (TypeToTAbstractType) result6_green[1];
 
 				Object[] result7_black = ArrayTypeToTypeImpl
@@ -818,8 +818,8 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(ArrayType mArrayType, TypeGraph tModel, TypeAccess mTypeAccess,
-			TAbstractType tAbstractType, Type mType, Model mModel, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Model mModel, TypeGraph tModel, TAbstractType tAbstractType,
+			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -848,9 +848,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {// 
-		Object[] result1_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_24_1_matchtggpattern_blackBBBB(mArrayType,
-				mTypeAccess, mType, mModel);
+	public boolean checkDEC_FWD(Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {// 
+		Object[] result1_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_24_1_matchtggpattern_blackBBBB(mModel,
+				mArrayType, mTypeAccess, mType);
 		if (result1_black != null) {
 			return ArrayTypeToTypeImpl.pattern_ArrayTypeToType_24_2_expressionF();
 		} else {
@@ -881,7 +881,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * @generated
 	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			TypeToTAbstractType mTypeToTTypeParameter) {
+			ModelToTypeGraph modelToTypeGraphParameter) {
 
 		Object[] result1_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -894,45 +894,46 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		// ForEach 
 		for (Object[] result2_black : ArrayTypeToTypeImpl
 				.pattern_ArrayTypeToType_26_2_isapplicablecore_blackFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList mTypeToTTypeList = (RuleEntryList) result2_black[0];
-			TypeGraph tModel = (TypeGraph) result2_black[1];
-			TAbstractType tAbstractType = (TAbstractType) result2_black[2];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[3];
-			Type mType = (Type) result2_black[4];
-			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[5];
-			Model mModel = (Model) result2_black[6];
+			//nothing RuleEntryList modelToTypeGraphList = (RuleEntryList) result2_black[0];
+			Model mModel = (Model) result2_black[1];
+			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result2_black[2];
+			TypeGraph tModel = (TypeGraph) result2_black[3];
+			TAbstractType tAbstractType = (TAbstractType) result2_black[4];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result2_black[5];
+			Type mType = (Type) result2_black[6];
 
 			Object[] result3_bindingAndBlack = ArrayTypeToTypeImpl
-					.pattern_ArrayTypeToType_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, tModel,
-							mTypeToTType, modelToTypeGraph, tAbstractType, mType, mModel, ruleResult);
+					.pattern_ArrayTypeToType_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, mModel,
+							mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mType, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[tModel] = " + tModel + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mModel] = " + mModel + ", "
 						+ "[mTypeToTType] = " + mTypeToTType + ", " + "[modelToTypeGraph] = " + modelToTypeGraph + ", "
-						+ "[tAbstractType] = " + tAbstractType + ", " + "[mType] = " + mType + ", " + "[mModel] = "
-						+ mModel + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[tModel] = " + tModel + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[mType] = "
+						+ mType + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_5_checknacs_blackBBBBBB(tModel,
-						mTypeToTType, modelToTypeGraph, tAbstractType, mType, mModel);
+				Object[] result5_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_5_checknacs_blackBBBBBB(mModel,
+						mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mType);
 				if (result5_black != null) {
 
 					Object[] result6_black = ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_6_perform_blackBBBBBBB(
-							tModel, mTypeToTType, modelToTypeGraph, tAbstractType, mType, mModel, ruleResult);
+							mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mType, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tModel] = " + tModel
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[mModel] = " + mModel
 								+ ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[modelToTypeGraph] = "
-								+ modelToTypeGraph + ", " + "[tAbstractType] = " + tAbstractType + ", " + "[mType] = "
-								+ mType + ", " + "[mModel] = " + mModel + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ modelToTypeGraph + ", " + "[tModel] = " + tModel + ", " + "[tAbstractType] = "
+								+ tAbstractType + ", " + "[mType] = " + mType + ", " + "[ruleResult] = " + ruleResult
+								+ ".");
 					}
-					ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_6_perform_greenFFFBBBB(tAbstractType, mType, mModel,
+					ArrayTypeToTypeImpl.pattern_ArrayTypeToType_26_6_perform_greenBBFFFBB(mModel, tAbstractType, mType,
 							ruleResult);
-					//nothing ArrayType mArrayType = (ArrayType) result6_green[0];
-					//nothing TypeToTAbstractType arrayTypeToTArrayClass = (TypeToTAbstractType) result6_green[1];
-					//nothing TypeAccess mTypeAccess = (TypeAccess) result6_green[2];
+					//nothing TypeToTAbstractType arrayTypeToTArrayClass = (TypeToTAbstractType) result6_green[2];
+					//nothing ArrayType mArrayType = (ArrayType) result6_green[3];
+					//nothing TypeAccess mTypeAccess = (TypeAccess) result6_green[4];
 
 				} else {
 				}
@@ -949,9 +950,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TypeGraph tModel,
-			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType,
-			Type mType, Model mModel, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, Type mType, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -966,12 +967,12 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("tModel", tModel);
+		isApplicableMatch.registerObject("mModel", mModel);
 		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("modelToTypeGraph", modelToTypeGraph);
+		isApplicableMatch.registerObject("tModel", tModel);
 		isApplicableMatch.registerObject("tAbstractType", tAbstractType);
 		isApplicableMatch.registerObject("mType", mType);
-		isApplicableMatch.registerObject("mModel", mModel);
 		return csp;
 	}
 
@@ -992,103 +993,103 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_FWD__MATCH_ARRAYTYPE_TYPEACCESS_TYPE_MODEL:
-				return isAppropriate_FWD((Match) arguments.get(0), (ArrayType) arguments.get(1),
-						(TypeAccess) arguments.get(2), (Type) arguments.get(3), (Model) arguments.get(4));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ARRAYTYPE_TYPEACCESS_TYPE_MODEL:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (ArrayType) arguments.get(1),
-						(TypeAccess) arguments.get(2), (Type) arguments.get(3), (Model) arguments.get(4));
-				return null;
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ARRAYTYPE_TYPEACCESS_TYPE_MODEL:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ArrayType) arguments.get(1),
-						(TypeAccess) arguments.get(2), (Type) arguments.get(3), (Model) arguments.get(4));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ARRAYTYPE_TYPEGRAPH_TYPETOTABSTRACTTYPE_TYPEACCESS_MODELTOTYPEGRAPH_TABSTRACTTYPE_TYPE_MODEL:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ArrayType) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TypeToTAbstractType) arguments.get(3),
-						(TypeAccess) arguments.get(4), (ModelToTypeGraph) arguments.get(5),
-						(TAbstractType) arguments.get(6), (Type) arguments.get(7), (Model) arguments.get(8));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9));
-				return null;
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
-				return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TAbstractType) arguments.get(2));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TAbstractType) arguments.get(2));
-				return null;
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TAbstractType) arguments.get(2));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_BWD_TYPE_GRAPH_0__TYPEGRAPH:
-				return isAppropriate_BWD_TypeGraph_0((TypeGraph) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_21__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__ARRAYTYPE_TYPEGRAPH_TYPEACCESS_TABSTRACTTYPE_TYPE_MODEL_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((ArrayType) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TypeAccess) arguments.get(2), (TAbstractType) arguments.get(3), (Type) arguments.get(4),
-						(Model) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_DEC_FWD__ARRAYTYPE_TYPEACCESS_TYPE_MODEL:
-				return checkDEC_FWD((ArrayType) arguments.get(0), (TypeAccess) arguments.get(1),
-						(Type) arguments.get(2), (Model) arguments.get(3));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_DEC_BWD__TYPEGRAPH_TABSTRACTTYPE:
-				return checkDEC_BWD((TypeGraph) arguments.get(0), (TAbstractType) arguments.get(1));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_TYPETOTABSTRACTTYPE:
-				return generateModel((RuleEntryContainer) arguments.get(0), (TypeToTAbstractType) arguments.get(1));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPEGRAPH_TYPETOTABSTRACTTYPE_MODELTOTYPEGRAPH_TABSTRACTTYPE_TYPE_MODEL_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TypeToTAbstractType) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
-						(TAbstractType) arguments.get(4), (Type) arguments.get(5), (Model) arguments.get(6),
-						(ModelgeneratorRuleResult) arguments.get(7));
-			case RulesPackage.ARRAY_TYPE_TO_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_FWD__MATCH_MODEL_ARRAYTYPE_TYPEACCESS_TYPE:
+			return isAppropriate_FWD((Match) arguments.get(0), (Model) arguments.get(1), (ArrayType) arguments.get(2),
+					(TypeAccess) arguments.get(3), (Type) arguments.get(4));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MODEL_ARRAYTYPE_TYPEACCESS_TYPE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Model) arguments.get(1), (ArrayType) arguments.get(2),
+					(TypeAccess) arguments.get(3), (Type) arguments.get(4));
+			return null;
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MODEL_ARRAYTYPE_TYPEACCESS_TYPE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Model) arguments.get(1),
+					(ArrayType) arguments.get(2), (TypeAccess) arguments.get(3), (Type) arguments.get(4));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MODEL_TYPETOTABSTRACTTYPE_MODELTOTYPEGRAPH_TYPEGRAPH_TABSTRACTTYPE_ARRAYTYPE_TYPEACCESS_TYPE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+					(TypeToTAbstractType) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
+					(TypeGraph) arguments.get(4), (TAbstractType) arguments.get(5), (ArrayType) arguments.get(6),
+					(TypeAccess) arguments.get(7), (Type) arguments.get(8));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9));
+			return null;
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
+			return isAppropriate_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2));
+			return null;
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPEGRAPH_TABSTRACTTYPE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_BWD_TYPE_GRAPH_0__TYPEGRAPH:
+			return isAppropriate_BWD_TypeGraph_0((TypeGraph) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_28__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_28((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__MODEL_TYPEGRAPH_TABSTRACTTYPE_ARRAYTYPE_TYPEACCESS_TYPE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Model) arguments.get(0), (TypeGraph) arguments.get(1),
+					(TAbstractType) arguments.get(2), (ArrayType) arguments.get(3), (TypeAccess) arguments.get(4),
+					(Type) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_DEC_FWD__MODEL_ARRAYTYPE_TYPEACCESS_TYPE:
+			return checkDEC_FWD((Model) arguments.get(0), (ArrayType) arguments.get(1), (TypeAccess) arguments.get(2),
+					(Type) arguments.get(3));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___CHECK_DEC_BWD__TYPEGRAPH_TABSTRACTTYPE:
+			return checkDEC_BWD((TypeGraph) arguments.get(0), (TAbstractType) arguments.get(1));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODEL_TYPETOTABSTRACTTYPE_MODELTOTYPEGRAPH_TYPEGRAPH_TABSTRACTTYPE_TYPE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Model) arguments.get(1),
+					(TypeToTAbstractType) arguments.get(2), (ModelToTypeGraph) arguments.get(3),
+					(TypeGraph) arguments.get(4), (TAbstractType) arguments.get(5), (Type) arguments.get(6),
+					(ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.ARRAY_TYPE_TO_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_0_1_initialbindings_blackBBBBBB(ArrayTypeToType _this,
-			Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
+			Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		if (!mArrayType.equals(mType)) {
-			return new Object[] { _this, match, mArrayType, mTypeAccess, mType, mModel };
+			return new Object[] { _this, match, mModel, mArrayType, mTypeAccess, mType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_0_2_SolveCSP_bindingFBBBBBB(ArrayTypeToType _this, Match match,
-			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mArrayType, mTypeAccess, mType, mModel);
+			Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, mModel, mArrayType, mTypeAccess, mType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, mArrayType, mTypeAccess, mType, mModel };
+			return new Object[] { csp, _this, match, mModel, mArrayType, mTypeAccess, mType };
 		}
 		return null;
 	}
@@ -1098,9 +1099,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_0_2_SolveCSP_bindingAndBlackFBBBBBB(ArrayTypeToType _this,
-			Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
+			Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		Object[] result_pattern_ArrayTypeToType_0_2_SolveCSP_binding = pattern_ArrayTypeToType_0_2_SolveCSP_bindingFBBBBBB(
-				_this, match, mArrayType, mTypeAccess, mType, mModel);
+				_this, match, mModel, mArrayType, mTypeAccess, mType);
 		if (result_pattern_ArrayTypeToType_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ArrayTypeToType_0_2_SolveCSP_binding[0];
 
@@ -1108,7 +1109,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 					csp);
 			if (result_pattern_ArrayTypeToType_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, mArrayType, mTypeAccess, mType, mModel };
+				return new Object[] { csp, _this, match, mModel, mArrayType, mTypeAccess, mType };
 			}
 		}
 		return null;
@@ -1121,28 +1122,25 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_0_4_collectelementstobetranslated_blackBBBBB(Match match,
-			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
+			Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		if (!mArrayType.equals(mType)) {
-			return new Object[] { match, mArrayType, mTypeAccess, mType, mModel };
+			return new Object[] { match, mModel, mArrayType, mTypeAccess, mType };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_0_4_collectelementstobetranslated_greenBBBBBFFFF(Match match,
-			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
-		EMoflonEdge mArrayType__mTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mArrayType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mArrayType__mTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(mArrayType);
 		match.getToBeTranslatedNodes().add(mTypeAccess);
-		String mArrayType__mTypeAccess____elementType_name_prime = "elementType";
 		String mTypeAccess__mType____type_name_prime = "type";
 		String mType__mTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String mModel__mArrayType____orphanTypes_name_prime = "orphanTypes";
-		mArrayType__mTypeAccess____elementType.setSrc(mArrayType);
-		mArrayType__mTypeAccess____elementType.setTrg(mTypeAccess);
-		match.getToBeTranslatedEdges().add(mArrayType__mTypeAccess____elementType);
+		String mArrayType__mTypeAccess____elementType_name_prime = "elementType";
 		mTypeAccess__mType____type.setSrc(mTypeAccess);
 		mTypeAccess__mType____type.setTrg(mType);
 		match.getToBeTranslatedEdges().add(mTypeAccess__mType____type);
@@ -1152,33 +1150,36 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		mModel__mArrayType____orphanTypes.setSrc(mModel);
 		mModel__mArrayType____orphanTypes.setTrg(mArrayType);
 		match.getToBeTranslatedEdges().add(mModel__mArrayType____orphanTypes);
-		mArrayType__mTypeAccess____elementType.setName(mArrayType__mTypeAccess____elementType_name_prime);
+		mArrayType__mTypeAccess____elementType.setSrc(mArrayType);
+		mArrayType__mTypeAccess____elementType.setTrg(mTypeAccess);
+		match.getToBeTranslatedEdges().add(mArrayType__mTypeAccess____elementType);
 		mTypeAccess__mType____type.setName(mTypeAccess__mType____type_name_prime);
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
 		mModel__mArrayType____orphanTypes.setName(mModel__mArrayType____orphanTypes_name_prime);
-		return new Object[] { match, mArrayType, mTypeAccess, mType, mModel, mArrayType__mTypeAccess____elementType,
-				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess,
-				mModel__mArrayType____orphanTypes };
+		mArrayType__mTypeAccess____elementType.setName(mArrayType__mTypeAccess____elementType_name_prime);
+		return new Object[] { match, mModel, mArrayType, mTypeAccess, mType, mTypeAccess__mType____type,
+				mType__mTypeAccess____usagesInTypeAccess, mModel__mArrayType____orphanTypes,
+				mArrayType__mTypeAccess____elementType };
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_0_5_collectcontextelements_blackBBBBB(Match match,
-			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
+			Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		if (!mArrayType.equals(mType)) {
-			return new Object[] { match, mArrayType, mTypeAccess, mType, mModel };
+			return new Object[] { match, mModel, mArrayType, mTypeAccess, mType };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_0_5_collectcontextelements_greenBBB(Match match, Type mType,
-			Model mModel) {
-		match.getContextNodes().add(mType);
+	public static final Object[] pattern_ArrayTypeToType_0_5_collectcontextelements_greenBBB(Match match, Model mModel,
+			Type mType) {
 		match.getContextNodes().add(mModel);
-		return new Object[] { match, mType, mModel };
+		match.getContextNodes().add(mType);
+		return new Object[] { match, mModel, mType };
 	}
 
 	public static final void pattern_ArrayTypeToType_0_6_registerobjectstomatch_expressionBBBBBB(ArrayTypeToType _this,
-			Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Model mModel) {
-		_this.registerObjectsToMatch_FWD(match, mArrayType, mTypeAccess, mType, mModel);
+			Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
+		_this.registerObjectsToMatch_FWD(match, mModel, mArrayType, mTypeAccess, mType);
 
 	}
 
@@ -1194,40 +1195,40 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_1_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("mArrayType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("tModel");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeAccess");
-		EObject _localVariable_4 = isApplicableMatch.getObject("modelToTypeGraph");
-		EObject _localVariable_5 = isApplicableMatch.getObject("tAbstractType");
-		EObject _localVariable_6 = isApplicableMatch.getObject("mType");
-		EObject _localVariable_7 = isApplicableMatch.getObject("mModel");
-		EObject tmpMArrayType = _localVariable_0;
-		EObject tmpTModel = _localVariable_1;
-		EObject tmpMTypeToTType = _localVariable_2;
-		EObject tmpMTypeAccess = _localVariable_3;
-		EObject tmpModelToTypeGraph = _localVariable_4;
-		EObject tmpTAbstractType = _localVariable_5;
-		EObject tmpMType = _localVariable_6;
-		EObject tmpMModel = _localVariable_7;
-		if (tmpMArrayType instanceof ArrayType) {
-			ArrayType mArrayType = (ArrayType) tmpMArrayType;
-			if (tmpTModel instanceof TypeGraph) {
-				TypeGraph tModel = (TypeGraph) tmpTModel;
-				if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-					TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-					if (tmpMTypeAccess instanceof TypeAccess) {
-						TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-						if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
-							ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
-							if (tmpTAbstractType instanceof TAbstractType) {
-								TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-								if (tmpMType instanceof Type) {
-									Type mType = (Type) tmpMType;
-									if (tmpMModel instanceof Model) {
-										Model mModel = (Model) tmpMModel;
-										return new Object[] { mArrayType, tModel, mTypeToTType, mTypeAccess,
-												modelToTypeGraph, tAbstractType, mType, mModel, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("mModel");
+		EObject _localVariable_1 = isApplicableMatch.getObject("mTypeToTType");
+		EObject _localVariable_2 = isApplicableMatch.getObject("modelToTypeGraph");
+		EObject _localVariable_3 = isApplicableMatch.getObject("tModel");
+		EObject _localVariable_4 = isApplicableMatch.getObject("tAbstractType");
+		EObject _localVariable_5 = isApplicableMatch.getObject("mArrayType");
+		EObject _localVariable_6 = isApplicableMatch.getObject("mTypeAccess");
+		EObject _localVariable_7 = isApplicableMatch.getObject("mType");
+		EObject tmpMModel = _localVariable_0;
+		EObject tmpMTypeToTType = _localVariable_1;
+		EObject tmpModelToTypeGraph = _localVariable_2;
+		EObject tmpTModel = _localVariable_3;
+		EObject tmpTAbstractType = _localVariable_4;
+		EObject tmpMArrayType = _localVariable_5;
+		EObject tmpMTypeAccess = _localVariable_6;
+		EObject tmpMType = _localVariable_7;
+		if (tmpMModel instanceof Model) {
+			Model mModel = (Model) tmpMModel;
+			if (tmpMTypeToTType instanceof TypeToTAbstractType) {
+				TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
+				if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
+					ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
+					if (tmpTModel instanceof TypeGraph) {
+						TypeGraph tModel = (TypeGraph) tmpTModel;
+						if (tmpTAbstractType instanceof TAbstractType) {
+							TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
+							if (tmpMArrayType instanceof ArrayType) {
+								ArrayType mArrayType = (ArrayType) tmpMArrayType;
+								if (tmpMTypeAccess instanceof TypeAccess) {
+									TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+									if (tmpMType instanceof Type) {
+										Type mType = (Type) tmpMType;
+										return new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel,
+												tAbstractType, mArrayType, mTypeAccess, mType, isApplicableMatch };
 									}
 								}
 							}
@@ -1239,16 +1240,16 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return null;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_1_1_performtransformation_blackBBBBBBBBFBB(
-			ArrayType mArrayType, TypeGraph tModel, TypeToTAbstractType mTypeToTType, TypeAccess mTypeAccess,
-			ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType, Type mType, Model mModel,
+	public static final Object[] pattern_ArrayTypeToType_1_1_performtransformation_blackBBBBBBBBFBB(Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
 			ArrayTypeToType _this, IsApplicableMatch isApplicableMatch) {
 		if (!mArrayType.equals(mType)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph,
-							tAbstractType, mType, mModel, csp, _this, isApplicableMatch };
+					return new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType,
+							mTypeAccess, mType, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1260,118 +1261,121 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		Object[] result_pattern_ArrayTypeToType_1_1_performtransformation_binding = pattern_ArrayTypeToType_1_1_performtransformation_bindingFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_ArrayTypeToType_1_1_performtransformation_binding != null) {
-			ArrayType mArrayType = (ArrayType) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[0];
-			TypeGraph tModel = (TypeGraph) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[1];
-			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[2];
-			TypeAccess mTypeAccess = (TypeAccess) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[3];
-			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[4];
-			TAbstractType tAbstractType = (TAbstractType) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[5];
-			Type mType = (Type) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[6];
-			Model mModel = (Model) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[7];
+			Model mModel = (Model) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[0];
+			TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[1];
+			ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[2];
+			TypeGraph tModel = (TypeGraph) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[3];
+			TAbstractType tAbstractType = (TAbstractType) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[4];
+			ArrayType mArrayType = (ArrayType) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[5];
+			TypeAccess mTypeAccess = (TypeAccess) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[6];
+			Type mType = (Type) result_pattern_ArrayTypeToType_1_1_performtransformation_binding[7];
 
 			Object[] result_pattern_ArrayTypeToType_1_1_performtransformation_black = pattern_ArrayTypeToType_1_1_performtransformation_blackBBBBBBBBFBB(
-					mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType, mType, mModel,
+					mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType, mTypeAccess, mType,
 					_this, isApplicableMatch);
 			if (result_pattern_ArrayTypeToType_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_ArrayTypeToType_1_1_performtransformation_black[8];
 
-				return new Object[] { mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType,
-						mType, mModel, csp, _this, isApplicableMatch };
+				return new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType,
+						mTypeAccess, mType, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_1_1_performtransformation_greenBFB(ArrayType mArrayType,
-			TAbstractType tAbstractType) {
+	public static final Object[] pattern_ArrayTypeToType_1_1_performtransformation_greenBFB(TAbstractType tAbstractType,
+			ArrayType mArrayType) {
 		TypeToTAbstractType arrayTypeToTArrayClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		arrayTypeToTArrayClass.setSource(mArrayType);
 		arrayTypeToTArrayClass.setTarget(tAbstractType);
-		return new Object[] { mArrayType, arrayTypeToTArrayClass, tAbstractType };
+		arrayTypeToTArrayClass.setSource(mArrayType);
+		return new Object[] { tAbstractType, arrayTypeToTArrayClass, mArrayType };
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_1_2_collecttranslatedelements_blackBBB(ArrayType mArrayType,
-			TypeToTAbstractType arrayTypeToTArrayClass, TypeAccess mTypeAccess) {
-		return new Object[] { mArrayType, arrayTypeToTArrayClass, mTypeAccess };
+	public static final Object[] pattern_ArrayTypeToType_1_2_collecttranslatedelements_blackBBB(
+			TypeToTAbstractType arrayTypeToTArrayClass, ArrayType mArrayType, TypeAccess mTypeAccess) {
+		return new Object[] { arrayTypeToTArrayClass, mArrayType, mTypeAccess };
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_1_2_collecttranslatedelements_greenFBBB(ArrayType mArrayType,
-			TypeToTAbstractType arrayTypeToTArrayClass, TypeAccess mTypeAccess) {
+	public static final Object[] pattern_ArrayTypeToType_1_2_collecttranslatedelements_greenFBBB(
+			TypeToTAbstractType arrayTypeToTArrayClass, ArrayType mArrayType, TypeAccess mTypeAccess) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(mArrayType);
 		ruleresult.getCreatedLinkElements().add(arrayTypeToTArrayClass);
+		ruleresult.getTranslatedElements().add(mArrayType);
 		ruleresult.getTranslatedElements().add(mTypeAccess);
-		return new Object[] { ruleresult, mArrayType, arrayTypeToTArrayClass, mTypeAccess };
+		return new Object[] { ruleresult, arrayTypeToTArrayClass, mArrayType, mTypeAccess };
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mArrayType, EObject tModel, EObject arrayTypeToTArrayClass,
-			EObject mTypeToTType, EObject mTypeAccess, EObject modelToTypeGraph, EObject tAbstractType, EObject mType,
-			EObject mModel) {
-		if (!mArrayType.equals(tModel)) {
-			if (!mArrayType.equals(mTypeToTType)) {
-				if (!mArrayType.equals(mTypeAccess)) {
-					if (!mArrayType.equals(modelToTypeGraph)) {
-						if (!mArrayType.equals(tAbstractType)) {
-							if (!mArrayType.equals(mType)) {
-								if (!mArrayType.equals(mModel)) {
-									if (!arrayTypeToTArrayClass.equals(mArrayType)) {
-										if (!arrayTypeToTArrayClass.equals(tModel)) {
-											if (!arrayTypeToTArrayClass.equals(mTypeToTType)) {
-												if (!arrayTypeToTArrayClass.equals(mTypeAccess)) {
-													if (!arrayTypeToTArrayClass.equals(modelToTypeGraph)) {
-														if (!arrayTypeToTArrayClass.equals(tAbstractType)) {
-															if (!arrayTypeToTArrayClass.equals(mType)) {
-																if (!arrayTypeToTArrayClass.equals(mModel)) {
-																	if (!mTypeToTType.equals(tModel)) {
-																		if (!mTypeToTType.equals(modelToTypeGraph)) {
-																			if (!mTypeToTType.equals(tAbstractType)) {
-																				if (!mTypeAccess.equals(tModel)) {
-																					if (!mTypeAccess
-																							.equals(mTypeToTType)) {
-																						if (!mTypeAccess.equals(
-																								modelToTypeGraph)) {
-																							if (!mTypeAccess.equals(
-																									tAbstractType)) {
-																								if (!modelToTypeGraph
-																										.equals(tModel)) {
-																									if (!modelToTypeGraph
-																											.equals(tAbstractType)) {
-																										if (!tAbstractType
-																												.equals(tModel)) {
-																											if (!mType
-																													.equals(tModel)) {
-																												if (!mType
-																														.equals(mTypeToTType)) {
-																													if (!mType
-																															.equals(mTypeAccess)) {
-																														if (!mType
+			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject modelToTypeGraph,
+			EObject tModel, EObject tAbstractType, EObject arrayTypeToTArrayClass, EObject mArrayType,
+			EObject mTypeAccess, EObject mType) {
+		if (!mModel.equals(mTypeToTType)) {
+			if (!mModel.equals(modelToTypeGraph)) {
+				if (!mModel.equals(tModel)) {
+					if (!mModel.equals(tAbstractType)) {
+						if (!mModel.equals(mTypeAccess)) {
+							if (!mModel.equals(mType)) {
+								if (!mTypeToTType.equals(modelToTypeGraph)) {
+									if (!mTypeToTType.equals(tModel)) {
+										if (!mTypeToTType.equals(tAbstractType)) {
+											if (!modelToTypeGraph.equals(tModel)) {
+												if (!modelToTypeGraph.equals(tAbstractType)) {
+													if (!tAbstractType.equals(tModel)) {
+														if (!arrayTypeToTArrayClass.equals(mModel)) {
+															if (!arrayTypeToTArrayClass.equals(mTypeToTType)) {
+																if (!arrayTypeToTArrayClass.equals(modelToTypeGraph)) {
+																	if (!arrayTypeToTArrayClass.equals(tModel)) {
+																		if (!arrayTypeToTArrayClass
+																				.equals(tAbstractType)) {
+																			if (!arrayTypeToTArrayClass
+																					.equals(mArrayType)) {
+																				if (!arrayTypeToTArrayClass
+																						.equals(mTypeAccess)) {
+																					if (!arrayTypeToTArrayClass
+																							.equals(mType)) {
+																						if (!mArrayType
+																								.equals(mModel)) {
+																							if (!mArrayType.equals(
+																									mTypeToTType)) {
+																								if (!mArrayType.equals(
+																										modelToTypeGraph)) {
+																									if (!mArrayType
+																											.equals(tModel)) {
+																										if (!mArrayType
+																												.equals(tAbstractType)) {
+																											if (!mArrayType
+																													.equals(mTypeAccess)) {
+																												if (!mArrayType
+																														.equals(mType)) {
+																													if (!mTypeAccess
+																															.equals(mTypeToTType)) {
+																														if (!mTypeAccess
 																																.equals(modelToTypeGraph)) {
-																															if (!mType
-																																	.equals(tAbstractType)) {
-																																if (!mModel
-																																		.equals(tModel)) {
-																																	if (!mModel
+																															if (!mTypeAccess
+																																	.equals(tModel)) {
+																																if (!mTypeAccess
+																																		.equals(tAbstractType)) {
+																																	if (!mType
 																																			.equals(mTypeToTType)) {
-																																		if (!mModel
-																																				.equals(mTypeAccess)) {
-																																			if (!mModel
-																																					.equals(modelToTypeGraph)) {
-																																				if (!mModel
+																																		if (!mType
+																																				.equals(modelToTypeGraph)) {
+																																			if (!mType
+																																					.equals(tModel)) {
+																																				if (!mType
 																																						.equals(tAbstractType)) {
-																																					if (!mModel
-																																							.equals(mType)) {
+																																					if (!mType
+																																							.equals(mTypeAccess)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								mArrayType,
-																																								tModel,
-																																								arrayTypeToTArrayClass,
+																																								mModel,
 																																								mTypeToTType,
-																																								mTypeAccess,
 																																								modelToTypeGraph,
+																																								tModel,
 																																								tAbstractType,
-																																								mType,
-																																								mModel };
+																																								arrayTypeToTArrayClass,
+																																								mArrayType,
+																																								mTypeAccess,
+																																								mType };
 																																					}
 																																				}
 																																			}
@@ -1412,30 +1416,27 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_1_3_bookkeepingforedges_greenBBBBBBBFFFFFF(
-			PerformRuleResult ruleresult, EObject mArrayType, EObject arrayTypeToTArrayClass, EObject mTypeAccess,
-			EObject tAbstractType, EObject mType, EObject mModel) {
-		EMoflonEdge arrayTypeToTArrayClass__mArrayType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mArrayType__mTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject mModel, EObject tAbstractType, EObject arrayTypeToTArrayClass,
+			EObject mArrayType, EObject mTypeAccess, EObject mType) {
 		EMoflonEdge arrayTypeToTArrayClass__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge arrayTypeToTArrayClass__mArrayType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mArrayType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mArrayType__mTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ArrayTypeToType";
-		String arrayTypeToTArrayClass__mArrayType____source_name_prime = "source";
-		String mArrayType__mTypeAccess____elementType_name_prime = "elementType";
 		String arrayTypeToTArrayClass__tAbstractType____target_name_prime = "target";
+		String arrayTypeToTArrayClass__mArrayType____source_name_prime = "source";
 		String mTypeAccess__mType____type_name_prime = "type";
 		String mType__mTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
 		String mModel__mArrayType____orphanTypes_name_prime = "orphanTypes";
-		arrayTypeToTArrayClass__mArrayType____source.setSrc(arrayTypeToTArrayClass);
-		arrayTypeToTArrayClass__mArrayType____source.setTrg(mArrayType);
-		ruleresult.getCreatedEdges().add(arrayTypeToTArrayClass__mArrayType____source);
-		mArrayType__mTypeAccess____elementType.setSrc(mArrayType);
-		mArrayType__mTypeAccess____elementType.setTrg(mTypeAccess);
-		ruleresult.getTranslatedEdges().add(mArrayType__mTypeAccess____elementType);
+		String mArrayType__mTypeAccess____elementType_name_prime = "elementType";
 		arrayTypeToTArrayClass__tAbstractType____target.setSrc(arrayTypeToTArrayClass);
 		arrayTypeToTArrayClass__tAbstractType____target.setTrg(tAbstractType);
 		ruleresult.getCreatedEdges().add(arrayTypeToTArrayClass__tAbstractType____target);
+		arrayTypeToTArrayClass__mArrayType____source.setSrc(arrayTypeToTArrayClass);
+		arrayTypeToTArrayClass__mArrayType____source.setTrg(mArrayType);
+		ruleresult.getCreatedEdges().add(arrayTypeToTArrayClass__mArrayType____source);
 		mTypeAccess__mType____type.setSrc(mTypeAccess);
 		mTypeAccess__mType____type.setTrg(mType);
 		ruleresult.getTranslatedEdges().add(mTypeAccess__mType____type);
@@ -1445,26 +1446,29 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		mModel__mArrayType____orphanTypes.setSrc(mModel);
 		mModel__mArrayType____orphanTypes.setTrg(mArrayType);
 		ruleresult.getTranslatedEdges().add(mModel__mArrayType____orphanTypes);
+		mArrayType__mTypeAccess____elementType.setSrc(mArrayType);
+		mArrayType__mTypeAccess____elementType.setTrg(mTypeAccess);
+		ruleresult.getTranslatedEdges().add(mArrayType__mTypeAccess____elementType);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		arrayTypeToTArrayClass__mArrayType____source.setName(arrayTypeToTArrayClass__mArrayType____source_name_prime);
-		mArrayType__mTypeAccess____elementType.setName(mArrayType__mTypeAccess____elementType_name_prime);
 		arrayTypeToTArrayClass__tAbstractType____target
 				.setName(arrayTypeToTArrayClass__tAbstractType____target_name_prime);
+		arrayTypeToTArrayClass__mArrayType____source.setName(arrayTypeToTArrayClass__mArrayType____source_name_prime);
 		mTypeAccess__mType____type.setName(mTypeAccess__mType____type_name_prime);
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
 		mModel__mArrayType____orphanTypes.setName(mModel__mArrayType____orphanTypes_name_prime);
-		return new Object[] { ruleresult, mArrayType, arrayTypeToTArrayClass, mTypeAccess, tAbstractType, mType, mModel,
-				arrayTypeToTArrayClass__mArrayType____source, mArrayType__mTypeAccess____elementType,
-				arrayTypeToTArrayClass__tAbstractType____target, mTypeAccess__mType____type,
-				mType__mTypeAccess____usagesInTypeAccess, mModel__mArrayType____orphanTypes };
+		mArrayType__mTypeAccess____elementType.setName(mArrayType__mTypeAccess____elementType_name_prime);
+		return new Object[] { ruleresult, mModel, tAbstractType, arrayTypeToTArrayClass, mArrayType, mTypeAccess, mType,
+				arrayTypeToTArrayClass__tAbstractType____target, arrayTypeToTArrayClass__mArrayType____source,
+				mTypeAccess__mType____type, mType__mTypeAccess____usagesInTypeAccess, mModel__mArrayType____orphanTypes,
+				mArrayType__mTypeAccess____elementType };
 	}
 
 	public static final void pattern_ArrayTypeToType_1_5_registerobjects_expressionBBBBBBBBBBB(ArrayTypeToType _this,
-			PerformRuleResult ruleresult, EObject mArrayType, EObject tModel, EObject arrayTypeToTArrayClass,
-			EObject mTypeToTType, EObject mTypeAccess, EObject modelToTypeGraph, EObject tAbstractType, EObject mType,
-			EObject mModel) {
-		_this.registerObjects_FWD(ruleresult, mArrayType, tModel, arrayTypeToTArrayClass, mTypeToTType, mTypeAccess,
-				modelToTypeGraph, tAbstractType, mType, mModel);
+			PerformRuleResult ruleresult, EObject mModel, EObject mTypeToTType, EObject modelToTypeGraph,
+			EObject tModel, EObject tAbstractType, EObject arrayTypeToTArrayClass, EObject mArrayType,
+			EObject mTypeAccess, EObject mType) {
+		_this.registerObjects_FWD(ruleresult, mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType,
+				arrayTypeToTArrayClass, mArrayType, mTypeAccess, mType);
 
 	}
 
@@ -1523,23 +1527,23 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_2_2_corematch_bindingFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("mArrayType");
-		EObject _localVariable_1 = match.getObject("mTypeAccess");
-		EObject _localVariable_2 = match.getObject("mType");
-		EObject _localVariable_3 = match.getObject("mModel");
-		EObject tmpMArrayType = _localVariable_0;
-		EObject tmpMTypeAccess = _localVariable_1;
-		EObject tmpMType = _localVariable_2;
-		EObject tmpMModel = _localVariable_3;
-		if (tmpMArrayType instanceof ArrayType) {
-			ArrayType mArrayType = (ArrayType) tmpMArrayType;
-			if (tmpMTypeAccess instanceof TypeAccess) {
-				TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-				if (tmpMType instanceof Type) {
-					Type mType = (Type) tmpMType;
-					if (tmpMModel instanceof Model) {
-						Model mModel = (Model) tmpMModel;
-						return new Object[] { mArrayType, mTypeAccess, mType, mModel, match };
+		EObject _localVariable_0 = match.getObject("mModel");
+		EObject _localVariable_1 = match.getObject("mArrayType");
+		EObject _localVariable_2 = match.getObject("mTypeAccess");
+		EObject _localVariable_3 = match.getObject("mType");
+		EObject tmpMModel = _localVariable_0;
+		EObject tmpMArrayType = _localVariable_1;
+		EObject tmpMTypeAccess = _localVariable_2;
+		EObject tmpMType = _localVariable_3;
+		if (tmpMModel instanceof Model) {
+			Model mModel = (Model) tmpMModel;
+			if (tmpMArrayType instanceof ArrayType) {
+				ArrayType mArrayType = (ArrayType) tmpMArrayType;
+				if (tmpMTypeAccess instanceof TypeAccess) {
+					TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+					if (tmpMType instanceof Type) {
+						Type mType = (Type) tmpMType;
+						return new Object[] { mModel, mArrayType, mTypeAccess, mType, match };
 					}
 				}
 			}
@@ -1547,20 +1551,20 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_ArrayTypeToType_2_2_corematch_blackBFFBFFBBB(ArrayType mArrayType,
-			TypeAccess mTypeAccess, Type mType, Model mModel, Match match) {
+	public static final Iterable<Object[]> pattern_ArrayTypeToType_2_2_corematch_blackBFFFFBBBB(Model mModel,
+			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mArrayType.equals(mType)) {
-			for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
-				TAbstractType tAbstractType = mTypeToTType.getTarget();
-				if (tAbstractType != null) {
-					for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
-						TypeGraph tModel = modelToTypeGraph.getTarget();
-						if (tModel != null) {
-							_result.add(new Object[] { mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph,
-									tAbstractType, mType, mModel, match });
+			for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
+				TypeGraph tModel = modelToTypeGraph.getTarget();
+				if (tModel != null) {
+					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(mType, TypeToTAbstractType.class, "source")) {
+						TAbstractType tAbstractType = mTypeToTType.getTarget();
+						if (tAbstractType != null) {
+							_result.add(new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType,
+									mArrayType, mTypeAccess, mType, match });
 						}
 
 					}
@@ -1571,21 +1575,21 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ArrayTypeToType_2_3_findcontext_blackBBBBBBBB(ArrayType mArrayType,
-			TypeGraph tModel, TypeToTAbstractType mTypeToTType, TypeAccess mTypeAccess,
-			ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType, Type mType, Model mModel) {
+	public static final Iterable<Object[]> pattern_ArrayTypeToType_2_3_findcontext_blackBBBBBBBB(Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!mArrayType.equals(mType)) {
-			if (mTypeAccess.equals(mArrayType.getElementType())) {
-				if (tModel.getAllTypes().contains(tAbstractType)) {
-					if (tAbstractType.equals(mTypeToTType.getTarget())) {
+			if (tModel.equals(modelToTypeGraph.getTarget())) {
+				if (tAbstractType.equals(mTypeToTType.getTarget())) {
+					if (mModel.equals(modelToTypeGraph.getSource())) {
 						if (mType.equals(mTypeAccess.getType())) {
-							if (mType.equals(mTypeToTType.getSource())) {
-								if (mModel.getOrphanTypes().contains(mArrayType)) {
-									if (mModel.equals(modelToTypeGraph.getSource())) {
-										if (tModel.equals(modelToTypeGraph.getTarget())) {
-											_result.add(new Object[] { mArrayType, tModel, mTypeToTType, mTypeAccess,
-													modelToTypeGraph, tAbstractType, mType, mModel });
+							if (mModel.getOrphanTypes().contains(mArrayType)) {
+								if (tModel.getAllTypes().contains(tAbstractType)) {
+									if (mType.equals(mTypeToTType.getSource())) {
+										if (mTypeAccess.equals(mArrayType.getElementType())) {
+											_result.add(new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel,
+													tAbstractType, mArrayType, mTypeAccess, mType });
 										}
 									}
 								}
@@ -1598,96 +1602,96 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return _result;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(ArrayType mArrayType,
-			TypeGraph tModel, TypeToTAbstractType mTypeToTType, TypeAccess mTypeAccess,
-			ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType, Type mType, Model mModel) {
+	public static final Object[] pattern_ArrayTypeToType_2_3_findcontext_greenBBBBBBBBFFFFFFFFFFF(Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge mArrayType__mTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tModel__tAbstractType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tAbstractType__tModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge modelToTypeGraph__tModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeToTType__tAbstractType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge modelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mTypeAccess__mType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mType__mTypeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mModel__mArrayType____orphanTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge modelToTypeGraph__mModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge modelToTypeGraph__tModel____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String mArrayType__mTypeAccess____elementType_name_prime = "elementType";
-		String tModel__tAbstractType____allTypes_name_prime = "allTypes";
-		String tAbstractType__tModel____model_name_prime = "model";
+		EMoflonEdge tModel__tAbstractType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tAbstractType__tModel____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mTypeToTType__mType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge mArrayType__mTypeAccess____elementType = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String modelToTypeGraph__tModel____target_name_prime = "target";
 		String mTypeToTType__tAbstractType____target_name_prime = "target";
+		String modelToTypeGraph__mModel____source_name_prime = "source";
 		String mTypeAccess__mType____type_name_prime = "type";
 		String mType__mTypeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String mTypeToTType__mType____source_name_prime = "source";
 		String mModel__mArrayType____orphanTypes_name_prime = "orphanTypes";
-		String modelToTypeGraph__mModel____source_name_prime = "source";
-		String modelToTypeGraph__tModel____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(mArrayType);
-		isApplicableMatch.getAllContextElements().add(tModel);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
-		isApplicableMatch.getAllContextElements().add(mTypeAccess);
-		isApplicableMatch.getAllContextElements().add(modelToTypeGraph);
-		isApplicableMatch.getAllContextElements().add(tAbstractType);
-		isApplicableMatch.getAllContextElements().add(mType);
+		String tModel__tAbstractType____allTypes_name_prime = "allTypes";
+		String tAbstractType__tModel____model_name_prime = "model";
+		String mTypeToTType__mType____source_name_prime = "source";
+		String mArrayType__mTypeAccess____elementType_name_prime = "elementType";
 		isApplicableMatch.getAllContextElements().add(mModel);
-		mArrayType__mTypeAccess____elementType.setSrc(mArrayType);
-		mArrayType__mTypeAccess____elementType.setTrg(mTypeAccess);
-		isApplicableMatch.getAllContextElements().add(mArrayType__mTypeAccess____elementType);
-		tModel__tAbstractType____allTypes.setSrc(tModel);
-		tModel__tAbstractType____allTypes.setTrg(tAbstractType);
-		isApplicableMatch.getAllContextElements().add(tModel__tAbstractType____allTypes);
-		tAbstractType__tModel____model.setSrc(tAbstractType);
-		tAbstractType__tModel____model.setTrg(tModel);
-		isApplicableMatch.getAllContextElements().add(tAbstractType__tModel____model);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
+		isApplicableMatch.getAllContextElements().add(modelToTypeGraph);
+		isApplicableMatch.getAllContextElements().add(tModel);
+		isApplicableMatch.getAllContextElements().add(tAbstractType);
+		isApplicableMatch.getAllContextElements().add(mArrayType);
+		isApplicableMatch.getAllContextElements().add(mTypeAccess);
+		isApplicableMatch.getAllContextElements().add(mType);
+		modelToTypeGraph__tModel____target.setSrc(modelToTypeGraph);
+		modelToTypeGraph__tModel____target.setTrg(tModel);
+		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__tModel____target);
 		mTypeToTType__tAbstractType____target.setSrc(mTypeToTType);
 		mTypeToTType__tAbstractType____target.setTrg(tAbstractType);
 		isApplicableMatch.getAllContextElements().add(mTypeToTType__tAbstractType____target);
+		modelToTypeGraph__mModel____source.setSrc(modelToTypeGraph);
+		modelToTypeGraph__mModel____source.setTrg(mModel);
+		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__mModel____source);
 		mTypeAccess__mType____type.setSrc(mTypeAccess);
 		mTypeAccess__mType____type.setTrg(mType);
 		isApplicableMatch.getAllContextElements().add(mTypeAccess__mType____type);
 		mType__mTypeAccess____usagesInTypeAccess.setSrc(mType);
 		mType__mTypeAccess____usagesInTypeAccess.setTrg(mTypeAccess);
 		isApplicableMatch.getAllContextElements().add(mType__mTypeAccess____usagesInTypeAccess);
-		mTypeToTType__mType____source.setSrc(mTypeToTType);
-		mTypeToTType__mType____source.setTrg(mType);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
 		mModel__mArrayType____orphanTypes.setSrc(mModel);
 		mModel__mArrayType____orphanTypes.setTrg(mArrayType);
 		isApplicableMatch.getAllContextElements().add(mModel__mArrayType____orphanTypes);
-		modelToTypeGraph__mModel____source.setSrc(modelToTypeGraph);
-		modelToTypeGraph__mModel____source.setTrg(mModel);
-		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__mModel____source);
-		modelToTypeGraph__tModel____target.setSrc(modelToTypeGraph);
-		modelToTypeGraph__tModel____target.setTrg(tModel);
-		isApplicableMatch.getAllContextElements().add(modelToTypeGraph__tModel____target);
-		mArrayType__mTypeAccess____elementType.setName(mArrayType__mTypeAccess____elementType_name_prime);
-		tModel__tAbstractType____allTypes.setName(tModel__tAbstractType____allTypes_name_prime);
-		tAbstractType__tModel____model.setName(tAbstractType__tModel____model_name_prime);
+		tModel__tAbstractType____allTypes.setSrc(tModel);
+		tModel__tAbstractType____allTypes.setTrg(tAbstractType);
+		isApplicableMatch.getAllContextElements().add(tModel__tAbstractType____allTypes);
+		tAbstractType__tModel____model.setSrc(tAbstractType);
+		tAbstractType__tModel____model.setTrg(tModel);
+		isApplicableMatch.getAllContextElements().add(tAbstractType__tModel____model);
+		mTypeToTType__mType____source.setSrc(mTypeToTType);
+		mTypeToTType__mType____source.setTrg(mType);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType__mType____source);
+		mArrayType__mTypeAccess____elementType.setSrc(mArrayType);
+		mArrayType__mTypeAccess____elementType.setTrg(mTypeAccess);
+		isApplicableMatch.getAllContextElements().add(mArrayType__mTypeAccess____elementType);
+		modelToTypeGraph__tModel____target.setName(modelToTypeGraph__tModel____target_name_prime);
 		mTypeToTType__tAbstractType____target.setName(mTypeToTType__tAbstractType____target_name_prime);
+		modelToTypeGraph__mModel____source.setName(modelToTypeGraph__mModel____source_name_prime);
 		mTypeAccess__mType____type.setName(mTypeAccess__mType____type_name_prime);
 		mType__mTypeAccess____usagesInTypeAccess.setName(mType__mTypeAccess____usagesInTypeAccess_name_prime);
-		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		mModel__mArrayType____orphanTypes.setName(mModel__mArrayType____orphanTypes_name_prime);
-		modelToTypeGraph__mModel____source.setName(modelToTypeGraph__mModel____source_name_prime);
-		modelToTypeGraph__tModel____target.setName(modelToTypeGraph__tModel____target_name_prime);
-		return new Object[] { mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph, tAbstractType, mType,
-				mModel, isApplicableMatch, mArrayType__mTypeAccess____elementType, tModel__tAbstractType____allTypes,
-				tAbstractType__tModel____model, mTypeToTType__tAbstractType____target, mTypeAccess__mType____type,
-				mType__mTypeAccess____usagesInTypeAccess, mTypeToTType__mType____source,
-				mModel__mArrayType____orphanTypes, modelToTypeGraph__mModel____source,
-				modelToTypeGraph__tModel____target };
+		tModel__tAbstractType____allTypes.setName(tModel__tAbstractType____allTypes_name_prime);
+		tAbstractType__tModel____model.setName(tAbstractType__tModel____model_name_prime);
+		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
+		mArrayType__mTypeAccess____elementType.setName(mArrayType__mTypeAccess____elementType_name_prime);
+		return new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType, mTypeAccess,
+				mType, isApplicableMatch, modelToTypeGraph__tModel____target, mTypeToTType__tAbstractType____target,
+				modelToTypeGraph__mModel____source, mTypeAccess__mType____type,
+				mType__mTypeAccess____usagesInTypeAccess, mModel__mArrayType____orphanTypes,
+				tModel__tAbstractType____allTypes, tAbstractType__tModel____model, mTypeToTType__mType____source,
+				mArrayType__mTypeAccess____elementType };
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_2_4_solveCSP_bindingFBBBBBBBBBB(ArrayTypeToType _this,
-			IsApplicableMatch isApplicableMatch, ArrayType mArrayType, TypeGraph tModel,
-			TypeToTAbstractType mTypeToTType, TypeAccess mTypeAccess, ModelToTypeGraph modelToTypeGraph,
-			TAbstractType tAbstractType, Type mType, Model mModel) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mArrayType, tModel, mTypeToTType,
-				mTypeAccess, modelToTypeGraph, tAbstractType, mType, mModel);
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeToTAbstractType mTypeToTType,
+			ModelToTypeGraph modelToTypeGraph, TypeGraph tModel, TAbstractType tAbstractType, ArrayType mArrayType,
+			TypeAccess mTypeAccess, Type mType) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, mModel, mTypeToTType,
+				modelToTypeGraph, tModel, tAbstractType, mArrayType, mTypeAccess, mType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mArrayType, tModel, mTypeToTType, mTypeAccess,
-					modelToTypeGraph, tAbstractType, mType, mModel };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, mTypeToTType, modelToTypeGraph, tModel,
+					tAbstractType, mArrayType, mTypeAccess, mType };
 		}
 		return null;
 	}
@@ -1697,12 +1701,12 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(ArrayTypeToType _this,
-			IsApplicableMatch isApplicableMatch, ArrayType mArrayType, TypeGraph tModel,
-			TypeToTAbstractType mTypeToTType, TypeAccess mTypeAccess, ModelToTypeGraph modelToTypeGraph,
-			TAbstractType tAbstractType, Type mType, Model mModel) {
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeToTAbstractType mTypeToTType,
+			ModelToTypeGraph modelToTypeGraph, TypeGraph tModel, TAbstractType tAbstractType, ArrayType mArrayType,
+			TypeAccess mTypeAccess, Type mType) {
 		Object[] result_pattern_ArrayTypeToType_2_4_solveCSP_binding = pattern_ArrayTypeToType_2_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, mArrayType, tModel, mTypeToTType, mTypeAccess, modelToTypeGraph,
-				tAbstractType, mType, mModel);
+				_this, isApplicableMatch, mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mArrayType,
+				mTypeAccess, mType);
 		if (result_pattern_ArrayTypeToType_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ArrayTypeToType_2_4_solveCSP_binding[0];
 
@@ -1710,8 +1714,8 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 					csp);
 			if (result_pattern_ArrayTypeToType_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mArrayType, tModel, mTypeToTType, mTypeAccess,
-						modelToTypeGraph, tAbstractType, mType, mModel };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, mTypeToTType, modelToTypeGraph, tModel,
+						tAbstractType, mArrayType, mTypeAccess, mType };
 			}
 		}
 		return null;
@@ -1992,9 +1996,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_0BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_614173 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_263005 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_614173)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_263005)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2003,7 +2007,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_255578 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_14319 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2012,7 +2016,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_2B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_112035 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_803492 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2021,7 +2025,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_3B(
 			TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_908179 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_525051 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2030,9 +2034,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_4BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_311312 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_78138 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_311312)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_78138)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2041,7 +2045,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_5B(
 			TypeAccess mTypeAccess) {
-		for (MethodDeclaration __DEC_mTypeAccess_returnType_695122 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mTypeAccess_returnType_582782 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2050,9 +2054,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_6BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_977906 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_502561 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_977906)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_502561)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2061,7 +2065,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_7B(
 			TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_116939 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_997044 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2070,7 +2074,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_8B(
 			TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_809781 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_745662 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2078,40 +2082,39 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Iterable<Object[]> pattern_ArrayTypeToType_18_2_testcorematchandDECs_blackFFFFB(
-			EMoflonEdge _edge_elementType) {
+			EMoflonEdge _edge_type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpMArrayType = _edge_elementType.getSrc();
-		if (tmpMArrayType instanceof ArrayType) {
-			ArrayType mArrayType = (ArrayType) tmpMArrayType;
-			EObject tmpMTypeAccess = _edge_elementType.getTrg();
-			if (tmpMTypeAccess instanceof TypeAccess) {
-				TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-				if (mTypeAccess.equals(mArrayType.getElementType())) {
-					Type mType = mTypeAccess.getType();
-					if (mType != null) {
-						if (!mArrayType.equals(mType)) {
-							if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_1B(mTypeAccess) == null) {
-								if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_2B(
+		EObject tmpMTypeAccess = _edge_type.getSrc();
+		if (tmpMTypeAccess instanceof TypeAccess) {
+			TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+			EObject tmpMType = _edge_type.getTrg();
+			if (tmpMType instanceof Type) {
+				Type mType = (Type) tmpMType;
+				if (mType.equals(mTypeAccess.getType())) {
+					if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_1B(mTypeAccess) == null) {
+						if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_2B(mTypeAccess) == null) {
+							if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_3B(mTypeAccess) == null) {
+								if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_5B(
 										mTypeAccess) == null) {
-									if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_3B(
+									if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_7B(
 											mTypeAccess) == null) {
-										if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_5B(
+										if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_8B(
 												mTypeAccess) == null) {
-											if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_7B(
-													mTypeAccess) == null) {
-												if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_8B(
-														mTypeAccess) == null) {
-													if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_0BB(
+											if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_0BB(
+													mTypeAccess, mType) == null) {
+												if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_4BB(
+														mTypeAccess, mType) == null) {
+													if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_6BB(
 															mTypeAccess, mType) == null) {
-														if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_4BB(
-																mTypeAccess, mType) == null) {
-															if (pattern_ArrayTypeToType_18_2_testcorematchandDECs_black_nac_6BB(
-																	mTypeAccess, mType) == null) {
+														for (ArrayType mArrayType : org.moflon.core.utilities.eMoflonEMFUtil
+																.getOppositeReferenceTyped(mTypeAccess, ArrayType.class,
+																		"elementType")) {
+															if (!mArrayType.equals(mType)) {
 																for (Model mModel : org.moflon.core.utilities.eMoflonEMFUtil
 																		.getOppositeReferenceTyped(mArrayType,
 																				Model.class, "orphanTypes")) {
-																	_result.add(new Object[] { mArrayType, mTypeAccess,
-																			mType, mModel, _edge_elementType });
+																	_result.add(new Object[] { mModel, mArrayType,
+																			mTypeAccess, mType, _edge_type });
 																}
 															}
 														}
@@ -2124,7 +2127,6 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 							}
 						}
 					}
-
 				}
 			}
 
@@ -2143,9 +2145,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final boolean pattern_ArrayTypeToType_18_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBB(
-			ArrayTypeToType _this, Match match, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
-			Model mModel) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mArrayType, mTypeAccess, mType, mModel);
+			ArrayTypeToType _this, Match match, Model mModel, ArrayType mArrayType, TypeAccess mTypeAccess,
+			Type mType) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, mModel, mArrayType, mTypeAccess, mType);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2189,31 +2191,31 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_21_2_matchsrctrgcontext_bindingFFFFFFBB(Match sourceMatch,
 			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("mArrayType");
+		EObject _localVariable_0 = sourceMatch.getObject("mModel");
 		EObject _localVariable_1 = targetMatch.getObject("tModel");
-		EObject _localVariable_2 = sourceMatch.getObject("mTypeAccess");
-		EObject _localVariable_3 = targetMatch.getObject("tAbstractType");
-		EObject _localVariable_4 = sourceMatch.getObject("mType");
-		EObject _localVariable_5 = sourceMatch.getObject("mModel");
-		EObject tmpMArrayType = _localVariable_0;
+		EObject _localVariable_2 = targetMatch.getObject("tAbstractType");
+		EObject _localVariable_3 = sourceMatch.getObject("mArrayType");
+		EObject _localVariable_4 = sourceMatch.getObject("mTypeAccess");
+		EObject _localVariable_5 = sourceMatch.getObject("mType");
+		EObject tmpMModel = _localVariable_0;
 		EObject tmpTModel = _localVariable_1;
-		EObject tmpMTypeAccess = _localVariable_2;
-		EObject tmpTAbstractType = _localVariable_3;
-		EObject tmpMType = _localVariable_4;
-		EObject tmpMModel = _localVariable_5;
-		if (tmpMArrayType instanceof ArrayType) {
-			ArrayType mArrayType = (ArrayType) tmpMArrayType;
+		EObject tmpTAbstractType = _localVariable_2;
+		EObject tmpMArrayType = _localVariable_3;
+		EObject tmpMTypeAccess = _localVariable_4;
+		EObject tmpMType = _localVariable_5;
+		if (tmpMModel instanceof Model) {
+			Model mModel = (Model) tmpMModel;
 			if (tmpTModel instanceof TypeGraph) {
 				TypeGraph tModel = (TypeGraph) tmpTModel;
-				if (tmpMTypeAccess instanceof TypeAccess) {
-					TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
-					if (tmpTAbstractType instanceof TAbstractType) {
-						TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
-						if (tmpMType instanceof Type) {
-							Type mType = (Type) tmpMType;
-							if (tmpMModel instanceof Model) {
-								Model mModel = (Model) tmpMModel;
-								return new Object[] { mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel,
+				if (tmpTAbstractType instanceof TAbstractType) {
+					TAbstractType tAbstractType = (TAbstractType) tmpTAbstractType;
+					if (tmpMArrayType instanceof ArrayType) {
+						ArrayType mArrayType = (ArrayType) tmpMArrayType;
+						if (tmpMTypeAccess instanceof TypeAccess) {
+							TypeAccess mTypeAccess = (TypeAccess) tmpMTypeAccess;
+							if (tmpMType instanceof Type) {
+								Type mType = (Type) tmpMType;
+								return new Object[] { mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType,
 										sourceMatch, targetMatch };
 							}
 						}
@@ -2224,12 +2226,12 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return null;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_21_2_matchsrctrgcontext_blackBBBBBBBB(ArrayType mArrayType,
-			TypeGraph tModel, TypeAccess mTypeAccess, TAbstractType tAbstractType, Type mType, Model mModel,
+	public static final Object[] pattern_ArrayTypeToType_21_2_matchsrctrgcontext_blackBBBBBBBB(Model mModel,
+			TypeGraph tModel, TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
 			Match sourceMatch, Match targetMatch) {
 		if (!mArrayType.equals(mType)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel, sourceMatch,
+				return new Object[] { mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2241,18 +2243,18 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		Object[] result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding = pattern_ArrayTypeToType_21_2_matchsrctrgcontext_bindingFFFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding != null) {
-			ArrayType mArrayType = (ArrayType) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[0];
+			Model mModel = (Model) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[0];
 			TypeGraph tModel = (TypeGraph) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[1];
-			TypeAccess mTypeAccess = (TypeAccess) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[2];
-			TAbstractType tAbstractType = (TAbstractType) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[3];
-			Type mType = (Type) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[4];
-			Model mModel = (Model) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[5];
+			TAbstractType tAbstractType = (TAbstractType) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[2];
+			ArrayType mArrayType = (ArrayType) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[3];
+			TypeAccess mTypeAccess = (TypeAccess) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[4];
+			Type mType = (Type) result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_black = pattern_ArrayTypeToType_21_2_matchsrctrgcontext_blackBBBBBBBB(
-					mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel, sourceMatch, targetMatch);
+					mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType, sourceMatch, targetMatch);
 			if (result_pattern_ArrayTypeToType_21_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel, sourceMatch,
+				return new Object[] { mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2260,13 +2262,13 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_21_3_solvecsp_bindingFBBBBBBBBB(ArrayTypeToType _this,
-			ArrayType mArrayType, TypeGraph tModel, TypeAccess mTypeAccess, TAbstractType tAbstractType, Type mType,
-			Model mModel, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mArrayType, tModel, mTypeAccess, tAbstractType, mType,
-				mModel, sourceMatch, targetMatch);
+			Model mModel, TypeGraph tModel, TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess,
+			Type mType, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(mModel, tModel, tAbstractType, mArrayType, mTypeAccess,
+				mType, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel,
+			return new Object[] { csp, _this, mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -2277,10 +2279,10 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_21_3_solvecsp_bindingAndBlackFBBBBBBBBB(ArrayTypeToType _this,
-			ArrayType mArrayType, TypeGraph tModel, TypeAccess mTypeAccess, TAbstractType tAbstractType, Type mType,
-			Model mModel, Match sourceMatch, Match targetMatch) {
+			Model mModel, TypeGraph tModel, TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess,
+			Type mType, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_ArrayTypeToType_21_3_solvecsp_binding = pattern_ArrayTypeToType_21_3_solvecsp_bindingFBBBBBBBBB(
-				_this, mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel, sourceMatch, targetMatch);
+				_this, mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType, sourceMatch, targetMatch);
 		if (result_pattern_ArrayTypeToType_21_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_ArrayTypeToType_21_3_solvecsp_binding[0];
 
@@ -2288,7 +2290,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 					csp);
 			if (result_pattern_ArrayTypeToType_21_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel,
+				return new Object[] { csp, _this, mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -2301,18 +2303,18 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_ArrayTypeToType_21_5_matchcorrcontext_blackBFFBBBBB(TypeGraph tModel,
-			TAbstractType tAbstractType, Type mType, Model mModel, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_ArrayTypeToType_21_5_matchcorrcontext_blackBFFBBBBB(Model mModel,
+			TypeGraph tModel, TAbstractType tAbstractType, Type mType, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
-				if (mType.equals(mTypeToTType.getSource())) {
-					for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(mModel, ModelToTypeGraph.class, "source")) {
-						if (tModel.equals(modelToTypeGraph.getTarget())) {
-							_result.add(new Object[] { tModel, mTypeToTType, modelToTypeGraph, tAbstractType, mType,
-									mModel, sourceMatch, targetMatch });
+			for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(tModel, ModelToTypeGraph.class, "target")) {
+				if (mModel.equals(modelToTypeGraph.getSource())) {
+					for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(tAbstractType, TypeToTAbstractType.class, "target")) {
+						if (mType.equals(mTypeToTType.getSource())) {
+							_result.add(new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType,
+									mType, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -2333,22 +2335,22 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return new Object[] { mTypeToTType, modelToTypeGraph, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_21_6_createcorrespondence_blackBBBBBBB(ArrayType mArrayType,
-			TypeGraph tModel, TypeAccess mTypeAccess, TAbstractType tAbstractType, Type mType, Model mModel,
+	public static final Object[] pattern_ArrayTypeToType_21_6_createcorrespondence_blackBBBBBBB(Model mModel,
+			TypeGraph tModel, TAbstractType tAbstractType, ArrayType mArrayType, TypeAccess mTypeAccess, Type mType,
 			CCMatch ccMatch) {
 		if (!mArrayType.equals(mType)) {
-			return new Object[] { mArrayType, tModel, mTypeAccess, tAbstractType, mType, mModel, ccMatch };
+			return new Object[] { mModel, tModel, tAbstractType, mArrayType, mTypeAccess, mType, ccMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_21_6_createcorrespondence_greenBFBB(ArrayType mArrayType,
-			TAbstractType tAbstractType, CCMatch ccMatch) {
+	public static final Object[] pattern_ArrayTypeToType_21_6_createcorrespondence_greenBFBB(
+			TAbstractType tAbstractType, ArrayType mArrayType, CCMatch ccMatch) {
 		TypeToTAbstractType arrayTypeToTArrayClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		arrayTypeToTArrayClass.setSource(mArrayType);
 		arrayTypeToTArrayClass.setTarget(tAbstractType);
+		arrayTypeToTArrayClass.setSource(mArrayType);
 		ccMatch.getCreateCorr().add(arrayTypeToTArrayClass);
-		return new Object[] { mArrayType, arrayTypeToTArrayClass, tAbstractType, ccMatch };
+		return new Object[] { tAbstractType, arrayTypeToTArrayClass, mArrayType, ccMatch };
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_21_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2374,9 +2376,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_0BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_871585 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_mTypeAccess_superInterfaces_662449 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_871585)) {
+			if (!mType.equals(__DEC_mTypeAccess_superInterfaces_662449)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2384,7 +2386,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_1B(TypeAccess mTypeAccess) {
-		for (Annotation __DEC_mTypeAccess_type_286668 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_mTypeAccess_type_276332 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, Annotation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2392,7 +2394,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_2B(TypeAccess mTypeAccess) {
-		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_807111 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationTypeMemberDeclaration __DEC_mTypeAccess_type_196356 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationTypeMemberDeclaration.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2400,7 +2402,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_3B(TypeAccess mTypeAccess) {
-		for (ClassInstanceCreation __DEC_mTypeAccess_type_878800 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassInstanceCreation __DEC_mTypeAccess_type_30029 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassInstanceCreation.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2409,9 +2411,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_4BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ClassDeclaration __DEC_mTypeAccess_superClass_315737 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_mTypeAccess_superClass_224121 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ClassDeclaration.class, "superClass")) {
-			if (!mType.equals(__DEC_mTypeAccess_superClass_315737)) {
+			if (!mType.equals(__DEC_mTypeAccess_superClass_224121)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2419,7 +2421,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_5B(TypeAccess mTypeAccess) {
-		for (MethodDeclaration __DEC_mTypeAccess_returnType_167530 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_mTypeAccess_returnType_102518 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, MethodDeclaration.class, "returnType")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2428,9 +2430,9 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_6BB(TypeAccess mTypeAccess,
 			Type mType) {
-		for (ParameterizedType __DEC_mTypeAccess_type_558336 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_mTypeAccess_type_164271 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, ParameterizedType.class, "type")) {
-			if (!mType.equals(__DEC_mTypeAccess_type_558336)) {
+			if (!mType.equals(__DEC_mTypeAccess_type_164271)) {
 				return new Object[] { mTypeAccess, mType };
 			}
 		}
@@ -2438,7 +2440,7 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_7B(TypeAccess mTypeAccess) {
-		for (TypeLiteral __DEC_mTypeAccess_type_119036 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeLiteral __DEC_mTypeAccess_type_911838 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, TypeLiteral.class, "type")) {
 			return new Object[] { mTypeAccess };
 		}
@@ -2446,19 +2448,19 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_8B(TypeAccess mTypeAccess) {
-		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_388605 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mTypeAccess_value_359336 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mTypeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { mTypeAccess };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_blackBBBB(ArrayType mArrayType,
-			TypeAccess mTypeAccess, Type mType, Model mModel) {
+	public static final Object[] pattern_ArrayTypeToType_24_1_matchtggpattern_blackBBBB(Model mModel,
+			ArrayType mArrayType, TypeAccess mTypeAccess, Type mType) {
 		if (!mArrayType.equals(mType)) {
-			if (mTypeAccess.equals(mArrayType.getElementType())) {
-				if (mType.equals(mTypeAccess.getType())) {
-					if (mModel.getOrphanTypes().contains(mArrayType)) {
+			if (mType.equals(mTypeAccess.getType())) {
+				if (mModel.getOrphanTypes().contains(mArrayType)) {
+					if (mTypeAccess.equals(mArrayType.getElementType())) {
 						if (pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_0BB(mTypeAccess, mType) == null) {
 							if (pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_1B(mTypeAccess) == null) {
 								if (pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_2B(mTypeAccess) == null) {
@@ -2474,8 +2476,8 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 															mTypeAccess) == null) {
 														if (pattern_ArrayTypeToType_24_1_matchtggpattern_black_nac_8B(
 																mTypeAccess) == null) {
-															return new Object[] { mArrayType, mTypeAccess, mType,
-																	mModel };
+															return new Object[] { mModel, mArrayType, mTypeAccess,
+																	mType };
 														}
 													}
 												}
@@ -2533,46 +2535,6 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, TypeGraph tModel) {
-		if (ruleResult.getTargetObjects().contains(tModel)) {
-			return new Object[] { ruleResult, tModel };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, TAbstractType tAbstractType) {
-		if (ruleResult.getTargetObjects().contains(tAbstractType)) {
-			return new Object[] { ruleResult, tAbstractType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToTType) {
-		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
-			return new Object[] { ruleResult, mTypeToTType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, Type mType) {
-		if (ruleResult.getSourceObjects().contains(mType)) {
-			return new Object[] { ruleResult, mType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, ModelToTypeGraph modelToTypeGraph) {
-		if (ruleResult.getCorrObjects().contains(modelToTypeGraph)) {
-			return new Object[] { ruleResult, modelToTypeGraph };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_5BB(
 			ModelgeneratorRuleResult ruleResult, Model mModel) {
 		if (ruleResult.getSourceObjects().contains(mModel)) {
 			return new Object[] { ruleResult, mModel };
@@ -2580,39 +2542,78 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return null;
 	}
 
+	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, ModelToTypeGraph modelToTypeGraph) {
+		if (ruleResult.getCorrObjects().contains(modelToTypeGraph)) {
+			return new Object[] { ruleResult, modelToTypeGraph };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, TypeGraph tModel) {
+		if (ruleResult.getTargetObjects().contains(tModel)) {
+			return new Object[] { ruleResult, tModel };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, TAbstractType tAbstractType) {
+		if (ruleResult.getTargetObjects().contains(tAbstractType)) {
+			return new Object[] { ruleResult, tAbstractType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, TypeToTAbstractType mTypeToTType) {
+		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
+			return new Object[] { ruleResult, mTypeToTType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, Type mType) {
+		if (ruleResult.getSourceObjects().contains(mType)) {
+			return new Object[] { ruleResult, mType };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_ArrayTypeToType_26_2_isapplicablecore_blackFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList mTypeToTTypeList : ruleEntryContainer.getRuleEntryList()) {
-			for (EObject tmpMTypeToTType : mTypeToTTypeList.getEntryObjects()) {
-				if (tmpMTypeToTType instanceof TypeToTAbstractType) {
-					TypeToTAbstractType mTypeToTType = (TypeToTAbstractType) tmpMTypeToTType;
-					TAbstractType tAbstractType = mTypeToTType.getTarget();
-					if (tAbstractType != null) {
-						Type mType = mTypeToTType.getSource();
-						if (mType != null) {
-							TypeGraph tModel = tAbstractType.getModel();
-							if (tModel != null) {
-								if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_2BB(ruleResult,
-										mTypeToTType) == null) {
-									if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_1BB(ruleResult,
-											tAbstractType) == null) {
-										if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_3BB(ruleResult,
-												mType) == null) {
-											if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_0BB(ruleResult,
-													tModel) == null) {
-												for (ModelToTypeGraph modelToTypeGraph : org.moflon.core.utilities.eMoflonEMFUtil
-														.getOppositeReferenceTyped(tModel, ModelToTypeGraph.class,
-																"target")) {
-													Model mModel = modelToTypeGraph.getSource();
-													if (mModel != null) {
+		for (RuleEntryList modelToTypeGraphList : ruleEntryContainer.getRuleEntryList()) {
+			for (EObject tmpModelToTypeGraph : modelToTypeGraphList.getEntryObjects()) {
+				if (tmpModelToTypeGraph instanceof ModelToTypeGraph) {
+					ModelToTypeGraph modelToTypeGraph = (ModelToTypeGraph) tmpModelToTypeGraph;
+					Model mModel = modelToTypeGraph.getSource();
+					if (mModel != null) {
+						TypeGraph tModel = modelToTypeGraph.getTarget();
+						if (tModel != null) {
+							if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_1BB(ruleResult,
+									modelToTypeGraph) == null) {
+								if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_0BB(ruleResult,
+										mModel) == null) {
+									if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_2BB(ruleResult,
+											tModel) == null) {
+										for (TAbstractType tAbstractType : tModel.getAllTypes()) {
+											if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_3BB(ruleResult,
+													tAbstractType) == null) {
+												for (TypeToTAbstractType mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
+														.getOppositeReferenceTyped(tAbstractType,
+																TypeToTAbstractType.class, "target")) {
+													Type mType = mTypeToTType.getSource();
+													if (mType != null) {
 														if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_4BB(
-																ruleResult, modelToTypeGraph) == null) {
+																ruleResult, mTypeToTType) == null) {
 															if (pattern_ArrayTypeToType_26_2_isapplicablecore_black_nac_5BB(
-																	ruleResult, mModel) == null) {
-																_result.add(new Object[] { mTypeToTTypeList, tModel,
-																		tAbstractType, mTypeToTType, mType,
-																		modelToTypeGraph, mModel, ruleEntryContainer,
+																	ruleResult, mType) == null) {
+																_result.add(new Object[] { modelToTypeGraphList, mModel,
+																		modelToTypeGraph, tModel, tAbstractType,
+																		mTypeToTType, mType, ruleEntryContainer,
 																		ruleResult });
 															}
 														}
@@ -2624,7 +2625,6 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 									}
 								}
 							}
-
 						}
 
 					}
@@ -2636,15 +2636,15 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_26_3_solveCSP_bindingFBBBBBBBBB(ArrayTypeToType _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph tModel, TypeToTAbstractType mTypeToTType,
-			ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType, Type mType, Model mModel,
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeToTAbstractType mTypeToTType,
+			ModelToTypeGraph modelToTypeGraph, TypeGraph tModel, TAbstractType tAbstractType, Type mType,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, tModel, mTypeToTType,
-				modelToTypeGraph, tAbstractType, mType, mModel, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, mModel, mTypeToTType,
+				modelToTypeGraph, tModel, tAbstractType, mType, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, tModel, mTypeToTType, modelToTypeGraph, tAbstractType,
-					mType, mModel, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, mModel, mTypeToTType, modelToTypeGraph, tModel,
+					tAbstractType, mType, ruleResult };
 		}
 		return null;
 	}
@@ -2654,11 +2654,11 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 	}
 
 	public static final Object[] pattern_ArrayTypeToType_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(ArrayTypeToType _this,
-			IsApplicableMatch isApplicableMatch, TypeGraph tModel, TypeToTAbstractType mTypeToTType,
-			ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType, Type mType, Model mModel,
+			IsApplicableMatch isApplicableMatch, Model mModel, TypeToTAbstractType mTypeToTType,
+			ModelToTypeGraph modelToTypeGraph, TypeGraph tModel, TAbstractType tAbstractType, Type mType,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_ArrayTypeToType_26_3_solveCSP_binding = pattern_ArrayTypeToType_26_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, tModel, mTypeToTType, modelToTypeGraph, tAbstractType, mType, mModel,
+				_this, isApplicableMatch, mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mType,
 				ruleResult);
 		if (result_pattern_ArrayTypeToType_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_ArrayTypeToType_26_3_solveCSP_binding[0];
@@ -2667,8 +2667,8 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 					csp);
 			if (result_pattern_ArrayTypeToType_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, tModel, mTypeToTType, modelToTypeGraph,
-						tAbstractType, mType, mModel, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, mModel, mTypeToTType, modelToTypeGraph, tModel,
+						tAbstractType, mType, ruleResult };
 			}
 		}
 		return null;
@@ -2680,37 +2680,37 @@ public class ArrayTypeToTypeImpl extends AbstractRuleImpl implements ArrayTypeTo
 		return _result;
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_26_5_checknacs_blackBBBBBB(TypeGraph tModel,
-			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType,
-			Type mType, Model mModel) {
-		return new Object[] { tModel, mTypeToTType, modelToTypeGraph, tAbstractType, mType, mModel };
+	public static final Object[] pattern_ArrayTypeToType_26_5_checknacs_blackBBBBBB(Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, Type mType) {
+		return new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mType };
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_26_6_perform_blackBBBBBBB(TypeGraph tModel,
-			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TAbstractType tAbstractType,
-			Type mType, Model mModel, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { tModel, mTypeToTType, modelToTypeGraph, tAbstractType, mType, mModel, ruleResult };
+	public static final Object[] pattern_ArrayTypeToType_26_6_perform_blackBBBBBBB(Model mModel,
+			TypeToTAbstractType mTypeToTType, ModelToTypeGraph modelToTypeGraph, TypeGraph tModel,
+			TAbstractType tAbstractType, Type mType, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { mModel, mTypeToTType, modelToTypeGraph, tModel, tAbstractType, mType, ruleResult };
 	}
 
-	public static final Object[] pattern_ArrayTypeToType_26_6_perform_greenFFFBBBB(TAbstractType tAbstractType,
-			Type mType, Model mModel, ModelgeneratorRuleResult ruleResult) {
-		ArrayType mArrayType = JavaFactory.eINSTANCE.createArrayType();
+	public static final Object[] pattern_ArrayTypeToType_26_6_perform_greenBBFFFBB(Model mModel,
+			TAbstractType tAbstractType, Type mType, ModelgeneratorRuleResult ruleResult) {
 		TypeToTAbstractType arrayTypeToTArrayClass = PmFactory.eINSTANCE.createTypeToTAbstractType();
+		ArrayType mArrayType = JavaFactory.eINSTANCE.createArrayType();
 		TypeAccess mTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		mModel.getOrphanTypes().add(mArrayType);
-		ruleResult.getSourceObjects().add(mArrayType);
-		arrayTypeToTArrayClass.setSource(mArrayType);
 		arrayTypeToTArrayClass.setTarget(tAbstractType);
 		ruleResult.getCorrObjects().add(arrayTypeToTArrayClass);
-		mArrayType.setElementType(mTypeAccess);
+		arrayTypeToTArrayClass.setSource(mArrayType);
+		mModel.getOrphanTypes().add(mArrayType);
+		ruleResult.getSourceObjects().add(mArrayType);
 		mTypeAccess.setType(mType);
+		mArrayType.setElementType(mTypeAccess);
 		ruleResult.getSourceObjects().add(mTypeAccess);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { mArrayType, arrayTypeToTArrayClass, mTypeAccess, tAbstractType, mType, mModel,
+		return new Object[] { mModel, tAbstractType, arrayTypeToTArrayClass, mArrayType, mTypeAccess, mType,
 				ruleResult };
 	}
 

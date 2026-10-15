@@ -744,7 +744,7 @@ public class InnerDeclaration2InnerClassifier_InMethod4InterfaceImpl extends Abs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_137(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_119(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4InterfaceImpl
 				.pattern_InnerDeclaration2InnerClassifier_InMethod4Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -807,7 +807,7 @@ public class InnerDeclaration2InnerClassifier_InMethod4InterfaceImpl extends Abs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_150(EMoflonEdge _edge_mInnerTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_mInnerTypes) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InMethod4InterfaceImpl
 				.pattern_InnerDeclaration2InnerClassifier_InMethod4Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -1205,100 +1205,100 @@ public class InnerDeclaration2InnerClassifier_InMethod4InterfaceImpl extends Abs
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
-						(Classifier) arguments.get(3), (MAbstractMethodDefinition) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
-						(Interface) arguments.get(7));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_INTERFACE:
-				return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(Interface) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_INTERFACE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(Interface) arguments.get(2));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_INTERFACE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(Interface) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
-						(Classifier) arguments.get(3), (MAbstractMethodDefinition) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
-						(Interface) arguments.get(7));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_137__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_137((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_150__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_150((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_CLASSIFIER_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION_INTERFACE_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (Classifier) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
-						(Interface) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
-				return checkDEC_FWD((InterfaceDeclaration) arguments.get(0),
-						(MAbstractMethodDefinition) arguments.get(1), (AbstractTypeDeclaration) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_DEC_BWD__CLASSIFIER_INTERFACE:
-				return checkDEC_BWD((Classifier) arguments.get(0), (Interface) arguments.get(1));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
-						(Classifier) arguments.get(3), (MAbstractMethodDefinition) arguments.get(4),
-						(ASTNode2Element) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
-						(Interface) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(Classifier) arguments.get(3), (MAbstractMethodDefinition) arguments.get(4),
+					(ASTNode2Element) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
+					(Interface) arguments.get(7));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_INTERFACE:
+			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(Interface) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_INTERFACE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(Interface) arguments.get(2));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_INTERFACE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(Interface) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(Classifier) arguments.get(3), (MAbstractMethodDefinition) arguments.get(4),
+					(ASTNode2Element) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
+					(Interface) arguments.get(7));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_119__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_CLASSIFIER_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION_INTERFACE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0), (Classifier) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+					(Interface) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION_MABSTRACTMETHODDEFINITION_ABSTRACTTYPEDECLARATION:
+			return checkDEC_FWD((InterfaceDeclaration) arguments.get(0), (MAbstractMethodDefinition) arguments.get(1),
+					(AbstractTypeDeclaration) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___CHECK_DEC_BWD__CLASSIFIER_INTERFACE:
+			return checkDEC_BWD((Classifier) arguments.get(0), (Interface) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_ASTNODE2ELEMENT_CLASSIFIER_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(InterfaceDeclaration) arguments.get(1), (ASTNode2Element) arguments.get(2),
+					(Classifier) arguments.get(3), (MAbstractMethodDefinition) arguments.get(4),
+					(ASTNode2Element) arguments.get(5), (AbstractTypeDeclaration) arguments.get(6),
+					(Interface) arguments.get(7), (ModelgeneratorRuleResult) arguments.get(8));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_METHOD4_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

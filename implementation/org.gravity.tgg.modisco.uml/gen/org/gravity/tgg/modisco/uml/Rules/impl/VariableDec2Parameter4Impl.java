@@ -21,7 +21,6 @@ import org.eclipse.modisco.java.ArrayType;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.MethodDeclaration;
 import org.eclipse.modisco.java.ParameterizedType;
-import org.eclipse.modisco.java.SingleVariableDeclaration;
 import org.eclipse.modisco.java.Type;
 import org.eclipse.modisco.java.TypeAccess;
 
@@ -146,9 +145,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			}
 			VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_0_4_collectelementstobetranslated_greenBBBBBFFFFF(
 					match, variableDec, jType, typeAccess, method);
-			//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result4_green[7];
 			//nothing EMoflonEdge method__variableDec____parameters = (EMoflonEdge) result4_green[8];
 			//nothing EMoflonEdge variableDec__method____methodDeclaration = (EMoflonEdge) result4_green[9];
 
@@ -187,63 +186,63 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[1];
-		Type jType = (Type) result1_bindingAndBlack[2];
-		Operation operation = (Operation) result1_bindingAndBlack[3];
-		ASTNode2Element md2o = (ASTNode2Element) result1_bindingAndBlack[4];
-		TypeAccess typeAccess = (TypeAccess) result1_bindingAndBlack[5];
-		AbstractMethodDeclaration method = (AbstractMethodDeclaration) result1_bindingAndBlack[6];
-		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[7];
+		Operation operation = (Operation) result1_bindingAndBlack[0];
+		MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[2];
+		Type jType = (Type) result1_bindingAndBlack[3];
+		TypeAccess typeAccess = (TypeAccess) result1_bindingAndBlack[4];
+		ASTNode2Element md2o = (ASTNode2Element) result1_bindingAndBlack[5];
+		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[6];
+		AbstractMethodDeclaration method = (AbstractMethodDeclaration) result1_bindingAndBlack[7];
 		CSP csp = (CSP) result1_bindingAndBlack[8];
 		Object[] result1_green = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_1_1_performtransformation_greenBFFBFBBB(variableDec, uType, operation,
+				.pattern_VariableDec2Parameter4_1_1_performtransformation_greenFBBFFBBB(operation, variableDec, uType,
 						typeAccess, csp);
-		TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result1_green[1];
-		ASTNode2Element vd2p = (ASTNode2Element) result1_green[2];
-		Parameter param = (Parameter) result1_green[4];
+		Parameter param = (Parameter) result1_green[0];
+		TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result1_green[3];
+		ASTNode2Element vd2p = (ASTNode2Element) result1_green[4];
 
 		Object[] result2_black = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_1_2_collecttranslatedelements_blackBBBBB(variableDec, ty2p, vd2p, param,
+				.pattern_VariableDec2Parameter4_1_2_collecttranslatedelements_blackBBBBB(param, variableDec, ty2p, vd2p,
 						typeAccess);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[variableDec] = " + variableDec
-					+ ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p + ", " + "[param] = " + param + ", "
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[param] = " + param + ", "
+					+ "[variableDec] = " + variableDec + ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p + ", "
 					+ "[typeAccess] = " + typeAccess + ".");
 		}
 		Object[] result2_green = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_1_2_collecttranslatedelements_greenFBBBBB(variableDec, ty2p, vd2p,
-						param, typeAccess);
+				.pattern_VariableDec2Parameter4_1_2_collecttranslatedelements_greenFBBBBB(param, variableDec, ty2p,
+						vd2p, typeAccess);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_1_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, variableDec, ty2p,
-						vd2p, uType, param, jType, operation, md2o, typeAccess, method, ne2ne);
+				.pattern_VariableDec2Parameter4_1_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, param, operation,
+						variableDec, ty2p, vd2p, uType, jType, typeAccess, md2o, ne2ne, method);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[variableDec] = " + variableDec + ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p
-					+ ", " + "[uType] = " + uType + ", " + "[param] = " + param + ", " + "[jType] = " + jType + ", "
-					+ "[operation] = " + operation + ", " + "[md2o] = " + md2o + ", " + "[typeAccess] = " + typeAccess
-					+ ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ".");
+					+ ", " + "[param] = " + param + ", " + "[operation] = " + operation + ", " + "[variableDec] = "
+					+ variableDec + ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p + ", " + "[uType] = " + uType
+					+ ", " + "[jType] = " + jType + ", " + "[typeAccess] = " + typeAccess + ", " + "[md2o] = " + md2o
+					+ ", " + "[ne2ne] = " + ne2ne + ", " + "[method] = " + method + ".");
 		}
 		VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_1_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFF(
-				ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, typeAccess, method);
-		//nothing EMoflonEdge vd2p__param____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge ty2p__param____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge vd2p__variableDec____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge param__uType____type = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge operation__param____ownedParameter = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge ty2p__typeAccess____source = (EMoflonEdge) result3_green[15];
+				ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, method);
+		//nothing EMoflonEdge param__uType____type = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge operation__param____ownedParameter = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge ty2p__param____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge vd2p__variableDec____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge vd2p__param____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge ty2p__typeAccess____source = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge method__variableDec____parameters = (EMoflonEdge) result3_green[19];
 		//nothing EMoflonEdge variableDec__method____methodDeclaration = (EMoflonEdge) result3_green[20];
 
 		// 
 		// 
 		VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_1_5_registerobjects_expressionBBBBBBBBBBBBB(this,
-				ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, md2o, typeAccess, method, ne2ne);
+				ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, md2o, ne2ne, method);
 		return VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_1_6_expressionFB(ruleresult);
 	}
 
@@ -277,39 +276,39 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		TypeAccess typeAccess = (TypeAccess) result2_binding[2];
 		AbstractMethodDeclaration method = (AbstractMethodDeclaration) result2_binding[3];
 		for (Object[] result2_black : VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_2_2_corematch_blackBFBFFBBFB(variableDec, jType, typeAccess, method,
+				.pattern_VariableDec2Parameter4_2_2_corematch_blackFBFBBFFBB(variableDec, jType, typeAccess, method,
 						match)) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[1];
-			Operation operation = (Operation) result2_black[3];
-			ASTNode2Element md2o = (ASTNode2Element) result2_black[4];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[7];
+			Operation operation = (Operation) result2_black[0];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[2];
+			ASTNode2Element md2o = (ASTNode2Element) result2_black[5];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : VariableDec2Parameter4Impl
-					.pattern_VariableDec2Parameter4_2_3_findcontext_blackBBBBBBBB(variableDec, uType, jType, operation,
-							md2o, typeAccess, method, ne2ne)) {
+					.pattern_VariableDec2Parameter4_2_3_findcontext_blackBBBBBBBB(operation, variableDec, uType, jType,
+							typeAccess, md2o, ne2ne, method)) {
 				Object[] result3_green = VariableDec2Parameter4Impl
-						.pattern_VariableDec2Parameter4_2_3_findcontext_greenBBBBBBBBFFFFFFFFFF(variableDec, uType,
-								jType, operation, md2o, typeAccess, method, ne2ne);
+						.pattern_VariableDec2Parameter4_2_3_findcontext_greenBBBBBBBBFFFFFFFFFF(operation, variableDec,
+								uType, jType, typeAccess, md2o, ne2ne, method);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[8];
-				//nothing EMoflonEdge md2o__operation____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge method__variableDec____parameters = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge variableDec__method____methodDeclaration = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge md2o__method____source = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge md2o__operation____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge md2o__method____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge method__variableDec____parameters = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge variableDec__method____methodDeclaration = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[17];
 
 				Object[] result4_bindingAndBlack = VariableDec2Parameter4Impl
 						.pattern_VariableDec2Parameter4_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch,
-								variableDec, uType, jType, operation, md2o, typeAccess, method, ne2ne);
+								operation, variableDec, uType, jType, typeAccess, md2o, ne2ne, method);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[variableDec] = " + variableDec
-							+ ", " + "[uType] = " + uType + ", " + "[jType] = " + jType + ", " + "[operation] = "
-							+ operation + ", " + "[md2o] = " + md2o + ", " + "[typeAccess] = " + typeAccess + ", "
-							+ "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[operation] = " + operation + ", "
+							+ "[variableDec] = " + variableDec + ", " + "[uType] = " + uType + ", " + "[jType] = "
+							+ jType + ", " + "[typeAccess] = " + typeAccess + ", " + "[md2o] = " + md2o + ", "
+							+ "[ne2ne] = " + ne2ne + ", " + "[method] = " + method + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -383,9 +382,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration variableDec,
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, ASTNode2Element md2o,
-			TypeAccess typeAccess, AbstractMethodDeclaration method, ASTNode2Element ne2ne) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation operation,
+			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess,
+			ASTNode2Element md2o, ASTNode2Element ne2ne, AbstractMethodDeclaration method) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -416,14 +415,14 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		isInParameter.solve(var_param_direction);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("operation", operation);
 		isApplicableMatch.registerObject("variableDec", variableDec);
 		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("jType", jType);
-		isApplicableMatch.registerObject("operation", operation);
-		isApplicableMatch.registerObject("md2o", md2o);
 		isApplicableMatch.registerObject("typeAccess", typeAccess);
-		isApplicableMatch.registerObject("method", method);
+		isApplicableMatch.registerObject("md2o", md2o);
 		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("method", method);
 		return csp;
 	}
 
@@ -441,20 +440,20 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p,
-			EObject uType, EObject param, EObject jType, EObject operation, EObject md2o, EObject typeAccess,
-			EObject method, EObject ne2ne) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject param, EObject operation, EObject variableDec,
+			EObject ty2p, EObject vd2p, EObject uType, EObject jType, EObject typeAccess, EObject md2o, EObject ne2ne,
+			EObject method) {
+		ruleresult.registerObject("param", param);
+		ruleresult.registerObject("operation", operation);
 		ruleresult.registerObject("variableDec", variableDec);
 		ruleresult.registerObject("ty2p", ty2p);
 		ruleresult.registerObject("vd2p", vd2p);
 		ruleresult.registerObject("uType", uType);
-		ruleresult.registerObject("param", param);
 		ruleresult.registerObject("jType", jType);
-		ruleresult.registerObject("operation", operation);
-		ruleresult.registerObject("md2o", md2o);
 		ruleresult.registerObject("typeAccess", typeAccess);
-		ruleresult.registerObject("method", method);
+		ruleresult.registerObject("md2o", md2o);
 		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("method", method);
 
 	}
 
@@ -476,56 +475,56 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
+	public boolean isAppropriate_BWD(Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
 
 		Object[] result1_black = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_10_1_initialbindings_blackBBBBB(this, match, uType, param, operation);
+				.pattern_VariableDec2Parameter4_10_1_initialbindings_blackBBBBB(this, match, param, operation, uType);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[uType] = " + uType + ", " + "[param] = " + param + ", "
-					+ "[operation] = " + operation + ".");
+					+ "[match] = " + match + ", " + "[param] = " + param + ", " + "[operation] = " + operation + ", "
+					+ "[uType] = " + uType + ".");
 		}
 
 		Object[] result2_bindingAndBlack = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, uType, param,
-						operation);
+				.pattern_VariableDec2Parameter4_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, param, operation,
+						uType);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[uType] = " + uType + ", " + "[param] = " + param + ", "
-					+ "[operation] = " + operation + ".");
+					+ "[match] = " + match + ", " + "[param] = " + param + ", " + "[operation] = " + operation + ", "
+					+ "[uType] = " + uType + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = VariableDec2Parameter4Impl
-					.pattern_VariableDec2Parameter4_10_4_collectelementstobetranslated_blackBBBB(match, uType, param,
-							operation);
+					.pattern_VariableDec2Parameter4_10_4_collectelementstobetranslated_blackBBBB(match, param,
+							operation, uType);
 			if (result4_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[uType] = " + uType
-								+ ", " + "[param] = " + param + ", " + "[operation] = " + operation + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[param] = " + param
+								+ ", " + "[operation] = " + operation + ", " + "[uType] = " + uType + ".");
 			}
 			VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_4_collectelementstobetranslated_greenBBBBFF(
-					match, uType, param, operation);
+					match, param, operation, uType);
 			//nothing EMoflonEdge param__uType____type = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge operation__param____ownedParameter = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = VariableDec2Parameter4Impl
-					.pattern_VariableDec2Parameter4_10_5_collectcontextelements_blackBBBB(match, uType, param,
-							operation);
+					.pattern_VariableDec2Parameter4_10_5_collectcontextelements_blackBBBB(match, param, operation,
+							uType);
 			if (result5_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[uType] = " + uType
-								+ ", " + "[param] = " + param + ", " + "[operation] = " + operation + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[param] = " + param
+								+ ", " + "[operation] = " + operation + ", " + "[uType] = " + uType + ".");
 			}
-			VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_5_collectcontextelements_greenBBB(match, uType,
-					operation);
+			VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_5_collectcontextelements_greenBBB(match,
+					operation, uType);
 
 			// 
 			VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_6_registerobjectstomatch_expressionBBBBB(this,
-					match, uType, param, operation);
+					match, param, operation, uType);
 			return VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_7_expressionF();
 		} else {
 			return VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_10_8_expressionF();
@@ -547,62 +546,62 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[0];
-		Parameter param = (Parameter) result1_bindingAndBlack[1];
-		Type jType = (Type) result1_bindingAndBlack[2];
-		Operation operation = (Operation) result1_bindingAndBlack[3];
+		Parameter param = (Parameter) result1_bindingAndBlack[0];
+		Operation operation = (Operation) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result1_bindingAndBlack[2];
+		Type jType = (Type) result1_bindingAndBlack[3];
 		ASTNode2Element md2o = (ASTNode2Element) result1_bindingAndBlack[4];
-		AbstractMethodDeclaration method = (AbstractMethodDeclaration) result1_bindingAndBlack[5];
-		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[6];
+		ASTNode2Element ne2ne = (ASTNode2Element) result1_bindingAndBlack[5];
+		AbstractMethodDeclaration method = (AbstractMethodDeclaration) result1_bindingAndBlack[6];
 		CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_11_1_performtransformation_greenFFFBBFBB(param, jType, method, csp);
-		MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result1_green[0];
-		TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result1_green[1];
-		ASTNode2Element vd2p = (ASTNode2Element) result1_green[2];
+				.pattern_VariableDec2Parameter4_11_1_performtransformation_greenBFFFBFBB(param, jType, method, csp);
+		MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result1_green[1];
+		TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result1_green[2];
+		ASTNode2Element vd2p = (ASTNode2Element) result1_green[3];
 		TypeAccess typeAccess = (TypeAccess) result1_green[5];
 
 		Object[] result2_black = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_11_2_collecttranslatedelements_blackBBBBB(variableDec, ty2p, vd2p,
-						param, typeAccess);
+				.pattern_VariableDec2Parameter4_11_2_collecttranslatedelements_blackBBBBB(param, variableDec, ty2p,
+						vd2p, typeAccess);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[variableDec] = " + variableDec
-					+ ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p + ", " + "[param] = " + param + ", "
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[param] = " + param + ", "
+					+ "[variableDec] = " + variableDec + ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p + ", "
 					+ "[typeAccess] = " + typeAccess + ".");
 		}
 		Object[] result2_green = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_11_2_collecttranslatedelements_greenFBBBBB(variableDec, ty2p, vd2p,
-						param, typeAccess);
+				.pattern_VariableDec2Parameter4_11_2_collecttranslatedelements_greenFBBBBB(param, variableDec, ty2p,
+						vd2p, typeAccess);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_11_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, variableDec,
-						ty2p, vd2p, uType, param, jType, operation, md2o, typeAccess, method, ne2ne);
+				.pattern_VariableDec2Parameter4_11_3_bookkeepingforedges_blackBBBBBBBBBBBB(ruleresult, param, operation,
+						variableDec, ty2p, vd2p, uType, jType, typeAccess, md2o, ne2ne, method);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[variableDec] = " + variableDec + ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p
-					+ ", " + "[uType] = " + uType + ", " + "[param] = " + param + ", " + "[jType] = " + jType + ", "
-					+ "[operation] = " + operation + ", " + "[md2o] = " + md2o + ", " + "[typeAccess] = " + typeAccess
-					+ ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ".");
+					+ ", " + "[param] = " + param + ", " + "[operation] = " + operation + ", " + "[variableDec] = "
+					+ variableDec + ", " + "[ty2p] = " + ty2p + ", " + "[vd2p] = " + vd2p + ", " + "[uType] = " + uType
+					+ ", " + "[jType] = " + jType + ", " + "[typeAccess] = " + typeAccess + ", " + "[md2o] = " + md2o
+					+ ", " + "[ne2ne] = " + ne2ne + ", " + "[method] = " + method + ".");
 		}
 		VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_11_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFF(
-				ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, typeAccess, method);
-		//nothing EMoflonEdge vd2p__param____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge ty2p__param____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge vd2p__variableDec____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge param__uType____type = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge operation__param____ownedParameter = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge ty2p__typeAccess____source = (EMoflonEdge) result3_green[15];
+				ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, method);
+		//nothing EMoflonEdge param__uType____type = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge operation__param____ownedParameter = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge ty2p__param____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge vd2p__variableDec____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge vd2p__param____target = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge typeAccess__jType____type = (EMoflonEdge) result3_green[16];
 		//nothing EMoflonEdge jType__typeAccess____usagesInTypeAccess = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge variableDec__typeAccess____type = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge ty2p__typeAccess____source = (EMoflonEdge) result3_green[18];
 		//nothing EMoflonEdge method__variableDec____parameters = (EMoflonEdge) result3_green[19];
 		//nothing EMoflonEdge variableDec__method____methodDeclaration = (EMoflonEdge) result3_green[20];
 
 		// 
 		// 
 		VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_11_5_registerobjects_expressionBBBBBBBBBBBBB(this,
-				ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, md2o, typeAccess, method, ne2ne);
+				ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, md2o, ne2ne, method);
 		return VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_11_6_expressionFB(ruleresult);
 	}
 
@@ -631,38 +630,38 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_binding[0];
-		Parameter param = (Parameter) result2_binding[1];
-		Operation operation = (Operation) result2_binding[2];
+		Parameter param = (Parameter) result2_binding[0];
+		Operation operation = (Operation) result2_binding[1];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_binding[2];
 		for (Object[] result2_black : VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_12_2_corematch_blackBBFBFFFB(uType, param, operation, match)) {
-			Type jType = (Type) result2_black[2];
+				.pattern_VariableDec2Parameter4_12_2_corematch_blackBBBFFFFB(param, operation, uType, match)) {
+			Type jType = (Type) result2_black[3];
 			ASTNode2Element md2o = (ASTNode2Element) result2_black[4];
-			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result2_black[5];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[6];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[5];
+			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : VariableDec2Parameter4Impl
-					.pattern_VariableDec2Parameter4_12_3_findcontext_blackBBBBBBB(uType, param, jType, operation, md2o,
-							method, ne2ne)) {
+					.pattern_VariableDec2Parameter4_12_3_findcontext_blackBBBBBBB(param, operation, uType, jType, md2o,
+							ne2ne, method)) {
 				Object[] result3_green = VariableDec2Parameter4Impl
-						.pattern_VariableDec2Parameter4_12_3_findcontext_greenBBBBBBBFFFFFFF(uType, param, jType,
-								operation, md2o, method, ne2ne);
+						.pattern_VariableDec2Parameter4_12_3_findcontext_greenBBBBBBBFFFFFFF(param, operation, uType,
+								jType, md2o, ne2ne, method);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
 				//nothing EMoflonEdge param__uType____type = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge operation__param____ownedParameter = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge md2o__operation____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge md2o__method____source = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge ne2ne__uType____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge md2o__method____source = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge ne2ne__jType____source = (EMoflonEdge) result3_green[13];
 
 				Object[] result4_bindingAndBlack = VariableDec2Parameter4Impl
 						.pattern_VariableDec2Parameter4_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								uType, param, jType, operation, md2o, method, ne2ne);
+								param, operation, uType, jType, md2o, ne2ne, method);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
-							+ "[param] = " + param + ", " + "[jType] = " + jType + ", " + "[operation] = " + operation
-							+ ", " + "[md2o] = " + md2o + ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[param] = " + param + ", "
+							+ "[operation] = " + operation + ", " + "[uType] = " + uType + ", " + "[jType] = " + jType
+							+ ", " + "[md2o] = " + md2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[method] = " + method
 							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -693,11 +692,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
-		match.registerObject("uType", uType);
+	public void registerObjectsToMatch_BWD(Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
 		match.registerObject("param", param);
 		match.registerObject("operation", operation);
+		match.registerObject("uType", uType);
 
 	}
 
@@ -706,8 +705,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -744,9 +743,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Parameter param, Type jType, Operation operation, ASTNode2Element md2o, AbstractMethodDeclaration method,
-			ASTNode2Element ne2ne) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -771,13 +770,13 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		eq.solve(var_variableDec_name, var_param_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("param", param);
-		isApplicableMatch.registerObject("jType", jType);
 		isApplicableMatch.registerObject("operation", operation);
+		isApplicableMatch.registerObject("uType", uType);
+		isApplicableMatch.registerObject("jType", jType);
 		isApplicableMatch.registerObject("md2o", md2o);
-		isApplicableMatch.registerObject("method", method);
 		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("method", method);
 		return csp;
 	}
 
@@ -795,20 +794,20 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p,
-			EObject uType, EObject param, EObject jType, EObject operation, EObject md2o, EObject typeAccess,
-			EObject method, EObject ne2ne) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject param, EObject operation, EObject variableDec,
+			EObject ty2p, EObject vd2p, EObject uType, EObject jType, EObject typeAccess, EObject md2o, EObject ne2ne,
+			EObject method) {
+		ruleresult.registerObject("param", param);
+		ruleresult.registerObject("operation", operation);
 		ruleresult.registerObject("variableDec", variableDec);
 		ruleresult.registerObject("ty2p", ty2p);
 		ruleresult.registerObject("vd2p", vd2p);
 		ruleresult.registerObject("uType", uType);
-		ruleresult.registerObject("param", param);
 		ruleresult.registerObject("jType", jType);
-		ruleresult.registerObject("operation", operation);
-		ruleresult.registerObject("md2o", md2o);
 		ruleresult.registerObject("typeAccess", typeAccess);
-		ruleresult.registerObject("method", method);
+		ruleresult.registerObject("md2o", md2o);
 		ruleresult.registerObject("ne2ne", ne2ne);
+		ruleresult.registerObject("method", method);
 
 	}
 
@@ -827,7 +826,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_130(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_134(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = VariableDec2Parameter4Impl
 				.pattern_VariableDec2Parameter4_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -844,9 +843,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		// ForEach 
 		for (Object[] result2_black : VariableDec2Parameter4Impl
 				.pattern_VariableDec2Parameter4_20_2_testcorematchandDECs_blackFFFB(_edge_type)) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[0];
-			Parameter param = (Parameter) result2_black[1];
-			Operation operation = (Operation) result2_black[2];
+			Parameter param = (Parameter) result2_black[0];
+			Operation operation = (Operation) result2_black[1];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[2];
 			Object[] result2_green = VariableDec2Parameter4Impl
 					.pattern_VariableDec2Parameter4_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -854,7 +853,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			// 
 			if (VariableDec2Parameter4Impl
 					.pattern_VariableDec2Parameter4_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, uType, param, operation)) {
+							this, match, param, operation, uType)) {
 				// 
 				if (VariableDec2Parameter4Impl
 						.pattern_VariableDec2Parameter4_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -886,7 +885,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_142(EMoflonEdge _edge_type) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_145(EMoflonEdge _edge_type) {
 
 		Object[] result1_bindingAndBlack = VariableDec2Parameter4Impl
 				.pattern_VariableDec2Parameter4_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -956,13 +955,13 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_variableDec_name = CSPFactoryHelper.eINSTANCE.createVariable("variableDec", true, csp);
-		var_variableDec_name.setValue(__helper.getValue("variableDec", "name"));
-		var_variableDec_name.setType("String");
-
 		Variable var_param_name = CSPFactoryHelper.eINSTANCE.createVariable("param", true, csp);
 		var_param_name.setValue(__helper.getValue("param", "name"));
 		var_param_name.setType("String");
+
+		Variable var_variableDec_name = CSPFactoryHelper.eINSTANCE.createVariable("variableDec", true, csp);
+		var_variableDec_name.setValue(__helper.getValue("variableDec", "name"));
+		var_variableDec_name.setType("String");
 
 		Variable var_param_direction = CSPFactoryHelper.eINSTANCE.createVariable("param", true, csp);
 		var_param_direction.setValue(__helper.getValue("param", "direction"));
@@ -1016,13 +1015,13 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_variableDec_name = CSPFactoryHelper.eINSTANCE.createVariable("variableDec", true, csp);
-		var_variableDec_name.setValue(__helper.getValue("variableDec", "name"));
-		var_variableDec_name.setType("String");
-
 		Variable var_param_name = CSPFactoryHelper.eINSTANCE.createVariable("param", true, csp);
 		var_param_name.setValue(__helper.getValue("param", "name"));
 		var_param_name.setType("String");
+
+		Variable var_variableDec_name = CSPFactoryHelper.eINSTANCE.createVariable("variableDec", true, csp);
+		var_variableDec_name.setValue(__helper.getValue("variableDec", "name"));
+		var_variableDec_name.setType("String");
 
 		Variable var_param_direction = CSPFactoryHelper.eINSTANCE.createVariable("param", true, csp);
 		var_param_direction.setValue(__helper.getValue("param", "direction"));
@@ -1080,21 +1079,21 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result2_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_bindingAndBlack[1];
-		Parameter param = (Parameter) result2_bindingAndBlack[2];
-		Type jType = (Type) result2_bindingAndBlack[3];
-		Operation operation = (Operation) result2_bindingAndBlack[4];
+		Parameter param = (Parameter) result2_bindingAndBlack[0];
+		Operation operation = (Operation) result2_bindingAndBlack[1];
+		MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_bindingAndBlack[3];
+		Type jType = (Type) result2_bindingAndBlack[4];
 		TypeAccess typeAccess = (TypeAccess) result2_bindingAndBlack[5];
 		AbstractMethodDeclaration method = (AbstractMethodDeclaration) result2_bindingAndBlack[6];
 
 		Object[] result3_bindingAndBlack = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, variableDec, uType,
-						param, jType, operation, typeAccess, method, sourceMatch, targetMatch);
+				.pattern_VariableDec2Parameter4_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(this, param, operation,
+						variableDec, uType, jType, typeAccess, method, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[variableDec] = " + variableDec + ", " + "[uType] = " + uType + ", " + "[param] = " + param
-					+ ", " + "[jType] = " + jType + ", " + "[operation] = " + operation + ", " + "[typeAccess] = "
+					+ "[param] = " + param + ", " + "[operation] = " + operation + ", " + "[variableDec] = "
+					+ variableDec + ", " + "[uType] = " + uType + ", " + "[jType] = " + jType + ", " + "[typeAccess] = "
 					+ typeAccess + ", " + "[method] = " + method + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
@@ -1103,28 +1102,28 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		if (VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : VariableDec2Parameter4Impl
-					.pattern_VariableDec2Parameter4_24_5_matchcorrcontext_blackBBBFBFBB(uType, jType, operation, method,
+					.pattern_VariableDec2Parameter4_24_5_matchcorrcontext_blackBBBFFBBB(operation, uType, jType, method,
 							sourceMatch, targetMatch)) {
 				ASTNode2Element md2o = (ASTNode2Element) result5_black[3];
-				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[5];
+				ASTNode2Element ne2ne = (ASTNode2Element) result5_black[4];
 				Object[] result5_green = VariableDec2Parameter4Impl
 						.pattern_VariableDec2Parameter4_24_5_matchcorrcontext_greenBBBBF(md2o, ne2ne, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = VariableDec2Parameter4Impl
-						.pattern_VariableDec2Parameter4_24_6_createcorrespondence_blackBBBBBBBB(variableDec, uType,
-								param, jType, operation, typeAccess, method, ccMatch);
+						.pattern_VariableDec2Parameter4_24_6_createcorrespondence_blackBBBBBBBB(param, operation,
+								variableDec, uType, jType, typeAccess, method, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[variableDec] = "
-							+ variableDec + ", " + "[uType] = " + uType + ", " + "[param] = " + param + ", "
-							+ "[jType] = " + jType + ", " + "[operation] = " + operation + ", " + "[typeAccess] = "
-							+ typeAccess + ", " + "[method] = " + method + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[param] = " + param + ", "
+							+ "[operation] = " + operation + ", " + "[variableDec] = " + variableDec + ", "
+							+ "[uType] = " + uType + ", " + "[jType] = " + jType + ", " + "[typeAccess] = " + typeAccess
+							+ ", " + "[method] = " + method + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_24_6_createcorrespondence_greenBFFBBB(
-						variableDec, param, typeAccess, ccMatch);
-				//nothing TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result6_green[1];
-				//nothing ASTNode2Element vd2p = (ASTNode2Element) result6_green[2];
+				VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_24_6_createcorrespondence_greenBBFFBB(param,
+						variableDec, typeAccess, ccMatch);
+				//nothing TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result6_green[2];
+				//nothing ASTNode2Element vd2p = (ASTNode2Element) result6_green[3];
 
 				Object[] result7_black = VariableDec2Parameter4Impl
 						.pattern_VariableDec2Parameter4_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1147,8 +1146,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType,
-			Parameter param, Type jType, Operation operation, TypeAccess typeAccess, AbstractMethodDeclaration method,
+	public CSP isApplicable_solveCsp_CC(Parameter param, Operation operation, MSingleVariableDeclaration variableDec,
+			org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1213,9 +1212,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Type uType, Parameter param, Operation operation) {// 
+	public boolean checkDEC_BWD(Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType) {// 
 		Object[] result1_black = VariableDec2Parameter4Impl
-				.pattern_VariableDec2Parameter4_28_1_matchtggpattern_blackBBB(uType, param, operation);
+				.pattern_VariableDec2Parameter4_28_1_matchtggpattern_blackBBB(param, operation, uType);
 		if (result1_black != null) {
 			return VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_28_2_expressionF();
 		} else {
@@ -1229,8 +1228,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element ne2neParameter,
-			ASTNode2Element md2oParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element md2oParameter,
+			ASTNode2Element ne2neParameter) {
 
 		Object[] result1_black = VariableDec2Parameter4Impl
 				.pattern_VariableDec2Parameter4_29_1_createresult_blackB(this);
@@ -1244,23 +1243,23 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		// ForEach 
 		for (Object[] result2_black : VariableDec2Parameter4Impl
 				.pattern_VariableDec2Parameter4_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[0];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[1];
-			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[2];
-			Type jType = (Type) result2_black[3];
-			//nothing RuleEntryList md2oList = (RuleEntryList) result2_black[4];
-			Operation operation = (Operation) result2_black[5];
-			ASTNode2Element md2o = (ASTNode2Element) result2_black[6];
-			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result2_black[7];
+			//nothing RuleEntryList md2oList = (RuleEntryList) result2_black[0];
+			Operation operation = (Operation) result2_black[1];
+			ASTNode2Element md2o = (ASTNode2Element) result2_black[2];
+			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result2_black[3];
+			//nothing RuleEntryList ne2neList = (RuleEntryList) result2_black[4];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result2_black[5];
+			ASTNode2Element ne2ne = (ASTNode2Element) result2_black[6];
+			Type jType = (Type) result2_black[7];
 
 			Object[] result3_bindingAndBlack = VariableDec2Parameter4Impl
 					.pattern_VariableDec2Parameter4_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							uType, jType, operation, md2o, method, ne2ne, ruleResult);
+							operation, uType, jType, md2o, ne2ne, method, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[uType] = " + uType + ", "
-						+ "[jType] = " + jType + ", " + "[operation] = " + operation + ", " + "[md2o] = " + md2o + ", "
-						+ "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ", " + "[ruleResult] = " + ruleResult
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[operation] = " + operation + ", "
+						+ "[uType] = " + uType + ", " + "[jType] = " + jType + ", " + "[md2o] = " + md2o + ", "
+						+ "[ne2ne] = " + ne2ne + ", " + "[method] = " + method + ", " + "[ruleResult] = " + ruleResult
 						+ ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1268,25 +1267,25 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 			if (VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = VariableDec2Parameter4Impl
-						.pattern_VariableDec2Parameter4_29_5_checknacs_blackBBBBBB(uType, jType, operation, md2o,
-								method, ne2ne);
+						.pattern_VariableDec2Parameter4_29_5_checknacs_blackBBBBBB(operation, uType, jType, md2o, ne2ne,
+								method);
 				if (result5_black != null) {
 
 					Object[] result6_black = VariableDec2Parameter4Impl
-							.pattern_VariableDec2Parameter4_29_6_perform_blackBBBBBBB(uType, jType, operation, md2o,
-									method, ne2ne, ruleResult);
+							.pattern_VariableDec2Parameter4_29_6_perform_blackBBBBBBB(operation, uType, jType, md2o,
+									ne2ne, method, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[uType] = " + uType
-								+ ", " + "[jType] = " + jType + ", " + "[operation] = " + operation + ", " + "[md2o] = "
-								+ md2o + ", " + "[method] = " + method + ", " + "[ne2ne] = " + ne2ne + ", "
-								+ "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[operation] = "
+								+ operation + ", " + "[uType] = " + uType + ", " + "[jType] = " + jType + ", "
+								+ "[md2o] = " + md2o + ", " + "[ne2ne] = " + ne2ne + ", " + "[method] = " + method
+								+ ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_29_6_perform_greenFFFBFBBFBBB(uType,
-							jType, operation, method, ruleResult, csp);
-					//nothing MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result6_green[0];
-					//nothing TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result6_green[1];
-					//nothing ASTNode2Element vd2p = (ASTNode2Element) result6_green[2];
-					//nothing Parameter param = (Parameter) result6_green[4];
+					VariableDec2Parameter4Impl.pattern_VariableDec2Parameter4_29_6_perform_greenFBFFFBBFBBB(operation,
+							uType, jType, method, ruleResult, csp);
+					//nothing Parameter param = (Parameter) result6_green[0];
+					//nothing MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result6_green[2];
+					//nothing TypeAccess2Parameter ty2p = (TypeAccess2Parameter) result6_green[3];
+					//nothing ASTNode2Element vd2p = (ASTNode2Element) result6_green[4];
 					//nothing TypeAccess typeAccess = (TypeAccess) result6_green[7];
 
 				} else {
@@ -1304,9 +1303,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Type jType, Operation operation, ASTNode2Element md2o, AbstractMethodDeclaration method,
-			ASTNode2Element ne2ne, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1336,12 +1335,12 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		eq.solve(var_variableDec_name, var_param_name);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("operation", operation);
 		isApplicableMatch.registerObject("uType", uType);
 		isApplicableMatch.registerObject("jType", jType);
-		isApplicableMatch.registerObject("operation", operation);
 		isApplicableMatch.registerObject("md2o", md2o);
-		isApplicableMatch.registerObject("method", method);
 		isApplicableMatch.registerObject("ne2ne", ne2ne);
+		isApplicableMatch.registerObject("method", method);
 		return csp;
 	}
 
@@ -1362,110 +1361,106 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_FWD__MATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (MSingleVariableDeclaration) arguments.get(1),
-						(Type) arguments.get(2), (TypeAccess) arguments.get(3),
-						(AbstractMethodDeclaration) arguments.get(4));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (MSingleVariableDeclaration) arguments.get(1),
-						(Type) arguments.get(2), (TypeAccess) arguments.get(3),
-						(AbstractMethodDeclaration) arguments.get(4));
-				return null;
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-						(MSingleVariableDeclaration) arguments.get(1), (Type) arguments.get(2),
-						(TypeAccess) arguments.get(3), (AbstractMethodDeclaration) arguments.get(4));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPE_OPERATION_ASTNODE2ELEMENT_TYPEACCESS_ABSTRACTMETHODDECLARATION_ASTNODE2ELEMENT:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(MSingleVariableDeclaration) arguments.get(1), (org.eclipse.uml2.uml.Type) arguments.get(2),
-						(Type) arguments.get(3), (Operation) arguments.get(4), (ASTNode2Element) arguments.get(5),
-						(TypeAccess) arguments.get(6), (AbstractMethodDeclaration) arguments.get(7),
-						(ASTNode2Element) arguments.get(8));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-						(EObject) arguments.get(11));
-				return null;
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_BWD__MATCH_TYPE_PARAMETER_OPERATION:
-				return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Type) arguments.get(1),
-						(Parameter) arguments.get(2), (Operation) arguments.get(3));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TYPE_PARAMETER_OPERATION:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Type) arguments.get(1),
-						(Parameter) arguments.get(2), (Operation) arguments.get(3));
-				return null;
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TYPE_PARAMETER_OPERATION:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0),
-						(org.eclipse.uml2.uml.Type) arguments.get(1), (Parameter) arguments.get(2),
-						(Operation) arguments.get(3));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_PARAMETER_TYPE_OPERATION_ASTNODE2ELEMENT_ABSTRACTMETHODDECLARATION_ASTNODE2ELEMENT:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(org.eclipse.uml2.uml.Type) arguments.get(1), (Parameter) arguments.get(2),
-						(Type) arguments.get(3), (Operation) arguments.get(4), (ASTNode2Element) arguments.get(5),
-						(AbstractMethodDeclaration) arguments.get(6), (ASTNode2Element) arguments.get(7));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-						(EObject) arguments.get(11));
-				return null;
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_BWD_EMOFLON_EDGE_130__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_130((EMoflonEdge) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_FWD_EMOFLON_EDGE_142__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_142((EMoflonEdge) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_SOLVE_CSP_CC__MSINGLEVARIABLEDECLARATION_TYPE_PARAMETER_TYPE_OPERATION_TYPEACCESS_ABSTRACTMETHODDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((MSingleVariableDeclaration) arguments.get(0),
-						(org.eclipse.uml2.uml.Type) arguments.get(1), (Parameter) arguments.get(2),
-						(Type) arguments.get(3), (Operation) arguments.get(4), (TypeAccess) arguments.get(5),
-						(AbstractMethodDeclaration) arguments.get(6), (Match) arguments.get(7),
-						(Match) arguments.get(8));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_DEC_FWD__MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
-				return checkDEC_FWD((MSingleVariableDeclaration) arguments.get(0), (Type) arguments.get(1),
-						(TypeAccess) arguments.get(2), (AbstractMethodDeclaration) arguments.get(3));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_DEC_BWD__TYPE_PARAMETER_OPERATION:
-				return checkDEC_BWD((org.eclipse.uml2.uml.Type) arguments.get(0), (Parameter) arguments.get(1),
-						(Operation) arguments.get(2));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TYPE_TYPE_OPERATION_ASTNODE2ELEMENT_ABSTRACTMETHODDECLARATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(org.eclipse.uml2.uml.Type) arguments.get(1), (Type) arguments.get(2),
-						(Operation) arguments.get(3), (ASTNode2Element) arguments.get(4),
-						(AbstractMethodDeclaration) arguments.get(5), (ASTNode2Element) arguments.get(6),
-						(ModelgeneratorRuleResult) arguments.get(7));
-			case RulesPackage.VARIABLE_DEC2_PARAMETER4___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_FWD__MATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (MSingleVariableDeclaration) arguments.get(1),
+					(Type) arguments.get(2), (TypeAccess) arguments.get(3),
+					(AbstractMethodDeclaration) arguments.get(4));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MSingleVariableDeclaration) arguments.get(1),
+					(Type) arguments.get(2), (TypeAccess) arguments.get(3),
+					(AbstractMethodDeclaration) arguments.get(4));
+			return null;
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MSingleVariableDeclaration) arguments.get(1),
+					(Type) arguments.get(2), (TypeAccess) arguments.get(3),
+					(AbstractMethodDeclaration) arguments.get(4));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_OPERATION_MSINGLEVARIABLEDECLARATION_TYPE_TYPE_TYPEACCESS_ASTNODE2ELEMENT_ASTNODE2ELEMENT_ABSTRACTMETHODDECLARATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
+					(MSingleVariableDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3),
+					(Type) arguments.get(4), (TypeAccess) arguments.get(5), (ASTNode2Element) arguments.get(6),
+					(ASTNode2Element) arguments.get(7), (AbstractMethodDeclaration) arguments.get(8));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+					(EObject) arguments.get(11));
+			return null;
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_BWD__MATCH_PARAMETER_OPERATION_TYPE:
+			return isAppropriate_BWD((Match) arguments.get(0), (Parameter) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PARAMETER_OPERATION_TYPE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Parameter) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3));
+			return null;
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PARAMETER_OPERATION_TYPE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Parameter) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PARAMETER_OPERATION_TYPE_TYPE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_ABSTRACTMETHODDECLARATION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Parameter) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3), (Type) arguments.get(4),
+					(ASTNode2Element) arguments.get(5), (ASTNode2Element) arguments.get(6),
+					(AbstractMethodDeclaration) arguments.get(7));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+					(EObject) arguments.get(11));
+			return null;
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_BWD_EMOFLON_EDGE_134__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_134((EMoflonEdge) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPROPRIATE_FWD_EMOFLON_EDGE_145__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_145((EMoflonEdge) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_SOLVE_CSP_CC__PARAMETER_OPERATION_MSINGLEVARIABLEDECLARATION_TYPE_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Parameter) arguments.get(0), (Operation) arguments.get(1),
+					(MSingleVariableDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Type) arguments.get(3),
+					(Type) arguments.get(4), (TypeAccess) arguments.get(5),
+					(AbstractMethodDeclaration) arguments.get(6), (Match) arguments.get(7), (Match) arguments.get(8));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_DEC_FWD__MSINGLEVARIABLEDECLARATION_TYPE_TYPEACCESS_ABSTRACTMETHODDECLARATION:
+			return checkDEC_FWD((MSingleVariableDeclaration) arguments.get(0), (Type) arguments.get(1),
+					(TypeAccess) arguments.get(2), (AbstractMethodDeclaration) arguments.get(3));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___CHECK_DEC_BWD__PARAMETER_OPERATION_TYPE:
+			return checkDEC_BWD((Parameter) arguments.get(0), (Operation) arguments.get(1),
+					(org.eclipse.uml2.uml.Type) arguments.get(2));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION_TYPE_TYPE_ASTNODE2ELEMENT_ASTNODE2ELEMENT_ABSTRACTMETHODDECLARATION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
+					(org.eclipse.uml2.uml.Type) arguments.get(2), (Type) arguments.get(3),
+					(ASTNode2Element) arguments.get(4), (ASTNode2Element) arguments.get(5),
+					(AbstractMethodDeclaration) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.VARIABLE_DEC2_PARAMETER4___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1525,41 +1520,41 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	public static final Object[] pattern_VariableDec2Parameter4_0_4_collectelementstobetranslated_greenBBBBBFFFFF(
 			Match match, MSingleVariableDeclaration variableDec, Type jType, TypeAccess typeAccess,
 			AbstractMethodDeclaration method) {
+		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__variableDec____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge variableDec__method____methodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(variableDec);
 		match.getToBeTranslatedNodes().add(typeAccess);
+		String variableDec__typeAccess____type_name_prime = "type";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String variableDec__typeAccess____type_name_prime = "type";
 		String method__variableDec____parameters_name_prime = "parameters";
 		String variableDec__method____methodDeclaration_name_prime = "methodDeclaration";
+		variableDec__typeAccess____type.setSrc(variableDec);
+		variableDec__typeAccess____type.setTrg(typeAccess);
+		match.getToBeTranslatedEdges().add(variableDec__typeAccess____type);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		match.getToBeTranslatedEdges().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		match.getToBeTranslatedEdges().add(jType__typeAccess____usagesInTypeAccess);
-		variableDec__typeAccess____type.setSrc(variableDec);
-		variableDec__typeAccess____type.setTrg(typeAccess);
-		match.getToBeTranslatedEdges().add(variableDec__typeAccess____type);
 		method__variableDec____parameters.setSrc(method);
 		method__variableDec____parameters.setTrg(variableDec);
 		match.getToBeTranslatedEdges().add(method__variableDec____parameters);
 		variableDec__method____methodDeclaration.setSrc(variableDec);
 		variableDec__method____methodDeclaration.setTrg(method);
 		match.getToBeTranslatedEdges().add(variableDec__method____methodDeclaration);
+		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
-		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
 		method__variableDec____parameters.setName(method__variableDec____parameters_name_prime);
 		variableDec__method____methodDeclaration.setName(variableDec__method____methodDeclaration_name_prime);
-		return new Object[] { match, variableDec, jType, typeAccess, method, typeAccess__jType____type,
-				jType__typeAccess____usagesInTypeAccess, variableDec__typeAccess____type,
-				method__variableDec____parameters, variableDec__method____methodDeclaration };
+		return new Object[] { match, variableDec, jType, typeAccess, method, variableDec__typeAccess____type,
+				typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess, method__variableDec____parameters,
+				variableDec__method____methodDeclaration };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_0_5_collectcontextelements_blackBBBBB(Match match,
@@ -1594,40 +1589,40 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_1_1_performtransformation_bindingFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("variableDec");
-		EObject _localVariable_1 = isApplicableMatch.getObject("uType");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("operation");
-		EObject _localVariable_4 = isApplicableMatch.getObject("md2o");
-		EObject _localVariable_5 = isApplicableMatch.getObject("typeAccess");
-		EObject _localVariable_6 = isApplicableMatch.getObject("method");
-		EObject _localVariable_7 = isApplicableMatch.getObject("ne2ne");
-		EObject tmpVariableDec = _localVariable_0;
-		EObject tmpUType = _localVariable_1;
-		EObject tmpJType = _localVariable_2;
-		EObject tmpOperation = _localVariable_3;
-		EObject tmpMd2o = _localVariable_4;
-		EObject tmpTypeAccess = _localVariable_5;
-		EObject tmpMethod = _localVariable_6;
-		EObject tmpNe2ne = _localVariable_7;
-		if (tmpVariableDec instanceof MSingleVariableDeclaration) {
-			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) tmpVariableDec;
-			if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-				org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-				if (tmpJType instanceof Type) {
-					Type jType = (Type) tmpJType;
-					if (tmpOperation instanceof Operation) {
-						Operation operation = (Operation) tmpOperation;
-						if (tmpMd2o instanceof ASTNode2Element) {
-							ASTNode2Element md2o = (ASTNode2Element) tmpMd2o;
-							if (tmpTypeAccess instanceof TypeAccess) {
-								TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
-								if (tmpMethod instanceof AbstractMethodDeclaration) {
-									AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
-									if (tmpNe2ne instanceof ASTNode2Element) {
-										ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-										return new Object[] { variableDec, uType, jType, operation, md2o, typeAccess,
-												method, ne2ne, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("operation");
+		EObject _localVariable_1 = isApplicableMatch.getObject("variableDec");
+		EObject _localVariable_2 = isApplicableMatch.getObject("uType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jType");
+		EObject _localVariable_4 = isApplicableMatch.getObject("typeAccess");
+		EObject _localVariable_5 = isApplicableMatch.getObject("md2o");
+		EObject _localVariable_6 = isApplicableMatch.getObject("ne2ne");
+		EObject _localVariable_7 = isApplicableMatch.getObject("method");
+		EObject tmpOperation = _localVariable_0;
+		EObject tmpVariableDec = _localVariable_1;
+		EObject tmpUType = _localVariable_2;
+		EObject tmpJType = _localVariable_3;
+		EObject tmpTypeAccess = _localVariable_4;
+		EObject tmpMd2o = _localVariable_5;
+		EObject tmpNe2ne = _localVariable_6;
+		EObject tmpMethod = _localVariable_7;
+		if (tmpOperation instanceof Operation) {
+			Operation operation = (Operation) tmpOperation;
+			if (tmpVariableDec instanceof MSingleVariableDeclaration) {
+				MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) tmpVariableDec;
+				if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+					org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+					if (tmpJType instanceof Type) {
+						Type jType = (Type) tmpJType;
+						if (tmpTypeAccess instanceof TypeAccess) {
+							TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
+							if (tmpMd2o instanceof ASTNode2Element) {
+								ASTNode2Element md2o = (ASTNode2Element) tmpMd2o;
+								if (tmpNe2ne instanceof ASTNode2Element) {
+									ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+									if (tmpMethod instanceof AbstractMethodDeclaration) {
+										AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
+										return new Object[] { operation, variableDec, uType, jType, typeAccess, md2o,
+												ne2ne, method, isApplicableMatch };
 									}
 								}
 							}
@@ -1640,14 +1635,14 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_1_1_performtransformation_blackBBBBBBBBFBB(
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType, Operation operation,
-			ASTNode2Element md2o, TypeAccess typeAccess, AbstractMethodDeclaration method, ASTNode2Element ne2ne,
+			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType,
+			TypeAccess typeAccess, ASTNode2Element md2o, ASTNode2Element ne2ne, AbstractMethodDeclaration method,
 			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch) {
 		if (!md2o.equals(ne2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { variableDec, uType, jType, operation, md2o, typeAccess, method, ne2ne, csp,
+					return new Object[] { operation, variableDec, uType, jType, typeAccess, md2o, ne2ne, method, csp,
 							_this, isApplicableMatch };
 				}
 			}
@@ -1660,170 +1655,172 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		Object[] result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding = pattern_VariableDec2Parameter4_1_1_performtransformation_bindingFFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding != null) {
-			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[1];
-			Type jType = (Type) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[2];
-			Operation operation = (Operation) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[3];
-			ASTNode2Element md2o = (ASTNode2Element) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[4];
-			TypeAccess typeAccess = (TypeAccess) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[5];
-			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[6];
-			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[7];
+			Operation operation = (Operation) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[0];
+			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[2];
+			Type jType = (Type) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[3];
+			TypeAccess typeAccess = (TypeAccess) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[4];
+			ASTNode2Element md2o = (ASTNode2Element) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[5];
+			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[6];
+			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result_pattern_VariableDec2Parameter4_1_1_performtransformation_binding[7];
 
 			Object[] result_pattern_VariableDec2Parameter4_1_1_performtransformation_black = pattern_VariableDec2Parameter4_1_1_performtransformation_blackBBBBBBBBFBB(
-					variableDec, uType, jType, operation, md2o, typeAccess, method, ne2ne, _this, isApplicableMatch);
+					operation, variableDec, uType, jType, typeAccess, md2o, ne2ne, method, _this, isApplicableMatch);
 			if (result_pattern_VariableDec2Parameter4_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_VariableDec2Parameter4_1_1_performtransformation_black[8];
 
-				return new Object[] { variableDec, uType, jType, operation, md2o, typeAccess, method, ne2ne, csp, _this,
+				return new Object[] { operation, variableDec, uType, jType, typeAccess, md2o, ne2ne, method, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_1_1_performtransformation_greenBFFBFBBB(
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Operation operation,
+	public static final Object[] pattern_VariableDec2Parameter4_1_1_performtransformation_greenFBBFFBBB(
+			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType,
 			TypeAccess typeAccess, CSP csp) {
+		Parameter param = UMLFactory.eINSTANCE.createParameter();
 		TypeAccess2Parameter ty2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
 		ASTNode2Element vd2p = UmlFactory.eINSTANCE.createASTNode2Element();
-		Parameter param = UMLFactory.eINSTANCE.createParameter();
 		Object _localVariable_0 = csp.getValue("param", "name");
 		Object _localVariable_1 = csp.getValue("param", "direction");
+		param.setType(uType);
+		operation.getOwnedParameters().add(param);
+		ty2p.setTarget(param);
 		ty2p.setSource(typeAccess);
 		vd2p.setSource(variableDec);
 		vd2p.setTarget(param);
-		ty2p.setTarget(param);
-		param.setType(uType);
-		operation.getOwnedParameters().add(param);
 		String param_name_prime = (String) _localVariable_0;
 		ParameterDirectionKind param_direction_prime = (ParameterDirectionKind) _localVariable_1;
 		param.setName(param_name_prime);
 		param.setDirection(param_direction_prime);
-		return new Object[] { variableDec, ty2p, vd2p, uType, param, operation, typeAccess, csp };
+		return new Object[] { param, operation, variableDec, ty2p, vd2p, uType, typeAccess, csp };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_1_2_collecttranslatedelements_blackBBBBB(
-			MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p, Parameter param,
+			Parameter param, MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p,
 			TypeAccess typeAccess) {
-		return new Object[] { variableDec, ty2p, vd2p, param, typeAccess };
+		return new Object[] { param, variableDec, ty2p, vd2p, typeAccess };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_1_2_collecttranslatedelements_greenFBBBBB(
-			MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p, Parameter param,
+			Parameter param, MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p,
 			TypeAccess typeAccess) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedElements().add(param);
 		ruleresult.getTranslatedElements().add(variableDec);
 		ruleresult.getCreatedLinkElements().add(ty2p);
 		ruleresult.getCreatedLinkElements().add(vd2p);
-		ruleresult.getCreatedElements().add(param);
 		ruleresult.getTranslatedElements().add(typeAccess);
-		return new Object[] { ruleresult, variableDec, ty2p, vd2p, param, typeAccess };
+		return new Object[] { ruleresult, param, variableDec, ty2p, vd2p, typeAccess };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_1_3_bookkeepingforedges_blackBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p, EObject uType, EObject param,
-			EObject jType, EObject operation, EObject md2o, EObject typeAccess, EObject method, EObject ne2ne) {
-		if (!variableDec.equals(vd2p)) {
-			if (!ty2p.equals(variableDec)) {
-				if (!ty2p.equals(vd2p)) {
-					if (!ty2p.equals(uType)) {
-						if (!ty2p.equals(typeAccess)) {
-							if (!uType.equals(variableDec)) {
-								if (!uType.equals(vd2p)) {
-									if (!param.equals(variableDec)) {
-										if (!param.equals(ty2p)) {
-											if (!param.equals(vd2p)) {
-												if (!param.equals(uType)) {
-													if (!param.equals(typeAccess)) {
-														if (!jType.equals(variableDec)) {
-															if (!jType.equals(ty2p)) {
-																if (!jType.equals(vd2p)) {
-																	if (!jType.equals(uType)) {
-																		if (!jType.equals(param)) {
-																			if (!jType.equals(operation)) {
-																				if (!jType.equals(md2o)) {
-																					if (!jType.equals(typeAccess)) {
-																						if (!jType.equals(method)) {
-																							if (!jType.equals(ne2ne)) {
-																								if (!operation.equals(
-																										variableDec)) {
-																									if (!operation
-																											.equals(ty2p)) {
-																										if (!operation
-																												.equals(vd2p)) {
-																											if (!operation
-																													.equals(uType)) {
-																												if (!operation
-																														.equals(param)) {
-																													if (!operation
-																															.equals(typeAccess)) {
-																														if (!md2o
+			PerformRuleResult ruleresult, EObject param, EObject operation, EObject variableDec, EObject ty2p,
+			EObject vd2p, EObject uType, EObject jType, EObject typeAccess, EObject md2o, EObject ne2ne,
+			EObject method) {
+		if (!param.equals(variableDec)) {
+			if (!param.equals(ty2p)) {
+				if (!param.equals(vd2p)) {
+					if (!param.equals(uType)) {
+						if (!param.equals(typeAccess)) {
+							if (!operation.equals(param)) {
+								if (!operation.equals(variableDec)) {
+									if (!operation.equals(ty2p)) {
+										if (!operation.equals(vd2p)) {
+											if (!operation.equals(uType)) {
+												if (!operation.equals(typeAccess)) {
+													if (!variableDec.equals(vd2p)) {
+														if (!ty2p.equals(variableDec)) {
+															if (!ty2p.equals(vd2p)) {
+																if (!ty2p.equals(uType)) {
+																	if (!ty2p.equals(typeAccess)) {
+																		if (!uType.equals(variableDec)) {
+																			if (!uType.equals(vd2p)) {
+																				if (!jType.equals(param)) {
+																					if (!jType.equals(operation)) {
+																						if (!jType
+																								.equals(variableDec)) {
+																							if (!jType.equals(ty2p)) {
+																								if (!jType
+																										.equals(vd2p)) {
+																									if (!jType.equals(
+																											uType)) {
+																										if (!jType
+																												.equals(typeAccess)) {
+																											if (!jType
+																													.equals(md2o)) {
+																												if (!jType
+																														.equals(ne2ne)) {
+																													if (!jType
+																															.equals(method)) {
+																														if (!typeAccess
 																																.equals(variableDec)) {
-																															if (!md2o
-																																	.equals(ty2p)) {
-																																if (!md2o
-																																		.equals(vd2p)) {
+																															if (!typeAccess
+																																	.equals(vd2p)) {
+																																if (!typeAccess
+																																		.equals(uType)) {
 																																	if (!md2o
-																																			.equals(uType)) {
+																																			.equals(param)) {
 																																		if (!md2o
-																																				.equals(param)) {
+																																				.equals(operation)) {
 																																			if (!md2o
-																																					.equals(operation)) {
+																																					.equals(variableDec)) {
 																																				if (!md2o
-																																						.equals(typeAccess)) {
+																																						.equals(ty2p)) {
 																																					if (!md2o
-																																							.equals(method)) {
+																																							.equals(vd2p)) {
 																																						if (!md2o
-																																								.equals(ne2ne)) {
-																																							if (!typeAccess
-																																									.equals(variableDec)) {
-																																								if (!typeAccess
-																																										.equals(vd2p)) {
-																																									if (!typeAccess
-																																											.equals(uType)) {
-																																										if (!method
-																																												.equals(variableDec)) {
-																																											if (!method
-																																													.equals(ty2p)) {
-																																												if (!method
-																																														.equals(vd2p)) {
-																																													if (!method
-																																															.equals(uType)) {
-																																														if (!method
-																																																.equals(param)) {
-																																															if (!method
-																																																	.equals(operation)) {
-																																																if (!method
+																																								.equals(uType)) {
+																																							if (!md2o
+																																									.equals(typeAccess)) {
+																																								if (!md2o
+																																										.equals(ne2ne)) {
+																																									if (!md2o
+																																											.equals(method)) {
+																																										if (!ne2ne
+																																												.equals(param)) {
+																																											if (!ne2ne
+																																													.equals(operation)) {
+																																												if (!ne2ne
+																																														.equals(variableDec)) {
+																																													if (!ne2ne
+																																															.equals(ty2p)) {
+																																														if (!ne2ne
+																																																.equals(vd2p)) {
+																																															if (!ne2ne
+																																																	.equals(uType)) {
+																																																if (!ne2ne
 																																																		.equals(typeAccess)) {
 																																																	if (!method
-																																																			.equals(ne2ne)) {
-																																																		if (!ne2ne
-																																																				.equals(variableDec)) {
-																																																			if (!ne2ne
-																																																					.equals(ty2p)) {
-																																																				if (!ne2ne
-																																																						.equals(vd2p)) {
-																																																					if (!ne2ne
-																																																							.equals(uType)) {
-																																																						if (!ne2ne
-																																																								.equals(param)) {
-																																																							if (!ne2ne
-																																																									.equals(operation)) {
-																																																								if (!ne2ne
-																																																										.equals(typeAccess)) {
+																																																			.equals(param)) {
+																																																		if (!method
+																																																				.equals(operation)) {
+																																																			if (!method
+																																																					.equals(variableDec)) {
+																																																				if (!method
+																																																						.equals(ty2p)) {
+																																																					if (!method
+																																																							.equals(vd2p)) {
+																																																						if (!method
+																																																								.equals(uType)) {
+																																																							if (!method
+																																																									.equals(typeAccess)) {
+																																																								if (!method
+																																																										.equals(ne2ne)) {
 																																																									return new Object[] {
 																																																											ruleresult,
+																																																											param,
+																																																											operation,
 																																																											variableDec,
 																																																											ty2p,
 																																																											vd2p,
 																																																											uType,
-																																																											param,
 																																																											jType,
-																																																											operation,
-																																																											md2o,
 																																																											typeAccess,
-																																																											method,
-																																																											ne2ne };
+																																																											md2o,
+																																																											ne2ne,
+																																																											method };
 																																																								}
 																																																							}
 																																																						}
@@ -1883,58 +1880,58 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_1_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p, EObject uType, EObject param,
-			EObject jType, EObject operation, EObject typeAccess, EObject method) {
-		EMoflonEdge vd2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject param, EObject operation, EObject variableDec, EObject ty2p,
+			EObject vd2p, EObject uType, EObject jType, EObject typeAccess, EObject method) {
+		EMoflonEdge param__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge operation__param____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ty2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge vd2p__variableDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge param__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge operation__param____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ty2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge vd2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ty2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__variableDec____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge variableDec__method____methodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "VariableDec2Parameter4";
-		String vd2p__param____target_name_prime = "target";
+		String param__uType____type_name_prime = "type";
+		String variableDec__typeAccess____type_name_prime = "type";
+		String operation__param____ownedParameter_name_prime = "ownedParameter";
 		String ty2p__param____target_name_prime = "target";
 		String vd2p__variableDec____source_name_prime = "source";
-		String param__uType____type_name_prime = "type";
-		String operation__param____ownedParameter_name_prime = "ownedParameter";
-		String ty2p__typeAccess____source_name_prime = "source";
+		String vd2p__param____target_name_prime = "target";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String variableDec__typeAccess____type_name_prime = "type";
+		String ty2p__typeAccess____source_name_prime = "source";
 		String method__variableDec____parameters_name_prime = "parameters";
 		String variableDec__method____methodDeclaration_name_prime = "methodDeclaration";
-		vd2p__param____target.setSrc(vd2p);
-		vd2p__param____target.setTrg(param);
-		ruleresult.getCreatedEdges().add(vd2p__param____target);
+		param__uType____type.setSrc(param);
+		param__uType____type.setTrg(uType);
+		ruleresult.getCreatedEdges().add(param__uType____type);
+		variableDec__typeAccess____type.setSrc(variableDec);
+		variableDec__typeAccess____type.setTrg(typeAccess);
+		ruleresult.getTranslatedEdges().add(variableDec__typeAccess____type);
+		operation__param____ownedParameter.setSrc(operation);
+		operation__param____ownedParameter.setTrg(param);
+		ruleresult.getCreatedEdges().add(operation__param____ownedParameter);
 		ty2p__param____target.setSrc(ty2p);
 		ty2p__param____target.setTrg(param);
 		ruleresult.getCreatedEdges().add(ty2p__param____target);
 		vd2p__variableDec____source.setSrc(vd2p);
 		vd2p__variableDec____source.setTrg(variableDec);
 		ruleresult.getCreatedEdges().add(vd2p__variableDec____source);
-		param__uType____type.setSrc(param);
-		param__uType____type.setTrg(uType);
-		ruleresult.getCreatedEdges().add(param__uType____type);
-		operation__param____ownedParameter.setSrc(operation);
-		operation__param____ownedParameter.setTrg(param);
-		ruleresult.getCreatedEdges().add(operation__param____ownedParameter);
-		ty2p__typeAccess____source.setSrc(ty2p);
-		ty2p__typeAccess____source.setTrg(typeAccess);
-		ruleresult.getCreatedEdges().add(ty2p__typeAccess____source);
+		vd2p__param____target.setSrc(vd2p);
+		vd2p__param____target.setTrg(param);
+		ruleresult.getCreatedEdges().add(vd2p__param____target);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		ruleresult.getTranslatedEdges().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		ruleresult.getTranslatedEdges().add(jType__typeAccess____usagesInTypeAccess);
-		variableDec__typeAccess____type.setSrc(variableDec);
-		variableDec__typeAccess____type.setTrg(typeAccess);
-		ruleresult.getTranslatedEdges().add(variableDec__typeAccess____type);
+		ty2p__typeAccess____source.setSrc(ty2p);
+		ty2p__typeAccess____source.setTrg(typeAccess);
+		ruleresult.getCreatedEdges().add(ty2p__typeAccess____source);
 		method__variableDec____parameters.setSrc(method);
 		method__variableDec____parameters.setTrg(variableDec);
 		ruleresult.getTranslatedEdges().add(method__variableDec____parameters);
@@ -1942,30 +1939,30 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		variableDec__method____methodDeclaration.setTrg(method);
 		ruleresult.getTranslatedEdges().add(variableDec__method____methodDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		vd2p__param____target.setName(vd2p__param____target_name_prime);
+		param__uType____type.setName(param__uType____type_name_prime);
+		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
+		operation__param____ownedParameter.setName(operation__param____ownedParameter_name_prime);
 		ty2p__param____target.setName(ty2p__param____target_name_prime);
 		vd2p__variableDec____source.setName(vd2p__variableDec____source_name_prime);
-		param__uType____type.setName(param__uType____type_name_prime);
-		operation__param____ownedParameter.setName(operation__param____ownedParameter_name_prime);
-		ty2p__typeAccess____source.setName(ty2p__typeAccess____source_name_prime);
+		vd2p__param____target.setName(vd2p__param____target_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
-		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
+		ty2p__typeAccess____source.setName(ty2p__typeAccess____source_name_prime);
 		method__variableDec____parameters.setName(method__variableDec____parameters_name_prime);
 		variableDec__method____methodDeclaration.setName(variableDec__method____methodDeclaration_name_prime);
-		return new Object[] { ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, typeAccess, method,
-				vd2p__param____target, ty2p__param____target, vd2p__variableDec____source, param__uType____type,
-				operation__param____ownedParameter, ty2p__typeAccess____source, typeAccess__jType____type,
-				jType__typeAccess____usagesInTypeAccess, variableDec__typeAccess____type,
-				method__variableDec____parameters, variableDec__method____methodDeclaration };
+		return new Object[] { ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, method,
+				param__uType____type, variableDec__typeAccess____type, operation__param____ownedParameter,
+				ty2p__param____target, vd2p__variableDec____source, vd2p__param____target, typeAccess__jType____type,
+				jType__typeAccess____usagesInTypeAccess, ty2p__typeAccess____source, method__variableDec____parameters,
+				variableDec__method____methodDeclaration };
 	}
 
 	public static final void pattern_VariableDec2Parameter4_1_5_registerobjects_expressionBBBBBBBBBBBBB(
-			VariableDec2Parameter4 _this, PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p,
-			EObject uType, EObject param, EObject jType, EObject operation, EObject md2o, EObject typeAccess,
-			EObject method, EObject ne2ne) {
-		_this.registerObjects_FWD(ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, md2o, typeAccess,
-				method, ne2ne);
+			VariableDec2Parameter4 _this, PerformRuleResult ruleresult, EObject param, EObject operation,
+			EObject variableDec, EObject ty2p, EObject vd2p, EObject uType, EObject jType, EObject typeAccess,
+			EObject md2o, EObject ne2ne, EObject method) {
+		_this.registerObjects_FWD(ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, md2o,
+				ne2ne, method);
 
 	}
 
@@ -2051,7 +2048,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_2_2_corematch_blackBFBFFBBFB(
+	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_2_2_corematch_blackFBFBBFFBB(
 			MSingleVariableDeclaration variableDec, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2066,8 +2063,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 						Element tmpUType = ne2ne.getTarget();
 						if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
 							org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-							_result.add(new Object[] { variableDec, uType, jType, operation, md2o, typeAccess, method,
-									ne2ne, match });
+							_result.add(new Object[] { operation, variableDec, uType, jType, typeAccess, md2o, ne2ne,
+									method, match });
 						}
 
 					}
@@ -2079,19 +2076,19 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_2_3_findcontext_blackBBBBBBBB(
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType, Operation operation,
-			ASTNode2Element md2o, TypeAccess typeAccess, AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
+			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType,
+			TypeAccess typeAccess, ASTNode2Element md2o, ASTNode2Element ne2ne, AbstractMethodDeclaration method) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!md2o.equals(ne2ne)) {
-			if (operation.equals(md2o.getTarget())) {
-				if (jType.equals(typeAccess.getType())) {
-					if (typeAccess.equals(variableDec.getType())) {
-						if (method.getParameters().contains(variableDec)) {
+			if (typeAccess.equals(variableDec.getType())) {
+				if (operation.equals(md2o.getTarget())) {
+					if (jType.equals(typeAccess.getType())) {
+						if (uType.equals(ne2ne.getTarget())) {
 							if (method.equals(md2o.getSource())) {
-								if (jType.equals(ne2ne.getSource())) {
-									if (uType.equals(ne2ne.getTarget())) {
-										_result.add(new Object[] { variableDec, uType, jType, operation, md2o,
-												typeAccess, method, ne2ne });
+								if (method.getParameters().contains(variableDec)) {
+									if (jType.equals(ne2ne.getSource())) {
+										_result.add(new Object[] { operation, variableDec, uType, jType, typeAccess,
+												md2o, ne2ne, method });
 									}
 								}
 							}
@@ -2104,35 +2101,38 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_2_3_findcontext_greenBBBBBBBBFFFFFFFFFF(
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType, Operation operation,
-			ASTNode2Element md2o, TypeAccess typeAccess, AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
+			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType,
+			TypeAccess typeAccess, ASTNode2Element md2o, ASTNode2Element ne2ne, AbstractMethodDeclaration method) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge md2o__operation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge md2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__variableDec____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge variableDec__method____methodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge md2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String variableDec__typeAccess____type_name_prime = "type";
 		String md2o__operation____target_name_prime = "target";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String variableDec__typeAccess____type_name_prime = "type";
+		String ne2ne__uType____target_name_prime = "target";
+		String md2o__method____source_name_prime = "source";
 		String method__variableDec____parameters_name_prime = "parameters";
 		String variableDec__method____methodDeclaration_name_prime = "methodDeclaration";
-		String md2o__method____source_name_prime = "source";
 		String ne2ne__jType____source_name_prime = "source";
-		String ne2ne__uType____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(operation);
 		isApplicableMatch.getAllContextElements().add(variableDec);
 		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(jType);
-		isApplicableMatch.getAllContextElements().add(operation);
-		isApplicableMatch.getAllContextElements().add(md2o);
 		isApplicableMatch.getAllContextElements().add(typeAccess);
-		isApplicableMatch.getAllContextElements().add(method);
+		isApplicableMatch.getAllContextElements().add(md2o);
 		isApplicableMatch.getAllContextElements().add(ne2ne);
+		isApplicableMatch.getAllContextElements().add(method);
+		variableDec__typeAccess____type.setSrc(variableDec);
+		variableDec__typeAccess____type.setTrg(typeAccess);
+		isApplicableMatch.getAllContextElements().add(variableDec__typeAccess____type);
 		md2o__operation____target.setSrc(md2o);
 		md2o__operation____target.setTrg(operation);
 		isApplicableMatch.getAllContextElements().add(md2o__operation____target);
@@ -2142,50 +2142,46 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		isApplicableMatch.getAllContextElements().add(jType__typeAccess____usagesInTypeAccess);
-		variableDec__typeAccess____type.setSrc(variableDec);
-		variableDec__typeAccess____type.setTrg(typeAccess);
-		isApplicableMatch.getAllContextElements().add(variableDec__typeAccess____type);
+		ne2ne__uType____target.setSrc(ne2ne);
+		ne2ne__uType____target.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(ne2ne__uType____target);
+		md2o__method____source.setSrc(md2o);
+		md2o__method____source.setTrg(method);
+		isApplicableMatch.getAllContextElements().add(md2o__method____source);
 		method__variableDec____parameters.setSrc(method);
 		method__variableDec____parameters.setTrg(variableDec);
 		isApplicableMatch.getAllContextElements().add(method__variableDec____parameters);
 		variableDec__method____methodDeclaration.setSrc(variableDec);
 		variableDec__method____methodDeclaration.setTrg(method);
 		isApplicableMatch.getAllContextElements().add(variableDec__method____methodDeclaration);
-		md2o__method____source.setSrc(md2o);
-		md2o__method____source.setTrg(method);
-		isApplicableMatch.getAllContextElements().add(md2o__method____source);
 		ne2ne__jType____source.setSrc(ne2ne);
 		ne2ne__jType____source.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(ne2ne__jType____source);
-		ne2ne__uType____target.setSrc(ne2ne);
-		ne2ne__uType____target.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(ne2ne__uType____target);
+		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
 		md2o__operation____target.setName(md2o__operation____target_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
-		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
+		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
+		md2o__method____source.setName(md2o__method____source_name_prime);
 		method__variableDec____parameters.setName(method__variableDec____parameters_name_prime);
 		variableDec__method____methodDeclaration.setName(variableDec__method____methodDeclaration_name_prime);
-		md2o__method____source.setName(md2o__method____source_name_prime);
 		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
-		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
-		return new Object[] { variableDec, uType, jType, operation, md2o, typeAccess, method, ne2ne, isApplicableMatch,
-				md2o__operation____target, typeAccess__jType____type, jType__typeAccess____usagesInTypeAccess,
-				variableDec__typeAccess____type, method__variableDec____parameters,
-				variableDec__method____methodDeclaration, md2o__method____source, ne2ne__jType____source,
-				ne2ne__uType____target };
+		return new Object[] { operation, variableDec, uType, jType, typeAccess, md2o, ne2ne, method, isApplicableMatch,
+				variableDec__typeAccess____type, md2o__operation____target, typeAccess__jType____type,
+				jType__typeAccess____usagesInTypeAccess, ne2ne__uType____target, md2o__method____source,
+				method__variableDec____parameters, variableDec__method____methodDeclaration, ne2ne__jType____source };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_2_4_solveCSP_bindingFBBBBBBBBBB(
-			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration variableDec,
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, ASTNode2Element md2o,
-			TypeAccess typeAccess, AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, variableDec, uType, jType, operation,
-				md2o, typeAccess, method, ne2ne);
+			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, Operation operation,
+			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess,
+			ASTNode2Element md2o, ASTNode2Element ne2ne, AbstractMethodDeclaration method) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, operation, variableDec, uType, jType,
+				typeAccess, md2o, ne2ne, method);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, variableDec, uType, jType, operation, md2o, typeAccess,
-					method, ne2ne };
+			return new Object[] { csp, _this, isApplicableMatch, operation, variableDec, uType, jType, typeAccess, md2o,
+					ne2ne, method };
 		}
 		return null;
 	}
@@ -2195,11 +2191,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_2_4_solveCSP_bindingAndBlackFBBBBBBBBBB(
-			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, MSingleVariableDeclaration variableDec,
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, ASTNode2Element md2o,
-			TypeAccess typeAccess, AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
+			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, Operation operation,
+			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess,
+			ASTNode2Element md2o, ASTNode2Element ne2ne, AbstractMethodDeclaration method) {
 		Object[] result_pattern_VariableDec2Parameter4_2_4_solveCSP_binding = pattern_VariableDec2Parameter4_2_4_solveCSP_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, variableDec, uType, jType, operation, md2o, typeAccess, method, ne2ne);
+				_this, isApplicableMatch, operation, variableDec, uType, jType, typeAccess, md2o, ne2ne, method);
 		if (result_pattern_VariableDec2Parameter4_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDec2Parameter4_2_4_solveCSP_binding[0];
 
@@ -2207,8 +2203,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 					csp);
 			if (result_pattern_VariableDec2Parameter4_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, variableDec, uType, jType, operation, md2o,
-						typeAccess, method, ne2ne };
+				return new Object[] { csp, _this, isApplicableMatch, operation, variableDec, uType, jType, typeAccess,
+						md2o, ne2ne, method };
 			}
 		}
 		return null;
@@ -2243,18 +2239,18 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_1_initialbindings_blackBBBBB(
-			VariableDec2Parameter4 _this, Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
-		return new Object[] { _this, match, uType, param, operation };
+			VariableDec2Parameter4 _this, Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
+		return new Object[] { _this, match, param, operation, uType };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_2_SolveCSP_bindingFBBBBB(
-			VariableDec2Parameter4 _this, Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, uType, param, operation);
+			VariableDec2Parameter4 _this, Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, param, operation, uType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, uType, param, operation };
+			return new Object[] { csp, _this, match, param, operation, uType };
 		}
 		return null;
 	}
@@ -2264,10 +2260,10 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			VariableDec2Parameter4 _this, Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
+			VariableDec2Parameter4 _this, Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
 		Object[] result_pattern_VariableDec2Parameter4_10_2_SolveCSP_binding = pattern_VariableDec2Parameter4_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, uType, param, operation);
+				_this, match, param, operation, uType);
 		if (result_pattern_VariableDec2Parameter4_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDec2Parameter4_10_2_SolveCSP_binding[0];
 
@@ -2275,7 +2271,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 					csp);
 			if (result_pattern_VariableDec2Parameter4_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, uType, param, operation };
+				return new Object[] { csp, _this, match, param, operation, uType };
 			}
 		}
 		return null;
@@ -2289,12 +2285,12 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, org.eclipse.uml2.uml.Type uType, Parameter param, Operation operation) {
-		return new Object[] { match, uType, param, operation };
+			Match match, Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType) {
+		return new Object[] { match, param, operation, uType };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_4_collectelementstobetranslated_greenBBBBFF(
-			Match match, org.eclipse.uml2.uml.Type uType, Parameter param, Operation operation) {
+			Match match, Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType) {
 		EMoflonEdge param__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge operation__param____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(param);
@@ -2308,26 +2304,26 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		match.getToBeTranslatedEdges().add(operation__param____ownedParameter);
 		param__uType____type.setName(param__uType____type_name_prime);
 		operation__param____ownedParameter.setName(operation__param____ownedParameter_name_prime);
-		return new Object[] { match, uType, param, operation, param__uType____type,
+		return new Object[] { match, param, operation, uType, param__uType____type,
 				operation__param____ownedParameter };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_5_collectcontextelements_blackBBBB(Match match,
-			org.eclipse.uml2.uml.Type uType, Parameter param, Operation operation) {
-		return new Object[] { match, uType, param, operation };
+			Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType) {
+		return new Object[] { match, param, operation, uType };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_10_5_collectcontextelements_greenBBB(Match match,
-			org.eclipse.uml2.uml.Type uType, Operation operation) {
-		match.getContextNodes().add(uType);
+			Operation operation, org.eclipse.uml2.uml.Type uType) {
 		match.getContextNodes().add(operation);
-		return new Object[] { match, uType, operation };
+		match.getContextNodes().add(uType);
+		return new Object[] { match, operation, uType };
 	}
 
 	public static final void pattern_VariableDec2Parameter4_10_6_registerobjectstomatch_expressionBBBBB(
-			VariableDec2Parameter4 _this, Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
-		_this.registerObjectsToMatch_BWD(match, uType, param, operation);
+			VariableDec2Parameter4 _this, Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
+		_this.registerObjectsToMatch_BWD(match, param, operation, uType);
 
 	}
 
@@ -2343,35 +2339,35 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("uType");
-		EObject _localVariable_1 = isApplicableMatch.getObject("param");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("operation");
+		EObject _localVariable_0 = isApplicableMatch.getObject("param");
+		EObject _localVariable_1 = isApplicableMatch.getObject("operation");
+		EObject _localVariable_2 = isApplicableMatch.getObject("uType");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jType");
 		EObject _localVariable_4 = isApplicableMatch.getObject("md2o");
-		EObject _localVariable_5 = isApplicableMatch.getObject("method");
-		EObject _localVariable_6 = isApplicableMatch.getObject("ne2ne");
-		EObject tmpUType = _localVariable_0;
-		EObject tmpParam = _localVariable_1;
-		EObject tmpJType = _localVariable_2;
-		EObject tmpOperation = _localVariable_3;
+		EObject _localVariable_5 = isApplicableMatch.getObject("ne2ne");
+		EObject _localVariable_6 = isApplicableMatch.getObject("method");
+		EObject tmpParam = _localVariable_0;
+		EObject tmpOperation = _localVariable_1;
+		EObject tmpUType = _localVariable_2;
+		EObject tmpJType = _localVariable_3;
 		EObject tmpMd2o = _localVariable_4;
-		EObject tmpMethod = _localVariable_5;
-		EObject tmpNe2ne = _localVariable_6;
-		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-			if (tmpParam instanceof Parameter) {
-				Parameter param = (Parameter) tmpParam;
-				if (tmpJType instanceof Type) {
-					Type jType = (Type) tmpJType;
-					if (tmpOperation instanceof Operation) {
-						Operation operation = (Operation) tmpOperation;
+		EObject tmpNe2ne = _localVariable_5;
+		EObject tmpMethod = _localVariable_6;
+		if (tmpParam instanceof Parameter) {
+			Parameter param = (Parameter) tmpParam;
+			if (tmpOperation instanceof Operation) {
+				Operation operation = (Operation) tmpOperation;
+				if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+					org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+					if (tmpJType instanceof Type) {
+						Type jType = (Type) tmpJType;
 						if (tmpMd2o instanceof ASTNode2Element) {
 							ASTNode2Element md2o = (ASTNode2Element) tmpMd2o;
-							if (tmpMethod instanceof AbstractMethodDeclaration) {
-								AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
-								if (tmpNe2ne instanceof ASTNode2Element) {
-									ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-									return new Object[] { uType, param, jType, operation, md2o, method, ne2ne,
+							if (tmpNe2ne instanceof ASTNode2Element) {
+								ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
+								if (tmpMethod instanceof AbstractMethodDeclaration) {
+									AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
+									return new Object[] { param, operation, uType, jType, md2o, ne2ne, method,
 											isApplicableMatch };
 								}
 							}
@@ -2384,14 +2380,14 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_11_1_performtransformation_blackBBBBBBBFBB(
-			org.eclipse.uml2.uml.Type uType, Parameter param, Type jType, Operation operation, ASTNode2Element md2o,
-			AbstractMethodDeclaration method, ASTNode2Element ne2ne, VariableDec2Parameter4 _this,
+			Parameter param, Operation operation, org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o,
+			ASTNode2Element ne2ne, AbstractMethodDeclaration method, VariableDec2Parameter4 _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!md2o.equals(ne2ne)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { uType, param, jType, operation, md2o, method, ne2ne, csp, _this,
+					return new Object[] { param, operation, uType, jType, md2o, ne2ne, method, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -2404,27 +2400,27 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		Object[] result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding = pattern_VariableDec2Parameter4_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding != null) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[0];
-			Parameter param = (Parameter) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[1];
-			Type jType = (Type) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[2];
-			Operation operation = (Operation) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[3];
+			Parameter param = (Parameter) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[0];
+			Operation operation = (Operation) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[2];
+			Type jType = (Type) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[3];
 			ASTNode2Element md2o = (ASTNode2Element) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[4];
-			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[5];
-			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[6];
+			ASTNode2Element ne2ne = (ASTNode2Element) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[5];
+			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result_pattern_VariableDec2Parameter4_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_VariableDec2Parameter4_11_1_performtransformation_black = pattern_VariableDec2Parameter4_11_1_performtransformation_blackBBBBBBBFBB(
-					uType, param, jType, operation, md2o, method, ne2ne, _this, isApplicableMatch);
+					param, operation, uType, jType, md2o, ne2ne, method, _this, isApplicableMatch);
 			if (result_pattern_VariableDec2Parameter4_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_VariableDec2Parameter4_11_1_performtransformation_black[7];
 
-				return new Object[] { uType, param, jType, operation, md2o, method, ne2ne, csp, _this,
+				return new Object[] { param, operation, uType, jType, md2o, ne2ne, method, csp, _this,
 						isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_11_1_performtransformation_greenFFFBBFBB(
+	public static final Object[] pattern_VariableDec2Parameter4_11_1_performtransformation_greenBFFFBFBB(
 			Parameter param, Type jType, AbstractMethodDeclaration method, CSP csp) {
 		MSingleVariableDeclaration variableDec = ModiscoFactory.eINSTANCE.createMSingleVariableDeclaration();
 		TypeAccess2Parameter ty2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
@@ -2433,138 +2429,140 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		Object _localVariable_0 = csp.getValue("variableDec", "name");
 		method.getParameters().add(variableDec);
 		ty2p.setTarget(param);
-		vd2p.setTarget(param);
 		vd2p.setSource(variableDec);
-		ty2p.setSource(typeAccess);
-		typeAccess.setType(jType);
+		vd2p.setTarget(param);
 		variableDec.setType(typeAccess);
+		typeAccess.setType(jType);
+		ty2p.setSource(typeAccess);
 		String variableDec_name_prime = (String) _localVariable_0;
 		variableDec.setName(variableDec_name_prime);
-		return new Object[] { variableDec, ty2p, vd2p, param, jType, typeAccess, method, csp };
+		return new Object[] { param, variableDec, ty2p, vd2p, jType, typeAccess, method, csp };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_11_2_collecttranslatedelements_blackBBBBB(
-			MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p, Parameter param,
+			Parameter param, MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p,
 			TypeAccess typeAccess) {
-		return new Object[] { variableDec, ty2p, vd2p, param, typeAccess };
+		return new Object[] { param, variableDec, ty2p, vd2p, typeAccess };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_11_2_collecttranslatedelements_greenFBBBBB(
-			MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p, Parameter param,
+			Parameter param, MSingleVariableDeclaration variableDec, TypeAccess2Parameter ty2p, ASTNode2Element vd2p,
 			TypeAccess typeAccess) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getTranslatedElements().add(param);
 		ruleresult.getCreatedElements().add(variableDec);
 		ruleresult.getCreatedLinkElements().add(ty2p);
 		ruleresult.getCreatedLinkElements().add(vd2p);
-		ruleresult.getTranslatedElements().add(param);
 		ruleresult.getCreatedElements().add(typeAccess);
-		return new Object[] { ruleresult, variableDec, ty2p, vd2p, param, typeAccess };
+		return new Object[] { ruleresult, param, variableDec, ty2p, vd2p, typeAccess };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_11_3_bookkeepingforedges_blackBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p, EObject uType, EObject param,
-			EObject jType, EObject operation, EObject md2o, EObject typeAccess, EObject method, EObject ne2ne) {
-		if (!variableDec.equals(vd2p)) {
-			if (!ty2p.equals(variableDec)) {
-				if (!ty2p.equals(vd2p)) {
-					if (!ty2p.equals(uType)) {
-						if (!ty2p.equals(typeAccess)) {
-							if (!uType.equals(variableDec)) {
-								if (!uType.equals(vd2p)) {
-									if (!param.equals(variableDec)) {
-										if (!param.equals(ty2p)) {
-											if (!param.equals(vd2p)) {
-												if (!param.equals(uType)) {
-													if (!param.equals(typeAccess)) {
-														if (!jType.equals(variableDec)) {
-															if (!jType.equals(ty2p)) {
-																if (!jType.equals(vd2p)) {
-																	if (!jType.equals(uType)) {
-																		if (!jType.equals(param)) {
-																			if (!jType.equals(operation)) {
-																				if (!jType.equals(md2o)) {
-																					if (!jType.equals(typeAccess)) {
-																						if (!jType.equals(method)) {
-																							if (!jType.equals(ne2ne)) {
-																								if (!operation.equals(
-																										variableDec)) {
-																									if (!operation
-																											.equals(ty2p)) {
-																										if (!operation
-																												.equals(vd2p)) {
-																											if (!operation
-																													.equals(uType)) {
-																												if (!operation
-																														.equals(param)) {
-																													if (!operation
-																															.equals(typeAccess)) {
-																														if (!md2o
+			PerformRuleResult ruleresult, EObject param, EObject operation, EObject variableDec, EObject ty2p,
+			EObject vd2p, EObject uType, EObject jType, EObject typeAccess, EObject md2o, EObject ne2ne,
+			EObject method) {
+		if (!param.equals(variableDec)) {
+			if (!param.equals(ty2p)) {
+				if (!param.equals(vd2p)) {
+					if (!param.equals(uType)) {
+						if (!param.equals(typeAccess)) {
+							if (!operation.equals(param)) {
+								if (!operation.equals(variableDec)) {
+									if (!operation.equals(ty2p)) {
+										if (!operation.equals(vd2p)) {
+											if (!operation.equals(uType)) {
+												if (!operation.equals(typeAccess)) {
+													if (!variableDec.equals(vd2p)) {
+														if (!ty2p.equals(variableDec)) {
+															if (!ty2p.equals(vd2p)) {
+																if (!ty2p.equals(uType)) {
+																	if (!ty2p.equals(typeAccess)) {
+																		if (!uType.equals(variableDec)) {
+																			if (!uType.equals(vd2p)) {
+																				if (!jType.equals(param)) {
+																					if (!jType.equals(operation)) {
+																						if (!jType
+																								.equals(variableDec)) {
+																							if (!jType.equals(ty2p)) {
+																								if (!jType
+																										.equals(vd2p)) {
+																									if (!jType.equals(
+																											uType)) {
+																										if (!jType
+																												.equals(typeAccess)) {
+																											if (!jType
+																													.equals(md2o)) {
+																												if (!jType
+																														.equals(ne2ne)) {
+																													if (!jType
+																															.equals(method)) {
+																														if (!typeAccess
 																																.equals(variableDec)) {
-																															if (!md2o
-																																	.equals(ty2p)) {
-																																if (!md2o
-																																		.equals(vd2p)) {
+																															if (!typeAccess
+																																	.equals(vd2p)) {
+																																if (!typeAccess
+																																		.equals(uType)) {
 																																	if (!md2o
-																																			.equals(uType)) {
+																																			.equals(param)) {
 																																		if (!md2o
-																																				.equals(param)) {
+																																				.equals(operation)) {
 																																			if (!md2o
-																																					.equals(operation)) {
+																																					.equals(variableDec)) {
 																																				if (!md2o
-																																						.equals(typeAccess)) {
+																																						.equals(ty2p)) {
 																																					if (!md2o
-																																							.equals(method)) {
+																																							.equals(vd2p)) {
 																																						if (!md2o
-																																								.equals(ne2ne)) {
-																																							if (!typeAccess
-																																									.equals(variableDec)) {
-																																								if (!typeAccess
-																																										.equals(vd2p)) {
-																																									if (!typeAccess
-																																											.equals(uType)) {
-																																										if (!method
-																																												.equals(variableDec)) {
-																																											if (!method
-																																													.equals(ty2p)) {
-																																												if (!method
-																																														.equals(vd2p)) {
-																																													if (!method
-																																															.equals(uType)) {
-																																														if (!method
-																																																.equals(param)) {
-																																															if (!method
-																																																	.equals(operation)) {
-																																																if (!method
+																																								.equals(uType)) {
+																																							if (!md2o
+																																									.equals(typeAccess)) {
+																																								if (!md2o
+																																										.equals(ne2ne)) {
+																																									if (!md2o
+																																											.equals(method)) {
+																																										if (!ne2ne
+																																												.equals(param)) {
+																																											if (!ne2ne
+																																													.equals(operation)) {
+																																												if (!ne2ne
+																																														.equals(variableDec)) {
+																																													if (!ne2ne
+																																															.equals(ty2p)) {
+																																														if (!ne2ne
+																																																.equals(vd2p)) {
+																																															if (!ne2ne
+																																																	.equals(uType)) {
+																																																if (!ne2ne
 																																																		.equals(typeAccess)) {
 																																																	if (!method
-																																																			.equals(ne2ne)) {
-																																																		if (!ne2ne
-																																																				.equals(variableDec)) {
-																																																			if (!ne2ne
-																																																					.equals(ty2p)) {
-																																																				if (!ne2ne
-																																																						.equals(vd2p)) {
-																																																					if (!ne2ne
-																																																							.equals(uType)) {
-																																																						if (!ne2ne
-																																																								.equals(param)) {
-																																																							if (!ne2ne
-																																																									.equals(operation)) {
-																																																								if (!ne2ne
-																																																										.equals(typeAccess)) {
+																																																			.equals(param)) {
+																																																		if (!method
+																																																				.equals(operation)) {
+																																																			if (!method
+																																																					.equals(variableDec)) {
+																																																				if (!method
+																																																						.equals(ty2p)) {
+																																																					if (!method
+																																																							.equals(vd2p)) {
+																																																						if (!method
+																																																								.equals(uType)) {
+																																																							if (!method
+																																																									.equals(typeAccess)) {
+																																																								if (!method
+																																																										.equals(ne2ne)) {
 																																																									return new Object[] {
 																																																											ruleresult,
+																																																											param,
+																																																											operation,
 																																																											variableDec,
 																																																											ty2p,
 																																																											vd2p,
 																																																											uType,
-																																																											param,
 																																																											jType,
-																																																											operation,
-																																																											md2o,
 																																																											typeAccess,
-																																																											method,
-																																																											ne2ne };
+																																																											md2o,
+																																																											ne2ne,
+																																																											method };
 																																																								}
 																																																							}
 																																																						}
@@ -2624,58 +2622,58 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_11_3_bookkeepingforedges_greenBBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p, EObject uType, EObject param,
-			EObject jType, EObject operation, EObject typeAccess, EObject method) {
-		EMoflonEdge vd2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject param, EObject operation, EObject variableDec, EObject ty2p,
+			EObject vd2p, EObject uType, EObject jType, EObject typeAccess, EObject method) {
+		EMoflonEdge param__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge operation__param____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ty2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge vd2p__variableDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge param__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge operation__param____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ty2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge vd2p__param____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeAccess__jType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jType__typeAccess____usagesInTypeAccess = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge variableDec__typeAccess____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ty2p__typeAccess____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge method__variableDec____parameters = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge variableDec__method____methodDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "VariableDec2Parameter4";
-		String vd2p__param____target_name_prime = "target";
+		String param__uType____type_name_prime = "type";
+		String variableDec__typeAccess____type_name_prime = "type";
+		String operation__param____ownedParameter_name_prime = "ownedParameter";
 		String ty2p__param____target_name_prime = "target";
 		String vd2p__variableDec____source_name_prime = "source";
-		String param__uType____type_name_prime = "type";
-		String operation__param____ownedParameter_name_prime = "ownedParameter";
-		String ty2p__typeAccess____source_name_prime = "source";
+		String vd2p__param____target_name_prime = "target";
 		String typeAccess__jType____type_name_prime = "type";
 		String jType__typeAccess____usagesInTypeAccess_name_prime = "usagesInTypeAccess";
-		String variableDec__typeAccess____type_name_prime = "type";
+		String ty2p__typeAccess____source_name_prime = "source";
 		String method__variableDec____parameters_name_prime = "parameters";
 		String variableDec__method____methodDeclaration_name_prime = "methodDeclaration";
-		vd2p__param____target.setSrc(vd2p);
-		vd2p__param____target.setTrg(param);
-		ruleresult.getCreatedEdges().add(vd2p__param____target);
+		param__uType____type.setSrc(param);
+		param__uType____type.setTrg(uType);
+		ruleresult.getTranslatedEdges().add(param__uType____type);
+		variableDec__typeAccess____type.setSrc(variableDec);
+		variableDec__typeAccess____type.setTrg(typeAccess);
+		ruleresult.getCreatedEdges().add(variableDec__typeAccess____type);
+		operation__param____ownedParameter.setSrc(operation);
+		operation__param____ownedParameter.setTrg(param);
+		ruleresult.getTranslatedEdges().add(operation__param____ownedParameter);
 		ty2p__param____target.setSrc(ty2p);
 		ty2p__param____target.setTrg(param);
 		ruleresult.getCreatedEdges().add(ty2p__param____target);
 		vd2p__variableDec____source.setSrc(vd2p);
 		vd2p__variableDec____source.setTrg(variableDec);
 		ruleresult.getCreatedEdges().add(vd2p__variableDec____source);
-		param__uType____type.setSrc(param);
-		param__uType____type.setTrg(uType);
-		ruleresult.getTranslatedEdges().add(param__uType____type);
-		operation__param____ownedParameter.setSrc(operation);
-		operation__param____ownedParameter.setTrg(param);
-		ruleresult.getTranslatedEdges().add(operation__param____ownedParameter);
-		ty2p__typeAccess____source.setSrc(ty2p);
-		ty2p__typeAccess____source.setTrg(typeAccess);
-		ruleresult.getCreatedEdges().add(ty2p__typeAccess____source);
+		vd2p__param____target.setSrc(vd2p);
+		vd2p__param____target.setTrg(param);
+		ruleresult.getCreatedEdges().add(vd2p__param____target);
 		typeAccess__jType____type.setSrc(typeAccess);
 		typeAccess__jType____type.setTrg(jType);
 		ruleresult.getCreatedEdges().add(typeAccess__jType____type);
 		jType__typeAccess____usagesInTypeAccess.setSrc(jType);
 		jType__typeAccess____usagesInTypeAccess.setTrg(typeAccess);
 		ruleresult.getCreatedEdges().add(jType__typeAccess____usagesInTypeAccess);
-		variableDec__typeAccess____type.setSrc(variableDec);
-		variableDec__typeAccess____type.setTrg(typeAccess);
-		ruleresult.getCreatedEdges().add(variableDec__typeAccess____type);
+		ty2p__typeAccess____source.setSrc(ty2p);
+		ty2p__typeAccess____source.setTrg(typeAccess);
+		ruleresult.getCreatedEdges().add(ty2p__typeAccess____source);
 		method__variableDec____parameters.setSrc(method);
 		method__variableDec____parameters.setTrg(variableDec);
 		ruleresult.getCreatedEdges().add(method__variableDec____parameters);
@@ -2683,30 +2681,30 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		variableDec__method____methodDeclaration.setTrg(method);
 		ruleresult.getCreatedEdges().add(variableDec__method____methodDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		vd2p__param____target.setName(vd2p__param____target_name_prime);
+		param__uType____type.setName(param__uType____type_name_prime);
+		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
+		operation__param____ownedParameter.setName(operation__param____ownedParameter_name_prime);
 		ty2p__param____target.setName(ty2p__param____target_name_prime);
 		vd2p__variableDec____source.setName(vd2p__variableDec____source_name_prime);
-		param__uType____type.setName(param__uType____type_name_prime);
-		operation__param____ownedParameter.setName(operation__param____ownedParameter_name_prime);
-		ty2p__typeAccess____source.setName(ty2p__typeAccess____source_name_prime);
+		vd2p__param____target.setName(vd2p__param____target_name_prime);
 		typeAccess__jType____type.setName(typeAccess__jType____type_name_prime);
 		jType__typeAccess____usagesInTypeAccess.setName(jType__typeAccess____usagesInTypeAccess_name_prime);
-		variableDec__typeAccess____type.setName(variableDec__typeAccess____type_name_prime);
+		ty2p__typeAccess____source.setName(ty2p__typeAccess____source_name_prime);
 		method__variableDec____parameters.setName(method__variableDec____parameters_name_prime);
 		variableDec__method____methodDeclaration.setName(variableDec__method____methodDeclaration_name_prime);
-		return new Object[] { ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, typeAccess, method,
-				vd2p__param____target, ty2p__param____target, vd2p__variableDec____source, param__uType____type,
-				operation__param____ownedParameter, ty2p__typeAccess____source, typeAccess__jType____type,
-				jType__typeAccess____usagesInTypeAccess, variableDec__typeAccess____type,
-				method__variableDec____parameters, variableDec__method____methodDeclaration };
+		return new Object[] { ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, method,
+				param__uType____type, variableDec__typeAccess____type, operation__param____ownedParameter,
+				ty2p__param____target, vd2p__variableDec____source, vd2p__param____target, typeAccess__jType____type,
+				jType__typeAccess____usagesInTypeAccess, ty2p__typeAccess____source, method__variableDec____parameters,
+				variableDec__method____methodDeclaration };
 	}
 
 	public static final void pattern_VariableDec2Parameter4_11_5_registerobjects_expressionBBBBBBBBBBBBB(
-			VariableDec2Parameter4 _this, PerformRuleResult ruleresult, EObject variableDec, EObject ty2p, EObject vd2p,
-			EObject uType, EObject param, EObject jType, EObject operation, EObject md2o, EObject typeAccess,
-			EObject method, EObject ne2ne) {
-		_this.registerObjects_BWD(ruleresult, variableDec, ty2p, vd2p, uType, param, jType, operation, md2o, typeAccess,
-				method, ne2ne);
+			VariableDec2Parameter4 _this, PerformRuleResult ruleresult, EObject param, EObject operation,
+			EObject variableDec, EObject ty2p, EObject vd2p, EObject uType, EObject jType, EObject typeAccess,
+			EObject md2o, EObject ne2ne, EObject method) {
+		_this.registerObjects_BWD(ruleresult, param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, md2o,
+				ne2ne, method);
 
 	}
 
@@ -2768,27 +2766,27 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("uType");
-		EObject _localVariable_1 = match.getObject("param");
-		EObject _localVariable_2 = match.getObject("operation");
-		EObject tmpUType = _localVariable_0;
-		EObject tmpParam = _localVariable_1;
-		EObject tmpOperation = _localVariable_2;
-		if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-			if (tmpParam instanceof Parameter) {
-				Parameter param = (Parameter) tmpParam;
-				if (tmpOperation instanceof Operation) {
-					Operation operation = (Operation) tmpOperation;
-					return new Object[] { uType, param, operation, match };
+		EObject _localVariable_0 = match.getObject("param");
+		EObject _localVariable_1 = match.getObject("operation");
+		EObject _localVariable_2 = match.getObject("uType");
+		EObject tmpParam = _localVariable_0;
+		EObject tmpOperation = _localVariable_1;
+		EObject tmpUType = _localVariable_2;
+		if (tmpParam instanceof Parameter) {
+			Parameter param = (Parameter) tmpParam;
+			if (tmpOperation instanceof Operation) {
+				Operation operation = (Operation) tmpOperation;
+				if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+					org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+					return new Object[] { param, operation, uType, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_12_2_corematch_blackBBFBFFFB(
-			org.eclipse.uml2.uml.Type uType, Parameter param, Operation operation, Match match) {
+	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_12_2_corematch_blackBBBFFFFB(Parameter param,
+			Operation operation, org.eclipse.uml2.uml.Type uType, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element md2o : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(operation,
 				ASTNode2Element.class, "target")) {
@@ -2801,7 +2799,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 						ASTNode tmpJType = ne2ne.getSource();
 						if (tmpJType instanceof Type) {
 							Type jType = (Type) tmpJType;
-							_result.add(new Object[] { uType, param, jType, operation, md2o, method, ne2ne, match });
+							_result.add(new Object[] { param, operation, uType, jType, md2o, ne2ne, method, match });
 						}
 
 					}
@@ -2812,18 +2810,18 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_12_3_findcontext_blackBBBBBBB(
-			org.eclipse.uml2.uml.Type uType, Parameter param, Type jType, Operation operation, ASTNode2Element md2o,
-			AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
+	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_12_3_findcontext_blackBBBBBBB(Parameter param,
+			Operation operation, org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o,
+			ASTNode2Element ne2ne, AbstractMethodDeclaration method) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!md2o.equals(ne2ne)) {
 			if (uType.equals(param.getType())) {
 				if (operation.getOwnedParameters().contains(param)) {
 					if (operation.equals(md2o.getTarget())) {
-						if (method.equals(md2o.getSource())) {
-							if (jType.equals(ne2ne.getSource())) {
-								if (uType.equals(ne2ne.getTarget())) {
-									_result.add(new Object[] { uType, param, jType, operation, md2o, method, ne2ne });
+						if (uType.equals(ne2ne.getTarget())) {
+							if (method.equals(md2o.getSource())) {
+								if (jType.equals(ne2ne.getSource())) {
+									_result.add(new Object[] { param, operation, uType, jType, md2o, ne2ne, method });
 								}
 							}
 						}
@@ -2834,29 +2832,29 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return _result;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_12_3_findcontext_greenBBBBBBBFFFFFFF(
-			org.eclipse.uml2.uml.Type uType, Parameter param, Type jType, Operation operation, ASTNode2Element md2o,
-			AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
+	public static final Object[] pattern_VariableDec2Parameter4_12_3_findcontext_greenBBBBBBBFFFFFFF(Parameter param,
+			Operation operation, org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o,
+			ASTNode2Element ne2ne, AbstractMethodDeclaration method) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge param__uType____type = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge operation__param____ownedParameter = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge md2o__operation____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge md2o__method____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge ne2ne__jType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge ne2ne__uType____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String param__uType____type_name_prime = "type";
 		String operation__param____ownedParameter_name_prime = "ownedParameter";
 		String md2o__operation____target_name_prime = "target";
+		String ne2ne__uType____target_name_prime = "target";
 		String md2o__method____source_name_prime = "source";
 		String ne2ne__jType____source_name_prime = "source";
-		String ne2ne__uType____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(uType);
 		isApplicableMatch.getAllContextElements().add(param);
-		isApplicableMatch.getAllContextElements().add(jType);
 		isApplicableMatch.getAllContextElements().add(operation);
+		isApplicableMatch.getAllContextElements().add(uType);
+		isApplicableMatch.getAllContextElements().add(jType);
 		isApplicableMatch.getAllContextElements().add(md2o);
-		isApplicableMatch.getAllContextElements().add(method);
 		isApplicableMatch.getAllContextElements().add(ne2ne);
+		isApplicableMatch.getAllContextElements().add(method);
 		param__uType____type.setSrc(param);
 		param__uType____type.setTrg(uType);
 		isApplicableMatch.getAllContextElements().add(param__uType____type);
@@ -2866,35 +2864,35 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		md2o__operation____target.setSrc(md2o);
 		md2o__operation____target.setTrg(operation);
 		isApplicableMatch.getAllContextElements().add(md2o__operation____target);
+		ne2ne__uType____target.setSrc(ne2ne);
+		ne2ne__uType____target.setTrg(uType);
+		isApplicableMatch.getAllContextElements().add(ne2ne__uType____target);
 		md2o__method____source.setSrc(md2o);
 		md2o__method____source.setTrg(method);
 		isApplicableMatch.getAllContextElements().add(md2o__method____source);
 		ne2ne__jType____source.setSrc(ne2ne);
 		ne2ne__jType____source.setTrg(jType);
 		isApplicableMatch.getAllContextElements().add(ne2ne__jType____source);
-		ne2ne__uType____target.setSrc(ne2ne);
-		ne2ne__uType____target.setTrg(uType);
-		isApplicableMatch.getAllContextElements().add(ne2ne__uType____target);
 		param__uType____type.setName(param__uType____type_name_prime);
 		operation__param____ownedParameter.setName(operation__param____ownedParameter_name_prime);
 		md2o__operation____target.setName(md2o__operation____target_name_prime);
+		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
 		md2o__method____source.setName(md2o__method____source_name_prime);
 		ne2ne__jType____source.setName(ne2ne__jType____source_name_prime);
-		ne2ne__uType____target.setName(ne2ne__uType____target_name_prime);
-		return new Object[] { uType, param, jType, operation, md2o, method, ne2ne, isApplicableMatch,
+		return new Object[] { param, operation, uType, jType, md2o, ne2ne, method, isApplicableMatch,
 				param__uType____type, operation__param____ownedParameter, md2o__operation____target,
-				md2o__method____source, ne2ne__jType____source, ne2ne__uType____target };
+				ne2ne__uType____target, md2o__method____source, ne2ne__jType____source };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_12_4_solveCSP_bindingFBBBBBBBBB(
-			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Parameter param, Type jType, Operation operation, ASTNode2Element md2o, AbstractMethodDeclaration method,
-			ASTNode2Element ne2ne) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, uType, param, jType, operation, md2o,
-				method, ne2ne);
+			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, param, operation, uType, jType, md2o,
+				ne2ne, method);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, param, jType, operation, md2o, method, ne2ne };
+			return new Object[] { csp, _this, isApplicableMatch, param, operation, uType, jType, md2o, ne2ne, method };
 		}
 		return null;
 	}
@@ -2904,11 +2902,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Parameter param, Type jType, Operation operation, ASTNode2Element md2o, AbstractMethodDeclaration method,
-			ASTNode2Element ne2ne) {
+			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method) {
 		Object[] result_pattern_VariableDec2Parameter4_12_4_solveCSP_binding = pattern_VariableDec2Parameter4_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, uType, param, jType, operation, md2o, method, ne2ne);
+				_this, isApplicableMatch, param, operation, uType, jType, md2o, ne2ne, method);
 		if (result_pattern_VariableDec2Parameter4_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDec2Parameter4_12_4_solveCSP_binding[0];
 
@@ -2916,8 +2914,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 					csp);
 			if (result_pattern_VariableDec2Parameter4_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, param, jType, operation, md2o, method,
-						ne2ne };
+				return new Object[] { csp, _this, isApplicableMatch, param, operation, uType, jType, md2o, ne2ne,
+						method };
 			}
 		}
 		return null;
@@ -3019,7 +3017,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 							.getOppositeReferenceTyped(param, BehavioralFeature.class, "ownedParameter")) {
 						if (tmpOperation instanceof Operation) {
 							Operation operation = (Operation) tmpOperation;
-							_result.add(new Object[] { uType, param, operation, _edge_type });
+							_result.add(new Object[] { param, operation, uType, _edge_type });
 						}
 					}
 				}
@@ -3040,9 +3038,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final boolean pattern_VariableDec2Parameter4_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			VariableDec2Parameter4 _this, Match match, org.eclipse.uml2.uml.Type uType, Parameter param,
-			Operation operation) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, uType, param, operation);
+			VariableDec2Parameter4 _this, Match match, Parameter param, Operation operation,
+			org.eclipse.uml2.uml.Type uType) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, param, operation, uType);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3131,9 +3129,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_0BB(
 			TypeAccess typeAccess, Type jType) {
-		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_761903 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_864376 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!jType.equals(__DEC_typeAccess_superInterfaces_761903)) {
+			if (!jType.equals(__DEC_typeAccess_superInterfaces_864376)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3142,7 +3140,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_1B(
 			TypeAccess typeAccess) {
-		for (Annotation __DEC_typeAccess_type_162503 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAccess_type_488742 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, Annotation.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -3151,9 +3149,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_2BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ArrayType __DEC_typeAccess_elementType_808453 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAccess_elementType_213950 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ArrayType.class, "elementType")) {
-			if (!jType.equals(__DEC_typeAccess_elementType_808453)) {
+			if (!jType.equals(__DEC_typeAccess_elementType_213950)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3162,9 +3160,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_3BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ClassDeclaration __DEC_typeAccess_superClass_861233 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAccess_superClass_622027 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ClassDeclaration.class, "superClass")) {
-			if (!jType.equals(__DEC_typeAccess_superClass_861233)) {
+			if (!jType.equals(__DEC_typeAccess_superClass_622027)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3173,9 +3171,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_4BB(
 			TypeAccess typeAccess, AbstractMethodDeclaration method) {
-		for (MethodDeclaration __DEC_typeAccess_returnType_952697 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAccess_returnType_509595 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, MethodDeclaration.class, "returnType")) {
-			if (!method.equals(__DEC_typeAccess_returnType_952697)) {
+			if (!method.equals(__DEC_typeAccess_returnType_509595)) {
 				return new Object[] { typeAccess, method };
 			}
 		}
@@ -3184,9 +3182,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_5BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ParameterizedType __DEC_typeAccess_type_959061 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAccess_type_882154 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ParameterizedType.class, "type")) {
-			if (!jType.equals(__DEC_typeAccess_type_959061)) {
+			if (!jType.equals(__DEC_typeAccess_type_882154)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3195,7 +3193,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_6B(
 			TypeAccess typeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeAccess_value_694924 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAccess_value_190470 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAccess };
 		}
@@ -3205,38 +3203,34 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_blackFFFFB(
 			EMoflonEdge _edge_type) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpTypeAccess = _edge_type.getSrc();
-		if (tmpTypeAccess instanceof TypeAccess) {
-			TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
-			EObject tmpJType = _edge_type.getTrg();
-			if (tmpJType instanceof Type) {
-				Type jType = (Type) tmpJType;
-				if (jType.equals(typeAccess.getType())) {
-					if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_1B(typeAccess) == null) {
-						if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_6B(typeAccess) == null) {
-							if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_0BB(typeAccess,
-									jType) == null) {
-								if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_2BB(typeAccess,
-										jType) == null) {
-									if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_3BB(
-											typeAccess, jType) == null) {
-										if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_5BB(
+		EObject tmpVariableDec = _edge_type.getSrc();
+		if (tmpVariableDec instanceof MSingleVariableDeclaration) {
+			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) tmpVariableDec;
+			EObject tmpTypeAccess = _edge_type.getTrg();
+			if (tmpTypeAccess instanceof TypeAccess) {
+				TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
+				if (typeAccess.equals(variableDec.getType())) {
+					AbstractMethodDeclaration method = variableDec.getMethodDeclaration();
+					if (method != null) {
+						Type jType = typeAccess.getType();
+						if (jType != null) {
+							if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_1B(
+									typeAccess) == null) {
+								if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_6B(
+										typeAccess) == null) {
+									if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_4BB(
+											typeAccess, method) == null) {
+										if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_0BB(
 												typeAccess, jType) == null) {
-											for (SingleVariableDeclaration tmpVariableDec : org.moflon.core.utilities.eMoflonEMFUtil
-													.getOppositeReferenceTyped(typeAccess,
-															SingleVariableDeclaration.class, "type")) {
-												if (tmpVariableDec instanceof MSingleVariableDeclaration) {
-													MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) tmpVariableDec;
-													AbstractMethodDeclaration method = variableDec
-															.getMethodDeclaration();
-													if (method != null) {
-														if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_4BB(
-																typeAccess, method) == null) {
-															_result.add(new Object[] { variableDec, jType, typeAccess,
-																	method, _edge_type });
-														}
+											if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_2BB(
+													typeAccess, jType) == null) {
+												if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_3BB(
+														typeAccess, jType) == null) {
+													if (pattern_VariableDec2Parameter4_21_2_testcorematchandDECs_black_nac_5BB(
+															typeAccess, jType) == null) {
+														_result.add(new Object[] { variableDec, jType, typeAccess,
+																method, _edge_type });
 													}
-
 												}
 											}
 										}
@@ -3244,7 +3238,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 								}
 							}
 						}
+
 					}
+
 				}
 			}
 
@@ -3308,37 +3304,37 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
-			Match sourceMatch, Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("variableDec");
-		EObject _localVariable_1 = targetMatch.getObject("uType");
-		EObject _localVariable_2 = targetMatch.getObject("param");
-		EObject _localVariable_3 = sourceMatch.getObject("jType");
-		EObject _localVariable_4 = targetMatch.getObject("operation");
+			Match targetMatch, Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("param");
+		EObject _localVariable_1 = targetMatch.getObject("operation");
+		EObject _localVariable_2 = sourceMatch.getObject("variableDec");
+		EObject _localVariable_3 = targetMatch.getObject("uType");
+		EObject _localVariable_4 = sourceMatch.getObject("jType");
 		EObject _localVariable_5 = sourceMatch.getObject("typeAccess");
 		EObject _localVariable_6 = sourceMatch.getObject("method");
-		EObject tmpVariableDec = _localVariable_0;
-		EObject tmpUType = _localVariable_1;
-		EObject tmpParam = _localVariable_2;
-		EObject tmpJType = _localVariable_3;
-		EObject tmpOperation = _localVariable_4;
+		EObject tmpParam = _localVariable_0;
+		EObject tmpOperation = _localVariable_1;
+		EObject tmpVariableDec = _localVariable_2;
+		EObject tmpUType = _localVariable_3;
+		EObject tmpJType = _localVariable_4;
 		EObject tmpTypeAccess = _localVariable_5;
 		EObject tmpMethod = _localVariable_6;
-		if (tmpVariableDec instanceof MSingleVariableDeclaration) {
-			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) tmpVariableDec;
-			if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-				org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-				if (tmpParam instanceof Parameter) {
-					Parameter param = (Parameter) tmpParam;
-					if (tmpJType instanceof Type) {
-						Type jType = (Type) tmpJType;
-						if (tmpOperation instanceof Operation) {
-							Operation operation = (Operation) tmpOperation;
+		if (tmpParam instanceof Parameter) {
+			Parameter param = (Parameter) tmpParam;
+			if (tmpOperation instanceof Operation) {
+				Operation operation = (Operation) tmpOperation;
+				if (tmpVariableDec instanceof MSingleVariableDeclaration) {
+					MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) tmpVariableDec;
+					if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+						org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+						if (tmpJType instanceof Type) {
+							Type jType = (Type) tmpJType;
 							if (tmpTypeAccess instanceof TypeAccess) {
 								TypeAccess typeAccess = (TypeAccess) tmpTypeAccess;
 								if (tmpMethod instanceof AbstractMethodDeclaration) {
 									AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
-									return new Object[] { variableDec, uType, param, jType, operation, typeAccess,
-											method, sourceMatch, targetMatch };
+									return new Object[] { param, operation, variableDec, uType, jType, typeAccess,
+											method, targetMatch, sourceMatch };
 								}
 							}
 						}
@@ -3349,12 +3345,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Parameter param, Type jType,
-			Operation operation, TypeAccess typeAccess, AbstractMethodDeclaration method, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_blackBBBBBBBBB(Parameter param,
+			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType,
+			TypeAccess typeAccess, AbstractMethodDeclaration method, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { variableDec, uType, param, jType, operation, typeAccess, method, sourceMatch,
+			return new Object[] { param, operation, variableDec, uType, jType, typeAccess, method, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -3363,21 +3358,21 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	public static final Object[] pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding = pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_bindingFFFFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding != null) {
-			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[0];
-			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[1];
-			Parameter param = (Parameter) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[2];
-			Type jType = (Type) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[3];
-			Operation operation = (Operation) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[4];
+			Parameter param = (Parameter) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[0];
+			Operation operation = (Operation) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[1];
+			MSingleVariableDeclaration variableDec = (MSingleVariableDeclaration) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[3];
+			Type jType = (Type) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[4];
 			TypeAccess typeAccess = (TypeAccess) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[5];
 			AbstractMethodDeclaration method = (AbstractMethodDeclaration) result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_binding[6];
 
 			Object[] result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_black = pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_blackBBBBBBBBB(
-					variableDec, uType, param, jType, operation, typeAccess, method, sourceMatch, targetMatch);
+					param, operation, variableDec, uType, jType, typeAccess, method, sourceMatch, targetMatch);
 			if (result_pattern_VariableDec2Parameter4_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { variableDec, uType, param, jType, operation, typeAccess, method, sourceMatch,
+				return new Object[] { param, operation, variableDec, uType, jType, typeAccess, method, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -3385,14 +3380,14 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_24_3_solvecsp_bindingFBBBBBBBBBB(
-			VariableDec2Parameter4 _this, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType,
-			Parameter param, Type jType, Operation operation, TypeAccess typeAccess, AbstractMethodDeclaration method,
+			VariableDec2Parameter4 _this, Parameter param, Operation operation, MSingleVariableDeclaration variableDec,
+			org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(variableDec, uType, param, jType, operation, typeAccess,
+		CSP _localVariable_7 = _this.isApplicable_solveCsp_CC(param, operation, variableDec, uType, jType, typeAccess,
 				method, sourceMatch, targetMatch);
 		CSP csp = _localVariable_7;
 		if (csp != null) {
-			return new Object[] { csp, _this, variableDec, uType, param, jType, operation, typeAccess, method,
+			return new Object[] { csp, _this, param, operation, variableDec, uType, jType, typeAccess, method,
 					sourceMatch, targetMatch };
 		}
 		return null;
@@ -3403,11 +3398,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_24_3_solvecsp_bindingAndBlackFBBBBBBBBBB(
-			VariableDec2Parameter4 _this, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType,
-			Parameter param, Type jType, Operation operation, TypeAccess typeAccess, AbstractMethodDeclaration method,
+			VariableDec2Parameter4 _this, Parameter param, Operation operation, MSingleVariableDeclaration variableDec,
+			org.eclipse.uml2.uml.Type uType, Type jType, TypeAccess typeAccess, AbstractMethodDeclaration method,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_VariableDec2Parameter4_24_3_solvecsp_binding = pattern_VariableDec2Parameter4_24_3_solvecsp_bindingFBBBBBBBBBB(
-				_this, variableDec, uType, param, jType, operation, typeAccess, method, sourceMatch, targetMatch);
+				_this, param, operation, variableDec, uType, jType, typeAccess, method, sourceMatch, targetMatch);
 		if (result_pattern_VariableDec2Parameter4_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDec2Parameter4_24_3_solvecsp_binding[0];
 
@@ -3415,7 +3410,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 					csp);
 			if (result_pattern_VariableDec2Parameter4_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, variableDec, uType, param, jType, operation, typeAccess, method,
+				return new Object[] { csp, _this, param, operation, variableDec, uType, jType, typeAccess, method,
 						sourceMatch, targetMatch };
 			}
 		}
@@ -3428,8 +3423,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_24_5_matchcorrcontext_blackBBBFBFBB(
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, AbstractMethodDeclaration method,
+	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_24_5_matchcorrcontext_blackBBBFFBBB(
+			Operation operation, org.eclipse.uml2.uml.Type uType, Type jType, AbstractMethodDeclaration method,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
@@ -3437,10 +3432,10 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 					ASTNode2Element.class, "target")) {
 				if (method.equals(md2o.getSource())) {
 					for (ASTNode2Element ne2ne : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(jType, ASTNode2Element.class, "source")) {
+							.getOppositeReferenceTyped(uType, ASTNode2Element.class, "target")) {
 						if (!md2o.equals(ne2ne)) {
-							if (uType.equals(ne2ne.getTarget())) {
-								_result.add(new Object[] { uType, jType, operation, md2o, method, ne2ne, sourceMatch,
+							if (jType.equals(ne2ne.getSource())) {
+								_result.add(new Object[] { operation, uType, jType, md2o, ne2ne, method, sourceMatch,
 										targetMatch });
 							}
 						}
@@ -3463,23 +3458,23 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return new Object[] { md2o, ne2ne, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_24_6_createcorrespondence_blackBBBBBBBB(
-			MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Parameter param, Type jType,
-			Operation operation, TypeAccess typeAccess, AbstractMethodDeclaration method, CCMatch ccMatch) {
-		return new Object[] { variableDec, uType, param, jType, operation, typeAccess, method, ccMatch };
+	public static final Object[] pattern_VariableDec2Parameter4_24_6_createcorrespondence_blackBBBBBBBB(Parameter param,
+			Operation operation, MSingleVariableDeclaration variableDec, org.eclipse.uml2.uml.Type uType, Type jType,
+			TypeAccess typeAccess, AbstractMethodDeclaration method, CCMatch ccMatch) {
+		return new Object[] { param, operation, variableDec, uType, jType, typeAccess, method, ccMatch };
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_24_6_createcorrespondence_greenBFFBBB(
-			MSingleVariableDeclaration variableDec, Parameter param, TypeAccess typeAccess, CCMatch ccMatch) {
+	public static final Object[] pattern_VariableDec2Parameter4_24_6_createcorrespondence_greenBBFFBB(Parameter param,
+			MSingleVariableDeclaration variableDec, TypeAccess typeAccess, CCMatch ccMatch) {
 		TypeAccess2Parameter ty2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
 		ASTNode2Element vd2p = UmlFactory.eINSTANCE.createASTNode2Element();
 		ty2p.setTarget(param);
 		ty2p.setSource(typeAccess);
 		ccMatch.getCreateCorr().add(ty2p);
-		vd2p.setTarget(param);
 		vd2p.setSource(variableDec);
+		vd2p.setTarget(param);
 		ccMatch.getCreateCorr().add(vd2p);
-		return new Object[] { variableDec, ty2p, vd2p, param, typeAccess, ccMatch };
+		return new Object[] { param, variableDec, ty2p, vd2p, typeAccess, ccMatch };
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_24_7_addtoreturnedresult_blackBB(
@@ -3505,9 +3500,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_0BB(
 			TypeAccess typeAccess, Type jType) {
-		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_277000 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AbstractTypeDeclaration __DEC_typeAccess_superInterfaces_813602 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AbstractTypeDeclaration.class, "superInterfaces")) {
-			if (!jType.equals(__DEC_typeAccess_superInterfaces_277000)) {
+			if (!jType.equals(__DEC_typeAccess_superInterfaces_813602)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3516,7 +3511,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_1B(
 			TypeAccess typeAccess) {
-		for (Annotation __DEC_typeAccess_type_455081 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Annotation __DEC_typeAccess_type_857005 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, Annotation.class, "type")) {
 			return new Object[] { typeAccess };
 		}
@@ -3525,9 +3520,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_2BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ArrayType __DEC_typeAccess_elementType_804753 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ArrayType __DEC_typeAccess_elementType_150574 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ArrayType.class, "elementType")) {
-			if (!jType.equals(__DEC_typeAccess_elementType_804753)) {
+			if (!jType.equals(__DEC_typeAccess_elementType_150574)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3536,9 +3531,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_3BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ClassDeclaration __DEC_typeAccess_superClass_722201 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ClassDeclaration __DEC_typeAccess_superClass_212784 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ClassDeclaration.class, "superClass")) {
-			if (!jType.equals(__DEC_typeAccess_superClass_722201)) {
+			if (!jType.equals(__DEC_typeAccess_superClass_212784)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3547,9 +3542,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_4BB(
 			TypeAccess typeAccess, AbstractMethodDeclaration method) {
-		for (MethodDeclaration __DEC_typeAccess_returnType_429097 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MethodDeclaration __DEC_typeAccess_returnType_878139 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, MethodDeclaration.class, "returnType")) {
-			if (!method.equals(__DEC_typeAccess_returnType_429097)) {
+			if (!method.equals(__DEC_typeAccess_returnType_878139)) {
 				return new Object[] { typeAccess, method };
 			}
 		}
@@ -3558,9 +3553,9 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_5BB(
 			TypeAccess typeAccess, Type jType) {
-		for (ParameterizedType __DEC_typeAccess_type_270191 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (ParameterizedType __DEC_typeAccess_type_335424 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, ParameterizedType.class, "type")) {
-			if (!jType.equals(__DEC_typeAccess_type_270191)) {
+			if (!jType.equals(__DEC_typeAccess_type_335424)) {
 				return new Object[] { typeAccess, jType };
 			}
 		}
@@ -3569,7 +3564,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_6B(
 			TypeAccess typeAccess) {
-		for (AnnotationMemberValuePair __DEC_typeAccess_value_743517 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_typeAccess_value_816366 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(typeAccess, AnnotationMemberValuePair.class, "value")) {
 			return new Object[] { typeAccess };
 		}
@@ -3579,8 +3574,8 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	public static final Object[] pattern_VariableDec2Parameter4_27_1_matchtggpattern_blackBBBB(
 			MSingleVariableDeclaration variableDec, Type jType, TypeAccess typeAccess,
 			AbstractMethodDeclaration method) {
-		if (jType.equals(typeAccess.getType())) {
-			if (typeAccess.equals(variableDec.getType())) {
+		if (typeAccess.equals(variableDec.getType())) {
+			if (jType.equals(typeAccess.getType())) {
 				if (method.getParameters().contains(variableDec)) {
 					if (pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_0BB(typeAccess, jType) == null) {
 						if (pattern_VariableDec2Parameter4_27_1_matchtggpattern_black_nac_1B(typeAccess) == null) {
@@ -3618,11 +3613,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return _result;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_28_1_matchtggpattern_blackBBB(
-			org.eclipse.uml2.uml.Type uType, Parameter param, Operation operation) {
+	public static final Object[] pattern_VariableDec2Parameter4_28_1_matchtggpattern_blackBBB(Parameter param,
+			Operation operation, org.eclipse.uml2.uml.Type uType) {
 		if (uType.equals(param.getType())) {
 			if (operation.getOwnedParameters().contains(param)) {
-				return new Object[] { uType, param, operation };
+				return new Object[] { param, operation, uType };
 			}
 		}
 		return null;
@@ -3651,30 +3646,6 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Type uType) {
-		if (ruleResult.getTargetObjects().contains(uType)) {
-			return new Object[] { ruleResult, uType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
-		if (ruleResult.getCorrObjects().contains(ne2ne)) {
-			return new Object[] { ruleResult, ne2ne };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Type jType) {
-		if (ruleResult.getSourceObjects().contains(jType)) {
-			return new Object[] { ruleResult, jType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, Operation operation) {
 		if (ruleResult.getTargetObjects().contains(operation)) {
 			return new Object[] { ruleResult, operation };
@@ -3682,7 +3653,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, ASTNode2Element md2o) {
 		if (ruleResult.getCorrObjects().contains(md2o)) {
 			return new Object[] { ruleResult, md2o };
@@ -3690,7 +3661,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, AbstractMethodDeclaration method) {
 		if (ruleResult.getSourceObjects().contains(method)) {
 			return new Object[] { ruleResult, method };
@@ -3698,46 +3669,70 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return null;
 	}
 
+	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Type uType) {
+		if (ruleResult.getTargetObjects().contains(uType)) {
+			return new Object[] { ruleResult, uType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element ne2ne) {
+		if (ruleResult.getCorrObjects().contains(ne2ne)) {
+			return new Object[] { ruleResult, ne2ne };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, Type jType) {
+		if (ruleResult.getSourceObjects().contains(jType)) {
+			return new Object[] { ruleResult, jType };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_VariableDec2Parameter4_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList md2oList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList md2oList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList ne2neList : ruleEntryContainer.getRuleEntryList()) {
 				if (!md2oList.equals(ne2neList)) {
-					for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
-						if (tmpNe2ne instanceof ASTNode2Element) {
-							ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
-							Element tmpUType = ne2ne.getTarget();
-							if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
-								org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
-								ASTNode tmpJType = ne2ne.getSource();
-								if (tmpJType instanceof Type) {
-									Type jType = (Type) tmpJType;
+					for (EObject tmpMd2o : md2oList.getEntryObjects()) {
+						if (tmpMd2o instanceof ASTNode2Element) {
+							ASTNode2Element md2o = (ASTNode2Element) tmpMd2o;
+							Element tmpOperation = md2o.getTarget();
+							if (tmpOperation instanceof Operation) {
+								Operation operation = (Operation) tmpOperation;
+								ASTNode tmpMethod = md2o.getSource();
+								if (tmpMethod instanceof AbstractMethodDeclaration) {
+									AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
 									if (pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											ne2ne) == null) {
+											md2o) == null) {
 										if (pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_0BB(
-												ruleResult, uType) == null) {
+												ruleResult, operation) == null) {
 											if (pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, jType) == null) {
-												for (EObject tmpMd2o : md2oList.getEntryObjects()) {
-													if (tmpMd2o instanceof ASTNode2Element) {
-														ASTNode2Element md2o = (ASTNode2Element) tmpMd2o;
+													ruleResult, method) == null) {
+												for (EObject tmpNe2ne : ne2neList.getEntryObjects()) {
+													if (tmpNe2ne instanceof ASTNode2Element) {
+														ASTNode2Element ne2ne = (ASTNode2Element) tmpNe2ne;
 														if (!md2o.equals(ne2ne)) {
-															Element tmpOperation = md2o.getTarget();
-															if (tmpOperation instanceof Operation) {
-																Operation operation = (Operation) tmpOperation;
-																ASTNode tmpMethod = md2o.getSource();
-																if (tmpMethod instanceof AbstractMethodDeclaration) {
-																	AbstractMethodDeclaration method = (AbstractMethodDeclaration) tmpMethod;
+															Element tmpUType = ne2ne.getTarget();
+															if (tmpUType instanceof org.eclipse.uml2.uml.Type) {
+																org.eclipse.uml2.uml.Type uType = (org.eclipse.uml2.uml.Type) tmpUType;
+																ASTNode tmpJType = ne2ne.getSource();
+																if (tmpJType instanceof Type) {
+																	Type jType = (Type) tmpJType;
 																	if (pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, md2o) == null) {
+																			ruleResult, ne2ne) == null) {
 																		if (pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_3BB(
-																				ruleResult, operation) == null) {
+																				ruleResult, uType) == null) {
 																			if (pattern_VariableDec2Parameter4_29_2_isapplicablecore_black_nac_5BB(
-																					ruleResult, method) == null) {
-																				_result.add(new Object[] { ne2neList,
-																						uType, ne2ne, jType, md2oList,
+																					ruleResult, jType) == null) {
+																				_result.add(new Object[] { md2oList,
 																						operation, md2o, method,
+																						ne2neList, uType, ne2ne, jType,
 																						ruleEntryContainer,
 																						ruleResult });
 																			}
@@ -3766,14 +3761,14 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_29_3_solveCSP_bindingFBBBBBBBBB(
-			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Type jType, Operation operation, ASTNode2Element md2o, AbstractMethodDeclaration method,
-			ASTNode2Element ne2ne, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, uType, jType, operation, md2o,
-				method, ne2ne, ruleResult);
+			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, operation, uType, jType, md2o, ne2ne,
+				method, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, uType, jType, operation, md2o, method, ne2ne,
+			return new Object[] { csp, _this, isApplicableMatch, operation, uType, jType, md2o, ne2ne, method,
 					ruleResult };
 		}
 		return null;
@@ -3784,11 +3779,11 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 	}
 
 	public static final Object[] pattern_VariableDec2Parameter4_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Type uType,
-			Type jType, Operation operation, ASTNode2Element md2o, AbstractMethodDeclaration method,
-			ASTNode2Element ne2ne, ModelgeneratorRuleResult ruleResult) {
+			VariableDec2Parameter4 _this, IsApplicableMatch isApplicableMatch, Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_VariableDec2Parameter4_29_3_solveCSP_binding = pattern_VariableDec2Parameter4_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, uType, jType, operation, md2o, method, ne2ne, ruleResult);
+				_this, isApplicableMatch, operation, uType, jType, md2o, ne2ne, method, ruleResult);
 		if (result_pattern_VariableDec2Parameter4_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_VariableDec2Parameter4_29_3_solveCSP_binding[0];
 
@@ -3796,7 +3791,7 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 					csp);
 			if (result_pattern_VariableDec2Parameter4_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, uType, jType, operation, md2o, method, ne2ne,
+				return new Object[] { csp, _this, isApplicableMatch, operation, uType, jType, md2o, ne2ne, method,
 						ruleResult };
 			}
 		}
@@ -3810,61 +3805,61 @@ public class VariableDec2Parameter4Impl extends AbstractRuleImpl implements Vari
 		return _result;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_29_5_checknacs_blackBBBBBB(
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, ASTNode2Element md2o,
-			AbstractMethodDeclaration method, ASTNode2Element ne2ne) {
+	public static final Object[] pattern_VariableDec2Parameter4_29_5_checknacs_blackBBBBBB(Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method) {
 		if (!md2o.equals(ne2ne)) {
-			return new Object[] { uType, jType, operation, md2o, method, ne2ne };
+			return new Object[] { operation, uType, jType, md2o, ne2ne, method };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_29_6_perform_blackBBBBBBB(
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, ASTNode2Element md2o,
-			AbstractMethodDeclaration method, ASTNode2Element ne2ne, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_VariableDec2Parameter4_29_6_perform_blackBBBBBBB(Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, ASTNode2Element md2o, ASTNode2Element ne2ne,
+			AbstractMethodDeclaration method, ModelgeneratorRuleResult ruleResult) {
 		if (!md2o.equals(ne2ne)) {
-			return new Object[] { uType, jType, operation, md2o, method, ne2ne, ruleResult };
+			return new Object[] { operation, uType, jType, md2o, ne2ne, method, ruleResult };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_VariableDec2Parameter4_29_6_perform_greenFFFBFBBFBBB(
-			org.eclipse.uml2.uml.Type uType, Type jType, Operation operation, AbstractMethodDeclaration method,
+	public static final Object[] pattern_VariableDec2Parameter4_29_6_perform_greenFBFFFBBFBBB(Operation operation,
+			org.eclipse.uml2.uml.Type uType, Type jType, AbstractMethodDeclaration method,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
+		Parameter param = UMLFactory.eINSTANCE.createParameter();
 		MSingleVariableDeclaration variableDec = ModiscoFactory.eINSTANCE.createMSingleVariableDeclaration();
 		TypeAccess2Parameter ty2p = UmlFactory.eINSTANCE.createTypeAccess2Parameter();
 		ASTNode2Element vd2p = UmlFactory.eINSTANCE.createASTNode2Element();
-		Parameter param = UMLFactory.eINSTANCE.createParameter();
 		TypeAccess typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-		Object _localVariable_0 = csp.getValue("variableDec", "name");
-		Object _localVariable_1 = csp.getValue("param", "name");
-		Object _localVariable_2 = csp.getValue("param", "direction");
+		Object _localVariable_0 = csp.getValue("param", "name");
+		Object _localVariable_1 = csp.getValue("param", "direction");
+		Object _localVariable_2 = csp.getValue("variableDec", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_3 = ruleResult.getIncrementedPerformCount();
-		method.getParameters().add(variableDec);
-		ruleResult.getSourceObjects().add(variableDec);
-		ruleResult.getCorrObjects().add(ty2p);
-		vd2p.setSource(variableDec);
-		ruleResult.getCorrObjects().add(vd2p);
-		vd2p.setTarget(param);
-		ty2p.setTarget(param);
 		param.setType(uType);
 		operation.getOwnedParameters().add(param);
 		ruleResult.getTargetObjects().add(param);
-		ty2p.setSource(typeAccess);
-		typeAccess.setType(jType);
+		method.getParameters().add(variableDec);
+		ruleResult.getSourceObjects().add(variableDec);
+		ty2p.setTarget(param);
+		ruleResult.getCorrObjects().add(ty2p);
+		vd2p.setSource(variableDec);
+		vd2p.setTarget(param);
+		ruleResult.getCorrObjects().add(vd2p);
 		variableDec.setType(typeAccess);
+		typeAccess.setType(jType);
+		ty2p.setSource(typeAccess);
 		ruleResult.getSourceObjects().add(typeAccess);
-		String variableDec_name_prime = (String) _localVariable_0;
-		String param_name_prime = (String) _localVariable_1;
-		ParameterDirectionKind param_direction_prime = (ParameterDirectionKind) _localVariable_2;
+		String param_name_prime = (String) _localVariable_0;
+		ParameterDirectionKind param_direction_prime = (ParameterDirectionKind) _localVariable_1;
+		String variableDec_name_prime = (String) _localVariable_2;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_3);
-		variableDec.setName(variableDec_name_prime);
 		param.setName(param_name_prime);
 		param.setDirection(param_direction_prime);
+		variableDec.setName(variableDec_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { variableDec, ty2p, vd2p, uType, param, jType, operation, typeAccess, method, ruleResult,
+		return new Object[] { param, operation, variableDec, ty2p, vd2p, uType, jType, typeAccess, method, ruleResult,
 				csp };
 	}
 

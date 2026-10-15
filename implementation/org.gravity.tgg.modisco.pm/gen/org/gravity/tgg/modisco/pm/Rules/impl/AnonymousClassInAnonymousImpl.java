@@ -211,12 +211,12 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 		Object[] result3_black = AnonymousClassInAnonymousImpl
 				.pattern_AnonymousClassInAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBBBBB(ruleresult,
-						mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg, mMember,
+						mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg, mMember,
 						mAnonymous, eAnonymousClassDeclarationToTClass, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[mCreation] = " + mCreation + ", "
-					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tAnonymous] = " + tAnonymous + ", " + "[tType] = "
+					+ "[tAnonymous] = " + tAnonymous + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = "
 					+ tType + ", " + "[tMember] = " + tMember + ", " + "[tPackage] = " + tPackage + ", " + "[pg] = "
 					+ pg + ", " + "[mMember] = " + mMember + ", " + "[mAnonymous] = " + mAnonymous + ", "
 					+ "[eAnonymousClassDeclarationToTClass] = " + eAnonymousClassDeclarationToTClass + ", "
@@ -241,7 +241,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		// 
 		// 
 		AnonymousClassInAnonymousImpl.pattern_AnonymousClassInAnonymous_1_5_registerobjects_expressionBBBBBBBBBBBBBB(
-				this, ruleresult, mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg,
+				this, ruleresult, mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg,
 				mMember, mAnonymous, eAnonymousClassDeclarationToTClass, mType);
 		return AnonymousClassInAnonymousImpl.pattern_AnonymousClassInAnonymous_1_6_expressionFB(ruleresult);
 	}
@@ -406,34 +406,34 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		literal0.setType("");
 
 		// Create attribute variables
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
+		var_tType_tLib.setValue(tType.isTLib());
+		var_tType_tLib.setType("Boolean");
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
 		var_tType_tName.setValue(tType.getTName());
 		var_tType_tName.setType("String");
 		Variable var_mAnonymous_index = CSPFactoryHelper.eINSTANCE.createVariable("mAnonymous.index", true, csp);
 		var_mAnonymous_index.setValue(mAnonymous.getIndex());
 		var_mAnonymous_index.setType("int");
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
-		var_tType_tLib.setValue(tType.isTLib());
-		var_tType_tLib.setType("Boolean");
 
 		// Create unbound variables
-		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tName", csp);
-		var_tAnonymous_tName.setType("String");
 		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tLib", csp);
 		var_tAnonymous_tLib.setType("Boolean");
+		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tName", csp);
+		var_tAnonymous_tName.setType("String");
 
 		// Create constraints
-		Concat concat = new Concat();
 		Eq eq = new Eq();
+		Concat concat = new Concat();
 
-		csp.getConstraints().add(concat);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(concat);
 
 		// Solve CSP
-		concat.setRuleName("NoRuleName");
-		concat.solve(literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_tType_tLib, var_tAnonymous_tLib);
+		concat.setRuleName("NoRuleName");
+		concat.solve(literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
@@ -464,12 +464,12 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * @generated
 	 */
 	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType) {
 		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
 		ruleresult.registerObject("mCreation", mCreation);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tAnonymous", tAnonymous);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tMember", tMember);
 		ruleresult.registerObject("tPackage", tPackage);
@@ -583,8 +583,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		}
 		MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result1_bindingAndBlack[0];
 		MClassInstanceCreation mCreation = (MClassInstanceCreation) result1_bindingAndBlack[1];
-		AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result1_bindingAndBlack[2];
-		TClass tAnonymous = (TClass) result1_bindingAndBlack[3];
+		TClass tAnonymous = (TClass) result1_bindingAndBlack[2];
+		AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result1_bindingAndBlack[3];
 		TClass tType = (TClass) result1_bindingAndBlack[4];
 		TMember tMember = (TMember) result1_bindingAndBlack[5];
 		TPackage tPackage = (TPackage) result1_bindingAndBlack[6];
@@ -612,12 +612,12 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 		Object[] result3_black = AnonymousClassInAnonymousImpl
 				.pattern_AnonymousClassInAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBBBBB(ruleresult,
-						mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg, mMember,
+						mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg, mMember,
 						mAnonymous, eAnonymousClassDeclarationToTClass, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
 					+ ", " + "[mMemberToTMember] = " + mMemberToTMember + ", " + "[mCreation] = " + mCreation + ", "
-					+ "[mTypeToTType] = " + mTypeToTType + ", " + "[tAnonymous] = " + tAnonymous + ", " + "[tType] = "
+					+ "[tAnonymous] = " + tAnonymous + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = "
 					+ tType + ", " + "[tMember] = " + tMember + ", " + "[tPackage] = " + tPackage + ", " + "[pg] = "
 					+ pg + ", " + "[mMember] = " + mMember + ", " + "[mAnonymous] = " + mAnonymous + ", "
 					+ "[eAnonymousClassDeclarationToTClass] = " + eAnonymousClassDeclarationToTClass + ", "
@@ -642,7 +642,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		// 
 		// 
 		AnonymousClassInAnonymousImpl.pattern_AnonymousClassInAnonymous_11_5_registerobjects_expressionBBBBBBBBBBBBBB(
-				this, ruleresult, mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg,
+				this, ruleresult, mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg,
 				mMember, mAnonymous, eAnonymousClassDeclarationToTClass, mType);
 		return AnonymousClassInAnonymousImpl.pattern_AnonymousClassInAnonymous_11_6_expressionFB(ruleresult);
 	}
@@ -678,20 +678,20 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		TPackage tPackage = (TPackage) result2_binding[3];
 		TypeGraph pg = (TypeGraph) result2_binding[4];
 		for (Object[] result2_black : AnonymousClassInAnonymousImpl
-				.pattern_AnonymousClassInAnonymous_12_2_corematch_blackFFBBBBBFFB(tAnonymous, tType, tMember, tPackage,
+				.pattern_AnonymousClassInAnonymous_12_2_corematch_blackFBFBBBBFFB(tAnonymous, tType, tMember, tPackage,
 						pg, match)) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[0];
-			AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result2_black[1];
+			AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result2_black[2];
 			MDefinition mMember = (MDefinition) result2_black[7];
 			AnonymousClassDeclaration mType = (AnonymousClassDeclaration) result2_black[8];
 			// ForEach 
 			for (Object[] result3_black : AnonymousClassInAnonymousImpl
-					.pattern_AnonymousClassInAnonymous_12_3_findcontext_blackBFBBBBBBBB(mMemberToTMember, mTypeToTType,
-							tAnonymous, tType, tMember, tPackage, pg, mMember, mType)) {
+					.pattern_AnonymousClassInAnonymous_12_3_findcontext_blackBFBBBBBBBB(mMemberToTMember, tAnonymous,
+							mTypeToTType, tType, tMember, tPackage, pg, mMember, mType)) {
 				MClassInstanceCreation mCreation = (MClassInstanceCreation) result3_black[1];
 				Object[] result3_green = AnonymousClassInAnonymousImpl
 						.pattern_AnonymousClassInAnonymous_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFFFFFFF(
-								mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg,
+								mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg,
 								mMember, mType);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[10];
 				//nothing EMoflonEdge tPackage__tAnonymous____allTypes = (EMoflonEdge) result3_green[11];
@@ -702,10 +702,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 				//nothing EMoflonEdge mMember__mCreation____mMethodInvocations = (EMoflonEdge) result3_green[16];
 				//nothing EMoflonEdge pg__tAnonymous____classes = (EMoflonEdge) result3_green[17];
 				//nothing EMoflonEdge tPackage__pg____model = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge tType__tMember____defines = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge tMember__tType____definedBy = (EMoflonEdge) result3_green[20];
-				//nothing EMoflonEdge pg__tAnonymous____allTypes = (EMoflonEdge) result3_green[21];
-				//nothing EMoflonEdge tAnonymous__pg____model = (EMoflonEdge) result3_green[22];
+				//nothing EMoflonEdge pg__tAnonymous____allTypes = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge tAnonymous__pg____model = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge tType__tMember____defines = (EMoflonEdge) result3_green[21];
+				//nothing EMoflonEdge tMember__tType____definedBy = (EMoflonEdge) result3_green[22];
 				//nothing EMoflonEdge tPackage__tAnonymous____classes = (EMoflonEdge) result3_green[23];
 				//nothing EMoflonEdge tType__tPackage____package = (EMoflonEdge) result3_green[24];
 				//nothing EMoflonEdge tPackage__tType____allTypes = (EMoflonEdge) result3_green[25];
@@ -717,15 +717,15 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 				Object[] result4_bindingAndBlack = AnonymousClassInAnonymousImpl
 						.pattern_AnonymousClassInAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
-								isApplicableMatch, mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType,
+								isApplicableMatch, mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType,
 								tMember, tPackage, pg, mMember, mType);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[mMemberToTMember] = "
-							+ mMemberToTMember + ", " + "[mCreation] = " + mCreation + ", " + "[mTypeToTType] = "
-							+ mTypeToTType + ", " + "[tAnonymous] = " + tAnonymous + ", " + "[tType] = " + tType + ", "
-							+ "[tMember] = " + tMember + ", " + "[tPackage] = " + tPackage + ", " + "[pg] = " + pg
-							+ ", " + "[mMember] = " + mMember + ", " + "[mType] = " + mType + ".");
+							+ mMemberToTMember + ", " + "[mCreation] = " + mCreation + ", " + "[tAnonymous] = "
+							+ tAnonymous + ", " + "[mTypeToTType] = " + mTypeToTType + ", " + "[tType] = " + tType
+							+ ", " + "[tMember] = " + tMember + ", " + "[tPackage] = " + tPackage + ", " + "[pg] = "
+							+ pg + ", " + "[mMember] = " + mMember + ", " + "[mType] = " + mType + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -813,7 +813,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * @generated
 	 */
 	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MClassInstanceCreation mCreation, AnonymousClassDeclarationToTClass mTypeToTType, TClass tAnonymous,
+			MClassInstanceCreation mCreation, TClass tAnonymous, AnonymousClassDeclarationToTClass mTypeToTType,
 			TClass tType, TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember,
 			AnonymousClassDeclaration mType) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
@@ -848,8 +848,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("mMemberToTMember", mMemberToTMember);
 		isApplicableMatch.registerObject("mCreation", mCreation);
-		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tAnonymous", tAnonymous);
+		isApplicableMatch.registerObject("mTypeToTType", mTypeToTType);
 		isApplicableMatch.registerObject("tType", tType);
 		isApplicableMatch.registerObject("tMember", tMember);
 		isApplicableMatch.registerObject("tPackage", tPackage);
@@ -874,12 +874,12 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * @generated
 	 */
 	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType) {
 		ruleresult.registerObject("mMemberToTMember", mMemberToTMember);
 		ruleresult.registerObject("mCreation", mCreation);
-		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tAnonymous", tAnonymous);
+		ruleresult.registerObject("mTypeToTType", mTypeToTType);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tMember", tMember);
 		ruleresult.registerObject("tPackage", tPackage);
@@ -906,7 +906,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_33(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = AnonymousClassInAnonymousImpl
 				.pattern_AnonymousClassInAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -967,7 +967,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_35(EMoflonEdge _edge_anonymousClassDeclaration) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_anonymousClassDeclaration) {
 
 		Object[] result1_bindingAndBlack = AnonymousClassInAnonymousImpl
 				.pattern_AnonymousClassInAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1038,54 +1038,54 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
-
-		Variable var_mAnonymous_index = CSPFactoryHelper.eINSTANCE.createVariable("mAnonymous", true, csp);
-		var_mAnonymous_index.setValue(__helper.getValue("mAnonymous", "index"));
-		var_mAnonymous_index.setType("int");
-
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
-		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous", true, csp);
-		var_tAnonymous_tName.setValue(__helper.getValue("tAnonymous", "tName"));
-		var_tAnonymous_tName.setType("String");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous", true, csp);
 		var_tAnonymous_tLib.setValue(__helper.getValue("tAnonymous", "tLib"));
 		var_tAnonymous_tLib.setType("boolean");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
+		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous", true, csp);
+		var_tAnonymous_tName.setValue(__helper.getValue("tAnonymous", "tName"));
+		var_tAnonymous_tName.setType("String");
 
-		Concat concat0 = new Concat();
-		csp.getConstraints().add(concat0);
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
 
-		Eq eq1 = new Eq();
-		csp.getConstraints().add(eq1);
+		Variable var_mAnonymous_index = CSPFactoryHelper.eINSTANCE.createVariable("mAnonymous", true, csp);
+		var_mAnonymous_index.setValue(__helper.getValue("mAnonymous", "index"));
+		var_mAnonymous_index.setType("int");
 
-		concat0.setRuleName("AnonymousClassInAnonymous");
-		concat0.solve(var_literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
 
-		eq1.setRuleName("AnonymousClassInAnonymous");
-		eq1.solve(var_tType_tLib, var_tAnonymous_tLib);
+		Eq eq0 = new Eq();
+		csp.getConstraints().add(eq0);
+
+		Concat concat1 = new Concat();
+		csp.getConstraints().add(concat1);
+
+		eq0.setRuleName("AnonymousClassInAnonymous");
+		eq0.solve(var_tType_tLib, var_tAnonymous_tLib);
+
+		concat1.setRuleName("AnonymousClassInAnonymous");
+		concat1.solve(var_literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
 
 		if (csp.check()) {
 			ruleResult.setSuccess(true);
 		} else {
-			var_tAnonymous_tName.setBound(false);
 			var_tAnonymous_tLib.setBound(false);
-			concat0.solve(var_literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
-			eq1.solve(var_tType_tLib, var_tAnonymous_tLib);
+			var_tAnonymous_tName.setBound(false);
+			eq0.solve(var_tType_tLib, var_tAnonymous_tLib);
+			concat1.solve(var_literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
 			if (csp.check()) {
 				ruleResult.setSuccess(true);
 				ruleResult.setRequiredChange(true);
-				__helper.setValue("tAnonymous", "tName", var_tAnonymous_tName.getValue());
 				__helper.setValue("tAnonymous", "tLib", var_tAnonymous_tLib.getValue());
+				__helper.setValue("tAnonymous", "tName", var_tAnonymous_tName.getValue());
 			} else {
 				ruleResult.setSuccess(false);
 				return ruleResult;
@@ -1110,29 +1110,29 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue("$");
-		var_literal0.setType("");
-
-		Variable var_mAnonymous_index = CSPFactoryHelper.eINSTANCE.createVariable("mAnonymous", true, csp);
-		var_mAnonymous_index.setValue(__helper.getValue("mAnonymous", "index"));
-		var_mAnonymous_index.setType("int");
-
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
-		var_tType_tName.setType("String");
-
-		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous", true, csp);
-		var_tAnonymous_tName.setValue(__helper.getValue("tAnonymous", "tName"));
-		var_tAnonymous_tName.setType("String");
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
+		var_tType_tLib.setType("boolean");
 
 		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous", true, csp);
 		var_tAnonymous_tLib.setValue(__helper.getValue("tAnonymous", "tLib"));
 		var_tAnonymous_tLib.setType("boolean");
 
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
-		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
-		var_tType_tLib.setType("boolean");
+		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous", true, csp);
+		var_tAnonymous_tName.setValue(__helper.getValue("tAnonymous", "tName"));
+		var_tAnonymous_tName.setType("String");
+
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
+		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
+		var_tType_tName.setType("String");
+
+		Variable var_mAnonymous_index = CSPFactoryHelper.eINSTANCE.createVariable("mAnonymous", true, csp);
+		var_mAnonymous_index.setValue(__helper.getValue("mAnonymous", "index"));
+		var_mAnonymous_index.setType("int");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue("$");
+		var_literal0.setType("");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1267,6 +1267,12 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		literal0.setType("");
 
 		// Create attribute variables
+		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
+		var_tType_tLib.setValue(tType.isTLib());
+		var_tType_tLib.setType("Boolean");
+		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tLib", true, csp);
+		var_tAnonymous_tLib.setValue(tAnonymous.isTLib());
+		var_tAnonymous_tLib.setType("Boolean");
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
 		var_tType_tName.setValue(tType.getTName());
 		var_tType_tName.setType("String");
@@ -1276,27 +1282,21 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tName", true, csp);
 		var_tAnonymous_tName.setValue(tAnonymous.getTName());
 		var_tAnonymous_tName.setType("String");
-		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
-		var_tType_tLib.setValue(tType.isTLib());
-		var_tType_tLib.setType("Boolean");
-		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tLib", true, csp);
-		var_tAnonymous_tLib.setValue(tAnonymous.isTLib());
-		var_tAnonymous_tLib.setType("Boolean");
 
 		// Create unbound variables
 
 		// Create constraints
-		Concat concat = new Concat();
 		Eq eq = new Eq();
+		Concat concat = new Concat();
 
-		csp.getConstraints().add(concat);
 		csp.getConstraints().add(eq);
+		csp.getConstraints().add(concat);
 
 		// Solve CSP
-		concat.setRuleName("NoRuleName");
-		concat.solve(literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
 		eq.setRuleName("NoRuleName");
 		eq.solve(var_tType_tLib, var_tAnonymous_tLib);
+		concat.setRuleName("NoRuleName");
+		concat.solve(literal0, var_tType_tName, var_mAnonymous_index, var_tAnonymous_tName);
 		return csp;
 	}
 
@@ -1368,14 +1368,14 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 						ruleResult)) {
 			//nothing RuleEntryList mMemberToTMemberList = (RuleEntryList) result2_black[0];
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result2_black[1];
-			MDefinition mMember = (MDefinition) result2_black[2];
-			MClassInstanceCreation mCreation = (MClassInstanceCreation) result2_black[3];
-			AnonymousClassDeclaration mType = (AnonymousClassDeclaration) result2_black[4];
-			AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result2_black[5];
-			TClass tType = (TClass) result2_black[6];
-			TMember tMember = (TMember) result2_black[7];
-			TPackage tPackage = (TPackage) result2_black[8];
-			TypeGraph pg = (TypeGraph) result2_black[9];
+			TMember tMember = (TMember) result2_black[2];
+			TClass tType = (TClass) result2_black[3];
+			TPackage tPackage = (TPackage) result2_black[4];
+			TypeGraph pg = (TypeGraph) result2_black[5];
+			AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result2_black[6];
+			AnonymousClassDeclaration mType = (AnonymousClassDeclaration) result2_black[7];
+			MDefinition mMember = (MDefinition) result2_black[8];
+			MClassInstanceCreation mCreation = (MClassInstanceCreation) result2_black[9];
 
 			Object[] result3_bindingAndBlack = AnonymousClassInAnonymousImpl
 					.pattern_AnonymousClassInAnonymous_29_3_solveCSP_bindingAndBlackFBBBBBBBBBBBB(this,
@@ -1443,20 +1443,20 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		literal0.setType("");
 
 		// Create attribute variables
-		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
-		var_tType_tName.setValue(tType.getTName());
-		var_tType_tName.setType("String");
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType.tLib", true, csp);
 		var_tType_tLib.setValue(tType.isTLib());
 		var_tType_tLib.setType("Boolean");
+		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType.tName", true, csp);
+		var_tType_tName.setValue(tType.getTName());
+		var_tType_tName.setType("String");
 
 		// Create unbound variables
+		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tLib", csp);
+		var_tAnonymous_tLib.setType("Boolean");
 		Variable var_mAnonymous_index = CSPFactoryHelper.eINSTANCE.createVariable("mAnonymous.index", csp);
 		var_mAnonymous_index.setType("int");
 		Variable var_tAnonymous_tName = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tName", csp);
 		var_tAnonymous_tName.setType("String");
-		Variable var_tAnonymous_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tAnonymous.tLib", csp);
-		var_tAnonymous_tLib.setType("Boolean");
 
 		// Create constraints
 		Eq eq = new Eq();
@@ -1501,114 +1501,112 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-						(MDefinition) arguments.get(2), (MAnonymousClass) arguments.get(3),
-						(AnonymousClassDeclaration) arguments.get(4));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-						(MDefinition) arguments.get(2), (MAnonymousClass) arguments.get(3),
-						(AnonymousClassDeclaration) arguments.get(4));
-				return null;
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
-						(MDefinition) arguments.get(2), (MAnonymousClass) arguments.get(3),
-						(AnonymousClassDeclaration) arguments.get(4));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MCLASSINSTANCECREATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(MDefinitionToTMember) arguments.get(1), (MClassInstanceCreation) arguments.get(2),
-						(AnonymousClassDeclarationToTClass) arguments.get(3), (TClass) arguments.get(4),
-						(TMember) arguments.get(5), (TPackage) arguments.get(6), (TypeGraph) arguments.get(7),
-						(MDefinition) arguments.get(8), (MAnonymousClass) arguments.get(9),
-						(AnonymousClassDeclaration) arguments.get(10));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-						(EObject) arguments.get(11), (EObject) arguments.get(12));
-				return null;
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
-				return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TClass) arguments.get(2),
-						(TMember) arguments.get(3), (TPackage) arguments.get(4), (TypeGraph) arguments.get(5));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-						(TClass) arguments.get(2), (TMember) arguments.get(3), (TPackage) arguments.get(4),
-						(TypeGraph) arguments.get(5));
-				return null;
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
-						(TClass) arguments.get(2), (TMember) arguments.get(3), (TPackage) arguments.get(4),
-						(TypeGraph) arguments.get(5));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MCLASSINSTANCECREATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_ANONYMOUSCLASSDECLARATION:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(MDefinitionToTMember) arguments.get(1), (MClassInstanceCreation) arguments.get(2),
-						(AnonymousClassDeclarationToTClass) arguments.get(3), (TClass) arguments.get(4),
-						(TClass) arguments.get(5), (TMember) arguments.get(6), (TPackage) arguments.get(7),
-						(TypeGraph) arguments.get(8), (MDefinition) arguments.get(9),
-						(AnonymousClassDeclaration) arguments.get(10));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
-						(EObject) arguments.get(11), (EObject) arguments.get(12));
-				return null;
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_33__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_33((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_35__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_35((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__MCLASSINSTANCECREATION_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((MClassInstanceCreation) arguments.get(0), (TClass) arguments.get(1),
-						(TClass) arguments.get(2), (TMember) arguments.get(3), (TPackage) arguments.get(4),
-						(TypeGraph) arguments.get(5), (MDefinition) arguments.get(6),
-						(MAnonymousClass) arguments.get(7), (AnonymousClassDeclaration) arguments.get(8),
-						(Match) arguments.get(9), (Match) arguments.get(10));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_DEC_FWD__MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
-				return checkDEC_FWD((MClassInstanceCreation) arguments.get(0), (MDefinition) arguments.get(1),
-						(MAnonymousClass) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_DEC_BWD__TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
-				return checkDEC_BWD((TClass) arguments.get(0), (TClass) arguments.get(1), (TMember) arguments.get(2),
-						(TPackage) arguments.get(3), (TypeGraph) arguments.get(4));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
-				return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MCLASSINSTANCECREATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_ANONYMOUSCLASSDECLARATION_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(MDefinitionToTMember) arguments.get(1), (MClassInstanceCreation) arguments.get(2),
-						(AnonymousClassDeclarationToTClass) arguments.get(3), (TClass) arguments.get(4),
-						(TMember) arguments.get(5), (TPackage) arguments.get(6), (TypeGraph) arguments.get(7),
-						(MDefinition) arguments.get(8), (AnonymousClassDeclaration) arguments.get(9),
-						(ModelgeneratorRuleResult) arguments.get(10));
-			case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
+					(MDefinition) arguments.get(2), (MAnonymousClass) arguments.get(3),
+					(AnonymousClassDeclaration) arguments.get(4));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
+					(MDefinition) arguments.get(2), (MAnonymousClass) arguments.get(3),
+					(AnonymousClassDeclaration) arguments.get(4));
+			return null;
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (MClassInstanceCreation) arguments.get(1),
+					(MDefinition) arguments.get(2), (MAnonymousClass) arguments.get(3),
+					(AnonymousClassDeclaration) arguments.get(4));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MCLASSINSTANCECREATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(MDefinitionToTMember) arguments.get(1), (MClassInstanceCreation) arguments.get(2),
+					(AnonymousClassDeclarationToTClass) arguments.get(3), (TClass) arguments.get(4),
+					(TMember) arguments.get(5), (TPackage) arguments.get(6), (TypeGraph) arguments.get(7),
+					(MDefinition) arguments.get(8), (MAnonymousClass) arguments.get(9),
+					(AnonymousClassDeclaration) arguments.get(10));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+					(EObject) arguments.get(11), (EObject) arguments.get(12));
+			return null;
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD__MATCH_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
+			return isAppropriate_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TClass) arguments.get(2),
+					(TMember) arguments.get(3), (TPackage) arguments.get(4), (TypeGraph) arguments.get(5));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TClass) arguments.get(1), (TClass) arguments.get(2),
+					(TMember) arguments.get(3), (TPackage) arguments.get(4), (TypeGraph) arguments.get(5));
+			return null;
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TClass) arguments.get(1),
+					(TClass) arguments.get(2), (TMember) arguments.get(3), (TPackage) arguments.get(4),
+					(TypeGraph) arguments.get(5));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MCLASSINSTANCECREATION_TCLASS_ANONYMOUSCLASSDECLARATIONTOTCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_ANONYMOUSCLASSDECLARATION:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(MDefinitionToTMember) arguments.get(1), (MClassInstanceCreation) arguments.get(2),
+					(TClass) arguments.get(3), (AnonymousClassDeclarationToTClass) arguments.get(4),
+					(TClass) arguments.get(5), (TMember) arguments.get(6), (TPackage) arguments.get(7),
+					(TypeGraph) arguments.get(8), (MDefinition) arguments.get(9),
+					(AnonymousClassDeclaration) arguments.get(10));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8), (EObject) arguments.get(9), (EObject) arguments.get(10),
+					(EObject) arguments.get(11), (EObject) arguments.get(12));
+			return null;
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_0__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_0((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_SOLVE_CSP_CC__MCLASSINSTANCECREATION_TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((MClassInstanceCreation) arguments.get(0), (TClass) arguments.get(1),
+					(TClass) arguments.get(2), (TMember) arguments.get(3), (TPackage) arguments.get(4),
+					(TypeGraph) arguments.get(5), (MDefinition) arguments.get(6), (MAnonymousClass) arguments.get(7),
+					(AnonymousClassDeclaration) arguments.get(8), (Match) arguments.get(9), (Match) arguments.get(10));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_DEC_FWD__MCLASSINSTANCECREATION_MDEFINITION_MANONYMOUSCLASS_ANONYMOUSCLASSDECLARATION:
+			return checkDEC_FWD((MClassInstanceCreation) arguments.get(0), (MDefinition) arguments.get(1),
+					(MAnonymousClass) arguments.get(2), (AnonymousClassDeclaration) arguments.get(3));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___CHECK_DEC_BWD__TCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH:
+			return checkDEC_BWD((TClass) arguments.get(0), (TClass) arguments.get(1), (TMember) arguments.get(2),
+					(TPackage) arguments.get(3), (TypeGraph) arguments.get(4));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___GENERATE_MODEL__RULEENTRYCONTAINER_MDEFINITIONTOTMEMBER:
+			return generateModel((RuleEntryContainer) arguments.get(0), (MDefinitionToTMember) arguments.get(1));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MDEFINITIONTOTMEMBER_MCLASSINSTANCECREATION_ANONYMOUSCLASSDECLARATIONTOTCLASS_TCLASS_TMEMBER_TPACKAGE_TYPEGRAPH_MDEFINITION_ANONYMOUSCLASSDECLARATION_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(MDefinitionToTMember) arguments.get(1), (MClassInstanceCreation) arguments.get(2),
+					(AnonymousClassDeclarationToTClass) arguments.get(3), (TClass) arguments.get(4),
+					(TMember) arguments.get(5), (TPackage) arguments.get(6), (TypeGraph) arguments.get(7),
+					(MDefinition) arguments.get(8), (AnonymousClassDeclaration) arguments.get(9),
+					(ModelgeneratorRuleResult) arguments.get(10));
+		case RulesPackage.ANONYMOUS_CLASS_IN_ANONYMOUS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1855,8 +1853,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		TClass tAnonymous = BasicFactory.eINSTANCE.createTClass();
 		AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE
 				.createAnonymousClassDeclarationToTClass();
-		Object _localVariable_0 = csp.getValue("tAnonymous", "tName");
-		Object _localVariable_1 = csp.getValue("tAnonymous", "tLib");
+		Object _localVariable_0 = csp.getValue("tAnonymous", "tLib");
+		Object _localVariable_1 = csp.getValue("tAnonymous", "tName");
 		tPackage.getAllTypes().add(tAnonymous);
 		pg.getClasses().add(tAnonymous);
 		pg.getAllTypes().add(tAnonymous);
@@ -1864,10 +1862,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		tType.getInnerTypes().add(tAnonymous);
 		eAnonymousClassDeclarationToTClass.setTarget(tAnonymous);
 		eAnonymousClassDeclarationToTClass.setSource(mAnonymous);
-		String tAnonymous_tName_prime = (String) _localVariable_0;
-		boolean tAnonymous_tLib_prime = (boolean) _localVariable_1;
-		tAnonymous.setTName(tAnonymous_tName_prime);
+		boolean tAnonymous_tLib_prime = (boolean) _localVariable_0;
+		String tAnonymous_tName_prime = (String) _localVariable_1;
 		tAnonymous.setTLib(Boolean.valueOf(tAnonymous_tLib_prime));
+		tAnonymous.setTName(tAnonymous_tName_prime);
 		return new Object[] { tAnonymous, tType, tPackage, pg, mAnonymous, eAnonymousClassDeclarationToTClass, csp };
 	}
 
@@ -1888,37 +1886,38 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_1_3_bookkeepingforedges_blackBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation, EObject mTypeToTType,
-			EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg, EObject mMember,
+			PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation, EObject tAnonymous,
+			EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg, EObject mMember,
 			EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType) {
-		if (!mMemberToTMember.equals(mTypeToTType)) {
-			if (!mMemberToTMember.equals(tAnonymous)) {
+		if (!mMemberToTMember.equals(tAnonymous)) {
+			if (!mMemberToTMember.equals(mTypeToTType)) {
 				if (!mMemberToTMember.equals(tType)) {
 					if (!mMemberToTMember.equals(tMember)) {
 						if (!mMemberToTMember.equals(tPackage)) {
 							if (!mMemberToTMember.equals(pg)) {
 								if (!mMemberToTMember.equals(mType)) {
 									if (!mCreation.equals(mMemberToTMember)) {
-										if (!mCreation.equals(mTypeToTType)) {
-											if (!mCreation.equals(tAnonymous)) {
+										if (!mCreation.equals(tAnonymous)) {
+											if (!mCreation.equals(mTypeToTType)) {
 												if (!mCreation.equals(tType)) {
 													if (!mCreation.equals(tMember)) {
 														if (!mCreation.equals(tPackage)) {
 															if (!mCreation.equals(pg)) {
 																if (!mCreation.equals(mMember)) {
 																	if (!mCreation.equals(mType)) {
-																		if (!mTypeToTType.equals(tAnonymous)) {
-																			if (!mTypeToTType.equals(tType)) {
-																				if (!mTypeToTType.equals(tMember)) {
+																		if (!tAnonymous.equals(tType)) {
+																			if (!tAnonymous.equals(tMember)) {
+																				if (!tAnonymous.equals(tPackage)) {
 																					if (!mTypeToTType
-																							.equals(tPackage)) {
-																						if (!mTypeToTType.equals(pg)) {
-																							if (!tAnonymous
-																									.equals(tType)) {
-																								if (!tAnonymous.equals(
-																										tMember)) {
-																									if (!tAnonymous
-																											.equals(tPackage)) {
+																							.equals(tAnonymous)) {
+																						if (!mTypeToTType
+																								.equals(tType)) {
+																							if (!mTypeToTType
+																									.equals(tMember)) {
+																								if (!mTypeToTType
+																										.equals(tPackage)) {
+																									if (!mTypeToTType
+																											.equals(pg)) {
 																										if (!tMember
 																												.equals(tType)) {
 																											if (!tMember
@@ -1936,9 +1935,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																	if (!mMember
 																																			.equals(mMemberToTMember)) {
 																																		if (!mMember
-																																				.equals(mTypeToTType)) {
+																																				.equals(tAnonymous)) {
 																																			if (!mMember
-																																					.equals(tAnonymous)) {
+																																					.equals(mTypeToTType)) {
 																																				if (!mMember
 																																						.equals(tType)) {
 																																					if (!mMember
@@ -1954,9 +1953,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																										if (!mAnonymous
 																																												.equals(mCreation)) {
 																																											if (!mAnonymous
-																																													.equals(mTypeToTType)) {
+																																													.equals(tAnonymous)) {
 																																												if (!mAnonymous
-																																														.equals(tAnonymous)) {
+																																														.equals(mTypeToTType)) {
 																																													if (!mAnonymous
 																																															.equals(tType)) {
 																																														if (!mAnonymous
@@ -1974,9 +1973,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																																				if (!eAnonymousClassDeclarationToTClass
 																																																						.equals(mCreation)) {
 																																																					if (!eAnonymousClassDeclarationToTClass
-																																																							.equals(mTypeToTType)) {
+																																																							.equals(tAnonymous)) {
 																																																						if (!eAnonymousClassDeclarationToTClass
-																																																								.equals(tAnonymous)) {
+																																																								.equals(mTypeToTType)) {
 																																																							if (!eAnonymousClassDeclarationToTClass
 																																																									.equals(tType)) {
 																																																								if (!eAnonymousClassDeclarationToTClass
@@ -1992,9 +1991,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																																													if (!eAnonymousClassDeclarationToTClass
 																																																															.equals(mType)) {
 																																																														if (!mType
-																																																																.equals(mTypeToTType)) {
+																																																																.equals(tAnonymous)) {
 																																																															if (!mType
-																																																																	.equals(tAnonymous)) {
+																																																																	.equals(mTypeToTType)) {
 																																																																if (!mType
 																																																																		.equals(tType)) {
 																																																																	if (!mType
@@ -2007,8 +2006,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																																																						ruleresult,
 																																																																						mMemberToTMember,
 																																																																						mCreation,
-																																																																						mTypeToTType,
 																																																																						tAnonymous,
+																																																																						mTypeToTType,
 																																																																						tType,
 																																																																						tMember,
 																																																																						tPackage,
@@ -2180,9 +2179,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final void pattern_AnonymousClassInAnonymous_1_5_registerobjects_expressionBBBBBBBBBBBBBB(
 			AnonymousClassInAnonymous _this, PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember,
+		_this.registerObjects_FWD(ruleresult, mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember,
 				tPackage, pg, mMember, mAnonymous, eAnonymousClassDeclarationToTClass, mType);
 
 	}
@@ -2695,8 +2694,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("mMemberToTMember");
 		EObject _localVariable_1 = isApplicableMatch.getObject("mCreation");
-		EObject _localVariable_2 = isApplicableMatch.getObject("mTypeToTType");
-		EObject _localVariable_3 = isApplicableMatch.getObject("tAnonymous");
+		EObject _localVariable_2 = isApplicableMatch.getObject("tAnonymous");
+		EObject _localVariable_3 = isApplicableMatch.getObject("mTypeToTType");
 		EObject _localVariable_4 = isApplicableMatch.getObject("tType");
 		EObject _localVariable_5 = isApplicableMatch.getObject("tMember");
 		EObject _localVariable_6 = isApplicableMatch.getObject("tPackage");
@@ -2705,8 +2704,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		EObject _localVariable_9 = isApplicableMatch.getObject("mType");
 		EObject tmpMMemberToTMember = _localVariable_0;
 		EObject tmpMCreation = _localVariable_1;
-		EObject tmpMTypeToTType = _localVariable_2;
-		EObject tmpTAnonymous = _localVariable_3;
+		EObject tmpTAnonymous = _localVariable_2;
+		EObject tmpMTypeToTType = _localVariable_3;
 		EObject tmpTType = _localVariable_4;
 		EObject tmpTMember = _localVariable_5;
 		EObject tmpTPackage = _localVariable_6;
@@ -2717,10 +2716,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
 			if (tmpMCreation instanceof MClassInstanceCreation) {
 				MClassInstanceCreation mCreation = (MClassInstanceCreation) tmpMCreation;
-				if (tmpMTypeToTType instanceof AnonymousClassDeclarationToTClass) {
-					AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) tmpMTypeToTType;
-					if (tmpTAnonymous instanceof TClass) {
-						TClass tAnonymous = (TClass) tmpTAnonymous;
+				if (tmpTAnonymous instanceof TClass) {
+					TClass tAnonymous = (TClass) tmpTAnonymous;
+					if (tmpMTypeToTType instanceof AnonymousClassDeclarationToTClass) {
+						AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) tmpMTypeToTType;
 						if (tmpTType instanceof TClass) {
 							TClass tType = (TClass) tmpTType;
 							if (tmpTMember instanceof TMember) {
@@ -2733,8 +2732,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 											MDefinition mMember = (MDefinition) tmpMMember;
 											if (tmpMType instanceof AnonymousClassDeclaration) {
 												AnonymousClassDeclaration mType = (AnonymousClassDeclaration) tmpMType;
-												return new Object[] { mMemberToTMember, mCreation, mTypeToTType,
-														tAnonymous, tType, tMember, tPackage, pg, mMember, mType,
+												return new Object[] { mMemberToTMember, mCreation, tAnonymous,
+														mTypeToTType, tType, tMember, tPackage, pg, mMember, mType,
 														isApplicableMatch };
 											}
 										}
@@ -2750,15 +2749,15 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_11_1_performtransformation_blackBBBBBBBBBBFBB(
-			MDefinitionToTMember mMemberToTMember, MClassInstanceCreation mCreation,
-			AnonymousClassDeclarationToTClass mTypeToTType, TClass tAnonymous, TClass tType, TMember tMember,
-			TPackage tPackage, TypeGraph pg, MDefinition mMember, AnonymousClassDeclaration mType,
-			AnonymousClassInAnonymous _this, IsApplicableMatch isApplicableMatch) {
+			MDefinitionToTMember mMemberToTMember, MClassInstanceCreation mCreation, TClass tAnonymous,
+			AnonymousClassDeclarationToTClass mTypeToTType, TClass tType, TMember tMember, TPackage tPackage,
+			TypeGraph pg, MDefinition mMember, AnonymousClassDeclaration mType, AnonymousClassInAnonymous _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!tAnonymous.equals(tType)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember,
+					return new Object[] { mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember,
 							tPackage, pg, mMember, mType, csp, _this, isApplicableMatch };
 				}
 			}
@@ -2773,8 +2772,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		if (result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding != null) {
 			MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[0];
 			MClassInstanceCreation mCreation = (MClassInstanceCreation) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[1];
-			AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[2];
-			TClass tAnonymous = (TClass) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[3];
+			TClass tAnonymous = (TClass) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[2];
+			AnonymousClassDeclarationToTClass mTypeToTType = (AnonymousClassDeclarationToTClass) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[3];
 			TClass tType = (TClass) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[4];
 			TMember tMember = (TMember) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[5];
 			TPackage tPackage = (TPackage) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[6];
@@ -2783,12 +2782,12 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 			AnonymousClassDeclaration mType = (AnonymousClassDeclaration) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_binding[9];
 
 			Object[] result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_black = pattern_AnonymousClassInAnonymous_11_1_performtransformation_blackBBBBBBBBBBFBB(
-					mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg, mMember, mType,
+					mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg, mMember, mType,
 					_this, isApplicableMatch);
 			if (result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_AnonymousClassInAnonymous_11_1_performtransformation_black[10];
 
-				return new Object[] { mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage,
+				return new Object[] { mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage,
 						pg, mMember, mType, csp, _this, isApplicableMatch };
 			}
 		}
@@ -2826,37 +2825,38 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_11_3_bookkeepingforedges_blackBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation, EObject mTypeToTType,
-			EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg, EObject mMember,
+			PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation, EObject tAnonymous,
+			EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg, EObject mMember,
 			EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType) {
-		if (!mMemberToTMember.equals(mTypeToTType)) {
-			if (!mMemberToTMember.equals(tAnonymous)) {
+		if (!mMemberToTMember.equals(tAnonymous)) {
+			if (!mMemberToTMember.equals(mTypeToTType)) {
 				if (!mMemberToTMember.equals(tType)) {
 					if (!mMemberToTMember.equals(tMember)) {
 						if (!mMemberToTMember.equals(tPackage)) {
 							if (!mMemberToTMember.equals(pg)) {
 								if (!mMemberToTMember.equals(mType)) {
 									if (!mCreation.equals(mMemberToTMember)) {
-										if (!mCreation.equals(mTypeToTType)) {
-											if (!mCreation.equals(tAnonymous)) {
+										if (!mCreation.equals(tAnonymous)) {
+											if (!mCreation.equals(mTypeToTType)) {
 												if (!mCreation.equals(tType)) {
 													if (!mCreation.equals(tMember)) {
 														if (!mCreation.equals(tPackage)) {
 															if (!mCreation.equals(pg)) {
 																if (!mCreation.equals(mMember)) {
 																	if (!mCreation.equals(mType)) {
-																		if (!mTypeToTType.equals(tAnonymous)) {
-																			if (!mTypeToTType.equals(tType)) {
-																				if (!mTypeToTType.equals(tMember)) {
+																		if (!tAnonymous.equals(tType)) {
+																			if (!tAnonymous.equals(tMember)) {
+																				if (!tAnonymous.equals(tPackage)) {
 																					if (!mTypeToTType
-																							.equals(tPackage)) {
-																						if (!mTypeToTType.equals(pg)) {
-																							if (!tAnonymous
-																									.equals(tType)) {
-																								if (!tAnonymous.equals(
-																										tMember)) {
-																									if (!tAnonymous
-																											.equals(tPackage)) {
+																							.equals(tAnonymous)) {
+																						if (!mTypeToTType
+																								.equals(tType)) {
+																							if (!mTypeToTType
+																									.equals(tMember)) {
+																								if (!mTypeToTType
+																										.equals(tPackage)) {
+																									if (!mTypeToTType
+																											.equals(pg)) {
 																										if (!tMember
 																												.equals(tType)) {
 																											if (!tMember
@@ -2874,9 +2874,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																	if (!mMember
 																																			.equals(mMemberToTMember)) {
 																																		if (!mMember
-																																				.equals(mTypeToTType)) {
+																																				.equals(tAnonymous)) {
 																																			if (!mMember
-																																					.equals(tAnonymous)) {
+																																					.equals(mTypeToTType)) {
 																																				if (!mMember
 																																						.equals(tType)) {
 																																					if (!mMember
@@ -2892,9 +2892,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																										if (!mAnonymous
 																																												.equals(mCreation)) {
 																																											if (!mAnonymous
-																																													.equals(mTypeToTType)) {
+																																													.equals(tAnonymous)) {
 																																												if (!mAnonymous
-																																														.equals(tAnonymous)) {
+																																														.equals(mTypeToTType)) {
 																																													if (!mAnonymous
 																																															.equals(tType)) {
 																																														if (!mAnonymous
@@ -2912,9 +2912,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																																				if (!eAnonymousClassDeclarationToTClass
 																																																						.equals(mCreation)) {
 																																																					if (!eAnonymousClassDeclarationToTClass
-																																																							.equals(mTypeToTType)) {
+																																																							.equals(tAnonymous)) {
 																																																						if (!eAnonymousClassDeclarationToTClass
-																																																								.equals(tAnonymous)) {
+																																																								.equals(mTypeToTType)) {
 																																																							if (!eAnonymousClassDeclarationToTClass
 																																																									.equals(tType)) {
 																																																								if (!eAnonymousClassDeclarationToTClass
@@ -2930,9 +2930,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																																													if (!eAnonymousClassDeclarationToTClass
 																																																															.equals(mType)) {
 																																																														if (!mType
-																																																																.equals(mTypeToTType)) {
+																																																																.equals(tAnonymous)) {
 																																																															if (!mType
-																																																																	.equals(tAnonymous)) {
+																																																																	.equals(mTypeToTType)) {
 																																																																if (!mType
 																																																																		.equals(tType)) {
 																																																																	if (!mType
@@ -2945,8 +2945,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																																																																						ruleresult,
 																																																																						mMemberToTMember,
 																																																																						mCreation,
-																																																																						mTypeToTType,
 																																																																						tAnonymous,
+																																																																						mTypeToTType,
 																																																																						tType,
 																																																																						tMember,
 																																																																						tPackage,
@@ -3118,9 +3118,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final void pattern_AnonymousClassInAnonymous_11_5_registerobjects_expressionBBBBBBBBBBBBBB(
 			AnonymousClassInAnonymous _this, PerformRuleResult ruleresult, EObject mMemberToTMember, EObject mCreation,
-			EObject mTypeToTType, EObject tAnonymous, EObject tType, EObject tMember, EObject tPackage, EObject pg,
+			EObject tAnonymous, EObject mTypeToTType, EObject tType, EObject tMember, EObject tPackage, EObject pg,
 			EObject mMember, EObject mAnonymous, EObject eAnonymousClassDeclarationToTClass, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember,
+		_this.registerObjects_BWD(ruleresult, mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember,
 				tPackage, pg, mMember, mAnonymous, eAnonymousClassDeclarationToTClass, mType);
 
 	}
@@ -3212,7 +3212,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_AnonymousClassInAnonymous_12_2_corematch_blackFFBBBBBFFB(
+	public static final Iterable<Object[]> pattern_AnonymousClassInAnonymous_12_2_corematch_blackFBFBBBBFFB(
 			TClass tAnonymous, TClass tType, TMember tMember, TPackage tPackage, TypeGraph pg, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!tAnonymous.equals(tType)) {
@@ -3225,7 +3225,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 						BodyDeclaration tmpMMember = mMemberToTMember.getSource();
 						if (tmpMMember instanceof MDefinition) {
 							MDefinition mMember = (MDefinition) tmpMMember;
-							_result.add(new Object[] { mMemberToTMember, mTypeToTType, tAnonymous, tType, tMember,
+							_result.add(new Object[] { mMemberToTMember, tAnonymous, mTypeToTType, tType, tMember,
 									tPackage, pg, mMember, mType, match });
 						}
 
@@ -3238,7 +3238,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Iterable<Object[]> pattern_AnonymousClassInAnonymous_12_3_findcontext_blackBFBBBBBBBB(
-			MDefinitionToTMember mMemberToTMember, AnonymousClassDeclarationToTClass mTypeToTType, TClass tAnonymous,
+			MDefinitionToTMember mMemberToTMember, TClass tAnonymous, AnonymousClassDeclarationToTClass mTypeToTType,
 			TClass tType, TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember,
 			AnonymousClassDeclaration mType) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -3248,8 +3248,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 					if (mMember.equals(mMemberToTMember.getSource())) {
 						if (pg.getClasses().contains(tAnonymous)) {
 							if (pg.equals(tPackage.getModel())) {
-								if (tType.getDefines().contains(tMember)) {
-									if (pg.getAllTypes().contains(tAnonymous)) {
+								if (pg.getAllTypes().contains(tAnonymous)) {
+									if (tType.getDefines().contains(tMember)) {
 										if (tPackage.getClasses().contains(tAnonymous)) {
 											if (tPackage.equals(tType.getPackage())) {
 												if (tType.equals(mTypeToTType.getTarget())) {
@@ -3261,7 +3261,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 																	if (tmpMCreation instanceof MClassInstanceCreation) {
 																		MClassInstanceCreation mCreation = (MClassInstanceCreation) tmpMCreation;
 																		_result.add(new Object[] { mMemberToTMember,
-																				mCreation, mTypeToTType, tAnonymous,
+																				mCreation, tAnonymous, mTypeToTType,
 																				tType, tMember, tPackage, pg, mMember,
 																				mType });
 																	}
@@ -3284,9 +3284,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_12_3_findcontext_greenBBBBBBBBBBFFFFFFFFFFFFFFFFFFFFF(
-			MDefinitionToTMember mMemberToTMember, MClassInstanceCreation mCreation,
-			AnonymousClassDeclarationToTClass mTypeToTType, TClass tAnonymous, TClass tType, TMember tMember,
-			TPackage tPackage, TypeGraph pg, MDefinition mMember, AnonymousClassDeclaration mType) {
+			MDefinitionToTMember mMemberToTMember, MClassInstanceCreation mCreation, TClass tAnonymous,
+			AnonymousClassDeclarationToTClass mTypeToTType, TClass tType, TMember tMember, TPackage tPackage,
+			TypeGraph pg, MDefinition mMember, AnonymousClassDeclaration mType) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge tPackage__tAnonymous____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnonymous__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -3296,10 +3296,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		EMoflonEdge mMember__mCreation____mMethodInvocations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tAnonymous____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tType__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge tMember__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge pg__tAnonymous____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tAnonymous__pg____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tType__tMember____defines = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge tMember__tType____definedBy = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tAnonymous____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tType__tPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPackage__tType____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -3316,10 +3316,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		String mMember__mCreation____mMethodInvocations_name_prime = "mMethodInvocations";
 		String pg__tAnonymous____classes_name_prime = "classes";
 		String tPackage__pg____model_name_prime = "model";
-		String tType__tMember____defines_name_prime = "defines";
-		String tMember__tType____definedBy_name_prime = "definedBy";
 		String pg__tAnonymous____allTypes_name_prime = "allTypes";
 		String tAnonymous__pg____model_name_prime = "model";
+		String tType__tMember____defines_name_prime = "defines";
+		String tMember__tType____definedBy_name_prime = "definedBy";
 		String tPackage__tAnonymous____classes_name_prime = "classes";
 		String tType__tPackage____package_name_prime = "package";
 		String tPackage__tType____allTypes_name_prime = "allTypes";
@@ -3330,8 +3330,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		String tAnonymous__tType____outerType_name_prime = "outerType";
 		isApplicableMatch.getAllContextElements().add(mMemberToTMember);
 		isApplicableMatch.getAllContextElements().add(mCreation);
-		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(tAnonymous);
+		isApplicableMatch.getAllContextElements().add(mTypeToTType);
 		isApplicableMatch.getAllContextElements().add(tType);
 		isApplicableMatch.getAllContextElements().add(tMember);
 		isApplicableMatch.getAllContextElements().add(tPackage);
@@ -3362,18 +3362,18 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		tPackage__pg____model.setSrc(tPackage);
 		tPackage__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tPackage__pg____model);
-		tType__tMember____defines.setSrc(tType);
-		tType__tMember____defines.setTrg(tMember);
-		isApplicableMatch.getAllContextElements().add(tType__tMember____defines);
-		tMember__tType____definedBy.setSrc(tMember);
-		tMember__tType____definedBy.setTrg(tType);
-		isApplicableMatch.getAllContextElements().add(tMember__tType____definedBy);
 		pg__tAnonymous____allTypes.setSrc(pg);
 		pg__tAnonymous____allTypes.setTrg(tAnonymous);
 		isApplicableMatch.getAllContextElements().add(pg__tAnonymous____allTypes);
 		tAnonymous__pg____model.setSrc(tAnonymous);
 		tAnonymous__pg____model.setTrg(pg);
 		isApplicableMatch.getAllContextElements().add(tAnonymous__pg____model);
+		tType__tMember____defines.setSrc(tType);
+		tType__tMember____defines.setTrg(tMember);
+		isApplicableMatch.getAllContextElements().add(tType__tMember____defines);
+		tMember__tType____definedBy.setSrc(tMember);
+		tMember__tType____definedBy.setTrg(tType);
+		isApplicableMatch.getAllContextElements().add(tMember__tType____definedBy);
 		tPackage__tAnonymous____classes.setSrc(tPackage);
 		tPackage__tAnonymous____classes.setTrg(tAnonymous);
 		isApplicableMatch.getAllContextElements().add(tPackage__tAnonymous____classes);
@@ -3407,10 +3407,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		mMember__mCreation____mMethodInvocations.setName(mMember__mCreation____mMethodInvocations_name_prime);
 		pg__tAnonymous____classes.setName(pg__tAnonymous____classes_name_prime);
 		tPackage__pg____model.setName(tPackage__pg____model_name_prime);
-		tType__tMember____defines.setName(tType__tMember____defines_name_prime);
-		tMember__tType____definedBy.setName(tMember__tType____definedBy_name_prime);
 		pg__tAnonymous____allTypes.setName(pg__tAnonymous____allTypes_name_prime);
 		tAnonymous__pg____model.setName(tAnonymous__pg____model_name_prime);
+		tType__tMember____defines.setName(tType__tMember____defines_name_prime);
+		tMember__tType____definedBy.setName(tMember__tType____definedBy_name_prime);
 		tPackage__tAnonymous____classes.setName(tPackage__tAnonymous____classes_name_prime);
 		tType__tPackage____package.setName(tType__tPackage____package_name_prime);
 		tPackage__tType____allTypes.setName(tPackage__tType____allTypes_name_prime);
@@ -3419,27 +3419,27 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		mTypeToTType__mType____source.setName(mTypeToTType__mType____source_name_prime);
 		tType__tAnonymous____innerTypes.setName(tType__tAnonymous____innerTypes_name_prime);
 		tAnonymous__tType____outerType.setName(tAnonymous__tType____outerType_name_prime);
-		return new Object[] { mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember, tPackage, pg,
+		return new Object[] { mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember, tPackage, pg,
 				mMember, mType, isApplicableMatch, tPackage__tAnonymous____allTypes, tAnonymous__tPackage____package,
 				mType__mMember____bodyDeclarations, mMember__mType____anonymousClassDeclarationOwner,
 				mMemberToTMember__mMember____source, mMember__mCreation____mMethodInvocations,
-				pg__tAnonymous____classes, tPackage__pg____model, tType__tMember____defines,
-				tMember__tType____definedBy, pg__tAnonymous____allTypes, tAnonymous__pg____model,
-				tPackage__tAnonymous____classes, tType__tPackage____package, tPackage__tType____allTypes,
-				mTypeToTType__tType____target, mMemberToTMember__tMember____target, mTypeToTType__mType____source,
-				tType__tAnonymous____innerTypes, tAnonymous__tType____outerType };
+				pg__tAnonymous____classes, tPackage__pg____model, pg__tAnonymous____allTypes, tAnonymous__pg____model,
+				tType__tMember____defines, tMember__tType____definedBy, tPackage__tAnonymous____classes,
+				tType__tPackage____package, tPackage__tType____allTypes, mTypeToTType__tType____target,
+				mMemberToTMember__tMember____target, mTypeToTType__mType____source, tType__tAnonymous____innerTypes,
+				tAnonymous__tType____outerType };
 	}
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_12_4_solveCSP_bindingFBBBBBBBBBBBB(
 			AnonymousClassInAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MClassInstanceCreation mCreation, AnonymousClassDeclarationToTClass mTypeToTType, TClass tAnonymous,
+			MClassInstanceCreation mCreation, TClass tAnonymous, AnonymousClassDeclarationToTClass mTypeToTType,
 			TClass tType, TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember,
 			AnonymousClassDeclaration mType) {
 		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, mMemberToTMember, mCreation,
-				mTypeToTType, tAnonymous, tType, tMember, tPackage, pg, mMember, mType);
+				tAnonymous, mTypeToTType, tType, tMember, tPackage, pg, mMember, mType);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mCreation, mTypeToTType, tAnonymous,
+			return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mCreation, tAnonymous, mTypeToTType,
 					tType, tMember, tPackage, pg, mMember, mType };
 		}
 		return null;
@@ -3451,11 +3451,11 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBBB(
 			AnonymousClassInAnonymous _this, IsApplicableMatch isApplicableMatch, MDefinitionToTMember mMemberToTMember,
-			MClassInstanceCreation mCreation, AnonymousClassDeclarationToTClass mTypeToTType, TClass tAnonymous,
+			MClassInstanceCreation mCreation, TClass tAnonymous, AnonymousClassDeclarationToTClass mTypeToTType,
 			TClass tType, TMember tMember, TPackage tPackage, TypeGraph pg, MDefinition mMember,
 			AnonymousClassDeclaration mType) {
 		Object[] result_pattern_AnonymousClassInAnonymous_12_4_solveCSP_binding = pattern_AnonymousClassInAnonymous_12_4_solveCSP_bindingFBBBBBBBBBBBB(
-				_this, isApplicableMatch, mMemberToTMember, mCreation, mTypeToTType, tAnonymous, tType, tMember,
+				_this, isApplicableMatch, mMemberToTMember, mCreation, tAnonymous, mTypeToTType, tType, tMember,
 				tPackage, pg, mMember, mType);
 		if (result_pattern_AnonymousClassInAnonymous_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_AnonymousClassInAnonymous_12_4_solveCSP_binding[0];
@@ -3464,8 +3464,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 					csp);
 			if (result_pattern_AnonymousClassInAnonymous_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mCreation, mTypeToTType,
-						tAnonymous, tType, tMember, tPackage, pg, mMember, mType };
+				return new Object[] { csp, _this, isApplicableMatch, mMemberToTMember, mCreation, tAnonymous,
+						mTypeToTType, tType, tMember, tPackage, pg, mMember, mType };
 			}
 		}
 		return null;
@@ -3555,9 +3555,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_0BB(
 			TClass tAnonymous, TPackage tPackage) {
-		for (TPackage __DEC_tAnonymous_classes_988302 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tAnonymous_classes_404882 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tAnonymous_classes_988302)) {
+			if (!tPackage.equals(__DEC_tAnonymous_classes_404882)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -3566,9 +3566,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tAnonymous, TypeGraph pg) {
-		for (TypeGraph __DEC_tAnonymous_classes_680461 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tAnonymous_classes_920979 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tAnonymous_classes_680461)) {
+			if (!pg.equals(__DEC_tAnonymous_classes_920979)) {
 				return new Object[] { tAnonymous, pg };
 			}
 		}
@@ -3578,10 +3578,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_2BB(
 			TClass tAnonymous, TClass tType) {
 		if (!tAnonymous.equals(tType)) {
-			TAbstractType __DEC_tAnonymous_innerTypes_949783 = tAnonymous.getOuterType();
-			if (__DEC_tAnonymous_innerTypes_949783 != null) {
-				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_949783)) {
-					if (!tType.equals(__DEC_tAnonymous_innerTypes_949783)) {
+			TAbstractType __DEC_tAnonymous_innerTypes_479580 = tAnonymous.getOuterType();
+			if (__DEC_tAnonymous_innerTypes_479580 != null) {
+				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_479580)) {
+					if (!tType.equals(__DEC_tAnonymous_innerTypes_479580)) {
 						return new Object[] { tAnonymous, tType };
 					}
 				}
@@ -3593,9 +3593,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_20_2_testcorematchandDECs_black_nac_3BB(
 			TClass tAnonymous, TPackage tPackage) {
-		TPackage __DEC_tAnonymous_allTypes_275114 = tAnonymous.getPackage();
-		if (__DEC_tAnonymous_allTypes_275114 != null) {
-			if (!tPackage.equals(__DEC_tAnonymous_allTypes_275114)) {
+		TPackage __DEC_tAnonymous_allTypes_518685 = tAnonymous.getPackage();
+		if (__DEC_tAnonymous_allTypes_518685 != null) {
+			if (!tPackage.equals(__DEC_tAnonymous_allTypes_518685)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -3758,7 +3758,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			MAnonymousClass mAnonymous) {
-		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_28554 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_276797 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnonymous, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnonymous };
 		}
@@ -4071,7 +4071,7 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_27_1_matchtggpattern_black_nac_0B(
 			MAnonymousClass mAnonymous) {
-		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_258344 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (EnumConstantDeclaration __DEC_mAnonymous_anonymousClassDeclaration_15642 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mAnonymous, EnumConstantDeclaration.class, "anonymousClassDeclaration")) {
 			return new Object[] { mAnonymous };
 		}
@@ -4107,9 +4107,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_0BB(TClass tAnonymous,
 			TPackage tPackage) {
-		for (TPackage __DEC_tAnonymous_classes_144731 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tAnonymous_classes_378247 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TPackage.class, "classes")) {
-			if (!tPackage.equals(__DEC_tAnonymous_classes_144731)) {
+			if (!tPackage.equals(__DEC_tAnonymous_classes_378247)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -4118,9 +4118,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_1BB(TClass tAnonymous,
 			TypeGraph pg) {
-		for (TypeGraph __DEC_tAnonymous_classes_46853 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tAnonymous_classes_821953 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tAnonymous, TypeGraph.class, "classes")) {
-			if (!pg.equals(__DEC_tAnonymous_classes_46853)) {
+			if (!pg.equals(__DEC_tAnonymous_classes_821953)) {
 				return new Object[] { tAnonymous, pg };
 			}
 		}
@@ -4130,10 +4130,10 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_2BB(TClass tAnonymous,
 			TClass tType) {
 		if (!tAnonymous.equals(tType)) {
-			TAbstractType __DEC_tAnonymous_innerTypes_929701 = tAnonymous.getOuterType();
-			if (__DEC_tAnonymous_innerTypes_929701 != null) {
-				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_929701)) {
-					if (!tType.equals(__DEC_tAnonymous_innerTypes_929701)) {
+			TAbstractType __DEC_tAnonymous_innerTypes_241231 = tAnonymous.getOuterType();
+			if (__DEC_tAnonymous_innerTypes_241231 != null) {
+				if (!tAnonymous.equals(__DEC_tAnonymous_innerTypes_241231)) {
+					if (!tType.equals(__DEC_tAnonymous_innerTypes_241231)) {
 						return new Object[] { tAnonymous, tType };
 					}
 				}
@@ -4145,9 +4145,9 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_28_1_matchtggpattern_black_nac_3BB(TClass tAnonymous,
 			TPackage tPackage) {
-		TPackage __DEC_tAnonymous_allTypes_874069 = tAnonymous.getPackage();
-		if (__DEC_tAnonymous_allTypes_874069 != null) {
-			if (!tPackage.equals(__DEC_tAnonymous_allTypes_874069)) {
+		TPackage __DEC_tAnonymous_allTypes_573402 = tAnonymous.getPackage();
+		if (__DEC_tAnonymous_allTypes_573402 != null) {
+			if (!tPackage.equals(__DEC_tAnonymous_allTypes_573402)) {
 				return new Object[] { tAnonymous, tPackage };
 			}
 		}
@@ -4161,8 +4161,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 			if (tPackage.getAllTypes().contains(tAnonymous)) {
 				if (pg.getClasses().contains(tAnonymous)) {
 					if (pg.equals(tPackage.getModel())) {
-						if (tType.getDefines().contains(tMember)) {
-							if (pg.getAllTypes().contains(tAnonymous)) {
+						if (pg.getAllTypes().contains(tAnonymous)) {
+							if (tType.getDefines().contains(tMember)) {
 								if (tPackage.getClasses().contains(tAnonymous)) {
 									if (tPackage.equals(tType.getPackage())) {
 										if (tType.getInnerTypes().contains(tAnonymous)) {
@@ -4224,46 +4224,6 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 	}
 
 	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
-		if (ruleResult.getSourceObjects().contains(mMember)) {
-			return new Object[] { ruleResult, mMember };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MClassInstanceCreation mCreation) {
-		if (ruleResult.getSourceObjects().contains(mCreation)) {
-			return new Object[] { ruleResult, mCreation };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration mType) {
-		if (ruleResult.getSourceObjects().contains(mType)) {
-			return new Object[] { ruleResult, mType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclarationToTClass mTypeToTType) {
-		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
-			return new Object[] { ruleResult, mTypeToTType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, TClass tType) {
-		if (ruleResult.getTargetObjects().contains(tType)) {
-			return new Object[] { ruleResult, tType };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_6BB(
 			ModelgeneratorRuleResult ruleResult, TMember tMember) {
 		if (ruleResult.getTargetObjects().contains(tMember)) {
 			return new Object[] { ruleResult, tMember };
@@ -4271,7 +4231,15 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		return null;
 	}
 
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_7BB(
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, TClass tType) {
+		if (ruleResult.getTargetObjects().contains(tType)) {
+			return new Object[] { ruleResult, tType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, TPackage tPackage) {
 		if (ruleResult.getTargetObjects().contains(tPackage)) {
 			return new Object[] { ruleResult, tPackage };
@@ -4279,10 +4247,42 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		return null;
 	}
 
-	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_8BB(
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
 		if (ruleResult.getTargetObjects().contains(pg)) {
 			return new Object[] { ruleResult, pg };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclarationToTClass mTypeToTType) {
+		if (ruleResult.getCorrObjects().contains(mTypeToTType)) {
+			return new Object[] { ruleResult, mTypeToTType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_6BB(
+			ModelgeneratorRuleResult ruleResult, AnonymousClassDeclaration mType) {
+		if (ruleResult.getSourceObjects().contains(mType)) {
+			return new Object[] { ruleResult, mType };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_7BB(
+			ModelgeneratorRuleResult ruleResult, MDefinition mMember) {
+		if (ruleResult.getSourceObjects().contains(mMember)) {
+			return new Object[] { ruleResult, mMember };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_8BB(
+			ModelgeneratorRuleResult ruleResult, MClassInstanceCreation mCreation) {
+		if (ruleResult.getSourceObjects().contains(mCreation)) {
+			return new Object[] { ruleResult, mCreation };
 		}
 		return null;
 	}
@@ -4294,16 +4294,16 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 			for (EObject tmpMMemberToTMember : mMemberToTMemberList.getEntryObjects()) {
 				if (tmpMMemberToTMember instanceof MDefinitionToTMember) {
 					MDefinitionToTMember mMemberToTMember = (MDefinitionToTMember) tmpMMemberToTMember;
-					BodyDeclaration tmpMMember = mMemberToTMember.getSource();
-					if (tmpMMember instanceof MDefinition) {
-						MDefinition mMember = (MDefinition) tmpMMember;
-						TMember tMember = mMemberToTMember.getTarget();
-						if (tMember != null) {
-							AnonymousClassDeclaration mType = mMember.getAnonymousClassDeclarationOwner();
-							if (mType != null) {
-								TAbstractType tmpTType = tMember.getDefinedBy();
-								if (tmpTType instanceof TClass) {
-									TClass tType = (TClass) tmpTType;
+					TMember tMember = mMemberToTMember.getTarget();
+					if (tMember != null) {
+						BodyDeclaration tmpMMember = mMemberToTMember.getSource();
+						if (tmpMMember instanceof MDefinition) {
+							MDefinition mMember = (MDefinition) tmpMMember;
+							TAbstractType tmpTType = tMember.getDefinedBy();
+							if (tmpTType instanceof TClass) {
+								TClass tType = (TClass) tmpTType;
+								AnonymousClassDeclaration mType = mMember.getAnonymousClassDeclarationOwner();
+								if (mType != null) {
 									TPackage tPackage = tType.getPackage();
 									if (tPackage != null) {
 										TypeGraph pg = tPackage.getModel();
@@ -4311,46 +4311,46 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 											if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_0BB(
 													ruleResult, mMemberToTMember) == null) {
 												if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_1BB(
-														ruleResult, mMember) == null) {
-													if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_6BB(
-															ruleResult, tMember) == null) {
-														if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
-																ruleResult, mType) == null) {
-															if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_5BB(
-																	ruleResult, tType) == null) {
-																if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_7BB(
+														ruleResult, tMember) == null) {
+													if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_7BB(
+															ruleResult, mMember) == null) {
+														if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+																ruleResult, tType) == null) {
+															if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_6BB(
+																	ruleResult, mType) == null) {
+																if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_3BB(
 																		ruleResult, tPackage) == null) {
-																	if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_8BB(
+																	if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
 																			ruleResult, pg) == null) {
 																		for (AbstractMethodInvocation tmpMCreation : mMember
 																				.getMMethodInvocations()) {
 																			if (tmpMCreation instanceof MClassInstanceCreation) {
 																				MClassInstanceCreation mCreation = (MClassInstanceCreation) tmpMCreation;
-																				if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_2BB(
+																				if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_8BB(
 																						ruleResult,
 																						mCreation) == null) {
 																					for (AnonymousClassDeclarationToTClass mTypeToTType : org.moflon.core.utilities.eMoflonEMFUtil
 																							.getOppositeReferenceTyped(
-																									mType,
+																									tType,
 																									AnonymousClassDeclarationToTClass.class,
-																									"source")) {
-																						if (tType.equals(mTypeToTType
-																								.getTarget())) {
-																							if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_4BB(
+																									"target")) {
+																						if (mType.equals(mTypeToTType
+																								.getSource())) {
+																							if (pattern_AnonymousClassInAnonymous_29_2_isapplicablecore_black_nac_5BB(
 																									ruleResult,
 																									mTypeToTType) == null) {
 																								_result.add(
 																										new Object[] {
 																												mMemberToTMemberList,
 																												mMemberToTMember,
-																												mMember,
-																												mCreation,
-																												mType,
-																												mTypeToTType,
-																												tType,
 																												tMember,
+																												tType,
 																												tPackage,
 																												pg,
+																												mTypeToTType,
+																												mType,
+																												mMember,
+																												mCreation,
 																												ruleEntryContainer,
 																												ruleResult });
 																							}
@@ -4454,8 +4454,8 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		MAnonymousClass mAnonymous = ModiscoFactory.eINSTANCE.createMAnonymousClass();
 		AnonymousClassDeclarationToTClass eAnonymousClassDeclarationToTClass = PmFactory.eINSTANCE
 				.createAnonymousClassDeclarationToTClass();
-		Object _localVariable_0 = csp.getValue("tAnonymous", "tName");
-		Object _localVariable_1 = csp.getValue("tAnonymous", "tLib");
+		Object _localVariable_0 = csp.getValue("tAnonymous", "tLib");
+		Object _localVariable_1 = csp.getValue("tAnonymous", "tName");
 		Object _localVariable_2 = csp.getValue("mAnonymous", "index");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_3 = ruleResult.getIncrementedPerformCount();
@@ -4470,13 +4470,13 @@ public class AnonymousClassInAnonymousImpl extends AbstractRuleImpl implements A
 		eAnonymousClassDeclarationToTClass.setTarget(tAnonymous);
 		eAnonymousClassDeclarationToTClass.setSource(mAnonymous);
 		ruleResult.getCorrObjects().add(eAnonymousClassDeclarationToTClass);
-		String tAnonymous_tName_prime = (String) _localVariable_0;
-		boolean tAnonymous_tLib_prime = (boolean) _localVariable_1;
+		boolean tAnonymous_tLib_prime = (boolean) _localVariable_0;
+		String tAnonymous_tName_prime = (String) _localVariable_1;
 		int mAnonymous_index_prime = (int) _localVariable_2;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_3);
-		tAnonymous.setTName(tAnonymous_tName_prime);
 		tAnonymous.setTLib(Boolean.valueOf(tAnonymous_tLib_prime));
+		tAnonymous.setTName(tAnonymous_tName_prime);
 		mAnonymous.setIndex(Integer.valueOf(mAnonymous_index_prime));
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
 		return new Object[] { mCreation, tAnonymous, tType, tPackage, pg, mAnonymous,

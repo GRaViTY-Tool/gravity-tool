@@ -726,7 +726,7 @@ public class InnerDeclaration2InnerClassifier_InAnnotationTypeImpl extends Abstr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_102(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_112(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnnotationTypeImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnnotationType_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -789,7 +789,7 @@ public class InnerDeclaration2InnerClassifier_InAnnotationTypeImpl extends Abstr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_109(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_121(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = InnerDeclaration2InnerClassifier_InAnnotationTypeImpl
 				.pattern_InnerDeclaration2InnerClassifier_InAnnotationType_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -1179,98 +1179,97 @@ public class InnerDeclaration2InnerClassifier_InAnnotationTypeImpl extends Abstr
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD__MATCH_ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
-						(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
-						(ASTNode2Element) arguments.get(6));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_INTERFACE:
-				return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(Interface) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_INTERFACE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(Interface) arguments.get(2));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_INTERFACE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
-						(Interface) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
-						(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
-						(ASTNode2Element) arguments.get(6));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6));
-				return null;
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_102__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_102((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_109__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_109((EMoflonEdge) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((Classifier) arguments.get(0),
-						(AbstractTypeDeclaration) arguments.get(1), (Interface) arguments.get(2),
-						(AnnotationTypeDeclaration) arguments.get(3), (Match) arguments.get(4),
-						(Match) arguments.get(5));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_DEC_FWD__ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
-				return checkDEC_FWD((AbstractTypeDeclaration) arguments.get(0),
-						(AnnotationTypeDeclaration) arguments.get(1));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_DEC_BWD__CLASSIFIER_INTERFACE:
-				return checkDEC_BWD((Classifier) arguments.get(0), (Interface) arguments.get(1));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
-						(ASTNode2Element) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
-						(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
-						(ASTNode2Element) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
-			case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD__MATCH_ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+					(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(ASTNode2Element) arguments.get(6));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD__MATCH_CLASSIFIER_INTERFACE:
+			return isAppropriate_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(Interface) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_CLASSIFIER_INTERFACE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(Interface) arguments.get(2));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_CLASSIFIER_INTERFACE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Classifier) arguments.get(1),
+					(Interface) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+					(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(ASTNode2Element) arguments.get(6));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6));
+			return null;
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_112__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_112((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_121__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_121((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_SOLVE_CSP_CC__CLASSIFIER_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Classifier) arguments.get(0), (AbstractTypeDeclaration) arguments.get(1),
+					(Interface) arguments.get(2), (AnnotationTypeDeclaration) arguments.get(3),
+					(Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_DEC_FWD__ABSTRACTTYPEDECLARATION_ANNOTATIONTYPEDECLARATION:
+			return checkDEC_FWD((AbstractTypeDeclaration) arguments.get(0),
+					(AnnotationTypeDeclaration) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___CHECK_DEC_BWD__CLASSIFIER_INTERFACE:
+			return checkDEC_BWD((Classifier) arguments.get(0), (Interface) arguments.get(1));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSIFIER_ASTNODE2ELEMENT_ABSTRACTTYPEDECLARATION_INTERFACE_ANNOTATIONTYPEDECLARATION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Classifier) arguments.get(1),
+					(ASTNode2Element) arguments.get(2), (AbstractTypeDeclaration) arguments.get(3),
+					(Interface) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5),
+					(ASTNode2Element) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.INNER_DECLARATION2_INNER_CLASSIFIER_IN_ANNOTATION_TYPE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -205,8 +205,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		//nothing EMoflonEdge typeGraph__tPrimitiveClass____classes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge primitives__tPrimitiveClass____contains = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tPrimitiveClass__primitives____module = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge typeToTAbstractType__ePrimitiveType____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge typeToTAbstractType__ePrimitiveType____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
@@ -519,8 +519,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		//nothing EMoflonEdge typeGraph__tPrimitiveClass____classes = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge primitives__tPrimitiveClass____contains = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge tPrimitiveClass__primitives____module = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge typeToTAbstractType__ePrimitiveType____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge typeToTAbstractType__ePrimitiveType____source = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
@@ -572,9 +572,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 				//nothing EMoflonEdge typeGraph__tPrimitiveClass____allTypes = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge tPrimitiveClass__typeGraph____model = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge typeGraph__tPrimitiveClass____classes = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge primitives__tPrimitiveClass____contains = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge tPrimitiveClass__primitives____module = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge eModelToTypeGraph__eModel____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge eModelToTypeGraph__eModel____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge primitives__tPrimitiveClass____contains = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge tPrimitiveClass__primitives____module = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge eModelToTypeGraph__typeGraph____target = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge typeGraph__primitives____modules = (EMoflonEdge) result3_green[13];
 
@@ -725,7 +725,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_9(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_37(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsCharImpl
 				.pattern_PrimitiveTypeIsChar_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -783,7 +783,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_38(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeIsCharImpl
 				.pattern_PrimitiveTypeIsChar_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1178,93 +1178,92 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
-				return isAppropriate_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-						(Model) arguments.get(2));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-						(Model) arguments.get(2));
-				return null;
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
-						(Model) arguments.get(2));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPECHAR_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(PrimitiveTypeChar) arguments.get(1), (ModelToTypeGraph) arguments.get(2),
-						(TModule) arguments.get(3), (TypeGraph) arguments.get(4), (Model) arguments.get(5));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-				return null;
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-				return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-				return null;
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_TCLASS_MODEL:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (TypeGraph) arguments.get(3),
-						(TClass) arguments.get(4), (Model) arguments.get(5));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-				return null;
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD_EMOFLON_EDGE_9__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_9((EMoflonEdge) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD_EMOFLON_EDGE_10__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPECHAR_TMODULE_TYPEGRAPH_TCLASS_MODEL_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((PrimitiveTypeChar) arguments.get(0), (TModule) arguments.get(1),
-						(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Model) arguments.get(4),
-						(Match) arguments.get(5), (Match) arguments.get(6));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_FWD__PRIMITIVETYPECHAR_MODEL:
-				return checkDEC_FWD((PrimitiveTypeChar) arguments.get(0), (Model) arguments.get(1));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_BWD__TMODULE_TYPEGRAPH_TCLASS:
-				return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1),
-						(TClass) arguments.get(2));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(ModelToTypeGraph) arguments.get(1), (TModule) arguments.get(2), (TypeGraph) arguments.get(3),
-						(Model) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
-			case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
+			return isAppropriate_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+					(Model) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+					(Model) arguments.get(2));
+			return null;
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PRIMITIVETYPECHAR_MODEL:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+					(Model) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PRIMITIVETYPECHAR_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (PrimitiveTypeChar) arguments.get(1),
+					(ModelToTypeGraph) arguments.get(2), (TModule) arguments.get(3), (TypeGraph) arguments.get(4),
+					(Model) arguments.get(5));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+			return null;
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+			return isAppropriate_BWD((Match) arguments.get(0), (TModule) arguments.get(1), (TypeGraph) arguments.get(2),
+					(TClass) arguments.get(3));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+					(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+			return null;
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TMODULE_TYPEGRAPH_TCLASS:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TModule) arguments.get(1),
+					(TypeGraph) arguments.get(2), (TClass) arguments.get(3));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_TCLASS_MODEL:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
+					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (TClass) arguments.get(4),
+					(Model) arguments.get(5));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+			return null;
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_BWD_EMOFLON_EDGE_37__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_37((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPROPRIATE_FWD_EMOFLON_EDGE_38__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_38((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_SOLVE_CSP_CC__PRIMITIVETYPECHAR_TMODULE_TYPEGRAPH_TCLASS_MODEL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((PrimitiveTypeChar) arguments.get(0), (TModule) arguments.get(1),
+					(TypeGraph) arguments.get(2), (TClass) arguments.get(3), (Model) arguments.get(4),
+					(Match) arguments.get(5), (Match) arguments.get(6));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_FWD__PRIMITIVETYPECHAR_MODEL:
+			return checkDEC_FWD((PrimitiveTypeChar) arguments.get(0), (Model) arguments.get(1));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___CHECK_DEC_BWD__TMODULE_TYPEGRAPH_TCLASS:
+			return checkDEC_BWD((TModule) arguments.get(0), (TypeGraph) arguments.get(1), (TClass) arguments.get(2));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL__RULEENTRYCONTAINER_MODELTOTYPEGRAPH:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ModelToTypeGraph) arguments.get(1));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELTOTYPEGRAPH_TMODULE_TYPEGRAPH_MODEL_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ModelToTypeGraph) arguments.get(1),
+					(TModule) arguments.get(2), (TypeGraph) arguments.get(3), (Model) arguments.get(4),
+					(ModelgeneratorRuleResult) arguments.get(5));
+		case RulesPackage.PRIMITIVE_TYPE_IS_CHAR___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1522,8 +1521,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		EMoflonEdge typeGraph__tPrimitiveClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge primitives__tPrimitiveClass____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPrimitiveClass__primitives____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeToTAbstractType__ePrimitiveType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PrimitiveTypeIsChar";
 		String eModel__ePrimitiveType____orphanTypes_name_prime = "orphanTypes";
 		String typeGraph__tPrimitiveClass____allTypes_name_prime = "allTypes";
@@ -1531,8 +1530,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		String typeGraph__tPrimitiveClass____classes_name_prime = "classes";
 		String primitives__tPrimitiveClass____contains_name_prime = "contains";
 		String tPrimitiveClass__primitives____module_name_prime = "module";
-		String typeToTAbstractType__tPrimitiveClass____target_name_prime = "target";
 		String typeToTAbstractType__ePrimitiveType____source_name_prime = "source";
+		String typeToTAbstractType__tPrimitiveClass____target_name_prime = "target";
 		eModel__ePrimitiveType____orphanTypes.setSrc(eModel);
 		eModel__ePrimitiveType____orphanTypes.setTrg(ePrimitiveType);
 		ruleresult.getTranslatedEdges().add(eModel__ePrimitiveType____orphanTypes);
@@ -1551,12 +1550,12 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		tPrimitiveClass__primitives____module.setSrc(tPrimitiveClass);
 		tPrimitiveClass__primitives____module.setTrg(primitives);
 		ruleresult.getCreatedEdges().add(tPrimitiveClass__primitives____module);
-		typeToTAbstractType__tPrimitiveClass____target.setSrc(typeToTAbstractType);
-		typeToTAbstractType__tPrimitiveClass____target.setTrg(tPrimitiveClass);
-		ruleresult.getCreatedEdges().add(typeToTAbstractType__tPrimitiveClass____target);
 		typeToTAbstractType__ePrimitiveType____source.setSrc(typeToTAbstractType);
 		typeToTAbstractType__ePrimitiveType____source.setTrg(ePrimitiveType);
 		ruleresult.getCreatedEdges().add(typeToTAbstractType__ePrimitiveType____source);
+		typeToTAbstractType__tPrimitiveClass____target.setSrc(typeToTAbstractType);
+		typeToTAbstractType__tPrimitiveClass____target.setTrg(tPrimitiveClass);
+		ruleresult.getCreatedEdges().add(typeToTAbstractType__tPrimitiveClass____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		eModel__ePrimitiveType____orphanTypes.setName(eModel__ePrimitiveType____orphanTypes_name_prime);
 		typeGraph__tPrimitiveClass____allTypes.setName(typeGraph__tPrimitiveClass____allTypes_name_prime);
@@ -1564,14 +1563,14 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		typeGraph__tPrimitiveClass____classes.setName(typeGraph__tPrimitiveClass____classes_name_prime);
 		primitives__tPrimitiveClass____contains.setName(primitives__tPrimitiveClass____contains_name_prime);
 		tPrimitiveClass__primitives____module.setName(tPrimitiveClass__primitives____module_name_prime);
+		typeToTAbstractType__ePrimitiveType____source.setName(typeToTAbstractType__ePrimitiveType____source_name_prime);
 		typeToTAbstractType__tPrimitiveClass____target
 				.setName(typeToTAbstractType__tPrimitiveClass____target_name_prime);
-		typeToTAbstractType__ePrimitiveType____source.setName(typeToTAbstractType__ePrimitiveType____source_name_prime);
 		return new Object[] { ruleresult, ePrimitiveType, primitives, typeGraph, typeToTAbstractType, tPrimitiveClass,
 				eModel, eModel__ePrimitiveType____orphanTypes, typeGraph__tPrimitiveClass____allTypes,
 				tPrimitiveClass__typeGraph____model, typeGraph__tPrimitiveClass____classes,
 				primitives__tPrimitiveClass____contains, tPrimitiveClass__primitives____module,
-				typeToTAbstractType__tPrimitiveClass____target, typeToTAbstractType__ePrimitiveType____source };
+				typeToTAbstractType__ePrimitiveType____source, typeToTAbstractType__tPrimitiveClass____target };
 	}
 
 	public static final void pattern_PrimitiveTypeIsChar_1_5_registerobjects_expressionBBBBBBBBB(
@@ -1983,8 +1982,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		PrimitiveTypeChar ePrimitiveType = JavaFactory.eINSTANCE.createPrimitiveTypeChar();
 		TypeToTAbstractType typeToTAbstractType = PmFactory.eINSTANCE.createTypeToTAbstractType();
 		eModel.getOrphanTypes().add(ePrimitiveType);
-		typeToTAbstractType.setTarget(tPrimitiveClass);
 		typeToTAbstractType.setSource(ePrimitiveType);
+		typeToTAbstractType.setTarget(tPrimitiveClass);
 		return new Object[] { ePrimitiveType, typeToTAbstractType, tPrimitiveClass, eModel };
 	}
 
@@ -2070,8 +2069,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		EMoflonEdge typeGraph__tPrimitiveClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge primitives__tPrimitiveClass____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPrimitiveClass__primitives____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeToTAbstractType__ePrimitiveType____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge typeToTAbstractType__tPrimitiveClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "PrimitiveTypeIsChar";
 		String eModel__ePrimitiveType____orphanTypes_name_prime = "orphanTypes";
 		String typeGraph__tPrimitiveClass____allTypes_name_prime = "allTypes";
@@ -2079,8 +2078,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		String typeGraph__tPrimitiveClass____classes_name_prime = "classes";
 		String primitives__tPrimitiveClass____contains_name_prime = "contains";
 		String tPrimitiveClass__primitives____module_name_prime = "module";
-		String typeToTAbstractType__tPrimitiveClass____target_name_prime = "target";
 		String typeToTAbstractType__ePrimitiveType____source_name_prime = "source";
+		String typeToTAbstractType__tPrimitiveClass____target_name_prime = "target";
 		eModel__ePrimitiveType____orphanTypes.setSrc(eModel);
 		eModel__ePrimitiveType____orphanTypes.setTrg(ePrimitiveType);
 		ruleresult.getCreatedEdges().add(eModel__ePrimitiveType____orphanTypes);
@@ -2099,12 +2098,12 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		tPrimitiveClass__primitives____module.setSrc(tPrimitiveClass);
 		tPrimitiveClass__primitives____module.setTrg(primitives);
 		ruleresult.getTranslatedEdges().add(tPrimitiveClass__primitives____module);
-		typeToTAbstractType__tPrimitiveClass____target.setSrc(typeToTAbstractType);
-		typeToTAbstractType__tPrimitiveClass____target.setTrg(tPrimitiveClass);
-		ruleresult.getCreatedEdges().add(typeToTAbstractType__tPrimitiveClass____target);
 		typeToTAbstractType__ePrimitiveType____source.setSrc(typeToTAbstractType);
 		typeToTAbstractType__ePrimitiveType____source.setTrg(ePrimitiveType);
 		ruleresult.getCreatedEdges().add(typeToTAbstractType__ePrimitiveType____source);
+		typeToTAbstractType__tPrimitiveClass____target.setSrc(typeToTAbstractType);
+		typeToTAbstractType__tPrimitiveClass____target.setTrg(tPrimitiveClass);
+		ruleresult.getCreatedEdges().add(typeToTAbstractType__tPrimitiveClass____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		eModel__ePrimitiveType____orphanTypes.setName(eModel__ePrimitiveType____orphanTypes_name_prime);
 		typeGraph__tPrimitiveClass____allTypes.setName(typeGraph__tPrimitiveClass____allTypes_name_prime);
@@ -2112,14 +2111,14 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		typeGraph__tPrimitiveClass____classes.setName(typeGraph__tPrimitiveClass____classes_name_prime);
 		primitives__tPrimitiveClass____contains.setName(primitives__tPrimitiveClass____contains_name_prime);
 		tPrimitiveClass__primitives____module.setName(tPrimitiveClass__primitives____module_name_prime);
+		typeToTAbstractType__ePrimitiveType____source.setName(typeToTAbstractType__ePrimitiveType____source_name_prime);
 		typeToTAbstractType__tPrimitiveClass____target
 				.setName(typeToTAbstractType__tPrimitiveClass____target_name_prime);
-		typeToTAbstractType__ePrimitiveType____source.setName(typeToTAbstractType__ePrimitiveType____source_name_prime);
 		return new Object[] { ruleresult, ePrimitiveType, primitives, typeGraph, typeToTAbstractType, tPrimitiveClass,
 				eModel, eModel__ePrimitiveType____orphanTypes, typeGraph__tPrimitiveClass____allTypes,
 				tPrimitiveClass__typeGraph____model, typeGraph__tPrimitiveClass____classes,
 				primitives__tPrimitiveClass____contains, tPrimitiveClass__primitives____module,
-				typeToTAbstractType__tPrimitiveClass____target, typeToTAbstractType__ePrimitiveType____source };
+				typeToTAbstractType__ePrimitiveType____source, typeToTAbstractType__tPrimitiveClass____target };
 	}
 
 	public static final void pattern_PrimitiveTypeIsChar_11_5_registerobjects_expressionBBBBBBBBB(
@@ -2240,8 +2239,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (typeGraph.getAllTypes().contains(tPrimitiveClass)) {
 			if (typeGraph.getClasses().contains(tPrimitiveClass)) {
-				if (primitives.getContains().contains(tPrimitiveClass)) {
-					if (eModel.equals(eModelToTypeGraph.getSource())) {
+				if (eModel.equals(eModelToTypeGraph.getSource())) {
+					if (primitives.getContains().contains(tPrimitiveClass)) {
 						if (typeGraph.equals(eModelToTypeGraph.getTarget())) {
 							if (typeGraph.getModules().contains(primitives)) {
 								String primitives_location = primitives.getLocation();
@@ -2274,17 +2273,17 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		EMoflonEdge typeGraph__tPrimitiveClass____allTypes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPrimitiveClass__typeGraph____model = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__tPrimitiveClass____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge eModelToTypeGraph__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge primitives__tPrimitiveClass____contains = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge tPrimitiveClass__primitives____module = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge eModelToTypeGraph__eModel____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge eModelToTypeGraph__typeGraph____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge typeGraph__primitives____modules = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String typeGraph__tPrimitiveClass____allTypes_name_prime = "allTypes";
 		String tPrimitiveClass__typeGraph____model_name_prime = "model";
 		String typeGraph__tPrimitiveClass____classes_name_prime = "classes";
+		String eModelToTypeGraph__eModel____source_name_prime = "source";
 		String primitives__tPrimitiveClass____contains_name_prime = "contains";
 		String tPrimitiveClass__primitives____module_name_prime = "module";
-		String eModelToTypeGraph__eModel____source_name_prime = "source";
 		String eModelToTypeGraph__typeGraph____target_name_prime = "target";
 		String typeGraph__primitives____modules_name_prime = "modules";
 		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph);
@@ -2301,15 +2300,15 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		typeGraph__tPrimitiveClass____classes.setSrc(typeGraph);
 		typeGraph__tPrimitiveClass____classes.setTrg(tPrimitiveClass);
 		isApplicableMatch.getAllContextElements().add(typeGraph__tPrimitiveClass____classes);
+		eModelToTypeGraph__eModel____source.setSrc(eModelToTypeGraph);
+		eModelToTypeGraph__eModel____source.setTrg(eModel);
+		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph__eModel____source);
 		primitives__tPrimitiveClass____contains.setSrc(primitives);
 		primitives__tPrimitiveClass____contains.setTrg(tPrimitiveClass);
 		isApplicableMatch.getAllContextElements().add(primitives__tPrimitiveClass____contains);
 		tPrimitiveClass__primitives____module.setSrc(tPrimitiveClass);
 		tPrimitiveClass__primitives____module.setTrg(primitives);
 		isApplicableMatch.getAllContextElements().add(tPrimitiveClass__primitives____module);
-		eModelToTypeGraph__eModel____source.setSrc(eModelToTypeGraph);
-		eModelToTypeGraph__eModel____source.setTrg(eModel);
-		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph__eModel____source);
 		eModelToTypeGraph__typeGraph____target.setSrc(eModelToTypeGraph);
 		eModelToTypeGraph__typeGraph____target.setTrg(typeGraph);
 		isApplicableMatch.getAllContextElements().add(eModelToTypeGraph__typeGraph____target);
@@ -2319,15 +2318,15 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 		typeGraph__tPrimitiveClass____allTypes.setName(typeGraph__tPrimitiveClass____allTypes_name_prime);
 		tPrimitiveClass__typeGraph____model.setName(tPrimitiveClass__typeGraph____model_name_prime);
 		typeGraph__tPrimitiveClass____classes.setName(typeGraph__tPrimitiveClass____classes_name_prime);
+		eModelToTypeGraph__eModel____source.setName(eModelToTypeGraph__eModel____source_name_prime);
 		primitives__tPrimitiveClass____contains.setName(primitives__tPrimitiveClass____contains_name_prime);
 		tPrimitiveClass__primitives____module.setName(tPrimitiveClass__primitives____module_name_prime);
-		eModelToTypeGraph__eModel____source.setName(eModelToTypeGraph__eModel____source_name_prime);
 		eModelToTypeGraph__typeGraph____target.setName(eModelToTypeGraph__typeGraph____target_name_prime);
 		typeGraph__primitives____modules.setName(typeGraph__primitives____modules_name_prime);
 		return new Object[] { eModelToTypeGraph, primitives, typeGraph, tPrimitiveClass, eModel, isApplicableMatch,
 				typeGraph__tPrimitiveClass____allTypes, tPrimitiveClass__typeGraph____model,
-				typeGraph__tPrimitiveClass____classes, primitives__tPrimitiveClass____contains,
-				tPrimitiveClass__primitives____module, eModelToTypeGraph__eModel____source,
+				typeGraph__tPrimitiveClass____classes, eModelToTypeGraph__eModel____source,
+				primitives__tPrimitiveClass____contains, tPrimitiveClass__primitives____module,
 				eModelToTypeGraph__typeGraph____target, typeGraph__primitives____modules };
 	}
 
@@ -2451,7 +2450,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_0B(
 			TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_867578 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_468062 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2460,9 +2459,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_1BB(
 			TClass tPrimitiveClass, TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_885618 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_691259 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_885618)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_691259)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2471,9 +2470,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_2B(
 			TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_72765 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_72765 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_72765)) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_249680 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_249680 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_249680)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}
@@ -2483,8 +2482,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_20_2_testcorematchandDECs_black_nac_3B(
 			TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_772533 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_772533 != null) {
+		TPackage __DEC_tPrimitiveClass_allTypes_261853 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_261853 != null) {
 			return new Object[] { tPrimitiveClass };
 		}
 
@@ -2865,8 +2864,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	public static final Object[] pattern_PrimitiveTypeIsChar_24_6_createcorrespondence_greenBFBB(
 			PrimitiveTypeChar ePrimitiveType, TClass tPrimitiveClass, CCMatch ccMatch) {
 		TypeToTAbstractType typeToTAbstractType = PmFactory.eINSTANCE.createTypeToTAbstractType();
-		typeToTAbstractType.setTarget(tPrimitiveClass);
 		typeToTAbstractType.setSource(ePrimitiveType);
+		typeToTAbstractType.setTarget(tPrimitiveClass);
 		ccMatch.getCreateCorr().add(typeToTAbstractType);
 		return new Object[] { ePrimitiveType, typeToTAbstractType, tPrimitiveClass, ccMatch };
 	}
@@ -2911,7 +2910,7 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_0B(TClass tPrimitiveClass) {
-		for (TPackage __DEC_tPrimitiveClass_classes_693994 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TPackage __DEC_tPrimitiveClass_classes_767807 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TPackage.class, "classes")) {
 			return new Object[] { tPrimitiveClass };
 		}
@@ -2920,9 +2919,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_1BB(TClass tPrimitiveClass,
 			TypeGraph typeGraph) {
-		for (TypeGraph __DEC_tPrimitiveClass_classes_948690 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tPrimitiveClass_classes_940155 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tPrimitiveClass, TypeGraph.class, "classes")) {
-			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_948690)) {
+			if (!typeGraph.equals(__DEC_tPrimitiveClass_classes_940155)) {
 				return new Object[] { tPrimitiveClass, typeGraph };
 			}
 		}
@@ -2930,9 +2929,9 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_2B(TClass tPrimitiveClass) {
-		TAbstractType __DEC_tPrimitiveClass_innerTypes_939692 = tPrimitiveClass.getOuterType();
-		if (__DEC_tPrimitiveClass_innerTypes_939692 != null) {
-			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_939692)) {
+		TAbstractType __DEC_tPrimitiveClass_innerTypes_957278 = tPrimitiveClass.getOuterType();
+		if (__DEC_tPrimitiveClass_innerTypes_957278 != null) {
+			if (!tPrimitiveClass.equals(__DEC_tPrimitiveClass_innerTypes_957278)) {
 				return new Object[] { tPrimitiveClass };
 			}
 		}
@@ -2941,8 +2940,8 @@ public class PrimitiveTypeIsCharImpl extends AbstractRuleImpl implements Primiti
 	}
 
 	public static final Object[] pattern_PrimitiveTypeIsChar_28_1_matchtggpattern_black_nac_3B(TClass tPrimitiveClass) {
-		TPackage __DEC_tPrimitiveClass_allTypes_540044 = tPrimitiveClass.getPackage();
-		if (__DEC_tPrimitiveClass_allTypes_540044 != null) {
+		TPackage __DEC_tPrimitiveClass_allTypes_524870 = tPrimitiveClass.getPackage();
+		if (__DEC_tPrimitiveClass_allTypes_524870 != null) {
 			return new Object[] { tPrimitiveClass };
 		}
 

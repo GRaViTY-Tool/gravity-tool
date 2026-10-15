@@ -197,10 +197,10 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 	@Override
 	public MGravityModel discoverModel(final Collection<IPath> libs, final IProgressMonitor monitor)
 			throws DiscoveryException {
-		if (this.model != null && this.model.eResource() != null) {
-			this.model.eResource().unload();
-			this.model = null;
-		}
+//		if (this.model != null && this.model.eResource() != null) {
+//			this.model.eResource().unload();
+//			this.model = null;
+//		}
 		if (this.load && this.discoveredLibs.containsAll(libs)) {
 			try {
 				this.model = this.loadModel();
@@ -487,22 +487,19 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 			this.discoverer.setDeepAnalysis(true);
 			this.discoverer.setElementsToAnalyze(analyze);
 
+			final var javaResource = getResourceSet().createResource(uri);
+			this.discoverer.setTargetModel(javaResource);
 			this.discoverer.discoverElement(javaProject, monitor);
-			final var javaResource = this.discoverer.getTargetModel();
-			if (javaResource != null) {
-				javaResource.setURI(uri);
-				final var contents = javaResource.getContents();
+			final var contents = javaResource.getContents();
 
-				if (!contents.isEmpty()) {
-					final var eobject = contents.get(0);
+			if (!contents.isEmpty()) {
+				final var eobject = contents.get(0);
 
-					if (eobject instanceof Model) {
-						return (Model) eobject;
+				if (eobject instanceof Model) {
+					return (Model) eobject;
 
-					}
 				}
 			}
-
 		}
 		return null;
 	}
@@ -566,7 +563,10 @@ public class GravityModiscoProjectDiscoverer implements IGravityModiscoProjectDi
 		}
 	}
 
-	public void setLoad(final boolean load) {
+	@Override
+	public boolean setLoadMode(boolean load) {
+		boolean previous = this.load;
 		this.load = load;
+		return previous;
 	}
 }

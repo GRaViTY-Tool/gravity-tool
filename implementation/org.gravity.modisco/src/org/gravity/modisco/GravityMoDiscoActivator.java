@@ -45,7 +45,7 @@ public class GravityMoDiscoActivator extends Plugin {
 			}
 			return null;
 		});
-		discoverer.setLoad(load);
+		discoverer.setLoadMode(load);
 		return discoverer;
 	}
 }

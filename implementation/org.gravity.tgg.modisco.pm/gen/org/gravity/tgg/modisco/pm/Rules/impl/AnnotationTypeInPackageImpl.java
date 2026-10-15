@@ -194,12 +194,12 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeInPackageImpl
-				.pattern_AnnotationTypeInPackage_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
-						annotatable2Annotatable, mPackageToTPackage, tType, tPackage, mPackage, pg, type2Type, mType);
+				.pattern_AnnotationTypeInPackage_1_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, mPackageToTPackage,
+						annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[annotatable2Annotatable] = " + annotatable2Annotatable + ", " + "[mPackageToTPackage] = "
-					+ mPackageToTPackage + ", " + "[tType] = " + tType + ", " + "[tPackage] = " + tPackage + ", "
+					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[annotatable2Annotatable] = "
+					+ annotatable2Annotatable + ", " + "[tType] = " + tType + ", " + "[tPackage] = " + tPackage + ", "
 					+ "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[type2Type] = " + type2Type + ", "
 					+ "[mType] = " + mType + ".");
 		}
@@ -220,7 +220,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		// 
 		// 
 		AnnotationTypeInPackageImpl.pattern_AnnotationTypeInPackage_1_5_registerobjects_expressionBBBBBBBBBB(this,
-				ruleresult, annotatable2Annotatable, mPackageToTPackage, tType, tPackage, mPackage, pg, type2Type,
+				ruleresult, mPackageToTPackage, annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type,
 				mType);
 		return AnnotationTypeInPackageImpl.pattern_AnnotationTypeInPackage_1_6_expressionFB(ruleresult);
 	}
@@ -408,11 +408,11 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject annotatable2Annotatable,
-			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject mPackageToTPackage,
+			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType) {
-		ruleresult.registerObject("annotatable2Annotatable", annotatable2Annotatable);
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
+		ruleresult.registerObject("annotatable2Annotatable", annotatable2Annotatable);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tPackage", tPackage);
 		ruleresult.registerObject("mPackage", mPackage);
@@ -534,12 +534,12 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = AnnotationTypeInPackageImpl
-				.pattern_AnnotationTypeInPackage_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult,
-						annotatable2Annotatable, mPackageToTPackage, tType, tPackage, mPackage, pg, type2Type, mType);
+				.pattern_AnnotationTypeInPackage_11_3_bookkeepingforedges_blackBBBBBBBBB(ruleresult, mPackageToTPackage,
+						annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type, mType);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[annotatable2Annotatable] = " + annotatable2Annotatable + ", " + "[mPackageToTPackage] = "
-					+ mPackageToTPackage + ", " + "[tType] = " + tType + ", " + "[tPackage] = " + tPackage + ", "
+					+ ", " + "[mPackageToTPackage] = " + mPackageToTPackage + ", " + "[annotatable2Annotatable] = "
+					+ annotatable2Annotatable + ", " + "[tType] = " + tType + ", " + "[tPackage] = " + tPackage + ", "
 					+ "[mPackage] = " + mPackage + ", " + "[pg] = " + pg + ", " + "[type2Type] = " + type2Type + ", "
 					+ "[mType] = " + mType + ".");
 		}
@@ -560,7 +560,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		// 
 		// 
 		AnnotationTypeInPackageImpl.pattern_AnnotationTypeInPackage_11_5_registerobjects_expressionBBBBBBBBBB(this,
-				ruleresult, annotatable2Annotatable, mPackageToTPackage, tType, tPackage, mPackage, pg, type2Type,
+				ruleresult, mPackageToTPackage, annotatable2Annotatable, tType, tPackage, mPackage, pg, type2Type,
 				mType);
 		return AnnotationTypeInPackageImpl.pattern_AnnotationTypeInPackage_11_6_expressionFB(ruleresult);
 	}
@@ -750,11 +750,11 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject annotatable2Annotatable,
-			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject mPackageToTPackage,
+			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType) {
-		ruleresult.registerObject("annotatable2Annotatable", annotatable2Annotatable);
 		ruleresult.registerObject("mPackageToTPackage", mPackageToTPackage);
+		ruleresult.registerObject("annotatable2Annotatable", annotatable2Annotatable);
 		ruleresult.registerObject("tType", tType);
 		ruleresult.registerObject("tPackage", tPackage);
 		ruleresult.registerObject("mPackage", mPackage);
@@ -779,7 +779,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_69(EMoflonEdge _edge_allTypes) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_allTypes) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInPackageImpl
 				.pattern_AnnotationTypeInPackage_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -838,7 +838,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_72(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_16(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = AnnotationTypeInPackageImpl
 				.pattern_AnnotationTypeInPackage_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -906,13 +906,13 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
@@ -970,13 +970,13 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
-		var_mType_name.setValue(__helper.getValue("mType", "name"));
-		var_mType_name.setType("String");
-
 		Variable var_tType_tName = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tName.setValue(__helper.getValue("tType", "tName"));
 		var_tType_tName.setType("String");
+
+		Variable var_mType_name = CSPFactoryHelper.eINSTANCE.createVariable("mType", true, csp);
+		var_mType_name.setValue(__helper.getValue("mType", "name"));
+		var_mType_name.setType("String");
 
 		Variable var_tType_tLib = CSPFactoryHelper.eINSTANCE.createVariable("tType", true, csp);
 		var_tType_tLib.setValue(__helper.getValue("tType", "tLib"));
@@ -1204,9 +1204,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 				.pattern_AnnotationTypeInPackage_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList mPackageToTPackageList = (RuleEntryList) result2_black[0];
 			PackageToTPackage mPackageToTPackage = (PackageToTPackage) result2_black[1];
-			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[2];
-			TPackage tPackage = (TPackage) result2_black[3];
-			TypeGraph pg = (TypeGraph) result2_black[4];
+			TPackage tPackage = (TPackage) result2_black[2];
+			TypeGraph pg = (TypeGraph) result2_black[3];
+			org.eclipse.modisco.java.Package mPackage = (org.eclipse.modisco.java.Package) result2_black[4];
 
 			Object[] result3_bindingAndBlack = AnnotationTypeInPackageImpl
 					.pattern_AnnotationTypeInPackage_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
@@ -1315,102 +1315,97 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
-				return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.Package) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2));
-				return null;
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-						(org.eclipse.modisco.java.Package) arguments.get(1),
-						(AnnotationTypeDeclaration) arguments.get(2));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGETOTPACKAGE_TPACKAGE_PACKAGE_TYPEGRAPH_ANNOTATIONTYPEDECLARATION:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(PackageToTPackage) arguments.get(1), (TPackage) arguments.get(2),
-						(org.eclipse.modisco.java.Package) arguments.get(3), (TypeGraph) arguments.get(4),
-						(AnnotationTypeDeclaration) arguments.get(5));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8));
-				return null;
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD__MATCH_TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
-				return isAppropriate_BWD((Match) arguments.get(0), (TAnnotationType) arguments.get(1),
-						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TAnnotationType) arguments.get(1),
-						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3));
-				return null;
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAnnotationType) arguments.get(1),
-						(TPackage) arguments.get(2), (TypeGraph) arguments.get(3));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGETOTPACKAGE_TANNOTATIONTYPE_TPACKAGE_PACKAGE_TYPEGRAPH:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(PackageToTPackage) arguments.get(1), (TAnnotationType) arguments.get(2),
-						(TPackage) arguments.get(3), (org.eclipse.modisco.java.Package) arguments.get(4),
-						(TypeGraph) arguments.get(5));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
-						(EObject) arguments.get(8));
-				return null;
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_69__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_69((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_72__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_72((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_CC__TANNOTATIONTYPE_TPACKAGE_PACKAGE_TYPEGRAPH_ANNOTATIONTYPEDECLARATION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((TAnnotationType) arguments.get(0), (TPackage) arguments.get(1),
-						(org.eclipse.modisco.java.Package) arguments.get(2), (TypeGraph) arguments.get(3),
-						(AnnotationTypeDeclaration) arguments.get(4), (Match) arguments.get(5),
-						(Match) arguments.get(6));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_DEC_FWD__PACKAGE_ANNOTATIONTYPEDECLARATION:
-				return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
-						(AnnotationTypeDeclaration) arguments.get(1));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_DEC_BWD__TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
-				return checkDEC_BWD((TAnnotationType) arguments.get(0), (TPackage) arguments.get(1),
-						(TypeGraph) arguments.get(2));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___GENERATE_MODEL__RULEENTRYCONTAINER_PACKAGETOTPACKAGE:
-				return generateModel((RuleEntryContainer) arguments.get(0), (PackageToTPackage) arguments.get(1));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGETOTPACKAGE_TPACKAGE_PACKAGE_TYPEGRAPH_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(PackageToTPackage) arguments.get(1), (TPackage) arguments.get(2),
-						(org.eclipse.modisco.java.Package) arguments.get(3), (TypeGraph) arguments.get(4),
-						(ModelgeneratorRuleResult) arguments.get(5));
-			case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
+					(AnnotationTypeDeclaration) arguments.get(2));
+			return null;
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_ANNOTATIONTYPEDECLARATION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
+					(org.eclipse.modisco.java.Package) arguments.get(1), (AnnotationTypeDeclaration) arguments.get(2));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGETOTPACKAGE_TPACKAGE_PACKAGE_TYPEGRAPH_ANNOTATIONTYPEDECLARATION:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (PackageToTPackage) arguments.get(1),
+					(TPackage) arguments.get(2), (org.eclipse.modisco.java.Package) arguments.get(3),
+					(TypeGraph) arguments.get(4), (AnnotationTypeDeclaration) arguments.get(5));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8));
+			return null;
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD__MATCH_TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
+			return isAppropriate_BWD((Match) arguments.get(0), (TAnnotationType) arguments.get(1),
+					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TAnnotationType) arguments.get(1),
+					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3));
+			return null;
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TAnnotationType) arguments.get(1),
+					(TPackage) arguments.get(2), (TypeGraph) arguments.get(3));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGETOTPACKAGE_TANNOTATIONTYPE_TPACKAGE_PACKAGE_TYPEGRAPH:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (PackageToTPackage) arguments.get(1),
+					(TAnnotationType) arguments.get(2), (TPackage) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4), (TypeGraph) arguments.get(5));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7),
+					(EObject) arguments.get(8));
+			return null;
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_16__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_16__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_16((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_SOLVE_CSP_CC__TANNOTATIONTYPE_TPACKAGE_PACKAGE_TYPEGRAPH_ANNOTATIONTYPEDECLARATION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((TAnnotationType) arguments.get(0), (TPackage) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (TypeGraph) arguments.get(3),
+					(AnnotationTypeDeclaration) arguments.get(4), (Match) arguments.get(5), (Match) arguments.get(6));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_DEC_FWD__PACKAGE_ANNOTATIONTYPEDECLARATION:
+			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
+					(AnnotationTypeDeclaration) arguments.get(1));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___CHECK_DEC_BWD__TANNOTATIONTYPE_TPACKAGE_TYPEGRAPH:
+			return checkDEC_BWD((TAnnotationType) arguments.get(0), (TPackage) arguments.get(1),
+					(TypeGraph) arguments.get(2));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___GENERATE_MODEL__RULEENTRYCONTAINER_PACKAGETOTPACKAGE:
+			return generateModel((RuleEntryContainer) arguments.get(0), (PackageToTPackage) arguments.get(1));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGETOTPACKAGE_TPACKAGE_PACKAGE_TYPEGRAPH_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(PackageToTPackage) arguments.get(1), (TPackage) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(3), (TypeGraph) arguments.get(4),
+					(ModelgeneratorRuleResult) arguments.get(5));
+		case RulesPackage.ANNOTATION_TYPE_IN_PACKAGE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1620,20 +1615,20 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	}
 
 	public static final Object[] pattern_AnnotationTypeInPackage_1_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject mPackageToTPackage, EObject tType,
+			PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject annotatable2Annotatable, EObject tType,
 			EObject tPackage, EObject mPackage, EObject pg, EObject type2Type, EObject mType) {
-		if (!annotatable2Annotatable.equals(mPackageToTPackage)) {
-			if (!annotatable2Annotatable.equals(tType)) {
-				if (!annotatable2Annotatable.equals(tPackage)) {
-					if (!annotatable2Annotatable.equals(mPackage)) {
-						if (!annotatable2Annotatable.equals(pg)) {
-							if (!annotatable2Annotatable.equals(type2Type)) {
-								if (!annotatable2Annotatable.equals(mType)) {
-									if (!mPackageToTPackage.equals(tType)) {
-										if (!mPackageToTPackage.equals(tPackage)) {
-											if (!mPackageToTPackage.equals(pg)) {
-												if (!mPackageToTPackage.equals(type2Type)) {
-													if (!mPackageToTPackage.equals(mType)) {
+		if (!mPackageToTPackage.equals(tType)) {
+			if (!mPackageToTPackage.equals(tPackage)) {
+				if (!mPackageToTPackage.equals(pg)) {
+					if (!mPackageToTPackage.equals(type2Type)) {
+						if (!mPackageToTPackage.equals(mType)) {
+							if (!annotatable2Annotatable.equals(mPackageToTPackage)) {
+								if (!annotatable2Annotatable.equals(tType)) {
+									if (!annotatable2Annotatable.equals(tPackage)) {
+										if (!annotatable2Annotatable.equals(mPackage)) {
+											if (!annotatable2Annotatable.equals(pg)) {
+												if (!annotatable2Annotatable.equals(type2Type)) {
+													if (!annotatable2Annotatable.equals(mType)) {
 														if (!tType.equals(type2Type)) {
 															if (!tPackage.equals(tType)) {
 																if (!tPackage.equals(type2Type)) {
@@ -1658,8 +1653,8 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 																															.equals(type2Type)) {
 																														return new Object[] {
 																																ruleresult,
-																																annotatable2Annotatable,
 																																mPackageToTPackage,
+																																annotatable2Annotatable,
 																																tType,
 																																tPackage,
 																																mPackage,
@@ -1776,10 +1771,10 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	}
 
 	public static final void pattern_AnnotationTypeInPackage_1_5_registerobjects_expressionBBBBBBBBBB(
-			AnnotationTypeInPackage _this, PerformRuleResult ruleresult, EObject annotatable2Annotatable,
-			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+			AnnotationTypeInPackage _this, PerformRuleResult ruleresult, EObject mPackageToTPackage,
+			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType) {
-		_this.registerObjects_FWD(ruleresult, annotatable2Annotatable, mPackageToTPackage, tType, tPackage, mPackage,
+		_this.registerObjects_FWD(ruleresult, mPackageToTPackage, annotatable2Annotatable, tType, tPackage, mPackage,
 				pg, type2Type, mType);
 
 	}
@@ -2222,20 +2217,20 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	}
 
 	public static final Object[] pattern_AnnotationTypeInPackage_11_3_bookkeepingforedges_blackBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject annotatable2Annotatable, EObject mPackageToTPackage, EObject tType,
+			PerformRuleResult ruleresult, EObject mPackageToTPackage, EObject annotatable2Annotatable, EObject tType,
 			EObject tPackage, EObject mPackage, EObject pg, EObject type2Type, EObject mType) {
-		if (!annotatable2Annotatable.equals(mPackageToTPackage)) {
-			if (!annotatable2Annotatable.equals(tType)) {
-				if (!annotatable2Annotatable.equals(tPackage)) {
-					if (!annotatable2Annotatable.equals(mPackage)) {
-						if (!annotatable2Annotatable.equals(pg)) {
-							if (!annotatable2Annotatable.equals(type2Type)) {
-								if (!annotatable2Annotatable.equals(mType)) {
-									if (!mPackageToTPackage.equals(tType)) {
-										if (!mPackageToTPackage.equals(tPackage)) {
-											if (!mPackageToTPackage.equals(pg)) {
-												if (!mPackageToTPackage.equals(type2Type)) {
-													if (!mPackageToTPackage.equals(mType)) {
+		if (!mPackageToTPackage.equals(tType)) {
+			if (!mPackageToTPackage.equals(tPackage)) {
+				if (!mPackageToTPackage.equals(pg)) {
+					if (!mPackageToTPackage.equals(type2Type)) {
+						if (!mPackageToTPackage.equals(mType)) {
+							if (!annotatable2Annotatable.equals(mPackageToTPackage)) {
+								if (!annotatable2Annotatable.equals(tType)) {
+									if (!annotatable2Annotatable.equals(tPackage)) {
+										if (!annotatable2Annotatable.equals(mPackage)) {
+											if (!annotatable2Annotatable.equals(pg)) {
+												if (!annotatable2Annotatable.equals(type2Type)) {
+													if (!annotatable2Annotatable.equals(mType)) {
 														if (!tType.equals(type2Type)) {
 															if (!tPackage.equals(tType)) {
 																if (!tPackage.equals(type2Type)) {
@@ -2260,8 +2255,8 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 																															.equals(type2Type)) {
 																														return new Object[] {
 																																ruleresult,
-																																annotatable2Annotatable,
 																																mPackageToTPackage,
+																																annotatable2Annotatable,
 																																tType,
 																																tPackage,
 																																mPackage,
@@ -2378,10 +2373,10 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	}
 
 	public static final void pattern_AnnotationTypeInPackage_11_5_registerobjects_expressionBBBBBBBBBB(
-			AnnotationTypeInPackage _this, PerformRuleResult ruleresult, EObject annotatable2Annotatable,
-			EObject mPackageToTPackage, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
+			AnnotationTypeInPackage _this, PerformRuleResult ruleresult, EObject mPackageToTPackage,
+			EObject annotatable2Annotatable, EObject tType, EObject tPackage, EObject mPackage, EObject pg,
 			EObject type2Type, EObject mType) {
-		_this.registerObjects_BWD(ruleresult, annotatable2Annotatable, mPackageToTPackage, tType, tPackage, mPackage,
+		_this.registerObjects_BWD(ruleresult, mPackageToTPackage, annotatable2Annotatable, tType, tPackage, mPackage,
 				pg, type2Type, mType);
 
 	}
@@ -2679,9 +2674,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_0BB(
 			TAnnotationType tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_annotationTypes_862806 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_annotationTypes_790954 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tType_annotationTypes_862806)) {
+			if (!pg.equals(__DEC_tType_annotationTypes_790954)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -2690,9 +2685,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_1B(
 			TAnnotationType tType) {
-		TAbstractType __DEC_tType_innerTypes_994321 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_994321 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_994321)) {
+		TAbstractType __DEC_tType_innerTypes_204 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_204 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_204)) {
 				return new Object[] { tType };
 			}
 		}
@@ -2702,9 +2697,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_20_2_testcorematchandDECs_black_nac_2BB(
 			TAnnotationType tType, TPackage tPackage) {
-		TPackage __DEC_tType_allTypes_180995 = tType.getPackage();
-		if (__DEC_tType_allTypes_180995 != null) {
-			if (!tPackage.equals(__DEC_tType_allTypes_180995)) {
+		TPackage __DEC_tType_allTypes_829427 = tType.getPackage();
+		if (__DEC_tType_allTypes_829427 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_829427)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -2848,9 +2843,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_0B(
 			AnnotationTypeDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_609163 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_609163 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_609163)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_107024 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_107024 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_107024)) {
 				return new Object[] { mType };
 			}
 		}
@@ -2860,9 +2855,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_1B(
 			AnnotationTypeDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_404545 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_914709 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_404545 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_914709 != null) {
 			return new Object[] { mType };
 		}
 
@@ -2871,7 +2866,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_2B(
 			AnnotationTypeDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_586214 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_794515 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -2880,7 +2875,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_21_2_testcorematchandDECs_black_nac_3B(
 			AnnotationTypeDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_263939 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_860928 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3139,9 +3134,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_0B(
 			AnnotationTypeDeclaration mType) {
-		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_961149 = mType.getAbstractTypeDeclaration();
-		if (__DEC_mType_abstractTypeDeclaration_961149 != null) {
-			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_961149)) {
+		AbstractTypeDeclaration __DEC_mType_abstractTypeDeclaration_11397 = mType.getAbstractTypeDeclaration();
+		if (__DEC_mType_abstractTypeDeclaration_11397 != null) {
+			if (!mType.equals(__DEC_mType_abstractTypeDeclaration_11397)) {
 				return new Object[] { mType };
 			}
 		}
@@ -3151,9 +3146,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_1B(
 			AnnotationTypeDeclaration mType) {
-		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_420251 = mType
+		AnonymousClassDeclaration __DEC_mType_anonymousClassDeclarationOwner_604562 = mType
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_mType_anonymousClassDeclarationOwner_420251 != null) {
+		if (__DEC_mType_anonymousClassDeclarationOwner_604562 != null) {
 			return new Object[] { mType };
 		}
 
@@ -3162,7 +3157,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_2B(
 			AnnotationTypeDeclaration mType) {
-		for (Model __DEC_mType_orphanTypes_282095 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Model __DEC_mType_orphanTypes_856844 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, Model.class, "orphanTypes")) {
 			return new Object[] { mType };
 		}
@@ -3171,7 +3166,7 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_27_1_matchtggpattern_black_nac_3B(
 			AnnotationTypeDeclaration mType) {
-		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_759239 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_mType_mInnerTypes_917073 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mType, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { mType };
 		}
@@ -3206,9 +3201,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_0BB(
 			TAnnotationType tType, TypeGraph pg) {
-		for (TypeGraph __DEC_tType_annotationTypes_950114 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (TypeGraph __DEC_tType_annotationTypes_857775 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(tType, TypeGraph.class, "annotationTypes")) {
-			if (!pg.equals(__DEC_tType_annotationTypes_950114)) {
+			if (!pg.equals(__DEC_tType_annotationTypes_857775)) {
 				return new Object[] { tType, pg };
 			}
 		}
@@ -3217,9 +3212,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_1B(
 			TAnnotationType tType) {
-		TAbstractType __DEC_tType_innerTypes_572640 = tType.getOuterType();
-		if (__DEC_tType_innerTypes_572640 != null) {
-			if (!tType.equals(__DEC_tType_innerTypes_572640)) {
+		TAbstractType __DEC_tType_innerTypes_306736 = tType.getOuterType();
+		if (__DEC_tType_innerTypes_306736 != null) {
+			if (!tType.equals(__DEC_tType_innerTypes_306736)) {
 				return new Object[] { tType };
 			}
 		}
@@ -3229,9 +3224,9 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 
 	public static final Object[] pattern_AnnotationTypeInPackage_28_1_matchtggpattern_black_nac_2BB(
 			TAnnotationType tType, TPackage tPackage) {
-		TPackage __DEC_tType_allTypes_979936 = tType.getPackage();
-		if (__DEC_tType_allTypes_979936 != null) {
-			if (!tPackage.equals(__DEC_tType_allTypes_979936)) {
+		TPackage __DEC_tType_allTypes_338360 = tType.getPackage();
+		if (__DEC_tType_allTypes_338360 != null) {
+			if (!tPackage.equals(__DEC_tType_allTypes_338360)) {
 				return new Object[] { tType, tPackage };
 			}
 		}
@@ -3292,14 +3287,6 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 	}
 
 	public static final Object[] pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package mPackage) {
-		if (ruleResult.getSourceObjects().contains(mPackage)) {
-			return new Object[] { ruleResult, mPackage };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, TPackage tPackage) {
 		if (ruleResult.getTargetObjects().contains(tPackage)) {
 			return new Object[] { ruleResult, tPackage };
@@ -3307,10 +3294,18 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 		return null;
 	}
 
-	public static final Object[] pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_3BB(
+	public static final Object[] pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, TypeGraph pg) {
 		if (ruleResult.getTargetObjects().contains(pg)) {
 			return new Object[] { ruleResult, pg };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package mPackage) {
+		if (ruleResult.getSourceObjects().contains(mPackage)) {
+			return new Object[] { ruleResult, mPackage };
 		}
 		return null;
 	}
@@ -3322,22 +3317,22 @@ public class AnnotationTypeInPackageImpl extends AbstractRuleImpl implements Ann
 			for (EObject tmpMPackageToTPackage : mPackageToTPackageList.getEntryObjects()) {
 				if (tmpMPackageToTPackage instanceof PackageToTPackage) {
 					PackageToTPackage mPackageToTPackage = (PackageToTPackage) tmpMPackageToTPackage;
-					org.eclipse.modisco.java.Package mPackage = mPackageToTPackage.getSource();
-					if (mPackage != null) {
-						TPackage tPackage = mPackageToTPackage.getTarget();
-						if (tPackage != null) {
+					TPackage tPackage = mPackageToTPackage.getTarget();
+					if (tPackage != null) {
+						org.eclipse.modisco.java.Package mPackage = mPackageToTPackage.getSource();
+						if (mPackage != null) {
 							TypeGraph pg = tPackage.getModel();
 							if (pg != null) {
 								if (pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 										mPackageToTPackage) == null) {
 									if (pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											mPackage) == null) {
-										if (pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_2BB(
-												ruleResult, tPackage) == null) {
-											if (pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_3BB(
+											tPackage) == null) {
+										if (pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_3BB(
+												ruleResult, mPackage) == null) {
+											if (pattern_AnnotationTypeInPackage_29_2_isapplicablecore_black_nac_2BB(
 													ruleResult, pg) == null) {
 												_result.add(new Object[] { mPackageToTPackageList, mPackageToTPackage,
-														mPackage, tPackage, pg, ruleEntryContainer, ruleResult });
+														tPackage, pg, mPackage, ruleEntryContainer, ruleResult });
 											}
 										}
 									}

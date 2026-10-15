@@ -103,7 +103,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,7 +183,7 @@ public interface ClassDec2Class extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject feature, EObject b2e);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject bodyDeclaration, EObject feature);
 
 	/**
 	 * <!-- begin-user-doc -->

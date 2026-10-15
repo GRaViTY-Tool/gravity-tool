@@ -45,8 +45,8 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass);
+	boolean isAppropriate_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +70,8 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass);
+	void registerObjectsToMatch_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,8 +79,8 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass);
+	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess eTypeAccess, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,9 +96,10 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TypeAccess eTypeAccess, TClass tExtendedClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass, TypeToTAbstractType eClassDeclarationToTClass);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch,
+			TypeToTAbstractType eExtendedClassToTExtendedClass, TClass tExtendedClass, TClass tClass,
+			TypeAccess eTypeAccess, TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,9 +115,9 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eTypeAccess, EObject tExtendedClass,
-			EObject eExtendedClassToTExtendedClass, EObject tClass, EObject eClassDeclaration, EObject eExtendedClass,
-			EObject eClassDeclarationToTClass);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject eExtendedClassToTExtendedClass,
+			EObject tExtendedClass, EObject tClass, EObject eTypeAccess, EObject eClassDeclarationToTClass,
+			EObject eExtendedClass, EObject eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +181,10 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass, TypeToTAbstractType eClassDeclarationToTClass);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			TypeToTAbstractType eExtendedClassToTExtendedClass, TClass tExtendedClass, TClass tClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,9 +200,9 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eTypeAccess, EObject tExtendedClass,
-			EObject eExtendedClassToTExtendedClass, EObject tClass, EObject eClassDeclaration, EObject eExtendedClass,
-			EObject eClassDeclarationToTClass);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject eExtendedClassToTExtendedClass,
+			EObject tExtendedClass, EObject tClass, EObject eTypeAccess, EObject eClassDeclarationToTClass,
+			EObject eExtendedClass, EObject eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +218,7 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_98(EMoflonEdge _edge_parentClasses);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_25(EMoflonEdge _edge_parentClasses);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +226,7 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_104(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_25(EMoflonEdge _edge_type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,8 +258,8 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TypeAccess eTypeAccess, TClass tExtendedClass, TClass tClass,
-			ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TClass tExtendedClass, TClass tClass, TypeAccess eTypeAccess,
+			ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +275,7 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(TypeAccess eTypeAccess, ClassDeclaration eClassDeclaration, ClassDeclaration eExtendedClass);
+	boolean checkDEC_FWD(TypeAccess eTypeAccess, ClassDeclaration eExtendedClass, ClassDeclaration eClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,10 +301,10 @@ public interface ClassExtendsClass extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TClass tExtendedClass,
-			TypeToTAbstractType eExtendedClassToTExtendedClass, TClass tClass, ClassDeclaration eClassDeclaration,
-			ClassDeclaration eExtendedClass, TypeToTAbstractType eClassDeclarationToTClass,
-			ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			TypeToTAbstractType eExtendedClassToTExtendedClass, TClass tExtendedClass, TClass tClass,
+			TypeToTAbstractType eClassDeclarationToTClass, ClassDeclaration eExtendedClass,
+			ClassDeclaration eClassDeclaration, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -158,12 +158,12 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Operation feature = (Operation) result1_bindingAndBlack[0];
-		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[1];
+		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[0];
+		Operation feature = (Operation) result1_bindingAndBlack[1];
 		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
-		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[3];
-		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[4];
-		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[5];
+		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[3];
+		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[4];
+		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		OperationInClassImpl.pattern_OperationInClass_1_1_performtransformation_greenBB(feature, umlClass);
 
@@ -174,24 +174,24 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OperationInClassImpl.pattern_OperationInClass_1_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+				ruleresult, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[classDec] = " + classDec + ", " + "[umlClass] = "
-					+ umlClass + ", " + "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ ", " + "[c2c] = " + c2c + ", " + "[feature] = " + feature + ", " + "[umlClass] = " + umlClass
+					+ ", " + "[classDec] = " + classDec + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[bd2ne] = " + bd2ne + ".");
 		}
 		OperationInClassImpl.pattern_OperationInClass_1_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, feature,
-				classDec, umlClass, bodyDeclaration);
-		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[8];
+				umlClass, classDec, bodyDeclaration);
+		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
-		OperationInClassImpl.pattern_OperationInClass_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, feature,
-				classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+		OperationInClassImpl.pattern_OperationInClass_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c2c,
+				feature, umlClass, classDec, bodyDeclaration, bd2ne);
 		return OperationInClassImpl.pattern_OperationInClass_1_6_expressionFB(ruleresult);
 	}
 
@@ -221,34 +221,35 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		}
 		ClassDeclaration classDec = (ClassDeclaration) result2_binding[0];
 		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_binding[1];
-		for (Object[] result2_black : OperationInClassImpl.pattern_OperationInClass_2_2_corematch_blackFBFFFBB(classDec,
+		for (Object[] result2_black : OperationInClassImpl.pattern_OperationInClass_2_2_corematch_blackFFFBBFB(classDec,
 				bodyDeclaration, match)) {
-			Operation feature = (Operation) result2_black[0];
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[0];
+			Operation feature = (Operation) result2_black[1];
 			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_black[2];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[3];
-			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[4];
+			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
-			for (Object[] result3_black : OperationInClassImpl.pattern_OperationInClass_2_3_findcontext_blackBBBBBB(
-					feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration)) {
+			for (Object[] result3_black : OperationInClassImpl.pattern_OperationInClass_2_3_findcontext_blackBBBBBB(c2c,
+					feature, umlClass, classDec, bodyDeclaration, bd2ne)) {
 				Object[] result3_green = OperationInClassImpl
-						.pattern_OperationInClass_2_3_findcontext_greenBBBBBBFFFFFFF(feature, classDec, umlClass, c2c,
-								bd2ne, bodyDeclaration);
+						.pattern_OperationInClass_2_3_findcontext_greenBBBBBBFFFFFFF(c2c, feature, umlClass, classDec,
+								bodyDeclaration, bd2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = OperationInClassImpl
-						.pattern_OperationInClass_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+						.pattern_OperationInClass_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, c2c,
+								feature, umlClass, classDec, bodyDeclaration, bd2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[classDec] = " + classDec + ", " + "[umlClass] = " + umlClass + ", " + "[c2c] = " + c2c
-							+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c2c] = " + c2c + ", "
+							+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = "
+							+ classDec + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[bd2ne] = " + bd2ne
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -319,9 +320,9 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -336,12 +337,12 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("classDec", classDec);
-		isApplicableMatch.registerObject("umlClass", umlClass);
 		isApplicableMatch.registerObject("c2c", c2c);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("umlClass", umlClass);
+		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		return csp;
 	}
 
@@ -359,14 +360,14 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass,
-			EObject c2c, EObject bd2ne, EObject bodyDeclaration) {
-		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("classDec", classDec);
-		ruleresult.registerObject("umlClass", umlClass);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject umlClass,
+			EObject classDec, EObject bodyDeclaration, EObject bd2ne) {
 		ruleresult.registerObject("c2c", c2c);
-		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("umlClass", umlClass);
+		ruleresult.registerObject("classDec", classDec);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("bd2ne", bd2ne);
 
 	}
 
@@ -446,12 +447,12 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Operation feature = (Operation) result1_bindingAndBlack[0];
-		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[1];
+		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[0];
+		Operation feature = (Operation) result1_bindingAndBlack[1];
 		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[2];
-		ASTNode2Element c2c = (ASTNode2Element) result1_bindingAndBlack[3];
-		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[4];
-		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[5];
+		ClassDeclaration classDec = (ClassDeclaration) result1_bindingAndBlack[3];
+		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result1_bindingAndBlack[4];
+		ASTNode2Element bd2ne = (ASTNode2Element) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		OperationInClassImpl.pattern_OperationInClass_11_1_performtransformation_greenBB(classDec, bodyDeclaration);
 
@@ -462,24 +463,24 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = OperationInClassImpl.pattern_OperationInClass_11_3_bookkeepingforedges_blackBBBBBBB(
-				ruleresult, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+				ruleresult, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[classDec] = " + classDec + ", " + "[umlClass] = "
-					+ umlClass + ", " + "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ ", " + "[c2c] = " + c2c + ", " + "[feature] = " + feature + ", " + "[umlClass] = " + umlClass
+					+ ", " + "[classDec] = " + classDec + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+					+ "[bd2ne] = " + bd2ne + ".");
 		}
 		OperationInClassImpl.pattern_OperationInClass_11_3_bookkeepingforedges_greenBBBBBFFFF(ruleresult, feature,
-				classDec, umlClass, bodyDeclaration);
-		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[5];
-		//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[8];
+				umlClass, classDec, bodyDeclaration);
+		//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[5];
+		//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = (EMoflonEdge) result3_green[8];
 
 		// 
 		// 
-		OperationInClassImpl.pattern_OperationInClass_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, feature,
-				classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+		OperationInClassImpl.pattern_OperationInClass_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c2c,
+				feature, umlClass, classDec, bodyDeclaration, bd2ne);
 		return OperationInClassImpl.pattern_OperationInClass_11_6_expressionFB(ruleresult);
 	}
 
@@ -509,34 +510,35 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		}
 		Operation feature = (Operation) result2_binding[0];
 		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_binding[1];
-		for (Object[] result2_black : OperationInClassImpl.pattern_OperationInClass_12_2_corematch_blackBFBFFFB(feature,
+		for (Object[] result2_black : OperationInClassImpl.pattern_OperationInClass_12_2_corematch_blackFBBFFFB(feature,
 				umlClass, match)) {
-			ClassDeclaration classDec = (ClassDeclaration) result2_black[1];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[3];
-			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[4];
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[5];
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[0];
+			ClassDeclaration classDec = (ClassDeclaration) result2_black[3];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[4];
+			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[5];
 			// ForEach 
 			for (Object[] result3_black : OperationInClassImpl.pattern_OperationInClass_12_3_findcontext_blackBBBBBB(
-					feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration)) {
+					c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne)) {
 				Object[] result3_green = OperationInClassImpl
-						.pattern_OperationInClass_12_3_findcontext_greenBBBBBBFFFFFFF(feature, classDec, umlClass, c2c,
-								bd2ne, bodyDeclaration);
+						.pattern_OperationInClass_12_3_findcontext_greenBBBBBBFFFFFFF(c2c, feature, umlClass, classDec,
+								bodyDeclaration, bd2ne);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge umlClass__feature____ownedOperation = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge feature__umlClass____class = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge c2c__umlClass____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge c2c__classDec____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
 
 				Object[] result4_bindingAndBlack = OperationInClassImpl
-						.pattern_OperationInClass_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch,
-								feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+						.pattern_OperationInClass_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, c2c,
+								feature, umlClass, classDec, bodyDeclaration, bd2ne);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-							+ "[classDec] = " + classDec + ", " + "[umlClass] = " + umlClass + ", " + "[c2c] = " + c2c
-							+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c2c] = " + c2c + ", "
+							+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = "
+							+ classDec + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[bd2ne] = " + bd2ne
+							+ ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -605,9 +607,9 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -622,12 +624,12 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("classDec", classDec);
-		isApplicableMatch.registerObject("umlClass", umlClass);
 		isApplicableMatch.registerObject("c2c", c2c);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("umlClass", umlClass);
+		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		return csp;
 	}
 
@@ -645,14 +647,14 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass,
-			EObject c2c, EObject bd2ne, EObject bodyDeclaration) {
-		ruleresult.registerObject("feature", feature);
-		ruleresult.registerObject("classDec", classDec);
-		ruleresult.registerObject("umlClass", umlClass);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject umlClass,
+			EObject classDec, EObject bodyDeclaration, EObject bd2ne) {
 		ruleresult.registerObject("c2c", c2c);
-		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("umlClass", umlClass);
+		ruleresult.registerObject("classDec", classDec);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("bd2ne", bd2ne);
 
 	}
 
@@ -670,7 +672,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_105(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = OperationInClassImpl
 				.pattern_OperationInClass_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -727,7 +729,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_112(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_134(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = OperationInClassImpl
 				.pattern_OperationInClass_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -860,16 +862,16 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		Operation feature = (Operation) result2_bindingAndBlack[0];
-		ClassDeclaration classDec = (ClassDeclaration) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[2];
+		org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_bindingAndBlack[1];
+		ClassDeclaration classDec = (ClassDeclaration) result2_bindingAndBlack[2];
 		MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = OperationInClassImpl
-				.pattern_OperationInClass_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, feature, classDec, umlClass,
+				.pattern_OperationInClass_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, feature, umlClass, classDec,
 						bodyDeclaration, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[feature] = " + feature + ", " + "[classDec] = " + classDec + ", " + "[umlClass] = " + umlClass
+					+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec
 					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
@@ -878,20 +880,20 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		if (OperationInClassImpl.pattern_OperationInClass_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : OperationInClassImpl
-					.pattern_OperationInClass_24_5_matchcorrcontext_blackBBBFFBBB(feature, classDec, umlClass,
+					.pattern_OperationInClass_24_5_matchcorrcontext_blackFBBBBFBB(feature, umlClass, classDec,
 							bodyDeclaration, sourceMatch, targetMatch)) {
-				ASTNode2Element c2c = (ASTNode2Element) result5_black[3];
-				ASTNode2Element bd2ne = (ASTNode2Element) result5_black[4];
+				ASTNode2Element c2c = (ASTNode2Element) result5_black[0];
+				ASTNode2Element bd2ne = (ASTNode2Element) result5_black[5];
 				Object[] result5_green = OperationInClassImpl.pattern_OperationInClass_24_5_matchcorrcontext_greenBBBBF(
 						c2c, bd2ne, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = OperationInClassImpl
-						.pattern_OperationInClass_24_6_createcorrespondence_blackBBBBB(feature, classDec, umlClass,
+						.pattern_OperationInClass_24_6_createcorrespondence_blackBBBBB(feature, umlClass, classDec,
 								bodyDeclaration, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = " + feature
-							+ ", " + "[classDec] = " + classDec + ", " + "[umlClass] = " + umlClass + ", "
+							+ ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec + ", "
 							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
@@ -915,8 +917,8 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(Operation feature, org.eclipse.uml2.uml.Class umlClass,
+			ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -978,8 +980,8 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element bd2neParameter,
-			ASTNode2Element c2cParameter) {
+	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, ASTNode2Element c2cParameter,
+			ASTNode2Element bd2neParameter) {
 
 		Object[] result1_black = OperationInClassImpl.pattern_OperationInClass_29_1_createresult_blackB(this);
 		if (result1_black == null) {
@@ -992,42 +994,42 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		// ForEach 
 		for (Object[] result2_black : OperationInClassImpl
 				.pattern_OperationInClass_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
-			//nothing RuleEntryList bd2neList = (RuleEntryList) result2_black[0];
-			Operation feature = (Operation) result2_black[1];
-			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[2];
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[3];
-			//nothing RuleEntryList c2cList = (RuleEntryList) result2_black[4];
-			ClassDeclaration classDec = (ClassDeclaration) result2_black[5];
-			ASTNode2Element c2c = (ASTNode2Element) result2_black[6];
-			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_black[7];
+			//nothing RuleEntryList c2cList = (RuleEntryList) result2_black[0];
+			ASTNode2Element c2c = (ASTNode2Element) result2_black[1];
+			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result2_black[2];
+			ClassDeclaration classDec = (ClassDeclaration) result2_black[3];
+			//nothing RuleEntryList bd2neList = (RuleEntryList) result2_black[4];
+			Operation feature = (Operation) result2_black[5];
+			ASTNode2Element bd2ne = (ASTNode2Element) result2_black[6];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result2_black[7];
 
 			Object[] result3_bindingAndBlack = OperationInClassImpl
-					.pattern_OperationInClass_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, feature,
-							classDec, umlClass, c2c, bd2ne, bodyDeclaration, ruleResult);
+					.pattern_OperationInClass_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, c2c,
+							feature, umlClass, classDec, bodyDeclaration, bd2ne, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[feature] = " + feature + ", "
-						+ "[classDec] = " + classDec + ", " + "[umlClass] = " + umlClass + ", " + "[c2c] = " + c2c
-						+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c2c] = " + c2c + ", " + "[feature] = "
+						+ feature + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = " + classDec + ", "
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[bd2ne] = " + bd2ne + ", "
 						+ "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (OperationInClassImpl.pattern_OperationInClass_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = OperationInClassImpl.pattern_OperationInClass_29_5_checknacs_blackBBBBBB(
-						feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+				Object[] result5_black = OperationInClassImpl.pattern_OperationInClass_29_5_checknacs_blackBBBBBB(c2c,
+						feature, umlClass, classDec, bodyDeclaration, bd2ne);
 				if (result5_black != null) {
 
 					Object[] result6_black = OperationInClassImpl.pattern_OperationInClass_29_6_perform_blackBBBBBBB(
-							feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, ruleResult);
+							c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[feature] = "
-								+ feature + ", " + "[classDec] = " + classDec + ", " + "[umlClass] = " + umlClass + ", "
-								+ "[c2c] = " + c2c + ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = "
-								+ bodyDeclaration + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c2c] = " + c2c + ", "
+								+ "[feature] = " + feature + ", " + "[umlClass] = " + umlClass + ", " + "[classDec] = "
+								+ classDec + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[bd2ne] = "
+								+ bd2ne + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					OperationInClassImpl.pattern_OperationInClass_29_6_perform_greenBBBBB(feature, classDec, umlClass,
+					OperationInClassImpl.pattern_OperationInClass_29_6_perform_greenBBBBB(feature, umlClass, classDec,
 							bodyDeclaration, ruleResult);
 
 				} else {
@@ -1045,9 +1047,9 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1062,12 +1064,12 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("classDec", classDec);
-		isApplicableMatch.registerObject("umlClass", umlClass);
 		isApplicableMatch.registerObject("c2c", c2c);
-		isApplicableMatch.registerObject("bd2ne", bd2ne);
+		isApplicableMatch.registerObject("feature", feature);
+		isApplicableMatch.registerObject("umlClass", umlClass);
+		isApplicableMatch.registerObject("classDec", classDec);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("bd2ne", bd2ne);
 		return csp;
 	}
 
@@ -1088,96 +1090,96 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_FWD__MATCH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-				return isAppropriate_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2));
-			case RulesPackage.OPERATION_IN_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2));
-				return null;
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
-						(MAbstractMethodDefinition) arguments.get(2));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_OPERATION_CLASSDECLARATION_CLASS_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MABSTRACTMETHODDEFINITION:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
-						(ClassDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-						(ASTNode2Element) arguments.get(4), (ASTNode2Element) arguments.get(5),
-						(MAbstractMethodDefinition) arguments.get(6));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6));
-				return null;
-			case RulesPackage.OPERATION_IN_CLASS___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_BWD__MATCH_OPERATION_CLASS:
-				return isAppropriate_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2));
-			case RulesPackage.OPERATION_IN_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_OPERATION_CLASS:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2));
-				return null;
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_OPERATION_CLASS:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION_CLASSDECLARATION_CLASS_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MABSTRACTMETHODDEFINITION:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
-						(ClassDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-						(ASTNode2Element) arguments.get(4), (ASTNode2Element) arguments.get(5),
-						(MAbstractMethodDefinition) arguments.get(6));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6));
-				return null;
-			case RulesPackage.OPERATION_IN_CLASS___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_105__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_105((EMoflonEdge) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_112__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_112((EMoflonEdge) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_CLASSDECLARATION_CLASS_MABSTRACTMETHODDEFINITION_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((Operation) arguments.get(0), (ClassDeclaration) arguments.get(1),
-						(org.eclipse.uml2.uml.Class) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3),
-						(Match) arguments.get(4), (Match) arguments.get(5));
-			case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.OPERATION_IN_CLASS___CHECK_DEC_FWD__CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
-				return checkDEC_FWD((ClassDeclaration) arguments.get(0), (MAbstractMethodDefinition) arguments.get(1));
-			case RulesPackage.OPERATION_IN_CLASS___CHECK_DEC_BWD__OPERATION_CLASS:
-				return checkDEC_BWD((Operation) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
-			case RulesPackage.OPERATION_IN_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
-				return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
-						(ASTNode2Element) arguments.get(2));
-			case RulesPackage.OPERATION_IN_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_OPERATION_CLASSDECLARATION_CLASS_ASTNODE2ELEMENT_ASTNODE2ELEMENT_MABSTRACTMETHODDEFINITION_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Operation) arguments.get(1),
-						(ClassDeclaration) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
-						(ASTNode2Element) arguments.get(4), (ASTNode2Element) arguments.get(5),
-						(MAbstractMethodDefinition) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
-			case RulesPackage.OPERATION_IN_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_FWD__MATCH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+			return isAppropriate_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2));
+		case RulesPackage.OPERATION_IN_CLASS___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2));
+			return null;
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (ClassDeclaration) arguments.get(1),
+					(MAbstractMethodDefinition) arguments.get(2));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_OPERATION_CLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (MAbstractMethodDefinition) arguments.get(5),
+					(ASTNode2Element) arguments.get(6));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6));
+			return null;
+		case RulesPackage.OPERATION_IN_CLASS___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_BWD__MATCH_OPERATION_CLASS:
+			return isAppropriate_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2));
+		case RulesPackage.OPERATION_IN_CLASS___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_OPERATION_CLASS:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2));
+			return null;
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_OPERATION_CLASS:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Operation) arguments.get(1),
+					(org.eclipse.uml2.uml.Class) arguments.get(2));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_OPERATION_CLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (MAbstractMethodDefinition) arguments.get(5),
+					(ASTNode2Element) arguments.get(6));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6));
+			return null;
+		case RulesPackage.OPERATION_IN_CLASS___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_125__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_134__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_134((EMoflonEdge) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_SOLVE_CSP_CC__OPERATION_CLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Operation) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1),
+					(ClassDeclaration) arguments.get(2), (MAbstractMethodDefinition) arguments.get(3),
+					(Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.OPERATION_IN_CLASS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.OPERATION_IN_CLASS___CHECK_DEC_FWD__CLASSDECLARATION_MABSTRACTMETHODDEFINITION:
+			return checkDEC_FWD((ClassDeclaration) arguments.get(0), (MAbstractMethodDefinition) arguments.get(1));
+		case RulesPackage.OPERATION_IN_CLASS___CHECK_DEC_BWD__OPERATION_CLASS:
+			return checkDEC_BWD((Operation) arguments.get(0), (org.eclipse.uml2.uml.Class) arguments.get(1));
+		case RulesPackage.OPERATION_IN_CLASS___GENERATE_MODEL__RULEENTRYCONTAINER_ASTNODE2ELEMENT_ASTNODE2ELEMENT:
+			return generateModel((RuleEntryContainer) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(ASTNode2Element) arguments.get(2));
+		case RulesPackage.OPERATION_IN_CLASS___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ASTNODE2ELEMENT_OPERATION_CLASS_CLASSDECLARATION_MABSTRACTMETHODDEFINITION_ASTNODE2ELEMENT_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ASTNode2Element) arguments.get(1),
+					(Operation) arguments.get(2), (org.eclipse.uml2.uml.Class) arguments.get(3),
+					(ClassDeclaration) arguments.get(4), (MAbstractMethodDefinition) arguments.get(5),
+					(ASTNode2Element) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.OPERATION_IN_CLASS___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1278,31 +1280,31 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 
 	public static final Object[] pattern_OperationInClass_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_1 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_0 = isApplicableMatch.getObject("c2c");
+		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
 		EObject _localVariable_2 = isApplicableMatch.getObject("umlClass");
-		EObject _localVariable_3 = isApplicableMatch.getObject("c2c");
-		EObject _localVariable_4 = isApplicableMatch.getObject("bd2ne");
-		EObject _localVariable_5 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpClassDec = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_5 = isApplicableMatch.getObject("bd2ne");
+		EObject tmpC2c = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
 		EObject tmpUmlClass = _localVariable_2;
-		EObject tmpC2c = _localVariable_3;
-		EObject tmpBd2ne = _localVariable_4;
-		EObject tmpBodyDeclaration = _localVariable_5;
-		if (tmpFeature instanceof Operation) {
-			Operation feature = (Operation) tmpFeature;
-			if (tmpClassDec instanceof ClassDeclaration) {
-				ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+		EObject tmpClassDec = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_4;
+		EObject tmpBd2ne = _localVariable_5;
+		if (tmpC2c instanceof ASTNode2Element) {
+			ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
+			if (tmpFeature instanceof Operation) {
+				Operation feature = (Operation) tmpFeature;
 				if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
 					org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
-					if (tmpC2c instanceof ASTNode2Element) {
-						ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
-						if (tmpBd2ne instanceof ASTNode2Element) {
-							ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-							if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-								MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-								return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration,
+					if (tmpClassDec instanceof ClassDeclaration) {
+						ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+						if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+							MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
+							if (tmpBd2ne instanceof ASTNode2Element) {
+								ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
+								return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne,
 										isApplicableMatch };
 							}
 						}
@@ -1313,14 +1315,15 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return null;
 	}
 
-	public static final Object[] pattern_OperationInClass_1_1_performtransformation_blackBBBBBBFBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, OperationInClass _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_OperationInClass_1_1_performtransformation_blackBBBBBBFBB(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, OperationInClass _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!bd2ne.equals(c2c)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, csp, _this,
+					return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1333,19 +1336,19 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		Object[] result_pattern_OperationInClass_1_1_performtransformation_binding = pattern_OperationInClass_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_OperationInClass_1_1_performtransformation_binding != null) {
-			Operation feature = (Operation) result_pattern_OperationInClass_1_1_performtransformation_binding[0];
-			ClassDeclaration classDec = (ClassDeclaration) result_pattern_OperationInClass_1_1_performtransformation_binding[1];
+			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInClass_1_1_performtransformation_binding[0];
+			Operation feature = (Operation) result_pattern_OperationInClass_1_1_performtransformation_binding[1];
 			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInClass_1_1_performtransformation_binding[2];
-			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInClass_1_1_performtransformation_binding[3];
-			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInClass_1_1_performtransformation_binding[4];
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInClass_1_1_performtransformation_binding[5];
+			ClassDeclaration classDec = (ClassDeclaration) result_pattern_OperationInClass_1_1_performtransformation_binding[3];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInClass_1_1_performtransformation_binding[4];
+			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInClass_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_OperationInClass_1_1_performtransformation_black = pattern_OperationInClass_1_1_performtransformation_blackBBBBBBFBB(
-					feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, _this, isApplicableMatch);
+					c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, _this, isApplicableMatch);
 			if (result_pattern_OperationInClass_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OperationInClass_1_1_performtransformation_black[6];
 
-				return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, csp, _this,
+				return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1364,25 +1367,26 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass, EObject c2c,
-			EObject bd2ne, EObject bodyDeclaration) {
-		if (!feature.equals(umlClass)) {
-			if (!classDec.equals(feature)) {
-				if (!classDec.equals(umlClass)) {
-					if (!c2c.equals(feature)) {
-						if (!c2c.equals(classDec)) {
-							if (!c2c.equals(umlClass)) {
-								if (!bd2ne.equals(feature)) {
-									if (!bd2ne.equals(classDec)) {
-										if (!bd2ne.equals(umlClass)) {
-											if (!bd2ne.equals(c2c)) {
-												if (!bd2ne.equals(bodyDeclaration)) {
-													if (!bodyDeclaration.equals(feature)) {
-														if (!bodyDeclaration.equals(classDec)) {
-															if (!bodyDeclaration.equals(umlClass)) {
-																if (!bodyDeclaration.equals(c2c)) {
-																	return new Object[] { ruleresult, feature, classDec,
-																			umlClass, c2c, bd2ne, bodyDeclaration };
+			PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject umlClass, EObject classDec,
+			EObject bodyDeclaration, EObject bd2ne) {
+		if (!c2c.equals(feature)) {
+			if (!c2c.equals(umlClass)) {
+				if (!c2c.equals(classDec)) {
+					if (!feature.equals(umlClass)) {
+						if (!classDec.equals(feature)) {
+							if (!classDec.equals(umlClass)) {
+								if (!bodyDeclaration.equals(c2c)) {
+									if (!bodyDeclaration.equals(feature)) {
+										if (!bodyDeclaration.equals(umlClass)) {
+											if (!bodyDeclaration.equals(classDec)) {
+												if (!bd2ne.equals(c2c)) {
+													if (!bd2ne.equals(feature)) {
+														if (!bd2ne.equals(umlClass)) {
+															if (!bd2ne.equals(classDec)) {
+																if (!bd2ne.equals(bodyDeclaration)) {
+																	return new Object[] { ruleresult, c2c, feature,
+																			umlClass, classDec, bodyDeclaration,
+																			bd2ne };
 																}
 															}
 														}
@@ -1402,44 +1406,44 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_1_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass,
+			PerformRuleResult ruleresult, EObject feature, EObject umlClass, EObject classDec,
 			EObject bodyDeclaration) {
-		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OperationInClass";
-		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
-		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__umlClass____class_name_prime = "class";
-		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
-		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
-		ruleresult.getTranslatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
-		bodyDeclaration__classDec____abstractTypeDeclaration.setSrc(bodyDeclaration);
-		bodyDeclaration__classDec____abstractTypeDeclaration.setTrg(classDec);
-		ruleresult.getTranslatedEdges().add(bodyDeclaration__classDec____abstractTypeDeclaration);
+		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
+		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		umlClass__feature____ownedOperation.setSrc(umlClass);
 		umlClass__feature____ownedOperation.setTrg(feature);
 		ruleresult.getCreatedEdges().add(umlClass__feature____ownedOperation);
 		feature__umlClass____class.setSrc(feature);
 		feature__umlClass____class.setTrg(umlClass);
 		ruleresult.getCreatedEdges().add(feature__umlClass____class);
+		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
+		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
+		ruleresult.getTranslatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
+		bodyDeclaration__classDec____abstractTypeDeclaration.setSrc(bodyDeclaration);
+		bodyDeclaration__classDec____abstractTypeDeclaration.setTrg(classDec);
+		ruleresult.getTranslatedEdges().add(bodyDeclaration__classDec____abstractTypeDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
+		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
-		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
-		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
-		return new Object[] { ruleresult, feature, classDec, umlClass, bodyDeclaration,
-				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration,
-				umlClass__feature____ownedOperation, feature__umlClass____class };
+		return new Object[] { ruleresult, feature, umlClass, classDec, bodyDeclaration,
+				umlClass__feature____ownedOperation, feature__umlClass____class,
+				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_OperationInClass_1_5_registerobjects_expressionBBBBBBBB(OperationInClass _this,
-			PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass, EObject c2c,
-			EObject bd2ne, EObject bodyDeclaration) {
-		_this.registerObjects_FWD(ruleresult, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+			PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject umlClass, EObject classDec,
+			EObject bodyDeclaration, EObject bd2ne) {
+		_this.registerObjects_FWD(ruleresult, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne);
 
 	}
 
@@ -1512,7 +1516,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInClass_2_2_corematch_blackFBFFFBB(
+	public static final Iterable<Object[]> pattern_OperationInClass_2_2_corematch_blackFFFBBFB(
 			ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element c2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(classDec,
@@ -1527,7 +1531,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 						if (tmpFeature instanceof Operation) {
 							Operation feature = (Operation) tmpFeature;
 							_result.add(
-									new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, match });
+									new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, match });
 						}
 
 					}
@@ -1538,17 +1542,17 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInClass_2_3_findcontext_blackBBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+	public static final Iterable<Object[]> pattern_OperationInClass_2_3_findcontext_blackBBBBBB(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!bd2ne.equals(c2c)) {
-			if (classDec.getBodyDeclarations().contains(bodyDeclaration)) {
-				if (umlClass.equals(c2c.getTarget())) {
-					if (feature.equals(bd2ne.getTarget())) {
-						if (classDec.equals(c2c.getSource())) {
+			if (umlClass.equals(c2c.getTarget())) {
+				if (classDec.equals(c2c.getSource())) {
+					if (classDec.getBodyDeclarations().contains(bodyDeclaration)) {
+						if (feature.equals(bd2ne.getTarget())) {
 							if (bodyDeclaration.equals(bd2ne.getSource())) {
-								_result.add(new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration });
+								_result.add(new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne });
 							}
 						}
 					}
@@ -1558,69 +1562,69 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInClass_2_3_findcontext_greenBBBBBBFFFFFFF(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_OperationInClass_2_3_findcontext_greenBBBBBBFFFFFFF(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge c2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String c2c__umlClass____target_name_prime = "target";
+		String c2c__classDec____source_name_prime = "source";
 		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
-		String c2c__umlClass____target_name_prime = "target";
 		String bd2ne__feature____target_name_prime = "target";
-		String c2c__classDec____source_name_prime = "source";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(feature);
-		isApplicableMatch.getAllContextElements().add(classDec);
-		isApplicableMatch.getAllContextElements().add(umlClass);
 		isApplicableMatch.getAllContextElements().add(c2c);
-		isApplicableMatch.getAllContextElements().add(bd2ne);
+		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(umlClass);
+		isApplicableMatch.getAllContextElements().add(classDec);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(bd2ne);
+		c2c__umlClass____target.setSrc(c2c);
+		c2c__umlClass____target.setTrg(umlClass);
+		isApplicableMatch.getAllContextElements().add(c2c__umlClass____target);
+		c2c__classDec____source.setSrc(c2c);
+		c2c__classDec____source.setTrg(classDec);
+		isApplicableMatch.getAllContextElements().add(c2c__classDec____source);
 		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
 		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(classDec__bodyDeclaration____bodyDeclarations);
 		bodyDeclaration__classDec____abstractTypeDeclaration.setSrc(bodyDeclaration);
 		bodyDeclaration__classDec____abstractTypeDeclaration.setTrg(classDec);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__classDec____abstractTypeDeclaration);
-		c2c__umlClass____target.setSrc(c2c);
-		c2c__umlClass____target.setTrg(umlClass);
-		isApplicableMatch.getAllContextElements().add(c2c__umlClass____target);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
-		c2c__classDec____source.setSrc(c2c);
-		c2c__classDec____source.setTrg(classDec);
-		isApplicableMatch.getAllContextElements().add(c2c__classDec____source);
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
+		c2c__umlClass____target.setName(c2c__umlClass____target_name_prime);
+		c2c__classDec____source.setName(c2c__classDec____source_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
-		c2c__umlClass____target.setName(c2c__umlClass____target_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		c2c__classDec____source.setName(c2c__classDec____source_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, isApplicableMatch,
-				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration,
-				c2c__umlClass____target, bd2ne__feature____target, c2c__classDec____source,
+		return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, isApplicableMatch,
+				c2c__umlClass____target, c2c__classDec____source, classDec__bodyDeclaration____bodyDeclarations,
+				bodyDeclaration__classDec____abstractTypeDeclaration, bd2ne__feature____target,
 				bd2ne__bodyDeclaration____source };
 	}
 
 	public static final Object[] pattern_OperationInClass_2_4_solveCSP_bindingFBBBBBBBB(OperationInClass _this,
-			IsApplicableMatch isApplicableMatch, Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, feature, classDec, umlClass, c2c,
-				bd2ne, bodyDeclaration);
+			IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, c2c, feature, umlClass, classDec,
+				bodyDeclaration, bd2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne,
-					bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration,
+					bd2ne };
 		}
 		return null;
 	}
@@ -1630,11 +1634,11 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_2_4_solveCSP_bindingAndBlackFBBBBBBBB(OperationInClass _this,
-			IsApplicableMatch isApplicableMatch, Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+			IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne) {
 		Object[] result_pattern_OperationInClass_2_4_solveCSP_binding = pattern_OperationInClass_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+				_this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne);
 		if (result_pattern_OperationInClass_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInClass_2_4_solveCSP_binding[0];
 
@@ -1642,8 +1646,8 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 					csp);
 			if (result_pattern_OperationInClass_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne,
-						bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration,
+						bd2ne };
 			}
 		}
 		return null;
@@ -1771,31 +1775,31 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 
 	public static final Object[] pattern_OperationInClass_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_1 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_0 = isApplicableMatch.getObject("c2c");
+		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
 		EObject _localVariable_2 = isApplicableMatch.getObject("umlClass");
-		EObject _localVariable_3 = isApplicableMatch.getObject("c2c");
-		EObject _localVariable_4 = isApplicableMatch.getObject("bd2ne");
-		EObject _localVariable_5 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpClassDec = _localVariable_1;
+		EObject _localVariable_3 = isApplicableMatch.getObject("classDec");
+		EObject _localVariable_4 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_5 = isApplicableMatch.getObject("bd2ne");
+		EObject tmpC2c = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
 		EObject tmpUmlClass = _localVariable_2;
-		EObject tmpC2c = _localVariable_3;
-		EObject tmpBd2ne = _localVariable_4;
-		EObject tmpBodyDeclaration = _localVariable_5;
-		if (tmpFeature instanceof Operation) {
-			Operation feature = (Operation) tmpFeature;
-			if (tmpClassDec instanceof ClassDeclaration) {
-				ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+		EObject tmpClassDec = _localVariable_3;
+		EObject tmpBodyDeclaration = _localVariable_4;
+		EObject tmpBd2ne = _localVariable_5;
+		if (tmpC2c instanceof ASTNode2Element) {
+			ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
+			if (tmpFeature instanceof Operation) {
+				Operation feature = (Operation) tmpFeature;
 				if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
 					org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
-					if (tmpC2c instanceof ASTNode2Element) {
-						ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
-						if (tmpBd2ne instanceof ASTNode2Element) {
-							ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-							if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-								MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-								return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration,
+					if (tmpClassDec instanceof ClassDeclaration) {
+						ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+						if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+							MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
+							if (tmpBd2ne instanceof ASTNode2Element) {
+								ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
+								return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne,
 										isApplicableMatch };
 							}
 						}
@@ -1806,14 +1810,15 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return null;
 	}
 
-	public static final Object[] pattern_OperationInClass_11_1_performtransformation_blackBBBBBBFBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, OperationInClass _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_OperationInClass_11_1_performtransformation_blackBBBBBBFBB(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, OperationInClass _this,
+			IsApplicableMatch isApplicableMatch) {
 		if (!bd2ne.equals(c2c)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, csp, _this,
+					return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, csp, _this,
 							isApplicableMatch };
 				}
 			}
@@ -1826,19 +1831,19 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		Object[] result_pattern_OperationInClass_11_1_performtransformation_binding = pattern_OperationInClass_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_OperationInClass_11_1_performtransformation_binding != null) {
-			Operation feature = (Operation) result_pattern_OperationInClass_11_1_performtransformation_binding[0];
-			ClassDeclaration classDec = (ClassDeclaration) result_pattern_OperationInClass_11_1_performtransformation_binding[1];
+			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInClass_11_1_performtransformation_binding[0];
+			Operation feature = (Operation) result_pattern_OperationInClass_11_1_performtransformation_binding[1];
 			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInClass_11_1_performtransformation_binding[2];
-			ASTNode2Element c2c = (ASTNode2Element) result_pattern_OperationInClass_11_1_performtransformation_binding[3];
-			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInClass_11_1_performtransformation_binding[4];
-			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInClass_11_1_performtransformation_binding[5];
+			ClassDeclaration classDec = (ClassDeclaration) result_pattern_OperationInClass_11_1_performtransformation_binding[3];
+			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInClass_11_1_performtransformation_binding[4];
+			ASTNode2Element bd2ne = (ASTNode2Element) result_pattern_OperationInClass_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_OperationInClass_11_1_performtransformation_black = pattern_OperationInClass_11_1_performtransformation_blackBBBBBBFBB(
-					feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, _this, isApplicableMatch);
+					c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, _this, isApplicableMatch);
 			if (result_pattern_OperationInClass_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_OperationInClass_11_1_performtransformation_black[6];
 
-				return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, csp, _this,
+				return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, csp, _this,
 						isApplicableMatch };
 			}
 		}
@@ -1857,25 +1862,26 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass, EObject c2c,
-			EObject bd2ne, EObject bodyDeclaration) {
-		if (!feature.equals(umlClass)) {
-			if (!classDec.equals(feature)) {
-				if (!classDec.equals(umlClass)) {
-					if (!c2c.equals(feature)) {
-						if (!c2c.equals(classDec)) {
-							if (!c2c.equals(umlClass)) {
-								if (!bd2ne.equals(feature)) {
-									if (!bd2ne.equals(classDec)) {
-										if (!bd2ne.equals(umlClass)) {
-											if (!bd2ne.equals(c2c)) {
-												if (!bd2ne.equals(bodyDeclaration)) {
-													if (!bodyDeclaration.equals(feature)) {
-														if (!bodyDeclaration.equals(classDec)) {
-															if (!bodyDeclaration.equals(umlClass)) {
-																if (!bodyDeclaration.equals(c2c)) {
-																	return new Object[] { ruleresult, feature, classDec,
-																			umlClass, c2c, bd2ne, bodyDeclaration };
+			PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject umlClass, EObject classDec,
+			EObject bodyDeclaration, EObject bd2ne) {
+		if (!c2c.equals(feature)) {
+			if (!c2c.equals(umlClass)) {
+				if (!c2c.equals(classDec)) {
+					if (!feature.equals(umlClass)) {
+						if (!classDec.equals(feature)) {
+							if (!classDec.equals(umlClass)) {
+								if (!bodyDeclaration.equals(c2c)) {
+									if (!bodyDeclaration.equals(feature)) {
+										if (!bodyDeclaration.equals(umlClass)) {
+											if (!bodyDeclaration.equals(classDec)) {
+												if (!bd2ne.equals(c2c)) {
+													if (!bd2ne.equals(feature)) {
+														if (!bd2ne.equals(umlClass)) {
+															if (!bd2ne.equals(classDec)) {
+																if (!bd2ne.equals(bodyDeclaration)) {
+																	return new Object[] { ruleresult, c2c, feature,
+																			umlClass, classDec, bodyDeclaration,
+																			bd2ne };
 																}
 															}
 														}
@@ -1895,44 +1901,44 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_11_3_bookkeepingforedges_greenBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass,
+			PerformRuleResult ruleresult, EObject feature, EObject umlClass, EObject classDec,
 			EObject bodyDeclaration) {
-		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge classDec__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bodyDeclaration__classDec____abstractTypeDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "OperationInClass";
-		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
-		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__umlClass____class_name_prime = "class";
-		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
-		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
-		bodyDeclaration__classDec____abstractTypeDeclaration.setSrc(bodyDeclaration);
-		bodyDeclaration__classDec____abstractTypeDeclaration.setTrg(classDec);
-		ruleresult.getCreatedEdges().add(bodyDeclaration__classDec____abstractTypeDeclaration);
+		String classDec__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
+		String bodyDeclaration__classDec____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		umlClass__feature____ownedOperation.setSrc(umlClass);
 		umlClass__feature____ownedOperation.setTrg(feature);
 		ruleresult.getTranslatedEdges().add(umlClass__feature____ownedOperation);
 		feature__umlClass____class.setSrc(feature);
 		feature__umlClass____class.setTrg(umlClass);
 		ruleresult.getTranslatedEdges().add(feature__umlClass____class);
+		classDec__bodyDeclaration____bodyDeclarations.setSrc(classDec);
+		classDec__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(classDec__bodyDeclaration____bodyDeclarations);
+		bodyDeclaration__classDec____abstractTypeDeclaration.setSrc(bodyDeclaration);
+		bodyDeclaration__classDec____abstractTypeDeclaration.setTrg(classDec);
+		ruleresult.getCreatedEdges().add(bodyDeclaration__classDec____abstractTypeDeclaration);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
+		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
 		classDec__bodyDeclaration____bodyDeclarations.setName(classDec__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__classDec____abstractTypeDeclaration
 				.setName(bodyDeclaration__classDec____abstractTypeDeclaration_name_prime);
-		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
-		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
-		return new Object[] { ruleresult, feature, classDec, umlClass, bodyDeclaration,
-				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration,
-				umlClass__feature____ownedOperation, feature__umlClass____class };
+		return new Object[] { ruleresult, feature, umlClass, classDec, bodyDeclaration,
+				umlClass__feature____ownedOperation, feature__umlClass____class,
+				classDec__bodyDeclaration____bodyDeclarations, bodyDeclaration__classDec____abstractTypeDeclaration };
 	}
 
 	public static final void pattern_OperationInClass_11_5_registerobjects_expressionBBBBBBBB(OperationInClass _this,
-			PerformRuleResult ruleresult, EObject feature, EObject classDec, EObject umlClass, EObject c2c,
-			EObject bd2ne, EObject bodyDeclaration) {
-		_this.registerObjects_BWD(ruleresult, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+			PerformRuleResult ruleresult, EObject c2c, EObject feature, EObject umlClass, EObject classDec,
+			EObject bodyDeclaration, EObject bd2ne) {
+		_this.registerObjects_BWD(ruleresult, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne);
 
 	}
 
@@ -2005,7 +2011,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInClass_12_2_corematch_blackBFBFFFB(Operation feature,
+	public static final Iterable<Object[]> pattern_OperationInClass_12_2_corematch_blackFBBFFFB(Operation feature,
 			org.eclipse.uml2.uml.Class umlClass, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (ASTNode2Element c2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(umlClass,
@@ -2020,7 +2026,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 						if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
 							MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 							_result.add(
-									new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, match });
+									new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, match });
 						}
 
 					}
@@ -2031,17 +2037,17 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInClass_12_3_findcontext_blackBBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+	public static final Iterable<Object[]> pattern_OperationInClass_12_3_findcontext_blackBBBBBB(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!bd2ne.equals(c2c)) {
 			if (umlClass.getOwnedOperations().contains(feature)) {
 				if (umlClass.equals(c2c.getTarget())) {
-					if (feature.equals(bd2ne.getTarget())) {
-						if (classDec.equals(c2c.getSource())) {
+					if (classDec.equals(c2c.getSource())) {
+						if (feature.equals(bd2ne.getTarget())) {
 							if (bodyDeclaration.equals(bd2ne.getSource())) {
-								_result.add(new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration });
+								_result.add(new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne });
 							}
 						}
 					}
@@ -2051,28 +2057,28 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInClass_12_3_findcontext_greenBBBBBBFFFFFFF(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_OperationInClass_12_3_findcontext_greenBBBBBBFFFFFFF(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge umlClass__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__umlClass____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__umlClass____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2c__classDec____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String umlClass__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__umlClass____class_name_prime = "class";
 		String c2c__umlClass____target_name_prime = "target";
-		String bd2ne__feature____target_name_prime = "target";
 		String c2c__classDec____source_name_prime = "source";
+		String bd2ne__feature____target_name_prime = "target";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(feature);
-		isApplicableMatch.getAllContextElements().add(classDec);
-		isApplicableMatch.getAllContextElements().add(umlClass);
 		isApplicableMatch.getAllContextElements().add(c2c);
-		isApplicableMatch.getAllContextElements().add(bd2ne);
+		isApplicableMatch.getAllContextElements().add(feature);
+		isApplicableMatch.getAllContextElements().add(umlClass);
+		isApplicableMatch.getAllContextElements().add(classDec);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(bd2ne);
 		umlClass__feature____ownedOperation.setSrc(umlClass);
 		umlClass__feature____ownedOperation.setTrg(feature);
 		isApplicableMatch.getAllContextElements().add(umlClass__feature____ownedOperation);
@@ -2082,36 +2088,36 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		c2c__umlClass____target.setSrc(c2c);
 		c2c__umlClass____target.setTrg(umlClass);
 		isApplicableMatch.getAllContextElements().add(c2c__umlClass____target);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
 		c2c__classDec____source.setSrc(c2c);
 		c2c__classDec____source.setTrg(classDec);
 		isApplicableMatch.getAllContextElements().add(c2c__classDec____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(bd2ne__feature____target);
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(bd2ne__bodyDeclaration____source);
 		umlClass__feature____ownedOperation.setName(umlClass__feature____ownedOperation_name_prime);
 		feature__umlClass____class.setName(feature__umlClass____class_name_prime);
 		c2c__umlClass____target.setName(c2c__umlClass____target_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		c2c__classDec____source.setName(c2c__classDec____source_name_prime);
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, isApplicableMatch,
+		return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, isApplicableMatch,
 				umlClass__feature____ownedOperation, feature__umlClass____class, c2c__umlClass____target,
-				bd2ne__feature____target, c2c__classDec____source, bd2ne__bodyDeclaration____source };
+				c2c__classDec____source, bd2ne__feature____target, bd2ne__bodyDeclaration____source };
 	}
 
 	public static final Object[] pattern_OperationInClass_12_4_solveCSP_bindingFBBBBBBBB(OperationInClass _this,
-			IsApplicableMatch isApplicableMatch, Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, feature, classDec, umlClass, c2c,
-				bd2ne, bodyDeclaration);
+			IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, c2c, feature, umlClass, classDec,
+				bodyDeclaration, bd2ne);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne,
-					bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration,
+					bd2ne };
 		}
 		return null;
 	}
@@ -2121,11 +2127,11 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_12_4_solveCSP_bindingAndBlackFBBBBBBBB(OperationInClass _this,
-			IsApplicableMatch isApplicableMatch, Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+			IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne) {
 		Object[] result_pattern_OperationInClass_12_4_solveCSP_binding = pattern_OperationInClass_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration);
+				_this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne);
 		if (result_pattern_OperationInClass_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInClass_12_4_solveCSP_binding[0];
 
@@ -2133,8 +2139,8 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 					csp);
 			if (result_pattern_OperationInClass_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne,
-						bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration,
+						bd2ne };
 			}
 		}
 		return null;
@@ -2411,22 +2417,22 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	public static final Object[] pattern_OperationInClass_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("feature");
-		EObject _localVariable_1 = sourceMatch.getObject("classDec");
-		EObject _localVariable_2 = targetMatch.getObject("umlClass");
+		EObject _localVariable_1 = targetMatch.getObject("umlClass");
+		EObject _localVariable_2 = sourceMatch.getObject("classDec");
 		EObject _localVariable_3 = sourceMatch.getObject("bodyDeclaration");
 		EObject tmpFeature = _localVariable_0;
-		EObject tmpClassDec = _localVariable_1;
-		EObject tmpUmlClass = _localVariable_2;
+		EObject tmpUmlClass = _localVariable_1;
+		EObject tmpClassDec = _localVariable_2;
 		EObject tmpBodyDeclaration = _localVariable_3;
 		if (tmpFeature instanceof Operation) {
 			Operation feature = (Operation) tmpFeature;
-			if (tmpClassDec instanceof ClassDeclaration) {
-				ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
-				if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
-					org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
+			if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
+				org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
+				if (tmpClassDec instanceof ClassDeclaration) {
+					ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
 					if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
 						MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-						return new Object[] { feature, classDec, umlClass, bodyDeclaration, targetMatch, sourceMatch };
+						return new Object[] { feature, umlClass, classDec, bodyDeclaration, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2435,10 +2441,10 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_24_2_matchsrctrgcontext_blackBBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { feature, classDec, umlClass, bodyDeclaration, sourceMatch, targetMatch };
+			return new Object[] { feature, umlClass, classDec, bodyDeclaration, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2449,28 +2455,28 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 				targetMatch, sourceMatch);
 		if (result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding != null) {
 			Operation feature = (Operation) result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding[0];
-			ClassDeclaration classDec = (ClassDeclaration) result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding[2];
+			org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding[1];
+			ClassDeclaration classDec = (ClassDeclaration) result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding[2];
 			MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) result_pattern_OperationInClass_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_OperationInClass_24_2_matchsrctrgcontext_black = pattern_OperationInClass_24_2_matchsrctrgcontext_blackBBBBBB(
-					feature, classDec, umlClass, bodyDeclaration, sourceMatch, targetMatch);
+					feature, umlClass, classDec, bodyDeclaration, sourceMatch, targetMatch);
 			if (result_pattern_OperationInClass_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { feature, classDec, umlClass, bodyDeclaration, sourceMatch, targetMatch };
+				return new Object[] { feature, umlClass, classDec, bodyDeclaration, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OperationInClass_24_3_solvecsp_bindingFBBBBBBB(OperationInClass _this,
-			Operation feature, ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
 			MAbstractMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(feature, classDec, umlClass, bodyDeclaration, sourceMatch,
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(feature, umlClass, classDec, bodyDeclaration, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, feature, classDec, umlClass, bodyDeclaration, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, feature, umlClass, classDec, bodyDeclaration, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2480,10 +2486,10 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_24_3_solvecsp_bindingAndBlackFBBBBBBB(OperationInClass _this,
-			Operation feature, ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
 			MAbstractMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_OperationInClass_24_3_solvecsp_binding = pattern_OperationInClass_24_3_solvecsp_bindingFBBBBBBB(
-				_this, feature, classDec, umlClass, bodyDeclaration, sourceMatch, targetMatch);
+				_this, feature, umlClass, classDec, bodyDeclaration, sourceMatch, targetMatch);
 		if (result_pattern_OperationInClass_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInClass_24_3_solvecsp_binding[0];
 
@@ -2491,7 +2497,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 					csp);
 			if (result_pattern_OperationInClass_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, feature, classDec, umlClass, bodyDeclaration, sourceMatch,
+				return new Object[] { csp, _this, feature, umlClass, classDec, bodyDeclaration, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2504,8 +2510,8 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_OperationInClass_24_5_matchcorrcontext_blackBBBFFBBB(
-			Operation feature, ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass,
+	public static final Iterable<Object[]> pattern_OperationInClass_24_5_matchcorrcontext_blackFBBBBFBB(
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
 			MAbstractMethodDefinition bodyDeclaration, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
@@ -2516,7 +2522,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 							.getOppositeReferenceTyped(feature, ASTNode2Element.class, "target")) {
 						if (!bd2ne.equals(c2c)) {
 							if (bodyDeclaration.equals(bd2ne.getSource())) {
-								_result.add(new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration,
+								_result.add(new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne,
 										sourceMatch, targetMatch });
 							}
 						}
@@ -2540,9 +2546,9 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_24_6_createcorrespondence_blackBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
 			CCMatch ccMatch) {
-		return new Object[] { feature, classDec, umlClass, bodyDeclaration, ccMatch };
+		return new Object[] { feature, umlClass, classDec, bodyDeclaration, ccMatch };
 	}
 
 	public static final Object[] pattern_OperationInClass_24_7_addtoreturnedresult_blackBB(
@@ -2615,38 +2621,6 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Operation feature) {
-		if (ruleResult.getTargetObjects().contains(feature)) {
-			return new Object[] { ruleResult, feature };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, ASTNode2Element bd2ne) {
-		if (ruleResult.getCorrObjects().contains(bd2ne)) {
-			return new Object[] { ruleResult, bd2ne };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, MAbstractMethodDefinition bodyDeclaration) {
-		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
-			return new Object[] { ruleResult, bodyDeclaration };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, ClassDeclaration classDec) {
-		if (ruleResult.getSourceObjects().contains(classDec)) {
-			return new Object[] { ruleResult, classDec };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_4BB(
 			ModelgeneratorRuleResult ruleResult, ASTNode2Element c2c) {
 		if (ruleResult.getCorrObjects().contains(c2c)) {
 			return new Object[] { ruleResult, c2c };
@@ -2654,7 +2628,7 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return null;
 	}
 
-	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Class umlClass) {
 		if (ruleResult.getTargetObjects().contains(umlClass)) {
 			return new Object[] { ruleResult, umlClass };
@@ -2662,47 +2636,80 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return null;
 	}
 
+	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, ClassDeclaration classDec) {
+		if (ruleResult.getSourceObjects().contains(classDec)) {
+			return new Object[] { ruleResult, classDec };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, Operation feature) {
+		if (ruleResult.getTargetObjects().contains(feature)) {
+			return new Object[] { ruleResult, feature };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, ASTNode2Element bd2ne) {
+		if (ruleResult.getCorrObjects().contains(bd2ne)) {
+			return new Object[] { ruleResult, bd2ne };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_OperationInClass_29_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, MAbstractMethodDefinition bodyDeclaration) {
+		if (ruleResult.getSourceObjects().contains(bodyDeclaration)) {
+			return new Object[] { ruleResult, bodyDeclaration };
+		}
+		return null;
+	}
+
 	public static final Iterable<Object[]> pattern_OperationInClass_29_2_isapplicablecore_blackFFFFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (RuleEntryList bd2neList : ruleEntryContainer.getRuleEntryList()) {
-			for (RuleEntryList c2cList : ruleEntryContainer.getRuleEntryList()) {
+		for (RuleEntryList c2cList : ruleEntryContainer.getRuleEntryList()) {
+			for (RuleEntryList bd2neList : ruleEntryContainer.getRuleEntryList()) {
 				if (!bd2neList.equals(c2cList)) {
-					for (EObject tmpBd2ne : bd2neList.getEntryObjects()) {
-						if (tmpBd2ne instanceof ASTNode2Element) {
-							ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
-							Element tmpFeature = bd2ne.getTarget();
-							if (tmpFeature instanceof Operation) {
-								Operation feature = (Operation) tmpFeature;
-								ASTNode tmpBodyDeclaration = bd2ne.getSource();
-								if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
-									MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
-									if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_1BB(ruleResult,
-											bd2ne) == null) {
-										if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-												feature) == null) {
+					for (EObject tmpC2c : c2cList.getEntryObjects()) {
+						if (tmpC2c instanceof ASTNode2Element) {
+							ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
+							Element tmpUmlClass = c2c.getTarget();
+							if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
+								org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
+								ASTNode tmpClassDec = c2c.getSource();
+								if (tmpClassDec instanceof ClassDeclaration) {
+									ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
+									if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+											c2c) == null) {
+										if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+												umlClass) == null) {
 											if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-													bodyDeclaration) == null) {
-												for (EObject tmpC2c : c2cList.getEntryObjects()) {
-													if (tmpC2c instanceof ASTNode2Element) {
-														ASTNode2Element c2c = (ASTNode2Element) tmpC2c;
+													classDec) == null) {
+												for (EObject tmpBd2ne : bd2neList.getEntryObjects()) {
+													if (tmpBd2ne instanceof ASTNode2Element) {
+														ASTNode2Element bd2ne = (ASTNode2Element) tmpBd2ne;
 														if (!bd2ne.equals(c2c)) {
-															ASTNode tmpClassDec = c2c.getSource();
-															if (tmpClassDec instanceof ClassDeclaration) {
-																ClassDeclaration classDec = (ClassDeclaration) tmpClassDec;
-																Element tmpUmlClass = c2c.getTarget();
-																if (tmpUmlClass instanceof org.eclipse.uml2.uml.Class) {
-																	org.eclipse.uml2.uml.Class umlClass = (org.eclipse.uml2.uml.Class) tmpUmlClass;
+															Element tmpFeature = bd2ne.getTarget();
+															if (tmpFeature instanceof Operation) {
+																Operation feature = (Operation) tmpFeature;
+																ASTNode tmpBodyDeclaration = bd2ne.getSource();
+																if (tmpBodyDeclaration instanceof MAbstractMethodDefinition) {
+																	MAbstractMethodDefinition bodyDeclaration = (MAbstractMethodDefinition) tmpBodyDeclaration;
 																	if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_4BB(
-																			ruleResult, c2c) == null) {
+																			ruleResult, bd2ne) == null) {
 																		if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_3BB(
-																				ruleResult, classDec) == null) {
+																				ruleResult, feature) == null) {
 																			if (pattern_OperationInClass_29_2_isapplicablecore_black_nac_5BB(
-																					ruleResult, umlClass) == null) {
-																				_result.add(new Object[] { bd2neList,
+																					ruleResult,
+																					bodyDeclaration) == null) {
+																				_result.add(new Object[] { c2cList, c2c,
+																						umlClass, classDec, bd2neList,
 																						feature, bd2ne, bodyDeclaration,
-																						c2cList, classDec, c2c,
-																						umlClass, ruleEntryContainer,
+																						ruleEntryContainer,
 																						ruleResult });
 																			}
 																		}
@@ -2730,15 +2737,15 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_29_3_solveCSP_bindingFBBBBBBBBB(OperationInClass _this,
-			IsApplicableMatch isApplicableMatch, Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, feature, classDec, umlClass, c2c,
-				bd2ne, bodyDeclaration, ruleResult);
+			IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, c2c, feature, umlClass, classDec,
+				bodyDeclaration, bd2ne, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne,
-					bodyDeclaration, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration,
+					bd2ne, ruleResult };
 		}
 		return null;
 	}
@@ -2748,11 +2755,11 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 	}
 
 	public static final Object[] pattern_OperationInClass_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			OperationInClass _this, IsApplicableMatch isApplicableMatch, Operation feature, ClassDeclaration classDec,
-			org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
+			OperationInClass _this, IsApplicableMatch isApplicableMatch, ASTNode2Element c2c, Operation feature,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
+			ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_OperationInClass_29_3_solveCSP_binding = pattern_OperationInClass_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, ruleResult);
+				_this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, ruleResult);
 		if (result_pattern_OperationInClass_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_OperationInClass_29_3_solveCSP_binding[0];
 
@@ -2760,8 +2767,8 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 					csp);
 			if (result_pattern_OperationInClass_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, feature, classDec, umlClass, c2c, bd2ne,
-						bodyDeclaration, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, c2c, feature, umlClass, classDec, bodyDeclaration,
+						bd2ne, ruleResult };
 			}
 		}
 		return null;
@@ -2773,35 +2780,35 @@ public class OperationInClassImpl extends AbstractRuleImpl implements OperationI
 		return _result;
 	}
 
-	public static final Object[] pattern_OperationInClass_29_5_checknacs_blackBBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration) {
+	public static final Object[] pattern_OperationInClass_29_5_checknacs_blackBBBBBB(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne) {
 		if (!bd2ne.equals(c2c)) {
-			return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration };
+			return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_OperationInClass_29_6_perform_blackBBBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, ASTNode2Element c2c, ASTNode2Element bd2ne,
-			MAbstractMethodDefinition bodyDeclaration, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_OperationInClass_29_6_perform_blackBBBBBBB(ASTNode2Element c2c,
+			Operation feature, org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec,
+			MAbstractMethodDefinition bodyDeclaration, ASTNode2Element bd2ne, ModelgeneratorRuleResult ruleResult) {
 		if (!bd2ne.equals(c2c)) {
-			return new Object[] { feature, classDec, umlClass, c2c, bd2ne, bodyDeclaration, ruleResult };
+			return new Object[] { c2c, feature, umlClass, classDec, bodyDeclaration, bd2ne, ruleResult };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_OperationInClass_29_6_perform_greenBBBBB(Operation feature,
-			ClassDeclaration classDec, org.eclipse.uml2.uml.Class umlClass, MAbstractMethodDefinition bodyDeclaration,
+			org.eclipse.uml2.uml.Class umlClass, ClassDeclaration classDec, MAbstractMethodDefinition bodyDeclaration,
 			ModelgeneratorRuleResult ruleResult) {
-		classDec.getBodyDeclarations().add(bodyDeclaration);
 		umlClass.getOwnedOperations().add(feature);
+		classDec.getBodyDeclarations().add(bodyDeclaration);
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { feature, classDec, umlClass, bodyDeclaration, ruleResult };
+		return new Object[] { feature, umlClass, classDec, bodyDeclaration, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_OperationInClass_29_7_expressionFB(

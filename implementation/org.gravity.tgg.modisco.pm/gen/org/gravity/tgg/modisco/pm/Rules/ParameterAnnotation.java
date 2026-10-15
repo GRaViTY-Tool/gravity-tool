@@ -52,8 +52,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, MMethodDefinition method, Annotation Annotation,
-			MSingleVariableDeclaration astNode);
+	boolean isAppropriate_FWD(Match match, MSingleVariableDeclaration astNode, Annotation Annotation,
+			MMethodDefinition method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,8 +77,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, MMethodDefinition method, Annotation Annotation,
-			MSingleVariableDeclaration astNode);
+	void registerObjectsToMatch_FWD(Match match, MSingleVariableDeclaration astNode, Annotation Annotation,
+			MMethodDefinition method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,8 +86,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition method, Annotation Annotation,
-			MSingleVariableDeclaration astNode);
+	CSP isAppropriate_solveCsp_FWD(Match match, MSingleVariableDeclaration astNode, Annotation Annotation,
+			MMethodDefinition method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,9 +103,10 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition method, Annotation Annotation,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TMethodDefinition tAnnotable, TParameter tParam,
-			TMethodSignature tSignature, MDefinitionToTMember mMethodToTDef, MSingleVariableDeclaration astNode);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, TParameter tParam,
+			MSingleVariableDeclaration astNode, TMethodDefinition tAnnotable, TMethodSignature tSignature,
+			Annotation Annotation, ASTNodeToTAnnotatable aSTNodeToTAnnotable, MDefinitionToTMember mMethodToTDef,
+			MMethodDefinition method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +122,9 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject method, EObject Annotation,
-			EObject aSTNodeToTAnnotable, EObject tAnnotable, EObject AnnotationToTAnnotation, EObject tParam,
-			EObject tSignature, EObject mMethodToTDef, EObject astNode);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject tParam, EObject astNode, EObject tAnnotable,
+			EObject AnnotationToTAnnotation, EObject tSignature, EObject Annotation, EObject aSTNodeToTAnnotable,
+			EObject mMethodToTDef, EObject method, EObject tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,8 +140,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, TAnnotation tAnnotation, TMethodDefinition tAnnotable, TParameter tParam,
-			TMethodSignature tSignature);
+	boolean isAppropriate_BWD(Match match, TParameter tParam, TMethodDefinition tAnnotable, TMethodSignature tSignature,
+			TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,8 +165,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, TAnnotation tAnnotation, TMethodDefinition tAnnotable,
-			TParameter tParam, TMethodSignature tSignature);
+	void registerObjectsToMatch_BWD(Match match, TParameter tParam, TMethodDefinition tAnnotable,
+			TMethodSignature tSignature, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,8 +174,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, TAnnotation tAnnotation, TMethodDefinition tAnnotable,
-			TParameter tParam, TMethodSignature tSignature);
+	CSP isAppropriate_solveCsp_BWD(Match match, TParameter tParam, TMethodDefinition tAnnotable,
+			TMethodSignature tSignature, TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,10 +191,10 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TAnnotation tAnnotation,
-			MMethodDefinition method, ASTNodeToTAnnotatable aSTNodeToTAnnotable, TMethodDefinition tAnnotable,
-			TParameter tParam, TMethodSignature tSignature, MDefinitionToTMember mMethodToTDef,
-			MSingleVariableDeclaration astNode);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tParam,
+			MSingleVariableDeclaration astNode, TMethodDefinition tAnnotable, TMethodSignature tSignature,
+			ASTNodeToTAnnotatable aSTNodeToTAnnotable, MDefinitionToTMember mMethodToTDef, MMethodDefinition method,
+			TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,9 +210,9 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tAnnotation, EObject method, EObject Annotation,
-			EObject aSTNodeToTAnnotable, EObject tAnnotable, EObject AnnotationToTAnnotation, EObject tParam,
-			EObject tSignature, EObject mMethodToTDef, EObject astNode);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject tParam, EObject astNode, EObject tAnnotable,
+			EObject AnnotationToTAnnotation, EObject tSignature, EObject Annotation, EObject aSTNodeToTAnnotable,
+			EObject mMethodToTDef, EObject method, EObject tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +236,7 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_37(EMoflonEdge _edge_annotations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_36(EMoflonEdge _edge_annotations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,9 +268,9 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(TAnnotation tAnnotation, MMethodDefinition method, Annotation Annotation,
-			TMethodDefinition tAnnotable, TParameter tParam, TMethodSignature tSignature,
-			MSingleVariableDeclaration astNode, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(TParameter tParam, MSingleVariableDeclaration astNode, TMethodDefinition tAnnotable,
+			TMethodSignature tSignature, Annotation Annotation, MMethodDefinition method, TAnnotation tAnnotation,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,7 +286,7 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(MMethodDefinition method, Annotation Annotation, MSingleVariableDeclaration astNode);
+	boolean checkDEC_FWD(MSingleVariableDeclaration astNode, Annotation Annotation, MMethodDefinition method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,8 +294,8 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(TAnnotation tAnnotation, TMethodDefinition tAnnotable, TParameter tParam,
-			TMethodSignature tSignature);
+	boolean checkDEC_BWD(TParameter tParam, TMethodDefinition tAnnotable, TMethodSignature tSignature,
+			TAnnotation tAnnotation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,7 +304,7 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotableParameter);
+			MDefinitionToTMember mMethodToTDefParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,9 +312,9 @@ public interface ParameterAnnotation extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, MMethodDefinition method,
-			ASTNodeToTAnnotatable aSTNodeToTAnnotable, TMethodDefinition tAnnotable, TParameter tParam,
-			TMethodSignature tSignature, MDefinitionToTMember mMethodToTDef, MSingleVariableDeclaration astNode,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, TParameter tParam,
+			MSingleVariableDeclaration astNode, TMethodDefinition tAnnotable, TMethodSignature tSignature,
+			ASTNodeToTAnnotatable aSTNodeToTAnnotable, MDefinitionToTMember mMethodToTDef, MMethodDefinition method,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

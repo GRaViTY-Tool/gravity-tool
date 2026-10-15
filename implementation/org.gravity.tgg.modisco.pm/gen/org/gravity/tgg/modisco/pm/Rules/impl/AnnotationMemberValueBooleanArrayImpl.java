@@ -776,7 +776,7 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_tValue) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_21(EMoflonEdge _edge_tValue) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanArrayImpl
 				.pattern_AnnotationMemberValueBooleanArray_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -836,7 +836,7 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_expressions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_21(EMoflonEdge _edge_expressions) {
 
 		Object[] result1_bindingAndBlack = AnnotationMemberValueBooleanArrayImpl
 				.pattern_AnnotationMemberValueBooleanArray_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1282,99 +1282,98 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
-				return isAppropriate_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
-						(ArrayInitializer) arguments.get(2), (BooleanLiteral) arguments.get(3));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___PERFORM_FWD__ISAPPLICABLEMATCH:
-				return perform_FWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_FWD__MATCH:
-				return isApplicable_FWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
-				registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
-						(ArrayInitializer) arguments.get(2), (BooleanLiteral) arguments.get(3));
-				return null;
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
-				return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-						(AnnotationMemberValuePair) arguments.get(1), (ArrayInitializer) arguments.get(2),
-						(BooleanLiteral) arguments.get(3));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
-				return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TANNOTATIONVALUE_BOOLEANLITERAL:
-				return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
-						(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
-						(TAnnotationValue) arguments.get(4), (BooleanLiteral) arguments.get(5));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
-				return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-				return null;
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_TYPES_FWD__MATCH:
-				return checkTypes_FWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD__MATCH_TBOOLNODE_TANNOTATIONVALUE:
-				return isAppropriate_BWD((Match) arguments.get(0), (TBoolNode) arguments.get(1),
-						(TAnnotationValue) arguments.get(2));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___PERFORM_BWD__ISAPPLICABLEMATCH:
-				return perform_BWD((IsApplicableMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_BWD__MATCH:
-				return isApplicable_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TBOOLNODE_TANNOTATIONVALUE:
-				registerObjectsToMatch_BWD((Match) arguments.get(0), (TBoolNode) arguments.get(1),
-						(TAnnotationValue) arguments.get(2));
-				return null;
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TBOOLNODE_TANNOTATIONVALUE:
-				return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TBoolNode) arguments.get(1),
-						(TAnnotationValue) arguments.get(2));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
-				return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TBOOLNODE_TANNOTATIONVALUE:
-				return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
-						(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
-						(TBoolNode) arguments.get(4), (TAnnotationValue) arguments.get(5));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
-				return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
-				registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
-						(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
-						(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
-				return null;
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_TYPES_BWD__MATCH:
-				return checkTypes_BWD((Match) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_59__EMOFLONEDGE:
-				return isAppropriate_BWD_EMoflonEdge_59((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_63__EMOFLONEDGE:
-				return isAppropriate_FWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
-				return checkAttributes_FWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
-				return checkAttributes_BWD((TripleMatch) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CC__MATCH_MATCH:
-				return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TBOOLNODE_TANNOTATIONVALUE_BOOLEANLITERAL_MATCH_MATCH:
-				return isApplicable_solveCsp_CC((AnnotationMemberValuePair) arguments.get(0),
-						(ArrayInitializer) arguments.get(1), (TBoolNode) arguments.get(2),
-						(TAnnotationValue) arguments.get(3), (BooleanLiteral) arguments.get(4),
-						(Match) arguments.get(5), (Match) arguments.get(6));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
-				return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_DEC_FWD__ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
-				return checkDEC_FWD((AnnotationMemberValuePair) arguments.get(0), (ArrayInitializer) arguments.get(1),
-						(BooleanLiteral) arguments.get(2));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_DEC_BWD__TBOOLNODE_TANNOTATIONVALUE:
-				return checkDEC_BWD((TBoolNode) arguments.get(0), (TAnnotationValue) arguments.get(1));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___GENERATE_MODEL__RULEENTRYCONTAINER_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE:
-				return generateModel((RuleEntryContainer) arguments.get(0),
-						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TANNOTATIONVALUE_MODELGENERATORRULERESULT:
-				return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-						(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
-						(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
-						(TAnnotationValue) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
-			case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
-				return generateModel_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
+			return isAppropriate_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
+					(ArrayInitializer) arguments.get(2), (BooleanLiteral) arguments.get(3));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___PERFORM_FWD__ISAPPLICABLEMATCH:
+			return perform_FWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_FWD__MATCH:
+			return isApplicable_FWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
+					(ArrayInitializer) arguments.get(2), (BooleanLiteral) arguments.get(3));
+			return null;
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (AnnotationMemberValuePair) arguments.get(1),
+					(ArrayInitializer) arguments.get(2), (BooleanLiteral) arguments.get(3));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
+			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TANNOTATIONVALUE_BOOLEANLITERAL:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
+					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
+					(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
+					(TAnnotationValue) arguments.get(4), (BooleanLiteral) arguments.get(5));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
+			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_FWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+			return null;
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_TYPES_FWD__MATCH:
+			return checkTypes_FWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD__MATCH_TBOOLNODE_TANNOTATIONVALUE:
+			return isAppropriate_BWD((Match) arguments.get(0), (TBoolNode) arguments.get(1),
+					(TAnnotationValue) arguments.get(2));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___PERFORM_BWD__ISAPPLICABLEMATCH:
+			return perform_BWD((IsApplicableMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_BWD__MATCH:
+			return isApplicable_BWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TBOOLNODE_TANNOTATIONVALUE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (TBoolNode) arguments.get(1),
+					(TAnnotationValue) arguments.get(2));
+			return null;
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TBOOLNODE_TANNOTATIONVALUE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (TBoolNode) arguments.get(1),
+					(TAnnotationValue) arguments.get(2));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
+			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TBOOLNODE_TANNOTATIONVALUE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
+					(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
+					(TBoolNode) arguments.get(4), (TAnnotationValue) arguments.get(5));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
+			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
+			registerObjects_BWD((PerformRuleResult) arguments.get(0), (EObject) arguments.get(1),
+					(EObject) arguments.get(2), (EObject) arguments.get(3), (EObject) arguments.get(4),
+					(EObject) arguments.get(5), (EObject) arguments.get(6), (EObject) arguments.get(7));
+			return null;
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_TYPES_BWD__MATCH:
+			return checkTypes_BWD((Match) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_BWD_EMOFLON_EDGE_21__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPROPRIATE_FWD_EMOFLON_EDGE_21__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_21((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
+			return checkAttributes_FWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
+			return checkAttributes_BWD((TripleMatch) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CC__MATCH_MATCH:
+			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_SOLVE_CSP_CC__ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TBOOLNODE_TANNOTATIONVALUE_BOOLEANLITERAL_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((AnnotationMemberValuePair) arguments.get(0),
+					(ArrayInitializer) arguments.get(1), (TBoolNode) arguments.get(2),
+					(TAnnotationValue) arguments.get(3), (BooleanLiteral) arguments.get(4), (Match) arguments.get(5),
+					(Match) arguments.get(6));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___IS_APPLICABLE_CHECK_CSP_CC__CSP:
+			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_DEC_FWD__ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_BOOLEANLITERAL:
+			return checkDEC_FWD((AnnotationMemberValuePair) arguments.get(0), (ArrayInitializer) arguments.get(1),
+					(BooleanLiteral) arguments.get(2));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___CHECK_DEC_BWD__TBOOLNODE_TANNOTATIONVALUE:
+			return checkDEC_BWD((TBoolNode) arguments.get(0), (TAnnotationValue) arguments.get(1));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___GENERATE_MODEL__RULEENTRYCONTAINER_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE:
+			return generateModel((RuleEntryContainer) arguments.get(0),
+					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_ANNOTATIONMEMBERVALUEPAIRTOTANNOTATIONVALUE_ANNOTATIONMEMBERVALUEPAIR_ARRAYINITIALIZER_TANNOTATIONVALUE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
+					(AnnotationMemberValuePairToTAnnotationValue) arguments.get(1),
+					(AnnotationMemberValuePair) arguments.get(2), (ArrayInitializer) arguments.get(3),
+					(TAnnotationValue) arguments.get(4), (ModelgeneratorRuleResult) arguments.get(5));
+		case RulesPackage.ANNOTATION_MEMBER_VALUE_BOOLEAN_ARRAY___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
+			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -2590,9 +2589,9 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueBooleanArray_21_2_testcorematchandDECs_black_nac_0BB(
 			BooleanLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_219707 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_15358 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_219707)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_15358)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
@@ -2867,9 +2866,9 @@ public class AnnotationMemberValueBooleanArrayImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_AnnotationMemberValueBooleanArray_27_1_matchtggpattern_black_nac_0BB(
 			BooleanLiteral mValue, AnnotationMemberValuePair mAnnotationValue) {
-		for (AnnotationMemberValuePair __DEC_mValue_value_906584 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (AnnotationMemberValuePair __DEC_mValue_value_251817 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(mValue, AnnotationMemberValuePair.class, "value")) {
-			if (!mAnnotationValue.equals(__DEC_mValue_value_906584)) {
+			if (!mAnnotationValue.equals(__DEC_mValue_value_251817)) {
 				return new Object[] { mValue, mAnnotationValue };
 			}
 		}
