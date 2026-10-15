@@ -1,0 +1,74 @@
+package org.gravity.pm.multimodule.tests;
+
+import static org.junit.Assert.*;
+import java.util.Map;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.gravity.pm.multimodule.link.ProgramModelLinker;
+import org.gravity.typegraph.basic.BasicFactory;
+import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TClass;
+import org.junit.Test;
+
+public class ProgramModelLinkerIntegrationTest {
+    @Test
+    public void linksAcrossResourcesPersistsAndRestoresSurrogate() throws Exception {
+        var set = new ResourceSetImpl();
+        set.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+        var first = set.createResource(URI.createURI("memory:/module-a.xmi"));
+        var second = set.createResource(URI.createURI("memory:/module-b.xmi"));
+        TClass owner = BasicFactory.eINSTANCE.createTClass();
+        TClass surrogate = BasicFactory.eINSTANCE.createTClass();
+        TClass actual = BasicFactory.eINSTANCE.createTClass();
+        first.getContents().add(owner);
+        first.getContents().add(surrogate);
+        second.getContents().add(actual);
+        owner.getParentClasses().add(surrogate);
+
+        var linker = new ProgramModelLinker();
+        linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual);
+        assertSame(actual, owner.getParentClasses().get(0));
+        assertEquals(1, linker.links().size());
+
+        var bytesA = new java.io.ByteArrayOutputStream();
+        var bytesB = new java.io.ByteArrayOutputStream();
+        first.save(bytesA, Map.of());
+        second.save(bytesB, Map.of());
+        var reloaded = new ResourceSetImpl();
+        reloaded.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+        var loadedB = reloaded.createResource(second.getURI());
+        loadedB.load(new java.io.ByteArrayInputStream(bytesB.toByteArray()), Map.of());
+        var loadedA = reloaded.createResource(first.getURI());
+        loadedA.load(new java.io.ByteArrayInputStream(bytesA.toByteArray()), Map.of());
+        TClass restored = (TClass) loadedA.getContents().get(0);
+        assertSame(loadedB.getContents().get(0), restored.getParentClasses().get(0));
+
+        linker.unlink();
+        assertSame(surrogate, owner.getParentClasses().get(0));
+    }
+
+    @Test
+    public void unlinkDoesNotOverwriteUserChanges() {
+        TClass owner = BasicFactory.eINSTANCE.createTClass();
+        TClass surrogate = BasicFactory.eINSTANCE.createTClass();
+        TClass actual = BasicFactory.eINSTANCE.createTClass();
+        TClass edited = BasicFactory.eINSTANCE.createTClass();
+        owner.getParentClasses().add(surrogate);
+        var linker = new ProgramModelLinker();
+        linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual);
+        owner.getParentClasses().set(0, edited);
+        linker.unlink();
+        assertSame(edited, owner.getParentClasses().get(0));
+    }
+
+    @Test
+    public void refusesContainmentAndMissingSurrogate() {
+        TClass owner = BasicFactory.eINSTANCE.createTClass();
+        TClass surrogate = BasicFactory.eINSTANCE.createTClass();
+        TClass actual = BasicFactory.eINSTANCE.createTClass();
+        var linker = new ProgramModelLinker();
+        assertThrows(IllegalArgumentException.class, () ->
+            linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual));
+    }
+}
