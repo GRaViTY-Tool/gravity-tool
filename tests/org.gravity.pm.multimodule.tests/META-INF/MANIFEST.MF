@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GRaViTY Multi-Project Program Model Tests
+Bundle-SymbolicName: org.gravity.pm.multimodule.tests;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Require-Bundle: org.gravity.pm.multimodule,
+ org.gravity.typegraph.basic,
+ org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
+ org.junit
