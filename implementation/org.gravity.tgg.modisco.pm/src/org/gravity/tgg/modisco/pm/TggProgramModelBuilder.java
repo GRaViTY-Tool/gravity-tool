@@ -1,6 +1,8 @@
 package org.gravity.tgg.modisco.pm;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
@@ -21,6 +23,8 @@ public final class TggProgramModelBuilder
 
 	public static final String ID = "org.gravity.java.modisco.tgg";
 
+	private final Map<IProject, MoDiscoTGGConverter> sessions = new HashMap<>();
+
 	@Override
 	public String id() { return ID; }
 
@@ -32,32 +36,30 @@ public final class TggProgramModelBuilder
 	@Override
 	public TypeGraph build(final IProject project, final IProgressMonitor monitor) throws ProgramModelBuildException {
 		try {
-			final var converter = new MoDiscoTGGConverter(JavaProjectUtil.getJavaProject(project));
+			final var converter = new MoDiscoTGGConverter(JavaProjectUtil.getJavaProject(project), false);
+			converter.disableAutosave();
 			if (!converter.convertProject(monitor)) {
 				throw new ProgramModelBuildException("TGG conversion failed for " + project.getName());
 			}
+			sessions.put(project, converter);
 			return converter.getPG();
 		} catch (IOException | CoreException e) {
 			throw new ProgramModelBuildException("Cannot create TGG program model for " + project.getName(), e);
 		}
 	}
 
+
 	@Override
 	public boolean synchronizeForward(final IProject project, final TypeGraph model, final IProgressMonitor monitor) {
-		try {
-			return new MoDiscoTGGConverter(JavaProjectUtil.getJavaProject(project)).syncProjectFwd(monitor);
-		} catch (IOException | CoreException e) {
-			return false;
-		}
+		final var converter = sessions.get(project);
+		if (converter == null || converter.getPG() != model) return false;
+		return converter.syncProjectFwd(monitor);
 	}
 
 	@Override
 	public boolean synchronizeBackward(final IProject project, final TypeGraph model, final IProgressMonitor monitor) {
-		try {
-			return new MoDiscoTGGConverter(JavaProjectUtil.getJavaProject(project))
-					.syncProjectBwd(ignored -> { }, monitor);
-		} catch (IOException | CoreException e) {
-			return false;
-		}
+		final var converter = sessions.get(project);
+		if (converter == null || converter.getPG() != model) return false;
+		return converter.syncProjectBwd(ignored -> { }, monitor);
 	}
 }
