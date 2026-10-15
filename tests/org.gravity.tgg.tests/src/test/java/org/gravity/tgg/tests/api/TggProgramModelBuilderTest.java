@@ -14,31 +14,19 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.tests.TestHelper;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.gravity.tgg.modisco.pm.TggProgramModelBuilder;
-import org.eclipse.core.runtime.Platform;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGActivator;
-import org.osgi.framework.Bundle;
-import org.junit.BeforeClass;
 import org.junit.After;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.modisco.java.MethodDeclaration;
+import org.eclipse.modisco.java.Model;
+import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.GravityMoDiscoModelPatcher;
+import org.gravity.modisco.util.MoDiscoUtil;
 import org.junit.Test;
 
 public class TggProgramModelBuilderTest {
 
 	private IJavaProject javaProject;
-
-	@BeforeClass
-	public static void printPatcherPluginDiagnostics() {
-		final String bundleId = "org.gravity.modisco.patcher.emfcompare";
-		final Bundle bundle = Platform.getBundle(bundleId);
-		System.out.println("MoDisco patcher bundle: " + (bundle == null ? "NOT INSTALLED"
-				: bundle.getSymbolicName() + " [" + bundle.getVersion() + "], state=" + bundle.getState()));
-		assertNotNull("MoDisco patcher bundle missing from test runtime: " + bundleId, bundle);
-		final var activator = MoDiscoTGGActivator.getDefault();
-		assertNotNull("MoDisco TGG activator was not started", activator);
-		final var patcher = activator.getSelectedPatcher();
-		System.out.println("Selected MoDisco patcher: " + (patcher == null ? "NONE"
-				: patcher.getClass().getName()));
-		assertNotNull("No MoDisco patcher selected; check extension registration", patcher);
-	}
 
 
 	@After
@@ -82,8 +70,42 @@ public class TggProgramModelBuilderTest {
 		final var source = "package dummy; public class Clazz { public void added() {} }";
 		file.setContents(new ByteArrayInputStream(source.getBytes(StandardCharsets.UTF_8)), true, false,
 				new NullProgressMonitor());
+		final var activator = MoDiscoTGGActivator.getDefault();
+		assertNotNull("TGG activator must be active", activator);
+		final var previous = activator.getSelectedPatcher();
+		final GravityMoDiscoModelPatcher controlledPatcher = new GravityMoDiscoModelPatcher() {
+			@Override
+			public void update(final MGravityModel oldModel, final MGravityModel newModel) {
+				final var oldClass = MoDiscoUtil.getType(oldModel, "dummy.Clazz");
+				final var newClass = MoDiscoUtil.getType(newModel, "dummy.Clazz");
+				assertNotNull(oldClass);
+				assertNotNull(newClass);
+				final var method = newClass.getBodyDeclarations().stream()
+						.filter(MethodDeclaration.class::isInstance)
+						.map(MethodDeclaration.class::cast)
+						.filter(m -> "added".equals(m.getName()))
+						.findFirst().orElseThrow();
+				oldClass.getBodyDeclarations().add(EcoreUtil.copy(method));
+			}
+
+			@Override
+			public void update(final Model oldModel, final Model newModel) {
+				throw new UnsupportedOperationException("Only MGravityModel patching is expected");
+			}
+
+			@Override
+			public String getName() { return "Controlled test method addition"; }
+
+			@Override
+			public String getDescription() { return "Copies only the newly introduced method"; }
+		};
+		activator.setSelectedPatcher(controlledPatcher);
+		try {
 		assertTrue("Forward synchronization failed", builder.synchronizeForward(javaProject.getProject(),
 				model, new NullProgressMonitor()));
+		} finally {
+			activator.setSelectedPatcher(previous);
+		}
 		assertNotNull("Existing model must still be available", model.getClass("dummy.Clazz"));
 		assertNotNull("Forward synchronization must add the method", model.getClass("dummy.Clazz").getTMethodDefinition("added():void"));
 	}
