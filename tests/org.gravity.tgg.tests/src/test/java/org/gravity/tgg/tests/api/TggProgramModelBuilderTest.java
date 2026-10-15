@@ -8,7 +8,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.tests.TestHelper;
-import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.gravity.tgg.modisco.pm.TggProgramModelBuilder;
 import org.junit.After;
 import org.junit.Test;
@@ -38,7 +38,9 @@ public class TggProgramModelBuilderTest {
 
 	@Test
 	public void rejectsNonJavaProject() throws Exception {
-		final IProject project = EclipseProjectUtil.createProject("TggProgramModelBuilderNonJava", null);
+		final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("TggProgramModelBuilderNonJava");
+		project.create(new NullProgressMonitor());
+		project.open(new NullProgressMonitor());
 		try {
 			final var builder = new TggProgramModelBuilder();
 			assertFalse(builder.supports(project));
