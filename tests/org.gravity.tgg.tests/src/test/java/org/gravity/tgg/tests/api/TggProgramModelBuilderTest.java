@@ -34,6 +34,7 @@ public class TggProgramModelBuilderTest {
 	@After
 	public void clean() throws Exception {
 		if (javaProject != null && javaProject.getProject().exists()) {
+			ModelSaveJobGuard.awaitPendingSaves();
 			javaProject.getProject().delete(true, new NullProgressMonitor());
 		}
 	}

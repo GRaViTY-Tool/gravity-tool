@@ -66,6 +66,7 @@ public class AnnotatedMultiModuleProjectTest {
                     .anyMatch(location -> location.programElement() == model.getClass("study.second.Second")));
         } finally {
             if (imported != null && imported.getProject().exists()) {
+                ModelSaveJobGuard.awaitPendingSaves();
                 imported.getProject().delete(true, new NullProgressMonitor());
             }
             try (var paths = Files.walk(root)) {

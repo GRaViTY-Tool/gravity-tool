@@ -21,6 +21,7 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -108,6 +109,12 @@ public class APITests {
 			delete = project.getProject();
 		}
 		if ((delete != null) && delete.exists()) {
+			try {
+				ModelSaveJobGuard.awaitPendingSaves();
+			} catch (final InterruptedException e) {
+				Thread.currentThread().interrupt();
+				throw new IllegalStateException("Interrupted waiting for model saves", e);
+			}
 			delete.delete(true, null);
 		}
 	}
