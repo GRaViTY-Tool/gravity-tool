@@ -14,12 +14,32 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.tests.TestHelper;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.gravity.tgg.modisco.pm.TggProgramModelBuilder;
+import org.eclipse.core.runtime.Platform;
+import org.gravity.tgg.modisco.pm.MoDiscoTGGActivator;
+import org.osgi.framework.Bundle;
+import org.junit.BeforeClass;
 import org.junit.After;
 import org.junit.Test;
 
 public class TggProgramModelBuilderTest {
 
 	private IJavaProject javaProject;
+
+	@BeforeClass
+	public static void printPatcherPluginDiagnostics() {
+		final String bundleId = "org.gravity.modisco.patcher.emfcompare";
+		final Bundle bundle = Platform.getBundle(bundleId);
+		System.out.println("MoDisco patcher bundle: " + (bundle == null ? "NOT INSTALLED"
+				: bundle.getSymbolicName() + " [" + bundle.getVersion() + "], state=" + bundle.getState()));
+		assertNotNull("MoDisco patcher bundle missing from test runtime: " + bundleId, bundle);
+		final var activator = MoDiscoTGGActivator.getDefault();
+		assertNotNull("MoDisco TGG activator was not started", activator);
+		final var patcher = activator.getSelectedPatcher();
+		System.out.println("Selected MoDisco patcher: " + (patcher == null ? "NONE"
+				: patcher.getClass().getName()));
+		assertNotNull("No MoDisco patcher selected; check extension registration", patcher);
+	}
+
 
 	@After
 	public void clean() throws Exception {
