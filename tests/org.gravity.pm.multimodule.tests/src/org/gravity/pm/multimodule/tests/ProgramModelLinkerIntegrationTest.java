@@ -100,4 +100,20 @@ public class ProgramModelLinkerIntegrationTest {
                         surrogate, BasicFactory.eINSTANCE.createTMethod()));
         assertSame(surrogate, owner.getParentClasses().get(0));
     }
+
+    @Test
+    public void linksReferencesAcrossContainedModelElements() {
+        var root = BasicFactory.eINSTANCE.createTypeGraph();
+        TClass owner = BasicFactory.eINSTANCE.createTClass();
+        TClass surrogate = BasicFactory.eINSTANCE.createTClass();
+        TClass actual = BasicFactory.eINSTANCE.createTClass();
+        root.getClasses().add(owner);
+        root.getClasses().add(surrogate);
+        owner.getParentClasses().add(surrogate);
+        var linker = new ProgramModelLinker();
+        assertEquals(1, linker.linkAll("tgg", root, surrogate, actual));
+        assertSame(actual, owner.getParentClasses().get(0));
+        linker.unlink();
+        assertSame(surrogate, owner.getParentClasses().get(0));
+    }
 }
