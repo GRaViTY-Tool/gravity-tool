@@ -15,7 +15,7 @@ public final class ProgramModelLinker {
         Objects.requireNonNull(reference);
         Objects.requireNonNull(surrogate);
         Objects.requireNonNull(target);
-        if (reference.isContainment() || reference.isContainer()) {
+        if (reference.isContainment() || reference.isContainer() || reference.isDerived() || !reference.isChangeable()) {
             throw new IllegalArgumentException("Containment references cannot be linked across program models");
         }
         if (!reference.getEReferenceType().isInstance(target)) {
@@ -27,6 +27,7 @@ public final class ProgramModelLinker {
             List<EObject> values = (List<EObject>) value;
             int index = values.indexOf(surrogate);
             if (index < 0) throw new IllegalArgumentException("Surrogate not referenced");
+            if (values.indexOf(surrogate, index + 1) >= 0) throw new IllegalArgumentException("Ambiguous repeated surrogate reference");
             values.set(index, target);
             links.add(new ProgramModelLink(builderId, owner, reference, index, surrogate, target));
         } else {
@@ -45,8 +46,11 @@ public final class ProgramModelLinker {
             if (link.reference().isMany()) {
                 @SuppressWarnings("unchecked")
                 List<EObject> values = (List<EObject>) link.owner().eGet(link.reference());
-                if (link.index() < values.size() && values.get(link.index()) == link.target())
+                if (link.index() < values.size() && values.get(link.index()) == link.target()) {
                     values.set(link.index(), link.surrogate());
+                } else if (values.contains(link.target())) {
+                    throw new IllegalStateException("Reference order changed after linking; cannot safely restore");
+                }
             } else if (link.owner().eGet(link.reference()) == link.target()) {
                 link.owner().eSet(link.reference(), link.surrogate());
             }
