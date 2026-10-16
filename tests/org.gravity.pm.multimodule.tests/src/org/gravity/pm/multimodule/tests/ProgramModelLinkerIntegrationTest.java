@@ -71,4 +71,31 @@ public class ProgramModelLinkerIntegrationTest {
         assertThrows(IllegalArgumentException.class, () ->
             linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual));
     }
+
+    @Test
+    public void refusesDuplicateSurrogatesWithoutChangingModel() {
+        TClass owner = BasicFactory.eINSTANCE.createTClass();
+        TClass surrogate = BasicFactory.eINSTANCE.createTClass();
+        TClass actual = BasicFactory.eINSTANCE.createTClass();
+        owner.getParentClasses().add(surrogate);
+        owner.getParentClasses().add(surrogate);
+        var linker = new ProgramModelLinker();
+        assertThrows(IllegalArgumentException.class, () ->
+                linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual));
+        assertSame(surrogate, owner.getParentClasses().get(0));
+        assertSame(surrogate, owner.getParentClasses().get(1));
+        assertTrue(linker.links().isEmpty());
+    }
+
+    @Test
+    public void refusesIncompatibleReferenceTarget() {
+        TClass owner = BasicFactory.eINSTANCE.createTClass();
+        TClass surrogate = BasicFactory.eINSTANCE.createTClass();
+        owner.getParentClasses().add(surrogate);
+        var linker = new ProgramModelLinker();
+        assertThrows(IllegalArgumentException.class, () ->
+                linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(),
+                        surrogate, BasicFactory.eINSTANCE.createTMethod()));
+        assertSame(surrogate, owner.getParentClasses().get(0));
+    }
 }
