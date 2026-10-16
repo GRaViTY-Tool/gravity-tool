@@ -12,4 +12,7 @@ Require-Bundle: org.gravity.pm.multimodule,
  org.eclipse.equinox.common,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
- org.junit
+ org.junit,
+ org.gravity.typegraph.spl,
+ org.eclipse.jdt.core,
+ org.gravity.eclipse

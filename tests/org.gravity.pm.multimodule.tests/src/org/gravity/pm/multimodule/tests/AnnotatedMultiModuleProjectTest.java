@@ -1,4 +1,4 @@
-package org.gravity.tgg.tests.api;
+package org.gravity.pm.multimodule.tests;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -66,7 +66,6 @@ public class AnnotatedMultiModuleProjectTest {
                     .anyMatch(location -> location.programElement() == model.getClass("study.second.Second")));
         } finally {
             if (imported != null && imported.getProject().exists()) {
-                ModelSaveJobGuard.awaitPendingSaves();
                 imported.getProject().delete(true, new NullProgressMonitor());
             }
             try (var paths = Files.walk(root)) {

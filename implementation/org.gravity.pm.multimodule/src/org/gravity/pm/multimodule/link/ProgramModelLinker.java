@@ -27,7 +27,7 @@ public final class ProgramModelLinker {
             List<EObject> values = (List<EObject>) value;
             int index = values.indexOf(surrogate);
             if (index < 0) throw new IllegalArgumentException("Surrogate not referenced");
-            if (values.indexOf(surrogate, index + 1) >= 0) throw new IllegalArgumentException("Ambiguous repeated surrogate reference");
+            if (values.subList(index + 1, values.size()).contains(surrogate)) throw new IllegalArgumentException("Ambiguous repeated surrogate reference");
             values.set(index, target);
             links.add(new ProgramModelLink(builderId, owner, reference, index, surrogate, target));
         } else {
