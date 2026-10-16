@@ -2,6 +2,7 @@ package org.gravity.pm.multimodule.project;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -77,12 +78,15 @@ public final class MavenProjectSystemProvider implements IProjectSystemProvider 
         if (facade == null) {
             throw new IllegalStateException("Missing m2e project facade: " + project.getName());
         }
-        final File base = canonical(project.getLocation().toFile());
+        final Path base = canonical(project.getLocation().toFile()).toPath();
         for (final IProject child : imported.values()) {
-            if (child.equals(project) || !base.toPath().equals(canonical(child.getLocation().toFile()).toPath().getParent())) {
+            if (child.equals(project)) {
                 continue;
             }
-            collect(child, imported, modules);
+            final Path location = canonical(child.getLocation().toFile()).toPath();
+            if (location.startsWith(base) && !location.equals(base)) {
+                collect(child, imported, modules);
+            }
         }
     }
 
