@@ -73,18 +73,20 @@ public class ProgramModelLinkerIntegrationTest {
     }
 
     @Test
-    public void refusesDuplicateSurrogatesWithoutChangingModel() {
+    public void uniqueParentReferenceDoesNotCreateDuplicateLinks() {
         TClass owner = BasicFactory.eINSTANCE.createTClass();
         TClass surrogate = BasicFactory.eINSTANCE.createTClass();
         TClass actual = BasicFactory.eINSTANCE.createTClass();
         owner.getParentClasses().add(surrogate);
         owner.getParentClasses().add(surrogate);
+        assertEquals("EMF parent classes are unique", 1, owner.getParentClasses().size());
+
         var linker = new ProgramModelLinker();
-        assertThrows(IllegalArgumentException.class, () ->
-                linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual));
+        linker.link("tgg", owner, BasicPackage.eINSTANCE.getTClass_ParentClasses(), surrogate, actual);
+        assertSame(actual, owner.getParentClasses().get(0));
+        assertEquals(1, linker.links().size());
+        linker.unlink();
         assertSame(surrogate, owner.getParentClasses().get(0));
-        assertSame(surrogate, owner.getParentClasses().get(1));
-        assertTrue(linker.links().isEmpty());
     }
 
     @Test
