@@ -55,7 +55,6 @@ public final class ProgramModelLinker {
             for (final EReference reference : owner.eClass().getEAllReferences()) {
                 if (reference.isContainment() || reference.isContainer()
                         || reference.isDerived() || !reference.isChangeable()
-                        || reference.getEOpposite() != null
                         || !reference.getEReferenceType().isInstance(target)) {
                     continue;
                 }
