@@ -1,0 +1,9 @@
+Security_Features
+	Cryptography
+		Encryption
+			Symmetric_Key_Cryptography
+				OneTimePad
+	Security_Monitoring
+		Logging
+	Secure_Data_Handling
+		Secure_Storage
