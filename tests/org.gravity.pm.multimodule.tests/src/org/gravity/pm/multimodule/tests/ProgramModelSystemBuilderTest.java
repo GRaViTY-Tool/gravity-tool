@@ -70,4 +70,41 @@ public class ProgramModelSystemBuilderTest {
                 new ProgramModelSystemBuilder(backend)
                         .build(new ProjectSystem(root, List.of(root), List.of()), monitor));
     }
+
+    @Test
+    public void selectsDifferentBackendsForDifferentProjects() throws Exception {
+        final var workspace = ResourcesPlugin.getWorkspace().getRoot();
+        final IProject root = workspace.getProject("mixed-reactor");
+        final IProject java = workspace.getProject("java-module");
+        final IProject other = workspace.getProject("other-module");
+        final AtomicInteger javaCalls = new AtomicInteger();
+        final AtomicInteger otherCalls = new AtomicInteger();
+        final IProgramModelBuilder javaBuilder = new IProgramModelBuilder() {
+            @Override public String id() { return "java"; }
+            @Override public boolean supports(IProject project) { return project.equals(java); }
+            @Override public TypeGraph build(IProject project, IProgressMonitor monitor) {
+                javaCalls.incrementAndGet();
+                return BasicFactory.eINSTANCE.createTypeGraph();
+            }
+        };
+        final IProgramModelBuilder otherBuilder = new IProgramModelBuilder() {
+            @Override public String id() { return "other"; }
+            @Override public boolean supports(IProject project) { return project.equals(other); }
+            @Override public TypeGraph build(IProject project, IProgressMonitor monitor) {
+                otherCalls.incrementAndGet();
+                return BasicFactory.eINSTANCE.createTypeGraph();
+            }
+        };
+        final var models = new ProgramModelSystemBuilder(List.of(javaBuilder, otherBuilder))
+                .build(new ProjectSystem(root, List.of(root, java, other), List.of()), new NullProgressMonitor());
+        assertEquals(2, models.size());
+        assertEquals(1, javaCalls.get());
+        assertEquals(1, otherCalls.get());
+        assertNotSame(models.get(java), models.get(other));
+    }
+
+    @Test
+    public void refusesEmptyBuilderRegistry() {
+        assertThrows(IllegalArgumentException.class, () -> new ProgramModelSystemBuilder(List.of()));
+    }
 }
